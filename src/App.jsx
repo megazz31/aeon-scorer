@@ -99,9 +99,9 @@ const findAlts=useCallback(async card=>{
 },[fmt,colors,isCmd,deck]);
 
 const result=useMemo(()=>scoreFullDeck(deck,pivot?.oracle||""),[deck,pivot]);
-const analytics=useMemo(()=>analyzeDeck(deck,result.scored),[deck,result]);
-const bracket=useMemo(()=>getBracket(result.pr,deck.length),[result.pr,deck.length]);
-const matchup=useMemo(()=>getMatchupProfile(analytics,result.arch,bracket),[analytics,result.arch,bracket]);
+const analytics=useMemo(()=>{const r=scoreFullDeck(deck,pivot?.oracle||"");return analyzeDeck(deck,r.scored);},[deck,pivot]);
+const bracket=useMemo(()=>{const r=scoreFullDeck(deck,pivot?.oracle||"");return getBracket(r.pr,deck.length);},[deck,pivot]);
+const matchup=useMemo(()=>{const r=scoreFullDeck(deck,pivot?.oracle||"");const a=analyzeDeck(deck,r.scored);const b=getBracket(r.pr,deck.length);return getMatchupProfile(a,r.arch,b);},[deck,pivot]);
 const uniqueCards=result.grouped||[];
 const catGroups=useMemo(()=>{const g={};for(const c of uniqueCards){const cat=c.category||getCategory(c.type);if(!g[cat])g[cat]=[];g[cat].push(c);}for(const k of Object.keys(g))g[k].sort((a,b)=>b.final-a.final);return g;},[uniqueCards]);
 const weakCards=useMemo(()=>[...uniqueCards].filter(c=>!/land/i.test(c.type||"")).sort((a,b)=>a.final-b.final).slice(0,5),[uniqueCards]);
