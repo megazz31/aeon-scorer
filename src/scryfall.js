@@ -153,3 +153,82 @@ export async function generateDeck(format,colors,pivotCard,isCommander,onProgres
   if(onProgress)onProgress(completed,totalSteps,"Terminé !");
   return deck;
 }
+
+// V11 OVERRIDE: Better deck generation with diverse slots
+const _origGenerate=generateDeck;
+export async function generateDeckV11(format,colors,pivotCard,isCommander,onProgress){
+  const idOp=isCommander?"id":"c";
+  const colorQ=colors.length>0?`${idOp}<=${colors.join("")}`:"";
+  const fmtQ=format?`f:${format}`:"";
+  const deckSize=isCommander?99:60;
+  const maxCopies=isCommander?1:4;
+
+  // BETTER SLOT DISTRIBUTION
+  const steps=isCommander?[
+    {name:"Créatures (menaces)",q:`t:creature ${fmtQ} ${colorQ} cmc>=3`,target:15,pages:2},
+    {name:"Créatures (utilitaires)",q:`t:creature ${fmtQ} ${colorQ} cmc<=2`,target:10,pages:1},
+    {name:"Removal",q:`(o:"destroy target" OR o:"exile target") ${fmtQ} ${colorQ} -t:land`,target:8,pages:1},
+    {name:"Pioche",q:`(o:"draw a card" OR o:"draw cards") ${fmtQ} ${colorQ} -t:land`,target:7,pages:1},
+    {name:"Ramp",q:`(t:artifact o:"add" cmc<=3) ${fmtQ} ${colorQ}`,target:8,pages:1},
+    {name:"Enchantements",q:`t:enchantment ${fmtQ} ${colorQ}`,target:5,pages:1},
+    {name:"Finishers",q:`t:creature ${fmtQ} ${colorQ} cmc>=5`,target:5,pages:1},
+  ]:[
+    {name:"Créatures aggro",q:`t:creature ${fmtQ} ${colorQ} cmc<=3`,target:12,pages:1},
+    {name:"Créatures mid",q:`t:creature ${fmtQ} ${colorQ} cmc>=3 cmc<=5`,target:6,pages:1},
+    {name:"Removal",q:`(o:"destroy target" OR o:"exile target" OR o:"damage to") (t:instant OR t:sorcery) ${fmtQ} ${colorQ}`,target:6,pages:1},
+    {name:"Pioche/Utilitaire",q:`(o:"draw a card") (t:instant OR t:sorcery OR t:enchantment) ${fmtQ} ${colorQ}`,target:4,pages:1},
+    {name:"Finishers",q:`t:creature ${fmtQ} ${colorQ} cmc>=4`,target:4,pages:1},
+  ];
+
+  const totalSteps=steps.length+1;
+  let completed=0;const deck=[];const used=new Set();
+
+  // Add pivot card
+  if(pivotCard&&!isCommander){
+    for(let i=0;i<Math.min(maxCopies,4);i++)deck.push({...pivotCard,qty:1});
+    used.add(pivotCard.name.toLowerCase());
+  }
+
+  for(const step of steps){
+    if(onProgress)onProgress(completed,totalSteps,`${step.name}...`);
+    let results;
+    try{results=await scryfallSearch(step.q,step.pages);}catch{results=[];}
+    let added=0;
+    for(const card of results){
+      if(added>=step.target)break;
+      const key=card.name.toLowerCase();
+      if(used.has(key))continue;
+      if(/basic land/i.test(card.type||""))continue;
+      const copies=isCommander?1:Math.min(maxCopies,4);
+      const landCount=deck.filter(c=>/land/i.test(c.type||"")).length;
+      const nonLandTarget=deckSize-(isCommander?37:23);
+      if(deck.length-landCount>=nonLandTarget)break;
+      for(let i=0;i<copies;i++)deck.push({...card,qty:1});
+      used.add(key);
+      added++;
+    }
+    completed++;
+  }
+
+  // LANDS
+  if(onProgress)onProgress(completed,totalSteps,"Terrains...");
+  const landTarget=deckSize-deck.filter(c=>!/land/i.test(c.type||"")).length;
+  const landNames={W:"Plains",U:"Island",B:"Swamp",R:"Mountain",G:"Forest"};
+  // Equal distribution among colors
+  let landsAdded=0;
+  const perColor=Math.floor(Math.max(0,landTarget)/Math.max(1,colors.length));
+  for(const col of colors){
+    for(let i=0;i<perColor&&landsAdded<landTarget;i++){
+      deck.push({name:landNames[col]||"Wastes",oracle:`({T}: Add {${col}}.)`,cmc:0,type:`Basic Land — ${landNames[col]||"Wastes"}`,colors:[],colorIdentity:[col],prices:{},keywords:[],qty:1});
+      landsAdded++;
+    }
+  }
+  while(landsAdded<landTarget&&colors.length>0){
+    const col=colors[landsAdded%colors.length];
+    deck.push({name:landNames[col],oracle:`({T}: Add {${col}}.)`,cmc:0,type:`Basic Land — ${landNames[col]}`,colors:[],colorIdentity:[col],prices:{},keywords:[],qty:1});
+    landsAdded++;
+  }
+  completed++;
+  if(onProgress)onProgress(completed,totalSteps,"Terminé !");
+  return deck;
+}
