@@ -6,45 +6,76 @@ import{simulateMatchup}from"./simulator.js";
 const FMTS=[{id:"commander",l:"Commander",sz:100},{id:"standard",l:"Standard",sz:60},{id:"modern",l:"Modern",sz:60},{id:"pioneer",l:"Pioneer",sz:60},{id:"legacy",l:"Legacy",sz:60},{id:"",l:"Casual",sz:60}];
 const COLS=[{id:"W",l:"W",bg:"#f5f0d0",fg:"#8a7a20"},{id:"U",l:"U",bg:"#0e68ab",fg:"#fff"},{id:"B",l:"B",bg:"#1a1a2a",fg:"#ccc"},{id:"R",l:"R",bg:"#d32029",fg:"#fff"},{id:"G",l:"G",bg:"#00733e",fg:"#fff"}];
 
-// FLOOR/CEILING EVALUATION
-// Floor = minimum guaranteed value (the card always does at least this)
-// Ceiling = maximum value in perfect context (synergy with commander/deck)
-// Opportunity cost = how restrictive is it to include
-function evalFloorCeiling(card, cmdTags, deckTags){
+// ====== QUADRANT THEORY SCORING (V13) ======
+// Based on: "A good card improves the quality of your REAL games most often"
+// Score = game_states(30%) + roles(20%) + quality(15%) + synergy(15%) + reliability(10%) + context(10%) - penalties(20%)
+function evalQuadrant(card,cmdTags,deckTags){
   const o=(card.oracle||"").toLowerCase();const t=(card.type||"").toLowerCase();
-  let floor=0,ceiling=0;
-  // BASE FLOOR: rate cards by raw efficiency
-  const cmc=card.cmc||0;
-  // Creatures: floor based on stats vs cmc
-  if(t.includes("creature")){
-    const pw=parseInt(card.power)||0;const th=parseInt(card.toughness)||0;
-    floor=Math.max(0,Math.round((pw+th-cmc)*1.5));
-    if(/haste|trample|flying|deathtouch|lifelink|hexproof|indestructible/i.test(o))floor+=2;
-    if(/vigilance|reach|menace|first strike|double strike/i.test(o))floor+=1;
-  }
-  // Instants/Sorceries: floor based on efficiency
-  if(t.includes("instant"))floor+=2; // instant speed is always good
-  if(/destroy target|exile target/i.test(o))floor+=3;
-  if(/draw/i.test(o))floor+=2;
-  if(/counter target spell/i.test(o))floor+=3;
-  // Low cmc = high floor (always castable)
-  if(cmc<=1)floor+=3;else if(cmc<=2)floor+=2;else if(cmc<=3)floor+=1;else if(cmc>=6)floor-=2;
-  // Unconditional effects = high floor
-  if(!/if |when |whenever |unless /i.test(o)&&o.length>10)floor+=1;
-  // CEILING: synergy with commander/deck strategy
+  const cmc=card.cmc||0;const pw=parseInt(card.power)||0;const th=parseInt(card.toughness)||0;
+  const isCr=t.includes("creature"),isInst=t.includes("instant"),isSorc=t.includes("sorcery");
+  // === GAME STATES (ahead/parity/behind) ===
+  let ahead=2,parity=2,behind=2,opening=2,topdeck=2;
+  // Board wipes: excellent behind, bad ahead
+  if(/destroy all|exile all|all creatures get -|board/i.test(o)){behind=5;parity=4;ahead=1;}
+  // Unconditional removal: great behind+parity
+  if(/destroy target|exile target/i.test(o)){behind+=2;parity+=2;ahead+=1;}
+  if(/fight|bite/i.test(o)){behind+=1;parity+=2;}
+  // Draw: great at parity
+  if(/draw a card|draw cards|draw two|draw three/i.test(o)){parity+=2;behind+=1;topdeck+=2;}
+  // Ramp: great opening
+  if(/add \{|add one mana|search.*basic land/i.test(o)&&cmc<=3){opening+=3;parity+=1;}
+  // Pump/anthem: win-more (great ahead, bad behind)
+  if(/creatures you control get \+|all creatures you control/i.test(o)){ahead+=3;behind-=1;}
+  // Tokens without conditions: decent behind
+  if(/create.*token/i.test(o)&&!/when.*attack|combat damage/i.test(o)){parity+=1;behind+=1;}
+  // Conditional tokens (need attack): ahead only
+  if(/create.*token/i.test(o)&&/when.*attack|combat damage/i.test(o)){ahead+=2;behind-=1;}
+  // ETB value: always good
+  if(/enters the battlefield/i.test(o)&&/draw|destroy|exile|create/i.test(o)){parity+=1;behind+=1;topdeck+=2;}
+  // Low CMC = good opening + topdeck
+  if(cmc<=1){opening+=2;topdeck+=1;}else if(cmc<=2){opening+=1;topdeck+=1;}else if(cmc>=5){opening-=2;topdeck-=1;}else if(cmc>=7){opening-=3;topdeck-=2;}
+  // Creatures with good rate: decent everywhere
+  if(isCr&&pw+th>cmc*2){parity+=1;ahead+=1;}
+  // Keywords
+  if(/haste/i.test(o)){behind+=1;topdeck+=1;}
+  if(/lifelink/i.test(o)){behind+=1;}
+  if(/hexproof|shroud|indestructible/i.test(o)){parity+=1;}
+  // Instant speed: always flexible
+  if(isInst){parity+=1;behind+=1;}
+  // Clamp values
+  ahead=Math.max(0,Math.min(5,ahead));parity=Math.max(0,Math.min(5,parity));behind=Math.max(0,Math.min(5,behind));opening=Math.max(0,Math.min(5,opening));topdeck=Math.max(0,Math.min(5,topdeck));
+  // === WEIGHTED STATE SCORE (behind matters most!) ===
+  const stateScore=0.25*ahead+0.35*parity+0.40*behind;
+  // === QUALITY ===
+  let efficiency=Math.max(0,Math.min(5,isCr?Math.round((pw+th)/Math.max(1,cmc)*2.5):cmc<=2?4:cmc<=4?3:2));
+  let flexibility=(isInst?4:isSorc?3:2);if(/choose one|choose two|modal/i.test(o))flexibility+=1;
+  let resilience=0;if(/indestructible|hexproof|regenerate|return.*from.*graveyard/i.test(o))resilience+=2;if(isCr&&th>=4)resilience+=1;
+  let immediacy=0;if(/enters the battlefield|haste|flash/i.test(o))immediacy+=2;if(isInst)immediacy+=2;if(cmc<=2)immediacy+=1;
+  const floor=Math.max(0,Math.min(5,Math.round(efficiency*0.3+flexibility*0.2+resilience*0.2+immediacy*0.3)));
+  const qualityScore=(efficiency+flexibility+resilience+immediacy+floor)/5;
+  // === SYNERGY ===
   const cardTags=getTags(o);
-  let synCount=0;
-  for(const tag of cardTags){if(cmdTags.includes(tag))synCount+=3;if(deckTags.includes(tag))synCount+=1;}
-  ceiling=floor+synCount;
-  // Combo potential boosts ceiling
-  if(/infinite|untap all|double|twice|additional/i.test(o))ceiling+=4;
-  if(/tutor|search your library/i.test(o))ceiling+=3;
-  // Format staples get floor boost
-  if(/sol ring|mana crypt|rhystic study|smothering tithe|sylvan library|esper sentinel/i.test(card.name||""))floor+=5;
-  // Opportunity cost: high cmc or restrictive mana = high cost
-  const oppCost=cmc>=5?2:cmc>=7?4:0;
-  floor=Math.max(0,floor-oppCost);
-  return{floor:Math.max(0,Math.min(10,floor)),ceiling:Math.max(floor,Math.min(15,ceiling))};
+  let cmdSyn=0,themeSyn=0;
+  for(const tag of cardTags){if(cmdTags.includes(tag))cmdSyn++;if(deckTags.includes(tag))themeSyn++;}
+  cmdSyn=Math.min(5,cmdSyn*2);themeSyn=Math.min(5,themeSyn);
+  const synergyScore=0.6*cmdSyn+0.4*themeSyn;
+  // === RELIABILITY ===
+  let independence=4;
+  if(/if you control|you control.*or more|as long as/i.test(o))independence-=2;
+  if(/your commander/i.test(o))independence-=1;
+  let variance=1;if(/random|flip|coin/i.test(o))variance+=2;
+  const reliabilityScore=(independence+(5-variance))/2;
+  // === CONTEXT ===
+  const contextScore=0.4*opening+0.3*topdeck+0.3*Math.max(0,behind);
+  // === PENALTIES ===
+  let winMore=Math.max(0,ahead-Math.max(parity,behind));
+  let setupNeed=0;if(/you control.*or more|threshold|delirium/i.test(o))setupNeed+=2;
+  let deadDraw=0;if(cmc>=6&&!(/draw|destroy|exile/i.test(o)))deadDraw+=2;if(isCr&&pw<=1&&cmc>=3)deadDraw+=1;
+  const penaltyScore=(0.4*winMore+0.3*setupNeed+0.3*deadDraw);
+  // === TOTAL ===
+  const total=0.30*stateScore+0.20*0+0.15*qualityScore+0.15*synergyScore+0.10*reliabilityScore+0.10*contextScore-0.20*penaltyScore;
+  const ceiling=Math.max(floor,Math.min(10,Math.round(total*2+cmdSyn)));
+  return{floor,ceiling:Math.max(floor,ceiling),ahead,parity,behind,opening,topdeck,winMore:Math.round(winMore),total:Math.round(total*20)/10};
 }
 
 export default function App(){
@@ -95,9 +126,9 @@ const computed=useMemo(()=>{
   // Floor/Ceiling for all cards
   const cmdTags=getTags(pivot?.oracle||"");
   const allTags=[...new Set(uc.flatMap(c=>getTags(c.oracle||"")))];
-  const fc=uc.map(c=>({name:c.name,...evalFloorCeiling(c,cmdTags,allTags)}));
+  const fc=uc.map(c=>({name:c.name,...evalQuadrant(c,cmdTags,allTags)}));
   const combos=detectCombos(deck.map(c=>c.name));
-  return{result:res,analytics:ana,bracket:brk,matchup:mup,uniqueCards:uc,catGroups:cg,weakCards:wk,floorCeiling:fc,combos};
+  return{result:res,analytics:ana,bracket:brk,matchup:mup,uniqueCards:uc,catGroups:cg,weakCards:wk,quadrant:fc,combos};
 },[deck,pivot]);
 
 // === DESTRUCTURE (safe, computed is fully initialized) ===
@@ -108,7 +139,7 @@ const matchup=computed.matchup;
 const uniqueCards=computed.uniqueCards;
 const catGroups=computed.catGroups;
 const weakCards=computed.weakCards;
-const floorCeiling=computed.floorCeiling;
+const quadrant=computed.quadrant;
 const allCombos=computed.combos;
 
 // === CALLBACKS (all defined AFTER computed) ===
@@ -197,7 +228,7 @@ return(<div style={{fontFamily:"'IBM Plex Mono',ui-monospace,monospace",backgrou
 
 <div style={{background:"linear-gradient(135deg,#080c18,#0c1428)",padding:"8px 10px",borderBottom:"1px solid #141e30",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
   <div style={{display:"flex",alignItems:"baseline",gap:"2px"}}>
-    <span style={{fontSize:"15px",fontWeight:"800",color:"#e8f0ff"}}>aeon</span><span style={{fontSize:"15px",color:"#f59e0b"}}>_</span><span style={{fontSize:"15px",fontWeight:"800",color:"#3b82f6"}}>scorer</span><span style={{fontSize:"8px",color:"#22c55e",marginLeft:"2px"}}>v12</span>
+    <span style={{fontSize:"15px",fontWeight:"800",color:"#e8f0ff"}}>aeon</span><span style={{fontSize:"15px",color:"#f59e0b"}}>_</span><span style={{fontSize:"15px",fontWeight:"800",color:"#3b82f6"}}>scorer</span><span style={{fontSize:"8px",color:"#22c55e",marginLeft:"2px"}}>v13</span>
   </div>
   <div style={{display:"flex",gap:"3px"}}>
     <button onClick={()=>setImpOpen(!impOpen)} style={{padding:"3px 6px",background:"#0c1428",border:"1px solid #1a2a44",borderRadius:"2px",color:"#3b82f6",fontSize:"7px",cursor:"pointer",fontFamily:"inherit"}}>📋</button>
@@ -273,7 +304,7 @@ return(<div style={{fontFamily:"'IBM Plex Mono',ui-monospace,monospace",backgrou
         <span style={{fontSize:"9px"}}>{CAT_ICONS[cat]}</span><span style={{fontSize:"8px",fontWeight:"700",color:CAT_CLR[cat],flex:1}}>{cat}</span><span style={{fontSize:"8px",color:"#4a6a8a"}}>{qty}</span><span style={{fontSize:"6px",color:"#2a3a50"}}>{colCat[cat]?"▸":"▾"}</span>
       </div>
       {!colCat[cat]&&<div style={{borderLeft:`2px solid ${(CAT_CLR[cat]||"#333")}20`,marginLeft:"3px",paddingLeft:"3px"}}>
-        {cards.map((card,i)=>{const w=weakCards.some(x=>x.name===card.name);const fc=floorCeiling.find(f=>f.name===card.name);return<div key={i}>
+        {cards.map((card,i)=>{const w=weakCards.some(x=>x.name===card.name);const fc=quadrant.find(f=>f.name===card.name);return<div key={i}>
           <div style={{display:"flex",alignItems:"center",gap:"3px",padding:"2px 3px",background:sel===card.name?"#0c1020":w?"#100808":"transparent",borderRadius:"2px",cursor:"pointer"}} onClick={()=>setSel(sel===card.name?null:card.name)}>
             <span style={{fontSize:"8px",fontWeight:"700",color:CAT_CLR[cat],width:"16px",textAlign:"center"}}>{card.qty}×</span>
             <span style={{flex:1,fontSize:"8px",color:w?"#aa8888":"#dde4ee",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{card.name}</span>
@@ -387,18 +418,23 @@ return(<div style={{fontFamily:"'IBM Plex Mono',ui-monospace,monospace",backgrou
       {[0,1,2,3,4,5,6,7].map(c=>{const v=analytics.curve[c]||0;const mx=Math.max(...Object.values(analytics.curve),1);return<div key={c} style={{flex:1,textAlign:"center"}}>{v>0&&<div style={{fontSize:"5px",color:"#3b82f6"}}>{v}</div>}<div style={{height:`${(v/mx)*22}px`,background:"#3b82f6",borderRadius:"1px 1px 0 0",minHeight:v?"1px":"0"}}/><div style={{fontSize:"4px",color:"#2a3a50"}}>{c===7?"7+":c}</div></div>;})}
     </div>
   </div>
-  {/* Floor/Ceiling overview */}
+  {/* Quadrant Theory Analysis */}
   <div style={{background:"#080c18",border:"1px solid #141e30",borderRadius:"4px",padding:"6px",marginBottom:"4px"}}>
-    <div style={{fontSize:"7px",color:"#f59e0b",marginBottom:"3px"}}>FLOOR / CEILING</div>
-    <div style={{fontSize:"6px",color:"#3a4a5a",marginBottom:"4px"}}>Floor = valeur minimale garantie. Ceiling = valeur maximale en synergie. Les cartes à haut floor sont fiables, celles à haut ceiling sont explosives.</div>
-    {floorCeiling.filter(f=>!/land/i.test(f.name)).slice(0,10).sort((a,b)=>(b.ceiling-b.floor)-(a.ceiling-a.floor)).map((fc,i)=>
-      <div key={i} style={{display:"flex",alignItems:"center",gap:"3px",padding:"1px 0",fontSize:"7px"}}>
-        <span style={{flex:1,color:"#c0c8d8",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{fc.name}</span>
-        <span style={{color:"#22c55e",width:"20px",textAlign:"right"}}>{fc.floor}</span>
-        <div style={{width:"40px",height:"4px",background:"#0c1428",borderRadius:"2px",position:"relative"}}>
-          <div style={{position:"absolute",left:`${fc.floor/15*100}%`,width:`${(fc.ceiling-fc.floor)/15*100}%`,height:"100%",background:"linear-gradient(90deg,#22c55e,#f59e0b)",borderRadius:"2px"}}/>
+    <div style={{fontSize:"7px",color:"#f59e0b",marginBottom:"3px"}}>QUADRANT THEORY — GAME STATES</div>
+    <div style={{fontSize:"6px",color:"#3a4a5a",marginBottom:"4px"}}>Ahead=devant, Parity=égalité, Behind=derrière. Les bonnes cartes sont fortes quand tu es derrière ou à égalité, pas seulement quand tu gagnes déjà.</div>
+    {quadrant.filter(f=>!/land/i.test(f.name)).slice(0,12).sort((a,b)=>b.total-a.total).map((q,i)=>
+      <div key={i} style={{display:"flex",alignItems:"center",gap:"2px",padding:"1px 0",fontSize:"7px"}}>
+        <span style={{flex:1,color:"#c0c8d8",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",maxWidth:"120px"}}>{q.name}</span>
+        <span style={{fontSize:"6px",color:"#22c55e"}} title="Behind">B{q.behind}</span>
+        <span style={{fontSize:"6px",color:"#3b82f6"}} title="Parity">P{q.parity}</span>
+        <span style={{fontSize:"6px",color:"#f59e0b"}} title="Ahead">A{q.ahead}</span>
+        {q.winMore>0&&<span style={{fontSize:"5px",color:"#ef4444",background:"#1a0808",padding:"0 2px",borderRadius:"1px"}}>WM</span>}
+        <span style={{fontSize:"6px",color:"#4a6a8a"}}>F{q.floor}</span>
+        <div style={{width:"30px",height:"3px",background:"#0c1428",borderRadius:"2px",position:"relative"}}>
+          <div style={{position:"absolute",left:`${q.floor/10*100}%`,width:`${(q.ceiling-q.floor)/10*100}%`,height:"100%",background:"linear-gradient(90deg,#22c55e,#f59e0b)",borderRadius:"2px"}}/>
         </div>
-        <span style={{color:"#f59e0b",width:"20px"}}>{fc.ceiling}</span>
+        <span style={{fontSize:"6px",color:"#f59e0b"}}>C{q.ceiling}</span>
+        <span style={{fontSize:"8px",fontWeight:"700",color:q.total>=3?"#22c55e":q.total>=1.5?"#f59e0b":"#ef4444"}}>{q.total}</span>
       </div>
     )}
   </div>
