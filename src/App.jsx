@@ -170,20 +170,22 @@ const genDeck=useCallback(async()=>{
 },[fmt,colors,pivot,isCmd]);
 
 const autoImprove=useCallback(async()=>{
-  // We recalculate inside the callback to avoid depending on external const
   const currentResult=scoreFullDeck(deck,pivot?.oracle||"");
-  const weak=(currentResult.scored||[]).filter(c=>!/land/i.test(c.type||"")&&c.final<=2).slice(0,5);
-  if(!weak.length)return;
+  // Get unique weak cards (score <=2, not lands)
+  const scored=currentResult.grouped||[];
+  const weak=scored.filter(c=>!/land/i.test(c.type||"")&&c.final<=2).slice(0,5);
+  if(!weak.length){setLoadMsg("Aucune carte faible à remplacer !");setTimeout(()=>setLoadMsg(""),2000);return;}
   setLoading(true);let done=0;let newDeck=[...deck];
   for(const card of weak){
-    setLoadMsg(`Amélioration: ${card.name}...`);setLoadProg(Math.round(done/weak.length*100));
+    setLoadMsg(`Remplacement: ${card.name} (${card.qty}×)...`);setLoadProg(Math.round(done/weak.length*100));
     const dn=newDeck.map(c=>c.name.toLowerCase());
     const alts=await searchAlternatives(card,fmt,colors,isCmd);
     const filtered=alts.filter(a=>!dn.includes(a.name.toLowerCase()));
     if(filtered.length>0){
       const best=filtered.sort((a,b)=>scoreCard(b.oracle||"",b.cmc||0).pts-scoreCard(a.oracle||"",a.cmc||0).pts)[0];
-      const idx=newDeck.findIndex(c=>c.name.toLowerCase()===card.name.toLowerCase());
-      if(idx>=0)newDeck[idx]={...best,qty:1};
+      // BUG 5 FIX: Replace ALL copies of the weak card, not just 1
+      const cardLower=card.name.toLowerCase();
+      newDeck=newDeck.map(c=>c.name.toLowerCase()===cardLower?{...best,qty:1}:c);
     }
     done++;
   }
@@ -229,7 +231,7 @@ return(<div style={{fontFamily:"'IBM Plex Mono',ui-monospace,monospace",backgrou
 
 <div style={{background:"linear-gradient(135deg,#080c18,#0c1428)",padding:"8px 10px",borderBottom:"1px solid #141e30",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
   <div style={{display:"flex",alignItems:"baseline",gap:"2px"}}>
-    <span style={{fontSize:"15px",fontWeight:"800",color:"#e8f0ff"}}>aeon</span><span style={{fontSize:"15px",color:"#f59e0b"}}>_</span><span style={{fontSize:"15px",fontWeight:"800",color:"#3b82f6"}}>scorer</span><span style={{fontSize:"8px",color:"#22c55e",marginLeft:"2px"}}>v14</span>
+    <span style={{fontSize:"15px",fontWeight:"800",color:"#e8f0ff"}}>aeon</span><span style={{fontSize:"15px",color:"#f59e0b"}}>_</span><span style={{fontSize:"15px",fontWeight:"800",color:"#3b82f6"}}>scorer</span><span style={{fontSize:"8px",color:"#22c55e",marginLeft:"2px"}}>v15</span>
   </div>
   <div style={{display:"flex",gap:"3px"}}>
     <button onClick={()=>setImpOpen(!impOpen)} style={{padding:"3px 6px",background:"#0c1428",border:"1px solid #1a2a44",borderRadius:"2px",color:"#3b82f6",fontSize:"7px",cursor:"pointer",fontFamily:"inherit"}}>📋</button>
