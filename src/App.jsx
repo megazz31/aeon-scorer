@@ -98,13 +98,17 @@ const findAlts=useCallback(async card=>{
   setAltRes(scored.slice(0,6));setAltLd(false);
 },[fmt,colors,isCmd,deck]);
 
-const result=useMemo(()=>scoreFullDeck(deck,pivot?.oracle||""),[deck,pivot]);
-const analytics=useMemo(()=>{const r=scoreFullDeck(deck,pivot?.oracle||"");return analyzeDeck(deck,r.scored);},[deck,pivot]);
-const bracket=useMemo(()=>{const r=scoreFullDeck(deck,pivot?.oracle||"");return getBracket(r.pr,deck.length);},[deck,pivot]);
-const matchup=useMemo(()=>{const r=scoreFullDeck(deck,pivot?.oracle||"");const a=analyzeDeck(deck,r.scored);const b=getBracket(r.pr,deck.length);return getMatchupProfile(a,r.arch,b);},[deck,pivot]);
-const uniqueCards=result.grouped||[];
-const catGroups=useMemo(()=>{const g={};for(const c of uniqueCards){const cat=c.category||getCategory(c.type);if(!g[cat])g[cat]=[];g[cat].push(c);}for(const k of Object.keys(g))g[k].sort((a,b)=>b.final-a.final);return g;},[uniqueCards]);
-const weakCards=useMemo(()=>[...uniqueCards].filter(c=>!/land/i.test(c.type||"")).sort((a,b)=>a.final-b.final).slice(0,5),[uniqueCards]);
+const computed=useMemo(()=>{
+  const res=scoreFullDeck(deck,pivot?.oracle||"");
+  const ana=analyzeDeck(deck,res.scored);
+  const brk=getBracket(res.pr,deck.length);
+  const mup=getMatchupProfile(ana,res.arch,brk);
+  const uc=res.grouped||[];
+  const cg={};for(const c of uc){const cat=c.category||getCategory(c.type);if(!cg[cat])cg[cat]=[];cg[cat].push(c);}for(const k of Object.keys(cg))cg[k].sort((a,b)=>b.final-a.final);
+  const wk=[...uc].filter(c=>!/land/i.test(c.type||"")).sort((a,b)=>a.final-b.final).slice(0,5);
+  return{result:res,analytics:ana,bracket:brk,matchup:mup,uniqueCards:uc,catGroups:cg,weakCards:wk};
+},[deck,pivot]);
+const{result,analytics,bracket,matchup,uniqueCards,catGroups,weakCards}=computed;
 
 return(<div style={{fontFamily:"'IBM Plex Mono',ui-monospace,monospace",background:"#060810",color:"#c0c8d8",minHeight:"100vh"}}>
 
