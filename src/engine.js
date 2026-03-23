@@ -1,9 +1,9 @@
-// AEON SCORER v6 ENGINE
+// AEON SCORER v7 ENGINE — Grouped cards, categories, matchups, suggestions
 
-// GAME CHANGERS LIST (Commander Format Panel Oct 2025)
+// GAME CHANGERS
 export const GAME_CHANGERS=["Ad Nauseam","Ancient Tomb","Bazaar of Baghdad","Bolas's Citadel","Cabal Coffers","Carpet of Flowers","Chrome Mox","Consecrated Sphinx","Craterhoof Behemoth","Cyclonic Rift","Dauthi Voidwalker","Deadly Rollick","Deflecting Swat","Demonic Consultation","Demonic Tutor","Dockside Extortionist","Drannith Magistrate","Esper Sentinel","Expropriate","Fierce Guardianship","Flawless Maneuver","Food Chain","Force of Negation","Force of Will","Gaea's Cradle","Grand Abolisher","Imperial Seal","Jeska's Will","Jeweled Lotus","Jin-Gitaxias, Core Augur","Lion's Eye Diamond","Mana Crypt","Mana Drain","Mana Vault","Mox Diamond","Mystic Remora","Mystical Tutor","Natural Order","Necropotence","Notion Thief","Orcish Bowmasters","Opposition Agent","Painter's Servant","Ragavan, Nimble Pilferer","Rhystic Study","Sensei's Divining Top","Serra Ascendant","Sheoldred, the Apocalypse","Smothering Tithe","Sol Ring","Survival of the Fittest","Sylvan Library","Tainted Pact","Teferi's Protection","Thassa's Oracle","The One Ring","Toxic Deluge","Underworld Breach","Vampiric Tutor","Veil of Summer","Yuriko, the Tiger's Shadow","Tergrid, God of Fright"].map(n=>n.toLowerCase());
 
-// PRIMITIVES
+// PRIMITIVES (70+)
 const P=[
 {p:/draw (\w+) cards?/gi,cat:"Draw",sc:m=>pw(m[1])*4,l:m=>`Draw ${m[1]}`},
 {p:/\bdraw a card\b/gi,cat:"Draw",sc:()=>4,l:()=>"Draw 1"},
@@ -81,21 +81,14 @@ const P=[
 ];
 
 function pw(w){const m={a:1,an:1,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,x:3};return parseInt(w)||m[w?.toLowerCase()]||1;}
-
-// RECURRENCE
-function recMult(o){
-  if(/at the beginning of/i.test(o))return 2.5;
-  if(/whenever/i.test(o))return 2.0;
-  if(/\{.*\}.*:/i.test(o)&&!/sacrifice.*:/i.test(o))return 1.5;
-  return 1.0;
-}
+function recMult(o){if(/at the beginning of/i.test(o))return 2.5;if(/whenever/i.test(o))return 2.0;if(/\{.*\}.*:/i.test(o)&&!/sacrifice.*:/i.test(o))return 1.5;return 1.0;}
 function cmcMult(c){return c<=0?2.5:c<=1?2:c<=2?1.5:c<=3?1.2:c<=4?1:c<=5?.9:c<=6?.8:.7;}
 
 export function scoreCard(oracle,cmc){
   const dets=[];let raw=0;
   for(const pr of P){pr.p.lastIndex=0;let m;while((m=pr.p.exec(oracle))!==null){const s=pr.sc(m);dets.push({cat:pr.cat,label:pr.l(m),score:Math.round(s*10)/10});raw+=s;if(!pr.p.global)break;}pr.p.lastIndex=0;}
-  const rm=recMult(oracle),cm=cmcMult(cmc),adj=raw*rm*cm;
-  return{dets,raw:Math.round(raw*10)/10,rm,cm,pts:Math.max(0,Math.round(adj/3))};
+  const rm=recMult(oracle),cm=cmcMult(cmc);
+  return{dets,raw:Math.round(raw*10)/10,rm,cm,pts:Math.max(0,Math.round(raw*rm*cm/3))};
 }
 
 // COMBOS
@@ -123,32 +116,52 @@ export const COMBOS=[
 {cards:["Worldgorger Dragon","Animate Dead"],name:"Worldgorger",mult:2.8,tier:"S"},
 {cards:["Karmic Guide","Reveillark"],name:"Karmic Lark",mult:2,tier:"A"},
 ];
-
 export function detectCombos(names){const l=names.map(n=>n.toLowerCase());return COMBOS.filter(co=>co.cards.every(cn=>l.some(dn=>dn===cn.toLowerCase())));}
 
-// TAGS
+// TAGS & ARCHETYPE
 const TP={sacrifice:[/sacrifice/gi,/whenever.*dies/gi],tokens:[/create.*token/gi],counters:[/\+1\/\+1/gi,/proliferate/gi],lifegain:[/gain.*life|lifelink/gi],graveyard:[/graveyard|return.*from/gi],spells:[/whenever.*cast.*(instant|sorcery)|copy.*spell/gi],tribal:[/vampire|elf|goblin|merfolk|zombie|angel|demon|dragon|knight|wizard/gi],aggro:[/haste|double strike/gi],control:[/counter target|destroy all/gi]};
 export function getTags(o){const t=[];for(const[k,ps]of Object.entries(TP)){for(const p of ps){p.lastIndex=0;if(p.test(o)){t.push(k);break;}p.lastIndex=0;}}return[...new Set(t)];}
-
 export function detectArchetype(deck){
-  const t=deck.length||1;const cr=deck.filter(c=>/creature/i.test(c.type||"")).length;
+  const t=deck.length||1,cr=deck.filter(c=>/creature/i.test(c.type||"")).length;
   const nl=deck.filter(c=>!/land/i.test(c.type||""));
   const avg=nl.length>0?nl.reduce((s,c)=>s+(c.cmc||0),0)/nl.length:3;
   const rem=deck.filter(c=>/destroy target|exile target|counter target/i.test(c.oracle||"")).length;
   const tut=deck.filter(c=>/search your library/i.test(c.oracle||"")).length;
-  const combos=detectCombos(deck.map(c=>c.name));
-  if(combos.some(c=>c.tier==="S")&&tut>=3)return"combo";
-  if(cr/t>.45&&avg<2.8)return"aggro";
-  if(rem/t>.15||cr/t<.25)return"control";
-  return"midrange";
+  if(detectCombos(deck.map(c=>c.name)).some(c=>c.tier==="S")&&tut>=3)return"combo";
+  if(cr/t>.45&&avg<2.8)return"aggro";if(rem/t>.15||cr/t<.25)return"control";return"midrange";
 }
-
 function ctxBonus(card,arch){
   const o=(card.oracle||"").toLowerCase(),t=(card.type||"").toLowerCase();
   if(arch==="aggro"&&t.includes("creature")&&(card.cmc||0)<=3)return 1.2;
   if(arch==="control"&&/counter|destroy|exile/i.test(o))return 1.2;
-  if(arch==="combo"&&/search your library|draw/i.test(o))return 1.3;
-  return 1.0;
+  if(arch==="combo"&&/search your library|draw/i.test(o))return 1.3;return 1.0;
+}
+
+// CARD CATEGORY for display grouping
+export function getCategory(type){
+  const t=(type||"").toLowerCase();
+  if(t.includes("basic")&&t.includes("land"))return"Basic Land";
+  if(t.includes("land"))return"Land";
+  if(t.includes("creature"))return"Creature";
+  if(t.includes("planeswalker"))return"Planeswalker";
+  if(t.includes("instant"))return"Instant";
+  if(t.includes("sorcery"))return"Sorcery";
+  if(t.includes("enchantment"))return"Enchantment";
+  if(t.includes("artifact"))return"Artifact";
+  return"Other";
+}
+export const CAT_ORDER=["Creature","Planeswalker","Instant","Sorcery","Enchantment","Artifact","Land","Basic Land","Other"];
+export const CAT_ICONS={"Creature":"👤","Planeswalker":"⚡","Instant":"💨","Sorcery":"🔮","Enchantment":"✨","Artifact":"⚙️","Land":"🏔️","Basic Land":"🏔️","Other":"📦"};
+export const CAT_CLR={"Creature":"#22c55e","Planeswalker":"#a855f7","Instant":"#3b82f6","Sorcery":"#ef4444","Enchantment":"#f59e0b","Artifact":"#6b7280","Land":"#78716c","Basic Land":"#57534e","Other":"#4a5568"};
+
+// GROUP DECK: merge duplicates → [{name, qty, card, scored}]
+export function groupDeck(scoredCards){
+  const map=new Map();
+  for(const c of scoredCards){
+    const key=c.name.toLowerCase();
+    if(map.has(key)){map.get(key).qty++;} else{map.set(key,{...c,qty:1,category:getCategory(c.type)});}
+  }
+  return[...map.values()];
 }
 
 // FULL SCORING
@@ -159,7 +172,6 @@ export function scoreFullDeck(deck,cmdOracle){
   const nl=deck.filter(c=>!/land/i.test(c.type||""));
   const avg=nl.length>0?nl.reduce((s,c)=>s+(c.cmc||0),0)/nl.length:3;
   const spd=avg<=2?1.3:avg<=2.5?1.15:avg<=3?1:avg<=3.5?.9:.8;
-
   const scored=deck.map(card=>{
     const sc=scoreCard(card.oracle||"",card.cmc||0);
     const tags=getTags(card.oracle||""),ov=ct.filter(t=>tags.includes(t));
@@ -171,14 +183,12 @@ export function scoreFullDeck(deck,cmdOracle){
     const final=Math.max(0,Math.round(sc.pts*cmdM*coM*ctx));
     return{...card,sc,tags,ov,cmdM:Math.round(cmdM*100)/100,myC,coM,ctx,final,gc};
   });
-
   const rawP=scored.reduce((s,c)=>s+c.final,0);
   const intB=deck.filter(c=>/destroy target|exile target|counter target/i.test(c.oracle||"")).length*5;
   const drwB=deck.filter(c=>/draw a card|draw \w+ card/i.test(c.oracle||"")).length*3;
   const coB=combos.reduce((s,co)=>s+(co.tier==="S"?50:co.tier==="A"?25:10),0);
   const pr=Math.round(rawP*spd+intB+drwB+coB);
-
-  return{scored,pr,arch,spd,tut,fm,avg:Math.round(avg*100)/100,combos,coB,intB,drwB};
+  return{scored,grouped:groupDeck(scored),pr,arch,spd,tut,fm,avg:Math.round(avg*100)/100,combos,coB,intB,drwB};
 }
 
 // BRACKETS
@@ -204,6 +214,9 @@ export function analyzeDeck(deck,scored){
   const cr=deck.filter(c=>/creature/i.test(c.type||"")).length;
   const is=deck.filter(c=>/instant|sorcery/i.test(c.type||"")).length;
   const la=deck.filter(c=>/land/i.test(c.type||"")).length;
+  const en=deck.filter(c=>/enchantment/i.test(c.type||"")).length;
+  const ar=deck.filter(c=>/artifact/i.test(c.type||"")&&!/creature/i.test(c.type||"")).length;
+  const pw=deck.filter(c=>/planeswalker/i.test(c.type||"")).length;
   const curve={};nl.forEach(c=>{const k=Math.min(c.cmc||0,7);curve[k]=(curve[k]||0)+1;});
   const avg=nl.length>0?nl.reduce((s,c)=>s+(c.cmc||0),0)/nl.length:0;
   const ds=deck.filter(c=>/draw a card|draw \w+ card|scry|you may draw/i.test(c.oracle||"")).length;
@@ -222,7 +235,31 @@ export function analyzeDeck(deck,scored){
     resilience:Math.min(100,Math.round(ds*6+rc*10+10)),
   };
   m.global=Math.round(Object.values(m).reduce((s,v)=>s+v,0)/6);
-  return{t,cr,is,la,curve,avg:Math.round(avg*100)/100,ds,rm,rp,rc,tu,gc,m};
+  return{t,cr,is,la,en,ar,pw,curve,avg:Math.round(avg*100)/100,ds,rm,rp,rc,tu,gc,m};
+}
+
+// MATCHUP PROFILE
+export function getMatchupProfile(analytics,arch,bracket){
+  const profiles=[];
+  const spd=analytics.avg<=2.5?"rapide":analytics.avg<=3.2?"moyen":"lent";
+  const intLvl=analytics.rm>=8?"haute":analytics.rm>=4?"moyenne":"faible";
+  const caLvl=analytics.ds>=8?"excellente":analytics.ds>=5?"correcte":"insuffisante";
+
+  profiles.push({label:"Vitesse",value:spd,color:spd==="rapide"?"#22c55e":spd==="moyen"?"#f59e0b":"#ef4444"});
+  profiles.push({label:"Interaction",value:intLvl,color:intLvl==="haute"?"#22c55e":intLvl==="moyenne"?"#f59e0b":"#ef4444"});
+  profiles.push({label:"Card Advantage",value:caLvl,color:caLvl==="excellente"?"#22c55e":caLvl==="correcte"?"#f59e0b":"#ef4444"});
+
+  const strengths=[],weaknesses=[];
+  if(spd==="rapide"){strengths.push("Pression rapide, peut gagner avant que le contrôle s'installe");weaknesses.push("Vulnérable aux boardwipes et au lifegain massif");}
+  if(spd==="lent"){strengths.push("Late game puissant, grind les decks aggro");weaknesses.push("Peut mourir avant de jouer ses bombes contre l'aggro");}
+  if(intLvl==="haute"){strengths.push("Contrôle les menaces adverses efficacement");}else{weaknesses.push("Peu d'interaction — les combos adverses passent facilement");}
+  if(caLvl==="excellente"){strengths.push("Ne manque jamais de ressources en late game");}else if(caLvl==="insuffisante"){weaknesses.push("Topdecke rapidement après T5-6");}
+  if(arch==="combo"){strengths.push("Win condition déterministe — peut win depuis une position perdante");weaknesses.push("Vulnérable à la hate spécifique (Rule of Law, etc.)");}
+  if(analytics.gc>=3){strengths.push(`${analytics.gc} Game Changers — cartes qui retournent des games`);}
+  if(analytics.la<analytics.t*.33){weaknesses.push("Manabase fragile — risque de mana screw");}
+  if(analytics.rp>=5){strengths.push("Bonne accélération de mana");}
+
+  return{profiles,strengths,weaknesses};
 }
 
 // SIMULATION
@@ -234,8 +271,7 @@ export function simHands(deck,n=2000){
     const s=[...cards];for(let j=s.length-1;j>0;j--){const k=Math.floor(Math.random()*(j+1));[s[j],s[k]]=[s[k],s[j]];}
     let h=s.slice(0,7),li=h.filter(c=>/land/i.test(c.type||"")).length;
     if(li<=1||li>=6){mull++;for(let j=s.length-1;j>0;j--){const k=Math.floor(Math.random()*(j+1));[s[j],s[k]]=[s[k],s[j]];}h=s.slice(0,7);li=h.filter(c=>/land/i.test(c.type||"")).length;}
-    tl+=li;if(li>=2&&li<=5)lok++;
-    if(li>=2&&li<=5&&h.some(c=>!/land/i.test(c.type||"")&&(c.cmc||0)<=3))play++;
+    tl+=li;if(li>=2&&li<=5)lok++;if(li>=2&&li<=5&&h.some(c=>!/land/i.test(c.type||"")&&(c.cmc||0)<=3))play++;
     if(h.some(c=>!/land/i.test(c.type||"")&&(c.cmc||0)<=1))t1++;
   }
   return{n,play:Math.round(play/n*100),lok:Math.round(lok/n*100),t1:Math.round(t1/n*100),avgL:Math.round(tl/n*10)/10,mull:Math.round(mull/n*100)};
