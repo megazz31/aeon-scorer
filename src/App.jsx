@@ -82,6 +82,7 @@ export default function App(){
 // === STATE (all useState at the top) ===
 const[deck,setDeck]=useState([]);
 const[fmt,setFmt]=useState("commander");
+const[targetBracket,setTargetBracket]=useState(3);
 const[pivot,setPivot]=useState(null);
 const[pivS,setPivS]=useState("");
 const[pivSugg,setPivSugg]=useState([]);
@@ -228,7 +229,7 @@ return(<div style={{fontFamily:"'IBM Plex Mono',ui-monospace,monospace",backgrou
 
 <div style={{background:"linear-gradient(135deg,#080c18,#0c1428)",padding:"8px 10px",borderBottom:"1px solid #141e30",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
   <div style={{display:"flex",alignItems:"baseline",gap:"2px"}}>
-    <span style={{fontSize:"15px",fontWeight:"800",color:"#e8f0ff"}}>aeon</span><span style={{fontSize:"15px",color:"#f59e0b"}}>_</span><span style={{fontSize:"15px",fontWeight:"800",color:"#3b82f6"}}>scorer</span><span style={{fontSize:"8px",color:"#22c55e",marginLeft:"2px"}}>v13</span>
+    <span style={{fontSize:"15px",fontWeight:"800",color:"#e8f0ff"}}>aeon</span><span style={{fontSize:"15px",color:"#f59e0b"}}>_</span><span style={{fontSize:"15px",fontWeight:"800",color:"#3b82f6"}}>scorer</span><span style={{fontSize:"8px",color:"#22c55e",marginLeft:"2px"}}>v14</span>
   </div>
   <div style={{display:"flex",gap:"3px"}}>
     <button onClick={()=>setImpOpen(!impOpen)} style={{padding:"3px 6px",background:"#0c1428",border:"1px solid #1a2a44",borderRadius:"2px",color:"#3b82f6",fontSize:"7px",cursor:"pointer",fontFamily:"inherit"}}>📋</button>
@@ -274,6 +275,14 @@ return(<div style={{fontFamily:"'IBM Plex Mono',ui-monospace,monospace",backgrou
     <div style={{fontSize:"8px",color:"#22c55e",fontWeight:"700",marginBottom:"6px"}}>3. COULEURS</div>
     <div style={{display:"flex",gap:"3px"}}>
       {COLS.map(c=><button key={c.id} onClick={()=>setColors(p=>p.includes(c.id)?p.filter(x=>x!==c.id):[...p,c.id])} style={{width:"32px",height:"26px",borderRadius:"3px",border:`2px solid ${colors.includes(c.id)?c.bg:"#1a2a44"}`,background:colors.includes(c.id)?c.bg:c.bg+"15",color:colors.includes(c.id)?c.fg:"#3a4a5a",fontSize:"11px",cursor:"pointer",fontFamily:"inherit",fontWeight:"700"}}>{c.l}</button>)}
+    </div>
+  </div>
+  <div style={{background:"#080c18",border:"1px solid #141e30",borderRadius:"5px",padding:"10px",marginBottom:"6px"}}>
+    <div style={{fontSize:"8px",color:"#ef4444",fontWeight:"700",marginBottom:"6px"}}>4. NIVEAU DE JEU</div>
+    <div style={{display:"flex",gap:"2px"}}>
+      {[{n:1,l:"Casual",c:"#22c55e"},{n:2,l:"Mid",c:"#3b82f6"},{n:3,l:"Focused",c:"#f59e0b"},{n:4,l:"Optimized",c:"#ef4444"},{n:5,l:"cEDH/Pro",c:"#dc2626"}].map(b=>
+        <button key={b.n} onClick={()=>setTargetBracket(b.n)} style={{flex:1,padding:"4px 2px",background:targetBracket===b.n?b.c+"20":"#0c1428",border:`1px solid ${targetBracket===b.n?b.c:"#141e30"}`,borderRadius:"2px",color:targetBracket===b.n?b.c:"#4a5a6a",fontSize:"7px",cursor:"pointer",fontFamily:"inherit",fontWeight:targetBracket===b.n?"700":"400"}}>{b.l}</button>
+      )}
     </div>
   </div>
   <button onClick={genDeck} disabled={!colors.length} style={{width:"100%",padding:"10px",background:!colors.length?"#101828":"linear-gradient(135deg,#1a3a6a,#2a4a8a)",border:"none",borderRadius:"5px",color:"#e8f0ff",fontSize:"12px",fontWeight:"700",cursor:!colors.length?"default":"pointer",fontFamily:"inherit",opacity:!colors.length?.3:1}}>⚡ Générer le deck</button>
