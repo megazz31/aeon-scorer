@@ -4,7 +4,7 @@
 export const GAME_CHANGERS=["Ad Nauseam","Ancient Tomb","Bazaar of Baghdad","Bolas's Citadel","Cabal Coffers","Carpet of Flowers","Chrome Mox","Consecrated Sphinx","Craterhoof Behemoth","Cyclonic Rift","Dauthi Voidwalker","Deadly Rollick","Deflecting Swat","Demonic Consultation","Demonic Tutor","Dockside Extortionist","Drannith Magistrate","Esper Sentinel","Expropriate","Fierce Guardianship","Flawless Maneuver","Food Chain","Force of Negation","Force of Will","Gaea's Cradle","Grand Abolisher","Imperial Seal","Jeska's Will","Jeweled Lotus","Jin-Gitaxias, Core Augur","Lion's Eye Diamond","Mana Crypt","Mana Drain","Mana Vault","Mox Diamond","Mystic Remora","Mystical Tutor","Natural Order","Necropotence","Notion Thief","Orcish Bowmasters","Opposition Agent","Painter's Servant","Ragavan, Nimble Pilferer","Rhystic Study","Sensei's Divining Top","Serra Ascendant","Sheoldred, the Apocalypse","Smothering Tithe","Sol Ring","Survival of the Fittest","Sylvan Library","Tainted Pact","Teferi's Protection","Thassa's Oracle","The One Ring","Toxic Deluge","Underworld Breach","Vampiric Tutor","Veil of Summer","Yuriko, the Tiger's Shadow","Tergrid, God of Fright"].map(n=>n.toLowerCase());
 
 // PRIMITIVES (70+)
-let P=[
+const P=[
 {p:/draw (\w+) cards?/gi,cat:"Draw",sc:m=>pw(m[1])*4,l:m=>`Draw ${m[1]}`},
 {p:/\bdraw a card\b/gi,cat:"Draw",sc:()=>4,l:()=>"Draw 1"},
 {p:/draw two additional/gi,cat:"Draw",sc:()=>8,l:()=>"Draw +2"},
@@ -78,6 +78,29 @@ let P=[
 {p:/target player discards/gi,cat:"Discard",sc:()=>3,l:()=>"Discard"},
 {p:/each opponent discards/gi,cat:"Discard",sc:()=>4,l:()=>"Mass discard"},
 {p:/cumulative upkeep/gi,cat:"Downside",sc:()=>-2,l:()=>"Cum. upkeep"},
+{p:/twice that many/gi,cat:"Double",sc:()=>8,l:()=>"Double tokens/counters"},
+{p:/create twice/gi,cat:"Double",sc:()=>8,l:()=>"Double creation"},
+{p:/double the number/gi,cat:"Double",sc:()=>8,l:()=>"Double amount"},
+{p:/additional (land|lands)/gi,cat:"Ramp",sc:()=>6,l:()=>"Extra land drop"},
+{p:/play (\w+) additional land/gi,cat:"Ramp",sc:m=>pw(m[1])*6,l:m=>`+${m[1]} land drops`},
+{p:/play an additional land/gi,cat:"Ramp",sc:()=>6,l:()=>"Extra land drop"},
+{p:/untap all permanents you control/gi,cat:"Untap",sc:()=>7,l:()=>"Untap all"},
+{p:/untap all creatures/gi,cat:"Untap",sc:()=>5,l:()=>"Untap creatures"},
+{p:/lands you control.*every basic land type/gi,cat:"Manafix",sc:()=>5,l:()=>"All land types"},
+{p:/spells you cast cost.*less/gi,cat:"Reduce",sc:()=>4,l:()=>"Cost reduction"},
+{p:/artifact spells.*cost.*less/gi,cat:"Reduce",sc:()=>4,l:()=>"Artifact cost reduce"},
+{p:/creature spells.*cost.*less/gi,cat:"Reduce",sc:()=>4,l:()=>"Creature cost reduce"},
+{p:/if.*would.*instead/gi,cat:"Replace",sc:()=>6,l:()=>"Replacement effect"},
+{p:/that many plus one/gi,cat:"Replace",sc:()=>5,l:()=>"+1 to counters"},
+{p:/choose a creature type/gi,cat:"Tribal",sc:()=>3,l:()=>"Choose type"},
+{p:/triggered? abilities.*trigger.*additional/gi,cat:"Double",sc:()=>7,l:()=>"Double triggers"},
+{p:/if you would create a.*instead create/gi,cat:"Replace",sc:()=>5,l:()=>"Replace creation"},
+{p:/you may play.*from the top/gi,cat:"Draw",sc:()=>5,l:()=>"Play from top"},
+{p:/for each color among/gi,cat:"Ramp",sc:()=>4,l:()=>"Mana per color"},
+{p:/put.*onto the battlefield from your hand/gi,cat:"Free",sc:()=>7,l:()=>"Cheat into play"},
+{p:/whenever another creature enters/gi,cat:"ETB",sc:()=>2,l:()=>"Creature ETB"},
+{p:/whenever a land enters/gi,cat:"Landfall",sc:()=>2,l:()=>"Landfall"},
+
 ];
 
 function pw(w){const m={a:1,an:1,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,x:3};return parseInt(w)||m[w?.toLowerCase()]||1;}
@@ -277,43 +300,5 @@ export function simHands(deck,n=2000){
   return{n,play:Math.round(play/n*100),lok:Math.round(lok/n*100),t1:Math.round(t1/n*100),avgL:Math.round(tl/n*10)/10,mull:Math.round(mull/n*100)};
 }
 
-export const CC={"Draw":"#3b82f6","Tutor":"#8b5cf6","Ramp":"#22c55e","Filter":"#06b6d4","Wipe":"#dc2626","Removal":"#ef4444","Counter":"#6366f1","Tokens":"#f59e0b","Drain":"#a855f7","Life":"#ec4899","Damage":"#f97316","Protect":"#06b6d4","Evasion":"#8b5cf6","Combat":"#d97706","+1/+1":"#84cc16","Lord":"#eab308","Anthem":"#eab308","Recursion":"#6366f1","Free":"#7c3aed","Reduce":"#059669","Extra":"#dc2626","Win":"#dc2626","Storm":"#b91c1c","Cascade":"#7c3aed","Death":"#9333ea","Sacrifice":"#a21caf","Tax":"#f59e0b","Stax":"#991b1b","Discard":"#78350f","Downside":"#6b7280"};
+export const CC={"Draw":"#3b82f6","Tutor":"#8b5cf6","Ramp":"#22c55e","Filter":"#06b6d4","Wipe":"#dc2626","Removal":"#ef4444","Counter":"#6366f1","Tokens":"#f59e0b","Drain":"#a855f7","Life":"#ec4899","Damage":"#f97316","Protect":"#06b6d4","Evasion":"#8b5cf6","Combat":"#d97706","+1/+1":"#84cc16","Lord":"#eab308","Anthem":"#eab308","Recursion":"#6366f1","Free":"#7c3aed","Reduce":"#059669","Extra":"#dc2626","Win":"#dc2626","Storm":"#b91c1c","Cascade":"#7c3aed","Death":"#9333ea","Sacrifice":"#a21caf","Tax":"#f59e0b","Stax":"#991b1b","Discard":"#78350f","Downside":"#6b7280","Double":"#f59e0b","Untap":"#06b6d4","Manafix":"#22c55e","Replace":"#8b5cf6","Tribal":"#d97706","ETB":"#9333ea","Landfall":"#84cc16","Scaling":"#6366f1"};
 export const TC={S:"#dc2626",A:"#f59e0b",B:"#3b82f6"};
-
-// V11 PATCH: Additional patterns for cards that scored 0
-// These are injected into the P array at module load
-const V11_EXTRA=[
-{p:/twice that many/gi,cat:"Double",sc:()=>8,l:()=>"Double tokens/counters"},
-{p:/create twice/gi,cat:"Double",sc:()=>8,l:()=>"Double creation"},
-{p:/double the number/gi,cat:"Double",sc:()=>8,l:()=>"Double amount"},
-{p:/additional (land|lands)/gi,cat:"Ramp",sc:()=>6,l:()=>"Extra land drop"},
-{p:/play (\w+) additional land/gi,cat:"Ramp",sc:m=>pw2(m[1])*6,l:m=>`+${m[1]} land drops`},
-{p:/untap all permanents you control/gi,cat:"Untap",sc:()=>7,l:()=>"Untap all"},
-{p:/untap all creatures you control/gi,cat:"Untap",sc:()=>5,l:()=>"Untap creatures"},
-{p:/untap target/gi,cat:"Untap",sc:()=>3,l:()=>"Untap target"},
-{p:/lands you control.*every basic land type/gi,cat:"Manafix",sc:()=>5,l:()=>"All land types"},
-{p:/spells you cast cost \{?\d?\}? less/gi,cat:"Reduce",sc:()=>4,l:()=>"Cost reduction"},
-{p:/artifact spells.*cost.*less/gi,cat:"Reduce",sc:()=>4,l:()=>"Artifact cost reduce"},
-{p:/creature spells.*cost.*less/gi,cat:"Reduce",sc:()=>4,l:()=>"Creature cost reduce"},
-{p:/if (an effect|one or more).*would.*instead/gi,cat:"Replace",sc:()=>6,l:()=>"Replacement effect"},
-{p:/that many plus one/gi,cat:"Replace",sc:()=>5,l:()=>"+1 to counters/tokens"},
-{p:/choose a creature type/gi,cat:"Tribal",sc:()=>3,l:()=>"Choose creature type"},
-{p:/trigger.*additional time/gi,cat:"Double",sc:()=>7,l:()=>"Double triggers"},
-{p:/triggered abilities.*trigger.*additional/gi,cat:"Double",sc:()=>7,l:()=>"Double triggers"},
-{p:/if you would create a.*instead create/gi,cat:"Replace",sc:()=>5,l:()=>"Replace creation"},
-{p:/you may play.*from the top of your library/gi,cat:"Draw",sc:()=>5,l:()=>"Play from top"},
-{p:/look at the top card.*you may play/gi,cat:"Draw",sc:()=>4,l:()=>"Play from top"},
-{p:/add one mana of any type/gi,cat:"Ramp",sc:()=>3,l:()=>"Any type mana"},
-{p:/for each color among/gi,cat:"Ramp",sc:()=>4,l:()=>"Mana per color"},
-{p:/each basic land type/gi,cat:"Manafix",sc:()=>4,l:()=>"Basic land types"},
-{p:/copy of.*except/gi,cat:"Tokens",sc:()=>5,l:()=>"Copy token"},
-{p:/put.*onto the battlefield from your hand/gi,cat:"Free",sc:()=>7,l:()=>"Cheat into play"},
-{p:/enters the battlefield with X/gi,cat:"Scaling",sc:()=>3,l:()=>"Scales with X"},
-{p:/each opponent.*each upkeep/gi,cat:"Drain",sc:()=>4,l:()=>"Recurring drain"},
-{p:/whenever another creature enters/gi,cat:"ETB",sc:()=>2,l:()=>"Creature ETB trigger"},
-{p:/whenever a land enters/gi,cat:"Landfall",sc:()=>2,l:()=>"Landfall"},
-{p:/play an additional land/gi,cat:"Ramp",sc:()=>6,l:()=>"Extra land drop"},
-];
-function pw2(w){const m={a:1,an:1,one:1,two:2,three:3,four:4};return parseInt(w)||m[w?.toLowerCase()]||1;}
-// Merge into P at runtime
-try{P.push(...V11_EXTRA);}catch(e){}
