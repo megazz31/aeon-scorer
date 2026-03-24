@@ -6,175 +6,298 @@ export async function fetchCard(name){const k=`c:${name.toLowerCase()}`;if(cache
 export async function fetchCardList(names,onProgress){const results=[];for(let i=0;i<names.length;i+=75){const batch=names.slice(i,i+75);try{await throttle();const r=await fetch("https://api.scryfall.com/cards/collection",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({identifiers:batch.map(n=>({name:n}))})});if(r.ok){const d=await r.json();for(const c of(d.data||[])){const card=parseCard(c);cache.set(`c:${c.name.toLowerCase()}`,card);results.push(card);}}if(onProgress)onProgress(Math.min(i+75,names.length),names.length);}catch{}}return results;}
 async function doSearch(query,maxPages){const k=`s:${query}`;if(cache.has(k))return cache.get(k);const all=[];let url=`https://api.scryfall.com/cards/search?q=${encodeURIComponent(query)}&order=edhrec&unique=cards`;for(let p=0;p<(maxPages||2)&&url;p++){try{await throttle();const r=await fetch(url);if(!r.ok)break;const d=await r.json();for(const c of(d.data||[]))all.push(parseCard(c));url=d.has_more?d.next_page:null;}catch{break;}}cache.set(k,all);return all;}
 export async function scryfallSearch(q,mp){return doSearch(q,mp);}
-export async function searchAlternatives(card,format,colors,isCommander){
-  const idF=isCommander&&colors.length?`id<=${colors.join("")}`:colors.length?`c<=${colors.join("")}`:"";
-  const fF=format?`f:${format}`:"";
-  // TYPE-AWARE: search for same card type
-  const t=(card.type||"").toLowerCase();
-  let tQ="";
-  if(t.includes("creature"))tQ="t:creature";
-  else if(t.includes("instant"))tQ="t:instant";
-  else if(t.includes("sorcery"))tQ="t:sorcery";
-  else if(t.includes("enchantment")&&!t.includes("creature"))tQ="t:enchantment";
-  else if(t.includes("artifact")&&!t.includes("creature"))tQ="t:artifact";
-  else if(t.includes("equipment"))tQ="t:equipment";
-  else tQ="";
-  if(!tQ)return[];
-  return doSearch(`${tQ} ${fF} ${idF} cmc<=${Math.max((card.cmc||0)+1,3)} -!"${card.name}"`,1);
-}
 export function parseDecklistText(text){const lines=text.split("\n").map(l=>l.trim()).filter(l=>l&&!l.startsWith("//")&&!l.startsWith("#"));const mb=[],sb=[];let inSB=false;for(const line of lines){if(/^sideboard:?$/i.test(line)){inSB=true;continue;}if(line===""){inSB=true;continue;}const m=line.match(/^(?:SB:\s*)?(\d+)x?\s+(.+?)(?:\s+\(.*\))?(?:\s+\d+)?$/i);if(m)(inSB?sb:mb).push({qty:parseInt(m[1]),name:m[2].trim()});}return{mainboard:mb,sideboard:sb};}
 export function extractSkeleton(refLists){if(!refLists||!refLists.length)return null;const freq={};const total=refLists.length;for(const list of refLists){const seen=new Set();for(const entry of list){const key=entry.name.toLowerCase();if(!seen.has(key)){freq[key]=(freq[key]||0)+1;seen.add(key);}}}const sorted=Object.entries(freq).map(([name,count])=>({name,freq:count/total})).sort((a,b)=>b.freq-a.freq);return{core:sorted.filter(c=>c.freq>=0.5),flex:sorted.filter(c=>c.freq>=0.2&&c.freq<0.5)};}
 
-// ====== V17: TEMPLATE-BASED GENERATION ======
-
-function detectThemes(oracle){
-  const o=(oracle||"").toLowerCase();const t=[];
-  if(/\+1\/\+1 counter|modified|counter on|enters with.*counter/i.test(o))t.push("counters");
-  if(/equip|equipment/i.test(o))t.push("equipment");
-  if(/aura|enchant creature/i.test(o))t.push("auras");
-  if(/token|create.*creature/i.test(o))t.push("tokens");
-  if(/sacrifice|dies|graveyard/i.test(o))t.push("sacrifice");
-  if(/combat damage|attack|whenever.*deals/i.test(o))t.push("combat");
-  if(/landfall|whenever a land/i.test(o))t.push("lands");
-  if(t.length===0)t.push("goodstuff");
-  return t.slice(0,2);
+// TYPE-AWARE alternatives
+export async function searchAlternatives(card,format,colors,isCommander){
+  const idF=isCommander&&colors.length?`id<=${colors.join("")}`:colors.length?`c<=${colors.join("")}`:"";
+  const fF=format?`f:${format}`:"";
+  const t=(card.type||"").toLowerCase();
+  let tQ=t.includes("creature")?"t:creature":t.includes("instant")?"t:instant":t.includes("sorcery")?"t:sorcery":t.includes("enchantment")?"t:enchantment":t.includes("artifact")?"t:artifact":"";
+  if(!tQ)return[];
+  return doSearch(`${tQ} ${fF} ${idF} cmc<=${Math.max((card.cmc||0)+1,3)} -!"${card.name}"`,1);
 }
 
-function isParasitic(card,themes){
-  const o=(card.oracle||"").toLowerCase();const n=(card.name||"").toLowerCase();
-  if(/(elf|elves|goblin|merfolk|zombie|vampire) you control/i.test(o)&&!themes.includes("tribal"))return true;
-  if(/(storm|aetherflux|thousand-year|grapeshot)/i.test(n))return true;
-  if(/for each.*spell.*cast this turn/i.test(o)&&!themes.includes("spells"))return true;
-  if(/whenever you gain life|you gained life/i.test(o)&&!themes.includes("lifegain"))return true;
-  if(/mill \d|into.*graveyard.*from.*library/i.test(o)&&!themes.includes("mill"))return true;
+// ====== V19: EDHREC-BASED SCORING ======
+export function edhrecScore(card){
+  const rank=card.edhrecRank||99999;
+  if(rank<=100)return 18;
+  if(rank<=500)return 15;
+  if(rank<=1000)return 13;
+  if(rank<=2000)return 11;
+  if(rank<=5000)return 9;
+  if(rank<=10000)return 7;
+  if(rank<=20000)return 5;
+  if(rank<=50000)return 3;
+  return 1;
+}
+
+// ====== V19: ARCHETYPE DETECTION ======
+export function detectArchetypes(oracle){
+  const o=(oracle||"").toLowerCase();
+  const archetypes=[];
+  if(/\+1\/\+1 counter|modified|enters with.*counter/i.test(o)){
+    archetypes.push({id:"counters_aggro",name:"Aggro +1/+1 Counters",desc:"Créatures rapides avec counters, attaques agressives"});
+    archetypes.push({id:"counters_midrange",name:"Midrange Counters/Value",desc:"Value à long terme, créatures qui grossissent"});
+  }
+  if(/equip|equipment/i.test(o)){
+    archetypes.push({id:"voltron",name:"Voltron Equipment",desc:"Un seul attaquant surpuissant avec equipment"});
+  }
+  if(/token|create.*creature/i.test(o)){
+    archetypes.push({id:"tokens_go_wide",name:"Go-Wide Tokens",desc:"Submerger avec beaucoup de tokens"});
+  }
+  if(/sacrifice|dies|graveyard/i.test(o)){
+    archetypes.push({id:"aristocrats",name:"Aristocrats/Sacrifice",desc:"Sacrifier pour de la value"});
+  }
+  if(/combat damage|attack|trample/i.test(o)){
+    archetypes.push({id:"combat_aggro",name:"Combat Aggro",desc:"Attaques rapides et puissantes"});
+  }
+  if(/landfall|whenever a land/i.test(o)){
+    archetypes.push({id:"landfall",name:"Landfall Value",desc:"Tirer profit des terrains qui arrivent"});
+  }
+  if(/draw|card advantage/i.test(o)){
+    archetypes.push({id:"card_advantage",name:"Card Advantage Engine",desc:"Moteur de pioche et value"});
+  }
+  if(/spell|instant|sorcery|magecraft/i.test(o)){
+    archetypes.push({id:"spellslinger",name:"Spellslinger",desc:"Instants et sorceries en masse"});
+  }
+  if(archetypes.length===0){
+    archetypes.push({id:"goodstuff",name:"Goodstuff",desc:"Les meilleures cartes disponibles"});
+  }
+  return archetypes.slice(0,4);
+}
+
+// ====== V19: ARCHETYPE-SPECIFIC TEMPLATES ======
+function getTemplate(archId,isCmd,cmdHasRamp){
+  // cmdHasRamp = le commandant fait de la ramp (Kodama)
+  const rampSlots=cmdHasRamp?4:8;
+  const extraSyn=cmdHasRamp?4:0; // réallouer les slots ramp en synergy
+  
+  if(isCmd){
+    const base={
+      counters_aggro:{creatures_syn:22+extraSyn,creatures_util:5,enchant_syn:6,removal:5,wipes:2,draw:8,ramp:rampSlots,protection:3,finishers:3,lands:36},
+      counters_midrange:{creatures_syn:18+extraSyn,creatures_util:6,enchant_syn:7,removal:6,wipes:2,draw:9,ramp:rampSlots,protection:3,finishers:4,lands:36},
+      voltron:{creatures_syn:12,creatures_util:4,enchant_syn:12,removal:6,wipes:2,draw:8,ramp:8,protection:5,finishers:2,lands:36},
+      tokens_go_wide:{creatures_syn:20,creatures_util:5,enchant_syn:6,removal:5,wipes:2,draw:8,ramp:8,protection:3,finishers:4,lands:36},
+      aristocrats:{creatures_syn:22,creatures_util:6,enchant_syn:5,removal:5,wipes:2,draw:8,ramp:8,protection:2,finishers:3,lands:36},
+      combat_aggro:{creatures_syn:24+extraSyn,creatures_util:4,enchant_syn:5,removal:5,wipes:1,draw:7,ramp:rampSlots,protection:3,finishers:3,lands:36},
+      landfall:{creatures_syn:18,creatures_util:5,enchant_syn:5,removal:5,wipes:2,draw:8,ramp:10,protection:3,finishers:3,lands:38},
+      spellslinger:{creatures_syn:10,creatures_util:4,enchant_syn:8,removal:8,wipes:3,draw:10,ramp:8,protection:4,finishers:4,lands:36},
+      goodstuff:{creatures_syn:18+extraSyn,creatures_util:6,enchant_syn:5,removal:6,wipes:2,draw:8,ramp:rampSlots,protection:3,finishers:3,lands:36},
+    };
+    return base[archId]||base.goodstuff;
+  } else {
+    // 60-card: quotas are UNIQUE card count (each × 4 copies)
+    const base={
+      counters_aggro:{creatures_core:6,creatures_mid:1,removal:2,support:1,lands:22},
+      counters_midrange:{creatures_core:4,creatures_mid:2,removal:2,support:2,lands:23},
+      voltron:{creatures_core:3,creatures_mid:1,removal:2,support:4,lands:22},
+      combat_aggro:{creatures_core:6,creatures_mid:2,removal:1,support:1,lands:20},
+      goodstuff:{creatures_core:5,creatures_mid:2,removal:2,support:1,lands:23},
+    };
+    return base[archId]||base.goodstuff;
+  }
+}
+
+// ====== V19: WHITELIST-BASED SYNERGY CHECK ======
+// Instead of blacklisting parasites, we WHITELIST what's on-theme
+function themeKeywords(archId){
+  const kw={
+    counters_aggro:["+1/+1","counter","modified","proliferate","adapt","evolve","riot","renown","mentor","hydra","scale","hardened"],
+    counters_midrange:["+1/+1","counter","modified","proliferate","adapt","evolve","riot","value","draw","ramp"],
+    voltron:["equip","equipment","aura","enchant","attach","sword","protection","hexproof","indestructible","double strike"],
+    tokens_go_wide:["token","create","populate","convoke","anthem","overrun","stampede"],
+    aristocrats:["sacrifice","dies","death","graveyard","blood artist","drain","aristocrat"],
+    combat_aggro:["trample","haste","double strike","combat","attack","power","fight","modified","+1/+1"],
+    landfall:["landfall","land","forest","search","ramp","land enters"],
+    spellslinger:["instant","sorcery","cast","spell","copy","storm","magecraft"],
+    goodstuff:[], // no filtering for goodstuff
+  };
+  return kw[archId]||[];
+}
+
+function hasThemeSynergy(card,archId,themes){
+  const kws=themeKeywords(archId);
+  if(kws.length===0)return true; // goodstuff = everything passes
+  const o=(card.oracle||"").toLowerCase();
+  const t=(card.type||"").toLowerCase();
+  const n=(card.name||"").toLowerCase();
+  const all=o+" "+t+" "+n;
+  // Card must match at least 1 theme keyword
+  for(const kw of kws){if(all.includes(kw))return true;}
+  // Also allow: basic staples that any deck wants
+  if(/draw a card|draw cards|destroy target|exile target|search your library.*land|add \{/i.test(o))return true;
+  if(/hexproof|indestructible|protection from/i.test(o)&&t.includes("instant"))return true;
   return false;
 }
 
 function priceOk(card,brk){
   const eur=parseFloat(card.prices?.eur)||0;
-  if(!eur)return true; // no price data = allow
+  if(!eur)return true;
   if(brk<=1&&eur>5)return false;
   if(brk<=2&&eur>15)return false;
   if(brk<=3&&eur>30)return false;
   return true;
 }
 
-// Build the synergy query based on theme
-function synQ(theme,idQ,fQ){
-  switch(theme){
-    case"counters":return`o:"+1/+1 counter" ${fQ} ${idQ}`;
-    case"equipment":return`t:equipment ${fQ} ${idQ} cmc<=3`;
-    case"auras":return`t:aura ${fQ} ${idQ} -o:"enchant land" cmc<=3`;
-    case"tokens":return`o:"create" o:"token" ${fQ} ${idQ} -t:land`;
-    case"sacrifice":return`o:"sacrifice" ${fQ} ${idQ}`;
-    case"combat":return`(o:trample OR o:"double strike" OR o:"combat damage") ${fQ} ${idQ}`;
-    case"lands":return`(o:landfall OR o:"whenever a land enters") ${fQ} ${idQ}`;
-    default:return`t:creature ${fQ} ${idQ} cmc<=4`;
-  }
-}
-
-// Helper: pick N cards from results that pass all filters
-async function pickCards(query,target,deck,used,themes,brk,maxCmc,copies,typeFilter){
-  let results=[];try{results=await doSearch(query,1);}catch{}
-  const picked=[];
-  for(const card of results){
-    if(picked.length>=target)break;
+// Pick cards from search results with all filters
+async function pick(query,target,used,archId,themes,brk,maxCmc,typeFilter){
+  let res=[];try{res=await doSearch(query,1);}catch{}
+  const out=[];
+  for(const card of res){
+    if(out.length>=target)break;
     const key=card.name.toLowerCase();
     if(used.has(key))continue;
     if(/basic land/i.test(card.type||""))continue;
     if((card.cmc||0)>maxCmc)continue;
-    if(isParasitic(card,themes))continue;
+    if(!hasThemeSynergy(card,archId,themes))continue;
     if(!priceOk(card,brk))continue;
     if(typeFilter&&!typeFilter(card))continue;
-    picked.push(card);
-    used.add(key);
+    out.push(card);used.add(key);
   }
-  return picked;
+  return out;
 }
 
-export async function generateDeckV11(format,colors,pivotCard,isCommander,onProgress,bracket,refLists){
+// Synergy query builder per archetype
+function archSynQ(archId,idQ,fQ){
+  const q={
+    counters_aggro:`t:creature ${fQ} ${idQ} (o:"+1/+1 counter" OR o:modified OR o:adapt OR o:evolve)`,
+    counters_midrange:`t:creature ${fQ} ${idQ} (o:"+1/+1 counter" OR o:proliferate OR o:evolve)`,
+    voltron:`(t:equipment OR t:aura) ${fQ} ${idQ} cmc<=3`,
+    tokens_go_wide:`${fQ} ${idQ} o:create o:token`,
+    aristocrats:`t:creature ${fQ} ${idQ} (o:sacrifice OR o:dies)`,
+    combat_aggro:`t:creature ${fQ} ${idQ} (o:trample OR o:haste OR o:"double strike" OR o:modified)`,
+    landfall:`${fQ} ${idQ} (o:landfall OR o:"whenever a land enters")`,
+    spellslinger:`${fQ} ${idQ} (o:"whenever you cast" OR o:magecraft)`,
+    goodstuff:`t:creature ${fQ} ${idQ} cmc<=4`,
+  };
+  return q[archId]||q.goodstuff;
+}
+
+function archEnchQ(archId,idQ,fQ){
+  const q={
+    counters_aggro:`(t:enchantment OR t:aura) ${fQ} ${idQ} (o:"+1/+1" OR o:counter OR o:modified OR o:trample)`,
+    counters_midrange:`(t:enchantment OR t:aura) ${fQ} ${idQ} (o:"+1/+1" OR o:counter OR o:draw)`,
+    voltron:`(t:equipment OR t:aura) ${fQ} ${idQ}`,
+    tokens_go_wide:`t:enchantment ${fQ} ${idQ} (o:token OR o:create OR o:"creatures you control")`,
+    aristocrats:`t:enchantment ${fQ} ${idQ} (o:sacrifice OR o:dies OR o:graveyard)`,
+    combat_aggro:`(t:enchantment OR t:aura) ${fQ} ${idQ} (o:trample OR o:haste OR o:"+1/+1" OR o:counter)`,
+    landfall:`t:enchantment ${fQ} ${idQ} (o:land OR o:ramp)`,
+    goodstuff:`t:enchantment ${fQ} ${idQ}`,
+  };
+  return q[archId]||q.goodstuff;
+}
+
+// ====== MAIN GENERATOR V19 ======
+export async function generateDeckV11(format,colors,pivotCard,isCommander,onProgress,bracket,refLists,archetype){
   const idOp=isCommander?"id":"c";
   const idQ=colors.length?`${idOp}<=${colors.join("")}`:"";
   const fQ=format?`f:${format}`:"";
   const brk=bracket||3;
-  const themes=detectThemes(pivotCard?.oracle||"");
+  const themes=detectArchetypes(pivotCard?.oracle||"").map(a=>a.id);
+  const archId=archetype||themes[0]||"goodstuff";
+  // Does the commander provide ramp?
+  const cmdRamp=/search.*land.*put.*battlefield|land.*onto the battlefield/i.test(pivotCard?.oracle||"");
+  const tmpl=getTemplate(archId,isCommander,cmdRamp);
   const deck=[];const used=new Set();
   const copies=isCommander?1:4;
   const maxCmc=isCommander?99:5;
+  let step=0;const total=12;
+  const prog=m=>{if(onProgress)onProgress(step++,total,m);};
+  const add=(cards,qty)=>{for(const c of cards){for(let i=0;i<(qty||copies);i++)deck.push({...c,qty:1});}};
 
-  // Use ref skeleton if available
+  // Ref skeleton if available
   const skeleton=refLists?.length?extractSkeleton(refLists):null;
-  let step=0;const total=10;
-  const prog=(msg)=>{if(onProgress)onProgress(step++,total,msg);};
-  const add=(cards,qty)=>{for(const c of cards){const q=qty||copies;for(let i=0;i<q;i++)deck.push({...c,qty:1});}};
-
   if(skeleton&&skeleton.core.length>=3){
-    prog("Squelette de référence...");
-    const coreCards=await fetchCardList(skeleton.core.map(c=>c.name));
-    for(const card of coreCards){
-      if(used.has(card.name.toLowerCase()))continue;
-      if(!priceOk(card,brk))continue;
-      if(/basic land/i.test(card.type||""))continue;
-      add([card],isCommander?1:copies);
-      used.add(card.name.toLowerCase());
-    }
+    prog("Squelette référence...");
+    const cc=await fetchCardList(skeleton.core.map(c=>c.name));
+    for(const card of cc){if(used.has(card.name.toLowerCase())||!priceOk(card,brk)||/basic land/i.test(card.type||""))continue;add([card],isCommander?1:copies);used.add(card.name.toLowerCase());}
   }
 
-  // ===== TEMPLATE: STRICT QUOTAS =====
   if(isCommander){
-    // Commander template: 99 cards = 36 lands + 63 non-lands
-    const SLOTS=[
-      {name:"Créatures synergy",q:`t:creature ${synQ(themes[0],idQ,fQ)}`,target:20,filter:c=>/creature/i.test(c.type)},
-      {name:"Créatures utility",q:`t:creature ${fQ} ${idQ} cmc<=3 (o:"add" OR o:"draw" OR o:"search")`,target:6,filter:c=>/creature/i.test(c.type)},
-      {name:"Card draw",q:`(o:"draw a card" OR o:"draw cards") ${fQ} ${idQ} -t:land`,target:8,filter:null},
-      {name:"Removal ciblé",q:`(o:"destroy target" OR o:"exile target") (t:instant OR t:sorcery) ${fQ} ${idQ} -o:hexproof -o:"you control"`,target:6,filter:null},
-      {name:"Board wipes",q:`(o:"destroy all" OR o:"exile all" OR o:"all creatures get -") ${fQ} ${idQ}`,target:2,filter:null},
-      {name:"Ramp",q:`(o:"search your library" o:"land" OR (t:creature o:"add" cmc<=2)) ${fQ} ${idQ}`,target:8,filter:null},
-      {name:"Protection",q:`(o:hexproof OR o:indestructible) t:instant ${fQ} ${idQ} cmc<=2`,target:3,filter:null},
-      {name:"Auras/Equipment",q:`(t:aura OR t:equipment) ${fQ} ${idQ} cmc<=3`,target:5,filter:null},
-      {name:"Finishers",q:`t:creature ${fQ} ${idQ} cmc>=5 (o:trample OR o:"all creatures" OR pow>=6)`,target:3,filter:c=>/creature/i.test(c.type)},
-    ];
-    for(const slot of SLOTS){
-      prog(slot.name+"...");
-      const existing=deck.filter(c=>!/land/i.test(c.type||"")).length;
-      if(existing>=63)break;
-      const needed=Math.max(0,slot.target-0); // always try to fill
-      const picked=await pickCards(slot.q,needed,deck,used,themes,brk,maxCmc,1,slot.filter);
-      add(picked,1);
-    }
+    // === COMMANDER GENERATION ===
+    // Pivot card (commander is separate in Commander)
+    
+    // 1. Synergy creatures
+    prog("Créatures synergy...");
+    const synCr=await pick(archSynQ(archId,idQ,fQ),tmpl.creatures_syn,used,archId,themes,brk,maxCmc,c=>/creature/i.test(c.type));
+    add(synCr,1);
+    
+    // 2. Utility creatures (dorks, draw, value)
+    prog("Créatures utility...");
+    const utilCr=await pick(`t:creature ${fQ} ${idQ} cmc<=3 (o:"add" OR o:"draw" OR o:"search your library")`,tmpl.creatures_util,used,archId,themes,brk,maxCmc,c=>/creature/i.test(c.type));
+    add(utilCr,1);
+    
+    // 3. Enchantments/Auras/Equipment synergy
+    prog("Enchantements/Auras...");
+    const enchSyn=await pick(archEnchQ(archId,idQ,fQ),tmpl.enchant_syn,used,archId,themes,brk,maxCmc,null);
+    add(enchSyn,1);
+    
+    // 4. Card draw
+    prog("Pioche...");
+    const draw=await pick(`(o:"draw a card" OR o:"draw cards") ${fQ} ${idQ} -t:land`,tmpl.draw,used,archId,themes,brk,maxCmc,null);
+    add(draw,1);
+    
+    // 5. Removal (REAL removal, not protection)
+    prog("Removal...");
+    const rem=await pick(`(o:"destroy target" OR o:"exile target" OR o:fight) (t:instant OR t:sorcery) ${fQ} ${idQ} -o:hexproof -o:"you control get"`,tmpl.removal,used,"goodstuff",themes,brk,maxCmc,null);
+    add(rem,1);
+    
+    // 6. Board wipes
+    prog("Board wipes...");
+    const wipes=await pick(`(o:"destroy all" OR o:"all creatures get -") ${fQ} ${idQ}`,tmpl.wipes,used,"goodstuff",themes,brk,maxCmc,null);
+    add(wipes,1);
+    
+    // 7. Ramp
+    prog("Ramp...");
+    const ramp=await pick(`(o:"search your library" o:"land" OR (t:creature o:"add" cmc<=2)) ${fQ} ${idQ}`,tmpl.ramp,used,"goodstuff",themes,brk,maxCmc,null);
+    add(ramp,1);
+    
+    // 8. Protection
+    prog("Protection...");
+    const prot=await pick(`(o:hexproof OR o:indestructible) t:instant ${fQ} ${idQ} cmc<=2`,tmpl.protection,used,"goodstuff",themes,brk,maxCmc,null);
+    add(prot,1);
+    
+    // 9. Finishers
+    prog("Finishers...");
+    const fin=await pick(`t:creature ${fQ} ${idQ} cmc>=5 (o:trample OR pow>=6)`,tmpl.finishers,used,archId,themes,brk,maxCmc,c=>/creature/i.test(c.type));
+    add(fin,1);
+
   } else {
-    // 60-card template: 22 lands + 38 non-lands = ~9-10 unique cards × 4
-    const SLOTS=[
-      {name:"Créatures core",q:`t:creature ${synQ(themes[0],idQ,fQ)} cmc<=3`,target:5,filter:c=>/creature/i.test(c.type)},
-      {name:"Créatures mid",q:`t:creature ${fQ} ${idQ} cmc>=3 cmc<=5`,target:2,filter:c=>/creature/i.test(c.type)},
-      {name:"Removal",q:`(o:"destroy target" OR o:"exile target") (t:instant OR t:sorcery) ${fQ} ${idQ} -o:hexproof -o:"you control"`,target:2,filter:null},
-      {name:"Support",q:`(t:enchantment OR t:instant) ${fQ} ${idQ} ${synQ(themes[0],idQ,fQ)} cmc<=3`,target:1,filter:null},
-    ];
-    // Add pivot first
+    // === 60-CARD GENERATION ===
     if(pivotCard){add([pivotCard],copies);used.add(pivotCard.name.toLowerCase());}
-    for(const slot of SLOTS){
-      prog(slot.name+"...");
-      const existing=deck.filter(c=>!/land/i.test(c.type||"")).length;
-      if(existing>=38)break;
-      const picked=await pickCards(slot.q,slot.target,deck,used,themes,brk,maxCmc,copies,slot.filter);
-      add(picked,copies);
-    }
+    
+    prog("Créatures core...");
+    const core=await pick(archSynQ(archId,idQ,fQ)+` cmc<=3`,tmpl.creatures_core||5,used,archId,themes,brk,maxCmc,c=>/creature/i.test(c.type));
+    add(core,copies);
+    
+    prog("Créatures mid...");
+    const mid=await pick(`t:creature ${fQ} ${idQ} cmc>=3 cmc<=5`,tmpl.creatures_mid||2,used,archId,themes,brk,maxCmc,c=>/creature/i.test(c.type));
+    add(mid,copies);
+    
+    prog("Removal...");
+    const rem=await pick(`(o:"destroy target" OR o:"exile target") (t:instant OR t:sorcery) ${fQ} ${idQ} -o:hexproof`,tmpl.removal||2,used,"goodstuff",themes,brk,maxCmc,null);
+    add(rem,copies);
+    
+    prog("Support...");
+    const sup=await pick(archEnchQ(archId,idQ,fQ)+` cmc<=3`,tmpl.support||1,used,archId,themes,brk,maxCmc,null);
+    add(sup,copies);
   }
 
-  // Fill any remaining non-land slots
-  const nonLandTarget=isCommander?63:38;
+  // Fill remaining
+  const targetNL=isCommander?(99-tmpl.lands):(60-(tmpl.lands||22));
   const currentNL=deck.filter(c=>!/land/i.test(c.type||"")).length;
-  if(currentNL<nonLandTarget){
+  if(currentNL<targetNL){
     prog("Remplissage...");
-    const fillPicked=await pickCards(`t:creature ${fQ} ${idQ} cmc<=4`,nonLandTarget-currentNL,deck,used,themes,brk,maxCmc,copies,c=>/creature/i.test(c.type));
-    add(fillPicked,isCommander?1:copies);
+    const fill=await pick(`t:creature ${fQ} ${idQ} cmc<=4`,Math.ceil((targetNL-currentNL)/(isCommander?1:copies)),used,archId,themes,brk,maxCmc,c=>/creature/i.test(c.type));
+    add(fill,isCommander?1:copies);
   }
 
-  // LANDS — subtract existing
+  // LANDS
   prog("Terrains...");
-  const landTarget=isCommander?36:22;
   const existingLands=deck.filter(c=>/land/i.test(c.type||"")).length;
-  const basicsNeeded=Math.max(0,landTarget-existingLands);
+  const basicsNeeded=Math.max(0,(tmpl.lands||36)-existingLands);
   const landNames={W:"Plains",U:"Island",B:"Swamp",R:"Mountain",G:"Forest"};
   let la=0;
   if(colors.length>0&&basicsNeeded>0){

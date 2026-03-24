@@ -1,5 +1,5 @@
 import{useState,useCallback,useMemo,useRef}from"react";
-import{searchCards,fetchCard,fetchCardList,parseDecklistText,scryfallSearch,searchAlternatives,generateDeckV11}from"./scryfall.js";
+import{searchCards,fetchCard,fetchCardList,parseDecklistText,scryfallSearch,searchAlternatives,generateDeckV11,detectArchetypes,edhrecScore}from"./scryfall.js";
 import{scoreFullDeck,analyzeDeck,simHands,detectCombos,getTags,getBracket,getMatchupProfile,scoreCard,CC,TC,CAT_ORDER,CAT_ICONS,CAT_CLR,getCategory}from"./engine.js";
 import{simulateMatchup}from"./simulator.js";
 
@@ -73,9 +73,11 @@ function evalQuadrant(card,cmdTags,deckTags){
   let deadDraw=0;if(cmc>=6&&!(/draw|destroy|exile/i.test(o)))deadDraw+=2;if(isCr&&pw<=1&&cmc>=3)deadDraw+=1;
   const penaltyScore=(0.4*winMore+0.3*setupNeed+0.3*deadDraw);
   // === TOTAL ===
-  const total=0.30*stateScore+0.20*0+0.15*qualityScore+0.15*synergyScore+0.10*reliabilityScore+0.10*contextScore-0.20*penaltyScore;
-  const ceiling=Math.max(floor,Math.min(10,Math.round(total*2+cmdSyn)));
-  return{floor,ceiling:Math.max(floor,ceiling),ahead,parity,behind,opening,topdeck,winMore:Math.round(winMore),total:Math.round(total*20)/10};
+  // V19: EDHREC rank as primary score source
+  const edhR=edhrecScore(card);
+  const total=Math.round((edhR*0.5 + (stateScore*4)*0.2 + qualityScore*0.15 + synergyScore*0.1 - penaltyScore*0.05)*10)/10;
+  const ceiling=Math.max(floor,Math.min(10,Math.round(total/2+cmdSyn)));
+  return{floor,ceiling:Math.max(floor,ceiling),ahead,parity,behind,opening,topdeck,winMore:Math.round(winMore),total,edhR};
 }
 
 export default function App(){
@@ -83,6 +85,8 @@ export default function App(){
 const[deck,setDeck]=useState([]);
 const[fmt,setFmt]=useState("commander");
 const[targetBracket,setTargetBracket]=useState(3);
+const[archetypes,setArchetypes]=useState([]);
+const[selArch,setSelArch]=useState("");
 const[pivot,setPivot]=useState(null);
 const[pivS,setPivS]=useState("");
 const[pivSugg,setPivSugg]=useState([]);
@@ -154,7 +158,7 @@ const rmOne=useCallback((name)=>{setDeck(prev=>{const i=prev.findIndex(c=>c.name
 const rmAll=useCallback(name=>{setDeck(p=>p.filter(c=>c.name.toLowerCase()!==name.toLowerCase()));},[]);
 
 const doPivS=useCallback(q=>{setPivS(q);if(q.length<2){setPivSugg([]);return;}clearTimeout(db2.current);db2.current=setTimeout(async()=>{setPivSugg((await searchCards(q)).slice(0,6));},250);},[]);
-const selectPivot=useCallback(async name=>{const card=await fetchCard(name);if(!card)return;setPivot(card);setPivS(card.name);setPivSugg([]);setColors(card.colorIdentity||card.colors||[]);},[]);
+const selectPivot=useCallback(async name=>{const card=await fetchCard(name);if(!card)return;setPivot(card);setPivS(card.name);setPivSugg([]);setColors(card.colorIdentity||card.colors||[]);const archs=detectArchetypes(card.oracle||"");setArchetypes(archs);if(archs.length>0)setSelArch(archs[0].id);},[]);
 
 const handleImport=useCallback(async()=>{
   if(!impTxt.trim())return;setLoading(true);setLoadMsg("Analyse...");setLoadProg(10);
@@ -168,11 +172,10 @@ const handleImport=useCallback(async()=>{
 
 const genDeck=useCallback(async()=>{
   if(!colors.length)return;setLoading(true);setLoadProg(0);
-  // Pass bracket and reference lists to the generator
   const refData=refLists.map(r=>r.cards);
-  const gen=await generateDeckV11(fmt,colors,pivot,isCmd,(c,t,m)=>{setLoadMsg(m);setLoadProg(Math.round(c/t*100));},targetBracket,refData);
+  const gen=await generateDeckV11(fmt,colors,pivot,isCmd,(c,t,m)=>{setLoadMsg(m);setLoadProg(Math.round(c/t*100));},targetBracket,refData,selArch);
   setDeck(gen);setLoading(false);setTab("deck");
-},[fmt,colors,pivot,isCmd,targetBracket,refLists]);
+},[fmt,colors,pivot,isCmd,targetBracket,refLists,selArch]);
 
 const autoImprove=useCallback(async()=>{
   const currentResult=scoreFullDeck(deck,pivot?.oracle||"");
@@ -248,7 +251,7 @@ return(<div style={{fontFamily:"'IBM Plex Mono',ui-monospace,monospace",backgrou
 
 <div style={{background:"linear-gradient(135deg,#080c18,#0c1428)",padding:"8px 10px",borderBottom:"1px solid #141e30",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
   <div style={{display:"flex",alignItems:"baseline",gap:"2px"}}>
-    <span style={{fontSize:"15px",fontWeight:"800",color:"#e8f0ff"}}>aeon</span><span style={{fontSize:"15px",color:"#f59e0b"}}>_</span><span style={{fontSize:"15px",fontWeight:"800",color:"#3b82f6"}}>scorer</span><span style={{fontSize:"8px",color:"#22c55e",marginLeft:"2px"}}>v17</span>
+    <span style={{fontSize:"15px",fontWeight:"800",color:"#e8f0ff"}}>aeon</span><span style={{fontSize:"15px",color:"#f59e0b"}}>_</span><span style={{fontSize:"15px",fontWeight:"800",color:"#3b82f6"}}>scorer</span><span style={{fontSize:"8px",color:"#22c55e",marginLeft:"2px"}}>v19</span>
   </div>
   <div style={{display:"flex",gap:"3px"}}>
     <button onClick={()=>setImpOpen(!impOpen)} style={{padding:"3px 6px",background:"#0c1428",border:"1px solid #1a2a44",borderRadius:"2px",color:"#3b82f6",fontSize:"7px",cursor:"pointer",fontFamily:"inherit"}}>📋</button>
@@ -296,8 +299,15 @@ return(<div style={{fontFamily:"'IBM Plex Mono',ui-monospace,monospace",backgrou
       {COLS.map(c=><button key={c.id} onClick={()=>setColors(p=>p.includes(c.id)?p.filter(x=>x!==c.id):[...p,c.id])} style={{width:"32px",height:"26px",borderRadius:"3px",border:`2px solid ${colors.includes(c.id)?c.bg:"#1a2a44"}`,background:colors.includes(c.id)?c.bg:c.bg+"15",color:colors.includes(c.id)?c.fg:"#3a4a5a",fontSize:"11px",cursor:"pointer",fontFamily:"inherit",fontWeight:"700"}}>{c.l}</button>)}
     </div>
   </div>
+  {archetypes.length>0&&<div style={{background:"#080c18",border:"1px solid #141e30",borderRadius:"5px",padding:"10px",marginBottom:"6px"}}>
+    <div style={{fontSize:"8px",color:"#8b5cf6",fontWeight:"700",marginBottom:"6px"}}>4. ARCHÉTYPE</div>
+    <div style={{display:"flex",gap:"2px",flexWrap:"wrap"}}>
+      {archetypes.map(a=><button key={a.id} onClick={()=>setSelArch(a.id)} style={{padding:"4px 6px",background:selArch===a.id?"#2a1a44":"#0c1428",border:`1px solid ${selArch===a.id?"#8b5cf6":"#141e30"}`,borderRadius:"2px",color:selArch===a.id?"#8b5cf6":"#4a5a6a",fontSize:"7px",cursor:"pointer",fontFamily:"inherit",fontWeight:selArch===a.id?"700":"400"}}>{a.name}</button>)}
+    </div>
+    {selArch&&archetypes.find(a=>a.id===selArch)&&<div style={{fontSize:"7px",color:"#4a5a6a",marginTop:"4px"}}>{archetypes.find(a=>a.id===selArch)?.desc}</div>}
+  </div>}
   <div style={{background:"#080c18",border:"1px solid #141e30",borderRadius:"5px",padding:"10px",marginBottom:"6px"}}>
-    <div style={{fontSize:"8px",color:"#ef4444",fontWeight:"700",marginBottom:"6px"}}>4. NIVEAU DE JEU</div>
+    <div style={{fontSize:"8px",color:"#ef4444",fontWeight:"700",marginBottom:"6px"}}>5. NIVEAU DE JEU</div>
     <div style={{display:"flex",gap:"2px"}}>
       {[{n:1,l:"Casual",c:"#22c55e"},{n:2,l:"Mid",c:"#3b82f6"},{n:3,l:"Focused",c:"#f59e0b"},{n:4,l:"Optimized",c:"#ef4444"},{n:5,l:"cEDH/Pro",c:"#dc2626"}].map(b=>
         <button key={b.n} onClick={()=>setTargetBracket(b.n)} style={{flex:1,padding:"4px 2px",background:targetBracket===b.n?b.c+"20":"#0c1428",border:`1px solid ${targetBracket===b.n?b.c:"#141e30"}`,borderRadius:"2px",color:targetBracket===b.n?b.c:"#4a5a6a",fontSize:"7px",cursor:"pointer",fontFamily:"inherit",fontWeight:targetBracket===b.n?"700":"400"}}>{b.l}</button>
