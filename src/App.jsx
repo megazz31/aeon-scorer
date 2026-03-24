@@ -107,6 +107,9 @@ const[oppName,setOppName]=useState("Adversaire");
 const[simMatch,setSimMatch]=useState(null);
 const[simming,setSimming]=useState(false);
 const[savedOpps,setSavedOpps]=useState([]);
+const[refTxt,setRefTxt]=useState("");
+const[refName,setRefName]=useState("");
+const[refLists,setRefLists]=useState([]);
 const db=useRef(null);
 const db2=useRef(null);
 
@@ -165,9 +168,11 @@ const handleImport=useCallback(async()=>{
 
 const genDeck=useCallback(async()=>{
   if(!colors.length)return;setLoading(true);setLoadProg(0);
-  const gen=await generateDeckV11(fmt,colors,pivot,isCmd,(c,t,m)=>{setLoadMsg(m);setLoadProg(Math.round(c/t*100));});
+  // Pass bracket and reference lists to the generator
+  const refData=refLists.map(r=>r.cards);
+  const gen=await generateDeckV11(fmt,colors,pivot,isCmd,(c,t,m)=>{setLoadMsg(m);setLoadProg(Math.round(c/t*100));},targetBracket,refData);
   setDeck(gen);setLoading(false);setTab("deck");
-},[fmt,colors,pivot,isCmd]);
+},[fmt,colors,pivot,isCmd,targetBracket,refLists]);
 
 const autoImprove=useCallback(async()=>{
   const currentResult=scoreFullDeck(deck,pivot?.oracle||"");
@@ -210,6 +215,18 @@ const importOpp=useCallback(async()=>{
   if(nd.length>0)setSavedOpps(p=>[...p.filter(o=>o.name!==oppName),{name:oppName,deck:nd}]);
 },[oppTxt,oppName]);
 
+const importRef=useCallback(async()=>{
+  if(!refTxt.trim())return;setLoading(true);setLoadMsg("Import référence...");
+  const{mainboard:mb}=parseDecklistText(refTxt);
+  const fetched=await fetchCardList(mb.map(e=>e.name));
+  const cards=[];for(const e of mb){const c=fetched.find(f=>f.name.toLowerCase()===e.name.toLowerCase());if(c)cards.push({...c,qty:e.qty});}
+  if(cards.length>0){
+    setRefLists(p=>[...p,{name:refName||`Ref ${p.length+1}`,cards}]);
+    setRefTxt("");setRefName("");
+  }
+  setLoading(false);
+},[refTxt,refName]);
+
 const runSim=useCallback(async(opponent)=>{
   const opp=opponent||oppDeck;
   if(!opp.length||!deck.length)return;
@@ -231,7 +248,7 @@ return(<div style={{fontFamily:"'IBM Plex Mono',ui-monospace,monospace",backgrou
 
 <div style={{background:"linear-gradient(135deg,#080c18,#0c1428)",padding:"8px 10px",borderBottom:"1px solid #141e30",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
   <div style={{display:"flex",alignItems:"baseline",gap:"2px"}}>
-    <span style={{fontSize:"15px",fontWeight:"800",color:"#e8f0ff"}}>aeon</span><span style={{fontSize:"15px",color:"#f59e0b"}}>_</span><span style={{fontSize:"15px",fontWeight:"800",color:"#3b82f6"}}>scorer</span><span style={{fontSize:"8px",color:"#22c55e",marginLeft:"2px"}}>v15</span>
+    <span style={{fontSize:"15px",fontWeight:"800",color:"#e8f0ff"}}>aeon</span><span style={{fontSize:"15px",color:"#f59e0b"}}>_</span><span style={{fontSize:"15px",fontWeight:"800",color:"#3b82f6"}}>scorer</span><span style={{fontSize:"8px",color:"#22c55e",marginLeft:"2px"}}>v16</span>
   </div>
   <div style={{display:"flex",gap:"3px"}}>
     <button onClick={()=>setImpOpen(!impOpen)} style={{padding:"3px 6px",background:"#0c1428",border:"1px solid #1a2a44",borderRadius:"2px",color:"#3b82f6",fontSize:"7px",cursor:"pointer",fontFamily:"inherit"}}>📋</button>
@@ -245,7 +262,7 @@ return(<div style={{fontFamily:"'IBM Plex Mono',ui-monospace,monospace",backgrou
 </div>}
 
 <div style={{display:"flex",background:"#080c14",borderBottom:"1px solid #101828",overflowX:"auto"}}>
-  {[{id:"setup",l:"⚙️Setup"},{id:"deck",l:`📋${deck.length}`},{id:"bracket",l:`🏆B${bracket.n}`},{id:"simulator",l:"🎮Sim"},{id:"analytics",l:"📊"},{id:"combos",l:`💥${allCombos.length}`}].map(t=>
+  {[{id:"setup",l:"⚙️Setup"},{id:"deck",l:`📋${deck.length}`},{id:"refs",l:`📚${refLists.length}`},{id:"bracket",l:`🏆B${bracket.n}`},{id:"simulator",l:"🎮Sim"},{id:"analytics",l:"📊"},{id:"combos",l:`💥${allCombos.length}`}].map(t=>
     <button key={t.id} onClick={()=>setTab(t.id)} style={{flex:1,padding:"7px 1px",border:"none",cursor:"pointer",background:tab===t.id?"#0c1020":"transparent",color:tab===t.id?"#3b82f6":"#2a3a50",fontSize:"8px",fontWeight:tab===t.id?"700":"400",borderBottom:tab===t.id?"2px solid #3b82f6":"2px solid transparent",fontFamily:"inherit",whiteSpace:"nowrap"}}>{t.l}</button>
   )}
 </div>
@@ -321,6 +338,7 @@ return(<div style={{fontFamily:"'IBM Plex Mono',ui-monospace,monospace",backgrou
             <span style={{flex:1,fontSize:"8px",color:w?"#aa8888":"#dde4ee",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{card.name}</span>
             {fc&&<span style={{fontSize:"6px",color:"#4a6a8a"}} title="Floor/Ceiling">{fc.floor}↗{fc.ceiling}</span>}
             {w&&<span style={{fontSize:"4px",color:"#ef4444",background:"#1a0808",padding:"0 1px",borderRadius:"1px"}}>▼</span>}
+            {card.prices?.eur&&<span style={{fontSize:"6px",color:"#4a6a4a"}}>{(parseFloat(card.prices.eur)*card.qty).toFixed(0)}€</span>}
             <span style={{fontSize:"10px",fontWeight:"700",color:card.final>=10?"#ef4444":card.final>=4?"#f59e0b":"#22c55e"}}>{card.final*card.qty}</span>
           </div>
           {sel===card.name&&<div style={{padding:"5px",background:"#0a0e18",borderRadius:"2px",margin:"1px 0"}}>
@@ -349,6 +367,37 @@ return(<div style={{fontFamily:"'IBM Plex Mono',ui-monospace,monospace",backgrou
       </div>}
     </div>;
   })}
+</div>}
+
+{tab==="refs"&&<div>
+  <div style={{background:"#080c18",border:"1px solid #141e30",borderRadius:"5px",padding:"10px",marginBottom:"6px"}}>
+    <div style={{fontSize:"9px",color:"#8b5cf6",fontWeight:"700",marginBottom:"4px"}}>📚 DECKLISTS DE RÉFÉRENCE</div>
+    <div style={{fontSize:"7px",color:"#4a5a6a",marginBottom:"6px"}}>Importe des decklists de tournois/référence. Le générateur utilisera leur squelette (core cards + flex) comme base au lieu de tout inventer depuis zéro.</div>
+    <input value={refName} onChange={e=>setRefName(e.target.value)} placeholder="Nom (ex: Kodama Top8 GP Paris)" style={{width:"100%",padding:"4px 6px",background:"#0c1428",border:"1px solid #1a2a44",borderRadius:"2px",color:"#e8f0ff",fontSize:"9px",fontFamily:"inherit",boxSizing:"border-box",marginBottom:"3px"}}/>
+    <textarea value={refTxt} onChange={e=>setRefTxt(e.target.value)} rows={4} placeholder={"Colle une decklist de référence :\n1 Sol Ring\n1 Kodama of the West Tree\n..."} style={{width:"100%",padding:"4px",background:"#060810",border:"1px solid #1a2a44",borderRadius:"2px",color:"#c0c8d8",fontSize:"9px",fontFamily:"inherit",resize:"vertical",boxSizing:"border-box"}}/>
+    <button onClick={importRef} style={{marginTop:"3px",padding:"4px 10px",background:"#1a2a44",border:"none",borderRadius:"2px",color:"#e8f0ff",fontSize:"8px",cursor:"pointer",fontFamily:"inherit"}}>📥 Ajouter référence</button>
+  </div>
+  {refLists.length>0&&<div style={{background:"#080c18",border:"1px solid #141e30",borderRadius:"4px",padding:"6px",marginBottom:"6px"}}>
+    <div style={{fontSize:"8px",color:"#8b5cf6",marginBottom:"4px"}}>{refLists.length} référence(s) chargées</div>
+    {refLists.map((r,i)=><div key={i} style={{display:"flex",alignItems:"center",gap:"3px",padding:"2px 0",borderBottom:"1px solid #101828"}}>
+      <span style={{flex:1,fontSize:"8px",color:"#c0c8d8"}}>{r.name} ({r.cards.length} cartes)</span>
+      <button onClick={()=>setRefLists(p=>p.filter((_,j)=>j!==i))} style={{fontSize:"6px",padding:"1px 3px",background:"#1a0a0a",border:"1px solid #3a1515",borderRadius:"1px",color:"#ef4444",cursor:"pointer",fontFamily:"inherit"}}>✕</button>
+    </div>)}
+  </div>}
+  {refLists.length>=1&&(()=>{
+    const allCards=refLists.flatMap(r=>r.cards);
+    const freq={};for(const c of allCards){const k=c.name.toLowerCase();freq[k]=(freq[k]||0)+1;}
+    const sorted=Object.entries(freq).sort((a,b)=>b[1]-a[1]).slice(0,15);
+    const maxF=sorted[0]?.[1]||1;
+    return<div style={{background:"#080c18",border:"1px solid #141e30",borderRadius:"4px",padding:"6px"}}>
+      <div style={{fontSize:"8px",color:"#f59e0b",marginBottom:"4px"}}>CORE CARDS (les plus fréquentes)</div>
+      {sorted.map(([name,count],i)=><div key={i} style={{display:"flex",alignItems:"center",gap:"3px",padding:"1px 0",fontSize:"7px"}}>
+        <span style={{flex:1,color:"#c0c8d8",textTransform:"capitalize"}}>{name}</span>
+        <div style={{width:"40px",height:"3px",background:"#0c1428",borderRadius:"2px"}}><div style={{width:`${count/maxF*100}%`,height:"100%",background:count/maxF>=0.7?"#22c55e":"#3b82f6",borderRadius:"2px"}}/></div>
+        <span style={{color:"#4a6a8a",width:"20px",textAlign:"right"}}>{count}×</span>
+      </div>)}
+    </div>;
+  })()}
 </div>}
 
 {tab==="bracket"&&<div>
