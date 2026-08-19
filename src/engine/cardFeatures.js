@@ -8,6 +8,7 @@ const clauses=text=>String(text||'').split(/[.\n;]+/).map(x=>x.trim()).filter(Bo
 function isOwnTargetClause(s){return /you control|you own|your graveyard|your hand/.test(s)}
 function isBlinkText(o){
   return /exile [^.\n;]{0,140}(?:you control|another target|one other target|target creature)[^.\n;]{0,140}(?:return|returns) [^.\n;]{0,140}(?:battlefield|under its owner)/i.test(o)
+    || /exile [^.\n;]{0,180}you control\.[^.\n;]{0,180}return (?:that card|those cards|them)[^.\n;]{0,180}battlefield/i.test(o)
     || /exile [^.\n;]{0,120} until [^.\n;]{0,120} returns? to the battlefield/i.test(o)
     || /flicker/i.test(o)
 }
