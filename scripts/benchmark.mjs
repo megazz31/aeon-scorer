@@ -9,7 +9,26 @@ const ITERATIONS = Number(process.env.AEON_BENCH_ITERATIONS || 1400)
 const USERNAME = process.env.ARCHIDEKT_USERNAME || 'MegazZ31'
 const TARGET = { precon:15, cedh:15, user:12 }
 const sleep = ms => new Promise(r=>setTimeout(r,ms))
+const clamp=(n,a=0,b=100)=>Math.max(a,Math.min(b,n))
+
 async function ensure(){ await fs.mkdir(CACHE,{recursive:true}) }
+async function fetchWithBackoff(url, options={}, attempts=7){
+  let last
+  for(let i=0;i<attempts;i++){
+    try{
+      const r=await fetch(url, options)
+      if(r.ok)return r
+      if(r.status===429||r.status>=500){
+        const retry=Number(r.headers.get('retry-after')||0)
+        await sleep(Math.max(retry*1000, 450*(i+1)))
+        last=new Error(`${r.status} ${r.statusText} ${url}`)
+        continue
+      }
+      throw new Error(`${r.status} ${r.statusText} ${url}`)
+    }catch(e){last=e;await sleep(450*(i+1))}
+  }
+  throw last
+}
 function safeName(s){return String(s).replace(/[^a-z0-9._-]+/gi,'_').slice(0,100)}
 async function cachedJson(key, url, options={}){
   const p=path.join(CACHE, safeName(key)+'.json')
@@ -17,7 +36,7 @@ async function cachedJson(key, url, options={}){
   let last
   for(let i=0;i<4;i++){
     try{
-      const r=await fetch(url,{...options,headers:{'User-Agent':'AeonScorer-Calibration/3.0 (+https://github.com/megazz31/aeon-scorer)','Accept':'application/json',...(options.headers||{})}})
+      const r=await fetchWithBackoff(url,{...options,headers:{'User-Agent':'AeonScorer-Calibration/3.0 (+https://github.com/megazz31/aeon-scorer)','Accept':'application/json',...(options.headers||{})}})
       if(!r.ok)throw new Error(`${r.status} ${r.statusText} ${url}`)
       const j=await r.json(); await fs.writeFile(p,JSON.stringify(j)); return j
     }catch(e){last=e; await sleep(400*(i+1))}
@@ -32,23 +51,22 @@ function normalizeScryfall(d){
 }
 async function scryfallCards(names){
   const uniq=[...new Set(names.filter(Boolean))]
-  const map=new Map()
+  const map=new Map();
   for(let i=0;i<uniq.length;i+=75){
     const batch=uniq.slice(i,i+75)
     const key='scryfall_'+simpleHash(batch.join('|'))
     const p=path.join(CACHE,key+'.json')
     let j
     try{j=JSON.parse(await fs.readFile(p,'utf8'))}catch{
-      const r=await fetch('https://api.scryfall.com/cards/collection',{method:'POST',headers:{'Content-Type':'application/json','User-Agent':'AeonScorer-Calibration/3.0'},body:JSON.stringify({identifiers:batch.map(name=>({name}))})})
-      if(!r.ok)throw new Error(`Scryfall ${r.status}`)
-      j=await r.json(); await fs.writeFile(p,JSON.stringify(j)); await sleep(120)
+      const r=await fetchWithBackoff('https://api.scryfall.com/cards/collection',{method:'POST',headers:{'Content-Type':'application/json','User-Agent':'AeonScorer-Calibration/3.0'},body:JSON.stringify({identifiers:batch.map(name=>({name}))})})
+      j=await r.json(); await fs.writeFile(p,JSON.stringify(j)); await sleep(260)
     }
     for(const d of (j.data||[])){ const c=normalizeScryfall(d); map.set(c.name.toLowerCase(),c) }
-    const missing=batch.filter(n=>!map.has(n.toLowerCase()))
+    const missing=batch.filter(n=>![...map.keys()].some(k=>k===n.toLowerCase()))
     for(const name of missing){
       try{
         const d=await cachedJson('sf_named_'+simpleHash(name),`https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(name)}`)
-        const c=normalizeScryfall(d); map.set(name.toLowerCase(),c); map.set(c.name.toLowerCase(),c); await sleep(90)
+        const c=normalizeScryfall(d); map.set(name.toLowerCase(),c); map.set(c.name.toLowerCase(),c); await sleep(180)
       }catch{}
     }
   }
@@ -61,33 +79,35 @@ function pct(xs,p){if(!xs.length)return 0;const a=[...xs].sort((x,y)=>x-y),i=(a.
 function auc(pos,neg){let wins=0,total=0;for(const p of pos)for(const n of neg){total++;wins+=p>n?1:p===n?.5:0}return total?wins/total:0}
 function evenlyPick(arr,n){if(arr.length<=n)return arr;const out=[];for(let i=0;i<n;i++)out.push(arr[Math.round(i*(arr.length-1)/(n-1))]);return out}
 
-function normalizeMtgjsonCard(c){
-  return {name:c.name,oracle:c.text||'',cmc:Number(c.manaValue??c.cmc??0)||0,manaCost:c.manaCost||'',type:c.type||c.typeLine||'',colors:c.colors||[],colorIdentity:c.colorIdentity||[],power:c.power??null,toughness:c.toughness??null,edhrecRank:c.edhrecRank||999999}
-}
-function expandMtgjson(list=[]){const out=[];for(const c of list){const qty=Number(c.count||c.quantity||1);for(let i=0;i<qty;i++)out.push(normalizeMtgjsonCard(c))}return out}
-
 async function loadPrecons(n){
   const root=await cachedJson('mtgjson_decklist','https://mtgjson.com/api/v5/DeckList.json')
   let rows=root.data||root
   rows=rows.filter(x=>/commander/i.test(x.type||'') && String(x.releaseDate||x.release_date||'')>='2018-01-01')
     .sort((a,b)=>String(a.releaseDate||'').localeCompare(String(b.releaseDate||'')))
-  const candidates=evenlyPick(rows,Math.min(rows.length,n*3))
-  const out=[]
+  const candidates=evenlyPick(rows,Math.min(rows.length,n*4))
+  const raw=[]
   for(const meta of candidates){
-    if(out.length>=n)break
+    if(raw.length>=n)break
     try{
       const fn=String(meta.fileName||meta.file_name||'').replace(/\.json$/i,'')
       if(!fn)continue
       const rootDeck=await cachedJson('mtgdeck_'+simpleHash(fn),`https://mtgjson.com/api/v5/decks/${encodeURIComponent(fn)}.json`)
       const d=rootDeck.data||rootDeck
-      const cmd=expandMtgjson(d.commander||[])
-      const cards=expandMtgjson(d.mainBoard||d.mainboard||d.cards||[])
-      if(cmd.length!==1)continue
-      if(cards.length<90||cards.length>102)continue
-      out.push({source:'precon',name:d.name||meta.name,commander:cmd[0],cards,meta:{releaseDate:meta.releaseDate||meta.release_date,type:meta.type,fileName:meta.fileName}})
+      const cmdRows=d.commander||[]
+      const mainRows=d.mainBoard||d.mainboard||d.cards||[]
+      const commanderNames=cmdRows.flatMap(c=>Array(Number(c.count||c.quantity||1)).fill(c.name)).filter(Boolean)
+      const names=mainRows.flatMap(c=>Array(Number(c.count||c.quantity||1)).fill(c.name)).filter(Boolean)
+      if(commanderNames.length!==1||names.length<90||names.length>102)continue
+      raw.push({source:'precon',name:d.name||meta.name,commanderName:commanderNames[0],names,meta:{releaseDate:meta.releaseDate||meta.release_date,type:meta.type,fileName:meta.fileName}})
     }catch(e){console.warn('precon skip',meta.name,e.message)}
   }
-  return out
+  const map=await scryfallCards(raw.flatMap(x=>[...x.names,x.commanderName]))
+  const out=[]
+  for(const x of raw){
+    const cards=expandNamed(x.names,map),commander=map.get(x.commanderName.toLowerCase())
+    if(commander&&cards.length>=88)out.push({source:'precon',name:x.name,commander:{...commander},cards,meta:x.meta})
+  }
+  return out.slice(0,n)
 }
 
 async function loadCedh(n){
@@ -232,7 +252,9 @@ function markdown(report){
 
 await ensure()
 console.log('Loading benchmark cohorts...')
-const [precons,cedh,user]=await Promise.all([loadPrecons(TARGET.precon),loadCedh(TARGET.cedh),loadArchidekt(TARGET.user)])
+const precons=await loadPrecons(TARGET.precon)
+const cedh=await loadCedh(TARGET.cedh)
+const user=await loadArchidekt(TARGET.user)
 const decks=[...precons,...cedh,...user]
 console.log(`Loaded ${decks.length}: ${precons.length} precon, ${cedh.length} cEDH, ${user.length} user/public`)
 if(precons.length<12||cedh.length<12)throw new Error('Insufficient anchor decks; benchmark would not be meaningful.')
