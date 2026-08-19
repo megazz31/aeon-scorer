@@ -13,6 +13,7 @@
     "audit": "node scripts/adversarial-audit.mjs",
     "benchmark": "node scripts/benchmark.mjs",
     "validate:calibration": "node scripts/validate-report.mjs",
+    "verify:sampling": "node scripts/compare-sampling.mjs",
     "quality:local": "npm run smoke && npm run test:semantic && npm run test:metamorphic && npm run audit && npm run build"
   },
   "dependencies": {
