@@ -1,15 +1,15 @@
 const MOTIFS = [
   { id:'early-commander', name:'Accélération du commandant', producers:['fast-mana','mana'], payoffs:[], special:'commander' },
-  { id:'blink-etb', name:'Blink / ETB', producers:['blink'], payoffs:['etb'] },
-  { id:'constellation', name:'Enchantements / Constellation', producers:['enchantment'], payoffs:['constellation'] },
-  { id:'tokens', name:'Tokens / conversion', producers:['tokens'], payoffs:['doubling','sacrifice','life-payoff'] },
-  { id:'sacrifice', name:'Sacrifice / mort', producers:['sacrifice'], payoffs:['recursion','tokens','life-payoff'] },
-  { id:'graveyard', name:'Cimetière / récursion', producers:['graveyard'], payoffs:['recursion'] },
+  { id:'blink-etb', name:'Blink / ETB', producers:['blink'], payoffs:['etb'], minP:2, minY:2 },
+  { id:'constellation', name:'Enchantements / Constellation', producers:['enchantment'], payoffs:['constellation'], minP:4, minY:1 },
+  { id:'tokens', name:'Tokens / conversion', producers:['tokens'], payoffs:['token-payoff','doubling'], minP:3, minY:2 },
+  { id:'sacrifice', name:'Sacrifice / mort', producers:['sac-outlet'], payoffs:['death-payoff'], minP:2, minY:2 },
+  { id:'graveyard', name:'Cimetière / récursion', producers:['graveyard-setup'], payoffs:['recursion'], minP:2, minY:2 },
   { id:'lands', name:'Lands / Landfall', producers:['land-ramp'], payoffs:['landfall'] },
-  { id:'counters', name:'Marqueurs', producers:['counters'], payoffs:['doubling'] },
-  { id:'spells', name:'Spellslinger', producers:['spellslinger'], payoffs:['draw','tokens'] },
-  { id:'exile', name:'Jeu depuis l’exil', producers:['exile-cast'], payoffs:['draw','tokens'] },
-  { id:'artifacts', name:'Artefacts', producers:['artifact'], payoffs:['doubling','sacrifice'] },
+  { id:'counters', name:'Marqueurs', producers:['counters'], payoffs:['counter-payoff','doubling'], minP:3, minY:2 },
+  { id:'spells', name:'Spellslinger', producers:['spellslinger'], payoffs:['draw','tokens'], minP:3, minY:2 },
+  { id:'exile', name:'Jeu depuis l’exil', producers:['exile-cast'], payoffs:['draw','tokens'], minP:2, minY:2 },
+  { id:'artifacts', name:'Artefacts', producers:['artifact-payoff'], payoffs:['artifact'], minP:3, minY:5 },
 ]
 
 function hasTag(c, tag) { return c.tags?.includes(tag) }
@@ -37,9 +37,11 @@ export function detectPackages(cards, commander = null) {
       continue
     }
 
-    if (producers.length < 2 || payoffs.length < 1) continue
+    if (producers.length < (m.minP||2) || payoffs.length < (m.minY||1)) continue
+    const pNames=new Set(producers.map(c=>c.name)); const yNames=new Set(payoffs.map(c=>c.name))
+    const cross=[...pNames].filter(n=>yNames.has(n)).length
     const unique = new Set([...producers,...payoffs].map(c=>c.name)).size
-    if (unique < 3) continue
+    if (unique < 3 || unique-cross < 2) continue
     const density = (producers.length + payoffs.length) / Math.max(1, nonlands.length)
     const strength = Math.min(100, Math.round(30 + unique*4 + density*70))
     out.push({
