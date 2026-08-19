@@ -15,17 +15,19 @@ export function parseDecklist(text){
     const line=raw.trim()
     if(!line||line.startsWith('//')||line.startsWith('#'))continue
     if(/^(commander|commanders|deck|mainboard|sideboard|maybeboard|considering)\s*:?$/i.test(line))continue
-    let m=line.match(/^(\d+)\s*x?\s+(.+)$/i)
-    if(!m)m=line.match(/^(.+?)\s+[x×](\d+)$/i)?.reverse?.()
-    if(!m)continue
-    const qty=Number(m[1])
-    const name=cleanCardName(m[2])
+    let qty,name
+    const leading=line.match(/^(\d+)\s*x?\s+(.+)$/i)
+    const trailing=line.match(/^(.+?)\s+[x×](\d+)$/i)
+    if(leading){qty=Number(leading[1]);name=cleanCardName(leading[2])}
+    else if(trailing){qty=Number(trailing[2]);name=cleanCardName(trailing[1])}
+    else continue
     if(!Number.isInteger(qty)||qty<1||qty>999||!name)continue
     rows.push({qty,name})
   }
   return rows
 }
 
+function uniq(xs){return [...new Set(xs)]}
 function normalizeCard(c){
   const faces=c.card_faces||[]
   const oracle=c.oracle_text||faces.map(f=>f.oracle_text||'').join('\n')
@@ -37,7 +39,6 @@ function normalizeCard(c){
     legalities:c.legalities||{},edhrecRank:c.edhrec_rank??null,image:c.image_uris?.normal||faces[0]?.image_uris?.normal||null,
   }
 }
-function uniq(xs){return [...new Set(xs)]}
 
 async function request(url,options={},attempts=6){
   let last
@@ -54,12 +55,10 @@ async function request(url,options={},attempts=6){
   }
   throw last
 }
-
 async function named(name,mode='exact'){
   const r=await request(`${API}/cards/named?${mode}=${encodeURIComponent(name.trim())}`)
   return normalizeCard(await r.json())
 }
-
 export async function fetchCard(name){
   if(!name?.trim())return null
   const q=cleanCardName(name)
@@ -68,19 +67,14 @@ export async function fetchCard(name){
     try{return await named(q,'fuzzy')}catch{return null}
   }
 }
-
 export async function fetchCards(entries,onProgress){
   const expanded=[]
   for(let i=0;i<entries.length;i+=75){
     const batch=entries.slice(i,i+75)
-    const r=await request(`${API}/cards/collection`,{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({identifiers:batch.map(x=>({name:cleanCardName(x.name)}))}),
-    })
+    const r=await request(`${API}/cards/collection`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({identifiers:batch.map(x=>({name:cleanCardName(x.name)}))})})
     const data=await r.json(),byName=new Map()
     for(const c of (data.data||[])){
-      const n=normalizeCard(c)
-      byName.set(c.name.toLowerCase(),n)
+      const n=normalizeCard(c);byName.set(c.name.toLowerCase(),n)
       for(const f of (c.card_faces||[]))if(f.name)byName.set(f.name.toLowerCase(),n)
     }
     for(const e of batch){
@@ -91,8 +85,7 @@ export async function fetchCards(entries,onProgress){
       for(let n=0;n<e.qty;n++)expanded.push({...card,__requestedName:requested})
       await sleep(45)
     }
-    onProgress?.(Math.min(i+batch.length,entries.length),entries.length)
-    await sleep(100)
+    onProgress?.(Math.min(i+batch.length,entries.length),entries.length);await sleep(100)
   }
   return expanded
 }
