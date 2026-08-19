@@ -2,45 +2,41 @@ const clamp=(n,a=0,b=10)=>Math.max(a,Math.min(b,n))
 const textOf=c=>(c.oracle||'').replace(/\s+/g,' ').trim()
 const lower=c=>textOf(c).toLowerCase()
 const typeLower=c=>(c.type||'').toLowerCase()
+const unique=xs=>[...new Set(xs)]
+const clauses=text=>String(text||'').split(/[.\n;]+/).map(x=>x.trim()).filter(Boolean)
 
-function clauses(text){return String(text||'').split(/[.\n;]+/).map(x=>x.trim()).filter(Boolean)}
-function hasAny(s,patterns){return patterns.some(r=>r.test(s))}
-function unique(xs){return [...new Set(xs)]}
-
-function isOwnTargetClause(s){
-  return /you control|you own|your graveyard|your hand/.test(s)
-}
+function isOwnTargetClause(s){return /you control|you own|your graveyard|your hand/.test(s)}
 function isBlinkText(o){
-  return /exile [^.\n;]{0,120}(?:you control|another target|target creature)[^.\n;]{0,120}(?:return|returns) [^.\n;]{0,120}(?:battlefield|under its owner)/i.test(o)
-    || /exile [^.\n;]{0,100} until [^.\n;]{0,100} returns? to the battlefield/i.test(o)
+  return /exile [^.\n;]{0,140}(?:you control|another target|target creature)[^.\n;]{0,140}(?:return|returns) [^.\n;]{0,140}(?:battlefield|under its owner)/i.test(o)
+    || /exile [^.\n;]{0,120} until [^.\n;]{0,120} returns? to the battlefield/i.test(o)
     || /flicker/i.test(o)
 }
 function isTemporaryInteraction(o){
   const s=o.toLowerCase()
   return /exile (?:up to )?(?:one |another )?target [^.\n;]+/.test(s)
     && !/target [^.\n;]+ you control/.test(s)
-    && /return (?:that card|it|them)[^.\n;]+battlefield/.test(s)
+    && /return (?:that card|it|them|those cards)[^.\n;]+battlefield/.test(s)
 }
 function isTargetRemoval(o){
+  const temporary=isTemporaryInteraction(o)
   for(const c of clauses(o.toLowerCase())){
     if(isOwnTargetClause(c))continue
     if(/destroy target /.test(c))return true
-    if(/exile (?:up to )?(?:one |another )?target /.test(c) && !/return .*battlefield/.test(c))return true
+    if(/exile (?:up to )?(?:one |another )?target /.test(c)&&!temporary&&!/return .*battlefield/.test(c))return true
     if(/return target [^.]+ to (?:its|their|that player's|owner'?s) hand/.test(c))return true
     if(/target [^.]+ gets -(?:\d+|x)\/-(?:\d+|x)/.test(c))return true
   }
   return false
 }
 function isTutor(o){
-  const s=o.toLowerCase()
-  const searches=/search your library(?: and\/or your graveyard)? for /.test(s)
-  if(!searches)return false
-  const landOnly=/search your library(?: and\/or your graveyard)? for (?:up to [^ ]+ )?(?:a |an )?(?:basic )?land card/.test(s)
+  const s=o.toLowerCase(),search=clauses(s).find(c=>/search your library(?: and\/or your graveyard)? for /.test(c))
+  if(!search)return false
+  const landOnly=/ for [^.]*\b(?:basic land|land card|plains(?: card)?|island(?: card)?|swamp(?: card)?|mountain(?: card)?|forest(?: card)?)\b/.test(search)
   return !landOnly
 }
 function isLandRamp(o){
   const s=o.toLowerCase()
-  return /search your library [^.]*land card[^.]*put [^.]*onto the battlefield/.test(s)
+  return /search your library [^.]*\b(?:land card|plains|island|swamp|mountain|forest)\b[^.]*put [^.]*onto the battlefield/.test(s)
     || /put (?:a|one|up to one) land card [^.]*onto the battlefield/.test(s)
     || /you may play an additional land/.test(s)
 }
@@ -56,17 +52,16 @@ function isGraveSetup(o){
   return /\bmill \d|\bmill x|surveil|discard (?:a|one|two|three|x) cards?|put the top [^.]*cards? of (?:your|a) library into (?:your|its) graveyard/.test(s)
 }
 function isSacOutlet(card,o){
-  const s=o.toLowerCase()
-  const name=(card.name||'').toLowerCase()
-  if(name && new RegExp(`sacrifice ${name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}`).test(s))return false
+  const s=o.toLowerCase(),name=(card.name||'').toLowerCase().replace(/[.*+?^${}()|[\]\\]/g,'\\$&')
+  if(name&&new RegExp(`sacrifice ${name}`).test(s))return false
   return /sacrifice (?:another |a |an |one or more )?(?:creature|artifact|permanent|token)[^:]{0,80}:/.test(s)
-    || /sacrifice (?:another |a |an |one or more )?(?:creature|artifact|permanent|token)\b/.test(s) && /as an additional cost|activate only/.test(s)
+    || (/sacrifice (?:another |a |an |one or more )?(?:creature|artifact|permanent|token)\b/.test(s)&&/as an additional cost|activate only/.test(s))
 }
 function counterRoles(o){
   const s=o.toLowerCase()
   const producer=/put (?:a |one |two |three |x )?(?:\+1\/\+1 |[-+]?\d+\/[-+]?\d+ )?counters? on|proliferate/.test(s)
   const payoff=/for each [^.]*counter|with (?:a|one or more|\w+) counters? on|has (?:a|one or more|\w+) counters? on|remove (?:a|one|\w+) counters? from|whenever one or more counters? (?:are|is) put/.test(s)
-  const doubler=/twice that many counters|double the number of [^.]*counters|additional [^.]*counter would be put|that many plus one [^.]*counters/.test(s)
+  const doubler=/twice that many(?: of those)? counters|double the number of [^.]*counters|additional [^.]*counter would be put|that many plus one [^.]*counters/.test(s)
   return {producer,payoff,doubler}
 }
 function tokenRoles(o){
@@ -76,182 +71,69 @@ function tokenRoles(o){
   const doubler=/if [^.]*would create [^.]*token[^.]*twice|twice that many [^.]*tokens|create twice that many [^.]*tokens/.test(s)
   return {producer,payoff,doubler}
 }
-function triggerDoubler(o){
-  const s=o.toLowerCase()
-  return /triggers? an additional time|trigger an additional time|causes? [^.]* ability to trigger an additional time/.test(s)
-}
-function artifactPayoff(o){
-  const s=o.toLowerCase()
-  return /artifacts? you control|whenever [^.]*artifact[^.]*enters|whenever you cast an artifact|for each artifact|artifact spells? you cast|sacrifice (?:an|another) artifact/.test(s)
-}
-function constellation(o){return /\bconstellation\b|whenever an enchantment [^.]* enters|whenever another enchantment [^.]* enters/i.test(o)}
-function spellslinger(o){return /magecraft|instant or sorcery spells?|whenever you cast (?:an? )?(?:instant|sorcery|noncreature) spell|noncreature spells? you cast/i.test(o)}
-function exileCast(o){return /cast [^.]* from exile|play [^.]* from exile|exile the top [^.]* you may (?:play|cast)/i.test(o)}
-function manaText(o){return /add \{|add one mana|add two mana|add three mana|add four mana|treasure token/i.test(o)}
+const triggerDoubler=o=>/triggers? an additional time|trigger an additional time|causes? [^.]* ability to trigger an additional time/i.test(o)
+const artifactPayoff=o=>/artifacts? you control|whenever [^.]*artifact[^.]*enters|whenever you cast an artifact|for each artifact|artifact spells? you cast|sacrifice (?:an|another) artifact/i.test(o)
+const constellation=o=>/\bconstellation\b|whenever an enchantment [^.]* enters|whenever another enchantment [^.]* enters/i.test(o)
+const spellslinger=o=>/magecraft|instant or sorcery spells?|whenever you cast (?:an? )?(?:instant|sorcery|noncreature) spell|noncreature spells? you cast/i.test(o)
+const exileCast=o=>/cast [^.]* from exile|play [^.]* from exile|exile the top [^.]* you may (?:play|cast)/i.test(o)
+const exilePayoff=o=>/whenever (?:you|a player) (?:cast|casts|play|plays) [^.]* from exile|if you (?:cast|play) [^.]* from exile/i.test(o)
+const manaText=o=>/add \{|add one mana|add two mana|add three mana|add four mana|treasure token/i.test(o)
 function fastMana(card,o){
   const n=(card.name||'').toLowerCase()
   if(/dark ritual|culling the weak|lotus petal|elvish spirit guide|simian spirit guide|chrome mox|mox diamond|mana crypt|mana vault|jeweled lotus/.test(n))return true
-  const cmc=Number(card.cmc||0)
-  return cmc<=1 && /sacrifice [^.]*: add (?:\{|three mana|two mana)/i.test(o)
+  return Number(card.cmc||0)<=1&&/sacrifice [^.]*: add (?:\{|three mana|two mana)/i.test(o)
 }
 function protection(o){
   const s=o.toLowerCase()
-  return /hexproof|indestructible|phase out|protection from|counter target spell [^.]*targets?/.test(s)
-    || (isBlinkText(o)&&/you control/.test(s))
+  return /hexproof|indestructible|phase out|protection from|counter target spell [^.]*targets?/.test(s)||(isBlinkText(o)&&/you control/.test(s))
 }
 
 export function tagsFor(card){
-  const o=textOf(card), s=o.toLowerCase(), t=typeLower(card)
-  const tags=[]
-  const add=x=>{if(x&&!tags.includes(x))tags.push(x)}
-  const counters=counterRoles(o), tokens=tokenRoles(o)
-
-  if(/\bland\b/.test(t))add('land')
-  if(/\bcreature\b/.test(t))add('creature')
-  if(/\benchantment\b/.test(t))add('enchantment')
-  if(/\bartifact\b/.test(t))add('artifact')
-  if(/\binstant\b/.test(t))add('instant')
-  if(/\bsorcery\b/.test(t))add('sorcery')
-
+  const o=textOf(card),t=typeLower(card),tags=[],add=x=>{if(x&&!tags.includes(x))tags.push(x)},counters=counterRoles(o),tokens=tokenRoles(o)
+  if(/\bland\b/.test(t))add('land');if(/\bcreature\b/.test(t))add('creature');if(/\benchantment\b/.test(t))add('enchantment');if(/\bartifact\b/.test(t))add('artifact');if(/\binstant\b/.test(t))add('instant');if(/\bsorcery\b/.test(t))add('sorcery')
   if(/draws? (?:a|one|two|three|four|\d+|x) cards?|draw (?:a|one|two|three|four|\d+|x) cards?/i.test(o))add('draw')
   if(isTutor(o)){add('tutor');if(/at the beginning|whenever|activate only|:\s*search your library/i.test(o))add('repeatable-tutor')}
-  if(isLandRamp(o))add('land-ramp')
-  if(manaText(o))add('mana')
-  if(fastMana(card,o)){add('fast-mana');add('mana')}
-
-  if(isTargetRemoval(o))add('removal')
-  if(isTemporaryInteraction(o)){add('tempo-interaction');add('blink')}
+  if(isLandRamp(o))add('land-ramp');if(manaText(o))add('mana');if(fastMana(card,o)){add('fast-mana');add('mana')}
+  if(isTargetRemoval(o))add('removal');if(isTemporaryInteraction(o)){add('tempo-interaction');add('blink')}
   if(/counter target (?:spell|activated ability|triggered ability)/i.test(o))add('counterspell')
   if(/destroy all|exile all|each player sacrifices|all creatures get -|return all [^.]* to their owners/i.test(o))add('wipe')
-  if(protection(o))add('protection')
-
-  if(isRecursion(o))add('recursion')
-  if(isGraveSetup(o))add('graveyard-setup')
-  if(tokens.producer)add('tokens')
-  if(tokens.payoff)add('token-payoff')
-  if(tokens.doubler){add('token-doubler');add('token-payoff')}
-
-  if(/\bsacrifice\b/i.test(o))add('sacrifice')
-  if(isSacOutlet(card,o))add('sac-outlet')
-  if(/whenever [^.]* dies|whenever you sacrifice|when [^.]* dies/i.test(o))add('death-payoff')
-
-  if(/enters(?: the battlefield)?|whenever [^.]* enters/i.test(o))add('etb')
-  if(isBlinkText(o))add('blink')
-  if(constellation(o))add('constellation')
-  if(artifactPayoff(o))add('artifact-payoff')
-  if(/\blandfall\b|whenever a land [^.]* enters/i.test(o))add('landfall')
-
-  if(counters.producer)add('counter-producer')
-  if(counters.payoff)add('counter-payoff')
-  if(counters.doubler){add('counter-doubler');add('counter-payoff')}
-
-  if(/gain [^.]* life|lifelink/i.test(o))add('lifegain')
-  if(/whenever you gain life|if you gained life|each opponent loses/i.test(o))add('life-payoff')
-  if(spellslinger(o))add('spellslinger')
-  if(exileCast(o))add('exile-cast')
-  if(/without paying [^.]* mana cost|put [^.]* onto the battlefield from your (?:hand|library)/i.test(o))add('cheat')
-  if(/without paying [^.]* mana cost|rather than pay [^.]* mana cost/i.test(o))add('free')
-  if(/opponents can'?t|players can'?t|spells cost [^.]* more|unless [^.]* pays|skip [^.]* step/i.test(o))add('stax')
-  if(/take an extra turn/i.test(o))add('extra-turn')
-  if(/additional combat|extra combat/i.test(o))add('extra-combat')
-  if(/you win the game|target opponent loses the game/i.test(o))add('win')
-  if(triggerDoubler(o))add('trigger-doubler')
-
+  if(protection(o))add('protection');if(isRecursion(o))add('recursion');if(isGraveSetup(o))add('graveyard-setup')
+  if(tokens.producer)add('tokens');if(tokens.payoff)add('token-payoff');if(tokens.doubler){add('token-doubler');add('token-payoff')}
+  if(/\bsacrifice\b/i.test(o))add('sacrifice');if(isSacOutlet(card,o))add('sac-outlet');if(/whenever [^.]* dies|whenever you sacrifice|when [^.]* dies/i.test(o))add('death-payoff')
+  if(/enters(?: the battlefield)?|whenever [^.]* enters/i.test(o))add('etb');if(isBlinkText(o))add('blink');if(constellation(o))add('constellation');if(artifactPayoff(o))add('artifact-payoff');if(/\blandfall\b|whenever a land [^.]* enters/i.test(o))add('landfall')
+  if(counters.producer)add('counter-producer');if(counters.payoff)add('counter-payoff');if(counters.doubler){add('counter-doubler');add('counter-payoff')}
+  if(/gain [^.]* life|lifelink/i.test(o))add('lifegain');if(/whenever you gain life|if you gained life|each opponent loses/i.test(o))add('life-payoff')
+  if(spellslinger(o))add('spellslinger');if(exileCast(o))add('exile-cast');if(exilePayoff(o))add('exile-payoff')
+  if(/without paying [^.]* mana cost|put [^.]* onto the battlefield from your (?:hand|library)/i.test(o))add('cheat');if(/without paying [^.]* mana cost|rather than pay [^.]* mana cost/i.test(o))add('free')
+  if(/opponents can'?t|players can'?t|spells cost [^.]* more|unless [^.]* pays|skip [^.]* step/i.test(o))add('stax');if(/take an extra turn/i.test(o))add('extra-turn');if(/additional combat|extra combat/i.test(o))add('extra-combat');if(/you win the game|target opponent loses the game/i.test(o))add('win');if(triggerDoubler(o))add('trigger-doubler')
   return unique(tags)
 }
 
-function manaValueScore(cmc){
-  if(cmc<=0)return 1
-  if(cmc<=1)return .95
-  if(cmc<=2)return .85
-  if(cmc<=3)return .72
-  if(cmc<=4)return .58
-  if(cmc<=5)return .46
-  if(cmc<=6)return .35
-  return .25
-}
-
+function manaValueScore(cmc){if(cmc<=0)return 1;if(cmc<=1)return .95;if(cmc<=2)return .85;if(cmc<=3)return .72;if(cmc<=4)return .58;if(cmc<=5)return .46;if(cmc<=6)return .35;return .25}
 export function manaRequirement(card){
-  const cost=String(card.manaCost||'')
-  const symbols=[...cost.matchAll(/\{([^}]+)\}/g)].map(m=>m[1].toUpperCase())
-  const colored=[]
-  let generic=0
-  for(const sym of symbols){
-    if(/^\d+$/.test(sym)){generic+=Number(sym);continue}
-    if(sym==='X'||sym==='Y'||sym==='Z')continue
-    if(/^[WUBRGC]$/.test(sym)){colored.push([sym]);continue}
-    const opts=sym.split('/').filter(x=>/^[WUBRGC]$/.test(x))
-    if(opts.length)colored.push(opts)
-  }
+  const symbols=[...String(card.manaCost||'').matchAll(/\{([^}]+)\}/g)].map(m=>m[1].toUpperCase()),colored=[];let generic=0
+  for(const sym of symbols){if(/^\d+$/.test(sym)){generic+=Number(sym);continue}if(sym==='X'||sym==='Y'||sym==='Z')continue;if(/^[WUBRGC]$/.test(sym)){colored.push([sym]);continue}const opts=sym.split('/').filter(x=>/^[WUBRGC]$/.test(x));if(opts.length)colored.push(opts)}
   return {generic,colored,total:Number(card.cmc||generic+colored.length)}
 }
-
 export function sourceColors(card){
   const pm=Array.isArray(card.producedMana)?card.producedMana:[]
   if(pm.length)return unique(pm.map(x=>String(x).toUpperCase()).filter(x=>/^[WUBRGC]$/.test(x)))
-  const t=typeLower(card), o=lower(card)
-  const out=[]
-  if(/plains/.test(t))out.push('W')
-  if(/island/.test(t))out.push('U')
-  if(/swamp/.test(t))out.push('B')
-  if(/mountain/.test(t))out.push('R')
-  if(/forest/.test(t))out.push('G')
-  if(/any color/.test(o))return ['W','U','B','R','G']
+  const t=typeLower(card),o=lower(card),out=[]
+  if(/plains/.test(t))out.push('W');if(/island/.test(t))out.push('U');if(/swamp/.test(t))out.push('B');if(/mountain/.test(t))out.push('R');if(/forest/.test(t))out.push('G')
+  if(/any color|any type that a land you control could produce/.test(o))return ['W','U','B','R','G']
+  if(/search your library for [^.]*plains/.test(o))out.push('W');if(/search your library for [^.]*island/.test(o))out.push('U');if(/search your library for [^.]*swamp/.test(o))out.push('B');if(/search your library for [^.]*mountain/.test(o))out.push('R');if(/search your library for [^.]*forest/.test(o))out.push('G');if(/search your library for (?:a )?basic land/.test(o))return ['W','U','B','R','G']
   for(const c of ['W','U','B','R','G','C'])if(new RegExp(`add \\{${c}\\}`,'i').test(o))out.push(c)
   return unique(out)
 }
 
 export function cardFeatures(card){
-  const o=lower(card), t=typeLower(card), tags=tagsFor(card)
-  const has=x=>tags.includes(x)
-  const isLand=t.includes('land')
-  const isCreature=t.includes('creature')
-  const cmc=Number(card.cmc||0)
-
-  let development=0
-  if(has('mana'))development+=1.0
-  if(has('land-ramp'))development+=1
-  if(has('draw'))development+=1.1
-  if(has('tutor'))development+=1.15
-  if(has('tokens'))development+=.45
-  if(has('cheat'))development+=1.15
-  if(has('trigger-doubler')||has('token-doubler')||has('counter-doubler'))development+=.8
-
-  let interaction=0
-  if(has('removal'))interaction+=1
-  if(has('tempo-interaction'))interaction+=.65
-  if(has('counterspell'))interaction+=1.1
-  if(has('wipe'))interaction+=1.5
-  if(has('stax'))interaction+=1.0
-
-  let resilience=0
-  if(has('draw'))resilience+=.7
-  if(has('recursion'))resilience+=1
-  if(has('protection'))resilience+=.85
-
-  let explosiveness=0
-  if(has('fast-mana'))explosiveness+=1.5
-  if(has('free'))explosiveness+=1.1
-  if(has('cheat'))explosiveness+=1.05
-  if(has('extra-turn'))explosiveness+=2
-  if(has('extra-combat'))explosiveness+=1
-  if(has('trigger-doubler')||has('token-doubler'))explosiveness+=.55
-  if(has('win'))explosiveness+=2
-  if(/\bstorm\b/.test(o))explosiveness+=1
-
-  let standalone=.7
-  if(interaction)standalone+=.4
-  if(has('draw'))standalone+=.3
-  if(has('protection'))standalone+=.2
-  if(/if you control|as long as you control|only if|unless you control/.test(o))standalone-=.3
-  if(/whenever another|for each other|equal to the number of/.test(o))standalone-=.12
-  standalone=clamp(standalone,.1,1.5)
-
-  const recurring=/at the beginning|whenever|each [^.]* step|once each turn/.test(o)?1:0
-  const immediacy=/enters|haste|flash/.test(o)||has('instant')?1:0
-  const efficiency=manaValueScore(cmc)
-
+  const o=lower(card),t=typeLower(card),tags=tagsFor(card),has=x=>tags.includes(x),isLand=t.includes('land'),isCreature=t.includes('creature'),cmc=Number(card.cmc||0)
+  let development=0;if(has('mana'))development+=1;if(has('land-ramp'))development+=1;if(has('draw'))development+=1.1;if(has('tutor'))development+=1.15;if(has('tokens'))development+=.45;if(has('cheat'))development+=1.15;if(has('trigger-doubler')||has('token-doubler')||has('counter-doubler'))development+=.8
+  let interaction=0;if(has('removal'))interaction+=1;if(has('tempo-interaction'))interaction+=.65;if(has('counterspell'))interaction+=1.1;if(has('wipe'))interaction+=1.5;if(has('stax'))interaction+=1
+  let resilience=0;if(has('draw'))resilience+=.7;if(has('recursion'))resilience+=1;if(has('protection'))resilience+=.85
+  let explosiveness=0;if(has('fast-mana'))explosiveness+=1.5;if(has('free'))explosiveness+=1.1;if(has('cheat'))explosiveness+=1.05;if(has('extra-turn'))explosiveness+=2;if(has('extra-combat'))explosiveness+=1;if(has('trigger-doubler')||has('token-doubler'))explosiveness+=.55;if(has('win'))explosiveness+=2;if(/\bstorm\b/.test(o))explosiveness+=1
+  let standalone=.7;if(interaction)standalone+=.4;if(has('draw'))standalone+=.3;if(has('protection'))standalone+=.2;if(/if you control|as long as you control|only if|unless you control/.test(o))standalone-=.3;if(/whenever another|for each other|equal to the number of/.test(o))standalone-=.12;standalone=clamp(standalone,.1,1.5)
+  const recurring=/at the beginning|whenever|each [^.]* step|once each turn/.test(o)?1:0,immediacy=/enters|haste|flash/.test(o)||has('instant')?1:0,efficiency=manaValueScore(cmc)
   return {...card,tags,isLand,isCreature,development,interaction,resilience,explosiveness,standalone,recurring,immediacy,efficiency,manaReq:manaRequirement(card),sourceColors:sourceColors(card)}
 }
-
 export function featureDeck(cards){return cards.map(cardFeatures)}
