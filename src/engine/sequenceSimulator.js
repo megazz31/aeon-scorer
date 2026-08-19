@@ -41,20 +41,20 @@ function capability(hand, packages, turn) {
   return {interaction,protection,rebuild,tutor,engine}
 }
 
-export function simulateSequences(cards, commander, packages, iterations=3000, maxTurn=7) {
+export function simulateSequences(cards, commander, packages, iterations=3000, maxTurn=7, rng=Math.random) {
   const libBase = cards.filter(c => !commander || c.name.toLowerCase()!==commander.name.toLowerCase() || c.__keepIn99)
   const samples=[]
   const cmdTurns=[]
   const turnStats=Array.from({length:maxTurn},()=>({cmd:0,engine:0,interaction:0,rebuild:0,explosive:0,total:0}))
 
   for(let it=0;it<iterations;it++){
-    let lib=shuffle(libBase)
+    let lib=shuffle(libBase,rng)
     let hand=lib.splice(0,7)
     for(let mull=0;mull<2;mull++){
       const lands=hand.filter(c=>c.isLand).length
       const early=hand.some(c=>!c.isLand&&(c.cmc||0)<=2)
       if(lands>=2&&lands<=5&&early)break
-      lib=shuffle(libBase); hand=lib.splice(0,7)
+      lib=shuffle(libBase,rng); hand=lib.splice(0,7)
     }
 
     let landsPlayed=0, ramp=0, cmdTurn=null, peak=0, sum=0
