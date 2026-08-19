@@ -7,6 +7,20 @@ import { aeonPriorFor } from '../data/aeonshift.js'
 const clamp=(n,a=0,b=100)=>Math.max(a,Math.min(b,n))
 const avg=xs=>xs.length?xs.reduce((s,x)=>s+x,0)/xs.length:0
 
+function hashSeed(cards,commander,salt=''){
+  const key=[commander?.name||'',...cards.map(c=>c.name)].sort().join('|')+'|'+salt
+  let h=2166136261
+  for(let i=0;i<key.length;i++){h^=key.charCodeAt(i);h=Math.imul(h,16777619)}
+  return h>>>0
+}
+function seeded(seed){let a=seed>>>0;return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function calibratePower(x){
+  if(x<=45)return clamp(x*.67)
+  if(x<=70)return clamp(30+(x-45)*1.2)
+  if(x<=90)return clamp(60+(x-70)*1.5)
+  return clamp(90+(x-90))
+}
+
 function roleStats(cards){
   const nonlands=cards.filter(c=>!c.isLand)
   const countTag=t=>nonlands.filter(c=>c.tags.includes(t)).length
@@ -55,8 +69,8 @@ export function analyzePower(rawCards, rawCommander=null, aeonMap=null, iteratio
   const combos=detectKnownCombos(cards.concat(commander?[commander]:[]))
   const cmdSyn=commanderSynergy(cards,commander)
   const roles=roleStats(cards)
-  const sim=simulateSequences(cards,commander,packages,iterations,7)
-  const simNoCmd=commander?simulateSequences(cards,null,packages.filter(p=>p.id!=='early-commander'),Math.max(1200,Math.floor(iterations/2)),7):null
+  const sim=simulateSequences(cards,commander,packages,iterations,7,seeded(hashSeed(cards,commander,'with-command')))
+  const simNoCmd=commander?simulateSequences(cards,null,packages.filter(p=>p.id!=='early-commander'),Math.max(1200,Math.floor(iterations/2)),7,seeded(hashSeed(cards,null,'no-command'))):null
   const aeon=aeonSignal(cards.concat(commander?[commander]:[]),aeonMap)
 
   const packageStrength=packages.length?avg(packages.slice(0,4).map(p=>p.strength)):0
@@ -82,10 +96,12 @@ export function analyzePower(rawCards, rawCommander=null, aeonMap=null, iteratio
     interaction*.06 + resilience*.05 + explosiveness*.04 + aeonAdj
   )
 
-  const floor=clamp(sim.floor*.72 + Math.min(25,roles.draw*1.2+roles.recursion*2.1+roles.interaction*.45))
-  const ceiling=clamp(Math.max(structural,sim.ceiling*.72 + explosiveness*.19 + synergy*.16 + comboBoost*.35))
-  const median=clamp(structural)
-  const variance=clamp(Math.max(0,ceiling-floor)*.55 + sim.variance*.65,0,50)
+  const latentFloor=clamp(sim.floor*.72 + Math.min(25,roles.draw*1.2+roles.recursion*2.1+roles.interaction*.45))
+  const latentCeiling=clamp(Math.max(structural,sim.ceiling*.72 + explosiveness*.19 + synergy*.16 + comboBoost*.35))
+  const median=calibratePower(structural)
+  const floor=calibratePower(latentFloor)
+  const ceiling=calibratePower(latentCeiling)
+  const variance=clamp(Math.max(0,ceiling-floor)*.55 + sim.variance*.45,0,50)
   const commanderDelta=commander&&simNoCmd?Math.max(0,Math.round((sim.median-simNoCmd.median)+cmdSyn.score*.10)):0
 
   const dimensions={
@@ -117,6 +133,6 @@ export function analyzePower(rawCards, rawCommander=null, aeonMap=null, iteratio
       commanderDelta, confidence:parsedConfidence(cards,packages,combos),
     },
     dimensions,roles,packages,combos,commanderSynergy:cmdSyn,aeon,simulation:sim,drivers,warnings,
-    methodology:{iterations,model:'sequence-access-v3-calibration',maxTurn:7},
+    methodology:{iterations,model:'sequence-access-v3-calibrated',maxTurn:7},
   }
 }
