@@ -2,6 +2,8 @@
 
 Aeon Scorer estime la **distribution de puissance d'un deck Commander**. Il ne cherche plus à convertir une somme de cartes en bracket.
 
+> La CI bloque désormais tout merge si le smoke test, le build ou la calibration complète échoue.
+
 ## Modèle
 
 1. **Card primitives** — fonctions détectées dans le texte Oracle : mana, tutor, interaction, protection, récursion, tokens, etc.
