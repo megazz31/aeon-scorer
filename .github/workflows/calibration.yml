@@ -1,4 +1,4 @@
-name: Aeon Scorer quality
+name: Aeon Scorer v3.1 quality
 on:
   pull_request:
     branches: [main]
@@ -8,7 +8,7 @@ permissions:
 jobs:
   quality:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -18,14 +18,20 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Smoke test
         run: npm run smoke
+      - name: Micro semantic truth tests
+        run: npm run test:semantic
+      - name: Metamorphic independent verification
+        run: npm run test:metamorphic
+      - name: Adversarial audit
+        run: npm run audit
       - name: Build application
         run: npm run build
-      - name: Run 30+ deck benchmark
+      - name: Macro 30+ deck benchmark
         env:
-          AEON_BENCH_ITERATIONS: '1400'
+          AEON_BENCH_ITERATIONS: '1800'
           ARCHIDEKT_USERNAME: 'MegazZ31'
         run: npm run benchmark
-      - name: Validate measured quality gates
+      - name: Validate macro quality gates
         run: npm run validate:calibration
       - name: Print report
         if: always()
@@ -33,7 +39,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: calibration-report
+          name: v3.1-validation-report
           path: |
             calibration/latest.json
             calibration/latest.md
