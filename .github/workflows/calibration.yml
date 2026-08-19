@@ -1,0 +1,33 @@
+name: Aeon Scorer calibration
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run 30+ deck benchmark
+        env:
+          AEON_BENCH_ITERATIONS: '1400'
+          ARCHIDEKT_USERNAME: 'MegazZ31'
+        run: node scripts/benchmark.mjs
+        continue-on-error: true
+      - name: Print report
+        if: always()
+        run: cat calibration/latest.md || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: calibration-report
+          path: |
+            calibration/latest.json
+            calibration/latest.md
+          if-no-files-found: error
