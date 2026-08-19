@@ -13,7 +13,15 @@ const isBurst=c=>c.tags.includes('fast-mana')
 const isPermanentRamp=c=>!c.isLand&&!isBurst(c)&&(c.tags.includes('mana')||c.tags.includes('land-ramp'))&&(c.cmc||0)<=3
 
 function source(options,origin='source'){return {options:uniq(options?.length?options:['C']),origin}}
-function baseLandSource(c){return source(c.sourceColors?.length?c.sourceColors:['C'],c.name)}
+function inferredLandColors(c){
+  if(c.sourceColors?.length)return c.sourceColors
+  const o=(c.oracle||'').toLowerCase(),t=(c.type||'').toLowerCase(),out=[]
+  if(/plains/.test(t))out.push('W');if(/island/.test(t))out.push('U');if(/swamp/.test(t))out.push('B');if(/mountain/.test(t))out.push('R');if(/forest/.test(t))out.push('G')
+  if(/search your library for [^.]*plains/.test(o))out.push('W');if(/search your library for [^.]*island/.test(o))out.push('U');if(/search your library for [^.]*swamp/.test(o))out.push('B');if(/search your library for [^.]*mountain/.test(o))out.push('R');if(/search your library for [^.]*forest/.test(o))out.push('G')
+  if(/search your library for (?:a )?basic land/.test(o)||/any color|any type that a land you control could produce/.test(o))return ['W','U','B','R','G']
+  return uniq(out.length?out:['C'])
+}
+function baseLandSource(c){return source(inferredLandColors(c),c.name)}
 function permanentRampSource(c,commander){
   if(c.tags.includes('land-ramp')){
     const colors=commander?.manaReq?.colored?.flat()||['W','U','B','R','G']
@@ -22,10 +30,9 @@ function permanentRampSource(c,commander){
   return source(c.sourceColors?.length?c.sourceColors:['C'],c.name)
 }
 function burstNetSources(c,baseSources,seenCards,forCommander=false){
-  const n=c.name.toLowerCase()
-  const any=['W','U','B','R','G']
+  const n=c.name.toLowerCase(),any=['W','U','B','R','G']
   const hasB=baseSources.some(s=>s.options.includes('B'))
-  if(n.includes('dark ritual'))return hasB?[source(['B'],c.name),source(['B'],c.name)]:[] // net +2 after paying B
+  if(n.includes('dark ritual'))return hasB?[source(['B'],c.name),source(['B'],c.name)]:[]
   if(n.includes('culling the weak')){
     const creature=seenCards.some(x=>x.isCreature&&x!==c)
     return hasB&&creature?[source(['B'],c.name),source(['B'],c.name),source(['B'],c.name)]:[]
@@ -34,7 +41,7 @@ function burstNetSources(c,baseSources,seenCards,forCommander=false){
   if(n.includes('simian spirit guide'))return [source(['R'],c.name)]
   if(n.includes('lotus petal'))return [source(any,c.name)]
   if(n.includes('mana crypt'))return [source(['C'],c.name),source(['C'],c.name)]
-  if(n.includes('mana vault'))return baseSources.length>=1?[source(['C'],c.name),source(['C'],c.name)]:[] // net +2 after paying 1
+  if(n.includes('mana vault'))return baseSources.length>=1?[source(['C'],c.name),source(['C'],c.name)]:[]
   if(n.includes('chrome mox')||n.includes('mox diamond'))return [source(any,c.name)]
   if(n.includes('jeweled lotus'))return forCommander?[source(any,c.name),source(any,c.name),source(any,c.name)]:[]
   return [source(c.sourceColors?.length?c.sourceColors:['C'],c.name)]
@@ -48,17 +55,14 @@ function paymentOptions(card,tax=0){
   const generic=Math.max(Number(req.generic||0)+tax,total-colored.length)
   return {colored,generic,total}
 }
-
 export function canPay(card,sources,tax=0){
   const req=paymentOptions(card,tax)
   if(sources.length<req.total)return false
-  const pips=[...req.colored].sort((a,b)=>a.length-b.length)
-  const used=new Set()
+  const pips=[...req.colored].sort((a,b)=>a.length-b.length),used=new Set()
   function place(i){
     if(i>=pips.length)return sources.length-used.size>=req.generic
     for(let s=0;s<sources.length;s++){
-      if(used.has(s))continue
-      if(!pips[i].some(c=>sources[s].options.includes(c)))continue
+      if(used.has(s)||!pips[i].some(c=>sources[s].options.includes(c)))continue
       used.add(s);if(place(i+1))return true;used.delete(s)
     }
     return false
@@ -67,17 +71,15 @@ export function canPay(card,sources,tax=0){
 }
 
 function potentialSources(activeSources,hand,used,forCommander=false){
-  const out=[...activeSources]
-  const seen=hand.filter(c=>!used.has(c))
+  const out=[...activeSources],seen=hand.filter(c=>!used.has(c))
   for(const c of seen.filter(isBurst))out.push(...burstNetSources(c,out,seen,forCommander))
   return out
 }
 function chooseLand(hand,used,commander){
-  const lands=hand.filter(c=>c.isLand&&!used.has(c))
-  if(!lands.length)return null
+  const lands=hand.filter(c=>c.isLand&&!used.has(c));if(!lands.length)return null
   const needs=new Set(commander?.manaReq?.colored?.flat()||[])
   return [...lands].sort((a,b)=>{
-    const score=c=>(c.sourceColors||[]).filter(x=>needs.has(x)).length*5+(c.sourceColors||[]).length
+    const score=c=>inferredLandColors(c).filter(x=>needs.has(x)).length*5+inferredLandColors(c).length
     return score(b)-score(a)
   })[0]
 }
@@ -86,7 +88,6 @@ function cardByName(cards,name){const n=name.toLowerCase();return cards.find(c=>
 
 function operationalPackage(hand,battlefield,used,packages,sources,cumulativeMana){
   const available=[...battlefield,...hand.filter(c=>!used.has(c))]
-  const names=new Map(available.map(c=>[c.name.toLowerCase(),c]))
   for(const p of packages.filter(x=>x.id!=='early-commander')){
     const producers=(p.producerCards||[]).map(x=>cardByName(available,x.name)).filter(Boolean)
     const payoffs=(p.payoffCards||[]).map(x=>cardByName(available,x.name)).filter(Boolean)
@@ -97,7 +98,7 @@ function operationalPackage(hand,battlefield,used,packages,sources,cumulativeMan
       if(deploy>cumulativeMana)continue
       if(!aBoard&&!canPay(a,sources))continue
       if(!bBoard&&!canPay(b,sources))continue
-      if(names.has(a.name.toLowerCase())&&names.has(b.name.toLowerCase()))return {ok:true,packageId:p.id}
+      return {ok:true,packageId:p.id}
     }
   }
   return {ok:false,packageId:null}
@@ -122,8 +123,7 @@ export function simulateSequences(cards,commander,packages,combos=[],iterations=
   for(let it=0;it<iterations;it++){
     let lib=shuffle(libBase,rng),hand=lib.splice(0,7)
     for(let mull=0;mull<2;mull++){
-      const lands=hand.filter(c=>c.isLand).length
-      const early=hand.some(c=>!c.isLand&&(c.cmc||0)<=2)
+      const lands=hand.filter(c=>c.isLand).length,early=hand.some(c=>!c.isLand&&(c.cmc||0)<=2)
       if(lands>=2&&lands<=5&&early)break
       lib=shuffle(libBase,rng);hand=lib.splice(0,7)
     }
@@ -134,28 +134,19 @@ export function simulateSequences(cards,commander,packages,combos=[],iterations=
     for(let turn=1;turn<=maxTurn;turn++){
       activeSources.push(...pendingSources);pendingSources=[]
       if(lib.length)hand.push(lib.shift())
-
       const land=chooseLand(hand,used,commander)
       if(land){used.add(land);battlefield.push(land);activeSources.push(baseLandSource(land))}
 
-      let baseSources=[...activeSources]
+      const baseSources=[...activeSources]
       cumulativeMana+=baseSources.length
-
-      // Develop at most one persistent ramp piece; it contributes from next turn.
       const ramp=castableCards(hand,used,baseSources,isPermanentRamp).sort((a,b)=>(a.cmc||0)-(b.cmc||0))[0]
       if(ramp){used.add(ramp);battlefield.push(ramp);pendingSources.push(permanentRampSource(ramp,commander))}
 
-      const generalSources=potentialSources(baseSources,hand,used,false)
-      const commanderSources=potentialSources(baseSources,hand,used,true)
-
-      if(commander&&cmdTurn==null&&canPay(commander,commanderSources,0)){
-        cmdTurn=turn
-        battlefield.push(commander)
-      }
+      const generalSources=potentialSources(baseSources,hand,used,false),commanderSources=potentialSources(baseSources,hand,used,true)
+      if(commander&&cmdTurn==null&&canPay(commander,commanderSources)){cmdTurn=turn;battlefield.push(commander)}
 
       const engine=operationalPackage(hand,battlefield,used,packages,generalSources,cumulativeMana)
       if(engine.ok&&engineTurn==null)engineTurn=turn
-
       const interaction=castableCards(hand,used,generalSources,c=>c.interaction>0).length>0
       const resource=castableCards(hand,used,generalSources,c=>c.tags.includes('draw')||c.tags.includes('recursion')).length>0
       const manaBurst=generalSources.length>=baseSources.length+2
@@ -163,11 +154,9 @@ export function simulateSequences(cards,commander,packages,combos=[],iterations=
       const combo=comboAccessible(hand,battlefield,used,combos,generalSources,cumulativeMana)
       const burst=manaBurst||highImpact||combo
 
-      // Disruption checkpoint: at T5, assume commander/one engine axis was answered on T4.
       if(turn===5){
         const recast=commander?canPay(commander,commanderSources,2):false
-        const alternateEngine=engine.ok
-        recovered=resource||alternateEngine||recast
+        recovered=resource||engine.ok||recast
         recoverySamples.push(recovered?1:0)
       }
 
@@ -175,34 +164,25 @@ export function simulateSequences(cards,commander,packages,combos=[],iterations=
       const manaTempo=Math.min(1.35,generalSources.length/Math.max(2,turn+1))
       const state=100*Math.min(1,.27*manaTempo+.22*(engine.ok?1:0)+.14*(interaction?1:0)+.11*(resource?1:0)+.10*(cmdOnline?1:0)+.08*(burst?1:0)+.08*(combo?1:0))
       peak=Math.max(peak,state);sum+=state
-
       const ts=turnStats[turn-1];ts.total++;ts.cmd+=cmdOnline?1:0;ts.engine+=engine.ok?1:0;ts.interaction+=interaction?1:0;ts.resource+=resource?1:0;ts.burst+=burst?1:0
     }
 
-    if(cmdTurn!=null)cmdTurns.push(cmdTurn)
-    if(engineTurn!=null)engineTurns.push(engineTurn)
+    if(cmdTurn!=null)cmdTurns.push(cmdTurn);if(engineTurn!=null)engineTurns.push(engineTurn)
     samples.push({avg:sum/maxTurn,peak,cmdTurn:cmdTurn||maxTurn+1,engineTurn:engineTurn||maxTurn+1,recovered})
   }
 
   const avgs=samples.map(x=>x.avg),peaks=samples.map(x=>x.peak)
-  const floor=percentile(avgs,.20),median=percentile(avgs,.50),ceiling=percentile(peaks,.80)
-  const q25=percentile(avgs,.25),q75=percentile(avgs,.75),variance=q75-q25
-  const consistency=Math.max(0,Math.min(100,100-variance*2.2))
+  const floor=percentile(avgs,.20),median=percentile(avgs,.50),high=percentile(avgs,.80),peak=percentile(peaks,.80)
+  const q25=percentile(avgs,.25),q75=percentile(avgs,.75),iqr=q75-q25
+  const consistency=Math.max(0,Math.min(100,100-iqr*2.2))
   const turnProfile=turnStats.map((s,i)=>({
-    turn:i+1,
-    commander:Math.round(s.cmd/Math.max(1,s.total)*100),
-    engine:Math.round(s.engine/Math.max(1,s.total)*100),
-    interaction:Math.round(s.interaction/Math.max(1,s.total)*100),
-    resource:Math.round(s.resource/Math.max(1,s.total)*100),
-    burst:Math.round(s.burst/Math.max(1,s.total)*100),
+    turn:i+1,commander:Math.round(s.cmd/Math.max(1,s.total)*100),engine:Math.round(s.engine/Math.max(1,s.total)*100),
+    interaction:Math.round(s.interaction/Math.max(1,s.total)*100),resource:Math.round(s.resource/Math.max(1,s.total)*100),burst:Math.round(s.burst/Math.max(1,s.total)*100),
   }))
-
   return {
-    iterations,
-    floor:Math.round(floor),median:Math.round(median),ceiling:Math.round(ceiling),variance:Math.round(variance),consistency:Math.round(consistency),
+    iterations,floor:Math.round(floor),median:Math.round(median),high:Math.round(high),ceiling:Math.round(high),peak:Math.round(peak),iqr:Math.round(iqr),consistency:Math.round(consistency),
     commanderMedianTurn:cmdTurns.length?Math.round(percentile(cmdTurns,.5)*10)/10:null,
     engineMedianTurn:engineTurns.length?Math.round(percentile(engineTurns,.5)*10)/10:null,
-    recoveryAfterDisruption:Math.round(recoverySamples.reduce((s,x)=>s+x,0)/Math.max(1,recoverySamples.length)*100),
-    turnProfile,
+    recoveryAfterDisruption:Math.round(recoverySamples.reduce((s,x)=>s+x,0)/Math.max(1,recoverySamples.length)*100),turnProfile,
   }
 }
