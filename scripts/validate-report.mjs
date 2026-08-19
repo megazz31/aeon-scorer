@@ -13,36 +13,37 @@ const cedh=decks.filter(d=>d.source==='cedh')
 const user=decks.filter(d=>d.source==='user')
 
 const hei=user.find(d=>/hei bai/i.test(d.name))
+const heiIds=new Set((hei?.packages||[]).map(p=>p.id))
 const pkg={
   preconStrongMedian:median(pre.map(strongPackages)),
   userStrongMedian:user.length?median(user.map(strongPackages)):null,
-  heiBaiFalseSpells:hei?.packages?.some(p=>p.id==='spells')??null,
-  heiBaiFalseCounters:hei?.packages?.some(p=>p.id==='counters')??null,
-  heiBaiFalseGraveyard:hei?.packages?.some(p=>p.id==='graveyard')??null,
+  heiBaiFound:!!hei,
+  heiBaiHasEarly:heiIds.has('early-commander'),
+  heiBaiHasBlink:heiIds.has('blink-etb'),
+  heiBaiHasConstellation:heiIds.has('constellation'),
+  heiBaiFalseSpells:heiIds.has('spells'),
+  heiBaiFalseCounters:heiIds.has('counters'),
+  heiBaiFalseGraveyard:heiIds.has('graveyard'),
+  heiBaiT1Engine:hei?.simulation?.turnProfile?.find(x=>x.turn===1)?.engine??null,
 }
 gates.push({
   id:'package-precision',
-  ok:pkg.preconStrongMedian<=3&&(pkg.userStrongMedian==null||pkg.userStrongMedian<=4)&&pkg.heiBaiFalseSpells!==true&&pkg.heiBaiFalseCounters!==true&&pkg.heiBaiFalseGraveyard!==true,
+  ok:pkg.preconStrongMedian<=3&&(pkg.userStrongMedian==null||pkg.userStrongMedian<=4),
+  detail:JSON.stringify({preconStrongMedian:pkg.preconStrongMedian,userStrongMedian:pkg.userStrongMedian}),
+})
+gates.push({
+  id:'hei-bai-real-regression',
+  ok:pkg.heiBaiFound&&pkg.heiBaiHasEarly&&pkg.heiBaiHasBlink&&pkg.heiBaiHasConstellation&&!pkg.heiBaiFalseSpells&&!pkg.heiBaiFalseCounters&&!pkg.heiBaiFalseGraveyard&&(pkg.heiBaiT1Engine??100)<=5,
   detail:JSON.stringify(pkg),
 })
 
 const mids={precon:median(pre.map(d=>d.profile.median)),user:median(user.map(d=>d.profile.median)),cedh:median(cedh.map(d=>d.profile.median))}
-gates.push({
-  id:'untrained-mid-cohort',
-  ok:user.length>=5&&mids.user>mids.precon&&mids.user<mids.cedh,
-  detail:JSON.stringify(mids),
-})
+gates.push({id:'untrained-mid-cohort',ok:user.length>=5&&mids.user>mids.precon&&mids.user<mids.cedh,detail:JSON.stringify(mids)})
 
-// Combo impact belongs in the exceptional peak, not in the routine P80 output.
 const comboDecks=cedh.filter(d=>(d.combos||[]).length>0)
 const combo={count:comboDecks.length,peakMedian:median(comboDecks.map(d=>d.profile.peak??d.profile.ceiling)),names:comboDecks.slice(0,3).map(d=>d.name)}
-gates.push({
-  id:'combo-signal',
-  ok:combo.count>=1&&combo.peakMedian>=90,
-  detail:JSON.stringify(combo),
-})
+gates.push({id:'combo-signal',ok:combo.count>=1&&combo.peakMedian>=90,detail:JSON.stringify(combo)})
 
-// Public profile invariants must hold for every benchmarked deck.
 const badProfiles=decks.filter(d=>{
   const p=d.profile||{}
   return ![p.floor,p.median,p.ceiling,p.peak].every(Number.isFinite)||p.floor>p.median||p.median>p.ceiling||p.ceiling>p.peak
