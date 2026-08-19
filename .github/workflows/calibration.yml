@@ -20,6 +20,10 @@ jobs:
           ARCHIDEKT_USERNAME: 'MegazZ31'
         run: node scripts/benchmark.mjs
         continue-on-error: true
+      - name: Validate measured quality gates
+        if: always()
+        run: node scripts/validate-report.mjs
+        continue-on-error: true
       - name: Print report
         if: always()
         run: cat calibration/latest.md || true
