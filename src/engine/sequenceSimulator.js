@@ -10,7 +10,7 @@ function percentile(xs,p){
 }
 const uniq=xs=>[...new Set(xs)]
 const isBurst=c=>c.tags.includes('fast-mana')
-const isPermanentRamp=c=>!c.isLand&&!isBurst(c)&&(c.tags.includes('mana')||c.tags.includes('land-ramp'))&&(c.cmc||0)<=3
+const isPermanentRamp=c=>!c.isLand&&!isBurst(c)&&(c.tags.includes('land-ramp')||(c.sourceColors?.length||0)>0)&&(c.cmc||0)<=3
 
 function source(options,origin='source'){return {options:uniq(options?.length?options:['C']),origin}}
 function inferredLandColors(c){
@@ -129,7 +129,7 @@ export function simulateSequences(cards,commander,packages,combos=[],iterations=
     }
 
     const used=new Set(),battlefield=[],activeSources=[]
-    let pendingSources=[],cmdTurn=null,engineTurn=null,peak=0,sum=0,cumulativeMana=0,recovered=false
+    let pendingSources=[],cmdTurn=null,engineTurn=null,peak=0,sum=0,cumulativeMana=0,recovered=false,disruptedPackageId=null
 
     for(let turn=1;turn<=maxTurn;turn++){
       activeSources.push(...pendingSources);pendingSources=[]
@@ -147,6 +147,7 @@ export function simulateSequences(cards,commander,packages,combos=[],iterations=
 
       const engine=operationalPackage(hand,battlefield,used,packages,generalSources,cumulativeMana)
       if(engine.ok&&engineTurn==null)engineTurn=turn
+      if(turn===4&&engine.ok)disruptedPackageId=engine.packageId
       const interaction=castableCards(hand,used,generalSources,c=>c.interaction>0).length>0
       const resource=castableCards(hand,used,generalSources,c=>c.tags.includes('draw')||c.tags.includes('recursion')).length>0
       const manaBurst=generalSources.length>=baseSources.length+2
@@ -156,7 +157,8 @@ export function simulateSequences(cards,commander,packages,combos=[],iterations=
 
       if(turn===5){
         const recast=commander?canPay(commander,commanderSources,2):false
-        recovered=resource||engine.ok||recast
+        const alternateEngine=engine.ok&&(!disruptedPackageId||engine.packageId!==disruptedPackageId)
+        recovered=resource||alternateEngine||recast
         recoverySamples.push(recovered?1:0)
       }
 
