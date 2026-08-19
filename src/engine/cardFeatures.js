@@ -7,13 +7,13 @@ const clauses=text=>String(text||'').split(/[.\n;]+/).map(x=>x.trim()).filter(Bo
 
 function isOwnTargetClause(s){return /you control|you own|your graveyard|your hand/.test(s)}
 function isBlinkText(o){
-  return /exile [^.\n;]{0,140}(?:you control|another target|target creature)[^.\n;]{0,140}(?:return|returns) [^.\n;]{0,140}(?:battlefield|under its owner)/i.test(o)
+  return /exile [^.\n;]{0,140}(?:you control|another target|one other target|target creature)[^.\n;]{0,140}(?:return|returns) [^.\n;]{0,140}(?:battlefield|under its owner)/i.test(o)
     || /exile [^.\n;]{0,120} until [^.\n;]{0,120} returns? to the battlefield/i.test(o)
     || /flicker/i.test(o)
 }
 function isTemporaryInteraction(o){
   const s=o.toLowerCase()
-  return /exile (?:up to )?(?:one |another )?target [^.\n;]+/.test(s)
+  return /exile (?:up to )?(?:one other |one |another )?target [^.\n;]+/.test(s)
     && !/target [^.\n;]+ you control/.test(s)
     && /return (?:that card|it|them|those cards)[^.\n;]+battlefield/.test(s)
 }
@@ -22,7 +22,7 @@ function isTargetRemoval(o){
   for(const c of clauses(o.toLowerCase())){
     if(isOwnTargetClause(c))continue
     if(/destroy target /.test(c))return true
-    if(/exile (?:up to )?(?:one |another )?target /.test(c)&&!temporary&&!/return .*battlefield/.test(c))return true
+    if(/exile (?:up to )?(?:one other |one |another )?target /.test(c)&&!temporary&&!/return .*battlefield/.test(c))return true
     if(/return target [^.]+ to (?:its|their|that player's|owner'?s) hand/.test(c))return true
     if(/target [^.]+ gets -(?:\d+|x)\/-(?:\d+|x)/.test(c))return true
   }
