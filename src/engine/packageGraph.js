@@ -19,6 +19,10 @@ const allNames=xs=>uniqByName(xs).map(x=>x.name)
 function roleCards(pool,tags){return uniqByName(pool.filter(c=>tags.some(t=>hasTag(c,t))))}
 function overlapCount(a,b){const s=new Set(a.map(x=>x.name.toLowerCase()));return b.filter(x=>s.has(x.name.toLowerCase())).length}
 const isManaPermanent=c=>!/\binstant\b|\bsorcery\b/i.test(c.type||'')&&(c.sourceColors?.length||0)>0
+function trueEtbPayoff(c){
+  const o=String(c.oracle||'').replace(/\([^)]*\)/g,' ').toLowerCase()
+  return /\bwhen(?:ever)?\b[^.\n;]{0,180}\benters(?: the battlefield)?\b/.test(o)
+}
 
 export function detectPackages(cards,commander=null){
   const out=[],nonlands=cards.filter(c=>!c.isLand),functionalPool=cards
@@ -33,7 +37,8 @@ export function detectPackages(cards,commander=null){
       out.push({id:m.id,name:m.name,strength:cohesion,cohesion,producers:previewNames(members),payoffs:[commander.name],members:allNames([...members,commander]),producerCards:members.map(mini),payoffCards:[mini(commander)],evidence:`${burst.length} accélérateur(s) burst + ${persistent.length} source(s) persistante(s) vers un commandant MV ${cmdCmc}.`})
       continue
     }
-    const producers=roleCards(functionalPool,m.producers),payoffs=roleCards(functionalPool,m.payoffs)
+    const producers=roleCards(functionalPool,m.producers)
+    const payoffs=m.id==='blink-etb'?uniqByName(functionalPool.filter(trueEtbPayoff)):roleCards(functionalPool,m.payoffs)
     if(producers.length<(m.minP||2)||payoffs.length<(m.minY||1))continue
     const members=uniqByName([...producers,...payoffs]),overlap=overlapCount(producers,payoffs),roleDistinct=Math.max(0,members.length-overlap)
     if(members.length<3||roleDistinct<2)continue
