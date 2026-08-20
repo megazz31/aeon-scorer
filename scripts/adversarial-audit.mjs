@@ -56,6 +56,7 @@ assert(/withoutReminderText/.test(features)&&/spellslinger=o=>[^\n]*withoutRemin
 assert(/lion's eye diamond[^\n]*forCommander\?/.test(sequence),'LED must not be generic hand-casting mana')
 for(const name of ['chrome mox','mox diamond','mox opal','mox amber'])assert(sequence.includes(`n.includes('${name}')`),`${name} condition must be modeled explicitly`)
 assert(/if\(isPermanentCard\(ramp\)\)battlefield\.push\(ramp\)/.test(sequence),'Sorcery ramp must not remain as a battlefield permanent')
+assert(/applyCommanderLondonBottom/.test(sequence)&&/Math\.max\(0,mulligans-1\)/.test(sequence),'Commander multiplayer mulligans must model one free mulligan then London bottoming')
 
 assert(/precon-temporal-coverage/.test(benchmark)&&/cedh-commander-diversity/.test(benchmark),'Macro anchors must be temporally and strategically diversified')
 assert(/sepAll\.preconMedian<=55/.test(benchmark)&&/sepAll\.cedhMedian>=72/.test(benchmark),'Base benchmark must preserve the strict presentation-scale gate')
@@ -66,4 +67,4 @@ assert(!/Dernier run\s*:\s*\*\*12\/12/i.test(readme),'README must not claim the 
 assert(/v3\.1 est en validation/i.test(readme),'README must state pre-validation status before final CI')
 assert(/pioche.*ne lance pas ensuite réellement/is.test(notes)&&/tuteurs.*ne sont pas exécutées dynamiquement/is.test(notes),'Known sequence-model limits must remain documented')
 
-console.log('ADVERSARIAL AUDIT OK — semantics, imports, name resolution, UI claims, mana edge cases, strict benchmark policy, disclosures and CI wiring')
+console.log('ADVERSARIAL AUDIT OK — semantics, imports, name resolution, UI claims, mana edge cases, Commander mulligans, strict benchmark policy, disclosures and CI wiring')
