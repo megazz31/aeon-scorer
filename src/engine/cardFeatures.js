@@ -4,6 +4,15 @@ const lower=c=>textOf(c).toLowerCase()
 const typeLower=c=>(c.type||'').toLowerCase()
 const unique=xs=>[...new Set(xs)]
 const clauses=text=>String(text||'').split(/[.\n;]+/).map(x=>x.trim()).filter(Boolean)
+function withoutReminderText(text){
+  let out='',depth=0
+  for(const ch of String(text||'')){
+    if(ch==='('){depth++;continue}
+    if(ch===')'&&depth){depth--;continue}
+    if(!depth)out+=ch
+  }
+  return out.replace(/\s+/g,' ').trim()
+}
 
 function isOwnTargetClause(s){return /you control|you own|your graveyard|your hand/.test(s)}
 function isBlinkText(o){
@@ -75,7 +84,7 @@ function tokenRoles(o){
 const triggerDoubler=o=>/triggers? an additional time|trigger an additional time|causes? [^.]* ability to trigger an additional time/i.test(o)
 const artifactPayoff=o=>/artifacts? you control|whenever [^.]*artifact[^.]*enters|whenever you cast an artifact|for each artifact|artifact spells? you cast|sacrifice (?:an|another) artifact/i.test(o)
 const constellation=o=>/\bconstellation\b|whenever an enchantment [^.]* enters|whenever another enchantment [^.]* enters/i.test(o)
-const spellslinger=o=>/magecraft|instant or sorcery spells?|whenever you cast (?:an? )?(?:instant|sorcery|noncreature) spell|noncreature spells? you cast/i.test(o)
+const spellslinger=o=>/magecraft|instant or sorcery spells?|whenever you cast (?:an? )?(?:instant|sorcery|noncreature) spell|noncreature spells? you cast/i.test(withoutReminderText(o))
 const exileCast=o=>/cast [^.]* from exile|play [^.]* from exile|exile the top [^.]* you may (?:play|cast)/i.test(o)
 const exilePayoff=o=>/whenever (?:you|a player) (?:cast|casts|play|plays) [^.]* from exile|if you (?:cast|play) [^.]* from exile/i.test(o)
 const manaText=o=>/add \{|add one mana|add two mana|add three mana|add four mana|treasure token/i.test(o)
