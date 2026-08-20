@@ -79,10 +79,12 @@ const spellslinger=o=>/magecraft|instant or sorcery spells?|whenever you cast (?
 const exileCast=o=>/cast [^.]* from exile|play [^.]* from exile|exile the top [^.]* you may (?:play|cast)/i.test(o)
 const exilePayoff=o=>/whenever (?:you|a player) (?:cast|casts|play|plays) [^.]* from exile|if you (?:cast|play) [^.]* from exile/i.test(o)
 const manaText=o=>/add \{|add one mana|add two mana|add three mana|add four mana|treasure token/i.test(o)
-function fastMana(card,o){
+function fastManaKind(card,o){
   const n=(card.name||'').toLowerCase()
-  if(/dark ritual|culling the weak|lotus petal|elvish spirit guide|simian spirit guide|chrome mox|mox diamond|mana crypt|mana vault|jeweled lotus/.test(n))return true
-  return Number(card.cmc||0)<=1&&/sacrifice [^.]*: add (?:\{|three mana|two mana)/i.test(o)
+  if(/dark ritual|cabal ritual|culling the weak|rite of flame|lotus petal|elvish spirit guide|simian spirit guide|jeweled lotus|lion's eye diamond|mana vault|grim monolith/.test(n))return 'burst'
+  if(/sol ring|mana crypt|chrome mox|mox diamond|mox opal|mox amber/.test(n))return 'persistent'
+  if(Number(card.cmc||0)<=1&&/sacrifice [^.]*: add (?:\{|three mana|two mana)/i.test(o))return 'burst'
+  return null
 }
 function protection(o){
   const s=o.toLowerCase()
@@ -90,11 +92,11 @@ function protection(o){
 }
 
 export function tagsFor(card){
-  const o=textOf(card),t=typeLower(card),tags=[],add=x=>{if(x&&!tags.includes(x))tags.push(x)},counters=counterRoles(o),tokens=tokenRoles(o)
+  const o=textOf(card),t=typeLower(card),tags=[],add=x=>{if(x&&!tags.includes(x))tags.push(x)},counters=counterRoles(o),tokens=tokenRoles(o),fm=fastManaKind(card,o)
   if(/\bland\b/.test(t))add('land');if(/\bcreature\b/.test(t))add('creature');if(/\benchantment\b/.test(t))add('enchantment');if(/\bartifact\b/.test(t))add('artifact');if(/\binstant\b/.test(t))add('instant');if(/\bsorcery\b/.test(t))add('sorcery')
   if(/draws? (?:a|one|two|three|four|\d+|x) cards?|draw (?:a|one|two|three|four|\d+|x) cards?/i.test(o))add('draw')
   if(isTutor(o)){add('tutor');if(/at the beginning|whenever|activate only|:\s*search your library/i.test(o))add('repeatable-tutor')}
-  if(isLandRamp(o))add('land-ramp');if(manaText(o))add('mana');if(fastMana(card,o)){add('fast-mana');add('mana')}
+  if(isLandRamp(o))add('land-ramp');if(manaText(o))add('mana');if(fm){add('fast-mana');add('mana');if(fm==='burst')add('burst-mana')}
   if(isTargetRemoval(o))add('removal');if(isTemporaryInteraction(o)){add('tempo-interaction');add('blink')}
   if(/counter target (?:spell|activated ability|triggered ability)/i.test(o))add('counterspell')
   if(/destroy all|exile all|each player sacrifices|all creatures get -|return all [^.]* to their owners/i.test(o))add('wipe')
