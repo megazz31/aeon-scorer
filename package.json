@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "smoke": "node scripts/smoke.mjs",
-    "test:semantic": "node scripts/semantic-tests.mjs",
+    "test:semantic": "node scripts/semantic-tests.mjs && node scripts/tutor-semantic-test.mjs",
     "test:metamorphic": "node scripts/metamorphic-tests.mjs",
     "audit": "node scripts/adversarial-audit.mjs",
     "benchmark": "node scripts/benchmark.mjs",
