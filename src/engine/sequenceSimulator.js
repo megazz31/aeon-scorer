@@ -15,7 +15,7 @@ function inferredLandColors(c){
   if(/search your library for (?:a )?basic land/.test(o)||/any color|any type that a land you control could produce/.test(o))return ['W','U','B','R','G']
   return uniq(out.length?out:['C'])
 }
-function baseLandSource(c){return source(inferredLandColors(c),c.name)}
+function baseLandSources(c){const colors=inferredLandColors(c),count=(c.name||'').toLowerCase()==='ancient tomb'?2:1;return Array.from({length:count},()=>source(colors,c.name))}
 function productionCount(c){const n=(c.name||'').toLowerCase(),o=(c.oracle||'').toLowerCase();if(n.includes('sol ring')||n.includes('mana crypt'))return 2;const m=o.match(/add ((?:\{[wubrgc]\})+)/i);if(m)return Math.max(1,(m[1].match(/\{[wubrgc]\}/gi)||[]).length);if(/add three mana/.test(o))return 3;if(/add two mana/.test(o))return 2;return 1}
 export function permanentRampSupport(c,hand,used,battlefield,commander){
   const n=(c.name||'').toLowerCase(),any=['W','U','B','R','G']
@@ -59,25 +59,10 @@ function comboAccessible(hand,priorHand,battlefield,used,combos,currentSources,p
 function keepOpeningHand(hand){const lands=hand.filter(c=>c.isLand).length,early=hand.some(c=>!c.isLand&&((c.cmc||0)<=2||c.tags?.includes('fast-mana')||c.tags?.includes('land-ramp')));return lands>=2&&lands<=5&&early}
 function bottomKeepValue(c,commander,landCount){
   if(c.isLand){const needs=new Set(commander?.manaReq?.colored?.flat()||[]),colorHits=inferredLandColors(c).filter(x=>needs.has(x)).length;return landCount>3?-8+colorHits+(alwaysTappedLand(c)?-1:0):5+colorHits}
-  let v=0
-  if(c.tags?.includes('fast-mana')||c.tags?.includes('land-ramp'))v+=8
-  if((c.cmc||0)<=2)v+=4
-  if(c.tags?.includes('draw')||c.interaction>0)v+=2
-  if((c.cmc||0)>=5)v-=4
-  if((c.cmc||0)>=7)v-=2
-  return v
+  let v=0;if(c.tags?.includes('fast-mana')||c.tags?.includes('land-ramp'))v+=8;if((c.cmc||0)<=2)v+=4;if(c.tags?.includes('draw')||c.interaction>0)v+=2;if((c.cmc||0)>=5)v-=4;if((c.cmc||0)>=7)v-=2;return v
 }
-export function applyCommanderLondonBottom(hand,penalty,commander=null){
-  if(penalty<=0)return {hand:[...hand],bottom:[]}
-  const landCount=hand.filter(c=>c.isLand).length,ranked=[...hand].map((c,i)=>({c,i,v:bottomKeepValue(c,commander,landCount)})).sort((a,b)=>a.v-b.v||b.i-a.i),bottom=ranked.slice(0,Math.min(penalty,hand.length)).map(x=>x.c),bottomSet=new Set(bottom)
-  return {hand:hand.filter(c=>!bottomSet.has(c)),bottom}
-}
-function openingHand(libBase,commander,rng){
-  let lib=[],hand=[],mulligans=0
-  while(true){lib=shuffle(libBase,rng);hand=lib.splice(0,7);if(keepOpeningHand(hand)||mulligans>=2)break;mulligans++}
-  const penalty=Math.max(0,mulligans-1),adjusted=applyCommanderLondonBottom(hand,penalty,commander);lib.push(...adjusted.bottom)
-  return {lib,hand:adjusted.hand,mulligans,penalty}
-}
+export function applyCommanderLondonBottom(hand,penalty,commander=null){if(penalty<=0)return {hand:[...hand],bottom:[]};const landCount=hand.filter(c=>c.isLand).length,ranked=[...hand].map((c,i)=>({c,i,v:bottomKeepValue(c,commander,landCount)})).sort((a,b)=>a.v-b.v||b.i-a.i),bottom=ranked.slice(0,Math.min(penalty,hand.length)).map(x=>x.c),bottomSet=new Set(bottom);return {hand:hand.filter(c=>!bottomSet.has(c)),bottom}}
+function openingHand(libBase,commander,rng){let lib=[],hand=[],mulligans=0;while(true){lib=shuffle(libBase,rng);hand=lib.splice(0,7);if(keepOpeningHand(hand)||mulligans>=2)break;mulligans++}const penalty=Math.max(0,mulligans-1),adjusted=applyCommanderLondonBottom(hand,penalty,commander);lib.push(...adjusted.bottom);return {lib,hand:adjusted.hand,mulligans,penalty}}
 
 export function simulateSequences(cards,commander,packages,combos=[],iterations=3000,maxTurn=7,rng=Math.random){
   const libBase=cards.filter(c=>!commander||c.name.toLowerCase()!==commander.name.toLowerCase()||c.__keepIn99),samples=[],cmdTurns=[],engineTurns=[],recoverySamples=[]
@@ -88,7 +73,7 @@ export function simulateSequences(cards,commander,packages,combos=[],iterations=
     let pendingSources=[],priorSources=[],cmdTurn=null,engineTurn=null,peak=0,sum=0,recovered=false,disruptedPackageId=null
     for(let turn=1;turn<=maxTurn;turn++){
       activeSources.push(...pendingSources);pendingSources=[];const priorHand=[...hand];if(lib.length)hand.push(lib.shift())
-      const land=chooseLand(hand,used,commander);if(land){used.add(land);battlefield.push(land);const src=baseLandSource(land);if(alwaysTappedLand(land))pendingSources.push(src);else activeSources.push(src)}
+      const land=chooseLand(hand,used,commander);if(land){used.add(land);battlefield.push(land);const sources=baseLandSources(land);if(alwaysTappedLand(land))pendingSources.push(...sources);else activeSources.push(...sources)}
       let turnSources=[...activeSources]
       const rampCandidates=castableCards(hand,used,turnSources,isPermanentRamp).map(card=>({card,support:permanentRampSupport(card,hand,used,battlefield,commander)})).filter(x=>x.support).sort((a,b)=>rampValue(b.card)-rampValue(a.card)||(a.card.cmc||0)-(b.card.cmc||0))
       const rampChoice=rampCandidates[0]
