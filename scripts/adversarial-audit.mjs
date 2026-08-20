@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import fs from 'node:fs/promises'
 import { cardFeatures } from '../src/engine/cardFeatures.js'
-import { parseDecklist } from '../src/scryfall.js'
+import { parseDecklist, acceptableFuzzyName } from '../src/scryfall.js'
 
 const card=(name,oracle,type='Instant',cmc=2,manaCost='{1}{W}')=>cardFeatures({name,oracle,type,cmc,manaCost})
 const has=(c,t)=>c.tags.includes(t)
@@ -29,6 +29,10 @@ assert(has(disenchant,'removal'));assert(!has(disenchant,'artifact')&&!has(disen
 const graveHate=card('Grave Hate','Exile target card from a graveyard.','Instant',1,'{W}')
 assert(!has(graveHate,'graveyard-setup')&&!has(graveHate,'recursion'))
 
+assert(acceptableFuzzyName('Lightning Bolt',{name:'Lightning Bolt',aliases:[]}))
+assert(acceptableFuzzyName('Lightning Bol',{name:'Lightning Bolt',aliases:[]}))
+assert(!acceptableFuzzyName('Lightning',{name:'Lightning Bolt',aliases:[]}),'Fuzzy fallback must not accept large prefix gaps')
+
 const list=parseDecklist('Commander\n1 Test Commander\nMainboard\n1 Sol Ring\nArcane Signet x1\n1x Command Tower\n1 Forest [M21]\n1 Island (M21) 265 *F*\nSideboard\n1 Demonic Tutor\n1 Vampiric Tutor\nMaybeboard\n1 Mana Crypt')
 assert.deepEqual(list,[{qty:1,name:'Test Commander'},{qty:1,name:'Sol Ring'},{qty:1,name:'Arcane Signet'},{qty:1,name:'Command Tower'},{qty:1,name:'Forest'},{qty:1,name:'Island'}],'Sideboard/maybeboard cards must never enter scoring input')
 
@@ -46,4 +50,4 @@ assert(!/COMMANDER_ENGINE_TAGS=new Set\([^\n]*'enchantment'/.test(packages),'Raw
 assert(!/\['enchantment',\s*\/enchantment\//.test(features))
 assert(/semantic/.test(workflow)&&/metamorphic/.test(workflow)&&/audit/.test(workflow)&&/3200/.test(workflow),'CI must execute micro, adversarial and cross-iteration verification')
 
-console.log('ADVERSARIAL AUDIT OK — false positives, import sections, UI semantics, commander synergy and CI wiring')
+console.log('ADVERSARIAL AUDIT OK — false positives, imports, name resolution, UI semantics, commander synergy and CI wiring')
