@@ -65,17 +65,17 @@ async function named(name,mode='exact'){
   return normalizeCard(await r.json())
 }
 function canonical(s){return String(s||'').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,' ').trim()}
-function acceptableFuzzy(requested,card){
+export function acceptableFuzzyName(requested,card){
   const q=canonical(requested),names=[card.name,...(card.aliases||[])].map(canonical)
   if(names.includes(q))return true
-  return names.some(n=>n.startsWith(q)||q.startsWith(n))&&Math.abs(n.length-q.length)<=3
+  return names.some(n=>(n.startsWith(q)||q.startsWith(n))&&Math.abs(n.length-q.length)<=3)
 }
 export async function fetchCard(name){
   if(!name?.trim())return null
   const q=cleanCardName(name)
   try{return await named(q,'exact')}catch(e){
     if(e?.status&&e.status!==404)return null
-    try{const c=await named(q,'fuzzy');return acceptableFuzzy(q,c)?c:null}catch{return null}
+    try{const c=await named(q,'fuzzy');return acceptableFuzzyName(q,c)?c:null}catch{return null}
   }
 }
 export async function fetchCards(entries,onProgress){
