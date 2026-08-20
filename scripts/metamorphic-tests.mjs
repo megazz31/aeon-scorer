@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { analyzePower } from '../src/engine/powerModel.js'
+import { applyCommanderLondonBottom } from '../src/engine/sequenceSimulator.js'
 
 let id=0
 const mk=(name,oracle='',cmc=2,type='Instant',manaCost='',producedMana=[])=>({name:`${name}${name==='Forest'||name==='Plains'?'':' '+(++id)}`,oracle,cmc,type,manaCost,producedMana,id:String(id)})
@@ -48,10 +49,26 @@ const tappedDeck=[...Array.from({length:36},tappedGreen),...Array.from({length:6
 const tapped=profile(tappedDeck)
 assert(tapped.simulation.turnProfile[3].commander<a.simulation.turnProfile[3].commander,'Unconditional tapped lands must reduce T4 commander access')
 
+const londonHand=[
+  {name:'Land A',isLand:true,sourceColors:['G'],oracle:'',type:'Land'},
+  {name:'Land B',isLand:true,sourceColors:['G'],oracle:'',type:'Land'},
+  {name:'Land C',isLand:true,sourceColors:['G'],oracle:'',type:'Land'},
+  {name:'Land D',isLand:true,sourceColors:['G'],oracle:'',type:'Land'},
+  {name:'Early',isLand:false,cmc:1,tags:['draw'],interaction:0},
+  {name:'Mid',isLand:false,cmc:3,tags:[],interaction:0},
+  {name:'Seven Drop',isLand:false,cmc:7,tags:[],interaction:0},
+]
+const freeMulligan=applyCommanderLondonBottom(londonHand,0,{manaReq:{colored:[['G']]}})
+assert.equal(freeMulligan.hand.length,7,'Commander first multiplayer mulligan must remain free')
+const paidMulligan=applyCommanderLondonBottom(londonHand,1,{manaReq:{colored:[['G']]}})
+assert.equal(paidMulligan.hand.length,6,'Second mulligan must apply one London bottom')
+assert.equal(paidMulligan.bottom.length,1)
+assert(!paidMulligan.hand.some(x=>x===paidMulligan.bottom[0]))
+
 for(const r of [a,b,c,d,mg,mx,tapped]){
   for(const v of [r.profile.median,r.profile.floor,r.profile.ceiling,r.profile.peak,r.profile.dispersion,...Object.values(r.dimensions)])assert(Number.isFinite(v)&&v>=0&&v<=100)
   assert(r.profile.floor<=r.profile.median)
   assert(r.profile.median<=r.profile.ceiling)
   assert(r.profile.ceiling<=r.profile.peak)
 }
-console.log('METAMORPHIC OK — directionality, determinism, color access, tapped-land tempo and score invariants')
+console.log('METAMORPHIC OK — directionality, determinism, color access, tapped-land tempo, Commander London mulligan and score invariants')
