@@ -15,8 +15,8 @@ function hashSeed(cards,commander,salt=''){
 }
 function seeded(seed){let a=seed>>>0;return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 
-// Monotonic presentation scale. It stretches the structurally useful 45–70 zone
-// after semantic hardening without changing ordering or introducing brackets.
+// Monotonic presentation scale only. Ordering comes from the structural model,
+// never from bracket labels or source-class lookups.
 function calibratePower(x){
   if(x<=30)return clamp(x*.80)
   if(x<=45)return clamp(24+(x-30)*1.50)
@@ -75,13 +75,20 @@ export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=
   const t3=sim.turnProfile.find(x=>x.turn===3)||{},t4=sim.turnProfile.find(x=>x.turn===4)||{}
   const speed=clamp(28+(3.4-roles.avgCmc)*11+roles.fastMana*3+(commander&&sim.commanderMedianTurn?Math.max(0,5-sim.commanderMedianTurn)*5:0)+(sim.engineMedianTurn?Math.max(0,6-sim.engineMedianTurn)*2:0)+(t3.engine||0)*.08)
   const interaction=clamp((t4.interaction||0)*.72+(t3.interaction||0)*.28)
-  const resilience=clamp(sim.recoveryAfterDisruption*.62+roles.recursion*3.2+roles.protection*1.8)
+  // "Recovery" is only an access checkpoint, not a simulated wipe. Keep it
+  // subordinate to concrete recursion/protection rather than letting a single
+  // castable draw spell masquerade as full resilience.
+  const resilience=clamp(sim.recoveryAfterDisruption*.25+(t4.resource||0)*.10+roles.recursion*3.2+roles.protection*1.2)
   const explosiveness=clamp((t4.burst||0)*.68+roles.fastMana*3.5+comboBoost+(sim.peak-sim.high)*.35)
   const synergy=clamp(packageCohesion*.72+cmdSyn.score*.28+combos.length*5)
   const consistency=clamp(sim.consistency*.88+roles.tutors*1.8+roles.repeatableTutors*1.3)
 
   const aeonAdj=aeon.available?(aeon.score-35)*.05:0
-  const structural=clamp(sim.median*.40+speed*.14+synergy*.16+consistency*.12+interaction*.07+resilience*.07+explosiveness*.04+aeonAdj)
+  // Semantic hardening showed that broad package cohesion is common even in
+  // strong precons. Effective power is therefore driven more by actual access:
+  // speed, consistency and explosiveness. Synergy remains important, but it
+  // cannot compensate by itself for slow or inconsistent sequencing.
+  const structural=clamp(sim.median*.36+speed*.20+synergy*.10+consistency*.15+interaction*.06+resilience*.04+explosiveness*.09+aeonAdj)
   const shift=structural-sim.median
   const rawP20=clamp(sim.floor+shift),rawP50=structural,rawP80=clamp(sim.high+shift),rawPeak=clamp(sim.peak+shift+comboBoost*.18)
   const floor=calibratePower(rawP20),median=calibratePower(rawP50),ceiling=calibratePower(rawP80),peak=calibratePower(rawPeak)
