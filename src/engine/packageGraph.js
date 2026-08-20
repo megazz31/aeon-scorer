@@ -37,7 +37,7 @@ export function detectPackages(cards,commander=null){
     if(producers.length<(m.minP||2)||payoffs.length<(m.minY||1))continue
     const members=uniqByName([...producers,...payoffs]),overlap=overlapCount(producers,payoffs),roleDistinct=Math.max(0,members.length-overlap)
     if(members.length<3||roleDistinct<2)continue
-    const density=members.length/Math.max(1,cards.length),balance=Math.min(producers.length,payoffs.length)/Math.max(producers.length,payoffs.length),cohesion=Math.min(100,Math.round(24+members.length*3.3+density*52+balance*18))
+    const density=members.length/Math.max(1,nonlands.length),balance=Math.min(producers.length,payoffs.length)/Math.max(producers.length,payoffs.length),cohesion=Math.min(100,Math.round(24+members.length*3.3+density*52+balance*18))
     out.push({id:m.id,name:m.name,strength:cohesion,cohesion,producers:previewNames(producers),payoffs:previewNames(payoffs),members:allNames(members),producerCards:producers.map(mini),payoffCards:payoffs.map(mini),producerTags:m.producers,payoffTags:m.payoffs,evidence:`${producers.length} producteur(s), ${payoffs.length} payoff(s), ${members.length} carte(s) distincte(s).`})
   }
   return out.sort((a,b)=>b.cohesion-a.cohesion)
@@ -49,7 +49,7 @@ export function commanderSynergy(cards,commander){
   const semantic=new Set((commander.tags||[]).filter(t=>COMMANDER_ENGINE_TAGS.has(t)))
   const pair=(a,b)=>{if(semantic.has(a))semantic.add(b)}
   pair('blink','etb');pair('etb','blink');pair('tokens','token-payoff');pair('token-payoff','tokens');pair('sac-outlet','death-payoff');pair('death-payoff','sac-outlet');pair('recursion','graveyard-setup');pair('graveyard-setup','recursion');pair('constellation','enchantment');pair('counter-producer','counter-payoff');pair('counter-payoff','counter-producer');pair('artifact-payoff','artifact');pair('exile-cast','exile-payoff');pair('exile-payoff','exile-cast');pair('landfall','land-ramp');pair('spellslinger','instant');pair('spellslinger','sorcery');pair('lifegain','life-payoff');pair('life-payoff','lifegain')
-  const connected=semantic.size?uniqByName(cards.filter(c=>c.tags.some(t=>semantic.has(t)))):[]
-  const score=Math.min(100,Math.round(connected.length/Math.max(1,cards.length)*170))
+  const nonlands=cards.filter(c=>!c.isLand),connected=semantic.size?uniqByName(cards.filter(c=>c.tags.some(t=>semantic.has(t)))):[]
+  const score=Math.min(100,Math.round(connected.length/Math.max(1,nonlands.length)*170))
   return {score,connected:connected.map(c=>c.name),tags:[...semantic]}
 }
