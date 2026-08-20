@@ -131,8 +131,10 @@ export function simulateSequences(cards,commander,packages,combos=[],iterations=
       if(ramp){
         const produced=permanentRampSources(ramp,commander),remaining=payAndRemain(ramp,turnSources)
         used.add(ramp);battlefield.push(ramp)
-        if(isArtifact(ramp)&&remaining){activeSources.push(...produced);turnSources=[...remaining,...produced]}
-        else pendingSources.push(...produced)
+        if(remaining){
+          if(isArtifact(ramp)){activeSources.push(...produced);turnSources=[...remaining,...produced]}
+          else {turnSources=[...remaining];pendingSources.push(...produced)}
+        }
       }
       const generalSources=potentialSources(turnSources,hand,used,false),commanderSources=potentialSources(turnSources,hand,used,true)
       if(commander&&cmdTurn==null&&canPay(commander,commanderSources)){cmdTurn=turn;battlefield.push(commander)}
@@ -145,7 +147,7 @@ export function simulateSequences(cards,commander,packages,combos=[],iterations=
       const state=100*Math.min(1,.27*manaTempo+.22*(engine.ok?1:0)+.14*(interaction?1:0)+.11*(resource?1:0)+.10*(cmdOnline?1:0)+.08*(burst?1:0)+.08*(combo?1:0))
       peak=Math.max(peak,state);sum+=state
       const ts=turnStats[turn-1];ts.total++;ts.cmd+=cmdOnline?1:0;ts.engine+=engine.ok?1:0;ts.interaction+=interaction?1:0;ts.resource+=resource?1:0;ts.burst+=burst?1:0
-      priorSources=[...generalSources]
+      priorSources=[...turnSources]
     }
     if(cmdTurn!=null)cmdTurns.push(cmdTurn);if(engineTurn!=null)engineTurns.push(engineTurn);samples.push({avg:sum/maxTurn,peak,cmdTurn:cmdTurn||maxTurn+1,engineTurn:engineTurn||maxTurn+1,recovered})
   }
