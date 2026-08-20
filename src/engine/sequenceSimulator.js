@@ -29,11 +29,35 @@ function productionCount(c){
   if(/add two mana/.test(o))return 2
   return 1
 }
-function permanentRampSources(c,commander){
-  const colors=c.tags.includes('land-ramp')?(commander?.manaReq?.colored?.flat()||['W','U','B','R','G']):(c.sourceColors?.length?c.sourceColors:['C'])
+function permanentRampSupport(c,hand,used,battlefield,commander){
+  const n=(c.name||'').toLowerCase(),any=['W','U','B','R','G']
+  if(n.includes('chrome mox')){
+    const needs=new Set(commander?.manaReq?.colored?.flat()||[])
+    const imprint=hand.filter(x=>x!==c&&!used.has(x)&&!x.isLand&&!isArtifact(x)&&(x.colors||[]).length)
+      .sort((a,b)=>(b.colors||[]).filter(x=>needs.has(x)).length-(a.colors||[]).filter(x=>needs.has(x)).length)[0]
+    return imprint?{consume:[imprint],colors:uniq(imprint.colors)}:null
+  }
+  if(n.includes('mox diamond')){
+    const land=hand.find(x=>x!==c&&x.isLand&&!used.has(x))
+    return land?{consume:[land],colors:any}:null
+  }
+  if(n.includes('mox opal')){
+    const artifacts=battlefield.filter(isArtifact)
+    return artifacts.length>=2?{consume:[],colors:any}:null
+  }
+  if(n.includes('mox amber')){
+    const legends=battlefield.filter(x=>/\blegendary\b/i.test(x.type||'')&&/\bcreature\b|\bplaneswalker\b/i.test(x.type||'')&&(x.colors||[]).length)
+    const colors=uniq(legends.flatMap(x=>x.colors||[]))
+    return colors.length?{consume:[],colors}:null
+  }
+  return {consume:[],colors:null}
+}
+function permanentRampSources(c,commander,support={}){
+  const colors=support.colors?.length?support.colors:c.tags.includes('land-ramp')?(commander?.manaReq?.colored?.flat()||['W','U','B','R','G']):(c.sourceColors?.length?c.sourceColors:['C'])
   const count=c.tags.includes('land-ramp')?1:productionCount(c)
   return Array.from({length:count},()=>source(colors.length?colors:['C'],c.name))
 }
+function rampValue(c){return productionCount(c)-Number(c.cmc||0)+(isArtifact(c)?.25:0)}
 function burstPriority(c){
   const n=c.name.toLowerCase()
   if(/lotus petal|elvish spirit guide|simian spirit guide|lion's eye diamond|jeweled lotus/.test(n))return 0
@@ -139,10 +163,14 @@ export function simulateSequences(cards,commander,packages,combos=[],iterations=
       const land=chooseLand(hand,used,commander)
       if(land){used.add(land);battlefield.push(land);const src=baseLandSource(land);if(alwaysTappedLand(land))pendingSources.push(src);else activeSources.push(src)}
       let turnSources=[...activeSources]
-      const ramp=castableCards(hand,used,turnSources,isPermanentRamp).sort((a,b)=>(a.cmc||0)-(b.cmc||0))[0]
-      if(ramp){
-        const produced=permanentRampSources(ramp,commander),remaining=payAndRemain(ramp,turnSources)
-        used.add(ramp);battlefield.push(ramp)
+      const rampCandidates=castableCards(hand,used,turnSources,isPermanentRamp)
+        .map(card=>({card,support:permanentRampSupport(card,hand,used,battlefield,commander)}))
+        .filter(x=>x.support)
+        .sort((a,b)=>rampValue(b.card)-rampValue(a.card)||(a.card.cmc||0)-(b.card.cmc||0))
+      const rampChoice=rampCandidates[0]
+      if(rampChoice){
+        const ramp=rampChoice.card,support=rampChoice.support,produced=permanentRampSources(ramp,commander,support),remaining=payAndRemain(ramp,turnSources)
+        used.add(ramp);for(const costCard of support.consume||[])used.add(costCard);battlefield.push(ramp)
         if(remaining){
           if(isArtifact(ramp)){activeSources.push(...produced);turnSources=[...remaining,...produced]}
           else {turnSources=[...remaining];pendingSources.push(...produced)}
