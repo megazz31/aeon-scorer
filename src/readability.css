@@ -1,78 +1,21 @@
 /* Accessibility/readability overrides loaded after the main visual system.
    Rule: no intentionally visible UI text should render below 11px. */
-.brandText small{font-size:12px;color:#aaa6b2;letter-spacing:.035em}
+.brandText small{font-size:12px;color:#c0bbc8;letter-spacing:.035em}
 .navActions{display:flex;align-items:center;gap:10px}
 .languageSwitch{display:flex;align-items:center;padding:3px;border:1px solid var(--line);border-radius:10px;background:#0d0d12}
-.languageSwitch button{min-width:36px;height:32px;border:0;border-radius:7px;background:transparent;color:#8f8a99;font-size:12px;font-weight:800;cursor:pointer}
-.languageSwitch button:hover{color:#d7d3dd}
-.languageSwitch button.active{background:#1b1724;color:#ece6fb;box-shadow:inset 0 0 0 1px #403650}
+.languageSwitch button{min-width:36px;height:32px;border:0;border-radius:7px;background:transparent;color:#aaa5b4;font-size:12px;font-weight:800;cursor:pointer}
+.languageSwitch button:hover{color:#eeeaf3}.languageSwitch button.active{background:#1b1724;color:#f5efff;box-shadow:inset 0 0 0 1px #514363}
+.heroKicker,.sectionEyebrow,.eyebrow{font-size:12px}.heroProof{font-size:14px;line-height:1.45}.exampleLabel{font-size:13px}.exampleScore>div small{font-size:12px}.examplePeak span{font-size:13px}.heroExample p{font-size:13px;line-height:1.6}.validationPill{font-size:12px}
+.fieldHeader label,.field label{font-size:14px}.cardCount{font-size:13px}textarea{font-size:13px}input,select{font-size:14px}input[type=file]{font-size:13px}.editorFoot,.textButton,.field small,.muted,.note,.advancedOptions summary,.error,.analyzerFoot{font-size:13px;line-height:1.55}.advancedOptions summary span{font-size:11px}.resultNav button{font-size:13px}
+.primaryScore>span{font-size:14px}.primaryScore>small{font-size:12px}.stat>span,.stat>small{font-size:12px}.rangeTop span{font-size:13px}.rangeTop small{font-size:12px}.scoreTick em,.calTick em{font-size:11px}.rangeLegend{font-size:12px;line-height:1.5}.scoreRead p{font-size:13px;line-height:1.6}.summaryAlert b{font-size:13px}.summaryAlert p{font-size:13px;line-height:1.5}.alertIcon{font-size:12px}.panelHeading p{font-size:13px;line-height:1.55}.barRow>div:first-child{font-size:13px}.note{font-size:13px}.turnHead{font-size:11px}.turnLine{font-size:12px}
+.pkg>div b{font-size:14px}.pkg>div span{font-size:13px}.pkg p{font-size:14px;line-height:1.6;color:#b0abb9}.pkg small{font-size:14px;line-height:1.65;color:#9e99aa}.pkg small b{color:#cfc4ea}.driver b{font-size:14px}.driver small{font-size:13px;color:#918c9d}.driver strong{font-size:14px}.combo b{font-size:13px}.combo span{font-size:12px}.caveats p{font-size:13px;line-height:1.65}
+.muted,.note,.panelHeading p,.scoreRead p,.summaryAlert p,.analyzerFoot,.rangeLegend,.driver small,.caveats p{color:#918c9d}.field small,.editorFoot{color:#a09baa}.footerInner small{color:#76717f}
+.contentHead p{font-size:16px}.prose h2,.proseGrid h2,.projectLinks h2,.methodSteps h2{font-size:19px}.prose p,.proseGrid p,.methodSteps p,.prose ul{font-size:14px;line-height:1.75}.fourMetricExplainer b{font-size:13px}.fourMetricExplainer small{font-size:12px}.contentCallout{font-size:14px}.inlineCta{font-size:13px}.methodSteps article>span{font-size:11px}.faq summary{font-size:13px}.projectLinks p,.linkStack a{font-size:13px}
+.footerBrand{font-size:14px}.footerInner>div:first-child span{font-size:12px;color:#9e99a7}.footerLinks a{font-size:12px}.footerInner small{font-size:11px}
 
-.heroKicker,.sectionEyebrow,.eyebrow{font-size:12px}
-.heroProof{font-size:14px;line-height:1.45}
-.exampleLabel{font-size:13px}
-.exampleScore>div small{font-size:12px}
-.examplePeak span{font-size:13px}
-.heroExample p{font-size:13px;line-height:1.6}
-.validationPill{font-size:12px}
-.fieldHeader label,.field label{font-size:14px}
-.cardCount{font-size:13px}
-textarea{font-size:13px}
-input,select{font-size:14px}
-input[type=file]{font-size:13px}
-.editorFoot,.textButton,.field small,.muted,.note,.advancedOptions summary,.error,.analyzerFoot{font-size:13px;line-height:1.55}
-.advancedOptions summary span{font-size:11px}
-.resultNav button{font-size:13px}
-.primaryScore>span{font-size:14px}
-.primaryScore>small{font-size:12px}
-.stat>span,.stat>small{font-size:12px}
-.rangeTop span{font-size:13px}
-.rangeTop small{font-size:12px}
-.scoreTick em,.calTick em{font-size:11px}
-.rangeLegend{font-size:12px;line-height:1.5}
-.scoreRead p{font-size:13px;line-height:1.6}
-.summaryAlert b{font-size:13px}
-.summaryAlert p{font-size:13px;line-height:1.5}
-.alertIcon{font-size:12px}
-.panelHeading p{font-size:13px;line-height:1.55}
-.barRow>div:first-child{font-size:13px}
-.note{font-size:13px}
-.turnHead{font-size:11px}
-.turnLine{font-size:12px}
-.pkg>div b{font-size:13px}
-.pkg>div span{font-size:12px}
-.pkg p{font-size:13px;line-height:1.55}
-.pkg small{font-size:12px;line-height:1.55}
-.driver b{font-size:13px}
-.driver small{font-size:12px}
-.driver strong{font-size:13px}
-.combo b{font-size:13px}
-.combo span{font-size:12px}
-.caveats p{font-size:13px;line-height:1.65}
-
-.contentHead p{font-size:16px}
-.prose h2,.proseGrid h2,.projectLinks h2,.methodSteps h2{font-size:19px}
-.prose p,.proseGrid p,.methodSteps p,.prose ul{font-size:14px;line-height:1.75}
-.fourMetricExplainer b{font-size:13px}
-.fourMetricExplainer small{font-size:12px}
-.contentCallout{font-size:14px}
-.inlineCta{font-size:13px}
-.methodSteps article>span{font-size:11px}
-.faq summary{font-size:13px}
-.projectLinks p,.linkStack a{font-size:13px}
-
-.footerBrand{font-size:14px}
-.footerInner>div:first-child span{font-size:12px;color:#8f8a98}
-.footerLinks a{font-size:12px}
-.footerInner small{font-size:11px;color:#666270}
-
-@media(max-width:760px){
-  .siteNav{grid-template-columns:1fr auto}
-  .navActions{grid-column:2;grid-row:1}
-  .navExternal{display:none}
-  .brandText small{display:block}
-  .heroProof{font-size:12px}
-}
-@media(max-width:520px){
-  .brandText small{font-size:11px}
-  .languageSwitch button{min-width:34px;height:30px;font-size:11px}
-}
+/* Account, saved-deck and analysis-history workspace. */
+.cloudDock{position:fixed;right:22px;top:88px;z-index:45;display:flex;align-items:center;gap:8px}.cloudDockButton,.cloudSaveQuick{border:1px solid #35313f;background:#131219;color:#e8e3ee;border-radius:10px;padding:10px 13px;font:700 12px Manrope,sans-serif;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.24)}.cloudDockButton span{margin-left:8px;color:#b9a1f1}.cloudSaveQuick{color:#c8b8ef}.cloudDockButton:hover,.cloudSaveQuick:hover{border-color:#5d4d76;background:#191620}
+.cloudBackdrop{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.62);backdrop-filter:blur(5px);display:flex;justify-content:flex-end}.cloudDrawer{width:min(480px,94vw);height:100%;overflow:auto;background:#0d0d12;border-left:1px solid #2b2934;padding:26px;box-shadow:-24px 0 70px rgba(0,0,0,.42);color:#f3f0f6}.cloudDrawer>header{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:20px;border-bottom:1px solid #292732}.cloudDrawer>header span{font-size:11px;letter-spacing:.14em;color:#b79aef;font-weight:800}.cloudDrawer h2{font-size:26px;margin:6px 0 0}.cloudDrawer>header button{width:38px;height:38px;border:1px solid #33303d;background:#14131a;color:#c7c1cf;border-radius:10px;font-size:22px;cursor:pointer}.cloudDrawer p,.cloudDrawer small,.cloudDrawer label,.cloudDrawer button,.cloudDrawer input,.cloudDrawer span{font-family:Manrope,sans-serif}.cloudDrawer footer{font-size:12px;color:#817c8a;line-height:1.6;border-top:1px solid #292732;margin-top:22px;padding-top:18px}
+.cloudAuth{padding:24px 0}.cloudAuth h3,.cloudListHead h3{font-size:18px;margin:0}.cloudAuth>p{font-size:14px;color:#aaa5b3;line-height:1.65}.cloudAuth form,.cloudSave{display:grid;gap:13px;margin-top:18px}.cloudAuth label,.cloudSave label{display:grid;gap:7px;font-size:13px;font-weight:700;color:#d5d0db}.cloudAuth input,.cloudSave input{height:44px;padding:0 12px;border:1px solid #34313e;border-radius:10px;background:#09090d;color:#f3f0f6;font-size:14px;outline:none}.cloudAuth input:focus,.cloudSave input:focus{border-color:#725f98;box-shadow:0 0 0 3px rgba(150,124,225,.1)}.cloudPrimary{min-height:43px;border:0;border-radius:10px;background:#967ce1;color:#0d0913;font-size:13px;font-weight:850;cursor:pointer;padding:10px 14px}.cloudPrimary:disabled{opacity:.55;cursor:wait}.cloudLink{border:0;background:transparent;color:#b9a6e8;font-size:12px;font-weight:750;cursor:pointer;padding:8px 0;text-align:left}.cloudMessage,.cloudNotice{font-size:13px!important;line-height:1.6;color:#c4b4e9!important;background:#15121c;border:1px solid #382f49;border-radius:10px;padding:11px 12px}.cloudAccount{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid #292732}.cloudAccount span{font-size:13px;color:#b9b4c0;overflow:hidden;text-overflow:ellipsis}.cloudAccount button,.cloudDeckActions button{border:1px solid #34313e;background:#15141b;color:#cac5d0;border-radius:8px;padding:7px 9px;font-size:12px;font-weight:700;cursor:pointer}.cloudSave{padding:18px 0;border-bottom:1px solid #292732}.cloudSave small{font-size:12px;color:#8e8997}.cloudListHead{display:flex;justify-content:space-between;align-items:center;margin:20px 0 10px}.cloudDeckList{display:grid;gap:9px}.cloudDeck{display:grid;grid-template-columns:1fr auto;gap:7px 16px;border:1px solid #292733;background:#111117;border-radius:13px;padding:14px}.cloudDeck>div:first-child{display:flex;flex-direction:column;gap:3px}.cloudDeck>div:first-child b{font-size:14px}.cloudDeck>div:first-child span{font-size:12px;color:#8f8999}.cloudDeckScore{text-align:right}.cloudDeckScore strong{display:block;font-size:23px;color:#c7b5ee}.cloudDeckScore span{font-size:11px;color:#8e8899}.cloudDeck>small{font-size:11px;color:#77717f}.cloudDeckActions{display:flex;justify-content:flex-end;gap:6px}.cloudDeckActions .danger{color:#d89aa5}.cloudNoRun{font-size:12px;color:#898391;align-self:center}.cloudEmpty{font-size:13px;color:#918b9a;line-height:1.6}
+@media(max-width:760px){.siteNav{grid-template-columns:1fr auto}.navActions{grid-column:2;grid-row:1}.navExternal{display:none}.brandText small{display:block}.heroProof{font-size:12px}.cloudDock{right:12px;top:auto;bottom:14px;flex-direction:column;align-items:flex-end}.cloudSaveQuick{display:none}.cloudDrawer{width:100%;padding:20px}}
+@media(max-width:520px){.brandText small{font-size:11px}.languageSwitch button{min-width:34px;height:30px;font-size:11px}}
