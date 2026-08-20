@@ -10,11 +10,7 @@ for(const [name,text] of [
   ['Cloudshift','Exile target creature you control, then return that card to the battlefield under your control.'],
   ['Ghostly Flicker','Exile two target artifacts, creatures, and/or lands you control, then return those cards to the battlefield under your control.'],
   ['Eerie Interlude','Exile any number of target creatures you control. Return those cards to the battlefield under their owner’s control at the beginning of the next end step.'],
-]){
-  const c=card(name,text)
-  assert(has(c,'blink'),`${name}: protective blink must be recognized`)
-  assert(!has(c,'removal'),`${name}: own-target blink must never become removal`)
-}
+]){const c=card(name,text);assert(has(c,'blink'),`${name}: protective blink must be recognized`);assert(!has(c,'removal'),`${name}: own-target blink must never become removal`)}
 const temporary=card('Temporary Dog','Exile up to one other target nonland permanent. At the beginning of the next end step, return that card to the battlefield under its owner’s control.','Creature',2,'{1}{W}')
 assert(has(temporary,'tempo-interaction'));assert(!has(temporary,'removal'))
 for(const name of ['Lotus Petal','Burnt Offering Rock','Self Sac Stone']){const c=card(name,`Sacrifice ${name}: Add three mana of any one color.`,'Artifact',0,'{0}');assert(!has(c,'sac-outlet'),`${name}: self-sacrifice is not a package sac outlet`)}
@@ -67,6 +63,6 @@ assert(/semantic/.test(workflow)&&/metamorphic/.test(workflow)&&/audit/.test(wor
 
 assert(!/Dernier run\s*:\s*\*\*12\/12/i.test(readme),'README must not claim the old 12/12 as current v3.1 validation')
 assert(/v3\.1 est en validation/i.test(readme),'README must state pre-validation status before final CI')
-assert(/pioche.*n'est pas encore propagée/is.test(notes)&&/tuteurs.*ne sont pas exécutées dynamiquement/is.test(notes),'Known sequence-model limits must remain documented')
+assert(/pioche.*ne lance pas ensuite réellement/is.test(notes)&&/tuteurs.*ne sont pas exécutées dynamiquement/is.test(notes),'Known sequence-model limits must remain documented')
 
 console.log('ADVERSARIAL AUDIT OK — semantics, imports, name resolution, UI claims, mana edge cases, benchmark policy, disclosures and CI wiring')
