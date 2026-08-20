@@ -3,7 +3,6 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms))
 
 function cleanCardName(name){
   let s=String(name||'').trim()
-  // Exporters may append foil/collector annotations in either order.
   for(let i=0;i<2;i++){
     s=s.replace(/\s+\*[^*]+\*\s*$/,'').trim()
     s=s.replace(/\s+\([A-Z0-9]{2,8}\)\s*[A-Za-z0-9-]*\s*$/i,'').trim()
@@ -14,10 +13,13 @@ function cleanCardName(name){
 
 export function parseDecklist(text){
   const rows=[]
+  let include=true
   for(const raw of String(text||'').split(/\r?\n/)){
     const line=raw.trim()
     if(!line||line.startsWith('//')||line.startsWith('#'))continue
-    if(/^(commander|commanders|deck|mainboard|sideboard|maybeboard|considering)\s*:?$/i.test(line))continue
+    const section=line.match(/^(commander|commanders|deck|mainboard|sideboard|maybeboard|considering)\s*:?$/i)?.[1]?.toLowerCase()
+    if(section){include=!['sideboard','maybeboard','considering'].includes(section);continue}
+    if(!include)continue
     let qty,name
     const leading=line.match(/^(\d+)\s*x?\s+(.+)$/i)
     const trailing=line.match(/^(.+?)\s+[x×](\d+)$/i)
@@ -66,7 +68,6 @@ function canonical(s){return String(s||'').toLowerCase().normalize('NFKD').repla
 function acceptableFuzzy(requested,card){
   const q=canonical(requested),names=[card.name,...(card.aliases||[])].map(canonical)
   if(names.includes(q))return true
-  // Allow only close spelling repair, never a semantically different fuzzy hit.
   return names.some(n=>n.startsWith(q)||q.startsWith(n))&&Math.abs(n.length-q.length)<=3
 }
 export async function fetchCard(name){
