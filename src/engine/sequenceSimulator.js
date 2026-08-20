@@ -1,9 +1,9 @@
 function shuffle(arr,rng=Math.random){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function percentile(xs,p){if(!xs.length)return 0;const a=[...xs].sort((x,y)=>x-y),i=(a.length-1)*p,lo=Math.floor(i),hi=Math.ceil(i);return lo===hi?a[lo]:a[lo]*(hi-i)+a[hi]*(i-lo)}
 const uniq=xs=>[...new Set(xs)]
-const isBurst=c=>c.tags.includes('fast-mana')
-const isPermanentRamp=c=>!c.isLand&&!isBurst(c)&&(c.tags.includes('land-ramp')||(c.sourceColors?.length||0)>0)&&(c.cmc||0)<=3
 const isPermanentCard=c=>!/\binstant\b|\bsorcery\b/i.test(c.type||'')
+const isBurst=c=>c.tags.includes('burst-mana')
+const isPermanentRamp=c=>!c.isLand&&!isBurst(c)&&(c.tags.includes('land-ramp')||(isPermanentCard(c)&&(c.sourceColors?.length||0)>0))&&(c.cmc||0)<=3
 function alwaysTappedLand(c){
   const o=(c.oracle||'').toLowerCase()
   if(!/enters(?: the battlefield)? tapped/.test(o))return false
@@ -21,15 +21,17 @@ function inferredLandColors(c){
 function baseLandSource(c){return source(inferredLandColors(c),c.name)}
 function permanentRampSource(c,commander){if(c.tags.includes('land-ramp')){const colors=commander?.manaReq?.colored?.flat()||['W','U','B','R','G'];return source(colors.length?colors:['W','U','B','R','G'],c.name)}return source(c.sourceColors?.length?c.sourceColors:['C'],c.name)}
 function burstNetSources(c,baseSources,seenCards,forCommander=false){
-  const n=c.name.toLowerCase(),any=['W','U','B','R','G'],hasB=baseSources.some(s=>s.options.includes('B'))
+  const n=c.name.toLowerCase(),any=['W','U','B','R','G'],hasB=baseSources.some(s=>s.options.includes('B')),hasR=baseSources.some(s=>s.options.includes('R'))
   if(n.includes('dark ritual'))return hasB?[source(['B'],c.name),source(['B'],c.name)]:[]
+  if(n.includes('cabal ritual'))return hasB&&baseSources.length>=2?[source(['B'],c.name)]:[]
   if(n.includes('culling the weak')){const creature=seenCards.some(x=>x.isCreature&&x!==c);return hasB&&creature?[source(['B'],c.name),source(['B'],c.name),source(['B'],c.name)]:[]}
+  if(n.includes('rite of flame'))return hasR?[source(['R'],c.name)]:[]
   if(n.includes('elvish spirit guide'))return [source(['G'],c.name)]
   if(n.includes('simian spirit guide'))return [source(['R'],c.name)]
   if(n.includes('lotus petal'))return [source(any,c.name)]
-  if(n.includes('mana crypt'))return [source(['C'],c.name),source(['C'],c.name)]
+  if(n.includes("lion's eye diamond"))return [source(any,c.name),source(any,c.name),source(any,c.name)]
   if(n.includes('mana vault'))return baseSources.length>=1?[source(['C'],c.name),source(['C'],c.name)]:[]
-  if(n.includes('chrome mox')||n.includes('mox diamond'))return [source(any,c.name)]
+  if(n.includes('grim monolith'))return baseSources.length>=2?[source(['C'],c.name)]:[]
   if(n.includes('jeweled lotus'))return forCommander?[source(any,c.name),source(any,c.name),source(any,c.name)]:[]
   return [source(c.sourceColors?.length?c.sourceColors:['C'],c.name)]
 }
@@ -41,8 +43,7 @@ export function canPay(card,sources,tax=0){
   return place(0)
 }
 function canPayPair(a,b,sources){
-  const ra=paymentOptions(a),rb=paymentOptions(b)
-  const fake={cmc:ra.total+rb.total,manaReq:{generic:ra.generic+rb.generic,colored:[...ra.colored,...rb.colored],total:ra.total+rb.total}}
+  const ra=paymentOptions(a),rb=paymentOptions(b),fake={cmc:ra.total+rb.total,manaReq:{generic:ra.generic+rb.generic,colored:[...ra.colored,...rb.colored],total:ra.total+rb.total}}
   return canPay(fake,sources)
 }
 function potentialSources(activeSources,hand,used,forCommander=false){const out=[...activeSources],seen=hand.filter(c=>!used.has(c));for(const c of seen.filter(isBurst))out.push(...burstNetSources(c,out,seen,forCommander));return out}
