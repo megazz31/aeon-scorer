@@ -11,7 +11,6 @@ const MOTIFS=[
   {id:'exile',name:'Jeu depuis l’exil',producers:['exile-cast'],payoffs:['exile-payoff'],minP:2,minY:1},
   {id:'artifacts',name:'Artefacts',producers:['artifact'],payoffs:['artifact-payoff'],minP:5,minY:2},
 ]
-
 const hasTag=(c,t)=>c.tags?.includes(t)
 const uniqByName=xs=>{const seen=new Set(),out=[];for(const x of xs){const k=x.name.toLowerCase();if(!seen.has(k)){seen.add(k);out.push(x)}}return out}
 const mini=c=>({name:c.name,cmc:Number(c.cmc||0),tags:c.tags||[],manaReq:c.manaReq||null})
@@ -19,14 +18,15 @@ const previewNames=xs=>uniqByName(xs).slice(0,10).map(x=>x.name)
 const allNames=xs=>uniqByName(xs).map(x=>x.name)
 function roleCards(nonlands,tags){return uniqByName(nonlands.filter(c=>tags.some(t=>hasTag(c,t))))}
 function overlapCount(a,b){const s=new Set(a.map(x=>x.name.toLowerCase()));return b.filter(x=>s.has(x.name.toLowerCase())).length}
+const isManaPermanent=c=>!/\binstant\b|\bsorcery\b/i.test(c.type||'')&&(c.sourceColors?.length||0)>0
 
 export function detectPackages(cards,commander=null){
   const out=[],nonlands=cards.filter(c=>!c.isLand)
   for(const m of MOTIFS){
     if(m.special==='commander'){
       if(!commander)continue
-      const burst=roleCards(nonlands,['fast-mana'])
-      const persistent=uniqByName(nonlands.filter(c=>!hasTag(c,'fast-mana')&&(c.cmc||0)<=3&&(hasTag(c,'land-ramp')||(c.sourceColors?.length||0)>0)))
+      const burst=roleCards(nonlands,['burst-mana'])
+      const persistent=uniqByName(nonlands.filter(c=>!hasTag(c,'burst-mana')&&(c.cmc||0)<=3&&(hasTag(c,'land-ramp')||isManaPermanent(c))))
       const cmdCmc=Number(commander.cmc||0),meaningful=burst.length>=2||(cmdCmc>=4&&(burst.length+persistent.length)>=4)
       if(!meaningful)continue
       const cohesion=Math.min(100,Math.round(22+burst.length*13+persistent.length*3+Math.max(0,cmdCmc-3)*4)),members=uniqByName([...burst,...persistent])
