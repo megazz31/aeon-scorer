@@ -1,56 +1,56 @@
-# Aeon Scorer v3 — Calibrated Power Distribution
+# Aeon Scorer v3.1 — Semantic Hardening
 
-Aeon Scorer estime la **distribution de puissance d'un deck Commander**. Il ne cherche plus à convertir une somme de cartes en bracket.
+Aeon Scorer estime la **distribution de puissance structurelle d'un deck Commander**. Il ne cherche pas à convertir une somme de cartes en bracket.
 
-> La CI bloque désormais tout merge si le smoke test, le build ou la calibration complète échoue.
+> La v3.1 est en validation. Elle ne doit être marquée comme validée que lorsque le même commit final passe l'intégralité de la chaîne CI et la revue manuelle finale.
 
 ## Modèle
 
 1. **Card primitives** — fonctions détectées dans le texte Oracle : mana, tutor, interaction, protection, récursion, tokens, etc.
-2. **Package graph** — détection de sous-systèmes producteurs/payoffs : early commander, Blink/ETB, Constellation, tokens, sacrifice, cimetière, marqueurs…
-3. **Sequence Monte Carlo** — simulation d'accès au mana, commandant, moteur, interaction, rebuild et explosivité jusqu'à T7.
-4. **Power distribution** — médiane, P20, P80, variance, consistance et dimensions.
+2. **Package graph** — sous-systèmes producteurs/payoffs : early commander, Blink/ETB, Constellation, tokens, sacrifice, cimetière, marqueurs…
+3. **Monte Carlo d'accès** — accès probable au mana, commandant, package opérationnel, interaction, ressource et burst jusqu'à T7.
+4. **Power distribution** — médiane, P20, P80, pic, dispersion, consistance et dimensions.
 5. **AeonShift prior** — signal externe optionnel et volontairement faible ; jamais une vérité Commander.
 
-Le moteur ne simule pas une partie complète de Magic : sans moteur de règles, stack, cibles, choix politiques et trois adversaires, cela donnerait une fausse précision.
+Le moteur ne simule pas une partie complète de Magic. Les colonnes d'accès sont évaluées indépendamment : elles ne prétendent pas qu'on peut tout faire simultanément dans une même ligne de jeu.
 
-## Calibration v3
+## Ce que v3.1 corrige
 
-Corpus final : **38 listes réelles**.
+- reminder text exclu des rôles fonctionnels ;
+- séparation type de carte / mot simplement cité dans Oracle ;
+- Blink propre ≠ removal ;
+- producteurs et payoffs affichés séparément et dédupliqués ;
+- marqueurs, doubles tokens et doubles triggers séparés ;
+- `fast-mana` et `burst-mana` séparés ;
+- fenêtres de mana colorée plus réalistes ;
+- conditions spécifiques de LED, Chrome Mox, Mox Diamond, Mox Opal et Mox Amber ;
+- sorts de ramp non permanents non conservés artificiellement sur le battlefield interne ;
+- parser Sideboard / Maybeboard / Considering ;
+- résolution Scryfall exacte puis fuzzy conservatrice ;
+- garde-fous identité couleur et copie du commandant dans l'interface ;
+- labels de reprise/disruption rendus moins trompeurs.
 
-- 15 précons Commander officiels ;
-- 15 listes cEDH établies ;
-- 8 listes personnelles/publices Archidekt utilisées comme cohorte intermédiaire non ancre.
+## Protocole de validation v3.1
 
-Dernier run : **12/12 gates de qualité**.
+Le même head final doit passer :
 
-Repères observés sur ce corpus :
+```text
+smoke
+micro-sémantique
+métamorphique
+audit adversarial
+build production
+benchmark macro 1 800
+validation étendue
+benchmark macro 3 200
+validation étendue
+convergence 1 800 ↔ 3 200
+revue manuelle finale
+```
 
-- précons : médiane **49** ;
-- cohorte personnelle/public : médiane **57** ;
-- cEDH : médiane **78** ;
-- séparation précon/cEDH : **AUC 1.000** ;
-- écart médian : **29 points** ;
-- stabilité des reruns : **0 point d'écart** sur le sous-échantillon testé.
+Le benchmark contient au minimum 30 listes réelles. La sélection v3.1 est stratifiée pour ne pas utiliser seulement d'anciens précons et cherche aussi à diversifier les commandants cEDH.
 
-Ces valeurs sont des **repères de calibration, pas des seuils**. `49` ne signifie pas « précon tier », pas plus que `78` ne signifie automatiquement « cEDH ». Le profil complet et la variance restent plus importants qu'un nombre isolé.
-
-## Gates mesurés
-
-Le benchmark vérifie notamment :
-
-- taille et diversité du corpus ;
-- séparation globale et holdout ;
-- stabilité Monte Carlo ;
-- sensibilité au fast mana ;
-- sensibilité aux tutors ;
-- dépendance au commandant ;
-- échelle sémantique ;
-- précision des packages ;
-- cohorte intermédiaire non entraînée ;
-- signal combo.
-
-`12/12` signifie que **ces tests internes passent**. Ce n'est pas une preuve que le modèle est universellement parfait ; le corpus doit continuer à grandir.
+Les anciennes valeurs v3 (38 decks, précons ~49 / cohorte perso ~57 / cEDH ~78) restent uniquement des **repères historiques** tant que le rapport v3.1 final n'est pas passé.
 
 ## Installation
 
@@ -59,14 +59,17 @@ npm install
 npm run dev
 ```
 
-Vérifications locales :
+Vérifications locales rapides :
 
 ```bash
 npm run smoke
+npm run test:semantic
+npm run test:metamorphic
+npm run audit
 npm run build
 ```
 
-Benchmark complet (accès Internet requis pour les sources publiques / Scryfall) :
+Benchmark réseau complet :
 
 ```bash
 npm run benchmark
@@ -79,21 +82,27 @@ npm run validate:calibration
 - indiquer le commandant ;
 - choisir 1 500 / 3 000 / 6 000 séquences ;
 - optionnel : importer le CSV AeonShift courant ;
-- lire **médiane + plancher + plafond + variance + dimensions + packages**, pas seulement la médiane.
+- lire **médiane + P20 + P80 + pic + dispersion + dimensions + packages**, pas seulement la médiane.
+
+La v3.1 supporte actuellement **un seul commandant**. Les configurations Partner / Friends Forever / Background à deux commandants ne sont pas encore modélisées.
 
 ## Limites connues
 
 - pas de moteur de règles Magic complet ;
-- mana colorée encore simplifiée ;
-- base de combos haute confiance volontairement petite ;
-- les tutors augmentent l'accès mais leurs cibles ne sont pas encore résolues dynamiquement ;
-- les interactions adverses ne sont pas encore simulées comme des scénarios complets ;
+- les tuteurs sont détectés mais leurs cibles ne sont pas exécutées dynamiquement ;
+- la pioche est mesurée comme capacité accessible mais n'est pas encore propagée comme de nouvelles cartes dans toutes les séquences futures ;
+- les coûts alternatifs contextuels comme Force of Will/Fierce Guardianship ne sont pas encore planifiés complètement ;
+- symboles hybrides/phyrexians et certaines capacités de mana spéciales restent approximatifs ;
+- base de combos haute confiance volontairement petite et **non exhaustive** ;
+- « options de reprise » n'est pas une simulation complète d'un wipe ;
+- politique multijoueur, stack réelle, cibles et décisions adverses ne sont pas simulées ;
 - AeonShift reste contextuel à son propre système de points.
 
-## Priorités v4
+## Priorités après v3.1
 
-- mana colorée et fenêtres de paiement exactes ;
 - graphe tutor → cible → package ;
-- scénarios commandant neutralisé / post-wipe / moteur retiré ;
-- élargissement continu du corpus de calibration ;
-- calibration sur données de parties réelles lorsque disponibles.
+- propagation réelle de la pioche ;
+- solveur complet des coûts alternatifs/spéciaux ;
+- scénarios commandant neutralisé / post-wipe / moteur retiré / graveyard hate ;
+- support multi-commandants ;
+- élargissement du corpus et données de parties réelles.

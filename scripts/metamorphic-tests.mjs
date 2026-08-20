@@ -1,0 +1,81 @@
+import assert from 'node:assert/strict'
+import { analyzePower } from '../src/engine/powerModel.js'
+import { applyCommanderLondonBottom } from '../src/engine/sequenceSimulator.js'
+
+let id=0
+const mk=(name,oracle='',cmc=2,type='Instant',manaCost='',producedMana=[])=>({name:`${name}${name==='Forest'||name==='Plains'?'':' '+(++id)}`,oracle,cmc,type,manaCost,producedMana,id:String(id)})
+const forest=()=>mk('Forest','{T}: Add {G}.',0,'Basic Land — Forest','',['G'])
+const plains=()=>mk('Plains','{T}: Add {W}.',0,'Basic Land — Plains','',['W'])
+const tappedGreen=()=>mk('Tapped Grove','Tapped Grove enters tapped. {T}: Add {G}.',0,'Land','',['G'])
+const ancient=()=>({name:'Ancient Tomb',oracle:'{T}: Add {C}{C}. Ancient Tomb deals 2 damage to you.',cmc:0,type:'Land',manaCost:'',producedMana:['C'],id:`tomb-${++id}`})
+const blank=(i=0)=>mk(`Blank${i}`,'',3,'Creature — Bear','{2}{G}')
+const draw=()=>mk('Draw','Draw two cards.',2,'Sorcery','{1}{G}')
+const remove=()=>mk('Removal','Destroy target creature an opponent controls.',2,'Instant','{1}{G}')
+const tutor=()=>mk('Tutor','Search your library for a card, put it into your hand, then shuffle.',2,'Sorcery','{1}{G}')
+const blink=()=>mk('Blink','Exile target creature you control, then return it to the battlefield.',1,'Instant','{W}')
+const etb=()=>mk('ETB','When this creature enters the battlefield, draw a card.',2,'Creature','{1}{W}')
+const cmd={name:'Test Commander',oracle:'Whenever another permanent enters under your control, draw a card.',cmc:4,type:'Legendary Creature',manaCost:'{2}{G}{G}',producedMana:[],id:'cmd'}
+function baseDeck(){return [...Array.from({length:36},forest),...Array.from({length:63},(_,i)=>blank(i))]}
+function replace(deck,n,cards){return [...deck.slice(0,deck.length-n),...cards]}
+function profile(deck,commander=cmd){return analyzePower(deck,commander,null,900)}
+
+const inert=baseDeck()
+const focused=replace(inert,20,[...Array.from({length:6},draw),...Array.from({length:5},remove),...Array.from({length:4},blink),...Array.from({length:5},etb)])
+const fast=replace(focused,4,[
+  {name:'Lotus Petal',oracle:'{T}, Sacrifice Lotus Petal: Add one mana of any color.',cmc:0,type:'Artifact',manaCost:'{0}',producedMana:['W','U','B','R','G']},
+  {name:'Elvish Spirit Guide',oracle:'Exile Elvish Spirit Guide from your hand: Add {G}.',cmc:3,type:'Creature',manaCost:'{2}{G}',producedMana:['G']},
+  {name:'Mana Crypt',oracle:'{T}: Add {C}{C}.',cmc:0,type:'Artifact',manaCost:'{0}',producedMana:['C']},
+  {name:'Mana Vault',oracle:'{T}: Add {C}{C}{C}.',cmc:1,type:'Artifact',manaCost:'{1}',producedMana:['C']},
+])
+const tutored=replace(focused,5,Array.from({length:5},tutor))
+const a=profile(inert),b=profile(focused),c=profile(fast),d=profile(tutored)
+assert(b.dimensions.synergy>a.dimensions.synergy)
+assert(c.dimensions.speed>b.dimensions.speed)
+assert(c.dimensions.explosiveness>b.dimensions.explosiveness)
+assert(d.profile.consistency>=b.profile.consistency)
+assert(b.profile.median>a.profile.median)
+
+const r1=profile(focused),r2=profile(focused)
+assert.deepEqual(r1.profile,r2.profile)
+assert.deepEqual(r1.simulation.turnProfile,r2.simulation.turnProfile)
+
+const greenCmd={name:'Five Color',oracle:'',cmc:5,type:'Legendary Creature',manaCost:'{W}{U}{B}{R}{G}',id:'five'}
+const monoGreen=[...Array.from({length:45},forest),...Array.from({length:54},(_,i)=>blank(i))]
+const mixed=[...Array.from({length:9},plains),...Array.from({length:9},forest),...Array.from({length:9},()=>mk('Island','{T}: Add {U}.',0,'Basic Land — Island','',['U'])),...Array.from({length:9},()=>mk('Swamp','{T}: Add {B}.',0,'Basic Land — Swamp','',['B'])),...Array.from({length:9},()=>mk('Mountain','{T}: Add {R}.',0,'Basic Land — Mountain','',['R'])),...Array.from({length:54},(_,i)=>blank(i))]
+const mg=profile(monoGreen,greenCmd),mx=profile(mixed,greenCmd)
+assert(mx.simulation.turnProfile[6].commander>mg.simulation.turnProfile[6].commander)
+assert.equal(mg.simulation.turnProfile[6].commander,0)
+
+const tappedDeck=[...Array.from({length:36},tappedGreen),...Array.from({length:63},(_,i)=>blank(i))]
+const tapped=profile(tappedDeck)
+assert(tapped.simulation.turnProfile[3].commander<a.simulation.turnProfile[3].commander,'Unconditional tapped lands must reduce T4 commander access')
+
+const genericCmd={name:'Generic Five',oracle:'',cmc:5,type:'Legendary Creature',manaCost:'{5}',id:'generic5'}
+const normalMana=[...Array.from({length:36},forest),...Array.from({length:63},(_,i)=>blank(i))]
+const tombMana=[...Array.from({length:4},ancient),...Array.from({length:32},forest),...Array.from({length:63},(_,i)=>blank(i))]
+const normalGeneric=profile(normalMana,genericCmd),tombGeneric=profile(tombMana,genericCmd)
+assert(tombGeneric.simulation.turnProfile[3].commander>normalGeneric.simulation.turnProfile[3].commander,'Ancient Tomb must improve early generic commander access')
+
+const londonHand=[
+  {name:'Land A',isLand:true,sourceColors:['G'],oracle:'',type:'Land'},
+  {name:'Land B',isLand:true,sourceColors:['G'],oracle:'',type:'Land'},
+  {name:'Land C',isLand:true,sourceColors:['G'],oracle:'',type:'Land'},
+  {name:'Land D',isLand:true,sourceColors:['G'],oracle:'',type:'Land'},
+  {name:'Early',isLand:false,cmc:1,tags:['draw'],interaction:0},
+  {name:'Mid',isLand:false,cmc:3,tags:[],interaction:0},
+  {name:'Seven Drop',isLand:false,cmc:7,tags:[],interaction:0},
+]
+const freeMulligan=applyCommanderLondonBottom(londonHand,0,{manaReq:{colored:[['G']]}})
+assert.equal(freeMulligan.hand.length,7,'Commander first multiplayer mulligan must remain free')
+const paidMulligan=applyCommanderLondonBottom(londonHand,1,{manaReq:{colored:[['G']]}})
+assert.equal(paidMulligan.hand.length,6,'Second mulligan must apply one London bottom')
+assert.equal(paidMulligan.bottom.length,1)
+assert(!paidMulligan.hand.some(x=>x===paidMulligan.bottom[0]))
+
+for(const r of [a,b,c,d,mg,mx,tapped,normalGeneric,tombGeneric]){
+  for(const v of [r.profile.median,r.profile.floor,r.profile.ceiling,r.profile.peak,r.profile.dispersion,...Object.values(r.dimensions)])assert(Number.isFinite(v)&&v>=0&&v<=100)
+  assert(r.profile.floor<=r.profile.median)
+  assert(r.profile.median<=r.profile.ceiling)
+  assert(r.profile.ceiling<=r.profile.peak)
+}
+console.log('METAMORPHIC OK — directionality, determinism, color access, tapped lands, Ancient Tomb, Commander London mulligan and score invariants')

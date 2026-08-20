@@ -1,15 +1,20 @@
 {
   "name": "aeon-scorer",
   "private": true,
-  "version": "3.0.0",
+  "version": "3.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "smoke": "node scripts/smoke.mjs",
+    "test:semantic": "node scripts/semantic-tests.mjs && node scripts/tutor-semantic-test.mjs && node scripts/etb-semantic-test.mjs",
+    "test:metamorphic": "node scripts/metamorphic-tests.mjs && node scripts/ramp-chain-test.mjs",
+    "audit": "node scripts/adversarial-audit.mjs",
     "benchmark": "node scripts/benchmark.mjs",
-    "validate:calibration": "node scripts/validate-report.mjs"
+    "validate:calibration": "node scripts/validate-report.mjs",
+    "verify:sampling": "node scripts/compare-sampling.mjs",
+    "quality:local": "npm run smoke && npm run test:semantic && npm run test:metamorphic && npm run audit && npm run build"
   },
   "dependencies": {
     "react": "^18.2.0",
