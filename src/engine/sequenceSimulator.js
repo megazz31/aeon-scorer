@@ -34,11 +34,18 @@ function permanentRampSources(c,commander){
   const count=c.tags.includes('land-ramp')?1:productionCount(c)
   return Array.from({length:count},()=>source(colors.length?colors:['C'],c.name))
 }
-function burstNetSources(c,baseSources,seenCards,forCommander=false){
+function burstPriority(c){
+  const n=c.name.toLowerCase()
+  if(/lotus petal|elvish spirit guide|simian spirit guide|lion's eye diamond|jeweled lotus/.test(n))return 0
+  if(/dark ritual|cabal ritual|rite of flame|mana vault|grim monolith/.test(n))return 1
+  if(/culling the weak/.test(n))return 2
+  return 1
+}
+function burstNetSources(c,baseSources,battlefield,forCommander=false){
   const n=c.name.toLowerCase(),any=['W','U','B','R','G'],hasB=baseSources.some(s=>s.options.includes('B')),hasR=baseSources.some(s=>s.options.includes('R'))
   if(n.includes('dark ritual'))return hasB?[source(['B'],c.name),source(['B'],c.name)]:[]
   if(n.includes('cabal ritual'))return hasB&&baseSources.length>=2?[source(['B'],c.name)]:[]
-  if(n.includes('culling the weak')){const creature=seenCards.some(x=>x.isCreature&&x!==c);return hasB&&creature?[source(['B'],c.name),source(['B'],c.name),source(['B'],c.name)]:[]}
+  if(n.includes('culling the weak')){const creature=battlefield.some(x=>x.isCreature);return hasB&&creature?[source(['B'],c.name),source(['B'],c.name),source(['B'],c.name)]:[]}
   if(n.includes('rite of flame'))return hasR?[source(['R'],c.name)]:[]
   if(n.includes('elvish spirit guide'))return [source(['G'],c.name)]
   if(n.includes('simian spirit guide'))return [source(['R'],c.name)]
@@ -73,7 +80,12 @@ function canPayPair(a,b,sources){
   const ra=paymentOptions(a),rb=paymentOptions(b),fake={cmc:ra.total+rb.total,manaReq:{generic:ra.generic+rb.generic,colored:[...ra.colored,...rb.colored],total:ra.total+rb.total}}
   return canPay(fake,sources)
 }
-function potentialSources(activeSources,hand,used,forCommander=false){const out=[...activeSources],seen=hand.filter(c=>!used.has(c));for(const c of seen.filter(isBurst))out.push(...burstNetSources(c,out,seen,forCommander));return out}
+function potentialSources(activeSources,hand,used,forCommander=false,battlefield=[]){
+  const out=[...activeSources]
+  const bursts=hand.filter(c=>!used.has(c)&&isBurst(c)).sort((a,b)=>burstPriority(a)-burstPriority(b)||a.name.localeCompare(b.name))
+  for(const c of bursts)out.push(...burstNetSources(c,out,battlefield,forCommander))
+  return out
+}
 function chooseLand(hand,used,commander){
   const lands=hand.filter(c=>c.isLand&&!used.has(c));if(!lands.length)return null
   const needs=new Set(commander?.manaReq?.colored?.flat()||[])
@@ -136,7 +148,7 @@ export function simulateSequences(cards,commander,packages,combos=[],iterations=
           else {turnSources=[...remaining];pendingSources.push(...produced)}
         }
       }
-      const generalSources=potentialSources(turnSources,hand,used,false),commanderSources=potentialSources(turnSources,hand,used,true)
+      const generalSources=potentialSources(turnSources,hand,used,false,battlefield),commanderSources=potentialSources(turnSources,hand,used,true,battlefield)
       if(commander&&cmdTurn==null&&canPay(commander,commanderSources)){cmdTurn=turn;battlefield.push(commander)}
       const engine=operationalPackage(hand,priorHand,battlefield,used,packages,generalSources,priorSources)
       if(engine.ok&&engineTurn==null)engineTurn=turn;if(turn===4&&engine.ok)disruptedPackageId=engine.packageId
