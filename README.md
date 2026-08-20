@@ -2,8 +2,8 @@
 
 **MTG Commander / EDH deck power level analyzer based on Monte Carlo access, card roles and synergy packages.**
 
-**Current production:** v3.2.0 · semantic model `3.2.0-semantic-1`  
-**Live app:** https://aeon-scorer.vercel.app
+Current production: v3.2.0 · semantic model `3.2.0-semantic-1`  
+Live app: https://aeon-scorer.vercel.app
 
 Aeon Scorer was built around a simple problem: saying *“my Commander deck is a 7”* is rarely enough to balance a table. Two decks can share the same subjective power level while having completely different low rolls, high rolls, speed and peak potential.
 
