@@ -38,7 +38,7 @@ function normalizeCard(c){
   const oracle=c.oracle_text||faces.map(f=>f.oracle_text||'').join('\n')
   const producedMana=c.produced_mana||uniq(faces.flatMap(f=>f.produced_mana||[]))
   return {
-    id:c.id,name:c.name,aliases:faces.map(f=>f.name).filter(Boolean),manaCost:c.mana_cost||faces.map(f=>f.mana_cost||'').join(' // '),cmc:Number(c.cmc||0),
+    id:c.id,oracleId:c.oracle_id||c.id,name:c.name,aliases:faces.map(f=>f.name).filter(Boolean),manaCost:c.mana_cost||faces.map(f=>f.mana_cost||'').join(' // '),cmc:Number(c.cmc||0),
     type:c.type_line||'',oracle,colors:c.colors||[],colorIdentity:c.color_identity||[],keywords:c.keywords||[],
     producedMana:producedMana||[],power:c.power??faces[0]?.power??null,toughness:c.toughness??faces[0]?.toughness??null,
     legalities:c.legalities||{},edhrecRank:c.edhrec_rank??null,image:c.image_uris?.normal||faces[0]?.image_uris?.normal||null,
