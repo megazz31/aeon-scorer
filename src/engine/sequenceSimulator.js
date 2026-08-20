@@ -50,7 +50,7 @@ function burstNetSources(c,baseSources,battlefield,forCommander=false){
   if(n.includes('elvish spirit guide'))return [source(['G'],c.name)]
   if(n.includes('simian spirit guide'))return [source(['R'],c.name)]
   if(n.includes('lotus petal'))return [source(any,c.name)]
-  if(n.includes("lion's eye diamond"))return [source(any,c.name),source(any,c.name),source(any,c.name)]
+  if(n.includes("lion's eye diamond"))return forCommander?[source(any,c.name),source(any,c.name),source(any,c.name)]:[]
   if(n.includes('mana vault'))return baseSources.length>=1?[source(['C'],c.name),source(['C'],c.name)]:[]
   if(n.includes('grim monolith'))return baseSources.length>=2?[source(['C'],c.name)]:[]
   if(n.includes('jeweled lotus'))return forCommander?[source(any,c.name),source(any,c.name),source(any,c.name)]:[]
