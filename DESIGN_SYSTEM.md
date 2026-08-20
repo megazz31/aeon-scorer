@@ -12,12 +12,22 @@ Aeon Scorer should feel like a **serious analysis instrument for Commander playe
 - one strong purple accent, not rainbow status colors;
 - metrics are the visual hierarchy, diagnostics are secondary.
 
+## Language policy
+
+- **English is the first-visit default** across navigation, analyzer, results, diagnostics, public pages, metadata and footer.
+- French is available through the persistent **EN / FR** switch.
+- Never mix untranslated French UI copy into the English view or vice versa, except established Magic terms and proper card names.
+- The document `lang` attribute and page metadata must follow the selected language.
+- Commander Brackets and Aeon Score are different concepts: copy must never imply that Aeon replaces the five official Commander Brackets.
+
 ## Typography
 
 - Primary family: **Manrope**.
 - Code/decklist editor: system monospace.
 - Headlines use tighter tracking and moderate weight rather than extreme boldness.
 - Numeric output uses tabular figures where alignment matters.
+- **11 px is the absolute minimum for intentionally visible UI text.** Most microcopy should sit at 12–14 px.
+- Navigation subtitle, calibration proof, commander support notes, diagnostics and footer text must remain comfortably readable.
 - Never use browser-default blue links.
 
 ## Color tokens
@@ -46,10 +56,10 @@ Purple is for focus, selected states and the power result. It should not fill ev
 
 The public result must answer this in order:
 
-1. **Puissance médiane**
-2. **Sortie basse / P20**
-3. **Sortie haute / P80**
-4. **Pic**
+1. **Median power**
+2. **Low output / P20**
+3. **High output / P80**
+4. **Peak**
 
 The visual distribution bar is allowed because it makes those four values easier to compare. Coverage, commander dependency, dimensions, packages and drivers belong in the detailed diagnostic unless they represent a warning.
 
@@ -57,7 +67,7 @@ The visual distribution bar is allowed because it makes those four values easier
 
 - Labels stay above controls.
 - Primary action is visually unique.
-- Optional expert inputs belong under progressive disclosure (`Options avancées`).
+- Optional expert inputs belong under progressive disclosure (`Advanced options` / `Options avancées`).
 - Deck size feedback is visible beside the decklist label.
 - Focus states must be visible and use the accent color sparingly.
 
@@ -77,6 +87,9 @@ Do not reintroduce:
 - a card for every sentence;
 - full-width statistics with no decision value;
 - tiny low-contrast text used for important information;
+- visible text below 11 px;
+- mixed-language UI in one selected locale;
+- ambiguous “power level 7” wording that can be confused with Commander Brackets;
 - unrelated icon libraries merely for decoration;
 - personal-deck cohort as a public calibration reference.
 
