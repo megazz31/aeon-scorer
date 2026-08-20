@@ -56,12 +56,34 @@ function pairOperational(a,b,battlefield,currentSources,priorSources,priorHandSe
 function operationalPackage(hand,priorHand,battlefield,used,packages,currentSources,priorSources){const available=[...battlefield,...hand.filter(c=>!used.has(c)),...priorHand],priorSet=new Set(priorHand);for(const p of packages.filter(x=>x.id!=='early-commander')){const producers=(p.producerCards||[]).map(x=>cardByName(available,x.name)).filter(Boolean),payoffs=(p.payoffCards||[]).map(x=>cardByName(available,x.name)).filter(Boolean);for(const a of producers)for(const b of payoffs){if(a.name.toLowerCase()===b.name.toLowerCase())continue;if(pairOperational(a,b,battlefield,currentSources,priorSources,priorSet))return {ok:true,packageId:p.id}}}return {ok:false,packageId:null}}
 function comboAccessible(hand,priorHand,battlefield,used,combos,currentSources,priorSources){if(!combos?.length)return false;const available=[...battlefield,...hand.filter(c=>!used.has(c)),...priorHand],priorSet=new Set(priorHand);for(const combo of combos){const pieces=combo.cards.map(n=>cardByName(available,n)).filter(Boolean);if(pieces.length!==combo.cards.length)continue;if(pieces.length===2&&pairOperational(pieces[0],pieces[1],battlefield,currentSources,priorSources,priorSet))return true;if(pieces.every(c=>battlefield.includes(c)||canPay(c,currentSources)))return true}return false}
 
+function keepOpeningHand(hand){const lands=hand.filter(c=>c.isLand).length,early=hand.some(c=>!c.isLand&&((c.cmc||0)<=2||c.tags?.includes('fast-mana')||c.tags?.includes('land-ramp')));return lands>=2&&lands<=5&&early}
+function bottomKeepValue(c,commander,landCount){
+  if(c.isLand){const needs=new Set(commander?.manaReq?.colored?.flat()||[]),colorHits=inferredLandColors(c).filter(x=>needs.has(x)).length;return landCount>3?-8+colorHits+(alwaysTappedLand(c)?-1:0):5+colorHits}
+  let v=0
+  if(c.tags?.includes('fast-mana')||c.tags?.includes('land-ramp'))v+=8
+  if((c.cmc||0)<=2)v+=4
+  if(c.tags?.includes('draw')||c.interaction>0)v+=2
+  if((c.cmc||0)>=5)v-=4
+  if((c.cmc||0)>=7)v-=2
+  return v
+}
+export function applyCommanderLondonBottom(hand,penalty,commander=null){
+  if(penalty<=0)return {hand:[...hand],bottom:[]}
+  const landCount=hand.filter(c=>c.isLand).length,ranked=[...hand].map((c,i)=>({c,i,v:bottomKeepValue(c,commander,landCount)})).sort((a,b)=>a.v-b.v||b.i-a.i),bottom=ranked.slice(0,Math.min(penalty,hand.length)).map(x=>x.c),bottomSet=new Set(bottom)
+  return {hand:hand.filter(c=>!bottomSet.has(c)),bottom}
+}
+function openingHand(libBase,commander,rng){
+  let lib=[],hand=[],mulligans=0
+  while(true){lib=shuffle(libBase,rng);hand=lib.splice(0,7);if(keepOpeningHand(hand)||mulligans>=2)break;mulligans++}
+  const penalty=Math.max(0,mulligans-1),adjusted=applyCommanderLondonBottom(hand,penalty,commander);lib.push(...adjusted.bottom)
+  return {lib,hand:adjusted.hand,mulligans,penalty}
+}
+
 export function simulateSequences(cards,commander,packages,combos=[],iterations=3000,maxTurn=7,rng=Math.random){
   const libBase=cards.filter(c=>!commander||c.name.toLowerCase()!==commander.name.toLowerCase()||c.__keepIn99),samples=[],cmdTurns=[],engineTurns=[],recoverySamples=[]
   const turnStats=Array.from({length:maxTurn},()=>({cmd:0,engine:0,interaction:0,resource:0,burst:0,total:0}))
   for(let it=0;it<iterations;it++){
-    let lib=shuffle(libBase,rng),hand=lib.splice(0,7)
-    for(let mull=0;mull<2;mull++){const lands=hand.filter(c=>c.isLand).length,early=hand.some(c=>!c.isLand&&(c.cmc||0)<=2);if(lands>=2&&lands<=5&&early)break;lib=shuffle(libBase,rng);hand=lib.splice(0,7)}
+    let {lib,hand}=openingHand(libBase,commander,rng)
     const used=new Set(),battlefield=[],activeSources=[]
     let pendingSources=[],priorSources=[],cmdTurn=null,engineTurn=null,peak=0,sum=0,recovered=false,disruptedPackageId=null
     for(let turn=1;turn<=maxTurn;turn++){
