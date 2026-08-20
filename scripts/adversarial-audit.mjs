@@ -58,6 +58,7 @@ for(const name of ['chrome mox','mox diamond','mox opal','mox amber'])assert(seq
 assert(/if\(isPermanentCard\(ramp\)\)battlefield\.push\(ramp\)/.test(sequence),'Sorcery ramp must not remain as a battlefield permanent')
 
 assert(/precon-temporal-coverage/.test(benchmark)&&/cedh-commander-diversity/.test(benchmark),'Macro anchors must be temporally and strategically diversified')
+assert(/sepAll\.preconMedian<=55/.test(benchmark)&&/sepAll\.cedhMedian>=72/.test(benchmark),'Base benchmark must preserve the strict presentation-scale gate')
 assert(/strictScale\.precon<=55/.test(validator)&&/strictScale\.cedh>=72/.test(validator),'Extended validation must preserve strict scale gates instead of relaxing them')
 assert(/semantic/.test(workflow)&&/metamorphic/.test(workflow)&&/audit/.test(workflow)&&/3200/.test(workflow),'CI must execute micro, adversarial and cross-iteration verification')
 
@@ -65,4 +66,4 @@ assert(!/Dernier run\s*:\s*\*\*12\/12/i.test(readme),'README must not claim the 
 assert(/v3\.1 est en validation/i.test(readme),'README must state pre-validation status before final CI')
 assert(/pioche.*ne lance pas ensuite réellement/is.test(notes)&&/tuteurs.*ne sont pas exécutées dynamiquement/is.test(notes),'Known sequence-model limits must remain documented')
 
-console.log('ADVERSARIAL AUDIT OK — semantics, imports, name resolution, UI claims, mana edge cases, benchmark policy, disclosures and CI wiring')
+console.log('ADVERSARIAL AUDIT OK — semantics, imports, name resolution, UI claims, mana edge cases, strict benchmark policy, disclosures and CI wiring')
