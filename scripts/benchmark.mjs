@@ -150,7 +150,7 @@ async function evaluateQuality(decks,scored){
     {id:'fast-mana',ok:!!fastManaSensitivity&&fastManaSensitivity.speedDelta>=4&&fastManaSensitivity.explosiveDelta>=5&&fastManaSensitivity.commanderTurnDelta>=0,detail:JSON.stringify(fastManaSensitivity)},
     {id:'tutors',ok:!!tutorSensitivity&&tutorSensitivity.consistencyDelta>=0&&tutorSensitivity.medianDelta>=0,detail:JSON.stringify(tutorSensitivity)},
     {id:'commander-dependency',ok:commanderDependency.positive>=Math.ceil(commanderDependency.total*.75),detail:JSON.stringify(commanderDependency)},
-    {id:'semantic-scale',ok:sepAll.preconMedian>=42&&sepAll.preconMedian<=58&&sepAll.cedhMedian>=70&&sepAll.cedhMedian<=90,detail:`precon ${sepAll.preconMedian.toFixed(1)}, cEDH ${sepAll.cedhMedian.toFixed(1)}`},
+    {id:'semantic-scale',ok:sepAll.preconMedian>=42&&sepAll.preconMedian<=55&&sepAll.cedhMedian>=72&&sepAll.cedhMedian<=88,detail:`strict precon ${sepAll.preconMedian.toFixed(1)}, cEDH ${sepAll.cedhMedian.toFixed(1)}`},
   ]
   return {score:gates.filter(g=>g.ok).length,total:gates.length,gates,separation:{all:sepAll,calibration:sepCal,holdout:sepHold},temporal,distinctCedhCommanders,repeatability,fastManaSensitivity,tutorSensitivity,commanderDependency}
 }
