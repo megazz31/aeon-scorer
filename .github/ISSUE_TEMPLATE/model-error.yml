@@ -1,0 +1,39 @@
+name: Deck analysis looks wrong
+description: Report a Commander deck, card role or package that Aeon Scorer appears to misread.
+title: "[Model] "
+labels: []
+body:
+  - type: input
+    id: commander
+    attributes:
+      label: Commander
+      placeholder: Hei Bai, Forest Guardian
+    validations:
+      required: true
+  - type: textarea
+    id: decklist
+    attributes:
+      label: Decklist or public deck link
+      description: A full reproducible list is much more useful than a screenshot alone.
+    validations:
+      required: true
+  - type: input
+    id: profile
+    attributes:
+      label: Aeon profile
+      placeholder: "66 [53–77] · peak 93"
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What looks wrong?
+      description: Mention the package, role, turn-access value or score behavior that seems incorrect.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect instead, and why?
+    validations:
+      required: true
