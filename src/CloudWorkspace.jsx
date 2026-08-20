@@ -1,8 +1,7 @@
 import { useEffect,useMemo,useState } from 'react'
 import { analysisHistory,deleteDeck,deleteMyAnalysisData,hashDeck,listDecks,recordAnalysis,restoreSession,saveDeck,signIn,signOut,signUp } from './supabaseClient.js'
+import { ENGINE_VERSION,SEMANTIC_VERSION } from './version.js'
 
-const ENGINE_VERSION='3.2.0'
-const SEMANTIC_VERSION='3.2.0-semantic-1'
 const t=(lang,en,fr)=>lang==='fr'?fr:en
 const language=()=>localStorage.getItem('aeon-lang')==='fr'?'fr':'en'
 const nativeSet=(el,value)=>{if(!el)return;const proto=el instanceof HTMLTextAreaElement?HTMLTextAreaElement.prototype:HTMLInputElement.prototype;Object.getOwnPropertyDescriptor(proto,'value')?.set?.call(el,value);el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}))}
@@ -29,7 +28,7 @@ export default function CloudWorkspace({children}){
  useEffect(()=>{
    const hook=async({result,cards,commander,iterations})=>{try{const input=currentInput();if(!input.decklist||!commander?.name)return;const deckHash=await hashDeck(input.decklist,commander.name),uniq=new Map();for(const c of [...(cards||[]),commander].filter(Boolean)){const id=c.oracleId||c.id||c.name;if(!uniq.has(id))uniq.set(id,{oracleId:c.oracleId||c.id,scryfallId:c.scryfallId||c.id||null,name:c.name,oracle:c.oracle||'',type:c.type||'',tags:c.tags||[]})}const out=await recordAnalysis(session,{deckId:active?.id||null,deckName:active?.name||null,decklist:input.decklist,commanderName:commander.name,deckHash,engineVersion:ENGINE_VERSION,semanticVersion:SEMANTIC_VERSION,iterations,cards:[...uniq.values()],result});if(active&&out?.ok)reload(session)}catch(e){console.warn('Aeon cloud analysis logging failed',e)}}
    window.__AEON_ANALYSIS_HOOK__=hook;return()=>{if(window.__AEON_ANALYSIS_HOOK__===hook)delete window.__AEON_ANALYSIS_HOOK__}
- },[session?.access_token,active?.id])
+ },[session?.access_token,active?.id,active?.name])
  async function saveCurrent(){if(!session)return setOpen(true);const input=currentInput();if(!input.decklist||!input.commander)return setNotice(t(lang,'Paste a decklist and commander first.','Colle d’abord une decklist et un commandant.'));setBusy(true);try{const hash=await hashDeck(input.decklist,input.commander),name=(saveName||active?.name||input.commander).trim().slice(0,100),row=await saveDeck(session,{id:active?.id||null,name,commanderName:input.commander,decklist:input.decklist,deckHash:hash,engineVersion:ENGINE_VERSION});setActive(row);setSaveName(row.name);setNotice(t(lang,'Deck saved. Future analyses will be attached to its history.','Deck sauvegardé. Les prochaines analyses seront liées à son historique.'));await reload(session)}catch(e){setNotice(e.message||String(e))}finally{setBusy(false)}}
  function load(deck){nativeSet(document.getElementById('decklist'),deck.original_decklist);nativeSet(document.getElementById('commander'),deck.commander_name||deck.deck_data?.commander||'');setActive(deck);setSaveName(deck.name);setNotice(t(lang,'Deck loaded. Run a new analysis to compare it with older engine versions.','Deck chargé. Relance une analyse pour la comparer aux anciennes versions du moteur.'));setOpen(false);window.scrollTo({top:document.querySelector('.analyzerCard')?.offsetTop||0,behavior:'smooth'})}
  async function remove(deck){if(!confirm(t(lang,`Delete “${deck.name}” and its linked analysis history from your account?`,`Supprimer « ${deck.name} » et son historique d’analyses lié de ton compte ?`)))return;setBusy(true);try{await deleteDeck(session,deck.id);if(active?.id===deck.id){setActive(null);setSaveName('')}await reload(session)}finally{setBusy(false)}}

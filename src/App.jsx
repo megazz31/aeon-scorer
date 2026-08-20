@@ -3,6 +3,7 @@ import { parseDecklist,fetchCards,fetchCard } from './scryfall.js'
 import { parseAeonShiftCsv } from './data/aeonshift.js'
 import { analyzePower } from './engine/powerModel.js'
 import { SITE_META,WhyPage,MethodPage,AboutPage } from './sitePages.jsx'
+import { AEON_LABEL,MODEL_ID } from './version.js'
 
 const SAMPLE=`1 Sol Ring\n1 Arcane Signet\n1 Swords to Plowshares\n1 Beast Within\n1 Cultivate\n1 Harmonize\n36 Forest`
 const CALIBRATION={precon:49,cedh:78}
@@ -107,7 +108,7 @@ export default function App(){
       {route==='/'&&<>
         <section className="homeHero">
           <div className="heroCopy">
-            <div className="heroKicker"><span className="statusDot"/>Aeon Scorer v3.1 · {L('validated model','modèle validé')}</div>
+            <div className="heroKicker"><span className="statusDot"/>Aeon Scorer {AEON_LABEL} · {L('validated model','modèle validé')}</div>
             <h1>{L('Commander power is more than a bracket.','La puissance d’un deck ne se résume pas à un bracket.')}</h1>
             <p>{L('The five Commander Brackets describe intended play experience. Aeon Scorer estimates what your deck can actually produce through a ','Les cinq brackets Commander décrivent une expérience de jeu. Aeon Scorer estime ce que ton deck peut réellement produire avec une ')}<b>{L('median','médiane')}</b>, {L('a ','une ')}<b>{L('low output','sortie basse')}</b>, {L('a ','une ')}<b>{L('high output','sortie haute')}</b> {L('and a ','et un ')}<b>{L('peak','pic')}</b>.</p>
             <div className="heroProof"><span>{L('38 calibration decks','38 decks de calibration')}</span><span>{L('1,800 / 3,200 sequences','1 800 / 3 200 séquences')}</span><span>{L('Micro + macro + convergence','Micro + macro + convergence')}</span></div>
@@ -115,8 +116,10 @@ export default function App(){
           <aside className="heroExample" aria-label={L('Aeon Scorer result example','Exemple de résultat Aeon Scorer')}><div className="exampleLabel">{L('How to read it','Exemple de lecture')}</div><div className="exampleScore"><strong>55</strong><div><span>45–65</span><small>{L('usual range','plage habituelle')}</small></div></div><div className="examplePeak"><span>{L('Peak','Pic')}</span><b>85</b></div><p>{L('Same median ≠ same deck. The range and peak show what a single number hides.','Même médiane ≠ même deck. La plage et le pic montrent ce qu’un chiffre unique cache.')}</p></aside>
         </section>
 
+        <section className="contentCallout" style={{marginBottom:18}}><b>{L('Aeon improves through real use.','Aeon s’améliore grâce aux analyses réelles.')}</b> {L('Each successful analysis is versioned and expands Aeon’s semantic QA corpus, including anonymous runs. It helps expose misread cards and regressions so future versions can improve. Analyses are evidence, never automatic truth.','Chaque analyse réussie est versionnée et agrandit le corpus QA sémantique d’Aeon, y compris les analyses anonymes. Cela aide à repérer les cartes mal comprises et les régressions pour améliorer les prochaines versions. Les analyses sont des indices, jamais une vérité automatique.')}</section>
+
         <section className="analyzerCard">
-          <div className="analyzerHeader"><div><span className="sectionEyebrow">{L('NEW ANALYSIS','NOUVELLE ANALYSE')}</span><h2>{L('Paste your decklist. Aeon does the rest.','Colle ta decklist. Aeon fait le reste.')}</h2></div><span className="validationPill"><i/>v3.1 {L('validated','validée')}</span></div>
+          <div className="analyzerHeader"><div><span className="sectionEyebrow">{L('NEW ANALYSIS','NOUVELLE ANALYSE')}</span><h2>{L('Paste your decklist. Aeon does the rest.','Colle ta decklist. Aeon fait le reste.')}</h2></div><span className="validationPill"><i/>{AEON_LABEL} {L('validated','validée')}</span></div>
           <div className="analyzerGrid">
             <div className="deckEditor"><div className="fieldHeader"><label htmlFor="decklist">Decklist</label><span className={`cardCount ${total===99||total===100?'ready':''}`}>{total} {L(total===1?'card':'cards',total>1?'cartes':'carte')}</span></div><textarea id="decklist" value={deckText} onChange={e=>setDeckText(e.target.value)} placeholder={SAMPLE}/><div className="editorFoot"><span>{L('99 cards with a separate commander · 100 when included','99 cartes si le commandant est séparé · 100 s’il est inclus')}</span><button type="button" className="textButton" onClick={()=>setDeckText('')}>{L('Clear','Effacer')}</button></div></div>
             <aside className="configPanel">
@@ -144,6 +147,6 @@ export default function App(){
         </section>}
       </>}
     </main>
-    <footer><div className="footerInner"><div><a href="/" className="footerBrand" onClick={e=>{e.preventDefault();navigate('/')}}>Aeon Scorer</a><span>{L('MTG Commander power analyzer','Analyseur de puissance MTG Commander')}</span></div><div className="footerLinks"><a href="/pourquoi" onClick={e=>{e.preventDefault();navigate('/pourquoi')}}>{L('Why','Pourquoi')}</a><a href="/methodologie" onClick={e=>{e.preventDefault();navigate('/methodologie')}}>{L('Methodology','Méthodologie')}</a><a href="/a-propos" onClick={e=>{e.preventDefault();navigate('/a-propos')}}>{L('About','À propos')}</a><a href="https://github.com/megazz31/aeon-scorer" target="_blank" rel="noreferrer">GitHub ↗</a></div><small>{L('Model','Modèle')} {result?.methodology.model||'sequence-access-v3.1-semantic'} · {L('AeonShift remains an optional weak prior.','AeonShift reste un prior faible et optionnel.')}</small></div></footer>
+    <footer><div className="footerInner"><div><a href="/" className="footerBrand" onClick={e=>{e.preventDefault();navigate('/')}}>Aeon Scorer</a><span>{L('MTG Commander power analyzer','Analyseur de puissance MTG Commander')}</span></div><div className="footerLinks"><a href="/pourquoi" onClick={e=>{e.preventDefault();navigate('/pourquoi')}}>{L('Why','Pourquoi')}</a><a href="/methodologie" onClick={e=>{e.preventDefault();navigate('/methodologie')}}>{L('Methodology','Méthodologie')}</a><a href="/a-propos" onClick={e=>{e.preventDefault();navigate('/a-propos')}}>{L('About','À propos')}</a><a href="https://github.com/megazz31/aeon-scorer" target="_blank" rel="noreferrer">GitHub ↗</a></div><small>{L('Model','Modèle')} {result?.methodology.model||MODEL_ID} · {L('AeonShift remains an optional weak prior.','AeonShift reste un prior faible et optionnel.')}</small></div></footer>
   </div>
 }

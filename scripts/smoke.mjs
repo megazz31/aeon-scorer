@@ -1,5 +1,7 @@
+import { readFileSync } from 'node:fs'
 import { analyzePower } from '../src/engine/powerModel.js'
 import { parseAeonShiftCsv } from '../src/data/aeonshift.js'
+import { AEON_LABEL,ENGINE_VERSION,MODEL_ID,SEMANTIC_VERSION } from '../src/version.js'
 
 const land = () => ({name:'Forest',type:'Basic Land — Forest',oracle:'',cmc:0,manaCost:'',id:crypto.randomUUID()})
 const card = (name,oracle,cmc,type='Instant') => ({name,oracle,cmc,type,manaCost:'',id:crypto.randomUUID()})
@@ -18,4 +20,17 @@ const csv='Name,Base Singleton,Duel Commander\nDark Ritual,5,5\nLotus Petal,16,1
 const map=parseAeonShiftCsv(csv)
 const r=analyzePower(deck,cmd,map,300)
 if(!Number.isFinite(r.profile.median)||!r.packages.some(p=>p.id==='early-commander')) throw new Error('Smoke test failed')
-console.log('Smoke OK', r.profile, r.packages.map(p=>p.name))
+if(r.methodology?.model!==MODEL_ID) throw new Error(`Model id mismatch: ${r.methodology?.model} !== ${MODEL_ID}`)
+
+const edge=readFileSync(new URL('../supabase/functions/record-analysis/index.ts',import.meta.url),'utf8')
+if(!edge.includes(`const ENGINE_VERSION='${ENGINE_VERSION}'`)) throw new Error('Frontend/record-analysis engine version mismatch')
+if(!edge.includes(`const SEMANTIC_VERSION='${SEMANTIC_VERSION}'`)) throw new Error('Frontend/record-analysis semantic version mismatch')
+
+const stalePublicLabels=['Aeon Scorer v3.1','v3.1 calibration and validation','Calibration et validation v3.1','v3.1 validated','v3.1 validée']
+for(const path of ['../src/App.jsx','../src/sitePages.jsx']){
+  const source=readFileSync(new URL(path,import.meta.url),'utf8')
+  const stale=stalePublicLabels.find(label=>source.includes(label))
+  if(stale) throw new Error(`Stale public version label in ${path}: ${stale}`)
+}
+if(AEON_LABEL!=='v3.2') throw new Error(`Unexpected public version label: ${AEON_LABEL}`)
+console.log('Smoke OK', {version:ENGINE_VERSION,semantic:SEMANTIC_VERSION,model:MODEL_ID,profile:r.profile,packages:r.packages.map(p=>p.name)})

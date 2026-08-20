@@ -1,4 +1,4 @@
-name: Aeon Scorer v3.1 quality
+name: Aeon Scorer v3.2 quality
 on:
   pull_request:
     branches: [main]
@@ -52,7 +52,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: v3.1-validation-report
+          name: v3.2-validation-report
           path: |
             calibration/latest.json
             calibration/latest.md

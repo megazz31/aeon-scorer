@@ -2,6 +2,7 @@
 
 **MTG Commander / EDH deck power level analyzer based on Monte Carlo access, card roles and synergy packages.**
 
+**Current production:** v3.2.0 · semantic model `3.2.0-semantic-1`  
 **Live app:** https://aeon-scorer.vercel.app
 
 Aeon Scorer was built around a simple problem: saying *“my Commander deck is a 7”* is rarely enough to balance a table. Two decks can share the same subjective power level while having completely different low rolls, high rolls, speed and peak potential.
@@ -41,10 +42,19 @@ Read more:
 
 The model is deterministic for a fixed seed and is designed to expose the reasons behind a score rather than hide them.
 
-## v3.1 validation
+## Improving from real use
 
-The same final v3.1 head passed:
+Every successful web analysis is recorded with the information needed to reproduce and audit it: **engine version, semantic version, deck hash, Oracle snapshot hash, iterations, normalized card evidence and result**. Anonymous analyses can also contribute to this QA corpus.
 
+This means real usage expands Aeon's semantic coverage and makes it easier to detect cards, packages or mechanics that the current model may misread. **User analyses are evidence, never automatic training labels or automatic truth.** A repeated user result cannot directly change the 0–100 model.
+
+The audit pipeline is intentionally separated into **RAW → AUDIT → APPROVED MODEL**. The database queues new analyses for an independent semantic auditor. The scheduled auditor is designed to run from ChatGPT with the connected Supabase project, not from an OpenAI API key or a GitHub Models worker. Suspected corrections must be independently checked against current Oracle/type data and then pass semantic, metamorphic, adversarial, macro and convergence tests before they can affect production.
+
+## v3.2 validation
+
+The same final v3.2 head passed:
+
+- smoke test;
 - micro-semantic truth tests;
 - metamorphic tests;
 - adversarial audit;
@@ -59,9 +69,9 @@ The final benchmark contains **38 real decks**: **15 precons**, **15 cEDH lists 
 
 Current corpus reference medians are roughly **49 for precons** and **78 for cEDH**. These are calibration references, not universal thresholds or brackets.
 
-## What v3.1 fixed
+## What v3.2 currently covers
 
-Among other issues, v3.1 hardened:
+The current model includes the semantic and sequencing hardening introduced through the v3.x line, including:
 
 - reminder-text false positives;
 - own-target blink incorrectly counted as removal;
@@ -75,7 +85,16 @@ Among other issues, v3.1 hardened:
 - Commander multiplayer London mulligans;
 - Sideboard / Maybeboard / Considering imports;
 - commander color-identity validation;
-- partial Scryfall resolution and conservative fuzzy matching.
+- partial Scryfall resolution and conservative fuzzy matching;
+- versioned saved decks and analysis history;
+- immutable analysis ingestion with server-side validation, deduplication and rate limiting;
+- versioned Oracle semantic snapshots and a queue-backed semantic QA corpus.
+
+## Versioning
+
+The public client version is centralized in `src/version.js`. The smoke test also checks that the frontend engine/semantic versions match the deployed `record-analysis` Edge Function constants in the repository, so a version mismatch should fail CI before release.
+
+Stored analyses preserve the exact `engine_version`, `semantic_version`, deck hash and Oracle snapshot hash used at analysis time. Historical results therefore remain distinguishable after future engine changes.
 
 ## Known limits
 
@@ -128,6 +147,8 @@ Useful test cases include:
 ## Français
 
 Aeon Scorer est un analyseur de puissance pour decks **Magic: The Gathering Commander / EDH**. L'objectif est de remplacer les discussions floues du type *« mon deck est un 7 »* par une lecture plus utile : **médiane, sortie basse P20, sortie haute P80 et pic**.
+
+La production actuelle est **v3.2.0** avec la sémantique **`3.2.0-semantic-1`**. Chaque analyse réussie est versionnée et agrandit le corpus QA utilisé pour détecter les cartes ou mécaniques mal comprises et améliorer les prochaines versions. Les analyses utilisateur restent des indices : elles ne deviennent jamais automatiquement la vérité du modèle.
 
 L'écran principal sert à comparer les decks. Les dimensions, packages, courbe d'accès, dépendance au commandant et couverture des données restent disponibles dans **Diagnostic détaillé** uniquement pour expliquer ou auditer le résultat.
 
