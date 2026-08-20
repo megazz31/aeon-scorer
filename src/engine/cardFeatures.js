@@ -4,83 +4,28 @@ const lower=c=>textOf(c).toLowerCase()
 const typeLower=c=>(c.type||'').toLowerCase()
 const unique=xs=>[...new Set(xs)]
 const clauses=text=>String(text||'').split(/[.\n;]+/).map(x=>x.trim()).filter(Boolean)
-function withoutReminderText(text){
-  let out='',depth=0
-  for(const ch of String(text||'')){
-    if(ch==='('){depth++;continue}
-    if(ch===')'&&depth){depth--;continue}
-    if(!depth)out+=ch
-  }
-  return out.replace(/\s+/g,' ').trim()
-}
+function withoutReminderText(text){let out='',depth=0;for(const ch of String(text||'')){if(ch==='('){depth++;continue}if(ch===')'&&depth){depth--;continue}if(!depth)out+=ch}return out.replace(/\s+/g,' ').trim()}
+function escapedName(card){return (card.name||'').toLowerCase().replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
 
 function isOwnTargetClause(s){return /you control|you own|your graveyard|your hand/.test(s)}
-function isBlinkText(o){
-  return /exile [^.\n;]{0,140}(?:you control|another target|one other target|target creature)[^.\n;]{0,140}(?:return|returns) [^.\n;]{0,140}(?:battlefield|under its owner)/i.test(o)
-    || /exile [^.\n;]{0,180}you control\.[^.\n;]{0,180}return (?:that card|those cards|them)[^.\n;]{0,180}battlefield/i.test(o)
-    || /exile [^.\n;]{0,120} until [^.\n;]{0,120} returns? to the battlefield/i.test(o)
-    || /flicker/i.test(o)
-}
-function isTemporaryInteraction(o){
+function isBlinkText(o){return /exile [^.\n;]{0,140}(?:you control|another target|one other target|target creature)[^.\n;]{0,140}(?:return|returns) [^.\n;]{0,140}(?:battlefield|under its owner)/i.test(o)||/exile [^.\n;]{0,180}you control\.[^.\n;]{0,180}return (?:that card|those cards|them)[^.\n;]{0,180}battlefield/i.test(o)||/exile [^.\n;]{0,120} until [^.\n;]{0,120} returns? to the battlefield/i.test(o)||/flicker/i.test(o)}
+function isTemporaryInteraction(o){const s=o.toLowerCase();return /exile (?:up to )?(?:one other |one |another )?target [^.\n;]+/.test(s)&&!/target [^.\n;]+ you control/.test(s)&&/return (?:that card|it|them|those cards)[^.\n;]+battlefield/.test(s)}
+function isTargetRemoval(o){const temporary=isTemporaryInteraction(o);for(const c of clauses(o.toLowerCase())){if(isOwnTargetClause(c))continue;if(/destroy target /.test(c))return true;if(/exile (?:up to )?(?:one other |one |another )?target /.test(c)&&!temporary&&!/return .*battlefield/.test(c))return true;if(/return target [^.]+ to (?:its|their|that player's|owner'?s) hand/.test(c))return true;if(/target [^.]+ gets -(?:\d+|x)\/-(?:\d+|x)/.test(c))return true}return false}
+function isTutor(o){const s=o.toLowerCase(),search=clauses(s).find(c=>/search your library(?: and\/or your graveyard)? for /.test(c));if(!search)return false;const landOnly=/ for [^.]*\b(?:basic land|land card|plains(?: card)?|island(?: card)?|swamp(?: card)?|mountain(?: card)?|forest(?: card)?)\b/.test(search);return !landOnly}
+function isRepeatableTutor(card,o){
   const s=o.toLowerCase()
-  return /exile (?:up to )?(?:one other |one |another )?target [^.\n;]+/.test(s)
-    && !/target [^.\n;]+ you control/.test(s)
-    && /return (?:that card|it|them|those cards)[^.\n;]+battlefield/.test(s)
+  if(/at the beginning [^.]*search your library|whenever [^.]*search your library/.test(s))return true
+  if(!/:\s*search your library/.test(s))return false
+  const name=escapedName(card)
+  if(name&&new RegExp(`(?:sacrifice|exile) ${name}[^:]*:`).test(s))return false
+  return true
 }
-function isTargetRemoval(o){
-  const temporary=isTemporaryInteraction(o)
-  for(const c of clauses(o.toLowerCase())){
-    if(isOwnTargetClause(c))continue
-    if(/destroy target /.test(c))return true
-    if(/exile (?:up to )?(?:one other |one |another )?target /.test(c)&&!temporary&&!/return .*battlefield/.test(c))return true
-    if(/return target [^.]+ to (?:its|their|that player's|owner'?s) hand/.test(c))return true
-    if(/target [^.]+ gets -(?:\d+|x)\/-(?:\d+|x)/.test(c))return true
-  }
-  return false
-}
-function isTutor(o){
-  const s=o.toLowerCase(),search=clauses(s).find(c=>/search your library(?: and\/or your graveyard)? for /.test(c))
-  if(!search)return false
-  const landOnly=/ for [^.]*\b(?:basic land|land card|plains(?: card)?|island(?: card)?|swamp(?: card)?|mountain(?: card)?|forest(?: card)?)\b/.test(search)
-  return !landOnly
-}
-function isLandRamp(o){
-  const s=o.toLowerCase()
-  return /search your library [^.]*\b(?:land card|plains|island|swamp|mountain|forest)\b[^.]*put [^.]*onto the battlefield/.test(s)
-    || /put (?:a|one|up to one) land card [^.]*onto the battlefield/.test(s)
-    || /you may play an additional land/.test(s)
-}
-function isRecursion(o){
-  const s=o.toLowerCase()
-  return /return [^.]* from (?:your|a) graveyard/.test(s)
-    || /cast [^.]* from your graveyard/.test(s)
-    || /play [^.]* from your graveyard/.test(s)
-    || /search your library and\/or your graveyard for [^.]*put [^.]*onto the battlefield/.test(s)
-}
-function isGraveSetup(o){
-  const s=o.toLowerCase()
-  return /\bmill \d|\bmill x|surveil|discard (?:a|one|two|three|x) cards?|put the top [^.]*cards? of (?:your|a) library into (?:your|its) graveyard/.test(s)
-}
-function isSacOutlet(card,o){
-  const s=o.toLowerCase(),name=(card.name||'').toLowerCase().replace(/[.*+?^${}()|[\]\\]/g,'\\$&')
-  if(name&&new RegExp(`sacrifice ${name}`).test(s))return false
-  return /sacrifice (?:another |a |an |one or more )?(?:creature|artifact|permanent|token)[^:]{0,80}:/.test(s)
-    || (/sacrifice (?:another |a |an |one or more )?(?:creature|artifact|permanent|token)\b/.test(s)&&/as an additional cost|activate only/.test(s))
-}
-function counterRoles(o){
-  const s=o.toLowerCase()
-  const producer=/put (?:a |one |two |three |x )?(?:\+1\/\+1 |[-+]?\d+\/[-+]?\d+ )?counters? on|proliferate/.test(s)
-  const payoff=/for each [^.]*counter|with (?:a|one or more|\w+) counters? on|has (?:a|one or more|\w+) counters? on|remove (?:a|one|\w+) counters? from|whenever one or more counters? (?:are|is) put/.test(s)
-  const doubler=/twice that many(?: of those)? counters|double the number of [^.]*counters|additional [^.]*counter would be put|that many plus one [^.]*counters/.test(s)
-  return {producer,payoff,doubler}
-}
-function tokenRoles(o){
-  const s=o.toLowerCase()
-  const producer=/create [^.]* tokens?/.test(s)
-  const payoff=/tokens? you control|creature tokens? [^.]* (?:get|have)|whenever [^.]*token[^.]*enters|whenever one or more tokens|sacrifice (?:a|one or more) tokens?/.test(s)
-  const doubler=/if [^.]*would create [^.]*token[^.]*twice|twice that many [^.]*tokens|create twice that many [^.]*tokens/.test(s)
-  return {producer,payoff,doubler}
-}
+function isLandRamp(o){const s=o.toLowerCase();return /search your library [^.]*\b(?:land card|plains|island|swamp|mountain|forest)\b[^.]*put [^.]*onto the battlefield/.test(s)||/put (?:a|one|up to one) land card [^.]*onto the battlefield/.test(s)||/you may play an additional land/.test(s)}
+function isRecursion(o){const s=o.toLowerCase();return /return [^.]* from (?:your|a) graveyard/.test(s)||/cast [^.]* from your graveyard/.test(s)||/play [^.]* from your graveyard/.test(s)||/search your library and\/or your graveyard for [^.]*put [^.]*onto the battlefield/.test(s)}
+function isGraveSetup(o){const s=o.toLowerCase();return /\bmill \d|\bmill x|surveil|discard (?:a|one|two|three|x) cards?|put the top [^.]*cards? of (?:your|a) library into (?:your|its) graveyard/.test(s)}
+function isSacOutlet(card,o){const s=o.toLowerCase(),name=escapedName(card);if(name&&new RegExp(`sacrifice ${name}`).test(s))return false;return /sacrifice (?:another |a |an |one or more )?(?:creature|artifact|permanent|token)[^:]{0,80}:/.test(s)||(/sacrifice (?:another |a |an |one or more )?(?:creature|artifact|permanent|token)\b/.test(s)&&/as an additional cost|activate only/.test(s))}
+function counterRoles(o){const s=o.toLowerCase(),producer=/put (?:a |one |two |three |x )?(?:\+1\/\+1 |[-+]?\d+\/[-+]?\d+ )?counters? on|proliferate/.test(s),payoff=/for each [^.]*counter|with (?:a|one or more|\w+) counters? on|has (?:a|one or more|\w+) counters? on|remove (?:a|one|\w+) counters? from|whenever one or more counters? (?:are|is) put/.test(s),doubler=/twice that many(?: of those)? counters|double the number of [^.]*counters|additional [^.]*counter would be put|that many plus one [^.]*counters/.test(s);return {producer,payoff,doubler}}
+function tokenRoles(o){const s=o.toLowerCase(),producer=/create [^.]* tokens?/.test(s),payoff=/tokens? you control|creature tokens? [^.]* (?:get|have)|whenever [^.]*token[^.]*enters|whenever one or more tokens|sacrifice (?:a|one or more) tokens?/.test(s),doubler=/if [^.]*would create [^.]*token[^.]*twice|twice that many [^.]*tokens|create twice that many [^.]*tokens/.test(s);return {producer,payoff,doubler}}
 const triggerDoubler=o=>/triggers? an additional time|trigger an additional time|causes? [^.]* ability to trigger an additional time/i.test(o)
 const artifactPayoff=o=>/artifacts? you control|whenever [^.]*artifact[^.]*enters|whenever you cast an artifact|for each artifact|artifact spells? you cast|sacrifice (?:an|another) artifact/i.test(o)
 const constellation=o=>/\bconstellation\b|whenever an enchantment [^.]* enters|whenever another enchantment [^.]* enters/i.test(o)
@@ -88,23 +33,14 @@ const spellslinger=o=>/magecraft|instant or sorcery spells?|whenever you cast (?
 const exileCast=o=>/cast [^.]* from exile|play [^.]* from exile|exile the top [^.]* you may (?:play|cast)/i.test(o)
 const exilePayoff=o=>/whenever (?:you|a player) (?:cast|casts|play|plays) [^.]* from exile|if you (?:cast|play) [^.]* from exile/i.test(o)
 const manaText=o=>/add \{|add one mana|add two mana|add three mana|add four mana|treasure token/i.test(o)
-function fastManaKind(card,o){
-  const n=(card.name||'').toLowerCase()
-  if(/dark ritual|cabal ritual|culling the weak|rite of flame|lotus petal|elvish spirit guide|simian spirit guide|jeweled lotus|lion's eye diamond|mana vault|grim monolith/.test(n))return 'burst'
-  if(/sol ring|mana crypt|chrome mox|mox diamond|mox opal|mox amber/.test(n))return 'persistent'
-  if(Number(card.cmc||0)<=1&&/sacrifice [^.]*: add (?:\{|three mana|two mana)/i.test(o))return 'burst'
-  return null
-}
-function protection(o){
-  const s=o.toLowerCase()
-  return /hexproof|indestructible|phase out|protection from|counter target spell [^.]*targets?/.test(s)||(isBlinkText(o)&&/you control/.test(s))
-}
+function fastManaKind(card,o){const n=(card.name||'').toLowerCase();if(/dark ritual|cabal ritual|culling the weak|rite of flame|lotus petal|elvish spirit guide|simian spirit guide|jeweled lotus|lion's eye diamond|mana vault|grim monolith/.test(n))return 'burst';if(/sol ring|mana crypt|chrome mox|mox diamond|mox opal|mox amber/.test(n))return 'persistent';if(Number(card.cmc||0)<=1&&/sacrifice [^.]*: add (?:\{|three mana|two mana)/i.test(o))return 'burst';return null}
+function protection(o){const s=o.toLowerCase();return /hexproof|indestructible|phase out|protection from|counter target spell [^.]*targets?/.test(s)||(isBlinkText(o)&&/you control/.test(s))}
 
 export function tagsFor(card){
   const o=textOf(card),t=typeLower(card),tags=[],add=x=>{if(x&&!tags.includes(x))tags.push(x)},counters=counterRoles(o),tokens=tokenRoles(o),fm=fastManaKind(card,o)
   if(/\bland\b/.test(t))add('land');if(/\bcreature\b/.test(t))add('creature');if(/\benchantment\b/.test(t))add('enchantment');if(/\bartifact\b/.test(t))add('artifact');if(/\binstant\b/.test(t))add('instant');if(/\bsorcery\b/.test(t))add('sorcery')
   if(/draws? (?:a|one|two|three|four|\d+|x) cards?|draw (?:a|one|two|three|four|\d+|x) cards?/i.test(o))add('draw')
-  if(isTutor(o)){add('tutor');if(/at the beginning|whenever|activate only|:\s*search your library/i.test(o))add('repeatable-tutor')}
+  if(isTutor(o)){add('tutor');if(isRepeatableTutor(card,o))add('repeatable-tutor')}
   if(isLandRamp(o))add('land-ramp');if(manaText(o))add('mana');if(fm){add('fast-mana');add('mana');if(fm==='burst')add('burst-mana')}
   if(isTargetRemoval(o))add('removal');if(isTemporaryInteraction(o)){add('tempo-interaction');add('blink')}
   if(/counter target (?:spell|activated ability|triggered ability)/i.test(o))add('counterspell')
@@ -122,21 +58,8 @@ export function tagsFor(card){
 }
 
 function manaValueScore(cmc){if(cmc<=0)return 1;if(cmc<=1)return .95;if(cmc<=2)return .85;if(cmc<=3)return .72;if(cmc<=4)return .58;if(cmc<=5)return .46;if(cmc<=6)return .35;return .25}
-export function manaRequirement(card){
-  const symbols=[...String(card.manaCost||'').matchAll(/\{([^}]+)\}/g)].map(m=>m[1].toUpperCase()),colored=[];let generic=0
-  for(const sym of symbols){if(/^\d+$/.test(sym)){generic+=Number(sym);continue}if(sym==='X'||sym==='Y'||sym==='Z')continue;if(/^[WUBRGC]$/.test(sym)){colored.push([sym]);continue}const opts=sym.split('/').filter(x=>/^[WUBRGC]$/.test(x));if(opts.length)colored.push(opts)}
-  return {generic,colored,total:Number(card.cmc||generic+colored.length)}
-}
-export function sourceColors(card){
-  const pm=Array.isArray(card.producedMana)?card.producedMana:[]
-  if(pm.length)return unique(pm.map(x=>String(x).toUpperCase()).filter(x=>/^[WUBRGC]$/.test(x)))
-  const t=typeLower(card),o=lower(card),out=[]
-  if(/plains/.test(t))out.push('W');if(/island/.test(t))out.push('U');if(/swamp/.test(t))out.push('B');if(/mountain/.test(t))out.push('R');if(/forest/.test(t))out.push('G')
-  if(/any color|any type that a land you control could produce/.test(o))return ['W','U','B','R','G']
-  if(/search your library for [^.]*plains/.test(o))out.push('W');if(/search your library for [^.]*island/.test(o))out.push('U');if(/search your library for [^.]*swamp/.test(o))out.push('B');if(/search your library for [^.]*mountain/.test(o))out.push('R');if(/search your library for [^.]*forest/.test(o))out.push('G');if(/search your library for (?:a )?basic land/.test(o))return ['W','U','B','R','G']
-  for(const c of ['W','U','B','R','G','C'])if(new RegExp(`add \\{${c}\\}`,'i').test(o))out.push(c)
-  return unique(out)
-}
+export function manaRequirement(card){const symbols=[...String(card.manaCost||'').matchAll(/\{([^}]+)\}/g)].map(m=>m[1].toUpperCase()),colored=[];let generic=0;for(const sym of symbols){if(/^\d+$/.test(sym)){generic+=Number(sym);continue}if(sym==='X'||sym==='Y'||sym==='Z')continue;if(/^[WUBRGC]$/.test(sym)){colored.push([sym]);continue}const opts=sym.split('/').filter(x=>/^[WUBRGC]$/.test(x));if(opts.length)colored.push(opts)}return {generic,colored,total:Number(card.cmc||generic+colored.length)}}
+export function sourceColors(card){const pm=Array.isArray(card.producedMana)?card.producedMana:[];if(pm.length)return unique(pm.map(x=>String(x).toUpperCase()).filter(x=>/^[WUBRGC]$/.test(x)));const t=typeLower(card),o=lower(card),out=[];if(/plains/.test(t))out.push('W');if(/island/.test(t))out.push('U');if(/swamp/.test(t))out.push('B');if(/mountain/.test(t))out.push('R');if(/forest/.test(t))out.push('G');if(/any color|any type that a land you control could produce/.test(o))return ['W','U','B','R','G'];if(/search your library for [^.]*plains/.test(o))out.push('W');if(/search your library for [^.]*island/.test(o))out.push('U');if(/search your library for [^.]*swamp/.test(o))out.push('B');if(/search your library for [^.]*mountain/.test(o))out.push('R');if(/search your library for [^.]*forest/.test(o))out.push('G');if(/search your library for (?:a )?basic land/.test(o))return ['W','U','B','R','G'];for(const c of ['W','U','B','R','G','C'])if(new RegExp(`add \\{${c}\\}`,'i').test(o))out.push(c);return unique(out)}
 
 export function cardFeatures(card){
   const o=lower(card),t=typeLower(card),tags=tagsFor(card),has=x=>tags.includes(x),isLand=t.includes('land'),isCreature=t.includes('creature'),cmc=Number(card.cmc||0)
