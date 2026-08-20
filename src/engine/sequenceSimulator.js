@@ -57,7 +57,7 @@ function permanentRampSources(c,commander,support={}){
   const count=c.tags.includes('land-ramp')?1:productionCount(c)
   return Array.from({length:count},()=>source(colors.length?colors:['C'],c.name))
 }
-function rampValue(c){return productionCount(c)-Number(c.cmc||0)+(isArtifact(c)?.25:0)}
+function rampValue(c){return productionCount(c)-Number(c.cmc||0)+(isArtifact(c)?0.25:0)}
 function burstPriority(c){
   const n=c.name.toLowerCase()
   if(/lotus petal|elvish spirit guide|simian spirit guide|lion's eye diamond|jeweled lotus/.test(n))return 0
