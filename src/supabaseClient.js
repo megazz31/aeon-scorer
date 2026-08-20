@@ -1,0 +1,25 @@
+const SUPABASE_URL='https://jrzzlcklctmqgemepucs.supabase.co'
+const PUBLISHABLE_KEY='sb_publishable_wrSl8JoCrvkBhh3hN6LiAg_M2yHrr1y'
+const SESSION_KEY='aeon-supabase-session-v1'
+
+const baseHeaders=()=>({apikey:PUBLISHABLE_KEY,'Content-Type':'application/json'})
+const authHeaders=token=>({...baseHeaders(),...(token?{Authorization:`Bearer ${token}`}:{})})
+const cleanSession=s=>s?.access_token&&s?.user?{access_token:s.access_token,refresh_token:s.refresh_token,user:s.user,expires_at:s.expires_at||Math.floor(Date.now()/1000)+(s.expires_in||3600)}:null
+export const cloudConfig={url:SUPABASE_URL}
+
+function readStored(){try{return JSON.parse(localStorage.getItem(SESSION_KEY)||'null')}catch{return null}}
+function store(session){if(session)localStorage.setItem(SESSION_KEY,JSON.stringify(session));else localStorage.removeItem(SESSION_KEY)}
+async function payload(res){const text=await res.text();let body=null;try{body=text?JSON.parse(text):null}catch{body={message:text}}if(!res.ok)throw new Error(body?.msg||body?.message||body?.error_description||body?.error||`Supabase HTTP ${res.status}`);return body}
+async function refresh(session){if(!session?.refresh_token)return null;try{const res=await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=refresh_token`,{method:'POST',headers:baseHeaders(),body:JSON.stringify({refresh_token:session.refresh_token})});const next=cleanSession(await payload(res));store(next);return next}catch{store(null);return null}}
+export async function restoreSession(){let s=readStored();if(!s)return null;if(!s.expires_at||s.expires_at<Math.floor(Date.now()/1000)+300)s=await refresh(s);if(!s)return null;try{const res=await fetch(`${SUPABASE_URL}/auth/v1/user`,{headers:authHeaders(s.access_token)});const user=await payload(res);s={...s,user};store(s);return s}catch{return refresh(s)}}
+export async function signIn(email,password){const res=await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`,{method:'POST',headers:baseHeaders(),body:JSON.stringify({email,password})});const s=cleanSession(await payload(res));store(s);return s}
+export async function signUp(email,password){const redirectTo='https://aeon-scorer.vercel.app';const res=await fetch(`${SUPABASE_URL}/auth/v1/signup?redirect_to=${encodeURIComponent(redirectTo)}`,{method:'POST',headers:baseHeaders(),body:JSON.stringify({email,password})});const body=await payload(res),s=cleanSession(body);if(s)store(s);return {session:s,user:body?.user||s?.user||null,needsConfirmation:!s}}
+export async function signOut(session){try{if(session?.access_token)await fetch(`${SUPABASE_URL}/auth/v1/logout`,{method:'POST',headers:authHeaders(session.access_token)})}finally{store(null)}}
+async function rest(path,{method='GET',body,session,prefer}={}){const headers=authHeaders(session?.access_token);if(prefer)headers.Prefer=prefer;const res=await fetch(`${SUPABASE_URL}/rest/v1/${path}`,{method,headers,body:body===undefined?undefined:JSON.stringify(body)});return payload(res)}
+export async function listDecks(session){return rest(`decks?select=id,name,commander_name,original_decklist,deck_data,deck_hash,source_url,last_modified,created_at,latest_analysis_at,engine_version,archived&archived=eq.false&order=last_modified.desc`,{session})}
+export async function saveDeck(session,{id,name,commanderName,decklist,deckHash,engineVersion,sourceUrl=null}){const row={user_id:session.user.id,name,commander_name:commanderName,original_decklist:decklist,deck_data:{commander:commanderName},deck_hash:deckHash,engine_version:engineVersion,source_url:sourceUrl,last_modified:new Date().toISOString()};if(id)return rest(`decks?id=eq.${encodeURIComponent(id)}`,{method:'PATCH',body:row,session,prefer:'return=representation'}).then(x=>x?.[0]||null);return rest('decks',{method:'POST',body:row,session,prefer:'return=representation'}).then(x=>x?.[0]||null)}
+export async function deleteDeck(session,id){await rest(`decks?id=eq.${encodeURIComponent(id)}`,{method:'DELETE',session});return true}
+export async function deleteMyAnalysisData(session){return rest('rpc/aeon_delete_my_analysis_data',{method:'POST',body:{},session})}
+export async function analysisHistory(session,deckId,limit=12){return rest(`analysis_runs?select=id,engine_version,semantic_version,median,p20,p80,peak,coverage,iterations,created_at&deck_id=eq.${encodeURIComponent(deckId)}&order=created_at.desc&limit=${Math.max(1,Math.min(50,limit))}`,{session})}
+export async function hashDeck(decklist,commander){const normalized=`${String(commander||'').trim().toLowerCase()}\n${String(decklist||'').split(/\r?\n/).map(x=>x.trim()).filter(Boolean).sort((a,b)=>a.localeCompare(b)).join('\n')}`;const d=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(normalized));return [...new Uint8Array(d)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+export async function recordAnalysis(session,data){const headers=authHeaders(session?.access_token);const res=await fetch(`${SUPABASE_URL}/functions/v1/record-analysis`,{method:'POST',headers,body:JSON.stringify(data)});return payload(res)}
