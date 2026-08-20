@@ -10,7 +10,7 @@ Une carte produit d'abord des **primitives fonctionnelles**. Sa contribution dé
 
 La v3.1 est un **modèle d'accès à des capacités**, pas un moteur de règles Magic. Chaque colonne de la courbe répond indépendamment à une question du type : « cette fonction est-elle accessible à ce tour avec une fenêtre de mana plausible ? ».
 
-Les colonnes ne signifient donc pas que commandant + package + interaction + ressource sont tous réalisables simultanément dans la même ligne de jeu.
+Les colonnes ne signifient donc pas que commandant + package + interaction + ressource sont tous réalisables simultanément dans la même ligne de jeu. Le score central agrège donc un **profil d'accès structurel**, pas un état de partie entièrement exécutable carte par carte.
 
 ## Pourquoi un profil plutôt qu'un bracket
 
@@ -65,7 +65,7 @@ Ces limites ne doivent pas être cachées derrière le score :
 - les **tuteurs** sont détectés et influencent la structure/consistance, mais leurs cibles ne sont pas exécutées dynamiquement dans le Monte Carlo ;
 - une carte de **pioche lançable** est mesurée comme accès à une ressource, mais le moteur ne lance pas ensuite réellement cette pioche pour modifier toutes les mains futures ;
 - les **coûts alternatifs contextuels** (Force of Will, Fierce Guardianship, etc.) ne sont pas encore planifiés comme un moteur de règles ;
-- les symboles de mana rares/hybrides/phyrexians restent une approximation tant que le solveur de coût complet n'est pas intégré ;
+- les symboles de mana rares, **hybrides ou phyrexians**, ainsi que les choix de coût de certaines **split cards / cartes modales double-face**, restent approximatifs tant qu'un solveur complet de choix de coût n'est pas intégré ;
 - la bibliothèque de **combos connues** est volontairement petite et haute confiance ; aucune détection ne signifie pas absence de combo ;
 - « options de reprise après disruption » mesure l'accès à une ressource, un autre package ou un recast du commandant ; ce n'est pas une simulation complète d'un wipe ;
 - politique multijoueur, stack réelle, choix de cibles, combat complet et décisions adverses ne sont pas simulés ;
@@ -77,7 +77,7 @@ Les gains de précision les plus importants après v3.1 seront :
 
 1. exécution tutor → cible → package ;
 2. pioche réellement propagée dans les séquences ;
-3. coûts alternatifs et symboles spéciaux entièrement résolus ;
+3. solveur complet des coûts alternatifs, hybrides, phyrexians et cartes à plusieurs faces/coûts ;
 4. scénarios adverses commandant retiré / wipe / graveyard hate / moteur retiré ;
 5. support multi-commandants ;
 6. corpus de parties observées pour calibration empirique.
