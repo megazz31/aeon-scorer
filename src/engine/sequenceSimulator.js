@@ -75,9 +75,17 @@ export function simulateSequences(cards,commander,packages,combos=[],iterations=
       activeSources.push(...pendingSources);pendingSources=[];const priorHand=[...hand];if(lib.length)hand.push(lib.shift())
       const land=chooseLand(hand,used,commander);if(land){used.add(land);battlefield.push(land);const sources=baseLandSources(land);if(alwaysTappedLand(land))pendingSources.push(...sources);else activeSources.push(...sources)}
       let turnSources=[...activeSources]
-      const rampCandidates=castableCards(hand,used,turnSources,isPermanentRamp).map(card=>({card,support:permanentRampSupport(card,hand,used,battlefield,commander)})).filter(x=>x.support).sort((a,b)=>rampValue(b.card)-rampValue(a.card)||(a.card.cmc||0)-(b.card.cmc||0))
-      const rampChoice=rampCandidates[0]
-      if(rampChoice){const ramp=rampChoice.card,support=rampChoice.support,produced=permanentRampSources(ramp,commander,support),remaining=payAndRemain(ramp,turnSources);used.add(ramp);for(const costCard of support.consume||[])used.add(costCard);if(isPermanentCard(ramp))battlefield.push(ramp);if(remaining){if(isArtifact(ramp)){activeSources.push(...produced);turnSources=[...remaining,...produced]}else{turnSources=[...remaining];pendingSources.push(...produced)}}}
+      // Chain every currently payable persistent ramp source. This matters for
+      // high-powered starts such as Crypt -> Ring -> Mox; limiting the turn to
+      // one rock artificially compressed cEDH sequencing toward precon speed.
+      for(let rampCasts=0;rampCasts<8;rampCasts++){
+        const rampCandidates=castableCards(hand,used,turnSources,isPermanentRamp).map(card=>({card,support:permanentRampSupport(card,hand,used,battlefield,commander)})).filter(x=>x.support).sort((a,b)=>rampValue(b.card)-rampValue(a.card)||(a.card.cmc||0)-(b.card.cmc||0))
+        const rampChoice=rampCandidates[0];if(!rampChoice)break
+        const ramp=rampChoice.card,support=rampChoice.support,produced=permanentRampSources(ramp,commander,support),remaining=payAndRemain(ramp,turnSources)
+        if(!remaining)break
+        used.add(ramp);for(const costCard of support.consume||[])used.add(costCard);if(isPermanentCard(ramp))battlefield.push(ramp)
+        if(isArtifact(ramp)){activeSources.push(...produced);turnSources=[...remaining,...produced]}else{turnSources=[...remaining];pendingSources.push(...produced)}
+      }
       const generalSources=potentialSources(turnSources,hand,used,false,battlefield),commanderSources=potentialSources(turnSources,hand,used,true,battlefield)
       if(commander&&cmdTurn==null&&canPay(commander,commanderSources)){cmdTurn=turn;battlefield.push(commander)}
       const engine=operationalPackage(hand,priorHand,battlefield,used,packages,generalSources,priorSources);if(engine.ok&&engineTurn==null)engineTurn=turn;if(turn===4&&engine.ok)disruptedPackageId=engine.packageId
