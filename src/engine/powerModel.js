@@ -15,12 +15,14 @@ function hashSeed(cards,commander,salt=''){
 }
 function seeded(seed){let a=seed>>>0;return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 
-// Semantic scale fitted only after structural scoring. It does not create categories or brackets.
+// Monotonic presentation scale. It stretches the structurally useful 45–70 zone
+// after semantic hardening without changing ordering or introducing brackets.
 function calibratePower(x){
-  if(x<=45)return clamp(x*.67)
-  if(x<=70)return clamp(30+(x-45)*1.2)
-  if(x<=90)return clamp(60+(x-70)*1.5)
-  return clamp(90+(x-90))
+  if(x<=30)return clamp(x*.80)
+  if(x<=45)return clamp(24+(x-30)*1.50)
+  if(x<=70)return clamp(46.5+(x-45)*1.28)
+  if(x<=90)return clamp(78.5+(x-70)*.75)
+  return clamp(93.5+(x-90)*.65)
 }
 
 function roleStats(cards){
@@ -100,8 +102,9 @@ export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=
     return {name:c.name,impact:Math.round((base+pkg*.7+(ap.normalized||0)*1.1)*10)/10,tags:c.tags.slice(0,6),aeon:ap.points}
   }).sort((a,b)=>b.impact-a.impact).slice(0,12)
 
+  const coverage=analysisCoverage(cards,packages,combos)
   return {
-    profile:{median:Math.round(median),floor:Math.round(floor),ceiling:Math.round(ceiling),peak:Math.round(peak),dispersion:Math.round(dispersion),variance:Math.round(dispersion),consistency:Math.round(consistency),commanderDelta,coverage:analysisCoverage(cards,packages,combos)},
+    profile:{median:Math.round(median),floor:Math.round(floor),ceiling:Math.round(ceiling),peak:Math.round(peak),dispersion:Math.round(dispersion),variance:Math.round(dispersion),consistency:Math.round(consistency),commanderDelta,coverage,dataCoverage:coverage},
     dimensions,roles,packages,combos,commanderSynergy:cmdSyn,aeon,simulation:sim,drivers,warnings,
     methodology:{iterations,model:'sequence-access-v3.1-semantic',maxTurn:7,curveMeaning:'Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.'},
   }
