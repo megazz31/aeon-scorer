@@ -3,6 +3,7 @@ function percentile(xs,p){if(!xs.length)return 0;const a=[...xs].sort((x,y)=>x-y
 const uniq=xs=>[...new Set(xs)]
 const isBurst=c=>c.tags.includes('fast-mana')
 const isPermanentRamp=c=>!c.isLand&&!isBurst(c)&&(c.tags.includes('land-ramp')||(c.sourceColors?.length||0)>0)&&(c.cmc||0)<=3
+const isPermanentCard=c=>!/\binstant\b|\bsorcery\b/i.test(c.type||'')
 function alwaysTappedLand(c){
   const o=(c.oracle||'').toLowerCase()
   if(!/enters(?: the battlefield)? tapped/.test(o))return false
@@ -39,6 +40,11 @@ export function canPay(card,sources,tax=0){
   function place(i){if(i>=pips.length)return sources.length-used.size>=req.generic;for(let s=0;s<sources.length;s++){if(used.has(s)||!pips[i].some(c=>sources[s].options.includes(c)))continue;used.add(s);if(place(i+1))return true;used.delete(s)}return false}
   return place(0)
 }
+function canPayPair(a,b,sources){
+  const ra=paymentOptions(a),rb=paymentOptions(b)
+  const fake={cmc:ra.total+rb.total,manaReq:{generic:ra.generic+rb.generic,colored:[...ra.colored,...rb.colored],total:ra.total+rb.total}}
+  return canPay(fake,sources)
+}
 function potentialSources(activeSources,hand,used,forCommander=false){const out=[...activeSources],seen=hand.filter(c=>!used.has(c));for(const c of seen.filter(isBurst))out.push(...burstNetSources(c,out,seen,forCommander));return out}
 function chooseLand(hand,used,commander){
   const lands=hand.filter(c=>c.isLand&&!used.has(c));if(!lands.length)return null
@@ -47,18 +53,34 @@ function chooseLand(hand,used,commander){
 }
 function castableCards(hand,used,sources,pred){return hand.filter(c=>!used.has(c)&&pred(c)&&canPay(c,sources))}
 function cardByName(cards,name){const n=name.toLowerCase();return cards.find(c=>c.name.toLowerCase()===n)}
-function operationalPackage(hand,battlefield,used,packages,sources,cumulativeMana){
-  const available=[...battlefield,...hand.filter(c=>!used.has(c))]
+function pairOperational(a,b,battlefield,currentSources,priorSources,priorHandSet){
+  const aBoard=battlefield.includes(a),bBoard=battlefield.includes(b)
+  if(aBoard&&bBoard)return true
+  if(aBoard)return canPay(b,currentSources)
+  if(bBoard)return canPay(a,currentSources)
+  if(canPayPair(a,b,currentSources))return true
+  const aWasKnown=priorHandSet.has(a),bWasKnown=priorHandSet.has(b)
+  if(aWasKnown&&isPermanentCard(a)&&canPay(a,priorSources)&&canPay(b,currentSources))return true
+  if(bWasKnown&&isPermanentCard(b)&&canPay(b,priorSources)&&canPay(a,currentSources))return true
+  return false
+}
+function operationalPackage(hand,priorHand,battlefield,used,packages,currentSources,priorSources){
+  const available=[...battlefield,...hand.filter(c=>!used.has(c)),...priorHand],priorSet=new Set(priorHand)
   for(const p of packages.filter(x=>x.id!=='early-commander')){
     const producers=(p.producerCards||[]).map(x=>cardByName(available,x.name)).filter(Boolean),payoffs=(p.payoffCards||[]).map(x=>cardByName(available,x.name)).filter(Boolean)
-    for(const a of producers)for(const b of payoffs){if(a.name.toLowerCase()===b.name.toLowerCase())continue;const aBoard=battlefield.includes(a),bBoard=battlefield.includes(b),deploy=(aBoard?0:Number(a.cmc||0))+(bBoard?0:Number(b.cmc||0));if(deploy>cumulativeMana)continue;if(!aBoard&&!canPay(a,sources))continue;if(!bBoard&&!canPay(b,sources))continue;return {ok:true,packageId:p.id}}
+    for(const a of producers)for(const b of payoffs){if(a.name.toLowerCase()===b.name.toLowerCase())continue;if(pairOperational(a,b,battlefield,currentSources,priorSources,priorSet))return {ok:true,packageId:p.id}}
   }
   return {ok:false,packageId:null}
 }
-function comboAccessible(hand,battlefield,used,combos,sources,cumulativeMana){
+function comboAccessible(hand,priorHand,battlefield,used,combos,currentSources,priorSources){
   if(!combos?.length)return false
-  const available=[...battlefield,...hand.filter(c=>!used.has(c))]
-  for(const combo of combos){const pieces=combo.cards.map(n=>cardByName(available,n)).filter(Boolean);if(pieces.length!==combo.cards.length)continue;const deploy=pieces.filter(c=>!battlefield.includes(c)).reduce((s,c)=>s+Number(c.cmc||0),0);if(deploy<=cumulativeMana&&pieces.every(c=>battlefield.includes(c)||canPay(c,sources)))return true}
+  const available=[...battlefield,...hand.filter(c=>!used.has(c)),...priorHand],priorSet=new Set(priorHand)
+  for(const combo of combos){
+    const pieces=combo.cards.map(n=>cardByName(available,n)).filter(Boolean)
+    if(pieces.length!==combo.cards.length)continue
+    if(pieces.length===2&&pairOperational(pieces[0],pieces[1],battlefield,currentSources,priorSources,priorSet))return true
+    if(pieces.every(c=>battlefield.includes(c)||canPay(c,currentSources)))return true
+  }
   return false
 }
 
@@ -69,26 +91,28 @@ export function simulateSequences(cards,commander,packages,combos=[],iterations=
     let lib=shuffle(libBase,rng),hand=lib.splice(0,7)
     for(let mull=0;mull<2;mull++){const lands=hand.filter(c=>c.isLand).length,early=hand.some(c=>!c.isLand&&(c.cmc||0)<=2);if(lands>=2&&lands<=5&&early)break;lib=shuffle(libBase,rng);hand=lib.splice(0,7)}
     const used=new Set(),battlefield=[],activeSources=[]
-    let pendingSources=[],cmdTurn=null,engineTurn=null,peak=0,sum=0,cumulativeMana=0,recovered=false,disruptedPackageId=null
+    let pendingSources=[],priorSources=[],cmdTurn=null,engineTurn=null,peak=0,sum=0,recovered=false,disruptedPackageId=null
     for(let turn=1;turn<=maxTurn;turn++){
       activeSources.push(...pendingSources);pendingSources=[]
+      const priorHand=[...hand]
       if(lib.length)hand.push(lib.shift())
       const land=chooseLand(hand,used,commander)
       if(land){used.add(land);battlefield.push(land);const src=baseLandSource(land);if(alwaysTappedLand(land))pendingSources.push(src);else activeSources.push(src)}
-      const baseSources=[...activeSources];cumulativeMana+=baseSources.length
+      const baseSources=[...activeSources]
       const ramp=castableCards(hand,used,baseSources,isPermanentRamp).sort((a,b)=>(a.cmc||0)-(b.cmc||0))[0]
       if(ramp){used.add(ramp);battlefield.push(ramp);pendingSources.push(permanentRampSource(ramp,commander))}
       const generalSources=potentialSources(baseSources,hand,used,false),commanderSources=potentialSources(baseSources,hand,used,true)
       if(commander&&cmdTurn==null&&canPay(commander,commanderSources)){cmdTurn=turn;battlefield.push(commander)}
-      const engine=operationalPackage(hand,battlefield,used,packages,generalSources,cumulativeMana)
+      const engine=operationalPackage(hand,priorHand,battlefield,used,packages,generalSources,priorSources)
       if(engine.ok&&engineTurn==null)engineTurn=turn;if(turn===4&&engine.ok)disruptedPackageId=engine.packageId
       const interaction=castableCards(hand,used,generalSources,c=>c.interaction>0).length>0,resource=castableCards(hand,used,generalSources,c=>c.tags.includes('draw')||c.tags.includes('recursion')).length>0
-      const manaBurst=generalSources.length>=baseSources.length+2,highImpact=castableCards(hand,used,generalSources,c=>c.tags.includes('extra-turn')||c.tags.includes('win')||c.tags.includes('cheat')).length>0,combo=comboAccessible(hand,battlefield,used,combos,generalSources,cumulativeMana),burst=manaBurst||highImpact||combo
+      const manaBurst=generalSources.length>=baseSources.length+2,highImpact=castableCards(hand,used,generalSources,c=>c.tags.includes('extra-turn')||c.tags.includes('win')||c.tags.includes('cheat')).length>0,combo=comboAccessible(hand,priorHand,battlefield,used,combos,generalSources,priorSources),burst=manaBurst||highImpact||combo
       if(turn===5){const recast=commander?canPay(commander,commanderSources,2):false,alternateEngine=engine.ok&&(!disruptedPackageId||engine.packageId!==disruptedPackageId);recovered=resource||alternateEngine||recast;recoverySamples.push(recovered?1:0)}
       const cmdOnline=commander&&cmdTurn!=null&&cmdTurn<=turn,manaTempo=Math.min(1.35,baseSources.length/Math.max(2,turn+1))
       const state=100*Math.min(1,.27*manaTempo+.22*(engine.ok?1:0)+.14*(interaction?1:0)+.11*(resource?1:0)+.10*(cmdOnline?1:0)+.08*(burst?1:0)+.08*(combo?1:0))
       peak=Math.max(peak,state);sum+=state
       const ts=turnStats[turn-1];ts.total++;ts.cmd+=cmdOnline?1:0;ts.engine+=engine.ok?1:0;ts.interaction+=interaction?1:0;ts.resource+=resource?1:0;ts.burst+=burst?1:0
+      priorSources=[...generalSources]
     }
     if(cmdTurn!=null)cmdTurns.push(cmdTurn);if(engineTurn!=null)engineTurns.push(engineTurn);samples.push({avg:sum/maxTurn,peak,cmdTurn:cmdTurn||maxTurn+1,engineTurn:engineTurn||maxTurn+1,recovered})
   }
