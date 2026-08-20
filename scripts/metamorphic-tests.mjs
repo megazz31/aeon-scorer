@@ -7,6 +7,7 @@ const mk=(name,oracle='',cmc=2,type='Instant',manaCost='',producedMana=[])=>({na
 const forest=()=>mk('Forest','{T}: Add {G}.',0,'Basic Land — Forest','',['G'])
 const plains=()=>mk('Plains','{T}: Add {W}.',0,'Basic Land — Plains','',['W'])
 const tappedGreen=()=>mk('Tapped Grove','Tapped Grove enters tapped. {T}: Add {G}.',0,'Land','',['G'])
+const ancient=()=>({name:`Ancient Tomb ${++id}`,oracle:'{T}: Add {C}{C}. Ancient Tomb deals 2 damage to you.',cmc:0,type:'Land',manaCost:'',producedMana:['C'],id:String(id)})
 const blank=(i=0)=>mk(`Blank${i}`,'',3,'Creature — Bear','{2}{G}')
 const draw=()=>mk('Draw','Draw two cards.',2,'Sorcery','{1}{G}')
 const remove=()=>mk('Removal','Destroy target creature an opponent controls.',2,'Instant','{1}{G}')
@@ -49,6 +50,12 @@ const tappedDeck=[...Array.from({length:36},tappedGreen),...Array.from({length:6
 const tapped=profile(tappedDeck)
 assert(tapped.simulation.turnProfile[3].commander<a.simulation.turnProfile[3].commander,'Unconditional tapped lands must reduce T4 commander access')
 
+const genericCmd={name:'Generic Five',oracle:'',cmc:5,type:'Legendary Creature',manaCost:'{5}',id:'generic5'}
+const normalMana=[...Array.from({length:36},forest),...Array.from({length:63},(_,i)=>blank(i))]
+const tombMana=[...Array.from({length:4},ancient),...Array.from({length:32},forest),...Array.from({length:63},(_,i)=>blank(i))]
+const normalGeneric=profile(normalMana,genericCmd),tombGeneric=profile(tombMana,genericCmd)
+assert(tombGeneric.simulation.turnProfile[3].commander>normalGeneric.simulation.turnProfile[3].commander,'Ancient Tomb must improve early generic commander access')
+
 const londonHand=[
   {name:'Land A',isLand:true,sourceColors:['G'],oracle:'',type:'Land'},
   {name:'Land B',isLand:true,sourceColors:['G'],oracle:'',type:'Land'},
@@ -65,10 +72,10 @@ assert.equal(paidMulligan.hand.length,6,'Second mulligan must apply one London b
 assert.equal(paidMulligan.bottom.length,1)
 assert(!paidMulligan.hand.some(x=>x===paidMulligan.bottom[0]))
 
-for(const r of [a,b,c,d,mg,mx,tapped]){
+for(const r of [a,b,c,d,mg,mx,tapped,normalGeneric,tombGeneric]){
   for(const v of [r.profile.median,r.profile.floor,r.profile.ceiling,r.profile.peak,r.profile.dispersion,...Object.values(r.dimensions)])assert(Number.isFinite(v)&&v>=0&&v<=100)
   assert(r.profile.floor<=r.profile.median)
   assert(r.profile.median<=r.profile.ceiling)
   assert(r.profile.ceiling<=r.profile.peak)
 }
-console.log('METAMORPHIC OK — directionality, determinism, color access, tapped-land tempo, Commander London mulligan and score invariants')
+console.log('METAMORPHIC OK — directionality, determinism, color access, tapped lands, Ancient Tomb, Commander London mulligan and score invariants')
