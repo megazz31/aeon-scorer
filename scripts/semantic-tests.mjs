@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict'
 import { cardFeatures, featureDeck } from '../src/engine/cardFeatures.js'
 import { detectPackages, commanderSynergy } from '../src/engine/packageGraph.js'
-import { canPay, simulateSequences } from '../src/engine/sequenceSimulator.js'
+import { canPay, simulateSequences, permanentRampSupport, burstNetSources } from '../src/engine/sequenceSimulator.js'
 import { parseDecklist } from '../src/scryfall.js'
 import { parseAeonShiftCsv } from '../src/data/aeonshift.js'
 
-const card=(name,oracle='',cmc=2,type='Instant',manaCost='',producedMana=[])=>cardFeatures({name,oracle,cmc,type,manaCost,producedMana})
+const card=(name,oracle='',cmc=2,type='Instant',manaCost='',producedMana=[],colors=[])=>cardFeatures({name,oracle,cmc,type,manaCost,producedMana,colors})
 const has=(c,t)=>c.tags.includes(t),no=(c,t)=>!has(c,t)
 
 const ephemerate=card('Ephemerate','Exile target creature you control, then return it to the battlefield under its owner’s control. Rebound.',1,'Instant','{W}')
@@ -42,6 +42,27 @@ const treasureMaker=()=>card(`Conditional Treasure ${crypto.randomUUID()}`,'When
 const treasurePkg=detectPackages(Array.from({length:6},treasureMaker),card('MV4 Commander','Flying.',4,'Legendary Creature','{2}{R}{R}'))
 assert(!treasurePkg.some(p=>p.id==='early-commander'),'Conditional Treasures must not count as persistent early-command ramp')
 
+// Fast-mana mechanics that have non-mana costs/conditions must not become unconditional sources.
+const led=card("Lion's Eye Diamond",'Discard your hand, Sacrifice Lion’s Eye Diamond: Add three mana of any one color.',0,'Artifact','{0}',['W','U','B','R','G'])
+assert.equal(burstNetSources(led,[],[],false).length,0,'LED cannot fund cards that remain in hand')
+assert.equal(burstNetSources(led,[],[],true).length,3,'LED may fund a commander from the command zone')
+const chrome=card('Chrome Mox','Imprint — When Chrome Mox enters, you may exile a nonartifact, nonland card from your hand. {T}: Add one mana of any of the exiled card’s colors.',0,'Artifact','{0}',['W','U','B','R','G'])
+assert.equal(permanentRampSupport(chrome,[chrome],new Set(),[],null),null,'Chrome Mox needs an imprintable colored card')
+const blueSpell=card('Blue Spell','Draw a card.',1,'Instant','{U}',[],['U'])
+assert.deepEqual(permanentRampSupport(chrome,[chrome,blueSpell],new Set(),[],null)?.colors,['U'])
+const moxDiamond=card('Mox Diamond','If Mox Diamond would enter, you may discard a land card instead. If you do, put Mox Diamond onto the battlefield. {T}: Add one mana of any color.',0,'Artifact','{0}',['W','U','B','R','G'])
+assert.equal(permanentRampSupport(moxDiamond,[moxDiamond],new Set(),[],null),null,'Mox Diamond needs a land to discard')
+const spareLand=card('Spare Land','{T}: Add {G}.',0,'Land','',['G'])
+assert(permanentRampSupport(moxDiamond,[moxDiamond,spareLand],new Set(),[],null))
+const moxOpal=card('Mox Opal','Metalcraft — {T}: Add one mana of any color. Activate only if you control three or more artifacts.',0,'Legendary Artifact','{0}',['W','U','B','R','G'])
+assert.equal(permanentRampSupport(moxOpal,[moxOpal],new Set(),[],null),null,'Mox Opal needs two other artifacts before it can produce')
+const rockA=card('Rock A','',0,'Artifact','{0}'),rockB=card('Rock B','',0,'Artifact','{0}')
+assert(permanentRampSupport(moxOpal,[moxOpal],new Set(),[rockA,rockB],null))
+const moxAmber=card('Mox Amber','{T}: Add one mana of any color among legendary creatures and planeswalkers you control.',0,'Legendary Artifact','{0}',['W','U','B','R','G'])
+assert.equal(permanentRampSupport(moxAmber,[moxAmber],new Set(),[],null),null,'Mox Amber needs a colored legendary creature or planeswalker')
+const blueLegend=card('Blue Legend','Flying.',2,'Legendary Creature','{1}{U}',[],['U'])
+assert.deepEqual(permanentRampSupport(moxAmber,[moxAmber],new Set(),[blueLegend],null)?.colors,['U'])
+
 const heiBai=card('Hei Bai, Forest Guardian','When Hei Bai enters, exile another target permanent you control, then return it to the battlefield. Whenever an enchantment enters under your control, create a 1/1 Spirit token.',4,'Legendary Creature — Spirit Avatar','{1}{W}{U}{B}')
 const ritual=card('Dark Ritual','Add {B}{B}{B}.',1,'Instant','{B}')
 const esg=card('Elvish Spirit Guide','Exile Elvish Spirit Guide from your hand: Add {G}.',3,'Creature — Elf Spirit','{2}{G}',['G'])
@@ -70,4 +91,4 @@ assert.deepEqual(parsed,[{qty:1,name:'Sol Ring'},{qty:1,name:'Arcane Signet'},{q
 const csv='Name,Base Singleton,Duel Commander\n"Card, With Comma",12,9\nDark Ritual,5,5\n',aeon=parseAeonShiftCsv(csv)
 assert.equal(aeon.get('card, with comma')?.base,12);assert.equal(aeon.get('dark ritual')?.duel,5)
 
-console.log('SEMANTIC OK — card roles, package roles, commander synergy, mana access and import syntax')
+console.log('SEMANTIC OK — card roles, package roles, conditional mana, commander synergy, access and import syntax')
