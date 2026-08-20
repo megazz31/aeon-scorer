@@ -7,7 +7,7 @@ const mk=(name,oracle='',cmc=2,type='Instant',manaCost='',producedMana=[])=>({na
 const forest=()=>mk('Forest','{T}: Add {G}.',0,'Basic Land — Forest','',['G'])
 const plains=()=>mk('Plains','{T}: Add {W}.',0,'Basic Land — Plains','',['W'])
 const tappedGreen=()=>mk('Tapped Grove','Tapped Grove enters tapped. {T}: Add {G}.',0,'Land','',['G'])
-const ancient=()=>({name:`Ancient Tomb ${++id}`,oracle:'{T}: Add {C}{C}. Ancient Tomb deals 2 damage to you.',cmc:0,type:'Land',manaCost:'',producedMana:['C'],id:String(id)})
+const ancient=()=>({name:'Ancient Tomb',oracle:'{T}: Add {C}{C}. Ancient Tomb deals 2 damage to you.',cmc:0,type:'Land',manaCost:'',producedMana:['C'],id:`tomb-${++id}`})
 const blank=(i=0)=>mk(`Blank${i}`,'',3,'Creature — Bear','{2}{G}')
 const draw=()=>mk('Draw','Draw two cards.',2,'Sorcery','{1}{G}')
 const remove=()=>mk('Removal','Destroy target creature an opponent controls.',2,'Instant','{1}{G}')
