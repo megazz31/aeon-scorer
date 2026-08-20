@@ -28,6 +28,10 @@ const wizard=card('Wizard Class','You have no maximum hand size. When this Class
 assert(has(wizard,'draw'));assert(has(wizard,'counter-producer'));assert(no(wizard,'counter-payoff'))
 const cleric=card('Moon-Blessed Cleric','When Moon-Blessed Cleric enters the battlefield, you may search your library for an enchantment card, reveal it, then shuffle and put that card on top.',3,'Creature — Human Cleric','{2}{W}')
 assert(has(cleric,'tutor'));assert(no(cleric,'enchantment'))
+const crescent=card('Crescent Island Temple','When Crescent Island Temple enters, for each Shrine you control, create a 1/1 red Monk creature token with prowess. (Whenever you cast a noncreature spell, it gets +1/+1 until end of turn.) Whenever another Shrine you control enters, create a 1/1 red Monk creature token with prowess.',4,'Legendary Enchantment — Shrine','{3}{R}')
+assert(has(crescent,'tokens'));assert(no(crescent,'spellslinger'),'Reminder text on a created prowess token must not turn the Shrine itself into a spellslinger payoff')
+const kitten=card('Displacer Kitten','Whenever you cast a noncreature spell, exile up to one target nonland permanent you control, then return that card to the battlefield under its owner’s control.',4,'Creature — Cat Beast','{3}{U}')
+assert(has(kitten,'spellslinger'));assert(has(kitten,'blink'),'Real noncreature-spell trigger must remain a spellslinger payoff')
 
 // Type alone must never seed commander synergy.
 const plainEnchantmentCommander=card('Plain Enchantment Commander','Flying.',4,'Legendary Enchantment Creature — Spirit','{2}{W}{W}')
@@ -48,7 +52,7 @@ const etb2=card('Eidolon of Blossoms','Constellation — Whenever Eidolon of Blo
 const setessan=card('Setessan Champion','Constellation — Whenever an enchantment enters the battlefield under your control, put a +1/+1 counter on Setessan Champion and draw a card.',3,'Creature','{2}{G}')
 const skybind=card('Skybind','Constellation — Whenever Skybind or another enchantment enters the battlefield under your control, exile target nonenchantment permanent. Return that card at the beginning of the next end step.',5,'Enchantment','{3}{W}{W}')
 const shrines=Array.from({length:8},(_,i)=>card(`Shrine ${i}`,'At the beginning of your upkeep, draw a card.',2,'Legendary Enchantment — Shrine','{1}{U}'))
-const heiCards=featureDeck([ritual,petal,esg,ssg,ephemerate,blink2,etb1,etb2,setessan,skybind,phelia,soulherder,wizard,panharm,procession,...shrines].map(x=>({...x})))
+const heiCards=featureDeck([ritual,petal,esg,ssg,ephemerate,blink2,etb1,etb2,setessan,skybind,phelia,soulherder,wizard,panharm,procession,crescent,kitten,...shrines].map(x=>({...x})))
 const pkgs=detectPackages(heiCards,heiBai),ids=new Set(pkgs.map(p=>p.id))
 assert(ids.has('early-commander'));assert(ids.has('blink-etb'));assert(ids.has('constellation'));assert(!ids.has('counters'));assert(!ids.has('graveyard'));assert(!ids.has('spells'))
 for(const p of pkgs)assert.equal(new Set(p.members.map(x=>x.toLowerCase())).size,p.members.length,`Duplicate member in ${p.id}`)
