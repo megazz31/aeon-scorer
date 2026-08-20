@@ -12,9 +12,11 @@ User analyses are coverage and adversarial test inputs. They are never training 
 
 ## Auditor control plane
 
-The auditor is a **scheduled ChatGPT task using the connected Supabase project**. Aeon ships no OpenAI API call, model secret, GitHub Models worker or model-running cron.
+The auditor is **designed to run as a scheduled ChatGPT task using the connected Supabase project**. Aeon ships no OpenAI API call, model secret, GitHub Models worker or model-running cron.
 
-Each run should:
+Runtime status for v3.2: the ingestion endpoint, versioned corpus, audit queue and service-role RPCs are ready in production. The ChatGPT schedule is created separately from this repository after production verification; the repository itself does not imply that a schedule is currently active.
+
+Each scheduled run should:
 
 1. Reset stale audit locks with `aeon_reset_stale_audits()`.
 2. Claim only a small pending batch with `aeon_claim_audit_batch(...)`.

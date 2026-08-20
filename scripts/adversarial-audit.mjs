@@ -86,8 +86,10 @@ assert(/sepAll\.preconMedian<=55/.test(benchmark)&&/sepAll\.cedhMedian>=72/.test
 assert(/strictScale\.precon<=55/.test(validator)&&/strictScale\.cedh>=72/.test(validator),'Extended validation must preserve strict scale gates instead of relaxing them')
 assert(/semantic/.test(workflow)&&/metamorphic/.test(workflow)&&/audit/.test(workflow)&&/3200/.test(workflow),'CI must execute micro, adversarial and cross-iteration verification')
 
-assert(!/Dernier run\s*:\s*\*\*12\/12/i.test(readme),'README must not claim the old 12/12 as current v3.1 validation')
-assert(/same final v3\.1 head passed/i.test(readme),'README must describe the final v3.1 validation without reverting to pre-validation wording')
+assert(!/Dernier run\s*:\s*\*\*12\/12/i.test(readme),'README must not claim a legacy 12/12 run as current validation')
+assert(/same final v3\.2 head passed/i.test(readme),'README must describe the final v3.2 validation without reverting to legacy release wording')
+assert(/Current production:\s*v3\.2\.0/i.test(readme),'README must identify the current production release explicitly')
+assert(/user analyses are evidence/i.test(readme)&&/automatic truth/i.test(readme),'README must describe real analyses as QA evidence rather than automatic truth')
 assert(/aeon-scorer\.vercel\.app/.test(readme)&&/Commander \/ EDH/.test(readme),'README must expose the live app and Commander/EDH discovery terms')
 assert(/pioche.*ne lance pas ensuite réellement/is.test(notes)&&/tuteurs.*ne sont pas exécutées dynamiquement/is.test(notes),'Known sequence-model limits must remain documented')
 

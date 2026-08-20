@@ -1,4 +1,4 @@
-# Aeon Scorer v3.1 — notes du modèle
+# Aeon Scorer v3.2 — notes du modèle
 
 ## Hypothèse centrale
 
@@ -8,7 +8,7 @@ Une carte produit d'abord des **primitives fonctionnelles**. Sa contribution dé
 
 ## Ce que le Monte Carlo mesure réellement
 
-La v3.1 est un **modèle d'accès à des capacités**, pas un moteur de règles Magic. Chaque colonne de la courbe répond indépendamment à une question du type : « cette fonction est-elle accessible à ce tour avec une fenêtre de mana plausible ? ».
+La v3.2 est un **modèle d'accès à des capacités**, pas un moteur de règles Magic. Chaque colonne de la courbe répond indépendamment à une question du type : « cette fonction est-elle accessible à ce tour avec une fenêtre de mana plausible ? ».
 
 Les colonnes ne signifient donc pas que commandant + package + interaction + ressource sont tous réalisables simultanément dans la même ligne de jeu. Le score central agrège donc un **profil d'accès structurel**, pas un état de partie entièrement exécutable carte par carte.
 
@@ -21,7 +21,7 @@ Deux decks peuvent avoir la même médiane et produire des expériences opposée
 
 La médiane doit toujours être lue avec P20, P80, pic, dispersion et dimensions.
 
-## Sémantique v3.1
+## Sémantique v3.2
 
 La détection distingue notamment :
 
@@ -40,9 +40,9 @@ Des cas mécaniques sensibles sont traités explicitement : Lotus Petal/Spirit G
 
 Les points AeonShift sont un **prior externe optionnel et faible**. Ils ne sont jamais additionnés comme une vérité Commander et ne remplacent ni la simulation d'accès ni les packages.
 
-## Validation v3.1
+## Validation v3.2
 
-La v3.1 n'est considérée comme validée que si le **même head final** passe successivement :
+La v3.2 n'est considérée comme validée que si le **même head final** passe successivement :
 
 1. smoke test ;
 2. tests micro-sémantiques ;
@@ -55,7 +55,20 @@ La v3.1 n'est considérée comme validée que si le **même head final** passe s
 9. convergence 1 800 ↔ 3 200 ;
 10. revue manuelle finale.
 
-Le corpus macro est en cours de durcissement pour couvrir des précons sur plusieurs années, y compris récents, et des commandants cEDH diversifiés. Les anciennes valeurs v3 ne doivent pas être présentées comme les résultats finaux v3.1.
+Le corpus macro couvre actuellement 38 decks réels : 15 précons, 15 listes cEDH avec 15 commandants distincts et 8 decks utilisateur/publics. Les valeurs historiques d'anciennes versions ne doivent pas être présentées comme les résultats finaux v3.2.
+
+## Données réelles et amélioration continue
+
+Chaque analyse web réussie est enregistrée avec son `engine_version`, son `semantic_version`, le hash exact du deck et un `oracle_snapshot_hash`. Les analyses alimentent un corpus QA versionné afin de rendre visibles les erreurs de lecture de cartes, de packages ou de mécaniques.
+
+Ce corpus est **adversarial / observationnel**, pas une vérité d'entraînement :
+
+- la fréquence d'un tag Aeon ne prouve pas qu'il est correct ;
+- un score utilisateur répété ne devient jamais une cible 0–100 ;
+- une correction sémantique doit être vérifiée indépendamment contre le texte/type Oracle ;
+- une correction candidate ne peut être promue qu'après les mêmes gates micro, métamorphiques, adversariales, macro et de convergence.
+
+La frontière reste **RAW → AUDIT → APPROVED MODEL**. La file d'audit est conçue pour être traitée par une planification ChatGPT connectée à Supabase, séparée du code de production et sans worker OpenAI API/GitHub Models embarqué dans l'application.
 
 ## Limites connues et assumées
 
@@ -73,7 +86,7 @@ Ces limites ne doivent pas être cachées derrière le score :
 
 ## Frontière suivante
 
-Les gains de précision les plus importants après v3.1 seront :
+Les gains de précision les plus importants après v3.2 seront :
 
 1. exécution tutor → cible → package ;
 2. pioche réellement propagée dans les séquences ;
