@@ -2,7 +2,18 @@
 
 Aeon Scorer estime la **distribution de puissance structurelle d'un deck Commander**. Il ne cherche pas à convertir une somme de cartes en bracket.
 
-> La v3.1 est en validation. Elle ne doit être marquée comme validée que lorsque le même commit final passe l'intégralité de la chaîne CI et la revue manuelle finale.
+La v3.1 a passé sur le même head final : micro-sémantique, métamorphique, audit adversarial, build, benchmarks 1 800 / 3 200 et convergence.
+
+## Lecture principale
+
+Le résumé est volontairement centré sur quatre valeurs :
+
+- **Puissance médiane** — niveau habituel estimé du deck ;
+- **P20** — sortie basse plausible ;
+- **P80** — bonne sortie plausible ;
+- **Pic** — haut de potentiel accessible, distinct de la sortie habituelle.
+
+Les dimensions, packages, drivers, courbe T1–T7, dépendance au commandant et couverture des données sont regroupés dans **Diagnostic détaillé**. Ils expliquent le score mais ne remplacent pas les quatre valeurs principales.
 
 ## Modèle
 
@@ -30,43 +41,39 @@ Le moteur ne simule pas une partie complète de Magic. Les colonnes d'accès son
 - garde-fous identité couleur et copie du commandant dans l'interface ;
 - labels de reprise/disruption rendus moins trompeurs.
 
-## Protocole de validation v3.1
+## Lancement Windows recommandé
 
-Le même head final doit passer :
+Après un `git pull`, tu peux simplement **double-cliquer sur `AeonScorer.cmd`** à la racine du projet.
 
-```text
-smoke
-micro-sémantique
-métamorphique
-audit adversarial
-build production
-benchmark macro 1 800
-validation étendue
-benchmark macro 3 200
-validation étendue
-convergence 1 800 ↔ 3 200
-revue manuelle finale
+Le menu propose :
+
+1. **Lancer Aeon Scorer** — installe les dépendances seulement si nécessaire puis démarre le site ;
+2. **Mettre à jour + vérifier + lancer** — `git pull --ff-only`, dépendances, tous les contrôles locaux, puis démarrage ;
+3. **Vérifier le projet uniquement** — smoke + sémantique + métamorphique + audit + build ;
+4. **Benchmark complet** — validation réseau longue du corpus.
+
+Le lanceur PowerShell sous-jacent est `AeonScorer.ps1`. Il peut aussi être appelé directement :
+
+```powershell
+.\AeonScorer.ps1 -Mode run
+.\AeonScorer.ps1 -Mode update
+.\AeonScorer.ps1 -Mode check
+.\AeonScorer.ps1 -Mode benchmark
 ```
 
-Le benchmark contient au minimum 30 listes réelles. La sélection v3.1 est stratifiée pour ne pas utiliser seulement d'anciens précons et cherche aussi à diversifier les commandants cEDH.
+## Installation manuelle
 
-Les anciennes valeurs v3 (38 decks, précons ~49 / cohorte perso ~57 / cEDH ~78) restent uniquement des **repères historiques** tant que le rapport v3.1 final n'est pas passé.
-
-## Installation
+Si tu préfères ne pas utiliser le lanceur :
 
 ```bash
 npm install
 npm run dev
 ```
 
-Vérifications locales rapides :
+Tous les contrôles locaux en une commande :
 
 ```bash
-npm run smoke
-npm run test:semantic
-npm run test:metamorphic
-npm run audit
-npm run build
+npm run quality:local
 ```
 
 Benchmark réseau complet :
@@ -82,7 +89,8 @@ npm run validate:calibration
 - indiquer le commandant ;
 - choisir 1 500 / 3 000 / 6 000 séquences ;
 - optionnel : importer le CSV AeonShift courant ;
-- lire **médiane + P20 + P80 + pic + dispersion + dimensions + packages**, pas seulement la médiane.
+- comparer d'abord **médiane + P20 + P80 + pic** ;
+- ouvrir **Diagnostic détaillé** seulement pour comprendre l'origine du résultat ou examiner un cas suspect.
 
 La v3.1 supporte actuellement **un seul commandant**. Les configurations Partner / Friends Forever / Background à deux commandants ne sont pas encore modélisées.
 
