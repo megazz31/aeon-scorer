@@ -48,7 +48,7 @@ assert(/option de reprise accessible/i.test(app)&&!/récupération après disrup
 assert(/Partner\/Background|Partner \/ Background/.test(app),'Unsupported dual-command configurations must be disclosed')
 assert(/Identité couleur incompatible/i.test(app),'UI must reject cards outside the chosen commander color identity')
 assert(/non exhaustive/i.test(app),'Combo UI must disclose incomplete combo coverage')
-assert(/Puissance médiane/.test(app)&&/Sortie basse/.test(app)&&/Sortie haute/.test(app)&&/>Pic</.test(app),'Primary dashboard must expose median, P20, P80 and peak')
+assert(/Puissance médiane/.test(app)&&/Sortie basse/.test(app)&&/Sortie haute/.test(app)&&/label="Pic"/.test(app),'Primary dashboard must expose median, P20, P80 and peak')
 assert(!/Cohorte perso|Tes decks/i.test(app),'Personal user cohort must not be presented as a public calibration reference')
 assert(/coverage<88/.test(app),'Analysis coverage must be demoted to a summary warning rather than a primary score metric')
 assert(/\/pourquoi/.test(app)&&/\/methodologie/.test(app)&&/\/a-propos/.test(app),'Public explanation pages must remain linked from the app')
