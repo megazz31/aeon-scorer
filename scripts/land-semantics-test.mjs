@@ -25,6 +25,10 @@ const templeSim=simulateSequences(temples,twoManaCommander,[],[],40,7,fixed)
 assert.equal(templeSim.commanderMedianTurn,5,'Temple of the False God must produce no mana before the fifth land')
 assert.equal(templeSim.turnProfile[3].commander,0,'Temple of the False God must still be offline through turn four')
 assert.equal(templeSim.turnProfile[4].commander,100,'Temple of the False God should provide two colorless once five lands are controlled')
+const ancient=card('Ancient Tomb','Land','{T}: Add {C}{C}. Ancient Tomb deals 2 damage to you.',0,'',{producedMana:['C']})
+const ancientSources=landManaSources(ancient,[ancient])
+assert.equal(ancientSources.length,2,'Ancient Tomb must expose both colorless mana units from its direct mana ability')
+assert.equal(canPay(twoManaCommander,ancientSources),true,'Ancient Tomb alone must pay a two-mana generic cost')
 
 // Conditional colored lands keep their real colorless fallback until their condition is met.
 const swamp=card('Audit Swamp','Basic Land — Swamp','{T}: Add {B}.',0,'',{producedMana:['B']})
@@ -66,4 +70,4 @@ assert.equal(isImmediateLandRamp(knight),false,'catch-up ETB ramp must not be as
 assert.equal(isImmediateLandRamp(sword),false,'attack-triggered equipment ramp is delayed')
 assert.equal(isImmediateLandRamp(hawk),false,'combat-damage catch-up ramp is delayed and conditional')
 
-console.log('LAND SEMANTICS OK — fetch timing, conditional mana, exact filters, immediate ramp and Temple condition')
+console.log('LAND SEMANTICS OK — fetch timing, conditional mana, exact filters, Ancient Tomb, immediate ramp and Temple condition')
