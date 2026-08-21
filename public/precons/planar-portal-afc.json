@@ -1,6 +1,6 @@
 {
   "slug": "planar-portal-afc",
-  "deckHash": "dd808fb3f98ff061eee7261d47a7cda90aad6c3eaba011ad6bc725a71fd4f864",
+  "deckHash": "a3de7cd792a52a428385f8af9574ace5f3814845f00d09ec64a7fb973c947aa4",
   "name": "Planar Portal",
   "productName": "Planar Portal",
   "commanderName": "Prosper, Tome-Bound",
@@ -37,7 +37,7 @@
     "oracleSnapshotHash": "ae0f7463cdac260f3f371487771eaadae51b7551ba3456ea3f4d2370551b3e67",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T09:05:13.599Z"
+    "analyzedAt": "2026-08-21T10:03:26.375Z"
   },
   "decklist": "1 Chittering Witch\n1 Fiend of the Shadows\n1 Gonti, Lord of Luxury\n1 Marionette Master\n1 Ogre Slumlord\n1 Piper of the Swarm\n1 Pontiff of Blight\n1 Dark-Dweller Oracle\n1 Dire Fleet Daredevil\n1 Dream Pillager\n1 Etali, Primal Storm\n1 Izzet Chemister\n1 Tectonic Giant\n1 Loyal Apprentice\n1 Consuming Vapors\n1 Hex\n1 Apex of Power\n1 Disrupt Decorum\n1 Ignite the Future\n1 Phthisis\n1 Light Up the Stage\n1 Throes of Chaos\n1 Vandalblast\n1 Chaos Warp\n1 Commune with Lava\n1 Bedevil\n1 Bituminous Blast\n1 Rakdos Charm\n1 Terminate\n1 Chaos Wand\n1 Arcane Signet\n1 Commander's Sphere\n1 Fellwar Stone\n1 Mind Stone\n1 Orazca Relic\n1 Rakdos Signet\n1 Sol Ring\n1 Talisman of Indulgence\n1 Unstable Obelisk\n1 Dead Man's Chest\n1 Theater of Horrors\n1 Shiny Impetus\n1 Exotic Orchard\n1 Foreboding Ruins\n1 Shadowblood Ridge\n1 Smoldering Marsh\n1 Spinerock Knoll\n1 Bojuka Bog\n1 Command Tower\n1 Mortuary Mire\n1 Rakdos Carnarium\n1 Tainted Peak\n1 Zhalfirin Void\n4 Swamp\n4 Swamp\n3 Swamp\n3 Swamp\n4 Mountain\n3 Mountain\n3 Mountain\n3 Mountain\n1 Karazikar, the Eye Tyrant\n1 Bag of Devouring\n1 Danse Macabre\n1 Death Tyrant\n1 Grim Hireling\n1 Hellish Rebuke\n1 Lorcan, Warlock Collector\n1 Fiendlash\n1 Reckless Endeavor\n1 Share the Spoils\n1 Wild-Magic Sorcerer\n1 Fevered Suspicion\n1 Hurl Through Hell\n1 Warlock Class\n1 Chaos Channeler\n1 You Find Some Prisoners\n1 Bucknard's Everfull Purse\n1 Ebony Fly\n1 Underdark Rift",
   "result": {
@@ -49,16 +49,16 @@
       "dispersion": 18,
       "variance": 18,
       "consistency": 68,
-      "commanderDelta": 7,
+      "commanderDelta": 8,
       "coverage": 91,
       "dataCoverage": 91
     },
     "dimensions": {
       "speed": 36,
       "consistency": 68,
-      "explosiveness": 28,
+      "explosiveness": 29,
       "synergy": 53,
-      "interaction": 58,
+      "interaction": 57,
       "resilience": 22
     },
     "roles": {
@@ -82,25 +82,45 @@
         "strength": 63,
         "cohesion": 63,
         "producers": [
+          "Bag of Devouring",
           "Chittering Witch",
-          "Dark-Dweller Oracle",
-          "Bag of Devouring"
+          "Dark-Dweller Oracle"
         ],
         "payoffs": [
-          "Ogre Slumlord",
-          "Dead Man's Chest",
           "Bag of Devouring",
-          "Death Tyrant"
+          "Dead Man's Chest",
+          "Death Tyrant",
+          "Ogre Slumlord"
         ],
         "members": [
+          "Bag of Devouring",
           "Chittering Witch",
           "Dark-Dweller Oracle",
-          "Bag of Devouring",
-          "Ogre Slumlord",
           "Dead Man's Chest",
-          "Death Tyrant"
+          "Death Tyrant",
+          "Ogre Slumlord"
         ],
         "producerCards": [
+          {
+            "name": "Bag of Devouring",
+            "cmc": 1,
+            "tags": [
+              "artifact",
+              "draw",
+              "sacrifice",
+              "sac-outlet",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 1
+            }
+          },
           {
             "name": "Chittering Witch",
             "cmc": 4,
@@ -140,7 +160,9 @@
               ],
               "total": 2
             }
-          },
+          }
+        ],
+        "payoffCards": [
           {
             "name": "Bag of Devouring",
             "cmc": 1,
@@ -159,29 +181,6 @@
                 ]
               ],
               "total": 1
-            }
-          }
-        ],
-        "payoffCards": [
-          {
-            "name": "Ogre Slumlord",
-            "cmc": 5,
-            "tags": [
-              "creature",
-              "tokens",
-              "death-payoff"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "B"
-                ],
-                [
-                  "B"
-                ]
-              ],
-              "total": 5
             }
           },
           {
@@ -202,26 +201,6 @@
             }
           },
           {
-            "name": "Bag of Devouring",
-            "cmc": 1,
-            "tags": [
-              "artifact",
-              "draw",
-              "sacrifice",
-              "sac-outlet",
-              "death-payoff"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [
-                [
-                  "B"
-                ]
-              ],
-              "total": 1
-            }
-          },
-          {
             "name": "Death Tyrant",
             "cmc": 5,
             "tags": [
@@ -233,6 +212,27 @@
             "manaReq": {
               "generic": 4,
               "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Ogre Slumlord",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
                 [
                   "B"
                 ]
@@ -258,14 +258,14 @@
         "producers": [
           "Arcane Signet",
           "Commander's Sphere",
+          "Ebony Fly",
           "Fellwar Stone",
           "Mind Stone",
           "Orazca Relic",
           "Rakdos Signet",
-          "Sol Ring // Sol Ring",
-          "Talisman of Indulgence",
-          "Unstable Obelisk",
-          "Shiny Impetus"
+          "Share the Spoils",
+          "Shiny Impetus",
+          "Sol Ring"
         ],
         "payoffs": [
           "Prosper, Tome-Bound"
@@ -273,16 +273,16 @@
         "members": [
           "Arcane Signet",
           "Commander's Sphere",
+          "Ebony Fly",
           "Fellwar Stone",
           "Mind Stone",
           "Orazca Relic",
           "Rakdos Signet",
-          "Sol Ring // Sol Ring",
+          "Share the Spoils",
+          "Shiny Impetus",
+          "Sol Ring",
           "Talisman of Indulgence",
           "Unstable Obelisk",
-          "Shiny Impetus",
-          "Share the Spoils",
-          "Ebony Fly",
           "Prosper, Tome-Bound"
         ],
         "producerCards": [
@@ -312,6 +312,20 @@
               "generic": 3,
               "colored": [],
               "total": 3
+            }
+          },
+          {
+            "name": "Ebony Fly",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "mana",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
             }
           },
           {
@@ -372,7 +386,42 @@
             }
           },
           {
-            "name": "Sol Ring // Sol Ring",
+            "name": "Share the Spoils",
+            "cmc": 2,
+            "tags": [
+              "enchantment",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Shiny Impetus",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "mana",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Sol Ring",
             "cmc": 0,
             "tags": [
               "mana",
@@ -411,55 +460,6 @@
               "colored": [],
               "total": 3
             }
-          },
-          {
-            "name": "Shiny Impetus",
-            "cmc": 3,
-            "tags": [
-              "enchantment",
-              "mana",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Share the Spoils",
-            "cmc": 2,
-            "tags": [
-              "enchantment",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 2
-            }
-          },
-          {
-            "name": "Ebony Fly",
-            "cmc": 2,
-            "tags": [
-              "artifact",
-              "mana",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [],
-              "total": 2
-            }
           }
         ],
         "payoffCards": [
@@ -494,16 +494,16 @@
     "commanderSynergy": {
       "score": 28,
       "connected": [
+        "Bucknard's Everfull Purse",
         "Chittering Witch",
+        "Death Tyrant",
+        "Etali, Primal Storm",
+        "Grim Hireling",
+        "Loyal Apprentice",
         "Ogre Slumlord",
         "Piper of the Swarm",
-        "Etali, Primal Storm",
-        "Loyal Apprentice",
-        "Shiny Impetus",
-        "Death Tyrant",
-        "Grim Hireling",
         "Reckless Endeavor",
-        "Bucknard's Everfull Purse"
+        "Shiny Impetus"
       ],
       "tags": [
         "tokens",
@@ -535,57 +535,57 @@
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 14,
-          "resource": 6,
+          "interaction": 13,
+          "resource": 5,
           "burst": 7
         },
         {
           "turn": 2,
           "commander": 0,
-          "engine": 1,
-          "interaction": 27,
+          "engine": 0,
+          "interaction": 26,
           "resource": 7,
           "burst": 5
         },
         {
           "turn": 3,
-          "commander": 28,
+          "commander": 27,
           "engine": 2,
-          "interaction": 44,
-          "resource": 10,
-          "burst": 15
+          "interaction": 42,
+          "resource": 9,
+          "burst": 16
         },
         {
           "turn": 4,
           "commander": 80,
-          "engine": 6,
-          "interaction": 64,
+          "engine": 5,
+          "interaction": 63,
           "resource": 20,
-          "burst": 26
+          "burst": 27
         },
         {
           "turn": 5,
-          "commander": 94,
+          "commander": 93,
           "engine": 10,
           "interaction": 71,
-          "resource": 27,
-          "burst": 33
+          "resource": 28,
+          "burst": 34
         },
         {
           "turn": 6,
-          "commander": 97,
+          "commander": 96,
           "engine": 12,
-          "interaction": 76,
+          "interaction": 77,
           "resource": 31,
-          "burst": 38
+          "burst": 39
         },
         {
           "turn": 7,
-          "commander": 98,
-          "engine": 15,
+          "commander": 97,
+          "engine": 14,
           "interaction": 80,
-          "resource": 34,
-          "burst": 43
+          "resource": 33,
+          "burst": 44
         }
       ]
     },
@@ -612,11 +612,10 @@
         "aeon": null
       },
       {
-        "name": "Izzet Chemister",
+        "name": "Chaos Wand",
         "impact": 3.7,
         "tags": [
-          "creature",
-          "sacrifice",
+          "artifact",
           "cheat",
           "free"
         ],
@@ -633,17 +632,18 @@
         "aeon": null
       },
       {
-        "name": "Chaos Wand",
+        "name": "Izzet Chemister",
         "impact": 3.7,
         "tags": [
-          "artifact",
+          "creature",
+          "sacrifice",
           "cheat",
           "free"
         ],
         "aeon": null
       },
       {
-        "name": "Sol Ring // Sol Ring",
+        "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
           "mana",
@@ -698,16 +698,6 @@
         "aeon": null
       },
       {
-        "name": "Shiny Impetus",
-        "impact": 2.8,
-        "tags": [
-          "enchantment",
-          "mana",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Grim Hireling",
         "impact": 2.8,
         "tags": [
@@ -716,6 +706,16 @@
           "removal",
           "tokens",
           "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Shiny Impetus",
+        "impact": 2.8,
+        "tags": [
+          "enchantment",
+          "mana",
+          "tokens"
         ],
         "aeon": null
       }

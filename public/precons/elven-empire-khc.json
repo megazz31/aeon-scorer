@@ -1,6 +1,6 @@
 {
   "slug": "elven-empire-khc",
-  "deckHash": "031fa467237d1f7022d1199a055fcaf8076367f27dd5367b99e21addfeb4b9df",
+  "deckHash": "2c8935ab5b41d989120018cae41d789504ce2a717c163094188e4b684086add6",
   "name": "Elven Empire",
   "productName": "Elven Empire",
   "commanderName": "Lathril, Blade of the Elves",
@@ -28,8 +28,8 @@
   "cardCount": 99,
   "analysis": {
     "median": 39,
-    "p20": 31,
-    "p80": 48,
+    "p20": 30,
+    "p80": 47,
     "peak": 74,
     "coverage": 92,
     "engineVersion": "3.2.0",
@@ -37,14 +37,14 @@
     "oracleSnapshotHash": "1f4798b0b266daca140cb8b69e639a6a3c67bbc72e35aa5f845b7128e35ea608",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T09:05:13.599Z"
+    "analyzedAt": "2026-08-21T10:03:26.375Z"
   },
   "decklist": "1 Abomination of Llanowar\n1 Beast Whisperer\n1 Canopy Tactician\n1 Cultivator of Blades\n1 Dwynen, Gilt-Leaf Daen\n1 Elderfang Ritualist\n1 Elvish Archdruid\n1 Elvish Mystic\n1 Elvish Rejuvenator\n1 End-Raze Forerunners\n1 Eyeblight Cullers\n1 Farhaven Elf\n1 Golgari Findbroker\n1 Harald, King of Skemfar\n1 Imperious Perfect\n1 Jagged-Scar Archers\n1 Jaspera Sentinel\n1 Llanowar Tribe\n1 Lys Alana Huntmaster\n1 Lys Alana Scarblade\n1 Marwyn, the Nurturer\n1 Masked Admirers\n1 Miara, Thorn of the Glade\n1 Nullmage Shepherd\n1 Numa, Joraga Chieftain\n1 Poison-Tip Archer\n1 Reclamation Sage\n1 Rhys the Exiled\n1 Ruthless Winnower\n1 Shaman of the Pack\n1 Skemfar Shadowsage\n1 Springbloom Druid\n1 Sylvan Messenger\n1 Timberwatch Elf\n1 Twinblade Assassins\n1 Voice of Many\n1 Voice of the Woods\n1 Wirewood Channeler\n1 Wolverine Riders\n1 Wood Elves\n1 Elven Ambush\n1 Poison the Cup\n1 Putrefy\n1 Tergrid's Shadow\n1 Ambition's Cost\n1 Bounty of Skemfar\n1 Casualties of War\n1 Eyeblight Massacre\n1 Elvish Promenade\n1 Harvest Season\n1 Pact of the Serpent\n1 Return Upon the Tide\n1 Roots of Wisdom\n1 Arcane Signet\n1 Serpent's Soul-Jar\n1 Sol Ring\n1 Binding the Old Gods\n1 Crown of Skemfar\n1 Elderfang Venom\n1 Pride of the Perfect\n1 Prowess of the Fair\n1 Moldervine Reclamation\n1 Command Tower\n16 Forest\n1 Foul Orchard\n1 Golgari Guildgate\n1 Golgari Rot Farm\n1 Jungle Hollow\n1 Myriad Landscape\n1 Path of Ancestry\n1 Skemfar Elderhall\n13 Swamp",
   "result": {
     "profile": {
       "median": 39,
-      "floor": 31,
-      "ceiling": 48,
+      "floor": 30,
+      "ceiling": 47,
       "peak": 74,
       "dispersion": 16,
       "variance": 16,
@@ -58,7 +58,7 @@
       "consistency": 70,
       "explosiveness": 11,
       "synergy": 56,
-      "interaction": 27,
+      "interaction": 26,
       "resilience": 44
     },
     "roles": {
@@ -82,6 +82,8 @@
         "strength": 59,
         "cohesion": 59,
         "producers": [
+          "Arcane Signet",
+          "Bounty of Skemfar",
           "Elvish Archdruid",
           "Elvish Mystic",
           "Elvish Rejuvenator",
@@ -89,14 +91,14 @@
           "Jaspera Sentinel",
           "Llanowar Tribe",
           "Marwyn, the Nurturer",
-          "Wood Elves",
-          "Bounty of Skemfar",
-          "Arcane Signet"
+          "Sol Ring"
         ],
         "payoffs": [
           "Lathril, Blade of the Elves"
         ],
         "members": [
+          "Arcane Signet",
+          "Bounty of Skemfar",
           "Elvish Archdruid",
           "Elvish Mystic",
           "Elvish Rejuvenator",
@@ -104,13 +106,41 @@
           "Jaspera Sentinel",
           "Llanowar Tribe",
           "Marwyn, the Nurturer",
+          "Sol Ring",
           "Wood Elves",
-          "Bounty of Skemfar",
-          "Arcane Signet",
-          "Sol Ring // Sol Ring",
           "Lathril, Blade of the Elves"
         ],
         "producerCards": [
+          {
+            "name": "Arcane Signet",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "mana"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Bounty of Skemfar",
+            "cmc": 3,
+            "tags": [
+              "sorcery",
+              "land-ramp"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
           {
             "name": "Elvish Archdruid",
             "cmc": 3,
@@ -243,6 +273,19 @@
             }
           },
           {
+            "name": "Sol Ring",
+            "cmc": 0,
+            "tags": [
+              "mana",
+              "fast-mana"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
             "name": "Wood Elves",
             "cmc": 3,
             "tags": [
@@ -258,49 +301,6 @@
                 ]
               ],
               "total": 3
-            }
-          },
-          {
-            "name": "Bounty of Skemfar",
-            "cmc": 3,
-            "tags": [
-              "sorcery",
-              "land-ramp"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Arcane Signet",
-            "cmc": 2,
-            "tags": [
-              "artifact",
-              "mana"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [],
-              "total": 2
-            }
-          },
-          {
-            "name": "Sol Ring // Sol Ring",
-            "cmc": 0,
-            "tags": [
-              "mana",
-              "fast-mana"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [],
-              "total": 2
             }
           }
         ],
@@ -336,22 +336,22 @@
       "score": 47,
       "connected": [
         "Dwynen, Gilt-Leaf Daen",
-        "Eyeblight Cullers",
-        "Imperious Perfect",
-        "Lys Alana Huntmaster",
-        "Poison-Tip Archer",
-        "Rhys the Exiled",
-        "Skemfar Shadowsage",
-        "Voice of the Woods",
-        "Wolverine Riders",
+        "Elderfang Venom",
         "Elven Ambush",
         "Elvish Promenade",
-        "Return Upon the Tide",
-        "Elderfang Venom",
-        "Prowess of the Fair",
-        "Moldervine Reclamation",
+        "Eyeblight Cullers",
+        "Imperious Perfect",
         "Jungle Hollow",
-        "Skemfar Elderhall"
+        "Lys Alana Huntmaster",
+        "Moldervine Reclamation",
+        "Poison-Tip Archer",
+        "Prowess of the Fair",
+        "Return Upon the Tide",
+        "Rhys the Exiled",
+        "Skemfar Elderhall",
+        "Skemfar Shadowsage",
+        "Voice of the Woods",
+        "Wolverine Riders"
       ],
       "tags": [
         "tokens",
@@ -369,7 +369,7 @@
     "simulation": {
       "iterations": 3200,
       "floor": 30,
-      "median": 35,
+      "median": 36,
       "high": 41,
       "ceiling": 41,
       "peak": 62,
@@ -392,7 +392,7 @@
           "commander": 0,
           "engine": 0,
           "interaction": 8,
-          "resource": 13,
+          "resource": 12,
           "burst": 0
         },
         {
@@ -400,20 +400,20 @@
           "commander": 16,
           "engine": 0,
           "interaction": 15,
-          "resource": 25,
+          "resource": 22,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 61,
           "engine": 0,
-          "interaction": 31,
-          "resource": 53,
+          "interaction": 30,
+          "resource": 50,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 84,
+          "commander": 85,
           "engine": 0,
           "interaction": 41,
           "resource": 69,
@@ -424,7 +424,7 @@
           "commander": 92,
           "engine": 0,
           "interaction": 48,
-          "resource": 78,
+          "resource": 76,
           "burst": 0
         },
         {
@@ -432,14 +432,14 @@
           "commander": 95,
           "engine": 0,
           "interaction": 53,
-          "resource": 82,
+          "resource": 80,
           "burst": 0
         }
       ]
     },
     "drivers": [
       {
-        "name": "Sol Ring // Sol Ring",
+        "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
           "mana",
@@ -488,15 +488,6 @@
         "aeon": null
       },
       {
-        "name": "Twinblade Assassins",
-        "impact": 2.2,
-        "tags": [
-          "creature",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Moldervine Reclamation",
         "impact": 2.2,
         "tags": [
@@ -508,20 +499,11 @@
         "aeon": null
       },
       {
-        "name": "Elvish Mystic",
-        "impact": 1.9,
+        "name": "Twinblade Assassins",
+        "impact": 2.2,
         "tags": [
           "creature",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Jaspera Sentinel",
-        "impact": 1.9,
-        "tags": [
-          "creature",
-          "mana"
+          "draw"
         ],
         "aeon": null
       },
@@ -545,11 +527,29 @@
         "aeon": null
       },
       {
-        "name": "Elvish Archdruid",
-        "impact": 1.8,
+        "name": "Elvish Mystic",
+        "impact": 1.9,
         "tags": [
           "creature",
           "mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Jaspera Sentinel",
+        "impact": 1.9,
+        "tags": [
+          "creature",
+          "mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Bounty of Skemfar",
+        "impact": 1.8,
+        "tags": [
+          "sorcery",
+          "land-ramp"
         ],
         "aeon": null
       }

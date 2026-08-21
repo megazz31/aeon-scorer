@@ -1,6 +1,6 @@
 {
   "slug": "silverquill-statement-c21",
-  "deckHash": "287650555fd2d0ead25fce48910f492ab8259e127a61cfd872a5a6d64f173d90",
+  "deckHash": "2560ddb4c2a4e95159e774372f2c40fcc7cc1c90dae1405772e3b60a0a647ae2",
   "name": "Silverquill Statement",
   "productName": "Silverquill Statement",
   "commanderName": "Breena, the Demagogue",
@@ -30,14 +30,14 @@
     "median": 41,
     "p20": 32,
     "p80": 51,
-    "peak": 79,
+    "peak": 76,
     "coverage": 92,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-1",
     "oracleSnapshotHash": "009577198c3198f2924f1c6583a027103d23c2f7219b5b6f309f5885293dbe66",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T09:05:13.599Z"
+    "analyzedAt": "2026-08-21T10:03:26.375Z"
   },
   "decklist": "1 Gideon, Champion of Justice\n1 Felisa, Fang of Silverquill\n1 Combat Calligrapher\n1 Guardian Archon\n1 Nils, Discipline Enforcer\n1 Scholarship Sponsor\n1 Author of Shadows\n1 Bold Plagiarist\n1 Fain, the Broker\n1 Keen Duelist\n1 Angel of Serenity\n1 Boreas Charger\n1 Hunted Lammasu\n1 Knight of the White Orchid\n1 Selfless Squire\n1 Stalking Leonin\n1 Sunscorch Regent\n1 Windborn Muse\n1 Zetalpa, Primal Dawn\n1 Deathbringer Regent\n1 Necropolis Regent\n1 Deathbringer Liege\n1 Magister of Worth\n1 Teysa, Envoy of Ghosts\n1 Elite Scaleguard\n1 Oreskos Explorer\n1 Orzhov Advokist\n1 Promise of Loyalty\n1 Incarnation Technique\n1 Tragic Arrogance\n1 Infernal Offering\n1 Secret Rendezvous\n1 Stinging Study\n1 Inkshield\n1 Oblation\n1 Utter End\n1 Fracture\n1 Tempting Contract\n1 Coveted Jewel\n1 Pendant of Prosperity\n1 Victory Chimes\n1 Arcane Signet\n1 Bloodthirsty Blade\n1 Mind Stone\n1 Orzhov Signet\n1 Sol Ring\n1 Spectral Searchlight\n1 Cunning Rhetoric\n1 Citadel Siege\n1 Together Forever\n1 Ghostly Prison\n1 Martial Impetus\n1 Soul Snare\n1 Vow of Duty\n1 Curse of Disturbance\n1 Parasitic Impetus\n1 Caves of Koilos\n1 Exotic Orchard\n1 Mikokoro, Center of the Sea\n1 Temple of Silence\n1 Silverquill Campus\n1 Study Hall\n1 Barren Moor\n1 Bojuka Bog\n1 Command Tower\n1 Myriad Landscape\n1 Opal Palace\n1 Orzhov Basilica\n1 Secluded Steppe\n1 Tainted Field\n1 Temple of the False God\n7 Plains\n7 Plains\n5 Swamp\n5 Swamp\n1 Duelist's Heritage\n1 Debtors' Knell\n1 Ambition's Cost\n1 Rogue's Passage",
   "result": {
@@ -45,11 +45,11 @@
       "median": 41,
       "floor": 32,
       "ceiling": 51,
-      "peak": 79,
+      "peak": 76,
       "dispersion": 19,
       "variance": 19,
       "consistency": 69,
-      "commanderDelta": 7,
+      "commanderDelta": 6,
       "coverage": 92,
       "dataCoverage": 92
     },
@@ -58,7 +58,7 @@
       "consistency": 69,
       "explosiveness": 11,
       "synergy": 48,
-      "interaction": 47,
+      "interaction": 45,
       "resilience": 35
     },
     "roles": {
@@ -82,26 +82,69 @@
         "strength": 60,
         "cohesion": 60,
         "producers": [
-          "Nils, Discipline Enforcer",
+          "Citadel Siege",
           "Fain, the Broker",
-          "Sunscorch Regent",
+          "Nils, Discipline Enforcer",
           "Orzhov Advokist",
-          "Citadel Siege"
+          "Sunscorch Regent"
         ],
         "payoffs": [
-          "Nils, Discipline Enforcer",
           "Fain, the Broker",
+          "Nils, Discipline Enforcer",
           "Together Forever"
         ],
         "members": [
-          "Nils, Discipline Enforcer",
-          "Fain, the Broker",
-          "Sunscorch Regent",
-          "Orzhov Advokist",
           "Citadel Siege",
+          "Fain, the Broker",
+          "Nils, Discipline Enforcer",
+          "Orzhov Advokist",
+          "Sunscorch Regent",
           "Together Forever"
         ],
         "producerCards": [
+          {
+            "name": "Citadel Siege",
+            "cmc": 4,
+            "tags": [
+              "enchantment",
+              "etb",
+              "counter-producer"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Fain, the Broker",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "mana",
+              "tokens",
+              "sacrifice",
+              "sac-outlet",
+              "counter-producer",
+              "counter-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
           {
             "name": "Nils, Discipline Enforcer",
             "cmc": 3,
@@ -122,22 +165,17 @@
             }
           },
           {
-            "name": "Fain, the Broker",
+            "name": "Orzhov Advokist",
             "cmc": 3,
             "tags": [
               "creature",
-              "mana",
-              "tokens",
-              "sacrifice",
-              "sac-outlet",
-              "counter-producer",
-              "counter-payoff"
+              "counter-producer"
             ],
             "manaReq": {
               "generic": 2,
               "colored": [
                 [
-                  "B"
+                  "W"
                 ]
               ],
               "total": 3
@@ -163,66 +201,9 @@
               ],
               "total": 5
             }
-          },
-          {
-            "name": "Orzhov Advokist",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "counter-producer"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "W"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Citadel Siege",
-            "cmc": 4,
-            "tags": [
-              "enchantment",
-              "etb",
-              "counter-producer"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "W"
-                ],
-                [
-                  "W"
-                ]
-              ],
-              "total": 4
-            }
           }
         ],
         "payoffCards": [
-          {
-            "name": "Nils, Discipline Enforcer",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "counter-producer",
-              "counter-payoff",
-              "stax"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "W"
-                ]
-              ],
-              "total": 3
-            }
-          },
           {
             "name": "Fain, the Broker",
             "cmc": 3,
@@ -240,6 +221,25 @@
               "colored": [
                 [
                   "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Nils, Discipline Enforcer",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-payoff",
+              "stax"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
                 ]
               ],
               "total": 3
@@ -281,11 +281,11 @@
     "commanderSynergy": {
       "score": 17,
       "connected": [
-        "Nils, Discipline Enforcer",
-        "Fain, the Broker",
-        "Sunscorch Regent",
-        "Orzhov Advokist",
         "Citadel Siege",
+        "Fain, the Broker",
+        "Nils, Discipline Enforcer",
+        "Orzhov Advokist",
+        "Sunscorch Regent",
         "Together Forever"
       ],
       "tags": [
@@ -305,7 +305,7 @@
       "median": 40,
       "high": 47,
       "ceiling": 47,
-      "peak": 69,
+      "peak": 67,
       "iqr": 10,
       "consistency": 78,
       "commanderMedianTurn": 4,
@@ -316,7 +316,7 @@
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 8,
+          "interaction": 7,
           "resource": 8,
           "burst": 0
         },
@@ -324,46 +324,46 @@
           "turn": 2,
           "commander": 0,
           "engine": 0,
-          "interaction": 12,
+          "interaction": 13,
           "resource": 8,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 42,
+          "commander": 38,
           "engine": 1,
-          "interaction": 28,
+          "interaction": 26,
           "resource": 17,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 81,
-          "engine": 5,
-          "interaction": 54,
+          "commander": 80,
+          "engine": 4,
+          "interaction": 53,
           "resource": 34,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 94,
+          "commander": 93,
           "engine": 9,
           "interaction": 69,
-          "resource": 47,
+          "resource": 48,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 97,
-          "engine": 13,
-          "interaction": 76,
-          "resource": 54,
+          "engine": 12,
+          "interaction": 75,
+          "resource": 55,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 98,
-          "engine": 16,
+          "engine": 15,
           "interaction": 81,
           "resource": 59,
           "burst": 0
@@ -383,22 +383,11 @@
         "aeon": null
       },
       {
-        "name": "Sol Ring // Sol Ring",
+        "name": "Sol Ring",
         "impact": 3,
         "tags": [
           "mana",
           "fast-mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Pendant of Prosperity",
-        "impact": 2.6,
-        "tags": [
-          "artifact",
-          "draw",
-          "land-ramp",
-          "etb"
         ],
         "aeon": null
       },
@@ -414,13 +403,13 @@
         "aeon": null
       },
       {
-        "name": "Nils, Discipline Enforcer",
-        "impact": 2.3,
+        "name": "Pendant of Prosperity",
+        "impact": 2.6,
         "tags": [
-          "creature",
-          "counter-producer",
-          "counter-payoff",
-          "stax"
+          "artifact",
+          "draw",
+          "land-ramp",
+          "etb"
         ],
         "aeon": null
       },
@@ -432,6 +421,17 @@
           "draw",
           "recursion",
           "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Nils, Discipline Enforcer",
+        "impact": 2.3,
+        "tags": [
+          "creature",
+          "counter-producer",
+          "counter-payoff",
+          "stax"
         ],
         "aeon": null
       },
@@ -468,7 +468,7 @@
         "aeon": null
       },
       {
-        "name": "Secret Rendezvous",
+        "name": "Ambition's Cost",
         "impact": 1.7,
         "tags": [
           "sorcery",
@@ -486,7 +486,7 @@
         "aeon": null
       },
       {
-        "name": "Ambition's Cost",
+        "name": "Secret Rendezvous",
         "impact": 1.7,
         "tags": [
           "sorcery",
