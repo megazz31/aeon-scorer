@@ -39,8 +39,9 @@ function normalizedDeckKey(decklist,commander){
   return `${String(commander||'').trim().toLowerCase()}\n${rows.join('\n')}`
 }
 function countOf(c){return Math.max(0,Number(c?.count??c?.quantity??1)||0)}
-function expandNames(rows){return (rows||[]).flatMap(c=>Array(countOf(c)).fill(c?.name).filter(Boolean))}
-function decklistText(rows){return (rows||[]).filter(c=>c?.name&&countOf(c)>0).map(c=>`${countOf(c)} ${c.name}`).join('\n')}
+function canonicalSourceName(name){const raw=String(name||'').trim(),parts=raw.split(' // ').map(x=>x.trim());return parts.length===2&&parts[0]&&parts[0].toLowerCase()===parts[1].toLowerCase()?parts[0]:raw}
+function expandNames(rows){return (rows||[]).flatMap(c=>Array(countOf(c)).fill(canonicalSourceName(c?.name)).filter(Boolean))}
+function decklistText(rows){return (rows||[]).filter(c=>c?.name&&countOf(c)>0).map(c=>`${countOf(c)} ${canonicalSourceName(c.name)}`).join('\n')}
 function stableAlias(meta){return {name:meta.name||null,setCode:meta.code||null,releaseDate:meta.releaseDate||null,fileName:meta.fileName||null}}
 function indexCard(map,c,requested=null){map.set(c.name.toLowerCase(),c);for(const a of c.aliases||[])map.set(String(a).toLowerCase(),c);if(requested)map.set(String(requested).toLowerCase(),c)}
 async function resolveScryfall(names){

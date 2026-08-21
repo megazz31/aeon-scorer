@@ -9,6 +9,7 @@ const migration=await fs.readFile(path.join(root,'supabase/migrations/2026082111
 const generator=await fs.readFile(path.join(root,'scripts/generate-public-precons.mjs'),'utf8')
 const page=await fs.readFile(path.join(root,'src/PublicDecksPage.jsx'),'utf8')
 const docs=await fs.readFile(path.join(root,'docs/PUBLIC_PRECONS.md'),'utf8')
+const repeatedSplitName=/^(.+?)\s+\/\/\s+\1$/i
 
 assert.match(migration,/create table if not exists public\.public_decks/i)
 assert.match(migration,/create table if not exists public\.public_deck_analyses/i)
@@ -21,6 +22,7 @@ assert.match(generator,/byHash=new Map/)
 assert.match(generator,/multiple_commanders_not_supported/)
 assert.match(generator,/compactOracleEvidence/)
 assert.match(generator,/normalizeScryfallCard/)
+assert.match(generator,/canonicalSourceName/)
 assert.match(page,/medianMin/)
 assert.match(page,/p20Min/)
 assert.match(page,/p80Min/)
@@ -60,8 +62,13 @@ try{
   assert(docs.includes(expectedDoc),'PUBLIC_PRECONS.md current snapshot block must match catalog.json exactly')
   for(const deck of catalog){
     assert(deck.slug&&deck.deckHash&&deck.name&&deck.commanderName)
+    assert.doesNotMatch(deck.commanderName,repeatedSplitName,`${deck.name} commander name must not repeat the same face around //`)
     const detail=JSON.parse(await fs.readFile(path.join(root,'public/precons',`${deck.slug}.json`),'utf8'))
     assert.equal(detail.deckHash,deck.deckHash)
+    for(const line of String(detail.decklist||'').split(/\r?\n/).filter(Boolean)){
+      const cardName=line.replace(/^\d+\s+/,'').trim()
+      assert.doesNotMatch(cardName,repeatedSplitName,`${deck.name} decklist contains duplicated reversible name ${cardName}`)
+    }
     if(deck.analysis){
       for(const k of ['median','p20','p80','peak','coverage'])assert(Number(deck.analysis[k])>=0&&Number(deck.analysis[k])<=100,`${deck.name} ${k} outside 0..100`)
       assert(Array.isArray(detail.oracleCards)&&detail.oracleCards.length>=50,`${deck.name} missing compact Oracle evidence`)
