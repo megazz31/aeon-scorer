@@ -20,6 +20,14 @@ function roleCards(pool,tags){return uniqByName(pool.filter(c=>tags.some(t=>hasT
 function overlapCount(a,b){const s=new Set(a.map(x=>x.name.toLowerCase()));return b.filter(x=>s.has(x.name.toLowerCase())).length}
 const isManaPermanent=c=>!/\binstant\b|\bsorcery\b/i.test(c.type||'')&&(c.sourceColors?.length||0)>0
 const isOneShotSpell=c=>/\binstant\b|\bsorcery\b/i.test(c.type||'')
+function counterKinds(c){return new Set((c?.tags||[]).filter(t=>t.startsWith('counter-kind:')).map(t=>t.slice(13)))}
+function counterCompatible(a,b){
+  const ak=counterKinds(a),bk=counterKinds(b);if(!ak.size||!bk.size)return false
+  if(ak.has('wild')||bk.has('wild')||ak.has('any')||bk.has('any'))return true
+  for(const k of ak)if(k!=='generic'&&bk.has(k))return true
+  return ak.has('generic')&&bk.has('generic')
+}
+function compatibleCounterRoles(producers,payoffs){return {producers:producers.filter(p=>payoffs.some(y=>counterCompatible(p,y))),payoffs:payoffs.filter(y=>producers.some(p=>counterCompatible(p,y)))}}
 function semanticText(c){return String(c?.oracle||'').replace(/\([^)]*\)/g,' ').replace(/\s+/g,' ').trim().toLowerCase()}
 function escaped(s){return String(s||'').toLowerCase().replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
 function selfEtbTrigger(c){
@@ -42,8 +50,9 @@ export function detectPackages(cards,commander=null){
       out.push({id:m.id,name:m.name,strength:cohesion,cohesion,producers:previewNames(members),payoffs:[commander.name],members:allNames([...members,commander]),producerCards:members.map(mini),payoffCards:[mini(commander)],evidence:`${burst.length} accélérateur(s) burst + ${persistent.length} source(s) persistante(s) vers un commandant MV ${cmdCmc}.`})
       continue
     }
-    const producers=roleCards(functionalPool,m.producers)
-    const payoffs=m.id==='blink-etb'?uniqByName(functionalPool.filter(trueEtbPayoff)):m.id==='spells'?roleCards(functionalPool,m.payoffs).filter(c=>!isOneShotSpell(c)):roleCards(functionalPool,m.payoffs)
+    let producers=roleCards(functionalPool,m.producers)
+    let payoffs=m.id==='blink-etb'?uniqByName(functionalPool.filter(trueEtbPayoff)):m.id==='spells'?roleCards(functionalPool,m.payoffs).filter(c=>!isOneShotSpell(c)):roleCards(functionalPool,m.payoffs)
+    if(m.id==='counters'){const compatible=compatibleCounterRoles(producers,payoffs);producers=compatible.producers;payoffs=compatible.payoffs}
     if(producers.length<(m.minP||2)||payoffs.length<(m.minY||1))continue
     const members=uniqByName([...producers,...payoffs]),overlap=overlapCount(producers,payoffs),roleDistinct=Math.max(0,members.length-overlap)
     if(members.length<3||roleDistinct<2)continue
@@ -56,12 +65,17 @@ const COMMANDER_ENGINE_TAGS=new Set(['blink','tokens','token-payoff','sac-outlet
 export function commanderSynergy(cards,commander){
   if(!commander)return {score:0,connected:[],tags:[]}
   const semantic=new Set((commander.tags||[]).filter(t=>COMMANDER_ENGINE_TAGS.has(t)))
+  if(semantic.has('lifegain')&&!/\byou (?:may )?gain [^.]*life\b/.test(semanticText(commander)))semantic.delete('lifegain')
   const pair=(a,b)=>{if(semantic.has(a))semantic.add(b)}
-  pair('blink','etb');pair('tokens','token-payoff');pair('token-payoff','tokens');pair('sac-outlet','death-payoff');pair('sac-enabler','death-payoff');pair('death-payoff','sac-outlet');pair('death-payoff','sac-enabler');pair('recursion','graveyard-setup');pair('graveyard-setup','recursion');pair('constellation','enchantment');pair('counter-producer','counter-payoff');pair('counter-payoff','counter-producer');pair('artifact-payoff','artifact');pair('exile-cast','exile-payoff');pair('exile-payoff','exile-cast');pair('landfall','land-ramp');pair('spellslinger','instant');pair('spellslinger','sorcery');pair('lifegain','life-payoff');pair('life-payoff','lifegain')
+  pair('blink','etb');pair('tokens','token-payoff');pair('token-payoff','tokens');pair('sac-outlet','death-payoff');pair('sac-enabler','death-payoff');pair('death-payoff','sac-outlet');pair('death-payoff','sac-enabler');pair('recursion','graveyard-setup');pair('graveyard-setup','recursion');pair('constellation','enchantment');pair('artifact-payoff','artifact');pair('exile-cast','exile-payoff');pair('exile-payoff','exile-cast');pair('landfall','land-ramp');pair('spellslinger','instant');pair('spellslinger','sorcery');pair('lifegain','life-payoff');pair('life-payoff','lifegain')
   // A commander whose own ETB is reusable benefits from blink sources, but that does not
   // make every unrelated ETB card in the deck part of the commander's engine.
   if(selfEtbTrigger(commander))semantic.add('blink')
-  const nonlands=cards.filter(c=>!c.isLand),connected=semantic.size?uniqByName(cards.filter(c=>c.tags.some(t=>semantic.has(t)))):[]
+  const counterEngine=semantic.has('counter-producer')||semantic.has('counter-payoff')
+  const nonlands=cards.filter(c=>!c.isLand),connected=semantic.size?uniqByName(cards.filter(c=>{
+    if(c.tags.some(t=>semantic.has(t)&&t!=='counter-producer'&&t!=='counter-payoff'))return true
+    return counterEngine&&(hasTag(c,'counter-producer')||hasTag(c,'counter-payoff'))&&counterCompatible(commander,c)
+  })):[]
   const score=Math.min(100,Math.round(connected.length/Math.max(1,nonlands.length)*170))
   return {score,connected:connected.map(c=>c.name),tags:[...semantic]}
 }
