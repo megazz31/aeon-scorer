@@ -15,12 +15,13 @@ const blinkA=card('Audit Flicker A','Instant','Exile target creature you control
 const blinkB=card('Audit Flicker B','Instant','Exile another target creature you control, then return it to the battlefield under its owner’s control.',2)
 const etbA=card('Audit Visionary A','Creature — Elf','When Audit Visionary A enters the battlefield, draw a card.',2)
 const etbB=card('Audit Visionary B','Creature — Human','When Audit Visionary B enters the battlefield, create a 1/1 white Soldier creature token.',3)
+const opponentEtb=card('Audit Stagnation','Creature — Eldrazi','Whenever a land an opponent controls enters, that player exiles the top two cards of their library and you draw two cards.',6)
 const bounceA=card('Audit Chancery A','Land','Audit Chancery A enters the battlefield tapped. When Audit Chancery A enters the battlefield, return a land you control to its owner’s hand.',0)
 const bounceB=card('Audit Chancery B','Land','Audit Chancery B enters the battlefield tapped. When Audit Chancery B enters the battlefield, return a land you control to its owner’s hand.',0)
-const blinkPool=featureDeck([blinkA,blinkB,etbA,etbB,bounceA,bounceB])
+const blinkPool=featureDeck([blinkA,blinkB,etbA,etbB,opponentEtb,bounceA,bounceB])
 const blinkPackage=detectPackages(blinkPool).find(p=>p.id==='blink-etb')
 assert.ok(blinkPackage,'real nonland ETB payoffs should still form a Blink / ETB package')
-assert.deepEqual(blinkPackage.payoffs.sort(),['Audit Visionary A','Audit Visionary B'],'lands must never be counted as blink ETB payoffs')
+assert.deepEqual(blinkPackage.payoffs.sort(),['Audit Visionary A','Audit Visionary B'],'lands and opponent-only entry triggers must never be counted as blink ETB payoffs')
 
 const landfallCommander=cardFeatures(card('Audit Landfall Commander','Legendary Creature — Serpent','Whenever a land enters the battlefield under your control, draw a card.',6))
 const landfallSynergy=commanderSynergy(blinkPool,landfallCommander)
@@ -31,7 +32,7 @@ assert.equal(selfEtbSynergy.tags.includes('blink'),true,'a commander with its ow
 assert.equal(selfEtbSynergy.connected.includes('Audit Visionary A'),false,'a self-ETB commander must not automatically connect to unrelated ETB creatures')
 assert.equal(selfEtbSynergy.connected.includes('Audit Flicker A'),true,'a self-ETB commander should connect to real blink sources')
 
-// Counter packages must connect compatible counter kinds, not merely the word "counter".
+// Counter packages must connect compatible counter kinds and compatible targets, not merely the word "counter".
 const plusProducers=Array.from({length:3},(_,i)=>card(`Plus Producer ${i+1}`,'Creature — Human',`{T}: Put a +1/+1 counter on target creature you control.`,2))
 const chargePayoffs=Array.from({length:2},(_,i)=>card(`Charge Payoff ${i+1}`,'Artifact',`{T}: Add {C} for each charge counter on Charge Payoff ${i+1}.`,2))
 const mixedCounters=detectPackages(featureDeck([...plusProducers,...chargePayoffs]))
@@ -44,6 +45,20 @@ const proliferateCharge=detectPackages(featureDeck([...proliferators,...chargePa
 assert.ok(proliferateCharge,'proliferate must remain a wildcard compatible with existing counter types')
 const aetherSnap=cardFeatures(card('Aether Snap','Sorcery','Remove all counters from all permanents and exile all tokens.',5))
 assert.equal(aetherSnap.tags.includes('counter-payoff'),false,'global counter removal must not be treated as a counter payoff')
+const minusOwn=Array.from({length:3},(_,i)=>card(`Own Minus Producer ${i+1}`,'Creature — Shaman','{T}: Put a -1/-1 counter on target creature you control.',2))
+const archfiendLike=card('Opponent Minus Producer','Creature — Demon','Whenever you discard a card, put a -1/-1 counter on each creature your opponents control.',5)
+const minusPayoffs=Array.from({length:2},(_,i)=>card(`Minus Payoff ${i+1}`,'Creature — Horror',`When Minus Payoff ${i+1} dies, draw a card for each -1/-1 counter on it.`,3))
+const scopedCounters=detectPackages(featureDeck([...minusOwn,archfiendLike,...minusPayoffs])).find(p=>p.id==='counters')
+assert.ok(scopedCounters,'valid own -1/-1 producers and payoffs should still form a package')
+assert.equal(scopedCounters.producers.includes('Opponent Minus Producer'),false,'opponent-only counter placement must not feed internal counter payoffs')
+
+// Conditional or delayed ramp is not immediate commander acceleration merely because it has a land-ramp tag.
+const fourCmcCommander=cardFeatures(card('Audit Four Commander','Legendary Creature — Human','',4,{manaCost:'{3}{W}',colors:['W'],colorIdentity:['W']}))
+const rocks=featureDeck(Array.from({length:3},(_,i)=>card(`Audit Rock ${i+1}`,'Artifact','{T}: Add {W}.',2,{producedMana:['W']})))
+const sword=cardFeatures(card('Sword of the Animist','Artifact — Equipment','Equipped creature gets +1/+1. Whenever equipped creature attacks, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle. Equip {2}',2))
+assert.equal(detectPackages([...rocks,sword],fourCmcCommander).some(p=>p.id==='early-commander'),false,'attack-triggered ramp must not satisfy immediate commander acceleration')
+const lore=cardFeatures(card("Nature's Lore",'Sorcery','Search your library for a Forest card, put that card onto the battlefield, then shuffle.',2))
+assert.equal(detectPackages([...rocks,lore],fourCmcCommander).some(p=>p.id==='early-commander'),true,'immediate land ramp should still count toward commander acceleration')
 
 // Incidental lifelink is not a commander life-engine by itself.
 const atraxaLike=cardFeatures(card('Audit Lifelink Commander','Legendary Creature — Phyrexian Angel','Flying, vigilance, deathtouch, lifelink. At the beginning of your end step, proliferate.',4))
@@ -71,4 +86,4 @@ assert.deepEqual(reversed.dimensions,forward.dimensions,'dimensions must be inva
 assert.deepEqual(reversed.packages,forward.packages,'packages must be invariant to decklist order')
 assert.deepEqual(reversed.simulation.turnProfile,forward.simulation.turnProfile,'turn simulation must be invariant to decklist order')
 
-console.log('PRECON AUDIT REGRESSION OK — package precision, typed counters, commander directionality and deck-order invariance')
+console.log('PRECON AUDIT REGRESSION OK — package precision, scoped counters/ramp, commander directionality and deck-order invariance')
