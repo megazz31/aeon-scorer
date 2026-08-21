@@ -24,8 +24,6 @@ jobs:
           EOF
       - name: Smoke test
         run: npm run smoke
-      - name: Public precon library contract
-        run: npm run test:public-precons
       - name: Micro semantic truth tests
         run: npm run test:semantic
       - name: Metamorphic independent verification
@@ -34,6 +32,8 @@ jobs:
         run: npm run audit
       - name: Build application
         run: npm run build
+      - name: Public precon library contract
+        run: npm run test:public-precons
       - name: Macro benchmark 1800
         env:
           AEON_BENCH_ITERATIONS: '1800'
