@@ -1,7 +1,7 @@
 name: Aeon Scorer v3.2 quality
 on:
   pull_request:
-    branches: [main]
+    branches: [main, public-precon-library]
   workflow_dispatch:
 permissions:
   contents: read
@@ -28,6 +28,8 @@ jobs:
         run: npm run test:semantic
       - name: Metamorphic independent verification
         run: npm run test:metamorphic
+      - name: Product contracts
+        run: npm run test:product
       - name: Adversarial audit
         run: npm run audit
       - name: Build application
