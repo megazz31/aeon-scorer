@@ -17,6 +17,7 @@ export default function DeckImportPanel({lang='en',onImported}){
       if(!response.ok)throw new Error(data.error||L('Unable to import this deck.','Impossible d’importer ce deck.'))
       if(!data.commanderName||!data.decklist)throw new Error(L('The imported deck is missing a commander or main deck.','Le deck importé ne contient pas de commandant ou de deck principal exploitable.'))
       onImported?.(data)
+      if(typeof window!=='undefined'&&typeof CustomEvent!=='undefined')window.dispatchEvent(new CustomEvent('aeon-deck-imported',{detail:data}))
       const source=data.source==='moxfield'?'Moxfield':'Archidekt'
       setNotice(L(`${source} imported · ${data.cardCount} main-deck cards · ${data.commanderName}`,`${source} importé · ${data.cardCount} cartes dans le deck · ${data.commanderName}`))
     }catch(e){setError(e.message||String(e))}
