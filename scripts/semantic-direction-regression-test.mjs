@@ -26,15 +26,25 @@ assert.equal(has(card('Wild-Magic Sorcerer','Creature — Orc Shaman','The first
 assert.equal(has(card('Prosper, Tome-Bound','Legendary Creature — Tiefling Warlock','At the beginning of your end step, exile the top card of your library. Until the end of your next turn, you may play that card. Whenever you play a card from exile, create a Treasure token.'),'exile-cast'),true)
 assert.equal(has(card('Prosper, Tome-Bound','Legendary Creature — Tiefling Warlock','At the beginning of your end step, exile the top card of your library. Until the end of your next turn, you may play that card. Whenever you play a card from exile, create a Treasure token.'),'exile-payoff'),true)
 
-// Nontoken text must never be confused with token payoff text.
+// Nontoken text and text printed inside a freshly-created token must not become a deck-wide token payoff.
 assert.equal(has(card('Guardian Project','Enchantment',"Whenever a nontoken creature you control enters, if it doesn't have the same name as another creature you control or a creature card in your graveyard, draw a card."),'token-payoff'),false)
 assert.equal(has(card('Theoretical Duplication','Instant',"Whenever a nontoken creature an opponent controls enters this turn, create a token that's a copy of that creature."),'token-payoff'),false)
+assert.equal(has(card('Angelic Sell-Sword','Creature — Angel Mercenary','Flying, vigilance. Whenever this creature or another nontoken creature you control enters, create a 1/1 red Mercenary creature token with "{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery."'),'token-payoff'),false)
+assert.equal(has(card('Angelic Sell-Sword','Creature — Angel Mercenary','Flying, vigilance. Whenever this creature or another nontoken creature you control enters, create a 1/1 red Mercenary creature token with "{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery."'),'tokens'),true)
 assert.equal(has(card('Mondrak, Glory Dominus','Legendary Creature — Phyrexian Horror','If one or more tokens would be created under your control, twice that many of those tokens are created instead.'),'token-payoff'),true)
 
 // Landfall is directional: opponent land entries are not payoffs for your own ramp package.
 assert.equal(has(card('Shattered Angel','Creature — Angel','Flying. Whenever a land an opponent controls enters, you may gain 3 life.'),'landfall'),false)
 assert.equal(has(card('Sire of Stagnation','Creature — Eldrazi','Whenever a land an opponent controls enters, that player exiles the top two cards of their library and you draw two cards.'),'landfall'),false)
 assert.equal(has(card('Tireless Tracker','Creature — Human Scout','Landfall — Whenever a land enters the battlefield under your control, investigate.'),'landfall'),true)
+
+// Sacrifice package payoffs must react to your deaths (or any deaths), not exclusively to opponent deaths.
+assert.equal(has(card('Assault Intercessor','Creature — Astartes Warrior','Whenever a creature an opponent controls dies, that player loses 2 life.'),'death-payoff'),false)
+assert.equal(has(card('Massacre Wurm','Creature — Phyrexian Wurm','Whenever a creature an opponent controls dies, that player loses 2 life.'),'death-payoff'),false)
+assert.equal(has(card('Kamber, the Plunderer','Legendary Creature — Vampire Rogue','Whenever a creature an opponent controls dies, you gain 1 life and create a Blood token.'),'death-payoff'),false)
+assert.equal(has(card('Bastion of Remembrance','Enchantment','Whenever a creature you control dies, each opponent loses 1 life and you gain 1 life.'),'death-payoff'),true)
+assert.equal(has(card('Poison-Tip Archer','Creature — Elf Archer','Whenever another creature dies, each opponent loses 1 life.'),'death-payoff'),true)
+assert.equal(has(card('Death Tyrant','Creature — Beholder Skeleton','Whenever an attacking creature you control or a blocking creature an opponent controls dies, create a 2/2 black Zombie creature token.'),'death-payoff'),true)
 
 // Life payoff means payoff for gaining life, not generic drain or incidental lifelink.
 assert.equal(has(card('Corpse Knight','Creature — Zombie Knight','Whenever another creature you control enters, each opponent loses 1 life.'),'life-payoff'),false)
@@ -50,4 +60,4 @@ assert.deepEqual(sourceColors(card('Share the Spoils','Enchantment',"During each
 assert.deepEqual(sourceColors(card('Arcane Signet','Artifact','{T}: Add one mana of any color in your commander’s color identity.')),['W','U','B','R','G'])
 assert.deepEqual(sourceColors(card('Fertile Ground','Enchantment — Aura','Whenever enchanted land is tapped for mana, its controller adds an additional one mana of any color.',{producedMana:['W','U','B','R','G']})),['W','U','B','R','G'])
 
-console.log('SEMANTIC DIRECTION REGRESSION OK — draw/spells/exile/tokens/lands/life/mana precision')
+console.log('SEMANTIC DIRECTION REGRESSION OK — draw/spells/exile/tokens/death/lands/life/mana precision')
