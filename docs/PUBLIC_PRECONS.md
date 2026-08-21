@@ -33,7 +33,11 @@ The generated snapshot contains its exact engine version, semantic version, Scry
 
 ### Current v3.2 snapshot
 
-The reviewed Aeon v3.2 snapshot generated on 2026-08-21 contains 180 canonical Commander precons after exact decklist deduplication. Of these, 174 are analyzed at 3,200 sequences with engine `3.2.0` / semantic `3.2.0-semantic-1`; 6 remain visible but unsupported, including one incomplete Scryfall-resolution case. The source revision is MTGJSON 2026-08-20 with the Oracle snapshot dated 2026-08-21.
+<!-- PRECON_SNAPSHOT_START -->
+Current reviewed snapshot: **168 canonical / 163 analyzed / 5 unsupported / 0 incomplete**, generated 2026-08-21, at 3,200 sequences with engine `3.2.0` / semantic `3.2.0-semantic-6`; source revision MTGJSON `2026-08-21`.
+<!-- PRECON_SNAPSHOT_END -->
+
+This block is generated from `public/precons/catalog.json` and is checked by `npm run test:public-precons`. Do not edit its counts or versions manually.
 
 ## Versioned Supabase storage
 
