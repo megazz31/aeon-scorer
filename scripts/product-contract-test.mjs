@@ -1,0 +1,36 @@
+import assert from 'node:assert/strict'
+import fs from 'node:fs'
+
+const read=p=>fs.readFileSync(new URL(`../${p}`,import.meta.url),'utf8')
+const migration=read('supabase/migrations/20260821170000_aeon_product_p0_p1.sql')
+const api=read('api/commander-insights.js')
+const vercel=JSON.parse(read('vercel.json'))
+const main=read('src/main.jsx')
+const workspace=read('src/ProductWorkspace.jsx')
+const tools=read('src/Rule0Tools.jsx')
+
+assert.match(migration,/create table if not exists public\.analysis_shares/i)
+const shareTable=migration.match(/create table if not exists public\.analysis_shares\s*\(([\s\S]*?)\n\);/i)?.[1]||''
+assert.ok(shareTable,'analysis_shares table contract missing')
+assert.doesNotMatch(shareTable,/decklist/i,'public Rule 0 share must never store decklist')
+assert.doesNotMatch(shareTable,/oracle_text|cards\s+jsonb/i,'public Rule 0 share must never store Oracle/card evidence')
+assert.match(migration,/analysis_feedback/i)
+assert.match(migration,/analysis_audit_queue/i,'feedback must feed semantic audit queue')
+assert.match(migration,/deck_versions/i)
+
+assert.match(api,/backend\.commanderspellbook\.com/)
+assert.match(api,/\/find-my-combos/)
+assert.match(api,/\/estimate-bracket/)
+assert.doesNotMatch(api,/median\s*[+\-]=|peak\s*[+\-]=|score\s*[+\-]=/i,'Spellbook evidence must not directly modify Aeon score')
+
+assert.ok(vercel.rewrites.some(x=>x.source==='/a/:path*'))
+assert.ok(vercel.rewrites.some(x=>x.source==='/pod'))
+assert.match(main,/SharedAnalysisPage/)
+assert.match(main,/PodMatchPage/)
+assert.match(main,/ProductWorkspace/)
+assert.match(workspace,/aeon-analysis-computed/)
+assert.match(workspace,/aeon-analysis-recorded/)
+assert.match(workspace,/aeon-deck-imported/)
+assert.match(tools,/emitProduct:false,record:false/,'What-if previews must stay local and unrecorded')
+
+console.log('PRODUCT CONTRACT OK — sanitized sharing, audit feedback, Spellbook isolation, routing and local What-if')
