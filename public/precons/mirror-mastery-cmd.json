@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 33,
+    "median": 34,
     "p20": 23,
-    "p80": 45,
+    "p80": 44,
     "peak": 67,
     "coverage": 88,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "78b45deb049478007be9629417eaea58690b9646fca6ef99412ef90c5b4d4a8c",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Garruk Wildspeaker\n1 Magus of the Vineyard\n1 Veteran Explorer\n1 Fierce Empath\n1 Edric, Spymaster of Trest\n1 Animar, Soul of Elements\n1 Conundrum Sphinx\n1 Aethersnipe\n1 Chartooth Cougar\n1 Rapacious One\n1 Spitebellows\n1 Deadwood Treefolk\n1 Elvish Aberration\n1 Baloth Woodcrasher\n1 Hydra Omnivore\n1 Nucklavee\n1 Valley Rannet\n1 Intet, the Dreamer\n1 Faultgrinder\n1 Krosan Tusker\n1 Simic Sky Swallower\n1 Trench Gorger\n1 Avatar of Fury\n1 Magmatic Force\n1 Artisan of Kozilek\n1 Collective Voyage\n1 Hull Breach\n1 Cultivate\n1 Kodama's Reach\n1 Firespout\n1 Ruination\n1 Explosive Vegetation\n1 Chain Reaction\n1 Death by Dragons\n1 Vengeful Rebirth\n1 Disaster Radius\n1 Call the Skybreaker\n1 Savage Twister\n1 Brainstorm\n1 Tribute to the Wild\n1 Colossal Might\n1 Invigorate\n1 Spell Crumple\n1 Electrolyze\n1 Ray of Command\n1 Prophetic Bolt\n1 Hunting Pack\n1 Sol Ring\n1 Armillary Sphere\n1 Gruul Signet\n1 Izzet Signet\n1 Lightning Greaves\n1 Prophetic Prism\n1 Simic Signet\n1 Vow of Flight\n1 Vow of Lightning\n1 Vow of Wildness\n1 Command Tower\n1 Evolving Wilds\n1 Fungal Reaches\n1 Gruul Turf\n1 Homeward Path\n1 Izzet Boilerworks\n1 Kazandu Refuge\n1 Rupture Spire\n1 Simic Growth Chamber\n1 Temple of the False God\n1 Vivid Crag\n1 Vivid Creek\n1 Vivid Grove\n2 Island\n2 Island\n2 Island\n1 Island\n2 Mountain\n2 Mountain\n2 Mountain\n2 Mountain\n4 Forest\n3 Forest\n3 Forest\n3 Forest\n1 Fire // Ice",
   "oracleCards": [
@@ -78,7 +78,8 @@
         "creature",
         "protection",
         "counter-producer",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -569,7 +570,9 @@
       ],
       "tags": [
         "land",
-        "mana"
+        "mana",
+        "counter-kind:storage",
+        "counter-kind:age"
       ],
       "isCommander": false
     },
@@ -743,7 +746,6 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "lifegain",
         "free"
       ],
       "isCommander": false
@@ -1058,7 +1060,6 @@
       "tags": [
         "creature",
         "tokens",
-        "token-payoff",
         "etb",
         "spellslinger"
       ],
@@ -1219,7 +1220,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counterspell"
+        "counterspell",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1370,7 +1372,8 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1395,7 +1398,8 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1420,7 +1424,8 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1478,12 +1483,12 @@
   ],
   "result": {
     "profile": {
-      "median": 33,
+      "median": 34,
       "floor": 23,
-      "ceiling": 45,
+      "ceiling": 44,
       "peak": 67,
-      "dispersion": 23,
-      "variance": 23,
+      "dispersion": 21,
+      "variance": 21,
       "consistency": 67,
       "commanderDelta": 10,
       "coverage": 88,
@@ -1494,7 +1499,7 @@
       "consistency": 67,
       "explosiveness": 11,
       "synergy": 55,
-      "interaction": 23,
+      "interaction": 22,
       "resilience": 30
     },
     "roles": {
@@ -1629,7 +1634,6 @@
             "tags": [
               "creature",
               "tokens",
-              "token-payoff",
               "etb",
               "spellslinger"
             ],
@@ -1685,8 +1689,8 @@
       ],
       "tags": [
         "tokens",
-        "token-payoff",
         "spellslinger",
+        "token-payoff",
         "instant",
         "sorcery"
       ]
@@ -1701,8 +1705,8 @@
       "iterations": 3200,
       "floor": 25,
       "median": 33,
-      "high": 41,
-      "ceiling": 41,
+      "high": 40,
+      "ceiling": 40,
       "peak": 58,
       "iqr": 13,
       "consistency": 72,
@@ -1715,7 +1719,7 @@
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 3,
+          "resource": 2,
           "burst": 0
         },
         {
@@ -1728,15 +1732,15 @@
         },
         {
           "turn": 3,
-          "commander": 18,
+          "commander": 17,
           "engine": 0,
-          "interaction": 17,
+          "interaction": 16,
           "resource": 18,
-          "burst": 1
+          "burst": 0
         },
         {
           "turn": 4,
-          "commander": 45,
+          "commander": 44,
           "engine": 0,
           "interaction": 25,
           "resource": 30,
@@ -1744,7 +1748,7 @@
         },
         {
           "turn": 5,
-          "commander": 73,
+          "commander": 72,
           "engine": 0,
           "interaction": 30,
           "resource": 38,
@@ -1752,7 +1756,7 @@
         },
         {
           "turn": 6,
-          "commander": 81,
+          "commander": 80,
           "engine": 0,
           "interaction": 35,
           "resource": 47,
@@ -1760,7 +1764,7 @@
         },
         {
           "turn": 7,
-          "commander": 87,
+          "commander": 86,
           "engine": 0,
           "interaction": 39,
           "resource": 53,
@@ -1879,7 +1883,6 @@
         "impact": 1.6,
         "tags": [
           "instant",
-          "lifegain",
           "free"
         ],
         "aeon": null

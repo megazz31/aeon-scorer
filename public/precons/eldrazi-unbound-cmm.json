@@ -24,17 +24,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 32,
-    "p20": 21,
+    "median": 33,
+    "p20": 22,
     "p80": 47,
-    "peak": 73,
+    "peak": 72,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "e34ed26f9a9b66a669b8d3bd74dd92f5523f64aa02ca36dda4489c5470795ca9",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Omarthis, Ghostfire Initiate\n1 Kozilek, the Great Distortion\n1 Abstruse Archaic\n1 Calamity of the Titans\n1 Desecrate Reality\n1 Flayer of Loyalties\n1 Rise of the Eldrazi\n1 Skittering Cicada\n1 Ugin's Mastery\n1 Darksteel Monolith\n1 All Is Dust\n1 Endbringer\n1 Endless One\n1 It That Betrays\n1 Matter Reshaper\n1 Oblivion Sower\n1 Ugin, the Ineffable\n1 Ancient Stone Idol\n1 Duplicant\n1 Endless Atlas\n1 Forsaken Monument\n1 Hangarback Walker\n1 Investigator's Journal\n1 Kaldra Compleat\n1 Mazemind Tome\n1 Metalwork Colossus\n1 Mirage Mirror\n1 Myriad Construct\n1 Mystic Forge\n1 Perilous Vault\n1 Phyrexian Triniform\n1 Solemn Simulacrum\n1 Soul of New Phyrexia\n1 Steel Hellkite\n1 Stonecoil Serpent\n1 Transmogrifying Wand\n1 Arch of Orazca\n1 Blast Zone\n1 Bonders' Enclave\n1 Geier Reach Sanitarium\n1 Mirrorpool\n1 Ruins of Oran-Rief\n1 Scavenger Grounds\n1 Sea Gate Wreckage\n1 Shrine of the Forsaken Gods\n1 Tyrite Sanctum\n1 War Room\n1 Burnished Hart\n1 Geode Golem\n1 Lightning Greaves\n1 Meteor Golem\n1 Sol Ring\n1 Thought Vessel\n1 Thran Dynamo\n1 Unstable Obelisk\n1 Reliquary Tower\n1 Rogue's Passage\n1 Artisan of Kozilek\n1 Bane of Bala Ged\n1 Not of This World\n1 Spatial Contortion\n1 Titan's Presence\n1 Warping Wail\n1 Crashing Drawbridge\n1 Dreamstone Hedron\n1 Everflowing Chalice\n1 Fireshrieker\n1 Hedron Archive\n1 Mind Stone\n1 Ornithopter of Paradise\n1 Palladium Myr\n1 Scaretiller\n1 Suspicious Bookcase\n1 Worn Powerstone\n1 Arcane Lighthouse\n1 Eldrazi Temple\n1 Forge of Heroes\n1 Guildless Commons\n1 Mage-Ring Network\n1 Temple of the False God\n1 Tomb of the Spirit Dragon\n1 Urza's Mine\n1 Urza's Power Plant\n1 Urza's Tower\n8 Wastes\n7 Wastes",
   "oracleCards": [
@@ -171,7 +171,9 @@
         "land",
         "mana",
         "sacrifice",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -372,7 +374,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -392,7 +396,9 @@
         "artifact",
         "mana",
         "etb",
-        "counter-payoff"
+        "counter-producer",
+        "counter-payoff",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -441,7 +447,9 @@
       "tags": [
         "land",
         "mana",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1",
+        "counter-kind:loyalty"
       ],
       "isCommander": false
     },
@@ -536,7 +544,8 @@
         "death-payoff",
         "etb",
         "counter-producer",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -572,7 +581,9 @@
       "tags": [
         "artifact",
         "sacrifice",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -620,7 +631,8 @@
       "tags": [
         "creature",
         "counterspell",
-        "graveyard-setup"
+        "graveyard-setup",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -654,7 +666,9 @@
       "tags": [
         "land",
         "mana",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:storage",
+        "counter-kind:age"
       ],
       "isCommander": false
     },
@@ -686,6 +700,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "counter-kind:age",
         "lifegain"
       ],
       "isCommander": false
@@ -798,7 +813,9 @@
         "artifact",
         "tokens",
         "sacrifice",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -830,7 +847,8 @@
       "tags": [
         "instant",
         "counterspell",
-        "protection"
+        "protection",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -864,7 +882,9 @@
         "creature",
         "death-payoff",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1",
+        "counter-kind:any"
       ],
       "isCommander": false
     },
@@ -1014,7 +1034,8 @@
         "land",
         "mana",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1207,7 +1228,9 @@
         "creature",
         "artifact",
         "protection",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1329,7 +1352,9 @@
       "tags": [
         "artifact",
         "removal",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1350,7 +1375,8 @@
         "mana",
         "protection",
         "sacrifice",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1494,7 +1520,8 @@
         "mana",
         "removal",
         "tokens",
-        "sacrifice"
+        "sacrifice",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1553,22 +1580,22 @@
   ],
   "result": {
     "profile": {
-      "median": 32,
-      "floor": 21,
+      "median": 33,
+      "floor": 22,
       "ceiling": 47,
-      "peak": 73,
-      "dispersion": 26,
-      "variance": 26,
-      "consistency": 60,
+      "peak": 72,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 62,
       "commanderDelta": 3,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 25,
-      "consistency": 60,
+      "consistency": 62,
       "explosiveness": 13,
-      "synergy": 44,
+      "synergy": 51,
       "interaction": 35,
       "resilience": 29
     },
@@ -1590,14 +1617,19 @@
       {
         "id": "counters",
         "name": "Marqueurs",
-        "strength": 64,
-        "cohesion": 64,
+        "strength": 79,
+        "cohesion": 79,
         "producers": [
+          "Blast Zone",
+          "Endless One",
+          "Everflowing Chalice",
           "Forge of Heroes",
           "Hangarback Walker",
+          "Myriad Construct",
           "Omarthis, Ghostfire Initiate",
           "Ruins of Oran-Rief",
-          "Tyrite Sanctum"
+          "Stonecoil Serpent",
+          "Transmogrifying Wand"
         ],
         "payoffs": [
           "Everflowing Chalice",
@@ -1605,22 +1637,78 @@
           "Mage-Ring Network"
         ],
         "members": [
+          "Blast Zone",
+          "Endless One",
+          "Everflowing Chalice",
           "Forge of Heroes",
           "Hangarback Walker",
+          "Myriad Construct",
           "Omarthis, Ghostfire Initiate",
           "Ruins of Oran-Rief",
+          "Stonecoil Serpent",
+          "Transmogrifying Wand",
           "Tyrite Sanctum",
-          "Everflowing Chalice",
           "Mage-Ring Network"
         ],
         "producerCards": [
+          {
+            "name": "Blast Zone",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "sacrifice",
+              "etb",
+              "counter-producer",
+              "counter-kind:charge"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Endless One",
+            "cmc": 0,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Everflowing Chalice",
+            "cmc": 0,
+            "tags": [
+              "artifact",
+              "mana",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:charge"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
           {
             "name": "Forge of Heroes",
             "cmc": 0,
             "tags": [
               "land",
               "mana",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1",
+              "counter-kind:loyalty"
             ],
             "manaReq": {
               "generic": 0,
@@ -1638,12 +1726,31 @@
               "death-payoff",
               "etb",
               "counter-producer",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
               "colored": [],
               "total": 0
+            }
+          },
+          {
+            "name": "Myriad Construct",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "artifact",
+              "tokens",
+              "sacrifice",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
             }
           },
           {
@@ -1653,7 +1760,9 @@
               "creature",
               "death-payoff",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1",
+              "counter-kind:any"
             ],
             "manaReq": {
               "generic": 0,
@@ -1668,12 +1777,46 @@
               "land",
               "mana",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
               "colored": [],
               "total": 0
+            }
+          },
+          {
+            "name": "Stonecoil Serpent",
+            "cmc": 0,
+            "tags": [
+              "creature",
+              "artifact",
+              "protection",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Transmogrifying Wand",
+            "cmc": 3,
+            "tags": [
+              "artifact",
+              "removal",
+              "etb",
+              "counter-producer",
+              "counter-kind:charge"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [],
+              "total": 3
             }
           },
           {
@@ -1684,7 +1827,8 @@
               "mana",
               "protection",
               "sacrifice",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
@@ -1701,7 +1845,9 @@
               "artifact",
               "mana",
               "etb",
-              "counter-payoff"
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:charge"
             ],
             "manaReq": {
               "generic": 0,
@@ -1719,7 +1865,8 @@
               "death-payoff",
               "etb",
               "counter-producer",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
@@ -1733,7 +1880,9 @@
             "tags": [
               "land",
               "mana",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:storage",
+              "counter-kind:age"
             ],
             "manaReq": {
               "generic": 0,
@@ -1748,7 +1897,7 @@
         "payoffTags": [
           "counter-payoff"
         ],
-        "evidence": "5 producteur(s), 3 payoff(s), 7 carte(s) distincte(s)."
+        "evidence": "11 producteur(s), 3 payoff(s), 12 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -1787,7 +1936,9 @@
               "artifact",
               "mana",
               "etb",
-              "counter-payoff"
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:charge"
             ],
             "manaReq": {
               "generic": 0,
@@ -1930,19 +2081,19 @@
       "iterations": 3200,
       "floor": 26,
       "median": 35,
-      "high": 45,
-      "ceiling": 45,
-      "peak": 65,
-      "iqr": 15,
-      "consistency": 68,
+      "high": 44,
+      "ceiling": 44,
+      "peak": 64,
+      "iqr": 14,
+      "consistency": 70,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 3,
-      "recoveryAfterDisruption": 31,
+      "recoveryAfterDisruption": 32,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
-          "engine": 7,
+          "engine": 5,
           "interaction": 6,
           "resource": 6,
           "burst": 0
@@ -1950,7 +2101,7 @@
         {
           "turn": 2,
           "commander": 0,
-          "engine": 9,
+          "engine": 7,
           "interaction": 11,
           "resource": 5,
           "burst": 0
@@ -1958,39 +2109,39 @@
         {
           "turn": 3,
           "commander": 2,
-          "engine": 11,
+          "engine": 9,
           "interaction": 26,
           "resource": 8,
           "burst": 1
         },
         {
           "turn": 4,
-          "commander": 23,
-          "engine": 13,
-          "interaction": 39,
-          "resource": 20,
+          "commander": 22,
+          "engine": 11,
+          "interaction": 38,
+          "resource": 19,
           "burst": 4
         },
         {
           "turn": 5,
-          "commander": 45,
-          "engine": 15,
+          "commander": 48,
+          "engine": 13,
           "interaction": 47,
           "resource": 24,
           "burst": 8
         },
         {
           "turn": 6,
-          "commander": 67,
-          "engine": 18,
+          "commander": 69,
+          "engine": 15,
           "interaction": 57,
           "resource": 28,
           "burst": 10
         },
         {
           "turn": 7,
-          "commander": 78,
-          "engine": 20,
+          "commander": 79,
+          "engine": 17,
           "interaction": 65,
           "resource": 33,
           "burst": 11
@@ -2036,7 +2187,9 @@
           "artifact",
           "mana",
           "etb",
-          "counter-payoff"
+          "counter-producer",
+          "counter-payoff",
+          "counter-kind:charge"
         ],
         "aeon": null
       },
@@ -2082,7 +2235,8 @@
           "mana",
           "removal",
           "tokens",
-          "sacrifice"
+          "sacrifice",
+          "counter-kind:generic"
         ],
         "aeon": null
       },

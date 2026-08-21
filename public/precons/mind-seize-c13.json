@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 42,
-    "p20": 30,
-    "p80": 53,
-    "peak": 84,
+    "median": 41,
+    "p20": 29,
+    "p80": 52,
+    "peak": 85,
     "coverage": 90,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "6ce68babecbb59c7bf6903d67162adf42c1e886eb1dd3b7696a156c330b5f440",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Augur of Bolas\n1 Baleful Force\n1 Baleful Strix\n1 Charmbreaker Devils\n1 Diviner Spirit\n1 Echo Mage\n1 Fog Bank\n1 Guard Gomazoa\n1 Guttersnipe\n1 Hooded Horror\n1 Jace's Archivist\n1 Mnemonic Wall\n1 Nekusar, the Mindrazer\n1 Nightscape Familiar\n1 Nivix Guildmage\n1 Terra Ravager\n1 Thraximundar\n1 True-Name Nemesis\n1 Uyo, Silent Prophet\n1 Vampire Nighthawk\n1 Viseling\n1 Army of the Damned\n1 Cruel Ultimatum\n1 Decree of Pain\n1 Fissure Vent\n1 Incendiary Command\n1 Infest\n1 Molten Disaster\n1 Phthisis\n1 Prosperity\n1 Skyscribing\n1 Strategic Planning\n1 Tempt with Reflections\n1 Annihilate\n1 Crosis's Charm\n1 Dismiss\n1 Grixis Charm\n1 Illusionist's Gambit\n1 Opportunity\n1 Soul Manipulation\n1 Starstorm\n1 Sudden Spoiling\n1 Vision Skeins\n1 Wild Ricochet\n1 Armillary Sphere\n1 Eye of Doom\n1 Mirari\n1 Obelisk of Grixis\n1 Sol Ring\n1 Swiftfoot Boots\n1 Temple Bell\n1 Wayfarer's Bauble\n1 Arcane Melee\n1 Curse of Chaos\n1 Curse of Inertia\n1 Curse of Shallow Graves\n1 Price of Knowledge\n1 Propaganda\n1 Spiteful Visions\n1 Akoum Refuge\n1 Bojuka Bog\n1 Command Tower\n1 Crumbling Necropolis\n1 Dimir Guildgate\n1 Evolving Wilds\n1 Grixis Panorama\n3 Island\n2 Island\n2 Island\n2 Island\n1 Izzet Boilerworks\n1 Izzet Guildgate\n1 Molten Slagheap\n2 Mountain\n1 Mountain\n1 Mountain\n1 Mountain\n1 Opal Palace\n1 Rakdos Carnarium\n1 Rakdos Guildgate\n1 Rupture Spire\n2 Swamp\n2 Swamp\n2 Swamp\n2 Swamp\n1 Temple of the False God\n1 Urza's Factory\n1 Vivid Creek\n1 Vivid Marsh",
   "oracleCards": [
@@ -293,8 +293,7 @@
       "tags": [
         "sorcery",
         "draw",
-        "recursion",
-        "lifegain"
+        "recursion"
       ],
       "isCommander": false
     },
@@ -433,7 +432,8 @@
       "tags": [
         "instant",
         "draw",
-        "counterspell"
+        "counterspell",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -501,7 +501,8 @@
       "tags": [
         "artifact",
         "sacrifice",
-        "etb"
+        "etb",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -862,7 +863,9 @@
       ],
       "tags": [
         "land",
-        "mana"
+        "mana",
+        "counter-kind:storage",
+        "counter-kind:age"
       ],
       "isCommander": false
     },
@@ -985,7 +988,9 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1198,7 +1203,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "recursion"
+        "recursion",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1391,7 +1397,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1523,7 +1530,8 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1548,7 +1556,8 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1589,21 +1598,21 @@
   ],
   "result": {
     "profile": {
-      "median": 42,
-      "floor": 30,
-      "ceiling": 53,
-      "peak": 84,
+      "median": 41,
+      "floor": 29,
+      "ceiling": 52,
+      "peak": 85,
       "dispersion": 23,
       "variance": 23,
       "consistency": 63,
-      "commanderDelta": 11,
+      "commanderDelta": 10,
       "coverage": 90,
       "dataCoverage": 90
     },
     "dimensions": {
       "speed": 34,
       "consistency": 63,
-      "explosiveness": 13,
+      "explosiveness": 14,
       "synergy": 82,
       "interaction": 27,
       "resilience": 38
@@ -1749,8 +1758,7 @@
             "tags": [
               "sorcery",
               "draw",
-              "recursion",
-              "lifegain"
+              "recursion"
             ],
             "manaReq": {
               "generic": 0,
@@ -1807,7 +1815,8 @@
             "tags": [
               "instant",
               "draw",
-              "counterspell"
+              "counterspell",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 2,
@@ -2032,7 +2041,8 @@
             "cmc": 3,
             "tags": [
               "instant",
-              "recursion"
+              "recursion",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 1,
@@ -2323,8 +2333,7 @@
             "tags": [
               "sorcery",
               "draw",
-              "recursion",
-              "lifegain"
+              "recursion"
             ],
             "manaReq": {
               "generic": 0,
@@ -2377,7 +2386,8 @@
             "cmc": 3,
             "tags": [
               "instant",
-              "recursion"
+              "recursion",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 1,
@@ -2448,11 +2458,11 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 28,
-      "median": 36,
-      "high": 44,
-      "ceiling": 44,
-      "peak": 71,
+      "floor": 27,
+      "median": 35,
+      "high": 43,
+      "ceiling": 43,
+      "peak": 72,
       "iqr": 13,
       "consistency": 72,
       "commanderMedianTurn": 4,
@@ -2464,7 +2474,7 @@
           "commander": 0,
           "engine": 0,
           "interaction": 8,
-          "resource": 4,
+          "resource": 3,
           "burst": 0
         },
         {
@@ -2472,12 +2482,12 @@
           "commander": 0,
           "engine": 0,
           "interaction": 9,
-          "resource": 19,
+          "resource": 18,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 10,
+          "commander": 9,
           "engine": 2,
           "interaction": 18,
           "resource": 37,
@@ -2485,23 +2495,23 @@
         },
         {
           "turn": 4,
-          "commander": 62,
+          "commander": 58,
           "engine": 11,
           "interaction": 31,
-          "resource": 52,
+          "resource": 51,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 79,
-          "engine": 19,
-          "interaction": 44,
-          "resource": 63,
+          "commander": 78,
+          "engine": 18,
+          "interaction": 43,
+          "resource": 62,
           "burst": 0
         },
         {
           "turn": 6,
-          "commander": 86,
+          "commander": 85,
           "engine": 27,
           "interaction": 53,
           "resource": 71,
@@ -2509,7 +2519,7 @@
         },
         {
           "turn": 7,
-          "commander": 90,
+          "commander": 89,
           "engine": 35,
           "interaction": 61,
           "resource": 78,
@@ -2524,8 +2534,7 @@
         "tags": [
           "sorcery",
           "draw",
-          "recursion",
-          "lifegain"
+          "recursion"
         ],
         "aeon": null
       },
@@ -2545,7 +2554,8 @@
         "tags": [
           "instant",
           "draw",
-          "counterspell"
+          "counterspell",
+          "counter-kind:generic"
         ],
         "aeon": null
       },
@@ -2610,7 +2620,8 @@
         "impact": 2.4,
         "tags": [
           "instant",
-          "recursion"
+          "recursion",
+          "counter-kind:generic"
         ],
         "aeon": null
       },

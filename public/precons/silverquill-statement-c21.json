@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 40,
-    "p20": 31,
+    "p20": 30,
     "p80": 49,
-    "peak": 77,
-    "coverage": 91,
+    "peak": 76,
+    "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "009577198c3198f2924f1c6583a027103d23c2f7219b5b6f309f5885293dbe66",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Gideon, Champion of Justice\n1 Felisa, Fang of Silverquill\n1 Combat Calligrapher\n1 Guardian Archon\n1 Nils, Discipline Enforcer\n1 Scholarship Sponsor\n1 Author of Shadows\n1 Bold Plagiarist\n1 Fain, the Broker\n1 Keen Duelist\n1 Angel of Serenity\n1 Boreas Charger\n1 Hunted Lammasu\n1 Knight of the White Orchid\n1 Selfless Squire\n1 Stalking Leonin\n1 Sunscorch Regent\n1 Windborn Muse\n1 Zetalpa, Primal Dawn\n1 Deathbringer Regent\n1 Necropolis Regent\n1 Deathbringer Liege\n1 Magister of Worth\n1 Teysa, Envoy of Ghosts\n1 Elite Scaleguard\n1 Oreskos Explorer\n1 Orzhov Advokist\n1 Promise of Loyalty\n1 Incarnation Technique\n1 Tragic Arrogance\n1 Infernal Offering\n1 Secret Rendezvous\n1 Stinging Study\n1 Inkshield\n1 Oblation\n1 Utter End\n1 Fracture\n1 Tempting Contract\n1 Coveted Jewel\n1 Pendant of Prosperity\n1 Victory Chimes\n1 Arcane Signet\n1 Bloodthirsty Blade\n1 Mind Stone\n1 Orzhov Signet\n1 Sol Ring\n1 Spectral Searchlight\n1 Cunning Rhetoric\n1 Citadel Siege\n1 Together Forever\n1 Ghostly Prison\n1 Martial Impetus\n1 Soul Snare\n1 Vow of Duty\n1 Curse of Disturbance\n1 Parasitic Impetus\n1 Caves of Koilos\n1 Exotic Orchard\n1 Mikokoro, Center of the Sea\n1 Temple of Silence\n1 Silverquill Campus\n1 Study Hall\n1 Barren Moor\n1 Bojuka Bog\n1 Command Tower\n1 Myriad Landscape\n1 Opal Palace\n1 Orzhov Basilica\n1 Secluded Steppe\n1 Tainted Field\n1 Temple of the False God\n7 Plains\n7 Plains\n5 Swamp\n5 Swamp\n1 Duelist's Heritage\n1 Debtors' Knell\n1 Ambition's Cost\n1 Rogue's Passage",
   "oracleCards": [
@@ -190,7 +190,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -227,7 +228,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": true
     },
@@ -269,7 +271,8 @@
       "tags": [
         "enchantment",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -459,7 +462,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -504,7 +508,8 @@
         "sacrifice",
         "sac-outlet",
         "counter-producer",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -524,7 +529,8 @@
       "tags": [
         "creature",
         "tokens",
-        "death-payoff"
+        "death-payoff",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -579,7 +585,8 @@
       "producedMana": [],
       "tags": [
         "wipe",
-        "protection"
+        "protection",
+        "counter-kind:loyalty"
       ],
       "isCommander": false
     },
@@ -820,7 +827,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -840,6 +848,8 @@
         "creature",
         "counter-producer",
         "counter-payoff",
+        "counter-kind:plus1",
+        "counter-kind:any",
         "stax"
       ],
       "isCommander": false
@@ -881,7 +891,9 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -917,7 +929,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1033,7 +1046,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1125,7 +1139,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1284,6 +1299,7 @@
       "tags": [
         "creature",
         "counter-producer",
+        "counter-kind:plus1",
         "lifegain"
       ],
       "isCommander": false
@@ -1424,7 +1440,8 @@
         "enchantment",
         "death-payoff",
         "etb",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1539,21 +1556,21 @@
   "result": {
     "profile": {
       "median": 40,
-      "floor": 31,
+      "floor": 30,
       "ceiling": 49,
-      "peak": 77,
-      "dispersion": 18,
-      "variance": 18,
+      "peak": 76,
+      "dispersion": 19,
+      "variance": 19,
       "consistency": 69,
       "commanderDelta": 7,
-      "coverage": 91,
-      "dataCoverage": 91
+      "coverage": 92,
+      "dataCoverage": 92
     },
     "dimensions": {
       "speed": 33,
       "consistency": 69,
       "explosiveness": 11,
-      "synergy": 48,
+      "synergy": 49,
       "interaction": 46,
       "resilience": 33
     },
@@ -1575,12 +1592,13 @@
       {
         "id": "counters",
         "name": "Marqueurs",
-        "strength": 60,
-        "cohesion": 60,
+        "strength": 62,
+        "cohesion": 62,
         "producers": [
           "Citadel Siege",
           "Fain, the Broker",
           "Nils, Discipline Enforcer",
+          "Opal Palace",
           "Orzhov Advokist",
           "Sunscorch Regent"
         ],
@@ -1593,6 +1611,7 @@
           "Citadel Siege",
           "Fain, the Broker",
           "Nils, Discipline Enforcer",
+          "Opal Palace",
           "Orzhov Advokist",
           "Sunscorch Regent",
           "Together Forever"
@@ -1604,7 +1623,8 @@
             "tags": [
               "enchantment",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -1629,7 +1649,8 @@
               "sacrifice",
               "sac-outlet",
               "counter-producer",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -1648,6 +1669,8 @@
               "creature",
               "counter-producer",
               "counter-payoff",
+              "counter-kind:plus1",
+              "counter-kind:any",
               "stax"
             ],
             "manaReq": {
@@ -1661,11 +1684,28 @@
             }
           },
           {
+            "name": "Opal Palace",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
             "name": "Orzhov Advokist",
             "cmc": 3,
             "tags": [
               "creature",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -1683,6 +1723,7 @@
             "tags": [
               "creature",
               "counter-producer",
+              "counter-kind:plus1",
               "lifegain"
             ],
             "manaReq": {
@@ -1710,7 +1751,8 @@
               "sacrifice",
               "sac-outlet",
               "counter-producer",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -1729,6 +1771,8 @@
               "creature",
               "counter-producer",
               "counter-payoff",
+              "counter-kind:plus1",
+              "counter-kind:any",
               "stax"
             ],
             "manaReq": {
@@ -1748,7 +1792,8 @@
               "enchantment",
               "death-payoff",
               "etb",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 0,
@@ -1770,7 +1815,7 @@
         "payoffTags": [
           "counter-payoff"
         ],
-        "evidence": "5 producteur(s), 3 payoff(s), 6 carte(s) distincte(s)."
+        "evidence": "6 producteur(s), 3 payoff(s), 7 carte(s) distincte(s)."
       }
     ],
     "combos": [],
@@ -1780,13 +1825,12 @@
         "Citadel Siege",
         "Fain, the Broker",
         "Nils, Discipline Enforcer",
+        "Opal Palace",
         "Orzhov Advokist",
-        "Sunscorch Regent",
-        "Together Forever"
+        "Sunscorch Regent"
       ],
       "tags": [
-        "counter-producer",
-        "counter-payoff"
+        "counter-producer"
       ]
     },
     "aeon": {
@@ -1797,16 +1841,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
+      "floor": 32,
       "median": 39,
       "high": 45,
       "ceiling": 45,
-      "peak": 67,
+      "peak": 66,
       "iqr": 10,
       "consistency": 78,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 79,
+      "recoveryAfterDisruption": 78,
       "turnProfile": [
         {
           "turn": 1,
@@ -1834,34 +1878,34 @@
         },
         {
           "turn": 4,
-          "commander": 83,
+          "commander": 82,
           "engine": 4,
           "interaction": 53,
-          "resource": 23,
+          "resource": 22,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 94,
-          "engine": 9,
+          "commander": 93,
+          "engine": 8,
           "interaction": 68,
           "resource": 35,
           "burst": 0
         },
         {
           "turn": 6,
-          "commander": 97,
-          "engine": 12,
+          "commander": 96,
+          "engine": 10,
           "interaction": 75,
-          "resource": 41,
+          "resource": 40,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 98,
-          "engine": 15,
-          "interaction": 81,
-          "resource": 46,
+          "engine": 12,
+          "interaction": 80,
+          "resource": 45,
           "burst": 0
         }
       ]
@@ -1894,6 +1938,8 @@
           "creature",
           "counter-producer",
           "counter-payoff",
+          "counter-kind:plus1",
+          "counter-kind:any",
           "stax"
         ],
         "aeon": null
@@ -1916,7 +1962,8 @@
         "impact": 2,
         "tags": [
           "wipe",
-          "protection"
+          "protection",
+          "counter-kind:loyalty"
         ],
         "aeon": null
       },
@@ -1964,7 +2011,8 @@
         "tags": [
           "enchantment",
           "etb",
-          "counter-producer"
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -1982,7 +2030,8 @@
         "impact": 1.5,
         "tags": [
           "creature",
-          "counter-producer"
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       }

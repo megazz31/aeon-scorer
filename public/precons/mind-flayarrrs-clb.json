@@ -29,15 +29,15 @@
   "analysis": {
     "median": 37,
     "p20": 27,
-    "p80": 50,
+    "p80": 49,
     "peak": 76,
     "coverage": 91,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "d078e27ddd4587ff5033a782ec278bcec46b15436dfdbdefd24de3b9cb69a4fc",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Chasm Skulker\n1 Forgotten Creation\n1 Grazilaxx, Illithid Scholar\n1 Hullbreaker Horror\n1 Mind Flayer\n1 Overcharged Amalgam\n1 Sludge Monster\n1 Wharf Infiltrator\n1 Dark Hatchling\n1 Dross Harvester\n1 Guiltfeeder\n1 Hunted Horror\n1 Nighthowler\n1 Nihilith\n1 Sewer Nemesis\n1 Woe Strider\n1 Consuming Aberration\n1 Nemesis of Reason\n1 Phyrexian Revoker\n1 Psychosis Crawler\n1 Spellskite\n1 Dauthi Horror\n1 Dusk Mangler\n1 Phyrexian Rager\n1 Plague Spitter\n1 Ravenous Chupacabra\n1 Fractured Sanity\n1 Crippling Fear\n1 Hex\n1 In Garruk's Wake\n1 Feed the Swarm\n1 Syphon Mind\n1 Extract from Darkness\n1 Pull from Tomorrow\n1 Curtains' Call\n1 Memory Plunder\n1 Fact or Fiction\n1 Drown in the Loch\n1 Arcane Signet\n1 Mind Stone\n1 Dimir Keyrune\n1 Dimir Signet\n1 Everflowing Chalice\n1 Herald's Horn\n1 Lightning Greaves\n1 Mindcrank\n1 Sol Ring\n1 Talisman of Dominance\n1 Thought Vessel\n1 Leyline of Anticipation\n1 Reflections of Littjara\n1 Black Market\n1 Choked Estuary\n1 Creeping Tar Pit\n1 Darkwater Catacombs\n1 Drownyard Temple\n1 Exotic Orchard\n1 Nephalia Drownyard\n1 River of Tears\n1 Sunken Hollow\n1 Temple of Deceit\n1 Command Tower\n1 Ash Barrens\n1 Dimir Aqueduct\n1 Myriad Landscape\n1 Path of Ancestry\n1 Port of Karfell\n1 Rogue's Passage\n1 Tainted Isle\n1 Temple of the False God\n3 Island\n2 Island\n2 Island\n2 Island\n3 Swamp\n3 Swamp\n3 Swamp\n2 Swamp\n1 Zellix, Sanity Flayer\n1 Haunted One\n1 Aboleth Spawn\n1 Endless Evil\n1 Grell Philosopher\n1 Psionic Ritual\n1 Brainstealer Dragon\n1 From the Catacombs\n1 Uchuulon",
   "oracleCards": [
@@ -116,7 +116,8 @@
         "enchantment",
         "mana",
         "death-payoff",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -173,7 +174,8 @@
         "creature",
         "tokens",
         "death-payoff",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -458,7 +460,8 @@
       "tags": [
         "instant",
         "removal",
-        "counterspell"
+        "counterspell",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -537,7 +540,9 @@
         "artifact",
         "mana",
         "etb",
-        "counter-payoff"
+        "counter-producer",
+        "counter-payoff",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -664,7 +669,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1038,7 +1044,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:time"
       ],
       "isCommander": false
     },
@@ -1056,7 +1063,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counterspell"
+        "counterspell",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1194,8 +1202,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "artifact",
-        "life-payoff"
+        "artifact"
       ],
       "isCommander": false
     },
@@ -1328,7 +1335,8 @@
       "tags": [
         "creature",
         "etb",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:slime"
       ],
       "isCommander": false
     },
@@ -1588,7 +1596,8 @@
         "tokens",
         "sacrifice",
         "sac-outlet",
-        "etb"
+        "etb",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1615,10 +1624,10 @@
     "profile": {
       "median": 37,
       "floor": 27,
-      "ceiling": 50,
+      "ceiling": 49,
       "peak": 76,
-      "dispersion": 23,
-      "variance": 23,
+      "dispersion": 22,
+      "variance": 22,
       "consistency": 63,
       "commanderDelta": 4,
       "coverage": 91,
@@ -1629,7 +1638,7 @@
       "consistency": 63,
       "explosiveness": 16,
       "synergy": 42,
-      "interaction": 36,
+      "interaction": 35,
       "resilience": 23
     },
     "roles": {
@@ -1704,7 +1713,8 @@
               "tokens",
               "sacrifice",
               "sac-outlet",
-              "etb"
+              "etb",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -1725,7 +1735,8 @@
               "enchantment",
               "mana",
               "death-payoff",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:charge"
             ],
             "manaReq": {
               "generic": 3,
@@ -1747,7 +1758,8 @@
               "creature",
               "tokens",
               "death-payoff",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2028,7 +2040,9 @@
               "artifact",
               "mana",
               "etb",
-              "counter-payoff"
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:charge"
             ],
             "manaReq": {
               "generic": 0,
@@ -2130,8 +2144,8 @@
       "iterations": 3200,
       "floor": 31,
       "median": 38,
-      "high": 47,
-      "ceiling": 47,
+      "high": 46,
+      "ceiling": 46,
       "peak": 67,
       "iqr": 13,
       "consistency": 72,
@@ -2157,23 +2171,23 @@
         },
         {
           "turn": 3,
-          "commander": 14,
+          "commander": 13,
           "engine": 3,
-          "interaction": 26,
-          "resource": 39,
+          "interaction": 25,
+          "resource": 38,
           "burst": 1
         },
         {
           "turn": 4,
-          "commander": 50,
-          "engine": 7,
-          "interaction": 40,
+          "commander": 48,
+          "engine": 6,
+          "interaction": 39,
           "resource": 48,
-          "burst": 8
+          "burst": 7
         },
         {
           "turn": 5,
-          "commander": 77,
+          "commander": 76,
           "engine": 10,
           "interaction": 48,
           "resource": 52,
@@ -2181,7 +2195,7 @@
         },
         {
           "turn": 6,
-          "commander": 87,
+          "commander": 86,
           "engine": 13,
           "interaction": 55,
           "resource": 55,
@@ -2189,9 +2203,9 @@
         },
         {
           "turn": 7,
-          "commander": 91,
-          "engine": 16,
-          "interaction": 60,
+          "commander": 90,
+          "engine": 15,
+          "interaction": 61,
           "resource": 58,
           "burst": 20
         }
@@ -2257,7 +2271,8 @@
           "enchantment",
           "mana",
           "death-payoff",
-          "counter-payoff"
+          "counter-payoff",
+          "counter-kind:charge"
         ],
         "aeon": null
       },
@@ -2296,7 +2311,8 @@
         "tags": [
           "instant",
           "removal",
-          "counterspell"
+          "counterspell",
+          "counter-kind:generic"
         ],
         "aeon": null
       },
@@ -2307,7 +2323,9 @@
           "artifact",
           "mana",
           "etb",
-          "counter-payoff"
+          "counter-producer",
+          "counter-payoff",
+          "counter-kind:charge"
         ],
         "aeon": null
       },

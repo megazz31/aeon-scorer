@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 41,
+    "median": 40,
     "p20": 30,
     "p80": 50,
-    "peak": 75,
+    "peak": 78,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "4c0646d4dfae0b09ed6d7e47b23370427ca242019bb3e1dc2b4211ab6cf16113",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Dovin, Grand Arbiter\n1 Donal, Herald of Wings\n1 Rhoda, Geist Avenger\n1 Timin, Youthful Geist\n1 Drogskol Reinforcements\n1 Priest of the Blessed Graf\n1 Ethereal Investigator\n1 Spectral Arcanist\n1 Angel of Flight Alabaster\n1 Boreas Charger\n1 Bygone Bishop\n1 Custodi Soulbinders\n1 Hallowed Spiritkeeper\n1 Hanged Executioner\n1 Karmic Guide\n1 Knight of the White Orchid\n1 Mentor of the Meek\n1 Mirror Entity\n1 Oyobi, Who Split the Heavens\n1 Remorseful Cleric\n1 Twilight Drover\n1 Windborn Muse\n1 Ghostly Pilferer\n1 Kami of the Crescent Moon\n1 Rattlechains\n1 Shacklegeist\n1 Supreme Phantom\n1 Geist of Saint Traft\n1 Custodi Squire\n1 Spectral Shepherd\n1 Nebelgast Herald\n1 Sire of the Storm\n1 Spectral Sailor\n1 Drogskol Captain\n1 Storm of Souls\n1 Haunting Imitation\n1 Fell the Mighty\n1 Kirtar's Wrath\n1 Flood of Tears\n1 Distant Melody\n1 Sudden Salvation\n1 Occult Epiphany\n1 Disorder in the Court\n1 Benevolent Offering\n1 Crush Contraband\n1 Swords to Plowshares\n1 Arcane Denial\n1 Midnight Clock\n1 Arcane Signet\n1 Azorius Locket\n1 Azorius Signet\n1 Commander's Sphere\n1 Marble Diamond\n1 Sky Diamond\n1 Sol Ring\n1 Haunted Library\n1 Breath of the Sleepless\n1 Promise of Bunrei\n1 Imprisoned in the Moon\n1 Verity Circle\n1 Darksteel Mutation\n1 Field of Souls\n1 Ghostly Prison\n1 Reconnaissance Mission\n1 Exotic Orchard\n1 Moorland Haunt\n1 Port Town\n1 Prairie Stream\n1 Skycloud Expanse\n1 Temple of Enlightenment\n1 Azorius Chancery\n1 Command Tower\n1 Myriad Landscape\n1 Path of Ancestry\n1 Temple of the False God\n1 Unclaimed Territory\n12 Plains\n11 Island",
   "oracleCards": [
@@ -74,7 +74,8 @@
       "tags": [
         "instant",
         "draw",
-        "counterspell"
+        "counterspell",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -317,7 +318,9 @@
       "tags": [
         "creature",
         "tokens",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -425,6 +428,7 @@
       "producedMana": [],
       "tags": [
         "tokens",
+        "counter-kind:loyalty",
         "lifegain"
       ],
       "isCommander": false
@@ -863,7 +867,8 @@
       ],
       "tags": [
         "artifact",
-        "mana"
+        "mana",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1197,7 +1202,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1497,7 +1503,8 @@
       "tags": [
         "creature",
         "tokens",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1564,23 +1571,23 @@
   ],
   "result": {
     "profile": {
-      "median": 41,
+      "median": 40,
       "floor": 30,
       "ceiling": 50,
-      "peak": 75,
+      "peak": 78,
       "dispersion": 20,
       "variance": 20,
-      "consistency": 67,
+      "consistency": 66,
       "commanderDelta": 5,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 33,
-      "consistency": 67,
-      "explosiveness": 14,
+      "consistency": 66,
+      "explosiveness": 15,
       "synergy": 60,
-      "interaction": 46,
+      "interaction": 45,
       "resilience": 38
     },
     "roles": {
@@ -1761,7 +1768,8 @@
             "cmc": 3,
             "tags": [
               "artifact",
-              "mana"
+              "mana",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 2,
@@ -1998,12 +2006,12 @@
       "median": 36,
       "high": 43,
       "ceiling": 43,
-      "peak": 62,
+      "peak": 65,
       "iqr": 11,
-      "consistency": 76,
+      "consistency": 75,
       "commanderMedianTurn": 6,
       "engineMedianTurn": 6,
-      "recoveryAfterDisruption": 69,
+      "recoveryAfterDisruption": 68,
       "turnProfile": [
         {
           "turn": 1,
@@ -2027,39 +2035,39 @@
           "engine": 0,
           "interaction": 31,
           "resource": 32,
-          "burst": 2
+          "burst": 1
         },
         {
           "turn": 4,
           "commander": 7,
           "engine": 0,
-          "interaction": 52,
-          "resource": 56,
+          "interaction": 51,
+          "resource": 55,
           "burst": 6
         },
         {
           "turn": 5,
-          "commander": 23,
+          "commander": 24,
           "engine": 2,
-          "interaction": 63,
-          "resource": 68,
+          "interaction": 62,
+          "resource": 67,
           "burst": 8
         },
         {
           "turn": 6,
-          "commander": 40,
+          "commander": 41,
           "engine": 4,
-          "interaction": 69,
+          "interaction": 68,
           "resource": 75,
           "burst": 10
         },
         {
           "turn": 7,
-          "commander": 55,
+          "commander": 57,
           "engine": 5,
           "interaction": 74,
           "resource": 80,
-          "burst": 12
+          "burst": 11
         }
       ]
     },
@@ -2091,7 +2099,8 @@
         "tags": [
           "instant",
           "draw",
-          "counterspell"
+          "counterspell",
+          "counter-kind:generic"
         ],
         "aeon": null
       },
@@ -2141,7 +2150,8 @@
         "impact": 2.4,
         "tags": [
           "artifact",
-          "mana"
+          "mana",
+          "counter-kind:generic"
         ],
         "aeon": null
       },

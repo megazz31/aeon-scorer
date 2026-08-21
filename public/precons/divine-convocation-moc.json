@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 36,
-    "p20": 24,
-    "p80": 47,
+    "p20": 25,
+    "p80": 46,
     "peak": 78,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "d7b1318a6394f5617a2008c1142c986d5a714d6c8fa79f3644624f53eeaf718d",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Saint Traft and Rem Karolus\n1 Wand of the Worldsoul\n1 Flockchaser Phantom\n1 Wildfire Awakener\n1 Ichor Elixir\n1 Path of the Ghosthunter\n1 Deluxe Dragster\n1 Mistmeadow Vanisher\n1 Nesting Dovehawk\n1 Kykar, Wind's Fury\n1 Elspeth, Sun's Champion\n1 The Locust God\n1 Angel of Finality\n1 Angel of Salvation\n1 Austere Command\n1 Chasm Skulker\n1 Cultivator's Caravan\n1 Emeria Angel\n1 Exotic Orchard\n1 Frostboil Snarl\n1 Furycalm Snarl\n1 Hour of Reckoning\n1 Keeper of the Accord\n1 Kher Keep\n1 Mentor of the Meek\n1 Nadir Kraken\n1 Port Town\n1 Prairie Stream\n1 Secure the Wastes\n1 Skycloud Expanse\n1 Temple of Enlightenment\n1 Temple of Epiphany\n1 Temple of Triumph\n1 Venerated Loxodon\n1 Whirlwind of Thought\n1 Cloud of Faeries\n1 Command Tower\n1 Commander's Sphere\n1 Ephemeral Shields\n1 Evolving Wilds\n1 Fractured Powerstone\n1 Goblin Instigator\n1 Goblin Medics\n1 Impact Tremors\n1 Spirited Companion\n1 Suture Priest\n1 Terramorphic Expanse\n1 Village Bell-Ringer\n1 Banisher Priest\n1 Arcane Signet\n1 Battle Screech\n1 Chant of Vitu-Ghazi\n1 Conclave Tribunal\n1 Devouring Light\n1 Duergar Hedge-Mage\n1 Fallowsage\n1 Flight of Equenauts\n1 Improbable Alliance\n1 Migratory Route\n1 Mystic Monastery\n1 Rogue's Passage\n1 Seraph of the Masses\n1 Skullclamp\n1 Sol Ring\n1 Stoke the Flames\n1 Swords to Plowshares\n1 Tetsuko Umezawa, Fugitive\n1 Wear // Tear\n1 Temporal Cleansing\n1 Meeting of Minds\n1 Shatter the Source\n1 Wrenn's Resolve\n1 Cut Short\n1 Joyful Stormsculptor\n1 Artistic Refusal\n8 Plains\n8 Island\n8 Mountain",
   "oracleCards": [
@@ -116,7 +116,8 @@
       "tags": [
         "instant",
         "counterspell",
-        "graveyard-setup"
+        "graveyard-setup",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -188,7 +189,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -208,7 +210,8 @@
         "creature",
         "tokens",
         "death-payoff",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -970,7 +973,8 @@
       "tags": [
         "creature",
         "tokens",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -990,7 +994,8 @@
         "creature",
         "token-payoff",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1454,7 +1459,8 @@
       "tags": [
         "creature",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1579,13 +1585,13 @@
   "result": {
     "profile": {
       "median": 36,
-      "floor": 24,
-      "ceiling": 47,
+      "floor": 25,
+      "ceiling": 46,
       "peak": 78,
-      "dispersion": 22,
-      "variance": 22,
+      "dispersion": 21,
+      "variance": 21,
       "consistency": 65,
-      "commanderDelta": 3,
+      "commanderDelta": 2,
       "coverage": 93,
       "dataCoverage": 93
     },
@@ -1662,7 +1668,8 @@
             "tags": [
               "instant",
               "counterspell",
-              "graveyard-setup"
+              "graveyard-setup",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 4,
@@ -1721,7 +1728,8 @@
             "name": "Chant of Vitu-Ghazi",
             "cmc": 8,
             "tags": [
-              "instant"
+              "instant",
+              "lifegain"
             ],
             "manaReq": {
               "generic": 6,
@@ -2304,9 +2312,9 @@
     "simulation": {
       "iterations": 3200,
       "floor": 27,
-      "median": 35,
-      "high": 42,
-      "ceiling": 42,
+      "median": 34,
+      "high": 41,
+      "ceiling": 41,
       "peak": 66,
       "iqr": 12,
       "consistency": 74,
@@ -2318,8 +2326,8 @@
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 6,
-          "resource": 8,
+          "interaction": 4,
+          "resource": 6,
           "burst": 0
         },
         {
@@ -2327,14 +2335,14 @@
           "commander": 0,
           "engine": 0,
           "interaction": 8,
-          "resource": 15,
+          "resource": 14,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 0,
           "engine": 0,
-          "interaction": 29,
+          "interaction": 28,
           "resource": 25,
           "burst": 0
         },
@@ -2344,11 +2352,11 @@
           "engine": 3,
           "interaction": 50,
           "resource": 39,
-          "burst": 3
+          "burst": 2
         },
         {
           "turn": 5,
-          "commander": 31,
+          "commander": 30,
           "engine": 13,
           "interaction": 61,
           "resource": 44,
@@ -2356,15 +2364,15 @@
         },
         {
           "turn": 6,
-          "commander": 58,
+          "commander": 57,
           "engine": 18,
           "interaction": 72,
           "resource": 48,
-          "burst": 9
+          "burst": 8
         },
         {
           "turn": 7,
-          "commander": 71,
+          "commander": 70,
           "engine": 21,
           "interaction": 78,
           "resource": 52,

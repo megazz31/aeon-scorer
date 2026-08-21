@@ -30,15 +30,15 @@
   "analysis": {
     "median": 42,
     "p20": 31,
-    "p80": 51,
+    "p80": 50,
     "peak": 72,
-    "coverage": 91,
+    "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "9b469ea67a3dca32b1777c6082b0819af4d30406ec61b3052721af576ea2e8d2",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Betor, Ancestor's Voice\n1 Protector of the Wastes\n1 Reunion of the House\n1 Jaws of Defeat\n1 Tip the Scales\n1 Will of the Abzan\n1 Arbor Adherent\n1 Canopy Gargantuan\n1 Rampart Architect\n1 Tree of Redemption\n1 Ikra Shidiqi, the Usurper\n1 Baldin, Century Herdmaster\n1 Expel the Interlopers\n1 Indomitable Ancients\n1 Rhox Faithmender\n1 Shalai, Voice of Plenty\n1 Wakestone Gargoyle\n1 Wall of Reverence\n1 Welcoming Vampire\n1 Zetalpa, Primal Dawn\n1 Arasta of the Endless Web\n1 Assault Formation\n1 Hornet Nest\n1 Seedborn Muse\n1 Sylvan Caryatid\n1 Towering Titan\n1 Anguished Unmaking\n1 Dragonlord Dromoka\n1 Faeburrow Elder\n1 Shadrix Silverquill\n1 Sidar Kondo of Jamuraa\n1 Colfenor's Urn\n1 Staff of Compleation\n1 Weathered Sentinels\n1 Canopy Vista\n1 Exotic Orchard\n1 Fortified Village\n1 Isolated Chapel\n1 Overgrown Farmland\n1 Sungrass Prairie\n1 Sunpetal Grove\n1 Temple of Malady\n1 Temple of Plenty\n1 Temple of Silence\n1 Twilight Mire\n1 Woodland Cemetery\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Nyx-Fleece Ram\n1 Slaughter the Strong\n1 Swords to Plowshares\n1 Wall of Omens\n1 Wingmantle Chaplain\n1 Behind the Scenes\n1 Blight Pile\n1 Feed the Swarm\n1 Infernal Grasp\n1 Wall of Limbs\n1 Arboreal Grazer\n1 Axebane Guardian\n1 Carven Caryatid\n1 Evolving Wilds\n1 Jaddi Offshoot\n1 Overgrown Battlement\n1 Sandsteppe Citadel\n1 Tower Defense\n1 Wall of Blossoms\n1 Wall of Roots\n1 Despark\n1 Indulging Patrician\n1 Crashing Drawbridge\n1 Orzhov Signet\n1 Selesnya Signet\n1 Swiftfoot Boots\n1 Walking Bulwark\n1 Access Tunnel\n1 Bojuka Bog\n1 Deceptive Landscape\n1 Path of Ancestry\n1 Radiant Grove\n3 Plains\n3 Plains\n3 Swamp\n2 Swamp\n4 Forest\n3 Forest",
   "oracleCards": [
@@ -255,6 +255,7 @@
       "tags": [
         "creature",
         "recursion",
+        "counter-kind:plus1",
         "lifegain"
       ],
       "isCommander": false
@@ -272,8 +273,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature",
-        "life-payoff"
+        "creature"
       ],
       "isCommander": false
     },
@@ -312,7 +312,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -669,7 +670,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -705,8 +707,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "lifegain",
-        "life-payoff"
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1091,7 +1092,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "draw"
+        "draw",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1111,7 +1113,8 @@
       "tags": [
         "creature",
         "protection",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1187,7 +1190,8 @@
       "tags": [
         "artifact",
         "mana",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:wild"
       ],
       "isCommander": false
     },
@@ -1435,7 +1439,9 @@
         "creature",
         "sacrifice",
         "sac-outlet",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1547,6 +1553,8 @@
         "creature",
         "sacrifice",
         "counter-producer",
+        "counter-kind:plus1",
+        "lifegain",
         "life-payoff"
       ],
       "isCommander": false
@@ -1583,7 +1591,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1604,7 +1613,8 @@
       "tags": [
         "creature",
         "mana",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1727,14 +1737,14 @@
     "profile": {
       "median": 42,
       "floor": 31,
-      "ceiling": 51,
+      "ceiling": 50,
       "peak": 72,
-      "dispersion": 20,
-      "variance": 20,
+      "dispersion": 19,
+      "variance": 19,
       "consistency": 67,
       "commanderDelta": 5,
-      "coverage": 91,
-      "dataCoverage": 91
+      "coverage": 92,
+      "dataCoverage": 92
     },
     "dimensions": {
       "speed": 41,
@@ -1923,7 +1933,8 @@
             "tags": [
               "artifact",
               "mana",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:wild"
             ],
             "manaReq": {
               "generic": 3,
@@ -1955,7 +1966,8 @@
             "tags": [
               "creature",
               "mana",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 1,
@@ -2139,20 +2151,20 @@
       "iterations": 3200,
       "floor": 32,
       "median": 39,
-      "high": 46,
-      "ceiling": 46,
+      "high": 45,
+      "ceiling": 45,
       "peak": 62,
       "iqr": 11,
       "consistency": 76,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 77,
+      "recoveryAfterDisruption": 76,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
-          "engine": 1,
-          "interaction": 13,
+          "engine": 0,
+          "interaction": 12,
           "resource": 0,
           "burst": 0
         },
@@ -2160,24 +2172,24 @@
           "turn": 2,
           "commander": 0,
           "engine": 2,
-          "interaction": 24,
+          "interaction": 23,
           "resource": 8,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 21,
-          "engine": 3,
+          "commander": 20,
+          "engine": 2,
           "interaction": 39,
           "resource": 24,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 71,
+          "commander": 69,
           "engine": 3,
           "interaction": 52,
-          "resource": 43,
+          "resource": 42,
           "burst": 0
         },
         {
@@ -2254,7 +2266,8 @@
         "tags": [
           "creature",
           "mana",
-          "counter-producer"
+          "counter-producer",
+          "counter-kind:generic"
         ],
         "aeon": null
       },
@@ -2272,7 +2285,8 @@
         "impact": 2.2,
         "tags": [
           "creature",
-          "draw"
+          "draw",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },

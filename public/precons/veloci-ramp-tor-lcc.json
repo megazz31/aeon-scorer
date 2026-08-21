@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 38,
-    "p20": 27,
-    "p80": 47,
-    "peak": 72,
+    "median": 36,
+    "p20": 25,
+    "p80": 45,
+    "peak": 73,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "3613010bbd9c62828463a0ddb23492c84a9f22acff66386fed88e4d82c4f5f86",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Wayta, Trainer Prodigy\n1 Bronzebeak Foragers\n1 From the Rubble\n1 Wrathful Raptors\n1 Curious Altisaur\n1 Dinosaur Egg\n1 Scion of Calamity\n1 Sunfrill Imitator\n1 Progenitor's Icon\n1 Akroma's Will\n1 Kinjalli's Sunwing\n1 Temple Altisaur\n1 Wakening Sun's Avatar\n1 Zetalpa, Primal Dawn\n1 Chandra's Ignition\n1 Etali, Primal Storm\n1 Fiery Confluence\n1 Marauding Raptor\n1 Apex Altisaur\n1 Deathgorge Scavenger\n1 Descendants' Path\n1 Rampaging Brontodon\n1 Regal Behemoth\n1 Return of the Wildspeaker\n1 Ripjaw Raptor\n1 Rishkar's Expertise\n1 Runic Armasaur\n1 Shifting Ceratops\n1 Topiary Stomper\n1 Verdant Sun's Avatar\n1 Wayward Swordtooth\n1 Quartzwood Crasher\n1 Regisaur Alpha\n1 Xenagos, God of Revels\n1 Zacama, Primal Calamity\n1 Lifecrafter's Bestiary\n1 Arch of Orazca\n1 Canopy Vista\n1 Cinder Glade\n1 Clifftop Retreat\n1 Exotic Orchard\n1 Fortified Village\n1 Furycalm Snarl\n1 Game Trail\n1 Kessig Wolf Run\n1 Mosswort Bridge\n1 Bellowing Aegisaur\n1 Generous Gift\n1 Majestic Heliopterus\n1 Path to Exile\n1 Earthshaker Dreadmaw\n1 Ixalli's Lorekeeper\n1 Thrashing Brontodon\n1 Otepec Huntmaster\n1 Itzquinth, Firstborn of Gishath\n1 Cultivate\n1 Drover of the Mighty\n1 Farseek\n1 Migration Path\n1 Rampant Growth\n1 Ranging Raptors\n1 Savage Stomp\n1 Thunderherd Migration\n1 Thundering Spineback\n1 Atzocan Seer\n1 Raging Regisaur\n1 Raging Swordtooth\n1 Rhythm of the Wild\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Evolving Wilds\n1 Jungle Shrine\n1 Myriad Landscape\n1 Path of Ancestry\n1 Rogue's Passage\n1 Secluded Courtyard\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Thriving Bluff\n1 Thriving Grove\n1 Thriving Heath\n1 Unclaimed Territory\n4 Forest\n4 Forest\n2 Plains\n2 Plains\n2 Mountain\n2 Mountain",
   "oracleCards": [
@@ -160,7 +160,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -577,7 +578,8 @@
       "tags": [
         "enchantment",
         "recursion",
-        "etb"
+        "etb",
+        "counter-kind:finality"
       ],
       "isCommander": false
     },
@@ -1278,7 +1280,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1616,7 +1619,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1757,23 +1761,23 @@
   ],
   "result": {
     "profile": {
-      "median": 38,
-      "floor": 27,
-      "ceiling": 47,
-      "peak": 72,
-      "dispersion": 19,
-      "variance": 19,
+      "median": 36,
+      "floor": 25,
+      "ceiling": 45,
+      "peak": 73,
+      "dispersion": 20,
+      "variance": 20,
       "consistency": 69,
-      "commanderDelta": 5,
+      "commanderDelta": 4,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 29,
+      "speed": 24,
       "consistency": 69,
-      "explosiveness": 20,
+      "explosiveness": 21,
       "synergy": 48,
-      "interaction": 35,
+      "interaction": 34,
       "resilience": 28
     },
     "roles": {
@@ -2072,14 +2076,14 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 30,
-      "median": 37,
-      "high": 43,
-      "ceiling": 43,
-      "peak": 63,
+      "floor": 29,
+      "median": 36,
+      "high": 42,
+      "ceiling": 42,
+      "peak": 64,
       "iqr": 10,
       "consistency": 78,
-      "commanderMedianTurn": 4,
+      "commanderMedianTurn": 5,
       "engineMedianTurn": null,
       "recoveryAfterDisruption": 55,
       "turnProfile": [
@@ -2087,7 +2091,7 @@
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 6,
+          "interaction": 5,
           "resource": 0,
           "burst": 8
         },
@@ -2096,48 +2100,48 @@
           "commander": 0,
           "engine": 0,
           "interaction": 7,
-          "resource": 1,
+          "resource": 0,
           "burst": 7
         },
         {
           "turn": 3,
-          "commander": 5,
+          "commander": 4,
           "engine": 0,
-          "interaction": 21,
-          "resource": 12,
-          "burst": 10
+          "interaction": 20,
+          "resource": 10,
+          "burst": 9
         },
         {
           "turn": 4,
-          "commander": 47,
+          "commander": 44,
           "engine": 0,
-          "interaction": 41,
-          "resource": 27,
+          "interaction": 40,
+          "resource": 26,
           "burst": 14
         },
         {
           "turn": 5,
-          "commander": 79,
+          "commander": 77,
           "engine": 0,
-          "interaction": 53,
+          "interaction": 52,
           "resource": 40,
-          "burst": 22
+          "burst": 21
         },
         {
           "turn": 6,
-          "commander": 90,
+          "commander": 88,
           "engine": 0,
-          "interaction": 60,
-          "resource": 48,
+          "interaction": 59,
+          "resource": 47,
           "burst": 26
         },
         {
           "turn": 7,
-          "commander": 94,
+          "commander": 93,
           "engine": 0,
-          "interaction": 65,
+          "interaction": 66,
           "resource": 53,
-          "burst": 30
+          "burst": 29
         }
       ]
     },

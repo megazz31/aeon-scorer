@@ -33,17 +33,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 33,
+    "median": 32,
     "p20": 24,
     "p80": 43,
-    "peak": 67,
+    "peak": 68,
     "coverage": 90,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "20e4db0f3883485023c5d6ff902c0812161a88e7be37ecfc8403fd5b5574c0fd",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Oreskos Explorer\n1 Magus of the Wheel\n1 Stinkdrinker Daredevil\n1 Taurean Mauler\n1 Dawnglare Invoker\n1 Desolation Giant\n1 Fumiko the Lowblood\n1 Hunted Dragon\n1 Stoneshock Giant\n1 Thundercloud Shaman\n1 Warchief Giant\n1 Herald of the Host\n1 Kalemne's Captain\n1 Anya, Merciless Angel\n1 Sunrise Sovereign\n1 Hammerfist Giant\n1 Inferno Titan\n1 Dawnbreak Reclaimer\n1 Sun Titan\n1 Hostility\n1 Jareth, Leonine Titan\n1 Victory's Herald\n1 Sandstone Oracle\n1 Hamletback Goliath\n1 Arbiter of Knollridge\n1 Borderland Behemoth\n1 Dream Pillager\n1 Magma Giant\n1 Angel of Serenity\n1 Gisela, Blade of Goldnight\n1 Breath of Darigaaz\n1 Fiery Confluence\n1 Disaster Radius\n1 Earthquake\n1 Meteor Blast\n1 Fall of the Hammer\n1 Orim's Thunder\n1 Sol Ring\n1 Blade of Selves\n1 Boros Signet\n1 Coldsteel Heart\n1 Fellwar Stone\n1 Lightning Greaves\n1 Mind Stone\n1 Thought Vessel\n1 Basalt Monolith\n1 Boros Cluestone\n1 Darksteel Ingot\n1 Loxodon Warhammer\n1 Urza's Incubator\n1 Worn Powerstone\n1 Seer's Sundial\n1 Dreamstone Hedron\n1 Staff of Nin\n1 Curse of the Nightly Hunt\n1 Banishing Light\n1 Faith's Fetters\n1 Rite of the Raging Storm\n1 Warstorm Surge\n1 Ancient Amphitheater\n1 Blasted Landscape\n1 Boros Garrison\n1 Boros Guildgate\n1 Command Tower\n1 Drifting Meadow\n1 Evolving Wilds\n1 Forgotten Cave\n1 Secluded Steppe\n1 Smoldering Crater\n1 Terramorphic Expanse\n1 Vivid Crag\n1 Vivid Meadow\n1 Wind-Scarred Crag\n4 Mountain\n4 Mountain\n3 Mountain\n3 Mountain\n3 Plains\n3 Plains\n3 Plains\n2 Plains\n1 Crib Swap",
   "oracleCards": [
@@ -733,7 +733,8 @@
       "tags": [
         "creature",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -858,7 +859,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:experience"
       ],
       "isCommander": true
     },
@@ -1271,7 +1273,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1383,7 +1386,8 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1408,7 +1412,8 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1493,22 +1498,22 @@
   ],
   "result": {
     "profile": {
-      "median": 33,
+      "median": 32,
       "floor": 24,
       "ceiling": 43,
-      "peak": 67,
+      "peak": 68,
       "dispersion": 19,
       "variance": 19,
-      "consistency": 67,
+      "consistency": 68,
       "commanderDelta": 6,
       "coverage": 90,
       "dataCoverage": 90
     },
     "dimensions": {
       "speed": 29,
-      "consistency": 67,
+      "consistency": 68,
       "explosiveness": 10,
-      "synergy": 39,
+      "synergy": 37,
       "interaction": 31,
       "resilience": 23
     },
@@ -1703,7 +1708,8 @@
             "cmc": 4,
             "tags": [
               "creature",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:experience"
             ],
             "manaReq": {
               "generic": 2,
@@ -1796,14 +1802,10 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 6,
-      "connected": [
-        "Hamletback Goliath",
-        "Taurean Mauler"
-      ],
+      "score": 0,
+      "connected": [],
       "tags": [
-        "counter-payoff",
-        "counter-producer"
+        "counter-payoff"
       ]
     },
     "aeon": {
@@ -1814,13 +1816,13 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 29,
-      "median": 35,
-      "high": 42,
-      "ceiling": 42,
+      "floor": 28,
+      "median": 34,
+      "high": 41,
+      "ceiling": 41,
       "peak": 60,
       "iqr": 11,
-      "consistency": 76,
+      "consistency": 77,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
       "recoveryAfterDisruption": 60,
@@ -1843,15 +1845,15 @@
         },
         {
           "turn": 3,
-          "commander": 24,
+          "commander": 23,
           "engine": 0,
-          "interaction": 17,
+          "interaction": 16,
           "resource": 3,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 78,
+          "commander": 77,
           "engine": 2,
           "interaction": 37,
           "resource": 13,
@@ -1870,7 +1872,7 @@
           "commander": 96,
           "engine": 3,
           "interaction": 52,
-          "resource": 26,
+          "resource": 25,
           "burst": 0
         },
         {

@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 40,
-    "p20": 28,
-    "p80": 52,
-    "peak": 87,
+    "p20": 26,
+    "p80": 51,
+    "peak": 86,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "cbb2a9a2eacbab1c78425da94658fe2705faa98672646e543d0ba56e7f543921",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Coiling Oracle\n1 Eternal Witness\n1 Ramunap Excavator\n1 Reclamation Sage\n1 Stumpsquall Hydra\n1 Yavimaya Elder\n1 Fathom Mage\n1 Sharktocrab\n1 Wickerbough Elder\n1 Acidic Slime\n1 Meloku the Clouded Mirror\n1 Mulldrifter\n1 Murkfiend Liege\n1 Sporemound\n1 Rampaging Baloths\n1 Shipbreaker Kraken\n1 Avenger of Zendikar\n1 Meteor Golem\n1 Molimo, Maro-Sorcerer\n1 Nezahal, Primal Tide\n1 Scourge of Fleets\n1 Simic Sky Swallower\n1 Sphinx of Uthuun\n1 Trench Behemoth\n1 Tromokratis\n1 Verdant Sun's Avatar\n1 Elder Deep-Fiend\n1 Slinn Voda, the Rising Deep\n1 Stormtide Leviathan\n1 Terastodon\n1 Arcane Denial\n1 Counterspell\n1 Growth Spiral\n1 Into the Roil\n1 Peel from Reality\n1 Simic Charm\n1 Beast Within\n1 Fact or Fiction\n1 Explore\n1 Rampant Growth\n1 Compulsive Research\n1 Cultivate\n1 Kodama's Reach\n1 Search for Tomorrow\n1 Harmonize\n1 Whelming Wave\n1 Urban Evolution\n1 Spitting Image\n1 Ior Ruin Expedition\n1 Khalni Heart Expedition\n1 Retreat to Kazandu\n1 Sol Ring\n1 Simic Signet\n1 Swiftfoot Boots\n1 Seer's Sundial\n1 Blighted Woodland\n1 Command Tower\n1 Coral Atoll\n1 Evolving Wilds\n8 Forest\n7 Forest\n8 Island\n7 Island\n1 Jungle Basin\n1 Memorial to Genius\n1 Reliquary Tower\n1 Simic Growth Chamber\n1 Simic Guildgate\n1 Terramorphic Expanse\n1 Thornwood Falls\n1 Vivid Creek\n1 Vivid Grove\n1 Woodland Stream",
   "oracleCards": [
@@ -97,7 +97,8 @@
       "tags": [
         "instant",
         "draw",
-        "counterspell"
+        "counterspell",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -118,7 +119,8 @@
         "tokens",
         "etb",
         "landfall",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -257,7 +259,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counterspell"
+        "counterspell",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -382,7 +385,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "draw"
+        "draw",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -477,7 +481,8 @@
         "enchantment",
         "sacrifice",
         "etb",
-        "landfall"
+        "landfall",
+        "counter-kind:quest"
       ],
       "isCommander": false
     },
@@ -539,7 +544,8 @@
         "enchantment",
         "sacrifice",
         "etb",
-        "landfall"
+        "landfall",
+        "counter-kind:quest"
       ],
       "isCommander": false
     },
@@ -818,6 +824,7 @@
         "etb",
         "landfall",
         "counter-producer",
+        "counter-kind:plus1",
         "lifegain"
       ],
       "isCommander": false
@@ -890,7 +897,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1141,7 +1149,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1292,7 +1301,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1317,7 +1327,8 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1342,7 +1353,8 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1379,7 +1391,9 @@
       "tags": [
         "creature",
         "removal",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1429,18 +1443,18 @@
   "result": {
     "profile": {
       "median": 40,
-      "floor": 28,
-      "ceiling": 52,
-      "peak": 87,
-      "dispersion": 24,
-      "variance": 24,
+      "floor": 26,
+      "ceiling": 51,
+      "peak": 86,
+      "dispersion": 25,
+      "variance": 25,
       "consistency": 62,
-      "commanderDelta": 6,
+      "commanderDelta": 7,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 24,
+      "speed": 23,
       "consistency": 62,
       "explosiveness": 15,
       "synergy": 71,
@@ -1636,7 +1650,8 @@
               "tokens",
               "etb",
               "landfall",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 5,
@@ -1658,7 +1673,8 @@
               "enchantment",
               "sacrifice",
               "etb",
-              "landfall"
+              "landfall",
+              "counter-kind:quest"
             ],
             "manaReq": {
               "generic": 1,
@@ -1677,7 +1693,8 @@
               "enchantment",
               "sacrifice",
               "etb",
-              "landfall"
+              "landfall",
+              "counter-kind:quest"
             ],
             "manaReq": {
               "generic": 1,
@@ -1719,6 +1736,7 @@
               "etb",
               "landfall",
               "counter-producer",
+              "counter-kind:plus1",
               "lifegain"
             ],
             "manaReq": {
@@ -1986,11 +2004,11 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 31,
+      "floor": 30,
       "median": 39,
-      "high": 48,
-      "ceiling": 48,
-      "peak": 80,
+      "high": 47,
+      "ceiling": 47,
+      "peak": 79,
       "iqr": 13,
       "consistency": 71,
       "commanderMedianTurn": 5,
@@ -2008,30 +2026,30 @@
         {
           "turn": 2,
           "commander": 0,
-          "engine": 2,
-          "interaction": 9,
-          "resource": 12,
+          "engine": 1,
+          "interaction": 8,
+          "resource": 11,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 1,
-          "engine": 7,
-          "interaction": 30,
-          "resource": 36,
+          "engine": 6,
+          "interaction": 29,
+          "resource": 35,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 20,
-          "engine": 17,
+          "commander": 19,
+          "engine": 16,
           "interaction": 48,
-          "resource": 60,
+          "resource": 59,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 46,
+          "commander": 45,
           "engine": 27,
           "interaction": 58,
           "resource": 71,
@@ -2039,7 +2057,7 @@
         },
         {
           "turn": 6,
-          "commander": 74,
+          "commander": 72,
           "engine": 35,
           "interaction": 65,
           "resource": 76,
@@ -2049,7 +2067,7 @@
           "turn": 7,
           "commander": 84,
           "engine": 43,
-          "interaction": 71,
+          "interaction": 70,
           "resource": 81,
           "burst": 0
         }
@@ -2091,7 +2109,8 @@
         "tags": [
           "instant",
           "draw",
-          "counterspell"
+          "counterspell",
+          "counter-kind:generic"
         ],
         "aeon": null
       },
@@ -2139,7 +2158,8 @@
         "impact": 2.2,
         "tags": [
           "creature",
-          "draw"
+          "draw",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },

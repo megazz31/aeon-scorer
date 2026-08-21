@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 36,
-    "p20": 24,
-    "p80": 47,
+    "median": 34,
+    "p20": 23,
+    "p80": 44,
     "peak": 73,
-    "coverage": 93,
+    "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "a2affee94d55376d0d8a6f3cb36cde627a0c950a68170ac9a55a146bef276fb3",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Ajani Unyielding\n1 Tayam, Luminous Enigma\n1 Nikara, Lair Scavenger\n1 Yannik, Scavenging Sentinel\n1 Avenging Huntbonder\n1 Cartographer's Hawk\n1 Vitality Hunter\n1 Daring Fiendbonder\n1 Slippery Bogbonder\n1 Akroma, Angel of Wrath\n1 Angel of Finality\n1 Cataclysmic Gearhulk\n1 Kalemne's Captain\n1 Odric, Lunarch Marshal\n1 Reveillark\n1 Solemn Recruit\n1 Sunblast Angel\n1 Zetalpa, Primal Dawn\n1 Cairn Wanderer\n1 Soul of Innistrad\n1 Soulflayer\n1 Hornet Queen\n1 Majestic Myriarch\n1 Splinterfright\n1 Archon of Valor's Reach\n1 Karametra, God of Harvests\n1 Void Beckoner\n1 Titanoth Rex\n1 Aerial Responder\n1 Vampire Nighthawk\n1 Acidic Slime\n1 Sakura-Tribe Elder\n1 Satyr Wayfinder\n1 Skullwinder\n1 Nyx Weaver\n1 Selective Adaptation\n1 Ever After\n1 Duneblast\n1 Unbreakable Bond\n1 Unburial Rites\n1 Cultivate\n1 Harmonize\n1 Obscuring Haze\n1 Blood Curdle\n1 Abzan Charm\n1 Deathsprout\n1 Despark\n1 Grisly Salvage\n1 Netherborn Altar\n1 Mimic Vat\n1 Bonder's Ornament\n1 Arcane Signet\n1 Commander's Sphere\n1 Sol Ring\n1 Swiftfoot Boots\n1 Together Forever\n1 Abzan Ascendancy\n1 Deadbridge Chant\n1 Martial Impetus\n1 Parasitic Impetus\n1 Predatory Impetus\n1 Nesting Grounds\n1 Canopy Vista\n1 Caves of Koilos\n1 Exotic Orchard\n1 Gavony Township\n1 Grim Backwoods\n1 Sungrass Prairie\n1 Blighted Woodland\n1 Command Tower\n1 Golgari Rot Farm\n1 Krosan Verge\n1 Memorial to Folly\n1 Myriad Landscape\n1 Orzhov Basilica\n1 Sandsteppe Citadel\n1 Selesnya Sanctuary\n1 Blossoming Sands\n1 Evolving Wilds\n1 Jungle Hollow\n1 Scoured Barrens\n3 Plains\n2 Plains\n2 Plains\n3 Swamp\n2 Swamp\n2 Swamp\n2 Forest\n1 Forest\n1 Forest",
   "oracleCards": [
@@ -61,7 +61,8 @@
         "tokens",
         "death-payoff",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -82,7 +83,8 @@
       "tags": [
         "instant",
         "draw",
-        "removal"
+        "removal",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -137,7 +139,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "removal"
+        "removal",
+        "counter-kind:plus1",
+        "counter-kind:loyalty"
       ],
       "isCommander": false
     },
@@ -233,7 +237,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -272,7 +277,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "removal"
+        "removal",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -498,7 +504,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "protection"
+        "protection",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -673,7 +680,8 @@
       "tags": [
         "land",
         "mana",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -861,6 +869,7 @@
         "etb",
         "counter-producer",
         "counter-payoff",
+        "counter-kind:plus1",
         "lifegain"
       ],
       "isCommander": true
@@ -996,7 +1005,8 @@
       ],
       "tags": [
         "land",
-        "mana"
+        "mana",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1014,7 +1024,8 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:any"
       ],
       "isCommander": false
     },
@@ -1032,7 +1043,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "draw"
+        "draw",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1351,7 +1363,8 @@
       "tags": [
         "creature",
         "protection",
-        "etb"
+        "etb",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1387,7 +1400,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1539,7 +1553,9 @@
         "creature",
         "recursion",
         "etb",
-        "counter-payoff"
+        "counter-producer",
+        "counter-payoff",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1556,7 +1572,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1576,7 +1593,8 @@
         "enchantment",
         "death-payoff",
         "etb",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1595,6 +1613,7 @@
       "tags": [
         "sorcery",
         "recursion",
+        "counter-kind:generic",
         "lifegain"
       ],
       "isCommander": false
@@ -1650,6 +1669,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-kind:generic",
         "lifegain"
       ],
       "isCommander": false
@@ -1667,7 +1687,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1686,7 +1707,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1711,22 +1733,22 @@
   ],
   "result": {
     "profile": {
-      "median": 36,
-      "floor": 24,
-      "ceiling": 47,
+      "median": 34,
+      "floor": 23,
+      "ceiling": 44,
       "peak": 73,
-      "dispersion": 22,
-      "variance": 22,
+      "dispersion": 21,
+      "variance": 21,
       "consistency": 65,
-      "commanderDelta": 8,
-      "coverage": 93,
-      "dataCoverage": 93
+      "commanderDelta": 5,
+      "coverage": 94,
+      "dataCoverage": 94
     },
     "dimensions": {
       "speed": 24,
       "consistency": 65,
-      "explosiveness": 16,
-      "synergy": 58,
+      "explosiveness": 17,
+      "synergy": 44,
       "interaction": 29,
       "resilience": 56
     },
@@ -1748,12 +1770,13 @@
       {
         "id": "counters",
         "name": "Marqueurs",
-        "strength": 67,
-        "cohesion": 67,
+        "strength": 62,
+        "cohesion": 62,
         "producers": [
           "Abzan Ascendancy",
           "Gavony Township",
-          "Solemn Recruit"
+          "Solemn Recruit",
+          "Tayam, Luminous Enigma"
         ],
         "payoffs": [
           "Netherborn Altar",
@@ -1764,8 +1787,8 @@
           "Abzan Ascendancy",
           "Gavony Township",
           "Solemn Recruit",
-          "Netherborn Altar",
           "Tayam, Luminous Enigma",
+          "Netherborn Altar",
           "Together Forever"
         ],
         "producerCards": [
@@ -1777,7 +1800,8 @@
               "tokens",
               "death-payoff",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
@@ -1801,7 +1825,8 @@
             "tags": [
               "land",
               "mana",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
@@ -1814,7 +1839,8 @@
             "cmc": 3,
             "tags": [
               "creature",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -1828,6 +1854,33 @@
               ],
               "total": 3
             }
+          },
+          {
+            "name": "Tayam, Luminous Enigma",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
           }
         ],
         "payoffCards": [
@@ -1836,7 +1889,8 @@
             "cmc": 2,
             "tags": [
               "artifact",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:any"
             ],
             "manaReq": {
               "generic": 1,
@@ -1855,7 +1909,9 @@
               "creature",
               "recursion",
               "etb",
-              "counter-payoff"
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 1,
@@ -1880,7 +1936,8 @@
               "enchantment",
               "death-payoff",
               "etb",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 0,
@@ -1902,7 +1959,7 @@
         "payoffTags": [
           "counter-payoff"
         ],
-        "evidence": "3 producteur(s), 3 payoff(s), 6 carte(s) distincte(s)."
+        "evidence": "4 producteur(s), 3 payoff(s), 6 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2029,6 +2086,7 @@
               "etb",
               "counter-producer",
               "counter-payoff",
+              "counter-kind:plus1",
               "lifegain"
             ],
             "manaReq": {
@@ -2053,33 +2111,16 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 53,
+      "score": 11,
       "connected": [
         "Abzan Ascendancy",
-        "Aerial Responder",
-        "Blossoming Sands",
-        "Cairn Wanderer",
         "Gavony Township",
-        "Jungle Hollow",
-        "Majestic Myriarch",
         "Netherborn Altar",
-        "Odric, Lunarch Marshal",
-        "Parasitic Impetus",
-        "Scoured Barrens",
-        "Selective Adaptation",
-        "Solemn Recruit",
-        "Soulflayer",
-        "Tayam, Luminous Enigma",
-        "Together Forever",
-        "Unbreakable Bond",
-        "Vampire Nighthawk",
-        "Vitality Hunter"
+        "Solemn Recruit"
       ],
       "tags": [
         "counter-producer",
-        "counter-payoff",
-        "lifegain",
-        "life-payoff"
+        "counter-payoff"
       ]
     },
     "aeon": {
@@ -2090,16 +2131,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 26,
-      "median": 34,
-      "high": 41,
-      "ceiling": 41,
+      "floor": 25,
+      "median": 33,
+      "high": 40,
+      "ceiling": 40,
       "peak": 62,
       "iqr": 12,
       "consistency": 74,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 59,
+      "recoveryAfterDisruption": 58,
       "turnProfile": [
         {
           "turn": 1,
@@ -2112,14 +2153,14 @@
         {
           "turn": 2,
           "commander": 0,
-          "engine": 1,
+          "engine": 0,
           "interaction": 3,
           "resource": 8,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 2,
+          "commander": 1,
           "engine": 1,
           "interaction": 12,
           "resource": 20,
@@ -2127,32 +2168,32 @@
         },
         {
           "turn": 4,
-          "commander": 29,
-          "engine": 5,
+          "commander": 28,
+          "engine": 3,
           "interaction": 35,
           "resource": 40,
           "burst": 8
         },
         {
           "turn": 5,
-          "commander": 62,
-          "engine": 7,
-          "interaction": 50,
+          "commander": 60,
+          "engine": 5,
+          "interaction": 49,
           "resource": 54,
           "burst": 9
         },
         {
           "turn": 6,
-          "commander": 76,
-          "engine": 9,
-          "interaction": 60,
-          "resource": 63,
+          "commander": 75,
+          "engine": 6,
+          "interaction": 59,
+          "resource": 62,
           "burst": 11
         },
         {
           "turn": 7,
           "commander": 82,
-          "engine": 10,
+          "engine": 7,
           "interaction": 67,
           "resource": 69,
           "burst": 12
@@ -2185,7 +2226,8 @@
         "tags": [
           "instant",
           "draw",
-          "removal"
+          "removal",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -2194,7 +2236,8 @@
         "impact": 2.3,
         "tags": [
           "creature",
-          "draw"
+          "draw",
+          "counter-kind:generic"
         ],
         "aeon": null
       },
@@ -2217,7 +2260,8 @@
           "tokens",
           "death-payoff",
           "etb",
-          "counter-producer"
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },

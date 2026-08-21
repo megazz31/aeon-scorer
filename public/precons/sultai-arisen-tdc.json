@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 48,
-    "p20": 36,
+    "median": 47,
+    "p20": 35,
     "p80": 58,
     "peak": 88,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "26b8eb39022d4a5ec471d0e2ce7d2a76e84750227b40c72e5625b972026c6721",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Kotis, Sibsig Champion\n1 Diviner of Mist\n1 Afterlife from the Loam\n1 Teval's Judgment\n1 Welcome the Dead\n1 Floral Evoker\n1 Steward of the Harvest\n1 Will of the Sultai\n1 Colossal Grave-Reaver\n1 Gravecrawler\n1 Life from the Loam\n1 Casualties of War\n1 Amphin Mutineer\n1 River Kelpie\n1 Dauthi Voidwalker\n1 Disciple of Bolas\n1 Junji, the Midnight Sky\n1 Lethal Scheme\n1 Living Death\n1 Lord of the Forsaken\n1 Necromantic Selection\n1 Necropolis Fiend\n1 Noxious Gearhulk\n1 Ob Nixilis, the Fallen\n1 Tasigur, the Golden Fang\n1 Woe Strider\n1 Avenger of Zendikar\n1 Conduit of Worlds\n1 Multani, Yavimaya's Avatar\n1 Shigeki, Jukai Visionary\n1 Consuming Aberration\n1 Jarad, Golgari Lich Lord\n1 Lord of Extinction\n1 Meren of Clan Nel Toth\n1 Command Beacon\n1 Crypt of Agadeem\n1 Darkwater Catacombs\n1 Dreamroot Cascade\n1 Drownyard Temple\n1 Exotic Orchard\n1 Fetid Pools\n1 Hinterland Harbor\n1 Llanowar Wastes\n1 Sunken Hollow\n1 Temple of Malady\n1 Woodland Cemetery\n1 Essence Anchor\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Forbidden Alchemy\n1 Hedron Crab\n1 Treasure Cruise\n1 Wonder\n1 Phyrexian Reclamation\n1 Reassembling Skeleton\n1 Stitcher's Supplier\n1 Victimize\n1 Kishla Skimmer\n1 Crawling Sensation\n1 Cultivate\n1 Farseek\n1 Grapple with the Past\n1 Harrow\n1 Opulent Palace\n1 Rampant Growth\n1 Sakura-Tribe Elder\n1 Satyr Wayfinder\n1 Springbloom Druid\n1 Tear Asunder\n1 Timeless Witness\n1 Grisly Salvage\n1 Nyx Weaver\n1 Putrefy\n1 Skull Prophet\n1 Millikin\n1 Cephalid Coliseum\n1 Contaminated Aquifer\n1 Foreboding Landscape\n1 Golgari Rot Farm\n1 Haunted Mire\n1 Memorial to Folly\n1 Myriad Landscape\n1 Terramorphic Expanse\n2 Island\n2 Island\n3 Swamp\n2 Swamp\n3 Forest\n3 Forest",
   "oracleCards": [
@@ -117,7 +117,8 @@
         "tokens",
         "etb",
         "landfall",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -373,6 +374,7 @@
       "tags": [
         "creature",
         "sacrifice",
+        "counter-kind:generic",
         "exile-cast",
         "cheat",
         "free"
@@ -561,7 +563,8 @@
         "recursion",
         "etb",
         "landfall",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -821,8 +824,7 @@
         "creature",
         "recursion",
         "sacrifice",
-        "sac-outlet",
-        "life-payoff"
+        "sac-outlet"
       ],
       "isCommander": false
     },
@@ -880,7 +882,8 @@
       "tags": [
         "creature",
         "recursion",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1039,7 +1042,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "death-payoff"
+        "death-payoff",
+        "counter-kind:experience"
       ],
       "isCommander": false
     },
@@ -1150,7 +1154,8 @@
       "tags": [
         "creature",
         "artifact",
-        "etb"
+        "etb",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1190,7 +1195,8 @@
         "creature",
         "etb",
         "landfall",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1713,7 +1719,8 @@
       "tags": [
         "sorcery",
         "recursion",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1734,7 +1741,8 @@
         "tokens",
         "sacrifice",
         "sac-outlet",
-        "etb"
+        "etb",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1781,14 +1789,14 @@
   ],
   "result": {
     "profile": {
-      "median": 48,
-      "floor": 36,
+      "median": 47,
+      "floor": 35,
       "ceiling": 58,
       "peak": 88,
       "dispersion": 22,
       "variance": 22,
       "consistency": 63,
-      "commanderDelta": 12,
+      "commanderDelta": 11,
       "coverage": 93,
       "dataCoverage": 93
     },
@@ -1797,7 +1805,7 @@
       "consistency": 63,
       "explosiveness": 20,
       "synergy": 81,
-      "interaction": 23,
+      "interaction": 22,
       "resilience": 84
     },
     "roles": {
@@ -1961,7 +1969,8 @@
               "recursion",
               "etb",
               "landfall",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2014,8 +2023,7 @@
               "creature",
               "recursion",
               "sacrifice",
-              "sac-outlet",
-              "life-payoff"
+              "sac-outlet"
             ],
             "manaReq": {
               "generic": 0,
@@ -2042,7 +2050,8 @@
             "tags": [
               "creature",
               "recursion",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
@@ -2254,7 +2263,8 @@
             "tags": [
               "sorcery",
               "recursion",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 4,
@@ -2417,7 +2427,8 @@
               "tokens",
               "etb",
               "landfall",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 5,
@@ -2440,7 +2451,8 @@
               "recursion",
               "etb",
               "landfall",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2477,7 +2489,8 @@
               "creature",
               "etb",
               "landfall",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -2532,8 +2545,7 @@
               "creature",
               "recursion",
               "sacrifice",
-              "sac-outlet",
-              "life-payoff"
+              "sac-outlet"
             ],
             "manaReq": {
               "generic": 0,
@@ -2585,7 +2597,8 @@
               "tokens",
               "sacrifice",
               "sac-outlet",
-              "etb"
+              "etb",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2624,7 +2637,8 @@
             "cmc": 4,
             "tags": [
               "creature",
-              "death-payoff"
+              "death-payoff",
+              "counter-kind:experience"
             ],
             "manaReq": {
               "generic": 2,
@@ -2903,23 +2917,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
-      "median": 41,
-      "high": 49,
-      "ceiling": 49,
+      "floor": 32,
+      "median": 40,
+      "high": 48,
+      "ceiling": 48,
       "peak": 77,
       "iqr": 13,
       "consistency": 72,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 88,
+      "recoveryAfterDisruption": 87,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
-          "engine": 1,
+          "engine": 0,
           "interaction": 0,
-          "resource": 29,
+          "resource": 28,
           "burst": 0
         },
         {
@@ -2932,25 +2946,25 @@
         },
         {
           "turn": 3,
-          "commander": 16,
+          "commander": 15,
           "engine": 7,
-          "interaction": 14,
-          "resource": 56,
-          "burst": 5
+          "interaction": 13,
+          "resource": 55,
+          "burst": 4
         },
         {
           "turn": 4,
-          "commander": 61,
+          "commander": 60,
           "engine": 19,
-          "interaction": 27,
+          "interaction": 26,
           "resource": 75,
           "burst": 10
         },
         {
           "turn": 5,
-          "commander": 80,
+          "commander": 79,
           "engine": 30,
-          "interaction": 36,
+          "interaction": 35,
           "resource": 84,
           "burst": 15
         },
@@ -3002,6 +3016,7 @@
         "tags": [
           "creature",
           "sacrifice",
+          "counter-kind:generic",
           "exile-cast",
           "cheat",
           "free"
@@ -3037,7 +3052,8 @@
           "recursion",
           "etb",
           "landfall",
-          "counter-producer"
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -3087,8 +3103,7 @@
           "creature",
           "recursion",
           "sacrifice",
-          "sac-outlet",
-          "life-payoff"
+          "sac-outlet"
         ],
         "aeon": null
       },

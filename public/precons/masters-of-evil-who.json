@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 37,
-    "p20": 26,
+    "p20": 25,
     "p80": 46,
     "peak": 71,
-    "coverage": 91,
+    "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "0fdcb923056f060a971567c85fb43c651902e4cc25d0792d6981b75f126a91cf",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Missy\n1 Auton Soldier\n1 The Flood of Mars\n1 Cyber Conversion\n1 Hunted by The Family\n1 Dalek Drone\n1 Vashta Nerada\n1 Time Reaper\n1 Doomsday Confluence\n1 The Toymaker's Trap\n1 Vislor Turlough\n1 Genesis of the Daleks\n1 This Is How It Ends\n1 Death in Heaven\n1 Delete\n1 Ensnared by the Mara\n1 Day of the Moon\n1 The Master, Multiplied\n1 The Master, Mesmerist\n1 Rassilon, the War President\n1 The Master, Gallifrey's End\n1 The Valeyard\n1 Weeping Angel\n1 The Beast, Deathless Prince\n1 The Rani\n1 Sycorax Commander\n1 The Cyber-Controller\n1 Cult of Skaro\n1 The Dalek Emperor\n1 Ashad, the Lone Cyberman\n1 Blink\n1 The Master, Formed Anew\n1 Cybermen Squadron\n1 Cybership\n1 Wound Reflection\n1 Blasphemous Act\n1 Solemn Simulacrum\n1 The Sound of Drums\n1 River of Tears\n1 Foreboding Ruins\n1 Shadowblood Ridge\n1 Smoldering Marsh\n1 Temple of Deceit\n1 Choked Estuary\n1 Sunken Hollow\n1 Darkwater Catacombs\n1 Fetid Pools\n1 Temple of Malice\n1 Canyon Slough\n1 Exotic Orchard\n1 Temple of Epiphany\n1 Frostboil Snarl\n1 Stormcarved Coast\n1 Fiery Islet\n1 Lavaclaw Reaches\n1 Shipwreck Marsh\n1 Drowned Catacomb\n1 Haunted Ridge\n1 Dragonskull Summit\n1 Creeping Tar Pit\n1 Gallifrey Council Chamber\n1 Renegade Silent\n1 Zygon Infiltrator\n1 Don't Blink\n1 Exterminate!\n1 Dalek Squadron\n1 Sontaran General\n1 Great Intelligence's Plan\n1 Cyberman Patrol\n1 Cybermat\n1 Clockwork Droid\n1 Midnight Crusader Shuttle\n1 Laser Screwdriver\n1 Arcane Signet\n1 Sol Ring\n1 Thought Vessel\n1 Mind Stone\n1 Lightning Greaves\n1 Propaganda\n1 Feed the Swarm\n1 Snuff Out\n1 Commander's Sphere\n1 Wayfarer's Bauble\n1 Talisman of Dominance\n1 Talisman of Indulgence\n1 Command Tower\n1 Terramorphic Expanse\n1 Thriving Moor\n1 Path of Ancestry\n1 Temple of the False God\n1 Reliquary Tower\n1 Crumbling Necropolis\n1 Ominous Cemetery\n1 Island\n1 Island\n1 Swamp\n1 Swamp\n1 Mountain\n1 Mountain",
   "oracleCards": [
@@ -84,7 +84,8 @@
         "sacrifice",
         "death-payoff",
         "artifact-payoff",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -315,7 +316,7 @@
         "artifact",
         "tokens",
         "counter-producer",
-        "life-payoff"
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -824,7 +825,8 @@
         "enchantment",
         "wipe",
         "tokens",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:lore"
       ],
       "isCommander": false
     },
@@ -1156,7 +1158,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1572,7 +1575,8 @@
       "tags": [
         "creature",
         "draw",
-        "etb"
+        "etb",
+        "counter-kind:stun"
       ],
       "isCommander": false
     },
@@ -1629,7 +1633,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1647,7 +1652,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1687,7 +1693,8 @@
       "tags": [
         "creature",
         "draw",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1881,7 +1888,8 @@
       "tags": [
         "creature",
         "protection",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1953,8 +1961,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "enchantment",
-        "life-payoff"
+        "enchantment"
       ],
       "isCommander": false
     },
@@ -1971,7 +1978,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:stun"
       ],
       "isCommander": false
     }
@@ -1979,15 +1987,15 @@
   "result": {
     "profile": {
       "median": 37,
-      "floor": 26,
+      "floor": 25,
       "ceiling": 46,
       "peak": 71,
-      "dispersion": 20,
-      "variance": 20,
+      "dispersion": 21,
+      "variance": 21,
       "consistency": 67,
       "commanderDelta": 7,
-      "coverage": 91,
-      "dataCoverage": 91
+      "coverage": 92,
+      "dataCoverage": 92
     },
     "dimensions": {
       "speed": 33,
@@ -2223,7 +2231,7 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 29,
+      "floor": 28,
       "median": 36,
       "high": 42,
       "ceiling": 42,
@@ -2238,7 +2246,7 @@
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 7,
+          "interaction": 6,
           "resource": 0,
           "burst": 0
         },
@@ -2247,12 +2255,12 @@
           "commander": 0,
           "engine": 0,
           "interaction": 13,
-          "resource": 1,
+          "resource": 0,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 20,
+          "commander": 19,
           "engine": 0,
           "interaction": 24,
           "resource": 17,
@@ -2260,33 +2268,33 @@
         },
         {
           "turn": 4,
-          "commander": 69,
+          "commander": 67,
           "engine": 0,
           "interaction": 37,
-          "resource": 40,
+          "resource": 38,
           "burst": 7
         },
         {
           "turn": 5,
-          "commander": 89,
+          "commander": 87,
           "engine": 0,
           "interaction": 47,
-          "resource": 52,
+          "resource": 51,
           "burst": 12
         },
         {
           "turn": 6,
-          "commander": 93,
+          "commander": 92,
           "engine": 0,
           "interaction": 55,
-          "resource": 60,
+          "resource": 59,
           "burst": 16
         },
         {
           "turn": 7,
           "commander": 96,
           "engine": 0,
-          "interaction": 61,
+          "interaction": 60,
           "resource": 64,
           "burst": 19
         }
@@ -2364,7 +2372,8 @@
         "tags": [
           "creature",
           "draw",
-          "etb"
+          "etb",
+          "counter-kind:stun"
         ],
         "aeon": null
       },
@@ -2374,7 +2383,8 @@
         "tags": [
           "creature",
           "draw",
-          "counter-producer"
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },

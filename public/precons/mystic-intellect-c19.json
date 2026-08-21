@@ -30,15 +30,15 @@
   "analysis": {
     "median": 42,
     "p20": 30,
-    "p80": 53,
-    "peak": 87,
+    "p80": 51,
+    "peak": 88,
     "coverage": 91,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "c86e3d7796989e89e4fccff220cce32d9601a5a5b158854e5652f34bee13ae3a",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Ral Zarek\n1 Elsha of the Infinite\n1 Pramikon, Sky Rampart\n1 Thalia's Geistcaller\n1 Wall of Stolen Identity\n1 Backdraft Hellkite\n1 Dockside Extortionist\n1 Gerrard, Weatherlight Hero\n1 Pristine Angel\n1 Sun Titan\n1 Clever Impersonator\n1 Zetalpa, Primal Dawn\n1 River Kelpie\n1 Talrand, Sky Summoner\n1 Pristine Skywise\n1 Cliffside Rescuer\n1 Scaretiller\n1 Guttersnipe\n1 Crackling Drake\n1 Burnished Hart\n1 Sevinne's Reclamation\n1 Mass Diminish\n1 Ignite the Future\n1 Divine Reckoning\n1 Dusk // Dawn\n1 Increasing Devotion\n1 Storm Herd\n1 Devil's Play\n1 Deep Analysis\n1 Mystic Retrieval\n1 Runic Repetition\n1 Faithless Looting\n1 Rolling Temblor\n1 Mandate of Peace\n1 Increasing Vengeance\n1 Magmaquake\n1 Refuse // Cooperate\n1 Leadership Vacuum\n1 Prismatic Strands\n1 Purify the Grave\n1 Ray of Distortion\n1 Chemister's Insight\n1 Fact or Fiction\n1 Fervent Denial\n1 Oona's Grace\n1 Think Twice\n1 Desperate Ravings\n1 Farm // Market\n1 Empowered Autogenerator\n1 Bloodthirsty Blade\n1 Armillary Sphere\n1 Azorius Locket\n1 Commander's Sphere\n1 Izzet Locket\n1 Sol Ring\n1 Jace's Sanctum\n1 Ghostly Prison\n1 Secrets of the Dead\n1 Burning Vengeance\n1 Exotic Orchard\n1 Prairie Stream\n3 Plains\n3 Plains\n3 Plains\n3 Island\n3 Island\n2 Island\n2 Mountain\n1 Mountain\n1 Mountain\n1 Ash Barrens\n1 Azorius Chancery\n1 Boros Garrison\n1 Boros Guildgate\n1 Command Tower\n1 Evolving Wilds\n1 Highland Lake\n1 Izzet Boilerworks\n1 Izzet Guildgate\n1 Myriad Landscape\n1 Mystic Monastery\n1 Stone Quarry\n1 Swiftwater Cliffs\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Tranquil Cove\n1 Wind-Scarred Crag",
   "oracleCards": [
@@ -508,7 +508,8 @@
       ],
       "tags": [
         "artifact",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -622,7 +623,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counterspell"
+        "counterspell",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1637,18 +1639,18 @@
     "profile": {
       "median": 42,
       "floor": 30,
-      "ceiling": 53,
-      "peak": 87,
-      "dispersion": 23,
-      "variance": 23,
-      "consistency": 64,
-      "commanderDelta": 6,
+      "ceiling": 51,
+      "peak": 88,
+      "dispersion": 22,
+      "variance": 22,
+      "consistency": 63,
+      "commanderDelta": 7,
       "coverage": 91,
       "dataCoverage": 91
     },
     "dimensions": {
       "speed": 30,
-      "consistency": 64,
+      "consistency": 63,
       "explosiveness": 22,
       "synergy": 68,
       "interaction": 31,
@@ -1902,7 +1904,8 @@
             "cmc": 5,
             "tags": [
               "instant",
-              "counterspell"
+              "counterspell",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 3,
@@ -2736,21 +2739,21 @@
       "iterations": 3200,
       "floor": 29,
       "median": 37,
-      "high": 45,
-      "ceiling": 45,
-      "peak": 77,
-      "iqr": 12,
-      "consistency": 73,
+      "high": 44,
+      "ceiling": 44,
+      "peak": 78,
+      "iqr": 13,
+      "consistency": 72,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 84,
+      "recoveryAfterDisruption": 83,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 5,
-          "resource": 3,
+          "interaction": 3,
+          "resource": 2,
           "burst": 0
         },
         {
@@ -2764,30 +2767,30 @@
         {
           "turn": 3,
           "commander": 2,
-          "engine": 1,
+          "engine": 0,
           "interaction": 21,
-          "resource": 39,
+          "resource": 38,
           "burst": 1
         },
         {
           "turn": 4,
-          "commander": 19,
-          "engine": 11,
+          "commander": 18,
+          "engine": 10,
           "interaction": 35,
-          "resource": 68,
-          "burst": 11
+          "resource": 67,
+          "burst": 10
         },
         {
           "turn": 5,
-          "commander": 61,
-          "engine": 27,
+          "commander": 59,
+          "engine": 26,
           "interaction": 44,
-          "resource": 81,
+          "resource": 80,
           "burst": 16
         },
         {
           "turn": 6,
-          "commander": 77,
+          "commander": 75,
           "engine": 37,
           "interaction": 51,
           "resource": 85,
@@ -2795,7 +2798,7 @@
         },
         {
           "turn": 7,
-          "commander": 84,
+          "commander": 83,
           "engine": 46,
           "interaction": 57,
           "resource": 89,

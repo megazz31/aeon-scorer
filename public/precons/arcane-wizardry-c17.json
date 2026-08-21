@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 41,
-    "p20": 29,
+    "median": 40,
+    "p20": 28,
     "p80": 51,
     "peak": 84,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "48fea1b0b77340fc43de24228cee7dec2c1b15b20f3446c429787549e70352de",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Kess, Dissident Mage\n1 Mairsil, the Pretender\n1 Galecaster Colossus\n1 Magus of the Mind\n1 Portal Mage\n1 Vindictive Lich\n1 Izzet Chemister\n1 Taigam, Sidisi's Hand\n1 Havengul Lich\n1 Marchesa, the Black Rose\n1 Vela the Night-Clad\n1 Arcanis the Omnipotent\n1 Azami, Lady of Scrolls\n1 Body Double\n1 Harbinger of the Tides\n1 Serendib Sorcerer\n1 Apprentice Necromancer\n1 Magus of the Abyss\n1 Puppeteer Clique\n1 Etherium-Horn Sorcerer\n1 Mercurial Chemister\n1 Nin, the Pain Artist\n1 Niv-Mizzet, the Firemind\n1 Shadowmage Infiltrator\n1 Bloodline Necromancer\n1 Archaeomancer\n1 Merchant of Secrets\n1 Sea Gate Oracle\n1 Corpse Augur\n1 Izzet Chronarch\n1 Nivix Guildmage\n1 Kindred Dominance\n1 Clone Legion\n1 Spelltwine\n1 Decree of Pain\n1 Necromantic Selection\n1 Comet Storm\n1 Polymorphist's Jest\n1 Chaos Warp\n1 Memory Plunder\n1 Silumgar's Command\n1 Into the Roil\n1 Opportunity\n1 Reality Shift\n1 Go for the Throat\n1 Cauldron Dance\n1 Crosis's Charm\n1 Rakdos Charm\n1 Terminate\n1 Nevinyrral's Disk\n1 Mirror of the Forebears\n1 Commander's Sphere\n1 Darksteel Ingot\n1 Fellwar Stone\n1 Sol Ring\n1 Unstable Obelisk\n1 Worn Powerstone\n1 Shifting Shadow\n1 Curse of Verbosity\n1 Curse of Disturbance\n1 Curse of Opulence\n1 Exotic Orchard\n1 Mystifying Maze\n4 Island\n3 Island\n3 Island\n2 Swamp\n2 Swamp\n2 Swamp\n2 Mountain\n1 Mountain\n1 Mountain\n1 Path of Ancestry\n1 Command Tower\n1 Crumbling Necropolis\n1 Dimir Aqueduct\n1 Dismal Backwater\n1 Evolving Wilds\n1 Grixis Panorama\n1 Izzet Boilerworks\n1 Jwar Isle Refuge\n1 Rakdos Carnarium\n1 Swiftwater Cliffs\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Vivid Crag\n1 Vivid Creek\n1 Vivid Marsh",
   "oracleCards": [
@@ -668,7 +668,6 @@
       "tags": [
         "creature",
         "tokens",
-        "token-payoff",
         "etb"
       ],
       "isCommander": true
@@ -893,7 +892,8 @@
       "tags": [
         "creature",
         "etb",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:age"
       ],
       "isCommander": false
     },
@@ -913,7 +913,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "death-payoff"
+        "death-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1361,7 +1362,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "removal"
+        "removal",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1552,8 +1554,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature",
-        "life-payoff"
+        "creature"
       ],
       "isCommander": false
     },
@@ -1596,7 +1597,8 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1621,7 +1623,8 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1646,7 +1649,8 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1672,12 +1676,12 @@
   ],
   "result": {
     "profile": {
-      "median": 41,
-      "floor": 29,
+      "median": 40,
+      "floor": 28,
       "ceiling": 51,
       "peak": 84,
-      "dispersion": 22,
-      "variance": 22,
+      "dispersion": 23,
+      "variance": 23,
       "consistency": 64,
       "commanderDelta": 5,
       "coverage": 92,
@@ -1688,7 +1692,7 @@
       "consistency": 64,
       "explosiveness": 22,
       "synergy": 59,
-      "interaction": 48,
+      "interaction": 47,
       "resilience": 43
     },
     "roles": {
@@ -2058,7 +2062,8 @@
             "cmc": 5,
             "tags": [
               "instant",
-              "removal"
+              "removal",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 3,
@@ -2507,7 +2512,6 @@
             "tags": [
               "creature",
               "tokens",
-              "token-payoff",
               "etb"
             ],
             "manaReq": {
@@ -2551,8 +2555,8 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 30,
-      "median": 38,
+      "floor": 29,
+      "median": 37,
       "high": 45,
       "ceiling": 45,
       "peak": 74,
@@ -2560,7 +2564,7 @@
       "consistency": 73,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 71,
+      "recoveryAfterDisruption": 70,
       "turnProfile": [
         {
           "turn": 1,
@@ -2574,47 +2578,47 @@
           "turn": 2,
           "commander": 0,
           "engine": 0,
-          "interaction": 20,
-          "resource": 10,
+          "interaction": 18,
+          "resource": 9,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 2,
+          "commander": 1,
           "engine": 1,
-          "interaction": 35,
-          "resource": 28,
+          "interaction": 34,
+          "resource": 27,
           "burst": 5
         },
         {
           "turn": 4,
-          "commander": 27,
-          "engine": 7,
-          "interaction": 53,
-          "resource": 52,
-          "burst": 13
+          "commander": 24,
+          "engine": 6,
+          "interaction": 52,
+          "resource": 50,
+          "burst": 12
         },
         {
           "turn": 5,
-          "commander": 63,
-          "engine": 16,
-          "interaction": 65,
-          "resource": 66,
+          "commander": 61,
+          "engine": 15,
+          "interaction": 64,
+          "resource": 65,
           "burst": 20
         },
         {
           "turn": 6,
-          "commander": 76,
+          "commander": 75,
           "engine": 21,
           "interaction": 72,
-          "resource": 74,
+          "resource": 73,
           "burst": 27
         },
         {
           "turn": 7,
-          "commander": 84,
+          "commander": 82,
           "engine": 25,
-          "interaction": 78,
+          "interaction": 77,
           "resource": 79,
           "burst": 33
         }

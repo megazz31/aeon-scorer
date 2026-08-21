@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 43,
+    "median": 42,
     "p20": 31,
     "p80": 51,
     "peak": 80,
-    "coverage": 92,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "516630bf718326b2921dcf793b6432f0ffd2babecb950dce901b1dc3203931ad",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Molecule Man\n1 Extract Power\n1 Glorious Purpose\n1 Helmut Zemo, Mastermind\n1 Kang Dynasty\n1 Age of Ultron\n1 Damocles Base, Sword of Kang\n1 Endless Ranks of HYDRA\n1 The Frightful Four\n1 Iron Monger, Sadistic Tycoon\n1 Klaw, Master of Sound\n1 Abomination, World Ravager\n1 Batroc the Leaper\n1 Killmonger, Ruthless Usurper\n1 Lady Loki, Agent of Chaos\n1 Living Laser\n1 Loki's Scepter\n1 Puppet Master, String Puller\n1 Stilt-Man, Towering Terror\n1 Titania, Proud Pummeler\n1 Archnemesis\n1 Kang Prime\n1 Loki, the Deceiver\n1 Red Ghost, Intangible Genius\n1 The Squadron Sinister\n1 Typhoid Mary, Fractured\n1 Ultron, Unlimited\n1 Doom's Time Platform\n1 Tri-Sentinel, Act of Vengeance\n1 Black Market Connections\n1 Kindred Dominance\n1 Lethal Scheme\n1 Toxic Deluge\n1 Blasphemous Act\n1 Chaos Warp\n1 Bedevil\n1 Currency Converter\n1 Progenitor's Icon\n1 Skullclamp\n1 Canyon Slough\n1 Choked Estuary\n1 Coastal Peak\n1 Dragonskull Summit\n1 Drowned Catacomb\n1 Exotic Orchard\n1 Fetid Pools\n1 Foreboding Ruins\n1 Frostboil Snarl\n1 Luxury Suite\n1 Scavenger Grounds\n1 Scorched Geyser\n1 Smoldering Marsh\n1 Sulfur Falls\n1 Sunken Hollow\n1 Spark Double\n1 Titan of Littjara\n1 Baron Strucker, HYDRA Overlord\n1 Moonstone, Harsh Mistress\n1 Kang, Temporal Tyrant\n1 Madame Hydra\n1 Villainous Hideout\n1 Containment Construct\n1 Chameleon, Master of Disguise\n1 Propaganda\n1 Night's Whisper\n1 Syphon Mind\n1 Tombstone, Career Criminal\n1 Withering Torment\n1 Superior Foes of Spider-Man\n1 Vandalblast\n1 Prowler, Clawed Thief\n1 Terminate\n1 Arcane Signet\n1 Patchwork Banner\n1 Sol Ring\n1 Swiftfoot Boots\n1 Talisman of Dominance\n1 Talisman of Indulgence\n1 Command Tower\n1 Crumbling Necropolis\n1 Path of Ancestry\n1 Secluded Courtyard\n1 Terramorphic Expanse\n1 Unclaimed Territory\n2 Island\n2 Island\n3 Swamp\n3 Swamp\n3 Mountain\n2 Mountain",
   "oracleCards": [
@@ -80,7 +80,8 @@
       "tags": [
         "enchantment",
         "tokens",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -121,8 +122,7 @@
       "producedMana": [],
       "tags": [
         "enchantment",
-        "draw",
-        "lifegain"
+        "draw"
       ],
       "isCommander": false
     },
@@ -158,7 +158,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -435,8 +437,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature",
-        "life-payoff"
+        "creature"
       ],
       "isCommander": true
     },
@@ -451,7 +452,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "counter-kind:time"
       ],
       "isCommander": false
     },
@@ -647,6 +649,7 @@
         "enchantment",
         "sacrifice",
         "counter-producer",
+        "counter-kind:plus1",
         "exile-cast",
         "cheat",
         "free"
@@ -668,7 +671,8 @@
       "tags": [
         "creature",
         "recursion",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -687,7 +691,8 @@
       "tags": [
         "creature",
         "artifact",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -743,7 +748,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-kind:time"
       ],
       "isCommander": false
     },
@@ -762,8 +768,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "lifegain",
-        "life-payoff"
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1320,7 +1325,10 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1",
+        "counter-kind:loyalty"
       ],
       "isCommander": false
     },
@@ -1682,8 +1690,7 @@
         "creature",
         "mana",
         "tokens",
-        "lifegain",
-        "life-payoff"
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1793,22 +1800,22 @@
   ],
   "result": {
     "profile": {
-      "median": 43,
+      "median": 42,
       "floor": 31,
       "ceiling": 51,
       "peak": 80,
       "dispersion": 20,
       "variance": 20,
-      "consistency": 67,
-      "commanderDelta": 7,
-      "coverage": 92,
-      "dataCoverage": 92
+      "consistency": 66,
+      "commanderDelta": 5,
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
       "speed": 36,
-      "consistency": 67,
+      "consistency": 66,
       "explosiveness": 21,
-      "synergy": 45,
+      "synergy": 43,
       "interaction": 45,
       "resilience": 38
     },
@@ -1950,7 +1957,8 @@
             "tags": [
               "creature",
               "recursion",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2057,6 +2065,7 @@
               "enchantment",
               "sacrifice",
               "counter-producer",
+              "counter-kind:plus1",
               "exile-cast",
               "cheat",
               "free"
@@ -2306,8 +2315,7 @@
             "name": "Doctor Doom, King of Latveria",
             "cmc": 4,
             "tags": [
-              "creature",
-              "life-payoff"
+              "creature"
             ],
             "manaReq": {
               "generic": 1,
@@ -2331,16 +2339,9 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 8,
-      "connected": [
-        "Archnemesis",
-        "Kang, Temporal Tyrant",
-        "Typhoid Mary, Fractured"
-      ],
-      "tags": [
-        "life-payoff",
-        "lifegain"
-      ]
+      "score": 0,
+      "connected": [],
+      "tags": []
     },
     "aeon": {
       "available": false,
@@ -2351,12 +2352,12 @@
     "simulation": {
       "iterations": 3200,
       "floor": 33,
-      "median": 41,
+      "median": 40,
       "high": 47,
       "ceiling": 47,
       "peak": 70,
       "iqr": 11,
-      "consistency": 76,
+      "consistency": 75,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
       "recoveryAfterDisruption": 79,
@@ -2366,7 +2367,7 @@
           "commander": 0,
           "engine": 0,
           "interaction": 14,
-          "resource": 9,
+          "resource": 8,
           "burst": 0
         },
         {
@@ -2379,9 +2380,9 @@
         },
         {
           "turn": 3,
-          "commander": 16,
+          "commander": 15,
           "engine": 2,
-          "interaction": 36,
+          "interaction": 35,
           "resource": 36,
           "burst": 10
         },
@@ -2390,7 +2391,7 @@
           "commander": 69,
           "engine": 7,
           "interaction": 49,
-          "resource": 59,
+          "resource": 58,
           "burst": 14
         },
         {
@@ -2427,9 +2428,9 @@
           "enchantment",
           "sacrifice",
           "counter-producer",
+          "counter-kind:plus1",
           "exile-cast",
-          "cheat",
-          "free"
+          "cheat"
         ],
         "aeon": null
       },
@@ -2523,8 +2524,7 @@
         "impact": 2.3,
         "tags": [
           "enchantment",
-          "draw",
-          "lifegain"
+          "draw"
         ],
         "aeon": null
       },

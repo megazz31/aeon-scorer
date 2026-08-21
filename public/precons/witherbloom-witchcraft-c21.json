@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 38,
-    "p20": 31,
-    "p80": 48,
-    "peak": 73,
+    "p20": 29,
+    "p80": 47,
+    "peak": 72,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "512d35c05fc25b99d1d1e132b8dd550c44c522252884348fecabe77bcfdca81d",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Ob Nixilis Reignited\n1 Gyome, Master Chef\n1 Marshland Bloodcaster\n1 Tivash, Gloom Summoner\n1 Veinwitch Coven\n1 Blossoming Bogbeast\n1 Ezzaroot Channeler\n1 Sproutback Trudge\n1 Yedora, Grave Gardener\n1 Bloodtracker\n1 Defiant Bloodlord\n1 Noxious Gearhulk\n1 Sangromancer\n1 Ageless Entity\n1 Gluttonous Troll\n1 Sapling of Colfenor\n1 Honor Troll\n1 Dina, Soul Steeper\n1 Bloodthirsty Aerialist\n1 Epicure of Blood\n1 Silversmote Ghoul\n1 Vampire Nighthawk\n1 Leyline Prowler\n1 Essence Pulse\n1 Healing Technique\n1 Pest Infestation\n1 Revival Experiment\n1 Damnable Pact\n1 Deadly Tempest\n1 Taste of Death\n1 Gaze of Granite\n1 Ancient Craving\n1 Feed the Swarm\n1 Cultivate\n1 Rampant Growth\n1 Mortality Spear\n1 Reckless Spite\n1 Suffer the Past\n1 Pulse of Murasa\n1 Druidic Satchel\n1 Loxodon Warhammer\n1 Well of Lost Dreams\n1 Arcane Signet\n1 Elixir of Immortality\n1 Paradise Plume\n1 Pristine Talisman\n1 Sol Ring\n1 Sun Droplet\n1 Talisman of Resilience\n1 Blight Mound\n1 Trudge Garden\n1 Sanguine Bond\n1 Greed\n1 Gift of Paradise\n1 Moldervine Reclamation\n1 Exotic Orchard\n1 High Market\n1 Llanowar Wastes\n1 Temple of Malady\n1 Witherbloom Campus\n1 Study Hall\n1 Blighted Woodland\n1 Command Tower\n1 Gingerbread Cabin\n1 Golgari Rot Farm\n1 Jungle Hollow\n1 Myriad Landscape\n1 Radiant Fountain\n1 Sapseep Forest\n1 Tainted Wood\n1 Temple of the False God\n6 Swamp\n5 Swamp\n6 Forest\n5 Forest\n1 Witch's Clinic\n1 Nissa's Renewal\n1 Verdant Sun's Avatar\n1 Alhammarret's Archive\n1 Venser's Journal\n1 Rogue's Passage",
   "oracleCards": [
@@ -55,6 +55,8 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-kind:plus1",
+        "lifegain",
         "life-payoff"
       ],
       "isCommander": false
@@ -172,6 +174,8 @@
       "tags": [
         "creature",
         "counter-producer",
+        "counter-kind:plus1",
+        "lifegain",
         "life-payoff"
       ],
       "isCommander": false
@@ -192,7 +196,8 @@
         "creature",
         "draw",
         "counter-producer",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -638,7 +643,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "recursion"
+        "recursion",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -882,7 +888,8 @@
       "tags": [
         "creature",
         "artifact",
-        "etb"
+        "etb",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1266,6 +1273,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "counter-kind:charge",
         "lifegain"
       ],
       "isCommander": false
@@ -1430,6 +1438,7 @@
       "tags": [
         "enchantment",
         "tokens",
+        "lifegain",
         "life-payoff"
       ],
       "isCommander": false
@@ -1467,6 +1476,7 @@
       "tags": [
         "creature",
         "recursion",
+        "lifegain",
         "life-payoff"
       ],
       "isCommander": false
@@ -1501,7 +1511,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1537,7 +1548,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:plus1"
       ],
       "isCommander": true
     },
@@ -1605,20 +1617,20 @@
   "result": {
     "profile": {
       "median": 38,
-      "floor": 31,
-      "ceiling": 48,
-      "peak": 73,
+      "floor": 29,
+      "ceiling": 47,
+      "peak": 72,
       "dispersion": 18,
       "variance": 18,
-      "consistency": 70,
+      "consistency": 69,
       "commanderDelta": 5,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 38,
-      "consistency": 70,
-      "explosiveness": 10,
+      "consistency": 69,
+      "explosiveness": 11,
       "synergy": 43,
       "interaction": 20,
       "resilience": 48
@@ -1828,16 +1840,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 31,
+      "floor": 30,
       "median": 36,
-      "high": 43,
-      "ceiling": 43,
+      "high": 42,
+      "ceiling": 42,
       "peak": 62,
       "iqr": 10,
-      "consistency": 79,
+      "consistency": 78,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 85,
+      "recoveryAfterDisruption": 84,
       "turnProfile": [
         {
           "turn": 1,
@@ -1857,7 +1869,7 @@
         },
         {
           "turn": 3,
-          "commander": 54,
+          "commander": 53,
           "engine": 2,
           "interaction": 11,
           "resource": 26,
@@ -1865,10 +1877,10 @@
         },
         {
           "turn": 4,
-          "commander": 85,
+          "commander": 84,
           "engine": 6,
           "interaction": 23,
-          "resource": 54,
+          "resource": 53,
           "burst": 0
         },
         {
@@ -1876,7 +1888,7 @@
           "commander": 92,
           "engine": 10,
           "interaction": 32,
-          "resource": 67,
+          "resource": 66,
           "burst": 0
         },
         {
@@ -1890,7 +1902,7 @@
         {
           "turn": 7,
           "commander": 96,
-          "engine": 14,
+          "engine": 13,
           "interaction": 44,
           "resource": 80,
           "burst": 0
@@ -1995,7 +2007,8 @@
           "creature",
           "draw",
           "counter-producer",
-          "counter-payoff"
+          "counter-payoff",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },

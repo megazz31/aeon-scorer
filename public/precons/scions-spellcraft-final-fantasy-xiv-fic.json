@@ -35,16 +35,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 52,
-    "p20": 41,
-    "p80": 62,
+    "p20": 40,
+    "p80": 61,
     "peak": 90,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "e8ee4ddf3621d33b2c037e953084fe56f9a4f24959a3765516e2c3460c1b4b8c",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 G'raha Tia, Scion Reborn\n1 Alisaie Leveilleur\n1 Champions from Beyond\n1 Dancer's Chakrams\n1 Summon: Good King Mog XII\n1 Tataru Taru\n1 Thancred Waters\n1 Alphinaud Leveilleur\n1 Blue Mage's Cane\n1 Hermes, Overseer of Elpis\n1 Hraesvelgr of the First Brood\n1 Observed Stasis\n1 Eye of Nidhogg\n1 Fandaniel, Telophoroi Ascian\n1 Astrologian's Planisphere\n1 Reaper's Scythe\n1 Transpose\n1 Ardbert, Warrior of Darkness\n1 Emet-Selch of the Third Seat\n1 Estinien Varlineau\n1 Hildibrand Manderville // Gentleman's Rise\n1 Krile Baldesion\n1 Lyse Hext\n1 Papalymo Totolymo\n1 Urianger Augurelt\n1 Archaeomancer's Map\n1 Authority of the Consuls\n1 Cleansing Nova\n1 Final Judgment\n1 Archmage Emeritus\n1 Dig Through Time\n1 Rite of Replication\n1 Sublime Epiphany\n1 Torrential Gearhulk\n1 Crux of Fate\n1 Lethal Scheme\n1 Murderous Rider // Swift End\n1 Baleful Strix\n1 Vindicate\n1 Void Rend\n1 Coveted Jewel\n1 Tome of Legends\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Desolate Mire\n1 Drowned Catacomb\n1 Exotic Orchard\n1 Fetid Heath\n1 Glacial Fortress\n1 Isolated Chapel\n1 Port Town\n1 Prairie Stream\n1 Scavenger Grounds\n1 Shineshadow Snarl\n1 Skycloud Expanse\n1 Sunken Hollow\n1 Sunken Ruins\n1 Underground River\n1 White Auracite\n1 Sage's Nouliths\n1 Circle of Power\n1 Cut a Deal\n1 Lingering Souls\n1 Swords to Plowshares\n1 Hypnotic Sprite // Mesmeric Glare\n1 Into the Story\n1 Propaganda\n1 Bastion of Remembrance\n1 Exsanguinate\n1 Snuff Out\n1 Syphon Mind\n1 Arcane Signet\n1 Relic of Legends\n1 Sol Ring\n1 Talisman of Dominance\n1 Talisman of Hierarchy\n1 Talisman of Progress\n1 Thought Vessel\n1 Arcane Sanctum\n1 Ash Barrens\n1 Command Tower\n1 Contaminated Aquifer\n1 Demolition Field\n1 Evolving Wilds\n1 Idyllic Beachfront\n1 Path of Ancestry\n1 Sunlit Marsh\n1 Temple of the False God\n1 Island\n1 Island\n1 Island\n2 Swamp\n1 Swamp\n1 Swamp\n2 Plains\n1 Plains\n1 Plains",
   "oracleCards": [
@@ -145,8 +145,7 @@
       "tags": [
         "artifact",
         "land-ramp",
-        "etb",
-        "landfall"
+        "etb"
       ],
       "isCommander": false
     },
@@ -184,7 +183,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -221,6 +221,7 @@
       "tags": [
         "artifact",
         "counter-producer",
+        "counter-kind:plus1",
         "spellslinger"
       ],
       "isCommander": false
@@ -282,8 +283,7 @@
         "tokens",
         "death-payoff",
         "etb",
-        "lifegain",
-        "life-payoff"
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -651,6 +651,7 @@
         "creature",
         "draw",
         "counter-producer",
+        "counter-kind:plus1",
         "spellslinger"
       ],
       "isCommander": false
@@ -708,8 +709,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "lifegain",
-        "life-payoff"
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -809,6 +809,7 @@
         "creature",
         "tokens",
         "counter-producer",
+        "counter-kind:plus1",
         "lifegain",
         "spellslinger"
       ],
@@ -913,7 +914,8 @@
       "tags": [
         "creature",
         "instant",
-        "counterspell"
+        "counterspell",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1255,7 +1257,8 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:any"
       ],
       "isCommander": false
     },
@@ -1434,7 +1437,8 @@
         "instant",
         "draw",
         "counterspell",
-        "tokens"
+        "tokens",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1456,6 +1460,7 @@
         "tokens",
         "token-payoff",
         "counter-producer",
+        "counter-kind:plus1",
         "lifegain",
         "spellslinger"
       ],
@@ -1741,7 +1746,9 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:age"
       ],
       "isCommander": false
     },
@@ -1919,8 +1926,8 @@
   "result": {
     "profile": {
       "median": 52,
-      "floor": 41,
-      "ceiling": 62,
+      "floor": 40,
+      "ceiling": 61,
       "peak": 90,
       "dispersion": 21,
       "variance": 21,
@@ -1930,11 +1937,11 @@
       "dataCoverage": 94
     },
     "dimensions": {
-      "speed": 40,
+      "speed": 39,
       "consistency": 62,
       "explosiveness": 14,
       "synergy": 89,
-      "interaction": 51,
+      "interaction": 50,
       "resilience": 43
     },
     "roles": {
@@ -2118,8 +2125,7 @@
             "cmc": 2,
             "tags": [
               "sorcery",
-              "lifegain",
-              "life-payoff"
+              "lifegain"
             ],
             "manaReq": {
               "generic": 0,
@@ -2184,7 +2190,8 @@
             "tags": [
               "creature",
               "instant",
-              "counterspell"
+              "counterspell",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 2,
@@ -2333,7 +2340,8 @@
               "instant",
               "draw",
               "counterspell",
-              "tokens"
+              "tokens",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 4,
@@ -2474,6 +2482,7 @@
             "tags": [
               "artifact",
               "counter-producer",
+              "counter-kind:plus1",
               "spellslinger"
             ],
             "manaReq": {
@@ -2493,6 +2502,7 @@
               "creature",
               "draw",
               "counter-producer",
+              "counter-kind:plus1",
               "spellslinger"
             ],
             "manaReq": {
@@ -2534,6 +2544,7 @@
               "creature",
               "tokens",
               "counter-producer",
+              "counter-kind:plus1",
               "lifegain",
               "spellslinger"
             ],
@@ -2662,6 +2673,7 @@
               "tokens",
               "token-payoff",
               "counter-producer",
+              "counter-kind:plus1",
               "lifegain",
               "spellslinger"
             ],
@@ -2748,8 +2760,7 @@
               "tokens",
               "death-payoff",
               "etb",
-              "lifegain",
-              "life-payoff"
+              "lifegain"
             ],
             "manaReq": {
               "generic": 2,
@@ -2810,6 +2821,7 @@
               "creature",
               "tokens",
               "counter-producer",
+              "counter-kind:plus1",
               "lifegain",
               "spellslinger"
             ],
@@ -2915,7 +2927,8 @@
               "instant",
               "draw",
               "counterspell",
-              "tokens"
+              "tokens",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 4,
@@ -2939,6 +2952,7 @@
               "tokens",
               "token-payoff",
               "counter-producer",
+              "counter-kind:plus1",
               "lifegain",
               "spellslinger"
             ],
@@ -3027,6 +3041,7 @@
               "tokens",
               "token-payoff",
               "counter-producer",
+              "counter-kind:plus1",
               "lifegain",
               "spellslinger"
             ],
@@ -3262,8 +3277,7 @@
             "tags": [
               "artifact",
               "land-ramp",
-              "etb",
-              "landfall"
+              "etb"
             ],
             "manaReq": {
               "generic": 2,
@@ -3382,104 +3396,6 @@
           }
         ],
         "evidence": "0 accélérateur(s) burst + 8 source(s) persistante(s) vers un commandant MV 4."
-      },
-      {
-        "id": "lands",
-        "name": "Lands / Landfall",
-        "strength": 42,
-        "cohesion": 42,
-        "producers": [
-          "Archaeomancer's Map",
-          "Demolition Field",
-          "Evolving Wilds"
-        ],
-        "payoffs": [
-          "Archaeomancer's Map"
-        ],
-        "members": [
-          "Archaeomancer's Map",
-          "Demolition Field",
-          "Evolving Wilds"
-        ],
-        "producerCards": [
-          {
-            "name": "Archaeomancer's Map",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "land-ramp",
-              "etb",
-              "landfall"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "W"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Demolition Field",
-            "cmc": 0,
-            "tags": [
-              "land",
-              "land-ramp",
-              "mana",
-              "removal",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [],
-              "total": 0
-            }
-          },
-          {
-            "name": "Evolving Wilds",
-            "cmc": 0,
-            "tags": [
-              "land",
-              "land-ramp",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [],
-              "total": 0
-            }
-          }
-        ],
-        "payoffCards": [
-          {
-            "name": "Archaeomancer's Map",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "land-ramp",
-              "etb",
-              "landfall"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "W"
-                ]
-              ],
-              "total": 3
-            }
-          }
-        ],
-        "producerTags": [
-          "land-ramp"
-        ],
-        "payoffTags": [
-          "landfall"
-        ],
-        "evidence": "3 producteur(s), 1 payoff(s), 3 carte(s) distincte(s)."
       }
     ],
     "combos": [],
@@ -3540,16 +3456,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 40,
+      "floor": 39,
       "median": 48,
-      "high": 56,
-      "ceiling": 56,
+      "high": 55,
+      "ceiling": 55,
       "peak": 84,
       "iqr": 13,
       "consistency": 71,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 88,
+      "recoveryAfterDisruption": 87,
       "turnProfile": [
         {
           "turn": 1,
@@ -3569,32 +3485,32 @@
         },
         {
           "turn": 3,
-          "commander": 18,
-          "engine": 6,
-          "interaction": 37,
-          "resource": 40,
+          "commander": 17,
+          "engine": 5,
+          "interaction": 36,
+          "resource": 39,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 71,
-          "engine": 28,
-          "interaction": 56,
-          "resource": 69,
+          "commander": 69,
+          "engine": 25,
+          "interaction": 55,
+          "resource": 68,
           "burst": 1
         },
         {
           "turn": 5,
-          "commander": 87,
-          "engine": 54,
+          "commander": 86,
+          "engine": 52,
           "interaction": 68,
           "resource": 81,
           "burst": 4
         },
         {
           "turn": 6,
-          "commander": 92,
-          "engine": 67,
+          "commander": 91,
+          "engine": 65,
           "interaction": 75,
           "resource": 87,
           "burst": 7
@@ -3602,7 +3518,7 @@
         {
           "turn": 7,
           "commander": 94,
-          "engine": 76,
+          "engine": 75,
           "interaction": 80,
           "resource": 91,
           "burst": 9
@@ -3642,7 +3558,8 @@
           "instant",
           "draw",
           "counterspell",
-          "tokens"
+          "tokens",
+          "counter-kind:generic"
         ],
         "aeon": null
       },
@@ -3704,17 +3621,6 @@
         "aeon": null
       },
       {
-        "name": "Archaeomancer's Map",
-        "impact": 3.1,
-        "tags": [
-          "artifact",
-          "land-ramp",
-          "etb",
-          "landfall"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Coveted Jewel",
         "impact": 3,
         "tags": [
@@ -3743,6 +3649,16 @@
           "instant",
           "removal",
           "free"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Archmage Emeritus",
+        "impact": 2.9,
+        "tags": [
+          "creature",
+          "draw",
+          "spellslinger"
         ],
         "aeon": null
       }

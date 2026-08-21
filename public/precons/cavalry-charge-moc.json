@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 42,
-    "p20": 31,
+    "median": 41,
+    "p20": 32,
     "p80": 51,
     "peak": 76,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "fea16c62e1eefe26c16870b210a37277caddb1db07f693a7ec0571461c250d4c",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Elenda and Azor\n1 Exsanguinator Cavalry\n1 Ichor Elixir\n1 Herald of Hoofbeats\n1 Locthwain Lancer\n1 Chivalric Alliance\n1 Path of the Enigma\n1 Vodalian Wave-Knight\n1 Conjurer's Mantle\n1 Ethersworn Adjudicator\n1 Hero of Bladehold\n1 Vona, Butcher of Magan\n1 Acclaimed Contender\n1 Adeline, Resplendent Cathar\n1 Aryel, Knight of Windgrace\n1 Choked Estuary\n1 Exotic Orchard\n1 Fell the Mighty\n1 Haakon, Stromgald Scourge\n1 Josu Vess, Lich Knight\n1 Knight Exemplar\n1 Knight of the White Orchid\n1 Knights' Charge\n1 Liliana's Standard Bearer\n1 Maul of the Skyclaves\n1 Midnight Reaper\n1 Murderous Rider // Swift End\n1 Painful Truths\n1 Port Town\n1 Prairie Stream\n1 Promise of Loyalty\n1 Pull from Tomorrow\n1 Shineshadow Snarl\n1 Sigiled Sword of Valeron\n1 Silverwing Squadron\n1 Sunken Hollow\n1 Temple of Deceit\n1 Temple of Enlightenment\n1 Temple of Silence\n1 Time Wipe\n1 Unbreakable Formation\n1 Valiant Knight\n1 Vanquisher's Banner\n1 Worthy Knight\n1 Bojuka Bog\n1 Command Tower\n1 Commander's Sphere\n1 Distant Melody\n1 Evolving Wilds\n1 Fractured Powerstone\n1 Orzhov Signet\n1 Path of Ancestry\n1 Read the Bones\n1 Smitten Swordmaster // Curry Favor\n1 Terramorphic Expanse\n1 Thriving Heath\n1 Thriving Isle\n1 Thriving Moor\n1 Arcane Sanctum\n1 Arcane Signet\n1 Arvad the Cursed\n1 Corpse Knight\n1 Despark\n1 Fellwar Stone\n1 Foulmire Knight // Profane Insight\n1 Herald's Horn\n1 Knight of the Last Breath\n1 Knights of the Black Rose\n1 Mind Stone\n1 Myriad Landscape\n1 Order of Midnight // Alter Fate\n1 Path to Exile\n1 Return to Dust\n1 Sol Ring\n1 Swords to Plowshares\n1 Syr Elenora, the Discerning\n1 Syr Konrad, the Grim\n1 Temple of the False God\n1 Wintermoor Commander\n1 Xerex Strobe-Knight\n8 Plains\n6 Island\n5 Swamp",
   "oracleCards": [
@@ -305,8 +305,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb",
-        "life-payoff"
+        "etb"
       ],
       "isCommander": false
     },
@@ -445,6 +444,7 @@
         "creature",
         "tokens",
         "counter-producer",
+        "counter-kind:plus1",
         "lifegain"
       ],
       "isCommander": false
@@ -746,8 +746,7 @@
         "enchantment",
         "recursion",
         "sacrifice",
-        "lifegain",
-        "life-payoff"
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -785,8 +784,7 @@
       "tags": [
         "creature",
         "draw",
-        "death-payoff",
-        "life-payoff"
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -1082,7 +1080,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1236,8 +1235,7 @@
       "tags": [
         "creature",
         "sorcery",
-        "lifegain",
-        "life-payoff"
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1568,7 +1566,8 @@
       "tags": [
         "instant",
         "protection",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1621,7 +1620,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1703,23 +1703,23 @@
   ],
   "result": {
     "profile": {
-      "median": 42,
-      "floor": 31,
+      "median": 41,
+      "floor": 32,
       "ceiling": 51,
       "peak": 76,
-      "dispersion": 20,
-      "variance": 20,
+      "dispersion": 19,
+      "variance": 19,
       "consistency": 67,
-      "commanderDelta": 6,
+      "commanderDelta": 5,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 39,
       "consistency": 67,
-      "explosiveness": 10,
+      "explosiveness": 11,
       "synergy": 43,
-      "interaction": 43,
+      "interaction": 42,
       "resilience": 42
     },
     "roles": {
@@ -1829,8 +1829,7 @@
               "enchantment",
               "recursion",
               "sacrifice",
-              "lifegain",
-              "life-payoff"
+              "lifegain"
             ],
             "manaReq": {
               "generic": 1,
@@ -2074,21 +2073,21 @@
     "simulation": {
       "iterations": 3200,
       "floor": 33,
-      "median": 40,
-      "high": 47,
-      "ceiling": 47,
+      "median": 39,
+      "high": 46,
+      "ceiling": 46,
       "peak": 66,
       "iqr": 11,
       "consistency": 76,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 88,
+      "recoveryAfterDisruption": 87,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 18,
+          "interaction": 16,
           "resource": 0,
           "burst": 0
         },
@@ -2102,41 +2101,41 @@
         },
         {
           "turn": 3,
-          "commander": 22,
-          "engine": 1,
+          "commander": 20,
+          "engine": 0,
           "interaction": 32,
-          "resource": 41,
+          "resource": 39,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 74,
+          "commander": 72,
           "engine": 3,
-          "interaction": 47,
-          "resource": 69,
+          "interaction": 46,
+          "resource": 68,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 89,
+          "commander": 88,
           "engine": 4,
-          "interaction": 58,
-          "resource": 81,
+          "interaction": 57,
+          "resource": 80,
           "burst": 0
         },
         {
           "turn": 6,
-          "commander": 93,
+          "commander": 92,
           "engine": 6,
           "interaction": 63,
-          "resource": 86,
+          "resource": 85,
           "burst": 0
         },
         {
           "turn": 7,
-          "commander": 96,
+          "commander": 95,
           "engine": 7,
-          "interaction": 68,
+          "interaction": 67,
           "resource": 89,
           "burst": 0
         }
@@ -2201,8 +2200,7 @@
           "enchantment",
           "recursion",
           "sacrifice",
-          "lifegain",
-          "life-payoff"
+          "lifegain"
         ],
         "aeon": null
       },
@@ -2212,8 +2210,7 @@
         "tags": [
           "creature",
           "draw",
-          "death-payoff",
-          "life-payoff"
+          "death-payoff"
         ],
         "aeon": null
       },

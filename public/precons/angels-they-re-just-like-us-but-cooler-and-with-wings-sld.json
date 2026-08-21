@@ -26,17 +26,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 42,
-    "p20": 32,
-    "p80": 51,
-    "peak": 72,
-    "coverage": 94,
+    "median": 39,
+    "p20": 30,
+    "p80": 49,
+    "peak": 71,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "c2a5a0d23a4b01f6742f08e91ffd80e87e9d045eb745169d73e36ac182088817",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Bruna, the Fading Light // Brisela, Voice of Nightmares\n1 Ajani, Strength of the Pride\n1 Angel of Destiny\n1 Angel of Finality\n1 Angel of Serenity\n1 Angel of the Ruins\n1 Angel of Vitality\n1 Angelic Accord\n1 Angelic Field Marshal\n1 Arcane Signet\n1 Arch of Orazca\n1 Archangel of Thune\n1 Archangel of Tithes\n1 Arden Angel\n1 Austere Command\n1 Bishop of Wings\n1 Bonders' Enclave\n1 Breathkeeper Seraph\n1 Cleansing Nova\n1 Commander's Plate\n1 Cosmos Elixir\n1 Court of Grace\n1 Dawn of Hope\n1 Dawnbreak Reclaimer\n1 Dismantling Wave\n1 Emeria Shepherd\n1 Emeria, the Sky Ruin\n1 Endless Atlas\n1 Entreat the Angels\n1 Everflowing Chalice\n1 Giada, Font of Hope\n1 Griffin Aerie\n1 Heirloom Blade\n1 Invoke the Divine\n1 Karoo\n1 Keeper of the Accord\n1 Kindred Boon\n1 Lightning Greaves\n1 Marble Diamond\n1 Mazemind Tome\n1 Mind Stone\n1 Myriad Landscape\n1 Nykthos Paragon\n1 Nykthos, Shrine to Nyx\n1 Oketra's Monument\n1 Path of Ancestry\n1 Path to Exile\n1 Pearl Medallion\n8 Plains\n8 Plains\n7 Plains\n7 Plains\n1 Righteous Valkyrie\n1 Search for Glory\n1 Sephara, Sky's Blade\n1 Seraph Sanctuary\n1 Serra Ascendant\n1 Shattered Angel\n1 Sol Ring\n1 Speaker of the Heavens\n1 Starnheim Aspirant\n1 Sunblast Angel\n1 Swiftfoot Boots\n1 Sword of the Animist\n1 Swords to Plowshares\n1 Thalia's Lancers\n1 The Book of Exalted Deeds\n1 Tome of Legends\n1 Urza's Incubator\n1 Valkyrie Harbinger\n1 Vanquisher's Banner\n1 War Room\n1 Well of Lost Dreams",
   "oracleCards": [
@@ -55,6 +55,8 @@
       "tags": [
         "tokens",
         "counter-producer",
+        "counter-kind:plus1",
+        "lifegain",
         "life-payoff"
       ],
       "isCommander": false
@@ -72,8 +74,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature",
-        "lifegain"
+        "creature"
       ],
       "isCommander": false
     },
@@ -241,6 +242,7 @@
       "tags": [
         "creature",
         "counter-producer",
+        "counter-kind:plus1",
         "lifegain",
         "life-payoff"
       ],
@@ -592,7 +594,9 @@
         "artifact",
         "mana",
         "etb",
-        "counter-payoff"
+        "counter-producer",
+        "counter-payoff",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -613,7 +617,9 @@
       "tags": [
         "creature",
         "mana",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -745,7 +751,8 @@
       "tags": [
         "enchantment",
         "protection",
-        "etb"
+        "etb",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -797,6 +804,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "counter-kind:age",
         "lifegain"
       ],
       "isCommander": false
@@ -855,6 +863,8 @@
       "tags": [
         "creature",
         "enchantment",
+        "counter-kind:plus1",
+        "lifegain",
         "life-payoff"
       ],
       "isCommander": false
@@ -987,7 +997,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1083,7 +1094,6 @@
       "tags": [
         "creature",
         "etb",
-        "landfall",
         "lifegain"
       ],
       "isCommander": false
@@ -1245,6 +1255,7 @@
       "tags": [
         "artifact",
         "tokens",
+        "counter-kind:generic",
         "stax"
       ],
       "isCommander": false
@@ -1261,7 +1272,9 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:age"
       ],
       "isCommander": false
     },
@@ -1356,22 +1369,22 @@
   ],
   "result": {
     "profile": {
-      "median": 42,
-      "floor": 32,
-      "ceiling": 51,
-      "peak": 72,
+      "median": 39,
+      "floor": 30,
+      "ceiling": 49,
+      "peak": 71,
       "dispersion": 19,
       "variance": 19,
       "consistency": 71,
-      "commanderDelta": 10,
-      "coverage": 94,
-      "dataCoverage": 94
+      "commanderDelta": 6,
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
       "speed": 34,
       "consistency": 71,
       "explosiveness": 9,
-      "synergy": 53,
+      "synergy": 34,
       "interaction": 53,
       "resilience": 32
     },
@@ -1390,112 +1403,6 @@
       "unknownManaLands": 0
     },
     "packages": [
-      {
-        "id": "lands",
-        "name": "Lands / Landfall",
-        "strength": 59,
-        "cohesion": 59,
-        "producers": [
-          "Keeper of the Accord",
-          "Sword of the Animist"
-        ],
-        "payoffs": [
-          "Emeria Shepherd",
-          "Shattered Angel"
-        ],
-        "members": [
-          "Keeper of the Accord",
-          "Sword of the Animist",
-          "Emeria Shepherd",
-          "Shattered Angel"
-        ],
-        "producerCards": [
-          {
-            "name": "Keeper of the Accord",
-            "cmc": 4,
-            "tags": [
-              "creature",
-              "land-ramp",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "W"
-                ]
-              ],
-              "total": 4
-            }
-          },
-          {
-            "name": "Sword of the Animist",
-            "cmc": 2,
-            "tags": [
-              "artifact",
-              "land-ramp"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [],
-              "total": 2
-            }
-          }
-        ],
-        "payoffCards": [
-          {
-            "name": "Emeria Shepherd",
-            "cmc": 7,
-            "tags": [
-              "creature",
-              "recursion",
-              "etb",
-              "landfall"
-            ],
-            "manaReq": {
-              "generic": 5,
-              "colored": [
-                [
-                  "W"
-                ],
-                [
-                  "W"
-                ]
-              ],
-              "total": 7
-            }
-          },
-          {
-            "name": "Shattered Angel",
-            "cmc": 5,
-            "tags": [
-              "creature",
-              "etb",
-              "landfall",
-              "lifegain"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "W"
-                ],
-                [
-                  "W"
-                ]
-              ],
-              "total": 5
-            }
-          }
-        ],
-        "producerTags": [
-          "land-ramp"
-        ],
-        "payoffTags": [
-          "landfall"
-        ],
-        "evidence": "2 producteur(s), 2 payoff(s), 4 carte(s) distincte(s)."
-      },
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
@@ -1544,7 +1451,9 @@
               "artifact",
               "mana",
               "etb",
-              "counter-payoff"
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:charge"
             ],
             "manaReq": {
               "generic": 0,
@@ -1558,7 +1467,9 @@
             "tags": [
               "creature",
               "mana",
-              "etb"
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -1648,35 +1559,95 @@
           }
         ],
         "evidence": "0 accélérateur(s) burst + 7 source(s) persistante(s) vers un commandant MV 4."
+      },
+      {
+        "id": "lands",
+        "name": "Lands / Landfall",
+        "strength": 46,
+        "cohesion": 46,
+        "producers": [
+          "Keeper of the Accord",
+          "Sword of the Animist"
+        ],
+        "payoffs": [
+          "Emeria Shepherd"
+        ],
+        "members": [
+          "Keeper of the Accord",
+          "Sword of the Animist",
+          "Emeria Shepherd"
+        ],
+        "producerCards": [
+          {
+            "name": "Keeper of the Accord",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "land-ramp",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Sword of the Animist",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "land-ramp"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Emeria Shepherd",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb",
+              "landfall"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 7
+            }
+          }
+        ],
+        "producerTags": [
+          "land-ramp"
+        ],
+        "payoffTags": [
+          "landfall"
+        ],
+        "evidence": "2 producteur(s), 1 payoff(s), 3 carte(s) distincte(s)."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 51,
-      "connected": [
-        "Ajani, Strength of the Pride",
-        "Angel of Destiny",
-        "Angel of Vitality",
-        "Archangel of Thune",
-        "Bishop of Wings",
-        "Cosmos Elixir",
-        "Dawn of Hope",
-        "Invoke the Divine",
-        "Mazemind Tome",
-        "Nykthos Paragon",
-        "Search for Glory",
-        "Sephara, Sky's Blade",
-        "Seraph Sanctuary",
-        "Serra Ascendant",
-        "Shattered Angel",
-        "Speaker of the Heavens",
-        "Valkyrie Harbinger",
-        "Well of Lost Dreams"
-      ],
-      "tags": [
-        "lifegain",
-        "life-payoff"
-      ]
+      "score": 0,
+      "connected": [],
+      "tags": []
     },
     "aeon": {
       "available": false,
@@ -1687,7 +1658,7 @@
     "simulation": {
       "iterations": 3200,
       "floor": 32,
-      "median": 39,
+      "median": 38,
       "high": 45,
       "ceiling": 45,
       "peak": 62,
@@ -1724,7 +1695,7 @@
         {
           "turn": 4,
           "commander": 85,
-          "engine": 1,
+          "engine": 0,
           "interaction": 57,
           "resource": 30,
           "burst": 0
@@ -1732,7 +1703,7 @@
         {
           "turn": 5,
           "commander": 93,
-          "engine": 2,
+          "engine": 0,
           "interaction": 66,
           "resource": 39,
           "burst": 0
@@ -1740,7 +1711,7 @@
         {
           "turn": 6,
           "commander": 96,
-          "engine": 3,
+          "engine": 1,
           "interaction": 72,
           "resource": 47,
           "burst": 0
@@ -1748,7 +1719,7 @@
         {
           "turn": 7,
           "commander": 98,
-          "engine": 4,
+          "engine": 2,
           "interaction": 77,
           "resource": 54,
           "burst": 0
@@ -1845,7 +1816,9 @@
           "artifact",
           "mana",
           "etb",
-          "counter-payoff"
+          "counter-producer",
+          "counter-payoff",
+          "counter-kind:charge"
         ],
         "aeon": null
       },
@@ -1866,6 +1839,7 @@
         "tags": [
           "artifact",
           "tokens",
+          "counter-kind:generic",
           "stax"
         ],
         "aeon": null

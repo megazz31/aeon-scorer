@@ -29,15 +29,15 @@
   "analysis": {
     "median": 52,
     "p20": 38,
-    "p80": 68,
-    "peak": 89,
+    "p80": 67,
+    "peak": 91,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "240a5b42182423a851d604784f147512aeb39627f512d9ba0c61ec03ffd66977",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Marvo, Deep Operative\n1 Case of the Shifting Visage\n1 Copy Catchers\n1 Final-Word Phantom\n1 Watcher of Hours\n1 Charnel Serenade\n1 Eye of Duskmantle\n1 Foreboding Steamboat\n1 Unshakable Tail\n1 Counterpoint\n1 Ransom Note\n1 Amphin Mutineer\n1 Dream Eater\n1 Mission Briefing\n1 Phyrexian Metamorph\n1 Sphinx of the Second Sun\n1 Vizier of Many Faces\n1 Black Sun's Zenith\n1 Dogged Detective\n1 Doom Whisperer\n1 Grave Titan\n1 Massacre Wurm\n1 Overseer of the Damned\n1 Phyrexian Arena\n1 Pile On\n1 Reanimate\n1 Rise of the Dark Realms\n1 Toxic Deluge\n1 Twilight Prophet\n1 Baleful Strix\n1 Connive // Concoct\n1 Lazav, the Multifarious\n1 Master of Death\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Drownyard Temple\n1 Fetid Pools\n1 Hostile Desert\n1 River of Tears\n1 Sunken Hollow\n1 Brainstorm\n1 Consider\n1 Curate\n1 Deep Analysis\n1 Enhanced Surveillance\n1 Ephara's Dispersal\n1 Mulldrifter\n1 Nightveil Sprite\n1 Otherworldly Gaze\n1 Thoughtbound Phantasm\n1 Animate Dead\n1 Necromancy\n1 Price of Fame\n1 Ravenous Chupacabra\n1 Shriekmaw\n1 Sinister Starfish\n1 Syr Konrad, the Grim\n1 Whispering Snitch\n1 Dimir Spybug\n1 Discovery // Dispersal\n1 Disinformation Campaign\n1 Notion Rain\n1 Arcane Signet\n1 Dimir Signet\n1 Everflowing Chalice\n1 Mind Stone\n1 Sol Ring\n1 Talisman of Dominance\n1 Thought Vessel\n1 Ash Barrens\n1 Bojuka Bog\n1 Command Tower\n1 Dimir Aqueduct\n1 Myriad Landscape\n1 Mystic Sanctuary\n1 Port of Karfell\n1 Reliquary Tower\n1 Rogue's Passage\n1 Tainted Isle\n1 Temple of the False God\n1 Tocasia's Dig Site\n5 Island\n4 Island\n5 Swamp\n4 Swamp",
   "oracleCards": [
@@ -153,7 +153,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -230,7 +231,9 @@
       "tags": [
         "sorcery",
         "recursion",
-        "graveyard-setup"
+        "graveyard-setup",
+        "counter-kind:time",
+        "counter-kind:finality"
       ],
       "isCommander": false
     },
@@ -354,6 +357,7 @@
         "instant",
         "counterspell",
         "recursion",
+        "counter-kind:generic",
         "cheat",
         "free"
       ],
@@ -479,7 +483,8 @@
       "tags": [
         "creature",
         "graveyard-setup",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -653,7 +658,9 @@
         "artifact",
         "mana",
         "etb",
-        "counter-payoff"
+        "counter-producer",
+        "counter-payoff",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -905,7 +912,9 @@
         "creature",
         "recursion",
         "graveyard-setup",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1",
+        "counter-kind:finality"
       ],
       "isCommander": true
     },
@@ -1536,7 +1545,8 @@
       "tags": [
         "creature",
         "graveyard-setup",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1591,8 +1601,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "lifegain",
-        "life-payoff"
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1648,7 +1657,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "graveyard-setup"
+        "graveyard-setup",
+        "counter-kind:time"
       ],
       "isCommander": false
     },
@@ -1676,21 +1686,21 @@
     "profile": {
       "median": 52,
       "floor": 38,
-      "ceiling": 68,
-      "peak": 89,
+      "ceiling": 67,
+      "peak": 91,
       "dispersion": 29,
       "variance": 29,
-      "consistency": 54,
-      "commanderDelta": 15,
+      "consistency": 53,
+      "commanderDelta": 14,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 46,
-      "consistency": 54,
+      "consistency": 53,
       "explosiveness": 16,
-      "synergy": 99,
-      "interaction": 35,
+      "synergy": 97,
+      "interaction": 34,
       "resilience": 46
     },
     "roles": {
@@ -1796,7 +1806,9 @@
             "tags": [
               "sorcery",
               "recursion",
-              "graveyard-setup"
+              "graveyard-setup",
+              "counter-kind:time",
+              "counter-kind:finality"
             ],
             "manaReq": {
               "generic": 4,
@@ -1900,7 +1912,8 @@
             "tags": [
               "creature",
               "graveyard-setup",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
@@ -2269,7 +2282,8 @@
             "tags": [
               "creature",
               "graveyard-setup",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
@@ -2320,7 +2334,8 @@
             "cmc": 6,
             "tags": [
               "creature",
-              "graveyard-setup"
+              "graveyard-setup",
+              "counter-kind:time"
             ],
             "manaReq": {
               "generic": 5,
@@ -2358,7 +2373,9 @@
             "tags": [
               "sorcery",
               "recursion",
-              "graveyard-setup"
+              "graveyard-setup",
+              "counter-kind:time",
+              "counter-kind:finality"
             ],
             "manaReq": {
               "generic": 4,
@@ -2409,6 +2426,7 @@
               "instant",
               "counterspell",
               "recursion",
+              "counter-kind:generic",
               "cheat",
               "free"
             ],
@@ -2506,9 +2524,8 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 96,
+      "score": 90,
       "connected": [
-        "Black Sun's Zenith",
         "Case of the Shifting Visage",
         "Charnel Serenade",
         "Connive // Concoct",
@@ -2525,7 +2542,6 @@
         "Drownyard Temple",
         "Enhanced Surveillance",
         "Ephara's Dispersal",
-        "Everflowing Chalice",
         "Eye of Duskmantle",
         "Lazav, the Multifarious",
         "Master of Death",
@@ -2547,8 +2563,7 @@
       "tags": [
         "recursion",
         "graveyard-setup",
-        "counter-producer",
-        "counter-payoff"
+        "counter-producer"
       ]
     },
     "aeon": {
@@ -2563,12 +2578,12 @@
       "median": 47,
       "high": 59,
       "ceiling": 59,
-      "peak": 82,
+      "peak": 84,
       "iqr": 18,
-      "consistency": 61,
+      "consistency": 60,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 91,
+      "recoveryAfterDisruption": 90,
       "turnProfile": [
         {
           "turn": 1,
@@ -2588,7 +2603,7 @@
         },
         {
           "turn": 3,
-          "commander": 72,
+          "commander": 71,
           "engine": 24,
           "interaction": 22,
           "resource": 60,
@@ -2596,32 +2611,32 @@
         },
         {
           "turn": 4,
-          "commander": 90,
-          "engine": 34,
-          "interaction": 40,
-          "resource": 72,
-          "burst": 7
+          "commander": 89,
+          "engine": 33,
+          "interaction": 39,
+          "resource": 71,
+          "burst": 6
         },
         {
           "turn": 5,
-          "commander": 93,
+          "commander": 92,
           "engine": 41,
-          "interaction": 50,
+          "interaction": 49,
           "resource": 78,
           "burst": 12
         },
         {
           "turn": 6,
-          "commander": 95,
+          "commander": 94,
           "engine": 47,
-          "interaction": 57,
+          "interaction": 56,
           "resource": 82,
           "burst": 16
         },
         {
           "turn": 7,
           "commander": 96,
-          "engine": 52,
+          "engine": 53,
           "interaction": 62,
           "resource": 86,
           "burst": 19
@@ -2636,6 +2651,7 @@
           "instant",
           "counterspell",
           "recursion",
+          "counter-kind:generic",
           "cheat",
           "free"
         ],
@@ -2751,7 +2767,9 @@
         "tags": [
           "sorcery",
           "recursion",
-          "graveyard-setup"
+          "graveyard-setup",
+          "counter-kind:time",
+          "counter-kind:finality"
         ],
         "aeon": null
       }

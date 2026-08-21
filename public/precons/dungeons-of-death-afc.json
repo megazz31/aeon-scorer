@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 49,
-    "p20": 39,
-    "p80": 58,
-    "peak": 88,
+    "p20": 41,
+    "p80": 60,
+    "peak": 87,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "4c0d71ba80c50704981cd948e80f8849c6fb64e5a970db7df60f775774618638",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Cataclysmic Gearhulk\n1 Eternal Dragon\n1 Karmic Guide\n1 Sun Titan\n1 Sunblast Angel\n1 Champion of Wits\n1 Curator of Mysteries\n1 Phantasmal Image\n1 Doomed Necromancer\n1 Ashen Rider\n1 Baleful Strix\n1 Hostage Taker\n1 Solemn Simulacrum\n1 Ronom Unicorn\n1 Wall of Omens\n1 Merfolk Looter\n1 Mulldrifter\n1 Murder of Crows\n1 Plaguecrafter\n1 Reassembling Skeleton\n1 Shriekmaw\n1 Cloudblazer\n1 Necrotic Sliver\n1 Obsessive Stitcher\n1 Burnished Hart\n1 Meteor Golem\n1 Necromantic Selection\n1 Unburial Rites\n1 Victimize\n1 Utter End\n1 Swords to Plowshares\n1 Forbidden Alchemy\n1 Despark\n1 Vanish into Memory\n1 Arcane Signet\n1 Commander's Sphere\n1 Fellwar Stone\n1 Sol Ring\n1 Wayfarer's Bauble\n1 Lightning Greaves\n1 Propaganda\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Geier Reach Sanitarium\n1 High Market\n1 Nimbus Maze\n1 Port Town\n1 Prairie Stream\n1 Sunken Hollow\n1 Evolving Wilds\n1 Arcane Sanctum\n1 Azorius Chancery\n1 Command Tower\n1 Dimir Aqueduct\n1 Esper Panorama\n1 Orzhov Basilica\n1 Terramorphic Expanse\n1 Thriving Heath\n1 Thriving Isle\n1 Thriving Moor\n2 Plains\n2 Plains\n2 Plains\n1 Plains\n2 Island\n1 Island\n1 Island\n1 Island\n2 Swamp\n2 Swamp\n2 Swamp\n1 Swamp\n1 Nihiloor\n1 Immovable Rod\n1 Radiant Solar\n1 Revivify\n1 Thorough Investigation\n1 Arcane Endeavor\n1 Minn, Wily Illusionist\n1 Phantom Steed\n1 Rod of Absorption\n1 Grave Endeavor\n1 Wand of Orcus\n1 Extract Brain\n1 Midnight Pathlighter\n1 Minimus Containment\n1 Hama Pashar, Ruin Seeker\n1 Dungeon Map\n1 Bucknard's Everfull Purse\n1 Clay Golem\n1 Component Pouch",
   "oracleCards": [
@@ -370,7 +370,8 @@
       ],
       "tags": [
         "artifact",
-        "mana"
+        "mana",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -663,8 +664,8 @@
       "tags": [
         "instant",
         "recursion",
-        "lifegain",
-        "life-payoff"
+        "counter-kind:plus1",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1216,7 +1217,6 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "token-payoff",
         "etb",
         "lifegain"
       ],
@@ -1717,22 +1717,22 @@
   "result": {
     "profile": {
       "median": 49,
-      "floor": 39,
-      "ceiling": 58,
-      "peak": 88,
+      "floor": 41,
+      "ceiling": 60,
+      "peak": 87,
       "dispersion": 19,
       "variance": 19,
       "consistency": 66,
-      "commanderDelta": 9,
+      "commanderDelta": 8,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 36,
       "consistency": 66,
-      "explosiveness": 26,
-      "synergy": 61,
-      "interaction": 53,
+      "explosiveness": 25,
+      "synergy": 69,
+      "interaction": 52,
       "resilience": 58
     },
     "roles": {
@@ -1912,8 +1912,8 @@
             "tags": [
               "instant",
               "recursion",
-              "lifegain",
-              "life-payoff"
+              "counter-kind:plus1",
+              "lifegain"
             ],
             "manaReq": {
               "generic": 5,
@@ -2052,153 +2052,6 @@
           "recursion"
         ],
         "evidence": "4 producteur(s), 9 payoff(s), 12 carte(s) distincte(s)."
-      },
-      {
-        "id": "tokens",
-        "name": "Tokens / conversion",
-        "strength": 54,
-        "cohesion": 54,
-        "producers": [
-          "Bucknard's Everfull Purse",
-          "Minn, Wily Illusionist",
-          "Phantom Steed",
-          "Wand of Orcus"
-        ],
-        "payoffs": [
-          "Minn, Wily Illusionist",
-          "Radiant Solar"
-        ],
-        "members": [
-          "Bucknard's Everfull Purse",
-          "Minn, Wily Illusionist",
-          "Phantom Steed",
-          "Wand of Orcus",
-          "Radiant Solar"
-        ],
-        "producerCards": [
-          {
-            "name": "Bucknard's Everfull Purse",
-            "cmc": 2,
-            "tags": [
-              "artifact",
-              "mana",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [],
-              "total": 2
-            }
-          },
-          {
-            "name": "Minn, Wily Illusionist",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "tokens",
-              "token-payoff",
-              "death-payoff"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "U"
-                ],
-                [
-                  "U"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Phantom Steed",
-            "cmc": 4,
-            "tags": [
-              "creature",
-              "tokens",
-              "sacrifice",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "U"
-                ]
-              ],
-              "total": 4
-            }
-          },
-          {
-            "name": "Wand of Orcus",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "B"
-                ]
-              ],
-              "total": 3
-            }
-          }
-        ],
-        "payoffCards": [
-          {
-            "name": "Minn, Wily Illusionist",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "tokens",
-              "token-payoff",
-              "death-payoff"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "U"
-                ],
-                [
-                  "U"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Radiant Solar",
-            "cmc": 6,
-            "tags": [
-              "creature",
-              "token-payoff",
-              "etb",
-              "lifegain"
-            ],
-            "manaReq": {
-              "generic": 5,
-              "colored": [
-                [
-                  "W"
-                ]
-              ],
-              "total": 6
-            }
-          }
-        ],
-        "producerTags": [
-          "tokens"
-        ],
-        "payoffTags": [
-          "token-payoff"
-        ],
-        "evidence": "4 producteur(s), 2 payoff(s), 5 carte(s) distincte(s)."
       }
     ],
     "combos": [],
@@ -2231,69 +2084,69 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 38,
-      "median": 45,
-      "high": 52,
-      "ceiling": 52,
-      "peak": 80,
+      "floor": 37,
+      "median": 43,
+      "high": 51,
+      "ceiling": 51,
+      "peak": 77,
       "iqr": 11,
       "consistency": 75,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 89,
+      "recoveryAfterDisruption": 88,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 6,
+          "interaction": 5,
           "resource": 8,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 4,
+          "commander": 3,
           "engine": 0,
-          "interaction": 19,
-          "resource": 23,
-          "burst": 5
+          "interaction": 18,
+          "resource": 22,
+          "burst": 4
         },
         {
           "turn": 3,
-          "commander": 45,
+          "commander": 43,
           "engine": 2,
-          "interaction": 35,
-          "resource": 41,
+          "interaction": 34,
+          "resource": 40,
           "burst": 12
         },
         {
           "turn": 4,
-          "commander": 81,
-          "engine": 10,
-          "interaction": 60,
-          "resource": 62,
+          "commander": 79,
+          "engine": 8,
+          "interaction": 59,
+          "resource": 61,
           "burst": 18
         },
         {
           "turn": 5,
           "commander": 90,
-          "engine": 18,
+          "engine": 15,
           "interaction": 72,
-          "resource": 75,
-          "burst": 23
+          "resource": 74,
+          "burst": 22
         },
         {
           "turn": 6,
           "commander": 93,
-          "engine": 26,
+          "engine": 21,
           "interaction": 80,
-          "resource": 82,
+          "resource": 81,
           "burst": 26
         },
         {
           "turn": 7,
           "commander": 96,
-          "engine": 32,
+          "engine": 26,
           "interaction": 85,
           "resource": 86,
           "burst": 30
@@ -2379,16 +2232,6 @@
         "aeon": null
       },
       {
-        "name": "Bucknard's Everfull Purse",
-        "impact": 2.3,
-        "tags": [
-          "artifact",
-          "mana",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Sun Titan",
         "impact": 2.1,
         "tags": [
@@ -2399,33 +2242,44 @@
         "aeon": null
       },
       {
-        "name": "Minn, Wily Illusionist",
-        "impact": 1.9,
+        "name": "Baleful Strix",
+        "impact": 1.8,
         "tags": [
           "creature",
-          "tokens",
-          "token-payoff",
-          "death-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Phantom Steed",
-        "impact": 1.9,
-        "tags": [
-          "creature",
-          "tokens",
-          "sacrifice",
+          "artifact",
+          "draw",
           "etb"
         ],
         "aeon": null
       },
       {
-        "name": "Wand of Orcus",
-        "impact": 1.9,
+        "name": "Wall of Omens",
+        "impact": 1.8,
         "tags": [
-          "artifact",
-          "tokens"
+          "creature",
+          "draw",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Doomed Necromancer",
+        "impact": 1.7,
+        "tags": [
+          "creature",
+          "recursion",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Obsessive Stitcher",
+        "impact": 1.7,
+        "tags": [
+          "creature",
+          "recursion",
+          "graveyard-setup",
+          "sacrifice"
         ],
         "aeon": null
       }

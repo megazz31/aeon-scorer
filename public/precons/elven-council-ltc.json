@@ -30,14 +30,14 @@
     "median": 42,
     "p20": 33,
     "p80": 51,
-    "peak": 78,
+    "peak": 77,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "2dc1259ea718f043d5ba494022c1bcd8a3652a746e65d70bffbbc26265ebb73c",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Gandalf, Westward Voyager\n1 Raise the Palisade\n1 Trap the Trespassers\n1 Arwen, Weaver of Hope\n1 Galadhrim Ambush\n1 Haldir, Lórien Lieutenant\n1 Legolas Greenleaf\n1 Mirkwood Elk\n1 Travel Through Caradhras\n1 Windswift Slice\n1 Círdan the Shipwright\n1 Elrond of the White Council\n1 Erestor of the Council\n1 Mirkwood Trapper\n1 Radagast, Wizard of Wilds\n1 Sail into the West\n1 Song of Eärendil\n1 Lothlórien Blade\n1 Model of Unity\n1 Colossal Whale\n1 Devastation Tide\n1 Mystic Confluence\n1 Plea for Power\n1 Swan Song\n1 Asceticism\n1 Elvish Archdruid\n1 Elvish Piper\n1 Elvish Warmaster\n1 Genesis Wave\n1 Heroic Intervention\n1 Hornet Queen\n1 Inscription of Abundance\n1 Overwhelming Stampede\n1 Realm Seekers\n1 Seeds of Renewal\n1 Sylvan Offering\n1 Exotic Orchard\n1 Flooded Grove\n1 Hinterland Harbor\n1 Rejuvenating Springs\n1 Vineglimmer Snarl\n1 Lórien Revealed\n1 Celeborn the Wise\n1 Elven Farsight\n1 Wose Pathfinder\n1 Learn from the Past\n1 Opt\n1 Preordain\n1 Arbor Elf\n1 Beast Within\n1 Cultivate\n1 Elvish Mystic\n1 Elvish Visionary\n1 Farhaven Elf\n1 Mirror of Galadriel\n1 Lignify\n1 Paradise Druid\n1 Rampant Growth\n1 Reclamation Sage\n1 Wood Elves\n1 Growth Spiral\n1 Arcane Signet\n1 Commander's Sphere\n1 Lightning Greaves\n1 Sol Ring\n1 Whispersilk Cloak\n1 Ash Barrens\n1 Command Tower\n1 Field of Ruin\n1 Lonely Sandbar\n1 Thornwood Falls\n1 Tranquil Thicket\n1 Woodland Stream\n6 Island\n5 Island\n8 Forest\n7 Forest",
   "oracleCards": [
@@ -94,7 +94,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -304,7 +306,8 @@
         "creature",
         "etb",
         "counter-producer",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -577,7 +580,8 @@
       "tags": [
         "creature",
         "draw",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": true
     },
@@ -652,7 +656,9 @@
       "tags": [
         "creature",
         "etb",
-        "counter-payoff"
+        "counter-producer",
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -730,7 +736,9 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -787,7 +795,8 @@
         "creature",
         "draw",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -892,7 +901,8 @@
       "tags": [
         "creature",
         "recursion",
-        "etb"
+        "etb",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -968,6 +978,7 @@
       "tags": [
         "instant",
         "counterspell",
+        "counter-kind:generic",
         "stax"
       ],
       "isCommander": false
@@ -1138,7 +1149,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1255,7 +1268,8 @@
         "enchantment",
         "draw",
         "mana",
-        "tokens"
+        "tokens",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1272,7 +1286,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1353,7 +1368,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:stun"
       ],
       "isCommander": false
     },
@@ -1504,7 +1520,7 @@
       "median": 42,
       "floor": 33,
       "ceiling": 51,
-      "peak": 78,
+      "peak": 77,
       "dispersion": 17,
       "variance": 17,
       "consistency": 69,
@@ -1516,7 +1532,7 @@
       "speed": 39,
       "consistency": 69,
       "explosiveness": 16,
-      "synergy": 49,
+      "synergy": 47,
       "interaction": 30,
       "resilience": 41
     },
@@ -1535,155 +1551,6 @@
       "unknownManaLands": 0
     },
     "packages": [
-      {
-        "id": "counters",
-        "name": "Marqueurs",
-        "strength": 63,
-        "cohesion": 63,
-        "producers": [
-          "Elrond of the White Council",
-          "Inscription of Abundance",
-          "Legolas Greenleaf"
-        ],
-        "payoffs": [
-          "Elrond of the White Council",
-          "Haldir, Lórien Lieutenant",
-          "Trap the Trespassers"
-        ],
-        "members": [
-          "Elrond of the White Council",
-          "Inscription of Abundance",
-          "Legolas Greenleaf",
-          "Haldir, Lórien Lieutenant",
-          "Trap the Trespassers"
-        ],
-        "producerCards": [
-          {
-            "name": "Elrond of the White Council",
-            "cmc": 5,
-            "tags": [
-              "creature",
-              "etb",
-              "counter-producer",
-              "counter-payoff"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "G"
-                ],
-                [
-                  "U"
-                ]
-              ],
-              "total": 5
-            }
-          },
-          {
-            "name": "Inscription of Abundance",
-            "cmc": 2,
-            "tags": [
-              "instant",
-              "counter-producer"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 2
-            }
-          },
-          {
-            "name": "Legolas Greenleaf",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "draw",
-              "etb",
-              "counter-producer"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
-            }
-          }
-        ],
-        "payoffCards": [
-          {
-            "name": "Elrond of the White Council",
-            "cmc": 5,
-            "tags": [
-              "creature",
-              "etb",
-              "counter-producer",
-              "counter-payoff"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "G"
-                ],
-                [
-                  "U"
-                ]
-              ],
-              "total": 5
-            }
-          },
-          {
-            "name": "Haldir, Lórien Lieutenant",
-            "cmc": 1,
-            "tags": [
-              "creature",
-              "etb",
-              "counter-payoff"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 1
-            }
-          },
-          {
-            "name": "Trap the Trespassers",
-            "cmc": 3,
-            "tags": [
-              "instant",
-              "counter-payoff"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "U"
-                ]
-              ],
-              "total": 3
-            }
-          }
-        ],
-        "producerTags": [
-          "counter-producer"
-        ],
-        "payoffTags": [
-          "counter-payoff"
-        ],
-        "evidence": "3 producteur(s), 3 payoff(s), 5 carte(s) distincte(s)."
-      },
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
@@ -1927,7 +1794,8 @@
             "tags": [
               "creature",
               "draw",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -1944,21 +1812,227 @@
           }
         ],
         "evidence": "0 accélérateur(s) burst + 12 source(s) persistante(s) vers un commandant MV 4."
+      },
+      {
+        "id": "counters",
+        "name": "Marqueurs",
+        "strength": 55,
+        "cohesion": 55,
+        "producers": [
+          "Arwen, Weaver of Hope",
+          "Elrond of the White Council",
+          "Haldir, Lórien Lieutenant",
+          "Inscription of Abundance",
+          "Legolas Greenleaf",
+          "Realm Seekers"
+        ],
+        "payoffs": [
+          "Elrond of the White Council",
+          "Haldir, Lórien Lieutenant"
+        ],
+        "members": [
+          "Arwen, Weaver of Hope",
+          "Elrond of the White Council",
+          "Haldir, Lórien Lieutenant",
+          "Inscription of Abundance",
+          "Legolas Greenleaf",
+          "Realm Seekers"
+        ],
+        "producerCards": [
+          {
+            "name": "Arwen, Weaver of Hope",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Elrond of the White Council",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Haldir, Lórien Lieutenant",
+            "cmc": 1,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Inscription of Abundance",
+            "cmc": 2,
+            "tags": [
+              "instant",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Legolas Greenleaf",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "draw",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Realm Seekers",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 6
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Elrond of the White Council",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Haldir, Lórien Lieutenant",
+            "cmc": 1,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 1
+            }
+          }
+        ],
+        "producerTags": [
+          "counter-producer"
+        ],
+        "payoffTags": [
+          "counter-payoff"
+        ],
+        "evidence": "6 producteur(s), 2 payoff(s), 6 carte(s) distincte(s)."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 14,
+      "score": 17,
       "connected": [
+        "Arwen, Weaver of Hope",
         "Elrond of the White Council",
         "Haldir, Lórien Lieutenant",
         "Inscription of Abundance",
         "Legolas Greenleaf",
-        "Trap the Trespassers"
+        "Realm Seekers"
       ],
       "tags": [
-        "counter-producer",
-        "counter-payoff"
+        "counter-producer"
       ]
     },
     "aeon": {
@@ -2023,7 +2097,7 @@
         {
           "turn": 6,
           "commander": 95,
-          "engine": 8,
+          "engine": 9,
           "interaction": 52,
           "resource": 86,
           "burst": 11
@@ -2031,7 +2105,7 @@
         {
           "turn": 7,
           "commander": 97,
-          "engine": 10,
+          "engine": 11,
           "interaction": 59,
           "resource": 89,
           "burst": 12
@@ -2085,7 +2159,8 @@
           "creature",
           "draw",
           "etb",
-          "counter-producer"
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -2096,7 +2171,8 @@
           "enchantment",
           "draw",
           "mana",
-          "tokens"
+          "tokens",
+          "counter-kind:generic"
         ],
         "aeon": null
       },

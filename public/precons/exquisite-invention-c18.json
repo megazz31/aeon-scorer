@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 43,
+    "median": 41,
     "p20": 28,
     "p80": 55,
-    "peak": 83,
+    "peak": 82,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "33a14e5e4e5b5aa52505ab847f2f67a676400f88cef0229d581ac6355910280c",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Maverick Thopterist\n1 Soul of New Phyrexia\n1 Inkwell Leviathan\n1 Sharding Sphinx\n1 Hellkite Igniter\n1 Bosh, Iron Golem\n1 Darksteel Juggernaut\n1 Duplicant\n1 Myr Battlesphere\n1 Psychosis Crawler\n1 Scuttling Doom Engine\n1 Steel Hellkite\n1 Thopter Assembly\n1 Etherium Sculptor\n1 Whirler Rogue\n1 Chief of the Foundry\n1 Pilgrim's Eye\n1 Saheeli's Artistry\n1 Blasphemous Act\n1 Reverse Engineer\n1 Tidings\n1 Chaos Warp\n1 Magmaquake\n1 Into the Roil\n1 Thirst for Knowledge\n1 Blinkmoth Urn\n1 Mimic Vat\n1 Mirrorworks\n1 Prototype Portal\n1 Unwinding Clock\n1 Commander's Sphere\n1 Dreamstone Hedron\n1 Hedron Archive\n1 Izzet Signet\n1 Magnifying Glass\n1 Mind Stone\n1 Prismatic Lens\n1 Scrabbling Claws\n1 Sol Ring\n1 Swiftfoot Boots\n1 Unstable Obelisk\n1 Vessel of Endless Rest\n1 Worn Powerstone\n1 Darksteel Citadel\n1 Great Furnace\n1 Seat of the Synod\n1 Thopter Spy Network\n5 Island\n5 Island\n5 Island\n4 Mountain\n4 Mountain\n4 Mountain\n1 Buried Ruin\n1 Command Tower\n1 Foundry of the Consuls\n1 Highland Lake\n1 Izzet Boilerworks\n1 Izzet Guildgate\n1 Swiftwater Cliffs\n1 Brudiclad, Telchor Engineer\n1 Tawnos, Urza's Apprentice\n1 Echo Storm\n1 Vedalken Humiliator\n1 Enchanter's Bane\n1 Saheeli's Directive\n1 Treasure Nabber\n1 Varchild, Betrayer of Kjeldor\n1 Ancient Stone Idol\n1 Coveted Jewel\n1 Endless Atlas\n1 Retrofitter Foundry\n1 Aether Gale\n1 Loyal Drake\n1 Loyal Apprentice\n1 Geode Golem\n1 Thopter Engineer\n1 Forge of Heroes",
   "oracleCards": [
@@ -432,7 +432,9 @@
       "tags": [
         "land",
         "mana",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1",
+        "counter-kind:loyalty"
       ],
       "isCommander": false
     },
@@ -818,7 +820,6 @@
       "tags": [
         "artifact",
         "tokens",
-        "token-payoff",
         "etb",
         "artifact-payoff"
       ],
@@ -930,8 +931,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "artifact",
-        "life-payoff"
+        "artifact"
       ],
       "isCommander": false
     },
@@ -1451,14 +1451,14 @@
   ],
   "result": {
     "profile": {
-      "median": 43,
+      "median": 41,
       "floor": 28,
       "ceiling": 55,
-      "peak": 83,
+      "peak": 82,
       "dispersion": 27,
       "variance": 27,
       "consistency": 58,
-      "commanderDelta": 15,
+      "commanderDelta": 14,
       "coverage": 92,
       "dataCoverage": 92
     },
@@ -1466,7 +1466,7 @@
       "speed": 33,
       "consistency": 58,
       "explosiveness": 15,
-      "synergy": 93,
+      "synergy": 87,
       "interaction": 14,
       "resilience": 28
     },
@@ -1873,7 +1873,6 @@
             "tags": [
               "artifact",
               "tokens",
-              "token-payoff",
               "etb",
               "artifact-payoff"
             ],
@@ -1944,8 +1943,7 @@
             "cmc": 5,
             "tags": [
               "creature",
-              "artifact",
-              "life-payoff"
+              "artifact"
             ],
             "manaReq": {
               "generic": 5,
@@ -2202,7 +2200,6 @@
             "tags": [
               "artifact",
               "tokens",
-              "token-payoff",
               "etb",
               "artifact-payoff"
             ],
@@ -2255,395 +2252,6 @@
           "artifact-payoff"
         ],
         "evidence": "40 producteur(s), 6 payoff(s), 42 carte(s) distincte(s)."
-      },
-      {
-        "id": "tokens",
-        "name": "Tokens / conversion",
-        "strength": 97,
-        "cohesion": 97,
-        "producers": [
-          "Ancient Stone Idol",
-          "Brudiclad, Telchor Engineer",
-          "Echo Storm",
-          "Foundry of the Consuls",
-          "Loyal Apprentice",
-          "Maverick Thopterist",
-          "Mimic Vat",
-          "Mirrorworks",
-          "Myr Battlesphere",
-          "Prototype Portal"
-        ],
-        "payoffs": [
-          "Brudiclad, Telchor Engineer",
-          "Mirrorworks"
-        ],
-        "members": [
-          "Ancient Stone Idol",
-          "Brudiclad, Telchor Engineer",
-          "Echo Storm",
-          "Foundry of the Consuls",
-          "Loyal Apprentice",
-          "Maverick Thopterist",
-          "Mimic Vat",
-          "Mirrorworks",
-          "Myr Battlesphere",
-          "Prototype Portal",
-          "Retrofitter Foundry",
-          "Saheeli's Artistry",
-          "Sharding Sphinx",
-          "Thopter Assembly",
-          "Thopter Engineer",
-          "Thopter Spy Network",
-          "Whirler Rogue"
-        ],
-        "producerCards": [
-          {
-            "name": "Ancient Stone Idol",
-            "cmc": 10,
-            "tags": [
-              "creature",
-              "artifact",
-              "tokens",
-              "death-payoff"
-            ],
-            "manaReq": {
-              "generic": 10,
-              "colored": [],
-              "total": 10
-            }
-          },
-          {
-            "name": "Brudiclad, Telchor Engineer",
-            "cmc": 6,
-            "tags": [
-              "creature",
-              "artifact",
-              "tokens",
-              "token-payoff"
-            ],
-            "manaReq": {
-              "generic": 4,
-              "colored": [
-                [
-                  "U"
-                ],
-                [
-                  "R"
-                ]
-              ],
-              "total": 6
-            }
-          },
-          {
-            "name": "Echo Storm",
-            "cmc": 5,
-            "tags": [
-              "sorcery",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "U"
-                ],
-                [
-                  "U"
-                ]
-              ],
-              "total": 5
-            }
-          },
-          {
-            "name": "Foundry of the Consuls",
-            "cmc": 0,
-            "tags": [
-              "land",
-              "mana",
-              "tokens",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [],
-              "total": 0
-            }
-          },
-          {
-            "name": "Loyal Apprentice",
-            "cmc": 2,
-            "tags": [
-              "creature",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 2
-            }
-          },
-          {
-            "name": "Maverick Thopterist",
-            "cmc": 5,
-            "tags": [
-              "creature",
-              "tokens",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "U"
-                ],
-                [
-                  "R"
-                ]
-              ],
-              "total": 5
-            }
-          },
-          {
-            "name": "Mimic Vat",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "tokens",
-              "death-payoff"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
-          {
-            "name": "Mirrorworks",
-            "cmc": 5,
-            "tags": [
-              "artifact",
-              "tokens",
-              "token-payoff",
-              "etb",
-              "artifact-payoff"
-            ],
-            "manaReq": {
-              "generic": 5,
-              "colored": [],
-              "total": 5
-            }
-          },
-          {
-            "name": "Myr Battlesphere",
-            "cmc": 7,
-            "tags": [
-              "creature",
-              "artifact",
-              "tokens",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 7,
-              "colored": [],
-              "total": 7
-            }
-          },
-          {
-            "name": "Prototype Portal",
-            "cmc": 4,
-            "tags": [
-              "artifact",
-              "tokens",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 4,
-              "colored": [],
-              "total": 4
-            }
-          },
-          {
-            "name": "Retrofitter Foundry",
-            "cmc": 1,
-            "tags": [
-              "artifact",
-              "tokens",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [],
-              "total": 1
-            }
-          },
-          {
-            "name": "Saheeli's Artistry",
-            "cmc": 6,
-            "tags": [
-              "sorcery",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 4,
-              "colored": [
-                [
-                  "U"
-                ],
-                [
-                  "U"
-                ]
-              ],
-              "total": 6
-            }
-          },
-          {
-            "name": "Sharding Sphinx",
-            "cmc": 6,
-            "tags": [
-              "creature",
-              "artifact",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 4,
-              "colored": [
-                [
-                  "U"
-                ],
-                [
-                  "U"
-                ]
-              ],
-              "total": 6
-            }
-          },
-          {
-            "name": "Thopter Assembly",
-            "cmc": 6,
-            "tags": [
-              "creature",
-              "artifact",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 6,
-              "colored": [],
-              "total": 6
-            }
-          },
-          {
-            "name": "Thopter Engineer",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "tokens",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Thopter Spy Network",
-            "cmc": 4,
-            "tags": [
-              "enchantment",
-              "draw",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "U"
-                ],
-                [
-                  "U"
-                ]
-              ],
-              "total": 4
-            }
-          },
-          {
-            "name": "Whirler Rogue",
-            "cmc": 4,
-            "tags": [
-              "creature",
-              "tokens",
-              "etb",
-              "artifact-payoff"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "U"
-                ],
-                [
-                  "U"
-                ]
-              ],
-              "total": 4
-            }
-          }
-        ],
-        "payoffCards": [
-          {
-            "name": "Brudiclad, Telchor Engineer",
-            "cmc": 6,
-            "tags": [
-              "creature",
-              "artifact",
-              "tokens",
-              "token-payoff"
-            ],
-            "manaReq": {
-              "generic": 4,
-              "colored": [
-                [
-                  "U"
-                ],
-                [
-                  "R"
-                ]
-              ],
-              "total": 6
-            }
-          },
-          {
-            "name": "Mirrorworks",
-            "cmc": 5,
-            "tags": [
-              "artifact",
-              "tokens",
-              "token-payoff",
-              "etb",
-              "artifact-payoff"
-            ],
-            "manaReq": {
-              "generic": 5,
-              "colored": [],
-              "total": 5
-            }
-          }
-        ],
-        "producerTags": [
-          "tokens"
-        ],
-        "payoffTags": [
-          "token-payoff"
-        ],
-        "evidence": "17 producteur(s), 2 payoff(s), 17 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2896,10 +2504,10 @@
     "simulation": {
       "iterations": 3200,
       "floor": 31,
-      "median": 41,
+      "median": 40,
       "high": 50,
       "ceiling": 50,
-      "peak": 74,
+      "peak": 73,
       "iqr": 15,
       "consistency": 66,
       "commanderMedianTurn": 4,
@@ -2933,7 +2541,7 @@
         {
           "turn": 4,
           "commander": 74,
-          "engine": 30,
+          "engine": 29,
           "interaction": 15,
           "resource": 47,
           "burst": 5
@@ -2941,7 +2549,7 @@
         {
           "turn": 5,
           "commander": 89,
-          "engine": 42,
+          "engine": 41,
           "interaction": 18,
           "resource": 54,
           "burst": 9
@@ -2949,7 +2557,7 @@
         {
           "turn": 6,
           "commander": 93,
-          "engine": 51,
+          "engine": 48,
           "interaction": 22,
           "resource": 58,
           "burst": 10
@@ -2957,7 +2565,7 @@
         {
           "turn": 7,
           "commander": 95,
-          "engine": 57,
+          "engine": 53,
           "interaction": 25,
           "resource": 63,
           "burst": 12
@@ -3008,16 +2616,6 @@
         "aeon": null
       },
       {
-        "name": "Thopter Spy Network",
-        "impact": 3.3,
-        "tags": [
-          "enchantment",
-          "draw",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Unstable Obelisk",
         "impact": 3.3,
         "tags": [
@@ -3034,16 +2632,6 @@
         "tags": [
           "artifact",
           "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Mimic Vat",
-        "impact": 2.6,
-        "tags": [
-          "artifact",
-          "tokens",
-          "death-payoff"
         ],
         "aeon": null
       },
@@ -3067,13 +2655,12 @@
         "aeon": null
       },
       {
-        "name": "Brudiclad, Telchor Engineer",
-        "impact": 2.5,
+        "name": "Thopter Spy Network",
+        "impact": 2.6,
         "tags": [
-          "creature",
-          "artifact",
-          "tokens",
-          "token-payoff"
+          "enchantment",
+          "draw",
+          "tokens"
         ],
         "aeon": null
       },
@@ -3084,6 +2671,25 @@
           "artifact",
           "mana",
           "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Magnifying Glass",
+        "impact": 2.5,
+        "tags": [
+          "artifact",
+          "mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Vessel of Endless Rest",
+        "impact": 2.5,
+        "tags": [
+          "artifact",
+          "mana",
+          "etb"
         ],
         "aeon": null
       }

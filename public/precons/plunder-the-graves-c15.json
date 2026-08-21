@@ -34,16 +34,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 42,
-    "p20": 32,
+    "p20": 30,
     "p80": 53,
     "peak": 85,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "2172cb392103920f381a167326712c54e4a5ff29df3b810abc2de3e2c6485ee0",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Sakura-Tribe Elder\n1 Satyr Wayfinder\n1 Viridian Emissary\n1 Wall of Blossoms\n1 Viridian Zealot\n1 Korozda Guildmage\n1 Lotleth Troll\n1 Blood Bairn\n1 Phyrexian Rager\n1 Skullwinder\n1 Wood Elves\n1 Eternal Witness\n1 Corpse Augur\n1 Centaur Vinecrasher\n1 Bloodspore Thrinax\n1 Jarad, Golgari Lich Lord\n1 Shriekmaw\n1 Indrik Stomphowler\n1 Kessig Cagebreakers\n1 Banshee of the Dread Choir\n1 Phyrexian Plaguelord\n1 Acidic Slime\n1 Mycoloth\n1 Mazirek, Kraul Death Priest\n1 Vulturous Zombie\n1 Great Oak Guardian\n1 Champion of Stray Souls\n1 Extractor Demon\n1 Thief of Blood\n1 Pathbreaker Ibex\n1 Cloudthresher\n1 Butcher of Malakir\n1 Eater of Hope\n1 Scourge of Nel Toth\n1 Caller of the Pack\n1 Terastodon\n1 Verdant Force\n1 Mulch\n1 Victimize\n1 Primal Growth\n1 Ambition's Cost\n1 Sever the Bloodline\n1 Barter in Blood\n1 Rise from the Grave\n1 Spider Spawning\n1 Overwhelming Stampede\n1 Dread Summons\n1 Altar's Reap\n1 Tribute to the Wild\n1 Golgari Charm\n1 Grisly Salvage\n1 Putrefy\n1 Wretched Confluence\n1 Skullclamp\n1 Sol Ring\n1 Golgari Signet\n1 Lightning Greaves\n1 Thought Vessel\n1 Bonehoard\n1 Eldrazi Monument\n1 Diabolic Servitude\n1 Command Tower\n1 Evolving Wilds\n1 Golgari Guildgate\n1 Golgari Rot Farm\n1 Grim Backwoods\n1 High Market\n1 Jungle Hollow\n1 Polluted Mire\n1 Slippery Karst\n1 Tainted Wood\n1 Terramorphic Expanse\n1 Vivid Grove\n1 Vivid Marsh\n4 Swamp\n3 Swamp\n3 Swamp\n3 Swamp\n3 Forest\n3 Forest\n3 Forest\n3 Forest",
   "oracleCards": [
@@ -172,7 +172,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -241,7 +243,9 @@
       "tags": [
         "creature",
         "recursion",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -674,8 +678,7 @@
         "creature",
         "recursion",
         "sacrifice",
-        "sac-outlet",
-        "life-payoff"
+        "sac-outlet"
       ],
       "isCommander": false
     },
@@ -771,7 +774,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -790,7 +794,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -809,7 +814,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "death-payoff"
+        "death-payoff",
+        "counter-kind:experience"
       ],
       "isCommander": true
     },
@@ -845,7 +851,8 @@
       "tags": [
         "creature",
         "tokens",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1276,7 +1283,9 @@
       "tags": [
         "creature",
         "etb",
-        "counter-payoff"
+        "counter-producer",
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1410,7 +1419,8 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1435,7 +1445,8 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1454,7 +1465,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1520,13 +1532,13 @@
   "result": {
     "profile": {
       "median": 42,
-      "floor": 32,
+      "floor": 30,
       "ceiling": 53,
       "peak": 85,
-      "dispersion": 21,
-      "variance": 21,
+      "dispersion": 23,
+      "variance": 23,
       "consistency": 63,
-      "commanderDelta": 8,
+      "commanderDelta": 9,
       "coverage": 92,
       "dataCoverage": 92
     },
@@ -1534,8 +1546,8 @@
       "speed": 32,
       "consistency": 63,
       "explosiveness": 14,
-      "synergy": 59,
-      "interaction": 39,
+      "synergy": 60,
+      "interaction": 38,
       "resilience": 54
     },
     "roles": {
@@ -1686,8 +1698,7 @@
               "creature",
               "recursion",
               "sacrifice",
-              "sac-outlet",
-              "life-payoff"
+              "sac-outlet"
             ],
             "manaReq": {
               "generic": 0,
@@ -1834,11 +1845,14 @@
       {
         "id": "counters",
         "name": "Marqueurs",
-        "strength": 57,
-        "cohesion": 57,
+        "strength": 59,
+        "cohesion": 59,
         "producers": [
+          "Bloodspore Thrinax",
+          "Centaur Vinecrasher",
           "Lotleth Troll",
           "Mazirek, Kraul Death Priest",
+          "Thief of Blood",
           "Vulturous Zombie"
         ],
         "payoffs": [
@@ -1846,19 +1860,64 @@
           "Thief of Blood"
         ],
         "members": [
+          "Bloodspore Thrinax",
+          "Centaur Vinecrasher",
           "Lotleth Troll",
           "Mazirek, Kraul Death Priest",
+          "Thief of Blood",
           "Vulturous Zombie",
-          "Mycoloth",
-          "Thief of Blood"
+          "Mycoloth"
         ],
         "producerCards": [
+          {
+            "name": "Bloodspore Thrinax",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Centaur Vinecrasher",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
           {
             "name": "Lotleth Troll",
             "cmc": 2,
             "tags": [
               "creature",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
@@ -1878,7 +1937,8 @@
             "cmc": 5,
             "tags": [
               "creature",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -1894,11 +1954,35 @@
             }
           },
           {
+            "name": "Thief of Blood",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
             "name": "Vulturous Zombie",
             "cmc": 5,
             "tags": [
               "creature",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -1921,7 +2005,8 @@
             "tags": [
               "creature",
               "tokens",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -1942,7 +2027,9 @@
             "tags": [
               "creature",
               "etb",
-              "counter-payoff"
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 4,
@@ -1964,7 +2051,7 @@
         "payoffTags": [
           "counter-payoff"
         ],
-        "evidence": "3 producteur(s), 2 payoff(s), 5 carte(s) distincte(s)."
+        "evidence": "6 producteur(s), 2 payoff(s), 7 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2112,7 +2199,8 @@
             "cmc": 4,
             "tags": [
               "creature",
-              "death-payoff"
+              "death-payoff",
+              "counter-kind:experience"
             ],
             "manaReq": {
               "generic": 2,
@@ -2162,7 +2250,7 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
+      "floor": 32,
       "median": 40,
       "high": 48,
       "ceiling": 48,
@@ -2178,53 +2266,53 @@
           "commander": 0,
           "engine": 1,
           "interaction": 0,
-          "resource": 7,
+          "resource": 5,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 0,
           "engine": 3,
-          "interaction": 7,
+          "interaction": 6,
           "resource": 18,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 20,
+          "commander": 19,
           "engine": 6,
-          "interaction": 22,
-          "resource": 39,
+          "interaction": 21,
+          "resource": 38,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 73,
+          "commander": 72,
           "engine": 12,
-          "interaction": 46,
-          "resource": 64,
+          "interaction": 45,
+          "resource": 63,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 89,
-          "engine": 19,
+          "engine": 20,
           "interaction": 60,
           "resource": 75,
           "burst": 0
         },
         {
           "turn": 6,
-          "commander": 94,
-          "engine": 26,
+          "commander": 93,
+          "engine": 28,
           "interaction": 68,
-          "resource": 81,
+          "resource": 80,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 96,
-          "engine": 32,
+          "engine": 35,
           "interaction": 74,
           "resource": 85,
           "burst": 0
@@ -2304,6 +2392,18 @@
         "aeon": null
       },
       {
+        "name": "Centaur Vinecrasher",
+        "impact": 2.2,
+        "tags": [
+          "creature",
+          "recursion",
+          "etb",
+          "counter-producer",
+          "counter-kind:plus1"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Golgari Signet",
         "impact": 1.9,
         "tags": [
@@ -2337,17 +2437,8 @@
         "tags": [
           "creature",
           "tokens",
-          "counter-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Primal Growth",
-        "impact": 1.8,
-        "tags": [
-          "sorcery",
-          "land-ramp",
-          "sacrifice"
+          "counter-payoff",
+          "counter-kind:plus1"
         ],
         "aeon": null
       }

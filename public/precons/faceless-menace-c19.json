@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 39,
-    "p20": 29,
-    "p80": 47,
-    "peak": 72,
-    "coverage": 91,
+    "p20": 30,
+    "p80": 46,
+    "peak": 73,
+    "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "ba3eeaba7ff21aff6ba865517499a569b79ccba467573cc43944de1aafa57328",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Vraska the Unseen\n1 Rayami, First of the Fallen\n1 Volrath, the Shapestealer\n1 Kadena's Silencer\n1 Thought Sponge\n1 Thieving Amalgam\n1 Apex Altisaur\n1 Grismold, the Dreadsower\n1 Deathmist Raptor\n1 Hooded Hydra\n1 Chromeshell Crab\n1 Ixidron\n1 Kheru Spellsnatcher\n1 Stratus Dancer\n1 Thousand Winds\n1 Vesuvan Shapeshifter\n1 Bane of the Living\n1 Grim Haruspex\n1 Silumgar Assassin\n1 Den Protector\n1 Seedborn Muse\n1 Thelonite Hermit\n1 Sagu Mauler\n1 Voice of Many\n1 Scaretiller\n1 Willbender\n1 Skinthinner\n1 Ainok Survivalist\n1 Great Oak Guardian\n1 Nantuko Vigilante\n1 Sakura-Tribe Elder\n1 Icefeather Aven\n1 Road of Return\n1 Ghastly Conscription\n1 Hex\n1 Overwhelming Stampede\n1 Tempt with Discovery\n1 Mire in Misery\n1 Tezzeret's Gambit\n1 Cultivate\n1 Explore\n1 Farseek\n1 Urban Evolution\n1 Sudden Substitution\n1 Biomass Mutation\n1 Leadership Vacuum\n1 Echoing Truth\n1 Reality Shift\n1 Putrefy\n1 Sultai Charm\n1 Pendant of Prosperity\n1 Scroll of Fate\n1 Strionic Resonator\n1 Sol Ring\n1 Thran Dynamo\n1 Gift of Doom\n1 Trail of Mystery\n1 Bounty of the Luxa\n1 Secret Plans\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Llanowar Wastes\n1 Shrine of the Forsaken Gods\n1 Sunken Hollow\n1 Thespian's Stage\n1 Yavimaya Coast\n2 Island\n2 Island\n1 Island\n1 Swamp\n1 Swamp\n1 Swamp\n3 Forest\n2 Forest\n2 Forest\n1 Ash Barrens\n1 Bojuka Bog\n1 Command Tower\n1 Dimir Aqueduct\n1 Evolving Wilds\n1 Foul Orchard\n1 Golgari Guildgate\n1 Golgari Rot Farm\n1 Jungle Hollow\n1 Myriad Landscape\n1 Opulent Palace\n1 Reliquary Tower\n1 Simic Growth Chamber\n1 Simic Guildgate\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Thornwood Falls\n1 Woodland Stream",
   "oracleCards": [
@@ -174,7 +174,8 @@
       "tags": [
         "enchantment",
         "draw",
-        "mana"
+        "mana",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -586,7 +587,8 @@
       "tags": [
         "creature",
         "death-payoff",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -624,7 +626,9 @@
         "tokens",
         "death-payoff",
         "etb",
-        "counter-payoff"
+        "counter-producer",
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -741,7 +745,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -760,6 +765,7 @@
       "tags": [
         "creature",
         "counterspell",
+        "counter-kind:generic",
         "exile-cast",
         "cheat",
         "free"
@@ -957,6 +963,7 @@
       "tags": [
         "creature",
         "protection",
+        "counter-kind:generic",
         "lifegain"
       ],
       "isCommander": false
@@ -1253,7 +1260,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1419,7 +1427,8 @@
       "tags": [
         "sorcery",
         "draw",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:wild"
       ],
       "isCommander": false
     },
@@ -1517,7 +1526,9 @@
       "tags": [
         "creature",
         "death-payoff",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1649,7 +1660,8 @@
       "tags": [
         "creature",
         "counter-producer",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1739,22 +1751,22 @@
   "result": {
     "profile": {
       "median": 39,
-      "floor": 29,
-      "ceiling": 47,
-      "peak": 72,
-      "dispersion": 18,
-      "variance": 18,
+      "floor": 30,
+      "ceiling": 46,
+      "peak": 73,
+      "dispersion": 16,
+      "variance": 16,
       "consistency": 70,
-      "commanderDelta": 5,
-      "coverage": 91,
-      "dataCoverage": 91
+      "commanderDelta": 4,
+      "coverage": 92,
+      "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 34,
+      "speed": 36,
       "consistency": 70,
       "explosiveness": 15,
-      "synergy": 35,
-      "interaction": 51,
+      "synergy": 34,
+      "interaction": 50,
       "resilience": 41
     },
     "roles": {
@@ -1775,11 +1787,13 @@
       {
         "id": "counters",
         "name": "Marqueurs",
-        "strength": 53,
-        "cohesion": 53,
+        "strength": 52,
+        "cohesion": 52,
         "producers": [
           "Grismold, the Dreadsower",
+          "Hooded Hydra",
           "Tezzeret's Gambit",
+          "Thought Sponge",
           "Volrath, the Shapestealer"
         ],
         "payoffs": [
@@ -1788,9 +1802,10 @@
         ],
         "members": [
           "Grismold, the Dreadsower",
+          "Hooded Hydra",
           "Tezzeret's Gambit",
-          "Volrath, the Shapestealer",
-          "Hooded Hydra"
+          "Thought Sponge",
+          "Volrath, the Shapestealer"
         ],
         "producerCards": [
           {
@@ -1799,7 +1814,8 @@
             "tags": [
               "creature",
               "death-payoff",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -1815,12 +1831,58 @@
             }
           },
           {
+            "name": "Hooded Hydra",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "tokens",
+              "death-payoff",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
             "name": "Tezzeret's Gambit",
             "cmc": 4,
             "tags": [
               "sorcery",
               "draw",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:wild"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Thought Sponge",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "death-payoff",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -1838,7 +1900,8 @@
             "tags": [
               "creature",
               "counter-producer",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:minus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -1866,7 +1929,9 @@
               "tokens",
               "death-payoff",
               "etb",
-              "counter-payoff"
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
@@ -1887,7 +1952,8 @@
             "tags": [
               "creature",
               "counter-producer",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:minus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -1912,7 +1978,7 @@
         "payoffTags": [
           "counter-payoff"
         ],
-        "evidence": "3 producteur(s), 2 payoff(s), 4 carte(s) distincte(s)."
+        "evidence": "5 producteur(s), 2 payoff(s), 5 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2063,15 +2129,15 @@
     "simulation": {
       "iterations": 3200,
       "floor": 30,
-      "median": 37,
-      "high": 42,
-      "ceiling": 42,
+      "median": 36,
+      "high": 41,
+      "ceiling": 41,
       "peak": 62,
       "iqr": 10,
       "consistency": 79,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": 6,
-      "recoveryAfterDisruption": 77,
+      "engineMedianTurn": 5,
+      "recoveryAfterDisruption": 76,
       "turnProfile": [
         {
           "turn": 1,
@@ -2085,37 +2151,37 @@
           "turn": 2,
           "commander": 0,
           "engine": 0,
-          "interaction": 20,
+          "interaction": 19,
           "resource": 8,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 7,
+          "commander": 6,
           "engine": 0,
-          "interaction": 37,
-          "resource": 29,
+          "interaction": 36,
+          "resource": 28,
           "burst": 1
         },
         {
           "turn": 4,
-          "commander": 57,
+          "commander": 55,
           "engine": 1,
-          "interaction": 56,
-          "resource": 57,
+          "interaction": 55,
+          "resource": 56,
           "burst": 6
         },
         {
           "turn": 5,
-          "commander": 81,
+          "commander": 80,
           "engine": 3,
           "interaction": 67,
           "resource": 69,
-          "burst": 10
+          "burst": 9
         },
         {
           "turn": 6,
-          "commander": 87,
+          "commander": 86,
           "engine": 4,
           "interaction": 74,
           "resource": 75,
@@ -2123,7 +2189,7 @@
         },
         {
           "turn": 7,
-          "commander": 91,
+          "commander": 90,
           "engine": 5,
           "interaction": 78,
           "resource": 79,
@@ -2138,6 +2204,7 @@
         "tags": [
           "creature",
           "counterspell",
+          "counter-kind:generic",
           "exile-cast",
           "cheat",
           "free"
@@ -2169,7 +2236,8 @@
         "tags": [
           "enchantment",
           "draw",
-          "mana"
+          "mana",
+          "counter-kind:generic"
         ],
         "aeon": null
       },
@@ -2189,7 +2257,8 @@
         "tags": [
           "sorcery",
           "draw",
-          "counter-producer"
+          "counter-producer",
+          "counter-kind:wild"
         ],
         "aeon": null
       },

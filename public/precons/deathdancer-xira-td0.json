@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 38,
-    "p20": 27,
+    "p20": 26,
     "p80": 48,
     "peak": 71,
     "coverage": 88,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "57cf59fb555204839b99800365001a0ae82fc8ea07cc444f1af103bfa27cad26",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Barren Moor\n1 Darigaaz's Caldera\n4 Forest\n3 Forest\n3 Forest\n1 Forgotten Cave\n1 Ghost Quarter\n1 Golgari Rot Farm\n1 Gruul Turf\n1 Jund Panorama\n3 Mountain\n2 Mountain\n2 Mountain\n1 Rakdos Carnarium\n1 Rupture Spire\n1 Savage Lands\n3 Swamp\n3 Swamp\n2 Swamp\n1 Terramorphic Expanse\n1 Tranquil Thicket\n1 Abyssal Gatekeeper\n1 Anarchist\n1 Anger\n1 Avatar of Woe\n1 Brawn\n1 Carrion Feeder\n1 Chartooth Cougar\n1 Civic Wayfinder\n1 Elvish Visionary\n1 Eternal Witness\n1 Flametongue Kavu\n1 Genesis\n1 Golgari Grave-Troll\n1 Golgari Thug\n1 Hissing Iguanar\n1 Keldon Vandals\n1 Krosan Tusker\n1 Nezumi Graverobber // Nighteyes the Desecrator\n1 Penumbra Bobcat\n1 Rootbreaker Wurm\n1 Sakura-Tribe Elder\n1 Shambling Shell\n1 Shriekmaw\n1 Stinkweed Imp\n1 Twisted Abomination\n1 Vampiric Dragon\n1 Werebear\n1 Wickerbough Elder\n1 Wild Mongrel\n1 Wirewood Guardian\n1 Yavimaya Elder\n1 All Hallow's Eve\n1 Ancient Grudge\n1 Animate Dead\n1 Ashes to Ashes\n1 Buried Alive\n1 Cauldron Dance\n1 Chain Lightning\n1 Constant Mists\n1 Dread Return\n1 Edge of Autumn\n1 Elven Cache\n1 Explosive Vegetation\n1 Fires of Yavimaya\n1 Golgari Signet\n1 Grim Harvest\n1 Gruul Signet\n1 Harmonize\n1 Kodama's Reach\n1 Life from the Loam\n1 Lightning Bolt\n1 Lightning Greaves\n1 Massacre\n1 Phyrexian Arena\n1 Putrefy\n1 Rakdos Signet\n1 Reaping the Graves\n1 Recollect\n1 Resounding Thunder\n1 Skullclamp\n1 Terminate\n1 Terror",
   "oracleCards": [
@@ -75,7 +75,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "wipe"
+        "wipe",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -259,7 +260,8 @@
         "creature",
         "sacrifice",
         "sac-outlet",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -618,7 +620,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1221,7 +1225,8 @@
       "tags": [
         "creature",
         "sacrifice",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1405,7 +1410,8 @@
       "tags": [
         "creature",
         "death-payoff",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1444,7 +1450,9 @@
       "tags": [
         "creature",
         "removal",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1526,22 +1534,22 @@
   "result": {
     "profile": {
       "median": 38,
-      "floor": 27,
+      "floor": 26,
       "ceiling": 48,
       "peak": 71,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 67,
-      "commanderDelta": 5,
+      "dispersion": 22,
+      "variance": 22,
+      "consistency": 68,
+      "commanderDelta": 6,
       "coverage": 88,
       "dataCoverage": 88
     },
     "dimensions": {
       "speed": 38,
-      "consistency": 67,
+      "consistency": 68,
       "explosiveness": 10,
       "synergy": 0,
-      "interaction": 60,
+      "interaction": 59,
       "resilience": 60
     },
     "roles": {
@@ -1573,23 +1581,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
+      "floor": 32,
       "median": 40,
       "high": 47,
       "ceiling": 47,
       "peak": 65,
-      "iqr": 12,
-      "consistency": 74,
+      "iqr": 11,
+      "consistency": 75,
       "commanderMedianTurn": 3,
       "engineMedianTurn": null,
-      "recoveryAfterDisruption": 87,
+      "recoveryAfterDisruption": 86,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 8,
-          "resource": 6,
+          "resource": 5,
           "burst": 0
         },
         {
@@ -1602,26 +1610,26 @@
         },
         {
           "turn": 3,
-          "commander": 47,
+          "commander": 46,
           "engine": 0,
-          "interaction": 50,
-          "resource": 48,
+          "interaction": 49,
+          "resource": 47,
           "burst": 2
         },
         {
           "turn": 4,
           "commander": 71,
           "engine": 0,
-          "interaction": 64,
+          "interaction": 63,
           "resource": 63,
           "burst": 5
         },
         {
           "turn": 5,
-          "commander": 80,
+          "commander": 79,
           "engine": 0,
           "interaction": 70,
-          "resource": 74,
+          "resource": 73,
           "burst": 8
         },
         {
@@ -1687,7 +1695,8 @@
         "impact": 2,
         "tags": [
           "sorcery",
-          "wipe"
+          "wipe",
+          "counter-kind:generic"
         ],
         "aeon": null
       },

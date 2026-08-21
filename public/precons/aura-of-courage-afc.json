@@ -30,15 +30,15 @@
   "analysis": {
     "median": 42,
     "p20": 33,
-    "p80": 51,
-    "peak": 72,
+    "p80": 50,
+    "peak": 73,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "40c7908a5cd1cacc2a31484cc55cccc23bd965e56f4966721e74092fc08465c3",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Angel of Finality\n1 Puresteel Paladin\n1 Realm-Cloaked Giant // Cast Off\n1 Sram, Senior Edificer\n1 Prognostic Sphinx\n1 Cold-Eyed Selkie\n1 Fleecemane Lion\n1 Knight of Autumn\n1 Riverwise Augur\n1 Acidic Slime\n1 Paradise Druid\n1 Winds of Rath\n1 Serum Visions\n1 Nature's Lore\n1 Heroic Intervention\n1 Valorous Stance\n1 Brainstorm\n1 Bant Charm\n1 Argentum Armor\n1 Basilisk Collar\n1 Masterwork of Ingenuity\n1 Moonsilver Spear\n1 Sword of the Animist\n1 Behemoth Sledge\n1 Arcane Signet\n1 Colossus Hammer\n1 Explorer's Scope\n1 Sol Ring\n1 Swiftfoot Boots\n1 Viridian Longbow\n1 Imprisoned in the Moon\n1 Greater Good\n1 Verdant Embrace\n1 Angelic Gift\n1 Gryff's Boon\n1 Curse of Verbosity\n1 Eel Umbra\n1 Psychic Impetus\n1 Abundant Growth\n1 Fertile Ground\n1 Kenrith's Transformation\n1 Rancor\n1 Utopia Sprawl\n1 Wild Growth\n1 Shielding Plax\n1 Canopy Vista\n1 Exotic Orchard\n1 Fortified Village\n1 Lumbering Falls\n1 Port Town\n1 Prairie Stream\n1 Skycloud Expanse\n1 Sungrass Prairie\n1 Evolving Wilds\n1 Azorius Chancery\n1 Bant Panorama\n1 Command Tower\n1 Flood Plain\n1 Grasslands\n1 Halimar Depths\n1 Mishra's Factory\n1 Path of Ancestry\n1 Seaside Citadel\n1 Simic Growth Chamber\n1 Terramorphic Expanse\n1 Thriving Grove\n1 Thriving Heath\n1 Thriving Isle\n1 Vitu-Ghazi, the City-Tree\n1 Island\n1 Island\n1 Island\n1 Island\n2 Forest\n2 Forest\n2 Forest\n2 Forest\n1 Plains\n1 Plains\n1 Storvald, Frost Giant Jarl\n1 Fey Steed\n1 Holy Avenger\n1 Mantle of the Ancients\n1 Robe of Stars\n1 Valiant Endeavor\n1 Diviner's Portent\n1 Netherese Puzzle-Ward\n1 Winged Boots\n1 Belt of Giant Strength\n1 Song of Inspiration\n1 Catti-brie of Mithral Hall\n1 Ride the Avalanche\n1 Clay Golem\n1 Ebony Fly\n1 Sword of Hours",
   "oracleCards": [
@@ -202,7 +202,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "removal"
+        "removal",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -333,7 +334,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1",
+        "counter-kind:any"
       ],
       "isCommander": false
     },
@@ -865,6 +868,7 @@
         "removal",
         "etb",
         "counter-producer",
+        "counter-kind:plus1",
         "lifegain"
       ],
       "isCommander": false
@@ -1215,7 +1219,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1394,7 +1399,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1488,7 +1494,8 @@
         "artifact",
         "counter-producer",
         "counter-doubler",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1775,8 +1782,8 @@
     "profile": {
       "median": 42,
       "floor": 33,
-      "ceiling": 51,
-      "peak": 72,
+      "ceiling": 50,
+      "peak": 73,
       "dispersion": 17,
       "variance": 17,
       "consistency": 70,
@@ -1787,9 +1794,9 @@
     "dimensions": {
       "speed": 43,
       "consistency": 70,
-      "explosiveness": 9,
+      "explosiveness": 10,
       "synergy": 42,
-      "interaction": 36,
+      "interaction": 35,
       "resilience": 45
     },
     "roles": {
@@ -2170,10 +2177,10 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
-      "median": 39,
-      "high": 45,
-      "ceiling": 45,
+      "floor": 32,
+      "median": 38,
+      "high": 44,
+      "ceiling": 44,
       "peak": 62,
       "iqr": 9,
       "consistency": 80,
@@ -2186,7 +2193,7 @@
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 12,
+          "resource": 9,
           "burst": 0
         },
         {
@@ -2194,30 +2201,30 @@
           "commander": 0,
           "engine": 0,
           "interaction": 4,
-          "resource": 27,
+          "resource": 25,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 22,
+          "commander": 19,
           "engine": 0,
-          "interaction": 20,
-          "resource": 53,
+          "interaction": 19,
+          "resource": 52,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 72,
+          "commander": 70,
           "engine": 1,
-          "interaction": 42,
-          "resource": 75,
+          "interaction": 41,
+          "resource": 74,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 90,
           "engine": 2,
-          "interaction": 54,
+          "interaction": 53,
           "resource": 83,
           "burst": 0
         },

@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 45,
-    "p20": 34,
-    "p80": 56,
+    "p20": 33,
+    "p80": 55,
     "peak": 83,
     "coverage": 89,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "b232c3b2a9322cebba3b600391704186caa0ae1558435074ee40799b3967768f",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Goblin Electromancer\n1 Jace's Archivist\n1 Gigantoplasm\n1 Talrand, Sky Summoner\n1 Psychosis Crawler\n1 Broodbirth Viper\n1 Illusory Ambusher\n1 Lone Revenant\n1 Warchief Giant\n1 Charmbreaker Devils\n1 Arjun, the Shifting Flame\n1 Etherium-Horn Sorcerer\n1 Melek, Izzet Paragon\n1 Dragon Mage\n1 Preordain\n1 Faithless Looting\n1 Vandalblast\n1 Mizzium Mortars\n1 Windfall\n1 Mystic Retrieval\n1 Stolen Goods\n1 Mizzix's Mastery\n1 Rite of Replication\n1 Sleep\n1 Chain Reaction\n1 Call the Skybreaker\n1 Blatant Thievery\n1 Epic Experiment\n1 Meteor Blast\n1 Blustersquall\n1 Brainstorm\n1 Echoing Truth\n1 Desperate Ravings\n1 Urza's Rage\n1 Counterflux\n1 Aetherize\n1 Fact or Fiction\n1 Reins of Power\n1 Steam Augury\n1 Mystic Confluence\n1 Word of Seizing\n1 Act of Aggression\n1 Prophetic Bolt\n1 Aethersnatch\n1 Mirror Match\n1 Firemind's Foresight\n1 Repeal\n1 Comet Storm\n1 Magmaquake\n1 Stroke of Genius\n1 Dominate\n1 Blue Sun's Zenith\n1 Sol Ring\n1 Izzet Signet\n1 Thought Vessel\n1 Worn Powerstone\n1 Seal of the Guildpact\n1 Awaken the Sky Tyrant\n1 Rite of the Raging Storm\n1 Thought Reflection\n1 Command Tower\n1 Evolving Wilds\n1 Izzet Boilerworks\n1 Izzet Guildgate\n1 Reliquary Tower\n1 Rogue's Passage\n1 Spinerock Knoll\n1 Swiftwater Cliffs\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Vivid Crag\n1 Vivid Creek\n4 Island\n4 Island\n3 Island\n3 Island\n4 Mountain\n3 Mountain\n3 Mountain\n3 Mountain",
   "oracleCards": [
@@ -327,7 +327,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counterspell"
+        "counterspell",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -794,6 +795,7 @@
       "tags": [
         "creature",
         "counter-payoff",
+        "counter-kind:experience",
         "spellslinger"
       ],
       "isCommander": true
@@ -852,6 +854,7 @@
       "tags": [
         "instant",
         "counterspell",
+        "counter-kind:generic",
         "stax"
       ],
       "isCommander": false
@@ -923,8 +926,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "artifact",
-        "life-payoff"
+        "artifact"
       ],
       "isCommander": false
     },
@@ -1335,7 +1337,8 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1360,7 +1363,8 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1438,11 +1442,11 @@
   "result": {
     "profile": {
       "median": 45,
-      "floor": 34,
-      "ceiling": 56,
+      "floor": 33,
+      "ceiling": 55,
       "peak": 83,
-      "dispersion": 22,
-      "variance": 22,
+      "dispersion": 23,
+      "variance": 23,
       "consistency": 64,
       "commanderDelta": 13,
       "coverage": 89,
@@ -1736,7 +1740,8 @@
             "cmc": 3,
             "tags": [
               "instant",
-              "counterspell"
+              "counterspell",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 0,
@@ -1985,6 +1990,7 @@
             "tags": [
               "instant",
               "counterspell",
+              "counter-kind:generic",
               "stax"
             ],
             "manaReq": {
@@ -2527,6 +2533,7 @@
             "tags": [
               "creature",
               "counter-payoff",
+              "counter-kind:experience",
               "spellslinger"
             ],
             "manaReq": {
@@ -2596,7 +2603,6 @@
       "tags": [
         "counter-payoff",
         "spellslinger",
-        "counter-producer",
         "instant",
         "sorcery"
       ]
@@ -2609,10 +2615,10 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 32,
+      "floor": 31,
       "median": 39,
-      "high": 48,
-      "ceiling": 48,
+      "high": 47,
+      "ceiling": 47,
       "peak": 71,
       "iqr": 13,
       "consistency": 71,
@@ -2624,8 +2630,8 @@
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 5,
-          "resource": 18,
+          "interaction": 3,
+          "resource": 12,
           "burst": 6
         },
         {
@@ -2638,43 +2644,43 @@
         },
         {
           "turn": 3,
-          "commander": 19,
+          "commander": 18,
           "engine": 6,
           "interaction": 15,
-          "resource": 49,
+          "resource": 48,
           "burst": 15
         },
         {
           "turn": 4,
-          "commander": 76,
+          "commander": 72,
           "engine": 12,
           "interaction": 20,
           "resource": 62,
-          "burst": 26
+          "burst": 25
         },
         {
           "turn": 5,
-          "commander": 87,
-          "engine": 22,
-          "interaction": 26,
+          "commander": 85,
+          "engine": 21,
+          "interaction": 25,
           "resource": 70,
-          "burst": 30
+          "burst": 29
         },
         {
           "turn": 6,
-          "commander": 91,
+          "commander": 90,
           "engine": 26,
           "interaction": 29,
-          "resource": 78,
+          "resource": 77,
           "burst": 32
         },
         {
           "turn": 7,
-          "commander": 94,
+          "commander": 93,
           "engine": 35,
           "interaction": 32,
           "resource": 83,
-          "burst": 36
+          "burst": 35
         }
       ]
     },
@@ -2757,6 +2763,7 @@
         "tags": [
           "instant",
           "counterspell",
+          "counter-kind:generic",
           "stax"
         ],
         "aeon": null

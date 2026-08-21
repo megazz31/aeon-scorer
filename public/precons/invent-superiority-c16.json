@@ -31,15 +31,15 @@
   "analysis": {
     "median": 49,
     "p20": 36,
-    "p80": 60,
+    "p80": 59,
     "peak": 88,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "f64fb1634c9ad27116db0096dc776bd356425aaff56ca585950dddf07c9ec7c3",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Daretti, Scrap Savant\n1 Myr Retriever\n1 Chief Engineer\n1 Etherium Sculptor\n1 Vedalken Engineer\n1 Slobad, Goblin Tinkerer\n1 Baleful Strix\n1 Akiri, Line-Slinger\n1 Armory Automaton\n1 Shimmer Myr\n1 Master of Etherium\n1 Trinket Mage\n1 Magus of the Will\n1 Hanna, Ship's Navigator\n1 Silas Renn, Seeker Adept\n1 Sydri, Galvanic Genius\n1 Etched Oracle\n1 Solemn Simulacrum\n1 Sanctum Gargoyle\n1 Faerie Artisans\n1 Bruse Tarl, Boorish Herder\n1 Ethersworn Adjudicator\n1 Sphinx Summoner\n1 Jor Kadeen, the Prevailer\n1 Soul of New Phyrexia\n1 Godo, Bandit Warlord\n1 Hellkite Tyrant\n1 Sharuum the Hegemon\n1 Myr Battlesphere\n1 Hellkite Igniter\n1 Filigree Angel\n1 Whipflare\n1 Parting Thoughts\n1 Trash for Treasure\n1 Beacon of Unrest\n1 Migratory Route\n1 Open the Vaults\n1 Phyrexian Rebirth\n1 Grave Upheaval\n1 Coastal Breach\n1 Grip of Phyresis\n1 Ancient Excavation\n1 Read the Runes\n1 Trial // Error\n1 Everflowing Chalice\n1 Skullclamp\n1 Sol Ring\n1 Dispeller's Capsule\n1 Executioner's Capsule\n1 Cranial Plating\n1 Fellwar Stone\n1 Ichor Wellspring\n1 Mycosynth Wellspring\n1 Swiftfoot Boots\n1 Thopter Foundry\n1 Commander's Sphere\n1 Loxodon Warhammer\n1 Bonehoard\n1 Nevinyrral's Disk\n1 Trading Post\n1 Blinkmoth Urn\n1 Darksteel Citadel\n1 Seat of the Synod\n1 Curse of Vengeance\n1 Arcane Sanctum\n1 Ash Barrens\n1 Azorius Chancery\n1 Boros Garrison\n1 Buried Ruin\n1 Command Tower\n1 Crumbling Necropolis\n1 Dimir Aqueduct\n1 Evolving Wilds\n1 Exotic Orchard\n1 Mystic Monastery\n1 Nomad Outpost\n1 Rakdos Carnarium\n1 Rupture Spire\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Transguild Promenade\n2 Plains\n2 Plains\n1 Plains\n2 Island\n2 Island\n1 Island\n2 Swamp\n1 Swamp\n1 Swamp\n2 Mountain\n1 Mountain\n1 Mountain",
   "oracleCards": [
@@ -462,6 +462,7 @@
       "tags": [
         "enchantment",
         "draw",
+        "counter-kind:generic",
         "lifegain"
       ],
       "isCommander": false
@@ -560,7 +561,8 @@
       "tags": [
         "creature",
         "artifact",
-        "draw"
+        "draw",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -620,7 +622,9 @@
         "artifact",
         "mana",
         "etb",
-        "counter-payoff"
+        "counter-producer",
+        "counter-payoff",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -698,7 +702,6 @@
         "creature",
         "wipe",
         "tokens",
-        "token-payoff",
         "etb"
       ],
       "isCommander": false
@@ -1155,7 +1158,8 @@
       "tags": [
         "sorcery",
         "draw",
-        "removal"
+        "removal",
+        "counter-kind:any"
       ],
       "isCommander": false
     },
@@ -1667,7 +1671,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1736,7 +1741,7 @@
     "profile": {
       "median": 49,
       "floor": 36,
-      "ceiling": 60,
+      "ceiling": 59,
       "peak": 88,
       "dispersion": 23,
       "variance": 23,
@@ -1750,7 +1755,7 @@
       "consistency": 66,
       "explosiveness": 14,
       "synergy": 71,
-      "interaction": 36,
+      "interaction": 35,
       "resilience": 59
     },
     "roles": {
@@ -1960,7 +1965,8 @@
             "tags": [
               "creature",
               "artifact",
-              "draw"
+              "draw",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 4,
@@ -2011,7 +2017,9 @@
               "artifact",
               "mana",
               "etb",
-              "counter-payoff"
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:charge"
             ],
             "manaReq": {
               "generic": 0,
@@ -2986,7 +2994,9 @@
               "artifact",
               "mana",
               "etb",
-              "counter-payoff"
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:charge"
             ],
             "manaReq": {
               "generic": 0,
@@ -3106,23 +3116,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 36,
-      "median": 45,
-      "high": 53,
-      "ceiling": 53,
+      "floor": 35,
+      "median": 44,
+      "high": 52,
+      "ceiling": 52,
       "peak": 80,
       "iqr": 14,
       "consistency": 69,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 89,
+      "recoveryAfterDisruption": 88,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 1,
-          "interaction": 9,
-          "resource": 23,
+          "interaction": 7,
+          "resource": 20,
           "burst": 0
         },
         {
@@ -3130,31 +3140,31 @@
           "commander": 0,
           "engine": 6,
           "interaction": 14,
-          "resource": 39,
+          "resource": 38,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 7,
-          "engine": 26,
-          "interaction": 24,
-          "resource": 62,
+          "engine": 25,
+          "interaction": 23,
+          "resource": 61,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 43,
-          "engine": 47,
-          "interaction": 40,
-          "resource": 80,
+          "commander": 42,
+          "engine": 45,
+          "interaction": 39,
+          "resource": 79,
           "burst": 1
         },
         {
           "turn": 5,
-          "commander": 61,
-          "engine": 57,
-          "interaction": 49,
-          "resource": 85,
+          "commander": 60,
+          "engine": 56,
+          "interaction": 48,
+          "resource": 84,
           "burst": 2
         },
         {
@@ -3167,7 +3177,7 @@
         },
         {
           "turn": 7,
-          "commander": 75,
+          "commander": 74,
           "engine": 71,
           "interaction": 62,
           "resource": 91,
@@ -3269,7 +3279,9 @@
           "artifact",
           "mana",
           "etb",
-          "counter-payoff"
+          "counter-producer",
+          "counter-payoff",
+          "counter-kind:charge"
         ],
         "aeon": null
       },

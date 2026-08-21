@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 40,
-    "p20": 30,
-    "p80": 49,
-    "peak": 70,
-    "coverage": 91,
+    "median": 39,
+    "p20": 28,
+    "p80": 48,
+    "peak": 69,
+    "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "1e5aea01f4ef89db051e817117bfc70f94ce4c5fa6d83386e85250df3e380009",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 The Lord of Pain\n1 Persistent Constrictor\n1 Sadistic Shell Game\n1 Suspended Sentence\n1 Barbflare Gremlin\n1 Gleeful Arsonist\n1 Spiked Corridor // Torture Pit\n1 Star Athlete\n1 Séance Board\n1 Bedevil\n1 Mogis, God of Slaughter\n1 Braids, Arisen Nightmare\n1 Decree of Pain\n1 Fate Unraveler\n1 Kederekt Parasite\n1 Mask of Griselbrand\n1 Massacre Girl\n1 Massacre Wurm\n1 Nightshade Harvester\n1 Blasphemous Act\n1 Brash Taunter\n1 Chaos Warp\n1 Combustible Gearhulk\n1 Enchanter's Bane\n1 Harsh Mentor\n1 Rampaging Ferocidon\n1 Tectonic Giant\n1 Florian, Voldaren Scion\n1 Kaervek the Merciless\n1 Rakdos, Lord of Riots\n1 Spiteful Visions\n1 Stormfist Crusader\n1 Theater of Horrors\n1 Vial Smasher the Fierce\n1 Basilisk Collar\n1 Solemn Simulacrum\n1 Blackcleave Cliffs\n1 Canyon Slough\n1 Dragonskull Summit\n1 Exotic Orchard\n1 Foreboding Ruins\n1 Graven Cairns\n1 Shadowblood Ridge\n1 Shivan Gorge\n1 Smoldering Marsh\n1 Spinerock Knoll\n1 Sulfurous Springs\n1 Temple of Malice\n1 Witch's Clinic\n1 Fear of Burning Alive\n1 Grab the Prize\n1 Terramorphic Expanse\n1 Blood Pact\n1 Blood Seeker\n1 Feed the Swarm\n1 Arcane Signet\n1 Lightning Greaves\n1 Sol Ring\n1 Command Tower\n1 Bastion of Remembrance\n1 Blood Artist\n1 Falkenrath Noble\n1 Gray Merchant of Asphodel\n1 Infernal Grasp\n1 Morbid Opportunist\n1 Sign in Blood\n1 Syr Konrad, the Grim\n1 Light Up the Stage\n1 Kardur, Doomscourge\n1 Mayhem Devil\n1 Rakdos Charm\n1 Fellwar Stone\n1 Mind Stone\n1 Rakdos Signet\n1 Talisman of Indulgence\n1 Thought Vessel\n1 Ash Barrens\n1 Bloodfell Caves\n1 Evolving Wilds\n1 Geothermal Bog\n1 Leechridden Swamp\n1 Tainted Peak\n1 Temple of the False God\n4 Swamp\n4 Swamp\n4 Mountain\n4 Mountain",
   "oracleCards": [
@@ -137,8 +137,7 @@
         "tokens",
         "death-payoff",
         "etb",
-        "lifegain",
-        "life-payoff"
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -730,8 +729,7 @@
       "tags": [
         "creature",
         "etb",
-        "lifegain",
-        "life-payoff"
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -805,8 +803,7 @@
         "creature",
         "death-payoff",
         "etb",
-        "lifegain",
-        "life-payoff"
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -843,8 +840,7 @@
       ],
       "tags": [
         "land",
-        "etb",
-        "life-payoff"
+        "etb"
       ],
       "isCommander": false
     },
@@ -1049,8 +1045,8 @@
       "tags": [
         "creature",
         "etb",
-        "landfall",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1068,7 +1064,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1184,7 +1181,8 @@
         "W"
       ],
       "tags": [
-        "artifact"
+        "artifact",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1442,7 +1440,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "removal"
+        "removal",
+        "counter-kind:time"
       ],
       "isCommander": false
     },
@@ -1677,7 +1676,8 @@
       "tags": [
         "creature",
         "draw",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": true
     },
@@ -1721,21 +1721,21 @@
   ],
   "result": {
     "profile": {
-      "median": 40,
-      "floor": 30,
-      "ceiling": 49,
-      "peak": 70,
+      "median": 39,
+      "floor": 28,
+      "ceiling": 48,
+      "peak": 69,
       "dispersion": 19,
       "variance": 19,
-      "consistency": 68,
+      "consistency": 69,
       "commanderDelta": 5,
-      "coverage": 91,
-      "dataCoverage": 91
+      "coverage": 92,
+      "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 39,
-      "consistency": 68,
-      "explosiveness": 10,
+      "speed": 35,
+      "consistency": 69,
+      "explosiveness": 11,
       "synergy": 37,
       "interaction": 46,
       "resilience": 29
@@ -1855,7 +1855,8 @@
             "name": "Séance Board",
             "cmc": 2,
             "tags": [
-              "artifact"
+              "artifact",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 2,
@@ -1897,7 +1898,8 @@
             "tags": [
               "creature",
               "draw",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -1914,113 +1916,16 @@
           }
         ],
         "evidence": "0 accélérateur(s) burst + 8 source(s) persistante(s) vers un commandant MV 4."
-      },
-      {
-        "id": "lands",
-        "name": "Lands / Landfall",
-        "strength": 47,
-        "cohesion": 47,
-        "producers": [
-          "Evolving Wilds",
-          "Solemn Simulacrum",
-          "Terramorphic Expanse"
-        ],
-        "payoffs": [
-          "Nightshade Harvester"
-        ],
-        "members": [
-          "Evolving Wilds",
-          "Solemn Simulacrum",
-          "Terramorphic Expanse",
-          "Nightshade Harvester"
-        ],
-        "producerCards": [
-          {
-            "name": "Evolving Wilds",
-            "cmc": 0,
-            "tags": [
-              "land",
-              "land-ramp",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [],
-              "total": 0
-            }
-          },
-          {
-            "name": "Solemn Simulacrum",
-            "cmc": 4,
-            "tags": [
-              "creature",
-              "artifact",
-              "draw",
-              "land-ramp",
-              "death-payoff",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 4,
-              "colored": [],
-              "total": 4
-            }
-          },
-          {
-            "name": "Terramorphic Expanse",
-            "cmc": 0,
-            "tags": [
-              "land",
-              "land-ramp",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [],
-              "total": 0
-            }
-          }
-        ],
-        "payoffCards": [
-          {
-            "name": "Nightshade Harvester",
-            "cmc": 4,
-            "tags": [
-              "creature",
-              "etb",
-              "landfall",
-              "counter-producer"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "B"
-                ]
-              ],
-              "total": 4
-            }
-          }
-        ],
-        "producerTags": [
-          "land-ramp"
-        ],
-        "payoffTags": [
-          "landfall"
-        ],
-        "evidence": "3 producteur(s), 1 payoff(s), 4 carte(s) distincte(s)."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 6,
+      "score": 3,
       "connected": [
-        "Nightshade Harvester",
-        "Persistent Constrictor"
+        "Nightshade Harvester"
       ],
       "tags": [
-        "counter-producer",
-        "counter-payoff"
+        "counter-producer"
       ]
     },
     "aeon": {
@@ -2031,16 +1936,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
-      "median": 40,
-      "high": 46,
-      "ceiling": 46,
+      "floor": 32,
+      "median": 39,
+      "high": 45,
+      "ceiling": 45,
       "peak": 62,
       "iqr": 10,
-      "consistency": 77,
+      "consistency": 78,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 82,
+      "engineMedianTurn": null,
+      "recoveryAfterDisruption": 81,
       "turnProfile": [
         {
           "turn": 1,
@@ -2060,42 +1965,42 @@
         },
         {
           "turn": 3,
-          "commander": 33,
-          "engine": 1,
-          "interaction": 37,
-          "resource": 45,
+          "commander": 30,
+          "engine": 0,
+          "interaction": 36,
+          "resource": 43,
           "burst": 4
         },
         {
           "turn": 4,
-          "commander": 84,
-          "engine": 2,
+          "commander": 82,
+          "engine": 0,
           "interaction": 50,
-          "resource": 60,
+          "resource": 59,
           "burst": 2
         },
         {
           "turn": 5,
-          "commander": 93,
-          "engine": 3,
+          "commander": 92,
+          "engine": 0,
           "interaction": 56,
           "resource": 66,
           "burst": 1
         },
         {
           "turn": 6,
-          "commander": 96,
-          "engine": 4,
-          "interaction": 62,
+          "commander": 95,
+          "engine": 0,
+          "interaction": 61,
           "resource": 71,
           "burst": 0
         },
         {
           "turn": 7,
-          "commander": 98,
-          "engine": 4,
+          "commander": 97,
+          "engine": 0,
           "interaction": 66,
-          "resource": 76,
+          "resource": 75,
           "burst": 0
         }
       ]
@@ -2111,8 +2016,18 @@
         "aeon": null
       },
       {
+        "name": "Decree of Pain",
+        "impact": 2.7,
+        "tags": [
+          "sorcery",
+          "draw",
+          "wipe"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Solemn Simulacrum",
-        "impact": 3.2,
+        "impact": 2.5,
         "tags": [
           "creature",
           "artifact",
@@ -2120,16 +2035,6 @@
           "land-ramp",
           "death-payoff",
           "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Decree of Pain",
-        "impact": 2.7,
-        "tags": [
-          "sorcery",
-          "draw",
-          "wipe"
         ],
         "aeon": null
       },

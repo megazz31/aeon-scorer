@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 35,
-    "p20": 24,
-    "p80": 47,
-    "peak": 76,
+    "median": 34,
+    "p20": 23,
+    "p80": 45,
+    "peak": 73,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "e85789df1765b1d382a817d410a6de10cd472f6b9f29282ab7fae402fc1ac0c9",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Licia, Sanguine Tribune\n1 Mathas, Fiend Seeker\n1 Kheru Mind-Eater\n1 Patron of the Vein\n1 Bloodsworn Steward\n1 Crimson Honor Guard\n1 Anowon, the Ruin Sage\n1 Bloodlord of Vaasgoth\n1 Blood Baron of Vizkopa\n1 Butcher of Malakir\n1 Captivating Vampire\n1 Dark Impostor\n1 Drana, Kalastria Bloodchief\n1 Malakir Bloodwitch\n1 Sangromancer\n1 Skeletal Vampire\n1 Vein Drinker\n1 Bloodline Necromancer\n1 Blood Artist\n1 Bloodhusk Ritualist\n1 Falkenrath Noble\n1 Pawn of Ulamog\n1 Vampire Nighthawk\n1 Rakish Heir\n1 Stromkirk Captain\n1 Tithe Drinker\n1 New Blood\n1 Disrupt Decorum\n1 Kindred Charge\n1 Fell the Mighty\n1 Blood Tribute\n1 Consuming Vapors\n1 Damnable Pact\n1 Merciless Eviction\n1 Ambition's Cost\n1 Read the Bones\n1 Syphon Mind\n1 Teferi's Protection\n1 Crackling Doom\n1 Return to Dust\n1 Swords to Plowshares\n1 Go for the Throat\n1 Skeletal Scrying\n1 Mortify\n1 Blade of the Bloodchief\n1 Door of Destinies\n1 Well of Lost Dreams\n1 Heirloom Blade\n1 Boros Signet\n1 Orzhov Signet\n1 Rakdos Signet\n1 Skullclamp\n1 Sol Ring\n1 Worn Powerstone\n1 Kindred Boon\n1 Blind Obedience\n1 Black Market\n1 Sanguine Bond\n1 Underworld Connections\n1 Outpost Siege\n1 Curse of Vitality\n1 Curse of Disturbance\n3 Swamp\n3 Swamp\n2 Swamp\n2 Mountain\n1 Mountain\n1 Mountain\n1 Plains\n1 Plains\n1 Plains\n1 Path of Ancestry\n1 Akoum Refuge\n1 Bloodfell Caves\n1 Bojuka Bog\n1 Boros Garrison\n1 Boros Guildgate\n1 Cinder Barrens\n1 Command Tower\n1 Evolving Wilds\n1 Forsaken Sanctuary\n1 Kabira Crossroads\n1 Nomad Outpost\n1 Opal Palace\n1 Orzhov Basilica\n1 Orzhov Guildgate\n1 Rakdos Carnarium\n1 Rakdos Guildgate\n1 Scoured Barrens\n1 Stone Quarry\n1 Terramorphic Expanse\n1 Urborg Volcano\n1 Wind-Scarred Crag",
   "oracleCards": [
@@ -120,7 +120,8 @@
         "enchantment",
         "mana",
         "death-payoff",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -137,7 +138,8 @@
       "tags": [
         "artifact",
         "death-payoff",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -494,7 +496,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -603,7 +606,8 @@
       "tags": [
         "creature",
         "removal",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -637,7 +641,8 @@
       "tags": [
         "artifact",
         "etb",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -676,7 +681,8 @@
       "tags": [
         "creature",
         "tokens",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": true
     },
@@ -845,7 +851,8 @@
       "tags": [
         "enchantment",
         "protection",
-        "etb"
+        "etb",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -884,7 +891,9 @@
       "tags": [
         "creature",
         "counter-producer",
-        "lifegain"
+        "counter-kind:plus1",
+        "lifegain",
+        "life-payoff"
       ],
       "isCommander": false
     },
@@ -904,8 +913,7 @@
         "creature",
         "protection",
         "etb",
-        "lifegain",
-        "life-payoff"
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -925,7 +933,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "death-payoff"
+        "death-payoff",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1048,7 +1057,9 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1179,7 +1190,8 @@
         "removal",
         "death-payoff",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1307,7 +1319,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1707,7 +1720,8 @@
       "tags": [
         "creature",
         "death-payoff",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1775,22 +1789,22 @@
   ],
   "result": {
     "profile": {
-      "median": 35,
-      "floor": 24,
-      "ceiling": 47,
-      "peak": 76,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 63,
-      "commanderDelta": 5,
+      "median": 34,
+      "floor": 23,
+      "ceiling": 45,
+      "peak": 73,
+      "dispersion": 22,
+      "variance": 22,
+      "consistency": 65,
+      "commanderDelta": 4,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 28,
-      "consistency": 63,
-      "explosiveness": 12,
-      "synergy": 51,
+      "consistency": 65,
+      "explosiveness": 11,
+      "synergy": 46,
       "interaction": 43,
       "resilience": 32
     },
@@ -1809,198 +1823,6 @@
       "unknownManaLands": 0
     },
     "packages": [
-      {
-        "id": "counters",
-        "name": "Marqueurs",
-        "strength": 63,
-        "cohesion": 63,
-        "producers": [
-          "Blade of the Bloodchief",
-          "Dark Impostor",
-          "Licia, Sanguine Tribune",
-          "Patron of the Vein",
-          "Rakish Heir",
-          "Vein Drinker"
-        ],
-        "payoffs": [
-          "Black Market",
-          "Door of Destinies"
-        ],
-        "members": [
-          "Blade of the Bloodchief",
-          "Dark Impostor",
-          "Licia, Sanguine Tribune",
-          "Patron of the Vein",
-          "Rakish Heir",
-          "Vein Drinker",
-          "Black Market",
-          "Door of Destinies"
-        ],
-        "producerCards": [
-          {
-            "name": "Blade of the Bloodchief",
-            "cmc": 1,
-            "tags": [
-              "artifact",
-              "death-payoff",
-              "counter-producer"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [],
-              "total": 1
-            }
-          },
-          {
-            "name": "Dark Impostor",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "removal",
-              "counter-producer"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "B"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Licia, Sanguine Tribune",
-            "cmc": 8,
-            "tags": [
-              "creature",
-              "counter-producer",
-              "lifegain"
-            ],
-            "manaReq": {
-              "generic": 5,
-              "colored": [
-                [
-                  "R"
-                ],
-                [
-                  "W"
-                ],
-                [
-                  "B"
-                ]
-              ],
-              "total": 8
-            }
-          },
-          {
-            "name": "Patron of the Vein",
-            "cmc": 6,
-            "tags": [
-              "creature",
-              "removal",
-              "death-payoff",
-              "etb",
-              "counter-producer"
-            ],
-            "manaReq": {
-              "generic": 4,
-              "colored": [
-                [
-                  "B"
-                ],
-                [
-                  "B"
-                ]
-              ],
-              "total": 6
-            }
-          },
-          {
-            "name": "Rakish Heir",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "counter-producer"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Vein Drinker",
-            "cmc": 6,
-            "tags": [
-              "creature",
-              "death-payoff",
-              "counter-producer"
-            ],
-            "manaReq": {
-              "generic": 4,
-              "colored": [
-                [
-                  "B"
-                ],
-                [
-                  "B"
-                ]
-              ],
-              "total": 6
-            }
-          }
-        ],
-        "payoffCards": [
-          {
-            "name": "Black Market",
-            "cmc": 5,
-            "tags": [
-              "enchantment",
-              "mana",
-              "death-payoff",
-              "counter-payoff"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "B"
-                ],
-                [
-                  "B"
-                ]
-              ],
-              "total": 5
-            }
-          },
-          {
-            "name": "Door of Destinies",
-            "cmc": 4,
-            "tags": [
-              "artifact",
-              "etb",
-              "counter-payoff"
-            ],
-            "manaReq": {
-              "generic": 4,
-              "colored": [],
-              "total": 4
-            }
-          }
-        ],
-        "producerTags": [
-          "counter-producer"
-        ],
-        "payoffTags": [
-          "counter-payoff"
-        ],
-        "evidence": "6 producteur(s), 2 payoff(s), 8 carte(s) distincte(s)."
-      },
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
@@ -2124,7 +1946,8 @@
             "tags": [
               "creature",
               "tokens",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -2148,15 +1971,14 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 33,
+      "score": 30,
       "connected": [
-        "Black Market",
         "Blade of the Bloodchief",
         "Curse of Disturbance",
         "Dark Impostor",
-        "Door of Destinies",
         "Kindred Charge",
         "Licia, Sanguine Tribune",
+        "Opal Palace",
         "Patron of the Vein",
         "Pawn of Ulamog",
         "Rakish Heir",
@@ -2166,8 +1988,7 @@
       "tags": [
         "tokens",
         "counter-producer",
-        "token-payoff",
-        "counter-payoff"
+        "token-payoff"
       ]
     },
     "aeon": {
@@ -2178,23 +1999,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 26,
-      "median": 34,
-      "high": 42,
-      "ceiling": 42,
-      "peak": 65,
-      "iqr": 13,
-      "consistency": 72,
+      "floor": 25,
+      "median": 33,
+      "high": 40,
+      "ceiling": 40,
+      "peak": 62,
+      "iqr": 12,
+      "consistency": 74,
       "commanderMedianTurn": 5,
-      "engineMedianTurn": 6,
-      "recoveryAfterDisruption": 65,
+      "engineMedianTurn": null,
+      "recoveryAfterDisruption": 64,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 11,
-          "resource": 8,
+          "interaction": 9,
+          "resource": 5,
           "burst": 0
         },
         {
@@ -2215,32 +2036,32 @@
         },
         {
           "turn": 4,
-          "commander": 21,
-          "engine": 2,
+          "commander": 20,
+          "engine": 0,
           "interaction": 48,
-          "resource": 50,
+          "resource": 49,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 40,
-          "engine": 5,
-          "interaction": 59,
+          "engine": 0,
+          "interaction": 58,
           "resource": 59,
           "burst": 0
         },
         {
           "turn": 6,
-          "commander": 58,
-          "engine": 7,
-          "interaction": 66,
+          "commander": 57,
+          "engine": 0,
+          "interaction": 65,
           "resource": 65,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 70,
-          "engine": 10,
+          "engine": 0,
           "interaction": 72,
           "resource": 69,
           "burst": 0
@@ -2286,29 +2107,6 @@
           "artifact",
           "draw",
           "death-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Black Market",
-        "impact": 2.3,
-        "tags": [
-          "enchantment",
-          "mana",
-          "death-payoff",
-          "counter-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Patron of the Vein",
-        "impact": 2.2,
-        "tags": [
-          "creature",
-          "removal",
-          "death-payoff",
-          "etb",
-          "counter-producer"
         ],
         "aeon": null
       },
@@ -2362,6 +2160,25 @@
       {
         "name": "Damnable Pact",
         "impact": 1.8,
+        "tags": [
+          "sorcery",
+          "draw"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Worn Powerstone",
+        "impact": 1.8,
+        "tags": [
+          "artifact",
+          "mana",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Ambition's Cost",
+        "impact": 1.7,
         "tags": [
           "sorcery",
           "draw"

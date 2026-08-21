@@ -30,17 +30,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 38,
+    "median": 37,
     "p20": 27,
     "p80": 48,
     "peak": 81,
     "coverage": 90,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "8ad744755aead40984b3381c78f5ac02d8502dec66ed1770118a465e9529519d",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Archelos, Lagoon Mystic\n1 Atla Palani, Nest Tender\n1 Baleful Strix\n1 Chromanticore\n1 Coiling Oracle\n1 O-Kagachi, Vengeful Kami\n1 Faeburrow Elder\n1 Fusion Elemental\n1 Zaxara, the Exemplary\n1 Hero of Precinct One\n1 Illuna, Apex of Wishes\n1 Knight of New Alara\n1 Maelstrom Archangel\n1 Nethroi, Apex of Death\n1 Rienne, Angel of Rebirth\n1 Selvala, Explorer Returned\n1 Solemn Simulacrum\n1 Surrak Dragonclaw\n1 Transguild Courier\n1 Glint-Eye Nephilim\n1 Xyris, the Writhing Storm\n1 Cultivate\n1 Duneblast\n1 Explore\n1 Explosive Vegetation\n1 Farseek\n1 Kodama's Reach\n1 Lavalanche\n1 Merciless Eviction\n1 Migration Path\n1 Painful Truths\n1 Radiant Flames\n1 Search for Tomorrow\n1 Time Wipe\n1 Abzan Charm\n1 Beast Within\n1 Echoing Truth\n1 Growth Spiral\n1 Terminate\n1 Naya Charm\n1 Path to Exile\n1 Sultai Charm\n1 Sylvan Reclamation\n1 Arcane Signet\n1 Coalition Relic\n1 Fellwar Stone\n1 Commander's Sphere\n1 Prophetic Prism\n1 Abundant Growth\n1 Maelstrom Nexus\n1 Path to the World Tree\n1 Bad River\n1 Arcane Sanctum\n1 Canopy Vista\n1 Cascading Cataracts\n1 Cinder Glade\n1 Command Tower\n1 Crumbling Necropolis\n1 Crystal Quarry\n1 Evolving Wilds\n1 Exotic Orchard\n1 Flood Plain\n1 Frontier Bivouac\n1 Grasslands\n1 Jungle Shrine\n1 Krosan Verge\n1 Mountain Valley\n1 Murmuring Bosk\n1 Mystic Monastery\n1 Nomad Outpost\n1 Opulent Palace\n1 Prairie Stream\n1 Rocky Tar Pit\n1 Sandsteppe Citadel\n1 Savage Lands\n1 Seaside Citadel\n1 Smoldering Marsh\n1 Sunken Hollow\n1 Terramorphic Expanse\n1 Jenson Carthalion, Druid Exile\n1 Two-Headed Hellkite\n1 Tiller Engine\n1 Unite the Coalition\n1 Fallaji Wayfarer\n1 Iridian Maelstrom\n1 Mana Cannons\n1 Primeval Spawn\n1 Obsidian Obelisk\n3 Forest\n2 Mountain\n2 Island\n2 Plains\n2 Swamp",
   "oracleCards": [
@@ -87,7 +87,8 @@
       "tags": [
         "instant",
         "draw",
-        "removal"
+        "removal",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -345,7 +346,8 @@
       "tags": [
         "artifact",
         "mana",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -918,7 +920,8 @@
         "mana",
         "recursion",
         "tokens",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": true
     },
@@ -1091,8 +1094,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "enchantment",
-        "spellslinger"
+        "enchantment"
       ],
       "isCommander": false
     },
@@ -2021,14 +2023,15 @@
         "creature",
         "mana",
         "tokens",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     }
   ],
   "result": {
     "profile": {
-      "median": 38,
+      "median": 37,
       "floor": 27,
       "ceiling": 48,
       "peak": 81,
@@ -2042,8 +2045,8 @@
     "dimensions": {
       "speed": 28,
       "consistency": 67,
-      "explosiveness": 11,
-      "synergy": 63,
+      "explosiveness": 12,
+      "synergy": 62,
       "interaction": 32,
       "resilience": 29
     },
@@ -2410,7 +2413,8 @@
             "tags": [
               "artifact",
               "mana",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:charge"
             ],
             "manaReq": {
               "generic": 3,
@@ -2620,7 +2624,8 @@
               "mana",
               "recursion",
               "tokens",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
@@ -2779,10 +2784,9 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 31,
+      "score": 28,
       "connected": [
         "Atla Palani, Nest Tender",
-        "Coalition Relic",
         "Glint-Eye Nephilim",
         "Hero of Precinct One",
         "Jenson Carthalion, Druid Exile",
@@ -2798,8 +2802,7 @@
         "tokens",
         "counter-payoff",
         "token-payoff",
-        "graveyard-setup",
-        "counter-producer"
+        "graveyard-setup"
       ]
     },
     "aeon": {
@@ -2810,10 +2813,10 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 30,
-      "median": 37,
-      "high": 44,
-      "ceiling": 44,
+      "floor": 29,
+      "median": 36,
+      "high": 43,
+      "ceiling": 43,
       "peak": 71,
       "iqr": 11,
       "consistency": 76,
@@ -2825,37 +2828,37 @@
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 4,
+          "interaction": 3,
           "resource": 0,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 0,
-          "engine": 2,
-          "interaction": 9,
+          "engine": 1,
+          "interaction": 8,
           "resource": 4,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 3,
+          "commander": 2,
           "engine": 4,
           "interaction": 18,
-          "resource": 17,
+          "resource": 16,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 30,
+          "commander": 29,
           "engine": 8,
           "interaction": 38,
-          "resource": 43,
+          "resource": 42,
           "burst": 3
         },
         {
           "turn": 5,
-          "commander": 70,
+          "commander": 69,
           "engine": 12,
           "interaction": 54,
           "resource": 62,
@@ -2865,7 +2868,7 @@
           "turn": 6,
           "commander": 87,
           "engine": 14,
-          "interaction": 64,
+          "interaction": 63,
           "resource": 70,
           "burst": 10
         },

@@ -30,15 +30,15 @@
   "analysis": {
     "median": 56,
     "p20": 44,
-    "p80": 67,
+    "p80": 66,
     "peak": 90,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "d5bb5bdedb5574699fa74f88643871a6181e12b22fb7741097f553fc92d816af",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Parnesse, the Subtle Brush\n1 Bloodsoaked Champion\n1 Cormela, Glamour Thief\n1 Dogged Detective\n1 Goblin Electromancer\n1 Kess, Dissident Mage\n1 Puppeteer Clique\n1 Rekindling Phoenix\n1 Spellbinding Soprano\n1 Squee, the Immortal\n1 Sinister Concierge\n1 Syrix, Carrier of the Flame\n1 Skyclave Shade\n1 Woe Strider\n1 Army of the Damned\n1 Bedevil\n1 Call the Skybreaker\n1 Chain Reaction\n1 Clone Legion\n1 Damnable Pact\n1 Deep Analysis\n1 Drawn from Dreams\n1 Dread Summons\n1 Feed the Swarm\n1 Flawless Forgery\n1 Hex\n1 Maestros Confluence\n1 Make an Example\n1 Ponder\n1 Preordain\n1 Reign of the Pit\n1 River's Rebuke\n1 Sever the Bloodline\n1 Talrand's Invocation\n1 Xander's Pact\n1 Zndrsplt's Judgment\n1 A Little Chat\n1 Dig Through Time\n1 Fact or Fiction\n1 Frantic Search\n1 Maestros Charm\n1 Mystic Confluence\n1 Waste Management\n1 Arcane Signet\n1 Audacious Swap\n1 Body Count\n1 Commander's Sphere\n1 Dimir Signet\n1 Fellwar Stone\n1 Izzet Signet\n1 Lightning Greaves\n1 Rakdos Signet\n1 Sol Ring\n1 Mimic Vat\n1 Smuggler's Buggy\n1 Twinning Staff\n1 Wayfarer's Bauble\n1 Cryptic Pursuit\n1 Determined Iteration\n1 Double Vision\n1 Extravagant Replication\n1 Rite of the Raging Storm\n1 Maestros Theater\n1 Ash Barrens\n1 Command Tower\n1 Crumbling Necropolis\n1 Grixis Panorama\n1 Myriad Landscape\n1 Path of Ancestry\n1 Thriving Bluff\n1 Thriving Isle\n1 Thriving Moor\n1 Cascade Bluffs\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Foreboding Ruins\n1 Shadowblood Ridge\n1 Smoldering Marsh\n1 Sunken Hollow\n1 Temple of Epiphany\n4 Island\n3 Island\n3 Swamp\n3 Swamp\n3 Mountain\n2 Mountain",
   "oracleCards": [
@@ -923,8 +923,7 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "lifegain",
-        "life-payoff"
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1056,6 +1055,7 @@
       "tags": [
         "instant",
         "counterspell",
+        "counter-kind:generic",
         "stax"
       ],
       "isCommander": false
@@ -1076,6 +1076,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-kind:generic",
         "stax"
       ],
       "isCommander": false
@@ -1309,7 +1310,8 @@
       "tags": [
         "creature",
         "removal",
-        "death-payoff"
+        "death-payoff",
+        "counter-kind:time"
       ],
       "isCommander": false
     },
@@ -1329,7 +1331,9 @@
         "creature",
         "recursion",
         "etb",
-        "landfall"
+        "landfall",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1673,7 +1677,8 @@
         "tokens",
         "sacrifice",
         "sac-outlet",
-        "etb"
+        "etb",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1717,12 +1722,12 @@
     "profile": {
       "median": 56,
       "floor": 44,
-      "ceiling": 67,
+      "ceiling": 66,
       "peak": 90,
-      "dispersion": 23,
-      "variance": 23,
+      "dispersion": 22,
+      "variance": 22,
       "consistency": 61,
-      "commanderDelta": 14,
+      "commanderDelta": 15,
       "coverage": 92,
       "dataCoverage": 92
     },
@@ -1731,7 +1736,7 @@
       "consistency": 61,
       "explosiveness": 26,
       "synergy": 85,
-      "interaction": 46,
+      "interaction": 45,
       "resilience": 60
     },
     "roles": {
@@ -2162,8 +2167,7 @@
             "cmc": 3,
             "tags": [
               "instant",
-              "lifegain",
-              "life-payoff"
+              "lifegain"
             ],
             "manaReq": {
               "generic": 0,
@@ -2227,6 +2231,7 @@
             "tags": [
               "instant",
               "counterspell",
+              "counter-kind:generic",
               "stax"
             ],
             "manaReq": {
@@ -2726,7 +2731,9 @@
               "creature",
               "recursion",
               "etb",
-              "landfall"
+              "landfall",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -2863,7 +2870,9 @@
               "creature",
               "recursion",
               "etb",
-              "landfall"
+              "landfall",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -2942,8 +2951,8 @@
       "iterations": 3200,
       "floor": 42,
       "median": 51,
-      "high": 60,
-      "ceiling": 60,
+      "high": 59,
+      "ceiling": 59,
       "peak": 84,
       "iqr": 14,
       "consistency": 69,
@@ -2956,7 +2965,7 @@
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 17,
+          "resource": 16,
           "burst": 0
         },
         {
@@ -2964,22 +2973,22 @@
           "commander": 4,
           "engine": 2,
           "interaction": 12,
-          "resource": 34,
+          "resource": 33,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 67,
+          "commander": 65,
           "engine": 15,
-          "interaction": 34,
+          "interaction": 33,
           "resource": 59,
-          "burst": 10
+          "burst": 9
         },
         {
           "turn": 4,
-          "commander": 89,
-          "engine": 36,
-          "interaction": 50,
+          "commander": 88,
+          "engine": 35,
+          "interaction": 49,
           "resource": 75,
           "burst": 20
         },
@@ -3069,7 +3078,9 @@
           "creature",
           "recursion",
           "etb",
-          "landfall"
+          "landfall",
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -3088,6 +3099,7 @@
         "tags": [
           "instant",
           "counterspell",
+          "counter-kind:generic",
           "stax"
         ],
         "aeon": null

@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 44,
-    "p20": 32,
+    "median": 43,
+    "p20": 31,
     "p80": 53,
-    "peak": 85,
-    "coverage": 92,
+    "peak": 84,
+    "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "fc33eb441c47254fe7d7c639d0c8379806c334a130e31a7b3960eb1e9ee609b6",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 The Master, Transcendent\n1 Jason Bright, Glowing Prophet\n1 Mirelurk Queen\n1 Piper Wright, Publick Reporter\n1 Radstorm\n1 Struggle for Project Purity\n1 Feral Ghoul\n1 Hancock, Ghoulish Mayor\n1 Nuclear Fallout\n1 Screeching Scorchbeast\n1 Vault 12: The Necropolis\n1 Harold and Bob, First Numens\n1 Lily Bowen, Raging Grandma\n1 Power Fist\n1 Rampaging Yao Guai\n1 Strong, the Brutish Thespian\n1 Tato Farmer\n1 Watchful Radstag\n1 Agent Frank Horrigan\n1 Alpha Deathclaw\n1 Atomize\n1 Marcus, Mutant Mayor\n1 Mutational Advantage\n1 Vault 87: Forced Evolution\n1 Nuka-Nuke Launcher\n1 Recon Craft Theta\n1 Mariposa Military Base\n1 Overflowing Basin\n1 Viridescent Bog\n1 Fraying Sanity\n1 Inexorable Tide\n1 Branching Evolution\n1 Guardian Project\n1 Hardened Scales\n1 Tireless Tracker\n1 Biomass Mutation\n1 Casualties of War\n1 Find // Finality\n1 Darkwater Catacombs\n1 Drowned Catacomb\n1 Exotic Orchard\n1 Fetid Pools\n1 Hinterland Harbor\n1 Nesting Grounds\n1 Sunken Hollow\n1 Temple of Deceit\n1 Temple of Malady\n1 Temple of Mystery\n1 Woodland Cemetery\n1 Vexing Radgull\n1 Bloatfly Swarm\n1 Infesting Radroach\n1 Cathedral Acolyte\n1 Glowing One\n1 Lumbering Megasloth\n1 Contaminated Drink\n1 Nightkin Ambusher\n1 Raul, Trouble Shooter\n1 Young Deathclaws\n1 Strength Bobblehead\n1 Cultivate\n1 Farseek\n1 Harmonize\n1 Inspiring Call\n1 Rampant Growth\n1 Corpsejack Menace\n1 Putrefy\n1 Winding Constrictor\n1 Arcane Signet\n1 Contagion Clasp\n1 Sol Ring\n1 Talisman of Curiosity\n1 Talisman of Dominance\n1 Talisman of Resilience\n1 Ash Barrens\n1 Command Tower\n1 Evolving Wilds\n1 Mortuary Mire\n1 Opulent Palace\n1 Path of Ancestry\n1 Tainted Isle\n1 Tainted Wood\n1 Temple of the False God\n1 Terramorphic Expanse\n3 Swamp\n2 Swamp\n3 Forest\n2 Forest\n3 Island\n2 Island",
   "oracleCards": [
@@ -59,7 +59,8 @@
         "creature",
         "protection",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:wild"
       ],
       "isCommander": false
     },
@@ -139,7 +140,8 @@
       "tags": [
         "instant",
         "removal",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:wild"
       ],
       "isCommander": false
     },
@@ -176,7 +178,10 @@
       "tags": [
         "creature",
         "etb",
-        "counter-payoff"
+        "counter-producer",
+        "counter-payoff",
+        "counter-kind:plus1",
+        "counter-kind:rad"
       ],
       "isCommander": false
     },
@@ -193,7 +198,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "enchantment"
+        "enchantment",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -231,7 +237,8 @@
       "tags": [
         "creature",
         "counter-producer",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -270,7 +277,9 @@
       "tags": [
         "artifact",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:minus1",
+        "counter-kind:wild"
       ],
       "isCommander": false
     },
@@ -289,7 +298,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "draw"
+        "draw",
+        "counter-kind:rad"
       ],
       "isCommander": false
     },
@@ -307,7 +317,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -445,7 +456,9 @@
       "tags": [
         "creature",
         "death-payoff",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1",
+        "counter-kind:rad"
       ],
       "isCommander": false
     },
@@ -488,7 +501,8 @@
         "sorcery",
         "wipe",
         "recursion",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -542,6 +556,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-kind:rad",
         "lifegain"
       ],
       "isCommander": false
@@ -561,7 +576,6 @@
       "tags": [
         "enchantment",
         "draw",
-        "token-payoff",
         "etb"
       ],
       "isCommander": false
@@ -579,7 +593,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:any"
       ],
       "isCommander": false
     },
@@ -598,7 +613,8 @@
       "tags": [
         "enchantment",
         "counter-doubler",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -641,7 +657,8 @@
       "tags": [
         "creature",
         "mana",
-        "death-payoff"
+        "death-payoff",
+        "counter-kind:rad"
       ],
       "isCommander": false
     },
@@ -682,7 +699,8 @@
       "producedMana": [],
       "tags": [
         "enchantment",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:wild"
       ],
       "isCommander": false
     },
@@ -699,7 +717,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:rad"
       ],
       "isCommander": false
     },
@@ -719,7 +738,8 @@
         "instant",
         "draw",
         "protection",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -760,7 +780,8 @@
         "sacrifice",
         "sac-outlet",
         "death-payoff",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -779,8 +800,10 @@
       "tags": [
         "creature",
         "etb",
+        "counter-producer",
         "counter-payoff",
         "counter-doubler",
+        "counter-kind:plus1",
         "lifegain"
       ],
       "isCommander": false
@@ -800,7 +823,8 @@
       "tags": [
         "creature",
         "etb",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:any"
       ],
       "isCommander": false
     },
@@ -820,7 +844,8 @@
       "tags": [
         "creature",
         "draw",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -839,7 +864,8 @@
       "tags": [
         "land",
         "mana",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:rad"
       ],
       "isCommander": false
     },
@@ -859,7 +885,9 @@
         "creature",
         "draw",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1",
+        "counter-kind:rad"
       ],
       "isCommander": false
     },
@@ -900,7 +928,8 @@
       "tags": [
         "instant",
         "protection",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:wild"
       ],
       "isCommander": false
     },
@@ -918,7 +947,8 @@
       ],
       "tags": [
         "land",
-        "mana"
+        "mana",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -937,7 +967,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-kind:rad"
       ],
       "isCommander": false
     },
@@ -954,7 +985,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "counter-kind:rad"
       ],
       "isCommander": false
     },
@@ -969,7 +1001,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "counter-kind:rad"
       ],
       "isCommander": false
     },
@@ -1059,7 +1092,8 @@
         "creature",
         "sacrifice",
         "death-payoff",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1076,7 +1110,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1113,7 +1148,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:wild"
       ],
       "isCommander": false
     },
@@ -1131,7 +1167,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1185,7 +1223,9 @@
         "artifact",
         "tokens",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1",
+        "counter-kind:wild"
       ],
       "isCommander": false
     },
@@ -1203,7 +1243,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "tokens"
+        "tokens",
+        "counter-kind:rad"
       ],
       "isCommander": false
     },
@@ -1244,7 +1285,8 @@
       "tags": [
         "artifact",
         "mana",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1263,6 +1305,8 @@
       "tags": [
         "creature",
         "counter-producer",
+        "counter-kind:plus1",
+        "counter-kind:rad",
         "lifegain"
       ],
       "isCommander": false
@@ -1282,7 +1326,8 @@
       "tags": [
         "enchantment",
         "draw",
-        "etb"
+        "etb",
+        "counter-kind:rad"
       ],
       "isCommander": false
     },
@@ -1457,7 +1502,8 @@
       "tags": [
         "creature",
         "etb",
-        "landfall"
+        "landfall",
+        "counter-kind:rad"
       ],
       "isCommander": false
     },
@@ -1582,7 +1628,8 @@
       "tags": [
         "creature",
         "artifact",
-        "etb"
+        "etb",
+        "counter-kind:rad"
       ],
       "isCommander": false
     },
@@ -1603,7 +1650,9 @@
       "tags": [
         "creature",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1",
+        "counter-kind:rad"
       ],
       "isCommander": true
     },
@@ -1625,7 +1674,8 @@
         "death-payoff",
         "etb",
         "landfall",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1644,7 +1694,9 @@
       "tags": [
         "enchantment",
         "tokens",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1",
+        "counter-kind:rad"
       ],
       "isCommander": false
     },
@@ -1663,7 +1715,8 @@
       "producedMana": [],
       "tags": [
         "enchantment",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1681,7 +1734,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:rad",
+        "counter-kind:wild"
       ],
       "isCommander": false
     },
@@ -1741,7 +1796,8 @@
       "tags": [
         "creature",
         "counter-doubler",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1789,23 +1845,23 @@
   ],
   "result": {
     "profile": {
-      "median": 44,
-      "floor": 32,
+      "median": 43,
+      "floor": 31,
       "ceiling": 53,
-      "peak": 85,
+      "peak": 84,
       "dispersion": 21,
       "variance": 21,
-      "consistency": 64,
+      "consistency": 63,
       "commanderDelta": 11,
-      "coverage": 92,
-      "dataCoverage": 92
+      "coverage": 94,
+      "dataCoverage": 94
     },
     "dimensions": {
-      "speed": 40,
-      "consistency": 64,
+      "speed": 39,
+      "consistency": 63,
       "explosiveness": 13,
       "synergy": 77,
-      "interaction": 15,
+      "interaction": 14,
       "resilience": 30
     },
     "roles": {
@@ -1831,14 +1887,14 @@
         "producers": [
           "Agent Frank Horrigan",
           "Atomize",
+          "Bloatfly Swarm",
           "Cathedral Acolyte",
           "Contagion Clasp",
           "Feral Ghoul",
           "Find // Finality",
           "Inexorable Tide",
           "Jason Bright, Glowing Prophet",
-          "Marcus, Mutant Mayor",
-          "Mirelurk Queen"
+          "Lily Bowen, Raging Grandma"
         ],
         "payoffs": [
           "Bloatfly Swarm",
@@ -1853,17 +1909,20 @@
         "members": [
           "Agent Frank Horrigan",
           "Atomize",
+          "Bloatfly Swarm",
           "Cathedral Acolyte",
           "Contagion Clasp",
           "Feral Ghoul",
           "Find // Finality",
           "Inexorable Tide",
           "Jason Bright, Glowing Prophet",
+          "Lily Bowen, Raging Grandma",
           "Marcus, Mutant Mayor",
           "Mirelurk Queen",
           "Mutational Advantage",
           "Piper Wright, Publick Reporter",
           "Radstorm",
+          "Rampaging Yao Guai",
           "Recon Craft Theta",
           "Strength Bobblehead",
           "Strong, the Brutish Thespian",
@@ -1871,10 +1930,8 @@
           "Vault 12: The Necropolis",
           "Vault 87: Forced Evolution",
           "Vexing Radgull",
-          "Bloatfly Swarm",
           "Hardened Scales",
           "Inspiring Call",
-          "Lily Bowen, Raging Grandma",
           "Lumbering Megasloth",
           "Mariposa Military Base",
           "Winding Constrictor"
@@ -1887,7 +1944,8 @@
               "creature",
               "protection",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:wild"
             ],
             "manaReq": {
               "generic": 5,
@@ -1908,7 +1966,8 @@
             "tags": [
               "instant",
               "removal",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:wild"
             ],
             "manaReq": {
               "generic": 2,
@@ -1924,12 +1983,34 @@
             }
           },
           {
+            "name": "Bloatfly Swarm",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1",
+              "counter-kind:rad"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
             "name": "Cathedral Acolyte",
             "cmc": 2,
             "tags": [
               "creature",
               "counter-producer",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -1947,7 +2028,9 @@
             "tags": [
               "artifact",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:minus1",
+              "counter-kind:wild"
             ],
             "manaReq": {
               "generic": 2,
@@ -1961,7 +2044,9 @@
             "tags": [
               "creature",
               "death-payoff",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1",
+              "counter-kind:rad"
             ],
             "manaReq": {
               "generic": 2,
@@ -1980,7 +2065,8 @@
               "sorcery",
               "wipe",
               "recursion",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 4,
@@ -2008,7 +2094,8 @@
             "cmc": 5,
             "tags": [
               "enchantment",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:wild"
             ],
             "manaReq": {
               "generic": 3,
@@ -2032,7 +2119,8 @@
               "sacrifice",
               "sac-outlet",
               "death-payoff",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2045,12 +2133,35 @@
             }
           },
           {
+            "name": "Lily Bowen, Raging Grandma",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-doubler",
+              "counter-kind:plus1",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
             "name": "Marcus, Mutant Mayor",
             "cmc": 5,
             "tags": [
               "creature",
               "draw",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -2072,7 +2183,9 @@
               "creature",
               "draw",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1",
+              "counter-kind:rad"
             ],
             "manaReq": {
               "generic": 4,
@@ -2090,7 +2203,8 @@
             "tags": [
               "instant",
               "protection",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:wild"
             ],
             "manaReq": {
               "generic": 1,
@@ -2112,7 +2226,8 @@
               "creature",
               "sacrifice",
               "death-payoff",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -2129,7 +2244,8 @@
             "cmc": 4,
             "tags": [
               "instant",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:wild"
             ],
             "manaReq": {
               "generic": 3,
@@ -2142,13 +2258,40 @@
             }
           },
           {
+            "name": "Rampaging Yao Guai",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
             "name": "Recon Craft Theta",
             "cmc": 4,
             "tags": [
               "artifact",
               "tokens",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1",
+              "counter-kind:wild"
             ],
             "manaReq": {
               "generic": 4,
@@ -2162,7 +2305,8 @@
             "tags": [
               "artifact",
               "mana",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -2176,6 +2320,8 @@
             "tags": [
               "creature",
               "counter-producer",
+              "counter-kind:plus1",
+              "counter-kind:rad",
               "lifegain"
             ],
             "manaReq": {
@@ -2200,7 +2346,8 @@
               "death-payoff",
               "etb",
               "landfall",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2218,7 +2365,9 @@
             "tags": [
               "enchantment",
               "tokens",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1",
+              "counter-kind:rad"
             ],
             "manaReq": {
               "generic": 4,
@@ -2238,7 +2387,8 @@
             "cmc": 5,
             "tags": [
               "enchantment",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -2258,7 +2408,9 @@
             "cmc": 2,
             "tags": [
               "creature",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:rad",
+              "counter-kind:wild"
             ],
             "manaReq": {
               "generic": 1,
@@ -2278,7 +2430,10 @@
             "tags": [
               "creature",
               "etb",
-              "counter-payoff"
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1",
+              "counter-kind:rad"
             ],
             "manaReq": {
               "generic": 3,
@@ -2296,7 +2451,8 @@
             "tags": [
               "creature",
               "counter-producer",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -2314,7 +2470,8 @@
             "tags": [
               "enchantment",
               "counter-doubler",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
@@ -2333,7 +2490,8 @@
               "instant",
               "draw",
               "protection",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2351,8 +2509,10 @@
             "tags": [
               "creature",
               "etb",
+              "counter-producer",
               "counter-payoff",
               "counter-doubler",
+              "counter-kind:plus1",
               "lifegain"
             ],
             "manaReq": {
@@ -2371,7 +2531,8 @@
             "tags": [
               "creature",
               "etb",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:any"
             ],
             "manaReq": {
               "generic": 10,
@@ -2392,7 +2553,8 @@
             "tags": [
               "land",
               "mana",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:rad"
             ],
             "manaReq": {
               "generic": 0,
@@ -2406,7 +2568,8 @@
             "tags": [
               "creature",
               "counter-doubler",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 0,
@@ -2428,7 +2591,7 @@
         "payoffTags": [
           "counter-payoff"
         ],
-        "evidence": "20 producteur(s), 8 payoff(s), 27 carte(s) distincte(s)."
+        "evidence": "23 producteur(s), 8 payoff(s), 28 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2524,7 +2687,8 @@
             "tags": [
               "creature",
               "etb",
-              "landfall"
+              "landfall",
+              "counter-kind:rad"
             ],
             "manaReq": {
               "generic": 2,
@@ -2545,7 +2709,8 @@
               "death-payoff",
               "etb",
               "landfall",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2634,7 +2799,8 @@
             "tags": [
               "creature",
               "mana",
-              "death-payoff"
+              "death-payoff",
+              "counter-kind:rad"
             ],
             "manaReq": {
               "generic": 2,
@@ -2682,7 +2848,8 @@
             "tags": [
               "artifact",
               "mana",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -2737,7 +2904,9 @@
             "tags": [
               "creature",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1",
+              "counter-kind:rad"
             ],
             "manaReq": {
               "generic": 1,
@@ -2782,18 +2951,17 @@
         "Mutational Advantage",
         "Piper Wright, Publick Reporter",
         "Radstorm",
+        "Rampaging Yao Guai",
         "Recon Craft Theta",
         "Strength Bobblehead",
         "Strong, the Brutish Thespian",
         "Tireless Tracker",
         "Vault 12: The Necropolis",
         "Vault 87: Forced Evolution",
-        "Vexing Radgull",
-        "Winding Constrictor"
+        "Vexing Radgull"
       ],
       "tags": [
         "counter-producer",
-        "counter-payoff",
         "blink"
       ]
     },
@@ -2805,13 +2973,13 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
-      "median": 41,
-      "high": 48,
-      "ceiling": 48,
-      "peak": 76,
-      "iqr": 12,
-      "consistency": 73,
+      "floor": 32,
+      "median": 40,
+      "high": 47,
+      "ceiling": 47,
+      "peak": 75,
+      "iqr": 13,
+      "consistency": 72,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
       "recoveryAfterDisruption": 77,
@@ -2827,47 +2995,47 @@
         {
           "turn": 2,
           "commander": 0,
-          "engine": 2,
+          "engine": 1,
           "interaction": 0,
           "resource": 3,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 17,
-          "engine": 14,
+          "commander": 15,
+          "engine": 12,
           "interaction": 6,
-          "resource": 20,
+          "resource": 19,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 71,
-          "engine": 37,
-          "interaction": 18,
-          "resource": 43,
+          "commander": 69,
+          "engine": 34,
+          "interaction": 17,
+          "resource": 42,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 89,
-          "engine": 50,
+          "commander": 88,
+          "engine": 48,
           "interaction": 26,
-          "resource": 55,
+          "resource": 54,
           "burst": 0
         },
         {
           "turn": 6,
-          "commander": 93,
-          "engine": 58,
+          "commander": 92,
+          "engine": 56,
           "interaction": 33,
-          "resource": 62,
+          "resource": 61,
           "burst": 0
         },
         {
           "turn": 7,
-          "commander": 96,
-          "engine": 64,
+          "commander": 95,
+          "engine": 63,
           "interaction": 39,
           "resource": 67,
           "burst": 0
@@ -2891,7 +3059,8 @@
           "instant",
           "draw",
           "protection",
-          "counter-payoff"
+          "counter-payoff",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -2914,7 +3083,8 @@
         "tags": [
           "creature",
           "draw",
-          "counter-producer"
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -2925,7 +3095,9 @@
           "creature",
           "draw",
           "etb",
-          "counter-producer"
+          "counter-producer",
+          "counter-kind:plus1",
+          "counter-kind:rad"
         ],
         "aeon": null
       },
@@ -2936,7 +3108,8 @@
           "sorcery",
           "wipe",
           "recursion",
-          "counter-producer"
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -2964,7 +3137,8 @@
         "tags": [
           "artifact",
           "mana",
-          "counter-producer"
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -2974,7 +3148,6 @@
         "tags": [
           "enchantment",
           "draw",
-          "token-payoff",
           "etb"
         ],
         "aeon": null
@@ -2985,9 +3158,10 @@
         "tags": [
           "creature",
           "etb",
+          "counter-producer",
           "counter-payoff",
           "counter-doubler",
-          "lifegain"
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -2997,7 +3171,8 @@
         "tags": [
           "enchantment",
           "draw",
-          "etb"
+          "etb",
+          "counter-kind:rad"
         ],
         "aeon": null
       }

@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 46,
-    "p20": 37,
-    "p80": 55,
-    "peak": 83,
+    "median": 45,
+    "p20": 35,
+    "p80": 54,
+    "peak": 82,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "a1d3f522fb1cc83cbd9377be02970e0c8ecbbd17b62a14ddd451c67d359fab5b",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Vivien, Champion of the Wilds\n1 Xenagos, the Reveler\n1 Aurora Phoenix\n1 Bonecrusher Giant // Stomp\n1 Dire Fleet Daredevil\n1 Dream Pillager\n1 Etali, Primal Storm\n1 Greater Gargadon\n1 Izzet Chemister\n1 Laelia, the Blade Reforged\n1 Tectonic Giant\n1 Urabrask the Hidden\n1 Wild-Magic Sorcerer\n1 Arasta of the Endless Web\n1 Battle Mammoth\n1 End-Raze Forerunners\n1 Hornet Queen\n1 Lovestruck Beast // Heart's Desire\n1 Managorger Hydra\n1 Sweet-Gum Recluse\n1 Embereth Shieldbreaker // Battle Display\n1 Sakura-Tribe Elder\n1 Bloodbraid Elf\n1 Grumgully, the Generous\n1 Ignite the Future\n1 Jeska's Will\n1 Mizzium Mortars\n1 Ezuri's Predation\n1 Escape to the Wilds\n1 Nature's Lore\n1 Light Up the Stage\n1 Beanstalk Giant // Fertile Footsteps\n1 Cultivate\n1 Explore\n1 Kodama's Reach\n1 Search for Tomorrow\n1 Terramorph\n1 Three Visits\n1 Return of the Wildspeaker\n1 Demon Bolt\n1 Beast Within\n1 Natural Reclamation\n1 Chaos Wand\n1 Arcane Signet\n1 Sol Ring\n1 Outpost Siege\n1 Stolen Strategy\n1 Warstorm Surge\n1 Primeval Bounty\n1 Sandwurm Convergence\n1 Castle Embereth\n1 Cinder Glade\n1 Game Trail\n1 Kessig Wolf Run\n1 Mossfire Valley\n1 Mosswort Bridge\n1 Raging Ravine\n1 Spinerock Knoll\n1 Temple of Abandon\n1 Command Tower\n1 Ash Barrens\n1 Blighted Woodland\n1 Gruul Turf\n1 Highland Forest\n1 Myriad Landscape\n1 Temple of the False God\n3 Mountain\n3 Mountain\n3 Mountain\n2 Mountain\n3 Forest\n3 Forest\n3 Forest\n3 Forest\n1 Durnan of the Yawning Portal\n1 Passionate Archaeologist\n1 Delayed Blast Fireball\n1 Nalfeshnee\n1 Green Slime\n1 Journey to the Lost City\n1 Tlincalli Hunter // Retrieve Prey\n1 Venture Forth\n1 Sarevok's Tome\n1 Volcanic Torrent",
   "oracleCards": [
@@ -614,7 +614,8 @@
       "tags": [
         "creature",
         "sacrifice",
-        "sac-outlet"
+        "sac-outlet",
+        "counter-kind:time"
       ],
       "isCommander": false
     },
@@ -632,7 +633,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -651,7 +653,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -798,7 +802,8 @@
         "land-ramp",
         "tokens",
         "sacrifice",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -855,6 +860,7 @@
       "tags": [
         "creature",
         "counter-producer",
+        "counter-kind:plus1",
         "exile-cast"
       ],
       "isCommander": false
@@ -910,7 +916,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1127,6 +1134,7 @@
         "etb",
         "landfall",
         "counter-producer",
+        "counter-kind:plus1",
         "lifegain",
         "spellslinger"
       ],
@@ -1152,7 +1160,8 @@
         "land",
         "mana",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1324,7 +1333,8 @@
       "tags": [
         "creature",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1474,7 +1484,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "counter-kind:time"
       ],
       "isCommander": false
     },
@@ -1544,7 +1555,6 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "spellslinger",
         "exile-payoff"
       ],
       "isCommander": false
@@ -1573,12 +1583,12 @@
   ],
   "result": {
     "profile": {
-      "median": 46,
-      "floor": 37,
-      "ceiling": 55,
-      "peak": 83,
-      "dispersion": 18,
-      "variance": 18,
+      "median": 45,
+      "floor": 35,
+      "ceiling": 54,
+      "peak": 82,
+      "dispersion": 20,
+      "variance": 20,
       "consistency": 67,
       "commanderDelta": 12,
       "coverage": 92,
@@ -1587,10 +1597,10 @@
     "dimensions": {
       "speed": 35,
       "consistency": 67,
-      "explosiveness": 35,
-      "synergy": 90,
-      "interaction": 29,
-      "resilience": 22
+      "explosiveness": 34,
+      "synergy": 86,
+      "interaction": 28,
+      "resilience": 21
     },
     "roles": {
       "lands": 39,
@@ -1607,567 +1617,6 @@
       "unknownManaLands": 0
     },
     "packages": [
-      {
-        "id": "spells",
-        "name": "Spellslinger",
-        "strength": 100,
-        "cohesion": 100,
-        "producers": [
-          "Beanstalk Giant // Fertile Footsteps",
-          "Beast Within",
-          "Bonecrusher Giant // Stomp",
-          "Cultivate",
-          "Delayed Blast Fireball",
-          "Demon Bolt",
-          "Embereth Shieldbreaker // Battle Display",
-          "Escape to the Wilds",
-          "Explore",
-          "Ezuri's Predation"
-        ],
-        "payoffs": [
-          "Primeval Bounty",
-          "Wild-Magic Sorcerer"
-        ],
-        "members": [
-          "Beanstalk Giant // Fertile Footsteps",
-          "Beast Within",
-          "Bonecrusher Giant // Stomp",
-          "Cultivate",
-          "Delayed Blast Fireball",
-          "Demon Bolt",
-          "Embereth Shieldbreaker // Battle Display",
-          "Escape to the Wilds",
-          "Explore",
-          "Ezuri's Predation",
-          "Ignite the Future",
-          "Jeska's Will",
-          "Kodama's Reach",
-          "Light Up the Stage",
-          "Lovestruck Beast // Heart's Desire",
-          "Mizzium Mortars",
-          "Natural Reclamation",
-          "Nature's Lore",
-          "Return of the Wildspeaker",
-          "Search for Tomorrow",
-          "Terramorph",
-          "Three Visits",
-          "Tlincalli Hunter // Retrieve Prey",
-          "Venture Forth",
-          "Volcanic Torrent",
-          "Primeval Bounty",
-          "Wild-Magic Sorcerer"
-        ],
-        "producerCards": [
-          {
-            "name": "Beanstalk Giant // Fertile Footsteps",
-            "cmc": 7,
-            "tags": [
-              "creature",
-              "sorcery",
-              "land-ramp"
-            ],
-            "manaReq": {
-              "generic": 8,
-              "colored": [
-                [
-                  "G"
-                ],
-                [
-                  "G"
-                ]
-              ],
-              "total": 7
-            }
-          },
-          {
-            "name": "Beast Within",
-            "cmc": 3,
-            "tags": [
-              "instant",
-              "removal"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Bonecrusher Giant // Stomp",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "instant"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "R"
-                ],
-                [
-                  "R"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Cultivate",
-            "cmc": 3,
-            "tags": [
-              "sorcery"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Delayed Blast Fireball",
-            "cmc": 3,
-            "tags": [
-              "instant"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "R"
-                ],
-                [
-                  "R"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Demon Bolt",
-            "cmc": 3,
-            "tags": [
-              "instant"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Embereth Shieldbreaker // Battle Display",
-            "cmc": 2,
-            "tags": [
-              "creature",
-              "sorcery",
-              "removal"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "R"
-                ],
-                [
-                  "R"
-                ]
-              ],
-              "total": 2
-            }
-          },
-          {
-            "name": "Escape to the Wilds",
-            "cmc": 5,
-            "tags": [
-              "sorcery",
-              "land-ramp",
-              "exile-cast"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "R"
-                ],
-                [
-                  "G"
-                ]
-              ],
-              "total": 5
-            }
-          },
-          {
-            "name": "Explore",
-            "cmc": 2,
-            "tags": [
-              "sorcery",
-              "draw",
-              "land-ramp"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 2
-            }
-          },
-          {
-            "name": "Ezuri's Predation",
-            "cmc": 8,
-            "tags": [
-              "sorcery",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 5,
-              "colored": [
-                [
-                  "G"
-                ],
-                [
-                  "G"
-                ],
-                [
-                  "G"
-                ]
-              ],
-              "total": 8
-            }
-          },
-          {
-            "name": "Ignite the Future",
-            "cmc": 4,
-            "tags": [
-              "sorcery",
-              "exile-cast",
-              "cheat",
-              "free"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 4
-            }
-          },
-          {
-            "name": "Jeska's Will",
-            "cmc": 3,
-            "tags": [
-              "sorcery",
-              "mana",
-              "exile-cast"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Kodama's Reach",
-            "cmc": 3,
-            "tags": [
-              "sorcery"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Light Up the Stage",
-            "cmc": 3,
-            "tags": [
-              "sorcery",
-              "exile-cast"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Lovestruck Beast // Heart's Desire",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "sorcery",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "G"
-                ],
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Mizzium Mortars",
-            "cmc": 2,
-            "tags": [
-              "sorcery"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 2
-            }
-          },
-          {
-            "name": "Natural Reclamation",
-            "cmc": 5,
-            "tags": [
-              "instant",
-              "removal"
-            ],
-            "manaReq": {
-              "generic": 4,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 5
-            }
-          },
-          {
-            "name": "Nature's Lore",
-            "cmc": 2,
-            "tags": [
-              "sorcery",
-              "land-ramp"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 2
-            }
-          },
-          {
-            "name": "Return of the Wildspeaker",
-            "cmc": 5,
-            "tags": [
-              "instant"
-            ],
-            "manaReq": {
-              "generic": 4,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 5
-            }
-          },
-          {
-            "name": "Search for Tomorrow",
-            "cmc": 3,
-            "tags": [
-              "sorcery",
-              "land-ramp"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Terramorph",
-            "cmc": 4,
-            "tags": [
-              "sorcery",
-              "land-ramp"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 4
-            }
-          },
-          {
-            "name": "Three Visits",
-            "cmc": 2,
-            "tags": [
-              "sorcery",
-              "land-ramp"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 2
-            }
-          },
-          {
-            "name": "Tlincalli Hunter // Retrieve Prey",
-            "cmc": 7,
-            "tags": [
-              "creature",
-              "sorcery",
-              "exile-cast",
-              "exile-payoff",
-              "free"
-            ],
-            "manaReq": {
-              "generic": 6,
-              "colored": [
-                [
-                  "G"
-                ],
-                [
-                  "G"
-                ],
-                [
-                  "G"
-                ]
-              ],
-              "total": 7
-            }
-          },
-          {
-            "name": "Venture Forth",
-            "cmc": 4,
-            "tags": [
-              "sorcery"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 4
-            }
-          },
-          {
-            "name": "Volcanic Torrent",
-            "cmc": 5,
-            "tags": [
-              "sorcery"
-            ],
-            "manaReq": {
-              "generic": 4,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 5
-            }
-          }
-        ],
-        "payoffCards": [
-          {
-            "name": "Primeval Bounty",
-            "cmc": 6,
-            "tags": [
-              "enchantment",
-              "tokens",
-              "etb",
-              "landfall",
-              "counter-producer",
-              "lifegain",
-              "spellslinger"
-            ],
-            "manaReq": {
-              "generic": 5,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 6
-            }
-          },
-          {
-            "name": "Wild-Magic Sorcerer",
-            "cmc": 4,
-            "tags": [
-              "creature",
-              "spellslinger",
-              "exile-payoff"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 4
-            }
-          }
-        ],
-        "producerTags": [
-          "instant",
-          "sorcery"
-        ],
-        "payoffTags": [
-          "spellslinger"
-        ],
-        "evidence": "25 producteur(s), 2 payoff(s), 27 carte(s) distincte(s)."
-      },
       {
         "id": "exile",
         "name": "Jeu depuis l’exil",
@@ -2391,6 +1840,7 @@
             "tags": [
               "creature",
               "counter-producer",
+              "counter-kind:plus1",
               "exile-cast"
             ],
             "manaReq": {
@@ -2641,7 +2091,6 @@
             "cmc": 4,
             "tags": [
               "creature",
-              "spellslinger",
               "exile-payoff"
             ],
             "manaReq": {
@@ -2763,7 +2212,8 @@
               "land-ramp",
               "tokens",
               "sacrifice",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -2872,6 +2322,7 @@
               "etb",
               "landfall",
               "counter-producer",
+              "counter-kind:plus1",
               "lifegain",
               "spellslinger"
             ],
@@ -2946,7 +2397,7 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 30,
+      "floor": 29,
       "median": 36,
       "high": 43,
       "ceiling": 43,
@@ -2955,7 +2406,7 @@
       "consistency": 76,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 73,
+      "recoveryAfterDisruption": 71,
       "turnProfile": [
         {
           "turn": 1,
@@ -2975,43 +2426,43 @@
         },
         {
           "turn": 3,
-          "commander": 55,
+          "commander": 54,
           "engine": 2,
-          "interaction": 20,
+          "interaction": 19,
           "resource": 0,
-          "burst": 23
+          "burst": 22
         },
         {
           "turn": 4,
-          "commander": 87,
-          "engine": 10,
+          "commander": 86,
+          "engine": 9,
           "interaction": 32,
           "resource": 4,
-          "burst": 34
+          "burst": 33
         },
         {
           "turn": 5,
-          "commander": 94,
-          "engine": 20,
+          "commander": 93,
+          "engine": 18,
           "interaction": 38,
-          "resource": 10,
-          "burst": 39
+          "resource": 9,
+          "burst": 38
         },
         {
           "turn": 6,
           "commander": 95,
-          "engine": 29,
+          "engine": 27,
           "interaction": 42,
           "resource": 14,
-          "burst": 43
+          "burst": 42
         },
         {
           "turn": 7,
-          "commander": 97,
-          "engine": 35,
+          "commander": 96,
+          "engine": 33,
           "interaction": 45,
           "resource": 17,
-          "burst": 47
+          "burst": 46
         }
       ]
     },
@@ -3023,17 +2474,6 @@
           "artifact",
           "mana",
           "etb",
-          "exile-cast",
-          "cheat",
-          "free"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Ignite the Future",
-        "impact": 5.1,
-        "tags": [
-          "sorcery",
           "exile-cast",
           "cheat",
           "free"
@@ -3063,6 +2503,17 @@
         "aeon": null
       },
       {
+        "name": "Ignite the Future",
+        "impact": 4.4,
+        "tags": [
+          "sorcery",
+          "exile-cast",
+          "cheat",
+          "free"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Izzet Chemister",
         "impact": 4.4,
         "tags": [
@@ -3076,41 +2527,10 @@
       },
       {
         "name": "Explore",
-        "impact": 4,
+        "impact": 3.3,
         "tags": [
           "sorcery",
           "draw",
-          "land-ramp"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Tlincalli Hunter // Retrieve Prey",
-        "impact": 3.3,
-        "tags": [
-          "creature",
-          "sorcery",
-          "exile-cast",
-          "exile-payoff",
-          "free"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Escape to the Wilds",
-        "impact": 3.1,
-        "tags": [
-          "sorcery",
-          "land-ramp",
-          "exile-cast"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Search for Tomorrow",
-        "impact": 3.1,
-        "tags": [
-          "sorcery",
           "land-ramp"
         ],
         "aeon": null
@@ -3125,15 +2545,6 @@
         "aeon": null
       },
       {
-        "name": "Terramorph",
-        "impact": 3,
-        "tags": [
-          "sorcery",
-          "land-ramp"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Journey to the Lost City",
         "impact": 2.7,
         "tags": [
@@ -3141,7 +2552,48 @@
           "land-ramp",
           "tokens",
           "sacrifice",
-          "counter-producer"
+          "counter-producer",
+          "counter-kind:plus1"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Tlincalli Hunter // Retrieve Prey",
+        "impact": 2.6,
+        "tags": [
+          "creature",
+          "sorcery",
+          "exile-cast",
+          "exile-payoff",
+          "free"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Escape to the Wilds",
+        "impact": 2.4,
+        "tags": [
+          "sorcery",
+          "land-ramp",
+          "exile-cast"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Search for Tomorrow",
+        "impact": 2.4,
+        "tags": [
+          "sorcery",
+          "land-ramp"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Terramorph",
+        "impact": 2.3,
+        "tags": [
+          "sorcery",
+          "land-ramp"
         ],
         "aeon": null
       }

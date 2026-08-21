@@ -30,17 +30,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 46,
-    "p20": 34,
-    "p80": 55,
-    "peak": 86,
-    "coverage": 92,
+    "median": 43,
+    "p20": 31,
+    "p80": 54,
+    "peak": 85,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "896f76ff074096a1f5b98449b33e9a0e6b76af783f78ba8787ef7a48c85bcca1",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Leonardo, the Balance\n1 Donatello, the Brains\n1 Splinter, the Mentor\n1 Raphael, the Muscle\n1 Michelangelo, the Heart\n1 Continue?\n1 Endless Foot Assault\n1 April O'Neil, Live on the Scene\n1 Baxter, Fly in the Ointment\n1 Here Comes a New Hero!\n1 Irma, Part-Time Mutant\n1 Krang, the All-Powerful\n1 Ray Fillet, Wave Warrior\n1 Bebop, Skull & Crossbones\n1 Dimension X Pizzasaur\n1 Foot Chopper\n1 Game Over\n1 Rat King, Pale Piper\n1 Shredder, Shadow Master\n1 Swift Demise\n1 Casey Jones, Back Alley Brute\n1 Electric Seaweed\n1 Fast Forward\n1 Shellshock\n1 Special Move\n1 Tempestra, Dame of Games\n1 Tokka & Rahzar, Unsupervised\n1 High Score\n1 Leatherhead, Iron Gator\n1 Level Up\n1 Ninja Pizza\n1 Rocksteady, Mutant Marauder\n1 Super Combo\n1 Double Jump // Flying Kick\n1 Arcade Cabinet\n1 Big Mother Mouser\n1 Coin of Mastery\n1 Exploding Barrel\n1 Mole Module\n1 Roadkill Rodney\n1 Big Apple, 3 a.m.\n1 Hidden Hideout\n1 Together Forever\n1 Vanquish the Horde\n1 Wave Goodbye\n1 Blasphemous Act\n1 Biogenic Ooze\n1 Steelbane Hydra\n1 Vigor\n1 Voracious Hydra\n1 Assassin's Trophy\n1 Corpsejack Menace\n1 Chromatic Lantern\n1 Cinder Glade\n1 City of Brass\n1 Dragonskull Summit\n1 Exotic Orchard\n1 Fabled Passage\n1 Grand Coliseum\n1 Hinterland Harbor\n1 Rain-Slicked Copse\n1 Rootbound Crag\n1 Smoldering Marsh\n1 Sodden Verdure\n1 Spire Garden\n1 Sunken Hollow\n1 Undergrowth Stadium\n1 Vernal Fen\n1 Lita, Little Orphan Amphibian\n1 Mona Lisa, Science Geek\n1 Lessons from Life\n1 Everything Pizza\n1 Escape Tunnel\n1 Turtle Lair\n1 Acidic Slime\n1 Cultivate\n1 Harmonize\n1 Arcane Signet\n1 Sol Ring\n1 Ash Barrens\n1 Command Tower\n1 Evolving Wilds\n1 Path of Ancestry\n1 Thriving Grove\n1 Thriving Isle\n1 Thriving Moor\n1 Vibrant Cityscape\n2 Plains\n2 Island\n2 Swamp\n2 Mountain\n4 Forest",
   "oracleCards": [
@@ -97,7 +97,9 @@
         "sacrifice",
         "sac-outlet",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1",
+        "counter-kind:any"
       ],
       "isCommander": false
     },
@@ -176,7 +178,8 @@
         "creature",
         "etb",
         "counter-producer",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -194,7 +197,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "draw"
+        "draw",
+        "counter-kind:any"
       ],
       "isCommander": false
     },
@@ -239,8 +243,10 @@
         "tokens",
         "death-payoff",
         "etb",
+        "counter-producer",
         "counter-doubler",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -260,7 +266,8 @@
         "creature",
         "tokens",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -295,7 +302,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -385,7 +393,9 @@
         "artifact",
         "mana",
         "tokens",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -442,7 +452,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -481,8 +492,9 @@
         "sacrifice",
         "etb",
         "counter-producer",
-        "lifegain",
-        "life-payoff"
+        "counter-kind:plus1",
+        "counter-kind:any",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -517,7 +529,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -618,7 +631,9 @@
         "artifact",
         "sacrifice",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -681,7 +696,8 @@
         "artifact",
         "mana",
         "sacrifice",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:any"
       ],
       "isCommander": false
     },
@@ -856,7 +872,8 @@
       "tags": [
         "creature",
         "draw",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": true
     },
@@ -881,6 +898,7 @@
         "mana",
         "etb",
         "counter-payoff",
+        "counter-kind:generic",
         "lifegain"
       ],
       "isCommander": false
@@ -901,7 +919,8 @@
         "enchantment",
         "draw",
         "counter-doubler",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -942,7 +961,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -981,6 +1001,7 @@
         "creature",
         "artifact",
         "counter-producer",
+        "counter-kind:plus1",
         "trigger-doubler"
       ],
       "isCommander": false
@@ -999,7 +1020,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1024,6 +1046,7 @@
         "token-payoff",
         "etb",
         "counter-producer",
+        "counter-kind:plus1",
         "lifegain"
       ],
       "isCommander": false
@@ -1066,7 +1089,8 @@
         "etb",
         "counter-producer",
         "counter-doubler",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1086,7 +1110,8 @@
         "creature",
         "tokens",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1105,7 +1130,8 @@
       "tags": [
         "creature",
         "tokens",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1271,7 +1297,8 @@
       "tags": [
         "creature",
         "tokens",
-        "etb"
+        "etb",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1311,7 +1338,8 @@
       "tags": [
         "creature",
         "draw",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1346,9 +1374,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "token-payoff",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1490,7 +1518,8 @@
         "instant",
         "removal",
         "sacrifice",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1550,7 +1579,9 @@
       "tags": [
         "creature",
         "removal",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1740,7 +1771,8 @@
         "enchantment",
         "death-payoff",
         "etb",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1760,7 +1792,8 @@
         "creature",
         "mana",
         "tokens",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1881,7 +1914,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1900,8 +1934,10 @@
       "tags": [
         "creature",
         "etb",
+        "counter-producer",
         "counter-doubler",
-        "counter-payoff"
+        "counter-payoff",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1918,31 +1954,32 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     }
   ],
   "result": {
     "profile": {
-      "median": 46,
-      "floor": 34,
-      "ceiling": 55,
-      "peak": 86,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 64,
-      "commanderDelta": 9,
-      "coverage": 92,
-      "dataCoverage": 92
+      "median": 43,
+      "floor": 31,
+      "ceiling": 54,
+      "peak": 85,
+      "dispersion": 23,
+      "variance": 23,
+      "consistency": 63,
+      "commanderDelta": 8,
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
       "speed": 36,
-      "consistency": 64,
+      "consistency": 63,
       "explosiveness": 13,
       "synergy": 86,
       "interaction": 27,
-      "resilience": 23
+      "resilience": 22
     },
     "roles": {
       "lands": 39,
@@ -1980,8 +2017,7 @@
           "Arcade Cabinet",
           "Big Apple, 3 a.m.",
           "Leonardo, the Balance",
-          "Rat King, Pale Piper",
-          "Rocksteady, Mutant Marauder"
+          "Rat King, Pale Piper"
         ],
         "members": [
           "Big Apple, 3 a.m.",
@@ -2003,8 +2039,7 @@
           "Tempestra, Dame of Games",
           "Tokka & Rahzar, Unsupervised",
           "Arcade Cabinet",
-          "Leonardo, the Balance",
-          "Rocksteady, Mutant Marauder"
+          "Leonardo, the Balance"
         ],
         "producerCards": [
           {
@@ -2032,8 +2067,10 @@
               "tokens",
               "death-payoff",
               "etb",
+              "counter-producer",
               "counter-doubler",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 4,
@@ -2048,7 +2085,8 @@
               "creature",
               "tokens",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -2070,7 +2108,9 @@
               "artifact",
               "mana",
               "tokens",
-              "etb"
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 4,
@@ -2139,7 +2179,8 @@
               "creature",
               "tokens",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -2157,7 +2198,8 @@
             "tags": [
               "creature",
               "tokens",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -2194,7 +2236,8 @@
             "tags": [
               "creature",
               "tokens",
-              "etb"
+              "etb",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 4,
@@ -2321,7 +2364,8 @@
               "creature",
               "mana",
               "tokens",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2344,7 +2388,9 @@
               "sacrifice",
               "sac-outlet",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1",
+              "counter-kind:any"
             ],
             "manaReq": {
               "generic": 3,
@@ -2376,6 +2422,7 @@
               "token-payoff",
               "etb",
               "counter-producer",
+              "counter-kind:plus1",
               "lifegain"
             ],
             "manaReq": {
@@ -2407,25 +2454,6 @@
               ],
               "total": 4
             }
-          },
-          {
-            "name": "Rocksteady, Mutant Marauder",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "token-payoff",
-              "etb",
-              "counter-producer"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
-            }
           }
         ],
         "producerTags": [
@@ -2434,7 +2462,7 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "18 producteur(s), 5 payoff(s), 21 carte(s) distincte(s)."
+        "evidence": "18 producteur(s), 4 payoff(s), 20 carte(s) distincte(s)."
       },
       {
         "id": "counters",
@@ -2444,14 +2472,14 @@
         "producers": [
           "Arcade Cabinet",
           "Baxter, Fly in the Ointment",
+          "Big Mother Mouser",
           "Biogenic Ooze",
           "Casey Jones, Back Alley Brute",
+          "Coin of Mastery",
           "Dimension X Pizzasaur",
           "Everything Pizza",
           "Irma, Part-Time Mutant",
-          "Krang, the All-Powerful",
-          "Leatherhead, Iron Gator",
-          "Leonardo, the Balance"
+          "Krang, the All-Powerful"
         ],
         "payoffs": [
           "Baxter, Fly in the Ointment",
@@ -2467,8 +2495,10 @@
         "members": [
           "Arcade Cabinet",
           "Baxter, Fly in the Ointment",
+          "Big Mother Mouser",
           "Biogenic Ooze",
           "Casey Jones, Back Alley Brute",
+          "Coin of Mastery",
           "Dimension X Pizzasaur",
           "Everything Pizza",
           "Irma, Part-Time Mutant",
@@ -2480,15 +2510,15 @@
           "Michelangelo, the Heart",
           "Rocksteady, Mutant Marauder",
           "Special Move",
+          "Steelbane Hydra",
           "Tokka & Rahzar, Unsupervised",
           "Vigor",
-          "Big Mother Mouser",
+          "Voracious Hydra",
           "Exploding Barrel",
           "Hidden Hideout",
           "High Score",
           "Ray Fillet, Wave Warrior",
-          "Together Forever",
-          "Voracious Hydra"
+          "Together Forever"
         ],
         "producerCards": [
           {
@@ -2500,7 +2530,9 @@
               "sacrifice",
               "sac-outlet",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1",
+              "counter-kind:any"
             ],
             "manaReq": {
               "generic": 3,
@@ -2515,7 +2547,8 @@
               "creature",
               "etb",
               "counter-producer",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -2528,13 +2561,34 @@
             }
           },
           {
+            "name": "Big Mother Mouser",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "artifact",
+              "tokens",
+              "death-payoff",
+              "etb",
+              "counter-producer",
+              "counter-doubler",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
+            }
+          },
+          {
             "name": "Biogenic Ooze",
             "cmc": 5,
             "tags": [
               "creature",
               "tokens",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -2554,7 +2608,8 @@
             "cmc": 4,
             "tags": [
               "creature",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -2567,6 +2622,23 @@
             }
           },
           {
+            "name": "Coin of Mastery",
+            "cmc": 4,
+            "tags": [
+              "artifact",
+              "mana",
+              "tokens",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
+            }
+          },
+          {
             "name": "Dimension X Pizzasaur",
             "cmc": 4,
             "tags": [
@@ -2575,8 +2647,9 @@
               "sacrifice",
               "etb",
               "counter-producer",
-              "lifegain",
-              "life-payoff"
+              "counter-kind:plus1",
+              "counter-kind:any",
+              "lifegain"
             ],
             "manaReq": {
               "generic": 3,
@@ -2595,7 +2668,9 @@
               "artifact",
               "sacrifice",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain"
             ],
             "manaReq": {
               "generic": 2,
@@ -2608,7 +2683,8 @@
             "cmc": 3,
             "tags": [
               "creature",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2627,6 +2703,7 @@
               "creature",
               "artifact",
               "counter-producer",
+              "counter-kind:plus1",
               "trigger-doubler"
             ],
             "manaReq": {
@@ -2644,7 +2721,8 @@
             "cmc": 7,
             "tags": [
               "creature",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 5,
@@ -2667,6 +2745,7 @@
               "token-payoff",
               "etb",
               "counter-producer",
+              "counter-kind:plus1",
               "lifegain"
             ],
             "manaReq": {
@@ -2688,7 +2767,8 @@
               "etb",
               "counter-producer",
               "counter-doubler",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -2707,7 +2787,8 @@
               "creature",
               "tokens",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -2725,7 +2806,8 @@
             "tags": [
               "creature",
               "tokens",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -2742,9 +2824,9 @@
             "cmc": 3,
             "tags": [
               "creature",
-              "token-payoff",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2763,7 +2845,8 @@
               "instant",
               "removal",
               "sacrifice",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2776,13 +2859,37 @@
             }
           },
           {
+            "name": "Steelbane Hydra",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "removal",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
             "name": "Tokka & Rahzar, Unsupervised",
             "cmc": 3,
             "tags": [
               "creature",
               "mana",
               "tokens",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2799,7 +2906,8 @@
             "cmc": 6,
             "tags": [
               "creature",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -2816,6 +2924,30 @@
               ],
               "total": 6
             }
+          },
+          {
+            "name": "Voracious Hydra",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-doubler",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
           }
         ],
         "payoffCards": [
@@ -2826,7 +2958,8 @@
               "creature",
               "etb",
               "counter-producer",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -2847,8 +2980,10 @@
               "tokens",
               "death-payoff",
               "etb",
+              "counter-producer",
               "counter-doubler",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 4,
@@ -2863,7 +2998,8 @@
               "artifact",
               "mana",
               "sacrifice",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:any"
             ],
             "manaReq": {
               "generic": 3,
@@ -2879,6 +3015,7 @@
               "mana",
               "etb",
               "counter-payoff",
+              "counter-kind:generic",
               "lifegain"
             ],
             "manaReq": {
@@ -2894,7 +3031,8 @@
               "enchantment",
               "draw",
               "counter-doubler",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2915,7 +3053,8 @@
               "etb",
               "counter-producer",
               "counter-doubler",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -2933,7 +3072,8 @@
             "tags": [
               "creature",
               "draw",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 2,
@@ -2952,7 +3092,8 @@
               "enchantment",
               "death-payoff",
               "etb",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 0,
@@ -2973,8 +3114,10 @@
             "tags": [
               "creature",
               "etb",
+              "counter-producer",
               "counter-doubler",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
@@ -2996,7 +3139,7 @@
         "payoffTags": [
           "counter-payoff"
         ],
-        "evidence": "17 producteur(s), 9 payoff(s), 24 carte(s) distincte(s)."
+        "evidence": "21 producteur(s), 9 payoff(s), 26 carte(s) distincte(s)."
       },
       {
         "id": "sacrifice",
@@ -3031,7 +3174,9 @@
               "sacrifice",
               "sac-outlet",
               "etb",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1",
+              "counter-kind:any"
             ],
             "manaReq": {
               "generic": 3,
@@ -3089,8 +3234,10 @@
               "tokens",
               "death-payoff",
               "etb",
+              "counter-producer",
               "counter-doubler",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 4,
@@ -3126,7 +3273,8 @@
               "enchantment",
               "death-payoff",
               "etb",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 0,
@@ -3210,7 +3358,8 @@
               "artifact",
               "mana",
               "sacrifice",
-              "counter-payoff"
+              "counter-payoff",
+              "counter-kind:any"
             ],
             "manaReq": {
               "generic": 3,
@@ -3274,7 +3423,8 @@
             "tags": [
               "creature",
               "draw",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
@@ -3304,17 +3454,17 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 68,
+      "score": 65,
       "connected": [
         "Arcade Cabinet",
         "Baxter, Fly in the Ointment",
         "Big Mother Mouser",
         "Biogenic Ooze",
         "Casey Jones, Back Alley Brute",
+        "Coin of Mastery",
         "Dimension X Pizzasaur",
         "Everything Pizza",
         "Exploding Barrel",
-        "Hidden Hideout",
         "High Score",
         "Irma, Part-Time Mutant",
         "Krang, the All-Powerful",
@@ -3323,17 +3473,15 @@
         "Level Up",
         "Lita, Little Orphan Amphibian",
         "Michelangelo, the Heart",
-        "Ray Fillet, Wave Warrior",
         "Rocksteady, Mutant Marauder",
         "Special Move",
-        "Together Forever",
+        "Steelbane Hydra",
         "Tokka & Rahzar, Unsupervised",
         "Vigor",
         "Voracious Hydra"
       ],
       "tags": [
-        "counter-producer",
-        "counter-payoff"
+        "counter-producer"
       ]
     },
     "aeon": {
@@ -3344,16 +3492,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 34,
-      "median": 42,
-      "high": 49,
-      "ceiling": 49,
-      "peak": 77,
-      "iqr": 12,
-      "consistency": 73,
+      "floor": 31,
+      "median": 39,
+      "high": 47,
+      "ceiling": 47,
+      "peak": 75,
+      "iqr": 13,
+      "consistency": 72,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 70,
+      "recoveryAfterDisruption": 69,
       "turnProfile": [
         {
           "turn": 1,
@@ -3366,48 +3514,48 @@
         {
           "turn": 2,
           "commander": 0,
-          "engine": 5,
-          "interaction": 11,
-          "resource": 15,
+          "engine": 3,
+          "interaction": 8,
+          "resource": 12,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 0,
-          "engine": 20,
+          "engine": 13,
           "interaction": 18,
-          "resource": 31,
+          "resource": 30,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 18,
-          "engine": 51,
+          "commander": 16,
+          "engine": 42,
           "interaction": 30,
-          "resource": 50,
+          "resource": 49,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 55,
-          "engine": 69,
+          "commander": 53,
+          "engine": 61,
           "interaction": 40,
           "resource": 58,
           "burst": 0
         },
         {
           "turn": 6,
-          "commander": 70,
-          "engine": 77,
+          "commander": 69,
+          "engine": 69,
           "interaction": 46,
           "resource": 62,
           "burst": 0
         },
         {
           "turn": 7,
-          "commander": 78,
-          "engine": 82,
-          "interaction": 51,
+          "commander": 77,
+          "engine": 75,
+          "interaction": 50,
           "resource": 66,
           "burst": 0
         }
@@ -3423,7 +3571,7 @@
           "tokens",
           "death-payoff",
           "etb",
-          "counter-doubler"
+          "counter-producer"
         ],
         "aeon": null
       },
@@ -3456,7 +3604,8 @@
           "enchantment",
           "draw",
           "counter-doubler",
-          "counter-payoff"
+          "counter-payoff",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -3478,7 +3627,8 @@
           "creature",
           "mana",
           "tokens",
-          "counter-producer"
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -3488,7 +3638,21 @@
         "tags": [
           "creature",
           "draw",
-          "counter-payoff"
+          "counter-payoff",
+          "counter-kind:generic"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Coin of Mastery",
+        "impact": 2.9,
+        "tags": [
+          "artifact",
+          "mana",
+          "tokens",
+          "etb",
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -3509,6 +3673,7 @@
           "creature",
           "artifact",
           "counter-producer",
+          "counter-kind:plus1",
           "trigger-doubler"
         ],
         "aeon": null
@@ -3520,7 +3685,8 @@
           "creature",
           "tokens",
           "etb",
-          "counter-producer"
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -3530,18 +3696,8 @@
         "tags": [
           "creature",
           "tokens",
-          "counter-producer"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Tempestra, Dame of Games",
-        "impact": 2.7,
-        "tags": [
-          "creature",
-          "tokens",
-          "sacrifice",
-          "sac-outlet"
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       }

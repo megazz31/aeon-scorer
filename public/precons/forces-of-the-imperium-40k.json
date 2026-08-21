@@ -35,16 +35,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 43,
-    "p20": 31,
-    "p80": 51,
-    "peak": 82,
+    "p20": 32,
+    "p80": 52,
+    "peak": 83,
     "coverage": 95,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "33b4ac00ff4584a388bddbafc222de92d05457099bd574c009650668de17e5d3",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Bastion Protector\n1 Collective Effort\n1 Deploy to the Front\n1 Fell the Mighty\n1 Hour of Reckoning\n1 Launch the Fleet\n1 Martial Coup\n1 Entrapment Maneuver\n1 Utter End\n1 Swords to Plowshares\n1 Mortify\n1 Everflowing Chalice\n1 Mind Stone\n1 Skullclamp\n1 Sol Ring\n1 Talisman of Dominance\n1 Talisman of Hierarchy\n1 Talisman of Progress\n1 Arcane Signet\n1 Commander's Sphere\n1 Reconnaissance Mission\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Port Town\n1 Prairie Stream\n1 Skycloud Expanse\n1 Sunken Hollow\n1 Arcane Sanctum\n1 Ash Barrens\n1 Memorial to Glory\n1 Command Tower\n1 Dismal Backwater\n1 Evolving Wilds\n1 Path of Ancestry\n1 Scoured Barrens\n1 Terramorphic Expanse\n1 Tranquil Cove\n5 Island\n7 Swamp\n8 Plains\n1 Marneus Calgar\n1 Celestine, the Living Saint\n1 Defenders of Humanity\n1 For the Emperor!\n1 Space Marine Devastator\n1 Triumph of Saint Katherine\n1 Ultramarines Honour Guard\n1 Vexilus Praetor\n1 Zephyrim\n1 Sister of Silence\n1 Vanguard Suppressor\n1 Arco-Flagellant\n1 Primaris Eliminator\n1 Assault Intercessor\n1 Belisarius Cawl\n1 Birth of the Imperium\n1 Callidus Assassin\n1 Commissar Severina Raine\n1 Company Commander\n1 Cybernetica Datasmith\n1 Epistolary Librarian\n1 Exterminatus\n1 The Flesh Is Weak\n1 Inquisitor Eisenhorn\n1 Neyam Shai Murad\n1 Sister Hospitaller\n1 Sister Repentia\n1 The Golden Throne\n1 Inquisitorial Rosette\n1 Knight Paladin\n1 Reaver Titan\n1 Redemptor Dreadnought\n1 Thunderhawk Gunship\n1 And They Shall Know No Fear\n1 Grey Knight Paragon\n1 Space Marine Scout\n1 Thunderwolf Cavalry\n1 Sicarian Infiltrator\n1 Sanguinary Priest\n1 Deny the Witch\n1 Primaris Chaplain",
   "oracleCards": [
@@ -304,7 +304,8 @@
       "tags": [
         "sorcery",
         "removal",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -371,8 +372,7 @@
         "draw",
         "sacrifice",
         "sac-outlet",
-        "lifegain",
-        "life-payoff"
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -475,7 +475,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counterspell"
+        "counterspell",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -575,7 +576,9 @@
         "artifact",
         "mana",
         "etb",
-        "counter-payoff"
+        "counter-producer",
+        "counter-payoff",
+        "counter-kind:charge"
       ],
       "isCommander": false
     },
@@ -1194,7 +1197,8 @@
       "tags": [
         "creature",
         "recursion",
-        "etb"
+        "etb",
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1212,7 +1216,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1493,7 +1498,8 @@
       "tags": [
         "enchantment",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1552,7 +1558,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1691,9 +1698,9 @@
   "result": {
     "profile": {
       "median": 43,
-      "floor": 31,
-      "ceiling": 51,
-      "peak": 82,
+      "floor": 32,
+      "ceiling": 52,
+      "peak": 83,
       "dispersion": 20,
       "variance": 20,
       "consistency": 66,
@@ -1706,7 +1713,7 @@
       "consistency": 66,
       "explosiveness": 17,
       "synergy": 49,
-      "interaction": 46,
+      "interaction": 45,
       "resilience": 44
     },
     "roles": {
@@ -2125,8 +2132,7 @@
               "draw",
               "sacrifice",
               "sac-outlet",
-              "lifegain",
-              "life-payoff"
+              "lifegain"
             ],
             "manaReq": {
               "generic": 1,
@@ -2308,7 +2314,9 @@
               "artifact",
               "mana",
               "etb",
-              "counter-payoff"
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:charge"
             ],
             "manaReq": {
               "generic": 0,
@@ -2443,7 +2451,7 @@
     "simulation": {
       "iterations": 3200,
       "floor": 34,
-      "median": 42,
+      "median": 41,
       "high": 48,
       "ceiling": 48,
       "peak": 74,
@@ -2457,31 +2465,31 @@
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 6,
-          "resource": 8,
+          "interaction": 5,
+          "resource": 7,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 1,
+          "commander": 0,
           "engine": 0,
-          "interaction": 12,
+          "interaction": 11,
           "resource": 11,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 22,
+          "commander": 21,
           "engine": 1,
-          "interaction": 29,
-          "resource": 27,
+          "interaction": 28,
+          "resource": 26,
           "burst": 2
         },
         {
           "turn": 4,
-          "commander": 72,
+          "commander": 71,
           "engine": 7,
-          "interaction": 53,
+          "interaction": 52,
           "resource": 51,
           "burst": 7
         },
@@ -2560,8 +2568,7 @@
           "draw",
           "sacrifice",
           "sac-outlet",
-          "lifegain",
-          "life-payoff"
+          "lifegain"
         ],
         "aeon": null
       },
@@ -2622,7 +2629,9 @@
           "artifact",
           "mana",
           "etb",
-          "counter-payoff"
+          "counter-producer",
+          "counter-payoff",
+          "counter-kind:charge"
         ],
         "aeon": null
       },

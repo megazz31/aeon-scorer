@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 53,
-    "p20": 43,
-    "p80": 64,
-    "peak": 90,
+    "p20": 44,
+    "p80": 63,
+    "peak": 91,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-3",
+    "semanticVersion": "3.2.0-semantic-4",
     "oracleSnapshotHash": "850e47327b5bca559aa62a649e14412ca91a38ec39bcf2f190a1527bb89b3b42",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T11:20:32.199Z"
+    "analyzedAt": "2026-08-21T12:09:12.997Z"
   },
   "decklist": "1 Excava, the Risen Past\n1 Lorehold Archivist // Restore Relic\n1 Augusta, Order Returned\n1 Ceaseless Conflict\n1 Vanguard of the Restless\n1 Advanced Reconstruction\n1 Fateful Tempest\n1 Naktamun Lorespinner // Wheel of Fortune\n1 Relic Retriever\n1 Spirit of Resilience\n1 Turbulent Steppe\n1 Moonshaker Cavalry\n1 Staff of the Storyteller\n1 Wave of Reckoning\n1 Fabled Passage\n1 Angel of Indemnity\n1 Ao, the Dawn Sky\n1 Archaeomancer's Map\n1 Claim Jumper\n1 Drumbellower\n1 Guardian of Faith\n1 Guardian Scalelord\n1 Karmic Guide\n1 Monologue Tax\n1 Remorseful Cleric\n1 Selfless Spirit\n1 Serra Paragon\n1 Sevinne's Reclamation\n1 Skyclave Apparition\n1 Sun Titan\n1 Tocasia's Welcome\n1 Tragic Arrogance\n1 White Orchid Phantom\n1 Atsushi, the Blazing Sky\n1 Conspiracy Theorist\n1 Laelia, the Blade Reforged\n1 Balefire Liege\n1 Hofri Ghostforge\n1 Quintorius, Loremaster\n1 Venerable Warsinger\n1 Bitterthorn, Nissa's Animus\n1 Currency Converter\n1 Battlefield Forge\n1 Clifftop Retreat\n1 Emeria, the Sky Ruin\n1 Exotic Orchard\n1 Furycalm Snarl\n1 Glittering Massif\n1 Lotus Field\n1 Radiant Summit\n1 Rugged Prairie\n1 Sunscorched Divide\n1 Temple of Triumph\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Primary Research\n1 Seize the Spoils\n1 Kirol, History Buff // Pack a Punch\n1 Lorehold Charm\n1 Fields of Strife\n1 Terramorphic Expanse\n1 Kami of Ancient Law\n1 Path to Exile\n1 Secret Rendezvous\n1 Swords to Plowshares\n1 Teshar, Ancestor's Apostle\n1 Anger\n1 Faithless Looting\n1 Squee, Goblin Nabob\n1 Quintorius, Field Historian\n1 Rip Apart\n1 Containment Construct\n1 Fellwar Stone\n1 Millikin\n1 Mind Stone\n1 Patchwork Banner\n1 Perpetual Timepiece\n1 Lorehold Campus\n1 Mistveil Plains\n1 Sacred Peaks\n1 Study Hall\n6 Plains\n5 Plains\n3 Mountain\n3 Mountain",
   "oracleCards": [
@@ -111,7 +111,8 @@
       "tags": [
         "creature",
         "death-payoff",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -152,8 +153,7 @@
       "tags": [
         "artifact",
         "land-ramp",
-        "etb",
-        "landfall"
+        "etb"
       ],
       "isCommander": false
     },
@@ -191,7 +191,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -446,7 +447,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "recursion"
+        "recursion",
+        "counter-kind:finality"
       ],
       "isCommander": false
     },
@@ -729,7 +731,8 @@
       "tags": [
         "creature",
         "sorcery",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -748,6 +751,7 @@
       "tags": [
         "creature",
         "counter-producer",
+        "counter-kind:plus1",
         "exile-cast"
       ],
       "isCommander": false
@@ -1409,7 +1413,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1446,7 +1451,9 @@
       "tags": [
         "artifact",
         "tokens",
-        "etb"
+        "token-payoff",
+        "etb",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1725,11 +1732,11 @@
   "result": {
     "profile": {
       "median": 53,
-      "floor": 43,
-      "ceiling": 64,
-      "peak": 90,
-      "dispersion": 21,
-      "variance": 21,
+      "floor": 44,
+      "ceiling": 63,
+      "peak": 91,
+      "dispersion": 20,
+      "variance": 20,
       "consistency": 64,
       "commanderDelta": 11,
       "coverage": 94,
@@ -1739,7 +1746,7 @@
       "speed": 43,
       "consistency": 64,
       "explosiveness": 15,
-      "synergy": 77,
+      "synergy": 82,
       "interaction": 50,
       "resilience": 75
     },
@@ -1949,7 +1956,8 @@
             "cmc": 4,
             "tags": [
               "creature",
-              "recursion"
+              "recursion",
+              "counter-kind:finality"
             ],
             "manaReq": {
               "generic": 2,
@@ -2235,8 +2243,7 @@
             "tags": [
               "artifact",
               "land-ramp",
-              "etb",
-              "landfall"
+              "etb"
             ],
             "manaReq": {
               "generic": 2,
@@ -2390,137 +2397,6 @@
           }
         ],
         "evidence": "0 accélérateur(s) burst + 10 source(s) persistante(s) vers un commandant MV 4."
-      },
-      {
-        "id": "lands",
-        "name": "Lands / Landfall",
-        "strength": 48,
-        "cohesion": 48,
-        "producers": [
-          "Archaeomancer's Map",
-          "Bitterthorn, Nissa's Animus",
-          "Claim Jumper",
-          "Fabled Passage",
-          "Terramorphic Expanse"
-        ],
-        "payoffs": [
-          "Archaeomancer's Map"
-        ],
-        "members": [
-          "Archaeomancer's Map",
-          "Bitterthorn, Nissa's Animus",
-          "Claim Jumper",
-          "Fabled Passage",
-          "Terramorphic Expanse"
-        ],
-        "producerCards": [
-          {
-            "name": "Archaeomancer's Map",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "land-ramp",
-              "etb",
-              "landfall"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "W"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Bitterthorn, Nissa's Animus",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "land-ramp"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
-          {
-            "name": "Claim Jumper",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "land-ramp",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "W"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Fabled Passage",
-            "cmc": 0,
-            "tags": [
-              "land",
-              "land-ramp",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [],
-              "total": 0
-            }
-          },
-          {
-            "name": "Terramorphic Expanse",
-            "cmc": 0,
-            "tags": [
-              "land",
-              "land-ramp",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [],
-              "total": 0
-            }
-          }
-        ],
-        "payoffCards": [
-          {
-            "name": "Archaeomancer's Map",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "land-ramp",
-              "etb",
-              "landfall"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "W"
-                ]
-              ],
-              "total": 3
-            }
-          }
-        ],
-        "producerTags": [
-          "land-ramp"
-        ],
-        "payoffTags": [
-          "landfall"
-        ],
-        "evidence": "5 producteur(s), 1 payoff(s), 5 carte(s) distincte(s)."
       }
     ],
     "combos": [],
@@ -2572,11 +2448,11 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 39,
-      "median": 46,
-      "high": 55,
-      "ceiling": 55,
-      "peak": 82,
+      "floor": 38,
+      "median": 45,
+      "high": 53,
+      "ceiling": 53,
+      "peak": 81,
       "iqr": 12,
       "consistency": 73,
       "commanderMedianTurn": 4,
@@ -2587,30 +2463,30 @@
           "turn": 1,
           "commander": 0,
           "engine": 2,
-          "interaction": 12,
-          "resource": 13,
+          "interaction": 10,
+          "resource": 12,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 0,
           "engine": 3,
-          "interaction": 24,
+          "interaction": 23,
           "resource": 21,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 14,
-          "engine": 12,
+          "commander": 13,
+          "engine": 10,
           "interaction": 37,
-          "resource": 41,
+          "resource": 40,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 72,
-          "engine": 30,
+          "commander": 70,
+          "engine": 26,
           "interaction": 55,
           "resource": 70,
           "burst": 3
@@ -2618,7 +2494,7 @@
         {
           "turn": 5,
           "commander": 92,
-          "engine": 43,
+          "engine": 39,
           "interaction": 63,
           "resource": 84,
           "burst": 7
@@ -2626,7 +2502,7 @@
         {
           "turn": 6,
           "commander": 96,
-          "engine": 50,
+          "engine": 47,
           "interaction": 68,
           "resource": 88,
           "burst": 9
@@ -2634,7 +2510,7 @@
         {
           "turn": 7,
           "commander": 98,
-          "engine": 56,
+          "engine": 52,
           "interaction": 71,
           "resource": 92,
           "burst": 11
@@ -2688,26 +2564,6 @@
         "aeon": null
       },
       {
-        "name": "Archaeomancer's Map",
-        "impact": 3.1,
-        "tags": [
-          "artifact",
-          "land-ramp",
-          "etb",
-          "landfall"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Bitterthorn, Nissa's Animus",
-        "impact": 3.1,
-        "tags": [
-          "artifact",
-          "land-ramp"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Conspiracy Theorist",
         "impact": 3,
         "tags": [
@@ -2751,22 +2607,40 @@
         "aeon": null
       },
       {
-        "name": "Claim Jumper",
-        "impact": 2.5,
-        "tags": [
-          "creature",
-          "land-ramp",
-          "etb"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Faithless Looting",
         "impact": 2.5,
         "tags": [
           "sorcery",
           "draw",
           "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Archaeomancer's Map",
+        "impact": 2.4,
+        "tags": [
+          "artifact",
+          "land-ramp",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Bitterthorn, Nissa's Animus",
+        "impact": 2.4,
+        "tags": [
+          "artifact",
+          "land-ramp"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Tocasia's Welcome",
+        "impact": 2.3,
+        "tags": [
+          "enchantment",
+          "draw"
         ],
         "aeon": null
       }
