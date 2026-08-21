@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 39,
-    "p20": 24,
-    "p80": 50,
-    "peak": 85,
-    "coverage": 92,
+    "median": 41,
+    "p20": 26,
+    "p80": 52,
+    "peak": 87,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "3b12cb9508bef238215133288a72b125824eea2fab877da38bfd9ba2b4eb66ac",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "4865a01b799e4a5e3c8c0ef4d9390dac765b986b26c26462ed1dfa9cbbde55a2",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Admonition Angel\n1 Trove Warden\n1 Geode Rager\n1 Emeria Angel\n1 Emeria Shepherd\n1 Sun Titan\n1 Multani, Yavimaya's Avatar\n1 Rampaging Baloths\n1 Sylvan Advocate\n1 Waker of the Wilds\n1 Living Twister\n1 Mina and Denn, Wildborn\n1 Omnath, Locus of Rage\n1 Abzan Falconer\n1 Elite Scaleguard\n1 Kor Cartographer\n1 Acidic Slime\n1 Armorcraft Judge\n1 Elvish Rejuvenator\n1 Embodiment of Insight\n1 Evolution Sage\n1 Fertilid\n1 Keeper of Fables\n1 Satyr Wayfinder\n1 Sporemound\n1 Springbloom Druid\n1 Tuskguard Captain\n1 Yavimaya Elder\n1 Sandstone Oracle\n1 Scaretiller\n1 Murasa Rootgrazer\n1 Hour of Revelation\n1 Planar Outburst\n1 Nissa's Renewal\n1 Beanstalk Giant // Fertile Footsteps\n1 Circuitous Route\n1 Far Wanderings\n1 Harmonize\n1 Kodama's Reach\n1 Ground Assault\n1 Treacherous Terrain\n1 Return of the Wildspeaker\n1 Condemn\n1 Crush Contraband\n1 Harrow\n1 Inspiring Call\n1 Naya Charm\n1 Sylvan Reclamation\n1 Roiling Regrowth\n1 Seer's Sundial\n1 Arcane Signet\n1 Sol Ring\n1 Together Forever\n1 Abundance\n1 The Mending of Dominaria\n1 Rites of Flourishing\n1 Banishing Light\n1 Retreat to Emeria\n1 Khalni Heart Expedition\n1 Retreat to Kazandu\n1 Zendikar's Roil\n1 Needle Spires\n1 Blighted Woodland\n1 Boros Garrison\n1 Boros Guildgate\n1 Command Tower\n1 Cryptic Caves\n1 Evolving Wilds\n1 Gruul Guildgate\n1 Gruul Turf\n1 Jungle Shrine\n1 Krosan Verge\n1 Myriad Landscape\n1 Naya Panorama\n1 Selesnya Guildgate\n1 Selesnya Sanctuary\n1 Terramorphic Expanse\n7 Plains\n4 Mountain\n10 Forest\n1 Struggle // Survive",
   "oracleCards": [
@@ -315,7 +315,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "removal"
       ],
       "isCommander": false
     },
@@ -351,6 +352,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -1177,7 +1179,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1229,6 +1232,7 @@
       "tags": [
         "creature",
         "artifact",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -1334,13 +1338,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1495,7 +1499,8 @@
       "producedMana": [],
       "tags": [
         "enchantment",
-        "recursion"
+        "recursion",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -1608,6 +1613,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "sacrifice",
         "death-payoff"
       ],
@@ -1636,24 +1642,24 @@
   ],
   "result": {
     "profile": {
-      "median": 39,
-      "floor": 24,
-      "ceiling": 50,
-      "peak": 85,
+      "median": 41,
+      "floor": 26,
+      "ceiling": 52,
+      "peak": 87,
       "dispersion": 26,
       "variance": 26,
       "consistency": 60,
       "commanderDelta": 11,
-      "coverage": 92,
-      "dataCoverage": 92
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
-      "speed": 32,
+      "speed": 31,
       "consistency": 60,
-      "explosiveness": 14,
+      "explosiveness": 15,
       "synergy": 78,
-      "interaction": 14,
-      "resilience": 40
+      "interaction": 24,
+      "resilience": 42
     },
     "roles": {
       "lands": 37,
@@ -1661,12 +1667,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 5,
-      "interaction": 5,
+      "draw": 8,
+      "interaction": 6,
       "protection": 1,
       "recursion": 6,
       "wipes": 2,
-      "avgCmc": 4.048387096774194,
+      "avgCmc": 4.064516129032258,
       "unknownManaLands": 0
     },
     "packages": [
@@ -2477,7 +2483,7 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
               "artifact",
               "mana",
@@ -2569,71 +2575,71 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 26,
-      "median": 36,
-      "high": 44,
-      "ceiling": 44,
-      "peak": 75,
-      "iqr": 14,
+      "floor": 28,
+      "median": 38,
+      "high": 46,
+      "ceiling": 46,
+      "peak": 78,
+      "iqr": 15,
       "consistency": 68,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 64,
+      "recoveryAfterDisruption": 69,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 0,
-          "resource": 0,
+          "interaction": 2,
+          "resource": 8,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 0,
           "engine": 1,
-          "interaction": 0,
-          "resource": 1,
+          "interaction": 9,
+          "resource": 8,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 8,
           "engine": 9,
-          "interaction": 6,
-          "resource": 11,
+          "interaction": 15,
+          "resource": 21,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 54,
           "engine": 25,
-          "interaction": 17,
-          "resource": 35,
+          "interaction": 27,
+          "resource": 44,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 75,
           "engine": 43,
-          "interaction": 27,
-          "resource": 51,
+          "interaction": 37,
+          "resource": 60,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 82,
           "engine": 54,
-          "interaction": 34,
-          "resource": 60,
+          "interaction": 44,
+          "resource": 69,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 87,
           "engine": 63,
-          "interaction": 40,
-          "resource": 68,
+          "interaction": 49,
+          "resource": 75,
           "burst": 0
         }
       ]

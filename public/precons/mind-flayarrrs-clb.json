@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 38,
-    "p20": 26,
+    "median": 37,
+    "p20": 25,
     "p80": 50,
-    "peak": 75,
+    "peak": 76,
     "coverage": 91,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "04f32ddbad6342eef309088f9e1ce3fecaef009644eb35ffb1fba591907c1df3",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "eea6e9030a2c4f97d8c11c42d1cb3785ad462e81b301c90c03d16b8c545aa8cb",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Chasm Skulker\n1 Forgotten Creation\n1 Grazilaxx, Illithid Scholar\n1 Hullbreaker Horror\n1 Mind Flayer\n1 Overcharged Amalgam\n1 Sludge Monster\n1 Wharf Infiltrator\n1 Dark Hatchling\n1 Dross Harvester\n1 Guiltfeeder\n1 Hunted Horror\n1 Nighthowler\n1 Nihilith\n1 Sewer Nemesis\n1 Woe Strider\n1 Consuming Aberration\n1 Nemesis of Reason\n1 Phyrexian Revoker\n1 Psychosis Crawler\n1 Spellskite\n1 Dauthi Horror\n1 Dusk Mangler\n1 Phyrexian Rager\n1 Plague Spitter\n1 Ravenous Chupacabra\n1 Fractured Sanity\n1 Crippling Fear\n1 Hex\n1 In Garruk's Wake\n1 Feed the Swarm\n1 Syphon Mind\n1 Extract from Darkness\n1 Pull from Tomorrow\n1 Curtains' Call\n1 Memory Plunder\n1 Fact or Fiction\n1 Drown in the Loch\n1 Arcane Signet\n1 Mind Stone\n1 Dimir Keyrune\n1 Dimir Signet\n1 Everflowing Chalice\n1 Herald's Horn\n1 Lightning Greaves\n1 Mindcrank\n1 Sol Ring\n1 Talisman of Dominance\n1 Thought Vessel\n1 Leyline of Anticipation\n1 Reflections of Littjara\n1 Black Market\n1 Choked Estuary\n1 Creeping Tar Pit\n1 Darkwater Catacombs\n1 Drownyard Temple\n1 Exotic Orchard\n1 Nephalia Drownyard\n1 River of Tears\n1 Sunken Hollow\n1 Temple of Deceit\n1 Command Tower\n1 Ash Barrens\n1 Dimir Aqueduct\n1 Myriad Landscape\n1 Path of Ancestry\n1 Port of Karfell\n1 Rogue's Passage\n1 Tainted Isle\n1 Temple of the False God\n3 Island\n2 Island\n2 Island\n2 Island\n3 Swamp\n3 Swamp\n3 Swamp\n2 Swamp\n1 Zellix, Sanity Flayer\n1 Haunted One\n1 Aboleth Spawn\n1 Endless Evil\n1 Grell Philosopher\n1 Psionic Ritual\n1 Brainstealer Dragon\n1 From the Catacombs\n1 Uchuulon",
   "oracleCards": [
@@ -460,8 +460,7 @@
       "tags": [
         "instant",
         "removal",
-        "counterspell",
-        "counter-kind:generic"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -519,7 +518,8 @@
       "producedMana": [],
       "tags": [
         "enchantment",
-        "tokens"
+        "tokens",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -933,6 +933,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -1062,8 +1063,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counterspell",
-        "counter-kind:generic"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -1163,6 +1163,7 @@
         "land",
         "mana",
         "recursion",
+        "graveyard-setup",
         "sacrifice",
         "etb"
       ],
@@ -1340,13 +1341,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1622,10 +1623,10 @@
   ],
   "result": {
     "profile": {
-      "median": 38,
-      "floor": 26,
+      "median": 37,
+      "floor": 25,
       "ceiling": 50,
-      "peak": 75,
+      "peak": 76,
       "dispersion": 25,
       "variance": 25,
       "consistency": 62,
@@ -1639,7 +1640,7 @@
       "explosiveness": 16,
       "synergy": 41,
       "interaction": 36,
-      "resilience": 23
+      "resilience": 24
     },
     "roles": {
       "lands": 38,
@@ -1647,20 +1648,20 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 6,
+      "draw": 7,
       "interaction": 8,
       "protection": 2,
       "recursion": 0,
       "wipes": 1,
-      "avgCmc": 3.6885245901639343,
+      "avgCmc": 3.7049180327868854,
       "unknownManaLands": 0
     },
     "packages": [
       {
         "id": "sacrifice",
         "name": "Sacrifice / mort",
-        "strength": 58,
-        "cohesion": 58,
+        "strength": 60,
+        "cohesion": 60,
         "producers": [
           "Dusk Mangler",
           "Woe Strider"
@@ -1669,6 +1670,7 @@
           "Black Market",
           "Chasm Skulker",
           "Dross Harvester",
+          "Endless Evil",
           "Plague Spitter"
         ],
         "members": [
@@ -1677,6 +1679,7 @@
           "Black Market",
           "Chasm Skulker",
           "Dross Harvester",
+          "Endless Evil",
           "Plague Spitter"
         ],
         "producerCards": [
@@ -1792,6 +1795,24 @@
             }
           },
           {
+            "name": "Endless Evil",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
             "name": "Plague Spitter",
             "cmc": 3,
             "tags": [
@@ -1816,133 +1837,7 @@
         "payoffTags": [
           "death-payoff"
         ],
-        "evidence": "2 producteur(s), 4 payoff(s), 6 carte(s) distincte(s)."
-      },
-      {
-        "id": "graveyard",
-        "name": "Cimetière / récursion",
-        "strength": 57,
-        "cohesion": 57,
-        "producers": [
-          "Dusk Mangler",
-          "Pull from Tomorrow",
-          "Wharf Infiltrator"
-        ],
-        "payoffs": [
-          "Drownyard Temple",
-          "Port of Karfell"
-        ],
-        "members": [
-          "Dusk Mangler",
-          "Pull from Tomorrow",
-          "Wharf Infiltrator",
-          "Drownyard Temple",
-          "Port of Karfell"
-        ],
-        "producerCards": [
-          {
-            "name": "Dusk Mangler",
-            "cmc": 7,
-            "tags": [
-              "creature",
-              "graveyard-setup",
-              "sacrifice",
-              "sac-enabler",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 5,
-              "colored": [
-                [
-                  "B"
-                ],
-                [
-                  "B"
-                ]
-              ],
-              "total": 7
-            }
-          },
-          {
-            "name": "Pull from Tomorrow",
-            "cmc": 2,
-            "tags": [
-              "instant",
-              "draw",
-              "graveyard-setup"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [
-                [
-                  "U"
-                ],
-                [
-                  "U"
-                ]
-              ],
-              "total": 2
-            }
-          },
-          {
-            "name": "Wharf Infiltrator",
-            "cmc": 2,
-            "tags": [
-              "creature",
-              "draw",
-              "graveyard-setup",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "U"
-                ]
-              ],
-              "total": 2
-            }
-          }
-        ],
-        "payoffCards": [
-          {
-            "name": "Drownyard Temple",
-            "cmc": 0,
-            "tags": [
-              "land",
-              "mana",
-              "recursion"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [],
-              "total": 0
-            }
-          },
-          {
-            "name": "Port of Karfell",
-            "cmc": 0,
-            "tags": [
-              "land",
-              "mana",
-              "recursion",
-              "sacrifice",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [],
-              "total": 0
-            }
-          }
-        ],
-        "producerTags": [
-          "graveyard-setup"
-        ],
-        "payoffTags": [
-          "recursion"
-        ],
-        "evidence": "3 producteur(s), 2 payoff(s), 5 carte(s) distincte(s)."
+        "evidence": "2 producteur(s), 5 payoff(s), 7 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2035,6 +1930,7 @@
             "cmc": 2,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2046,7 +1942,7 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
               "artifact",
               "mana",
@@ -2107,6 +2003,151 @@
           }
         ],
         "evidence": "0 accélérateur(s) burst + 8 source(s) persistante(s) vers un commandant MV 5."
+      },
+      {
+        "id": "graveyard",
+        "name": "Cimetière / récursion",
+        "strength": 54,
+        "cohesion": 54,
+        "producers": [
+          "Dusk Mangler",
+          "Port of Karfell",
+          "Pull from Tomorrow",
+          "Wharf Infiltrator"
+        ],
+        "payoffs": [
+          "Drownyard Temple",
+          "Port of Karfell"
+        ],
+        "members": [
+          "Dusk Mangler",
+          "Port of Karfell",
+          "Pull from Tomorrow",
+          "Wharf Infiltrator",
+          "Drownyard Temple"
+        ],
+        "producerCards": [
+          {
+            "name": "Dusk Mangler",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "graveyard-setup",
+              "sacrifice",
+              "sac-enabler",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Port of Karfell",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "recursion",
+              "graveyard-setup",
+              "sacrifice",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Pull from Tomorrow",
+            "cmc": 2,
+            "tags": [
+              "instant",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Wharf Infiltrator",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "draw",
+              "graveyard-setup",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 2
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Drownyard Temple",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Port of Karfell",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "recursion",
+              "graveyard-setup",
+              "sacrifice",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          }
+        ],
+        "producerTags": [
+          "graveyard-setup"
+        ],
+        "payoffTags": [
+          "recursion"
+        ],
+        "evidence": "4 producteur(s), 2 payoff(s), 5 carte(s) distincte(s)."
       }
     ],
     "combos": [],
@@ -2127,17 +2168,17 @@
       "median": 39,
       "high": 48,
       "ceiling": 48,
-      "peak": 67,
-      "iqr": 13,
-      "consistency": 71,
+      "peak": 68,
+      "iqr": 14,
+      "consistency": 70,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 65,
+      "recoveryAfterDisruption": 66,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
-          "engine": 0,
+          "engine": 1,
           "interaction": 0,
           "resource": 16,
           "burst": 0
@@ -2145,7 +2186,7 @@
         {
           "turn": 2,
           "commander": 2,
-          "engine": 1,
+          "engine": 2,
           "interaction": 12,
           "resource": 24,
           "burst": 0
@@ -2153,7 +2194,7 @@
         {
           "turn": 3,
           "commander": 18,
-          "engine": 3,
+          "engine": 4,
           "interaction": 27,
           "resource": 40,
           "burst": 2
@@ -2161,7 +2202,7 @@
         {
           "turn": 4,
           "commander": 51,
-          "engine": 6,
+          "engine": 7,
           "interaction": 40,
           "resource": 48,
           "burst": 8
@@ -2169,7 +2210,7 @@
         {
           "turn": 5,
           "commander": 77,
-          "engine": 9,
+          "engine": 11,
           "interaction": 48,
           "resource": 52,
           "burst": 13
@@ -2177,7 +2218,7 @@
         {
           "turn": 6,
           "commander": 87,
-          "engine": 12,
+          "engine": 14,
           "interaction": 56,
           "resource": 56,
           "burst": 18
@@ -2185,7 +2226,7 @@
         {
           "turn": 7,
           "commander": 91,
-          "engine": 15,
+          "engine": 17,
           "interaction": 61,
           "resource": 58,
           "burst": 20
@@ -2233,6 +2274,17 @@
           "draw",
           "graveyard-setup",
           "tokens"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mind Stone",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2293,8 +2345,7 @@
         "tags": [
           "instant",
           "removal",
-          "counterspell",
-          "counter-kind:generic"
+          "counterspell"
         ],
         "aeon": null
       },
@@ -2308,16 +2359,6 @@
           "counter-producer",
           "counter-payoff",
           "counter-kind:charge"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Uchuulon",
-        "impact": 2,
-        "tags": [
-          "creature",
-          "removal",
-          "tokens"
         ],
         "aeon": null
       }

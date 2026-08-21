@@ -30,15 +30,15 @@
   "analysis": {
     "median": 44,
     "p20": 31,
-    "p80": 58,
+    "p80": 57,
     "peak": 87,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "d9ace40a87919cba52ee464144d4d2beaf7ff33bf1e451d7885cf1f00a2c3772",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "78c461646a89c5d186d5732aa5e41747660173c09d75800571d9c714c1f52020",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Hashaton, Scarab's Fist\n1 On Wings of Gold\n1 Priest of the Crossing\n1 Renewed Solidarity\n1 Wizened Mentor\n1 Prophet of the Scarab\n1 Rhet-Tomb Mystic\n1 Lost Monarch of Ifnir\n1 Accursed Duneyard\n1 Commence the Endgame\n1 Cryptbreaker\n1 Grave Titan\n1 Gravecrawler\n1 Midnight Reaper\n1 Murderous Rider // Swift End\n1 Zombie Master\n1 Angel of Sanctions\n1 Dusk // Dawn\n1 God-Eternal Oketra\n1 Timeless Dragon\n1 Champion of Wits\n1 Forgotten Creation\n1 Pull from Tomorrow\n1 Vizier of Many Faces\n1 Archfiend of Ifnir\n1 Cemetery Reaper\n1 Crowded Crypt\n1 Damn\n1 Dread Summons\n1 Dreadhorde Invasion\n1 Liliana, Death's Majesty\n1 Never // Return\n1 Plague Belcher\n1 Rot Hulk\n1 The Scarab God\n1 God-Pharaoh's Gift\n1 Maskwood Nexus\n1 Adarkar Wastes\n1 Caves of Koilos\n1 Drowned Catacomb\n1 Exotic Orchard\n1 Fetid Pools\n1 Glacial Fortress\n1 Irrigated Farmland\n1 Isolated Chapel\n1 Prairie Stream\n1 Sunken Hollow\n1 Temple of Deceit\n1 Temple of Silence\n1 Underground River\n1 Unholy Grotto\n1 Swords to Plowshares\n1 Corpse Augur\n1 Corpse Knight\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Path of Ancestry\n1 Binding Mummy\n1 Cast Out\n1 Eternal Skylord\n1 Fleshbag Marauder\n1 Gempalm Polluter\n1 Lord of the Accursed\n1 Twisted Abomination\n1 Undead Augur\n1 Despark\n1 Gleaming Overseer\n1 Lazotep Chancellor\n1 Wayward Servant\n1 Bontu's Monument\n1 Commander's Sphere\n1 Dimir Signet\n1 Gate to the Afterlife\n1 Orzhov Signet\n1 Talisman of Dominance\n1 Talisman of Hierarchy\n1 Arcane Sanctum\n1 Ash Barrens\n1 Desert of the Glorified\n1 Desert of the Mindful\n1 Desert of the True\n1 Evolving Wilds\n1 Orzhov Basilica\n1 Terramorphic Expanse\n5 Plains\n4 Island\n5 Swamp",
   "oracleCards": [
@@ -295,6 +295,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "graveyard-setup",
         "etb"
       ],
@@ -340,6 +341,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -1035,6 +1037,7 @@
       "tags": [
         "wipe",
         "recursion",
+        "graveyard-setup",
         "tokens"
       ],
       "isCommander": false
@@ -1070,7 +1073,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "recursion"
+        "recursion",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -1330,6 +1334,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -1410,13 +1415,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1810,12 +1815,12 @@
     "profile": {
       "median": 44,
       "floor": 31,
-      "ceiling": 58,
+      "ceiling": 57,
       "peak": 87,
       "dispersion": 27,
       "variance": 27,
       "consistency": 59,
-      "commanderDelta": 7,
+      "commanderDelta": 6,
       "coverage": 93,
       "dataCoverage": 93
     },
@@ -1823,9 +1828,9 @@
       "speed": 33,
       "consistency": 59,
       "explosiveness": 13,
-      "synergy": 70,
+      "synergy": 69,
       "interaction": 47,
-      "resilience": 43
+      "resilience": 44
     },
     "roles": {
       "lands": 39,
@@ -1833,12 +1838,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 8,
+      "draw": 11,
       "interaction": 12,
       "protection": 1,
       "recursion": 5,
       "wipes": 3,
-      "avgCmc": 3.45,
+      "avgCmc": 3.466666666666667,
       "unknownManaLands": 0
     },
     "packages": [
@@ -2048,6 +2053,7 @@
             "tags": [
               "wipe",
               "recursion",
+              "graveyard-setup",
               "tokens"
             ],
             "manaReq": {
@@ -2265,13 +2271,15 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 84,
-        "cohesion": 84,
+        "strength": 79,
+        "cohesion": 79,
         "producers": [
           "Champion of Wits",
           "Cryptbreaker",
           "Gate to the Afterlife",
           "Lazotep Chancellor",
+          "Liliana, Death's Majesty",
+          "Lost Monarch of Ifnir",
           "Pull from Tomorrow"
         ],
         "payoffs": [
@@ -2286,11 +2294,11 @@
           "Cryptbreaker",
           "Gate to the Afterlife",
           "Lazotep Chancellor",
+          "Liliana, Death's Majesty",
+          "Lost Monarch of Ifnir",
           "Pull from Tomorrow",
           "Dusk // Dawn",
           "Gravecrawler",
-          "Liliana, Death's Majesty",
-          "Lost Monarch of Ifnir",
           "Rot Hulk"
         ],
         "producerCards": [
@@ -2299,6 +2307,7 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "draw",
               "graveyard-setup",
               "etb"
             ],
@@ -2366,6 +2375,46 @@
                 ]
               ],
               "total": 2
+            }
+          },
+          {
+            "name": "Liliana, Death's Majesty",
+            "cmc": 5,
+            "tags": [
+              "wipe",
+              "recursion",
+              "graveyard-setup",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Lost Monarch of Ifnir",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
             }
           },
           {
@@ -2441,6 +2490,7 @@
             "tags": [
               "wipe",
               "recursion",
+              "graveyard-setup",
               "tokens"
             ],
             "manaReq": {
@@ -2461,7 +2511,8 @@
             "cmc": 4,
             "tags": [
               "creature",
-              "recursion"
+              "recursion",
+              "graveyard-setup"
             ],
             "manaReq": {
               "generic": 3,
@@ -2501,7 +2552,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "5 producteur(s), 5 payoff(s), 10 carte(s) distincte(s)."
+        "evidence": "7 producteur(s), 5 payoff(s), 10 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2551,6 +2602,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2610,7 +2662,7 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
               "artifact",
               "mana",
@@ -2715,7 +2767,7 @@
       "consistency": 67,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 79,
+      "recoveryAfterDisruption": 83,
       "turnProfile": [
         {
           "turn": 1,
@@ -2738,7 +2790,7 @@
           "commander": 13,
           "engine": 8,
           "interaction": 33,
-          "resource": 41,
+          "resource": 45,
           "burst": 0
         },
         {
@@ -2746,31 +2798,31 @@
           "commander": 41,
           "engine": 22,
           "interaction": 52,
-          "resource": 60,
+          "resource": 65,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 72,
-          "engine": 33,
+          "engine": 34,
           "interaction": 65,
-          "resource": 70,
+          "resource": 77,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 85,
-          "engine": 41,
+          "engine": 43,
           "interaction": 72,
-          "resource": 76,
+          "resource": 82,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 90,
-          "engine": 48,
+          "engine": 50,
           "interaction": 77,
-          "resource": 81,
+          "resource": 87,
           "burst": 0
         }
       ]
@@ -2782,6 +2834,7 @@
         "tags": [
           "wipe",
           "recursion",
+          "graveyard-setup",
           "tokens"
         ],
         "aeon": null
@@ -2817,6 +2870,17 @@
           "sacrifice",
           "death-payoff",
           "counter-payoff"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2864,6 +2928,17 @@
         "aeon": null
       },
       {
+        "name": "Champion of Wits",
+        "impact": 2.4,
+        "tags": [
+          "creature",
+          "draw",
+          "graveyard-setup",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Midnight Reaper",
         "impact": 2.3,
         "tags": [
@@ -2880,25 +2955,6 @@
           "creature",
           "draw",
           "death-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Cemetery Reaper",
-        "impact": 2.2,
-        "tags": [
-          "creature",
-          "removal",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Forgotten Creation",
-        "impact": 2.2,
-        "tags": [
-          "creature",
-          "draw"
         ],
         "aeon": null
       }

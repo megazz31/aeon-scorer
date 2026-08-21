@@ -35,16 +35,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 43,
-    "p20": 29,
+    "p20": 31,
     "p80": 55,
-    "peak": 83,
-    "coverage": 89,
+    "peak": 84,
+    "coverage": 90,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "f41381980f010c99707197dc8a30f304426508c727ada2b4f8f3c81debb1fc56",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "ed98e437679d51af751a27f81a4aa886d420e86870cf68be255a648a078ae9d8",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Acidic Slime\n1 Aerie Mystics\n1 Angel of Finality\n1 Azami, Lady of Scrolls\n1 Bane of Progress\n1 Deceiver Exarch\n1 Diviner Spirit\n1 Djinn of Infinite Deceits\n1 Dungeon Geists\n1 Farhaven Elf\n1 Fiend Hunter\n1 Flickerwisp\n1 Hada Spy Patrol\n1 Karmic Guide\n1 Kazandu Tuskcaller\n1 Lu Xun, Scholar General\n1 Mirror Entity\n1 Mistmeadow Witch\n1 Murkfiend Liege\n1 Phantom Nantuko\n1 Pilgrim's Eye\n1 Roon of the Hidden Realm\n1 Rubinia Soulsinger\n1 Selesnya Guildmage\n1 Skyward Eye Prophets\n1 Stonecloaker\n1 Thornwind Faeries\n1 Winged Coatl\n1 Wonder\n1 Borrowing 100,000 Arrows\n1 Kirtar's Wrath\n1 Restore\n1 Tempt with Glory\n1 Wash Out\n1 Aethermage's Touch\n1 Arcane Denial\n1 Blue Sun's Zenith\n1 Krosan Grip\n1 Selesnya Charm\n1 Unexpectedly Absent\n1 Azorius Keyrune\n1 Basalt Monolith\n1 Conjurer's Closet\n1 Darksteel Ingot\n1 Leonin Bladetrap\n1 Selesnya Signet\n1 Simic Signet\n1 Sol Ring\n1 Surveyor's Scope\n1 Swiftfoot Boots\n1 Sword of the Paruns\n1 Thousand-Year Elixir\n1 Thunderstaff\n1 Control Magic\n1 Curse of Inertia\n1 Curse of Predation\n1 Curse of the Forsaken\n1 Darksteel Mutation\n1 Flickerform\n1 Leafdrake Roost\n1 Presence of Gond\n1 Azorius Chancery\n1 Azorius Guildgate\n1 Bant Panorama\n1 Command Tower\n1 Evolving Wilds\n1 Faerie Conclave\n2 Forest\n2 Forest\n1 Forest\n1 Forest\n2 Island\n2 Island\n2 Island\n1 Island\n1 Opal Palace\n2 Plains\n2 Plains\n2 Plains\n1 Plains\n1 Rupture Spire\n1 Saltcrusted Steppe\n1 Seaside Citadel\n1 Secluded Steppe\n1 Sejiri Refuge\n1 Selesnya Guildgate\n1 Selesnya Sanctuary\n1 Simic Guildgate\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Transguild Promenade",
   "oracleCards": [
@@ -138,8 +138,7 @@
       "tags": [
         "instant",
         "draw",
-        "counterspell",
-        "counter-kind:generic"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -156,7 +155,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -524,7 +524,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -671,8 +672,8 @@
       "tags": [
         "creature",
         "tempo-interaction",
-        "blink",
-        "etb"
+        "etb",
+        "blink"
       ],
       "isCommander": false
     },
@@ -1362,13 +1363,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1584,7 +1585,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "removal"
       ],
       "isCommander": false
     },
@@ -1645,23 +1647,23 @@
   "result": {
     "profile": {
       "median": 43,
-      "floor": 29,
+      "floor": 31,
       "ceiling": 55,
-      "peak": 83,
-      "dispersion": 26,
-      "variance": 26,
+      "peak": 84,
+      "dispersion": 24,
+      "variance": 24,
       "consistency": 61,
-      "commanderDelta": 5,
-      "coverage": 89,
-      "dataCoverage": 89
+      "commanderDelta": 4,
+      "coverage": 90,
+      "dataCoverage": 90
     },
     "dimensions": {
       "speed": 38,
       "consistency": 61,
       "explosiveness": 12,
       "synergy": 64,
-      "interaction": 52,
-      "resilience": 30
+      "interaction": 56,
+      "resilience": 31
     },
     "roles": {
       "lands": 38,
@@ -1669,12 +1671,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 4,
-      "interaction": 13,
+      "draw": 6,
+      "interaction": 14,
       "protection": 5,
       "recursion": 1,
       "wipes": 3,
-      "avgCmc": 3.4262295081967213,
+      "avgCmc": 3.442622950819672,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1738,8 +1740,8 @@
             "tags": [
               "creature",
               "tempo-interaction",
-              "blink",
-              "etb"
+              "etb",
+              "blink"
             ],
             "manaReq": {
               "generic": 1,
@@ -1943,8 +1945,8 @@
             "tags": [
               "creature",
               "tempo-interaction",
-              "blink",
-              "etb"
+              "etb",
+              "blink"
             ],
             "manaReq": {
               "generic": 1,
@@ -2037,7 +2039,7 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 30,
+      "floor": 31,
       "median": 39,
       "high": 48,
       "ceiling": 48,
@@ -2046,7 +2048,7 @@
       "consistency": 69,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 74,
+      "recoveryAfterDisruption": 75,
       "turnProfile": [
         {
           "turn": 1,
@@ -2060,7 +2062,7 @@
           "turn": 2,
           "commander": 1,
           "engine": 0,
-          "interaction": 16,
+          "interaction": 18,
           "resource": 5,
           "burst": 0
         },
@@ -2068,40 +2070,40 @@
           "turn": 3,
           "commander": 32,
           "engine": 1,
-          "interaction": 36,
-          "resource": 14,
+          "interaction": 39,
+          "resource": 15,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 66,
           "engine": 8,
-          "interaction": 58,
-          "resource": 26,
+          "interaction": 62,
+          "resource": 29,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 81,
           "engine": 16,
-          "interaction": 71,
-          "resource": 35,
+          "interaction": 74,
+          "resource": 41,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 87,
           "engine": 23,
-          "interaction": 78,
-          "resource": 41,
+          "interaction": 81,
+          "resource": 48,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 91,
           "engine": 28,
-          "interaction": 83,
-          "resource": 45,
+          "interaction": 85,
+          "resource": 54,
           "burst": 0
         }
       ]
@@ -2113,8 +2115,7 @@
         "tags": [
           "instant",
           "draw",
-          "counterspell",
-          "counter-kind:generic"
+          "counterspell"
         ],
         "aeon": null
       },
@@ -2140,6 +2141,15 @@
         "aeon": null
       },
       {
+        "name": "Diviner Spirit",
+        "impact": 2.2,
+        "tags": [
+          "creature",
+          "draw"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Lu Xun, Scholar General",
         "impact": 2.2,
         "tags": [
@@ -2154,8 +2164,8 @@
         "tags": [
           "creature",
           "tempo-interaction",
-          "blink",
-          "etb"
+          "etb",
+          "blink"
         ],
         "aeon": null
       },
@@ -2213,16 +2223,6 @@
       },
       {
         "name": "Fiend Hunter",
-        "impact": 1.8,
-        "tags": [
-          "creature",
-          "removal",
-          "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Stonecloaker",
         "impact": 1.8,
         "tags": [
           "creature",

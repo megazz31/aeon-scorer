@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 37,
+    "median": 38,
     "p20": 24,
     "p80": 52,
-    "peak": 82,
+    "peak": 83,
     "coverage": 90,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "e6a2e7154e1c3bc21dd35041fafab1da897e3563857243c38d7bc8d64652f150",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "065667550b5d4e28e5dcad921f7fa3c27a0f7279d97e82ad9a842132ad2bdd2d",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Past in Flames\n1 Decree of Pain\n1 Blasphemous Act\n1 Deny Reality\n1 Chaos Warp\n1 Reverberate\n1 Bile Blight\n1 Bituminous Blast\n1 Brainstorm\n1 Dark Ritual\n1 Chromatic Lantern\n1 Assault Suit\n1 Sol Ring\n1 Talisman of Creativity\n1 Talisman of Dominance\n1 Talisman of Indulgence\n1 Worn Powerstone\n1 Commander's Sphere\n1 Wayfarer's Bauble\n1 Warstorm Surge\n1 Exotic Orchard\n1 Foreboding Ruins\n1 Sunken Hollow\n1 Barren Moor\n1 Crumbling Necropolis\n1 Molten Slagheap\n1 Temple of the False God\n1 Command Tower\n1 Dismal Backwater\n1 Evolving Wilds\n1 Forgotten Cave\n1 Path of Ancestry\n1 Swiftwater Cliffs\n1 Terramorphic Expanse\n8 Mountain\n8 Swamp\n8 Island\n1 Be'lakor, the Dark Master\n1 Lord of Change\n1 Blight Grenade\n1 Great Unclean One\n1 Mandate of Abaddon\n1 Mortarion, Daemon Primarch\n1 Nurgle's Conscription\n1 Plague Drone\n1 Poxwalkers\n1 Sloppity Bilepiper\n1 Tallyman of Nurgle\n1 Venomcrawler\n1 Aspiring Champion\n1 Bloodthirster\n1 Dark Apostle\n1 Keeper of Secrets\n1 Khârn the Betrayer\n1 Knight Rampager\n1 Let the Galaxy Burn\n1 Blood for the Blood God!\n1 Chaos Defiler\n1 Chaos Mutation\n1 Drach'Nyen\n1 Exalted Flamer of Tzeentch\n1 Helbrute\n1 The Horus Heresy\n1 Kill! Maim! Burn!\n1 Lucius the Eternal\n1 Magnus the Red\n1 Mutalith Vortex Beast\n1 Pink Horror\n1 The Ruinous Powers\n1 Tzaangor Shaman\n1 Heralds of Tzeentch\n1 Nurgle's Rot\n1 Bloodcrusher of Khorne\n1 Chaos Terminator Lord\n1 Herald of Slaanesh\n1 Noise Marine\n1 Seeker of Slaanesh\n1 The Lost and the Damned",
   "oracleCards": [
@@ -300,6 +300,7 @@
       "tags": [
         "creature",
         "artifact",
+        "death-payoff",
         "etb"
       ],
       "isCommander": false
@@ -352,7 +353,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "removal"
       ],
       "isCommander": false
     },
@@ -418,6 +420,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -1214,13 +1217,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1435,7 +1438,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "enchantment"
+        "enchantment",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1577,12 +1581,12 @@
   ],
   "result": {
     "profile": {
-      "median": 37,
+      "median": 38,
       "floor": 24,
       "ceiling": 52,
-      "peak": 82,
-      "dispersion": 28,
-      "variance": 28,
+      "peak": 83,
+      "dispersion": 29,
+      "variance": 29,
       "consistency": 58,
       "commanderDelta": 4,
       "coverage": 90,
@@ -1593,7 +1597,7 @@
       "consistency": 58,
       "explosiveness": 26,
       "synergy": 57,
-      "interaction": 16,
+      "interaction": 21,
       "resilience": 31
     },
     "roles": {
@@ -1602,12 +1606,12 @@
       "fastMana": 2,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 7,
-      "interaction": 5,
+      "draw": 9,
+      "interaction": 6,
       "protection": 0,
       "recursion": 3,
       "wipes": 3,
-      "avgCmc": 4.295081967213115,
+      "avgCmc": 4.311475409836065,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1794,7 +1798,8 @@
             "name": "Chaos Warp",
             "cmc": 3,
             "tags": [
-              "instant"
+              "instant",
+              "removal"
             ],
             "manaReq": {
               "generic": 2,
@@ -2152,6 +2157,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2163,7 +2169,7 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
               "artifact",
               "mana",
@@ -2380,15 +2386,15 @@
     "simulation": {
       "iterations": 3200,
       "floor": 29,
-      "median": 38,
-      "high": 48,
-      "ceiling": 48,
-      "peak": 74,
-      "iqr": 15,
+      "median": 39,
+      "high": 49,
+      "ceiling": 49,
+      "peak": 75,
+      "iqr": 16,
       "consistency": 66,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 68,
+      "recoveryAfterDisruption": 69,
       "turnProfile": [
         {
           "turn": 1,
@@ -2402,48 +2408,48 @@
           "turn": 2,
           "commander": 1,
           "engine": 0,
-          "interaction": 1,
-          "resource": 13,
+          "interaction": 2,
+          "resource": 14,
           "burst": 11
         },
         {
           "turn": 3,
           "commander": 15,
           "engine": 4,
-          "interaction": 7,
-          "resource": 26,
+          "interaction": 11,
+          "resource": 27,
           "burst": 13
         },
         {
           "turn": 4,
           "commander": 49,
           "engine": 12,
-          "interaction": 19,
-          "resource": 44,
+          "interaction": 25,
+          "resource": 45,
           "burst": 15
         },
         {
           "turn": 5,
           "commander": 73,
           "engine": 23,
-          "interaction": 28,
-          "resource": 54,
+          "interaction": 35,
+          "resource": 56,
           "burst": 16
         },
         {
           "turn": 6,
           "commander": 83,
           "engine": 33,
-          "interaction": 35,
-          "resource": 62,
+          "interaction": 43,
+          "resource": 65,
           "burst": 17
         },
         {
           "turn": 7,
           "commander": 88,
           "engine": 39,
-          "interaction": 41,
-          "resource": 68,
+          "interaction": 49,
+          "resource": 71,
           "burst": 19
         }
       ]
@@ -2477,6 +2483,17 @@
           "sorcery",
           "draw",
           "wipe"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2550,15 +2567,6 @@
       },
       {
         "name": "Talisman of Creativity",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Talisman of Dominance",
         "impact": 1.9,
         "tags": [
           "artifact",

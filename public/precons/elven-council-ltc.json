@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 42,
-    "p20": 33,
-    "p80": 51,
+    "p20": 32,
+    "p80": 52,
     "peak": 77,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "d56958a59e207609c2cc49e41957698b0044195a6681d011a712c818fcbe4f55",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "fd44bbd26047a9d032ec0b383566925cae70ad2e268fdf001ac0ec7071da9c0a",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Gandalf, Westward Voyager\n1 Raise the Palisade\n1 Trap the Trespassers\n1 Arwen, Weaver of Hope\n1 Galadhrim Ambush\n1 Haldir, Lórien Lieutenant\n1 Legolas Greenleaf\n1 Mirkwood Elk\n1 Travel Through Caradhras\n1 Windswift Slice\n1 Círdan the Shipwright\n1 Elrond of the White Council\n1 Erestor of the Council\n1 Mirkwood Trapper\n1 Radagast, Wizard of Wilds\n1 Sail into the West\n1 Song of Eärendil\n1 Lothlórien Blade\n1 Model of Unity\n1 Colossal Whale\n1 Devastation Tide\n1 Mystic Confluence\n1 Plea for Power\n1 Swan Song\n1 Asceticism\n1 Elvish Archdruid\n1 Elvish Piper\n1 Elvish Warmaster\n1 Genesis Wave\n1 Heroic Intervention\n1 Hornet Queen\n1 Inscription of Abundance\n1 Overwhelming Stampede\n1 Realm Seekers\n1 Seeds of Renewal\n1 Sylvan Offering\n1 Exotic Orchard\n1 Flooded Grove\n1 Hinterland Harbor\n1 Rejuvenating Springs\n1 Vineglimmer Snarl\n1 Lórien Revealed\n1 Celeborn the Wise\n1 Elven Farsight\n1 Wose Pathfinder\n1 Learn from the Past\n1 Opt\n1 Preordain\n1 Arbor Elf\n1 Beast Within\n1 Cultivate\n1 Elvish Mystic\n1 Elvish Visionary\n1 Farhaven Elf\n1 Mirror of Galadriel\n1 Lignify\n1 Paradise Druid\n1 Rampant Growth\n1 Reclamation Sage\n1 Wood Elves\n1 Growth Spiral\n1 Arcane Signet\n1 Commander's Sphere\n1 Lightning Greaves\n1 Sol Ring\n1 Whispersilk Cloak\n1 Ash Barrens\n1 Command Tower\n1 Field of Ruin\n1 Lonely Sandbar\n1 Thornwood Falls\n1 Tranquil Thicket\n1 Woodland Stream\n6 Island\n5 Island\n8 Forest\n7 Forest",
   "oracleCards": [
@@ -249,6 +249,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -438,8 +439,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "draw",
-        "mana"
+        "draw"
       ],
       "isCommander": false
     },
@@ -936,8 +936,7 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact",
-        "draw"
+        "artifact"
       ],
       "isCommander": false
     },
@@ -977,9 +976,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counterspell",
-        "counter-kind:generic",
-        "stax"
+        "draw",
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -1075,8 +1073,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery",
-        "draw"
+        "sorcery"
       ],
       "isCommander": false
     },
@@ -1234,13 +1231,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1267,7 +1264,6 @@
       "producedMana": [],
       "tags": [
         "enchantment",
-        "draw",
         "mana",
         "tokens",
         "counter-kind:generic"
@@ -1288,7 +1284,7 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counter-kind:generic"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -1519,23 +1515,23 @@
   "result": {
     "profile": {
       "median": 42,
-      "floor": 33,
-      "ceiling": 51,
+      "floor": 32,
+      "ceiling": 52,
       "peak": 77,
-      "dispersion": 19,
-      "variance": 19,
-      "consistency": 67,
+      "dispersion": 20,
+      "variance": 20,
+      "consistency": 66,
       "commanderDelta": 6,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 39,
-      "consistency": 67,
+      "consistency": 66,
       "explosiveness": 15,
       "synergy": 47,
-      "interaction": 30,
-      "resilience": 42
+      "interaction": 38,
+      "resilience": 39
     },
     "roles": {
       "lands": 38,
@@ -1543,12 +1539,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 14,
-      "interaction": 7,
+      "draw": 13,
+      "interaction": 8,
       "protection": 3,
       "recursion": 3,
       "wipes": 2,
-      "avgCmc": 3.278688524590164,
+      "avgCmc": 3.2950819672131146,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1606,6 +1602,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -1741,7 +1738,7 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
               "artifact",
               "mana",
@@ -2045,71 +2042,71 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 34,
+      "floor": 33,
       "median": 40,
       "high": 47,
       "ceiling": 47,
       "peak": 67,
       "iqr": 11,
-      "consistency": 76,
+      "consistency": 75,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 87,
+      "recoveryAfterDisruption": 81,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 8,
-          "resource": 14,
+          "interaction": 13,
+          "resource": 10,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 2,
           "engine": 0,
-          "interaction": 10,
-          "resource": 27,
+          "interaction": 16,
+          "resource": 17,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 22,
           "engine": 1,
-          "interaction": 20,
-          "resource": 41,
+          "interaction": 27,
+          "resource": 30,
           "burst": 2
         },
         {
           "turn": 4,
           "commander": 70,
           "engine": 3,
-          "interaction": 34,
-          "resource": 66,
+          "interaction": 42,
+          "resource": 55,
           "burst": 7
         },
         {
           "turn": 5,
           "commander": 90,
           "engine": 6,
-          "interaction": 45,
-          "resource": 79,
+          "interaction": 53,
+          "resource": 70,
           "burst": 9
         },
         {
           "turn": 6,
           "commander": 94,
           "engine": 9,
-          "interaction": 52,
-          "resource": 86,
+          "interaction": 60,
+          "resource": 79,
           "burst": 11
         },
         {
           "turn": 7,
           "commander": 97,
           "engine": 11,
-          "interaction": 59,
-          "resource": 89,
+          "interaction": 65,
+          "resource": 84,
           "burst": 12
         }
       ]
@@ -2136,22 +2133,23 @@
         "aeon": null
       },
       {
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Growth Spiral",
         "impact": 3.3,
         "tags": [
           "instant",
           "draw",
           "land-ramp"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Erestor of the Council",
-        "impact": 3.1,
-        "tags": [
-          "creature",
-          "draw",
-          "mana"
         ],
         "aeon": null
       },
@@ -2168,14 +2166,12 @@
         "aeon": null
       },
       {
-        "name": "Song of Eärendil",
-        "impact": 2.8,
+        "name": "Mystic Confluence",
+        "impact": 2.5,
         "tags": [
-          "enchantment",
+          "instant",
           "draw",
-          "mana",
-          "tokens",
-          "counter-kind:generic"
+          "counterspell"
         ],
         "aeon": null
       },
@@ -2195,6 +2191,15 @@
         "tags": [
           "artifact",
           "mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Erestor of the Council",
+        "impact": 2.3,
+        "tags": [
+          "creature",
+          "draw"
         ],
         "aeon": null
       },
@@ -2222,15 +2227,6 @@
         "impact": 1.9,
         "tags": [
           "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Elvish Mystic",
-        "impact": 1.9,
-        "tags": [
-          "creature",
           "mana"
         ],
         "aeon": null

@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 46,
-    "p20": 34,
+    "median": 47,
+    "p20": 35,
     "p80": 58,
     "peak": 83,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "54c0b7edc84da015a08b2652b412eb17e47a65f15fe8ca0c3c5cb55a77382e88",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "21a7117053715a283b442084dae36b085b2b90c986da7a0affdc1ece8316c071",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Preston Garvey, Minuteman\n1 Codsworth, Handy Helper\n1 Idolized\n1 Pre-War Formalwear\n1 Vault 101: Birthday Party\n1 Duchess, Wayward Tavernkeep\n1 Grim Reaper's Sprint\n1 Junk Jet\n1 Megaton's Fate\n1 Vault 21: House Gambit\n1 Veronica, Dissident Scribe\n1 Animal Friend\n1 Strong Back\n1 Almost Perfect\n1 Armory Paladin\n1 Cait, Cage Brawler\n1 Cass, Hand of Vengeance\n1 Inventory Management\n1 Moira Brown, Guide Author\n1 Three Dog, Galaxy News DJ\n1 Mister Gutsy\n1 Pip-Boy 3000\n1 Junktown\n1 Sunscorched Divide\n1 Mantle of the Ancients\n1 Puresteel Paladin\n1 Single Combat\n1 Blasphemous Act\n1 Chaos Warp\n1 Heroic Intervention\n1 Basilisk Collar\n1 Bloodforged Battle-Axe\n1 Champion's Helm\n1 Masterwork of Ingenuity\n1 Canopy Vista\n1 Cinder Glade\n1 Clifftop Retreat\n1 Exotic Orchard\n1 Mossfire Valley\n1 Rootbound Crag\n1 Scattered Groves\n1 Scavenger Grounds\n1 Sheltered Thicket\n1 Sungrass Prairie\n1 Sunpetal Grove\n1 Temple of Abandon\n1 Temple of Plenty\n1 Temple of Triumph\n1 Brotherhood Outcast\n1 Commander Sofia Daguerre\n1 Acquired Mutation\n1 Crimson Caravaneer\n1 Ian the Reckless\n1 Bighorner Rancher\n1 Break Down\n1 Gunner Conscript\n1 Super Mutant Scavenger\n1 Well Rested\n1 Agility Bobblehead\n1 Perception Bobblehead\n1 Silver Shroud Costume\n1 All That Glitters\n1 Path to Exile\n1 Valorous Stance\n1 Sticky Fingers\n1 Abundant Growth\n1 Fertile Ground\n1 Rancor\n1 Squirrel Nest\n1 Wild Growth\n1 Behemoth Sledge\n1 Arcane Signet\n1 Brass Knuckles\n1 Explorer's Scope\n1 Fireshrieker\n1 Sol Ring\n1 Swiftfoot Boots\n1 Ash Barrens\n1 Buried Ruin\n1 Command Tower\n1 Evolving Wilds\n1 Jungle Shrine\n1 Path of Ancestry\n1 Roadside Reliquary\n1 Rogue's Passage\n1 Temple of the False God\n1 Terramorphic Expanse\n2 Mountain\n2 Mountain\n2 Forest\n2 Forest\n2 Plains\n2 Plains",
   "oracleCards": [
@@ -401,6 +401,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "protection",
         "graveyard-setup",
         "counter-producer",
@@ -479,7 +480,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "removal"
       ],
       "isCommander": false
     },
@@ -624,6 +626,7 @@
       "tags": [
         "creature",
         "recursion",
+        "graveyard-setup",
         "tokens",
         "etb"
       ],
@@ -1150,6 +1153,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "draw",
         "graveyard-setup",
         "counter-producer",
         "counter-kind:plus1"
@@ -1417,13 +1421,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1475,7 +1479,8 @@
         "enchantment",
         "draw",
         "mana",
-        "tokens"
+        "tokens",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -1578,6 +1583,7 @@
       "tags": [
         "creature",
         "recursion",
+        "death-payoff",
         "etb"
       ],
       "isCommander": false
@@ -1773,7 +1779,6 @@
       "producedMana": [],
       "tags": [
         "enchantment",
-        "draw",
         "mana",
         "graveyard-setup",
         "tokens"
@@ -1843,24 +1848,24 @@
   ],
   "result": {
     "profile": {
-      "median": 46,
-      "floor": 34,
+      "median": 47,
+      "floor": 35,
       "ceiling": 58,
       "peak": 83,
-      "dispersion": 24,
-      "variance": 24,
+      "dispersion": 23,
+      "variance": 23,
       "consistency": 62,
-      "commanderDelta": 13,
+      "commanderDelta": 12,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 45,
       "consistency": 62,
-      "explosiveness": 12,
+      "explosiveness": 11,
       "synergy": 76,
-      "interaction": 33,
-      "resilience": 50
+      "interaction": 37,
+      "resilience": 51
     },
     "roles": {
       "lands": 38,
@@ -1868,12 +1873,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 6,
-      "interaction": 5,
+      "draw": 7,
+      "interaction": 6,
       "protection": 6,
       "recursion": 5,
       "wipes": 0,
-      "avgCmc": 2.80327868852459,
+      "avgCmc": 2.819672131147541,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1914,6 +1919,7 @@
             "cmc": 2,
             "tags": [
               "creature",
+              "draw",
               "protection",
               "graveyard-setup",
               "counter-producer",
@@ -1937,6 +1943,7 @@
             "cmc": 1,
             "tags": [
               "artifact",
+              "draw",
               "graveyard-setup",
               "counter-producer",
               "counter-kind:plus1"
@@ -1952,7 +1959,6 @@
             "cmc": 2,
             "tags": [
               "enchantment",
-              "draw",
               "mana",
               "graveyard-setup",
               "tokens"
@@ -2088,6 +2094,7 @@
             "tags": [
               "creature",
               "recursion",
+              "death-payoff",
               "etb"
             ],
             "manaReq": {
@@ -2143,9 +2150,9 @@
       ],
       "tags": [
         "recursion",
+        "graveyard-setup",
         "tokens",
-        "token-payoff",
-        "graveyard-setup"
+        "token-payoff"
       ]
     },
     "aeon": {
@@ -2156,23 +2163,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 30,
-      "median": 38,
-      "high": 47,
-      "ceiling": 47,
+      "floor": 31,
+      "median": 39,
+      "high": 48,
+      "ceiling": 48,
       "peak": 70,
       "iqr": 13,
       "consistency": 71,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 84,
+      "recoveryAfterDisruption": 85,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 11,
-          "resource": 17,
+          "resource": 21,
           "burst": 0
         },
         {
@@ -2180,47 +2187,47 @@
           "commander": 2,
           "engine": 1,
           "interaction": 19,
-          "resource": 25,
+          "resource": 31,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 41,
           "engine": 4,
-          "interaction": 27,
-          "resource": 41,
+          "interaction": 30,
+          "resource": 46,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 74,
           "engine": 10,
-          "interaction": 35,
-          "resource": 56,
+          "interaction": 40,
+          "resource": 61,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 86,
           "engine": 16,
-          "interaction": 41,
-          "resource": 64,
+          "interaction": 48,
+          "resource": 68,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 90,
           "engine": 21,
-          "interaction": 47,
-          "resource": 68,
+          "interaction": 54,
+          "resource": 73,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 93,
-          "engine": 25,
-          "interaction": 50,
-          "resource": 72,
+          "engine": 24,
+          "interaction": 57,
+          "resource": 77,
           "burst": 0
         }
       ]
@@ -2238,14 +2245,15 @@
         "aeon": null
       },
       {
-        "name": "Vault 21: House Gambit",
-        "impact": 3.7,
+        "name": "Cait, Cage Brawler",
+        "impact": 3.6,
         "tags": [
-          "enchantment",
+          "creature",
           "draw",
-          "mana",
+          "protection",
           "graveyard-setup",
-          "tokens"
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -2256,7 +2264,8 @@
           "enchantment",
           "draw",
           "mana",
-          "tokens"
+          "tokens",
+          "death-payoff"
         ],
         "aeon": null
       },
@@ -2268,6 +2277,18 @@
           "draw",
           "graveyard-setup",
           "tokens"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Pip-Boy 3000",
+        "impact": 3.1,
+        "tags": [
+          "artifact",
+          "draw",
+          "graveyard-setup",
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -2303,6 +2324,17 @@
         "aeon": null
       },
       {
+        "name": "Vault 21: House Gambit",
+        "impact": 2.3,
+        "tags": [
+          "enchantment",
+          "mana",
+          "graveyard-setup",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Well Rested",
         "impact": 2.3,
         "tags": [
@@ -2311,18 +2343,6 @@
           "counter-producer",
           "counter-kind:plus1",
           "lifegain"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Cait, Cage Brawler",
-        "impact": 2.2,
-        "tags": [
-          "creature",
-          "protection",
-          "graveyard-setup",
-          "counter-producer",
-          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -2345,16 +2365,6 @@
           "removal",
           "tokens",
           "counter-kind:rad"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Preston Garvey, Minuteman",
-        "impact": 2,
-        "tags": [
-          "creature",
-          "mana",
-          "tokens"
         ],
         "aeon": null
       }

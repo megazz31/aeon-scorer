@@ -30,15 +30,15 @@
   "analysis": {
     "median": 37,
     "p20": 24,
-    "p80": 50,
+    "p80": 51,
     "peak": 83,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "f9fa12114bff3199def196712e8562b7f98493da0a112bff7940eb38b63032a4",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "d3a6a710183581108f6d5bcfaa10a0c962057b386862ea609dbf4fde77bbd50c",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Brooding Saurian\n1 Capricious Efreet\n1 Charnelhoard Wurm\n1 Deathbringer Thoctar\n1 Deepfire Elemental\n1 Elvish Skysweeper\n1 Endless Cockroaches\n1 Endrek Sahr, Master Breeder\n1 Fell Shepherd\n1 Goblin Sharpshooter\n1 Golgari Guildmage\n1 Hooded Horror\n1 Hua Tuo, Honored Physician\n1 Hunted Troll\n1 Inferno Titan\n1 Jade Mage\n1 Ophiomancer\n1 Quagmire Druid\n1 Sakura-Tribe Elder\n1 Scarland Thrinax\n1 Sek'Kuar, Deathkeeper\n1 Shattergang Brothers\n1 Silklash Spider\n1 Sprouting Thrinax\n1 Stalking Vengeance\n1 Stronghold Assassin\n1 Terra Ravager\n1 Viscera Seer\n1 Walker of the Grove\n1 Wight of Precinct Six\n1 Dirge of Dread\n1 Mass Mutiny\n1 Restore\n1 Rough // Tumble\n1 Spoils of Victory\n1 Sudden Demise\n1 Tempt with Vengeance\n1 Jund Charm\n1 Reincarnation\n1 Armillary Sphere\n1 Carnage Altar\n1 Jar of Eyeballs\n1 Obelisk of Jund\n1 Plague Boiler\n1 Sol Ring\n1 Spine of Ish Sah\n1 Swiftfoot Boots\n1 Blood Rites\n1 Curse of Chaos\n1 Curse of Predation\n1 Curse of Shallow Graves\n1 Fecundity\n1 Foster\n1 Furnace Celebration\n1 Goblin Bombardment\n1 Night Soil\n1 Primal Vigor\n1 Tooth and Claw\n1 Vile Requiem\n1 Widespread Panic\n1 Akoum Refuge\n1 Command Tower\n1 Evolving Wilds\n2 Forest\n2 Forest\n2 Forest\n1 Forest\n1 Golgari Guildgate\n1 Golgari Rot Farm\n1 Grim Backwoods\n1 Gruul Guildgate\n1 Jund Panorama\n1 Kazandu Refuge\n1 Khalni Garden\n1 Kher Keep\n1 Llanowar Reborn\n2 Mountain\n2 Mountain\n2 Mountain\n1 Mountain\n1 Opal Palace\n1 Rakdos Guildgate\n1 Rupture Spire\n1 Savage Lands\n2 Swamp\n2 Swamp\n1 Swamp\n1 Swamp\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Vivid Grove",
   "oracleCards": [
@@ -147,6 +147,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "draw",
         "sacrifice",
         "sac-outlet"
       ],
@@ -597,6 +598,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "sacrifice",
         "sac-outlet"
@@ -1292,13 +1294,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1666,22 +1668,22 @@
     "profile": {
       "median": 37,
       "floor": 24,
-      "ceiling": 50,
+      "ceiling": 51,
       "peak": 83,
-      "dispersion": 26,
-      "variance": 26,
-      "consistency": 61,
+      "dispersion": 27,
+      "variance": 27,
+      "consistency": 58,
       "commanderDelta": 10,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 31,
-      "consistency": 61,
-      "explosiveness": 14,
+      "consistency": 58,
+      "explosiveness": 13,
       "synergy": 83,
       "interaction": 30,
-      "resilience": 15
+      "resilience": 20
     },
     "roles": {
       "lands": 39,
@@ -1689,12 +1691,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 0,
+      "draw": 1,
       "interaction": 8,
       "protection": 1,
       "recursion": 2,
       "wipes": 1,
-      "avgCmc": 3.6333333333333333,
+      "avgCmc": 3.65,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1778,6 +1780,7 @@
             "cmc": 2,
             "tags": [
               "artifact",
+              "draw",
               "sacrifice",
               "sac-outlet"
             ],
@@ -1877,6 +1880,7 @@
             "cmc": 0,
             "tags": [
               "land",
+              "draw",
               "mana",
               "sacrifice",
               "sac-outlet"
@@ -2262,7 +2266,7 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
               "artifact",
               "mana",
@@ -2376,23 +2380,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 22,
-      "median": 31,
-      "high": 40,
-      "ceiling": 40,
-      "peak": 69,
-      "iqr": 14,
-      "consistency": 69,
+      "floor": 23,
+      "median": 32,
+      "high": 42,
+      "ceiling": 42,
+      "peak": 70,
+      "iqr": 15,
+      "consistency": 66,
       "commanderMedianTurn": 6,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 26,
+      "recoveryAfterDisruption": 39,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 3,
-          "resource": 0,
+          "resource": 9,
           "burst": 0
         },
         {
@@ -2400,7 +2404,7 @@
           "commander": 0,
           "engine": 0,
           "interaction": 8,
-          "resource": 4,
+          "resource": 19,
           "burst": 0
         },
         {
@@ -2408,7 +2412,7 @@
           "commander": 1,
           "engine": 7,
           "interaction": 21,
-          "resource": 8,
+          "resource": 24,
           "burst": 0
         },
         {
@@ -2416,7 +2420,7 @@
           "commander": 5,
           "engine": 21,
           "interaction": 34,
-          "resource": 11,
+          "resource": 27,
           "burst": 0
         },
         {
@@ -2424,7 +2428,7 @@
           "commander": 22,
           "engine": 35,
           "interaction": 42,
-          "resource": 13,
+          "resource": 29,
           "burst": 0
         },
         {
@@ -2432,7 +2436,7 @@
           "commander": 47,
           "engine": 46,
           "interaction": 49,
-          "resource": 15,
+          "resource": 31,
           "burst": 0
         },
         {
@@ -2440,7 +2444,7 @@
           "commander": 63,
           "engine": 54,
           "interaction": 56,
-          "resource": 19,
+          "resource": 34,
           "burst": 0
         }
       ]
@@ -2453,6 +2457,17 @@
           "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Carnage Altar",
+        "impact": 2.5,
+        "tags": [
+          "artifact",
+          "draw",
+          "sacrifice",
+          "sac-outlet"
         ],
         "aeon": null
       },
@@ -2559,15 +2574,6 @@
           "sac-outlet",
           "counter-producer",
           "counter-kind:plus1"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Fecundity",
-        "impact": 1.5,
-        "tags": [
-          "enchantment",
-          "death-payoff"
         ],
         "aeon": null
       }

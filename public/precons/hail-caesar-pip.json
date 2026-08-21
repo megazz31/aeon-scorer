@@ -30,15 +30,15 @@
   "analysis": {
     "median": 48,
     "p20": 36,
-    "p80": 59,
+    "p80": 60,
     "peak": 88,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "04d07b3963799b01717738dd4a88b3d3b4b35859a9bbc68600f3eb60ae189b4d",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "b5fa5f1fc14804980de46c6b10328276ee68bd5a30b14e25667ca2624758de00",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Mr. House, President and CEO\n1 Aradesh, the Founder\n1 Battle of Hoover Dam\n1 Overseer of Vault 76\n1 Securitron Squadron\n1 Sierra, Nuka's Biggest Fan\n1 Vault 75: Middle School\n1 Yes Man, Personal Securitron\n1 V.A.T.S.\n1 Wasteland Raider\n1 Mysterious Stranger\n1 Powder Ganger\n1 Rose, Cutthroat Raider\n1 Thrill-Kill Disciple\n1 Wild Wasteland\n1 Boomer Scrapper\n1 Colonel Autumn\n1 Desdemona, Freedom's Edge\n1 Elder Arthur Maxson\n1 Kellogg, Dangerous Mind\n1 MacCready, Lamplight Mayor\n1 The Nipton Lottery\n1 Paladin Elizabeth Taggerdy\n1 Vault 11: Voter's Dilemma\n1 ED-E, Lonesome Eyebot\n1 Desolate Mire\n1 Diamond City\n1 Captain of the Watch\n1 Entrapment Maneuver\n1 Hour of Reckoning\n1 Keeper of the Accord\n1 Marshal's Anthem\n1 Martial Coup\n1 Secure the Wastes\n1 Black Market\n1 Lethal Scheme\n1 Stolen Strategy\n1 Anguished Unmaking\n1 Assemble the Legion\n1 Fervent Charge\n1 Ruinous Ultimatum\n1 Canyon Slough\n1 Clifftop Retreat\n1 Dragonskull Summit\n1 Isolated Chapel\n1 Shadowblood Ridge\n1 Smoldering Marsh\n1 Temple of Malice\n1 Temple of Silence\n1 Temple of Triumph\n1 Windbrisk Heights\n1 Gary Clone\n1 Butch DeLoria, Tunnel Snake\n1 Ruthless Radrat\n1 Craig Boone, Novac Guard\n1 Legate Lanius, Caesar's Ace\n1 White Glove Gourmand\n1 Charisma Bobblehead\n1 Luck Bobblehead\n1 Survivor's Med Kit\n1 Impassioned Orator\n1 Intangible Virtue\n1 Bastion of Remembrance\n1 Deadly Dispute\n1 Morbid Opportunist\n1 Pitiless Plunderer\n1 General's Enforcer\n1 Heroic Reinforcements\n1 Wear // Tear\n1 Arcane Signet\n1 Skullclamp\n1 Sol Ring\n1 Talisman of Conviction\n1 Talisman of Hierarchy\n1 Talisman of Indulgence\n1 Ash Barrens\n1 Command Tower\n1 Evolving Wilds\n1 Memorial to Glory\n1 Myriad Landscape\n1 Nomad Outpost\n1 Path of Ancestry\n1 Tainted Field\n1 Tainted Peak\n1 Terramorphic Expanse\n3 Plains\n2 Plains\n2 Swamp\n2 Swamp\n3 Mountain\n2 Mountain",
   "oracleCards": [
@@ -546,6 +546,7 @@
       "tags": [
         "creature",
         "artifact",
+        "draw",
         "sacrifice",
         "counter-payoff",
         "counter-kind:quest"
@@ -1354,7 +1355,8 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "draw"
+        "draw",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -1381,13 +1383,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1429,6 +1431,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "draw",
         "tokens",
         "sacrifice",
         "counter-kind:rad"
@@ -1823,8 +1826,7 @@
       "producedMana": [],
       "tags": [
         "enchantment",
-        "exile-cast",
-        "stax"
+        "exile-cast"
       ],
       "isCommander": false
     },
@@ -1877,12 +1879,12 @@
     "profile": {
       "median": 48,
       "floor": 36,
-      "ceiling": 59,
+      "ceiling": 60,
       "peak": 88,
       "dispersion": 23,
       "variance": 23,
       "consistency": 62,
-      "commanderDelta": 10,
+      "commanderDelta": 11,
       "coverage": 94,
       "dataCoverage": 94
     },
@@ -1890,9 +1892,9 @@
       "speed": 43,
       "consistency": 62,
       "explosiveness": 20,
-      "synergy": 76,
-      "interaction": 44,
-      "resilience": 33
+      "synergy": 77,
+      "interaction": 40,
+      "resilience": 36
     },
     "roles": {
       "lands": 36,
@@ -1900,12 +1902,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 7,
-      "interaction": 12,
+      "draw": 9,
+      "interaction": 11,
       "protection": 2,
       "recursion": 2,
       "wipes": 6,
-      "avgCmc": 3.2222222222222223,
+      "avgCmc": 3.238095238095238,
       "unknownManaLands": 0
     },
     "packages": [
@@ -2344,6 +2346,7 @@
             "cmc": 1,
             "tags": [
               "artifact",
+              "draw",
               "tokens",
               "sacrifice",
               "counter-kind:rad"
@@ -2514,8 +2517,8 @@
       {
         "id": "sacrifice",
         "name": "Sacrifice / mort",
-        "strength": 66,
-        "cohesion": 66,
+        "strength": 70,
+        "cohesion": 70,
         "producers": [
           "Deadly Dispute",
           "Elder Arthur Maxson"
@@ -2527,6 +2530,7 @@
           "Pitiless Plunderer",
           "Rose, Cutthroat Raider",
           "Sierra, Nuka's Biggest Fan",
+          "Skullclamp",
           "Thrill-Kill Disciple"
         ],
         "members": [
@@ -2538,6 +2542,7 @@
           "Pitiless Plunderer",
           "Rose, Cutthroat Raider",
           "Sierra, Nuka's Biggest Fan",
+          "Skullclamp",
           "Thrill-Kill Disciple"
         ],
         "producerCards": [
@@ -2716,6 +2721,20 @@
             }
           },
           {
+            "name": "Skullclamp",
+            "cmc": 1,
+            "tags": [
+              "artifact",
+              "draw",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
             "name": "Thrill-Kill Disciple",
             "cmc": 3,
             "tags": [
@@ -2742,7 +2761,7 @@
         "payoffTags": [
           "death-payoff"
         ],
-        "evidence": "2 producteur(s), 7 payoff(s), 9 carte(s) distincte(s)."
+        "evidence": "2 producteur(s), 8 payoff(s), 10 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2816,7 +2835,7 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
               "artifact",
               "mana",
@@ -2943,23 +2962,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
-      "median": 41,
-      "high": 50,
-      "ceiling": 50,
-      "peak": 78,
+      "floor": 34,
+      "median": 42,
+      "high": 51,
+      "ceiling": 51,
+      "peak": 79,
       "iqr": 13,
       "consistency": 70,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 76,
+      "recoveryAfterDisruption": 82,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 4,
+          "resource": 8,
           "burst": 8
         },
         {
@@ -2967,47 +2986,47 @@
           "commander": 0,
           "engine": 1,
           "interaction": 4,
-          "resource": 14,
+          "resource": 23,
           "burst": 8
         },
         {
           "turn": 3,
           "commander": 15,
-          "engine": 9,
-          "interaction": 26,
-          "resource": 35,
+          "engine": 10,
+          "interaction": 23,
+          "resource": 45,
           "burst": 7
         },
         {
           "turn": 4,
           "commander": 62,
-          "engine": 27,
-          "interaction": 51,
-          "resource": 55,
+          "engine": 28,
+          "interaction": 47,
+          "resource": 65,
           "burst": 10
         },
         {
           "turn": 5,
           "commander": 81,
-          "engine": 37,
-          "interaction": 61,
-          "resource": 64,
+          "engine": 38,
+          "interaction": 57,
+          "resource": 72,
           "burst": 11
         },
         {
           "turn": 6,
           "commander": 87,
-          "engine": 43,
-          "interaction": 69,
-          "resource": 69,
+          "engine": 44,
+          "interaction": 65,
+          "resource": 77,
           "burst": 11
         },
         {
           "turn": 7,
           "commander": 91,
-          "engine": 48,
-          "interaction": 75,
-          "resource": 73,
+          "engine": 49,
+          "interaction": 71,
+          "resource": 81,
           "burst": 13
         }
       ]
@@ -3085,12 +3104,34 @@
         "aeon": null
       },
       {
+        "name": "Skullclamp",
+        "impact": 3.1,
+        "tags": [
+          "artifact",
+          "draw",
+          "death-payoff"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Charisma Bobblehead",
         "impact": 2.9,
         "tags": [
           "artifact",
           "mana",
           "tokens"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Survivor's Med Kit",
+        "impact": 2.9,
+        "tags": [
+          "artifact",
+          "draw",
+          "tokens",
+          "sacrifice",
+          "counter-kind:rad"
         ],
         "aeon": null
       },
@@ -3125,27 +3166,6 @@
           "mana",
           "tokens",
           "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Mr. House, President and CEO",
-        "impact": 2.8,
-        "tags": [
-          "creature",
-          "artifact",
-          "mana",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Keeper of the Accord",
-        "impact": 2.7,
-        "tags": [
-          "creature",
-          "land-ramp",
-          "tokens"
         ],
         "aeon": null
       }

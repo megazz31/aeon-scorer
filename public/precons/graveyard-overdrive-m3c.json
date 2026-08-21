@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 37,
+    "median": 39,
     "p20": 28,
-    "p80": 47,
-    "peak": 73,
+    "p80": 50,
+    "peak": 84,
     "coverage": 91,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "cff0cb1087aaf1ad5c1f79d35b19b18706f94780572cbf8fade2232cc276de33",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "099a201fd1cec55f1d983882f4c6ce3eb64316d63034304ddf27aee545641b44",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Coram, the Undertaker\n1 Bloodbraid Challenger\n1 Broodmate Tyrant\n1 Tempt with Mayhem\n1 Gluttonous Hellkite\n1 Pyrogoyf\n1 Polygoyf\n1 Barrowgoyf\n1 Sawhorn Nemesis\n1 Infested Thrinax\n1 Final Act\n1 Siege-Gang Lieutenant\n1 Tarmogoyf Nest\n1 Exterminator Magmarch\n1 Liliana, Death's Majesty\n1 Maelstrom Pulse\n1 Junji, the Midnight Sky\n1 Garruk, Apex Predator\n1 The Reaver Cleaver\n1 Temple of Malady\n1 Deadbridge Chant\n1 Kolaghan's Command\n1 Izoni, Thousand-Eyed\n1 Lhurgoyf\n1 Selvala, Heart of the Wilds\n1 Kessig Wolf Run\n1 Archon of Cruelty\n1 Maskwood Nexus\n1 Grist, the Hunger Tide\n1 Ignoble Hierarch\n1 Necrogoyf\n1 Mortivore\n1 Chandra's Ignition\n1 Viridescent Bog\n1 Find // Finality\n1 Mossfire Valley\n1 Ziatora, the Incinerator\n1 Canyon Slough\n1 Cinder Glade\n1 Exotic Orchard\n1 Shadowblood Ridge\n1 Sheltered Thicket\n1 Smoldering Marsh\n1 Temple of Abandon\n1 Temple of Malice\n1 Raging Ravine\n1 Terminate\n1 Demolition Field\n1 Command Tower\n1 Twisted Landscape\n1 Grisly Salvage\n1 Yavimaya Elder\n1 Bituminous Blast\n1 Bloodbraid Elf\n1 Eternal Witness\n1 Savage Lands\n1 Tainted Wood\n1 Burnished Hart\n1 Deathreap Ritual\n1 Arcane Signet\n1 Syr Konrad, the Grim\n1 Grapple with the Past\n1 Dakmor Salvage\n1 Accursed Marauder\n1 Brawn\n1 Faithless Looting\n1 Rampant Growth\n1 Anger\n1 Tranquil Thicket\n1 Stitcher's Supplier\n1 Graveshifter\n1 Talisman of Resilience\n1 Altar of the Goyf\n1 Syphon Mind\n1 Talisman of Indulgence\n1 Sakura-Tribe Elder\n1 Terramorphic Expanse\n1 Tainted Peak\n1 Riveteers Overlook\n1 Riveteers Charm\n1 Forgotten Cave\n1 Path of Ancestry\n1 Lightning Greaves\n1 Myriad Landscape\n1 Sol Ring\n1 Talisman of Impulse\n1 Evolving Wilds\n2 Swamp\n2 Swamp\n2 Mountain\n1 Mountain\n3 Forest\n2 Forest",
   "oracleCards": [
@@ -704,7 +704,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "recursion"
+        "recursion",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -941,6 +942,7 @@
       "tags": [
         "wipe",
         "recursion",
+        "graveyard-setup",
         "tokens"
       ],
       "isCommander": false
@@ -1298,6 +1300,7 @@
       ],
       "tags": [
         "creature",
+        "mana",
         "etb"
       ],
       "isCommander": false
@@ -1388,13 +1391,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1420,6 +1423,8 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "graveyard-setup",
+        "death-payoff",
         "etb"
       ],
       "isCommander": false
@@ -1834,6 +1839,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "sacrifice",
         "death-payoff"
       ],
@@ -1864,24 +1870,24 @@
   ],
   "result": {
     "profile": {
-      "median": 37,
+      "median": 39,
       "floor": 28,
-      "ceiling": 47,
-      "peak": 73,
-      "dispersion": 19,
-      "variance": 19,
-      "consistency": 68,
-      "commanderDelta": 5,
+      "ceiling": 50,
+      "peak": 84,
+      "dispersion": 22,
+      "variance": 22,
+      "consistency": 63,
+      "commanderDelta": 6,
       "coverage": 91,
       "dataCoverage": 91
     },
     "dimensions": {
-      "speed": 28,
-      "consistency": 68,
-      "explosiveness": 11,
-      "synergy": 50,
+      "speed": 30,
+      "consistency": 63,
+      "explosiveness": 14,
+      "synergy": 54,
       "interaction": 44,
-      "resilience": 41
+      "resilience": 42
     },
     "roles": {
       "lands": 39,
@@ -1889,15 +1895,437 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 5,
+      "draw": 6,
       "interaction": 11,
       "protection": 0,
       "recursion": 6,
       "wipes": 5,
-      "avgCmc": 3.7,
+      "avgCmc": 3.716666666666667,
       "unknownManaLands": 0
     },
     "packages": [
+      {
+        "id": "graveyard",
+        "name": "Cimetière / récursion",
+        "strength": 69,
+        "cohesion": 69,
+        "producers": [
+          "Faithless Looting",
+          "Grapple with the Past",
+          "Liliana, Death's Majesty",
+          "Stitcher's Supplier"
+        ],
+        "payoffs": [
+          "Eternal Witness",
+          "Find // Finality",
+          "Grapple with the Past",
+          "Graveshifter",
+          "Kolaghan's Command",
+          "Liliana, Death's Majesty"
+        ],
+        "members": [
+          "Faithless Looting",
+          "Grapple with the Past",
+          "Liliana, Death's Majesty",
+          "Stitcher's Supplier",
+          "Eternal Witness",
+          "Find // Finality",
+          "Graveshifter",
+          "Kolaghan's Command"
+        ],
+        "producerCards": [
+          {
+            "name": "Faithless Looting",
+            "cmc": 1,
+            "tags": [
+              "sorcery",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Grapple with the Past",
+            "cmc": 2,
+            "tags": [
+              "instant",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Liliana, Death's Majesty",
+            "cmc": 5,
+            "tags": [
+              "wipe",
+              "recursion",
+              "graveyard-setup",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Stitcher's Supplier",
+            "cmc": 1,
+            "tags": [
+              "creature",
+              "graveyard-setup",
+              "death-payoff",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 1
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Eternal Witness",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Find // Finality",
+            "cmc": 8,
+            "tags": [
+              "sorcery",
+              "wipe",
+              "recursion",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B",
+                  "G"
+                ],
+                [
+                  "B",
+                  "G"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 8
+            }
+          },
+          {
+            "name": "Grapple with the Past",
+            "cmc": 2,
+            "tags": [
+              "instant",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Graveshifter",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Kolaghan's Command",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "removal",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Liliana, Death's Majesty",
+            "cmc": 5,
+            "tags": [
+              "wipe",
+              "recursion",
+              "graveyard-setup",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          }
+        ],
+        "producerTags": [
+          "graveyard-setup"
+        ],
+        "payoffTags": [
+          "recursion"
+        ],
+        "evidence": "4 producteur(s), 6 payoff(s), 8 carte(s) distincte(s)."
+      },
+      {
+        "id": "sacrifice",
+        "name": "Sacrifice / mort",
+        "strength": 58,
+        "cohesion": 58,
+        "producers": [
+          "Grist, the Hunger Tide",
+          "Izoni, Thousand-Eyed"
+        ],
+        "payoffs": [
+          "Infested Thrinax",
+          "Stitcher's Supplier",
+          "Syr Konrad, the Grim",
+          "Yavimaya Elder"
+        ],
+        "members": [
+          "Grist, the Hunger Tide",
+          "Izoni, Thousand-Eyed",
+          "Infested Thrinax",
+          "Stitcher's Supplier",
+          "Syr Konrad, the Grim",
+          "Yavimaya Elder"
+        ],
+        "producerCards": [
+          {
+            "name": "Grist, the Hunger Tide",
+            "cmc": 3,
+            "tags": [
+              "removal",
+              "tokens",
+              "sacrifice",
+              "sac-outlet",
+              "counter-kind:loyalty"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Izoni, Thousand-Eyed",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "draw",
+              "tokens",
+              "sacrifice",
+              "sac-outlet",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 6
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Infested Thrinax",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens",
+              "death-payoff",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Stitcher's Supplier",
+            "cmc": 1,
+            "tags": [
+              "creature",
+              "graveyard-setup",
+              "death-payoff",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Syr Konrad, the Grim",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Yavimaya Elder",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "draw",
+              "sacrifice",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          }
+        ],
+        "producerTags": [
+          "sac-outlet",
+          "sac-enabler"
+        ],
+        "payoffTags": [
+          "death-payoff"
+        ],
+        "evidence": "2 producteur(s), 4 payoff(s), 6 carte(s) distincte(s)."
+      },
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
@@ -2000,6 +2428,7 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "mana",
               "etb"
             ],
             "manaReq": {
@@ -2017,7 +2446,7 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
               "artifact",
               "mana",
@@ -2095,157 +2524,6 @@
           }
         ],
         "evidence": "0 accélérateur(s) burst + 9 source(s) persistante(s) vers un commandant MV 5."
-      },
-      {
-        "id": "sacrifice",
-        "name": "Sacrifice / mort",
-        "strength": 57,
-        "cohesion": 57,
-        "producers": [
-          "Grist, the Hunger Tide",
-          "Izoni, Thousand-Eyed"
-        ],
-        "payoffs": [
-          "Infested Thrinax",
-          "Syr Konrad, the Grim",
-          "Yavimaya Elder"
-        ],
-        "members": [
-          "Grist, the Hunger Tide",
-          "Izoni, Thousand-Eyed",
-          "Infested Thrinax",
-          "Syr Konrad, the Grim",
-          "Yavimaya Elder"
-        ],
-        "producerCards": [
-          {
-            "name": "Grist, the Hunger Tide",
-            "cmc": 3,
-            "tags": [
-              "removal",
-              "tokens",
-              "sacrifice",
-              "sac-outlet",
-              "counter-kind:loyalty"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "B"
-                ],
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Izoni, Thousand-Eyed",
-            "cmc": 6,
-            "tags": [
-              "creature",
-              "draw",
-              "tokens",
-              "sacrifice",
-              "sac-outlet",
-              "etb",
-              "lifegain"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "B"
-                ],
-                [
-                  "B"
-                ],
-                [
-                  "G"
-                ],
-                [
-                  "G"
-                ]
-              ],
-              "total": 6
-            }
-          }
-        ],
-        "payoffCards": [
-          {
-            "name": "Infested Thrinax",
-            "cmc": 5,
-            "tags": [
-              "creature",
-              "tokens",
-              "death-payoff",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "B"
-                ],
-                [
-                  "G"
-                ]
-              ],
-              "total": 5
-            }
-          },
-          {
-            "name": "Syr Konrad, the Grim",
-            "cmc": 5,
-            "tags": [
-              "creature",
-              "death-payoff"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "B"
-                ],
-                [
-                  "B"
-                ]
-              ],
-              "total": 5
-            }
-          },
-          {
-            "name": "Yavimaya Elder",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "sacrifice",
-              "death-payoff"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "G"
-                ],
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
-            }
-          }
-        ],
-        "producerTags": [
-          "sac-outlet",
-          "sac-enabler"
-        ],
-        "payoffTags": [
-          "death-payoff"
-        ],
-        "evidence": "2 producteur(s), 3 payoff(s), 5 carte(s) distincte(s)."
       }
     ],
     "combos": [],
@@ -2277,16 +2555,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 29,
-      "median": 35,
-      "high": 42,
-      "ceiling": 42,
-      "peak": 62,
-      "iqr": 11,
-      "consistency": 77,
+      "floor": 30,
+      "median": 37,
+      "high": 45,
+      "ceiling": 45,
+      "peak": 74,
+      "iqr": 13,
+      "consistency": 72,
       "commanderMedianTurn": 5,
-      "engineMedianTurn": 6,
-      "recoveryAfterDisruption": 68,
+      "engineMedianTurn": 5,
+      "recoveryAfterDisruption": 71,
       "turnProfile": [
         {
           "turn": 1,
@@ -2307,41 +2585,41 @@
         {
           "turn": 3,
           "commander": 6,
-          "engine": 0,
+          "engine": 3,
           "interaction": 29,
-          "resource": 28,
+          "resource": 30,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 39,
-          "engine": 0,
+          "engine": 9,
           "interaction": 50,
-          "resource": 49,
+          "resource": 53,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 73,
-          "engine": 2,
+          "engine": 15,
           "interaction": 61,
-          "resource": 61,
+          "resource": 65,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 87,
-          "engine": 3,
+          "engine": 22,
           "interaction": 69,
-          "resource": 69,
+          "resource": 72,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 92,
-          "engine": 5,
+          "engine": 26,
           "interaction": 74,
-          "resource": 74,
+          "resource": 77,
           "burst": 0
         }
       ]
@@ -2354,6 +2632,29 @@
           "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Liliana, Death's Majesty",
+        "impact": 3.2,
+        "tags": [
+          "wipe",
+          "recursion",
+          "graveyard-setup",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Find // Finality",
+        "impact": 2.7,
+        "tags": [
+          "sorcery",
+          "wipe",
+          "recursion",
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -2371,6 +2672,16 @@
         "aeon": null
       },
       {
+        "name": "Faithless Looting",
+        "impact": 2.5,
+        "tags": [
+          "sorcery",
+          "draw",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Ignoble Hierarch",
         "impact": 2.5,
         "tags": [
@@ -2380,12 +2691,33 @@
         "aeon": null
       },
       {
-        "name": "Liliana, Death's Majesty",
+        "name": "Kolaghan's Command",
         "impact": 2.5,
         "tags": [
-          "wipe",
-          "recursion",
-          "tokens"
+          "instant",
+          "removal",
+          "recursion"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Selvala, Heart of the Wilds",
+        "impact": 2.4,
+        "tags": [
+          "creature",
+          "mana",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Yavimaya Elder",
+        "impact": 2.4,
+        "tags": [
+          "creature",
+          "draw",
+          "sacrifice",
+          "death-payoff"
         ],
         "aeon": null
       },
@@ -2417,56 +2749,6 @@
           "creature",
           "draw",
           "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "The Reaver Cleaver",
-        "impact": 2.1,
-        "tags": [
-          "artifact",
-          "mana",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Find // Finality",
-        "impact": 2,
-        "tags": [
-          "sorcery",
-          "wipe",
-          "recursion",
-          "counter-producer",
-          "counter-kind:plus1"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Arcane Signet",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Rampant Growth",
-        "impact": 1.9,
-        "tags": [
-          "sorcery",
-          "land-ramp"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Sakura-Tribe Elder",
-        "impact": 1.9,
-        "tags": [
-          "creature",
-          "land-ramp",
-          "sacrifice"
         ],
         "aeon": null
       }

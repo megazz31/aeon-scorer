@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 34,
+    "median": 35,
     "p20": 23,
-    "p80": 44,
-    "peak": 72,
+    "p80": 48,
+    "peak": 79,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "cb51195ffb4807a541a1d9860ac0ad01b51360e07425d1e32374c04b1f826abb",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "7a693b5c8f1090cad963c7f5d3f395ed7a768330a47ce747a2416960cbd39478",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Ajani Unyielding\n1 Tayam, Luminous Enigma\n1 Nikara, Lair Scavenger\n1 Yannik, Scavenging Sentinel\n1 Avenging Huntbonder\n1 Cartographer's Hawk\n1 Vitality Hunter\n1 Daring Fiendbonder\n1 Slippery Bogbonder\n1 Akroma, Angel of Wrath\n1 Angel of Finality\n1 Cataclysmic Gearhulk\n1 Kalemne's Captain\n1 Odric, Lunarch Marshal\n1 Reveillark\n1 Solemn Recruit\n1 Sunblast Angel\n1 Zetalpa, Primal Dawn\n1 Cairn Wanderer\n1 Soul of Innistrad\n1 Soulflayer\n1 Hornet Queen\n1 Majestic Myriarch\n1 Splinterfright\n1 Archon of Valor's Reach\n1 Karametra, God of Harvests\n1 Void Beckoner\n1 Titanoth Rex\n1 Aerial Responder\n1 Vampire Nighthawk\n1 Acidic Slime\n1 Sakura-Tribe Elder\n1 Satyr Wayfinder\n1 Skullwinder\n1 Nyx Weaver\n1 Selective Adaptation\n1 Ever After\n1 Duneblast\n1 Unbreakable Bond\n1 Unburial Rites\n1 Cultivate\n1 Harmonize\n1 Obscuring Haze\n1 Blood Curdle\n1 Abzan Charm\n1 Deathsprout\n1 Despark\n1 Grisly Salvage\n1 Netherborn Altar\n1 Mimic Vat\n1 Bonder's Ornament\n1 Arcane Signet\n1 Commander's Sphere\n1 Sol Ring\n1 Swiftfoot Boots\n1 Together Forever\n1 Abzan Ascendancy\n1 Deadbridge Chant\n1 Martial Impetus\n1 Parasitic Impetus\n1 Predatory Impetus\n1 Nesting Grounds\n1 Canopy Vista\n1 Caves of Koilos\n1 Exotic Orchard\n1 Gavony Township\n1 Grim Backwoods\n1 Sungrass Prairie\n1 Blighted Woodland\n1 Command Tower\n1 Golgari Rot Farm\n1 Krosan Verge\n1 Memorial to Folly\n1 Myriad Landscape\n1 Orzhov Basilica\n1 Sandsteppe Citadel\n1 Selesnya Sanctuary\n1 Blossoming Sands\n1 Evolving Wilds\n1 Jungle Hollow\n1 Scoured Barrens\n3 Plains\n2 Plains\n2 Plains\n3 Swamp\n2 Swamp\n2 Swamp\n2 Forest\n1 Forest\n1 Forest",
   "oracleCards": [
@@ -468,6 +468,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -725,6 +726,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "sacrifice",
         "sac-outlet"
@@ -1064,7 +1066,8 @@
       "tags": [
         "creature",
         "enchantment",
-        "recursion"
+        "recursion",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -1369,13 +1372,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1456,7 +1459,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -1553,6 +1557,7 @@
       "tags": [
         "creature",
         "recursion",
+        "graveyard-setup",
         "etb",
         "counter-producer",
         "counter-payoff",
@@ -1733,24 +1738,24 @@
   ],
   "result": {
     "profile": {
-      "median": 34,
+      "median": 35,
       "floor": 23,
-      "ceiling": 44,
-      "peak": 72,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 64,
-      "commanderDelta": 6,
+      "ceiling": 48,
+      "peak": 79,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 62,
+      "commanderDelta": 5,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 24,
-      "consistency": 64,
-      "explosiveness": 16,
-      "synergy": 43,
+      "consistency": 62,
+      "explosiveness": 18,
+      "synergy": 49,
       "interaction": 30,
-      "resilience": 56
+      "resilience": 57
     },
     "roles": {
       "lands": 38,
@@ -1758,15 +1763,304 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 3,
+      "draw": 4,
       "interaction": 10,
       "protection": 10,
       "recursion": 8,
       "wipes": 2,
-      "avgCmc": 4.19672131147541,
+      "avgCmc": 4.213114754098361,
       "unknownManaLands": 0
     },
     "packages": [
+      {
+        "id": "graveyard",
+        "name": "Cimetière / récursion",
+        "strength": 72,
+        "cohesion": 72,
+        "producers": [
+          "Nyx Weaver",
+          "Splinterfright",
+          "Tayam, Luminous Enigma"
+        ],
+        "payoffs": [
+          "Ever After",
+          "Memorial to Folly",
+          "Nyx Weaver",
+          "Reveillark",
+          "Skullwinder",
+          "Soul of Innistrad",
+          "Tayam, Luminous Enigma",
+          "Unbreakable Bond",
+          "Unburial Rites"
+        ],
+        "members": [
+          "Nyx Weaver",
+          "Splinterfright",
+          "Tayam, Luminous Enigma",
+          "Ever After",
+          "Memorial to Folly",
+          "Reveillark",
+          "Skullwinder",
+          "Soul of Innistrad",
+          "Unbreakable Bond",
+          "Unburial Rites"
+        ],
+        "producerCards": [
+          {
+            "name": "Nyx Weaver",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "enchantment",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Splinterfright",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Tayam, Luminous Enigma",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion",
+              "graveyard-setup",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Ever After",
+            "cmc": 6,
+            "tags": [
+              "sorcery",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Memorial to Folly",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "recursion",
+              "sacrifice",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Nyx Weaver",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "enchantment",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Reveillark",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Skullwinder",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Soul of Innistrad",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Tayam, Luminous Enigma",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion",
+              "graveyard-setup",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Unbreakable Bond",
+            "cmc": 5,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "counter-kind:generic",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Unburial Rites",
+            "cmc": 5,
+            "tags": [
+              "sorcery",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          }
+        ],
+        "producerTags": [
+          "graveyard-setup"
+        ],
+        "payoffTags": [
+          "recursion"
+        ],
+        "evidence": "3 producteur(s), 9 payoff(s), 10 carte(s) distincte(s)."
+      },
       {
         "id": "counters",
         "name": "Marqueurs",
@@ -1861,6 +2155,7 @@
             "tags": [
               "creature",
               "recursion",
+              "graveyard-setup",
               "etb",
               "counter-producer",
               "counter-payoff",
@@ -1908,6 +2203,7 @@
             "tags": [
               "creature",
               "recursion",
+              "graveyard-setup",
               "etb",
               "counter-producer",
               "counter-payoff",
@@ -2015,6 +2311,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2044,7 +2341,7 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
               "artifact",
               "mana",
@@ -2113,22 +2410,22 @@
     "simulation": {
       "iterations": 3200,
       "floor": 26,
-      "median": 34,
-      "high": 41,
-      "ceiling": 41,
-      "peak": 62,
-      "iqr": 12,
-      "consistency": 73,
+      "median": 35,
+      "high": 44,
+      "ceiling": 44,
+      "peak": 69,
+      "iqr": 14,
+      "consistency": 70,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 59,
+      "recoveryAfterDisruption": 61,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 8,
+          "resource": 15,
           "burst": 0
         },
         {
@@ -2136,45 +2433,45 @@
           "commander": 0,
           "engine": 0,
           "interaction": 3,
-          "resource": 9,
+          "resource": 16,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 5,
-          "engine": 1,
+          "engine": 2,
           "interaction": 14,
-          "resource": 23,
+          "resource": 29,
           "burst": 4
         },
         {
           "turn": 4,
           "commander": 27,
-          "engine": 3,
+          "engine": 7,
           "interaction": 36,
-          "resource": 41,
+          "resource": 44,
           "burst": 8
         },
         {
           "turn": 5,
           "commander": 61,
-          "engine": 5,
+          "engine": 13,
           "interaction": 50,
-          "resource": 54,
+          "resource": 57,
           "burst": 9
         },
         {
           "turn": 6,
           "commander": 75,
-          "engine": 6,
+          "engine": 18,
           "interaction": 61,
-          "resource": 64,
+          "resource": 65,
           "burst": 10
         },
         {
           "turn": 7,
           "commander": 82,
-          "engine": 7,
+          "engine": 21,
           "interaction": 68,
           "resource": 71,
           "burst": 12
@@ -2203,6 +2500,17 @@
         "aeon": null
       },
       {
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Abzan Charm",
         "impact": 2.5,
         "tags": [
@@ -2224,6 +2532,19 @@
         "aeon": null
       },
       {
+        "name": "Tayam, Luminous Enigma",
+        "impact": 2.3,
+        "tags": [
+          "creature",
+          "recursion",
+          "graveyard-setup",
+          "etb",
+          "counter-producer",
+          "counter-payoff"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Karametra, God of Harvests",
         "impact": 2.2,
         "tags": [
@@ -2231,6 +2552,17 @@
           "enchantment",
           "land-ramp",
           "protection"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Nyx Weaver",
+        "impact": 2.2,
+        "tags": [
+          "creature",
+          "enchantment",
+          "recursion",
+          "graveyard-setup"
         ],
         "aeon": null
       },
@@ -2273,34 +2605,6 @@
           "creature",
           "land-ramp",
           "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Bonder's Ornament",
-        "impact": 1.8,
-        "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Commander's Sphere",
-        "impact": 1.8,
-        "tags": [
-          "artifact",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Harmonize",
-        "impact": 1.7,
-        "tags": [
-          "sorcery",
-          "draw"
         ],
         "aeon": null
       }

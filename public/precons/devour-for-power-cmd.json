@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 29,
-    "p20": 20,
-    "p80": 44,
-    "peak": 66,
-    "coverage": 89,
+    "median": 31,
+    "p20": 21,
+    "p80": 46,
+    "peak": 70,
+    "coverage": 90,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "3f1ffa7933d6db9e03b1fa42f0de16156edb7d03526a885314dac162dbf47748",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "e17e20cc806e305c5d31fb36b060b738df7a62204c5f9e191b7e21954d1e9547",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Nezumi Graverobber // Nighteyes the Desecrator\n1 Skullbriar, the Walking Grave\n1 Riddlekeeper\n1 Fleshbag Marauder\n1 Eternal Witness\n1 Troll Ascetic\n1 Yavimaya Elder\n1 Solemn Simulacrum\n1 Brawn\n1 Wonder\n1 Sewer Nemesis\n1 Gravedigger\n1 Lhurgoyf\n1 Dreamborn Muse\n1 Mortivore\n1 Desecrator Hag\n1 Mulldrifter\n1 Acidic Slime\n1 Vulturous Zombie\n1 Dark Hatchling\n1 Extractor Demon\n1 Scythe Specter\n1 Wrexial, the Risen Deep\n1 Vorosh, the Hunter\n1 Triskelavus\n1 Slipstream Eel\n1 Butcher of Malakir\n1 Patron of the Nezumi\n1 Damia, Sage of Stone\n1 Szadek, Lord of Secrets\n1 Avatar of Woe\n1 Artisan of Kozilek\n1 Minds Aglow\n1 Shared Trauma\n1 Sign in Blood\n1 Stitch Together\n1 Cultivate\n1 Windfall\n1 Buried Alive\n1 Syphon Mind\n1 Unnerve\n1 Rise from the Grave\n1 Syphon Flesh\n1 Living Death\n1 Tribute to the Wild\n1 Spell Crumple\n1 Fact or Fiction\n1 Relic Crush\n1 Sol Ring\n1 Dimir Signet\n1 Golgari Signet\n1 Lightning Greaves\n1 Simic Signet\n1 Oblivion Stone\n1 Vow of Wildness\n1 Vow of Flight\n1 Vow of Malice\n1 Memory Erosion\n1 Grave Pact\n1 Barren Moor\n1 Command Tower\n1 Dimir Aqueduct\n1 Dreadship Reef\n1 Golgari Rot Farm\n1 Jwar Isle Refuge\n1 Lonely Sandbar\n1 Rupture Spire\n1 Simic Growth Chamber\n1 Svogthos, the Restless Tomb\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Tranquil Thicket\n2 Forest\n2 Forest\n2 Forest\n2 Forest\n2 Island\n2 Island\n2 Island\n2 Island\n3 Swamp\n3 Swamp\n3 Swamp\n2 Swamp",
   "oracleCards": [
@@ -230,7 +230,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "stax"
+        "draw"
       ],
       "isCommander": false
     },
@@ -391,7 +391,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -997,13 +998,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1049,8 +1050,7 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counterspell",
-        "counter-kind:generic"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -1421,7 +1421,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "draw",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -1476,6 +1478,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "sacrifice",
         "death-payoff"
       ],
@@ -1484,24 +1487,24 @@
   ],
   "result": {
     "profile": {
-      "median": 29,
-      "floor": 20,
-      "ceiling": 44,
-      "peak": 66,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 61,
-      "commanderDelta": 3,
-      "coverage": 89,
-      "dataCoverage": 89
+      "median": 31,
+      "floor": 21,
+      "ceiling": 46,
+      "peak": 70,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 60,
+      "commanderDelta": 4,
+      "coverage": 90,
+      "dataCoverage": 90
     },
     "dimensions": {
       "speed": 24,
-      "consistency": 61,
-      "explosiveness": 11,
-      "synergy": 30,
+      "consistency": 60,
+      "explosiveness": 12,
+      "synergy": 37,
       "interaction": 28,
-      "resilience": 36
+      "resilience": 38
     },
     "roles": {
       "lands": 40,
@@ -1509,15 +1512,160 @@
       "fastMana": 1,
       "tutors": 1,
       "repeatableTutors": 0,
-      "draw": 5,
-      "interaction": 8,
+      "draw": 8,
+      "interaction": 7,
       "protection": 1,
       "recursion": 4,
       "wipes": 1,
-      "avgCmc": 4.033898305084746,
+      "avgCmc": 4.0508474576271185,
       "unknownManaLands": 0
     },
     "packages": [
+      {
+        "id": "graveyard",
+        "name": "Cimetière / récursion",
+        "strength": 58,
+        "cohesion": 58,
+        "producers": [
+          "Extractor Demon",
+          "Windfall"
+        ],
+        "payoffs": [
+          "Artisan of Kozilek",
+          "Eternal Witness",
+          "Gravedigger",
+          "Stitch Together"
+        ],
+        "members": [
+          "Extractor Demon",
+          "Windfall",
+          "Artisan of Kozilek",
+          "Eternal Witness",
+          "Gravedigger",
+          "Stitch Together"
+        ],
+        "producerCards": [
+          {
+            "name": "Extractor Demon",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Windfall",
+            "cmc": 3,
+            "tags": [
+              "sorcery",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Artisan of Kozilek",
+            "cmc": 9,
+            "tags": [
+              "creature",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 9,
+              "colored": [],
+              "total": 9
+            }
+          },
+          {
+            "name": "Eternal Witness",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Gravedigger",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Stitch Together",
+            "cmc": 2,
+            "tags": [
+              "sorcery",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
+            }
+          }
+        ],
+        "producerTags": [
+          "graveyard-setup"
+        ],
+        "payoffTags": [
+          "recursion"
+        ],
+        "evidence": "2 producteur(s), 4 payoff(s), 6 carte(s) distincte(s)."
+      },
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
@@ -1581,7 +1729,7 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
               "artifact",
               "mana",
@@ -1638,15 +1786,15 @@
     "simulation": {
       "iterations": 3200,
       "floor": 27,
-      "median": 35,
-      "high": 45,
-      "ceiling": 45,
-      "peak": 62,
+      "median": 36,
+      "high": 46,
+      "ceiling": 46,
+      "peak": 65,
       "iqr": 15,
-      "consistency": 67,
+      "consistency": 66,
       "commanderMedianTurn": 5,
-      "engineMedianTurn": null,
-      "recoveryAfterDisruption": 68,
+      "engineMedianTurn": 6,
+      "recoveryAfterDisruption": 73,
       "turnProfile": [
         {
           "turn": 1,
@@ -1661,7 +1809,7 @@
           "commander": 1,
           "engine": 0,
           "interaction": 8,
-          "resource": 15,
+          "resource": 16,
           "burst": 0
         },
         {
@@ -1669,39 +1817,39 @@
           "commander": 22,
           "engine": 0,
           "interaction": 22,
-          "resource": 32,
+          "resource": 38,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 34,
-          "engine": 0,
+          "engine": 1,
           "interaction": 30,
-          "resource": 48,
+          "resource": 55,
           "burst": 2
         },
         {
           "turn": 5,
           "commander": 60,
-          "engine": 0,
-          "interaction": 41,
-          "resource": 58,
+          "engine": 2,
+          "interaction": 39,
+          "resource": 65,
           "burst": 3
         },
         {
           "turn": 6,
           "commander": 73,
-          "engine": 0,
-          "interaction": 50,
-          "resource": 63,
+          "engine": 4,
+          "interaction": 47,
+          "resource": 72,
           "burst": 5
         },
         {
           "turn": 7,
           "commander": 79,
-          "engine": 0,
-          "interaction": 57,
-          "resource": 69,
+          "engine": 6,
+          "interaction": 54,
+          "resource": 78,
           "burst": 7
         }
       ]
@@ -1737,6 +1885,34 @@
           "land-ramp",
           "death-payoff",
           "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Windfall",
+        "impact": 2.4,
+        "tags": [
+          "sorcery",
+          "draw",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Artisan of Kozilek",
+        "impact": 2.1,
+        "tags": [
+          "creature",
+          "recursion"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Damia, Sage of Stone",
+        "impact": 2.1,
+        "tags": [
+          "creature",
+          "draw"
         ],
         "aeon": null
       },
@@ -1786,39 +1962,11 @@
         "aeon": null
       },
       {
-        "name": "Syphon Mind",
+        "name": "Eternal Witness",
         "impact": 1.7,
         "tags": [
-          "sorcery",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Mulldrifter",
-        "impact": 1.6,
-        "tags": [
           "creature",
-          "draw",
-          "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Damia, Sage of Stone",
-        "impact": 1.5,
-        "tags": [
-          "creature",
-          "stax"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Fleshbag Marauder",
-        "impact": 1.5,
-        "tags": [
-          "creature",
-          "wipe",
+          "recursion",
           "etb"
         ],
         "aeon": null

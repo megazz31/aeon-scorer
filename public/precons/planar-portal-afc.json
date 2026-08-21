@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 49,
-    "p20": 39,
-    "p80": 58,
-    "peak": 81,
+    "median": 50,
+    "p20": 40,
+    "p80": 60,
+    "peak": 82,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "9f5a8b91ba9bb3fa75a671a92f1a0f705024c3b394edfb78fcf532db60780ab2",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "c9fb1d0068e51e16a1d44c7d75eb937e60d489a9a05620292fbb40f1a7c597ac",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Chittering Witch\n1 Fiend of the Shadows\n1 Gonti, Lord of Luxury\n1 Marionette Master\n1 Ogre Slumlord\n1 Piper of the Swarm\n1 Pontiff of Blight\n1 Dark-Dweller Oracle\n1 Dire Fleet Daredevil\n1 Dream Pillager\n1 Etali, Primal Storm\n1 Izzet Chemister\n1 Tectonic Giant\n1 Loyal Apprentice\n1 Consuming Vapors\n1 Hex\n1 Apex of Power\n1 Disrupt Decorum\n1 Ignite the Future\n1 Phthisis\n1 Light Up the Stage\n1 Throes of Chaos\n1 Vandalblast\n1 Chaos Warp\n1 Commune with Lava\n1 Bedevil\n1 Bituminous Blast\n1 Rakdos Charm\n1 Terminate\n1 Chaos Wand\n1 Arcane Signet\n1 Commander's Sphere\n1 Fellwar Stone\n1 Mind Stone\n1 Orazca Relic\n1 Rakdos Signet\n1 Sol Ring\n1 Talisman of Indulgence\n1 Unstable Obelisk\n1 Dead Man's Chest\n1 Theater of Horrors\n1 Shiny Impetus\n1 Exotic Orchard\n1 Foreboding Ruins\n1 Shadowblood Ridge\n1 Smoldering Marsh\n1 Spinerock Knoll\n1 Bojuka Bog\n1 Command Tower\n1 Mortuary Mire\n1 Rakdos Carnarium\n1 Tainted Peak\n1 Zhalfirin Void\n4 Swamp\n4 Swamp\n3 Swamp\n3 Swamp\n4 Mountain\n3 Mountain\n3 Mountain\n3 Mountain\n1 Karazikar, the Eye Tyrant\n1 Bag of Devouring\n1 Danse Macabre\n1 Death Tyrant\n1 Grim Hireling\n1 Hellish Rebuke\n1 Lorcan, Warlock Collector\n1 Fiendlash\n1 Reckless Endeavor\n1 Share the Spoils\n1 Wild-Magic Sorcerer\n1 Fevered Suspicion\n1 Hurl Through Hell\n1 Warlock Class\n1 Chaos Channeler\n1 You Find Some Prisoners\n1 Bucknard's Everfull Purse\n1 Ebony Fly\n1 Underdark Rift",
   "oracleCards": [
@@ -101,6 +101,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "draw",
         "sacrifice",
         "sac-outlet",
         "death-payoff"
@@ -232,7 +233,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "removal"
       ],
       "isCommander": false
     },
@@ -298,6 +300,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -762,7 +765,6 @@
       "tags": [
         "creature",
         "sacrifice",
-        "exile-cast",
         "cheat",
         "free"
       ],
@@ -782,7 +784,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -817,7 +820,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -871,6 +875,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -1204,13 +1209,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1361,8 +1366,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "enchantment",
-        "exile-cast"
+        "enchantment"
       ],
       "isCommander": false
     },
@@ -1397,7 +1401,8 @@
       ],
       "tags": [
         "land",
-        "mana"
+        "mana",
+        "removal"
       ],
       "isCommander": false
     },
@@ -1515,24 +1520,24 @@
   ],
   "result": {
     "profile": {
-      "median": 49,
-      "floor": 39,
-      "ceiling": 58,
-      "peak": 81,
-      "dispersion": 19,
-      "variance": 19,
-      "consistency": 66,
-      "commanderDelta": 13,
+      "median": 50,
+      "floor": 40,
+      "ceiling": 60,
+      "peak": 82,
+      "dispersion": 20,
+      "variance": 20,
+      "consistency": 63,
+      "commanderDelta": 12,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 36,
-      "consistency": 66,
+      "consistency": 63,
       "explosiveness": 29,
-      "synergy": 81,
-      "interaction": 58,
-      "resilience": 19
+      "synergy": 79,
+      "interaction": 64,
+      "resilience": 22
     },
     "roles": {
       "lands": 39,
@@ -1540,12 +1545,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 1,
-      "interaction": 12,
+      "draw": 5,
+      "interaction": 13,
       "protection": 0,
       "recursion": 1,
       "wipes": 1,
-      "avgCmc": 3.6,
+      "avgCmc": 3.6166666666666667,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1583,11 +1588,9 @@
           "Gonti, Lord of Luxury",
           "Hurl Through Hell",
           "Ignite the Future",
-          "Izzet Chemister",
           "Light Up the Stage",
           "Share the Spoils",
           "Tectonic Giant",
-          "Theater of Horrors",
           "You Find Some Prisoners",
           "Wild-Magic Sorcerer"
         ],
@@ -1851,26 +1854,6 @@
             }
           },
           {
-            "name": "Izzet Chemister",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "sacrifice",
-              "exile-cast",
-              "cheat",
-              "free"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
             "name": "Light Up the Stage",
             "cmc": 3,
             "tags": [
@@ -1926,26 +1909,6 @@
             }
           },
           {
-            "name": "Theater of Horrors",
-            "cmc": 3,
-            "tags": [
-              "enchantment",
-              "exile-cast"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "B"
-                ],
-                [
-                  "R"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
             "name": "You Find Some Prisoners",
             "cmc": 2,
             "tags": [
@@ -1989,7 +1952,7 @@
         "payoffTags": [
           "exile-payoff"
         ],
-        "evidence": "19 producteur(s), 1 payoff(s), 20 carte(s) distincte(s)."
+        "evidence": "17 producteur(s), 1 payoff(s), 18 carte(s) distincte(s)."
       },
       {
         "id": "sacrifice",
@@ -2004,6 +1967,7 @@
         "payoffs": [
           "Bag of Devouring",
           "Death Tyrant",
+          "Lorcan, Warlock Collector",
           "Ogre Slumlord"
         ],
         "members": [
@@ -2011,6 +1975,7 @@
           "Chittering Witch",
           "Dark-Dweller Oracle",
           "Death Tyrant",
+          "Lorcan, Warlock Collector",
           "Ogre Slumlord"
         ],
         "producerCards": [
@@ -2019,6 +1984,7 @@
             "cmc": 1,
             "tags": [
               "artifact",
+              "draw",
               "sacrifice",
               "sac-outlet",
               "death-payoff"
@@ -2080,6 +2046,7 @@
             "cmc": 1,
             "tags": [
               "artifact",
+              "draw",
               "sacrifice",
               "sac-outlet",
               "death-payoff"
@@ -2114,6 +2081,26 @@
             }
           },
           {
+            "name": "Lorcan, Warlock Collector",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
             "name": "Ogre Slumlord",
             "cmc": 5,
             "tags": [
@@ -2142,7 +2129,7 @@
         "payoffTags": [
           "death-payoff"
         ],
-        "evidence": "3 producteur(s), 3 payoff(s), 5 carte(s) distincte(s)."
+        "evidence": "3 producteur(s), 4 payoff(s), 6 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2197,6 +2184,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2238,6 +2226,7 @@
             "cmc": 2,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2296,7 +2285,7 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
               "artifact",
               "mana",
@@ -2367,7 +2356,7 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 82,
+      "score": 77,
       "connected": [
         "Apex of Power",
         "Bucknard's Everfull Purse",
@@ -2386,7 +2375,6 @@
         "Grim Hireling",
         "Hurl Through Hell",
         "Ignite the Future",
-        "Izzet Chemister",
         "Light Up the Stage",
         "Loyal Apprentice",
         "Ogre Slumlord",
@@ -2395,7 +2383,6 @@
         "Share the Spoils",
         "Shiny Impetus",
         "Tectonic Giant",
-        "Theater of Horrors",
         "Wild-Magic Sorcerer",
         "You Find Some Prisoners"
       ],
@@ -2414,71 +2401,71 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 35,
-      "median": 42,
-      "high": 49,
-      "ceiling": 49,
-      "peak": 68,
-      "iqr": 12,
-      "consistency": 75,
+      "floor": 37,
+      "median": 44,
+      "high": 52,
+      "ceiling": 52,
+      "peak": 71,
+      "iqr": 13,
+      "consistency": 72,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 61,
+      "recoveryAfterDisruption": 68,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 13,
-          "resource": 0,
+          "interaction": 20,
+          "resource": 5,
           "burst": 7
         },
         {
           "turn": 2,
           "commander": 5,
           "engine": 0,
-          "interaction": 31,
-          "resource": 0,
+          "interaction": 37,
+          "resource": 8,
           "burst": 6
         },
         {
           "turn": 3,
           "commander": 31,
           "engine": 2,
-          "interaction": 44,
-          "resource": 1,
+          "interaction": 51,
+          "resource": 10,
           "burst": 17
         },
         {
           "turn": 4,
           "commander": 81,
           "engine": 7,
-          "interaction": 63,
-          "resource": 5,
+          "interaction": 69,
+          "resource": 19,
           "burst": 27
         },
         {
           "turn": 5,
           "commander": 93,
           "engine": 14,
-          "interaction": 71,
-          "resource": 10,
+          "interaction": 76,
+          "resource": 27,
           "burst": 34
         },
         {
           "turn": 6,
           "commander": 96,
           "engine": 18,
-          "interaction": 77,
-          "resource": 11,
+          "interaction": 81,
+          "resource": 31,
           "burst": 39
         },
         {
           "turn": 7,
           "commander": 97,
-          "engine": 21,
-          "interaction": 80,
-          "resource": 13,
+          "engine": 22,
+          "interaction": 84,
+          "resource": 34,
           "burst": 44
         }
       ]
@@ -2530,11 +2517,10 @@
       },
       {
         "name": "Izzet Chemister",
-        "impact": 4.4,
+        "impact": 3.7,
         "tags": [
           "creature",
           "sacrifice",
-          "exile-cast",
           "cheat",
           "free"
         ],
@@ -2551,6 +2537,28 @@
         "aeon": null
       },
       {
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mind Stone",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Orazca Relic",
         "impact": 3.3,
         "tags": [
@@ -2559,6 +2567,18 @@
           "mana",
           "sacrifice",
           "lifegain"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Bag of Devouring",
+        "impact": 3.1,
+        "tags": [
+          "artifact",
+          "draw",
+          "sacrifice",
+          "sac-outlet",
+          "death-payoff"
         ],
         "aeon": null
       },
@@ -2581,38 +2601,6 @@
           "enchantment",
           "mana",
           "tokens"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Unstable Obelisk",
-        "impact": 2.6,
-        "tags": [
-          "artifact",
-          "mana",
-          "removal",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Death Tyrant",
-        "impact": 2.5,
-        "tags": [
-          "creature",
-          "recursion",
-          "tokens",
-          "death-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Ebony Fly",
-        "impact": 2.4,
-        "tags": [
-          "artifact",
-          "mana",
-          "etb"
         ],
         "aeon": null
       }

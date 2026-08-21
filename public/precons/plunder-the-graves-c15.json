@@ -33,17 +33,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 41,
-    "p20": 29,
-    "p80": 54,
-    "peak": 84,
-    "coverage": 92,
+    "median": 42,
+    "p20": 28,
+    "p80": 55,
+    "peak": 85,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "e98361d8b96335ef5386990ec8f768f8c20e06e1053074d8038afb9796ae8cd4",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "3e4c6a5d69b728a91a47ff6b16b2812c387118b07f3e7042b967ef641f064048",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Sakura-Tribe Elder\n1 Satyr Wayfinder\n1 Viridian Emissary\n1 Wall of Blossoms\n1 Viridian Zealot\n1 Korozda Guildmage\n1 Lotleth Troll\n1 Blood Bairn\n1 Phyrexian Rager\n1 Skullwinder\n1 Wood Elves\n1 Eternal Witness\n1 Corpse Augur\n1 Centaur Vinecrasher\n1 Bloodspore Thrinax\n1 Jarad, Golgari Lich Lord\n1 Shriekmaw\n1 Indrik Stomphowler\n1 Kessig Cagebreakers\n1 Banshee of the Dread Choir\n1 Phyrexian Plaguelord\n1 Acidic Slime\n1 Mycoloth\n1 Mazirek, Kraul Death Priest\n1 Vulturous Zombie\n1 Great Oak Guardian\n1 Champion of Stray Souls\n1 Extractor Demon\n1 Thief of Blood\n1 Pathbreaker Ibex\n1 Cloudthresher\n1 Butcher of Malakir\n1 Eater of Hope\n1 Scourge of Nel Toth\n1 Caller of the Pack\n1 Terastodon\n1 Verdant Force\n1 Mulch\n1 Victimize\n1 Primal Growth\n1 Ambition's Cost\n1 Sever the Bloodline\n1 Barter in Blood\n1 Rise from the Grave\n1 Spider Spawning\n1 Overwhelming Stampede\n1 Dread Summons\n1 Altar's Reap\n1 Tribute to the Wild\n1 Golgari Charm\n1 Grisly Salvage\n1 Putrefy\n1 Wretched Confluence\n1 Skullclamp\n1 Sol Ring\n1 Golgari Signet\n1 Lightning Greaves\n1 Thought Vessel\n1 Bonehoard\n1 Eldrazi Monument\n1 Diabolic Servitude\n1 Command Tower\n1 Evolving Wilds\n1 Golgari Guildgate\n1 Golgari Rot Farm\n1 Grim Backwoods\n1 High Market\n1 Jungle Hollow\n1 Polluted Mire\n1 Slippery Karst\n1 Tainted Wood\n1 Terramorphic Expanse\n1 Vivid Grove\n1 Vivid Marsh\n4 Swamp\n3 Swamp\n3 Swamp\n3 Swamp\n3 Forest\n3 Forest\n3 Forest\n3 Forest",
   "oracleCards": [
@@ -451,7 +451,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -597,6 +598,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "sacrifice",
         "sac-outlet"
@@ -1109,7 +1111,8 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "draw"
+        "draw",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -1154,13 +1157,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1531,22 +1534,22 @@
   ],
   "result": {
     "profile": {
-      "median": 41,
-      "floor": 29,
-      "ceiling": 54,
-      "peak": 84,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 62,
-      "commanderDelta": 7,
-      "coverage": 92,
-      "dataCoverage": 92
+      "median": 42,
+      "floor": 28,
+      "ceiling": 55,
+      "peak": 85,
+      "dispersion": 27,
+      "variance": 27,
+      "consistency": 60,
+      "commanderDelta": 9,
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
       "speed": 32,
-      "consistency": 62,
+      "consistency": 60,
       "explosiveness": 13,
-      "synergy": 57,
+      "synergy": 60,
       "interaction": 39,
       "resilience": 54
     },
@@ -1561,15 +1564,15 @@
       "protection": 1,
       "recursion": 8,
       "wipes": 2,
-      "avgCmc": 3.9836065573770494,
+      "avgCmc": 4,
       "unknownManaLands": 0
     },
     "packages": [
       {
         "id": "sacrifice",
         "name": "Sacrifice / mort",
-        "strength": 80,
-        "cohesion": 80,
+        "strength": 87,
+        "cohesion": 87,
         "producers": [
           "Altar's Reap",
           "Blood Bairn",
@@ -1583,6 +1586,7 @@
           "Butcher of Malakir",
           "Corpse Augur",
           "Diabolic Servitude",
+          "Skullclamp",
           "Viridian Emissary"
         ],
         "members": [
@@ -1596,6 +1600,7 @@
           "Butcher of Malakir",
           "Corpse Augur",
           "Diabolic Servitude",
+          "Skullclamp",
           "Viridian Emissary"
         ],
         "producerCards": [
@@ -1663,6 +1668,7 @@
             "cmc": 0,
             "tags": [
               "land",
+              "draw",
               "mana",
               "sacrifice",
               "sac-outlet"
@@ -1799,6 +1805,20 @@
             }
           },
           {
+            "name": "Skullclamp",
+            "cmc": 1,
+            "tags": [
+              "artifact",
+              "draw",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
             "name": "Viridian Emissary",
             "cmc": 2,
             "tags": [
@@ -1824,7 +1844,7 @@
         "payoffTags": [
           "death-payoff"
         ],
-        "evidence": "7 producteur(s), 4 payoff(s), 11 carte(s) distincte(s)."
+        "evidence": "7 producteur(s), 5 payoff(s), 12 carte(s) distincte(s)."
       },
       {
         "id": "counters",
@@ -2116,7 +2136,7 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
               "artifact",
               "mana",
@@ -2206,7 +2226,7 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 31,
+      "score": 33,
       "connected": [
         "Altar's Reap",
         "Blood Bairn",
@@ -2218,6 +2238,7 @@
         "High Market",
         "Jarad, Golgari Lich Lord",
         "Phyrexian Plaguelord",
+        "Skullclamp",
         "Viridian Emissary"
       ],
       "tags": [
@@ -2235,68 +2256,68 @@
     "simulation": {
       "iterations": 3200,
       "floor": 32,
-      "median": 40,
-      "high": 49,
-      "ceiling": 49,
-      "peak": 76,
-      "iqr": 13,
-      "consistency": 71,
+      "median": 41,
+      "high": 51,
+      "ceiling": 51,
+      "peak": 78,
+      "iqr": 14,
+      "consistency": 68,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 83,
+      "recoveryAfterDisruption": 84,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
-          "engine": 0,
+          "engine": 1,
           "interaction": 0,
-          "resource": 6,
+          "resource": 14,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 2,
-          "engine": 1,
+          "engine": 3,
           "interaction": 7,
-          "resource": 21,
+          "resource": 27,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 24,
-          "engine": 3,
+          "engine": 6,
           "interaction": 23,
-          "resource": 40,
+          "resource": 45,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 71,
-          "engine": 9,
+          "engine": 13,
           "interaction": 45,
-          "resource": 63,
+          "resource": 65,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 88,
-          "engine": 16,
+          "engine": 20,
           "interaction": 59,
-          "resource": 74,
+          "resource": 76,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 92,
-          "engine": 23,
+          "engine": 28,
           "interaction": 68,
-          "resource": 80,
+          "resource": 81,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 95,
-          "engine": 29,
+          "engine": 35,
           "interaction": 73,
           "resource": 85,
           "burst": 0
@@ -2311,6 +2332,16 @@
           "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Skullclamp",
+        "impact": 3.1,
+        "tags": [
+          "artifact",
+          "draw",
+          "death-payoff"
         ],
         "aeon": null
       },
@@ -2353,15 +2384,6 @@
           "creature",
           "draw",
           "death-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Skullclamp",
-        "impact": 2.4,
-        "tags": [
-          "artifact",
-          "draw"
         ],
         "aeon": null
       },

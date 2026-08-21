@@ -32,17 +32,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 36,
-    "p20": 24,
+    "median": 37,
+    "p20": 25,
     "p80": 49,
     "peak": 71,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "a2e986a25d7633720bedc931395eb2426a23e0ef82e63387fd274c13dc5ef978",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "c2b127ef0f20a78a1e98ec6a626de615739541f7c6a20e86813334b43db138c9",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Elvish Mystic\n1 Elvish Skysweeper\n1 Essence Warden\n1 Joraga Warcaller\n1 Llanowar Elves\n1 Sylvan Safekeeper\n1 Elvish Visionary\n1 Priest of Titania\n1 Sylvan Ranger\n1 Thornweald Archer\n1 Wellwisher\n1 Farhaven Elf\n1 Imperious Perfect\n1 Reclamation Sage\n1 Timberwatch Elf\n1 Titania's Chosen\n1 Wood Elves\n1 Elvish Archdruid\n1 Ezuri, Renegade Leader\n1 Drove of Elves\n1 Immaculate Magistrate\n1 Wren's Run Packmaster\n1 Lys Alana Huntmaster\n1 Masked Admirers\n1 Wolfbriar Elemental\n1 Creeperhulk\n1 Silklash Spider\n1 Titania, Protector of Argoth\n1 Grave Sifter\n1 Primordial Sage\n1 Rampaging Baloths\n1 Soul of the Harvest\n1 Thunderfoot Baloth\n1 Siege Behemoth\n1 Tornado Elemental\n1 Terastodon\n1 Lifeblood Hydra\n1 Hunting Triad\n1 Whirlwind\n1 Overwhelming Stampede\n1 Overrun\n1 Grim Flowering\n1 Collective Unconscious\n1 Desert Twister\n1 Wave of Vitriol\n1 Praetor's Counsel\n1 Sylvan Offering\n1 Harrow\n1 Fresh Meat\n1 Skullclamp\n1 Sol Ring\n1 Emerald Medallion\n1 Moss Diamond\n1 Swiftfoot Boots\n1 Commander's Sphere\n1 Assault Suit\n1 Seer's Sundial\n1 Predator, Flagship\n1 Loreseeker's Stone\n1 Beastmaster Ascension\n1 Song of the Dryads\n1 Wolfcaller's Howl\n1 Crystal Vein\n1 Evolving Wilds\n1 Gargoyle Castle\n1 Ghost Quarter\n1 Haunted Fengraf\n1 Havenwood Battleground\n1 Jungle Basin\n1 Myriad Landscape\n1 Oran-Rief, the Vastwood\n1 Slippery Karst\n1 Terramorphic Expanse\n1 Tranquil Thicket\n7 Forest\n6 Forest\n6 Forest\n6 Forest",
   "oracleCards": [
@@ -115,6 +115,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -412,6 +413,7 @@
         "G"
       ],
       "tags": [
+        "draw",
         "mana",
         "removal",
         "tokens"
@@ -669,6 +671,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "death-payoff",
         "etb",
         "counter-producer",
@@ -708,7 +711,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1024,7 +1028,8 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "draw"
+        "draw",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -1050,13 +1055,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1469,24 +1474,24 @@
   ],
   "result": {
     "profile": {
-      "median": 36,
-      "floor": 24,
+      "median": 37,
+      "floor": 25,
       "ceiling": 49,
       "peak": 71,
-      "dispersion": 25,
-      "variance": 25,
-      "consistency": 62,
-      "commanderDelta": 7,
+      "dispersion": 24,
+      "variance": 24,
+      "consistency": 63,
+      "commanderDelta": 8,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 34,
-      "consistency": 62,
+      "consistency": 63,
       "explosiveness": 9,
       "synergy": 50,
       "interaction": 32,
-      "resilience": 33
+      "resilience": 35
     },
     "roles": {
       "lands": 37,
@@ -1494,12 +1499,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 8,
+      "draw": 11,
       "interaction": 6,
       "protection": 3,
       "recursion": 3,
       "wipes": 2,
-      "avgCmc": 3.7419354838709675,
+      "avgCmc": 3.7580645161290325,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1676,6 +1681,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -1790,7 +1796,7 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
               "artifact",
               "mana",
@@ -1826,6 +1832,7 @@
             "name": "Freyalise, Llanowar's Fury",
             "cmc": 5,
             "tags": [
+              "draw",
               "mana",
               "removal",
               "tokens"
@@ -1876,16 +1883,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 28,
-      "median": 36,
+      "floor": 29,
+      "median": 37,
       "high": 45,
       "ceiling": 45,
       "peak": 62,
       "iqr": 13,
-      "consistency": 71,
+      "consistency": 72,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 62,
+      "recoveryAfterDisruption": 67,
       "turnProfile": [
         {
           "turn": 1,
@@ -1900,7 +1907,7 @@
           "commander": 1,
           "engine": 0,
           "interaction": 19,
-          "resource": 24,
+          "resource": 25,
           "burst": 1
         },
         {
@@ -1908,7 +1915,7 @@
           "commander": 14,
           "engine": 1,
           "interaction": 25,
-          "resource": 30,
+          "resource": 33,
           "burst": 0
         },
         {
@@ -1916,7 +1923,7 @@
           "commander": 46,
           "engine": 3,
           "interaction": 35,
-          "resource": 43,
+          "resource": 48,
           "burst": 0
         },
         {
@@ -1924,7 +1931,7 @@
           "commander": 75,
           "engine": 6,
           "interaction": 42,
-          "resource": 54,
+          "resource": 60,
           "burst": 0
         },
         {
@@ -1932,7 +1939,7 @@
           "commander": 87,
           "engine": 8,
           "interaction": 49,
-          "resource": 63,
+          "resource": 69,
           "burst": 0
         },
         {
@@ -1940,7 +1947,7 @@
           "commander": 92,
           "engine": 10,
           "interaction": 55,
-          "resource": 68,
+          "resource": 75,
           "burst": 0
         }
       ]
@@ -1953,6 +1960,17 @@
           "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2003,7 +2021,8 @@
         "impact": 2.4,
         "tags": [
           "artifact",
-          "draw"
+          "draw",
+          "death-payoff"
         ],
         "aeon": null
       },
@@ -2051,15 +2070,6 @@
           "artifact",
           "mana",
           "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Priest of Titania",
-        "impact": 1.9,
-        "tags": [
-          "creature",
-          "mana"
         ],
         "aeon": null
       }

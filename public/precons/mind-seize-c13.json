@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 41,
-    "p20": 29,
-    "p80": 53,
-    "peak": 85,
-    "coverage": 90,
+    "median": 43,
+    "p20": 31,
+    "p80": 56,
+    "peak": 87,
+    "coverage": 91,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "3c72cbf278c822005f9ae9bfb9b19acf03d0a2881e35b6ae177496b74cf0f210",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "7cd16bc7179a8d609a139803b12035f63a75ff9efb97f602ad08e832aac88b5c",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Augur of Bolas\n1 Baleful Force\n1 Baleful Strix\n1 Charmbreaker Devils\n1 Diviner Spirit\n1 Echo Mage\n1 Fog Bank\n1 Guard Gomazoa\n1 Guttersnipe\n1 Hooded Horror\n1 Jace's Archivist\n1 Mnemonic Wall\n1 Nekusar, the Mindrazer\n1 Nightscape Familiar\n1 Nivix Guildmage\n1 Terra Ravager\n1 Thraximundar\n1 True-Name Nemesis\n1 Uyo, Silent Prophet\n1 Vampire Nighthawk\n1 Viseling\n1 Army of the Damned\n1 Cruel Ultimatum\n1 Decree of Pain\n1 Fissure Vent\n1 Incendiary Command\n1 Infest\n1 Molten Disaster\n1 Phthisis\n1 Prosperity\n1 Skyscribing\n1 Strategic Planning\n1 Tempt with Reflections\n1 Annihilate\n1 Crosis's Charm\n1 Dismiss\n1 Grixis Charm\n1 Illusionist's Gambit\n1 Opportunity\n1 Soul Manipulation\n1 Starstorm\n1 Sudden Spoiling\n1 Vision Skeins\n1 Wild Ricochet\n1 Armillary Sphere\n1 Eye of Doom\n1 Mirari\n1 Obelisk of Grixis\n1 Sol Ring\n1 Swiftfoot Boots\n1 Temple Bell\n1 Wayfarer's Bauble\n1 Arcane Melee\n1 Curse of Chaos\n1 Curse of Inertia\n1 Curse of Shallow Graves\n1 Price of Knowledge\n1 Propaganda\n1 Spiteful Visions\n1 Akoum Refuge\n1 Bojuka Bog\n1 Command Tower\n1 Crumbling Necropolis\n1 Dimir Guildgate\n1 Evolving Wilds\n1 Grixis Panorama\n3 Island\n2 Island\n2 Island\n2 Island\n1 Izzet Boilerworks\n1 Izzet Guildgate\n1 Molten Slagheap\n2 Mountain\n1 Mountain\n1 Mountain\n1 Mountain\n1 Opal Palace\n1 Rakdos Carnarium\n1 Rakdos Guildgate\n1 Rupture Spire\n2 Swamp\n2 Swamp\n2 Swamp\n2 Swamp\n1 Temple of the False God\n1 Urza's Factory\n1 Vivid Creek\n1 Vivid Marsh",
   "oracleCards": [
@@ -432,8 +432,7 @@
       "tags": [
         "instant",
         "draw",
-        "counterspell",
-        "counter-kind:generic"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -450,7 +449,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -665,7 +665,9 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "removal"
+        "draw",
+        "removal",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -765,7 +767,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -939,6 +943,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "graveyard-setup",
         "spellslinger"
       ],
@@ -1048,13 +1053,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "3e3f0bcd-0796-494d-bf51-94b33c1671e9",
-      "scryfallId": "3e3f0bcd-0796-494d-bf51-94b33c1671e9",
+      "oracleId": "ea9709b6-4c37-4d5a-b04d-cd4c42e4f9dd",
+      "scryfallId": "ac943e31-26bc-4b54-b73f-460e6e402d86",
       "name": "Propaganda",
       "type": "Enchantment",
       "oracle": "Creatures can't attack you unless their controller pays {2} for each creature they control that's attacking you.",
       "manaCost": "{2}{U}",
-      "cmc": 0,
+      "cmc": 3,
       "colorIdentity": [
         "U"
       ],
@@ -1172,13 +1177,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1205,8 +1210,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "recursion",
-        "counter-kind:generic"
+        "counterspell",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -1600,24 +1605,24 @@
   ],
   "result": {
     "profile": {
-      "median": 41,
-      "floor": 29,
-      "ceiling": 53,
-      "peak": 85,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 62,
+      "median": 43,
+      "floor": 31,
+      "ceiling": 56,
+      "peak": 87,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 61,
       "commanderDelta": 10,
-      "coverage": 90,
-      "dataCoverage": 90
+      "coverage": 91,
+      "dataCoverage": 91
     },
     "dimensions": {
       "speed": 32,
-      "consistency": 62,
-      "explosiveness": 13,
-      "synergy": 82,
-      "interaction": 31,
-      "resilience": 37
+      "consistency": 61,
+      "explosiveness": 14,
+      "synergy": 87,
+      "interaction": 35,
+      "resilience": 40
     },
     "roles": {
       "lands": 40,
@@ -1625,12 +1630,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 11,
-      "interaction": 10,
+      "draw": 15,
+      "interaction": 11,
       "protection": 2,
       "recursion": 4,
       "wipes": 2,
-      "avgCmc": 3.7457627118644066,
+      "avgCmc": 3.8135593220338984,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1817,8 +1822,7 @@
             "tags": [
               "instant",
               "draw",
-              "counterspell",
-              "counter-kind:generic"
+              "counterspell"
             ],
             "manaReq": {
               "generic": 2,
@@ -1901,7 +1905,9 @@
             "cmc": 5,
             "tags": [
               "sorcery",
-              "removal"
+              "draw",
+              "removal",
+              "graveyard-setup"
             ],
             "manaReq": {
               "generic": 3,
@@ -2043,8 +2049,8 @@
             "cmc": 3,
             "tags": [
               "instant",
-              "recursion",
-              "counter-kind:generic"
+              "counterspell",
+              "recursion"
             ],
             "manaReq": {
               "generic": 1,
@@ -2221,6 +2227,7 @@
             "cmc": 2,
             "tags": [
               "creature",
+              "draw",
               "graveyard-setup",
               "spellslinger"
             ],
@@ -2250,10 +2257,12 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 58,
-        "cohesion": 58,
+        "strength": 75,
+        "cohesion": 75,
         "producers": [
           "Curse of Chaos",
+          "Incendiary Command",
+          "Jace's Archivist",
           "Nivix Guildmage"
         ],
         "payoffs": [
@@ -2264,6 +2273,8 @@
         ],
         "members": [
           "Curse of Chaos",
+          "Incendiary Command",
+          "Jace's Archivist",
           "Nivix Guildmage",
           "Charmbreaker Devils",
           "Cruel Ultimatum",
@@ -2289,10 +2300,54 @@
             }
           },
           {
+            "name": "Incendiary Command",
+            "cmc": 5,
+            "tags": [
+              "sorcery",
+              "draw",
+              "removal",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Jace's Archivist",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
             "name": "Nivix Guildmage",
             "cmc": 2,
             "tags": [
               "creature",
+              "draw",
               "graveyard-setup",
               "spellslinger"
             ],
@@ -2388,8 +2443,8 @@
             "cmc": 3,
             "tags": [
               "instant",
-              "recursion",
-              "counter-kind:generic"
+              "counterspell",
+              "recursion"
             ],
             "manaReq": {
               "generic": 1,
@@ -2411,7 +2466,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "2 producteur(s), 4 payoff(s), 6 carte(s) distincte(s)."
+        "evidence": "4 producteur(s), 4 payoff(s), 8 carte(s) distincte(s)."
       }
     ],
     "combos": [],
@@ -2460,16 +2515,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 28,
-      "median": 36,
-      "high": 45,
-      "ceiling": 45,
-      "peak": 73,
+      "floor": 29,
+      "median": 37,
+      "high": 47,
+      "ceiling": 47,
+      "peak": 76,
       "iqr": 14,
-      "consistency": 70,
+      "consistency": 69,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 6,
-      "recoveryAfterDisruption": 69,
+      "recoveryAfterDisruption": 77,
       "turnProfile": [
         {
           "turn": 1,
@@ -2484,52 +2539,63 @@
           "commander": 0,
           "engine": 0,
           "interaction": 10,
-          "resource": 19,
+          "resource": 23,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 12,
           "engine": 2,
-          "interaction": 22,
-          "resource": 37,
+          "interaction": 24,
+          "resource": 45,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 50,
           "engine": 10,
-          "interaction": 35,
-          "resource": 50,
+          "interaction": 39,
+          "resource": 60,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 70,
-          "engine": 17,
-          "interaction": 47,
-          "resource": 61,
+          "engine": 18,
+          "interaction": 51,
+          "resource": 73,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 78,
-          "engine": 26,
-          "interaction": 55,
-          "resource": 71,
+          "engine": 27,
+          "interaction": 59,
+          "resource": 81,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 84,
-          "engine": 34,
-          "interaction": 62,
-          "resource": 78,
+          "engine": 36,
+          "interaction": 66,
+          "resource": 86,
           "burst": 0
         }
       ]
     },
     "drivers": [
+      {
+        "name": "Incendiary Command",
+        "impact": 3.8,
+        "tags": [
+          "sorcery",
+          "draw",
+          "removal",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
       {
         "name": "Cruel Ultimatum",
         "impact": 3.6,
@@ -2551,13 +2617,33 @@
         "aeon": null
       },
       {
+        "name": "Soul Manipulation",
+        "impact": 3.3,
+        "tags": [
+          "instant",
+          "counterspell",
+          "recursion"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Dismiss",
         "impact": 3.2,
         "tags": [
           "instant",
           "draw",
-          "counterspell",
-          "counter-kind:generic"
+          "counterspell"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Nivix Guildmage",
+        "impact": 3.2,
+        "tags": [
+          "creature",
+          "draw",
+          "graveyard-setup",
+          "spellslinger"
         ],
         "aeon": null
       },
@@ -2615,34 +2701,6 @@
         "tags": [
           "instant",
           "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Soul Manipulation",
-        "impact": 2.4,
-        "tags": [
-          "instant",
-          "recursion",
-          "counter-kind:generic"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Opportunity",
-        "impact": 2.3,
-        "tags": [
-          "instant",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Infest",
-        "impact": 2.2,
-        "tags": [
-          "sorcery",
-          "wipe"
         ],
         "aeon": null
       }

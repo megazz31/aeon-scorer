@@ -29,15 +29,15 @@
   "analysis": {
     "median": 50,
     "p20": 37,
-    "p80": 61,
+    "p80": 63,
     "peak": 88,
-    "coverage": 92,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "a34075585071aab530f48057d0103bc5de564b0d6fab8a9bcbd106c9e7b15a28",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "d9968f8a7fea7a1c8c42b1cb89ad5f1356f626478ac186a0448e997bb59cb8ab",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Oreskos Explorer\n1 Karlov of the Ghost Council\n1 Underworld Coinsmith\n1 Burnished Hart\n1 Bastion Protector\n1 Dawnglare Invoker\n1 Ghostblade Eidolon\n1 Kor Sanctifiers\n1 Monk Idealist\n1 Mesa Enchantress\n1 Nighthowler\n1 Corpse Augur\n1 Fate Unraveler\n1 Ajani's Chosen\n1 Doomwake Giant\n1 Dreadbringer Lampads\n1 Celestial Ancient\n1 Celestial Archon\n1 Herald of the Host\n1 Banshee of the Dread Choir\n1 Thief of Blood\n1 Treasury Thrull\n1 Sandstone Oracle\n1 Silent Sentinel\n1 Teysa, Envoy of Ghosts\n1 Ancient Craving\n1 Gild\n1 Dawn to Dusk\n1 Righteous Confluence\n1 Open the Vaults\n1 Deadly Tempest\n1 Death Grasp\n1 Sol Ring\n1 Wayfarer's Bauble\n1 Lightning Greaves\n1 Orzhov Signet\n1 Thought Vessel\n1 Crystal Chimes\n1 Orzhov Cluestone\n1 Phyrexian Reclamation\n1 Seal of Cleansing\n1 Grave Peril\n1 Banishing Light\n1 Cage of Hands\n1 Karmic Justice\n1 Vow of Duty\n1 Fallen Ideal\n1 Seal of Doom\n1 Vow of Malice\n1 Aura of Silence\n1 Grasp of Fate\n1 Shielded by Faith\n1 Phyrexian Arena\n1 Underworld Connections\n1 Daxos's Torment\n1 Marshal's Anthem\n1 Dictate of Heliod\n1 Sigil of the Empty Throne\n1 Black Market\n1 Necromancer's Covenant\n1 Barren Moor\n1 Command Tower\n1 Evolving Wilds\n1 Ghost Quarter\n1 New Benalia\n1 Orzhov Basilica\n1 Orzhov Guildgate\n1 Rogue's Passage\n1 Scoured Barrens\n1 Secluded Steppe\n1 Tainted Field\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Vivid Marsh\n1 Vivid Meadow\n3 Plains\n3 Plains\n3 Plains\n2 Plains\n4 Swamp\n3 Swamp\n3 Swamp\n3 Swamp",
   "oracleCards": [
@@ -94,7 +94,8 @@
       "tags": [
         "enchantment",
         "removal",
-        "sacrifice"
+        "sacrifice",
+        "stax"
       ],
       "isCommander": false
     },
@@ -684,7 +685,6 @@
         "removal",
         "counter-producer",
         "counter-kind:plus1",
-        "lifegain",
         "life-payoff"
       ],
       "isCommander": false
@@ -933,6 +933,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -1089,6 +1090,7 @@
       "tags": [
         "creature",
         "artifact",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -1232,13 +1234,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1440,7 +1442,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "enchantment"
+        "enchantment",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1552,22 +1555,22 @@
     "profile": {
       "median": 50,
       "floor": 37,
-      "ceiling": 61,
+      "ceiling": 63,
       "peak": 88,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 59,
+      "dispersion": 26,
+      "variance": 26,
+      "consistency": 60,
       "commanderDelta": 8,
-      "coverage": 92,
-      "dataCoverage": 92
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
       "speed": 41,
-      "consistency": 59,
-      "explosiveness": 13,
+      "consistency": 60,
+      "explosiveness": 12,
       "synergy": 77,
       "interaction": 58,
-      "resilience": 53
+      "resilience": 54
     },
     "roles": {
       "lands": 39,
@@ -1575,12 +1578,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 4,
+      "draw": 7,
       "interaction": 12,
       "protection": 3,
       "recursion": 7,
       "wipes": 2,
-      "avgCmc": 3.65,
+      "avgCmc": 3.6666666666666665,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1646,7 +1649,8 @@
             "tags": [
               "enchantment",
               "removal",
-              "sacrifice"
+              "sacrifice",
+              "stax"
             ],
             "manaReq": {
               "generic": 1,
@@ -2128,7 +2132,8 @@
             "name": "Underworld Connections",
             "cmc": 3,
             "tags": [
-              "enchantment"
+              "enchantment",
+              "draw"
             ],
             "manaReq": {
               "generic": 1,
@@ -2314,14 +2319,14 @@
       "iterations": 3200,
       "floor": 36,
       "median": 45,
-      "high": 54,
-      "ceiling": 54,
+      "high": 55,
+      "ceiling": 55,
       "peak": 80,
       "iqr": 15,
-      "consistency": 67,
+      "consistency": 68,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 86,
+      "recoveryAfterDisruption": 87,
       "turnProfile": [
         {
           "turn": 1,
@@ -2336,7 +2341,7 @@
           "commander": 9,
           "engine": 0,
           "interaction": 23,
-          "resource": 12,
+          "resource": 13,
           "burst": 0
         },
         {
@@ -2344,7 +2349,7 @@
           "commander": 68,
           "engine": 7,
           "interaction": 48,
-          "resource": 36,
+          "resource": 39,
           "burst": 0
         },
         {
@@ -2352,7 +2357,7 @@
           "commander": 87,
           "engine": 22,
           "interaction": 62,
-          "resource": 54,
+          "resource": 58,
           "burst": 0
         },
         {
@@ -2360,7 +2365,7 @@
           "commander": 92,
           "engine": 34,
           "interaction": 71,
-          "resource": 64,
+          "resource": 68,
           "burst": 0
         },
         {
@@ -2368,7 +2373,7 @@
           "commander": 95,
           "engine": 41,
           "interaction": 77,
-          "resource": 71,
+          "resource": 76,
           "burst": 0
         },
         {
@@ -2376,7 +2381,7 @@
           "commander": 96,
           "engine": 46,
           "interaction": 81,
-          "resource": 77,
+          "resource": 81,
           "burst": 0
         }
       ]
@@ -2402,6 +2407,28 @@
         "aeon": null
       },
       {
+        "name": "Aura of Silence",
+        "impact": 2.6,
+        "tags": [
+          "enchantment",
+          "removal",
+          "sacrifice",
+          "stax"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Orzhov Cluestone",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Necromancer's Covenant",
         "impact": 2.4,
         "tags": [
@@ -2410,6 +2437,15 @@
           "tokens",
           "etb",
           "lifegain"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Underworld Connections",
+        "impact": 2.4,
+        "tags": [
+          "enchantment",
+          "draw"
         ],
         "aeon": null
       },
@@ -2456,16 +2492,6 @@
         "aeon": null
       },
       {
-        "name": "Aura of Silence",
-        "impact": 1.8,
-        "tags": [
-          "enchantment",
-          "removal",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Banishing Light",
         "impact": 1.8,
         "tags": [
@@ -2482,25 +2508,6 @@
           "enchantment",
           "removal",
           "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Phyrexian Reclamation",
-        "impact": 1.8,
-        "tags": [
-          "enchantment",
-          "recursion"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Seal of Cleansing",
-        "impact": 1.8,
-        "tags": [
-          "enchantment",
-          "removal",
-          "sacrifice"
         ],
         "aeon": null
       }

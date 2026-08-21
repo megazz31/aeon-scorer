@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 40,
-    "p20": 28,
-    "p80": 49,
-    "peak": 69,
+    "median": 42,
+    "p20": 31,
+    "p80": 52,
+    "peak": 76,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-8",
-    "oracleSnapshotHash": "30376126b8b2aeff159a11ed5f253ba761ff2bfcb52f7842aa28c2087ad8e887",
+    "semanticVersion": "3.2.0-semantic-9",
+    "oracleSnapshotHash": "25e0682364845f15e24c2b51b72deac94cd3f8533342b1039d2b4b14ab0bf022",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T17:59:33.369Z"
+    "analyzedAt": "2026-08-21T22:03:55.931Z"
   },
   "decklist": "1 Bastion Protector\n1 Collective Effort\n1 Deploy to the Front\n1 Fell the Mighty\n1 Hour of Reckoning\n1 Launch the Fleet\n1 Martial Coup\n1 Entrapment Maneuver\n1 Utter End\n1 Swords to Plowshares\n1 Mortify\n1 Everflowing Chalice\n1 Mind Stone\n1 Skullclamp\n1 Sol Ring\n1 Talisman of Dominance\n1 Talisman of Hierarchy\n1 Talisman of Progress\n1 Arcane Signet\n1 Commander's Sphere\n1 Reconnaissance Mission\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Port Town\n1 Prairie Stream\n1 Skycloud Expanse\n1 Sunken Hollow\n1 Arcane Sanctum\n1 Ash Barrens\n1 Memorial to Glory\n1 Command Tower\n1 Dismal Backwater\n1 Evolving Wilds\n1 Path of Ancestry\n1 Scoured Barrens\n1 Terramorphic Expanse\n1 Tranquil Cove\n5 Island\n7 Swamp\n8 Plains\n1 Marneus Calgar\n1 Celestine, the Living Saint\n1 Defenders of Humanity\n1 For the Emperor!\n1 Space Marine Devastator\n1 Triumph of Saint Katherine\n1 Ultramarines Honour Guard\n1 Vexilus Praetor\n1 Zephyrim\n1 Sister of Silence\n1 Vanguard Suppressor\n1 Arco-Flagellant\n1 Primaris Eliminator\n1 Assault Intercessor\n1 Belisarius Cawl\n1 Birth of the Imperium\n1 Callidus Assassin\n1 Commissar Severina Raine\n1 Company Commander\n1 Cybernetica Datasmith\n1 Epistolary Librarian\n1 Exterminatus\n1 The Flesh Is Weak\n1 Inquisitor Eisenhorn\n1 Neyam Shai Murad\n1 Sister Hospitaller\n1 Sister Repentia\n1 The Golden Throne\n1 Inquisitorial Rosette\n1 Knight Paladin\n1 Reaver Titan\n1 Redemptor Dreadnought\n1 Thunderhawk Gunship\n1 And They Shall Know No Fear\n1 Grey Knight Paragon\n1 Space Marine Scout\n1 Thunderwolf Cavalry\n1 Sicarian Infiltrator\n1 Sanguinary Priest\n1 Deny the Witch\n1 Primaris Chaplain",
   "oracleCards": [
@@ -222,6 +222,7 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "draw",
         "tokens"
       ],
       "isCommander": false
@@ -347,6 +348,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -472,8 +474,7 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counterspell",
-        "counter-kind:generic"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -726,6 +727,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "tokens"
       ],
       "isCommander": false
@@ -745,7 +747,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "tokens"
       ],
       "isCommander": true
     },
@@ -896,6 +899,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -1213,8 +1217,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb",
-        "counter-kind:generic"
+        "counterspell",
+        "etb"
       ],
       "isCommander": false
     },
@@ -1251,7 +1255,8 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "draw"
+        "draw",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -1278,13 +1283,13 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
       "type": "Artifact",
       "oracle": "{T}: Add {C}{C}.",
       "manaCost": "{1}",
-      "cmc": 0,
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
@@ -1694,24 +1699,24 @@
   ],
   "result": {
     "profile": {
-      "median": 40,
-      "floor": 28,
-      "ceiling": 49,
-      "peak": 69,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 65,
-      "commanderDelta": 5,
+      "median": 42,
+      "floor": 31,
+      "ceiling": 52,
+      "peak": 76,
+      "dispersion": 20,
+      "variance": 20,
+      "consistency": 66,
+      "commanderDelta": 7,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 34,
-      "consistency": 65,
-      "explosiveness": 14,
-      "synergy": 40,
-      "interaction": 47,
-      "resilience": 43
+      "consistency": 66,
+      "explosiveness": 15,
+      "synergy": 49,
+      "interaction": 49,
+      "resilience": 44
     },
     "roles": {
       "lands": 37,
@@ -1719,33 +1724,35 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 8,
-      "interaction": 12,
+      "draw": 12,
+      "interaction": 13,
       "protection": 8,
       "recursion": 3,
       "wipes": 4,
-      "avgCmc": 3.7903225806451615,
+      "avgCmc": 3.806451612903226,
       "unknownManaLands": 0
     },
     "packages": [
       {
         "id": "sacrifice",
         "name": "Sacrifice / mort",
-        "strength": 59,
-        "cohesion": 59,
+        "strength": 57,
+        "cohesion": 57,
         "producers": [
           "Commissar Severina Raine",
           "The Golden Throne"
         ],
         "payoffs": [
           "Sanguinary Priest",
-          "Sister Repentia"
+          "Sister Repentia",
+          "Skullclamp"
         ],
         "members": [
           "Commissar Severina Raine",
           "The Golden Throne",
           "Sanguinary Priest",
-          "Sister Repentia"
+          "Sister Repentia",
+          "Skullclamp"
         ],
         "producerCards": [
           {
@@ -1827,6 +1834,20 @@
               ],
               "total": 5
             }
+          },
+          {
+            "name": "Skullclamp",
+            "cmc": 1,
+            "tags": [
+              "artifact",
+              "draw",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
           }
         ],
         "producerTags": [
@@ -1836,7 +1857,7 @@
         "payoffTags": [
           "death-payoff"
         ],
-        "evidence": "2 producteur(s), 2 payoff(s), 4 carte(s) distincte(s)."
+        "evidence": "2 producteur(s), 3 payoff(s), 5 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -1886,6 +1907,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -1917,6 +1939,7 @@
             "cmc": 2,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -1928,7 +1951,7 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
               "artifact",
               "mana",
@@ -1985,7 +2008,8 @@
             "name": "Inquisitor Greyfax",
             "cmc": 4,
             "tags": [
-              "creature"
+              "creature",
+              "tokens"
             ],
             "manaReq": {
               "generic": 1,
@@ -2009,9 +2033,26 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 0,
-      "connected": [],
-      "tags": []
+      "score": 36,
+      "connected": [
+        "Belisarius Cawl",
+        "Birth of the Imperium",
+        "Company Commander",
+        "Defenders of Humanity",
+        "Deploy to the Front",
+        "Entrapment Maneuver",
+        "Inquisitor Eisenhorn",
+        "Inquisitorial Rosette",
+        "Launch the Fleet",
+        "Marneus Calgar",
+        "Martial Coup",
+        "Memorial to Glory",
+        "Thunderhawk Gunship"
+      ],
+      "tags": [
+        "tokens",
+        "token-payoff"
+      ]
     },
     "aeon": {
       "available": false,
@@ -2021,16 +2062,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 32,
+      "floor": 33,
       "median": 40,
-      "high": 46,
-      "ceiling": 46,
-      "peak": 62,
-      "iqr": 12,
-      "consistency": 74,
+      "high": 47,
+      "ceiling": 47,
+      "peak": 66,
+      "iqr": 11,
+      "consistency": 75,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 75,
+      "recoveryAfterDisruption": 78,
       "turnProfile": [
         {
           "turn": 1,
@@ -2051,41 +2092,41 @@
         {
           "turn": 3,
           "commander": 28,
-          "engine": 0,
-          "interaction": 32,
-          "resource": 31,
+          "engine": 1,
+          "interaction": 33,
+          "resource": 33,
           "burst": 3
         },
         {
           "turn": 4,
           "commander": 72,
-          "engine": 1,
-          "interaction": 53,
-          "resource": 52,
+          "engine": 2,
+          "interaction": 55,
+          "resource": 56,
           "burst": 7
         },
         {
           "turn": 5,
           "commander": 84,
-          "engine": 2,
-          "interaction": 65,
-          "resource": 63,
+          "engine": 4,
+          "interaction": 67,
+          "resource": 68,
           "burst": 9
         },
         {
           "turn": 6,
           "commander": 89,
-          "engine": 3,
-          "interaction": 72,
-          "resource": 70,
+          "engine": 5,
+          "interaction": 75,
+          "resource": 75,
           "burst": 10
         },
         {
           "turn": 7,
           "commander": 92,
-          "engine": 4,
-          "interaction": 78,
-          "resource": 75,
+          "engine": 7,
+          "interaction": 80,
+          "resource": 81,
           "burst": 12
         }
       ]
@@ -2112,6 +2153,38 @@
         "aeon": null
       },
       {
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mind Stone",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Skullclamp",
+        "impact": 3.1,
+        "tags": [
+          "artifact",
+          "draw",
+          "death-payoff"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Commissar Severina Raine",
         "impact": 3,
         "tags": [
@@ -2124,6 +2197,16 @@
         "aeon": null
       },
       {
+        "name": "Inquisitor Eisenhorn",
+        "impact": 2.6,
+        "tags": [
+          "creature",
+          "draw",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Marneus Calgar",
         "impact": 2.5,
         "tags": [
@@ -2131,15 +2214,6 @@
           "draw",
           "tokens",
           "token-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Skullclamp",
-        "impact": 2.4,
-        "tags": [
-          "artifact",
-          "draw"
         ],
         "aeon": null
       },
@@ -2180,38 +2254,6 @@
         "tags": [
           "creature",
           "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Everflowing Chalice",
-        "impact": 2,
-        "tags": [
-          "artifact",
-          "mana",
-          "etb",
-          "counter-producer",
-          "counter-payoff",
-          "counter-kind:charge"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Arcane Signet",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Exterminatus",
-        "impact": 1.9,
-        "tags": [
-          "sorcery",
-          "wipe",
-          "protection"
         ],
         "aeon": null
       }
