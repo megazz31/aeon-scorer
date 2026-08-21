@@ -35,7 +35,8 @@ function counterKinds(o){
     ['plus1',/\+1\/\+1 counters?/],['minus1',/-1\/-1 counters?/],['charge',/charge counters?/],['poison',/poison counters?/],['stun',/stun counters?/],['shield',/shield counters?/],['lore',/lore counters?/],['time',/time counters?/],['oil',/oil counters?/],['experience',/experience counters?/],['energy',/energy counters?|\{e\}/],['rad',/rad counters?/],['loyalty',/loyalty counters?/],['finality',/finality counters?/],['quest',/quest counters?/],['storage',/storage counters?/],['muster',/muster counters?/],['verse',/verse counters?/],['brick',/brick counters?/],['age',/age counters?/],['fate',/fate counters?/],['spore',/spore counters?/],['slime',/slime counters?/]
   ])if(re.test(s))add(kind)
   if(/\bproliferate\b/.test(s))add('wild')
-  if(/for each [^.]*counter|each kind of counter|different kinds? of counters|number of counters? (?:on|among|removed)|for each counter removed/.test(s))add('any')
+  const concrete=out.some(k=>k!=='wild'&&k!=='generic')
+  if(/each kind of counter|different kinds? of counters|number of counters? (?:on|among|removed)/.test(s)||(!concrete&&/for each [^.]*counter|for each counter removed/.test(s)))add('any')
   if(!out.length&&/\bcounters?\b/.test(s))add('generic')
   return out
 }
