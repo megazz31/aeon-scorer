@@ -15,7 +15,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/NecronDynasties_40K.json",
-  "sourceRevision": "2026-08-20",
+  "sourceRevision": "2026-08-21",
   "productAliases": [
     {
       "name": "Necron Dynasties",
@@ -34,15 +34,15 @@
   "analysis": {
     "median": 43,
     "p20": 31,
-    "p80": 54,
+    "p80": 55,
     "peak": 83,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-5",
+    "semanticVersion": "3.2.0-semantic-6",
     "oracleSnapshotHash": "f2f1b4d15b5750fb132bf882fd9d510ca6bb70c7394e3c3b28e20c77d087f792",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T13:32:22.094Z"
+    "analyzedAt": "2026-08-21T14:56:27.531Z"
   },
   "decklist": "1 Beacon of Unrest\n1 Living Death\n1 Mutilate\n1 Dread Return\n1 Defile\n1 Darkness\n1 Go for the Throat\n1 Caged Sun\n1 Endless Atlas\n1 Gilded Lotus\n1 Mystic Forge\n1 Sculpting Steel\n1 Cranial Plating\n1 Hedron Archive\n1 Mask of Memory\n1 Sol Ring\n1 Arcane Signet\n1 Commander's Sphere\n1 Mind Stone\n1 Thought Vessel\n1 Unstable Obelisk\n1 Wayfarer's Bauble\n1 Barren Moor\n1 Myriad Landscape\n1 Reliquary Tower\n1 Desert of the Glorified\n1 Polluted Mire\n1 Vault of Whispers\n10 Swamp\n10 Swamp\n10 Swamp\n1 Imotekh the Stormlord\n1 Anrakyr the Traveller\n1 Biotransference\n1 Chronomancer\n1 Cryptek\n1 Illuminor Szeras\n1 Lokhust Heavy Destroyer\n1 Lychguard\n1 Necron Deathmark\n1 Necron Overlord\n1 Out of the Tombs\n1 Royal Warden\n1 Shard of the Nightbringer\n1 Shard of the Void Dragon\n1 Skorpekh Lord\n1 Technomancer\n1 Their Name Is Death\n1 Their Number Is Legion\n1 Tomb Blade\n1 Trazyn the Infinite\n1 Triarch Stalker\n1 The War in Heaven\n1 Canoptek Scarab Swarm\n1 Canoptek Spyder\n1 Canoptek Tomb Sentinel\n1 Canoptek Wraith\n1 Convergence of Dominion\n1 Cryptothrall\n1 Ghost Ark\n1 Necron Monolith\n1 Resurrection Orb\n1 Sceptre of Eternal Glory\n1 Tomb Fortress\n1 Flayed One\n1 Hexmark Destroyer\n1 Plasmancer\n1 Psychomancer\n1 Sautekh Immortal\n1 Skorpekh Destroyer\n1 Triarch Praetorian\n1 Night Scythe",
   "oracleCards": [
@@ -327,8 +327,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "artifact",
-        "death-payoff"
+        "artifact"
       ],
       "isCommander": false
     },
@@ -918,7 +917,6 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "death-payoff",
         "lifegain"
       ],
       "isCommander": false
@@ -1389,12 +1387,12 @@
     "profile": {
       "median": 43,
       "floor": 31,
-      "ceiling": 54,
+      "ceiling": 55,
       "peak": 83,
-      "dispersion": 23,
-      "variance": 23,
+      "dispersion": 24,
+      "variance": 24,
       "consistency": 62,
-      "commanderDelta": 6,
+      "commanderDelta": 5,
       "coverage": 93,
       "dataCoverage": 93
     },
@@ -1402,7 +1400,7 @@
       "speed": 38,
       "consistency": 62,
       "explosiveness": 12,
-      "synergy": 56,
+      "synergy": 58,
       "interaction": 30,
       "resilience": 42
     },
@@ -1665,8 +1663,7 @@
             "cmc": 4,
             "tags": [
               "creature",
-              "artifact",
-              "death-payoff"
+              "artifact"
             ],
             "manaReq": {
               "generic": 3,
@@ -2021,7 +2018,6 @@
             "cmc": 2,
             "tags": [
               "artifact",
-              "death-payoff",
               "lifegain"
             ],
             "manaReq": {
@@ -2432,108 +2428,6 @@
         "evidence": "48 producteur(s), 6 payoff(s), 50 carte(s) distincte(s)."
       },
       {
-        "id": "sacrifice",
-        "name": "Sacrifice / mort",
-        "strength": 59,
-        "cohesion": 59,
-        "producers": [
-          "Chronomancer",
-          "Illuminor Szeras"
-        ],
-        "payoffs": [
-          "Cryptek",
-          "Resurrection Orb"
-        ],
-        "members": [
-          "Chronomancer",
-          "Illuminor Szeras",
-          "Cryptek",
-          "Resurrection Orb"
-        ],
-        "producerCards": [
-          {
-            "name": "Chronomancer",
-            "cmc": 2,
-            "tags": [
-              "creature",
-              "artifact",
-              "sacrifice",
-              "sac-outlet"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "B"
-                ]
-              ],
-              "total": 2
-            }
-          },
-          {
-            "name": "Illuminor Szeras",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "artifact",
-              "sacrifice",
-              "sac-outlet"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "B"
-                ]
-              ],
-              "total": 3
-            }
-          }
-        ],
-        "payoffCards": [
-          {
-            "name": "Cryptek",
-            "cmc": 4,
-            "tags": [
-              "creature",
-              "artifact",
-              "death-payoff"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "B"
-                ]
-              ],
-              "total": 4
-            }
-          },
-          {
-            "name": "Resurrection Orb",
-            "cmc": 2,
-            "tags": [
-              "artifact",
-              "death-payoff",
-              "lifegain"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [],
-              "total": 2
-            }
-          }
-        ],
-        "producerTags": [
-          "sac-outlet",
-          "sac-enabler"
-        ],
-        "payoffTags": [
-          "death-payoff"
-        ],
-        "evidence": "2 producteur(s), 2 payoff(s), 4 carte(s) distincte(s)."
-      },
-      {
         "id": "early-commander",
         "name": "Accélération du commandant",
         "strength": 50,
@@ -2721,13 +2615,13 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 36,
-      "median": 44,
+      "floor": 35,
+      "median": 43,
       "high": 52,
       "ceiling": 52,
-      "peak": 77,
+      "peak": 76,
       "iqr": 13,
-      "consistency": 70,
+      "consistency": 71,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
       "recoveryAfterDisruption": 76,
@@ -2751,7 +2645,7 @@
         {
           "turn": 3,
           "commander": 25,
-          "engine": 22,
+          "engine": 21,
           "interaction": 17,
           "resource": 35,
           "burst": 0
@@ -2759,7 +2653,7 @@
         {
           "turn": 4,
           "commander": 75,
-          "engine": 43,
+          "engine": 40,
           "interaction": 35,
           "resource": 49,
           "burst": 0
@@ -2767,7 +2661,7 @@
         {
           "turn": 5,
           "commander": 90,
-          "engine": 52,
+          "engine": 49,
           "interaction": 44,
           "resource": 58,
           "burst": 0
@@ -2775,7 +2669,7 @@
         {
           "turn": 6,
           "commander": 94,
-          "engine": 58,
+          "engine": 55,
           "interaction": 50,
           "resource": 63,
           "burst": 0
@@ -2783,7 +2677,7 @@
         {
           "turn": 7,
           "commander": 96,
-          "engine": 62,
+          "engine": 58,
           "interaction": 55,
           "resource": 68,
           "burst": 0
@@ -2903,13 +2797,13 @@
         "aeon": null
       },
       {
-        "name": "Illuminor Szeras",
-        "impact": 2.4,
+        "name": "Canoptek Tomb Sentinel",
+        "impact": 2.3,
         "tags": [
           "creature",
           "artifact",
-          "sacrifice",
-          "sac-outlet"
+          "removal",
+          "etb"
         ],
         "aeon": null
       }
