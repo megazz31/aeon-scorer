@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 33,
-    "p20": 22,
-    "p80": 44,
-    "peak": 71,
+    "median": 34,
+    "p20": 23,
+    "p80": 46,
+    "peak": 72,
     "coverage": 89,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "d215d50087dd78da4a967c672a7dbf28c738b4914f43ba1f1c50432990085c57",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "923b26797057a879d97e2414ef41e04e6c04080a7deadf1e2b61efe05aec4abe",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Will Kenrith\n1 Rowan Kenrith\n1 Keiga, the Tide Star\n1 Pursued Whale\n1 Sly Instigator\n1 Agitator Ant\n1 Avatar of Slaughter\n1 Brash Taunter\n1 Chaos Dragon\n1 Drakuseth, Maw of Flames\n1 Geode Rager\n1 Goblin Spymaster\n1 Kazuul, Tyrant of the Cliffs\n1 Ryusei, the Falling Star\n1 Territorial Hellkite\n1 Thunder Dragon\n1 Vengeful Ancestor\n1 Warmonger Hellkite\n1 Niv-Mizzet, Parun\n1 Solemn Simulacrum\n1 Steel Hellkite\n1 Stuffy Doll\n1 Burnished Hart\n1 Sprite Dragon\n1 Aether Gale\n1 Curse of the Swine\n1 Blasphemous Act\n1 Chain Reaction\n1 Disrupt Decorum\n1 Compulsive Research\n1 Domineering Will\n1 Reins of Power\n1 Chaos Warp\n1 Midnight Clock\n1 Dragon's Hoard\n1 Arcane Signet\n1 Mind Stone\n1 Wayfarer's Bauble\n1 Bloodthirsty Blade\n1 Fellwar Stone\n1 Hedron Archive\n1 Izzet Signet\n1 Sol Ring\n1 Talisman of Creativity\n1 Dissipation Field\n1 The Akroan War\n1 Psychic Impetus\n1 Shiny Impetus\n1 Curse of Verbosity\n1 Propaganda\n1 Curse of Opulence\n1 Castle Vantress\n1 Desolate Lighthouse\n1 Kher Keep\n1 Temple of Epiphany\n1 Wandering Fumarole\n1 Command Tower\n1 Ash Barrens\n1 Izzet Boilerworks\n1 Myriad Landscape\n1 Path of Ancestry\n1 Prismari Campus\n1 Reliquary Tower\n1 Temple of the False God\n1 Terrain Generator\n3 Island\n3 Island\n3 Island\n3 Island\n3 Mountain\n3 Mountain\n3 Mountain\n3 Mountain\n1 Baeloth Barrityl, Entertainer\n1 Clan Crafter\n1 Artificer Class\n1 Astral Dragon\n1 Mocking Doppelganger\n1 Bothersome Quasit\n1 Death Kiss\n1 Loot Dispute\n1 Spectacular Showdown\n1 Angler Turtle",
   "oracleCards": [
@@ -1022,15 +1022,16 @@
       "oracleId": "3e3f0bcd-0796-494d-bf51-94b33c1671e9",
       "scryfallId": "3e3f0bcd-0796-494d-bf51-94b33c1671e9",
       "name": "Propaganda",
-      "type": "",
-      "oracle": "Creatures can't attack you unless their controller pays {2} for each creature they control that's attacking you.\nCreatures can't attack you unless their controller pays {2} for each creature they control that's attacking you.",
-      "manaCost": "{2}{U} // {2}{U}",
+      "type": "Enchantment",
+      "oracle": "Creatures can't attack you unless their controller pays {2} for each creature they control that's attacking you.",
+      "manaCost": "{2}{U}",
       "cmc": 0,
       "colorIdentity": [
         "U"
       ],
       "producedMana": [],
       "tags": [
+        "enchantment",
         "stax"
       ],
       "isCommander": false
@@ -1183,15 +1184,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1520,23 +1522,23 @@
   ],
   "result": {
     "profile": {
-      "median": 33,
-      "floor": 22,
-      "ceiling": 44,
-      "peak": 71,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 66,
+      "median": 34,
+      "floor": 23,
+      "ceiling": 46,
+      "peak": 72,
+      "dispersion": 23,
+      "variance": 23,
+      "consistency": 64,
       "commanderDelta": 5,
       "coverage": 89,
       "dataCoverage": 89
     },
     "dimensions": {
       "speed": 32,
-      "consistency": 66,
+      "consistency": 64,
       "explosiveness": 11,
       "synergy": 50,
-      "interaction": 5,
+      "interaction": 14,
       "resilience": 23
     },
     "roles": {
@@ -2000,13 +2002,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2161,16 +2164,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 27,
-      "median": 35,
-      "high": 42,
-      "ceiling": 42,
-      "peak": 63,
+      "floor": 28,
+      "median": 36,
+      "high": 44,
+      "ceiling": 44,
+      "peak": 64,
       "iqr": 12,
-      "consistency": 75,
+      "consistency": 73,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 63,
+      "recoveryAfterDisruption": 64,
       "turnProfile": [
         {
           "turn": 1,
@@ -2182,25 +2185,25 @@
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 2,
           "engine": 0,
-          "interaction": 0,
-          "resource": 6,
+          "interaction": 1,
+          "resource": 7,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 13,
+          "commander": 18,
           "engine": 2,
-          "interaction": 1,
-          "resource": 23,
+          "interaction": 9,
+          "resource": 24,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 55,
+          "commander": 56,
           "engine": 9,
-          "interaction": 7,
+          "interaction": 16,
           "resource": 37,
           "burst": 0
         },
@@ -2208,15 +2211,15 @@
           "turn": 5,
           "commander": 80,
           "engine": 15,
-          "interaction": 13,
-          "resource": 44,
+          "interaction": 20,
+          "resource": 45,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 88,
           "engine": 21,
-          "interaction": 18,
+          "interaction": 22,
           "resource": 50,
           "burst": 0
         },
@@ -2224,7 +2227,7 @@
           "turn": 7,
           "commander": 92,
           "engine": 25,
-          "interaction": 21,
+          "interaction": 24,
           "resource": 55,
           "burst": 0
         }
@@ -2235,6 +2238,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],

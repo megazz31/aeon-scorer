@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 53,
-    "p20": 42,
-    "p80": 63,
+    "p20": 41,
+    "p80": 65,
     "peak": 87,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "b38087413c93d65b6992ffa71d374e8baf321bcbafb5c17f60d2c073a4e4bc66",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "d3b86589a5c08420f93473061bad1d10cb4b576ff117f8c2430575a48d306e21",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Shorikai, Genesis Engine\n1 Jace, Architect of Thought\n1 Drumbellower\n1 Ironsoul Enforcer\n1 Cyberdrive Awakener\n1 Kappa Cannoneer\n1 Katsumasa, the Animator\n1 Research Thief\n1 Aeronaut Admiral\n1 Cataclysmic Gearhulk\n1 Indomitable Archangel\n1 Myrsmith\n1 Sram, Senior Edificer\n1 Teshar, Ancestor's Apostle\n1 Emry, Lurker of the Loch\n1 Etherium Sculptor\n1 Master of Etherium\n1 Riddlesmith\n1 Sai, Master Thopterist\n1 Vedalken Engineer\n1 Whirler Rogue\n1 Arcanist's Owl\n1 Hanna, Ship's Navigator\n1 Raff Capashen, Ship's Mage\n1 Foundry Inspector\n1 Gold Myr\n1 Shimmer Myr\n1 Silver Myr\n1 Solemn Simulacrum\n1 Organic Extinction\n1 Universal Surveillance\n1 Thoughtcast\n1 Dance of the Manse\n1 Release to Memory\n1 Access Denied\n1 Armed and Armored\n1 Crush Contraband\n1 Dispatch\n1 Generous Gift\n1 Swords to Plowshares\n1 Reality Shift\n1 Aerial Surveyor\n1 Imposter Mech\n1 Imperial Recovery Unit\n1 Mobilizer Mech\n1 Prodigy's Prototype\n1 Surgehacker Mech\n1 Parhelion II\n1 Arcane Signet\n1 Azorius Signet\n1 Colossal Plow\n1 Cultivator's Caravan\n1 Fellwar Stone\n1 Mirage Mirror\n1 Peacewalker Colossus\n1 Raiders' Karve\n1 Skysovereign, Consul Flagship\n1 Smuggler's Copter\n1 Sol Ring\n1 Weatherlight\n1 Swift Reconfiguration\n1 Thopter Spy Network\n1 Command Tower\n1 Exotic Orchard\n1 Port Town\n1 Prairie Stream\n1 Skycloud Expanse\n1 Spire of Industry\n1 Temple of Enlightenment\n8 Plains\n7 Plains\n8 Island\n7 Island",
   "oracleCards": [
@@ -1130,15 +1130,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1413,22 +1414,22 @@
   "result": {
     "profile": {
       "median": 53,
-      "floor": 42,
-      "ceiling": 63,
+      "floor": 41,
+      "ceiling": 65,
       "peak": 87,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 62,
-      "commanderDelta": 6,
+      "dispersion": 24,
+      "variance": 24,
+      "consistency": 61,
+      "commanderDelta": 7,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 49,
-      "consistency": 62,
+      "consistency": 61,
       "explosiveness": 17,
       "synergy": 63,
-      "interaction": 40,
+      "interaction": 41,
       "resilience": 46
     },
     "roles": {
@@ -1505,6 +1506,7 @@
           "Silver Myr",
           "Skysovereign, Consul Flagship",
           "Smuggler's Copter",
+          "Sol Ring",
           "Solemn Simulacrum",
           "Surgehacker Mech",
           "Weatherlight",
@@ -1992,6 +1994,20 @@
             }
           },
           {
+            "name": "Sol Ring",
+            "cmc": 0,
+            "tags": [
+              "artifact",
+              "mana",
+              "fast-mana"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
             "name": "Solemn Simulacrum",
             "cmc": 4,
             "tags": [
@@ -2252,7 +2268,7 @@
         "payoffTags": [
           "artifact-payoff"
         ],
-        "evidence": "32 producteur(s), 11 payoff(s), 38 carte(s) distincte(s)."
+        "evidence": "33 producteur(s), 11 payoff(s), 39 carte(s) distincte(s)."
       },
       {
         "id": "graveyard",
@@ -2455,52 +2471,52 @@
     "simulation": {
       "iterations": 3200,
       "floor": 44,
-      "median": 52,
-      "high": 60,
-      "ceiling": 60,
+      "median": 53,
+      "high": 62,
+      "ceiling": 62,
       "peak": 84,
-      "iqr": 13,
-      "consistency": 71,
+      "iqr": 14,
+      "consistency": 69,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 94,
+      "recoveryAfterDisruption": 95,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 5,
-          "resource": 0,
+          "resource": 1,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 0,
-          "engine": 2,
-          "interaction": 12,
-          "resource": 17,
+          "commander": 6,
+          "engine": 5,
+          "interaction": 15,
+          "resource": 20,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 76,
-          "engine": 36,
-          "interaction": 32,
-          "resource": 49,
+          "commander": 78,
+          "engine": 39,
+          "interaction": 33,
+          "resource": 51,
           "burst": 4
         },
         {
           "turn": 4,
-          "commander": 93,
-          "engine": 60,
-          "interaction": 43,
+          "commander": 94,
+          "engine": 61,
+          "interaction": 44,
           "resource": 66,
           "burst": 8
         },
         {
           "turn": 5,
           "commander": 96,
-          "engine": 70,
+          "engine": 71,
           "interaction": 50,
           "resource": 73,
           "burst": 10
@@ -2510,13 +2526,13 @@
           "commander": 98,
           "engine": 77,
           "interaction": 53,
-          "resource": 76,
+          "resource": 77,
           "burst": 11
         },
         {
           "turn": 7,
           "commander": 99,
-          "engine": 81,
+          "engine": 82,
           "interaction": 58,
           "resource": 80,
           "burst": 13
@@ -2556,6 +2572,16 @@
         "aeon": null
       },
       {
+        "name": "Sol Ring",
+        "impact": 3.7,
+        "tags": [
+          "artifact",
+          "mana",
+          "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Solemn Simulacrum",
         "impact": 3.2,
         "tags": [
@@ -2565,15 +2591,6 @@
           "land-ramp",
           "death-payoff",
           "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Sol Ring",
-        "impact": 3,
-        "tags": [
-          "mana",
-          "fast-mana"
         ],
         "aeon": null
       },

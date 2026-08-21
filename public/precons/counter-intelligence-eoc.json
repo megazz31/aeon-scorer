@@ -30,15 +30,15 @@
   "analysis": {
     "median": 52,
     "p20": 40,
-    "p80": 64,
-    "peak": 87,
+    "p80": 65,
+    "peak": 86,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "65ca4b87153ba820445a0f9b64142b26f5d297e0add959ad20d168c2d7c9b2a5",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "57b887afac8ede14978fd1c27e51a6c6909c8dc333b66d3b1b79a3eab5ac2486",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Kilo, Apogee Mind\n1 Patrolling Peacemaker\n1 Insight Engine\n1 Uthros Research Craft\n1 Depthshaker Titan\n1 Long-Range Sensor\n1 Moxite Refinery\n1 Solar Array\n1 Surge Conductor\n1 Glittering Massif\n1 Radiant Summit\n1 Swan Song\n1 Chaos Warp\n1 Cloud Key\n1 Gavel of the Righteous\n1 Battlefield Forge\n1 Angel of the Ruins\n1 Fumigate\n1 Organic Extinction\n1 Resourceful Defense\n1 Chrome Host Seedshark\n1 Cyberdrive Awakener\n1 Deepglow Skate\n1 Emry, Lurker of the Loch\n1 Kappa Cannoneer\n1 Phyrexian Metamorph\n1 Pull from Tomorrow\n1 Ripples of Potential\n1 Tekuthal, Inquiry Dominus\n1 Thought Monitor\n1 Universal Surveillance\n1 Chain Reaction\n1 Alibou, Ancient Witness\n1 Jhoira, Weatherlight Captain\n1 Wake the Past\n1 Astral Cornucopia\n1 Crystalline Crawler\n1 Darksteel Reactor\n1 Empowered Autogenerator\n1 Hangarback Walker\n1 Lux Artillery\n1 Lux Cannon\n1 Steel Overseer\n1 Threefold Thunderhulk\n1 Titan Forge\n1 Adarkar Wastes\n1 Cascade Bluffs\n1 Clifftop Retreat\n1 Exotic Orchard\n1 Glacial Fortress\n1 Irrigated Farmland\n1 Karn's Bastion\n1 The Mycosynth Gardens\n1 Rugged Prairie\n1 Shivan Reef\n1 Skycloud Expanse\n1 Spire of Industry\n1 Sulfur Falls\n1 Temple of Enlightenment\n1 Temple of Epiphany\n1 Temple of Triumph\n1 Swords to Plowshares\n1 Tezzeret's Gambit\n1 Thirst for Knowledge\n1 Arcane Signet\n1 Pentad Prism\n1 Sol Ring\n1 Command Tower\n1 Dispatch\n1 Etherium Sculptor\n1 Experimental Augury\n1 Thrummingbird\n1 Enthusiastic Mechanaut\n1 Coretapper\n1 Etched Oracle\n1 Everflowing Chalice\n1 Golem Foundry\n1 Mindless Automaton\n1 Soul-Guide Lantern\n1 Ancient Den\n1 Buried Ruin\n1 Evolving Wilds\n1 Great Furnace\n1 Lonely Sandbar\n1 Mystic Monastery\n1 Razortide Bridge\n1 Rustvale Bridge\n1 Seat of the Synod\n1 Secluded Steppe\n1 Silverbluff Bridge\n2 Plains\n1 Plains\n2 Island\n1 Island\n2 Mountain\n1 Mountain",
   "oracleCards": [
@@ -1502,15 +1502,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1968,22 +1969,22 @@
     "profile": {
       "median": 52,
       "floor": 40,
-      "ceiling": 64,
-      "peak": 87,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 61,
-      "commanderDelta": 13,
+      "ceiling": 65,
+      "peak": 86,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 59,
+      "commanderDelta": 14,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 47,
-      "consistency": 61,
-      "explosiveness": 16,
+      "consistency": 59,
+      "explosiveness": 15,
       "synergy": 94,
       "interaction": 29,
-      "resilience": 32
+      "resilience": 33
     },
     "roles": {
       "lands": 40,
@@ -2583,6 +2584,7 @@
           "Rustvale Bridge",
           "Seat of the Synod",
           "Silverbluff Bridge",
+          "Sol Ring",
           "Solar Array",
           "Soul-Guide Lantern",
           "Steel Overseer",
@@ -3187,6 +3189,20 @@
             }
           },
           {
+            "name": "Sol Ring",
+            "cmc": 0,
+            "tags": [
+              "artifact",
+              "mana",
+              "fast-mana"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
             "name": "Solar Array",
             "cmc": 3,
             "tags": [
@@ -3528,7 +3544,7 @@
         "payoffTags": [
           "artifact-payoff"
         ],
-        "evidence": "43 producteur(s), 11 payoff(s), 44 carte(s) distincte(s)."
+        "evidence": "44 producteur(s), 11 payoff(s), 45 carte(s) distincte(s)."
       },
       {
         "id": "graveyard",
@@ -3694,6 +3710,7 @@
         "Rustvale Bridge",
         "Seat of the Synod",
         "Silverbluff Bridge",
+        "Sol Ring",
         "Solar Array",
         "Soul-Guide Lantern",
         "Steel Overseer",
@@ -3717,47 +3734,47 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 39,
-      "median": 48,
-      "high": 57,
-      "ceiling": 57,
+      "floor": 40,
+      "median": 49,
+      "high": 59,
+      "ceiling": 59,
       "peak": 80,
-      "iqr": 14,
-      "consistency": 69,
+      "iqr": 15,
+      "consistency": 67,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 3,
-      "recoveryAfterDisruption": 84,
+      "recoveryAfterDisruption": 85,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
-          "engine": 9,
-          "interaction": 11,
+          "engine": 10,
+          "interaction": 10,
           "resource": 8,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 5,
-          "engine": 22,
-          "interaction": 17,
-          "resource": 12,
+          "commander": 6,
+          "engine": 25,
+          "interaction": 18,
+          "resource": 13,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 44,
-          "engine": 47,
+          "commander": 47,
+          "engine": 49,
           "interaction": 23,
-          "resource": 28,
+          "resource": 30,
           "burst": 2
         },
         {
           "turn": 4,
-          "commander": 79,
-          "engine": 70,
+          "commander": 80,
+          "engine": 71,
           "interaction": 32,
-          "resource": 46,
+          "resource": 47,
           "burst": 6
         },
         {
@@ -3771,7 +3788,7 @@
         {
           "turn": 6,
           "commander": 93,
-          "engine": 87,
+          "engine": 88,
           "interaction": 42,
           "resource": 62,
           "burst": 10
@@ -3779,7 +3796,7 @@
         {
           "turn": 7,
           "commander": 95,
-          "engine": 91,
+          "engine": 92,
           "interaction": 46,
           "resource": 68,
           "burst": 12
@@ -3799,6 +3816,16 @@
         "aeon": null
       },
       {
+        "name": "Sol Ring",
+        "impact": 3.7,
+        "tags": [
+          "artifact",
+          "mana",
+          "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Insight Engine",
         "impact": 3.1,
         "tags": [
@@ -3806,15 +3833,6 @@
           "draw",
           "counter-payoff",
           "counter-kind:charge"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Sol Ring",
-        "impact": 3,
-        "tags": [
-          "mana",
-          "fast-mana"
         ],
         "aeon": null
       },

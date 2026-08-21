@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 46,
-    "p20": 32,
-    "p80": 56,
-    "peak": 87,
+    "p20": 31,
+    "p80": 58,
+    "peak": 86,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "80a845cd261386c170164b670d6c2b356b68194c6b9f562bf84f78fb181073f6",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "c5091f13fd7f54d62ba2c549518d0ffd9b70d6e8e2d4ed361aed22710661d081",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Angel of Finality\n1 Angel of Serenity\n1 Arcane Artisan\n1 Brago, King Eternal\n1 Burnished Hart\n1 Cloudblazer\n1 Cloudgoat Ranger\n1 Empyrean Eagle\n1 Ethereal Valkyrie\n1 Evangel of Heliod\n1 Flickerwisp\n1 Geist-Honored Monk\n1 Goldnight Commander\n1 Hero of Bretagard\n1 Inspired Sphinx\n1 Kor Cartographer\n1 Meteor Golem\n1 Mist Raven\n1 Mistmeadow Witch\n1 Mulldrifter\n1 Restoration Angel\n1 Sage of the Beyond\n1 Sea Gate Oracle\n1 Soulherder\n1 Stoic Farmer\n1 Sun Titan\n1 Surtland Elementalist\n1 Thunderclap Wyvern\n1 Vega, the Watcher\n1 Wall of Omens\n1 Whirler Rogue\n1 Behold the Multiverse\n1 Cosmic Intervention\n1 Eerie Interlude\n1 Ghostly Flicker\n1 Iron Verdict\n1 Momentary Blink\n1 Return to Dust\n1 Saw It Coming\n1 Synthetic Destiny\n1 Warhorn Blast\n1 Cleansing Nova\n1 Curse of the Swine\n1 Migratory Route\n1 Ravenform\n1 Spectral Deluge\n1 Storm Herd\n1 Tales of the Ancestors\n1 Windfall\n1 Banishing Light\n1 Day of the Dragons\n1 Ghostly Prison\n1 Marshal's Anthem\n1 Niko Defies Destiny\n1 Arcane Signet\n1 Azorius Signet\n1 Commander's Sphere\n1 Marble Diamond\n1 Mind Stone\n1 Replicating Ring\n1 Sky Diamond\n1 Sol Ring\n1 Swiftfoot Boots\n1 Azorius Chancery\n1 Azorius Guildgate\n1 Command Tower\n1 Cryptic Caves\n1 Gates of Istfell\n1 Glacial Floodplain\n12 Island\n1 Meandering River\n1 Myriad Landscape\n1 Opal Palace\n13 Plains\n1 Sejiri Refuge\n1 Tranquil Cove",
   "oracleCards": [
@@ -1235,15 +1235,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1552,23 +1553,23 @@
   "result": {
     "profile": {
       "median": 46,
-      "floor": 32,
-      "ceiling": 56,
-      "peak": 87,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 62,
+      "floor": 31,
+      "ceiling": 58,
+      "peak": 86,
+      "dispersion": 27,
+      "variance": 27,
+      "consistency": 60,
       "commanderDelta": 7,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 32,
-      "consistency": 62,
+      "consistency": 60,
       "explosiveness": 14,
       "synergy": 65,
-      "interaction": 51,
-      "resilience": 43
+      "interaction": 53,
+      "resilience": 44
     },
     "roles": {
       "lands": 36,
@@ -2425,13 +2426,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           }
         ],
@@ -2488,15 +2490,15 @@
     "simulation": {
       "iterations": 3200,
       "floor": 36,
-      "median": 45,
-      "high": 53,
-      "ceiling": 53,
+      "median": 46,
+      "high": 55,
+      "ceiling": 55,
       "peak": 82,
-      "iqr": 14,
-      "consistency": 70,
+      "iqr": 15,
+      "consistency": 68,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 78,
+      "recoveryAfterDisruption": 79,
       "turnProfile": [
         {
           "turn": 1,
@@ -2508,32 +2510,32 @@
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 2,
           "engine": 0,
-          "interaction": 6,
-          "resource": 12,
+          "interaction": 8,
+          "resource": 14,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 24,
-          "engine": 3,
-          "interaction": 33,
-          "resource": 27,
+          "commander": 29,
+          "engine": 5,
+          "interaction": 36,
+          "resource": 29,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 75,
-          "engine": 24,
-          "interaction": 58,
+          "commander": 76,
+          "engine": 26,
+          "interaction": 59,
           "resource": 47,
           "burst": 1
         },
         {
           "turn": 5,
           "commander": 89,
-          "engine": 46,
+          "engine": 47,
           "interaction": 69,
           "resource": 57,
           "burst": 2
@@ -2543,15 +2545,15 @@
           "commander": 93,
           "engine": 56,
           "interaction": 76,
-          "resource": 63,
+          "resource": 64,
           "burst": 3
         },
         {
           "turn": 7,
           "commander": 95,
           "engine": 63,
-          "interaction": 80,
-          "resource": 68,
+          "interaction": 81,
+          "resource": 69,
           "burst": 5
         }
       ]
@@ -2572,6 +2574,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],

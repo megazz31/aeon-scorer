@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 46,
-    "p20": 36,
-    "p80": 56,
+    "p20": 34,
+    "p80": 58,
     "peak": 87,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "87a4084f30bcf989921f4d0c2f1da23c3b6c35f1a6dffe913d27d584f752952a",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "54561a7b78c46d142f84b488cb81a45686c8f016e4ef1a814c30dc46af39a35e",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Bilious Skulldweller\n1 Blight Mamba\n1 Blightbelly Rat\n1 Cankerbloom\n1 Contaminant Grafter\n1 Evolution Sage\n1 Glissa's Retriever\n1 Grateful Apparition\n1 Ichor Rats\n1 Ichorclaw Myr\n1 Mycosynth Fiend\n1 Myr Convert\n1 Norn's Choirmaster\n1 Pestilent Syphoner\n1 Phyrexian Swarmlord\n1 Plague Myr\n1 Plague Stinger\n1 Scavenging Ooze\n1 Venomous Brutalizer\n1 Viridian Corrupter\n1 Vishgraz, the Doomhive\n1 Windborn Muse\n1 Caress of Phyrexia\n1 Culling Ritual\n1 Cultivate\n1 Expand the Sphere\n1 Feed the Infection\n1 Fumigate\n1 Geth's Summons\n1 Infectious Inquiry\n1 Merciless Eviction\n1 Night's Whisper\n1 Noxious Assault\n1 Painful Truths\n1 Phyresis Outbreak\n1 Phyrexian Rebirth\n1 Unnatural Restoration\n1 Vat Emergence\n1 Wurmquake\n1 Beast Within\n1 Carrion Call\n1 Mortify\n1 Noxious Revival\n1 Putrefy\n1 Swords to Plowshares\n1 Vraska's Fall\n1 Ghostly Prison\n1 Moldervine Reclamation\n1 Norn's Decree\n1 Arcane Signet\n1 Chromatic Lantern\n1 Commander's Sphere\n1 Contagion Clasp\n1 Fellwar Stone\n1 Glistening Sphere\n1 Golgari Signet\n1 Grafted Exoskeleton\n1 Norn's Annex\n1 Phyrexian Atlas\n1 Sol Ring\n1 Trailblazer's Boots\n1 Bojuka Bog\n1 Canopy Vista\n1 Command Tower\n1 Exotic Orchard\n1 Fortified Village\n1 Karn's Bastion\n1 Krosan Verge\n1 Myriad Landscape\n1 Necroblossom Snarl\n1 Path of Ancestry\n1 Sandsteppe Citadel\n1 Shineshadow Snarl\n1 Sungrass Prairie\n1 Tainted Field\n1 Tainted Wood\n1 Temple of Malady\n1 Temple of Plenty\n1 Temple of Silence\n6 Plains\n6 Swamp\n8 Forest",
   "oracleCards": [
@@ -1344,15 +1344,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1708,22 +1709,22 @@
   "result": {
     "profile": {
       "median": 46,
-      "floor": 36,
-      "ceiling": 56,
+      "floor": 34,
+      "ceiling": 58,
       "peak": 87,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 64,
-      "commanderDelta": 4,
+      "dispersion": 24,
+      "variance": 24,
+      "consistency": 62,
+      "commanderDelta": 5,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 40,
-      "consistency": 64,
-      "explosiveness": 14,
+      "consistency": 62,
+      "explosiveness": 13,
       "synergy": 54,
-      "interaction": 60,
+      "interaction": 61,
       "resilience": 35
     },
     "roles": {
@@ -2335,13 +2336,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           }
         ],
@@ -2474,12 +2476,12 @@
     "simulation": {
       "iterations": 3200,
       "floor": 36,
-      "median": 43,
-      "high": 51,
-      "ceiling": 51,
-      "peak": 80,
-      "iqr": 12,
-      "consistency": 73,
+      "median": 44,
+      "high": 53,
+      "ceiling": 53,
+      "peak": 81,
+      "iqr": 13,
+      "consistency": 71,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
       "recoveryAfterDisruption": 80,
@@ -2494,26 +2496,26 @@
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 1,
           "engine": 0,
-          "interaction": 21,
-          "resource": 7,
+          "interaction": 23,
+          "resource": 9,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 17,
-          "engine": 4,
-          "interaction": 44,
-          "resource": 26,
+          "commander": 21,
+          "engine": 5,
+          "interaction": 46,
+          "resource": 28,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 70,
+          "commander": 72,
           "engine": 16,
-          "interaction": 66,
-          "resource": 49,
+          "interaction": 67,
+          "resource": 50,
           "burst": 0
         },
         {
@@ -2521,7 +2523,7 @@
           "commander": 89,
           "engine": 28,
           "interaction": 75,
-          "resource": 62,
+          "resource": 63,
           "burst": 0
         },
         {
@@ -2560,6 +2562,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],

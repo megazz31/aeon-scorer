@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 44,
-    "p20": 32,
+    "median": 45,
+    "p20": 31,
     "p80": 56,
-    "peak": 83,
+    "peak": 82,
     "coverage": 89,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "b232c3b2a9322cebba3b600391704186caa0ae1558435074ee40799b3967768f",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "9886a5551024f9c5a6b6132f612553217a7a54f3b390b8dca5911e64699693da",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Goblin Electromancer\n1 Jace's Archivist\n1 Gigantoplasm\n1 Talrand, Sky Summoner\n1 Psychosis Crawler\n1 Broodbirth Viper\n1 Illusory Ambusher\n1 Lone Revenant\n1 Warchief Giant\n1 Charmbreaker Devils\n1 Arjun, the Shifting Flame\n1 Etherium-Horn Sorcerer\n1 Melek, Izzet Paragon\n1 Dragon Mage\n1 Preordain\n1 Faithless Looting\n1 Vandalblast\n1 Mizzium Mortars\n1 Windfall\n1 Mystic Retrieval\n1 Stolen Goods\n1 Mizzix's Mastery\n1 Rite of Replication\n1 Sleep\n1 Chain Reaction\n1 Call the Skybreaker\n1 Blatant Thievery\n1 Epic Experiment\n1 Meteor Blast\n1 Blustersquall\n1 Brainstorm\n1 Echoing Truth\n1 Desperate Ravings\n1 Urza's Rage\n1 Counterflux\n1 Aetherize\n1 Fact or Fiction\n1 Reins of Power\n1 Steam Augury\n1 Mystic Confluence\n1 Word of Seizing\n1 Act of Aggression\n1 Prophetic Bolt\n1 Aethersnatch\n1 Mirror Match\n1 Firemind's Foresight\n1 Repeal\n1 Comet Storm\n1 Magmaquake\n1 Stroke of Genius\n1 Dominate\n1 Blue Sun's Zenith\n1 Sol Ring\n1 Izzet Signet\n1 Thought Vessel\n1 Worn Powerstone\n1 Seal of the Guildpact\n1 Awaken the Sky Tyrant\n1 Rite of the Raging Storm\n1 Thought Reflection\n1 Command Tower\n1 Evolving Wilds\n1 Izzet Boilerworks\n1 Izzet Guildgate\n1 Reliquary Tower\n1 Rogue's Passage\n1 Spinerock Knoll\n1 Swiftwater Cliffs\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Vivid Crag\n1 Vivid Creek\n4 Island\n4 Island\n3 Island\n3 Island\n4 Mountain\n3 Mountain\n3 Mountain\n3 Mountain",
   "oracleCards": [
@@ -1074,15 +1074,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1441,24 +1442,24 @@
   ],
   "result": {
     "profile": {
-      "median": 44,
-      "floor": 32,
+      "median": 45,
+      "floor": 31,
       "ceiling": 56,
-      "peak": 83,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 64,
+      "peak": 82,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 63,
       "commanderDelta": 13,
       "coverage": 89,
       "dataCoverage": 89
     },
     "dimensions": {
       "speed": 34,
-      "consistency": 64,
+      "consistency": 63,
       "explosiveness": 28,
       "synergy": 82,
-      "interaction": 18,
-      "resilience": 33
+      "interaction": 19,
+      "resilience": 34
     },
     "roles": {
       "lands": 39,
@@ -2489,13 +2490,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2616,43 +2618,43 @@
     "simulation": {
       "iterations": 3200,
       "floor": 31,
-      "median": 39,
-      "high": 48,
-      "ceiling": 48,
+      "median": 40,
+      "high": 49,
+      "ceiling": 49,
       "peak": 71,
-      "iqr": 13,
-      "consistency": 71,
+      "iqr": 14,
+      "consistency": 69,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 79,
+      "recoveryAfterDisruption": 80,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 4,
-          "resource": 15,
+          "resource": 14,
           "burst": 5
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 3,
           "engine": 0,
           "interaction": 8,
-          "resource": 33,
-          "burst": 9
+          "resource": 36,
+          "burst": 10
         },
         {
           "turn": 3,
-          "commander": 20,
+          "commander": 22,
           "engine": 6,
-          "interaction": 14,
-          "resource": 48,
-          "burst": 14
+          "interaction": 15,
+          "resource": 49,
+          "burst": 15
         },
         {
           "turn": 4,
-          "commander": 69,
+          "commander": 70,
           "engine": 12,
           "interaction": 20,
           "resource": 61,
@@ -2671,7 +2673,7 @@
           "commander": 89,
           "engine": 27,
           "interaction": 29,
-          "resource": 77,
+          "resource": 78,
           "burst": 32
         },
         {
@@ -2722,6 +2724,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],

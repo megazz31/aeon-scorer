@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 43,
-    "p20": 34,
-    "p80": 52,
+    "p20": 33,
+    "p80": 54,
     "peak": 83,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "7ca92f01cc863cb6053a0ad8071b3dacf65d98fdf87ece50739f47467d86c2c2",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "2b7df76a4b51913d5be11d735ac0733e51f22fcaca5013764f0c72a432ed5132",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 The Reaper, King No More\n1 Wickersmith's Tools\n1 Sinister Gnarlbark\n1 Eventide's Shadow\n1 Aberrant Return\n1 Dread Tiller\n1 Grave Venerations\n1 Oft-Nabbed Goat\n1 Village Pillagers\n1 Puca's Covenant\n1 Ferrafor, Young Yew\n1 Tree of Perdition\n1 Vernal Fen\n1 Festering Thicket\n1 Necroskitter\n1 Ignoble Hierarch\n1 Nesting Grounds\n1 Massacre Girl, Known Killer\n1 Grave Titan\n1 Vraska, Betrayal's Sting\n1 The Scorpion God\n1 Liliana, Death Wielder\n1 Chimil, the Inner Sun\n1 Carnifex Demon\n1 Puppeteer Clique\n1 Dusk Urchins\n1 Black Sun's Zenith\n1 Painful Truths\n1 Persist\n1 Midnight Banshee\n1 Chain Reaction\n1 Archfiend of Ifnir\n1 Channeler Initiate\n1 Hapatra, Vizier of Poisons\n1 Glissa Sunslayer\n1 Everlasting Torment\n1 Assassin's Trophy\n1 Grim Poppet\n1 Canyon Slough\n1 Sheltered Thicket\n1 Exotic Orchard\n1 Smoldering Marsh\n1 Cinder Glade\n1 Dragonskull Summit\n1 Rootbound Crag\n1 Woodland Cemetery\n1 Lasting Tarfire\n1 Burning Curiosity\n1 Hoarder's Greed\n1 Blowfly Infestation\n1 Fire Covenant\n1 Sol Ring\n1 Arcane Signet\n1 Command Tower\n1 Cathartic Reunion\n1 Skinrender\n1 Soul Snuffers\n1 Incremental Blight\n1 Infernal Grasp\n1 Evolution Sage\n1 Devoted Druid\n1 Flourishing Defenses\n1 Harmonize\n1 Putrefy\n1 Binding the Old Gods\n1 Kulrath Knight\n1 Contagion Clasp\n1 Savage Lands\n1 Ifnir Deadlands\n1 Night's Whisper\n1 Wickerbough Elder\n1 Terminate\n1 Commander's Sphere\n1 Cathartic Pyre\n1 Evolving Wilds\n1 Terramorphic Expanse\n1 Path of Ancestry\n1 Riveteers Overlook\n1 Rakdos Carnarium\n1 Gruul Turf\n1 Golgari Rot Farm\n8 Swamp\n4 Mountain\n6 Forest",
   "oracleCards": [
@@ -1479,15 +1479,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1775,22 +1776,22 @@
   "result": {
     "profile": {
       "median": 43,
-      "floor": 34,
-      "ceiling": 52,
+      "floor": 33,
+      "ceiling": 54,
       "peak": 83,
-      "dispersion": 18,
-      "variance": 18,
-      "consistency": 67,
-      "commanderDelta": 4,
+      "dispersion": 21,
+      "variance": 21,
+      "consistency": 65,
+      "commanderDelta": 5,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 36,
-      "consistency": 67,
-      "explosiveness": 13,
+      "consistency": 65,
+      "explosiveness": 12,
       "synergy": 54,
-      "interaction": 46,
+      "interaction": 47,
       "resilience": 42
     },
     "roles": {
@@ -2700,13 +2701,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2771,12 +2773,12 @@
     "simulation": {
       "iterations": 3200,
       "floor": 34,
-      "median": 40,
-      "high": 47,
-      "ceiling": 47,
+      "median": 41,
+      "high": 49,
+      "ceiling": 49,
       "peak": 74,
-      "iqr": 11,
-      "consistency": 76,
+      "iqr": 12,
+      "consistency": 74,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
       "recoveryAfterDisruption": 88,
@@ -2793,39 +2795,39 @@
           "turn": 2,
           "commander": 0,
           "engine": 0,
-          "interaction": 12,
-          "resource": 18,
+          "interaction": 14,
+          "resource": 21,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 13,
-          "engine": 4,
-          "interaction": 30,
-          "resource": 44,
+          "commander": 17,
+          "engine": 5,
+          "interaction": 33,
+          "resource": 47,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 62,
+          "commander": 64,
           "engine": 14,
-          "interaction": 52,
-          "resource": 71,
+          "interaction": 53,
+          "resource": 72,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 84,
           "engine": 21,
-          "interaction": 61,
-          "resource": 81,
+          "interaction": 62,
+          "resource": 82,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 89,
           "engine": 25,
-          "interaction": 67,
+          "interaction": 68,
           "resource": 87,
           "burst": 0
         },
@@ -2857,6 +2859,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],

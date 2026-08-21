@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 36,
-    "p20": 26,
+    "p20": 24,
     "p80": 45,
-    "peak": 71,
+    "peak": 70,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "00aa2c1462d1d63e7ae3b34e3ebbb3d1c53a31e4f56a207f7557b6b62212f64f",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "4e09014136c2af7084bebca8ca91dc779dcea793d2e6da75b3328a198baca42a",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Feather, Radiant Arbiter\n1 Immortal Obligation\n1 Otherworldly Escort\n1 Redemption Arc\n1 Trouble in Pairs\n1 Havoc Eater\n1 Hot Pursuit\n1 Mob Verdict\n1 Prisoner's Dilemma\n1 Take the Bait\n1 Ransom Note\n1 Angel of the Ruins\n1 Comeuppance\n1 Darien, King of Kjeldor\n1 Duelist's Heritage\n1 Elspeth, Sun's Champion\n1 Keeper of the Accord\n1 Loran of the Third Path\n1 Promise of Loyalty\n1 Selfless Squire\n1 Sevinne's Reclamation\n1 Smuggler's Share\n1 Stalking Leonin\n1 Sun Titan\n1 Windborn Muse\n1 Winds of Rath\n1 Agitator Ant\n1 Brash Taunter\n1 Disrupt Decorum\n1 Etali, Primal Storm\n1 Fiendish Duo\n1 Frontier Warmonger\n1 Kazuul, Tyrant of the Cliffs\n1 Spectacular Showdown\n1 Vengeful Ancestor\n1 Anya, Merciless Angel\n1 Boros Reckoner\n1 Deflecting Palm\n1 Gisela, Blade of Goldnight\n1 Ancient Stone Idol\n1 Solemn Simulacrum\n1 Steel Hellkite\n1 Tome of Legends\n1 Castle Ardenvale\n1 Exotic Orchard\n1 Furycalm Snarl\n1 Kher Keep\n1 Labyrinth of Skophos\n1 Needle Spires\n1 Scavenger Grounds\n1 Slayers' Stronghold\n1 Temple of Triumph\n1 Throne of the High City\n1 War Room\n1 Ghostly Prison\n1 Gideon's Sacrifice\n1 Martial Impetus\n1 Orzhov Advokist\n1 Seal of Cleansing\n1 Soul Snare\n1 Vow of Duty\n1 Wall of Omens\n1 Curse of Opulence\n1 Rite of the Raging Storm\n1 Shiny Impetus\n1 Vow of Lightning\n1 Arcane Signet\n1 Bloodthirsty Blade\n1 Fellwar Stone\n1 Mind Stone\n1 Sol Ring\n1 Talisman of Conviction\n1 Thought Vessel\n1 Access Tunnel\n1 Ash Barrens\n1 Boros Garrison\n1 Command Tower\n1 Escape Tunnel\n1 Myriad Landscape\n1 Reliquary Tower\n1 Rogue's Passage\n1 Sunhome, Fortress of the Legion\n1 Temple of the False God\n5 Plains\n4 Plains\n4 Mountain\n3 Mountain",
   "oracleCards": [
@@ -1246,15 +1246,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1676,22 +1677,22 @@
   "result": {
     "profile": {
       "median": 36,
-      "floor": 26,
+      "floor": 24,
       "ceiling": 45,
-      "peak": 71,
-      "dispersion": 20,
-      "variance": 20,
-      "consistency": 68,
-      "commanderDelta": 5,
+      "peak": 70,
+      "dispersion": 21,
+      "variance": 21,
+      "consistency": 66,
+      "commanderDelta": 6,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 33,
-      "consistency": 68,
+      "consistency": 66,
       "explosiveness": 11,
       "synergy": 36,
-      "interaction": 39,
+      "interaction": 41,
       "resilience": 31
     },
     "roles": {
@@ -1818,13 +1819,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -1893,12 +1895,12 @@
     "simulation": {
       "iterations": 3200,
       "floor": 29,
-      "median": 36,
-      "high": 42,
-      "ceiling": 42,
+      "median": 37,
+      "high": 43,
+      "ceiling": 43,
       "peak": 62,
       "iqr": 11,
-      "consistency": 77,
+      "consistency": 75,
       "commanderMedianTurn": 4,
       "engineMedianTurn": null,
       "recoveryAfterDisruption": 68,
@@ -1913,25 +1915,25 @@
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 3,
           "engine": 0,
-          "interaction": 12,
-          "resource": 5,
+          "interaction": 14,
+          "resource": 7,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 25,
+          "commander": 29,
           "engine": 0,
-          "interaction": 27,
-          "resource": 24,
+          "interaction": 29,
+          "resource": 25,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 71,
+          "commander": 72,
           "engine": 0,
-          "interaction": 44,
+          "interaction": 45,
           "resource": 41,
           "burst": 1
         },
@@ -1948,7 +1950,7 @@
           "commander": 88,
           "engine": 0,
           "interaction": 58,
-          "resource": 54,
+          "resource": 55,
           "burst": 6
         },
         {
@@ -1977,6 +1979,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],

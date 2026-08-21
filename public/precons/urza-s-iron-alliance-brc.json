@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 49,
-    "p20": 36,
-    "p80": 60,
-    "peak": 89,
+    "p20": 34,
+    "p80": 62,
+    "peak": 88,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "8a1069f92c38fd0a9c10ec9dcaa4a842dc9762ca90db0790ed7e3ee4274c4893",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "cd36845a1bc0eef09d2d00c4116fadb30fcfdc35b8e67cdac12824070805e228",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Indomitable Archangel\n1 Ethersworn Adjudicator\n1 Noxious Gearhulk\n1 Alela, Artful Provocateur\n1 Angel of the Ruins\n1 Bronze Guardian\n1 Digsite Engineer\n1 Losheel, Clockwork Scholar\n1 Teshar, Ancestor's Apostle\n1 Master of Etherium\n1 Sai, Master Thopterist\n1 Sharding Sphinx\n1 Shimmer Dragon\n1 Thought Monitor\n1 Vedalken Humiliator\n1 Marionette Master\n1 Baleful Strix\n1 Sharuum the Hegemon\n1 Darksteel Juggernaut\n1 Etched Champion\n1 Myr Battlesphere\n1 Solemn Simulacrum\n1 Steel Hellkite\n1 Steel Overseer\n1 Filigree Attendant\n1 Whirler Rogue\n1 Armix, Filigree Thrasher\n1 Chief of the Foundry\n1 Etherium Sculptor\n1 Chrome Courier\n1 Austere Command\n1 Phyrexian Rebirth\n1 Urza's Ruinous Blast\n1 One with the Machine\n1 Vindicate\n1 Preordain\n1 Sphinx's Revelation\n1 Unbreakable Formation\n1 Swords to Plowshares\n1 Despark\n1 Bident of Thassa\n1 Cranial Plating\n1 Liquimetal Torque\n1 Relic of Progenitus\n1 Skullclamp\n1 Sol Ring\n1 Swiftfoot Boots\n1 Thought Vessel\n1 Arcane Signet\n1 Azorius Signet\n1 Dimir Signet\n1 Orzhov Signet\n1 Tempered Steel\n1 Thopter Spy Network\n1 Exotic Orchard\n1 Prairie Stream\n1 River of Tears\n1 Skycloud Expanse\n1 Spire of Industry\n1 Sunken Hollow\n1 Temple of Deceit\n1 Temple of Enlightenment\n1 Temple of Silence\n1 Arcane Sanctum\n1 Azorius Chancery\n1 Darksteel Citadel\n1 Dimir Aqueduct\n1 Orzhov Basilica\n1 Ancient Den\n1 Ash Barrens\n1 Bojuka Bog\n1 Command Tower\n1 Evolving Wilds\n1 Goldmire Bridge\n1 Mistvault Bridge\n1 Path of Ancestry\n1 Razortide Bridge\n1 Seat of the Synod\n1 Vault of Whispers\n2 Plains\n2 Plains\n2 Island\n2 Island\n2 Swamp\n1 Swamp\n1 Tawnos, Solemn Survivor\n1 Sanwell, Avenger Ace\n1 Scholar of New Horizons\n1 March of Progress\n1 Wire Surgeons\n1 Wreck Hunter\n1 Hexavus\n1 Kayla's Music Box\n1 Thopter Shop",
   "oracleCards": [
@@ -1310,15 +1310,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1877,22 +1878,22 @@
   "result": {
     "profile": {
       "median": 49,
-      "floor": 36,
-      "ceiling": 60,
-      "peak": 89,
-      "dispersion": 25,
-      "variance": 25,
-      "consistency": 60,
+      "floor": 34,
+      "ceiling": 62,
+      "peak": 88,
+      "dispersion": 27,
+      "variance": 27,
+      "consistency": 57,
       "commanderDelta": 10,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
-      "speed": 36,
-      "consistency": 60,
+      "speed": 37,
+      "consistency": 57,
       "explosiveness": 13,
       "synergy": 83,
-      "interaction": 42,
+      "interaction": 43,
       "resilience": 39
     },
     "roles": {
@@ -1973,6 +1974,7 @@
           "Sharding Sphinx",
           "Sharuum the Hegemon",
           "Skullclamp",
+          "Sol Ring",
           "Solemn Simulacrum",
           "Steel Hellkite",
           "Steel Overseer",
@@ -2541,6 +2543,20 @@
             }
           },
           {
+            "name": "Sol Ring",
+            "cmc": 0,
+            "tags": [
+              "artifact",
+              "mana",
+              "fast-mana"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
             "name": "Solemn Simulacrum",
             "cmc": 4,
             "tags": [
@@ -2952,7 +2968,7 @@
         "payoffTags": [
           "artifact-payoff"
         ],
-        "evidence": "41 producteur(s), 15 payoff(s), 49 carte(s) distincte(s)."
+        "evidence": "42 producteur(s), 15 payoff(s), 50 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -3053,13 +3069,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -3313,6 +3330,7 @@
         "Sharuum the Hegemon",
         "Shimmer Dragon",
         "Skullclamp",
+        "Sol Ring",
         "Solemn Simulacrum",
         "Steel Hellkite",
         "Steel Overseer",
@@ -3342,15 +3360,15 @@
     "simulation": {
       "iterations": 3200,
       "floor": 38,
-      "median": 47,
-      "high": 56,
-      "ceiling": 56,
+      "median": 48,
+      "high": 58,
+      "ceiling": 58,
       "peak": 84,
-      "iqr": 15,
-      "consistency": 68,
+      "iqr": 16,
+      "consistency": 65,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 80,
+      "recoveryAfterDisruption": 79,
       "turnProfile": [
         {
           "turn": 1,
@@ -3362,40 +3380,40 @@
         },
         {
           "turn": 2,
-          "commander": 0,
-          "engine": 5,
-          "interaction": 22,
-          "resource": 23,
+          "commander": 1,
+          "engine": 7,
+          "interaction": 23,
+          "resource": 25,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 3,
-          "engine": 33,
-          "interaction": 33,
-          "resource": 44,
+          "commander": 5,
+          "engine": 37,
+          "interaction": 35,
+          "resource": 47,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 23,
-          "engine": 64,
-          "interaction": 45,
-          "resource": 65,
+          "commander": 25,
+          "engine": 65,
+          "interaction": 46,
+          "resource": 66,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 45,
           "engine": 76,
-          "interaction": 53,
-          "resource": 73,
+          "interaction": 54,
+          "resource": 74,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 64,
-          "engine": 82,
+          "engine": 83,
           "interaction": 59,
           "resource": 79,
           "burst": 0
@@ -3404,7 +3422,7 @@
           "turn": 7,
           "commander": 75,
           "engine": 88,
-          "interaction": 64,
+          "interaction": 65,
           "resource": 83,
           "burst": 0
         }
@@ -3412,21 +3430,22 @@
     },
     "drivers": [
       {
+        "name": "Sol Ring",
+        "impact": 4.4,
+        "tags": [
+          "artifact",
+          "mana",
+          "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Relic of Progenitus",
         "impact": 3.7,
         "tags": [
           "artifact",
           "draw",
           "wipe"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Sol Ring",
-        "impact": 3.7,
-        "tags": [
-          "mana",
-          "fast-mana"
         ],
         "aeon": null
       },

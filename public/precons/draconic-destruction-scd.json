@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 31,
-    "p20": 23,
+    "p20": 22,
     "p80": 40,
     "peak": 64,
     "coverage": 90,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "b8d66b107b8adc6bca4b256906176c02a96eace52b68c6d4a6c0feb923e5c226",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "f60eac95e53b62be978ebb2bf590b1584480404d2afe099abff1401b3b459cd3",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Akoum Hellkite\n1 Chain Reaction\n1 Crucible of Fire\n1 Demanding Dragon\n1 Dragonkin Berserker\n1 Dragonmaster Outcast\n1 Drakuseth, Maw of Flames\n1 Dream Pillager\n1 Flameblast Dragon\n1 Hoard-Smelter Dragon\n1 Magmaquake\n1 Mordant Dragon\n1 Runehorn Hellkite\n1 Sarkhan, the Dragonspeaker\n1 Scourge of Valkas\n1 Spit Flame\n1 Sweltering Suns\n1 Thunderbreak Regent\n1 Thundermaw Hellkite\n1 Tyrant's Familiar\n1 Verix Bladewing\n1 Foe-Razer Regent\n1 Frontier Siege\n1 Hunter's Prowess\n1 Primal Might\n1 Shamanic Revelation\n1 Clan Defiance\n1 Harbinger of the Hunt\n1 Dragon's Hoard\n1 Steel Hellkite\n1 Cinder Glade\n1 Game Trail\n1 Haven of the Spirit Dragon\n1 Temple of Abandon\n1 Dragon Mage\n1 Dragon Tempest\n1 Dragonlord's Servant\n1 Dragonspeaker Shaman\n1 Furnace Whelp\n1 Provoke the Trolls\n1 Rapacious Dragon\n1 Unleash Fury\n1 Vandalblast\n1 Beast Within\n1 Blossoming Defense\n1 Cultivate\n1 Drumhunter\n1 Elemental Bond\n1 Garruk's Uprising\n1 Harmonize\n1 Hunter's Insight\n1 Loaming Shaman\n1 Return to Nature\n1 Sakura-Tribe Elder\n1 Draconic Disciple\n1 Fires of Yavimaya\n1 Savage Ventmaw\n1 Arcane Signet\n1 Atarka Monument\n1 Commander's Sphere\n1 Sol Ring\n1 Swiftfoot Boots\n1 Talisman of Impulse\n1 Command Tower\n1 Kazandu Refuge\n1 Path of Ancestry\n1 Rugged Highlands\n1 Shivan Oasis\n1 Timber Gorge\n5 Mountain\n5 Mountain\n4 Mountain\n4 Mountain\n3 Forest\n3 Forest\n3 Forest\n3 Forest",
   "oracleCards": [
@@ -1172,15 +1172,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1433,22 +1434,22 @@
   "result": {
     "profile": {
       "median": 31,
-      "floor": 23,
+      "floor": 22,
       "ceiling": 40,
       "peak": 64,
-      "dispersion": 17,
-      "variance": 17,
-      "consistency": 70,
+      "dispersion": 18,
+      "variance": 18,
+      "consistency": 68,
       "commanderDelta": 1,
       "coverage": 90,
       "dataCoverage": 90
     },
     "dimensions": {
       "speed": 27,
-      "consistency": 70,
+      "consistency": 68,
       "explosiveness": 10,
       "synergy": 45,
-      "interaction": 28,
+      "interaction": 29,
       "resilience": 25
     },
     "roles": {
@@ -1595,13 +1596,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -1657,12 +1659,12 @@
     "simulation": {
       "iterations": 3200,
       "floor": 24,
-      "median": 30,
-      "high": 36,
-      "ceiling": 36,
-      "peak": 54,
-      "iqr": 10,
-      "consistency": 79,
+      "median": 31,
+      "high": 37,
+      "ceiling": 37,
+      "peak": 55,
+      "iqr": 11,
+      "consistency": 77,
       "commanderMedianTurn": 6,
       "engineMedianTurn": null,
       "recoveryAfterDisruption": 56,
@@ -1671,7 +1673,7 @@
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 5,
+          "interaction": 4,
           "resource": 0,
           "burst": 0
         },
@@ -1679,29 +1681,29 @@
           "turn": 2,
           "commander": 0,
           "engine": 0,
-          "interaction": 14,
-          "resource": 0,
+          "interaction": 15,
+          "resource": 1,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 0,
           "engine": 0,
-          "interaction": 22,
-          "resource": 19,
+          "interaction": 23,
+          "resource": 21,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 3,
+          "commander": 4,
           "engine": 0,
           "interaction": 31,
-          "resource": 43,
+          "resource": 44,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 15,
+          "commander": 16,
           "engine": 0,
           "interaction": 36,
           "resource": 55,
@@ -1711,8 +1713,8 @@
           "turn": 6,
           "commander": 36,
           "engine": 0,
-          "interaction": 40,
-          "resource": 61,
+          "interaction": 41,
+          "resource": 62,
           "burst": 0
         },
         {
@@ -1730,6 +1732,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],

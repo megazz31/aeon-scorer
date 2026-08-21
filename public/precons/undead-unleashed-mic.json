@@ -29,15 +29,15 @@
   "analysis": {
     "median": 49,
     "p20": 37,
-    "p80": 58,
-    "peak": 88,
+    "p80": 59,
+    "peak": 87,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "4a01325fd9588878861060df74c4747e4bea6ab9d613d7cbbba71432a1a38aa0",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "d21c435e0b87b4849a9026152de5cbecfd26ab62fa8cb4e617c58627a2a78c16",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Liliana, Death's Majesty\n1 Forgotten Creation\n1 Havengul Runebinder\n1 Stitcher Geralf\n1 Undead Alchemist\n1 Butcher of Malakir\n1 Cemetery Reaper\n1 Death Baron\n1 Diregraf Colossus\n1 Eater of Hope\n1 Gravespawn Sovereign\n1 Midnight Reaper\n1 Overseer of the Damned\n1 Gisa and Geralf\n1 Eternal Skylord\n1 Corpse Augur\n1 Fleshbag Marauder\n1 Liliana's Devotee\n1 Lord of the Accursed\n1 Spark Reaper\n1 Undead Augur\n1 Diregraf Captain\n1 Gleaming Overseer\n1 Ruthless Deathfang\n1 Hour of Eternity\n1 Army of the Damned\n1 Dark Salvation\n1 Dread Summons\n1 Zombie Apocalypse\n1 Distant Melody\n1 Feed the Swarm\n1 Syphon Flesh\n1 Aetherspouts\n1 Go for the Throat\n1 Arcane Signet\n1 Charcoal Diamond\n1 Commander's Sphere\n1 Sky Diamond\n1 Sol Ring\n1 Talisman of Dominance\n1 Rooftop Storm\n1 Dreadhorde Invasion\n1 Endless Ranks of the Dead\n1 Liliana's Mastery\n1 Open the Graves\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Sunken Hollow\n1 Temple of Deceit\n1 Bojuka Bog\n1 Command Tower\n1 Dimir Aqueduct\n1 Mortuary Mire\n1 Myriad Landscape\n1 Path of Ancestry\n1 Tainted Isle\n1 Unclaimed Territory\n12 Island\n15 Swamp\n1 Eloise, Nephalia Sleuth\n1 Cleaver Skaab\n1 Curse of Unbinding\n1 Drown in Dreams\n1 Empty the Laboratory\n1 Hordewing Skaab\n1 Shadow Kin\n1 Crowded Crypt\n1 Curse of the Restless Dead\n1 Ghouls' Night Out\n1 Gorex, the Tombshell\n1 Prowling Geistcatcher\n1 Ravenous Rotbelly\n1 Tomb Tyrant",
   "oracleCards": [
@@ -1213,15 +1213,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1521,21 +1522,21 @@
     "profile": {
       "median": 49,
       "floor": 37,
-      "ceiling": 58,
-      "peak": 88,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 65,
+      "ceiling": 59,
+      "peak": 87,
+      "dispersion": 22,
+      "variance": 22,
+      "consistency": 63,
       "commanderDelta": 13,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 32,
-      "consistency": 65,
-      "explosiveness": 14,
+      "consistency": 63,
+      "explosiveness": 13,
       "synergy": 87,
-      "interaction": 51,
+      "interaction": 52,
       "resilience": 44
     },
     "roles": {
@@ -2481,13 +2482,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2585,46 +2587,46 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 36,
-      "median": 44,
-      "high": 51,
-      "ceiling": 51,
+      "floor": 37,
+      "median": 45,
+      "high": 53,
+      "ceiling": 53,
       "peak": 80,
-      "iqr": 12,
-      "consistency": 74,
+      "iqr": 13,
+      "consistency": 72,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 83,
+      "recoveryAfterDisruption": 84,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 14,
+          "interaction": 13,
           "resource": 0,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 5,
           "engine": 0,
-          "interaction": 27,
-          "resource": 3,
+          "interaction": 30,
+          "resource": 6,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 26,
-          "engine": 2,
-          "interaction": 44,
-          "resource": 30,
+          "commander": 30,
+          "engine": 4,
+          "interaction": 45,
+          "resource": 33,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 80,
-          "engine": 19,
-          "interaction": 54,
+          "commander": 81,
+          "engine": 20,
+          "interaction": 55,
           "resource": 58,
           "burst": 0
         },
@@ -2632,22 +2634,22 @@
           "turn": 5,
           "commander": 92,
           "engine": 34,
-          "interaction": 61,
-          "resource": 68,
+          "interaction": 62,
+          "resource": 69,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 95,
-          "engine": 43,
+          "engine": 44,
           "interaction": 67,
-          "resource": 75,
+          "resource": 76,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 97,
-          "engine": 50,
+          "engine": 51,
           "interaction": 73,
           "resource": 80,
           "burst": 0
@@ -2672,6 +2674,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],

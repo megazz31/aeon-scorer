@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 47,
-    "p20": 33,
+    "p20": 34,
     "p80": 61,
     "peak": 89,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "fe8e2ac5ebc3e28cedd8c8fd0f48878ca913d26c368fc28ce85dd557ba6eb90b",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "a5285ffd4637ca09686b6befe97a83a2135510cfb719fa00e98a8fad06f8c9ae",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Tivit, Seller of Secrets\n1 Aerial Extortionist\n1 Cephalid Facetaker\n1 Skyway Robber\n1 Misfortune Teller\n1 Oskar, Rubbish Reclaimer\n1 Silent-Blade Oni\n1 Wrexial, the Risen Deep\n1 Alela, Artful Provocateur\n1 Fallen Shinobi\n1 Drana, Liberator of Malakir\n1 Archon of Coronation\n1 Sun Titan\n1 Champion of Wits\n1 Chasm Skulker\n1 Ghostly Pilferer\n1 Identity Thief\n1 Nadir Kraken\n1 Custodi Lich\n1 Graveblade Marauder\n1 Daxos of Meletis\n1 Dragonlord Ojutai\n1 Shadowmage Infiltrator\n1 Thief of Sanity\n1 Daring Saboteur\n1 Looter il-Kor\n1 Whirler Rogue\n1 Inkfathom Witch\n1 Jailbreak\n1 Writ of Return\n1 Austere Command\n1 Dusk // Dawn\n1 Stolen Identity\n1 Nightmare Unmaking\n1 Profane Command\n1 Treasure Cruise\n1 An Offer You Can't Refuse\n1 Change of Plans\n1 Lethal Scheme\n1 Obscura Charm\n1 Obscura Confluence\n1 Commit // Memory\n1 Utter End\n1 Swords to Plowshares\n1 In Too Deep\n1 Life Insurance\n1 Smuggler's Share\n1 Arcane Signet\n1 Azorius Signet\n1 Commander's Sphere\n1 Currency Converter\n1 Dimir Signet\n1 Fellwar Stone\n1 Mask of Riddles\n1 Mask of the Schemer\n1 Orzhov Signet\n1 Quietus Spike\n1 Strionic Resonator\n1 Sol Ring\n1 Swiftfoot Boots\n1 Wayfarer's Bauble\n1 Fetid Heath\n1 Creeping Tar Pit\n1 Sunken Hollow\n1 Choked Estuary\n1 Arcane Sanctum\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Port Town\n1 Prairie Stream\n1 Skycloud Expanse\n1 Temple of Silence\n1 Ash Barrens\n1 Command Tower\n1 Esper Panorama\n1 Myriad Landscape\n1 Obscura Storefront\n1 Path of Ancestry\n1 Rogue's Passage\n1 Thriving Heath\n1 Thriving Isle\n1 Thriving Moor\n3 Plains\n2 Plains\n3 Island\n3 Island\n3 Swamp\n3 Swamp",
   "oracleCards": [
@@ -1365,15 +1365,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1760,22 +1761,22 @@
   "result": {
     "profile": {
       "median": 47,
-      "floor": 33,
+      "floor": 34,
       "ceiling": 61,
       "peak": 89,
-      "dispersion": 28,
-      "variance": 28,
-      "consistency": 58,
+      "dispersion": 27,
+      "variance": 27,
+      "consistency": 56,
       "commanderDelta": 5,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 39,
-      "consistency": 58,
-      "explosiveness": 23,
-      "synergy": 58,
-      "interaction": 44,
+      "consistency": 56,
+      "explosiveness": 22,
+      "synergy": 60,
+      "interaction": 45,
       "resilience": 55
     },
     "roles": {
@@ -1796,8 +1797,8 @@
       {
         "id": "artifacts",
         "name": "Artefacts",
-        "strength": 89,
-        "cohesion": 89,
+        "strength": 93,
+        "cohesion": 93,
         "producers": [
           "Arcane Signet",
           "Azorius Signet",
@@ -1825,6 +1826,7 @@
           "Mask of the Schemer",
           "Orzhov Signet",
           "Quietus Spike",
+          "Sol Ring",
           "Strionic Resonator",
           "Swiftfoot Boots",
           "Wayfarer's Bauble",
@@ -1975,6 +1977,20 @@
             }
           },
           {
+            "name": "Sol Ring",
+            "cmc": 0,
+            "tags": [
+              "artifact",
+              "mana",
+              "fast-mana"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
             "name": "Strionic Resonator",
             "cmc": 2,
             "tags": [
@@ -2069,7 +2085,7 @@
         "payoffTags": [
           "artifact-payoff"
         ],
-        "evidence": "13 producteur(s), 2 payoff(s), 15 carte(s) distincte(s)."
+        "evidence": "14 producteur(s), 2 payoff(s), 16 carte(s) distincte(s)."
       },
       {
         "id": "graveyard",
@@ -2470,13 +2486,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2535,16 +2552,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 36,
-      "median": 45,
-      "high": 56,
-      "ceiling": 56,
+      "floor": 37,
+      "median": 46,
+      "high": 57,
+      "ceiling": 57,
       "peak": 84,
       "iqr": 16,
-      "consistency": 66,
+      "consistency": 64,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 88,
+      "recoveryAfterDisruption": 89,
       "turnProfile": [
         {
           "turn": 1,
@@ -2556,32 +2573,32 @@
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 1,
           "engine": 0,
-          "interaction": 10,
-          "resource": 24,
+          "interaction": 12,
+          "resource": 27,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 31,
-          "engine": 10,
-          "interaction": 30,
-          "resource": 55,
-          "burst": 5
+          "commander": 34,
+          "engine": 12,
+          "interaction": 31,
+          "resource": 57,
+          "burst": 6
         },
         {
           "turn": 4,
-          "commander": 76,
-          "engine": 23,
-          "interaction": 49,
-          "resource": 69,
+          "commander": 77,
+          "engine": 24,
+          "interaction": 50,
+          "resource": 70,
           "burst": 14
         },
         {
           "turn": 5,
           "commander": 88,
-          "engine": 32,
+          "engine": 33,
           "interaction": 59,
           "resource": 78,
           "burst": 22
@@ -2591,20 +2608,30 @@
           "commander": 93,
           "engine": 40,
           "interaction": 66,
-          "resource": 82,
-          "burst": 28
+          "resource": 83,
+          "burst": 29
         },
         {
           "turn": 7,
           "commander": 95,
-          "engine": 45,
+          "engine": 46,
           "interaction": 71,
-          "resource": 86,
+          "resource": 87,
           "burst": 34
         }
       ]
     },
     "drivers": [
+      {
+        "name": "Sol Ring",
+        "impact": 4.4,
+        "tags": [
+          "artifact",
+          "mana",
+          "fast-mana"
+        ],
+        "aeon": null
+      },
       {
         "name": "Fallen Shinobi",
         "impact": 4.2,
@@ -2643,15 +2670,6 @@
           "creature",
           "cheat",
           "free"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Sol Ring",
-        "impact": 3.7,
-        "tags": [
-          "mana",
-          "fast-mana"
         ],
         "aeon": null
       },

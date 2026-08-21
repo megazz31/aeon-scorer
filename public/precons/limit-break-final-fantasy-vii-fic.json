@@ -35,16 +35,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 41,
-    "p20": 29,
+    "p20": 27,
     "p80": 52,
-    "peak": 80,
+    "peak": 79,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "7aa12e0714ad8c6ea8d060dbee8294d15a677fa013fbfbe80186f981810d36ec",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "cb22d9b6dc65c6617158d3326c44a788808b1db9ab500a897e22eeb3cf26ed73",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Tifa, Martial Artist\n1 Cid, Freeflier Pilot\n1 Cloud's Limit Break\n1 Elena, Turk Recruit\n1 Heidegger, Shinra Executive\n1 Helitrooper\n1 SOLDIER Military Program\n1 Ultimate Magic: Holy\n1 Avalanche of Sector 7\n1 Cait Sith, Fortune Teller\n1 Summon: Kujata\n1 Ultimate Magic: Meteor\n1 Vincent, Vengeful Atoner\n1 Yuffie, Materia Hunter\n1 Bugenhagen, Wise Elder\n1 Lifestream's Blessing\n1 Professor Hojo\n1 Summoning Materia\n1 Aerith, Last Ancient\n1 Barret, Avalanche Leader\n1 Red XIII, Proud Warrior\n1 Sephiroth, Fallen Hero\n1 Conformer Shuriken\n1 Wrecking Ball Arm\n1 Austere Command\n1 Bastion Protector\n1 Bronze Guardian\n1 Clever Concealment\n1 Puresteel Paladin\n1 Unfinished Business\n1 Vanquish the Horde\n1 Chaos Warp\n1 Hellkite Tyrant\n1 Professional Face-Breaker\n1 Decimate\n1 Armory Automaton\n1 Champion's Helm\n1 Conqueror's Flail\n1 Darksteel Plate\n1 Inspiring Statuary\n1 Sword of the Animist\n1 Battlefield Forge\n1 Bonders' Enclave\n1 Brushland\n1 Canopy Vista\n1 Cinder Glade\n1 Clifftop Retreat\n1 Exotic Orchard\n1 Fire-Lit Thicket\n1 Fortified Village\n1 Furycalm Snarl\n1 Game Trail\n1 Mossfire Valley\n1 Rootbound Crag\n1 Rugged Prairie\n1 Scavenger Grounds\n1 Slayers' Stronghold\n1 Spire of Industry\n1 Sungrass Prairie\n1 Sunpetal Grove\n1 Sunscorched Divide\n1 Zack Fair\n1 Barret Wallace\n1 Dispatch\n1 Secret Rendezvous\n1 Furious Rise\n1 Vandalblast\n1 Cultivate\n1 Harmonize\n1 Nature's Lore\n1 Rampant Growth\n1 Behemoth Sledge\n1 Arcane Signet\n1 Colossus Hammer\n1 Explorer's Scope\n1 Hero's Blade\n1 Hero's Heirloom\n1 Lightning Greaves\n1 Mask of Memory\n1 Skullclamp\n1 Sol Ring\n1 Trailblazer's Boots\n1 Ash Barrens\n1 Evolving Wilds\n1 Jungle Shrine\n1 Path of Ancestry\n1 Radiant Grove\n1 Sacred Peaks\n1 Wooded Ridgeline\n1 Command Tower\n1 Mountain\n1 Mountain\n1 Mountain\n1 Forest\n1 Forest\n1 Forest\n1 Plains\n1 Plains\n1 Plains",
   "oracleCards": [
@@ -1462,15 +1462,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1866,22 +1867,22 @@
   "result": {
     "profile": {
       "median": 41,
-      "floor": 29,
+      "floor": 27,
       "ceiling": 52,
-      "peak": 80,
-      "dispersion": 23,
-      "variance": 23,
-      "consistency": 63,
+      "peak": 79,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 62,
       "commanderDelta": 5,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 37,
-      "consistency": 63,
+      "speed": 38,
+      "consistency": 62,
       "explosiveness": 12,
       "synergy": 59,
-      "interaction": 34,
+      "interaction": 35,
       "resilience": 51
     },
     "roles": {
@@ -1938,6 +1939,7 @@
           "Lightning Greaves",
           "Mask of Memory",
           "Skullclamp",
+          "Sol Ring",
           "Summoning Materia",
           "Sword of the Animist",
           "Trailblazer's Boots",
@@ -2181,6 +2183,20 @@
             }
           },
           {
+            "name": "Sol Ring",
+            "cmc": 0,
+            "tags": [
+              "artifact",
+              "mana",
+              "fast-mana"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
             "name": "Summoning Materia",
             "cmc": 3,
             "tags": [
@@ -2274,7 +2290,7 @@
         "payoffTags": [
           "artifact-payoff"
         ],
-        "evidence": "21 producteur(s), 2 payoff(s), 21 carte(s) distincte(s)."
+        "evidence": "22 producteur(s), 2 payoff(s), 22 carte(s) distincte(s)."
       },
       {
         "id": "graveyard",
@@ -2565,13 +2581,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2646,12 +2663,12 @@
     "simulation": {
       "iterations": 3200,
       "floor": 28,
-      "median": 36,
-      "high": 44,
-      "ceiling": 44,
+      "median": 37,
+      "high": 45,
+      "ceiling": 45,
       "peak": 67,
-      "iqr": 13,
-      "consistency": 72,
+      "iqr": 14,
+      "consistency": 70,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 5,
       "recoveryAfterDisruption": 74,
@@ -2661,44 +2678,44 @@
           "commander": 0,
           "engine": 0,
           "interaction": 12,
-          "resource": 6,
+          "resource": 7,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 0,
           "engine": 0,
-          "interaction": 21,
-          "resource": 21,
+          "interaction": 22,
+          "resource": 23,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 3,
-          "engine": 5,
-          "interaction": 28,
-          "resource": 43,
+          "commander": 5,
+          "engine": 6,
+          "interaction": 29,
+          "resource": 44,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 27,
-          "engine": 12,
+          "commander": 28,
+          "engine": 13,
           "interaction": 37,
-          "resource": 59,
+          "resource": 60,
           "burst": 1
         },
         {
           "turn": 5,
-          "commander": 61,
+          "commander": 62,
           "engine": 20,
           "interaction": 42,
-          "resource": 70,
+          "resource": 71,
           "burst": 3
         },
         {
           "turn": 6,
-          "commander": 75,
+          "commander": 76,
           "engine": 25,
           "interaction": 46,
           "resource": 76,
@@ -2707,7 +2724,7 @@
         {
           "turn": 7,
           "commander": 82,
-          "engine": 29,
+          "engine": 30,
           "interaction": 51,
           "resource": 82,
           "burst": 7
@@ -2715,6 +2732,16 @@
       ]
     },
     "drivers": [
+      {
+        "name": "Sol Ring",
+        "impact": 4.4,
+        "tags": [
+          "artifact",
+          "mana",
+          "fast-mana"
+        ],
+        "aeon": null
+      },
       {
         "name": "Bugenhagen, Wise Elder",
         "impact": 3.9,
@@ -2732,15 +2759,6 @@
           "artifact",
           "draw",
           "graveyard-setup"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Sol Ring",
-        "impact": 3.7,
-        "tags": [
-          "mana",
-          "fast-mana"
         ],
         "aeon": null
       },

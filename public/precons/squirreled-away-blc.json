@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 53,
-    "p20": 42,
-    "p80": 64,
+    "p20": 41,
+    "p80": 65,
     "peak": 90,
     "coverage": 95,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "3f497f1157560ff43969cc679d43f9e2ef4f91bff5d32fcf2cac5de385538e58",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "70930ecbc5a68987a0844410a8d6ce4b7487c111b70c81ec06b7b52550dfb974",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 The Odd Acorn Gang\n1 Garruk, Cursed Huntsman\n1 Chittering Witch\n1 Insatiable Frugivore\n1 Moonstone Eulogist\n1 Swarmyard Massacre\n1 Hazel's Brewmaster\n1 Woe Strider\n1 Saw in Half\n1 Ogre Slumlord\n1 Decree of Pain\n1 Gourmand's Talent\n1 Rootcast Apprenticeship\n1 Scurry of Squirrels\n1 End-Raze Forerunners\n1 Arasta of the Endless Web\n1 Deep Forest Hermit\n1 Toski, Bearer of Secrets\n1 Beastmaster Ascension\n1 Second Harvest\n1 Shamanic Revelation\n1 Chatterfang, Squirrel General\n1 Temple of Malady\n1 Casualties of War\n1 Windgrace's Judgment\n1 Maskwood Nexus\n1 Academy Manufactor\n1 Woodland Cemetery\n1 Necroblossom Snarl\n1 Oran-Rief, the Vastwood\n1 Swarmyard\n1 Exotic Orchard\n1 Llanowar Wastes\n1 Grim Backwoods\n1 Viridescent Bog\n1 Twilight Mire\n1 Gilded Goose\n1 Chitterspitter\n1 Maelstrom Pulse\n1 Beledros Witherbloom\n1 Idol of Oblivion\n1 Sword of the Squeak\n1 Morbid Opportunist\n1 Nadier's Nightblade\n1 Plumb the Forbidden\n1 Bastion of Remembrance\n1 Plaguecrafter\n1 Cache Grab\n1 Chatterstorm\n1 Poison-Tip Archer\n1 Moldervine Reclamation\n1 Ravenous Squirrel\n1 Skyfisher Spider\n1 Binding the Old Gods\n1 Golgari Rot Farm\n1 Jungle Hollow\n1 Haunted Mire\n1 Nested Shambler\n1 Deadly Dispute\n1 Zulaport Cutthroat\n1 Squirrel Sovereign\n1 Prosperous Innkeeper\n1 Haywire Mite\n1 Tireless Provisioner\n1 Squirrel Nest\n1 Honored Dreyleader\n1 Tear Asunder\n1 Wolfwillow Haven\n1 Putrefy\n1 Arcane Signet\n1 Golgari Signet\n1 Talisman of Resilience\n1 Sol Ring\n1 Skullclamp\n1 Terramorphic Expanse\n1 Path of Ancestry\n1 Evolving Wilds\n1 Command Tower\n1 Tranquil Thicket\n1 Bojuka Bog\n1 Tainted Wood\n1 Barren Moor\n4 Swamp\n4 Swamp\n5 Forest\n4 Forest",
   "oracleCards": [
@@ -1330,15 +1330,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1794,22 +1795,22 @@
   "result": {
     "profile": {
       "median": 53,
-      "floor": 42,
-      "ceiling": 64,
+      "floor": 41,
+      "ceiling": 65,
       "peak": 90,
-      "dispersion": 22,
-      "variance": 22,
-      "consistency": 60,
+      "dispersion": 24,
+      "variance": 24,
+      "consistency": 59,
       "commanderDelta": 11,
       "coverage": 95,
       "dataCoverage": 95
     },
     "dimensions": {
       "speed": 43,
-      "consistency": 60,
+      "consistency": 59,
       "explosiveness": 13,
-      "synergy": 90,
-      "interaction": 60,
+      "synergy": 91,
+      "interaction": 62,
       "resilience": 28
     },
     "roles": {
@@ -2893,8 +2894,8 @@
       {
         "id": "artifacts",
         "name": "Artefacts",
-        "strength": 83,
-        "cohesion": 83,
+        "strength": 87,
+        "cohesion": 87,
         "producers": [
           "Academy Manufactor",
           "Arcane Signet",
@@ -2904,8 +2905,8 @@
           "Idol of Oblivion",
           "Maskwood Nexus",
           "Skullclamp",
-          "Sword of the Squeak",
-          "Talisman of Resilience"
+          "Sol Ring",
+          "Sword of the Squeak"
         ],
         "payoffs": [
           "Gourmand's Talent",
@@ -2921,6 +2922,7 @@
           "Idol of Oblivion",
           "Maskwood Nexus",
           "Skullclamp",
+          "Sol Ring",
           "Sword of the Squeak",
           "Talisman of Resilience",
           "Gourmand's Talent",
@@ -3048,6 +3050,20 @@
             }
           },
           {
+            "name": "Sol Ring",
+            "cmc": 0,
+            "tags": [
+              "artifact",
+              "mana",
+              "fast-mana"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
             "name": "Sword of the Squeak",
             "cmc": 2,
             "tags": [
@@ -3156,7 +3172,7 @@
         "payoffTags": [
           "artifact-payoff"
         ],
-        "evidence": "10 producteur(s), 3 payoff(s), 13 carte(s) distincte(s)."
+        "evidence": "11 producteur(s), 3 payoff(s), 14 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -3258,13 +3274,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -3493,12 +3510,12 @@
     "simulation": {
       "iterations": 3200,
       "floor": 40,
-      "median": 48,
-      "high": 57,
-      "ceiling": 57,
+      "median": 49,
+      "high": 58,
+      "ceiling": 58,
       "peak": 84,
-      "iqr": 14,
-      "consistency": 68,
+      "iqr": 15,
+      "consistency": 67,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
       "recoveryAfterDisruption": 83,
@@ -3513,34 +3530,34 @@
         },
         {
           "turn": 2,
-          "commander": 0,
-          "engine": 9,
-          "interaction": 19,
-          "resource": 23,
+          "commander": 2,
+          "engine": 10,
+          "interaction": 22,
+          "resource": 25,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 24,
-          "engine": 25,
-          "interaction": 43,
-          "resource": 39,
+          "commander": 28,
+          "engine": 27,
+          "interaction": 45,
+          "resource": 41,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 75,
-          "engine": 48,
-          "interaction": 67,
-          "resource": 56,
+          "commander": 76,
+          "engine": 49,
+          "interaction": 68,
+          "resource": 57,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 92,
-          "engine": 61,
+          "engine": 62,
           "interaction": 76,
-          "resource": 66,
+          "resource": 67,
           "burst": 0
         },
         {
@@ -3576,6 +3593,16 @@
         "aeon": null
       },
       {
+        "name": "Sol Ring",
+        "impact": 4.4,
+        "tags": [
+          "artifact",
+          "mana",
+          "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Tireless Provisioner",
         "impact": 4.2,
         "tags": [
@@ -3597,15 +3624,6 @@
           "sac-outlet",
           "death-payoff",
           "artifact-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Sol Ring",
-        "impact": 3.7,
-        "tags": [
-          "mana",
-          "fast-mana"
         ],
         "aeon": null
       },

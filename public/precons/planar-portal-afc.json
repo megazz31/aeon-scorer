@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 49,
-    "p20": 40,
+    "p20": 39,
     "p80": 58,
     "peak": 81,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "ae0f7463cdac260f3f371487771eaadae51b7551ba3456ea3f4d2370551b3e67",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "9f5a8b91ba9bb3fa75a671a92f1a0f705024c3b394edfb78fcf532db60780ab2",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Chittering Witch\n1 Fiend of the Shadows\n1 Gonti, Lord of Luxury\n1 Marionette Master\n1 Ogre Slumlord\n1 Piper of the Swarm\n1 Pontiff of Blight\n1 Dark-Dweller Oracle\n1 Dire Fleet Daredevil\n1 Dream Pillager\n1 Etali, Primal Storm\n1 Izzet Chemister\n1 Tectonic Giant\n1 Loyal Apprentice\n1 Consuming Vapors\n1 Hex\n1 Apex of Power\n1 Disrupt Decorum\n1 Ignite the Future\n1 Phthisis\n1 Light Up the Stage\n1 Throes of Chaos\n1 Vandalblast\n1 Chaos Warp\n1 Commune with Lava\n1 Bedevil\n1 Bituminous Blast\n1 Rakdos Charm\n1 Terminate\n1 Chaos Wand\n1 Arcane Signet\n1 Commander's Sphere\n1 Fellwar Stone\n1 Mind Stone\n1 Orazca Relic\n1 Rakdos Signet\n1 Sol Ring\n1 Talisman of Indulgence\n1 Unstable Obelisk\n1 Dead Man's Chest\n1 Theater of Horrors\n1 Shiny Impetus\n1 Exotic Orchard\n1 Foreboding Ruins\n1 Shadowblood Ridge\n1 Smoldering Marsh\n1 Spinerock Knoll\n1 Bojuka Bog\n1 Command Tower\n1 Mortuary Mire\n1 Rakdos Carnarium\n1 Tainted Peak\n1 Zhalfirin Void\n4 Swamp\n4 Swamp\n3 Swamp\n3 Swamp\n4 Mountain\n3 Mountain\n3 Mountain\n3 Mountain\n1 Karazikar, the Eye Tyrant\n1 Bag of Devouring\n1 Danse Macabre\n1 Death Tyrant\n1 Grim Hireling\n1 Hellish Rebuke\n1 Lorcan, Warlock Collector\n1 Fiendlash\n1 Reckless Endeavor\n1 Share the Spoils\n1 Wild-Magic Sorcerer\n1 Fevered Suspicion\n1 Hurl Through Hell\n1 Warlock Class\n1 Chaos Channeler\n1 You Find Some Prisoners\n1 Bucknard's Everfull Purse\n1 Ebony Fly\n1 Underdark Rift",
   "oracleCards": [
@@ -1207,15 +1207,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1515,22 +1516,22 @@
   "result": {
     "profile": {
       "median": 49,
-      "floor": 40,
+      "floor": 39,
       "ceiling": 58,
       "peak": 81,
-      "dispersion": 18,
-      "variance": 18,
-      "consistency": 68,
+      "dispersion": 19,
+      "variance": 19,
+      "consistency": 66,
       "commanderDelta": 13,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 36,
-      "consistency": 68,
+      "consistency": 66,
       "explosiveness": 29,
       "synergy": 81,
-      "interaction": 56,
+      "interaction": 58,
       "resilience": 19
     },
     "roles": {
@@ -2297,13 +2298,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2413,12 +2415,12 @@
     "simulation": {
       "iterations": 3200,
       "floor": 35,
-      "median": 41,
-      "high": 48,
-      "ceiling": 48,
+      "median": 42,
+      "high": 49,
+      "ceiling": 49,
       "peak": 68,
-      "iqr": 10,
-      "consistency": 77,
+      "iqr": 12,
+      "consistency": 75,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
       "recoveryAfterDisruption": 61,
@@ -2433,25 +2435,25 @@
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 5,
           "engine": 0,
-          "interaction": 27,
+          "interaction": 31,
           "resource": 0,
-          "burst": 5
+          "burst": 6
         },
         {
           "turn": 3,
-          "commander": 27,
-          "engine": 1,
-          "interaction": 42,
-          "resource": 0,
-          "burst": 16
+          "commander": 31,
+          "engine": 2,
+          "interaction": 44,
+          "resource": 1,
+          "burst": 17
         },
         {
           "turn": 4,
-          "commander": 80,
+          "commander": 81,
           "engine": 7,
-          "interaction": 62,
+          "interaction": 63,
           "resource": 5,
           "burst": 27
         },
@@ -2460,14 +2462,14 @@
           "commander": 93,
           "engine": 14,
           "interaction": 71,
-          "resource": 9,
+          "resource": 10,
           "burst": 34
         },
         {
           "turn": 6,
-          "commander": 95,
+          "commander": 96,
           "engine": 18,
-          "interaction": 76,
+          "interaction": 77,
           "resource": 11,
           "burst": 39
         },
@@ -2542,6 +2544,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],

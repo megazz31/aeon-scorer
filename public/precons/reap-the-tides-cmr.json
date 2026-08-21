@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 40,
-    "p20": 27,
-    "p80": 51,
-    "peak": 87,
+    "p20": 26,
+    "p80": 53,
+    "peak": 86,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "cbb2a9a2eacbab1c78425da94658fe2705faa98672646e543d0ba56e7f543921",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "08cabe3cb8d8fad7f602f766efa07e250a24a80ffedf734a20df90ea029ea6ea",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Coiling Oracle\n1 Eternal Witness\n1 Ramunap Excavator\n1 Reclamation Sage\n1 Stumpsquall Hydra\n1 Yavimaya Elder\n1 Fathom Mage\n1 Sharktocrab\n1 Wickerbough Elder\n1 Acidic Slime\n1 Meloku the Clouded Mirror\n1 Mulldrifter\n1 Murkfiend Liege\n1 Sporemound\n1 Rampaging Baloths\n1 Shipbreaker Kraken\n1 Avenger of Zendikar\n1 Meteor Golem\n1 Molimo, Maro-Sorcerer\n1 Nezahal, Primal Tide\n1 Scourge of Fleets\n1 Simic Sky Swallower\n1 Sphinx of Uthuun\n1 Trench Behemoth\n1 Tromokratis\n1 Verdant Sun's Avatar\n1 Elder Deep-Fiend\n1 Slinn Voda, the Rising Deep\n1 Stormtide Leviathan\n1 Terastodon\n1 Arcane Denial\n1 Counterspell\n1 Growth Spiral\n1 Into the Roil\n1 Peel from Reality\n1 Simic Charm\n1 Beast Within\n1 Fact or Fiction\n1 Explore\n1 Rampant Growth\n1 Compulsive Research\n1 Cultivate\n1 Kodama's Reach\n1 Search for Tomorrow\n1 Harmonize\n1 Whelming Wave\n1 Urban Evolution\n1 Spitting Image\n1 Ior Ruin Expedition\n1 Khalni Heart Expedition\n1 Retreat to Kazandu\n1 Sol Ring\n1 Simic Signet\n1 Swiftfoot Boots\n1 Seer's Sundial\n1 Blighted Woodland\n1 Command Tower\n1 Coral Atoll\n1 Evolving Wilds\n8 Forest\n7 Forest\n8 Island\n7 Island\n1 Jungle Basin\n1 Memorial to Genius\n1 Reliquary Tower\n1 Simic Growth Chamber\n1 Simic Guildgate\n1 Terramorphic Expanse\n1 Thornwood Falls\n1 Vivid Creek\n1 Vivid Grove\n1 Woodland Stream",
   "oracleCards": [
@@ -1047,15 +1047,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1443,22 +1444,22 @@
   "result": {
     "profile": {
       "median": 40,
-      "floor": 27,
-      "ceiling": 51,
-      "peak": 87,
-      "dispersion": 25,
-      "variance": 25,
-      "consistency": 62,
-      "commanderDelta": 7,
+      "floor": 26,
+      "ceiling": 53,
+      "peak": 86,
+      "dispersion": 27,
+      "variance": 27,
+      "consistency": 59,
+      "commanderDelta": 6,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 24,
-      "consistency": 62,
-      "explosiveness": 15,
+      "consistency": 59,
+      "explosiveness": 14,
       "synergy": 71,
-      "interaction": 42,
+      "interaction": 43,
       "resilience": 36
     },
     "roles": {
@@ -1933,13 +1934,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           }
         ],
@@ -2006,14 +2008,14 @@
       "iterations": 3200,
       "floor": 31,
       "median": 40,
-      "high": 48,
-      "ceiling": 48,
+      "high": 50,
+      "ceiling": 50,
       "peak": 80,
-      "iqr": 13,
-      "consistency": 70,
+      "iqr": 15,
+      "consistency": 67,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 75,
+      "recoveryAfterDisruption": 76,
       "turnProfile": [
         {
           "turn": 1,
@@ -2027,32 +2029,32 @@
           "turn": 2,
           "commander": 0,
           "engine": 1,
-          "interaction": 8,
-          "resource": 12,
+          "interaction": 10,
+          "resource": 14,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 2,
-          "engine": 7,
-          "interaction": 29,
-          "resource": 35,
+          "commander": 4,
+          "engine": 8,
+          "interaction": 31,
+          "resource": 38,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 21,
+          "commander": 23,
           "engine": 17,
-          "interaction": 47,
-          "resource": 59,
+          "interaction": 48,
+          "resource": 60,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 48,
+          "commander": 49,
           "engine": 27,
           "interaction": 57,
-          "resource": 70,
+          "resource": 71,
           "burst": 0
         },
         {
@@ -2060,7 +2062,7 @@
           "commander": 75,
           "engine": 36,
           "interaction": 65,
-          "resource": 76,
+          "resource": 77,
           "burst": 0
         },
         {
@@ -2098,6 +2100,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],

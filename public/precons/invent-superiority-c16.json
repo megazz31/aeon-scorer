@@ -30,16 +30,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 47,
-    "p20": 33,
-    "p80": 58,
-    "peak": 87,
+    "p20": 32,
+    "p80": 59,
+    "peak": 86,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "f64fb1634c9ad27116db0096dc776bd356425aaff56ca585950dddf07c9ec7c3",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "1bd3f6ae7130456b2f9abcb189607605df095e8e8e6bf9c6b590a1dcd029e483",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Daretti, Scrap Savant\n1 Myr Retriever\n1 Chief Engineer\n1 Etherium Sculptor\n1 Vedalken Engineer\n1 Slobad, Goblin Tinkerer\n1 Baleful Strix\n1 Akiri, Line-Slinger\n1 Armory Automaton\n1 Shimmer Myr\n1 Master of Etherium\n1 Trinket Mage\n1 Magus of the Will\n1 Hanna, Ship's Navigator\n1 Silas Renn, Seeker Adept\n1 Sydri, Galvanic Genius\n1 Etched Oracle\n1 Solemn Simulacrum\n1 Sanctum Gargoyle\n1 Faerie Artisans\n1 Bruse Tarl, Boorish Herder\n1 Ethersworn Adjudicator\n1 Sphinx Summoner\n1 Jor Kadeen, the Prevailer\n1 Soul of New Phyrexia\n1 Godo, Bandit Warlord\n1 Hellkite Tyrant\n1 Sharuum the Hegemon\n1 Myr Battlesphere\n1 Hellkite Igniter\n1 Filigree Angel\n1 Whipflare\n1 Parting Thoughts\n1 Trash for Treasure\n1 Beacon of Unrest\n1 Migratory Route\n1 Open the Vaults\n1 Phyrexian Rebirth\n1 Grave Upheaval\n1 Coastal Breach\n1 Grip of Phyresis\n1 Ancient Excavation\n1 Read the Runes\n1 Trial // Error\n1 Everflowing Chalice\n1 Skullclamp\n1 Sol Ring\n1 Dispeller's Capsule\n1 Executioner's Capsule\n1 Cranial Plating\n1 Fellwar Stone\n1 Ichor Wellspring\n1 Mycosynth Wellspring\n1 Swiftfoot Boots\n1 Thopter Foundry\n1 Commander's Sphere\n1 Loxodon Warhammer\n1 Bonehoard\n1 Nevinyrral's Disk\n1 Trading Post\n1 Blinkmoth Urn\n1 Darksteel Citadel\n1 Seat of the Synod\n1 Curse of Vengeance\n1 Arcane Sanctum\n1 Ash Barrens\n1 Azorius Chancery\n1 Boros Garrison\n1 Buried Ruin\n1 Command Tower\n1 Crumbling Necropolis\n1 Dimir Aqueduct\n1 Evolving Wilds\n1 Exotic Orchard\n1 Mystic Monastery\n1 Nomad Outpost\n1 Rakdos Carnarium\n1 Rupture Spire\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Transguild Promenade\n2 Plains\n2 Plains\n1 Plains\n2 Island\n2 Island\n1 Island\n2 Swamp\n1 Swamp\n1 Swamp\n2 Mountain\n1 Mountain\n1 Mountain",
   "oracleCards": [
@@ -1406,15 +1406,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1739,22 +1740,22 @@
   "result": {
     "profile": {
       "median": 47,
-      "floor": 33,
-      "ceiling": 58,
-      "peak": 87,
-      "dispersion": 25,
-      "variance": 25,
-      "consistency": 65,
+      "floor": 32,
+      "ceiling": 59,
+      "peak": 86,
+      "dispersion": 26,
+      "variance": 26,
+      "consistency": 63,
       "commanderDelta": 6,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 36,
-      "consistency": 65,
-      "explosiveness": 14,
+      "consistency": 63,
+      "explosiveness": 13,
       "synergy": 70,
-      "interaction": 33,
+      "interaction": 34,
       "resilience": 59
     },
     "roles": {
@@ -1827,6 +1828,7 @@
           "Shimmer Myr",
           "Silas Renn, Seeker Adept",
           "Skullclamp",
+          "Sol Ring",
           "Solemn Simulacrum",
           "Soul of New Phyrexia",
           "Sphinx Summoner",
@@ -2290,6 +2292,20 @@
             }
           },
           {
+            "name": "Sol Ring",
+            "cmc": 0,
+            "tags": [
+              "artifact",
+              "mana",
+              "fast-mana"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
             "name": "Solemn Simulacrum",
             "cmc": 4,
             "tags": [
@@ -2537,7 +2553,7 @@
         "payoffTags": [
           "artifact-payoff"
         ],
-        "evidence": "34 producteur(s), 7 payoff(s), 37 carte(s) distincte(s)."
+        "evidence": "35 producteur(s), 7 payoff(s), 38 carte(s) distincte(s)."
       },
       {
         "id": "graveyard",
@@ -3003,13 +3019,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -3099,45 +3116,45 @@
     "simulation": {
       "iterations": 3200,
       "floor": 35,
-      "median": 44,
-      "high": 53,
-      "ceiling": 53,
+      "median": 45,
+      "high": 54,
+      "ceiling": 54,
       "peak": 80,
-      "iqr": 15,
-      "consistency": 68,
+      "iqr": 16,
+      "consistency": 66,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 87,
+      "recoveryAfterDisruption": 88,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
-          "engine": 1,
+          "engine": 2,
           "interaction": 8,
-          "resource": 23,
+          "resource": 24,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 0,
-          "engine": 7,
-          "interaction": 13,
-          "resource": 39,
+          "engine": 9,
+          "interaction": 14,
+          "resource": 43,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 7,
-          "engine": 24,
-          "interaction": 23,
-          "resource": 60,
+          "commander": 8,
+          "engine": 26,
+          "interaction": 24,
+          "resource": 62,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 30,
-          "engine": 41,
-          "interaction": 37,
+          "engine": 42,
+          "interaction": 38,
           "resource": 77,
           "burst": 1
         },
@@ -3147,7 +3164,7 @@
           "engine": 53,
           "interaction": 48,
           "resource": 83,
-          "burst": 2
+          "burst": 3
         },
         {
           "turn": 6,
@@ -3163,11 +3180,21 @@
           "engine": 68,
           "interaction": 62,
           "resource": 90,
-          "burst": 6
+          "burst": 7
         }
       ]
     },
     "drivers": [
+      {
+        "name": "Sol Ring",
+        "impact": 4.4,
+        "tags": [
+          "artifact",
+          "mana",
+          "fast-mana"
+        ],
+        "aeon": null
+      },
       {
         "name": "Solemn Simulacrum",
         "impact": 3.9,
@@ -3178,15 +3205,6 @@
           "land-ramp",
           "death-payoff",
           "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Sol Ring",
-        "impact": 3.7,
-        "tags": [
-          "mana",
-          "fast-mana"
         ],
         "aeon": null
       },

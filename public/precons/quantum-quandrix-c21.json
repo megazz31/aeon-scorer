@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 41,
-    "p20": 30,
-    "p80": 52,
-    "peak": 81,
+    "p20": 29,
+    "p80": 53,
+    "peak": 80,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "a3a81cfb752a1ac679acdf759b884b5317874b06348330a85812e8181599dfba",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "f8f7040513ffad63c392f45857c613a64793233d0b7c4823393ac38e00267918",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Garruk, Primal Hunter\n1 Esix, Fractal Bloom\n1 Curiosity Crafter\n1 Deekah, Fractal Theorist\n1 Spawning Kraken\n1 Guardian Augmenter\n1 Ruxa, Patient Professor\n1 Desolation Twin\n1 Champion of Wits\n1 Crafty Cutpurse\n1 Reef Worm\n1 Arashi, the Sky Asunder\n1 Forgotten Ancient\n1 Hornet Nest\n1 Hornet Queen\n1 Hydra Broodmaster\n1 Incubation Druid\n1 Kazandu Tuskcaller\n1 Managorger Hydra\n1 Rampaging Baloths\n1 Terastodon\n1 Kaseto, Orochi Archmage\n1 Master Biomancer\n1 Biomathematician\n1 Quandrix Cultivator\n1 Zimone, Quandrix Prodigy\n1 Coiling Oracle\n1 Plaxcaster Frogling\n1 Trygon Predator\n1 Replication Technique\n1 Oversimplify\n1 Curse of the Swine\n1 Rite of Replication\n1 Shamanic Revelation\n1 Spitting Image\n1 Golden Ratio\n1 Rampant Growth\n1 Incubation // Incongruity\n1 Perplexing Test\n1 Theoretical Duplication\n1 Return of the Wildspeaker\n1 Biomass Mutation\n1 Eureka Moment\n1 Rapid Hybridization\n1 Beast Within\n1 Krosan Grip\n1 Fractal Harness\n1 Sequence Engine\n1 Geometric Nexus\n1 Idol of Oblivion\n1 Arcane Signet\n1 Simic Signet\n1 Sol Ring\n1 Paradox Zone\n1 Primal Empathy\n1 Exotic Orchard\n1 Lumbering Falls\n1 Mosswort Bridge\n1 Oran-Rief, the Vastwood\n1 Temple of Mystery\n1 Yavimaya Coast\n1 Quandrix Campus\n1 Study Hall\n1 Blighted Woodland\n1 Command Tower\n1 Llanowar Reborn\n1 Lonely Sandbar\n1 Myriad Landscape\n1 Novijen, Heart of Progress\n1 Opal Palace\n1 Simic Growth Chamber\n1 Temple of the False God\n1 Tranquil Thicket\n6 Forest\n5 Forest\n5 Island\n5 Island\n1 Commander's Insight\n1 Ezuri's Predation\n1 Kodama's Reach\n1 Nissa's Expedition\n1 Rogue's Passage",
   "oracleCards": [
@@ -1404,15 +1404,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1643,22 +1644,22 @@
   "result": {
     "profile": {
       "median": 41,
-      "floor": 30,
-      "ceiling": 52,
-      "peak": 81,
-      "dispersion": 22,
-      "variance": 22,
-      "consistency": 64,
-      "commanderDelta": 10,
+      "floor": 29,
+      "ceiling": 53,
+      "peak": 80,
+      "dispersion": 24,
+      "variance": 24,
+      "consistency": 62,
+      "commanderDelta": 11,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 33,
-      "consistency": 64,
-      "explosiveness": 15,
+      "consistency": 62,
+      "explosiveness": 14,
       "synergy": 64,
-      "interaction": 43,
+      "interaction": 44,
       "resilience": 26
     },
     "roles": {
@@ -2248,13 +2249,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2347,15 +2349,15 @@
     "simulation": {
       "iterations": 3200,
       "floor": 31,
-      "median": 38,
-      "high": 46,
-      "ceiling": 46,
+      "median": 39,
+      "high": 48,
+      "ceiling": 48,
       "peak": 70,
-      "iqr": 12,
-      "consistency": 73,
+      "iqr": 14,
+      "consistency": 70,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 71,
+      "recoveryAfterDisruption": 72,
       "turnProfile": [
         {
           "turn": 1,
@@ -2367,34 +2369,34 @@
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 3,
           "engine": 0,
-          "interaction": 7,
-          "resource": 0,
+          "interaction": 9,
+          "resource": 1,
           "burst": 7
         },
         {
           "turn": 3,
-          "commander": 28,
+          "commander": 32,
           "engine": 2,
-          "interaction": 30,
-          "resource": 19,
+          "interaction": 32,
+          "resource": 20,
           "burst": 6
         },
         {
           "turn": 4,
-          "commander": 73,
+          "commander": 74,
           "engine": 8,
-          "interaction": 48,
-          "resource": 38,
+          "interaction": 49,
+          "resource": 39,
           "burst": 4
         },
         {
           "turn": 5,
           "commander": 89,
           "engine": 14,
-          "interaction": 58,
-          "resource": 49,
+          "interaction": 59,
+          "resource": 50,
           "burst": 3
         },
         {
@@ -2409,8 +2411,8 @@
           "turn": 7,
           "commander": 95,
           "engine": 23,
-          "interaction": 68,
-          "resource": 60,
+          "interaction": 69,
+          "resource": 61,
           "burst": 1
         }
       ]
@@ -2430,6 +2432,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],

@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 45,
-    "p20": 34,
+    "p20": 35,
     "p80": 54,
     "peak": 81,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "9acd1b111381673d54add143882fb16a803270b5584c994ed5e41b94de764369",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "710cd9332383bebf07f7d0ba062d74fd083b16e720591137eaa376b10393c9ed",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Mr. Foxglove\n1 Tamiyo, Field Researcher\n1 Tenuous Truce\n1 Loran of the Third Path\n1 Steelburr Champion\n1 Tempt with Bunnies\n1 Perch Protection\n1 Sunscorch Regent\n1 Promise of Loyalty\n1 Hoofprints of the Stag\n1 Mangara, the Diplomat\n1 Realm-Cloaked Giant // Cast Off\n1 Sphinx of Enlightenment\n1 Forgotten Ancient\n1 Bloodroot Apothecary\n1 Communal Brewing\n1 Managorger Hydra\n1 Rishkar, Peema Renegade\n1 Rites of Flourishing\n1 Tempt with Discovery\n1 Kalonian Hydra\n1 Faeburrow Elder\n1 Exotic Orchard\n1 Simic Ascendancy\n1 Ghirapur Orrery\n1 Psychosis Crawler\n1 Adarkar Wastes\n1 Temple of Enlightenment\n1 Seachrome Coast\n1 Glacial Fortress\n1 Hinterland Harbor\n1 Razorverge Thicket\n1 Flooded Grove\n1 Skycloud Expanse\n1 Canopy Vista\n1 Prairie Stream\n1 Brushland\n1 Temple of Mystery\n1 Yavimaya Coast\n1 Overflowing Basin\n1 Sungrass Prairie\n1 Sunpetal Grove\n1 Triskaidekaphile\n1 Octomancer\n1 Twenty-Toed Toad\n1 Intellectual Offering\n1 Illusionist's Gambit\n1 Body of Knowledge\n1 Chasm Skulker\n1 Perplexing Test\n1 Jolrael, Mwonvuli Recluse\n1 Fisher's Talent\n1 Selvala, Explorer Returned\n1 Kwain, Itinerant Meddler\n1 Coveted Jewel\n1 Temple of Plenty\n1 Generous Gift\n1 Swords to Plowshares\n1 Secret Rendezvous\n1 Baird, Steward of Argive\n1 An Offer You Can't Refuse\n1 Wizard Class\n1 Cultivate\n1 Farseek\n1 Broken Wings\n1 Spore Frog\n1 Wear Down\n1 Peerless Recycling\n1 Coiling Oracle\n1 Riot Control\n1 Martial Impetus\n1 Jolly Gerbils\n1 Long River's Pull\n1 Thought Vessel\n1 Arcane Signet\n1 Swiftfoot Boots\n1 Fellwar Stone\n1 Sol Ring\n1 Mind Stone\n1 Thriving Heath\n1 Thriving Isle\n1 Thriving Grove\n1 Terramorphic Expanse\n1 Command Tower\n1 Evolving Wilds\n1 Reliquary Tower\n1 Seaside Citadel\n2 Plains\n2 Plains\n2 Island\n2 Island\n2 Forest\n2 Forest",
   "oracleCards": [
@@ -1346,15 +1346,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1874,22 +1875,22 @@
   "result": {
     "profile": {
       "median": 45,
-      "floor": 34,
+      "floor": 35,
       "ceiling": 54,
       "peak": 81,
       "dispersion": 20,
       "variance": 20,
-      "consistency": 67,
-      "commanderDelta": 7,
+      "consistency": 66,
+      "commanderDelta": 8,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 40,
-      "consistency": 67,
+      "consistency": 66,
       "explosiveness": 30,
       "synergy": 56,
-      "interaction": 39,
+      "interaction": 40,
       "resilience": 30
     },
     "roles": {
@@ -2375,13 +2376,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2456,52 +2458,52 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 32,
-      "median": 39,
-      "high": 46,
-      "ceiling": 46,
+      "floor": 33,
+      "median": 40,
+      "high": 47,
+      "ceiling": 47,
       "peak": 69,
       "iqr": 11,
-      "consistency": 76,
+      "consistency": 75,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 75,
+      "recoveryAfterDisruption": 76,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 5,
+          "interaction": 4,
           "resource": 4,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 1,
           "engine": 0,
-          "interaction": 11,
-          "resource": 14,
-          "burst": 7
+          "interaction": 13,
+          "resource": 15,
+          "burst": 8
         },
         {
           "turn": 3,
-          "commander": 15,
+          "commander": 18,
           "engine": 0,
-          "interaction": 27,
-          "resource": 28,
-          "burst": 14
+          "interaction": 28,
+          "resource": 30,
+          "burst": 15
         },
         {
           "turn": 4,
-          "commander": 66,
+          "commander": 67,
           "engine": 4,
           "interaction": 44,
-          "resource": 52,
-          "burst": 27
+          "resource": 53,
+          "burst": 28
         },
         {
           "turn": 5,
-          "commander": 84,
+          "commander": 85,
           "engine": 9,
           "interaction": 52,
           "resource": 64,
@@ -2512,7 +2514,7 @@
           "commander": 90,
           "engine": 12,
           "interaction": 58,
-          "resource": 71,
+          "resource": 72,
           "burst": 39
         },
         {
@@ -2563,6 +2565,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],

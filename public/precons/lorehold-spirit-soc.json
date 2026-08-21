@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 52,
-    "p20": 43,
+    "p20": 41,
     "p80": 64,
-    "peak": 90,
+    "peak": 89,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "850e47327b5bca559aa62a649e14412ca91a38ec39bcf2f190a1527bb89b3b42",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "2caf6f65ea2b07d8faf5c708957f5b226ed21dfdbc2a7c255c4bd036e31800eb",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Excava, the Risen Past\n1 Lorehold Archivist // Restore Relic\n1 Augusta, Order Returned\n1 Ceaseless Conflict\n1 Vanguard of the Restless\n1 Advanced Reconstruction\n1 Fateful Tempest\n1 Naktamun Lorespinner // Wheel of Fortune\n1 Relic Retriever\n1 Spirit of Resilience\n1 Turbulent Steppe\n1 Moonshaker Cavalry\n1 Staff of the Storyteller\n1 Wave of Reckoning\n1 Fabled Passage\n1 Angel of Indemnity\n1 Ao, the Dawn Sky\n1 Archaeomancer's Map\n1 Claim Jumper\n1 Drumbellower\n1 Guardian of Faith\n1 Guardian Scalelord\n1 Karmic Guide\n1 Monologue Tax\n1 Remorseful Cleric\n1 Selfless Spirit\n1 Serra Paragon\n1 Sevinne's Reclamation\n1 Skyclave Apparition\n1 Sun Titan\n1 Tocasia's Welcome\n1 Tragic Arrogance\n1 White Orchid Phantom\n1 Atsushi, the Blazing Sky\n1 Conspiracy Theorist\n1 Laelia, the Blade Reforged\n1 Balefire Liege\n1 Hofri Ghostforge\n1 Quintorius, Loremaster\n1 Venerable Warsinger\n1 Bitterthorn, Nissa's Animus\n1 Currency Converter\n1 Battlefield Forge\n1 Clifftop Retreat\n1 Emeria, the Sky Ruin\n1 Exotic Orchard\n1 Furycalm Snarl\n1 Glittering Massif\n1 Lotus Field\n1 Radiant Summit\n1 Rugged Prairie\n1 Sunscorched Divide\n1 Temple of Triumph\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Primary Research\n1 Seize the Spoils\n1 Kirol, History Buff // Pack a Punch\n1 Lorehold Charm\n1 Fields of Strife\n1 Terramorphic Expanse\n1 Kami of Ancient Law\n1 Path to Exile\n1 Secret Rendezvous\n1 Swords to Plowshares\n1 Teshar, Ancestor's Apostle\n1 Anger\n1 Faithless Looting\n1 Squee, Goblin Nabob\n1 Quintorius, Field Historian\n1 Rip Apart\n1 Containment Construct\n1 Fellwar Stone\n1 Millikin\n1 Mind Stone\n1 Patchwork Banner\n1 Perpetual Timepiece\n1 Lorehold Campus\n1 Mistveil Plains\n1 Sacred Peaks\n1 Study Hall\n6 Plains\n5 Plains\n3 Mountain\n3 Mountain",
   "oracleCards": [
@@ -1383,15 +1383,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1730,22 +1731,22 @@
   "result": {
     "profile": {
       "median": 52,
-      "floor": 43,
+      "floor": 41,
       "ceiling": 64,
-      "peak": 90,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 64,
+      "peak": 89,
+      "dispersion": 23,
+      "variance": 23,
+      "consistency": 62,
       "commanderDelta": 11,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 43,
-      "consistency": 64,
+      "consistency": 62,
       "explosiveness": 15,
       "synergy": 79,
-      "interaction": 52,
+      "interaction": 53,
       "resilience": 75
     },
     "roles": {
@@ -2306,13 +2307,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           }
         ],
@@ -2392,12 +2394,12 @@
     "simulation": {
       "iterations": 3200,
       "floor": 37,
-      "median": 44,
-      "high": 53,
-      "ceiling": 53,
+      "median": 45,
+      "high": 54,
+      "ceiling": 54,
       "peak": 80,
-      "iqr": 12,
-      "consistency": 73,
+      "iqr": 14,
+      "consistency": 70,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
       "recoveryAfterDisruption": 88,
@@ -2412,47 +2414,47 @@
         },
         {
           "turn": 2,
-          "commander": 0,
-          "engine": 3,
-          "interaction": 23,
-          "resource": 20,
+          "commander": 3,
+          "engine": 4,
+          "interaction": 25,
+          "resource": 23,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 17,
-          "engine": 12,
-          "interaction": 42,
-          "resource": 48,
+          "commander": 22,
+          "engine": 13,
+          "interaction": 44,
+          "resource": 51,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 75,
-          "engine": 28,
+          "commander": 76,
+          "engine": 29,
           "interaction": 56,
-          "resource": 73,
+          "resource": 74,
           "burst": 3
         },
         {
           "turn": 5,
-          "commander": 90,
-          "engine": 39,
+          "commander": 91,
+          "engine": 40,
           "interaction": 63,
-          "resource": 83,
+          "resource": 84,
           "burst": 6
         },
         {
           "turn": 6,
           "commander": 94,
           "engine": 46,
-          "interaction": 67,
-          "resource": 87,
+          "interaction": 68,
+          "resource": 88,
           "burst": 8
         },
         {
           "turn": 7,
-          "commander": 96,
+          "commander": 97,
           "engine": 52,
           "interaction": 71,
           "resource": 91,
@@ -2478,6 +2480,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],

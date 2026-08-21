@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 47,
-    "p20": 33,
-    "p80": 57,
+    "p20": 34,
+    "p80": 59,
     "peak": 89,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "97ace6d67d7b548836cbd2105c1980f1470f78131718fd4d9a9e7f7c4ea53117",
+    "semanticVersion": "3.2.0-semantic-7",
+    "oracleSnapshotHash": "e38149e1298052b6b62a58088ef09044255c30dc25e9efaabaf915438e6a2a47",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-21T15:55:41.831Z"
   },
   "decklist": "1 Muddle, the Ever-Changing\n1 Inspired Skypainter // Maestro's Gift\n1 Abstract Performance\n1 Dirgur Focusmage // Braingeyser\n1 Leitmotif Composer\n1 Furygale Flocking\n1 Prismari Pianist\n1 Renegade Bull\n1 Coastal Peak\n1 Scorched Geyser\n1 Turbulent Springs\n1 Faerie Mastermind\n1 Chain Reaction\n1 Determined Iteration\n1 Harmonic Prodigy\n1 Fabled Passage\n1 Archmage Emeritus\n1 Brazen Borrower // Petty Theft\n1 Curiosity Crafter\n1 Dig Through Time\n1 Replication Technique\n1 Rite of Replication\n1 Thunderclap Drake\n1 Blasphemous Act\n1 Chaos Warp\n1 Creative Technique\n1 Cursed Mirror\n1 Dance with Calamity\n1 Goldspan Dragon\n1 Manaform Hellkite\n1 Mirrorwing Dragon\n1 Plargg and Nassari\n1 Redoubled Stormsinger\n1 Rionya, Fire Dancer\n1 Rousing Refrain\n1 Surge to Victory\n1 Twinflame\n1 Volcanic Salvo\n1 Brudiclad, Telchor Engineer\n1 Galazeth Prismari\n1 Magma Opus\n1 Prismari Command\n1 Veyran, Voice of Duality\n1 Solemn Simulacrum\n1 Cascade Bluffs\n1 Exotic Orchard\n1 Ferrous Lake\n1 Frostboil Snarl\n1 Hall of Oracles\n1 Restless Spire\n1 Shivan Reef\n1 Sulfur Falls\n1 Temple of Epiphany\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Prismari Charm\n1 Spectacle Summit\n1 Terramorphic Expanse\n1 Aether Gale\n1 Arcane Denial\n1 Deep Analysis\n1 Reality Shift\n1 Resculpt\n1 Treasure Cruise\n1 Abrade\n1 Big Score\n1 Mana Geyser\n1 Storm-Kiln Artist\n1 Throes of Chaos\n1 Volcanic Torrent\n1 Expressive Iteration\n1 Rootha, Mercurial Artist\n1 Stormcatch Mentor\n1 Fellwar Stone\n1 Lightning Greaves\n1 Talisman of Creativity\n1 Molten Tributary\n1 Mystic Sanctuary\n1 Path of Ancestry\n1 Prismari Campus\n1 Reliquary Tower\n1 Study Hall\n1 Temple of the False God\n4 Island\n4 Island\n4 Mountain\n3 Mountain",
   "oracleCards": [
@@ -1391,15 +1391,16 @@
       "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
       "cmc": 0,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1793,23 +1794,23 @@
   "result": {
     "profile": {
       "median": 47,
-      "floor": 33,
-      "ceiling": 57,
+      "floor": 34,
+      "ceiling": 59,
       "peak": 89,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 62,
-      "commanderDelta": 9,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 61,
+      "commanderDelta": 10,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 31,
-      "consistency": 62,
+      "speed": 32,
+      "consistency": 61,
       "explosiveness": 19,
-      "synergy": 80,
+      "synergy": 81,
       "interaction": 44,
-      "resilience": 27
+      "resilience": 28
     },
     "roles": {
       "lands": 38,
@@ -3230,14 +3231,15 @@
       {
         "id": "artifacts",
         "name": "Artefacts",
-        "strength": 67,
-        "cohesion": 67,
+        "strength": 70,
+        "cohesion": 70,
         "producers": [
           "Arcane Signet",
           "Brudiclad, Telchor Engineer",
           "Cursed Mirror",
           "Fellwar Stone",
           "Lightning Greaves",
+          "Sol Ring",
           "Solemn Simulacrum",
           "Talisman of Creativity"
         ],
@@ -3251,6 +3253,7 @@
           "Cursed Mirror",
           "Fellwar Stone",
           "Lightning Greaves",
+          "Sol Ring",
           "Solemn Simulacrum",
           "Talisman of Creativity",
           "Galazeth Prismari",
@@ -3336,6 +3339,20 @@
             }
           },
           {
+            "name": "Sol Ring",
+            "cmc": 0,
+            "tags": [
+              "artifact",
+              "mana",
+              "fast-mana"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
             "name": "Solemn Simulacrum",
             "cmc": 4,
             "tags": [
@@ -3417,7 +3434,7 @@
         "payoffTags": [
           "artifact-payoff"
         ],
-        "evidence": "7 producteur(s), 2 payoff(s), 9 carte(s) distincte(s)."
+        "evidence": "8 producteur(s), 2 payoff(s), 10 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -3491,13 +3508,14 @@
             "name": "Sol Ring",
             "cmc": 0,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -3574,16 +3592,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 36,
-      "median": 45,
-      "high": 53,
-      "ceiling": 53,
+      "floor": 37,
+      "median": 46,
+      "high": 55,
+      "ceiling": 55,
       "peak": 84,
-      "iqr": 13,
-      "consistency": 71,
+      "iqr": 14,
+      "consistency": 69,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 85,
+      "recoveryAfterDisruption": 86,
       "turnProfile": [
         {
           "turn": 1,
@@ -3595,32 +3613,32 @@
         },
         {
           "turn": 2,
-          "commander": 0,
-          "engine": 0,
-          "interaction": 15,
-          "resource": 11,
+          "commander": 3,
+          "engine": 1,
+          "interaction": 17,
+          "resource": 14,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 15,
-          "engine": 7,
-          "interaction": 37,
-          "resource": 36,
-          "burst": 1
+          "commander": 19,
+          "engine": 11,
+          "interaction": 38,
+          "resource": 39,
+          "burst": 2
         },
         {
           "turn": 4,
-          "commander": 69,
-          "engine": 37,
+          "commander": 70,
+          "engine": 40,
           "interaction": 47,
-          "resource": 62,
-          "burst": 7
+          "resource": 63,
+          "burst": 8
         },
         {
           "turn": 5,
           "commander": 87,
-          "engine": 65,
+          "engine": 66,
           "interaction": 51,
           "resource": 72,
           "burst": 21
@@ -3628,7 +3646,7 @@
         {
           "turn": 6,
           "commander": 92,
-          "engine": 76,
+          "engine": 77,
           "interaction": 54,
           "resource": 77,
           "burst": 30
@@ -3664,6 +3682,16 @@
           "exile-cast",
           "cheat",
           "free"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Sol Ring",
+        "impact": 4.4,
+        "tags": [
+          "artifact",
+          "mana",
+          "fast-mana"
         ],
         "aeon": null
       },
@@ -3765,17 +3793,6 @@
           "draw",
           "tokens",
           "spellslinger"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Arcane Denial",
-        "impact": 3.9,
-        "tags": [
-          "instant",
-          "draw",
-          "counterspell",
-          "counter-kind:generic"
         ],
         "aeon": null
       }
