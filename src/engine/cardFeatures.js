@@ -60,7 +60,7 @@ function counterRoles(o){
   const s=o.toLowerCase(),putCounter=/put (?:a |one |two |three |x |up to [a-z]+ )?(?:\+1\/\+1 |[-+]?\d+\/[-+]?\d+ )?counters? on/,
     producer=clauses(s).some(c=>{const actionable=c.replace(/\b(?:if|whenever) you put [^,]*counters? on[^,]*(?:,\s*|$)/,'');return putCounter.test(actionable)||/enters(?: the battlefield)? with [^.]*counters? on/.test(actionable)||/\bproliferate\b/.test(actionable)}),
     removeOwn=/remove (?:a|one|two|three|x|any number of) counters? from [^.]{0,100}(?:you control|this)/.test(s),
-    payoff=/for each [^.]*counter|with (?:a|one or more|\w+) counters? on|has (?:a|one or more|\w+) counters? on|whenever one or more counters? (?:are|is) put/.test(s)||removeOwn,
+    payoff=/for each [^.]*counter|with (?:a|one or more|\w+) counters? on|has (?:a|one or more|\w+) counters? on|whenever one or more counters? (?:are|is) put|\b(?:if|whenever) you put [^.]*counters? on/.test(s)||removeOwn,
     doubler=/twice that many(?: of those)? counters|double the number of [^.]*counters|additional [^.]*counter would be put|that many plus one [^.]*counters/.test(s)
   return {producer,payoff,doubler,kinds:counterKinds(s)}
 }
