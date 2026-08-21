@@ -15,7 +15,7 @@ function aeonSignal(cards,map){if(!map?.size)return {available:false,score:null,
 function weightedPackageCohesion(packages){const weights=[1,.65,.4],top=packages.slice(0,3);if(!top.length)return 0;return top.reduce((s,p,i)=>s+(p.cohesion??p.strength??0)*weights[i],0)/weights.slice(0,top.length).reduce((a,b)=>a+b,0)}
 function analysisCoverage(cards,packages,combos){const nonlands=cards.filter(c=>!c.isLand),lands=cards.filter(c=>c.isLand),texted=nonlands.filter(c=>c.oracle?.trim()).length/Math.max(1,nonlands.length),featureHit=nonlands.filter(c=>c.tags.length>1).length/Math.max(1,nonlands.length),manaKnown=lands.filter(c=>(c.sourceColors||[]).length||/(plains|island|swamp|mountain|forest|any color|search your library for .*land)/i.test(`${c.type||''} ${c.oracle||''}`)).length/Math.max(1,lands.length);let score=45+texted*20+featureHit*15+manaKnown*12;if(packages.length)score+=3;if(combos.length)score+=1;return Math.round(clamp(score,30,96))}
 
-export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=3000){
+export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=3000,options={}){
   let commander=rawCommander?cardFeatures(rawCommander):null
   let cards=featureDeck(rawCards).sort(canonicalCardOrder)
   if(commander){const ix=cards.findIndex(c=>c.name.toLowerCase()===commander.name.toLowerCase());if(ix>=0)cards=cards.filter((_,i)=>i!==ix)}
@@ -37,7 +37,7 @@ export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=
   const coverage=analysisCoverage(cards,packages,combos)
   const result={profile:{median:Math.round(median),floor:Math.round(floor),ceiling:Math.round(ceiling),peak:Math.round(peak),dispersion:Math.round(dispersion),variance:Math.round(dispersion),consistency:Math.round(consistency),commanderDelta,coverage,dataCoverage:coverage},dimensions,roles,packages,combos,commanderSynergy:cmdSyn,aeon,simulation:sim,drivers,warnings,methodology:{iterations,model:'sequence-access-v3.2-semantic',maxTurn:7,curveMeaning:'Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.'}}
   const detail={result,cards,commander,iterations}
-  if(typeof window!=='undefined'&&typeof window.dispatchEvent==='function'&&typeof CustomEvent!=='undefined')queueMicrotask(()=>{try{window.dispatchEvent(new CustomEvent('aeon-analysis-computed',{detail}))}catch{}})
-  const hook=globalThis?.__AEON_ANALYSIS_HOOK__;if(typeof hook==='function')queueMicrotask(()=>{try{hook(detail)}catch{}})
+  if(options?.emitProduct!==false&&typeof window!=='undefined'&&typeof window.dispatchEvent==='function'&&typeof CustomEvent!=='undefined')queueMicrotask(()=>{try{window.dispatchEvent(new CustomEvent('aeon-analysis-computed',{detail}))}catch{}})
+  const hook=globalThis?.__AEON_ANALYSIS_HOOK__;if(options?.record!==false&&typeof hook==='function')queueMicrotask(()=>{try{hook(detail)}catch{}})
   return result
 }
