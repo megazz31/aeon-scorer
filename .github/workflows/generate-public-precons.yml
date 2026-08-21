@@ -4,6 +4,7 @@ on:
     branches: [public-precon-library]
     paths:
       - 'scripts/generate-public-precons.mjs'
+      - 'scripts/update-public-precon-doc.mjs'
       - 'scripts/public-precon-contract-test.mjs'
       - 'src/engine/**'
       - 'src/version.js'
@@ -42,9 +43,10 @@ jobs:
             git reset --hard origin/public-precon-library
 
             npm run precons:generate
+            node scripts/update-public-precon-doc.mjs
             npm run test:public-precons
 
-            git add public/precons
+            git add public/precons docs/PUBLIC_PRECONS.md
             if git diff --cached --quiet; then
               echo "Public precon snapshot already current for $(git rev-parse HEAD)."
               exit 0
