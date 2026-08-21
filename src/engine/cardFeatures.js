@@ -29,6 +29,17 @@ function isDrawSource(o){
 }
 function isSacOutlet(card,o){const s=withoutReminderText(o).toLowerCase(),name=escapedName(card);if(name&&new RegExp(`sacrifice ${name}`).test(s))return false;return /sacrifice (?:another |a |an |one or more )?(?:creature|artifact|permanent|token)[^:]{0,80}:/.test(s)}
 function isSacEnabler(card,o){const s=withoutReminderText(o).toLowerCase(),name=escapedName(card);if(name&&new RegExp(`sacrifice ${name}`).test(s))return false;return /as an additional cost to cast [^.]*sacrifice (?:another |a |an )?(?:creature|artifact|permanent|token)/.test(s)||/when you cast [^.]*you may sacrifice (?:another |a |an )?(?:creature|artifact|permanent|token)/.test(s)}
+function deathPayoff(o){
+  const s=withoutReminderText(o).toLowerCase()
+  return clauses(s).some(c=>{
+    if(/\bwhenever you sacrifice\b/.test(c))return true
+    if(!/\b(?:dies|die)\b/.test(c))return false
+    const opponentOnly=/(?:creature|permanent|artifact|planeswalker) an opponent controls dies|blocking creature an opponent controls dies|creatures? your opponents control die/.test(c)
+    const ownOrAny=/this (?:creature|permanent|artifact|enchantment) dies|another [^.]* you control dies|[a-z]+ you control dies|attacking creature you control [^.]* dies|another creature dies|a creature dies|one or more creatures die|nontoken creature dies|whenever [^.]* dies/.test(c)
+    if(opponentOnly&&!/you control [^.]* dies|attacking creature you control/.test(c))return false
+    return ownOrAny||/when [^.]* dies/.test(c)
+  })
+}
 function counterKinds(o){
   const s=o.toLowerCase(),out=[],add=k=>{if(!out.includes(k))out.push(k)}
   for(const [kind,re] of [
@@ -47,7 +58,7 @@ function counterRoles(o){
     doubler=/twice that many(?: of those)? counters|double the number of [^.]*counters|additional [^.]*counter would be put|that many plus one [^.]*counters/.test(s)
   return {producer,payoff,doubler,kinds:counterKinds(s)}
 }
-function tokenRoles(o){const s=o.toLowerCase(),producer=/create [^.]*\btokens?\b/.test(s),payoff=/\btokens?\b you control|creature \btokens?\b [^.]* (?:get|have)|whenever [^.]*\btokens?\b[^.]*enters|whenever one or more \btokens?\b|whenever you create [^.]*\btokens?\b|sacrifice (?:a|one or more) \btokens?\b/.test(s),doubler=/if [^.]*would create [^.]*\btokens?\b[^.]*twice|twice that many [^.]*\btokens?\b|create twice that many [^.]*\btokens?\b/.test(s);return {producer,payoff,doubler}}
+function tokenRoles(o){const s=o.toLowerCase(),producer=/create [^.]*\btokens?\b/.test(s),payoff=/\btokens?\b you control|creature \btokens?\b (?:you control )?(?:get|have)|whenever [^.]*\btokens?\b[^.]*enters|whenever one or more \btokens?\b|whenever you create [^.]*\btokens?\b|sacrifice (?:a|one or more) \btokens?\b/.test(s),doubler=/if [^.]*would create [^.]*\btokens?\b[^.]*twice|twice that many [^.]*\btokens?\b|create twice that many [^.]*\btokens?\b/.test(s);return {producer,payoff,doubler}}
 const triggerDoubler=o=>/triggers? an additional time|trigger an additional time|causes? [^.]* ability to trigger an additional time/i.test(o)
 function artifactPayoff(o){const s=withoutReminderText(o).toLowerCase();return clauses(s).some(c=>{if(/opponent/.test(c)&&/artifact/.test(c)&&!/artifacts? you control/.test(c))return false;return /artifacts? you control/.test(c)||/whenever (?:an|another|one or more) artifacts? [^.]*enters[^.]*under your control/.test(c)||/whenever you cast (?:an? )?artifact/.test(c)||/artifact spells? you cast/.test(c)||/for each artifact you control/.test(c)||/whenever you sacrifice (?:an|another|one or more) artifacts?/.test(c)||/whenever (?:an|another) artifact you control [^.]*graveyard/.test(c)})}
 const constellation=o=>/\bconstellation\b|whenever an enchantment [^.]* enters|whenever another enchantment [^.]* enters/i.test(o)
@@ -72,7 +83,7 @@ export function tagsFor(card){
   if(/destroy all|exile all|each player sacrifices|all creatures get -|return all [^.]* to their owners/i.test(semantic))add('wipe')
   if(protection(semantic))add('protection');if(isRecursion(semantic))add('recursion');if(isGraveSetup(semantic))add('graveyard-setup')
   if(tokens.producer)add('tokens');if(tokens.payoff)add('token-payoff');if(tokens.doubler){add('token-doubler');add('token-payoff')}
-  if(/\bsacrifice\b/i.test(semantic))add('sacrifice');if(isSacOutlet(card,semantic))add('sac-outlet');if(isSacEnabler(card,semantic))add('sac-enabler');if(/whenever [^.]* dies|whenever you sacrifice|when [^.]* dies/i.test(semantic))add('death-payoff')
+  if(/\bsacrifice\b/i.test(semantic))add('sacrifice');if(isSacOutlet(card,semantic))add('sac-outlet');if(isSacEnabler(card,semantic))add('sac-enabler');if(deathPayoff(semantic))add('death-payoff')
   if(/enters(?: the battlefield)?|whenever [^.]* enters/i.test(semantic))add('etb');if(isBlinkText(semantic))add('blink');if(constellation(semantic))add('constellation');if(artifactPayoff(semantic))add('artifact-payoff');if(landfallPayoff(semantic))add('landfall')
   if(counters.producer)add('counter-producer');if(counters.payoff)add('counter-payoff');if(counters.doubler){add('counter-doubler');add('counter-payoff')}for(const kind of counters.kinds)add(`counter-kind:${kind}`)
   if(lifeGainSource(semantic))add('lifegain');if(lifePayoff(semantic))add('life-payoff')
