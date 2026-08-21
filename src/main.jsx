@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import CloudWorkspace from './CloudWorkspace.jsx'
+import ProductWorkspace from './ProductWorkspace.jsx'
 import PublicDecksPage from './PublicDecksPage.jsx'
 import { PodMatchPage,SharedAnalysisPage } from './ProductPages.jsx'
 import './styles.css'
@@ -18,6 +19,6 @@ let page
 if(publicDeckRoute)page=<PublicDecksPage/>
 else if(shareRoute)page=<SharedAnalysisPage/>
 else if(podRoute)page=<PodMatchPage/>
-else page=<><CloudWorkspace><App /></CloudWorkspace><a className="publicLibraryShortcut" href="/decklists-publiques"><span>{publicLabel}</span></a></>
+else page=<><ProductWorkspace><CloudWorkspace><App /></CloudWorkspace></ProductWorkspace><a className="publicLibraryShortcut" href="/decklists-publiques"><span>{publicLabel}</span></a></>
 
 ReactDOM.createRoot(document.getElementById('root')).render(<React.StrictMode>{page}</React.StrictMode>)
