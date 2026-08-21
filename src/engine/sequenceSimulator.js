@@ -35,7 +35,7 @@ function filterLandInfo(c){
 function isConditionalLand(c){const n=(c.name||'').toLowerCase();return n==='temple of the false god'||/^tainted (?:field|wood|isle|peak)$/.test(n)||n==='spire of industry'||n==='nimbus maze'}
 export function landManaSources(c,battlefield=[]){
   if(!/\bland\b/i.test(c.type||''))return []
-  const n=(c.name||'').toLowerCase(),o=(c.oracle||'').toLowerCase(),types=landTypes(battlefield),conditional={landSource:true,conditionalLand:isConditionalLand(c)}
+  const n=(c.name||'').toLowerCase(),types=landTypes(battlefield),conditional={landSource:true,conditionalLand:isConditionalLand(c)}
   const fetch=fetchLandInfo(c);if(fetch)return [source(fetch.colors,c.name,{landSource:true})]
   if(n==='temple of the false god'){const landCount=battlefield.filter(x=>x.isLand||/\bland\b/i.test(x.type||'')).length;return landCount>=5?[source(['C'],c.name,conditional),source(['C'],c.name,conditional)]:[]}
   if(/^tainted (?:field|wood|isle|peak)$/.test(n)){const colors=types.has('swamp')?(c.sourceColors?.length?c.sourceColors:directLandColors(c)):['C'];return [source(colors.length?colors:['C'],c.name,conditional)]}
@@ -43,7 +43,7 @@ export function landManaSources(c,battlefield=[]){
   if(n==='nimbus maze'){const colors=['C'];if(types.has('island'))colors.push('W');if(types.has('plains'))colors.push('U');return [source(colors,c.name,conditional)]}
   const filter=filterLandInfo(c)
   if(filter){const fallback=directLandColors(c);return [source(fallback,c.name,{landSource:true,filter})]}
-  const direct=directLandColors(c);if(direct.length)return [source(direct,c.name,{landSource:true})]
+  const direct=directLandColors(c);if(direct.length)return Array.from({length:productionCount(c)},()=>source(direct,c.name,{landSource:true}))
   if(c.sourceColors?.length)return [source(c.sourceColors,c.name,{landSource:true})]
   return [source(['C'],c.name,{landSource:true})]
 }
