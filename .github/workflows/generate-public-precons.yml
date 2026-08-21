@@ -8,6 +8,14 @@ on:
       - 'src/engine/**'
       - 'src/version.js'
       - '.github/workflows/generate-public-precons.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/generate-public-precons.mjs'
+      - 'scripts/public-precon-contract-test.mjs'
+      - 'src/engine/**'
+      - 'src/version.js'
+      - '.github/workflows/generate-public-precons.yml'
   workflow_dispatch:
 permissions:
   contents: write
