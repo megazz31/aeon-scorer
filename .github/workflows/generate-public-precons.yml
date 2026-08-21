@@ -41,6 +41,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Public precon snapshot already current."
           else
-            git commit -m "Generate Aeon v3.2 public precon snapshot [skip ci]"
+            git commit -m "Generate Aeon v3.2 public precon snapshot"
             git push origin HEAD:public-precon-library
           fi
