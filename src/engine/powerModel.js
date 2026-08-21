@@ -6,6 +6,7 @@ import { aeonPriorFor } from '../data/aeonshift.js'
 
 const clamp=(n,a=0,b=100)=>Math.max(a,Math.min(b,n))
 const avg=xs=>xs.length?xs.reduce((s,x)=>s+x,0)/xs.length:0
+const canonicalCardOrder=(a,b)=>{const x=String(a?.name||'').toLowerCase(),y=String(b?.name||'').toLowerCase();return x<y?-1:x>y?1:0}
 function hashSeed(cards,commander,salt=''){const key=[commander?.name||'',...cards.map(c=>c.name)].sort().join('|')+'|'+salt;let h=2166136261;for(let i=0;i<key.length;i++){h^=key.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 function seeded(seed){let a=seed>>>0;return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 function calibratePower(x){if(x<=30)return clamp(x*.80);if(x<=45)return clamp(24+(x-30)*1.50);if(x<=70)return clamp(46.5+(x-45)*1.28);if(x<=90)return clamp(78.5+(x-70)*.75);return clamp(93.5+(x-90)*.65)}
@@ -16,7 +17,7 @@ function analysisCoverage(cards,packages,combos){const nonlands=cards.filter(c=>
 
 export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=3000){
   let commander=rawCommander?cardFeatures(rawCommander):null
-  let cards=featureDeck(rawCards)
+  let cards=featureDeck(rawCards).sort(canonicalCardOrder)
   if(commander){const ix=cards.findIndex(c=>c.name.toLowerCase()===commander.name.toLowerCase());if(ix>=0)cards=cards.filter((_,i)=>i!==ix)}
   const packages=detectPackages(cards,commander),combos=detectKnownCombos(cards.concat(commander?[commander]:[])),cmdSyn=commanderSynergy(cards,commander),roles=roleStats(cards)
   const sim=simulateSequences(cards,commander,packages,combos,iterations,7,seeded(hashSeed(cards,commander,'with-command-v31')))
