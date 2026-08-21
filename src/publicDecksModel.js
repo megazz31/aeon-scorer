@@ -62,7 +62,8 @@ export function filterPublicDecks(decks,filters={},versions={}){
   })
 }
 
-const cmp=(a,b)=>a===b?0:a===null||a===undefined?1:b===null||b===undefined?-1:a<b?-1:1
+const nullish=v=>v===null||v===undefined||Number.isNaN(v)
+const cmp=(a,b)=>a===b?0:a<b?-1:1
 export function sortPublicDecks(decks,sort='release',direction='desc'){
   const dir=direction==='asc'?1:-1
   const value=(d)=>{
@@ -73,8 +74,10 @@ export function sortPublicDecks(decks,sort='release',direction='desc'){
     return d.releaseDate||null
   }
   return [...(decks||[])].sort((a,b)=>{
-    const av=value(a),bv=value(b),primary=cmp(av,bv)*dir
-    return primary||String(a.name||'').localeCompare(String(b.name||''))
+    const av=value(a),bv=value(b),an=nullish(av),bn=nullish(bv)
+    if(an||bn){if(an!==bn)return an?1:-1}
+    else{const primary=cmp(av,bv)*dir;if(primary)return primary}
+    return String(a.name||'').localeCompare(String(b.name||''))
   })
 }
 
