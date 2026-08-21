@@ -3,13 +3,14 @@ const type=c=>String(c?.type||c?.type_line||'').toLowerCase()
 const frontName=c=>String(c?.name||'').split(' // ')[0].trim()
 const norm=s=>String(s||'').trim().toLowerCase().replace(/[’]/g,"'")
 const uniq=xs=>[...new Set(xs)]
+const subtypeText=c=>{const t=type(c),m=t.match(/[—-]\s*(.+)$/);return String(m?.[1]||'').trim().replace(/\s+/g,' ')}
 
 export function combinedColorIdentity(commanders=[]){return uniq(commanders.flatMap(c=>c?.colorIdentity||c?.color_identity||[])).sort()}
 export function isBackground(c){return /\blegendary\b/.test(type(c))&&/\benchantment\b/.test(type(c))&&/\bbackground\b/.test(type(c))}
 export function choosesBackground(c){return /\bchoose a background\b/.test(text(c))}
 export function hasFriendsForever(c){return /\bfriends forever\b/.test(text(c))}
 export function hasDoctorsCompanion(c){return /\bdoctor'?s companion\b/.test(text(c))}
-export function isDoctor(c){const t=type(c);if(!/\blegendary\b/.test(t)||!/\bcreature\b/.test(t))return false;const sub=(t.split('—')[1]||t.split('-')[1]||'').trim().split(/\s+/).filter(Boolean);return sub.length===2&&sub.includes('time')&&sub.includes('lord')&&/\bdoctor\b/.test(t)}
+export function isDoctor(c){const t=type(c);return /\blegendary\b/.test(t)&&/\bcreature\b/.test(t)&&subtypeText(c)==='time lord doctor'}
 export function hasOpenPartner(c){const o=text(c);return /(?:^|[.;])\s*partner\s*(?:$|[.;])/.test(o)||/\bpartner\s*\([^)]*you can have two commanders/.test(String(c?.oracle||'').toLowerCase())}
 export function partnerWithTarget(c){const m=String(c?.oracle||'').match(/\bpartner with ([^(\n.]+)/i);return m?.[1]?.trim()||null}
 
