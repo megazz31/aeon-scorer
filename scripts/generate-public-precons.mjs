@@ -143,8 +143,8 @@ async function main(){
     if(supported){
       const cards=d.mainNames.map(n=>({...cardsByName.get(n.toLowerCase())}))
       result=analyzePower(cards,{...commander},new Map(),ITERATIONS)
-      const all=[...cards,commander],snapshot=oracleSnapshotHash(all)
-      oracleCards=compactOracleEvidence(all,d.commanderName)
+      const all=[commander,...cards],snapshot=oracleSnapshotHash(all)
+      oracleCards=compactOracleEvidence(all,commander.name)
       analysis={...metricSummary(result),engineVersion:ENGINE_VERSION,semanticVersion:SEMANTIC_VERSION,oracleSnapshotHash:snapshot,scryfallOracleDate:oracleDate,iterations:ITERATIONS,analyzedAt:generatedAt}
       analyzed++
     }else{unsupported++;if(!d.unsupportedReason)incomplete++}
