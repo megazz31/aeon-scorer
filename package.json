@@ -10,11 +10,14 @@
     "smoke": "node scripts/smoke.mjs",
     "test:semantic": "node scripts/semantic-tests.mjs && node scripts/tutor-semantic-test.mjs && node scripts/etb-semantic-test.mjs && node scripts/clavileno-semantic-test.mjs",
     "test:metamorphic": "node scripts/metamorphic-tests.mjs && node scripts/ramp-chain-test.mjs",
+    "test:public-precons": "node scripts/public-precon-contract-test.mjs",
+    "precons:generate": "node scripts/generate-public-precons.mjs",
+    "precons:sync": "node scripts/sync-public-precons.mjs",
     "audit": "node scripts/adversarial-audit.mjs",
     "benchmark": "node scripts/benchmark.mjs",
     "validate:calibration": "node scripts/validate-report.mjs",
     "verify:sampling": "node scripts/compare-sampling.mjs",
-    "quality:local": "npm run smoke && npm run test:semantic && npm run test:metamorphic && npm run audit && npm run build"
+    "quality:local": "npm run smoke && npm run test:semantic && npm run test:metamorphic && npm run test:public-precons && npm run audit && npm run build"
   },
   "dependencies": {
     "react": "^18.2.0",
