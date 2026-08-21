@@ -20,7 +20,15 @@ function roleCards(pool,tags){return uniqByName(pool.filter(c=>tags.some(t=>hasT
 function overlapCount(a,b){const s=new Set(a.map(x=>x.name.toLowerCase()));return b.filter(x=>s.has(x.name.toLowerCase())).length}
 const isManaPermanent=c=>!/\binstant\b|\bsorcery\b/i.test(c.type||'')&&(c.sourceColors?.length||0)>0
 const isOneShotSpell=c=>/\binstant\b|\bsorcery\b/i.test(c.type||'')
-function trueEtbPayoff(c){if(c.isLand||/\bland\b/i.test(c.type||''))return false;const o=String(c.oracle||'').replace(/\([^)]*\)/g,' ').toLowerCase();return /\bwhen(?:ever)?\b[^.\n;]{0,180}\benters(?: the battlefield)?\b/.test(o)}
+function semanticText(c){return String(c?.oracle||'').replace(/\([^)]*\)/g,' ').replace(/\s+/g,' ').trim().toLowerCase()}
+function escaped(s){return String(s||'').toLowerCase().replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+function selfEtbTrigger(c){
+  const o=semanticText(c),front=String(c?.name||'').split(' // ')[0].trim(),name=escaped(front)
+  if(!o)return false
+  if(/\bwhen(?:ever)?\s+this\s+(?:creature|permanent|artifact|enchantment)\s+enters\b/.test(o))return true
+  return !!name&&new RegExp(`\\bwhen(?:ever)?\\s+${name}\\s+enters\\b`).test(o)
+}
+function trueEtbPayoff(c){if(c.isLand||/\bland\b/i.test(c.type||''))return false;const o=semanticText(c);return /\bwhen(?:ever)?\b[^.\n;]{0,180}\benters(?: the battlefield)?\b/.test(o)}
 export function detectPackages(cards,commander=null){
   const out=[],nonlands=cards.filter(c=>!c.isLand),functionalPool=cards
   for(const m of MOTIFS){
@@ -44,12 +52,15 @@ export function detectPackages(cards,commander=null){
   }
   return out.sort((a,b)=>b.cohesion-a.cohesion)
 }
-const COMMANDER_ENGINE_TAGS=new Set(['blink','etb','tokens','token-payoff','sac-outlet','sac-enabler','death-payoff','recursion','graveyard-setup','constellation','counter-producer','counter-payoff','artifact-payoff','exile-cast','exile-payoff','landfall','spellslinger','lifegain','life-payoff'])
+const COMMANDER_ENGINE_TAGS=new Set(['blink','tokens','token-payoff','sac-outlet','sac-enabler','death-payoff','recursion','graveyard-setup','constellation','counter-producer','counter-payoff','artifact-payoff','exile-cast','exile-payoff','landfall','spellslinger','lifegain','life-payoff'])
 export function commanderSynergy(cards,commander){
   if(!commander)return {score:0,connected:[],tags:[]}
   const semantic=new Set((commander.tags||[]).filter(t=>COMMANDER_ENGINE_TAGS.has(t)))
   const pair=(a,b)=>{if(semantic.has(a))semantic.add(b)}
-  pair('blink','etb');pair('etb','blink');pair('tokens','token-payoff');pair('token-payoff','tokens');pair('sac-outlet','death-payoff');pair('sac-enabler','death-payoff');pair('death-payoff','sac-outlet');pair('death-payoff','sac-enabler');pair('recursion','graveyard-setup');pair('graveyard-setup','recursion');pair('constellation','enchantment');pair('counter-producer','counter-payoff');pair('counter-payoff','counter-producer');pair('artifact-payoff','artifact');pair('exile-cast','exile-payoff');pair('exile-payoff','exile-cast');pair('landfall','land-ramp');pair('spellslinger','instant');pair('spellslinger','sorcery');pair('lifegain','life-payoff');pair('life-payoff','lifegain')
+  pair('blink','etb');pair('tokens','token-payoff');pair('token-payoff','tokens');pair('sac-outlet','death-payoff');pair('sac-enabler','death-payoff');pair('death-payoff','sac-outlet');pair('death-payoff','sac-enabler');pair('recursion','graveyard-setup');pair('graveyard-setup','recursion');pair('constellation','enchantment');pair('counter-producer','counter-payoff');pair('counter-payoff','counter-producer');pair('artifact-payoff','artifact');pair('exile-cast','exile-payoff');pair('exile-payoff','exile-cast');pair('landfall','land-ramp');pair('spellslinger','instant');pair('spellslinger','sorcery');pair('lifegain','life-payoff');pair('life-payoff','lifegain')
+  // A commander whose own ETB is reusable benefits from blink sources, but that does not
+  // make every unrelated ETB card in the deck part of the commander's engine.
+  if(selfEtbTrigger(commander))semantic.add('blink')
   const nonlands=cards.filter(c=>!c.isLand),connected=semantic.size?uniqByName(cards.filter(c=>c.tags.some(t=>semantic.has(t)))):[]
   const score=Math.min(100,Math.round(connected.length/Math.max(1,nonlands.length)*170))
   return {score,connected:connected.map(c=>c.name),tags:[...semantic]}
