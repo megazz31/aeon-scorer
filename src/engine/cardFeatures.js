@@ -31,13 +31,18 @@ function isSacOutlet(card,o){const s=withoutReminderText(o).toLowerCase(),name=e
 function isSacEnabler(card,o){const s=withoutReminderText(o).toLowerCase(),name=escapedName(card);if(name&&new RegExp(`sacrifice ${name}`).test(s))return false;return /as an additional cost to cast [^.]*sacrifice (?:another |a |an )?(?:creature|artifact|permanent|token)/.test(s)||/when you cast [^.]*you may sacrifice (?:another |a |an )?(?:creature|artifact|permanent|token)/.test(s)}
 function deathPayoff(o){
   const s=withoutReminderText(o).toLowerCase()
+  const grantedToOpponent=/target creature an opponent controls[^.]{0,180}(?:has|gains)[^.]{0,140}when(?:ever)? this creature dies/.test(s)
+  const opponentAura=/enchant creature an opponent controls[^.]{0,180}when enchanted creature dies/.test(s)
   return clauses(s).some(c=>{
     if(/\bwhenever you sacrifice\b/.test(c))return true
     if(!/\b(?:dies|die)\b/.test(c))return false
+    if(grantedToOpponent&&/when(?:ever)? this creature dies/.test(c))return false
+    if(opponentAura&&/when enchanted creature dies/.test(c))return false
+    if(/creature dealt damage by this creature[^.]*dies/.test(c)&&!/you control/.test(c))return false
     const opponentOnly=/(?:creature|permanent|artifact|planeswalker) an opponent controls dies|blocking creature an opponent controls dies|creatures? your opponents control die/.test(c)
-    const ownOrAny=/this (?:creature|permanent|artifact|enchantment) dies|another [^.]* you control dies|[a-z]+ you control dies|attacking creature you control [^.]* dies|another creature dies|a creature dies|one or more creatures die|nontoken creature dies|whenever [^.]* dies/.test(c)
-    if(opponentOnly&&!/you control [^.]* dies|attacking creature you control/.test(c))return false
-    return ownOrAny||/when [^.]* dies/.test(c)
+    const ownOrAny=/this (?:creature|permanent|artifact|enchantment) dies|another [^.]* you control dies|(?:a|another|one or more|one or more other|nontoken|token) [^.]{0,70} you control (?:dies|die)|attacking creature you control [^.]* dies|\banother creature dies\b|\ba creature dies\b|\bone or more creatures die\b|\bnontoken creature dies\b/.test(c)
+    if(opponentOnly&&!/you control [^.]* (?:dies|die)|attacking creature you control/.test(c))return false
+    return ownOrAny
   })
 }
 function counterKinds(o){
