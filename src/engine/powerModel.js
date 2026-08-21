@@ -36,6 +36,8 @@ export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=
   const drivers=cards.filter(c=>!c.isLand).map(c=>{const ap=aeonPriorFor(c,aeonMap),pkg=packages.filter(p=>(p.members||[]).some(n=>n.toLowerCase()===c.name.toLowerCase())).length,base=c.development*.85+c.interaction*.8+c.resilience*.7+c.explosiveness*1.15+c.recurring*.55+c.efficiency*.4;return {name:c.name,impact:Math.round((base+pkg*.7+(ap.normalized||0)*1.1)*10)/10,tags:c.tags.slice(0,6),aeon:ap.points}}).sort((a,b)=>b.impact-a.impact).slice(0,12)
   const coverage=analysisCoverage(cards,packages,combos)
   const result={profile:{median:Math.round(median),floor:Math.round(floor),ceiling:Math.round(ceiling),peak:Math.round(peak),dispersion:Math.round(dispersion),variance:Math.round(dispersion),consistency:Math.round(consistency),commanderDelta,coverage,dataCoverage:coverage},dimensions,roles,packages,combos,commanderSynergy:cmdSyn,aeon,simulation:sim,drivers,warnings,methodology:{iterations,model:'sequence-access-v3.2-semantic',maxTurn:7,curveMeaning:'Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.'}}
-  const hook=globalThis?.__AEON_ANALYSIS_HOOK__;if(typeof hook==='function')queueMicrotask(()=>{try{hook({result,cards,commander,iterations})}catch{}})
+  const detail={result,cards,commander,iterations}
+  if(typeof window!=='undefined'&&typeof window.dispatchEvent==='function'&&typeof CustomEvent!=='undefined')queueMicrotask(()=>{try{window.dispatchEvent(new CustomEvent('aeon-analysis-computed',{detail}))}catch{}})
+  const hook=globalThis?.__AEON_ANALYSIS_HOOK__;if(typeof hook==='function')queueMicrotask(()=>{try{hook(detail)}catch{}})
   return result
 }
