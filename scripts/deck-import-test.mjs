@@ -12,6 +12,7 @@ const moxLegacy=normalizeMoxfield({
   mainboard:{ring:{quantity:1,card:{name:'Sol Ring'}},island:{quantity:98,card:{name:'Island'}}},
 },'https://www.moxfield.com/decks/test')
 assert.equal(moxLegacy.commanderName,'Atraxa, Praetors Voice')
+assert.deepEqual(moxLegacy.commanderNames,['Atraxa, Praetors Voice'])
 assert.equal(moxLegacy.cardCount,99)
 assert.match(moxLegacy.decklist,/1 Sol Ring/)
 assert.match(moxLegacy.decklist,/98 Island/)
@@ -48,9 +49,21 @@ assert.equal(arch.cardCount,99)
 assert.doesNotMatch(arch.decklist,/Black Lotus/)
 assert.doesNotMatch(arch.decklist,/Ancestral Recall/)
 
-assert.throws(()=>normalizeArchidekt({categories:[{name:'Commander',includedInDeck:true}],cards:[
+const partnerArch=normalizeArchidekt({categories:[{name:'Commander',includedInDeck:true},{name:'Mainboard',includedInDeck:true}],cards:[
   {quantity:1,categories:['Commander'],card:{oracleCard:{name:'Partner A'}}},
   {quantity:1,categories:['Commander'],card:{oracleCard:{name:'Partner B'}}},
-]}),/exactly one commander/)
+  {quantity:98,categories:['Mainboard'],card:{oracleCard:{name:'Forest'}}},
+]})
+assert.deepEqual(partnerArch.commanderNames,['Partner A','Partner B'])
+assert.equal(partnerArch.commanderName,'Partner A')
+assert.equal(partnerArch.cardCount,98)
+assert.equal(partnerArch.decklist,'98 Forest')
 
-console.log('DECK IMPORT CONTRACT OK — Moxfield + Archidekt public single-commander normalization')
+assert.throws(()=>normalizeArchidekt({categories:[{name:'Commander',includedInDeck:true},{name:'Mainboard',includedInDeck:true}],cards:[
+  {quantity:1,categories:['Commander'],card:{oracleCard:{name:'A'}}},
+  {quantity:1,categories:['Commander'],card:{oracleCard:{name:'B'}}},
+  {quantity:1,categories:['Commander'],card:{oracleCard:{name:'C'}}},
+  {quantity:97,categories:['Mainboard'],card:{oracleCard:{name:'Forest'}}},
+]}),/one commander or a two-card command zone/)
+
+console.log('DECK IMPORT CONTRACT OK — Moxfield + Archidekt public one- or two-commandant normalization')
