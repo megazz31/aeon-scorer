@@ -19,7 +19,8 @@ const allNames=xs=>uniqByName(xs).map(x=>x.name)
 function roleCards(pool,tags){return uniqByName(pool.filter(c=>tags.some(t=>hasTag(c,t))))}
 function overlapCount(a,b){const s=new Set(a.map(x=>x.name.toLowerCase()));return b.filter(x=>s.has(x.name.toLowerCase())).length}
 const isManaPermanent=c=>!/\binstant\b|\bsorcery\b/i.test(c.type||'')&&(c.sourceColors?.length||0)>0
-function trueEtbPayoff(c){const o=String(c.oracle||'').replace(/\([^)]*\)/g,' ').toLowerCase();return /\bwhen(?:ever)?\b[^.\n;]{0,180}\benters(?: the battlefield)?\b/.test(o)}
+const isOneShotSpell=c=>/\binstant\b|\bsorcery\b/i.test(c.type||'')
+function trueEtbPayoff(c){if(c.isLand||/\bland\b/i.test(c.type||''))return false;const o=String(c.oracle||'').replace(/\([^)]*\)/g,' ').toLowerCase();return /\bwhen(?:ever)?\b[^.\n;]{0,180}\benters(?: the battlefield)?\b/.test(o)}
 export function detectPackages(cards,commander=null){
   const out=[],nonlands=cards.filter(c=>!c.isLand),functionalPool=cards
   for(const m of MOTIFS){
@@ -34,7 +35,7 @@ export function detectPackages(cards,commander=null){
       continue
     }
     const producers=roleCards(functionalPool,m.producers)
-    const payoffs=m.id==='blink-etb'?uniqByName(functionalPool.filter(trueEtbPayoff)):roleCards(functionalPool,m.payoffs)
+    const payoffs=m.id==='blink-etb'?uniqByName(functionalPool.filter(trueEtbPayoff)):m.id==='spells'?roleCards(functionalPool,m.payoffs).filter(c=>!isOneShotSpell(c)):roleCards(functionalPool,m.payoffs)
     if(producers.length<(m.minP||2)||payoffs.length<(m.minY||1))continue
     const members=uniqByName([...producers,...payoffs]),overlap=overlapCount(producers,payoffs),roleDistinct=Math.max(0,members.length-overlap)
     if(members.length<3||roleDistinct<2)continue
