@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 51,
+    "median": 50,
     "p20": 38,
     "p80": 63,
-    "peak": 89,
+    "peak": 88,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-4",
+    "semanticVersion": "3.2.0-semantic-5",
     "oracleSnapshotHash": "0ce6b11dbd263fca57da5b800d540980bf265063c6d898977caed00f6fbfcbac",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T12:09:12.997Z"
+    "analyzedAt": "2026-08-21T12:56:17.800Z"
   },
   "decklist": "1 Neriv, Crackling Vanguard\n1 Ainok Strike Leader\n1 Ironwill Forger\n1 Will of the Mardu\n1 Bone Devourer\n1 Within Range\n1 Goldlust Triad\n1 Infantry Shield\n1 Redoubled Stormsinger\n1 Adeline, Resplendent Cathar\n1 Angel of Invention\n1 Commander's Insignia\n1 Divine Visitation\n1 Emeria Angel\n1 Grand Crescendo\n1 Hero of Bladehold\n1 Hour of Reckoning\n1 Legion Loyalty\n1 Selfless Spirit\n1 Sun Titan\n1 Tocasia's Welcome\n1 Twilight Drover\n1 Chittering Witch\n1 Eliminate the Competition\n1 Gix, Yawgmoth Praetor\n1 Mindblade Render\n1 Ophiomancer\n1 Yahenni, Undying Partisan\n1 Grenzo, Havoc Raiser\n1 Legion Warboss\n1 Ogre Battledriver\n1 Siege-Gang Commander\n1 Tempt with Vengeance\n1 Kaya, Geist Hunter\n1 Blade of Selves\n1 Idol of Oblivion\n1 Myr Battlesphere\n1 Solemn Simulacrum\n1 Battlefield Forge\n1 Canyon Slough\n1 Castle Ardenvale\n1 Castle Embereth\n1 Caves of Koilos\n1 Clifftop Retreat\n1 Dragonskull Summit\n1 Exotic Orchard\n1 Fetid Heath\n1 Isolated Chapel\n1 Shattered Sanctum\n1 Smoldering Marsh\n1 Temple of Silence\n1 Temple of Triumph\n1 Vault of the Archangel\n1 Windbrisk Heights\n1 Shadow Summoning\n1 Lightning Greaves\n1 Skullclamp\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Goldnight Commander\n1 Lingering Souls\n1 Release the Dogs\n1 Stroke of Midnight\n1 Swords to Plowshares\n1 Bastion of Remembrance\n1 Bitter Triumph\n1 Deadly Dispute\n1 Morbid Opportunist\n1 Viscera Seer\n1 Abrade\n1 Beetleback Chief\n1 Loyal Apprentice\n1 Nomad Outpost\n1 Aron, Benalia's Ruin\n1 Thalisse, Reverent Medium\n1 Fellwar Stone\n1 Talisman of Conviction\n1 Talisman of Hierarchy\n1 Wayfarer's Bauble\n1 Bojuka Bog\n1 Path of Ancestry\n1 Shattered Landscape\n1 Terramorphic Expanse\n3 Plains\n2 Plains\n3 Swamp\n2 Swamp\n3 Mountain\n2 Mountain",
   "oracleCards": [
@@ -406,7 +406,6 @@
         "creature",
         "removal",
         "tokens",
-        "token-payoff",
         "sacrifice",
         "sac-outlet",
         "etb"
@@ -1775,7 +1774,6 @@
         "protection",
         "sacrifice",
         "sac-outlet",
-        "death-payoff",
         "counter-producer",
         "counter-kind:plus1"
       ],
@@ -1805,12 +1803,12 @@
   ],
   "result": {
     "profile": {
-      "median": 51,
+      "median": 50,
       "floor": 38,
       "ceiling": 63,
-      "peak": 89,
-      "dispersion": 24,
-      "variance": 24,
+      "peak": 88,
+      "dispersion": 26,
+      "variance": 26,
       "consistency": 60,
       "commanderDelta": 11,
       "coverage": 93,
@@ -1819,10 +1817,10 @@
     "dimensions": {
       "speed": 48,
       "consistency": 60,
-      "explosiveness": 21,
-      "synergy": 82,
-      "interaction": 46,
-      "resilience": 35
+      "explosiveness": 19,
+      "synergy": 81,
+      "interaction": 45,
+      "resilience": 34
     },
     "roles": {
       "lands": 37,
@@ -1858,7 +1856,6 @@
         ],
         "payoffs": [
           "Ainok Strike Leader",
-          "Chittering Witch",
           "Kaya, Geist Hunter",
           "Neriv, Crackling Vanguard",
           "Redoubled Stormsinger"
@@ -1997,7 +1994,6 @@
               "creature",
               "removal",
               "tokens",
-              "token-payoff",
               "sacrifice",
               "sac-outlet",
               "etb"
@@ -2453,28 +2449,6 @@
             }
           },
           {
-            "name": "Chittering Witch",
-            "cmc": 4,
-            "tags": [
-              "creature",
-              "removal",
-              "tokens",
-              "token-payoff",
-              "sacrifice",
-              "sac-outlet",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "B"
-                ]
-              ],
-              "total": 4
-            }
-          },
-          {
             "name": "Kaya, Geist Hunter",
             "cmc": 3,
             "tags": [
@@ -2550,13 +2524,13 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "28 producteur(s), 5 payoff(s), 28 carte(s) distincte(s)."
+        "evidence": "28 producteur(s), 4 payoff(s), 28 carte(s) distincte(s)."
       },
       {
         "id": "sacrifice",
         "name": "Sacrifice / mort",
-        "strength": 79,
-        "cohesion": 79,
+        "strength": 76,
+        "cohesion": 76,
         "producers": [
           "Aron, Benalia's Ruin",
           "Chittering Witch",
@@ -2568,8 +2542,7 @@
           "Bastion of Remembrance",
           "Bone Devourer",
           "Skullclamp",
-          "Solemn Simulacrum",
-          "Yahenni, Undying Partisan"
+          "Solemn Simulacrum"
         ],
         "members": [
           "Aron, Benalia's Ruin",
@@ -2616,7 +2589,6 @@
               "creature",
               "removal",
               "tokens",
-              "token-payoff",
               "sacrifice",
               "sac-outlet",
               "etb"
@@ -2678,7 +2650,6 @@
               "protection",
               "sacrifice",
               "sac-outlet",
-              "death-payoff",
               "counter-producer",
               "counter-kind:plus1"
             ],
@@ -2765,28 +2736,6 @@
               "colored": [],
               "total": 4
             }
-          },
-          {
-            "name": "Yahenni, Undying Partisan",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "protection",
-              "sacrifice",
-              "sac-outlet",
-              "death-payoff",
-              "counter-producer",
-              "counter-kind:plus1"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "B"
-                ]
-              ],
-              "total": 3
-            }
           }
         ],
         "producerTags": [
@@ -2796,7 +2745,7 @@
         "payoffTags": [
           "death-payoff"
         ],
-        "evidence": "5 producteur(s), 5 payoff(s), 9 carte(s) distincte(s)."
+        "evidence": "5 producteur(s), 4 payoff(s), 9 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2960,16 +2909,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 35,
-      "median": 44,
+      "floor": 34,
+      "median": 43,
       "high": 53,
       "ceiling": 53,
-      "peak": 79,
+      "peak": 77,
       "iqr": 15,
       "consistency": 68,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 86,
+      "recoveryAfterDisruption": 85,
       "turnProfile": [
         {
           "turn": 1,
@@ -2981,7 +2930,7 @@
         },
         {
           "turn": 2,
-          "commander": 2,
+          "commander": 3,
           "engine": 1,
           "interaction": 22,
           "resource": 15,
@@ -2989,7 +2938,7 @@
         },
         {
           "turn": 3,
-          "commander": 59,
+          "commander": 57,
           "engine": 11,
           "interaction": 39,
           "resource": 37,
@@ -2997,32 +2946,32 @@
         },
         {
           "turn": 4,
-          "commander": 84,
-          "engine": 34,
-          "interaction": 49,
-          "resource": 52,
-          "burst": 12
+          "commander": 83,
+          "engine": 31,
+          "interaction": 48,
+          "resource": 51,
+          "burst": 11
         },
         {
           "turn": 5,
-          "commander": 89,
-          "engine": 48,
+          "commander": 88,
+          "engine": 43,
           "interaction": 52,
           "resource": 57,
-          "burst": 12
+          "burst": 11
         },
         {
           "turn": 6,
           "commander": 92,
-          "engine": 56,
+          "engine": 51,
           "interaction": 56,
           "resource": 63,
-          "burst": 12
+          "burst": 11
         },
         {
           "turn": 7,
           "commander": 94,
-          "engine": 62,
+          "engine": 56,
           "interaction": 61,
           "resource": 67,
           "burst": 13
@@ -3107,9 +3056,9 @@
           "creature",
           "removal",
           "tokens",
-          "token-payoff",
           "sacrifice",
-          "sac-outlet"
+          "sac-outlet",
+          "etb"
         ],
         "aeon": null
       },

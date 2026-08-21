@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 41,
-    "p20": 31,
-    "p80": 52,
-    "peak": 80,
+    "p20": 30,
+    "p80": 50,
+    "peak": 79,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-4",
+    "semanticVersion": "3.2.0-semantic-5",
     "oracleSnapshotHash": "1db9a4199c695df049b9a8e1aaf3db606d9311eacf636737b6d08997ffc47bdb",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T12:09:12.997Z"
+    "analyzedAt": "2026-08-21T12:56:17.800Z"
   },
   "decklist": "1 Timothar, Baron of Bats\n1 Crossway Troublemakers\n1 Kamber, the Plunderer\n1 Shadowgrange Archfiend\n1 Laurine, the Diversion\n1 Markov Enforcer\n1 Midnight Arsonist\n1 Scion of Opulence\n1 Anowon, the Ruin Sage\n1 Bloodlord of Vaasgoth\n1 Bloodtracker\n1 Butcher of Malakir\n1 Champion of Dusk\n1 Cordial Vampire\n1 Dark Impostor\n1 Malakir Bloodwitch\n1 Necropolis Regent\n1 Nirkana Revenant\n1 Patron of the Vein\n1 Sanctum Seeker\n1 Stromkirk Condemned\n1 Anje's Ravager\n1 Bloodsworn Steward\n1 Crimson Honor Guard\n1 Falkenrath Gorger\n1 Stromkirk Occultist\n1 Vampiric Dragon\n1 Bloodtithe Harvester\n1 Blood Artist\n1 Bloodline Necromancer\n1 Falkenrath Noble\n1 Indulgent Aristocrat\n1 Vampire Nighthawk\n1 Rakish Heir\n1 Stromkirk Captain\n1 Olivia's Wrath\n1 Predators' Hour\n1 Imposing Grandeur\n1 Sinister Waltz\n1 Damnable Pact\n1 Avacyn's Judgment\n1 Blasphemous Act\n1 Mob Rule\n1 Ancient Craving\n1 Feed the Swarm\n1 Night's Whisper\n1 Vandalblast\n1 Urge to Feed\n1 Rakdos Charm\n1 Glass-Cast Heart\n1 Arcane Signet\n1 Charcoal Diamond\n1 Commander's Sphere\n1 Fire Diamond\n1 Rakdos Signet\n1 Sol Ring\n1 Swiftfoot Boots\n1 Unstable Obelisk\n1 Arterial Alchemy\n1 Underworld Connections\n1 Molten Echoes\n1 Stensia Masquerade\n1 Exotic Orchard\n1 Foreboding Ruins\n1 Shadowblood Ridge\n1 Smoldering Marsh\n1 Temple of Malice\n1 Command Tower\n1 Myriad Landscape\n1 Path of Ancestry\n1 Rakdos Carnarium\n1 Tainted Peak\n1 Temple of the False God\n1 Unclaimed Territory\n14 Swamp\n11 Mountain",
   "oracleCards": [
@@ -679,7 +679,6 @@
       "tags": [
         "creature",
         "tokens",
-        "death-payoff",
         "lifegain"
       ],
       "isCommander": false
@@ -946,7 +945,6 @@
       "tags": [
         "creature",
         "removal",
-        "death-payoff",
         "etb",
         "counter-producer",
         "counter-kind:plus1"
@@ -1554,21 +1552,21 @@
   "result": {
     "profile": {
       "median": 41,
-      "floor": 31,
-      "ceiling": 52,
-      "peak": 80,
-      "dispersion": 22,
-      "variance": 22,
-      "consistency": 67,
-      "commanderDelta": 7,
+      "floor": 30,
+      "ceiling": 50,
+      "peak": 79,
+      "dispersion": 20,
+      "variance": 20,
+      "consistency": 66,
+      "commanderDelta": 8,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 35,
-      "consistency": 67,
-      "explosiveness": 11,
-      "synergy": 56,
+      "consistency": 66,
+      "explosiveness": 12,
+      "synergy": 53,
       "interaction": 42,
       "resilience": 28
     },
@@ -1590,8 +1588,8 @@
       {
         "id": "sacrifice",
         "name": "Sacrifice / mort",
-        "strength": 81,
-        "cohesion": 81,
+        "strength": 74,
+        "cohesion": 74,
         "producers": [
           "Indulgent Aristocrat",
           "Laurine, the Diversion"
@@ -1602,11 +1600,10 @@
           "Cordial Vampire",
           "Crossway Troublemakers",
           "Falkenrath Noble",
-          "Kamber, the Plunderer",
           "Markov Enforcer",
-          "Patron of the Vein",
           "Scion of Opulence",
-          "Timothar, Baron of Bats"
+          "Timothar, Baron of Bats",
+          "Vampiric Dragon"
         ],
         "members": [
           "Indulgent Aristocrat",
@@ -1616,9 +1613,7 @@
           "Cordial Vampire",
           "Crossway Troublemakers",
           "Falkenrath Noble",
-          "Kamber, the Plunderer",
           "Markov Enforcer",
-          "Patron of the Vein",
           "Scion of Opulence",
           "Timothar, Baron of Bats",
           "Vampiric Dragon"
@@ -1763,25 +1758,6 @@
             }
           },
           {
-            "name": "Kamber, the Plunderer",
-            "cmc": 4,
-            "tags": [
-              "creature",
-              "tokens",
-              "death-payoff",
-              "lifegain"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "B"
-                ]
-              ],
-              "total": 4
-            }
-          },
-          {
             "name": "Markov Enforcer",
             "cmc": 6,
             "tags": [
@@ -1798,30 +1774,6 @@
                 ],
                 [
                   "R"
-                ]
-              ],
-              "total": 6
-            }
-          },
-          {
-            "name": "Patron of the Vein",
-            "cmc": 6,
-            "tags": [
-              "creature",
-              "removal",
-              "death-payoff",
-              "etb",
-              "counter-producer",
-              "counter-kind:plus1"
-            ],
-            "manaReq": {
-              "generic": 4,
-              "colored": [
-                [
-                  "B"
-                ],
-                [
-                  "B"
                 ]
               ],
               "total": 6
@@ -1901,7 +1853,7 @@
         "payoffTags": [
           "death-payoff"
         ],
-        "evidence": "2 producteur(s), 11 payoff(s), 13 carte(s) distincte(s)."
+        "evidence": "2 producteur(s), 9 payoff(s), 11 carte(s) distincte(s)."
       },
       {
         "id": "tokens",
@@ -2000,7 +1952,6 @@
             "tags": [
               "creature",
               "tokens",
-              "death-payoff",
               "lifegain"
             ],
             "manaReq": {
@@ -2356,11 +2307,11 @@
       "iterations": 3200,
       "floor": 32,
       "median": 39,
-      "high": 47,
-      "ceiling": 47,
+      "high": 46,
+      "ceiling": 46,
       "peak": 69,
       "iqr": 11,
-      "consistency": 76,
+      "consistency": 75,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
       "recoveryAfterDisruption": 73,
@@ -2369,7 +2320,7 @@
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 6,
+          "interaction": 5,
           "resource": 0,
           "burst": 0
         },
@@ -2384,23 +2335,23 @@
         {
           "turn": 3,
           "commander": 23,
-          "engine": 2,
+          "engine": 3,
           "interaction": 33,
           "resource": 23,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 75,
-          "engine": 11,
+          "commander": 76,
+          "engine": 10,
           "interaction": 46,
-          "resource": 41,
+          "resource": 42,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 89,
-          "engine": 18,
+          "engine": 16,
           "interaction": 54,
           "resource": 52,
           "burst": 0
@@ -2408,15 +2359,15 @@
         {
           "turn": 6,
           "commander": 93,
-          "engine": 23,
-          "interaction": 60,
+          "engine": 21,
+          "interaction": 59,
           "resource": 59,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 96,
-          "engine": 28,
+          "engine": 26,
           "interaction": 64,
           "resource": 64,
           "burst": 0
@@ -2452,17 +2403,6 @@
         "tags": [
           "creature",
           "draw",
-          "death-payoff",
-          "lifegain"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Kamber, the Plunderer",
-        "impact": 2.6,
-        "tags": [
-          "creature",
-          "tokens",
           "death-payoff",
           "lifegain"
         ],
@@ -2512,19 +2452,6 @@
         "aeon": null
       },
       {
-        "name": "Patron of the Vein",
-        "impact": 2.2,
-        "tags": [
-          "creature",
-          "removal",
-          "death-payoff",
-          "etb",
-          "counter-producer",
-          "counter-kind:plus1"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Anowon, the Ruin Sage",
         "impact": 1.9,
         "tags": [
@@ -2549,6 +2476,27 @@
           "artifact",
           "mana",
           "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Fire Diamond",
+        "impact": 1.9,
+        "tags": [
+          "artifact",
+          "mana",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Glass-Cast Heart",
+        "impact": 1.9,
+        "tags": [
+          "artifact",
+          "tokens",
+          "sacrifice",
+          "lifegain"
         ],
         "aeon": null
       }

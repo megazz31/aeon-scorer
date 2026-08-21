@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 37,
-    "p20": 28,
-    "p80": 47,
-    "peak": 71,
+    "p20": 26,
+    "p80": 46,
+    "peak": 70,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-4",
+    "semanticVersion": "3.2.0-semantic-5",
     "oracleSnapshotHash": "bf3a1d3cd78fcf838c9d3ae3101c1051d7117487ef504f92a6f51191588bf4f4",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T12:09:12.997Z"
+    "analyzedAt": "2026-08-21T12:56:17.800Z"
   },
   "decklist": "1 Archon of Redemption\n1 Cartographer's Hawk\n1 Cleansing Nova\n1 Emeria Angel\n1 Gideon Jura\n1 Hanged Executioner\n1 Remorseful Cleric\n1 Sephara, Sky's Blade\n1 Steel-Plume Marshal\n1 Storm Herd\n1 True Conviction\n1 Angler Turtle\n1 Bident of Thassa\n1 Diluvian Primordial\n1 Ever-Watching Threshold\n1 Faerie Formation\n1 Gravitational Shift\n1 Inspired Sphinx\n1 Sharding Sphinx\n1 Sphinx of Enlightenment\n1 Windreader Sphinx\n1 Absorb\n1 Skycat Sovereign\n1 Sphinx's Revelation\n1 Time Wipe\n1 Moorland Haunt\n1 Port Town\n1 Prairie Stream\n1 Temple of Enlightenment\n1 Aven Gagglemaster\n1 Banishing Light\n1 Condemn\n1 Crush Contraband\n1 Disenchant\n1 Generous Gift\n1 Kangee's Lieutenant\n1 Rally of Wings\n1 Soul Snare\n1 Swords to Plowshares\n1 Vow of Duty\n1 Aetherize\n1 Counterspell\n1 Favorable Winds\n1 Negate\n1 Tide Skimmer\n1 Warden of Evos Isle\n1 Winged Words\n1 Cloudblazer\n1 Empyrean Eagle\n1 Jubilant Skybonder\n1 Kangee, Sky Warden\n1 Migratory Route\n1 Staggering Insight\n1 Thunderclap Wyvern\n1 Arcane Signet\n1 Azorius Signet\n1 Commander's Sphere\n1 Hedron Archive\n1 Pilgrim's Eye\n1 Sky Diamond\n1 Skyscanner\n1 Sol Ring\n1 Talisman of Progress\n1 Thought Vessel\n1 Coastal Tower\n1 Command Tower\n1 Meandering River\n1 Sejiri Refuge\n1 Tranquil Cove\n4 Plains\n4 Plains\n4 Plains\n3 Plains\n4 Island\n4 Island\n4 Island\n3 Island",
   "oracleCards": [
@@ -1430,11 +1430,11 @@
   "result": {
     "profile": {
       "median": 37,
-      "floor": 28,
-      "ceiling": 47,
-      "peak": 71,
-      "dispersion": 19,
-      "variance": 19,
+      "floor": 26,
+      "ceiling": 46,
+      "peak": 70,
+      "dispersion": 20,
+      "variance": 20,
       "consistency": 68,
       "commanderDelta": 2,
       "coverage": 92,
@@ -1444,8 +1444,8 @@
       "speed": 28,
       "consistency": 68,
       "explosiveness": 10,
-      "synergy": 42,
-      "interaction": 61,
+      "synergy": 40,
+      "interaction": 62,
       "resilience": 25
     },
     "roles": {
@@ -1466,12 +1466,11 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 58,
-        "cohesion": 58,
+        "strength": 55,
+        "cohesion": 55,
         "producers": [
           "Arcane Signet",
           "Azorius Signet",
-          "Cartographer's Hawk",
           "Commander's Sphere",
           "Sky Diamond",
           "Sol Ring",
@@ -1484,7 +1483,6 @@
         "members": [
           "Arcane Signet",
           "Azorius Signet",
-          "Cartographer's Hawk",
           "Commander's Sphere",
           "Sky Diamond",
           "Sol Ring",
@@ -1516,23 +1514,6 @@
             "manaReq": {
               "generic": 2,
               "colored": [],
-              "total": 2
-            }
-          },
-          {
-            "name": "Cartographer's Hawk",
-            "cmc": 2,
-            "tags": [
-              "creature",
-              "land-ramp"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "W"
-                ]
-              ],
               "total": 2
             }
           },
@@ -1632,7 +1613,7 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 8 source(s) persistante(s) vers un commandant MV 6."
+        "evidence": "0 accélérateur(s) burst + 7 source(s) persistante(s) vers un commandant MV 6."
       }
     ],
     "combos": [],
@@ -1649,16 +1630,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 31,
+      "floor": 30,
       "median": 37,
-      "high": 44,
-      "ceiling": 44,
+      "high": 43,
+      "ceiling": 43,
       "peak": 62,
       "iqr": 10,
       "consistency": 77,
       "commanderMedianTurn": 5,
       "engineMedianTurn": null,
-      "recoveryAfterDisruption": 68,
+      "recoveryAfterDisruption": 67,
       "turnProfile": [
         {
           "turn": 1,
@@ -1672,21 +1653,21 @@
           "turn": 2,
           "commander": 0,
           "engine": 0,
-          "interaction": 16,
-          "resource": 3,
+          "interaction": 18,
+          "resource": 4,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 2,
+          "commander": 1,
           "engine": 0,
-          "interaction": 47,
+          "interaction": 48,
           "resource": 32,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 20,
+          "commander": 18,
           "engine": 0,
           "interaction": 67,
           "resource": 55,
@@ -1694,23 +1675,23 @@
         },
         {
           "turn": 5,
-          "commander": 43,
+          "commander": 39,
           "engine": 0,
-          "interaction": 75,
+          "interaction": 74,
           "resource": 65,
           "burst": 1
         },
         {
           "turn": 6,
-          "commander": 66,
+          "commander": 63,
           "engine": 0,
           "interaction": 80,
-          "resource": 73,
-          "burst": 4
+          "resource": 72,
+          "burst": 3
         },
         {
           "turn": 7,
-          "commander": 76,
+          "commander": 73,
           "engine": 0,
           "interaction": 83,
           "resource": 77,
@@ -1826,11 +1807,12 @@
         "aeon": null
       },
       {
-        "name": "Cartographer's Hawk",
+        "name": "Sky Diamond",
         "impact": 1.9,
         "tags": [
-          "creature",
-          "land-ramp"
+          "artifact",
+          "mana",
+          "etb"
         ],
         "aeon": null
       }
