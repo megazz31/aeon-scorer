@@ -11,6 +11,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: public-precon-generation
+  cancel-in-progress: true
 jobs:
   generate:
     runs-on: ubuntu-latest
