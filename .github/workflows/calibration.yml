@@ -16,6 +16,12 @@ jobs:
           node-version: 22
       - name: Install
         run: npm install --no-audit --no-fund
+      - name: Pin mid-power validation cohort
+        run: |
+          mkdir -p calibration/cache
+          cat > calibration/cache/arch_listing_MegazZ31.json <<'EOF'
+          {"results":[{"id":25464836},{"id":25449616},{"id":18888572},{"id":24925767},{"id":25449328},{"id":23299336},{"id":23299341},{"id":23294619},{"id":25448552}]}
+          EOF
       - name: Smoke test
         run: npm run smoke
       - name: Public precon library contract
