@@ -33,17 +33,20 @@ const arch=normalizeArchidekt({
     {id:1,name:'Commander',includedInDeck:true},
     {id:2,name:'Mainboard',includedInDeck:true},
     {id:3,name:'Maybeboard',includedInDeck:false},
+    {id:4,name:'Sideboard',includedInDeck:true},
   ],
   cards:[
-    {quantity:1,categories:[1],card:{oracleCard:{name:'Muldrotha, the Gravetide'}}},
-    {quantity:1,categories:[2],card:{oracleCard:{name:'Sol Ring'}}},
-    {quantity:98,categories:[2],card:{oracleCard:{name:'Forest'}}},
-    {quantity:1,categories:[3],card:{oracleCard:{name:'Black Lotus'}}},
+    {quantity:1,categories:['Commander'],card:{oracleCard:{name:'Muldrotha, the Gravetide'}}},
+    {quantity:1,categories:['Mainboard'],card:{oracleCard:{name:'Sol Ring'}}},
+    {quantity:98,categories:['Mainboard'],card:{oracleCard:{name:'Forest'}}},
+    {quantity:1,categories:['Maybeboard'],card:{oracleCard:{name:'Black Lotus'}}},
+    {quantity:1,categories:['Sideboard','Mainboard'],card:{oracleCard:{name:'Ancestral Recall'}}},
   ],
 },'https://archidekt.com/decks/123')
 assert.equal(arch.commanderName,'Muldrotha, the Gravetide')
 assert.equal(arch.cardCount,99)
 assert.doesNotMatch(arch.decklist,/Black Lotus/)
+assert.doesNotMatch(arch.decklist,/Ancestral Recall/)
 
 assert.throws(()=>normalizeArchidekt({categories:[{name:'Commander',includedInDeck:true}],cards:[
   {quantity:1,categories:['Commander'],card:{oracleCard:{name:'Partner A'}}},
