@@ -38,10 +38,15 @@ assert.equal(has(card('Shattered Angel','Creature — Angel','Flying. Whenever a
 assert.equal(has(card('Sire of Stagnation','Creature — Eldrazi','Whenever a land an opponent controls enters, that player exiles the top two cards of their library and you draw two cards.'),'landfall'),false)
 assert.equal(has(card('Tireless Tracker','Creature — Human Scout','Landfall — Whenever a land enters the battlefield under your control, investigate.'),'landfall'),true)
 
-// Sacrifice package payoffs must react to your deaths (or any deaths), not exclusively to opponent deaths.
+// Sacrifice package payoffs must react to your deaths (or any deaths), not exclusively/conditionally to opponent deaths.
 assert.equal(has(card('Assault Intercessor','Creature — Astartes Warrior','Whenever a creature an opponent controls dies, that player loses 2 life.'),'death-payoff'),false)
 assert.equal(has(card('Massacre Wurm','Creature — Phyrexian Wurm','Whenever a creature an opponent controls dies, that player loses 2 life.'),'death-payoff'),false)
 assert.equal(has(card('Kamber, the Plunderer','Legendary Creature — Vampire Rogue','Whenever a creature an opponent controls dies, you gain 1 life and create a Blood token.'),'death-payoff'),false)
+assert.equal(has(card("Dead Man's Chest",'Enchantment — Aura',"Enchant creature an opponent controls. When enchanted creature dies, exile cards equal to its power from the top of its owner's library. You may cast spells from among those cards for as long as they remain exiled, and mana of any type can be spent to cast them."),'death-payoff'),false)
+assert.equal(has(card('Markov Enforcer','Creature — Vampire Soldier','Whenever this creature or another Vampire you control enters, this creature fights up to one target creature an opponent controls. Whenever a creature dealt damage by this creature this turn dies, create a Blood token.'),'death-payoff'),false)
+assert.equal(has(card('Vampiric Dragon','Creature — Vampire Dragon','Flying. Whenever a creature dealt damage by this creature this turn dies, put a +1/+1 counter on this creature. {1}{R}: This creature deals 1 damage to target creature.'),'death-payoff'),false)
+assert.equal(has(card("Nurgle's Rot",'Enchantment — Aura',"Enchant creature an opponent controls. When enchanted creature dies, return this card to its owner's hand and you create a 1/3 black Demon creature token named Plaguebearer of Nurgle."),'death-payoff'),false)
+assert.equal(has(card('Moonstone Eulogist','Creature — Vampire Cleric','Flying. Whenever a creature an opponent controls dies, you create a Blood token. Whenever you sacrifice an artifact, put a +1/+1 counter on this creature and you gain 1 life.'),'death-payoff'),true)
 assert.equal(has(card('Bastion of Remembrance','Enchantment','Whenever a creature you control dies, each opponent loses 1 life and you gain 1 life.'),'death-payoff'),true)
 assert.equal(has(card('Poison-Tip Archer','Creature — Elf Archer','Whenever another creature dies, each opponent loses 1 life.'),'death-payoff'),true)
 assert.equal(has(card('Death Tyrant','Creature — Beholder Skeleton','Whenever an attacking creature you control or a blocking creature an opponent controls dies, create a 2/2 black Zombie creature token.'),'death-payoff'),true)
