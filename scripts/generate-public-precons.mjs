@@ -2,6 +2,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import crypto from 'node:crypto'
 import { analyzePower } from '../src/engine/powerModel.js'
+import { tagsFor } from '../src/engine/cardFeatures.js'
 import { ENGINE_VERSION, SEMANTIC_VERSION } from '../src/version.js'
 
 const MTGJSON='https://mtgjson.com/api/v5'
@@ -116,6 +117,14 @@ function oracleSnapshotHash(cards){
   const uniq=new Map();for(const c of cards){const k=c.oracleId||c.id||c.name.toLowerCase();if(!uniq.has(k))uniq.set(k,c)}
   return sha256([...uniq.values()].map(c=>`${c.oracleId||c.id||c.name.toLowerCase()}|${c.type||''}|${c.oracle||''}`).sort().join('\n'))
 }
+function compactOracleEvidence(cards,commanderName){
+  const uniq=new Map(),cmd=String(commanderName||'').toLowerCase()
+  for(const c of cards){
+    const key=c.oracleId||c.id||c.name.toLowerCase();if(uniq.has(key))continue
+    uniq.set(key,{oracleId:c.oracleId||c.id,scryfallId:c.id||null,name:c.name,type:c.type||'',oracle:c.oracle||'',manaCost:c.manaCost||'',cmc:Number(c.cmc||0),colorIdentity:c.colorIdentity||[],producedMana:c.producedMana||[],tags:tagsFor(c),isCommander:String(c.name||'').toLowerCase()===cmd})
+  }
+  return [...uniq.values()].sort((a,b)=>a.name.localeCompare(b.name))
+}
 
 async function main(){
   await fs.rm(OUT,{recursive:true,force:true});await fs.mkdir(OUT,{recursive:true})
@@ -130,11 +139,12 @@ async function main(){
     let unsupportedReason=d.unsupportedReason
     if(d.supported&&!commander)unsupportedReason='commander_unresolved_by_scryfall'
     if(d.supported&&missingNames.length)unsupportedReason=`scryfall_unresolved_${missingNames.length}_cards`
-    let result=null,analysis=null
+    let result=null,analysis=null,oracleCards=[]
     if(supported){
       const cards=d.mainNames.map(n=>({...cardsByName.get(n.toLowerCase())}))
       result=analyzePower(cards,{...commander},new Map(),ITERATIONS)
-      const snapshot=oracleSnapshotHash([...cards,commander])
+      const all=[...cards,commander],snapshot=oracleSnapshotHash(all)
+      oracleCards=compactOracleEvidence(all,d.commanderName)
       analysis={...metricSummary(result),engineVersion:ENGINE_VERSION,semanticVersion:SEMANTIC_VERSION,oracleSnapshotHash:snapshot,scryfallOracleDate:oracleDate,iterations:ITERATIONS,analyzedAt:generatedAt}
       analyzed++
     }else{unsupported++;if(!d.unsupportedReason)incomplete++}
@@ -143,7 +153,7 @@ async function main(){
     while(catalog.some(x=>x.slug===slug))slug=`${slugify(`${d.name}-${d.setCode||index}`)}-${suffix++}`
     const summary={slug,deckHash:d.deckHash,name:d.name,productName:d.productName,commanderName:d.commanderName,commanderImageUrl:commander?.image||null,commanderOracleId:commander?.oracleId||null,colorIdentity:commander?.colorIdentity||[],setCode:d.setCode,releaseDate:d.releaseDate,supported,unsupportedReason:unsupportedReason||null,sourceName:'MTGJSON',sourceUrl:d.sourceUrl,sourceRevision:d.sourceRevision||revision,productAliases:d.aliases,cardCount:d.mainNames.length,analysis}
     catalog.push(summary)
-    const detail={...summary,decklist:d.decklist,result}
+    const detail={...summary,decklist:d.decklist,oracleCards,result}
     await fs.writeFile(path.join(OUT,`${slug}.json`),JSON.stringify(detail,null,2)+'\n')
     console.log(`[${index+1}/${decks.length}] ${d.name}: ${analysis?`${analysis.median} [${analysis.p20}-${analysis.p80}] peak ${analysis.peak}`:`unsupported (${unsupportedReason})`}`)
   }
