@@ -20,15 +20,33 @@ function roleCards(pool,tags){return uniqByName(pool.filter(c=>tags.some(t=>hasT
 function overlapCount(a,b){const s=new Set(a.map(x=>x.name.toLowerCase()));return b.filter(x=>s.has(x.name.toLowerCase())).length}
 const isManaPermanent=c=>!/\binstant\b|\bsorcery\b/i.test(c.type||'')&&(c.sourceColors?.length||0)>0
 const isOneShotSpell=c=>/\binstant\b|\bsorcery\b/i.test(c.type||'')
+function semanticText(c){return String(c?.oracle||'').replace(/\([^)]*\)/g,' ').replace(/\s+/g,' ').trim().toLowerCase()}
+function semanticClauses(c){return semanticText(c).split(/[.\n;]+/).map(x=>x.trim()).filter(Boolean)}
+export function isImmediateLandRamp(c){
+  if(!hasTag(c,'land-ramp'))return false
+  const o=semanticText(c)
+  if(/whenever [^.]* attacks|when [^.]* attacks|whenever [^.]* deals combat damage|when [^.]* deals combat damage|when [^.]* leaves the battlefield/.test(o))return false
+  if(/if an opponent controls more lands than you|choose an opponent who controls more lands than you|player who controls more lands than you/.test(o))return false
+  if(/whenever a land an opponent controls enters|whenever a land [^.]* opponent [^.]* enters/.test(o))return false
+  return true
+}
 function counterKinds(c){return new Set((c?.tags||[]).filter(t=>t.startsWith('counter-kind:')).map(t=>t.slice(13)))}
+function opponentOnlyCounterProducer(c){
+  if(counterKinds(c).has('wild'))return false
+  const cs=semanticClauses(c).filter(s=>/put [^.]*counters? on/.test(s))
+  if(!cs.length)return false
+  const relevant=cs.filter(s=>/counter/.test(s));if(!relevant.length)return false
+  return relevant.every(s=>/opponent/.test(s)&&!/you control|this (?:creature|artifact|enchantment|permanent)|target (?:creature|artifact|permanent)(?! an opponent)|each creature(?! your opponents)/.test(s))
+}
+function counterPayoffUsesOpponent(c){const o=semanticText(c);return /opponents? (?:has|have|with) [^.]*counters?|counters? on (?:an |each )?opponents?|poison counters? (?:an |each |your )?opponents?|for each [^.]*counter [^.]*opponent/.test(o)}
 function counterCompatible(a,b){
   const ak=counterKinds(a),bk=counterKinds(b);if(!ak.size||!bk.size)return false
+  if(opponentOnlyCounterProducer(a)&&!counterPayoffUsesOpponent(b))return false
   if(ak.has('wild')||bk.has('wild')||ak.has('any')||bk.has('any'))return true
   for(const k of ak)if(k!=='generic'&&bk.has(k))return true
   return ak.has('generic')&&bk.has('generic')
 }
 function compatibleCounterRoles(producers,payoffs){return {producers:producers.filter(p=>payoffs.some(y=>counterCompatible(p,y))),payoffs:payoffs.filter(y=>producers.some(p=>counterCompatible(p,y)))}}
-function semanticText(c){return String(c?.oracle||'').replace(/\([^)]*\)/g,' ').replace(/\s+/g,' ').trim().toLowerCase()}
 function escaped(s){return String(s||'').toLowerCase().replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
 function selfEtbTrigger(c){
   const o=semanticText(c),front=String(c?.name||'').split(' // ')[0].trim(),name=escaped(front)
@@ -36,14 +54,21 @@ function selfEtbTrigger(c){
   if(/\bwhen(?:ever)?\s+this\s+(?:creature|permanent|artifact|enchantment)\s+enters\b/.test(o))return true
   return !!name&&new RegExp(`\\bwhen(?:ever)?\\s+${name}\\s+enters\\b`).test(o)
 }
-function trueEtbPayoff(c){if(c.isLand||/\bland\b/i.test(c.type||''))return false;const o=semanticText(c);return /\bwhen(?:ever)?\b[^.\n;]{0,180}\benters(?: the battlefield)?\b/.test(o)}
+function trueEtbPayoff(c){
+  if(c.isLand||/\bland\b/i.test(c.type||''))return false
+  return semanticClauses(c).some(s=>{
+    if(!/\bwhen(?:ever)?\b[^.\n;]{0,180}\benters(?: the battlefield)?\b/.test(s))return false
+    const opponentOnly=/(?:land|creature|artifact|permanent|enchantment) an opponent controls enters|(?:land|creature|artifact|permanent|enchantment)s? your opponents? control enters|under an opponent'?s control enters/.test(s)
+    return !opponentOnly
+  })
+}
 export function detectPackages(cards,commander=null){
   const out=[],nonlands=cards.filter(c=>!c.isLand),functionalPool=cards
   for(const m of MOTIFS){
     if(m.special==='commander'){
       if(!commander)continue
       const burst=roleCards(nonlands,['burst-mana'])
-      const persistent=uniqByName(nonlands.filter(c=>!hasTag(c,'burst-mana')&&(c.cmc||0)<=3&&(hasTag(c,'land-ramp')||isManaPermanent(c))))
+      const persistent=uniqByName(nonlands.filter(c=>!hasTag(c,'burst-mana')&&(c.cmc||0)<=3&&(isImmediateLandRamp(c)||isManaPermanent(c))))
       const cmdCmc=Number(commander.cmc||0),meaningful=burst.length>=2||(cmdCmc>=4&&(burst.length+persistent.length)>=4)
       if(!meaningful)continue
       const cohesion=Math.min(100,Math.round(22+burst.length*13+persistent.length*3+Math.max(0,cmdCmc-3)*4)),members=uniqByName([...burst,...persistent])
@@ -68,13 +93,11 @@ export function commanderSynergy(cards,commander){
   if(semantic.has('lifegain')&&!/\byou (?:may )?gain [^.]*life\b/.test(semanticText(commander)))semantic.delete('lifegain')
   const pair=(a,b)=>{if(semantic.has(a))semantic.add(b)}
   pair('blink','etb');pair('tokens','token-payoff');pair('token-payoff','tokens');pair('sac-outlet','death-payoff');pair('sac-enabler','death-payoff');pair('death-payoff','sac-outlet');pair('death-payoff','sac-enabler');pair('recursion','graveyard-setup');pair('graveyard-setup','recursion');pair('constellation','enchantment');pair('artifact-payoff','artifact');pair('exile-cast','exile-payoff');pair('exile-payoff','exile-cast');pair('landfall','land-ramp');pair('spellslinger','instant');pair('spellslinger','sorcery');pair('lifegain','life-payoff');pair('life-payoff','lifegain')
-  // A commander whose own ETB is reusable benefits from blink sources, but that does not
-  // make every unrelated ETB card in the deck part of the commander's engine.
   if(selfEtbTrigger(commander))semantic.add('blink')
   const counterEngine=semantic.has('counter-producer')||semantic.has('counter-payoff')
   const nonlands=cards.filter(c=>!c.isLand),connected=semantic.size?uniqByName(cards.filter(c=>{
     if(c.tags.some(t=>semantic.has(t)&&t!=='counter-producer'&&t!=='counter-payoff'))return true
-    return counterEngine&&(hasTag(c,'counter-producer')||hasTag(c,'counter-payoff'))&&counterCompatible(commander,c)
+    return counterEngine&&(hasTag(c,'counter-producer')||hasTag(c,'counter-payoff'))&&(hasTag(commander,'counter-producer')?counterCompatible(commander,c):counterCompatible(c,commander))
   })):[]
   const score=Math.min(100,Math.round(connected.length/Math.max(1,nonlands.length)*170))
   return {score,connected:connected.map(c=>c.name),tags:[...semantic]}
