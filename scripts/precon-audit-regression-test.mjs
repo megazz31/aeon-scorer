@@ -31,6 +31,34 @@ assert.equal(selfEtbSynergy.tags.includes('blink'),true,'a commander with its ow
 assert.equal(selfEtbSynergy.connected.includes('Audit Visionary A'),false,'a self-ETB commander must not automatically connect to unrelated ETB creatures')
 assert.equal(selfEtbSynergy.connected.includes('Audit Flicker A'),true,'a self-ETB commander should connect to real blink sources')
 
+// Counter packages must connect compatible counter kinds, not merely the word "counter".
+const plusProducers=Array.from({length:3},(_,i)=>card(`Plus Producer ${i+1}`,'Creature — Human',`{T}: Put a +1/+1 counter on target creature you control.`,2))
+const chargePayoffs=Array.from({length:2},(_,i)=>card(`Charge Payoff ${i+1}`,'Artifact',`{T}: Add {C} for each charge counter on Charge Payoff ${i+1}.`,2))
+const mixedCounters=detectPackages(featureDeck([...plusProducers,...chargePayoffs]))
+assert.equal(mixedCounters.some(p=>p.id==='counters'),false,'+1/+1 producers must not connect to charge-counter payoffs')
+const plusPayoffs=Array.from({length:2},(_,i)=>card(`Plus Payoff ${i+1}`,'Enchantment',`Creatures you control get +1/+1 for each +1/+1 counter on Plus Payoff ${i+1}.`,2))
+const plusCounters=detectPackages(featureDeck([...plusProducers,...plusPayoffs])).find(p=>p.id==='counters')
+assert.ok(plusCounters,'matching +1/+1 producers and payoffs must still form a counter package')
+const proliferators=Array.from({length:3},(_,i)=>card(`Proliferator ${i+1}`,'Creature — Vedalken',`When Proliferator ${i+1} enters, proliferate.`,2))
+const proliferateCharge=detectPackages(featureDeck([...proliferators,...chargePayoffs])).find(p=>p.id==='counters')
+assert.ok(proliferateCharge,'proliferate must remain a wildcard compatible with existing counter types')
+const aetherSnap=cardFeatures(card('Aether Snap','Sorcery','Remove all counters from all permanents and exile all tokens.',5))
+assert.equal(aetherSnap.tags.includes('counter-payoff'),false,'global counter removal must not be treated as a counter payoff')
+
+// Incidental lifelink is not a commander life-engine by itself.
+const atraxaLike=cardFeatures(card('Audit Lifelink Commander','Legendary Creature — Phyrexian Angel','Flying, vigilance, deathtouch, lifelink. At the beginning of your end step, proliferate.',4))
+const lifePool=featureDeck([
+  card('Soul Warden','Creature — Human Cleric','Whenever another creature enters, you gain 1 life.',1),
+  card('Ajani Pridemate','Creature — Cat Soldier','Whenever you gain life, put a +1/+1 counter on this creature.',2),
+])
+const incidentalLife=commanderSynergy(lifePool,atraxaLike)
+assert.equal(incidentalLife.tags.includes('lifegain'),false,'lifelink alone must not seed commander lifegain synergy')
+assert.equal(incidentalLife.tags.includes('life-payoff'),false,'lifelink alone must not pull in life payoffs')
+const oloroLike=cardFeatures(card('Audit Life Commander','Legendary Creature — Giant Soldier','At the beginning of your upkeep, you gain 2 life.',6))
+const explicitLife=commanderSynergy(lifePool,oloroLike)
+assert.equal(explicitLife.tags.includes('lifegain'),true,'explicit repeated life gain should seed commander lifegain synergy')
+assert.equal(explicitLife.tags.includes('life-payoff'),true,'explicit life gain should connect to actual life-gain payoffs')
+
 const commander=card('Audit Commander','Legendary Creature — Human','Whenever you cast a noncreature spell, draw a card.',4,{manaCost:'{2}{U}{R}',colors:['U','R'],colorIdentity:['U','R']})
 const orderDeck=[...genericSpells,copyAdept,oneShotCopy,blinkA,blinkB,etbA,etbB,bounceA,bounceB,
   ...Array.from({length:12},(_,i)=>card(`Audit Land ${i+1}`,'Basic Land — Island','{T}: Add {U}.',0,{producedMana:['U']})),
@@ -43,4 +71,4 @@ assert.deepEqual(reversed.dimensions,forward.dimensions,'dimensions must be inva
 assert.deepEqual(reversed.packages,forward.packages,'packages must be invariant to decklist order')
 assert.deepEqual(reversed.simulation.turnProfile,forward.simulation.turnProfile,'turn simulation must be invariant to decklist order')
 
-console.log('PRECON AUDIT REGRESSION OK — package precision, commander ETB directionality and deck-order invariance')
+console.log('PRECON AUDIT REGRESSION OK — package precision, typed counters, commander directionality and deck-order invariance')
