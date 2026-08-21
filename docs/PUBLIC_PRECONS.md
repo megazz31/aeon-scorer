@@ -34,10 +34,10 @@ The generated snapshot contains its exact engine version, semantic version, Scry
 ### Current v3.2 snapshot
 
 <!-- PRECON_SNAPSHOT_START -->
-Current reviewed snapshot: **168 canonical / 163 analyzed / 5 unsupported / 0 incomplete**, generated 2026-08-21, at 3,200 sequences with engine `3.2.0` / semantic `3.2.0-semantic-6`; source revision MTGJSON `2026-08-21`.
+Current reviewed snapshot: **168 canonical / 163 analyzed / 5 unsupported / 0 incomplete**, generated 2026-08-21, at 3,200 sequences with engine `3.2.0` / semantic `3.2.0-semantic-7`; source revision MTGJSON `2026-08-21`.
 <!-- PRECON_SNAPSHOT_END -->
 
-This block is generated from `public/precons/catalog.json` and is checked by `npm run test:public-precons`. Do not edit its counts or versions manually.
+This block mirrors `public/precons/catalog.json` and is checked by `npm run test:public-precons`. Any stale count, version, generation date, iteration count or source revision fails the quality gate.
 
 ## Versioned Supabase storage
 
