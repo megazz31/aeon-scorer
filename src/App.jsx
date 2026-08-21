@@ -3,6 +3,7 @@ import { parseDecklist,fetchCards,fetchCard } from './scryfall.js'
 import { parseAeonShiftCsv } from './data/aeonshift.js'
 import { analyzePower } from './engine/powerModel.js'
 import { SITE_META,WhyPage,MethodPage,AboutPage } from './sitePages.jsx'
+import DeckImportPanel from './DeckImportPanel.jsx'
 import { AEON_LABEL,MODEL_ID } from './version.js'
 
 const SAMPLE=`1 Sol Ring\n1 Arcane Signet\n1 Swords to Plowshares\n1 Beast Within\n1 Cultivate\n1 Harmonize\n36 Forest`
@@ -72,6 +73,7 @@ export default function App(){
 
   function changeLanguage(next){if(next===lang)return;localStorage.setItem('aeon-lang',next);setLang(next);setError('');setStatus('')}
   function navigate(path){const next=ROUTES.has(path)?path:'/';if(window.location.pathname!==next)window.history.pushState({},'',next);setRoute(next);window.scrollTo({top:0,behavior:'smooth'})}
+  function applyDeckImport(data){setDeckText(data.decklist||'');setCommanderName(data.commanderName||'');setCommander(null);setResult(null);setError('');setStatus('');setView('summary')}
 
   async function analyze(){
     setError('');setResult(null)
@@ -119,7 +121,8 @@ export default function App(){
         <section className="contentCallout" style={{marginBottom:18}}><b>{L('Aeon improves through real use.','Aeon s’améliore grâce aux analyses réelles.')}</b> {L('Each successful analysis is versioned and expands Aeon’s semantic QA corpus, including anonymous runs. It helps expose misread cards and regressions so future versions can improve. Analyses are evidence, never automatic truth.','Chaque analyse réussie est versionnée et agrandit le corpus QA sémantique d’Aeon, y compris les analyses anonymes. Cela aide à repérer les cartes mal comprises et les régressions pour améliorer les prochaines versions. Les analyses sont des indices, jamais une vérité automatique.')}</section>
 
         <section className="analyzerCard">
-          <div className="analyzerHeader"><div><span className="sectionEyebrow">{L('NEW ANALYSIS','NOUVELLE ANALYSE')}</span><h2>{L('Paste your decklist. Aeon does the rest.','Colle ta decklist. Aeon fait le reste.')}</h2></div><span className="validationPill"><i/>{AEON_LABEL} {L('validated','validée')}</span></div>
+          <div className="analyzerHeader"><div><span className="sectionEyebrow">{L('NEW ANALYSIS','NOUVELLE ANALYSE')}</span><h2>{L('Import or paste your decklist. Aeon does the rest.','Importe ou colle ta decklist. Aeon fait le reste.')}</h2></div><span className="validationPill"><i/>{AEON_LABEL} {L('validated','validée')}</span></div>
+          <DeckImportPanel lang={lang} onImported={applyDeckImport}/>
           <div className="analyzerGrid">
             <div className="deckEditor"><div className="fieldHeader"><label htmlFor="decklist">Decklist</label><span className={`cardCount ${total===99||total===100?'ready':''}`}>{total} {L(total===1?'card':'cards',total>1?'cartes':'carte')}</span></div><textarea id="decklist" value={deckText} onChange={e=>setDeckText(e.target.value)} placeholder={SAMPLE}/><div className="editorFoot"><span>{L('99 cards with a separate commander · 100 when included','99 cartes si le commandant est séparé · 100 s’il est inclus')}</span><button type="button" className="textButton" onClick={()=>setDeckText('')}>{L('Clear','Effacer')}</button></div></div>
             <aside className="configPanel">
