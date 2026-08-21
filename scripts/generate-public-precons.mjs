@@ -3,6 +3,7 @@ import path from 'node:path'
 import crypto from 'node:crypto'
 import { analyzePower } from '../src/engine/powerModel.js'
 import { tagsFor } from '../src/engine/cardFeatures.js'
+import { normalizeScryfallCard } from '../src/scryfallNormalize.js'
 import { ENGINE_VERSION, SEMANTIC_VERSION } from '../src/version.js'
 
 const MTGJSON='https://mtgjson.com/api/v5'
@@ -41,31 +42,21 @@ function countOf(c){return Math.max(0,Number(c?.count??c?.quantity??1)||0)}
 function expandNames(rows){return (rows||[]).flatMap(c=>Array(countOf(c)).fill(c?.name).filter(Boolean))}
 function decklistText(rows){return (rows||[]).filter(c=>c?.name&&countOf(c)>0).map(c=>`${countOf(c)} ${c.name}`).join('\n')}
 function stableAlias(meta){return {name:meta.name||null,setCode:meta.code||null,releaseDate:meta.releaseDate||null,fileName:meta.fileName||null}}
-function normalizeScryfall(d){
-  const faces=d.card_faces||[],faceNames=faces.map(f=>f.name).filter(Boolean),distinctFaceNames=[...new Set(faceNames)],sameNameReversible=distinctFaceNames.length===1&&String(d.name||'').includes(' // '),name=sameNameReversible?distinctFaceNames[0]:d.name
-  const oracle=d.oracle_text||faces.map(f=>f.oracle_text||'').filter(Boolean).join('\n'),producedMana=d.produced_mana||[...new Set(faces.flatMap(f=>f.produced_mana||[]))]
-  return {
-    id:d.id,oracleId:d.oracle_id||d.id,name,aliases:faceNames.filter(x=>x&&x!==name),manaCost:d.mana_cost||faces.map(f=>f.mana_cost||'').filter(Boolean).join(' // '),cmc:Number(d.cmc||0),
-    type:d.type_line||'',oracle,colors:d.colors||[],colorIdentity:d.color_identity||[],keywords:d.keywords||[],producedMana:producedMana||[],
-    power:d.power??faces[0]?.power??null,toughness:d.toughness??faces[0]?.toughness??null,legalities:d.legalities||{},edhrecRank:d.edhrec_rank??null,
-    image:d.image_uris?.normal||faces[0]?.image_uris?.normal||null,
-  }
-}
 function indexCard(map,c,requested=null){map.set(c.name.toLowerCase(),c);for(const a of c.aliases||[])map.set(String(a).toLowerCase(),c);if(requested)map.set(String(requested).toLowerCase(),c)}
 async function resolveScryfall(names){
   const unique=[...new Set(names.filter(Boolean))],map=new Map(),missing=[]
   for(let i=0;i<unique.length;i+=75){
     const batch=unique.slice(i,i+75)
     const payload=await fetchJson(`${SCRYFALL}/cards/collection`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({identifiers:batch.map(name=>({name}))})})
-    for(const raw of payload.data||[])indexCard(map,normalizeScryfall(raw))
+    for(const raw of payload.data||[])indexCard(map,normalizeScryfallCard(raw))
     const unresolved=batch.filter(name=>!map.has(name.toLowerCase()))
     for(const name of unresolved){
       let resolved=null
-      try{resolved=normalizeScryfall(await fetchJson(`${SCRYFALL}/cards/named?exact=${encodeURIComponent(name)}`))}
+      try{resolved=normalizeScryfallCard(await fetchJson(`${SCRYFALL}/cards/named?exact=${encodeURIComponent(name)}`))}
       catch(e){if(e?.status!==404)console.warn('Scryfall exact failed',name,e.message)}
       if(!resolved&&name.includes(' // ')){
         const front=name.split(' // ')[0].trim()
-        try{resolved=normalizeScryfall(await fetchJson(`${SCRYFALL}/cards/named?exact=${encodeURIComponent(front)}`))}
+        try{resolved=normalizeScryfallCard(await fetchJson(`${SCRYFALL}/cards/named?exact=${encodeURIComponent(front)}`))}
         catch(e){if(e?.status!==404)console.warn('Scryfall front-face fallback failed',name,e.message)}
       }
       if(resolved)indexCard(map,resolved,name)
