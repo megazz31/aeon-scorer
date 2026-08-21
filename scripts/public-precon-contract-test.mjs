@@ -18,6 +18,7 @@ assert.match(generator,/\/commander\/i\.test/)
 assert.match(generator,/AEON_PRECON_ITERATIONS\|\|3200/)
 assert.match(generator,/byHash=new Map/)
 assert.match(generator,/multiple_commanders_not_supported/)
+assert.match(generator,/compactOracleEvidence/)
 assert.match(page,/medianMin/)
 assert.match(page,/p20Min/)
 assert.match(page,/p80Min/)
@@ -54,7 +55,12 @@ try{
     assert(deck.slug&&deck.deckHash&&deck.name&&deck.commanderName)
     const detail=JSON.parse(await fs.readFile(path.join(root,'public/precons',`${deck.slug}.json`),'utf8'))
     assert.equal(detail.deckHash,deck.deckHash)
-    if(deck.analysis){for(const k of ['median','p20','p80','peak','coverage'])assert(Number(deck.analysis[k])>=0&&Number(deck.analysis[k])<=100,`${deck.name} ${k} outside 0..100`)}
+    if(deck.analysis){
+      for(const k of ['median','p20','p80','peak','coverage'])assert(Number(deck.analysis[k])>=0&&Number(deck.analysis[k])<=100,`${deck.name} ${k} outside 0..100`)
+      assert(Array.isArray(detail.oracleCards)&&detail.oracleCards.length>=50,`${deck.name} missing compact Oracle evidence`)
+      assert.equal(detail.oracleCards.filter(c=>c.isCommander).length,1,`${deck.name} must have exactly one commander in Oracle evidence`)
+      assert(detail.oracleCards.every(c=>c.oracleId&&c.name&&typeof c.oracle==='string'&&typeof c.type==='string'&&Array.isArray(c.tags)),`${deck.name} has malformed Oracle evidence`)
+    }
   }
   console.log(`Public precon contract OK: ${catalog.length} canonical decks, ${catalog.filter(x=>x.analysis).length} analyzed.`)
 }catch(e){
