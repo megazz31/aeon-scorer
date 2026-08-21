@@ -80,6 +80,7 @@ for(const c of [
   card('Temporal Spring','Sorcery','Put target permanent on top of its owner\'s library.')
 ])assert.equal(has(c,'removal'),true,c.name)
 assert.equal(has(card('Chaos Warp','Instant','The owner of target permanent shuffles it into their library, then reveals the top card of their library.'),'removal'),true)
+assert.equal(has(card('Blink','Enchantment — Saga','I, III — Choose target creature. Its owner shuffles it into their library, then investigates.\nII, IV — Create a 2/2 black Alien Angel artifact creature token.'),'removal'),true)
 assert.equal(has(card('Noxious Revival','Instant','Put target card from a graveyard on top of its owner\'s library.'),'removal'),false)
 assert.equal(has(card('Academy Ruins','Legendary Land','{T}: Add {C}. {1}{U}, {T}: Put target artifact card from your graveyard on top of your library.'),'removal'),false)
 assert.equal(has(card('Reality Scramble','Sorcery','Put target permanent you own on the bottom of your library. Reveal cards from the top of your library until you reveal a card that shares a card type with that permanent.'),'removal'),false)
@@ -114,7 +115,10 @@ assert.equal(has(card('Anje Falkenrath','Legendary Creature — Vampire','Haste\
 assert.equal(has(card('Corpse Knight','Creature — Zombie Knight','Whenever another creature you control enters, each opponent loses 1 life.'),'life-payoff'),false)
 assert.equal(has(card('Wound Reflection','Enchantment','At the beginning of each end step, each opponent loses life equal to the life they lost this turn.'),'life-payoff'),false)
 assert.equal(has(card('Dina, Soul Steeper','Legendary Creature — Dryad Druid','Whenever you gain life, each opponent loses 1 life.'),'life-payoff'),true)
+assert.equal(has(card('Dina, Soul Steeper','Legendary Creature — Dryad Druid','Whenever you gain life, each opponent loses 1 life.'),'lifegain'),false)
 assert.equal(has(card('Ajani Pridemate','Creature — Cat Soldier','Whenever you gain life, put a +1/+1 counter on this creature.'),'life-payoff'),true)
+assert.equal(has(card('Ajani Pridemate','Creature — Cat Soldier','Whenever you gain life, put a +1/+1 counter on this creature.'),'lifegain'),false)
+assert.equal(has(card('Soul Warden','Creature — Human Cleric','Whenever another creature enters, you gain 1 life.'),'lifegain'),true)
 assert.equal(has(card('Atraxa, Praetors Voice','Legendary Creature — Phyrexian Angel Horror','Flying, vigilance, deathtouch, lifelink. At the beginning of your end step, proliferate.'),'lifegain'),true)
 assert.equal(has(card('Atraxa, Praetors Voice','Legendary Creature — Phyrexian Angel Horror','Flying, vigilance, deathtouch, lifelink. At the beginning of your end step, proliferate.'),'life-payoff'),false)
 
