@@ -57,7 +57,8 @@ function counterKinds(o){
   return out
 }
 function counterRoles(o){
-  const s=o.toLowerCase(),producer=/put (?:a |one |two |three |x |up to [a-z]+ )?(?:\+1\/\+1 |[-+]?\d+\/[-+]?\d+ )?counters? on|enters(?: the battlefield)? with [^.]*counters? on|\bproliferate\b/.test(s),
+  const s=o.toLowerCase(),putCounter=/put (?:a |one |two |three |x |up to [a-z]+ )?(?:\+1\/\+1 |[-+]?\d+\/[-+]?\d+ )?counters? on/,
+    producer=clauses(s).some(c=>{const actionable=c.replace(/\b(?:if|whenever) you put [^,]*counters? on[^,]*(?:,\s*|$)/,'');return putCounter.test(actionable)||/enters(?: the battlefield)? with [^.]*counters? on/.test(actionable)||/\bproliferate\b/.test(actionable)}),
     removeOwn=/remove (?:a|one|two|three|x|any number of) counters? from [^.]{0,100}(?:you control|this)/.test(s),
     payoff=/for each [^.]*counter|with (?:a|one or more|\w+) counters? on|has (?:a|one or more|\w+) counters? on|whenever one or more counters? (?:are|is) put/.test(s)||removeOwn,
     doubler=/twice that many(?: of those)? counters|double the number of [^.]*counters|additional [^.]*counter would be put|that many plus one [^.]*counters/.test(s)
@@ -99,7 +100,7 @@ export function tagsFor(card){
 }
 
 function manaValueScore(cmc){if(cmc<=0)return 1;if(cmc<=1)return .95;if(cmc<=2)return .85;if(cmc<=3)return .72;if(cmc<=4)return .58;if(cmc<=5)return .46;if(cmc<=6)return .35;return .25}
-export function manaRequirement(card){const symbols=[...String(card.manaCost||'').matchAll(/\{([^}]+)\}/g)].map(m=>m[1].toUpperCase()),colored=[];let generic=0;for(const sym of symbols){if(/^\d+$/.test(sym)){generic+=Number(sym);continue}if(sym==='X'||sym==='Y'||sym==='Z')continue;if(/^[WUBRGC]$/.test(sym)){colored.push([sym]);continue}const opts=sym.split('/').filter(x=>/^[WUBRGC]$/.test(x));if(opts.length)colored.push(opts)}return {generic,colored,total:Number(card.cmc||generic+colored.length)}}
+export function manaRequirement(card){const symbols=[...String(card.manaCost||'').matchAll(/\{([^}]+)\}/g)].map(m=>m[1].toUpperCase()),colored=[];let generic=0;for(const sym of symbols){if(/^\d+$/.test(sym)){generic+=Number(sym);continue}if(sym==='X'||sym==='Y'||sym==='Z')continue;if(/^[WUBRGC]$/.test(sym)){colored.push([sym]);continue}const opts=sym.split('/').filter(x=>/^[WUBRGC]$/.test(x));if(opts.length)colored.push(opts)}return {generic,colored,total:Number(card.cmc||generic+colored.length)}
 export function sourceColors(card){const pm=Array.isArray(card.producedMana)?card.producedMana:[];if(pm.length)return unique(pm.map(x=>String(x).toUpperCase()).filter(x=>/^[WUBRGC]$/.test(x)));const t=typeLower(card),o=lower(card),out=[];if(/plains/.test(t))out.push('W');if(/island/.test(t))out.push('U');if(/swamp/.test(t))out.push('B');if(/mountain/.test(t))out.push('R');if(/forest/.test(t))out.push('G');if(/\badd (?:one )?mana of any color\b|\badd one mana of any type that a land you control could produce\b/.test(o))return ['W','U','B','R','G'];for(const c of ['W','U','B','R','G','C'])if(new RegExp(`\\badd \\{${c}\\}`,'i').test(o))out.push(c);return unique(out)}
 
 export function cardFeatures(card){
