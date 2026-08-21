@@ -18,6 +18,8 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Smoke test
         run: npm run smoke
+      - name: Public precon library contract
+        run: npm run test:public-precons
       - name: Micro semantic truth tests
         run: npm run test:semantic
       - name: Metamorphic independent verification
