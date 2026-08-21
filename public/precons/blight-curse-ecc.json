@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 43,
-    "p20": 33,
-    "p80": 54,
-    "peak": 83,
+    "median": 44,
+    "p20": 34,
+    "p80": 55,
+    "peak": 86,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-7",
+    "semanticVersion": "3.2.0-semantic-8",
     "oracleSnapshotHash": "2b7df76a4b51913d5be11d735ac0733e51f22fcaca5013764f0c72a432ed5132",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T15:55:41.831Z"
+    "analyzedAt": "2026-08-21T17:59:33.369Z"
   },
   "decklist": "1 The Reaper, King No More\n1 Wickersmith's Tools\n1 Sinister Gnarlbark\n1 Eventide's Shadow\n1 Aberrant Return\n1 Dread Tiller\n1 Grave Venerations\n1 Oft-Nabbed Goat\n1 Village Pillagers\n1 Puca's Covenant\n1 Ferrafor, Young Yew\n1 Tree of Perdition\n1 Vernal Fen\n1 Festering Thicket\n1 Necroskitter\n1 Ignoble Hierarch\n1 Nesting Grounds\n1 Massacre Girl, Known Killer\n1 Grave Titan\n1 Vraska, Betrayal's Sting\n1 The Scorpion God\n1 Liliana, Death Wielder\n1 Chimil, the Inner Sun\n1 Carnifex Demon\n1 Puppeteer Clique\n1 Dusk Urchins\n1 Black Sun's Zenith\n1 Painful Truths\n1 Persist\n1 Midnight Banshee\n1 Chain Reaction\n1 Archfiend of Ifnir\n1 Channeler Initiate\n1 Hapatra, Vizier of Poisons\n1 Glissa Sunslayer\n1 Everlasting Torment\n1 Assassin's Trophy\n1 Grim Poppet\n1 Canyon Slough\n1 Sheltered Thicket\n1 Exotic Orchard\n1 Smoldering Marsh\n1 Cinder Glade\n1 Dragonskull Summit\n1 Rootbound Crag\n1 Woodland Cemetery\n1 Lasting Tarfire\n1 Burning Curiosity\n1 Hoarder's Greed\n1 Blowfly Infestation\n1 Fire Covenant\n1 Sol Ring\n1 Arcane Signet\n1 Command Tower\n1 Cathartic Reunion\n1 Skinrender\n1 Soul Snuffers\n1 Incremental Blight\n1 Infernal Grasp\n1 Evolution Sage\n1 Devoted Druid\n1 Flourishing Defenses\n1 Harmonize\n1 Putrefy\n1 Binding the Old Gods\n1 Kulrath Knight\n1 Contagion Clasp\n1 Savage Lands\n1 Ifnir Deadlands\n1 Night's Whisper\n1 Wickerbough Elder\n1 Terminate\n1 Commander's Sphere\n1 Cathartic Pyre\n1 Evolving Wilds\n1 Terramorphic Expanse\n1 Path of Ancestry\n1 Riveteers Overlook\n1 Rakdos Carnarium\n1 Gruul Turf\n1 Golgari Rot Farm\n8 Swamp\n4 Mountain\n6 Forest",
   "oracleCards": [
@@ -872,6 +872,7 @@
         "creature",
         "tokens",
         "counter-producer",
+        "counter-payoff",
         "counter-kind:minus1"
       ],
       "isCommander": false
@@ -1030,7 +1031,7 @@
       "producedMana": [],
       "tags": [
         "enchantment",
-        "counter-producer",
+        "counter-payoff",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -1775,10 +1776,10 @@
   ],
   "result": {
     "profile": {
-      "median": 43,
-      "floor": 33,
-      "ceiling": 54,
-      "peak": 83,
+      "median": 44,
+      "floor": 34,
+      "ceiling": 55,
+      "peak": 86,
       "dispersion": 21,
       "variance": 21,
       "consistency": 65,
@@ -1787,9 +1788,9 @@
       "dataCoverage": 94
     },
     "dimensions": {
-      "speed": 36,
+      "speed": 38,
       "consistency": 65,
-      "explosiveness": 12,
+      "explosiveness": 14,
       "synergy": 54,
       "interaction": 47,
       "resilience": 42
@@ -1828,6 +1829,8 @@
         ],
         "payoffs": [
           "Dusk Urchins",
+          "Hapatra, Vizier of Poisons",
+          "Lasting Tarfire",
           "Puca's Covenant",
           "Village Pillagers"
         ],
@@ -1845,7 +1848,6 @@
           "Grim Poppet",
           "Hapatra, Vizier of Poisons",
           "Incremental Blight",
-          "Lasting Tarfire",
           "Liliana, Death Wielder",
           "Midnight Banshee",
           "Oft-Nabbed Goat",
@@ -1855,6 +1857,7 @@
           "The Scorpion God",
           "Vraska, Betrayal's Sting",
           "Wickerbough Elder",
+          "Lasting Tarfire",
           "Puca's Covenant",
           "Village Pillagers"
         ],
@@ -2086,6 +2089,7 @@
               "creature",
               "tokens",
               "counter-producer",
+              "counter-payoff",
               "counter-kind:minus1"
             ],
             "manaReq": {
@@ -2120,24 +2124,6 @@
                 ]
               ],
               "total": 5
-            }
-          },
-          {
-            "name": "Lasting Tarfire",
-            "cmc": 2,
-            "tags": [
-              "enchantment",
-              "counter-producer",
-              "counter-kind:generic"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 2
             }
           },
           {
@@ -2365,6 +2351,47 @@
             }
           },
           {
+            "name": "Hapatra, Vizier of Poisons",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "tokens",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Lasting Tarfire",
+            "cmc": 2,
+            "tags": [
+              "enchantment",
+              "counter-payoff",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
             "name": "Puca's Covenant",
             "cmc": 3,
             "tags": [
@@ -2414,7 +2441,7 @@
         "payoffTags": [
           "counter-payoff"
         ],
-        "evidence": "23 producteur(s), 3 payoff(s), 25 carte(s) distincte(s)."
+        "evidence": "22 producteur(s), 5 payoff(s), 25 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2772,15 +2799,15 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 34,
-      "median": 41,
-      "high": 49,
-      "ceiling": 49,
-      "peak": 74,
+      "floor": 35,
+      "median": 42,
+      "high": 50,
+      "ceiling": 50,
+      "peak": 79,
       "iqr": 12,
       "consistency": 74,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": 5,
+      "engineMedianTurn": 4,
       "recoveryAfterDisruption": 88,
       "turnProfile": [
         {
@@ -2802,7 +2829,7 @@
         {
           "turn": 3,
           "commander": 17,
-          "engine": 5,
+          "engine": 8,
           "interaction": 33,
           "resource": 47,
           "burst": 0
@@ -2810,7 +2837,7 @@
         {
           "turn": 4,
           "commander": 64,
-          "engine": 14,
+          "engine": 20,
           "interaction": 53,
           "resource": 72,
           "burst": 0
@@ -2818,7 +2845,7 @@
         {
           "turn": 5,
           "commander": 84,
-          "engine": 21,
+          "engine": 29,
           "interaction": 62,
           "resource": 82,
           "burst": 0
@@ -2826,7 +2853,7 @@
         {
           "turn": 6,
           "commander": 89,
-          "engine": 25,
+          "engine": 34,
           "interaction": 68,
           "resource": 87,
           "burst": 0
@@ -2834,7 +2861,7 @@
         {
           "turn": 7,
           "commander": 93,
-          "engine": 29,
+          "engine": 39,
           "interaction": 73,
           "resource": 90,
           "burst": 0

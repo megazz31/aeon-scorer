@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 45,
-    "p20": 32,
-    "p80": 57,
+    "median": 46,
+    "p20": 31,
+    "p80": 56,
     "peak": 87,
     "coverage": 95,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-7",
+    "semanticVersion": "3.2.0-semantic-8",
     "oracleSnapshotHash": "e5b678d668ff5024c4efe805df20181a125da37ff6d59c94fe60aa706a76261b",
     "scryfallOracleDate": "2026-08-21",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T15:55:41.831Z"
+    "analyzedAt": "2026-08-21T17:59:33.369Z"
   },
   "decklist": "1 Kros, Defense Contractor\n1 Ajani Unyielding\n1 Angelic Sleuth\n1 Aven Courier\n1 Aven Mimeomancer\n1 Avenging Huntbonder\n1 Bribe Taker\n1 Crystalline Giant\n1 Devoted Druid\n1 Denry Klin, Editor in Chief\n1 Evolution Sage\n1 Fathom Mage\n1 Forgotten Ancient\n1 Grateful Apparition\n1 Incubation Druid\n1 Jenara, Asura of War\n1 Luminarch Aspirant\n1 Park Heights Maverick\n1 Rishkar, Peema Renegade\n1 Roalesk, Apex Hybrid\n1 Scavenging Ooze\n1 Shield Broker\n1 Skyboon Evangelist\n1 Skyship Plunderer\n1 Slippery Bogbonder\n1 Steelbane Hydra\n1 Thrummingbird\n1 Vorel of the Hull Clade\n1 Wall of Roots\n1 Wickerbough Elder\n1 Wingspan Mentor\n1 Declaration in Stone\n1 Damning Verdict\n1 Planar Outburst\n1 Tezzeret's Gambit\n1 Rishkar's Expertise\n1 Urban Evolution\n1 Bant Charm\n1 Brokers Charm\n1 Brokers Confluence\n1 Contractual Safeguard\n1 Exotic Pets\n1 Generous Gift\n1 Storm of Forms\n1 Family's Favor\n1 Hoofprints of the Stag\n1 Primal Empathy\n1 Resourceful Defense\n1 Together Forever\n1 Agent's Toolkit\n1 Arcane Signet\n1 Commander's Sphere\n1 Everflowing Chalice\n1 Fellwar Stone\n1 Gavel of the Righteous\n1 Midnight Clock\n1 Oblivion Stone\n1 Oracle's Vault\n1 Power Conduit\n1 Sol Ring\n1 Swiftfoot Boots\n1 Ash Barrens\n1 Bant Panorama\n1 Brokers Hideout\n1 Canopy Vista\n1 Command Tower\n1 Exotic Orchard\n1 Flooded Grove\n1 Fortified Village\n1 Gavony Township\n1 Karn's Bastion\n1 Littjara Mirrorlake\n1 Llanowar Reborn\n1 Myriad Landscape\n1 Nesting Grounds\n1 Path of Ancestry\n1 Port Town\n1 Prairie Stream\n1 Seaside Citadel\n1 Skycloud Expanse\n1 Sungrass Prairie\n1 Temple of Mystery\n1 Vivid Creek\n1 Vivid Grove\n1 Vivid Meadow\n3 Forest\n2 Forest\n2 Island\n2 Island\n3 Plains\n2 Plains",
   "oracleCards": [
@@ -933,6 +933,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-payoff",
         "counter-kind:shield"
       ],
       "isCommander": false
@@ -1876,20 +1877,20 @@
   ],
   "result": {
     "profile": {
-      "median": 45,
-      "floor": 32,
-      "ceiling": 57,
+      "median": 46,
+      "floor": 31,
+      "ceiling": 56,
       "peak": 87,
       "dispersion": 25,
       "variance": 25,
-      "consistency": 59,
-      "commanderDelta": 4,
+      "consistency": 60,
+      "commanderDelta": 5,
       "coverage": 95,
       "dataCoverage": 95
     },
     "dimensions": {
       "speed": 44,
-      "consistency": 59,
+      "consistency": 60,
       "explosiveness": 19,
       "synergy": 55,
       "interaction": 44,
@@ -1933,11 +1934,11 @@
           "Everflowing Chalice",
           "Exotic Pets",
           "Gavel of the Righteous",
+          "Kros, Defense Contractor",
           "Power Conduit",
           "Rishkar, Peema Renegade",
           "Skyboon Evangelist",
-          "Skyship Plunderer",
-          "Storm of Forms"
+          "Skyship Plunderer"
         ],
         "members": [
           "Agent's Toolkit",
@@ -1969,6 +1970,7 @@
           "Damning Verdict",
           "Exotic Pets",
           "Gavel of the Righteous",
+          "Kros, Defense Contractor",
           "Skyboon Evangelist",
           "Skyship Plunderer",
           "Storm of Forms",
@@ -2566,6 +2568,30 @@
             }
           },
           {
+            "name": "Kros, Defense Contractor",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "counter-payoff",
+              "counter-kind:shield"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "W"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
             "name": "Power Conduit",
             "cmc": 2,
             "tags": [
@@ -2686,7 +2712,7 @@
         "payoffTags": [
           "counter-payoff"
         ],
-        "evidence": "25 producteur(s), 11 payoff(s), 33 carte(s) distincte(s)."
+        "evidence": "25 producteur(s), 12 payoff(s), 34 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -3037,12 +3063,12 @@
     "simulation": {
       "iterations": 3200,
       "floor": 35,
-      "median": 44,
+      "median": 45,
       "high": 53,
       "ceiling": 53,
       "peak": 81,
       "iqr": 15,
-      "consistency": 67,
+      "consistency": 68,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
       "recoveryAfterDisruption": 66,
@@ -3074,7 +3100,7 @@
         {
           "turn": 4,
           "commander": 60,
-          "engine": 43,
+          "engine": 44,
           "interaction": 50,
           "resource": 27,
           "burst": 8
@@ -3082,7 +3108,7 @@
         {
           "turn": 5,
           "commander": 79,
-          "engine": 56,
+          "engine": 58,
           "interaction": 61,
           "resource": 37,
           "burst": 13
@@ -3090,7 +3116,7 @@
         {
           "turn": 6,
           "commander": 86,
-          "engine": 64,
+          "engine": 67,
           "interaction": 69,
           "resource": 44,
           "burst": 17
@@ -3098,7 +3124,7 @@
         {
           "turn": 7,
           "commander": 90,
-          "engine": 71,
+          "engine": 73,
           "interaction": 74,
           "resource": 48,
           "burst": 20
