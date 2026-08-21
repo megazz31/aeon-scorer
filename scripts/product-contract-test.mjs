@@ -39,7 +39,8 @@ assert.match(pages,/POD MATCH · EXPERIMENTAL/,'Pod Match must be explicitly exp
 assert.match(pages,/podWarnings/,'Pod Match must expose asymmetry warnings separately')
 assert.match(productData,/GAME_CHANGERS_SOURCE/)
 assert.match(productData,/reviewedAt:'2026-08-21'/)
+assert.match(productData,/POD_ASYMMETRY_THRESHOLDS=\{peak:15,dispersion:10,explosiveness:20,speed:20,consistency:20\}/)
+assert.match(productData,/for\(const key of \['explosiveness','speed','consistency'\]\)/,'Pod Match must inspect Aeon dimensions without depending on code-generation syntax')
 assert.match(productData,/high-peak-asymmetry/)
-assert.match(productData,/high-explosiveness-asymmetry/)
 
 console.log('PRODUCT CONTRACT OK — sanitized sharing, audit feedback, Spellbook isolation, experimental Pod asymmetries, Game Changer provenance and local What-if')
