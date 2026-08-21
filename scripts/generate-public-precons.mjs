@@ -25,7 +25,6 @@ async function fetchWithBackoff(url,options={},attempts=7){
 }
 async function fetchJson(url,options){return (await fetchWithBackoff(url,options)).json()}
 const sha256=s=>crypto.createHash('sha256').update(String(s)).digest('hex')
-const canonical=s=>String(s||'').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,' ').trim()
 function slugify(s){return String(s||'deck').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,90)||'deck'}
 function normalizedDeckKey(decklist,commander){return `${String(commander||'').trim().toLowerCase()}\n${String(decklist||'').split(/\r?\n/).map(x=>x.trim()).filter(Boolean).sort((a,b)=>a.localeCompare(b)).join('\n')}`}
 function countOf(c){return Math.max(0,Number(c?.count??c?.quantity??1)||0)}
@@ -117,7 +116,7 @@ async function main(){
     let result=null,analysis=null
     if(supported){
       const cards=d.mainNames.map(n=>({...cardsByName.get(n.toLowerCase())}))
-      result=analyzePower(cards,{...commander},null,ITERATIONS)
+      result=analyzePower(cards,{...commander},new Map(),ITERATIONS)
       const snapshot=oracleSnapshotHash([...cards,commander])
       analysis={...metricSummary(result),engineVersion:ENGINE_VERSION,semanticVersion:SEMANTIC_VERSION,oracleSnapshotHash:snapshot,scryfallOracleDate:oracleDate,iterations:ITERATIONS,analyzedAt:generatedAt}
       analyzed++
