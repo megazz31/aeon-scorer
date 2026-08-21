@@ -1,10 +1,14 @@
 export const GAME_CHANGERS_SOURCE={
   label:'Commander Brackets / Game Changers',
   asOf:'2026-02-09',
+  reviewedAt:'2026-08-21',
+  snapshotId:'wotc-game-changers-2026-02-09-reviewed-2026-08-21',
   url:'https://magic.wizards.com/en/formats/commander',
+  updateUrl:'https://magic.wizards.com/en/news/announcements/commander-brackets-beta-update-february-9-2026',
 }
+export const GAME_CHANGER_REVIEW_MAX_AGE_DAYS=120
 
-// Official October 2025 list + February 9, 2026 additions Farewell and Biorhythm.
+// Official October 2025 list + February 9, 2026 additions Farewell and Biorhythm; reviewed against the live Wizards Commander page on 2026-08-21.
 export const GAME_CHANGERS=new Set([
   'Drannith Magistrate','Humility','Serra’s Sanctum',"Serra's Sanctum",'Smothering Tithe','Enlightened Tutor',"Teferi's Protection",
   'Consecrated Sphinx','Cyclonic Rift','Force of Will','Fierce Guardianship','Gifts Ungiven','Intuition','Mystical Tutor','Narset, Parter of Veils','Rhystic Study',"Thassa's Oracle",
@@ -17,6 +21,10 @@ export const GAME_CHANGERS=new Set([
 const norm=s=>String(s||'').trim().replace(/[’]/g,"'").toLowerCase()
 const gameChangerIndex=new Map([...GAME_CHANGERS].map(x=>[norm(x),x]))
 export function gameChangersIn(cardNames=[]){const out=[];for(const name of cardNames){const hit=gameChangerIndex.get(norm(name));if(hit&&!out.some(x=>norm(x)===norm(hit)))out.push(hit)}return out.sort((a,b)=>a.localeCompare(b))}
+export function gameChangerSourceStatus(now=new Date()){
+  const reviewed=new Date(`${GAME_CHANGERS_SOURCE.reviewedAt}T00:00:00Z`),current=now instanceof Date?now:new Date(now),ageDays=Math.max(0,Math.floor((current-reviewed)/86400000))
+  return {status:ageDays>GAME_CHANGER_REVIEW_MAX_AGE_DAYS?'review-needed':'reviewed',ageDays,maxAgeDays:GAME_CHANGER_REVIEW_MAX_AGE_DAYS,...GAME_CHANGERS_SOURCE}
+}
 
 export function parseDeckMap(text=''){
   const map=new Map()
@@ -38,28 +46,35 @@ export function deckDiff(before='',after=''){
 const num=x=>Number.isFinite(Number(x))?Number(x):0
 export function normalizedShare(row){return {code:row.share_code||row.code,deckName:row.deck_name||row.deckName||'Deck',commanderNames:row.commander_names||row.commanderNames||[],median:num(row.median),p20:num(row.p20),p80:num(row.p80),peak:num(row.peak),coverage:num(row.coverage),dimensions:row.dimensions||{},packages:row.packages||[],combos:row.combo_summary||row.combos||[],gameChangers:row.game_changers||row.gameChangers||[],bracketSignals:row.bracket_signals||row.bracketSignals||{},engineVersion:row.engine_version||row.engineVersion,semanticVersion:row.semantic_version||row.semanticVersion,iterations:num(row.iterations)}}
 
+export const POD_ASYMMETRY_THRESHOLDS={peak:15,dispersion:10,explosiveness:20,speed:20,consistency:20}
+const dimensionGap=(a,b,key)=>Math.abs(num(a?.dimensions?.[key])-num(b?.dimensions?.[key]))
 export function pairFit(a,b){
   a=normalizedShare(a);b=normalizedShare(b)
   const overlap=Math.max(0,Math.min(a.p80,b.p80)-Math.max(a.p20,b.p20)),union=Math.max(1,Math.max(a.p80,b.p80)-Math.min(a.p20,b.p20)),overlapRatio=overlap/union
-  const medianGap=Math.abs(a.median-b.median),peakGap=Math.abs(a.peak-b.peak)
+  const medianGap=Math.abs(a.median-b.median),peakGap=Math.abs(a.peak-b.peak),dispersionGap=Math.abs((a.p80-a.p20)-(b.p80-b.p20))
   const label=medianGap<=4&&overlapRatio>=.45?'close':medianGap<=8&&overlapRatio>=.2?'playable':'mismatch'
-  return {label,medianGap,peakGap,overlapRatio:Math.round(overlapRatio*100)}
+  const gaps={explosiveness:dimensionGap(a,b,'explosiveness'),speed:dimensionGap(a,b,'speed'),consistency:dimensionGap(a,b,'consistency')},warnings=[]
+  if(peakGap>=POD_ASYMMETRY_THRESHOLDS.peak)warnings.push({code:'high-peak-asymmetry',gap:peakGap})
+  if(dispersionGap>=POD_ASYMMETRY_THRESHOLDS.dispersion)warnings.push({code:'high-dispersion-asymmetry',gap:dispersionGap})
+  for(const key of ['explosiveness','speed','consistency'])if(gaps[key]>=POD_ASYMMETRY_THRESHOLDS[key])warnings.push({code:`high-${key}-asymmetry`,gap:gaps[key]})
+  return {label,medianGap,peakGap,dispersionGap,dimensionGaps:gaps,overlapRatio:Math.round(overlapRatio*100),warnings,experimental:true}
 }
 export function podSummary(rows=[]){
-  const decks=rows.map(normalizedShare).filter(x=>x.commanderNames.length||x.deckName);if(decks.length<2)return {decks,fit:'need-more',medianSpread:0,peakSpread:0,pairs:[]}
+  const decks=rows.map(normalizedShare).filter(x=>x.commanderNames.length||x.deckName);if(decks.length<2)return {decks,fit:'need-more',medianSpread:0,peakSpread:0,pairs:[],warnings:[],experimental:true}
   const pairs=[];for(let i=0;i<decks.length;i++)for(let j=i+1;j<decks.length;j++)pairs.push({a:i,b:j,...pairFit(decks[i],decks[j])})
   const medians=decks.map(x=>x.median),peaks=decks.map(x=>x.peak),medianSpread=Math.max(...medians)-Math.min(...medians),peakSpread=Math.max(...peaks)-Math.min(...peaks)
   const bad=pairs.filter(x=>x.label==='mismatch').length,close=pairs.filter(x=>x.label==='close').length
   const fit=bad?'mismatch':close===pairs.length?'close':'playable'
   const avgMedian=medians.reduce((s,x)=>s+x,0)/medians.length,outlier=decks.map((d,i)=>({i,distance:Math.abs(d.median-avgMedian)})).sort((a,b)=>b.distance-a.distance)[0]
-  return {decks,fit,medianSpread,peakSpread,pairs,outlierIndex:outlier?.i??null}
+  const warnings=[];for(const p of pairs)for(const warning of p.warnings){const key=`${warning.code}:${p.a}:${p.b}`;if(!warnings.some(x=>x.key===key))warnings.push({...warning,key,a:p.a,b:p.b})}
+  return {decks,fit,medianSpread,peakSpread,pairs,warnings,outlierIndex:outlier?.i??null,experimental:true}
 }
 
 export function localBracketSignals(cards=[],result=null,spellbook=null){
   const names=cards.map(c=>typeof c==='string'?c:c?.name).filter(Boolean),gameChangers=gameChangersIn(names)
   const tags=new Set(cards.flatMap(c=>Array.isArray(c?.tags)?c.tags:[])),combos=spellbook?.included||result?.combos||[]
   const twoCardCombos=(combos||[]).filter(c=>{const cs=c.cards||c.uses||[];return cs.length===2}).length
-  return {gameChangers,gameChangerCount:gameChangers.length,extraTurns:tags.has('extra-turn'),twoCardCombos,spellbookBracket:spellbook?.bracketTag||spellbook?.bracket||null,source:GAME_CHANGERS_SOURCE}
+  return {gameChangers,gameChangerCount:gameChangers.length,extraTurns:tags.has('extra-turn'),twoCardCombos,spellbookBracket:spellbook?.bracketTag||spellbook?.bracket||null,source:GAME_CHANGERS_SOURCE,sourceStatus:gameChangerSourceStatus()}
 }
 
 export function resultDelta(before,after){
