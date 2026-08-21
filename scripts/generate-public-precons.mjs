@@ -26,7 +26,16 @@ async function fetchWithBackoff(url,options={},attempts=7){
 async function fetchJson(url,options){return (await fetchWithBackoff(url,options)).json()}
 const sha256=s=>crypto.createHash('sha256').update(String(s)).digest('hex')
 function slugify(s){return String(s||'deck').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,90)||'deck'}
-function normalizedDeckKey(decklist,commander){return `${String(commander||'').trim().toLowerCase()}\n${String(decklist||'').split(/\r?\n/).map(x=>x.trim()).filter(Boolean).sort((a,b)=>a.localeCompare(b)).join('\n')}`}
+function normalizedDeckKey(decklist,commander){
+  const counts=new Map()
+  for(const raw of String(decklist||'').split(/\r?\n/)){
+    const m=raw.trim().match(/^(\d+)\s+(.+)$/);if(!m)continue
+    const name=m[2].trim().toLowerCase(),qty=Number(m[1])||0
+    counts.set(name,(counts.get(name)||0)+qty)
+  }
+  const rows=[...counts].sort(([a],[b])=>a<b?-1:a>b?1:0).map(([name,qty])=>`${qty} ${name}`)
+  return `${String(commander||'').trim().toLowerCase()}\n${rows.join('\n')}`
+}
 function countOf(c){return Math.max(0,Number(c?.count??c?.quantity??1)||0)}
 function expandNames(rows){return (rows||[]).flatMap(c=>Array(countOf(c)).fill(c?.name).filter(Boolean))}
 function decklistText(rows){return (rows||[]).filter(c=>c?.name&&countOf(c)>0).map(c=>`${countOf(c)} ${c.name}`).join('\n')}
@@ -40,7 +49,7 @@ function normalizeScryfall(d){
     image:d.image_uris?.normal||faces[0]?.image_uris?.normal||null,
   }
 }
-function indexCard(map,c){map.set(c.name.toLowerCase(),c);for(const a of c.aliases||[])map.set(String(a).toLowerCase(),c)}
+function indexCard(map,c,requested=null){map.set(c.name.toLowerCase(),c);for(const a of c.aliases||[])map.set(String(a).toLowerCase(),c);if(requested)map.set(String(requested).toLowerCase(),c)}
 async function resolveScryfall(names){
   const unique=[...new Set(names.filter(Boolean))],map=new Map(),missing=[]
   for(let i=0;i<unique.length;i+=75){
@@ -49,8 +58,15 @@ async function resolveScryfall(names){
     for(const raw of payload.data||[])indexCard(map,normalizeScryfall(raw))
     const unresolved=batch.filter(name=>!map.has(name.toLowerCase()))
     for(const name of unresolved){
-      try{const raw=await fetchJson(`${SCRYFALL}/cards/named?exact=${encodeURIComponent(name)}`);indexCard(map,normalizeScryfall(raw))}
+      let resolved=null
+      try{resolved=normalizeScryfall(await fetchJson(`${SCRYFALL}/cards/named?exact=${encodeURIComponent(name)}`))}
       catch(e){if(e?.status!==404)console.warn('Scryfall exact failed',name,e.message)}
+      if(!resolved&&name.includes(' // ')){
+        const front=name.split(' // ')[0].trim()
+        try{resolved=normalizeScryfall(await fetchJson(`${SCRYFALL}/cards/named?exact=${encodeURIComponent(front)}`))}
+        catch(e){if(e?.status!==404)console.warn('Scryfall front-face fallback failed',name,e.message)}
+      }
+      if(resolved)indexCard(map,resolved,name)
       await sleep(65)
     }
     await sleep(120)
