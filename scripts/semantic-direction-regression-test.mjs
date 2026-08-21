@@ -14,6 +14,8 @@ assert.equal(has(card('Greater Good','Enchantment','Sacrifice a creature: Draw c
 assert.equal(has(card('Brokers Charm','Instant','Choose one —\n• Target creature you control gets +1/+0 until end of turn.\n• Destroy target enchantment.\n• Draw two cards.'),'draw'),true)
 assert.equal(has(card('Treasure Cruise','Sorcery','Delve\nDraw three cards.'),'draw'),true)
 assert.equal(has(card('Alms Collector','Creature — Cat Cleric','Flash\nIf an opponent would draw two or more cards, instead you and that player each draw a card.'),'draw'),true)
+assert.equal(has(card('Windfall','Sorcery','Each player discards their hand, then draws cards equal to the greatest number of cards a player discarded this way.'),'draw'),true)
+assert.equal(has(card('Sphinx\'s Revelation','Instant','You gain X life and draw X cards.'),'draw'),true)
 assert.equal(has(card('Abundance','Enchantment','If you would draw a card, you may instead choose land or nonland and reveal cards from the top of your library until you reveal a card of the chosen kind.'),'draw'),false)
 
 // Countermagic is interaction, not a physical counter package or automatic stax.
@@ -62,6 +64,7 @@ assert.equal(has(card('Declaration in Stone','Sorcery','Exile any number of targ
 // Treasure mana must belong to the analyzed player, not merely appear in Oracle text.
 assert.equal(has(card("An Offer You Can't Refuse",'Instant','Counter target noncreature spell. Its controller creates two Treasure tokens. (They are artifacts with "{T}, Sacrifice this token: Add one mana of any color.")'),'mana'),false)
 assert.equal(has(card('Excavation Technique','Sorcery','Destroy target nonland permanent. Its controller creates two Treasure tokens.'),'mana'),false)
+assert.equal(has(card('Deadly Dispute','Instant','As an additional cost to cast this spell, sacrifice an artifact or creature. Draw two cards and create a Treasure token.'),'mana'),true)
 assert.equal(has(card('Monologue Tax','Enchantment','Whenever an opponent casts their second spell each turn, you create a Treasure token.'),'mana'),true)
 
 // Landfall is directional: opponent land entries are not payoffs for your own ramp package.
@@ -76,6 +79,7 @@ for(const c of [
   card('Unexpectedly Absent','Instant','Put target nonland permanent into its owner\'s library just beneath the top X cards of that library.'),
   card('Temporal Spring','Sorcery','Put target permanent on top of its owner\'s library.')
 ])assert.equal(has(c,'removal'),true,c.name)
+assert.equal(has(card('Chaos Warp','Instant','The owner of target permanent shuffles it into their library, then reveals the top card of their library.'),'removal'),true)
 assert.equal(has(card('Noxious Revival','Instant','Put target card from a graveyard on top of its owner\'s library.'),'removal'),false)
 assert.equal(has(card('Academy Ruins','Legendary Land','{T}: Add {C}. {1}{U}, {T}: Put target artifact card from your graveyard on top of your library.'),'removal'),false)
 assert.equal(has(card('Reality Scramble','Sorcery','Put target permanent you own on the bottom of your library. Reveal cards from the top of your library until you reveal a card that shares a card type with that permanent.'),'removal'),false)
