@@ -39,6 +39,15 @@ function comboAccessible(hand,priorHand,battlefield,used,combos,currentSources,p
 function keepOpeningHand(hand){const lands=hand.filter(c=>c.isLand).length,early=hand.some(c=>!c.isLand&&((c.cmc||0)<=2||c.tags?.includes('fast-mana')||isImmediateLandRamp(c)));return lands>=2&&lands<=5&&early}
 function openingHand(libBase,priority,rng){let lib=[],hand=[],mulligans=0;while(true){lib=shuffle(libBase,rng);hand=lib.splice(0,7);if(keepOpeningHand(hand)||mulligans>=2)break;mulligans++}const penalty=Math.max(0,mulligans-1),adjusted=applyCommanderLondonBottom(hand,penalty,priority);lib.push(...adjusted.bottom);return {lib,hand:adjusted.hand,mulligans,penalty}}
 
+export function planCommanderCasts(commanders=[],cmdTurns=[],castCounts=[],sources=[]){
+  const pending=commanders.map((c,i)=>({c,i})).filter(x=>cmdTurns[x.i]==null).sort((a,b)=>String(a.c?.name||'').localeCompare(String(b.c?.name||''))).map(x=>x.i)
+  if(!pending.length)return {indices:[],names:[],remaining:sources}
+  const orders=pending.length===2?[pending,[pending[1],pending[0]]]:[pending]
+  const plans=orders.map(order=>{let remaining=sources;const indices=[];for(const i of order){const next=payAndRemain(commanders[i],remaining,(castCounts[i]||0)*2);if(next){indices.push(i);remaining=next}}return {indices,names:indices.map(i=>commanders[i].name),remaining}})
+  plans.sort((a,b)=>b.indices.length-a.indices.length||a.names.join('|').localeCompare(b.names.join('|')))
+  return plans[0]
+}
+
 export function simulateSequencesMulti(cards,commanders,packages,combos=[],iterations=3000,maxTurn=7,rng=Math.random){
   const cmd=(commanders||[]).filter(Boolean).slice(0,2),cmdNames=new Set(cmd.map(c=>c.name.toLowerCase())),priority=commanderPriorityProfile(cmd)
   const libBase=cards.filter(c=>!cmdNames.has(c.name.toLowerCase())||c.__keepIn99),samples=[],engineTurns=[],recoverySamples=[],firstCmdTurns=[],perCmdTurns=cmd.map(()=>[])
@@ -60,7 +69,8 @@ export function simulateSequencesMulti(cards,commanders,packages,combos=[],itera
         if(isArtifact(ramp)){activeSources.push(...produced);turnSources=[...remaining,...produced]}else{turnSources=[...remaining];pendingSources.push(...produced)}
       }
       const generalSources=potentialSources(turnSources,hand,used,false,battlefield),commanderSources=potentialSources(turnSources,hand,used,true,battlefield)
-      for(let i=0;i<cmd.length;i++)if(cmdTurns[i]==null&&canPay(cmd[i],commanderSources,castCounts[i]*2)){cmdTurns[i]=turn;castCounts[i]++;battlefield.push(cmd[i])}
+      const castPlan=planCommanderCasts(cmd,cmdTurns,castCounts,commanderSources)
+      for(const i of castPlan.indices){cmdTurns[i]=turn;castCounts[i]++;battlefield.push(cmd[i])}
       const engine=operationalPackage(hand,priorHand,battlefield,used,packages,generalSources,priorSources);if(engine.ok&&engineTurn==null)engineTurn=turn;if(turn===4&&engine.ok)disruptedPackageId=engine.packageId
       const interaction=castableCards(hand,used,generalSources,c=>c.interaction>0).length>0,resource=castableCards(hand,used,generalSources,c=>c.tags.includes('draw')||c.tags.includes('recursion')).length>0
       const manaBurst=maxManaCount(generalSources)>=maxManaCount(turnSources)+2,highImpact=castableCards(hand,used,generalSources,c=>c.tags.includes('extra-turn')||c.tags.includes('win')||c.tags.includes('cheat')).length>0,combo=comboAccessible(hand,priorHand,battlefield,used,combos,generalSources,priorSources),burst=manaBurst||highImpact||combo
