@@ -1,0 +1,43 @@
+name: Generate public precon library
+on:
+  push:
+    branches: [public-precon-library]
+    paths:
+      - 'scripts/generate-public-precons.mjs'
+      - 'scripts/public-precon-contract-test.mjs'
+      - 'src/engine/**'
+      - 'src/version.js'
+      - '.github/workflows/generate-public-precons.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: public-precon-library
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install
+        run: npm install --no-audit --no-fund
+      - name: Generate canonical Commander precon catalog
+        env:
+          AEON_PRECON_ITERATIONS: '3200'
+        run: npm run precons:generate
+      - name: Validate generated catalog contract
+        run: npm run test:public-precons
+      - name: Commit generated snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/precons
+          if git diff --cached --quiet; then
+            echo "Public precon snapshot already current."
+          else
+            git commit -m "Generate Aeon v3.2 public precon snapshot [skip ci]"
+            git push origin HEAD:public-precon-library
+          fi
