@@ -34,11 +34,11 @@ export function parseDecklist(text){
 
 function uniq(xs){return [...new Set(xs)]}
 function normalizeCard(c){
-  const faces=c.card_faces||[]
+  const faces=c.card_faces||[],faceNames=faces.map(f=>f.name).filter(Boolean),distinctFaceNames=uniq(faceNames),sameNameReversible=distinctFaceNames.length===1&&String(c.name||'').includes(' // '),name=sameNameReversible?distinctFaceNames[0]:c.name
   const oracle=c.oracle_text||faces.map(f=>f.oracle_text||'').join('\n')
   const producedMana=c.produced_mana||uniq(faces.flatMap(f=>f.produced_mana||[]))
   return {
-    id:c.id,oracleId:c.oracle_id||c.id,name:c.name,aliases:faces.map(f=>f.name).filter(Boolean),manaCost:c.mana_cost||faces.map(f=>f.mana_cost||'').join(' // '),cmc:Number(c.cmc||0),
+    id:c.id,oracleId:c.oracle_id||c.id,name,aliases:faceNames.filter(x=>x&&x!==name),manaCost:c.mana_cost||faces.map(f=>f.mana_cost||'').join(' // '),cmc:Number(c.cmc||0),
     type:c.type_line||'',oracle,colors:c.colors||[],colorIdentity:c.color_identity||[],keywords:c.keywords||[],
     producedMana:producedMana||[],power:c.power??faces[0]?.power??null,toughness:c.toughness??faces[0]?.toughness??null,
     legalities:c.legalities||{},edhrecRank:c.edhrec_rank??null,image:c.image_uris?.normal||faces[0]?.image_uris?.normal||null,
@@ -85,7 +85,7 @@ export async function fetchCards(entries,onProgress){
     const r=await request(`${API}/cards/collection`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({identifiers:batch.map(x=>({name:cleanCardName(x.name)}))})})
     const data=await r.json(),byName=new Map()
     for(const c of (data.data||[])){
-      const n=normalizeCard(c);byName.set(c.name.toLowerCase(),n)
+      const n=normalizeCard(c);byName.set(c.name.toLowerCase(),n);byName.set(n.name.toLowerCase(),n)
       for(const f of (c.card_faces||[]))if(f.name)byName.set(f.name.toLowerCase(),n)
     }
     for(const e of batch){
