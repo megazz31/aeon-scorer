@@ -7,15 +7,25 @@ const isBurst=c=>c.tags.includes('burst-mana')
 const isPermanentRamp=c=>!c.isLand&&!isBurst(c)&&(c.tags.includes('land-ramp')||(isPermanentCard(c)&&(c.sourceColors?.length||0)>0))&&(c.cmc||0)<=3
 function alwaysTappedLand(c){const o=(c.oracle||'').toLowerCase();if(!/enters(?: the battlefield)? tapped/.test(o))return false;return !/unless|you may pay|if you control|if an opponent|reveal [^.]* from your hand|as [^.]* enters/.test(o)}
 function source(options,origin='source'){return {options:uniq(options?.length?options:['C']),origin}}
+function fetchLandInfo(c){
+  if(!/\bland\b/i.test(c.type||''))return null
+  const o=(c.oracle||'').toLowerCase();if(!/search your library for [^.]*\b(?:basic land|plains|island|swamp|mountain|forest)\b[^.]*put [^.]*onto the battlefield/.test(o))return null
+  const colors=[];if(/search your library for [^.]*plains/.test(o))colors.push('W');if(/search your library for [^.]*island/.test(o))colors.push('U');if(/search your library for [^.]*swamp/.test(o))colors.push('B');if(/search your library for [^.]*mountain/.test(o))colors.push('R');if(/search your library for [^.]*forest/.test(o))colors.push('G');if(/search your library for [^.]*basic land/.test(o))colors.push('W','U','B','R','G')
+  return {colors:uniq(colors.length?colors:['W','U','B','R','G']),delayed:/put [^.]*onto the battlefield tapped/.test(o)||alwaysTappedLand(c),fabled:/if you control four or more lands, untap that land/.test(o)}
+}
 function inferredLandColors(c){
   if(c.sourceColors?.length)return c.sourceColors
+  const fetch=fetchLandInfo(c);if(fetch)return fetch.colors
   const o=(c.oracle||'').toLowerCase(),t=(c.type||'').toLowerCase(),out=[]
   if(/plains/.test(t))out.push('W');if(/island/.test(t))out.push('U');if(/swamp/.test(t))out.push('B');if(/mountain/.test(t))out.push('R');if(/forest/.test(t))out.push('G')
-  if(/search your library for [^.]*plains/.test(o))out.push('W');if(/search your library for [^.]*island/.test(o))out.push('U');if(/search your library for [^.]*swamp/.test(o))out.push('B');if(/search your library for [^.]*mountain/.test(o))out.push('R');if(/search your library for [^.]*forest/.test(o))out.push('G')
-  if(/search your library for (?:a )?basic land/.test(o)||/any color|any type that a land you control could produce/.test(o))return ['W','U','B','R','G']
+  if(/any color|any type that a land you control could produce/.test(o))return ['W','U','B','R','G']
   return uniq(out.length?out:['C'])
 }
-function baseLandSources(c){const colors=inferredLandColors(c),count=(c.name||'').toLowerCase()==='ancient tomb'?2:1;return Array.from({length:count},()=>source(colors,c.name))}
+function baseLandSources(c){const colors=inferredLandColors(c),n=(c.name||'').toLowerCase(),count=n==='ancient tomb'?2:n==='temple of the false god'?0:1;return Array.from({length:count},()=>source(colors,c.name))}
+function activateConditionalLands(battlefield,activeSources){
+  const lands=battlefield.filter(c=>c.isLand),landCount=lands.length;if(landCount<5)return
+  for(const land of lands){if((land.name||'').toLowerCase()!=='temple of the false god')continue;if(activeSources.some(s=>s.origin===land.name))continue;activeSources.push(source(['C'],land.name),source(['C'],land.name))}
+}
 function productionCount(c){const n=(c.name||'').toLowerCase(),o=(c.oracle||'').toLowerCase();if(n.includes('sol ring')||n.includes('mana crypt'))return 2;const m=o.match(/add ((?:\{[wubrgc]\})+)/i);if(m)return Math.max(1,(m[1].match(/\{[wubrgc]\}/gi)||[]).length);if(/add three mana/.test(o))return 3;if(/add two mana/.test(o))return 2;return 1}
 export function permanentRampSupport(c,hand,used,battlefield,commander){
   const n=(c.name||'').toLowerCase(),any=['W','U','B','R','G']
@@ -49,16 +59,18 @@ export function canPay(card,sources,tax=0){return paymentIndices(card,sources,ta
 function payAndRemain(card,sources,tax=0){const used=paymentIndices(card,sources,tax);return used?[...sources].filter((_,i)=>!used.has(i)):null}
 function canPayPair(a,b,sources){const ra=paymentOptions(a),rb=paymentOptions(b),fake={cmc:ra.total+rb.total,manaReq:{generic:ra.generic+rb.generic,colored:[...ra.colored,...rb.colored],total:ra.total+rb.total}};return canPay(fake,sources)}
 function potentialSources(activeSources,hand,used,forCommander=false,battlefield=[]){const out=[...activeSources];const bursts=hand.filter(c=>!used.has(c)&&isBurst(c)).sort((a,b)=>burstPriority(a)-burstPriority(b)||a.name.localeCompare(b.name));for(const c of bursts)out.push(...burstNetSources(c,out,battlefield,forCommander));return out}
-function chooseLand(hand,used,commander){const lands=hand.filter(c=>c.isLand&&!used.has(c));if(!lands.length)return null;const needs=new Set(commander?.manaReq?.colored?.flat()||[]);return [...lands].sort((a,b)=>{const score=c=>inferredLandColors(c).filter(x=>needs.has(x)).length*5+inferredLandColors(c).length-(alwaysTappedLand(c)?2:0);return score(b)-score(a)})[0]}
+function chooseLand(hand,used,commander,battlefield=[]){const lands=hand.filter(c=>c.isLand&&!used.has(c));if(!lands.length)return null;const needs=new Set(commander?.manaReq?.colored?.flat()||[]),landCount=battlefield.filter(c=>c.isLand).length;return [...lands].sort((a,b)=>{const score=c=>inferredLandColors(c).filter(x=>needs.has(x)).length*5+inferredLandColors(c).length-(alwaysTappedLand(c)?2:0)-(((c.name||'').toLowerCase()==='temple of the false god'&&landCount<4)?12:0);return score(b)-score(a)})[0]}
 function castableCards(hand,used,sources,pred){return hand.filter(c=>!used.has(c)&&pred(c)&&canPay(c,sources))}
 function cardByName(cards,name){const n=name.toLowerCase();return cards.find(c=>c.name.toLowerCase()===n)}
 function pairOperational(a,b,battlefield,currentSources,priorSources,priorHandSet){const aBoard=battlefield.includes(a),bBoard=battlefield.includes(b);if(aBoard&&bBoard)return true;if(aBoard)return canPay(b,currentSources);if(bBoard)return canPay(a,currentSources);if(canPayPair(a,b,currentSources))return true;const aWasKnown=priorHandSet.has(a),bWasKnown=priorHandSet.has(b);if(aWasKnown&&isPermanentCard(a)&&canPay(a,priorSources)&&canPay(b,currentSources))return true;if(bWasKnown&&isPermanentCard(b)&&canPay(b,priorSources)&&canPay(a,currentSources))return true;return false}
-function operationalPackage(hand,priorHand,battlefield,used,packages,currentSources,priorSources){const available=[...battlefield,...hand.filter(c=>!used.has(c)),...priorHand],priorSet=new Set(priorHand);for(const p of packages.filter(x=>x.id!=='early-commander')){const producers=(p.producerCards||[]).map(x=>cardByName(available,x.name)).filter(Boolean),payoffs=(p.payoffCards||[]).map(x=>cardByName(available,x.name)).filter(Boolean);for(const a of producers)for(const b of payoffs){if(a.name.toLowerCase()===b.name.toLowerCase())continue;if(pairOperational(a,b,battlefield,currentSources,priorSources,priorSet))return {ok:true,packageId:p.id}}}return {ok:false,packageId:null}}
+function counterKinds(c){return new Set((c?.tags||[]).filter(t=>t.startsWith('counter-kind:')).map(t=>t.slice(13)))}
+function counterPairCompatible(a,b){const ak=counterKinds(a),bk=counterKinds(b);if(!ak.size||!bk.size)return false;if(ak.has('wild')||bk.has('wild')||ak.has('any')||bk.has('any'))return true;for(const k of ak)if(k!=='generic'&&bk.has(k))return true;return ak.has('generic')&&bk.has('generic')}
+function operationalPackage(hand,priorHand,battlefield,used,packages,currentSources,priorSources){const available=[...battlefield,...hand.filter(c=>!used.has(c)),...priorHand],priorSet=new Set(priorHand);for(const p of packages.filter(x=>x.id!=='early-commander')){const producers=(p.producerCards||[]).map(x=>cardByName(available,x.name)).filter(Boolean),payoffs=(p.payoffCards||[]).map(x=>cardByName(available,x.name)).filter(Boolean);for(const a of producers)for(const b of payoffs){if(a.name.toLowerCase()===b.name.toLowerCase())continue;if(p.id==='counters'&&!counterPairCompatible(a,b))continue;if(pairOperational(a,b,battlefield,currentSources,priorSources,priorSet))return {ok:true,packageId:p.id}}}return {ok:false,packageId:null}}
 function comboAccessible(hand,priorHand,battlefield,used,combos,currentSources,priorSources){if(!combos?.length)return false;const available=[...battlefield,...hand.filter(c=>!used.has(c)),...priorHand],priorSet=new Set(priorHand);for(const combo of combos){const pieces=combo.cards.map(n=>cardByName(available,n)).filter(Boolean);if(pieces.length!==combo.cards.length)continue;if(pieces.length===2&&pairOperational(pieces[0],pieces[1],battlefield,currentSources,priorSources,priorSet))return true;if(pieces.every(c=>battlefield.includes(c)||canPay(c,currentSources)))return true}return false}
 
 function keepOpeningHand(hand){const lands=hand.filter(c=>c.isLand).length,early=hand.some(c=>!c.isLand&&((c.cmc||0)<=2||c.tags?.includes('fast-mana')||c.tags?.includes('land-ramp')));return lands>=2&&lands<=5&&early}
 function bottomKeepValue(c,commander,landCount){
-  if(c.isLand){const needs=new Set(commander?.manaReq?.colored?.flat()||[]),colorHits=inferredLandColors(c).filter(x=>needs.has(x)).length;return landCount>3?-8+colorHits+(alwaysTappedLand(c)?-1:0):5+colorHits}
+  if(c.isLand){const needs=new Set(commander?.manaReq?.colored?.flat()||[]),colorHits=inferredLandColors(c).filter(x=>needs.has(x)).length,temple=(c.name||'').toLowerCase()==='temple of the false god';return landCount>3?-8+colorHits+(alwaysTappedLand(c)?-1:0)-(temple?3:0):5+colorHits-(temple?8:0)}
   let v=0;if(c.tags?.includes('fast-mana')||c.tags?.includes('land-ramp'))v+=8;if((c.cmc||0)<=2)v+=4;if(c.tags?.includes('draw')||c.interaction>0)v+=2;if((c.cmc||0)>=5)v-=4;if((c.cmc||0)>=7)v-=2;return v
 }
 export function applyCommanderLondonBottom(hand,penalty,commander=null){if(penalty<=0)return {hand:[...hand],bottom:[]};const landCount=hand.filter(c=>c.isLand).length,ranked=[...hand].map((c,i)=>({c,i,v:bottomKeepValue(c,commander,landCount)})).sort((a,b)=>a.v-b.v||b.i-a.i),bottom=ranked.slice(0,Math.min(penalty,hand.length)).map(x=>x.c),bottomSet=new Set(bottom);return {hand:hand.filter(c=>!bottomSet.has(c)),bottom}}
@@ -73,7 +85,7 @@ export function simulateSequences(cards,commander,packages,combos=[],iterations=
     let pendingSources=[],priorSources=[],cmdTurn=null,engineTurn=null,peak=0,sum=0,recovered=false,disruptedPackageId=null
     for(let turn=1;turn<=maxTurn;turn++){
       activeSources.push(...pendingSources);pendingSources=[];const priorHand=[...hand];if(lib.length)hand.push(lib.shift())
-      const land=chooseLand(hand,used,commander);if(land){used.add(land);battlefield.push(land);const sources=baseLandSources(land);if(alwaysTappedLand(land))pendingSources.push(...sources);else activeSources.push(...sources)}
+      const land=chooseLand(hand,used,commander,battlefield);if(land){used.add(land);battlefield.push(land);const landCount=battlefield.filter(c=>c.isLand).length,sources=baseLandSources(land),fetch=fetchLandInfo(land),fetchDelayed=!!fetch&&fetch.delayed&&!(fetch.fabled&&landCount>=4);if(alwaysTappedLand(land)||fetchDelayed)pendingSources.push(...sources);else activeSources.push(...sources);activateConditionalLands(battlefield,activeSources)}
       let turnSources=[...activeSources]
       // Chain every currently payable persistent ramp source. This matters for
       // high-powered starts such as Crypt -> Ring -> Mox; limiting the turn to
