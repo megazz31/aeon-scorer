@@ -7,6 +7,7 @@ const USER_AGENT='AeonScorer/3.2 deck-import (+https://aeon-scorer.vercel.app)'
 const clean=v=>String(v??'').trim()
 const qty=v=>{const n=Number(v??1);return Number.isFinite(n)&&n>0?Math.floor(n):0}
 const key=name=>clean(name).toLowerCase()
+const ARCHIDEKT_SIDE_ZONES=new Set(['sideboard','maybeboard','considering','companion'])
 
 export function parseDeckSource(input){
   let url
@@ -80,6 +81,8 @@ export function normalizeArchidekt(payload,sourceUrl=''){
     const cats=archCategoryNames(entry,index),lower=cats.map(x=>x.toLowerCase())
     const isCommander=lower.some(x=>x==='commander'||x.startsWith('commander '))
     if(isCommander){commanders.push({name,quantity});continue}
+    const sideZone=entry?.companion===true||lower.some(x=>ARCHIDEKT_SIDE_ZONES.has(x))
+    if(sideZone)continue
     const included=!cats.length||cats.some(c=>index.included.get(c.toLowerCase())!==false)
     if(included)mainboard.push({name,quantity})
   }
