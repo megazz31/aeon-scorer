@@ -31,6 +31,10 @@ Default generation uses 3,200 sequences per supported precon and writes:
 
 The generated snapshot contains its exact engine version, semantic version, Scryfall Oracle date/hash and source revision. Static files are used by the website for fast public reads and reproducibility.
 
+### Current v3.2 snapshot
+
+The reviewed Aeon v3.2 snapshot generated on 2026-08-21 contains 180 canonical Commander precons after exact decklist deduplication. Of these, 174 are analyzed at 3,200 sequences with engine `3.2.0` / semantic `3.2.0-semantic-1`; 6 remain visible but unsupported, including one incomplete Scryfall-resolution case. The source revision is MTGJSON 2026-08-20 with the Oracle snapshot dated 2026-08-21.
+
 ## Versioned Supabase storage
 
 Production uses two dedicated tables:
