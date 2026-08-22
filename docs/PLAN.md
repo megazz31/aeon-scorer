@@ -298,24 +298,24 @@ Correct final statement:
 
 # 13. Post-roadmap V2 follow-up — PR #11
 
-The original P2→P7 roadmap above remains the historical record of PR #10. A stacked follow-up now closes the largest product gaps identified during the post-roadmap competitive/product audit.
+The original P2→P7 roadmap above remains the historical record of PR #10. A stacked follow-up closes the largest product gaps identified during the post-roadmap competitive/product audit.
 
 **Working branch:** `product-p2-p7-v2`  
 **Validation PR:** `#11`  
 **Base branch:** `product-p2-p7-roadmap`  
-**Validated non-document code commit:** `385be2c7b022e447d10bc641752a61a4dacafa26`  
-**Full validation:** `P2-P7 product validation #198` — **SUCCESS**  
+**Latest validated non-document code commit:** `949bf288d89e76e94f4cf2dd8f45a939871d0024`  
+**Latest full validation:** `P2-P7 product validation #206` — **SUCCESS**  
 **Merge policy:** PR remains draft; **no merge without explicit approval**.
 
 ## 13.1 Semantic integration gate
 
-The user reported that semantic-12 had been launched. GitHub was audited before continuing product work.
+The user reported that semantic-12 had been launched. GitHub was audited before and after the V2 product work.
 
-Repository-visible state at that audit:
+Repository-visible state at the latest audit:
 
 - PR #8 `public-precon-library` HEAD: `d076a9eb9322629b8a2879815a982ca9a22487d6`;
 - `src/version.js` on PR #8: `3.2.0-semantic-10`;
-- latest PR-attached quality run on that HEAD: #276 — success;
+- PR #8 remains open, draft, mergeable and unmerged;
 - no GitHub branch, indexed commit, PR or issue exposing `semantic-11` or `semantic-12` was found.
 
 Therefore semantic-12 may have been started outside the repository-visible workflow, but it is **not currently auditable from GitHub**. PR #11 intentionally does not touch semantic card evaluation. The complete product stack must be replayed/revalidated on semantic-12 (or later) once that semantic version is actually pushed.
@@ -326,7 +326,7 @@ Therefore semantic-12 may have been started outside the repository-visible workf
 
 Changes:
 
-- Rule 0 questions now expose bounded answer choices;
+- Rule 0 questions expose bounded answer choices;
 - combo intent, extra-turn intent and land-denial acceptance feed an explicit declared-intent overlay;
 - answering a question recalculates Pod Match/Game Quality immediately in `/pod`;
 - pair reasons expose declared-intent gap/conflict separately;
@@ -339,7 +339,7 @@ This closes the previous gap where Aeon generated smart questions but did not us
 
 **Model:** `pod-repair-v2`.
 
-Aeon Match now audits every remaining 1↔1 cross-table swap for the generated assignment.
+Aeon Match audits every remaining 1↔1 cross-table swap for the generated assignment.
 
 For an improving repair it reports:
 
@@ -355,9 +355,9 @@ When no improving one-swap exists, Aeon reports the number of swaps evaluated an
 
 ## 13.4 Aeon Reality inside Aeon Match — IMPLEMENTED
 
-Every generated `/match` table now receives its own `pod-intelligence-v3` assessment and displays Game Quality.
+Every generated `/match` table receives its own `pod-intelligence-v3` assessment and displays Game Quality.
 
-The post-game observation form is available per table and receives exactly the prediction displayed before the game:
+For tables backed entirely by versioned Aeon shares, the post-game observation form receives exactly the prediction displayed before the game:
 
 - risk score/level;
 - Pod Match mismatch;
@@ -383,19 +383,33 @@ For each answer class:
 
 Aeon computes the largest turn-specific gap between a threat requiring that class and the combined class-specific coverage of the other seats.
 
-Output includes:
-
-- answer class;
-- debt score/level;
-- critical turn;
-- associated threat id;
-- supporting worst/examples.
+Output includes answer class, debt score/level, critical turn, associated threat id and supporting examples.
 
 Answer Debt is deliberately an aggregation of existing Threat/Answer evidence, **not a new probability model**. It is visible in `/pod`, and the leading debt is shown for every `/match` table.
 
-## 13.6 V2 validation
+## 13.6 Lower-friction local Match import — IMPLEMENTED
 
-Run #198 passed the entire branch quality gate together:
+Local `/match` now accepts a mixture of:
+
+- versioned Aeon share codes/links; and
+- public Moxfield / Archidekt deck URLs.
+
+External URLs reuse the existing `/api/import-deck` normalizer, then the existing Scryfall resolver and `analyzePower`. Each external deck receives an **in-memory 1,800-sequence quick analysis**.
+
+Boundaries:
+
+- maximum 8 external URLs per local Match batch;
+- up to 64 total entries when remaining entries are versioned shares;
+- no imported external decklist is persisted by this flow;
+- persistent LGS sessions remain share-only;
+- local external analyses are visibly labelled;
+- any table containing a non-persisted local import is excluded from Aeon Reality submission, because it lacks the versioned public-share identity required by the calibration contract.
+
+This intentionally improves ad-hoc/casual onboarding without weakening the persistence and evidence boundaries of LGS sessions or P7.
+
+## 13.7 Latest V2 validation
+
+Run #206 passed the complete branch gate together:
 
 1. Smoke ✅
 2. Semantic contracts ✅
@@ -413,23 +427,23 @@ Dedicated V2 regressions prove:
 - an exact small-N result has no improving 1↔1 cross-table swap;
 - Answer Debt identifies a structurally under-covered answer class;
 - `/pod` preserves the exact adaptive prediction for Reality;
-- `/match` is wired to Pod Repair, table intelligence and exact pre-game Reality prediction.
+- `/match` is wired to Pod Repair, table intelligence and exact pre-game Reality prediction;
+- direct local URL import reuses the existing audited import endpoint and Scryfall resolution path;
+- direct imports are capped at 8, run at 1,800 local sequences, stay non-persistent, and cannot enter Reality data without first becoming versioned Aeon shares.
 
-The only branch commit after validated code `385be2c7…` before this documentation update removed a temporary documentation marker; it contained no code change.
-
-## 13.7 Remaining priority work after V2
+## 13.8 Remaining priority work after V2
 
 These remain real engineering/scientific gaps and must not be presented as solved:
 
-1. **Final semantic integration** — rebase/reconstruct the stacked product path on semantic-12 or later and rerun every gate.
+1. **Final semantic integration** — reconstruct/rebase the stacked product path on semantic-12 or later and rerun every gate.
 2. **True First-Access Horizon** — instrument first commander/engine/interaction/burst/threat access instead of deriving cumulative language from per-turn availability.
 3. **Card-level Answer Timing** — simulate whether the relevant answer is actually drawn/castable with correct colors/mana/timing rather than scaling generic interaction access by class density.
 4. **Threat Objects** — explicit prerequisites/zones/mana/pieces/answer classes/protection/recovery for combo and engine threats.
 5. **Causal non-commander SPOF** — graveyard/artifact/enchantment/board suppression counterfactuals.
 6. **Exact Combo Accessibility T5/T7/T9** — piece-specific tutor eligibility, zones, mana and prerequisites.
 7. **Real-world P7 calibration** — held-out data, baseline comparisons, cohort leakage protection and calibration review.
-8. **Lower-friction LGS onboarding** — reuse the existing Moxfield/Archidekt importer, but do not bypass the audited share/session persistence boundary with an unaudited anonymous ingest path.
-9. **Agency Timeline** — candidate next major Game Quality dimension after the temporal primitives above are trustworthy: measure whether each seat can meaningfully advance or interact before the game becomes structurally closed.
+8. **Persistent direct LGS import** — remains intentionally share-first until anonymous ingest, compute cost, version identity and calibration provenance have a safe server-side design.
+9. **Agency Timeline** — candidate next major Game Quality dimension only after the temporal primitives above are trustworthy: measure whether each seat can meaningfully advance or interact before the game becomes structurally closed.
 
 Strategic order remains:
 
