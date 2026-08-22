@@ -29,6 +29,29 @@ returns jsonb language sql immutable set search_path = public, pg_temp as $$
   )
 $$;
 
+create or replace function public.aeon_safe_answer_profile(p jsonb)
+returns jsonb language sql immutable set search_path = public, pg_temp as $$
+  select jsonb_build_object(
+    'modelVersion',p->'modelVersion',
+    'interactionCards',p->'interactionCards',
+    'classes',coalesce((select jsonb_object_agg(key,jsonb_strip_nulls(jsonb_build_object(
+      'count',value->'count','density',value->'density','availabilityScale',value->'availabilityScale','level',value->'level',
+      'turns',coalesce((select jsonb_agg(jsonb_build_object('turn',x->'turn','value',x->'value')) from jsonb_array_elements(case when jsonb_typeof(value->'turns')='array' then value->'turns' else '[]'::jsonb end) x),'[]'::jsonb)
+    ))) from jsonb_each(case when jsonb_typeof(p->'classes')='object' then p->'classes' else '{}'::jsonb end)),'{}'::jsonb)
+  )
+$$;
+
+create or replace function public.aeon_safe_threat_profile(p jsonb)
+returns jsonb language sql immutable set search_path = public, pg_temp as $$
+  select jsonb_build_object(
+    'modelVersion',p->'modelVersion',
+    'threats',coalesce((select jsonb_agg(jsonb_strip_nulls(jsonb_build_object(
+      'id',x->'id','strength',x->'strength','level',x->'level','answers',x->'answers',
+      'turns',coalesce((select jsonb_agg(jsonb_build_object('turn',z->'turn','value',z->'value')) from jsonb_array_elements(case when jsonb_typeof(x->'turns')='array' then x->'turns' else '[]'::jsonb end) z),'[]'::jsonb)
+    ))) from jsonb_array_elements(case when jsonb_typeof(p->'threats')='array' then p->'threats' else '[]'::jsonb end) x),'[]'::jsonb)
+  )
+$$;
+
 drop function if exists public.aeon_create_analysis_share(uuid,text[],jsonb,jsonb);
 create function public.aeon_create_analysis_share(
   p_analysis_id uuid,
@@ -66,6 +89,8 @@ begin
     'spof',jsonb_build_object('modelVersion',p_product_intelligence#>'{spof,modelVersion}','dependencies',public.aeon_safe_metric_map(p_product_intelligence#>'{spof,dependencies}')),
     'comboAccessibility',public.aeon_safe_combo_access(p_product_intelligence->'comboAccessibility'),
     'vulnerability',jsonb_build_object('modelVersion',p_product_intelligence#>'{vulnerability,modelVersion}','classes',public.aeon_safe_metric_map(p_product_intelligence#>'{vulnerability,classes}')),
+    'answerProfile',public.aeon_safe_answer_profile(p_product_intelligence->'answerProfile'),
+    'threatProfile',public.aeon_safe_threat_profile(p_product_intelligence->'threatProfile'),
     'confidence',jsonb_build_object('productCalibration','experimental'),
     'privacy',jsonb_build_object('decklist',false,'oracle',false,'evidenceCards',false)
   );
@@ -85,4 +110,6 @@ end $$;
 revoke all on function public.aeon_safe_metric_map(jsonb) from public, anon, authenticated;
 revoke all on function public.aeon_safe_horizon_curves(jsonb) from public, anon, authenticated;
 revoke all on function public.aeon_safe_combo_access(jsonb) from public, anon, authenticated;
+revoke all on function public.aeon_safe_answer_profile(jsonb) from public, anon, authenticated;
+revoke all on function public.aeon_safe_threat_profile(jsonb) from public, anon, authenticated;
 grant execute on function public.aeon_create_analysis_share(uuid,text[],jsonb,jsonb,jsonb) to anon, authenticated;
