@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 42,
-    "p20": 32,
-    "p80": 52,
-    "peak": 75,
+    "median": 43,
+    "p20": 33,
+    "p80": 53,
+    "peak": 76,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-9",
+    "semanticVersion": "3.2.0-semantic-10",
     "oracleSnapshotHash": "cf6732d88a7d8d077d6a305eff79d277508caa9feee3eb75647f570ef519bc15",
     "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-22T06:49:00.503Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Moira and Teshar\n1 Ichor Elixir\n1 Blight Titan\n1 Darksteel Splicer\n1 Excise the Imperfect\n1 Filigree Vector\n1 Path of the Schemer\n1 Bitterthorn, Nissa's Animus\n1 Vulpine Harvester\n1 Cataclysmic Gearhulk\n1 Massacre Wurm\n1 Noxious Gearhulk\n1 Phyrexian Scriptures\n1 Phyrexian Triniform\n1 Soul of New Phyrexia\n1 Ancient Stone Idol\n1 Angel of the Ruins\n1 Blade Splicer\n1 Coveted Jewel\n1 Duplicant\n1 Exotic Orchard\n1 Fetid Heath\n1 Karn's Bastion\n1 Myr Battlesphere\n1 Nettlecyst\n1 Phyrexian Delver\n1 Phyrexian Rebirth\n1 Psychosis Crawler\n1 Scrap Trawler\n1 Sculpting Steel\n1 Scytheclaw\n1 Shineshadow Snarl\n1 Spire of Industry\n1 Temple of Silence\n1 Utter End\n1 Vault of the Archangel\n1 Yawgmoth's Vile Offering\n1 Bojuka Bog\n1 Command Tower\n1 Commander's Sphere\n1 Evolving Wilds\n1 First-Sphere Gargantua\n1 Fractured Powerstone\n1 Goldmire Bridge\n1 Night's Whisper\n1 Orzhov Locket\n1 Orzhov Signet\n1 Path of Ancestry\n1 Phyrexian Ghoul\n1 Phyrexian Rager\n1 Silverquill Campus\n1 Terramorphic Expanse\n1 Wayfarer's Bauble\n1 Hedron Archive\n1 Ambition's Cost\n1 Arcane Signet\n1 Bloodline Pretender\n1 Bone Shredder\n1 Burnished Hart\n1 Despark\n1 Go for the Throat\n1 Graveshifter\n1 Keskit, the Flesh Sculptor\n1 Master Splicer\n1 Meteor Golem\n1 Mind Stone\n1 Mortify\n1 Shattered Angel\n1 Shimmer Myr\n1 Sol Ring\n1 Swords to Plowshares\n1 Tainted Field\n1 Talisman of Hierarchy\n1 Victimize\n1 Compleated Huntmaster\n1 Phyrexian Gargantua\n10 Plains\n13 Swamp",
   "oracleCards": [
@@ -168,8 +168,10 @@
       "tags": [
         "creature",
         "graveyard-setup",
+        "tokens",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -248,7 +250,9 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "tokens",
         "counter-producer",
+        "counter-kind:plus1",
         "counter-kind:wild"
       ],
       "isCommander": true
@@ -349,9 +353,11 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "tokens",
         "sacrifice",
         "sac-outlet",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1579,14 +1585,14 @@
   ],
   "result": {
     "profile": {
-      "median": 42,
-      "floor": 32,
-      "ceiling": 52,
-      "peak": 75,
+      "median": 43,
+      "floor": 33,
+      "ceiling": 53,
+      "peak": 76,
       "dispersion": 20,
       "variance": 20,
       "consistency": 67,
-      "commanderDelta": 6,
+      "commanderDelta": 8,
       "coverage": 94,
       "dataCoverage": 94
     },
@@ -1594,7 +1600,7 @@
       "speed": 30,
       "consistency": 67,
       "explosiveness": 10,
-      "synergy": 47,
+      "synergy": 54,
       "interaction": 59,
       "resilience": 41
     },
@@ -1642,9 +1648,11 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "tokens",
               "sacrifice",
               "sac-outlet",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -1919,7 +1927,9 @@
             "cmc": 4,
             "tags": [
               "creature",
+              "tokens",
               "counter-producer",
+              "counter-kind:plus1",
               "counter-kind:wild"
             ],
             "manaReq": {
@@ -1941,15 +1951,26 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 11,
+      "score": 36,
       "connected": [
+        "Ancient Stone Idol",
+        "Blade Splicer",
+        "Blight Titan",
         "Bloodline Pretender",
+        "Compleated Huntmaster",
+        "Darksteel Splicer",
         "Filigree Vector",
         "Karn's Bastion",
-        "Phyrexian Scriptures"
+        "Master Splicer",
+        "Myr Battlesphere",
+        "Phyrexian Rebirth",
+        "Phyrexian Scriptures",
+        "Phyrexian Triniform"
       ],
       "tags": [
-        "counter-producer"
+        "tokens",
+        "counter-producer",
+        "token-payoff"
       ]
     },
     "aeon": {

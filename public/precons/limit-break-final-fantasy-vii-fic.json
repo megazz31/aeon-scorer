@@ -35,16 +35,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 42,
-    "p20": 28,
+    "p20": 29,
     "p80": 53,
     "peak": 81,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-9",
+    "semanticVersion": "3.2.0-semantic-10",
     "oracleSnapshotHash": "8b22cf7bec7b57f12953c9f3da78d695b88b22814e7e97624577f40fb67ddf93",
     "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-22T06:49:00.503Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Tifa, Martial Artist\n1 Cid, Freeflier Pilot\n1 Cloud's Limit Break\n1 Elena, Turk Recruit\n1 Heidegger, Shinra Executive\n1 Helitrooper\n1 SOLDIER Military Program\n1 Ultimate Magic: Holy\n1 Avalanche of Sector 7\n1 Cait Sith, Fortune Teller\n1 Summon: Kujata\n1 Ultimate Magic: Meteor\n1 Vincent, Vengeful Atoner\n1 Yuffie, Materia Hunter\n1 Bugenhagen, Wise Elder\n1 Lifestream's Blessing\n1 Professor Hojo\n1 Summoning Materia\n1 Aerith, Last Ancient\n1 Barret, Avalanche Leader\n1 Red XIII, Proud Warrior\n1 Sephiroth, Fallen Hero\n1 Conformer Shuriken\n1 Wrecking Ball Arm\n1 Austere Command\n1 Bastion Protector\n1 Bronze Guardian\n1 Clever Concealment\n1 Puresteel Paladin\n1 Unfinished Business\n1 Vanquish the Horde\n1 Chaos Warp\n1 Hellkite Tyrant\n1 Professional Face-Breaker\n1 Decimate\n1 Armory Automaton\n1 Champion's Helm\n1 Conqueror's Flail\n1 Darksteel Plate\n1 Inspiring Statuary\n1 Sword of the Animist\n1 Battlefield Forge\n1 Bonders' Enclave\n1 Brushland\n1 Canopy Vista\n1 Cinder Glade\n1 Clifftop Retreat\n1 Exotic Orchard\n1 Fire-Lit Thicket\n1 Fortified Village\n1 Furycalm Snarl\n1 Game Trail\n1 Mossfire Valley\n1 Rootbound Crag\n1 Rugged Prairie\n1 Scavenger Grounds\n1 Slayers' Stronghold\n1 Spire of Industry\n1 Sungrass Prairie\n1 Sunpetal Grove\n1 Sunscorched Divide\n1 Zack Fair\n1 Barret Wallace\n1 Dispatch\n1 Secret Rendezvous\n1 Furious Rise\n1 Vandalblast\n1 Cultivate\n1 Harmonize\n1 Nature's Lore\n1 Rampant Growth\n1 Behemoth Sledge\n1 Arcane Signet\n1 Colossus Hammer\n1 Explorer's Scope\n1 Hero's Blade\n1 Hero's Heirloom\n1 Lightning Greaves\n1 Mask of Memory\n1 Skullclamp\n1 Sol Ring\n1 Trailblazer's Boots\n1 Ash Barrens\n1 Evolving Wilds\n1 Jungle Shrine\n1 Path of Ancestry\n1 Radiant Grove\n1 Sacred Peaks\n1 Wooded Ridgeline\n1 Command Tower\n1 Mountain\n1 Mountain\n1 Mountain\n1 Forest\n1 Forest\n1 Forest\n1 Plains\n1 Plains\n1 Plains",
   "oracleCards": [
@@ -1295,7 +1295,7 @@
         "creature",
         "recursion",
         "etb",
-        "counter-payoff"
+        "modified-payoff"
       ],
       "isCommander": false
     },
@@ -1423,7 +1423,7 @@
         "recursion",
         "sacrifice",
         "counter-producer",
-        "counter-payoff",
+        "modified-payoff",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -1874,7 +1874,7 @@
   "result": {
     "profile": {
       "median": 42,
-      "floor": 28,
+      "floor": 29,
       "ceiling": 53,
       "peak": 81,
       "dispersion": 24,
@@ -1888,7 +1888,7 @@
       "speed": 37,
       "consistency": 62,
       "explosiveness": 12,
-      "synergy": 59,
+      "synergy": 61,
       "interaction": 39,
       "resilience": 52
     },
@@ -2429,7 +2429,7 @@
               "creature",
               "recursion",
               "etb",
-              "counter-payoff"
+              "modified-payoff"
             ],
             "manaReq": {
               "generic": 1,
@@ -2452,7 +2452,7 @@
               "recursion",
               "sacrifice",
               "counter-producer",
-              "counter-payoff",
+              "modified-payoff",
               "counter-kind:generic"
             ],
             "manaReq": {
@@ -2496,6 +2496,207 @@
           "recursion"
         ],
         "evidence": "2 producteur(s), 6 payoff(s), 8 carte(s) distincte(s)."
+      },
+      {
+        "id": "counters",
+        "name": "Marqueurs",
+        "strength": 59,
+        "cohesion": 59,
+        "producers": [
+          "Conformer Shuriken",
+          "Elena, Turk Recruit",
+          "Sephiroth, Fallen Hero",
+          "SOLDIER Military Program",
+          "Vincent, Vengeful Atoner",
+          "Zack Fair"
+        ],
+        "payoffs": [
+          "Red XIII, Proud Warrior",
+          "Sephiroth, Fallen Hero"
+        ],
+        "members": [
+          "Conformer Shuriken",
+          "Elena, Turk Recruit",
+          "Sephiroth, Fallen Hero",
+          "SOLDIER Military Program",
+          "Vincent, Vengeful Atoner",
+          "Zack Fair",
+          "Red XIII, Proud Warrior"
+        ],
+        "producerCards": [
+          {
+            "name": "Conformer Shuriken",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Elena, Turk Recruit",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Sephiroth, Fallen Hero",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "recursion",
+              "sacrifice",
+              "counter-producer",
+              "modified-payoff",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "SOLDIER Military Program",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Vincent, Vengeful Atoner",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Zack Fair",
+            "cmc": 1,
+            "tags": [
+              "creature",
+              "protection",
+              "sacrifice",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 1
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Red XIII, Proud Warrior",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb",
+              "modified-payoff"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Sephiroth, Fallen Hero",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "recursion",
+              "sacrifice",
+              "counter-producer",
+              "modified-payoff",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          }
+        ],
+        "producerTags": [
+          "counter-producer"
+        ],
+        "payoffTags": [
+          "counter-payoff",
+          "modified-payoff"
+        ],
+        "evidence": "6 producteur(s), 2 payoff(s), 7 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2793,6 +2994,31 @@
         "aeon": null
       },
       {
+        "name": "Elena, Turk Recruit",
+        "impact": 2.9,
+        "tags": [
+          "creature",
+          "recursion",
+          "etb",
+          "counter-producer",
+          "counter-kind:plus1"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Sephiroth, Fallen Hero",
+        "impact": 2.8,
+        "tags": [
+          "creature",
+          "recursion",
+          "sacrifice",
+          "counter-producer",
+          "modified-payoff",
+          "counter-kind:generic"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Arcane Signet",
         "impact": 2.6,
         "tags": [
@@ -2807,6 +3033,17 @@
         "tags": [
           "artifact",
           "mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Red XIII, Proud Warrior",
+        "impact": 2.4,
+        "tags": [
+          "creature",
+          "recursion",
+          "etb",
+          "modified-payoff"
         ],
         "aeon": null
       },
@@ -2826,36 +3063,6 @@
           "instant",
           "removal",
           "wipe"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Professor Hojo",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Puresteel Paladin",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "draw",
-          "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Aerith, Last Ancient",
-        "impact": 2.2,
-        "tags": [
-          "creature",
-          "recursion",
-          "lifegain",
-          "life-payoff"
         ],
         "aeon": null
       }

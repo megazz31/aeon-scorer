@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 47,
-    "p20": 37,
-    "p80": 57,
+    "median": 48,
+    "p20": 36,
+    "p80": 58,
     "peak": 88,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-9",
+    "semanticVersion": "3.2.0-semantic-10",
     "oracleSnapshotHash": "79815ac3b45cebd3790e9175a0feda678fd9d44b6b6410ce8baba65cb16d9013",
     "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-22T06:49:00.503Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 The Reaper, King No More\n1 Wickersmith's Tools\n1 Sinister Gnarlbark\n1 Eventide's Shadow\n1 Aberrant Return\n1 Dread Tiller\n1 Grave Venerations\n1 Oft-Nabbed Goat\n1 Village Pillagers\n1 Puca's Covenant\n1 Ferrafor, Young Yew\n1 Tree of Perdition\n1 Vernal Fen\n1 Festering Thicket\n1 Necroskitter\n1 Ignoble Hierarch\n1 Nesting Grounds\n1 Massacre Girl, Known Killer\n1 Grave Titan\n1 Vraska, Betrayal's Sting\n1 The Scorpion God\n1 Liliana, Death Wielder\n1 Chimil, the Inner Sun\n1 Carnifex Demon\n1 Puppeteer Clique\n1 Dusk Urchins\n1 Black Sun's Zenith\n1 Painful Truths\n1 Persist\n1 Midnight Banshee\n1 Chain Reaction\n1 Archfiend of Ifnir\n1 Channeler Initiate\n1 Hapatra, Vizier of Poisons\n1 Glissa Sunslayer\n1 Everlasting Torment\n1 Assassin's Trophy\n1 Grim Poppet\n1 Canyon Slough\n1 Sheltered Thicket\n1 Exotic Orchard\n1 Smoldering Marsh\n1 Cinder Glade\n1 Dragonskull Summit\n1 Rootbound Crag\n1 Woodland Cemetery\n1 Lasting Tarfire\n1 Burning Curiosity\n1 Hoarder's Greed\n1 Blowfly Infestation\n1 Fire Covenant\n1 Sol Ring\n1 Arcane Signet\n1 Command Tower\n1 Cathartic Reunion\n1 Skinrender\n1 Soul Snuffers\n1 Incremental Blight\n1 Infernal Grasp\n1 Evolution Sage\n1 Devoted Druid\n1 Flourishing Defenses\n1 Harmonize\n1 Putrefy\n1 Binding the Old Gods\n1 Kulrath Knight\n1 Contagion Clasp\n1 Savage Lands\n1 Ifnir Deadlands\n1 Night's Whisper\n1 Wickerbough Elder\n1 Terminate\n1 Commander's Sphere\n1 Cathartic Pyre\n1 Evolving Wilds\n1 Terramorphic Expanse\n1 Path of Ancestry\n1 Riveteers Overlook\n1 Rakdos Carnarium\n1 Gruul Turf\n1 Golgari Rot Farm\n8 Swamp\n4 Mountain\n6 Forest",
   "oracleCards": [
@@ -218,6 +218,7 @@
       "tags": [
         "sorcery",
         "counter-producer",
+        "counter-kind:minus1",
         "exile-cast"
       ],
       "isCommander": false
@@ -1287,7 +1288,8 @@
       "tags": [
         "creature",
         "etb",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1437,7 +1439,8 @@
       "tags": [
         "creature",
         "draw",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1784,22 +1787,22 @@
   ],
   "result": {
     "profile": {
-      "median": 47,
-      "floor": 37,
-      "ceiling": 57,
+      "median": 48,
+      "floor": 36,
+      "ceiling": 58,
       "peak": 88,
-      "dispersion": 21,
-      "variance": 21,
+      "dispersion": 22,
+      "variance": 22,
       "consistency": 64,
-      "commanderDelta": 10,
+      "commanderDelta": 12,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 38,
       "consistency": 64,
-      "explosiveness": 14,
-      "synergy": 75,
+      "explosiveness": 13,
+      "synergy": 77,
       "interaction": 47,
       "resilience": 42
     },
@@ -1827,13 +1830,13 @@
           "Aberrant Return",
           "Black Sun's Zenith",
           "Blowfly Infestation",
+          "Burning Curiosity",
           "Carnifex Demon",
           "Channeler Initiate",
           "Contagion Clasp",
           "Devoted Druid",
           "Dread Tiller",
-          "Dusk Urchins",
-          "Evolution Sage"
+          "Dusk Urchins"
         ],
         "payoffs": [
           "Dusk Urchins",
@@ -1846,6 +1849,7 @@
           "Aberrant Return",
           "Black Sun's Zenith",
           "Blowfly Infestation",
+          "Burning Curiosity",
           "Carnifex Demon",
           "Channeler Initiate",
           "Contagion Clasp",
@@ -1859,6 +1863,8 @@
           "Liliana, Death Wielder",
           "Midnight Banshee",
           "Oft-Nabbed Goat",
+          "Puppeteer Clique",
+          "Sinister Gnarlbark",
           "Skinrender",
           "Soul Snuffers",
           "The Reaper, King No More",
@@ -1928,6 +1934,25 @@
               "colored": [
                 [
                   "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Burning Curiosity",
+            "cmc": 3,
+            "tags": [
+              "sorcery",
+              "counter-producer",
+              "counter-kind:minus1",
+              "exile-cast"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
                 ]
               ],
               "total": 3
@@ -2202,6 +2227,47 @@
             }
           },
           {
+            "name": "Puppeteer Clique",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Sinister Gnarlbark",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "draw",
+              "counter-producer",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
             "name": "Skinrender",
             "cmc": 4,
             "tags": [
@@ -2468,9 +2534,10 @@
           "counter-producer"
         ],
         "payoffTags": [
-          "counter-payoff"
+          "counter-payoff",
+          "modified-payoff"
         ],
-        "evidence": "23 producteur(s), 5 payoff(s), 26 carte(s) distincte(s)."
+        "evidence": "26 producteur(s), 5 payoff(s), 29 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2819,12 +2886,13 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 74,
+      "score": 82,
       "connected": [
         "Aberrant Return",
         "Archfiend of Ifnir",
         "Black Sun's Zenith",
         "Blowfly Infestation",
+        "Burning Curiosity",
         "Carnifex Demon",
         "Channeler Initiate",
         "Contagion Clasp",
@@ -2840,6 +2908,8 @@
         "Midnight Banshee",
         "Oft-Nabbed Goat",
         "Puca's Covenant",
+        "Puppeteer Clique",
+        "Sinister Gnarlbark",
         "Skinrender",
         "Soul Snuffers",
         "The Reaper, King No More",
@@ -2861,9 +2931,9 @@
     "simulation": {
       "iterations": 3200,
       "floor": 35,
-      "median": 42,
-      "high": 50,
-      "ceiling": 50,
+      "median": 43,
+      "high": 51,
+      "ceiling": 51,
       "peak": 79,
       "iqr": 12,
       "consistency": 73,
@@ -2898,7 +2968,7 @@
         {
           "turn": 4,
           "commander": 64,
-          "engine": 21,
+          "engine": 22,
           "interaction": 53,
           "resource": 72,
           "burst": 0
@@ -2906,7 +2976,7 @@
         {
           "turn": 5,
           "commander": 84,
-          "engine": 30,
+          "engine": 31,
           "interaction": 62,
           "resource": 83,
           "burst": 0
@@ -2914,7 +2984,7 @@
         {
           "turn": 6,
           "commander": 89,
-          "engine": 35,
+          "engine": 36,
           "interaction": 68,
           "resource": 88,
           "burst": 0
@@ -2922,7 +2992,7 @@
         {
           "turn": 7,
           "commander": 93,
-          "engine": 40,
+          "engine": 41,
           "interaction": 73,
           "resource": 92,
           "burst": 0
@@ -3015,6 +3085,17 @@
         "aeon": null
       },
       {
+        "name": "Sinister Gnarlbark",
+        "impact": 3,
+        "tags": [
+          "creature",
+          "draw",
+          "counter-producer",
+          "counter-kind:minus1"
+        ],
+        "aeon": null
+      },
+      {
         "name": "The Scorpion God",
         "impact": 2.9,
         "tags": [
@@ -3055,17 +3136,6 @@
           "creature",
           "mana",
           "etb",
-          "counter-producer",
-          "counter-kind:minus1"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Devoted Druid",
-        "impact": 2.6,
-        "tags": [
-          "creature",
-          "mana",
           "counter-producer",
           "counter-kind:minus1"
         ],

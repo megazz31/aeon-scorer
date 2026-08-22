@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 42,
+    "median": 43,
     "p20": 29,
-    "p80": 55,
+    "p80": 56,
     "peak": 85,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-9",
+    "semanticVersion": "3.2.0-semantic-10",
     "oracleSnapshotHash": "7322b81ec3e890190f3fe42886bb7f65f615f0cd9fa92caf0550091e1581eaca",
     "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-22T06:49:00.503Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Kaima, the Fractured Calm\n1 Ox of Agonas\n1 Akki Battle Squad\n1 Kami of Celebration\n1 Komainu Battle Armor\n1 Ascendant Acolyte\n1 Kosei, Penitent Warlord\n1 Rampant Rejuvenator\n1 Tanuki Transplanter\n1 Orochi Merge-Keeper\n1 Towashi Guide-Bot\n1 Walking Skyscraper\n1 Agitator Ant\n1 Goblin Razerunners\n1 Krenko, Tin Street Kingpin\n1 Taurean Mauler\n1 Acidic Slime\n1 Champion of Lambholt\n1 Fertilid\n1 Forgotten Ancient\n1 Genesis Hydra\n1 Loyal Guardian\n1 Primeval Protector\n1 Rishkar, Peema Renegade\n1 Sakura-Tribe Elder\n1 Spearbreaker Behemoth\n1 Whiptongue Hydra\n1 Grumgully, the Generous\n1 Ulasht, the Hate Seed\n1 Collision of Realms\n1 Smoke Spirits' Aid\n1 Chain Reaction\n1 Kodama's Reach\n1 Rampant Growth\n1 Rishkar's Expertise\n1 Shamanic Revelation\n1 Soul's Majesty\n1 Vastwood Surge\n1 Decimate\n1 Silkguard\n1 Chaos Warp\n1 Starstorm\n1 Beast Within\n1 Hunter's Insight\n1 Mage Slayer\n1 Arcane Signet\n1 Blackblade Reforged\n1 Bonehoard\n1 Fireshrieker\n1 Sol Ring\n1 Swiftfoot Boots\n1 Sword of Vengeance\n1 Unquenchable Fury\n1 Concord with the Kami\n1 One with the Kami\n1 Invigorating Hot Spring\n1 Elemental Mastery\n1 Shifting Shadow\n1 Bear Umbra\n1 Ordeal of Nylea\n1 Snake Umbra\n1 Rhythm of the Wild\n1 Cinder Glade\n1 Command Tower\n1 Exotic Orchard\n1 Game Trail\n1 Gruul Turf\n2 Mossfire Valley\n1 Opal Palace\n1 Oran-Rief, the Vastwood\n1 Raging Ravine\n1 Temple of Abandon\n6 Mountain\n6 Mountain\n7 Forest\n7 Forest",
   "oracleCards": [
@@ -93,7 +93,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-payoff",
+        "modified-payoff",
         "extra-combat"
       ],
       "isCommander": false
@@ -280,7 +280,7 @@
         "tokens",
         "etb",
         "counter-producer",
-        "counter-payoff",
+        "modified-payoff",
         "counter-kind:plus1"
       ],
       "isCommander": true
@@ -642,7 +642,7 @@
         "enchantment",
         "etb",
         "counter-producer",
-        "counter-payoff",
+        "modified-payoff",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -682,7 +682,7 @@
       "tags": [
         "creature",
         "counter-producer",
-        "counter-payoff",
+        "modified-payoff",
         "counter-kind:plus1",
         "exile-cast",
         "exile-payoff"
@@ -858,7 +858,7 @@
         "enchantment",
         "tokens",
         "death-payoff",
-        "counter-payoff"
+        "modified-payoff"
       ],
       "isCommander": false
     },
@@ -1069,7 +1069,8 @@
       "producedMana": [],
       "tags": [
         "enchantment",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1188,7 +1189,7 @@
         "instant",
         "protection",
         "counter-producer",
-        "counter-payoff",
+        "modified-payoff",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1412,7 +1413,7 @@
         "draw",
         "etb",
         "counter-producer",
-        "counter-payoff",
+        "modified-payoff",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1490,7 +1491,7 @@
         "creature",
         "artifact",
         "protection",
-        "counter-payoff"
+        "modified-payoff"
       ],
       "isCommander": false
     },
@@ -1518,12 +1519,12 @@
   ],
   "result": {
     "profile": {
-      "median": 42,
+      "median": 43,
       "floor": 29,
-      "ceiling": 55,
+      "ceiling": 56,
       "peak": 85,
-      "dispersion": 26,
-      "variance": 26,
+      "dispersion": 27,
+      "variance": 27,
       "consistency": 59,
       "commanderDelta": 13,
       "coverage": 92,
@@ -1532,8 +1533,8 @@
     "dimensions": {
       "speed": 37,
       "consistency": 59,
-      "explosiveness": 14,
-      "synergy": 79,
+      "explosiveness": 13,
+      "synergy": 81,
       "interaction": 23,
       "resilience": 26
     },
@@ -1570,10 +1571,12 @@
           "Invigorating Hot Spring"
         ],
         "payoffs": [
+          "Akki Battle Squad",
           "Ascendant Acolyte",
           "Concord with the Kami",
           "Invigorating Hot Spring",
           "Kami of Celebration",
+          "One with the Kami",
           "Rishkar, Peema Renegade",
           "Silkguard",
           "Towashi Guide-Bot",
@@ -1600,13 +1603,17 @@
           "Primeval Protector",
           "Raging Ravine",
           "Rampant Rejuvenator",
+          "Rhythm of the Wild",
           "Rishkar, Peema Renegade",
           "Silkguard",
           "Taurean Mauler",
           "Towashi Guide-Bot",
           "Ulasht, the Hate Seed",
           "Vastwood Surge",
-          "Whiptongue Hydra"
+          "Whiptongue Hydra",
+          "Akki Battle Squad",
+          "One with the Kami",
+          "Walking Skyscraper"
         ],
         "producerCards": [
           {
@@ -1801,7 +1808,7 @@
               "enchantment",
               "etb",
               "counter-producer",
-              "counter-payoff",
+              "modified-payoff",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -1844,7 +1851,7 @@
             "tags": [
               "creature",
               "counter-producer",
-              "counter-payoff",
+              "modified-payoff",
               "counter-kind:plus1",
               "exile-cast",
               "exile-payoff"
@@ -2003,6 +2010,27 @@
             }
           },
           {
+            "name": "Rhythm of the Wild",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
             "name": "Rishkar, Peema Renegade",
             "cmc": 3,
             "tags": [
@@ -2030,7 +2058,7 @@
               "instant",
               "protection",
               "counter-producer",
-              "counter-payoff",
+              "modified-payoff",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -2070,7 +2098,7 @@
               "draw",
               "etb",
               "counter-producer",
-              "counter-payoff",
+              "modified-payoff",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -2144,6 +2172,24 @@
         ],
         "payoffCards": [
           {
+            "name": "Akki Battle Squad",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "modified-payoff",
+              "extra-combat"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
             "name": "Ascendant Acolyte",
             "cmc": 5,
             "tags": [
@@ -2192,7 +2238,7 @@
               "enchantment",
               "etb",
               "counter-producer",
-              "counter-payoff",
+              "modified-payoff",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -2214,7 +2260,7 @@
             "tags": [
               "creature",
               "counter-producer",
-              "counter-payoff",
+              "modified-payoff",
               "counter-kind:plus1",
               "exile-cast",
               "exile-payoff"
@@ -2227,6 +2273,25 @@
                 ]
               ],
               "total": 5
+            }
+          },
+          {
+            "name": "One with the Kami",
+            "cmc": 4,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "death-payoff",
+              "modified-payoff"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
             }
           },
           {
@@ -2257,7 +2322,7 @@
               "instant",
               "protection",
               "counter-producer",
-              "counter-payoff",
+              "modified-payoff",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -2279,7 +2344,7 @@
               "draw",
               "etb",
               "counter-producer",
-              "counter-payoff",
+              "modified-payoff",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -2311,15 +2376,31 @@
               ],
               "total": 4
             }
+          },
+          {
+            "name": "Walking Skyscraper",
+            "cmc": 8,
+            "tags": [
+              "creature",
+              "artifact",
+              "protection",
+              "modified-payoff"
+            ],
+            "manaReq": {
+              "generic": 8,
+              "colored": [],
+              "total": 8
+            }
           }
         ],
         "producerTags": [
           "counter-producer"
         ],
         "payoffTags": [
-          "counter-payoff"
+          "counter-payoff",
+          "modified-payoff"
         ],
-        "evidence": "27 producteur(s), 8 payoff(s), 27 carte(s) distincte(s)."
+        "evidence": "28 producteur(s), 11 payoff(s), 31 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2457,7 +2538,7 @@
               "tokens",
               "etb",
               "counter-producer",
-              "counter-payoff",
+              "modified-payoff",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -2479,9 +2560,10 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 82,
+      "score": 90,
       "connected": [
         "Agitator Ant",
+        "Akki Battle Squad",
         "Ascendant Acolyte",
         "Champion of Lambholt",
         "Concord with the Kami",
@@ -2503,6 +2585,7 @@
         "Primeval Protector",
         "Raging Ravine",
         "Rampant Rejuvenator",
+        "Rhythm of the Wild",
         "Rishkar, Peema Renegade",
         "Silkguard",
         "Smoke Spirits' Aid",
@@ -2510,12 +2593,13 @@
         "Towashi Guide-Bot",
         "Ulasht, the Hate Seed",
         "Vastwood Surge",
+        "Walking Skyscraper",
         "Whiptongue Hydra"
       ],
       "tags": [
         "tokens",
         "counter-producer",
-        "counter-payoff",
+        "modified-payoff",
         "token-payoff"
       ]
     },
@@ -2529,8 +2613,8 @@
       "iterations": 3200,
       "floor": 31,
       "median": 40,
-      "high": 49,
-      "ceiling": 49,
+      "high": 50,
+      "ceiling": 50,
       "peak": 76,
       "iqr": 15,
       "consistency": 67,
@@ -2565,7 +2649,7 @@
         {
           "turn": 4,
           "commander": 74,
-          "engine": 34,
+          "engine": 35,
           "interaction": 26,
           "resource": 39,
           "burst": 1
@@ -2589,7 +2673,7 @@
         {
           "turn": 7,
           "commander": 94,
-          "engine": 62,
+          "engine": 63,
           "interaction": 45,
           "resource": 62,
           "burst": 8
@@ -2632,6 +2716,16 @@
         "aeon": null
       },
       {
+        "name": "Akki Battle Squad",
+        "impact": 2.5,
+        "tags": [
+          "creature",
+          "modified-payoff",
+          "extra-combat"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Rishkar, Peema Renegade",
         "impact": 2.5,
         "tags": [
@@ -2653,7 +2747,7 @@
           "draw",
           "etb",
           "counter-producer",
-          "counter-payoff"
+          "modified-payoff"
         ],
         "aeon": null
       },
@@ -2717,17 +2811,6 @@
         "tags": [
           "artifact",
           "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Krenko, Tin Street Kingpin",
-        "impact": 1.9,
-        "tags": [
-          "creature",
-          "tokens",
-          "counter-producer",
-          "counter-kind:plus1"
         ],
         "aeon": null
       }

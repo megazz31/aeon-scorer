@@ -34,11 +34,11 @@
     "peak": 88,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-9",
+    "semanticVersion": "3.2.0-semantic-10",
     "oracleSnapshotHash": "85bf3bb3019a5404fd7522b75f684248564370c568c002af8c5fb7f1d2fb6d71",
     "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-22T06:49:00.503Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Neriv, Crackling Vanguard\n1 Ainok Strike Leader\n1 Ironwill Forger\n1 Will of the Mardu\n1 Bone Devourer\n1 Within Range\n1 Goldlust Triad\n1 Infantry Shield\n1 Redoubled Stormsinger\n1 Adeline, Resplendent Cathar\n1 Angel of Invention\n1 Commander's Insignia\n1 Divine Visitation\n1 Emeria Angel\n1 Grand Crescendo\n1 Hero of Bladehold\n1 Hour of Reckoning\n1 Legion Loyalty\n1 Selfless Spirit\n1 Sun Titan\n1 Tocasia's Welcome\n1 Twilight Drover\n1 Chittering Witch\n1 Eliminate the Competition\n1 Gix, Yawgmoth Praetor\n1 Mindblade Render\n1 Ophiomancer\n1 Yahenni, Undying Partisan\n1 Grenzo, Havoc Raiser\n1 Legion Warboss\n1 Ogre Battledriver\n1 Siege-Gang Commander\n1 Tempt with Vengeance\n1 Kaya, Geist Hunter\n1 Blade of Selves\n1 Idol of Oblivion\n1 Myr Battlesphere\n1 Solemn Simulacrum\n1 Battlefield Forge\n1 Canyon Slough\n1 Castle Ardenvale\n1 Castle Embereth\n1 Caves of Koilos\n1 Clifftop Retreat\n1 Dragonskull Summit\n1 Exotic Orchard\n1 Fetid Heath\n1 Isolated Chapel\n1 Shattered Sanctum\n1 Smoldering Marsh\n1 Temple of Silence\n1 Temple of Triumph\n1 Vault of the Archangel\n1 Windbrisk Heights\n1 Shadow Summoning\n1 Lightning Greaves\n1 Skullclamp\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Goldnight Commander\n1 Lingering Souls\n1 Release the Dogs\n1 Stroke of Midnight\n1 Swords to Plowshares\n1 Bastion of Remembrance\n1 Bitter Triumph\n1 Deadly Dispute\n1 Morbid Opportunist\n1 Viscera Seer\n1 Abrade\n1 Beetleback Chief\n1 Loyal Apprentice\n1 Nomad Outpost\n1 Aron, Benalia's Ruin\n1 Thalisse, Reverent Medium\n1 Fellwar Stone\n1 Talisman of Conviction\n1 Talisman of Hierarchy\n1 Wayfarer's Bauble\n1 Bojuka Bog\n1 Path of Ancestry\n1 Shattered Landscape\n1 Terramorphic Expanse\n3 Plains\n2 Plains\n3 Swamp\n2 Swamp\n3 Mountain\n2 Mountain",
   "oracleCards": [
@@ -113,7 +113,9 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "tokens",
         "counter-producer",
+        "counter-kind:plus1",
         "lifegain"
       ],
       "isCommander": false
@@ -911,7 +913,8 @@
       "tags": [
         "creature",
         "tokens",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1817,7 +1820,7 @@
       "dispersion": 25,
       "variance": 25,
       "consistency": 58,
-      "commanderDelta": 11,
+      "commanderDelta": 12,
       "coverage": 93,
       "dataCoverage": 93
     },
@@ -1852,14 +1855,14 @@
         "producers": [
           "Adeline, Resplendent Cathar",
           "Ainok Strike Leader",
+          "Angel of Invention",
           "Bastion of Remembrance",
           "Beetleback Chief",
           "Castle Ardenvale",
           "Chittering Witch",
           "Deadly Dispute",
           "Emeria Angel",
-          "Goldlust Triad",
-          "Grand Crescendo"
+          "Goldlust Triad"
         ],
         "payoffs": [
           "Ainok Strike Leader",
@@ -1873,6 +1876,7 @@
         "members": [
           "Adeline, Resplendent Cathar",
           "Ainok Strike Leader",
+          "Angel of Invention",
           "Bastion of Remembrance",
           "Beetleback Chief",
           "Castle Ardenvale",
@@ -1940,6 +1944,29 @@
                 ]
               ],
               "total": 2
+            }
+          },
+          {
+            "name": "Angel of Invention",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
             }
           },
           {
@@ -2167,7 +2194,8 @@
             "tags": [
               "creature",
               "tokens",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2600,7 +2628,7 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "28 producteur(s), 7 payoff(s), 29 carte(s) distincte(s)."
+        "evidence": "29 producteur(s), 7 payoff(s), 30 carte(s) distincte(s)."
       },
       {
         "id": "sacrifice",
@@ -2941,10 +2969,11 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 80,
+      "score": 82,
       "connected": [
         "Adeline, Resplendent Cathar",
         "Ainok Strike Leader",
+        "Angel of Invention",
         "Bastion of Remembrance",
         "Beetleback Chief",
         "Castle Ardenvale",

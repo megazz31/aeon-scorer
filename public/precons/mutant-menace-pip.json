@@ -34,11 +34,11 @@
     "peak": 86,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-9",
+    "semanticVersion": "3.2.0-semantic-10",
     "oracleSnapshotHash": "29256fcf9bfc43d814bcbc1fc21683f68ee03541421a83ae68a9b3f16dd40499",
     "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-22T06:49:00.503Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 The Master, Transcendent\n1 Jason Bright, Glowing Prophet\n1 Mirelurk Queen\n1 Piper Wright, Publick Reporter\n1 Radstorm\n1 Struggle for Project Purity\n1 Feral Ghoul\n1 Hancock, Ghoulish Mayor\n1 Nuclear Fallout\n1 Screeching Scorchbeast\n1 Vault 12: The Necropolis\n1 Harold and Bob, First Numens\n1 Lily Bowen, Raging Grandma\n1 Power Fist\n1 Rampaging Yao Guai\n1 Strong, the Brutish Thespian\n1 Tato Farmer\n1 Watchful Radstag\n1 Agent Frank Horrigan\n1 Alpha Deathclaw\n1 Atomize\n1 Marcus, Mutant Mayor\n1 Mutational Advantage\n1 Vault 87: Forced Evolution\n1 Nuka-Nuke Launcher\n1 Recon Craft Theta\n1 Mariposa Military Base\n1 Overflowing Basin\n1 Viridescent Bog\n1 Fraying Sanity\n1 Inexorable Tide\n1 Branching Evolution\n1 Guardian Project\n1 Hardened Scales\n1 Tireless Tracker\n1 Biomass Mutation\n1 Casualties of War\n1 Find // Finality\n1 Darkwater Catacombs\n1 Drowned Catacomb\n1 Exotic Orchard\n1 Fetid Pools\n1 Hinterland Harbor\n1 Nesting Grounds\n1 Sunken Hollow\n1 Temple of Deceit\n1 Temple of Malady\n1 Temple of Mystery\n1 Woodland Cemetery\n1 Vexing Radgull\n1 Bloatfly Swarm\n1 Infesting Radroach\n1 Cathedral Acolyte\n1 Glowing One\n1 Lumbering Megasloth\n1 Contaminated Drink\n1 Nightkin Ambusher\n1 Raul, Trouble Shooter\n1 Young Deathclaws\n1 Strength Bobblehead\n1 Cultivate\n1 Farseek\n1 Harmonize\n1 Inspiring Call\n1 Rampant Growth\n1 Corpsejack Menace\n1 Putrefy\n1 Winding Constrictor\n1 Arcane Signet\n1 Contagion Clasp\n1 Sol Ring\n1 Talisman of Curiosity\n1 Talisman of Dominance\n1 Talisman of Resilience\n1 Ash Barrens\n1 Command Tower\n1 Evolving Wilds\n1 Mortuary Mire\n1 Opulent Palace\n1 Path of Ancestry\n1 Tainted Isle\n1 Tainted Wood\n1 Temple of the False God\n1 Terramorphic Expanse\n3 Swamp\n2 Swamp\n3 Forest\n2 Forest\n3 Island\n2 Island",
   "oracleCards": [
@@ -597,6 +597,7 @@
       "tags": [
         "creature",
         "counter-producer",
+        "counter-kind:plus1",
         "counter-kind:any"
       ],
       "isCommander": false
@@ -1849,7 +1850,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     }
@@ -1871,7 +1873,7 @@
       "speed": 39,
       "consistency": 61,
       "explosiveness": 13,
-      "synergy": 80,
+      "synergy": 81,
       "interaction": 14,
       "resilience": 31
     },
@@ -1945,6 +1947,7 @@
           "Vault 87: Forced Evolution",
           "Vexing Radgull",
           "Watchful Radstag",
+          "Young Deathclaws",
           "Hardened Scales",
           "Inspiring Call",
           "Lumbering Megasloth",
@@ -2133,6 +2136,7 @@
             "tags": [
               "creature",
               "counter-producer",
+              "counter-kind:plus1",
               "counter-kind:any"
             ],
             "manaReq": {
@@ -2517,6 +2521,27 @@
               ],
               "total": 3
             }
+          },
+          {
+            "name": "Young Deathclaws",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
           }
         ],
         "payoffCards": [
@@ -2686,9 +2711,10 @@
           "counter-producer"
         ],
         "payoffTags": [
-          "counter-payoff"
+          "counter-payoff",
+          "modified-payoff"
         ],
-        "evidence": "27 producteur(s), 8 payoff(s), 32 carte(s) distincte(s)."
+        "evidence": "28 producteur(s), 8 payoff(s), 33 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -3028,7 +3054,7 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 88,
+      "score": 91,
       "connected": [
         "Agent Frank Horrigan",
         "Alpha Deathclaw",
@@ -3060,7 +3086,8 @@
         "Vault 12: The Necropolis",
         "Vault 87: Forced Evolution",
         "Vexing Radgull",
-        "Watchful Radstag"
+        "Watchful Radstag",
+        "Young Deathclaws"
       ],
       "tags": [
         "counter-producer",
@@ -3113,7 +3140,7 @@
         {
           "turn": 4,
           "commander": 68,
-          "engine": 36,
+          "engine": 37,
           "interaction": 17,
           "resource": 46,
           "burst": 0
@@ -3137,7 +3164,7 @@
         {
           "turn": 7,
           "commander": 94,
-          "engine": 63,
+          "engine": 64,
           "interaction": 38,
           "resource": 71,
           "burst": 0

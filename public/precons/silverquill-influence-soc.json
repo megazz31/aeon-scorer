@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 52,
-    "p20": 42,
+    "p20": 43,
     "p80": 62,
     "peak": 87,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-9",
+    "semanticVersion": "3.2.0-semantic-10",
     "oracleSnapshotHash": "c1777072cb1bb6083e9030bf7f7fbf454b73b0f16eecc93ce167a9ce8afd1d51",
     "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-22T06:49:00.503Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Scriv, the Obligator\n1 Eiganjo Dynastorian // Replenish\n1 Forum Filibuster\n1 Herald of Amity\n1 Changing Loyalty\n1 Coercive Impetus\n1 Intermediate Chirography\n1 Defacing Duskmage // Vandal's Edit\n1 Eclipsed Steppe\n1 Turbulent Moor\n1 Umbral Expanse\n1 Fabled Passage\n1 Eldrazi Conscription\n1 Ajani's Chosen\n1 Angelic Destiny\n1 Archon of Sun's Grace\n1 Armored Skyhunter\n1 Combat Calligrapher\n1 Eidolon of Countless Battles\n1 Firemane Commando\n1 Gift of Immortality\n1 Kor Spiritdancer\n1 Land Tax\n1 Mangara, the Diplomat\n1 Nils, Discipline Enforcer\n1 Pearl-Ear, Imperial Advisor\n1 Promise of Loyalty\n1 Redemption Arc\n1 Shielded by Faith\n1 Songbirds' Blessing\n1 Sram, Senior Edificer\n1 Starfield Mystic\n1 Winds of Rath\n1 Doomwake Giant\n1 Ghoulish Impetus\n1 Keen Duelist\n1 Anguished Unmaking\n1 Breena, the Demagogue\n1 Eriette of the Charmed Apple\n1 Inkshield\n1 Shadrix Silverquill\n1 Tomik, Wielder of Law\n1 Vanishing Verse\n1 Caves of Koilos\n1 Desolate Mire\n1 Exotic Orchard\n1 Fetid Heath\n1 Isolated Chapel\n1 Shineshadow Snarl\n1 Temple of Silence\n1 War Room\n1 Flickering Ward\n1 Fallen Ideal\n1 Screams from Within\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Forum of Amity\n1 Terramorphic Expanse\n1 Chains of Custody\n1 Darksteel Mutation\n1 Ghostly Prison\n1 Martial Impetus\n1 Raffine's Guidance\n1 Sage's Reverie\n1 Secret Rendezvous\n1 Sentinel's Eyes\n1 Sheltered by Ghosts\n1 Spirit Mantle\n1 Transcendent Envoy\n1 Animate Dead\n1 Hateful Eidolon\n1 Parasitic Impetus\n1 Fracture\n1 Killian, Ink Duelist\n1 Fellwar Stone\n1 Talisman of Hierarchy\n1 Arcane Lighthouse\n1 Bojuka Bog\n1 Path of Ancestry\n1 Silverquill Campus\n1 Study Hall\n1 Sunlit Marsh\n4 Plains\n4 Plains\n4 Swamp\n4 Swamp",
   "oracleCards": [
@@ -861,7 +861,7 @@
         "tokens",
         "etb",
         "counter-producer",
-        "counter-payoff",
+        "modified-payoff",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1094,6 +1094,7 @@
       "tags": [
         "creature",
         "draw",
+        "modified-payoff",
         "lifegain"
       ],
       "isCommander": false
@@ -1728,7 +1729,7 @@
   "result": {
     "profile": {
       "median": 52,
-      "floor": 42,
+      "floor": 43,
       "ceiling": 62,
       "peak": 87,
       "dispersion": 20,
@@ -1742,7 +1743,7 @@
       "speed": 48,
       "consistency": 65,
       "explosiveness": 17,
-      "synergy": 82,
+      "synergy": 85,
       "interaction": 50,
       "resilience": 49
     },
@@ -2111,7 +2112,7 @@
               "tokens",
               "etb",
               "counter-producer",
-              "counter-payoff",
+              "modified-payoff",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -2430,8 +2431,8 @@
       {
         "id": "counters",
         "name": "Marqueurs",
-        "strength": 50,
-        "cohesion": 50,
+        "strength": 58,
+        "cohesion": 58,
         "producers": [
           "Breena, the Demagogue",
           "Intermediate Chirography",
@@ -2440,13 +2441,15 @@
         ],
         "payoffs": [
           "Intermediate Chirography",
-          "Nils, Discipline Enforcer"
+          "Nils, Discipline Enforcer",
+          "Pearl-Ear, Imperial Advisor"
         ],
         "members": [
           "Breena, the Demagogue",
           "Intermediate Chirography",
           "Nils, Discipline Enforcer",
-          "Starfield Mystic"
+          "Starfield Mystic",
+          "Pearl-Ear, Imperial Advisor"
         ],
         "producerCards": [
           {
@@ -2478,7 +2481,7 @@
               "tokens",
               "etb",
               "counter-producer",
-              "counter-payoff",
+              "modified-payoff",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -2539,7 +2542,7 @@
               "tokens",
               "etb",
               "counter-producer",
-              "counter-payoff",
+              "modified-payoff",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -2571,15 +2574,38 @@
               ],
               "total": 3
             }
+          },
+          {
+            "name": "Pearl-Ear, Imperial Advisor",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "draw",
+              "modified-payoff",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
           }
         ],
         "producerTags": [
           "counter-producer"
         ],
         "payoffTags": [
-          "counter-payoff"
+          "counter-payoff",
+          "modified-payoff"
         ],
-        "evidence": "4 producteur(s), 2 payoff(s), 4 carte(s) distincte(s)."
+        "evidence": "4 producteur(s), 3 payoff(s), 5 carte(s) distincte(s)."
       }
     ],
     "combos": [],
@@ -2736,6 +2762,17 @@
         "aeon": null
       },
       {
+        "name": "Pearl-Ear, Imperial Advisor",
+        "impact": 3,
+        "tags": [
+          "creature",
+          "draw",
+          "modified-payoff",
+          "lifegain"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Sol Ring",
         "impact": 3,
         "tags": [
@@ -2753,7 +2790,7 @@
           "tokens",
           "etb",
           "counter-producer",
-          "counter-payoff",
+          "modified-payoff",
           "counter-kind:plus1"
         ],
         "aeon": null
@@ -2804,16 +2841,6 @@
         "tags": [
           "creature",
           "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Pearl-Ear, Imperial Advisor",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "draw",
-          "lifegain"
         ],
         "aeon": null
       },

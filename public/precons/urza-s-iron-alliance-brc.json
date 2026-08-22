@@ -34,11 +34,11 @@
     "peak": 88,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-9",
+    "semanticVersion": "3.2.0-semantic-10",
     "oracleSnapshotHash": "4458385c5ace5715533f9b45613ba98293a6aa9ae4f41d07901a38820b2197cf",
     "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-22T06:49:00.503Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Indomitable Archangel\n1 Ethersworn Adjudicator\n1 Noxious Gearhulk\n1 Alela, Artful Provocateur\n1 Angel of the Ruins\n1 Bronze Guardian\n1 Digsite Engineer\n1 Losheel, Clockwork Scholar\n1 Teshar, Ancestor's Apostle\n1 Master of Etherium\n1 Sai, Master Thopterist\n1 Sharding Sphinx\n1 Shimmer Dragon\n1 Thought Monitor\n1 Vedalken Humiliator\n1 Marionette Master\n1 Baleful Strix\n1 Sharuum the Hegemon\n1 Darksteel Juggernaut\n1 Etched Champion\n1 Myr Battlesphere\n1 Solemn Simulacrum\n1 Steel Hellkite\n1 Steel Overseer\n1 Filigree Attendant\n1 Whirler Rogue\n1 Armix, Filigree Thrasher\n1 Chief of the Foundry\n1 Etherium Sculptor\n1 Chrome Courier\n1 Austere Command\n1 Phyrexian Rebirth\n1 Urza's Ruinous Blast\n1 One with the Machine\n1 Vindicate\n1 Preordain\n1 Sphinx's Revelation\n1 Unbreakable Formation\n1 Swords to Plowshares\n1 Despark\n1 Bident of Thassa\n1 Cranial Plating\n1 Liquimetal Torque\n1 Relic of Progenitus\n1 Skullclamp\n1 Sol Ring\n1 Swiftfoot Boots\n1 Thought Vessel\n1 Arcane Signet\n1 Azorius Signet\n1 Dimir Signet\n1 Orzhov Signet\n1 Tempered Steel\n1 Thopter Spy Network\n1 Exotic Orchard\n1 Prairie Stream\n1 River of Tears\n1 Skycloud Expanse\n1 Spire of Industry\n1 Sunken Hollow\n1 Temple of Deceit\n1 Temple of Enlightenment\n1 Temple of Silence\n1 Arcane Sanctum\n1 Azorius Chancery\n1 Darksteel Citadel\n1 Dimir Aqueduct\n1 Orzhov Basilica\n1 Ancient Den\n1 Ash Barrens\n1 Bojuka Bog\n1 Command Tower\n1 Evolving Wilds\n1 Goldmire Bridge\n1 Mistvault Bridge\n1 Path of Ancestry\n1 Razortide Bridge\n1 Seat of the Synod\n1 Vault of Whispers\n2 Plains\n2 Plains\n2 Island\n2 Island\n2 Swamp\n1 Swamp\n1 Tawnos, Solemn Survivor\n1 Sanwell, Avenger Ace\n1 Scholar of New Horizons\n1 March of Progress\n1 Wire Surgeons\n1 Wreck Hunter\n1 Hexavus\n1 Kayla's Music Box\n1 Thopter Shop",
   "oracleCards": [
@@ -813,8 +813,10 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "tokens",
         "artifact-payoff",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -2853,8 +2855,10 @@
             "cmc": 6,
             "tags": [
               "creature",
+              "tokens",
               "artifact-payoff",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 4,
@@ -3265,10 +3269,11 @@
       {
         "id": "counters",
         "name": "Marqueurs",
-        "strength": 50,
-        "cohesion": 50,
+        "strength": 52,
+        "cohesion": 52,
         "producers": [
           "Hexavus",
+          "Marionette Master",
           "Scholar of New Horizons",
           "Steel Overseer",
           "Unbreakable Formation"
@@ -3279,6 +3284,7 @@
         ],
         "members": [
           "Hexavus",
+          "Marionette Master",
           "Scholar of New Horizons",
           "Steel Overseer",
           "Unbreakable Formation"
@@ -3298,6 +3304,29 @@
             "manaReq": {
               "generic": 6,
               "colored": [],
+              "total": 6
+            }
+          },
+          {
+            "name": "Marionette Master",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "tokens",
+              "artifact-payoff",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
               "total": 6
             }
           },
@@ -3399,9 +3428,10 @@
           "counter-producer"
         ],
         "payoffTags": [
-          "counter-payoff"
+          "counter-payoff",
+          "modified-payoff"
         ],
-        "evidence": "4 producteur(s), 2 payoff(s), 4 carte(s) distincte(s)."
+        "evidence": "5 producteur(s), 2 payoff(s), 5 carte(s) distincte(s)."
       }
     ],
     "combos": [],

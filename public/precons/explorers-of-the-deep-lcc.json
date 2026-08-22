@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 44,
-    "p20": 30,
-    "p80": 56,
-    "peak": 82,
-    "coverage": 91,
+    "median": 46,
+    "p20": 33,
+    "p80": 58,
+    "peak": 84,
+    "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-9",
+    "semanticVersion": "3.2.0-semantic-10",
     "oracleSnapshotHash": "341f08b29eaf91203e673e1700b0a1c9806e7d927de735e28485272be36aa5ea",
     "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-22T06:49:00.503Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Xolatoyac, the Smiling Flood\n1 Mist Dancer\n1 Ripples of Potential\n1 Wave Goodbye\n1 Bygone Marvels\n1 Deeproot Historian\n1 Topography Tracker\n1 Tributary Instructor\n1 Singer of Swift Rivers\n1 Benthic Biomancer\n1 Commit // Memory\n1 Coralhelm Commander\n1 Curse of the Swine\n1 Emperor Mihail II\n1 Herald of Secret Streams\n1 Kindred Discovery\n1 Kopala, Warden of Waves\n1 Master of the Pearl Trident\n1 Merfolk Sovereign\n1 Reflections of Littjara\n1 Seafloor Oracle\n1 Surgespanner\n1 Svyelun of Sea and Sky\n1 Thassa, God of the Sea\n1 Thieving Skydiver\n1 Branching Evolution\n1 Deeproot Elite\n1 Hardened Scales\n1 Realmwalker\n1 Ruinous Intrusion\n1 Cold-Eyed Selkie\n1 Kumena, Tyrant of Orazca\n1 Prime Speaker Zegana\n1 Quandrix Command\n1 Simic Ascendancy\n1 Tishana, Voice of Thunder\n1 Vorel of the Hull Clade\n1 Zegana, Utopian Speaker\n1 Metallic Mimic\n1 Alchemist's Refuge\n1 Hinterland Harbor\n1 Karn's Bastion\n1 Mosswort Bridge\n1 Temple of Mystery\n1 Vineglimmer Snarl\n1 Merfolk Cave-Diver\n1 Aetherize\n1 Deeproot Waters\n1 Merrow Reejerey\n1 Rapid Hybridization\n1 Ravenform\n1 Sage of Fables\n1 Stonybrook Banneret\n1 Beast Within\n1 Nicanzil, Current Conductor\n1 Evolution Sage\n1 Explore\n1 Inspiring Call\n1 Kodama's Reach\n1 Growth Spiral\n1 Kiora's Follower\n1 Merfolk Mistbinder\n1 Merfolk Skydiver\n1 Tatyova, Benthic Druid\n1 Arcane Signet\n1 Commander's Sphere\n1 Simic Signet\n1 Sol Ring\n1 Swiftfoot Boots\n1 Command Tower\n1 Llanowar Reborn\n1 Myriad Landscape\n1 Path of Ancestry\n1 Reliquary Tower\n1 Rogue's Passage\n1 Secluded Courtyard\n1 Simic Growth Chamber\n1 Temple of the False God\n1 Unclaimed Territory\n4 Forest\n3 Forest\n7 Island\n6 Island",
   "oracleCards": [
@@ -464,7 +464,9 @@
       "tags": [
         "creature",
         "draw",
-        "land-ramp"
+        "land-ramp",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": true
     },
@@ -734,7 +736,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1657,22 +1661,22 @@
   ],
   "result": {
     "profile": {
-      "median": 44,
-      "floor": 30,
-      "ceiling": 56,
-      "peak": 82,
+      "median": 46,
+      "floor": 33,
+      "ceiling": 58,
+      "peak": 84,
       "dispersion": 25,
       "variance": 25,
       "consistency": 59,
-      "commanderDelta": 6,
-      "coverage": 91,
-      "dataCoverage": 91
+      "commanderDelta": 11,
+      "coverage": 92,
+      "dataCoverage": 92
     },
     "dimensions": {
       "speed": 44,
       "consistency": 59,
       "explosiveness": 21,
-      "synergy": 55,
+      "synergy": 71,
       "interaction": 35,
       "resilience": 36
     },
@@ -1703,10 +1707,10 @@
           "Karn's Bastion",
           "Kumena, Tyrant of Orazca",
           "Llanowar Reborn",
+          "Merfolk Cave-Diver",
           "Merfolk Skydiver",
           "Metallic Mimic",
-          "Nicanzil, Current Conductor",
-          "Prime Speaker Zegana"
+          "Nicanzil, Current Conductor"
         ],
         "payoffs": [
           "Hardened Scales",
@@ -1720,6 +1724,7 @@
           "Karn's Bastion",
           "Kumena, Tyrant of Orazca",
           "Llanowar Reborn",
+          "Merfolk Cave-Diver",
           "Merfolk Skydiver",
           "Metallic Mimic",
           "Nicanzil, Current Conductor",
@@ -1847,6 +1852,24 @@
               "generic": 0,
               "colored": [],
               "total": 0
+            }
+          },
+          {
+            "name": "Merfolk Cave-Diver",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
             }
           },
           {
@@ -2196,9 +2219,10 @@
           "counter-producer"
         ],
         "payoffTags": [
-          "counter-payoff"
+          "counter-payoff",
+          "modified-payoff"
         ],
-        "evidence": "19 producteur(s), 3 payoff(s), 21 carte(s) distincte(s)."
+        "evidence": "20 producteur(s), 3 payoff(s), 22 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2489,7 +2513,9 @@
             "tags": [
               "creature",
               "draw",
-              "land-ramp"
+              "land-ramp",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2510,9 +2536,33 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 0,
-      "connected": [],
-      "tags": []
+      "score": 57,
+      "connected": [
+        "Benthic Biomancer",
+        "Deeproot Elite",
+        "Evolution Sage",
+        "Hardened Scales",
+        "Inspiring Call",
+        "Karn's Bastion",
+        "Kumena, Tyrant of Orazca",
+        "Llanowar Reborn",
+        "Merfolk Cave-Diver",
+        "Merfolk Skydiver",
+        "Metallic Mimic",
+        "Nicanzil, Current Conductor",
+        "Prime Speaker Zegana",
+        "Quandrix Command",
+        "Ripples of Potential",
+        "Ruinous Intrusion",
+        "Sage of Fables",
+        "Simic Ascendancy",
+        "Topography Tracker",
+        "Tributary Instructor",
+        "Zegana, Utopian Speaker"
+      ],
+      "tags": [
+        "counter-producer"
+      ]
     },
     "aeon": {
       "available": false,
@@ -2576,7 +2626,7 @@
         {
           "turn": 6,
           "commander": 89,
-          "engine": 27,
+          "engine": 28,
           "interaction": 49,
           "resource": 78,
           "burst": 14
