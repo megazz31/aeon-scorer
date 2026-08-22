@@ -2,7 +2,7 @@ name: P2-P7 product validation
 
 on:
   push:
-    branches: [product-p2-p7-roadmap, product-p2-p7-v2, product-temporal-first-access, product-answer-timing-v2, product-threat-objects-v1, product-agency-timeline-v1, product-spof-suppression-v1]
+    branches: [product-p2-p7-roadmap, product-p2-p7-v2, product-temporal-first-access, product-answer-timing-v2, product-threat-objects-v1, product-agency-timeline-v1, product-spof-suppression-v1, product-combo-access-v2]
     paths-ignore:
       - 'docs/PLAN.md'
       - 'docs/P2_P7_V2_WORKLOG.md'
@@ -12,8 +12,9 @@ on:
       - 'docs/THREAT_OBJECTS_V1_WORKLOG.md'
       - 'docs/AGENCY_TIMELINE_V1_WORKLOG.md'
       - 'docs/SPOF_SUPPRESSION_V1_WORKLOG.md'
+      - 'docs/COMBO_ACCESS_V2_WORKLOG.md'
   pull_request:
-    branches: [product-p0-p1, product-p2-p7-roadmap, product-p2-p7-v2, product-temporal-first-access, product-answer-timing-v2, product-threat-objects-v1, product-agency-timeline-v1]
+    branches: [product-p0-p1, product-p2-p7-roadmap, product-p2-p7-v2, product-temporal-first-access, product-answer-timing-v2, product-threat-objects-v1, product-agency-timeline-v1, product-spof-suppression-v1]
     paths-ignore:
       - 'docs/PLAN.md'
       - 'docs/P2_P7_V2_WORKLOG.md'
@@ -23,6 +24,7 @@ on:
       - 'docs/THREAT_OBJECTS_V1_WORKLOG.md'
       - 'docs/AGENCY_TIMELINE_V1_WORKLOG.md'
       - 'docs/SPOF_SUPPRESSION_V1_WORKLOG.md'
+      - 'docs/COMBO_ACCESS_V2_WORKLOG.md'
 
 permissions:
   contents: read
