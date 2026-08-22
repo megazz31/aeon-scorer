@@ -431,20 +431,110 @@ Dedicated V2 regressions prove:
 - direct local URL import reuses the existing audited import endpoint and Scryfall resolution path;
 - direct imports are capped at 8, run at 1,800 local sequences, stay non-persistent, and cannot enter Reality data without first becoming versioned Aeon shares.
 
-## 13.8 Remaining priority work after V2
+## 13.8 Remaining priority work after V2 — historical snapshot
 
-These remain real engineering/scientific gaps and must not be presented as solved:
+This list is retained as the state immediately after PR #11. Several items have since been completed in the stacked follow-ups documented below.
 
-1. **Final semantic integration** — reconstruct/rebase the stacked product path on semantic-12 or later and rerun every gate.
-2. **True First-Access Horizon** — instrument first commander/engine/interaction/burst/threat access instead of deriving cumulative language from per-turn availability.
-3. **Card-level Answer Timing** — simulate whether the relevant answer is actually drawn/castable with correct colors/mana/timing rather than scaling generic interaction access by class density.
-4. **Threat Objects** — explicit prerequisites/zones/mana/pieces/answer classes/protection/recovery for combo and engine threats.
-5. **Causal non-commander SPOF** — graveyard/artifact/enchantment/board suppression counterfactuals.
-6. **Exact Combo Accessibility T5/T7/T9** — piece-specific tutor eligibility, zones, mana and prerequisites.
-7. **Real-world P7 calibration** — held-out data, baseline comparisons, cohort leakage protection and calibration review.
-8. **Persistent direct LGS import** — remains intentionally share-first until anonymous ingest, compute cost, version identity and calibration provenance have a safe server-side design.
-9. **Agency Timeline** — candidate next major Game Quality dimension only after the temporal primitives above are trustworthy: measure whether each seat can meaningfully advance or interact before the game becomes structurally closed.
+1. **Final semantic integration** — still externally gated.
+2. **True First-Access Horizon** — completed in PR #12.
+3. **Card-level Answer Timing** — completed in PR #13 with explicit MV/draw-envelope boundaries.
+4. **Threat Objects** — completed in PR #14.
+5. **Causal non-commander SPOF** — paired suppression evidence completed in PR #16; score promotion remains intentionally withheld.
+6. **Exact Combo Accessibility T5/T7/T9** — remains the next major unresolved temporal proxy.
+7. **Real-world P7 calibration** — remains scientifically gated on real observations/holdout.
+8. **Persistent direct LGS import** — remains intentionally share-first.
+9. **Agency Timeline** — completed diagnostically in PR #15; scoring promotion remains withheld pending ablation/real data.
 
 Strategic order remains:
 
-> **semantic integration → close end-to-end UX gaps → replace strategic proxies → collect real games → calibrate → only then promote probabilistic claims.**
+> **close trustworthy temporal/causal evidence gaps → collect real games → calibrate/ablate → only then promote probabilistic or scoring claims.**
+
+---
+
+# 14. Stacked evidence-hardening follow-ups — PR #12 → PR #16
+
+The V2 audit exposed several places where useful product outputs still relied on structural proxies. PRs #12–#16 replace those proxies incrementally while preserving the core-score and privacy invariants.
+
+## 14.1 PR #12 — True First-Access Horizon — VALIDATED
+
+**Branch:** `product-temporal-first-access`  
+**Model:** `goldfish-horizon-v2` plus deterministic first-access sampling.
+
+Aeon now exposes true cumulative first-access curves when instrumented evidence is available, while retaining the historical per-turn availability curves separately. Curves are bounded, monotonic and reproducible under fixed seeds. A regression verifies that enabling the sampler leaves the existing power profile/dimensions/main turn profile unchanged.
+
+This resolves the old evidence-boundary item “Horizon available-on-turn only” for the product intelligence path without rewriting the main scoring simulation.
+
+## 14.2 PR #13 — Answer Timing V2 — VALIDATED
+
+**Branch:** `product-answer-timing-v2`  
+**Models:** `answer-profile-v2`, `threat-answer-v3` when V2 timing is actually present.
+
+Relevant answer classes now incorporate actual answer-card counts and mana-value gating under Temporal V2 first-access evidence. Cheap stack interaction can therefore become available earlier than expensive wipes. Historical analyses retain the exact prior scaled-general-interaction fallback and are not relabelled as V2.
+
+Public serialization exposes only safe aggregates such as `meanManaValue`, `earliestManaTurn` and timing method; answer-card names/Oracle text remain private.
+
+## 14.3 PR #14 — Threat Objects V1 — VALIDATED
+
+**Branch:** `product-threat-objects-v1`  
+**Models:** `threat-object-v1`, `threat-profile-v3`, `deck-intelligence-v3`, `share-intelligence-v3`.
+
+Material threat rows now carry explicit family, strength, aggregate evidence, known/unknown prerequisites, answer classes, temporal source/semantics, T25/T50/T75 and critical window. Legacy threat IDs and numeric consumer fields remain compatible.
+
+Validation discovered and fixed a real pre-existing privacy leak: public Combo Accessibility no longer exposes combo-line/highest names that can reveal combo-piece card names.
+
+Authoritative validation: **P2-P7 product validation #228 — SUCCESS**.
+
+## 14.4 PR #15 — Threat–Answer V4 + Agency Timeline V1 — VALIDATED
+
+**Branch:** `product-agency-timeline-v1`  
+**Models:** `threat-answer-v4`, `agency-timeline-v1`, `pod-intelligence-v5` on the V4 path.
+
+Threat–Answer V4 preserves every explicit Threat Object window while retaining the historical worst-window `decks[].turns` surface. Regression coverage proves the worst-window arithmetic remains identical to the equivalent V3 calculation.
+
+Agency Timeline V1 derives per-seat development agency, relevant-response agency, opponent structural pressure, first meaningful agency turn, first material pressure turn and maximum participation gap. It is visible in `/pod` and `/match`.
+
+Agency remains diagnostic only: no Aeon power, Pod Match, Game Quality or Reality prediction coefficient/schema change. Dedicated regressions enforce that isolation.
+
+Validated non-document code: `30434f30dc8c0fec056c5c1a9636fcf401ee7697`  
+Authoritative validation: **P2-P7 product validation #239 — SUCCESS**.
+
+## 14.5 PR #16 — SPOF Suppression V1 — VALIDATED
+
+**Branch:** `product-spof-suppression-v1`  
+**Models:** `dependency-suppression-counterfactual-v1`, `spof-v2`.
+
+For graveyard, artifact, enchantment and creature-board dependencies Aeon now runs paired fixed-seed stress scenarios. Matching dependency contributors are converted to inert dead draws so deck cardinality/draw positions remain preserved; affected package evidence and combo lines are invalidated for the counterfactual scenario.
+
+Outputs include signed deltas for median, peak, engine T4/T5 and resource T5 plus suppressed-card count. Non-applicable classes are explicit.
+
+The existing semantic SPOF score is deliberately **not** replaced by these deltas in V1. `scorePromotion = semantic-score-unchanged-v1` makes the non-promotion boundary explicit. The counterfactual is a contributor-suppression stress model, not a literal simulation of every hate permanent/rules interaction.
+
+The full suppression payload remains local/private; public shares do not expose suppressed contributor names or the private counterfactual payload.
+
+Validated non-document code: `478275866454cd2d4ddbcc3dfd5f7818efe7ce46`  
+Authoritative validation: **P2-P7 product validation #246 — SUCCESS**.
+
+Base→code audit from PR #15 documentation head `8233df507b6e52b4d19ae1dd52e18416d21ca36e` to validated code:
+
+- ahead 7 / behind 0;
+- six changed files only;
+- no `cardFeatures.js`, `packageGraph.js`, `powerModel.js` or sequence-simulator change;
+- no semantic-version change;
+- no Aeon power / Pod Match / Game Quality coefficient change;
+- no Reality contract change.
+
+## 14.6 Current unresolved scope after PR #16
+
+The remaining high-value work inside the current product scope is now narrower:
+
+1. **Combo Accessibility V2 temporal evidence** — replace `timing.status = not-simulated` only for combo lines whose pieces/zones/tutor eligibility/mana/prerequisites can be represented honestly. Unsupported lines must stay explicit rather than receiving fabricated T5/T7/T9 probabilities.
+2. **Threat Object prerequisite depth** — enrich zones/protection/recovery only where upstream combo/semantic evidence supports it; do not infer unknown prerequisites from labels.
+3. **SPOF suppression promotion study** — compare semantic proxy versus paired suppression deltas across curated decks/real games before allowing those deltas into promoted vulnerability/Game Quality scores.
+4. **Agency ablation/calibration** — collect Reality evidence before deciding whether Agency should affect Game Quality numerically.
+5. **Real-world P7 calibration** — held-out AUC/Brier/calibration, baseline superiority and cohort review remain required before any exact good-game probability.
+6. **Persistent direct LGS import** — intentionally deferred until server-side provenance, identity and cost controls are safe.
+7. **Final semantic integration/replay** — handled separately; the whole product stack must be replayed/revalidated on the eventual repository-visible semantic baseline before integrated promotion.
+
+**Current next implementation target:** Combo Accessibility V2 temporal evidence.
+
+All PRs in this stack remain **open / draft / unmerged**. No merge, retarget or production promotion occurs without explicit approval.
