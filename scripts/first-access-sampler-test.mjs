@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict'
+import fs from 'node:fs'
 import { sampleFirstAccess,FIRST_ACCESS_MODEL_VERSION } from '../src/engine/firstAccessSampler.js'
+import { analyzePower } from '../src/engine/powerModel.js'
 
 const lcg=seed=>{let x=seed>>>0;return()=>((x=Math.imul(1664525,x)+1013904223>>>0)/4294967296)}
 const land=(name,color='W')=>({name,isLand:true,type:`Basic Land — ${color==='W'?'Plains':'Island'}`,oracle:`{T}: Add {${color}}.`,sourceColors:[color],tags:[],cmc:0,colors:[]})
@@ -26,4 +28,17 @@ assert.ok(out.curves.burst.points.at(-1).value>0)
 const again=sampleFirstAccess({cards,commanders:[commander],packages:[],combos:[],iterations:80,maxTurn:7,rng:lcg(42)})
 assert.deepEqual(again.curves,out.curves,'fixed seed must reproduce first-access curves')
 
-console.log('FIRST ACCESS SAMPLER OK — deterministic cumulative first-access curves are bounded and monotonic')
+// Power isolation: first-access sampling runs after scoring on its own RNG stream.
+const fixture=JSON.parse(fs.readFileSync(new URL('../public/precons/blood-rites-lcc.json',import.meta.url),'utf8')),byName=new Map(fixture.oracleCards.map(c=>[c.name.toLowerCase(),c])),expanded=[]
+for(const line of fixture.decklist.split(/\r?\n/)){const m=line.match(/^(\d+)\s+(.+)$/);if(!m)continue;const card=byName.get(m[2].toLowerCase());if(!card)continue;for(let i=0;i<Number(m[1]);i++)expanded.push({...card})}
+const fixtureCommander=fixture.oracleCards.find(c=>c.isCommander)||byName.get(String(fixture.commanderName||'').toLowerCase())
+assert.ok(fixtureCommander)
+const without=analyzePower(expanded,fixtureCommander,null,80,{firstAccess:false,emitProduct:false,record:false}),withFirst=analyzePower(expanded,fixtureCommander,null,80,{emitProduct:false,record:false})
+assert.deepEqual(withFirst.profile,without.profile,'first-access instrumentation must not change the Aeon power profile')
+assert.deepEqual(withFirst.dimensions,without.dimensions,'first-access instrumentation must not change power dimensions')
+assert.deepEqual(withFirst.simulation.turnProfile,without.simulation.turnProfile,'main simulation turn profile must remain identical')
+assert.equal(without.simulation.firstAccess,undefined)
+assert.equal(withFirst.simulation.firstAccess.modelVersion,FIRST_ACCESS_MODEL_VERSION)
+assert.equal(withFirst.methodology.firstAccessIterations,Math.min(80,Math.max(80,Math.floor(80/3))))
+
+console.log('FIRST ACCESS SAMPLER OK — deterministic cumulative first-access curves are bounded, monotonic and power-isolated')
