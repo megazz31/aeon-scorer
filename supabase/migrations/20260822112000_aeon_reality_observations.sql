@@ -49,15 +49,20 @@ begin
   p_predicted_risk_level := lower(trim(coalesce(p_predicted_risk_level,'')));
   if p_pod_fingerprint !~ '^[a-f0-9]{64}$' then raise exception 'invalid_pod_fingerprint'; end if;
   if length(trim(coalesce(p_pod_model_version,''))) not between 1 and 80 then raise exception 'invalid_model_version'; end if;
-  if p_predicted_risk_score not between 0 and 100 or p_predicted_pod_mismatch not between 0 and 100 or p_predicted_threat_gap not between 0 and 100 then raise exception 'invalid_prediction'; end if;
+  if p_predicted_risk_score is null or p_predicted_pod_mismatch is null or p_predicted_threat_gap is null or p_predicted_risk_score not between 0 and 100 or p_predicted_pod_mismatch not between 0 and 100 or p_predicted_threat_gap not between 0 and 100 then raise exception 'invalid_prediction'; end if;
   if p_predicted_risk_level not in ('low','moderate','high') then raise exception 'invalid_risk_level'; end if;
   if p_turn_band not in ('1-4','5-7','8-10','11+') then raise exception 'invalid_turn_band'; end if;
   if p_win_type not in ('combat','combo','drain','lock','concession','other') then raise exception 'invalid_win_type'; end if;
   if p_balance not in ('very-unbalanced','unbalanced','mixed','balanced','very-balanced') then raise exception 'invalid_balance'; end if;
   if coalesce(p_dominant_event,'none') not in ('runaway-start','unanswered-combo','lock','mana-issue','normal-game','other','none') then raise exception 'invalid_dominant_event'; end if;
   if cardinality(coalesce(p_engine_versions,'{}'))>8 or cardinality(coalesce(p_semantic_versions,'{}'))>8 then raise exception 'too_many_versions'; end if;
+
+  -- Serialize submissions for the same anonymized pod fingerprint so concurrent clients
+  -- cannot bypass the per-hour observation cap with a count-then-insert race.
+  perform pg_catalog.pg_advisory_xact_lock(pg_catalog.hashtext(p_pod_fingerprint));
   select count(*) into recent_count from public.game_observations where pod_fingerprint=p_pod_fingerprint and created_at>now()-interval '1 hour';
   if recent_count>=8 then raise exception 'observation_rate_limited'; end if;
+
   insert into public.game_observations(
     user_id,pod_fingerprint,pod_model_version,engine_versions,semantic_versions,
     predicted_risk_score,predicted_risk_level,predicted_pod_mismatch,predicted_threat_gap,
