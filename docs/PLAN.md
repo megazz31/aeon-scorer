@@ -9,6 +9,7 @@
 ## 0. Live execution status
 
 **Working branch:** `product-p2-p7-roadmap`  
+**Validation PR:** `#10 — P2-P7 roadmap — Experience Intelligence foundation`  
 **Base branch:** `product-p0-p1`  
 **Merge policy:** validation branch only; no merge without explicit approval.  
 **Implementation rule:** small auditable commits, evidence-first behavior, no hidden coefficient tuning to make outputs look right.
@@ -17,7 +18,7 @@
 
 | Phase | Focus | Status |
 |---|---|---|
-| P2 | Experience Intelligence | **IN PROGRESS** |
+| P2 | Experience Intelligence | **IN PROGRESS — Fingerprint V1 implemented** |
 | P3 | Pod Intelligence | PLANNED |
 | P4 | Game Quality Engine | PLANNED |
 | P5 | Aeon Match | PLANNED |
@@ -41,9 +42,37 @@
 - No P2 metric may silently modify the existing Aeon 0–100 power score.
 - P7-facing version/evidence fields must be designed into P2 outputs from the start.
 
+#### 2026-08-22 — Experience Fingerprint V1 implemented
+
+- Added `src/engine/experienceModel.js` with product model version `experience-v1`.
+- Added eight evidence-bearing dimensions: tempo, explosiveness, volatility, interaction, resilience, inevitability, dependency and turn complexity.
+- Added decomposed confidence fields: semantic, simulation, product calibration and evidence coverage.
+- Product calibration is explicitly `experimental`.
+- `analyzePower()` now exposes the model as `result.experience`.
+- Existing Aeon score formulas were not changed; Experience Fingerprint is a parallel output only.
+- Added `scripts/experience-model-test.mjs` and included it in `npm run test:product`.
+- Tests lock important invariants:
+  - every dimension is bounded and carries evidence;
+  - speed-only changes only move tempo;
+  - higher peak tail increases volatility;
+  - commander delta increases dependency;
+  - recurring/chained actions increase turn complexity;
+  - changing only the raw Aeon median does **not** secretly move the Experience Fingerprint.
+- Added `.github/workflows/product-p2-p7-validation.yml` for branch/stack validation.
+- Validation run `P2-P7 product validation #2` completed successfully: product contracts **green**, build **green**.
+- Opened draft PR #10 against `product-p0-p1` for isolated review.
+
+### Known P2 V1 limitations
+
+- `dependency` is intentionally command-zone focused until SPOF V1 adds generalized counterfactual dependency.
+- `inevitability` is a structural proxy, not a validated real-game inevitability probability.
+- `turnComplexity` uses semantic/recurrence evidence but is not yet calibrated against observed turn duration.
+- No UI surface is added yet; model/output contract comes first.
+- PR #10 is stacked on P0/P1 and will ultimately need to follow the validated upstream branch state before production merge.
+
 ### Current next action
 
-Implement the P2 **Experience Fingerprint V1** as a separate model built from existing Aeon outputs, with structured evidence and tests before UI integration.
+Implement **Table Friction V1** as a separate neutral evidence model, with recurrence/redundancy weighting and adversarial tests before any UI exposure.
 
 ---
 
@@ -203,7 +232,7 @@ Describe **what kind of game experience a deck tends to produce**, independently
 
 P2 provides primitives required by P3/P4.
 
-## 5.1 Experience Fingerprint — FIRST IMPLEMENTATION TARGET
+## 5.1 Experience Fingerprint — IMPLEMENTED V1
 
 ### User question
 
@@ -239,7 +268,12 @@ Use existing Aeon evidence first. Avoid new hand-maintained card lists unless a 
     dependency: { score: 0, level: 'low', evidence: [] },
     turnComplexity: { score: 0, level: 'low', evidence: [] }
   },
-  confidence: 'experimental'
+  confidence: {
+    semantic: 'high',
+    simulation: 'high',
+    productCalibration: 'experimental',
+    evidenceCoverage: 'full'
+  }
 }
 ```
 
@@ -251,7 +285,7 @@ Use existing Aeon evidence first. Avoid new hand-maintained card lists unless a 
 - fixtures separate glass-cannon, grind, interactive-control and commander-centric patterns;
 - no fingerprint field directly modifies the core power score.
 
-## 5.2 Table Friction Profile
+## 5.2 Table Friction Profile — NEXT
 
 ### User question
 
@@ -665,7 +699,7 @@ Use holdout separation, playgroup leakage protection, calibration curves, baseli
 
 # 15. Implementation sequence
 
-1. **Experience Fingerprint + Table Friction**.
+1. **Experience Fingerprint + Table Friction** — Fingerprint V1 implemented, Friction next.
 2. **Goldfish Horizon + SPOF**.
 3. **Threat–Answer Timeline**.
 4. **Adaptive Rule 0**.
