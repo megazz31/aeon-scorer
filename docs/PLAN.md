@@ -2,356 +2,108 @@
 
 > Living roadmap **and execution log** for turning Aeon from a deck power analyzer into a **Commander Intelligence Engine** focused on game quality, matchup fit and explainable causal analysis.
 >
-> This file is the source of truth for P2–P7. Every implementation pass must update the progress ledger, decisions, tests, limitations and next step here.
+> This file is the source of truth for P2–P7. It distinguishes three things that must never be conflated: **implemented engineering**, **experimental product output**, and **scientifically/production-promoted behavior**.
 
 ---
 
-## 0. Live execution status
+# 0. Live status
 
 **Working branch:** `product-p2-p7-roadmap`  
-**Validation PR:** `#10 — P2-P7 roadmap — Experience Intelligence foundation`  
+**Validation PR:** `#10`  
 **Base branch:** `product-p0-p1`  
-**Merge policy:** validation branch only; no merge without explicit approval.  
-**Implementation rule:** small auditable commits, evidence-first behavior, no hidden coefficient tuning to make outputs look right.
+**Merge policy:** draft validation branch only; **no merge without explicit approval**.  
+**Core-score policy:** P2–P7 must remain parallel product intelligence unless a separate power-model validation explicitly authorizes a scoring change.
 
-### Phase status
+## Overall status
 
-| Phase | Focus | Status |
-|---|---|---|
-| P2 | Experience Intelligence | **IN PROGRESS — Fingerprint V1 + Friction V1 + Horizon V1 implemented** |
-| P3 | Pod Intelligence | PLANNED |
-| P4 | Game Quality Engine | PLANNED |
-| P5 | Aeon Match | PLANNED |
-| P6 | Causal Deck Doctor | PLANNED |
-| P7 | Aeon Reality | PLANNED — instrumentation starts early |
+**P2→P7 engineering roadmap: IMPLEMENTED.**  
+**Scientific promotion of Game Quality probabilities: NOT PROMOTED — intentionally blocked on real-game data and holdout validation.**  
+**Database migrations: code-ready in the branch, not considered deployed merely because the SQL exists in Git.**
 
-### Progress ledger
+| Phase | Focus | Engineering status | Promotion status |
+|---|---|---|---|
+| P2 | Experience Intelligence | **IMPLEMENTED V1** | Experimental product intelligence |
+| P3 | Pod Intelligence | **IMPLEMENTED V2** | Experimental product intelligence |
+| P4 | Game Quality Engine | **IMPLEMENTED V2** | Categorical only; no exact probability |
+| P5 | Aeon Match | **IMPLEMENTED V1** | Ready for validation after migration deployment |
+| P6 | Causal Deck Doctor | **IMPLEMENTED V1** | Candidate generation intentionally external |
+| P7 | Aeon Reality | **Instrumentation + evaluation IMPLEMENTED** | **Calibration promotion blocked on real observations** |
 
-#### 2026-08-22 — P2/P7 roadmap branch initialized
-
-- Created `product-p2-p7-roadmap` from `product-p0-p1`.
-- Reworked this roadmap into a living implementation document.
-- P2 is the first implementation target.
-- Initial P2 order is locked to:
-  1. shared evidence/result contracts;
-  2. Experience Fingerprint V1;
-  3. Table Friction V1;
-  4. Goldfish Horizon V1;
-  5. SPOF V1;
-  6. curated regression fixtures and UI exposure.
-- No P2 metric may silently modify the existing Aeon 0–100 power score.
-- P7-facing version/evidence fields must be designed into P2 outputs from the start.
-
-#### 2026-08-22 — Experience Fingerprint V1 implemented
-
-- Added `src/engine/experienceModel.js` with product model version `experience-v1`.
-- Added eight evidence-bearing dimensions: tempo, explosiveness, volatility, interaction, resilience, inevitability, dependency and turn complexity.
-- Added decomposed confidence fields: semantic, simulation, product calibration and evidence coverage.
-- Product calibration is explicitly `experimental`.
-- `analyzePower()` now exposes the model as `result.experience`.
-- Existing Aeon score formulas were not changed; Experience Fingerprint is a parallel output only.
-- Added `scripts/experience-model-test.mjs` and included it in `npm run test:product`.
-- Tests lock important invariants:
-  - every dimension is bounded and carries evidence;
-  - speed-only changes only move tempo;
-  - higher peak tail increases volatility;
-  - commander delta increases dependency;
-  - recurring/chained actions increase turn complexity;
-  - changing only the raw Aeon median does **not** secretly move the Experience Fingerprint.
-- Added `.github/workflows/product-p2-p7-validation.yml` for branch/stack validation.
-- Validation run `P2-P7 product validation #2` completed successfully: product contracts **green**, build **green**.
-- Opened draft PR #10 against `product-p0-p1` for isolated review.
-
-#### 2026-08-22 — Table Friction V1 implemented
-
-- Added `src/engine/frictionModel.js` with model version `friction-v1`.
-- `analyzePower()` now exposes `result.friction` after Experience Fingerprint calculation.
-- V1 signals:
-  - Resource denial / taxes;
-  - Mass land denial;
-  - Commander lockout;
-  - Theft / control exchange;
-  - Extra-turn recurrence;
-  - Forced discard / sacrifice;
-  - Restriction stacking potential;
-  - Long sequencing potential.
-- Friction is explicitly descriptive and non-moralized; no global “salt/toxic” score is produced.
-- Recurring/persistent effects count more than one-shot effects and redundant restrictions increase evidence strength.
-- `lockPotential` requires multiple persistent restrictions and explicitly does **not** claim a deterministic hard lock.
-- Long sequencing reuses the Experience Fingerprint turn-complexity evidence rather than inventing a separate opaque heuristic.
-- Added `scripts/friction-model-test.mjs` to `npm run test:product`.
-- Adversarial tests include:
-  - stacked persistent restrictions > single tax effect;
-  - one-shot mass land destruction remains one-shot evidence;
-  - theft is surfaced;
-  - observer-only “whenever an opponent discards” does not become forced discard;
-  - extra-turn text is surfaced;
-  - moralized labels are absent from model output.
-- Deterministic-loop classification is intentionally deferred until combo evidence carries reliable loop/prerequisite metadata.
-
-#### 2026-08-22 — Goldfish Horizon V1 implemented and validated
-
-- Added `src/engine/goldfishHorizon.js` with model version `goldfish-horizon-v1`.
-- `analyzePower()` now exposes `result.horizon`.
-- V1 exposes temporal curves for:
-  - commander online;
-  - engine operational;
-  - meaningful interaction available;
-  - draw/recursion resource action available;
-  - burst/high-impact line available.
-- Each curve exposes 25/50/75 threshold milestones where available.
-- Critical semantic decision: **do not turn the existing on-turn simulator values into fake cumulative first-access probabilities**.
-- Therefore V1 explicitly distinguishes:
-  - commander: `online-by-turn`;
-  - engine / interaction / resource / burst: `available-on-turn`.
-- Added `scripts/goldfish-horizon-test.mjs` to `npm run test:product`.
-- Test locks a deliberately non-monotonic engine series to ensure Aeon does not silently force it into a cumulative-looking curve.
-- Model notes explicitly state that Horizon is temporal access, not a win-probability curve.
-- Validation run `P2-P7 product validation #22` completed successfully: product contracts **green**, build **green**.
-
-#### 2026-08-22 — P2 isolation audit and CI hygiene
-
-- Validation runs `#24`, `#26` and `#28` completed successfully: product contracts **green**, build **green**.
-- Compared branch implementation against `product-p0-p1` base: the P2 product layer adds outputs without editing the existing power/calibration formulas.
-- At the isolation checkpoint, `src/engine/powerModel.js` contained **6 added lines and 0 deleted lines**: product-model imports plus `result.experience`, `result.friction` and `result.horizon` assignments.
-- No existing Aeon structural/calibration formula was edited in this branch.
-- Updated `.github/workflows/product-p2-p7-validation.yml` so commits touching only `docs/PLAN.md` are ignored by CI. This keeps the roadmap continuously current without wasting validation runs.
-- Code/workflow changes still trigger `npm run test:product` + build.
-- PR #10 remains draft and unmerged.
-
-### Known P2 V1 limitations
-
-- `dependency` is intentionally command-zone focused until SPOF V1 adds generalized counterfactual dependency.
-- `inevitability` is a structural proxy, not a validated real-game inevitability probability.
-- `turnComplexity` uses semantic/recurrence evidence but is not yet calibrated against observed turn duration.
-- Friction V1 detects structural Oracle patterns but does not yet model multi-card hard locks as proven deterministic states.
-- Goldfish Horizon V1 is limited by the current simulator horizon (`maxTurn`, currently 7 in standard analysis) and does not fabricate T8–T10 values.
-- True cumulative “first access by turn” for interaction/resource/burst requires the sequence simulator to record first-access events explicitly; that extension is deferred rather than approximated incorrectly.
-- No UI surface is added yet; model/output contracts come first.
-- PR #10 is stacked on P0/P1 and will ultimately need to follow the validated upstream branch state before production merge.
-
-### Current next action
-
-Design and implement the **SPOF counterfactual contract** before scoring SPOF itself. First target is a clean commander-unavailable / commander-tax experiment path that reuses fixed seeds and cannot recursively trigger product models. Generalized graveyard/artifact/enchantment suppression will only be added where the counterfactual remains interpretable.
-
----
-
-# 1. Product thesis
+## Non-negotiable product thesis
 
 Aeon must not become another tool whose main promise is:
 
 > “Your Commander deck is a 7/10.”
 
-A single power number cannot explain whether four decks will produce a good game.
-
-Aeon’s long-term public utility is:
+Aeon’s public utility is:
 
 > **Understand what a deck can do, when it can do it, what it depends on, whether the table can answer it, whether four decks are likely to produce a compatible game, and what minimal change can repair a bad pod.**
 
-The 0–100 score remains useful, but becomes only one output among several.
-
-### Product north star
+North star:
 
 > **Will these decks produce the kind of Commander game these players want to play?**
 
-### Core identity
+---
 
-Aeon must preserve:
+# 1. Invariants preserved during P2→P7
 
-1. **Semantic understanding** — roles, packages, bridges, payoffs, interaction and structural dependencies from Oracle text.
-2. **Causal sequencing** — estimate what the deck can access and deploy over time instead of static counting.
-3. **Explainability** — important conclusions must carry traceable evidence.
-4. **Versionability** — product-model outputs must be reproducible and attributable to model/semantic versions.
+1. No moralized “salt/toxic” deck score.
+2. Brackets, Game Changers, Spellbook and feedback remain context/evidence, never semantic truth.
+3. No hidden collapse of every signal into one opaque number.
+4. No exact “good game probability” before P7 promotion requirements are met.
+5. Human intent is asked only where it materially changes interpretation.
+6. Public shares never expose decklists, Oracle evidence, private evidence-card lists or user-private payloads.
+7. Real-game feedback never rewrites card semantics or power truth automatically.
+8. Product models carry explicit model versions/confidence.
+9. The existing Aeon 0–100 score is untouched by P2→P7.
+
+### Core-score audit
+
+Compared with base `1f92c521857cd2245a786c52dcbcc9573f736a9c`, `src/engine/powerModel.js` contains **6 added lines and 0 deleted lines**:
+
+- 3 product-model imports;
+- `result.experience`;
+- `result.friction`;
+- `result.horizon`.
+
+No existing structural/calibration coefficient or P20/median/P80/peak formula is edited by this roadmap branch.
 
 ---
 
-# 2. Non-negotiable principles
+# 2. P2 — Experience Intelligence — IMPLEMENTED V1
 
-## 2.1 No moralized deck labels
+## 2.1 Experience Fingerprint
 
-Do not create a punitive “salt score”. Stax, extra turns, denial, theft, fast combo and long sequencing are **experience characteristics**.
+**Model:** `experience-v1`  
+**Output:** `result.experience`
 
-## 2.2 No popularity-as-truth
+Dimensions:
 
-Commander Spellbook, Wizards Brackets/Game Changers, popularity data and community feedback are evidence/context, not semantic truth.
-
-## 2.3 No hidden collapse into one score
-
-Keep visible separately:
-
-- P20 / median / P80 / peak;
-- speed;
+- tempo;
 - explosiveness;
-- consistency;
+- volatility;
 - interaction;
 - resilience;
+- inevitability;
 - dependency;
-- friction characteristics;
-- threat windows;
-- answer windows;
-- confidence.
+- turn complexity.
 
-## 2.4 No fake precision
+Rules locked by tests:
 
-Until real-game calibration exists, do not expose claims such as “73% probability of a good game”. Use transparent categories such as `low`, `moderate`, `high`, with reasons.
+- bounded dimensions;
+- evidence-bearing outputs;
+- speed-only change does not arbitrarily move unrelated dimensions;
+- higher tail increases volatility;
+- commander dependence increases dependency;
+- repeated/chained actions increase turn complexity;
+- changing only the raw Aeon median does not secretly rewrite the fingerprint.
 
-## 2.5 Human intent matters
+## 2.2 Table Friction
 
-Decklists cannot answer everything. Ask only high-information questions where intent materially changes pod assessment.
+**Model:** `friction-v1`  
+**Output:** `result.friction`
 
-## 2.6 New product models do not rewrite power scoring by default
-
-P2–P7 outputs are parallel product intelligence. Any future change to the core 0–100 score requires its own semantic/model validation pass.
-
----
-
-# 3. Existing foundation — P0 / P1
-
-P0/P1 provide:
-
-- shareable sanitized Rule 0 cards;
-- Pod Match for 2–4 shares;
-- Commander Spellbook evidence;
-- Moxfield / Archidekt refresh and diff;
-- immutable deck versions;
-- feedback routed to semantic audit;
-- Brackets/Game Changers as parallel context;
-- local What-if analysis;
-- command-zone multi-card support tracked separately.
-
-The key lesson is that Aeon is most useful when it moves from **score → explanation → comparison → action**.
-
----
-
-# 4. Architecture shared by P2–P7
-
-## 4.1 Separate internal models
-
-Prefer distinct modules for:
-
-- power/output;
-- experience profile;
-- friction;
-- temporal horizon;
-- dependency/SPOF;
-- threat model;
-- answer model;
-- matchup/pod model;
-- real-game calibration.
-
-Do not create one giant formula.
-
-## 4.2 Structured evidence contract
-
-Higher-level conclusions should return machine-readable evidence. Target shape:
-
-```js
-{
-  signal: 'exposed-threat-window',
-  value: 0.72,
-  level: 'high',
-  source: 'simulation',
-  evidenceCards: [],
-  evidencePackages: [],
-  reasons: [],
-  confidence: 'experimental',
-  modelVersion: 'experience-v1'
-}
-```
-
-UI copy must be derived from evidence, not hidden heuristics.
-
-## 4.3 Version everything important
-
-Preserve where relevant:
-
-- engine version;
-- semantic version;
-- product model version;
-- iteration configuration;
-- external-data source revision;
-- timestamp.
-
-## 4.4 Confidence is decomposed
-
-Separate:
-
-- semantic confidence;
-- simulation stability;
-- product-model calibration.
-
-A model can be semantically reliable while still being product-calibration `experimental`.
-
----
-
-# 5. P2 — Experience Intelligence
-
-## Goal
-
-Describe **what kind of game experience a deck tends to produce**, independently from raw power.
-
-P2 provides primitives required by P3/P4.
-
-## 5.1 Experience Fingerprint — IMPLEMENTED V1
-
-### User question
-
-> “What does playing with or against this deck actually feel like?”
-
-### V1 dimensions
-
-1. **Tempo** — how early meaningful development is established.
-2. **Explosiveness** — ability to jump ahead in one turn.
-3. **Volatility** — distance between normal and high/low outcomes.
-4. **Interaction** — density and accessibility of meaningful answers.
-5. **Resilience** — ability to continue/rebuild after disruption.
-6. **Inevitability** — structural tendency to compound advantage.
-7. **Dependency** — reliance on commander or narrow engines.
-8. **Turn Complexity** — repeated/chained actions and trigger density.
-
-### V1 implementation rule
-
-Use existing Aeon evidence first. Avoid new hand-maintained card lists unless a semantic concept truly cannot be expressed otherwise.
-
-### V1 output contract
-
-```js
-{
-  modelVersion: 'experience-v1',
-  dimensions: {
-    tempo: { score: 0, level: 'low', evidence: [] },
-    explosiveness: { score: 0, level: 'low', evidence: [] },
-    volatility: { score: 0, level: 'low', evidence: [] },
-    interaction: { score: 0, level: 'low', evidence: [] },
-    resilience: { score: 0, level: 'low', evidence: [] },
-    inevitability: { score: 0, level: 'low', evidence: [] },
-    dependency: { score: 0, level: 'low', evidence: [] },
-    turnComplexity: { score: 0, level: 'low', evidence: [] }
-  },
-  confidence: {
-    semantic: 'high',
-    simulation: 'high',
-    productCalibration: 'experimental',
-    evidenceCoverage: 'full'
-  }
-}
-```
-
-### Acceptance criteria
-
-- definitions documented in code/tests;
-- strongest evidence exposed per dimension;
-- unrelated card change must not cause unrelated large shifts;
-- fixtures separate glass-cannon, grind, interactive-control and commander-centric patterns;
-- no fingerprint field directly modifies the core power score.
-
-## 5.2 Table Friction Profile — IMPLEMENTED V1
-
-### User question
-
-> “What should the table know before this deck is played?”
-
-### V1 signals
+Signals:
 
 - resource denial / taxes;
 - mass land denial;
@@ -359,445 +111,480 @@ Use existing Aeon evidence first. Avoid new hand-maintained card lists unless a 
 - theft / control exchange;
 - extra-turn recurrence;
 - forced discard / sacrifice;
-- restriction stacking potential;
-- long sequencing potential.
+- restriction stacking;
+- long sequencing.
 
-### Rules
+Friction is descriptive, not moral. Persistent/repeated patterns count more than incidental one-shot presence. Observer-only text is explicitly guarded against false forced-discard classification.
 
-- descriptive, never moral;
-- recurrence/redundancy matters more than one-off presence;
-- every signal links to evidence;
-- observer-only text cannot create false friction;
-- deterministic hard-lock claims are not made without deterministic evidence.
+## 2.3 Goldfish Horizon
 
-## 5.3 Goldfish Horizon — IMPLEMENTED V1
+**Model:** `goldfish-horizon-v1`  
+**Output:** `result.horizon`
 
-### User question
+Curves:
 
-> “When does this deck become operational or threatening?”
+- commander online;
+- engine operational;
+- meaningful interaction;
+- draw/recursion resource action;
+- burst/high-impact line.
 
-### V1 curves
+Critical semantic boundary:
 
-- commander online (`online-by-turn`);
-- engine operational (`available-on-turn`);
-- meaningful interaction (`available-on-turn`);
-- draw/recursion resource action (`available-on-turn`);
-- burst/high-impact line (`available-on-turn`).
+- commander = `online-by-turn`;
+- engine / interaction / resource / burst = `available-on-turn`.
 
-### Critical V1 rule
+Aeon **does not fabricate cumulative first-access probabilities** from non-cumulative simulator data. True first-access instrumentation is a future simulator promotion, not something approximated dishonestly in V1.
 
-Do not relabel an on-turn probability as cumulative first-access probability. True first-access curves require first-access events to be tracked inside the simulator.
+## 2.4 Single Point of Failure — SPOF
 
-### Acceptance criteria
+**Model:** `spof-v1`  
+**Commander counterfactual:** `commander-tax-counterfactual-v1`
 
-- fixed-seed deterministic upstream simulation;
-- original turn-profile semantics preserved;
-- thresholds documented;
-- no hidden assumption that `engine online` equals `winning`;
-- no fabricated turns beyond the simulator horizon.
+Commander dependency now runs paired deterministic stress scenarios:
 
-## 5.4 Single Point of Failure — SPOF — NEXT
+- baseline;
+- +2 command-zone tax;
+- +4 command-zone tax;
+- command-zone card unavailable.
 
-### User question
+The scenarios reuse the same deterministic sequence seed. For two command-zone cards, +2/+4 is applied equally to both as a command-zone dependency stress test.
 
-> “What single disruption hurts this deck the most?”
+Other dependencies:
 
-### Counterfactuals
+- graveyard;
+- artifact;
+- enchantment;
+- creature board.
 
-- commander normal;
-- commander +2 tax;
-- commander +4 tax;
-- commander unavailable;
-- graveyard disabled;
-- artifact/enchantment/creature-board dependencies where modelable;
-- selected package disabled when causal semantics are reliable.
-
-### Outputs
-
-- commander dependency;
-- graveyard dependency;
-- artifact dependency;
-- enchantment dependency;
-- creature-board dependency;
-- highest structural SPOF.
-
-### Acceptance criteria
-
-- based on causal delta, not card count;
-- distinguish dependency from synergy;
-- expose absolute/relative delta;
-- counterfactual assumptions explicit;
-- fixed seed between baseline and counterfactual where comparison is stochastic;
-- product-model hooks disabled inside counterfactual runs to prevent recursive analysis.
+These remain explicitly labeled `semantic-proxy` until suppression simulations can be interpreted reliably. Aeon does not pretend those proxies are causal loss probabilities.
 
 ---
 
-# 6. P3 — Pod Intelligence
+# 3. P3 — Pod Intelligence — IMPLEMENTED V2
 
-## Goal
+## 3.1 Answer Profile
 
-Move from individual deck analysis to **interaction between temporal game plans**.
+**Model:** `answer-profile-v1`
 
-## 6.1 Threat–Answer Timeline
-
-For each turn estimate:
-
-- probability a deck presents a meaningful threat;
-- probability opponents have a relevant answer in that same window.
-
-Answer classes must remain separate:
+Separate answer classes:
 
 - stack;
 - creature;
 - artifact;
 - enchantment;
 - graveyard;
-- wipes;
-- protection/anti-interaction;
-- denial when relevant.
+- wipe.
 
-**Key principle:** a fast threat is not automatically a mismatch if the pod reliably answers it.
+Timing is derived by scaling simulated general-interaction access using semantic class coverage. It is **not** presented as a rules-complete card-by-card casting simulation.
 
-## 6.2 Adaptive Rule 0
+## 3.2 Threat Profile
 
-Analyze first, then ask **0–3 high-information questions** only when player intent would materially change interpretation.
+**Model:** `threat-profile-v1`
 
-Responses affect matchup interpretation, never semantic truth.
+Threat classes include:
 
-## 6.3 Advanced Pod Match
+- combo;
+- graveyard engine;
+- artifact engine;
+- enchantment engine;
+- creature board;
+- extra-turn loop.
 
-Inputs:
+Each threat declares the answer classes that can plausibly interact with it.
 
-- range overlap;
-- median/peak gaps;
-- volatility;
-- speed/explosiveness;
-- interaction profile;
-- Threat–Answer mismatch;
-- friction mismatch;
-- player intent.
+## 3.3 Threat–Answer Timeline
 
-Every verdict must explain:
+**Preferred model:** `threat-answer-v2`  
+**Fallback:** `threat-answer-v1`
 
-1. what differs;
-2. magnitude;
-3. why it may create a bad game;
-4. what information could change the verdict.
+V2 compares each threat against the **relevant answer classes** available across the rest of the pod. Output stays decomposed by turn and threat class.
+
+## 3.4 Adaptive Rule 0
+
+**Model:** `adaptive-rule0-v1`
+
+Aeon asks at most three high-information questions when detected uncertainty is materially relevant, for example combo intent, repeated extra turns or mass-land-denial acceptance.
+
+Answers are player intent, not semantic truth.
+
+## 3.5 Advanced Pod Match
+
+**Model:** `advanced-pod-match-v2`  
+**Orchestrator:** `pod-intelligence-v2`
+
+Independent mismatch terms include:
+
+- median gap;
+- normal-range overlap;
+- peak gap;
+- speed gap;
+- explosiveness gap;
+- volatility gap;
+- friction gap;
+- **Threat–Answer exposure**.
+
+Threat–Answer is now a real mismatch term, not a side-panel decoration. The pair reasons expose its contribution separately.
 
 ---
 
-# 7. P4 — Game Quality Engine
+# 4. P4 — Game Quality Engine — IMPLEMENTED V2
 
-## Goal
+## 4.1 Game Quality / Non-Game Risk
 
-Estimate **why a game is likely to become a non-game**, without pretending to simulate rules-complete multiplayer Magic.
+**Model:** `game-quality-v2`
 
-## 7.1 Non-Game Risk / Game Quality Forecast
+The V2 categorical risk model combines:
 
-Initial mechanisms:
+- multi-axis Pod Match mismatch;
+- exposed Threat–Answer windows;
+- commander SPOF;
+- friction characteristics;
+- explicit vulnerability-versus-opponent-answer hard counters.
 
-- one deck operates materially earlier;
-- threat before relevant answers;
-- severe high-roll asymmetry;
-- structural hard counter;
-- commander dependency vs heavy commander interaction;
-- graveyard dependency vs graveyard hate;
-- lock/denial disproportionately shuts off decks;
-- combo accessibility exceeds answer windows;
-- severe experience-intent mismatch.
+Examples of hard-counter matching:
 
-V1 outputs categorical risk + causal reasons, never unsupported exact probability.
+- graveyard dependency ↔ graveyard hate;
+- artifact dependency ↔ artifact answers;
+- enchantment dependency ↔ enchantment answers;
+- creature-board dependency ↔ creature removal/wipes;
+- spell/combo concentration ↔ stack interaction;
+- resource-denial vulnerability ↔ opposing resource-denial profile.
 
-## 7.2 Combo Accessibility
+Output remains `low / moderate / high` and `good / mixed / poor` style categorical guidance. **It is not a win rate and not an exact probability of a good game.**
 
-Separate **combo presence** from **combo accessibility**.
+## 4.2 Combo Accessibility
 
-Consider:
+**Model:** `combo-access-v1`
 
-- pieces;
+V1 separates combo presence from accessibility using structural evidence:
+
+- number of pieces;
 - commander participation;
-- mana/colors;
-- zones;
-- compatible/conditional tutors;
-- draw/selection;
-- redundancy;
-- recursion;
-- protection;
-- timing/prerequisites.
+- tutors;
+- draw;
+- fast mana;
+- burst access;
+- combo size penalty.
 
-Target access windows: before T5 / T7 / T9 plus median access where meaningful.
+The contract explicitly exposes:
 
-## 7.3 Vulnerability Matrix
+```text
+timing.status = not-simulated
+targetWindows = T5 / T7 / T9
+```
 
-Candidate classes:
+This is intentional. Exact T5/T7/T9 access is **not promoted** until Aeon has piece-specific tutor eligibility, zone/prerequisite semantics and dedicated access simulation. No fake timing number is emitted.
 
+## 4.3 Vulnerability Matrix
+
+**Model:** `vulnerability-v2`
+
+Classes:
+
+- commander removal;
 - graveyard hate;
-- commander removal/tax;
-- creature removal;
-- wipes;
 - artifact suppression;
 - enchantment suppression;
-- Rule of Law/cast restriction;
+- board wipes;
+- creature removal;
+- Rule of Law / cast restriction;
 - counterspells;
 - resource denial;
 - exile interaction.
 
-Prefer causal simulation where model quality permits; use semantic dependency otherwise and expose confidence.
+Commander-removal vulnerability can use paired causal commander counterfactuals. Other classes remain explicitly semantic/behavioral proxies until suppression simulation is trustworthy.
 
 ---
 
-# 8. P5 — Aeon Match
+# 5. P5 — Aeon Match — IMPLEMENTED V1
 
-## Goal
+## 5.1 N-player matchmaking
 
-Automatically form better Commander tables for public/LGS use.
+**Model:** `aeon-match-v1`
 
-## 8.1 N-player matchmaking
+Supports 4–64 public Rule 0 shares.
 
-Target 16–64 players. Optimize multiple independent mismatch terms instead of one opaque power number.
+- complete pools up to 12 players: **exact exhaustive partition** for the current Aeon Match objective;
+- larger pools: deterministic greedy construction + local swaps;
+- deterministic tie-breaking;
+- 64-player regression verifies repeatability.
 
-Heuristic optimizer is acceptable if deterministic under a seed, benchmarked against exact small-N solutions and explainable.
+Large pools do not claim global optimality.
 
-## 8.2 Pod Repair
+## 5.2 Pod Repair
 
-Repair hierarchy:
+**Model:** `pod-repair-v1`
 
-1. swap players/decks between tables;
+Priority remains:
+
+1. rearrange/swap players or decks;
 2. choose another registered deck;
-3. explicitly accept asymmetry;
-4. adjust experience constraints;
-5. only then offer deck micro-tuning when requested.
+3. explicitly accept an asymmetry;
+4. only then consider deck tuning if requested.
 
-## 8.3 Fast public/LGS flow
+Aeon never forces deck modification as the first repair.
 
-Organizer session → QR → players join/import/share → optional intent → generate pods → table assignment.
+## 5.3 LGS / event session flow
 
-No account should be required merely to join a public matchmaking session.
+Route: `/match`
+
+Implemented:
+
+- organizer creates a session while authenticated;
+- participants can join anonymously with a public Rule 0 share code;
+- 4–64 capacity;
+- six-hour expiry;
+- organizer open / locked / closed status;
+- organizer secret stored only as a hash server-side;
+- transactional row lock prevents concurrent over-capacity joins;
+- repeated join is idempotent;
+- only public share codes are stored, never private deck payloads;
+- direct `/match?session=…` access is routed through Vercel;
+- join link is ready for QR display without Aeon sending session data to a third-party QR provider.
+
+Database migration exists in the branch. **Presence of the migration in Git is not considered deployment.** Migration application and staging smoke remain release gates after approval/merge.
 
 ---
 
-# 9. P6 — Causal Deck Doctor
+# 6. P6 — Causal Deck Doctor — IMPLEMENTED V1
 
-## Goal
+## 6.1 Causal What-if explanation
 
-Turn What-if into **causal optimization under user constraints**.
+**Model:** `deck-doctor-explain-v1`
 
-## 9.1 Causal explanation
+A before/after analysis explains deltas in:
 
-Every swap should explain mechanisms, not only score delta:
+- P20 / median / P80 / peak;
+- speed;
+- interaction;
+- resilience;
+- explosiveness;
+- commander dependency;
+- turn complexity;
+- package strength.
 
-- timing changes;
-- package changes;
-- dependency changes;
-- threat-window changes;
-- median/peak changes.
+It explains observed model changes without pretending one swapped card caused every correlated shift.
 
-## 9.2 Constrained Deck Doctor
+## 6.2 Constrained variant selection
 
-Example intents:
+**Model:** `deck-doctor-v1`
 
-- reduce peak without moving median much;
+Supported objectives include:
+
+- reduce peak while preserving median;
 - reduce commander dependency;
-- increase early interaction;
-- improve pod compatibility;
-- improve consistency without fast mana;
-- remove an exposed threat window.
+- increase interaction;
+- arbitrary bounded metric objective;
+- target pod compatibility.
 
-Architecture:
+Constraints can bound median, peak and commander dependency.
 
-1. semantic candidate filtering;
-2. fast controlled causal screening;
-3. full-run confirmation for finalists.
+## 6.3 Targeted Pod Tuning
 
-## 9.3 Targeted Pod Tuning
+**Model:** `targeted-pod-tuning-v1`
 
-Optional 1–2 micro-swaps for recurring playgroups, only after Pod Repair and only with explicit opt-in.
+Supplied analyzed variants are evaluated against the **actual other decks in the pod** using `pod-intelligence-v2`. The output reports baseline mismatch, candidate mismatch and improvement.
+
+Boundary intentionally preserved:
+
+- V1 ranks supplied legal/analyzed candidates;
+- it does not invent cards from an opaque AI suggestion layer;
+- card candidate generation, budget rules and legality filtering remain explicit upstream responsibilities;
+- full-run confirmation is required before future autonomous recommendations are promoted.
+
+This boundary prevents a generic LLM recommendation layer from being mistaken for Aeon’s evidence-first causal engine.
 
 ---
 
-# 10. P7 — Aeon Reality
+# 7. P7 — Aeon Reality — INSTRUMENTATION + EVALUATION IMPLEMENTED
 
-## Goal
+## 7.1 Observation collection
 
-Validate Aeon predictions against **real Commander games**.
+**Observation summary model:** `aeon-reality-v1`
 
-## 10.1 Instrument early
+Optional post-game form records only bounded observational data:
 
-Collect game observations before P7 model promotion. Never ask users for a numeric “true deck power”.
-
-Minimal post-game data should stay <=30 seconds where possible:
-
-- ending turn/band;
+- turn band;
 - win type;
-- commander timing/disruption;
-- perceived balance ordinal response;
-- optional dominant event such as runaway start, lock or unanswered combo.
+- perceived balance;
+- dominant event;
+- pod model version;
+- engine/semantic versions;
+- hashed pod fingerprint;
+- **the pre-game aggregate prediction that Aeon actually made**.
 
-## 10.2 Validation questions
+Stored prediction fields:
 
-Test whether:
+- predicted risk score;
+- predicted risk level;
+- predicted Pod Match mismatch;
+- predicted maximum Threat–Answer gap.
 
-- Threat–Answer mismatch predicts non-games;
-- peak asymmetry predicts runaway games;
-- commander SPOF predicts failure into commander-heavy interaction;
-- Experience Fingerprint mismatch predicts dissatisfaction despite similar power;
-- Aeon-matched pods outperform random/manual baselines.
+Not stored:
 
-## 10.3 Confidence Model
+- decklists;
+- Oracle text;
+- card lists;
+- raw share codes;
+- email/IP/user-agent in the observation table.
 
-Expose independently:
+Raw observation table access is not granted to normal anon/authenticated clients. Submission is through a bounded SECURITY DEFINER RPC with rate limiting.
 
-- semantic confidence;
-- simulation stability;
-- game-quality calibration state.
+## 7.2 Calibration evaluation
 
-Exact game-quality probability remains forbidden until sufficient varied data, holdout validation, acceptable calibration and baseline superiority exist.
+**Evaluation model:** `reality-calibration-eval-v1`  
+**Readiness model:** `calibration-readiness-v2`
 
----
+Implemented evaluation metrics:
 
-# 11. Feature priority
+- severe-imbalance prevalence;
+- Brier score;
+- constant-prevalence baseline Brier;
+- Brier improvement vs baseline;
+- AUC;
+- calibration bands low / moderate / high;
+- calibration MAE;
+- distinct-pod count.
 
-| Rank | Feature | Public utility | Differentiation | Feasibility |
-|---:|---|---:|---:|---:|
-| 1 | Game Quality / Non-Game Forecast | 10 | 10 | 7 |
-| 2 | Threat–Answer Timeline | 10 | 10 | 7 |
-| 3 | Aeon Match | 10 | 9 | 8 |
-| 4 | Adaptive Rule 0 | 10 | 10 | 9 |
-| 5 | Experience Fingerprint | 10 | 8 | 9 |
-| 6 | Pod Repair | 10 | 9 | 8 |
-| 7 | SPOF | 9 | 9 | 8 |
-| 8 | Combo Accessibility | 9 | 9 | 7 |
-| 9 | Real-game Validation | 10 | 10 | 5 |
-| 10 | Vulnerability Matrix | 8 | 8 | 7 |
-| 11 | Goldfish Horizon alone | 8 | 7 | 9 |
-| 12 | Causal Deck Doctor | 8 | 9 | 6 |
-| 13 | Confidence Model | 8 | 7 | 9 |
-| 14 | Targeted Pod Tuning | 7 | 9 | 5 |
-| 15 | Semantic Graph UI | 6 | 8 | 8 |
+## 7.3 Scientific promotion gate
 
----
+Aeon must **not** publish the experimental risk score as an exact probability until all of the following are satisfied:
 
-# 12. Validation strategy
+- sufficient real games;
+- sufficient distinct pods / independent cohorts;
+- both positive and negative outcomes;
+- held-out evaluation;
+- baseline superiority;
+- calibration curve review;
+- pod/playgroup leakage protection;
+- no material cohort failure.
 
-## P2
+`calibrationReadiness()` is necessary, not sufficient. A true public-probability promotion still requires a held-out analysis decision.
 
-Curated fixtures for:
-
-- obvious stax vs non-stax;
-- glass cannon vs grind;
-- commander-centric vs commander-light;
-- graveyard-centric vs independent;
-- low vs high volatility;
-- interactive vs low-interaction decks.
-
-Use monotonic and adversarial changes.
-
-## P3
-
-Synthetic pods:
-
-- same power/different speed;
-- same power/unanswered combo;
-- interaction-rich table;
-- same median/extreme peak mismatch;
-- compatible power/incompatible friction.
-
-## P4
-
-Compare against simple baselines:
-
-- median spread only;
-- P20–P80 overlap only;
-- bracket only.
-
-Game Quality Engine must materially outperform simple baselines before stronger claims.
-
-## P5
-
-Small N: heuristic vs exhaustive partitions.  
-Large N: runtime, mean/worst mismatch, stability and constraints.
-
-## P6
-
-Every recommendation must pass legality, semantic fit, fast screening, full-run confirmation and controlled before/after comparison.
-
-## P7
-
-Use holdout separation, playgroup leakage protection, calibration curves, baselines and cohort analysis.
+No observation ever automatically rewrites semantic truth or core deck power.
 
 ---
 
-# 13. Success metrics
+# 8. Privacy / sharing architecture
 
-## Near term
+Public Rule 0 shares can carry sanitized product intelligence needed for Pod Match, including scores, levels, model versions and temporal curves.
 
-- Rule 0 share creation/open rate;
-- Pod Match completion;
-- explainable mismatch reasons;
-- What-if repeat usage;
-- semantic feedback quality.
+They explicitly strip:
 
-## Mid term
+- decklist;
+- Oracle text;
+- evidence-card names/lists;
+- raw private analysis payload.
 
-- Adaptive Rule 0 response rate;
-- bad pods repaired;
-- repeat playgroup use;
-- LGS setup/session completion time.
+Sanitization exists both client-side and again in the SQL share RPC. Tests inject sentinel private strings and verify they do not survive public serialization.
 
-## Long term north-star metric
-
-> **Reduction in reported non-games / severe mismatches for Aeon-matched pods versus appropriate baselines.**
+Older shares without P2→P7 intelligence remain usable: `/pod` falls back to the original P0/P1 range comparison.
 
 ---
 
-# 14. What Aeon must not become
+# 9. Validation strategy and current audit
 
-- generic AI chat coach;
-- crowd-rated power level;
-- EDHREC clone;
-- full rules engine as the first goal;
-- bracket wrapper;
-- opaque one-score matchmaking formula.
+The dedicated branch workflow now runs the **full Aeon quality suite**, not only product tests:
+
+1. smoke;
+2. semantic contracts;
+3. metamorphic contracts;
+4. P0–P7 product contracts;
+5. public precon contract;
+6. adversarial audit;
+7. production build.
+
+Dedicated P2→P7 regression coverage includes:
+
+- Experience Fingerprint independence;
+- friction recurrence/directionality;
+- Goldfish Horizon no-fake-cumulative invariant;
+- paired commander +2/+4/unavailable SPOF monotonicity;
+- Threat–Answer contribution to Pod Match mismatch;
+- vulnerability-versus-answer hard-counter risk;
+- exact 8-player matchmaking vs brute force;
+- deterministic 64-player matchmaking;
+- targeted pod variant tuning;
+- sanitized public-share round trip;
+- P7 prediction-bearing observations;
+- Brier/AUC/calibration contracts;
+- session token hashing / capacity / idempotence / table revocation;
+- direct `/match` deployment route.
+
+### Validation history
+
+- early P2 runs: product/build green;
+- run `#127`: P7 calibration fixtures + product/build green;
+- run `#145`: SPOF + Targeted Pod Tuning + product/build green;
+- run `#159`: **full quality suite green** (smoke, semantic, metamorphic, product, public precons, adversarial audit, build);
+- final post-route/contract validation: **pending at the time of this journal update**.
 
 ---
 
-# 15. Implementation sequence
+# 10. Known boundaries — explicit, not hidden TODOs
 
-1. **Experience Fingerprint + Table Friction** — V1 models implemented.
-2. **Goldfish Horizon + SPOF** — Horizon V1 implemented; SPOF next.
-3. **Threat–Answer Timeline**.
-4. **Adaptive Rule 0**.
-5. **Game Quality / Non-Game Risk V1**.
-6. **Combo Accessibility + Vulnerability Matrix**.
-7. **Aeon Match + Pod Repair**.
-8. **Causal Deck Doctor**.
-9. **P7 calibration promotion** once observations are sufficient.
+These are intentionally not misrepresented as completed scientific capabilities:
 
-P7 instrumentation begins before step 9.
+1. **Goldfish first-access:** interaction/resource/burst curves remain `available-on-turn`; cumulative first access needs simulator instrumentation.
+2. **Non-commander SPOF:** graveyard/artifact/enchantment/board dependency remains semantic proxy until suppression simulation is causal enough.
+3. **Threat class timing:** class availability scales simulated general interaction access; not rules-complete card-by-card casting.
+4. **Combo T5/T7/T9:** target windows are declared but exact probabilities are not emitted until piece/zone/tutor-prerequisite simulation exists.
+5. **Large-N Aeon Match:** deterministic heuristic beyond 12 players; no global-optimum claim.
+6. **Deck Doctor candidate generation:** V1 evaluates supplied legal/analyzed candidates; autonomous card generation is not evidence enough to promote.
+7. **P7 calibration:** no exact good-game probability until real observations + holdout validation pass.
+8. **SQL deployment:** migrations are versioned code, not proof that production/staging has applied them.
+
+These boundaries are part of the product contract. Removing the warning without adding the missing evidence would be a regression.
 
 ---
 
-# 16. Definition of the future Aeon product
+# 11. Release / promotion gates
 
-The completed direction should answer, in order:
+## Engineering merge gate
+
+Before any merge of PR #10:
+
+- final full quality workflow green;
+- final base→head diff audit;
+- `powerModel.js` coefficient isolation confirmed;
+- privacy/deployment contracts green;
+- PR remains draft until explicit approval;
+- upstream `product-p0-p1` relationship reviewed before retarget/rebase.
+
+## Database deployment gate
+
+After an approved integration path:
+
+- apply migrations to a non-production environment first;
+- smoke `aeon_create_analysis_share` with sanitized intelligence;
+- smoke Aeon Reality observation submission;
+- smoke create/join/lock/close Match session;
+- verify RLS and grants from anon/authenticated roles;
+- only then promote migrations to production.
+
+## Scientific P7 promotion gate
+
+Collect observations first. Then evaluate holdout AUC/Brier/calibration and baseline superiority. Until that succeeds, Game Quality remains **categorical experimental guidance**.
+
+---
+
+# 12. Definition of the implemented Aeon direction
+
+The branch now provides an evidence-bearing answer path for:
 
 - **Deck:** What can my deck do?
-- **Time:** When can it do it?
+- **Time:** When can it operate?
 - **Dependency:** What does it depend on?
-- **Threat:** When does it create a must-answer situation?
-- **Answer:** Can the other decks answer in time?
-- **Experience:** What type of game does it create?
-- **Intent:** What important information cannot be inferred from the decklist?
-- **Pod:** Are these decks and players compatible?
-- **Repair:** What is the smallest change that fixes a mismatch?
-- **Reality:** Do real games confirm Aeon’s prediction?
+- **Threat:** What kind of must-answer state can it present?
+- **Answer:** Does this pod have the relevant answer class in time?
+- **Experience:** What type of game does it tend to produce?
+- **Intent:** What high-information Rule 0 question still needs a human answer?
+- **Pod:** Are these decks structurally compatible?
+- **Repair:** Can player/deck assignment improve the pod?
+- **Tune:** Which supplied variant best improves the actual pod?
+- **Reality:** Did observed games support the pre-game prediction?
 
----
+Strategic decision rule remains:
 
-# 17. Strategic decision rule
-
-When choosing between future features, prefer the one that better answers:
-
-> **“Will this help players avoid a bad Commander game before it starts?”**
-
-If both do, prefer the one that can also explain **why**.
+> **Prefer the feature that best helps players avoid a bad Commander game before it starts — and prefer the version that can explain why.**
