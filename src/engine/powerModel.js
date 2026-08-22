@@ -6,6 +6,7 @@ import { simulateSequencesMulti } from './sequenceSimulatorMulti.js'
 import { buildExperienceFingerprint } from './experienceModel.js'
 import { buildTableFriction } from './frictionModel.js'
 import { buildGoldfishHorizon } from './goldfishHorizon.js'
+import { sampleFirstAccess } from './firstAccessSampler.js'
 import { aeonPriorFor } from '../data/aeonshift.js'
 
 const clamp=(n,a=0,b=100)=>Math.max(a,Math.min(b,n))
@@ -45,8 +46,9 @@ export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=
   if(aeon.available)warnings.push('AeonShift est utilisé comme prior faible uniquement ; ce n’est pas une calibration Commander multijoueur.')
   if(combos.length)warnings.push('Combo connue détectée : sa consistance réelle dépend encore des tuteurs, redondances et fenêtres de protection.')
   const drivers=cards.filter(c=>!c.isLand).map(c=>{const ap=aeonPriorFor(c,aeonMap),pkg=packages.filter(p=>(p.members||[]).some(n=>n.toLowerCase()===c.name.toLowerCase())).length,base=c.development*.85+c.interaction*.8+c.resilience*.7+c.explosiveness*1.15+c.recurring*.55+c.efficiency*.4;return {name:c.name,impact:Math.round((base+pkg*.7+(ap.normalized||0)*1.1)*10)/10,tags:c.tags.slice(0,6),aeon:ap.points}}).sort((a,b)=>b.impact-a.impact).slice(0,12)
-  const coverage=analysisCoverage(cards,packages,combos)
-  const result={profile:{median:Math.round(median),floor:Math.round(floor),ceiling:Math.round(ceiling),peak:Math.round(peak),dispersion:Math.round(dispersion),variance:Math.round(dispersion),consistency:Math.round(consistency),commanderDelta,coverage,dataCoverage:coverage},dimensions,roles,packages,combos,commanderSynergy:cmdSyn,commanderNames:commanders.map(c=>c.name),aeon,simulation:sim,drivers,warnings,methodology:{iterations,model:'sequence-access-v3.2-semantic',maxTurn:7,commandZoneCount:commanders.length,separateCommanderTax:multi,curveMeaning:'Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.'}}
+  const coverage=analysisCoverage(cards,packages,combos),firstAccessIterations=options?.firstAccess===false?0:Math.max(1,Math.min(Math.max(1,iterations),800,Math.max(80,Math.floor(iterations/3))))
+  if(firstAccessIterations>0)sim.firstAccess=sampleFirstAccess({cards,commanders,packages,combos,iterations:firstAccessIterations,maxTurn:7,rng:seeded(hashSeed(cards,commanders,'first-access-v2'))})
+  const result={profile:{median:Math.round(median),floor:Math.round(floor),ceiling:Math.round(ceiling),peak:Math.round(peak),dispersion:Math.round(dispersion),variance:Math.round(dispersion),consistency:Math.round(consistency),commanderDelta,coverage,dataCoverage:coverage},dimensions,roles,packages,combos,commanderSynergy:cmdSyn,commanderNames:commanders.map(c=>c.name),aeon,simulation:sim,drivers,warnings,methodology:{iterations,firstAccessIterations,model:'sequence-access-v3.2-semantic',maxTurn:7,commandZoneCount:commanders.length,separateCommanderTax:multi,curveMeaning:'Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.'}}
   result.experience=buildExperienceFingerprint(result,cards.concat(commanders))
   result.friction=buildTableFriction(result,cards.concat(commanders))
   result.horizon=buildGoldfishHorizon(result)
