@@ -3,6 +3,7 @@ import { buildComboAccessibility,buildVulnerabilityMatrix,buildGameQualityForeca
 import { buildThreatAnswerTimeline,buildAdaptiveRule0,buildAdvancedPodMatch } from './podIntelligence.js'
 import { buildAnswerProfile,buildThreatProfile } from './threatAnswerProfile.js'
 import { buildClassThreatAnswerTimeline } from './threatAnswerTimeline.js'
+import { buildAnswerDebt } from './answerDebt.js'
 
 export function buildDeckIntelligence(result={},cards=[]){
   const spof=buildSpofProfile(result,cards),withSpof={...result,spof},comboAccessibility=buildComboAccessibility(withSpof,cards),withCombo={...withSpof,comboAccessibility},vulnerability=buildVulnerabilityMatrix(withCombo),answerProfile=buildAnswerProfile(withCombo,cards),threatProfile=buildThreatProfile({...withCombo,vulnerability},cards)
@@ -30,11 +31,11 @@ function suppliedDeckIntelligence(result){
   if(!result?.spof&&!result?.comboAccessibility&&!result?.vulnerability&&!result?.answerProfile&&!result?.threatProfile)return null
   return {modelVersion:'deck-intelligence-v1',spof:result.spof||{dependencies:{}},comboAccessibility:result.comboAccessibility||{lines:[]},vulnerability:result.vulnerability||{classes:{}},answerProfile:result.answerProfile||{classes:{}},threatProfile:result.threatProfile||{threats:[]},confidence:{productCalibration:'experimental'}}
 }
-export function buildPodIntelligence(decks=[]){
+export function buildPodIntelligence(decks=[],options={}){
   const enriched=decks.filter(Boolean).map(d=>{
     const result=d.result||d.analysis||d,cards=d.cards||[],deckIntelligence=d.deckIntelligence||suppliedDeckIntelligence(result)||buildDeckIntelligence(result,cards)
     return {...result,...deckIntelligence}
   })
-  const threatAnswer=buildClassThreatAnswerTimeline(enriched)||buildThreatAnswerTimeline(enriched),adaptiveRule0=buildAdaptiveRule0(enriched),podMatch=buildAdvancedPodMatch(enriched,threatAnswer),gameQuality=buildGameQualityForecast(enriched,podMatch,threatAnswer)
-  return {modelVersion:'pod-intelligence-v2',decks:enriched,threatAnswer,adaptiveRule0,podMatch,gameQuality,confidence:{productCalibration:'experimental'},notes:['Threat–Answer exposure is included in Pod Match V2.','All P3/P4 conclusions remain evidence-bearing and experimental until P7 calibration.']}
+  const threatAnswer=buildClassThreatAnswerTimeline(enriched)||buildThreatAnswerTimeline(enriched),answerDebt=buildAnswerDebt(enriched),adaptiveRule0=buildAdaptiveRule0(enriched,options.rule0Answers||{}),podMatch=buildAdvancedPodMatch(enriched,threatAnswer,adaptiveRule0.intentOverlay),gameQuality=buildGameQualityForecast(enriched,podMatch,threatAnswer)
+  return {modelVersion:'pod-intelligence-v3',decks:enriched,threatAnswer,answerDebt,adaptiveRule0,podMatch,gameQuality,confidence:{productCalibration:'experimental',declaredIntent:adaptiveRule0.intentOverlay?.answersApplied?'applied':'not-applied'},notes:['Threat–Answer exposure is included in Pod Match.','Answer Debt summarizes class-specific under-coverage without introducing a new probability model.','Adaptive Rule 0 answers alter only the explicit declared-intent compatibility overlay; they never rewrite detected capability or semantic truth.','All P3/P4 conclusions remain evidence-bearing and experimental until P7 calibration.']}
 }

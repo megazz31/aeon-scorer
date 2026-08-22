@@ -2,13 +2,17 @@ name: P2-P7 product validation
 
 on:
   push:
-    branches: [product-p2-p7-roadmap]
+    branches: [product-p2-p7-roadmap, product-p2-p7-v2]
     paths-ignore:
       - 'docs/PLAN.md'
+      - 'docs/P2_P7_V2_WORKLOG.md'
+      - 'docs/P2_P7_V2_SCOPE.md'
   pull_request:
-    branches: [product-p0-p1]
+    branches: [product-p0-p1, product-p2-p7-roadmap]
     paths-ignore:
       - 'docs/PLAN.md'
+      - 'docs/P2_P7_V2_WORKLOG.md'
+      - 'docs/P2_P7_V2_SCOPE.md'
 
 permissions:
   contents: read
