@@ -109,6 +109,15 @@
 - Model notes explicitly state that Horizon is temporal access, not a win-probability curve.
 - Validation run `P2-P7 product validation #22` completed successfully: product contracts **green**, build **green**.
 
+#### 2026-08-22 — P2 isolation audit
+
+- Latest validation run `P2-P7 product validation #24` completed successfully: product contracts **green**, build **green**.
+- Compared branch head against `product-p0-p1` base.
+- `src/engine/powerModel.js` contains **6 added lines and 0 deleted lines** across this P2 pass.
+- Those additions are only model imports plus `result.experience`, `result.friction` and `result.horizon` assignments.
+- No existing Aeon structural/calibration formula was edited in this branch.
+- PR #10 remains draft and unmerged.
+
 ### Known P2 V1 limitations
 
 - `dependency` is intentionally command-zone focused until SPOF V1 adds generalized counterfactual dependency.
