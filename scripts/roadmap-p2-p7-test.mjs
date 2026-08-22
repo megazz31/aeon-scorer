@@ -99,19 +99,22 @@ assert.equal(explanation.changes.peak,-13)
 const doctor=selectConstrainedVariant(base,[{id:'A',analysis:variantA},{id:'B',analysis:variantB}],{type:'reduce-peak-preserve-median'},{minMedian:47})
 assert.equal(doctor.best.id,'A')
 
-const predictionFields={predictedRiskScore:20,predictedRiskLevel:'low',predictedPodMismatch:18,predictedThreatGap:12}
-const valid=validateGameObservation({turnBand:'5-7',winType:'combat',balance:'balanced',dominantEvent:'normal-game',podModelVersion:'pod-intelligence-v1',podFingerprint:'1'.padStart(64,'0'),...predictionFields})
+const predictionFields={podSize:4,predictedRiskScore:20,predictedRiskLevel:'low',predictedPodMismatch:18,predictedThreatGap:12}
+const valid=validateGameObservation({turnBand:'5-7',winType:'combat',balance:'balanced',dominantEvent:'normal-game',podModelVersion:'pod-intelligence-v2',podFingerprint:'1'.padStart(64,'0'),...predictionFields})
 assert.equal(valid.ok,true)
 assert.equal(validateGameObservation({turnBand:'bad',winType:'combat',balance:'balanced',dominantEvent:'normal-game',podModelVersion:'x',...predictionFields}).ok,false)
 assert.equal(validateGameObservation({turnBand:'5-7',winType:'combat',balance:'balanced',dominantEvent:'normal-game',podModelVersion:'x'}).ok,false)
+assert.equal(validateGameObservation({turnBand:'5-7',winType:'combat',balance:'balanced',dominantEvent:'normal-game',podModelVersion:'x',podSize:1,predictedRiskScore:20,predictedRiskLevel:'low',predictedPodMismatch:18,predictedThreatGap:12}).ok,false)
+assert.equal(validateGameObservation({turnBand:'5-7',winType:'combat',balance:'balanced',dominantEvent:'normal-game',podModelVersion:'x',podSize:4,predictedRiskScore:20,predictedRiskLevel:'high',predictedPodMismatch:18,predictedThreatGap:12}).ok,false)
 
 const observations=Array.from({length:12},(_,i)=>{
   const severe=i%4===0,pod=String((i%3)+1).padStart(64,'0')
-  return {turnBand:'5-7',winType:severe?'combo':'combat',balance:severe?'unbalanced':'balanced',dominantEvent:severe?'unanswered-combo':'normal-game',podModelVersion:'pod-intelligence-v1',podFingerprint:pod,predictedRiskScore:severe?82:18,predictedRiskLevel:severe?'high':'low',predictedPodMismatch:severe?76:20,predictedThreatGap:severe?72:14}
+  return {turnBand:'5-7',winType:severe?'combo':'combat',balance:severe?'unbalanced':'balanced',dominantEvent:severe?'unanswered-combo':'normal-game',podModelVersion:'pod-intelligence-v2',podSize:4,podFingerprint:pod,predictedRiskScore:severe?82:18,predictedRiskLevel:severe?'high':'low',predictedPodMismatch:severe?76:20,predictedThreatGap:severe?72:14}
 })
 const realitySummary=summarizeRealityObservations(observations),calibration=evaluateRealityCalibration(observations)
 assert.equal(realitySummary.count,12)
 assert.equal(realitySummary.distinctPods,3)
+assert.equal(realitySummary.byPodSize[4],12)
 assert.equal(calibration.count,12)
 assert.equal(calibration.auc,1)
 assert.ok(calibration.brier<calibration.baselineBrier)
@@ -124,5 +127,6 @@ assert.equal(ready.ready,true)
 assert.equal(ready.requirements.holdoutRequired,true)
 assert.equal(ready.requirements.baselineComparisonRequired,true)
 assert.equal(ready.requirements.calibrationCurveRequired,true)
+assert.equal(ready.requirements.podSizeCohortReviewRequired,true)
 
 console.log('P2-P7 ROADMAP MODELS OK — intelligence, share privacy, class Threat-Answer V2, exact/large matchmaking, deck doctor and reality calibration contracts')
