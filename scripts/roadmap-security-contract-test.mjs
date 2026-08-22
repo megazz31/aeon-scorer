@@ -5,6 +5,8 @@ const shareMigration=readFileSync(new URL('../supabase/migrations/20260822110500
 const realityMigration=readFileSync(new URL('../supabase/migrations/20260822112000_aeon_reality_observations.sql',import.meta.url),'utf8')
 const matchMigration=readFileSync(new URL('../supabase/migrations/20260822113500_aeon_match_sessions.sql',import.meta.url),'utf8')
 const client=readFileSync(new URL('../src/supabaseClient.js',import.meta.url),'utf8')
+const main=readFileSync(new URL('../src/main.jsx',import.meta.url),'utf8')
+const vercel=readFileSync(new URL('../vercel.json',import.meta.url),'utf8')
 
 assert.match(shareMigration,/product_intelligence jsonb/)
 assert.match(shareMigration,/aeon_safe_answer_profile/)
@@ -48,4 +50,8 @@ assert.match(matchMigration,/grant execute on function public\.aeon_join_match_s
 assert.match(matchMigration,/revoke all on public\.match_sessions from public,anon,authenticated/)
 assert.match(matchMigration,/revoke all on public\.match_session_entries from public,anon,authenticated/)
 
-console.log('P2-P7 SECURITY CONTRACT OK — shares sanitized, sessions bounded/idempotent, observations prediction-bearing and privacy-bounded')
+assert.match(main,/const matchRoute=path==='\/match'/)
+assert.match(main,/else if\(matchRoute\)page=<AeonMatchPage\/>/)
+assert.match(vercel,/"source": "\/match", "destination": "\/index\.html"/)
+
+console.log('P2-P7 SECURITY/DEPLOYMENT CONTRACT OK — shares sanitized, sessions bounded/idempotent, observations privacy-bounded, /match directly routable')
