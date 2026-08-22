@@ -30,6 +30,9 @@ function result(median=50,extra={}){
 // Adaptive Rule 0: declared intent changes product compatibility, never capability.
 const a=result(50),b=result(50)
 const baseline=buildPodIntelligence([a,b])
+assert.equal(baseline.answerDebt.modelVersion,'answer-debt-v1')
+assert.ok(baseline.answerDebt.highest.length>0)
+assert.ok(baseline.answerDebt.highest[0].score>0)
 const answers={
   [rule0AnswerKey(0,'combo-intent')]:'primary',
   [rule0AnswerKey(1,'combo-intent')]:'backup',
@@ -90,4 +93,4 @@ assert.ok(podPage.includes('rule0Answers'))
 assert.ok(podPage.includes('rule0AnswerKey'))
 assert.ok(podPage.includes('prediction={observationPrediction}'))
 
-console.log('P2-P7 V2 OK — adaptive Rule 0 overlay, cross-table repair audit and Match Reality wiring')
+console.log('P2-P7 V2 OK — adaptive Rule 0 overlay, Answer Debt, cross-table repair audit and Match Reality wiring')
