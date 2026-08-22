@@ -28,7 +28,7 @@ export function summarizeRealityObservations(observations=[]){
 
 function auc(rows){
   const pos=rows.filter(x=>x.y===1),neg=rows.filter(x=>x.y===0);if(!pos.length||!neg.length)return null
-  let wins=0;for(const p of pos)for(const n of neg)wins+=p.p>n.p?1:p.p===n.p?.5:0
+  let wins=0;for(const p of pos)for(const n of neg)wins+=p.p>n.p?1:p.p===n.p?0.5:0
   return wins/(pos.length*neg.length)
 }
 export function evaluateRealityCalibration(observations=[]){
