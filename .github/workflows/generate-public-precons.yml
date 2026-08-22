@@ -39,6 +39,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # Always derive the published snapshot from the latest branch head.
           for attempt in 1 2 3; do
             echo "Snapshot attempt ${attempt}/3"
             git fetch origin public-precon-library
