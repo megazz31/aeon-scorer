@@ -3,6 +3,7 @@ import { detectPackages, commanderSynergy } from './packageGraph.js'
 import { detectKnownCombos } from './knownCombos.js'
 import { simulateSequences } from './sequenceSimulator.js'
 import { simulateSequencesMulti } from './sequenceSimulatorMulti.js'
+import { buildExperienceFingerprint } from './experienceModel.js'
 import { aeonPriorFor } from '../data/aeonshift.js'
 
 const clamp=(n,a=0,b=100)=>Math.max(a,Math.min(b,n))
@@ -44,6 +45,7 @@ export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=
   const drivers=cards.filter(c=>!c.isLand).map(c=>{const ap=aeonPriorFor(c,aeonMap),pkg=packages.filter(p=>(p.members||[]).some(n=>n.toLowerCase()===c.name.toLowerCase())).length,base=c.development*.85+c.interaction*.8+c.resilience*.7+c.explosiveness*1.15+c.recurring*.55+c.efficiency*.4;return {name:c.name,impact:Math.round((base+pkg*.7+(ap.normalized||0)*1.1)*10)/10,tags:c.tags.slice(0,6),aeon:ap.points}}).sort((a,b)=>b.impact-a.impact).slice(0,12)
   const coverage=analysisCoverage(cards,packages,combos)
   const result={profile:{median:Math.round(median),floor:Math.round(floor),ceiling:Math.round(ceiling),peak:Math.round(peak),dispersion:Math.round(dispersion),variance:Math.round(dispersion),consistency:Math.round(consistency),commanderDelta,coverage,dataCoverage:coverage},dimensions,roles,packages,combos,commanderSynergy:cmdSyn,commanderNames:commanders.map(c=>c.name),aeon,simulation:sim,drivers,warnings,methodology:{iterations,model:'sequence-access-v3.2-semantic',maxTurn:7,commandZoneCount:commanders.length,separateCommanderTax:multi,curveMeaning:'Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.'}}
+  result.experience=buildExperienceFingerprint(result,cards.concat(commanders))
   const detail={result,cards,commander,commanders,iterations}
   if(options?.emitProduct!==false&&typeof window!=='undefined'&&typeof window.dispatchEvent==='function'&&typeof CustomEvent!=='undefined')queueMicrotask(()=>{try{window.dispatchEvent(new CustomEvent('aeon-analysis-computed',{detail}))}catch{}})
   const hook=globalThis?.__AEON_ANALYSIS_HOOK__;if(options?.record!==false&&typeof hook==='function')queueMicrotask(()=>{try{hook(detail)}catch{}})
