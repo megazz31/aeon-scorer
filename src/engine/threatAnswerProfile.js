@@ -1,8 +1,9 @@
+import { buildThreatObjects } from './threatObjects.js'
+
 const clamp=(n,a=0,b=100)=>Math.max(a,Math.min(b,n))
 const lower=c=>`${c?.type||''} ${c?.oracle||''}`.toLowerCase()
 const has=(c,t)=>Array.isArray(c?.tags)&&c.tags.includes(t)
 const turnsOf=result=>result?.horizon?.curves?.interaction?.points||[]
-const point=(result,key,turn)=>result?.horizon?.curves?.[key]?.points?.find(x=>x.turn===turn)?.value||0
 const level=n=>n>=70?'high':n>=40?'moderate':'low'
 const ANSWER_CLASSES=['stack','creature','artifact','enchantment','graveyard','wipe']
 
@@ -35,17 +36,7 @@ export function buildAnswerProfile(result={},cards=[]){
   return {modelVersion:'answer-profile-v2',interactionCards:interactionRows.length,classes,confidence:{classification:'semantic-proxy',timing:firstAccess?'card-specific-draw-mv-envelope':'scaled-general-interaction-fallback',productCalibration:'experimental'},notes:firstAccess?['Class timing is bounded by Aeon true first-interaction access and a class-specific draw/mana-value envelope built from the actual answer cards.','This is more specific than density scaling but is still not rules-complete card-by-card casting: alternate costs, tutors, card draw sequencing and colored-mana details remain approximations.','A card may cover multiple answer classes.']:['Historical analysis without cumulative first-access Horizon data: class timing falls back to the V1 general-interaction × class-density method.','A card may cover multiple answer classes.']}
 }
 
-function packageStrength(result,idPattern){return Math.max(0,...(result.packages||[]).filter(p=>idPattern.test(String(p.id||''))).map(p=>Number(p.strength??p.cohesion??0)))}
 export function buildThreatProfile(result={},cards=[]){
-  const combo=Number(result.comboAccessibility?.highest?.score||0),graveyard=Number(result.spof?.dependencies?.graveyard?.score||0),artifact=Math.max(Number(result.spof?.dependencies?.artifact?.score||0),packageStrength(result,/artifact|treasure/i)),enchantment=Math.max(Number(result.spof?.dependencies?.enchantment?.score||0),packageStrength(result,/enchant|constellation/i)),board=Math.max(Number(result.spof?.dependencies?.creatureBoard?.score||0),packageStrength(result,/token|counter|sacrifice|tribal|creature/i)),extraTurns=Number(result.friction?.signals?.extraTurns?.score||0),firstAccess=['engine','burst'].some(key=>result?.horizon?.curves?.[key]?.semantics==='cumulative-first-access')
-  const defs=[
-    {id:'combo',strength:combo,curve:'burst',answers:['stack','creature','artifact','enchantment','graveyard']},
-    {id:'graveyard-engine',strength:graveyard,curve:'engine',answers:['graveyard']},
-    {id:'artifact-engine',strength:artifact,curve:'engine',answers:['artifact']},
-    {id:'enchantment-engine',strength:enchantment,curve:'engine',answers:['enchantment']},
-    {id:'creature-board',strength:board,curve:'engine',answers:['wipe','creature']},
-    {id:'extra-turn-loop',strength:extraTurns,curve:'burst',answers:['stack']},
-  ].filter(x=>x.strength>=12)
-  const threats=defs.map(d=>({...d,level:level(d.strength),turns:(result.horizon?.curves?.[d.curve]?.points||[]).map(p=>({turn:p.turn,value:Math.round(clamp(Number(p.value||0)*(d.strength/100)))}))}))
-  return {modelVersion:'threat-profile-v2',threats,confidence:{classification:'structural-proxy',timing:firstAccess?'horizon-first-access-weighted':'horizon-weighted-fallback',productCalibration:'experimental'},notes:['Threat classes represent disruption needs, not deterministic win conditions.','Threat timing follows the active Horizon temporal semantics; Temporal V2 analyses therefore use cumulative first-access curves.','Combo V2 still exposes multiple possible answer classes because exact combo-piece zones/types are not fully simulated yet.']}
+  const built=buildThreatObjects(result),threats=built.objects
+  return {modelVersion:'threat-profile-v3',threatObjectModel:built.modelVersion,threats,objects:threats,confidence:{classification:'aggregate-structural-evidence',timing:built.confidence.timing,prerequisites:'explicit-partial',productCalibration:'experimental'},notes:['Threat Profile V3 is backed by explicit Threat Objects with aggregate evidence, prerequisite boundaries, temporal milestones/windows and relevant answer classes.','Threat objects remain disruption-needs evidence, not deterministic win conditions.','Unknown prerequisites remain explicit; exact combo-window probability is not claimed.']}
 }
