@@ -21,9 +21,13 @@ export function buildShareableIntelligence(result={},cards=[]){
   return {modelVersion:'share-intelligence-v1',experience,friction,horizon,spof,comboAccessibility,vulnerability,confidence:{productCalibration:'experimental'},privacy:{decklist:false,oracle:false,evidenceCards:false}}
 }
 
+function suppliedDeckIntelligence(result){
+  if(!result?.spof&&!result?.comboAccessibility&&!result?.vulnerability)return null
+  return {modelVersion:'deck-intelligence-v1',spof:result.spof||{dependencies:{}},comboAccessibility:result.comboAccessibility||{lines:[]},vulnerability:result.vulnerability||{classes:{}},confidence:{productCalibration:'experimental'}}
+}
 export function buildPodIntelligence(decks=[]){
   const enriched=decks.filter(Boolean).map(d=>{
-    const result=d.result||d.analysis||d,cards=d.cards||[],deckIntelligence=d.deckIntelligence||buildDeckIntelligence(result,cards)
+    const result=d.result||d.analysis||d,cards=d.cards||[],deckIntelligence=d.deckIntelligence||suppliedDeckIntelligence(result)||buildDeckIntelligence(result,cards)
     return {...result,...deckIntelligence}
   })
   const threatAnswer=buildThreatAnswerTimeline(enriched),adaptiveRule0=buildAdaptiveRule0(enriched),podMatch=buildAdvancedPodMatch(enriched),gameQuality=buildGameQualityForecast(enriched,podMatch,threatAnswer)
