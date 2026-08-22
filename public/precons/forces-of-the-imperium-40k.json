@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 42,
-    "p20": 31,
-    "p80": 52,
-    "peak": 76,
+    "median": 44,
+    "p20": 32,
+    "p80": 53,
+    "peak": 79,
     "coverage": 94,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "25e0682364845f15e24c2b51b72deac94cd3f8533342b1039d2b4b14ab0bf022",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Bastion Protector\n1 Collective Effort\n1 Deploy to the Front\n1 Fell the Mighty\n1 Hour of Reckoning\n1 Launch the Fleet\n1 Martial Coup\n1 Entrapment Maneuver\n1 Utter End\n1 Swords to Plowshares\n1 Mortify\n1 Everflowing Chalice\n1 Mind Stone\n1 Skullclamp\n1 Sol Ring\n1 Talisman of Dominance\n1 Talisman of Hierarchy\n1 Talisman of Progress\n1 Arcane Signet\n1 Commander's Sphere\n1 Reconnaissance Mission\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Port Town\n1 Prairie Stream\n1 Skycloud Expanse\n1 Sunken Hollow\n1 Arcane Sanctum\n1 Ash Barrens\n1 Memorial to Glory\n1 Command Tower\n1 Dismal Backwater\n1 Evolving Wilds\n1 Path of Ancestry\n1 Scoured Barrens\n1 Terramorphic Expanse\n1 Tranquil Cove\n5 Island\n7 Swamp\n8 Plains\n1 Marneus Calgar\n1 Celestine, the Living Saint\n1 Defenders of Humanity\n1 For the Emperor!\n1 Space Marine Devastator\n1 Triumph of Saint Katherine\n1 Ultramarines Honour Guard\n1 Vexilus Praetor\n1 Zephyrim\n1 Sister of Silence\n1 Vanguard Suppressor\n1 Arco-Flagellant\n1 Primaris Eliminator\n1 Assault Intercessor\n1 Belisarius Cawl\n1 Birth of the Imperium\n1 Callidus Assassin\n1 Commissar Severina Raine\n1 Company Commander\n1 Cybernetica Datasmith\n1 Epistolary Librarian\n1 Exterminatus\n1 The Flesh Is Weak\n1 Inquisitor Eisenhorn\n1 Neyam Shai Murad\n1 Sister Hospitaller\n1 Sister Repentia\n1 The Golden Throne\n1 Inquisitorial Rosette\n1 Knight Paladin\n1 Reaver Titan\n1 Redemptor Dreadnought\n1 Thunderhawk Gunship\n1 And They Shall Know No Fear\n1 Grey Knight Paragon\n1 Space Marine Scout\n1 Thunderwolf Cavalry\n1 Sicarian Infiltrator\n1 Sanguinary Priest\n1 Deny the Witch\n1 Primaris Chaplain",
   "oracleCards": [
@@ -708,7 +708,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "wipe"
+        "wipe",
+        "token-payoff"
       ],
       "isCommander": false
     },
@@ -1525,7 +1526,8 @@
         "artifact",
         "mana",
         "sacrifice",
-        "sac-outlet"
+        "sac-outlet",
+        "counter-producer"
       ],
       "isCommander": false
     },
@@ -1699,22 +1701,22 @@
   ],
   "result": {
     "profile": {
-      "median": 42,
-      "floor": 31,
-      "ceiling": 52,
-      "peak": 76,
-      "dispersion": 20,
-      "variance": 20,
-      "consistency": 66,
-      "commanderDelta": 7,
+      "median": 44,
+      "floor": 32,
+      "ceiling": 53,
+      "peak": 79,
+      "dispersion": 21,
+      "variance": 21,
+      "consistency": 65,
+      "commanderDelta": 8,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
-      "speed": 34,
-      "consistency": 66,
-      "explosiveness": 15,
-      "synergy": 49,
+      "speed": 32,
+      "consistency": 65,
+      "explosiveness": 16,
+      "synergy": 61,
       "interaction": 49,
       "resilience": 44
     },
@@ -1733,6 +1735,353 @@
       "unknownManaLands": 0
     },
     "packages": [
+      {
+        "id": "tokens",
+        "name": "Tokens / conversion",
+        "strength": 85,
+        "cohesion": 85,
+        "producers": [
+          "Belisarius Cawl",
+          "Birth of the Imperium",
+          "Company Commander",
+          "Defenders of Humanity",
+          "Deploy to the Front",
+          "Entrapment Maneuver",
+          "Inquisitor Eisenhorn",
+          "Inquisitorial Rosette",
+          "Launch the Fleet",
+          "Marneus Calgar"
+        ],
+        "payoffs": [
+          "Hour of Reckoning",
+          "Marneus Calgar"
+        ],
+        "members": [
+          "Belisarius Cawl",
+          "Birth of the Imperium",
+          "Company Commander",
+          "Defenders of Humanity",
+          "Deploy to the Front",
+          "Entrapment Maneuver",
+          "Inquisitor Eisenhorn",
+          "Inquisitorial Rosette",
+          "Launch the Fleet",
+          "Marneus Calgar",
+          "Martial Coup",
+          "Memorial to Glory",
+          "Thunderhawk Gunship",
+          "Hour of Reckoning"
+        ],
+        "producerCards": [
+          {
+            "name": "Belisarius Cawl",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "artifact",
+              "tokens",
+              "artifact-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Birth of the Imperium",
+            "cmc": 5,
+            "tags": [
+              "enchantment",
+              "draw",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "U"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Company Commander",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Defenders of Humanity",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Deploy to the Front",
+            "cmc": 7,
+            "tags": [
+              "sorcery",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Entrapment Maneuver",
+            "cmc": 4,
+            "tags": [
+              "instant",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Inquisitor Eisenhorn",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "draw",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Inquisitorial Rosette",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Launch the Fleet",
+            "cmc": 1,
+            "tags": [
+              "sorcery",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Marneus Calgar",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "draw",
+              "tokens",
+              "token-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "U"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Martial Coup",
+            "cmc": 2,
+            "tags": [
+              "sorcery",
+              "wipe",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Memorial to Glory",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "tokens",
+              "sacrifice",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Thunderhawk Gunship",
+            "cmc": 6,
+            "tags": [
+              "artifact",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 6,
+              "colored": [],
+              "total": 6
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Hour of Reckoning",
+            "cmc": 7,
+            "tags": [
+              "sorcery",
+              "wipe",
+              "token-payoff"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Marneus Calgar",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "draw",
+              "tokens",
+              "token-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "U"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          }
+        ],
+        "producerTags": [
+          "tokens"
+        ],
+        "payoffTags": [
+          "token-payoff"
+        ],
+        "evidence": "13 producteur(s), 2 payoff(s), 14 carte(s) distincte(s)."
+      },
       {
         "id": "sacrifice",
         "name": "Sacrifice / mort",
@@ -1785,7 +2134,8 @@
               "artifact",
               "mana",
               "sacrifice",
-              "sac-outlet"
+              "sac-outlet",
+              "counter-producer"
             ],
             "manaReq": {
               "generic": 4,
@@ -2033,7 +2383,7 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 36,
+      "score": 38,
       "connected": [
         "Belisarius Cawl",
         "Birth of the Imperium",
@@ -2041,6 +2391,7 @@
         "Defenders of Humanity",
         "Deploy to the Front",
         "Entrapment Maneuver",
+        "Hour of Reckoning",
         "Inquisitor Eisenhorn",
         "Inquisitorial Rosette",
         "Launch the Fleet",
@@ -2063,14 +2414,14 @@
     "simulation": {
       "iterations": 3200,
       "floor": 33,
-      "median": 40,
-      "high": 47,
-      "ceiling": 47,
-      "peak": 66,
-      "iqr": 11,
-      "consistency": 75,
+      "median": 41,
+      "high": 48,
+      "ceiling": 48,
+      "peak": 69,
+      "iqr": 12,
+      "consistency": 74,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": 5,
+      "engineMedianTurn": 6,
       "recoveryAfterDisruption": 78,
       "turnProfile": [
         {
@@ -2100,7 +2451,7 @@
         {
           "turn": 4,
           "commander": 72,
-          "engine": 2,
+          "engine": 4,
           "interaction": 55,
           "resource": 56,
           "burst": 7
@@ -2108,7 +2459,7 @@
         {
           "turn": 5,
           "commander": 84,
-          "engine": 4,
+          "engine": 8,
           "interaction": 67,
           "resource": 68,
           "burst": 9
@@ -2116,7 +2467,7 @@
         {
           "turn": 6,
           "commander": 89,
-          "engine": 5,
+          "engine": 13,
           "interaction": 75,
           "resource": 75,
           "burst": 10
@@ -2124,7 +2475,7 @@
         {
           "turn": 7,
           "commander": 92,
-          "engine": 7,
+          "engine": 17,
           "interaction": 80,
           "resource": 81,
           "burst": 12
@@ -2164,6 +2515,16 @@
         "aeon": null
       },
       {
+        "name": "Inquisitor Eisenhorn",
+        "impact": 3.3,
+        "tags": [
+          "creature",
+          "draw",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Mind Stone",
         "impact": 3.3,
         "tags": [
@@ -2171,6 +2532,17 @@
           "draw",
           "mana",
           "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Marneus Calgar",
+        "impact": 3.2,
+        "tags": [
+          "creature",
+          "draw",
+          "tokens",
+          "token-payoff"
         ],
         "aeon": null
       },
@@ -2197,23 +2569,22 @@
         "aeon": null
       },
       {
-        "name": "Inquisitor Eisenhorn",
-        "impact": 2.6,
+        "name": "Birth of the Imperium",
+        "impact": 2.7,
         "tags": [
-          "creature",
+          "enchantment",
           "draw",
           "tokens"
         ],
         "aeon": null
       },
       {
-        "name": "Marneus Calgar",
-        "impact": 2.5,
+        "name": "Martial Coup",
+        "impact": 2.6,
         "tags": [
-          "creature",
-          "draw",
-          "tokens",
-          "token-payoff"
+          "sorcery",
+          "wipe",
+          "tokens"
         ],
         "aeon": null
       },
@@ -2236,24 +2607,6 @@
           "draw",
           "death-payoff",
           "lifegain"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Reconnaissance Mission",
-        "impact": 2.2,
-        "tags": [
-          "enchantment",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Vanguard Suppressor",
-        "impact": 2.2,
-        "tags": [
-          "creature",
-          "draw"
         ],
         "aeon": null
       }

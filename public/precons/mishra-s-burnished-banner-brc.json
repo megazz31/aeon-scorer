@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 49,
-    "p20": 36,
+    "median": 50,
+    "p20": 37,
     "p80": 62,
     "peak": 88,
     "coverage": 94,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "7153d5aaa4933d411daead210c109788a3d30347696cb9311114c262069f72fd",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Muzzio, Visionary Architect\n1 Geth, Lord of the Vault\n1 Herald of Anguish\n1 Jhoira, Weatherlight Captain\n1 Silas Renn, Seeker Adept\n1 Emry, Lurker of the Loch\n1 Master Transmuter\n1 Padeem, Consul of Innovation\n1 Workshop Elders\n1 Fain, the Broker\n1 Audacious Reshapers\n1 Hellkite Igniter\n1 Slobad, Goblin Tinkerer\n1 Brudiclad, Telchor Engineer\n1 Metalwork Colossus\n1 Traxos, Scourge of Kroog\n1 Blasphemous Act\n1 Expressive Iteration\n1 Thoughtcast\n1 Feed the Swarm\n1 Faithless Looting\n1 Chaos Warp\n1 Bedevil\n1 Fact or Fiction\n1 Thirst for Knowledge\n1 Abrade\n1 Lithoform Engine\n1 Cursed Mirror\n1 Idol of Oblivion\n1 Mirrorworks\n1 Oblivion Stone\n1 Spine of Ish Sah\n1 Strionic Resonator\n1 Trading Post\n1 Oni-Cult Anvil\n1 Dreamstone Hedron\n1 Fellwar Stone\n1 Hedron Archive\n1 Ichor Wellspring\n1 Mind Stone\n1 Servo Schematic\n1 Sol Ring\n1 Thran Dynamo\n1 Mnemonic Sphere\n1 Executioner's Capsule\n1 Arcane Signet\n1 Commander's Sphere\n1 Dimir Signet\n1 Mycosynth Wellspring\n1 Nihil Spellbomb\n1 Prophetic Prism\n1 Rakdos Signet\n1 Wayfarer's Bauble\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Shadowblood Ridge\n1 Smoldering Marsh\n1 Temple of Deceit\n1 Temple of Epiphany\n1 Temple of Malice\n1 Buried Ruin\n1 Crumbling Necropolis\n1 Dimir Aqueduct\n1 Izzet Boilerworks\n1 Myriad Landscape\n1 Rakdos Carnarium\n1 Reliquary Tower\n1 Ash Barrens\n1 Command Tower\n1 Drossforge Bridge\n1 Great Furnace\n1 Mistvault Bridge\n1 Path of Ancestry\n1 Seat of the Synod\n1 Silverbluff Bridge\n1 Terramorphic Expanse\n1 Vault of Whispers\n2 Swamp\n2 Swamp\n3 Island\n2 Island\n2 Mountain\n2 Mountain\n1 Ashnod the Uncaring\n1 Glint Raker\n1 Terisiare's Devastation\n1 Blast-Furnace Hellkite\n1 Farid, Enterprising Salvager\n1 Machine God's Effigy\n1 Scavenged Brawler\n1 Smelting Vat\n1 Wondrous Crucible",
   "oracleCards": [
@@ -802,6 +802,7 @@
         "artifact",
         "draw",
         "tokens",
+        "token-payoff",
         "sacrifice"
       ],
       "isCommander": false
@@ -1151,6 +1152,7 @@
       "tags": [
         "artifact",
         "sacrifice",
+        "counter-producer",
         "counter-kind:fate"
       ],
       "isCommander": false
@@ -1833,6 +1835,7 @@
       "tags": [
         "creature",
         "artifact-payoff",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1840,20 +1843,20 @@
   ],
   "result": {
     "profile": {
-      "median": 49,
-      "floor": 36,
+      "median": 50,
+      "floor": 37,
       "ceiling": 62,
       "peak": 88,
       "dispersion": 26,
       "variance": 26,
-      "consistency": 58,
-      "commanderDelta": 11,
+      "consistency": 59,
+      "commanderDelta": 12,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 33,
-      "consistency": 58,
+      "consistency": 59,
       "explosiveness": 13,
       "synergy": 87,
       "interaction": 48,
@@ -2148,6 +2151,7 @@
               "artifact",
               "draw",
               "tokens",
+              "token-payoff",
               "sacrifice"
             ],
             "manaReq": {
@@ -2314,6 +2318,7 @@
             "tags": [
               "artifact",
               "sacrifice",
+              "counter-producer",
               "counter-kind:fate"
             ],
             "manaReq": {
@@ -2799,6 +2804,7 @@
             "tags": [
               "creature",
               "artifact-payoff",
+              "counter-producer",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -3021,6 +3027,265 @@
           "recursion"
         ],
         "evidence": "6 producteur(s), 3 payoff(s), 8 carte(s) distincte(s)."
+      },
+      {
+        "id": "tokens",
+        "name": "Tokens / conversion",
+        "strength": 65,
+        "cohesion": 65,
+        "producers": [
+          "Brudiclad, Telchor Engineer",
+          "Fain, the Broker",
+          "Farid, Enterprising Salvager",
+          "Idol of Oblivion",
+          "Mirrorworks",
+          "Oni-Cult Anvil",
+          "Servo Schematic",
+          "Terisiare's Devastation",
+          "Trading Post"
+        ],
+        "payoffs": [
+          "Brudiclad, Telchor Engineer",
+          "Idol of Oblivion"
+        ],
+        "members": [
+          "Brudiclad, Telchor Engineer",
+          "Fain, the Broker",
+          "Farid, Enterprising Salvager",
+          "Idol of Oblivion",
+          "Mirrorworks",
+          "Oni-Cult Anvil",
+          "Servo Schematic",
+          "Terisiare's Devastation",
+          "Trading Post"
+        ],
+        "producerCards": [
+          {
+            "name": "Brudiclad, Telchor Engineer",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "artifact",
+              "tokens",
+              "token-payoff"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Fain, the Broker",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "mana",
+              "tokens",
+              "sacrifice",
+              "sac-outlet",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Farid, Enterprising Salvager",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "graveyard-setup",
+              "tokens",
+              "sacrifice",
+              "sac-outlet",
+              "artifact-payoff",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Idol of Oblivion",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "tokens",
+              "token-payoff",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Mirrorworks",
+            "cmc": 5,
+            "tags": [
+              "artifact",
+              "tokens",
+              "etb",
+              "artifact-payoff"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [],
+              "total": 5
+            }
+          },
+          {
+            "name": "Oni-Cult Anvil",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "tokens",
+              "sacrifice",
+              "sac-outlet",
+              "artifact-payoff",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Servo Schematic",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Terisiare's Devastation",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "wipe",
+              "tokens",
+              "artifact-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Trading Post",
+            "cmc": 4,
+            "tags": [
+              "artifact",
+              "draw",
+              "recursion",
+              "graveyard-setup",
+              "tokens",
+              "sacrifice",
+              "sac-outlet",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Brudiclad, Telchor Engineer",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "artifact",
+              "tokens",
+              "token-payoff"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Idol of Oblivion",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "tokens",
+              "token-payoff",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          }
+        ],
+        "producerTags": [
+          "tokens"
+        ],
+        "payoffTags": [
+          "token-payoff"
+        ],
+        "evidence": "9 producteur(s), 2 payoff(s), 9 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -3300,16 +3565,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 39,
-      "median": 48,
-      "high": 58,
-      "ceiling": 58,
+      "floor": 40,
+      "median": 49,
+      "high": 59,
+      "ceiling": 59,
       "peak": 84,
       "iqr": 15,
-      "consistency": 66,
+      "consistency": 67,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 85,
+      "recoveryAfterDisruption": 86,
       "turnProfile": [
         {
           "turn": 1,
@@ -3330,7 +3595,7 @@
         {
           "turn": 3,
           "commander": 12,
-          "engine": 22,
+          "engine": 23,
           "interaction": 39,
           "resource": 53,
           "burst": 0
@@ -3338,7 +3603,7 @@
         {
           "turn": 4,
           "commander": 45,
-          "engine": 49,
+          "engine": 50,
           "interaction": 52,
           "resource": 69,
           "burst": 1
@@ -3346,7 +3611,7 @@
         {
           "turn": 5,
           "commander": 74,
-          "engine": 63,
+          "engine": 65,
           "interaction": 60,
           "resource": 77,
           "burst": 3
@@ -3354,7 +3619,7 @@
         {
           "turn": 6,
           "commander": 87,
-          "engine": 71,
+          "engine": 73,
           "interaction": 66,
           "resource": 81,
           "burst": 5
@@ -3362,7 +3627,7 @@
         {
           "turn": 7,
           "commander": 92,
-          "engine": 76,
+          "engine": 79,
           "interaction": 71,
           "resource": 85,
           "burst": 7
@@ -3383,18 +3648,8 @@
         "aeon": null
       },
       {
-        "name": "Sol Ring",
-        "impact": 4.4,
-        "tags": [
-          "artifact",
-          "mana",
-          "fast-mana"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Trading Post",
-        "impact": 4.1,
+        "impact": 4.8,
         "tags": [
           "artifact",
           "draw",
@@ -3402,6 +3657,16 @@
           "graveyard-setup",
           "tokens",
           "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Sol Ring",
+        "impact": 4.4,
+        "tags": [
+          "artifact",
+          "mana",
+          "fast-mana"
         ],
         "aeon": null
       },
@@ -3439,12 +3704,37 @@
         "aeon": null
       },
       {
+        "name": "Idol of Oblivion",
+        "impact": 3.5,
+        "tags": [
+          "artifact",
+          "draw",
+          "tokens",
+          "token-payoff",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Padeem, Consul of Innovation",
         "impact": 3.5,
         "tags": [
           "creature",
           "draw",
           "protection",
+          "artifact-payoff"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Farid, Enterprising Salvager",
+        "impact": 3.3,
+        "tags": [
+          "creature",
+          "graveyard-setup",
+          "tokens",
+          "sacrifice",
+          "sac-outlet",
           "artifact-payoff"
         ],
         "aeon": null
@@ -3472,33 +3762,13 @@
         "aeon": null
       },
       {
-        "name": "Dreamstone Hedron",
-        "impact": 3.1,
+        "name": "Terisiare's Devastation",
+        "impact": 3.2,
         "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Idol of Oblivion",
-        "impact": 2.8,
-        "tags": [
-          "artifact",
-          "draw",
+          "sorcery",
+          "wipe",
           "tokens",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Arcane Signet",
-        "impact": 2.6,
-        "tags": [
-          "artifact",
-          "mana"
+          "artifact-payoff"
         ],
         "aeon": null
       }

@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 42,
+    "median": 45,
     "p20": 30,
-    "p80": 54,
-    "peak": 81,
+    "p80": 57,
+    "peak": 86,
     "coverage": 93,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "0d9f8fbd4196203afc4348afab368e8d8e0cb44f2a6bef2cc9578866ab82aea4",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Garruk, Primal Hunter\n1 Esix, Fractal Bloom\n1 Curiosity Crafter\n1 Deekah, Fractal Theorist\n1 Spawning Kraken\n1 Guardian Augmenter\n1 Ruxa, Patient Professor\n1 Desolation Twin\n1 Champion of Wits\n1 Crafty Cutpurse\n1 Reef Worm\n1 Arashi, the Sky Asunder\n1 Forgotten Ancient\n1 Hornet Nest\n1 Hornet Queen\n1 Hydra Broodmaster\n1 Incubation Druid\n1 Kazandu Tuskcaller\n1 Managorger Hydra\n1 Rampaging Baloths\n1 Terastodon\n1 Kaseto, Orochi Archmage\n1 Master Biomancer\n1 Biomathematician\n1 Quandrix Cultivator\n1 Zimone, Quandrix Prodigy\n1 Coiling Oracle\n1 Plaxcaster Frogling\n1 Trygon Predator\n1 Replication Technique\n1 Oversimplify\n1 Curse of the Swine\n1 Rite of Replication\n1 Shamanic Revelation\n1 Spitting Image\n1 Golden Ratio\n1 Rampant Growth\n1 Incubation // Incongruity\n1 Perplexing Test\n1 Theoretical Duplication\n1 Return of the Wildspeaker\n1 Biomass Mutation\n1 Eureka Moment\n1 Rapid Hybridization\n1 Beast Within\n1 Krosan Grip\n1 Fractal Harness\n1 Sequence Engine\n1 Geometric Nexus\n1 Idol of Oblivion\n1 Arcane Signet\n1 Simic Signet\n1 Sol Ring\n1 Paradox Zone\n1 Primal Empathy\n1 Exotic Orchard\n1 Lumbering Falls\n1 Mosswort Bridge\n1 Oran-Rief, the Vastwood\n1 Temple of Mystery\n1 Yavimaya Coast\n1 Quandrix Campus\n1 Study Hall\n1 Blighted Woodland\n1 Command Tower\n1 Llanowar Reborn\n1 Lonely Sandbar\n1 Myriad Landscape\n1 Novijen, Heart of Progress\n1 Opal Palace\n1 Simic Growth Chamber\n1 Temple of the False God\n1 Tranquil Thicket\n6 Forest\n5 Forest\n5 Island\n5 Island\n1 Commander's Insight\n1 Ezuri's Predation\n1 Kodama's Reach\n1 Nissa's Expedition\n1 Rogue's Passage",
   "oracleCards": [
@@ -614,7 +614,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "tokens"
+        "tokens",
+        "counter-producer"
       ],
       "isCommander": false
     },
@@ -632,6 +633,7 @@
         "artifact",
         "draw",
         "tokens",
+        "token-payoff",
         "sacrifice"
       ],
       "isCommander": false
@@ -677,6 +679,7 @@
       "tags": [
         "creature",
         "mana",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -788,7 +791,9 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1085,6 +1090,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1647,22 +1653,22 @@
   ],
   "result": {
     "profile": {
-      "median": 42,
+      "median": 45,
       "floor": 30,
-      "ceiling": 54,
-      "peak": 81,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 62,
-      "commanderDelta": 10,
+      "ceiling": 57,
+      "peak": 86,
+      "dispersion": 27,
+      "variance": 27,
+      "consistency": 58,
+      "commanderDelta": 11,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 33,
-      "consistency": 62,
-      "explosiveness": 14,
-      "synergy": 64,
+      "consistency": 58,
+      "explosiveness": 16,
+      "synergy": 82,
       "interaction": 44,
       "resilience": 30
     },
@@ -1682,21 +1688,544 @@
     },
     "packages": [
       {
+        "id": "tokens",
+        "name": "Tokens / conversion",
+        "strength": 100,
+        "cohesion": 100,
+        "producers": [
+          "Biomathematician",
+          "Deekah, Fractal Theorist",
+          "Desolation Twin",
+          "Esix, Fractal Bloom",
+          "Ezuri's Predation",
+          "Fractal Harness",
+          "Garruk, Primal Hunter",
+          "Geometric Nexus",
+          "Hornet Nest",
+          "Hornet Queen"
+        ],
+        "payoffs": [
+          "Curiosity Crafter",
+          "Idol of Oblivion"
+        ],
+        "members": [
+          "Biomathematician",
+          "Deekah, Fractal Theorist",
+          "Desolation Twin",
+          "Esix, Fractal Bloom",
+          "Ezuri's Predation",
+          "Fractal Harness",
+          "Garruk, Primal Hunter",
+          "Geometric Nexus",
+          "Hornet Nest",
+          "Hornet Queen",
+          "Hydra Broodmaster",
+          "Idol of Oblivion",
+          "Kazandu Tuskcaller",
+          "Paradox Zone",
+          "Rampaging Baloths",
+          "Reef Worm",
+          "Replication Technique",
+          "Rite of Replication",
+          "Sequence Engine",
+          "Spawning Kraken",
+          "Spitting Image",
+          "Theoretical Duplication",
+          "Curiosity Crafter"
+        ],
+        "producerCards": [
+          {
+            "name": "Biomathematician",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Deekah, Fractal Theorist",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1",
+              "spellslinger"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Desolation Twin",
+            "cmc": 10,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 10,
+              "colored": [],
+              "total": 10
+            }
+          },
+          {
+            "name": "Esix, Fractal Bloom",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Ezuri's Predation",
+            "cmc": 8,
+            "tags": [
+              "sorcery",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 8
+            }
+          },
+          {
+            "name": "Fractal Harness",
+            "cmc": 3,
+            "tags": [
+              "artifact",
+              "tokens",
+              "etb",
+              "counter-producer",
+              "counter-doubler",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Garruk, Primal Hunter",
+            "cmc": 5,
+            "tags": [
+              "draw",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Geometric Nexus",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1",
+              "counter-kind:charge"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Hornet Nest",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Hornet Queen",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Hydra Broodmaster",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "tokens",
+              "counter-producer"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Idol of Oblivion",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "tokens",
+              "token-payoff",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Kazandu Tuskcaller",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Paradox Zone",
+            "cmc": 5,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "etb",
+              "counter-producer",
+              "counter-doubler",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Rampaging Baloths",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb",
+              "landfall"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Reef Worm",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "tokens",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Replication Technique",
+            "cmc": 5,
+            "tags": [
+              "sorcery",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Rite of Replication",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Sequence Engine",
+            "cmc": 3,
+            "tags": [
+              "artifact",
+              "removal",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Spawning Kraken",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Spitting Image",
+            "cmc": 6,
+            "tags": [
+              "sorcery",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "G",
+                  "U"
+                ],
+                [
+                  "G",
+                  "U"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Theoretical Duplication",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Curiosity Crafter",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "draw",
+              "token-payoff"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Idol of Oblivion",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "tokens",
+              "token-payoff",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          }
+        ],
+        "producerTags": [
+          "tokens"
+        ],
+        "payoffTags": [
+          "token-payoff"
+        ],
+        "evidence": "22 producteur(s), 2 payoff(s), 23 carte(s) distincte(s)."
+      },
+      {
         "id": "counters",
         "name": "Marqueurs",
-        "strength": 81,
-        "cohesion": 81,
+        "strength": 93,
+        "cohesion": 93,
         "producers": [
           "Biomathematician",
           "Deekah, Fractal Theorist",
           "Forgotten Ancient",
           "Fractal Harness",
           "Geometric Nexus",
+          "Incubation Druid",
+          "Llanowar Reborn",
           "Managorger Hydra",
           "Master Biomancer",
-          "Novijen, Heart of Progress",
-          "Opal Palace",
-          "Oran-Rief, the Vastwood"
+          "Novijen, Heart of Progress"
         ],
         "payoffs": [
           "Fractal Harness",
@@ -1708,12 +2237,15 @@
           "Forgotten Ancient",
           "Fractal Harness",
           "Geometric Nexus",
+          "Incubation Druid",
+          "Llanowar Reborn",
           "Managorger Hydra",
           "Master Biomancer",
           "Novijen, Heart of Progress",
           "Opal Palace",
           "Oran-Rief, the Vastwood",
           "Paradox Zone",
+          "Plaxcaster Frogling",
           "Primal Empathy",
           "Sequence Engine"
         ],
@@ -1815,6 +2347,41 @@
               "generic": 2,
               "colored": [],
               "total": 2
+            }
+          },
+          {
+            "name": "Incubation Druid",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "mana",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Llanowar Reborn",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
             }
           },
           {
@@ -1927,6 +2494,27 @@
             }
           },
           {
+            "name": "Plaxcaster Frogling",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
             "name": "Primal Empathy",
             "cmc": 3,
             "tags": [
@@ -2021,7 +2609,7 @@
         "payoffTags": [
           "counter-payoff"
         ],
-        "evidence": "13 producteur(s), 2 payoff(s), 13 carte(s) distincte(s)."
+        "evidence": "16 producteur(s), 2 payoff(s), 16 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2207,6 +2795,7 @@
             "tags": [
               "creature",
               "mana",
+              "counter-producer",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -2352,13 +2941,13 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 32,
-      "median": 40,
-      "high": 49,
-      "ceiling": 49,
-      "peak": 71,
-      "iqr": 13,
-      "consistency": 71,
+      "floor": 33,
+      "median": 43,
+      "high": 52,
+      "ceiling": 52,
+      "peak": 79,
+      "iqr": 15,
+      "consistency": 66,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
       "recoveryAfterDisruption": 81,
@@ -2382,7 +2971,7 @@
         {
           "turn": 3,
           "commander": 32,
-          "engine": 2,
+          "engine": 7,
           "interaction": 32,
           "resource": 34,
           "burst": 6
@@ -2390,7 +2979,7 @@
         {
           "turn": 4,
           "commander": 74,
-          "engine": 8,
+          "engine": 19,
           "interaction": 49,
           "resource": 56,
           "burst": 4
@@ -2398,7 +2987,7 @@
         {
           "turn": 5,
           "commander": 89,
-          "engine": 14,
+          "engine": 30,
           "interaction": 59,
           "resource": 67,
           "burst": 3
@@ -2406,7 +2995,7 @@
         {
           "turn": 6,
           "commander": 93,
-          "engine": 19,
+          "engine": 38,
           "interaction": 64,
           "resource": 74,
           "burst": 2
@@ -2414,7 +3003,7 @@
         {
           "turn": 7,
           "commander": 95,
-          "engine": 23,
+          "engine": 43,
           "interaction": 69,
           "resource": 78,
           "burst": 1
@@ -2443,12 +3032,38 @@
         "aeon": null
       },
       {
+        "name": "Fractal Harness",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "tokens",
+          "etb",
+          "counter-producer",
+          "counter-doubler",
+          "counter-payoff"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Eureka Moment",
         "impact": 3.2,
         "tags": [
           "instant",
           "draw",
           "land-ramp"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Paradox Zone",
+        "impact": 3.2,
+        "tags": [
+          "enchantment",
+          "tokens",
+          "etb",
+          "counter-producer",
+          "counter-doubler",
+          "counter-payoff"
         ],
         "aeon": null
       },
@@ -2464,43 +3079,8 @@
         "aeon": null
       },
       {
-        "name": "Fractal Harness",
-        "impact": 2.6,
-        "tags": [
-          "artifact",
-          "tokens",
-          "etb",
-          "counter-producer",
-          "counter-doubler",
-          "counter-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Rampant Growth",
-        "impact": 2.6,
-        "tags": [
-          "sorcery",
-          "land-ramp"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Paradox Zone",
-        "impact": 2.5,
-        "tags": [
-          "enchantment",
-          "tokens",
-          "etb",
-          "counter-producer",
-          "counter-doubler",
-          "counter-payoff"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Curiosity Crafter",
-        "impact": 2.2,
+        "impact": 2.9,
         "tags": [
           "creature",
           "draw",
@@ -2510,7 +3090,7 @@
       },
       {
         "name": "Sequence Engine",
-        "impact": 2.2,
+        "impact": 2.9,
         "tags": [
           "artifact",
           "removal",
@@ -2522,18 +3102,19 @@
       },
       {
         "name": "Idol of Oblivion",
-        "impact": 2.1,
+        "impact": 2.8,
         "tags": [
           "artifact",
           "draw",
           "tokens",
+          "token-payoff",
           "sacrifice"
         ],
         "aeon": null
       },
       {
         "name": "Garruk, Primal Hunter",
-        "impact": 2,
+        "impact": 2.7,
         "tags": [
           "draw",
           "tokens"
@@ -2542,13 +3123,24 @@
       },
       {
         "name": "Geometric Nexus",
-        "impact": 2,
+        "impact": 2.7,
         "tags": [
           "artifact",
           "tokens",
           "counter-producer",
           "counter-kind:plus1",
           "counter-kind:charge"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Incubation Druid",
+        "impact": 2.6,
+        "tags": [
+          "creature",
+          "mana",
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       }

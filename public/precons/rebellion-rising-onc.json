@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 51,
-    "p20": 38,
+    "median": 52,
+    "p20": 39,
     "p80": 63,
-    "peak": 87,
+    "peak": 88,
     "coverage": 94,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "d96f83fc0e64e591b85766e4ba1e428977475ff8aad1568550ee57d072528d53",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Elspeth Tirel\n1 Adriana, Captain of the Guard\n1 Dragonmaster Outcast\n1 Emeria Angel\n1 Goldnight Commander\n1 Harmonious Archon\n1 Jor Kadeen, the Prevailer\n1 Legion Warboss\n1 Loyal Apprentice\n1 Mentor of the Meek\n1 Myr Battlesphere\n1 Otharri, Suns' Glory\n1 Phantom General\n1 Prava of the Steel Legion\n1 Siege-Gang Commander\n1 Silverwing Squadron\n1 Solemn Simulacrum\n1 Boros Charm\n1 Call the Coppercoats\n1 Clever Concealment\n1 Flawless Maneuver\n1 Generous Gift\n1 Midnight Haunting\n1 Path to Exile\n1 White Sun's Zenith\n1 Battle Screech\n1 Chain Reaction\n1 Collective Effort\n1 Cut a Deal\n1 Finale of Glory\n1 Goldwardens' Gambit\n1 Hate Mirage\n1 Heroic Reinforcements\n1 Hordeling Outburst\n1 Hour of Reckoning\n1 Increasing Devotion\n1 Martial Coup\n1 Rip Apart\n1 Assemble the Legion\n1 Court of Grace\n1 Felidar Retreat\n1 Intangible Virtue\n1 Roar of Resistance\n1 Arcane Signet\n1 Boros Signet\n1 Commander's Sphere\n1 Fellwar Stone\n1 Glimmer Lens\n1 Hexplate Wallbreaker\n1 Idol of Oblivion\n1 Kemba's Banner\n1 Loxodon Warhammer\n1 Mace of the Valiant\n1 Mask of Memory\n1 Maul of the Skyclaves\n1 Mind Stone\n1 Sol Ring\n1 Soul-Guide Lantern\n1 Staff of the Storyteller\n1 Talisman of Conviction\n1 Vulshok Factory\n1 Boros Garrison\n1 Buried Ruin\n1 Castle Ardenvale\n1 Castle Embereth\n1 Command Tower\n1 Exotic Orchard\n1 Forgotten Cave\n1 Furycalm Snarl\n1 Kher Keep\n1 Myriad Landscape\n1 Path of Ancestry\n1 Secluded Steppe\n1 Slayers' Stronghold\n1 Temple of Triumph\n1 Temple of the False God\n1 Windbrisk Heights\n11 Plains\n11 Mountain",
   "oracleCards": [
@@ -97,6 +97,7 @@
       "tags": [
         "enchantment",
         "tokens",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:muster"
       ],
@@ -786,7 +787,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "wipe"
+        "wipe",
+        "token-payoff"
       ],
       "isCommander": false
     },
@@ -804,6 +806,7 @@
         "artifact",
         "draw",
         "tokens",
+        "token-payoff",
         "sacrifice"
       ],
       "isCommander": false
@@ -914,7 +917,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "tokens"
+        "tokens",
+        "counter-producer"
       ],
       "isCommander": false
     },
@@ -967,6 +971,7 @@
       "tags": [
         "artifact",
         "etb",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:charge"
       ],
@@ -1473,6 +1478,7 @@
         "tokens",
         "token-payoff",
         "etb",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -1560,6 +1566,7 @@
         "mana",
         "tokens",
         "sacrifice",
+        "counter-producer",
         "counter-kind:charge"
       ],
       "isCommander": false
@@ -1608,14 +1615,14 @@
   ],
   "result": {
     "profile": {
-      "median": 51,
-      "floor": 38,
+      "median": 52,
+      "floor": 39,
       "ceiling": 63,
-      "peak": 87,
+      "peak": 88,
       "dispersion": 24,
       "variance": 24,
       "consistency": 59,
-      "commanderDelta": 13,
+      "commanderDelta": 14,
       "coverage": 94,
       "dataCoverage": 94
     },
@@ -1660,6 +1667,8 @@
           "Finale of Glory"
         ],
         "payoffs": [
+          "Hour of Reckoning",
+          "Idol of Oblivion",
           "Intangible Virtue",
           "Phantom General",
           "Prava of the Steel Legion",
@@ -1697,6 +1706,7 @@
           "Staff of the Storyteller",
           "Vulshok Factory",
           "White Sun's Zenith",
+          "Hour of Reckoning",
           "Intangible Virtue",
           "Phantom General",
           "Roar of Resistance"
@@ -1708,6 +1718,7 @@
             "tags": [
               "enchantment",
               "tokens",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:muster"
             ],
@@ -2003,6 +2014,7 @@
               "artifact",
               "draw",
               "tokens",
+              "token-payoff",
               "sacrifice"
             ],
             "manaReq": {
@@ -2050,7 +2062,8 @@
             "cmc": 3,
             "tags": [
               "creature",
-              "tokens"
+              "tokens",
+              "counter-producer"
             ],
             "manaReq": {
               "generic": 2,
@@ -2222,6 +2235,7 @@
               "tokens",
               "token-payoff",
               "etb",
+              "counter-producer",
               "counter-kind:generic"
             ],
             "manaReq": {
@@ -2242,6 +2256,7 @@
               "mana",
               "tokens",
               "sacrifice",
+              "counter-producer",
               "counter-kind:charge"
             ],
             "manaReq": {
@@ -2279,6 +2294,46 @@
           }
         ],
         "payoffCards": [
+          {
+            "name": "Hour of Reckoning",
+            "cmc": 7,
+            "tags": [
+              "sorcery",
+              "wipe",
+              "token-payoff"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Idol of Oblivion",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "tokens",
+              "token-payoff",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
           {
             "name": "Intangible Virtue",
             "cmc": 2,
@@ -2357,6 +2412,7 @@
               "tokens",
               "token-payoff",
               "etb",
+              "counter-producer",
               "counter-kind:generic"
             ],
             "manaReq": {
@@ -2376,7 +2432,7 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "30 producteur(s), 5 payoff(s), 33 carte(s) distincte(s)."
+        "evidence": "30 producteur(s), 7 payoff(s), 34 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2512,6 +2568,7 @@
               "mana",
               "tokens",
               "sacrifice",
+              "counter-producer",
               "counter-kind:charge"
             ],
             "manaReq": {
@@ -2553,7 +2610,7 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 92,
+      "score": 95,
       "connected": [
         "Assemble the Legion",
         "Battle Screech",
@@ -2570,6 +2627,7 @@
         "Hate Mirage",
         "Heroic Reinforcements",
         "Hordeling Outburst",
+        "Hour of Reckoning",
         "Idol of Oblivion",
         "Increasing Devotion",
         "Intangible Virtue",
@@ -2604,11 +2662,11 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 38,
-      "median": 47,
-      "high": 56,
-      "ceiling": 56,
-      "peak": 80,
+      "floor": 39,
+      "median": 48,
+      "high": 57,
+      "ceiling": 57,
+      "peak": 81,
       "iqr": 15,
       "consistency": 67,
       "commanderMedianTurn": 4,
@@ -2626,7 +2684,7 @@
         {
           "turn": 2,
           "commander": 3,
-          "engine": 4,
+          "engine": 5,
           "interaction": 24,
           "resource": 36,
           "burst": 8
@@ -2634,7 +2692,7 @@
         {
           "turn": 3,
           "commander": 28,
-          "engine": 16,
+          "engine": 20,
           "interaction": 39,
           "resource": 54,
           "burst": 11
@@ -2642,7 +2700,7 @@
         {
           "turn": 4,
           "commander": 75,
-          "engine": 33,
+          "engine": 39,
           "interaction": 50,
           "resource": 65,
           "burst": 13
@@ -2650,7 +2708,7 @@
         {
           "turn": 5,
           "commander": 89,
-          "engine": 41,
+          "engine": 48,
           "interaction": 57,
           "resource": 70,
           "burst": 13
@@ -2658,7 +2716,7 @@
         {
           "turn": 6,
           "commander": 93,
-          "engine": 48,
+          "engine": 55,
           "interaction": 63,
           "resource": 74,
           "burst": 13
@@ -2666,7 +2724,7 @@
         {
           "turn": 7,
           "commander": 95,
-          "engine": 52,
+          "engine": 61,
           "interaction": 67,
           "resource": 77,
           "burst": 13
@@ -2704,7 +2762,7 @@
           "tokens",
           "token-payoff",
           "etb",
-          "counter-kind:generic"
+          "counter-producer"
         ],
         "aeon": null
       },
@@ -2738,6 +2796,7 @@
           "mana",
           "tokens",
           "sacrifice",
+          "counter-producer",
           "counter-kind:charge"
         ],
         "aeon": null
@@ -2749,6 +2808,7 @@
           "artifact",
           "draw",
           "tokens",
+          "token-payoff",
           "sacrifice"
         ],
         "aeon": null

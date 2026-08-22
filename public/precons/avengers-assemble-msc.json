@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 42,
-    "p20": 33,
-    "p80": 50,
-    "peak": 72,
-    "coverage": 90,
+    "median": 52,
+    "p20": 43,
+    "p80": 61,
+    "peak": 81,
+    "coverage": 93,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "55774b0f578df4978509bf2b13c3daa71e96d32a55b3ace0dc149d44c5c085cd",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Avenge\n1 Falcon and Redwing\n1 Hercules, Olympian Hero\n1 Heroic Return\n1 Heroic Sacrifice\n1 Methods of the Mighty\n1 Winter Soldier, Reborn Avenger\n1 Iron Man, Armored Avenger\n1 Jarvis, Earth's Mightiest Butler\n1 Professor Hulk\n1 The Wasp, Winsome Avenger\n1 West Coast Expansion\n1 Firebird, Blazing Ranger\n1 Photon, Mighty Marvel\n1 She-Hulk, Wallbreaker\n1 War Machine, Avenging Arsenal\n1 Ant-Man, Elusive Avenger\n1 Black Widow, Agile Avenger\n1 Captain Marvel, Apex Avenger\n1 Director Nick Fury\n1 Hawkeye, Avenging Archer\n1 Love on the Battlefield\n1 Quicksilver, Speedster\n1 Scarlet Witch, Chaotic Avenger\n1 Shang-Chi and the Ten Rings\n1 Avengers Quinjet\n1 Hulkbuster Armor\n1 Jocasta, Automaton Avenger\n1 Vision, Synthezoid Avenger\n1 Austere Command\n1 Bastion Protector\n1 Dismantling Wave\n1 Folk Hero\n1 Gift of Immortality\n1 Kindred Discovery\n1 Door of Destinies\n1 Metallic Mimic\n1 Tome of Legends\n1 Clifftop Retreat\n1 Coastal Peak\n1 Exotic Orchard\n1 Frostboil Snarl\n1 Furycalm Snarl\n1 Glacial Fortress\n1 Glittering Massif\n1 Irrigated Farmland\n1 Plaza of Heroes\n1 Port Town\n1 Prairie Stream\n1 Radiant Summit\n1 Scavenger Grounds\n1 Scorched Geyser\n1 Spectator Seating\n1 Sulfur Falls\n1 Raise the Palisade\n1 Thor, Asgard's Avenger\n1 Captain Mar-Vell, Space-Born\n1 Patriot, Shield Wielder\n1 Speed, Young Avenger\n1 Captain America, Living Legend\n1 Avengers Tower\n1 Destroy Evil\n1 Make Your Move\n1 Swords to Plowshares\n1 Arcane Denial\n1 Reconnaissance Mission\n1 Rip Apart\n1 Arcane Signet\n1 Hero's Blade\n1 Relic of Legends\n1 Sol Ring\n1 Talisman of Conviction\n1 Talisman of Creativity\n1 Talisman of Progress\n1 Thought Vessel\n1 Command Tower\n1 Mystic Monastery\n1 Path of Ancestry\n1 Secluded Courtyard\n1 Unclaimed Territory\n1 Fellwar Stone\n1 Herald's Horn\n1 Rescue, Pepper Potts\n3 Plains\n3 Plains\n3 Island\n2 Island\n3 Mountain\n2 Mountain",
   "oracleCards": [
@@ -298,6 +298,7 @@
       "tags": [
         "creature",
         "protection",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:generic"
       ],
@@ -438,6 +439,7 @@
       "tags": [
         "artifact",
         "etb",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:charge"
       ],
@@ -758,6 +760,7 @@
       "tags": [
         "instant",
         "draw",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -793,6 +796,7 @@
         "creature",
         "artifact",
         "counter-producer",
+        "counter-payoff",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1742,7 +1746,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "artifact"
+        "artifact",
+        "counter-payoff"
       ],
       "isCommander": false
     },
@@ -1790,22 +1795,22 @@
   ],
   "result": {
     "profile": {
-      "median": 42,
-      "floor": 33,
-      "ceiling": 50,
-      "peak": 72,
-      "dispersion": 17,
-      "variance": 17,
+      "median": 52,
+      "floor": 43,
+      "ceiling": 61,
+      "peak": 81,
+      "dispersion": 18,
+      "variance": 18,
       "consistency": 68,
       "commanderDelta": 9,
-      "coverage": 90,
-      "dataCoverage": 90
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
-      "speed": 41,
+      "speed": 43,
       "consistency": 68,
       "explosiveness": 21,
-      "synergy": 11,
+      "synergy": 79,
       "interaction": 55,
       "resilience": 46
     },
@@ -1823,7 +1828,424 @@
       "avgCmc": 3.360655737704918,
       "unknownManaLands": 0
     },
-    "packages": [],
+    "packages": [
+      {
+        "id": "counters",
+        "name": "Marqueurs",
+        "strength": 94,
+        "cohesion": 94,
+        "producers": [
+          "Captain Marvel, Apex Avenger",
+          "Door of Destinies",
+          "Falcon and Redwing",
+          "Hercules, Olympian Hero",
+          "Heroic Return",
+          "Heroic Sacrifice",
+          "Iron Man, Armored Avenger",
+          "Jocasta, Automaton Avenger",
+          "Love on the Battlefield",
+          "Metallic Mimic"
+        ],
+        "payoffs": [
+          "Captain Marvel, Apex Avenger",
+          "Door of Destinies",
+          "Iron Man, Armored Avenger"
+        ],
+        "members": [
+          "Captain Marvel, Apex Avenger",
+          "Door of Destinies",
+          "Falcon and Redwing",
+          "Hercules, Olympian Hero",
+          "Heroic Return",
+          "Heroic Sacrifice",
+          "Iron Man, Armored Avenger",
+          "Jocasta, Automaton Avenger",
+          "Love on the Battlefield",
+          "Metallic Mimic",
+          "Methods of the Mighty",
+          "Rescue, Pepper Potts",
+          "Shang-Chi and the Ten Rings",
+          "She-Hulk, Wallbreaker",
+          "Vision, Synthezoid Avenger",
+          "Winter Soldier, Reborn Avenger"
+        ],
+        "producerCards": [
+          {
+            "name": "Captain Marvel, Apex Avenger",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "protection",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Door of Destinies",
+            "cmc": 4,
+            "tags": [
+              "artifact",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:charge"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
+            }
+          },
+          {
+            "name": "Falcon and Redwing",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Hercules, Olympian Hero",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "protection",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Heroic Return",
+            "cmc": 6,
+            "tags": [
+              "instant",
+              "recursion",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Heroic Sacrifice",
+            "cmc": 2,
+            "tags": [
+              "instant",
+              "draw",
+              "counter-producer",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Iron Man, Armored Avenger",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "artifact",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Jocasta, Automaton Avenger",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "artifact",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [],
+              "total": 3
+            }
+          },
+          {
+            "name": "Love on the Battlefield",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Metallic Mimic",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "artifact",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Methods of the Mighty",
+            "cmc": 4,
+            "tags": [
+              "instant",
+              "removal",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Rescue, Pepper Potts",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "artifact",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Shang-Chi and the Ten Rings",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "draw",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "She-Hulk, Wallbreaker",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Vision, Synthezoid Avenger",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "artifact",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
+            }
+          },
+          {
+            "name": "Winter Soldier, Reborn Avenger",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Captain Marvel, Apex Avenger",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "protection",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Door of Destinies",
+            "cmc": 4,
+            "tags": [
+              "artifact",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:charge"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
+            }
+          },
+          {
+            "name": "Iron Man, Armored Avenger",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "artifact",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          }
+        ],
+        "producerTags": [
+          "counter-producer"
+        ],
+        "payoffTags": [
+          "counter-payoff"
+        ],
+        "evidence": "16 producteur(s), 3 payoff(s), 16 carte(s) distincte(s)."
+      }
+    ],
     "combos": [],
     "commanderSynergy": {
       "score": 39,
@@ -1856,14 +2278,14 @@
     "simulation": {
       "iterations": 3200,
       "floor": 37,
-      "median": 43,
-      "high": 49,
-      "ceiling": 49,
-      "peak": 66,
+      "median": 44,
+      "high": 51,
+      "ceiling": 51,
+      "peak": 68,
       "iqr": 10,
       "consistency": 77,
       "commanderMedianTurn": 3,
-      "engineMedianTurn": null,
+      "engineMedianTurn": 5,
       "recoveryAfterDisruption": 93,
       "turnProfile": [
         {
@@ -1893,7 +2315,7 @@
         {
           "turn": 4,
           "commander": 89,
-          "engine": 0,
+          "engine": 3,
           "interaction": 59,
           "resource": 72,
           "burst": 17
@@ -1901,7 +2323,7 @@
         {
           "turn": 5,
           "commander": 94,
-          "engine": 0,
+          "engine": 6,
           "interaction": 67,
           "resource": 81,
           "burst": 20
@@ -1909,7 +2331,7 @@
         {
           "turn": 6,
           "commander": 96,
-          "engine": 0,
+          "engine": 9,
           "interaction": 72,
           "resource": 87,
           "burst": 23
@@ -1917,7 +2339,7 @@
         {
           "turn": 7,
           "commander": 98,
-          "engine": 0,
+          "engine": 11,
           "interaction": 76,
           "resource": 90,
           "burst": 25
@@ -1958,12 +2380,34 @@
         "aeon": null
       },
       {
+        "name": "Shang-Chi and the Ten Rings",
+        "impact": 3,
+        "tags": [
+          "creature",
+          "draw",
+          "counter-producer",
+          "counter-kind:plus1"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Sol Ring",
         "impact": 3,
         "tags": [
           "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Heroic Sacrifice",
+        "impact": 2.5,
+        "tags": [
+          "instant",
+          "draw",
+          "counter-producer",
+          "counter-kind:generic"
         ],
         "aeon": null
       },
@@ -1997,17 +2441,6 @@
         "aeon": null
       },
       {
-        "name": "Shang-Chi and the Ten Rings",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "draw",
-          "counter-producer",
-          "counter-kind:plus1"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Tome of Legends",
         "impact": 2.3,
         "tags": [
@@ -2035,15 +2468,6 @@
           "enchantment",
           "draw",
           "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Reconnaissance Mission",
-        "impact": 2.2,
-        "tags": [
-          "enchantment",
-          "draw"
         ],
         "aeon": null
       }

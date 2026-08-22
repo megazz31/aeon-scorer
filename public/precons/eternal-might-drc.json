@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 44,
-    "p20": 31,
+    "median": 45,
+    "p20": 30,
     "p80": 57,
     "peak": 87,
     "coverage": 93,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "78c461646a89c5d186d5732aa5e41747660173c09d75800571d9c714c1f52020",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Hashaton, Scarab's Fist\n1 On Wings of Gold\n1 Priest of the Crossing\n1 Renewed Solidarity\n1 Wizened Mentor\n1 Prophet of the Scarab\n1 Rhet-Tomb Mystic\n1 Lost Monarch of Ifnir\n1 Accursed Duneyard\n1 Commence the Endgame\n1 Cryptbreaker\n1 Grave Titan\n1 Gravecrawler\n1 Midnight Reaper\n1 Murderous Rider // Swift End\n1 Zombie Master\n1 Angel of Sanctions\n1 Dusk // Dawn\n1 God-Eternal Oketra\n1 Timeless Dragon\n1 Champion of Wits\n1 Forgotten Creation\n1 Pull from Tomorrow\n1 Vizier of Many Faces\n1 Archfiend of Ifnir\n1 Cemetery Reaper\n1 Crowded Crypt\n1 Damn\n1 Dread Summons\n1 Dreadhorde Invasion\n1 Liliana, Death's Majesty\n1 Never // Return\n1 Plague Belcher\n1 Rot Hulk\n1 The Scarab God\n1 God-Pharaoh's Gift\n1 Maskwood Nexus\n1 Adarkar Wastes\n1 Caves of Koilos\n1 Drowned Catacomb\n1 Exotic Orchard\n1 Fetid Pools\n1 Glacial Fortress\n1 Irrigated Farmland\n1 Isolated Chapel\n1 Prairie Stream\n1 Sunken Hollow\n1 Temple of Deceit\n1 Temple of Silence\n1 Underground River\n1 Unholy Grotto\n1 Swords to Plowshares\n1 Corpse Augur\n1 Corpse Knight\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Path of Ancestry\n1 Binding Mummy\n1 Cast Out\n1 Eternal Skylord\n1 Fleshbag Marauder\n1 Gempalm Polluter\n1 Lord of the Accursed\n1 Twisted Abomination\n1 Undead Augur\n1 Despark\n1 Gleaming Overseer\n1 Lazotep Chancellor\n1 Wayward Servant\n1 Bontu's Monument\n1 Commander's Sphere\n1 Dimir Signet\n1 Gate to the Afterlife\n1 Orzhov Signet\n1 Talisman of Dominance\n1 Talisman of Hierarchy\n1 Arcane Sanctum\n1 Ash Barrens\n1 Desert of the Glorified\n1 Desert of the Mindful\n1 Desert of the True\n1 Evolving Wilds\n1 Orzhov Basilica\n1 Terramorphic Expanse\n5 Plains\n4 Island\n5 Swamp",
   "oracleCards": [
@@ -361,7 +361,10 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "draw"
+        "draw",
+        "tokens",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -423,6 +426,7 @@
         "tokens",
         "sacrifice",
         "death-payoff",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:any"
       ],
@@ -603,7 +607,10 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "tokens",
         "token-payoff",
+        "counter-producer",
+        "counter-kind:plus1",
         "lifegain"
       ],
       "isCommander": false
@@ -664,8 +671,11 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "tokens",
         "token-payoff",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -843,8 +853,11 @@
       "tags": [
         "creature",
         "protection",
+        "tokens",
         "token-payoff",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1018,7 +1031,10 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "graveyard-setup"
+        "graveyard-setup",
+        "tokens",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1813,14 +1829,14 @@
   ],
   "result": {
     "profile": {
-      "median": 44,
-      "floor": 31,
+      "median": 45,
+      "floor": 30,
       "ceiling": 57,
       "peak": 87,
       "dispersion": 27,
       "variance": 27,
       "consistency": 59,
-      "commanderDelta": 6,
+      "commanderDelta": 7,
       "coverage": 93,
       "dataCoverage": 93
     },
@@ -1854,15 +1870,15 @@
         "cohesion": 100,
         "producers": [
           "Cemetery Reaper",
+          "Commence the Endgame",
           "Crowded Crypt",
           "Cryptbreaker",
           "Dread Summons",
+          "Dreadhorde Invasion",
+          "Eternal Skylord",
+          "Gleaming Overseer",
           "God-Eternal Oketra",
-          "God-Pharaoh's Gift",
-          "Grave Titan",
-          "Hashaton, Scarab's Fist",
-          "Liliana, Death's Majesty",
-          "Maskwood Nexus"
+          "God-Pharaoh's Gift"
         ],
         "payoffs": [
           "Dreadhorde Invasion",
@@ -1872,23 +1888,25 @@
         ],
         "members": [
           "Cemetery Reaper",
+          "Commence the Endgame",
           "Crowded Crypt",
           "Cryptbreaker",
           "Dread Summons",
+          "Dreadhorde Invasion",
+          "Eternal Skylord",
+          "Gleaming Overseer",
           "God-Eternal Oketra",
           "God-Pharaoh's Gift",
           "Grave Titan",
           "Hashaton, Scarab's Fist",
+          "Lazotep Chancellor",
           "Liliana, Death's Majesty",
           "Maskwood Nexus",
           "Never // Return",
           "On Wings of Gold",
           "Renewed Solidarity",
           "The Scarab God",
-          "Wizened Mentor",
-          "Dreadhorde Invasion",
-          "Eternal Skylord",
-          "Gleaming Overseer"
+          "Wizened Mentor"
         ],
         "producerCards": [
           {
@@ -1913,6 +1931,29 @@
             }
           },
           {
+            "name": "Commence the Endgame",
+            "cmc": 6,
+            "tags": [
+              "instant",
+              "draw",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
             "name": "Crowded Crypt",
             "cmc": 3,
             "tags": [
@@ -1921,6 +1962,7 @@
               "tokens",
               "sacrifice",
               "death-payoff",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:any"
             ],
@@ -1971,6 +2013,73 @@
                 ]
               ],
               "total": 2
+            }
+          },
+          {
+            "name": "Dreadhorde Invasion",
+            "cmc": 2,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "token-payoff",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Eternal Skylord",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens",
+              "token-payoff",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Gleaming Overseer",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "protection",
+              "tokens",
+              "token-payoff",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
             }
           },
           {
@@ -2039,6 +2148,29 @@
               "colored": [
                 [
                   "W"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Lazotep Chancellor",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "graveyard-setup",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "U"
                 ],
                 [
                   "B"
@@ -2187,7 +2319,10 @@
             "cmc": 2,
             "tags": [
               "enchantment",
+              "tokens",
               "token-payoff",
+              "counter-producer",
+              "counter-kind:plus1",
               "lifegain"
             ],
             "manaReq": {
@@ -2205,8 +2340,11 @@
             "cmc": 5,
             "tags": [
               "creature",
+              "tokens",
               "token-payoff",
-              "etb"
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 4,
@@ -2224,8 +2362,11 @@
             "tags": [
               "creature",
               "protection",
+              "tokens",
               "token-payoff",
-              "etb"
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -2266,7 +2407,7 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "15 producteur(s), 4 payoff(s), 18 carte(s) distincte(s)."
+        "evidence": "20 producteur(s), 4 payoff(s), 20 carte(s) distincte(s)."
       },
       {
         "id": "graveyard",
@@ -2362,7 +2503,10 @@
             "cmc": 2,
             "tags": [
               "creature",
-              "graveyard-setup"
+              "graveyard-setup",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
@@ -2621,6 +2765,7 @@
               "tokens",
               "sacrifice",
               "death-payoff",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:any"
             ],
@@ -2759,7 +2904,7 @@
     "simulation": {
       "iterations": 3200,
       "floor": 34,
-      "median": 43,
+      "median": 44,
       "high": 53,
       "ceiling": 53,
       "peak": 81,
@@ -2796,7 +2941,7 @@
         {
           "turn": 4,
           "commander": 41,
-          "engine": 22,
+          "engine": 24,
           "interaction": 52,
           "resource": 65,
           "burst": 0
@@ -2804,7 +2949,7 @@
         {
           "turn": 5,
           "commander": 72,
-          "engine": 34,
+          "engine": 36,
           "interaction": 65,
           "resource": 77,
           "burst": 0
@@ -2812,7 +2957,7 @@
         {
           "turn": 6,
           "commander": 85,
-          "engine": 43,
+          "engine": 44,
           "interaction": 72,
           "resource": 82,
           "burst": 0
@@ -2820,7 +2965,7 @@
         {
           "turn": 7,
           "commander": 90,
-          "engine": 50,
+          "engine": 52,
           "interaction": 77,
           "resource": 87,
           "burst": 0
@@ -2869,7 +3014,7 @@
           "tokens",
           "sacrifice",
           "death-payoff",
-          "counter-payoff"
+          "counter-producer"
         ],
         "aeon": null
       },
@@ -2908,6 +3053,30 @@
         "aeon": null
       },
       {
+        "name": "Lazotep Chancellor",
+        "impact": 2.7,
+        "tags": [
+          "creature",
+          "graveyard-setup",
+          "tokens",
+          "counter-producer",
+          "counter-kind:plus1"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commence the Endgame",
+        "impact": 2.6,
+        "tags": [
+          "instant",
+          "draw",
+          "tokens",
+          "counter-producer",
+          "counter-kind:plus1"
+        ],
+        "aeon": null
+      },
+      {
         "name": "The Scarab God",
         "impact": 2.6,
         "tags": [
@@ -2935,26 +3104,6 @@
           "draw",
           "graveyard-setup",
           "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Midnight Reaper",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "draw",
-          "death-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Undead Augur",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "draw",
-          "death-payoff"
         ],
         "aeon": null
       }

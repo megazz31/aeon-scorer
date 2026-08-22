@@ -35,9 +35,9 @@
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "a2fad3e921fc7e5af3316bec4a816e86486239ec71cfaf8fd8ff6a4e013e4276",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Liliana, Death's Majesty\n1 Forgotten Creation\n1 Havengul Runebinder\n1 Stitcher Geralf\n1 Undead Alchemist\n1 Butcher of Malakir\n1 Cemetery Reaper\n1 Death Baron\n1 Diregraf Colossus\n1 Eater of Hope\n1 Gravespawn Sovereign\n1 Midnight Reaper\n1 Overseer of the Damned\n1 Gisa and Geralf\n1 Eternal Skylord\n1 Corpse Augur\n1 Fleshbag Marauder\n1 Liliana's Devotee\n1 Lord of the Accursed\n1 Spark Reaper\n1 Undead Augur\n1 Diregraf Captain\n1 Gleaming Overseer\n1 Ruthless Deathfang\n1 Hour of Eternity\n1 Army of the Damned\n1 Dark Salvation\n1 Dread Summons\n1 Zombie Apocalypse\n1 Distant Melody\n1 Feed the Swarm\n1 Syphon Flesh\n1 Aetherspouts\n1 Go for the Throat\n1 Arcane Signet\n1 Charcoal Diamond\n1 Commander's Sphere\n1 Sky Diamond\n1 Sol Ring\n1 Talisman of Dominance\n1 Rooftop Storm\n1 Dreadhorde Invasion\n1 Endless Ranks of the Dead\n1 Liliana's Mastery\n1 Open the Graves\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Sunken Hollow\n1 Temple of Deceit\n1 Bojuka Bog\n1 Command Tower\n1 Dimir Aqueduct\n1 Mortuary Mire\n1 Myriad Landscape\n1 Path of Ancestry\n1 Tainted Isle\n1 Unclaimed Territory\n12 Island\n15 Swamp\n1 Eloise, Nephalia Sleuth\n1 Cleaver Skaab\n1 Curse of Unbinding\n1 Drown in Dreams\n1 Empty the Laboratory\n1 Hordewing Skaab\n1 Shadow Kin\n1 Crowded Crypt\n1 Curse of the Restless Dead\n1 Ghouls' Night Out\n1 Gorex, the Tombshell\n1 Prowling Geistcatcher\n1 Ravenous Rotbelly\n1 Tomb Tyrant",
   "oracleCards": [
@@ -305,6 +305,7 @@
         "tokens",
         "sacrifice",
         "death-payoff",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:any"
       ],
@@ -517,7 +518,10 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "tokens",
         "token-payoff",
+        "counter-producer",
+        "counter-kind:plus1",
         "lifegain"
       ],
       "isCommander": false
@@ -633,8 +637,11 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "tokens",
         "token-payoff",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -769,8 +776,11 @@
       "tags": [
         "creature",
         "protection",
+        "tokens",
         "token-payoff",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1572,9 +1582,9 @@
           "Curse of the Restless Dead",
           "Diregraf Colossus",
           "Dread Summons",
+          "Dreadhorde Invasion",
           "Eloise, Nephalia Sleuth",
-          "Endless Ranks of the Dead",
-          "Havengul Runebinder"
+          "Endless Ranks of the Dead"
         ],
         "payoffs": [
           "Dreadhorde Invasion",
@@ -1590,8 +1600,11 @@
           "Curse of the Restless Dead",
           "Diregraf Colossus",
           "Dread Summons",
+          "Dreadhorde Invasion",
           "Eloise, Nephalia Sleuth",
           "Endless Ranks of the Dead",
+          "Eternal Skylord",
+          "Gleaming Overseer",
           "Havengul Runebinder",
           "Hour of Eternity",
           "Liliana's Devotee",
@@ -1601,10 +1614,7 @@
           "Overseer of the Damned",
           "Stitcher Geralf",
           "Syphon Flesh",
-          "Undead Alchemist",
-          "Dreadhorde Invasion",
-          "Eternal Skylord",
-          "Gleaming Overseer"
+          "Undead Alchemist"
         ],
         "producerCards": [
           {
@@ -1678,6 +1688,7 @@
               "tokens",
               "sacrifice",
               "death-payoff",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:any"
             ],
@@ -1751,6 +1762,27 @@
             }
           },
           {
+            "name": "Dreadhorde Invasion",
+            "cmc": 2,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "token-payoff",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
             "name": "Eloise, Nephalia Sleuth",
             "cmc": 5,
             "tags": [
@@ -1792,6 +1824,52 @@
                 ]
               ],
               "total": 4
+            }
+          },
+          {
+            "name": "Eternal Skylord",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens",
+              "token-payoff",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Gleaming Overseer",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "protection",
+              "tokens",
+              "token-payoff",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
             }
           },
           {
@@ -2003,7 +2081,10 @@
             "cmc": 2,
             "tags": [
               "enchantment",
+              "tokens",
               "token-payoff",
+              "counter-producer",
+              "counter-kind:plus1",
               "lifegain"
             ],
             "manaReq": {
@@ -2045,8 +2126,11 @@
             "cmc": 5,
             "tags": [
               "creature",
+              "tokens",
               "token-payoff",
-              "etb"
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 4,
@@ -2064,8 +2148,11 @@
             "tags": [
               "creature",
               "protection",
+              "tokens",
               "token-payoff",
-              "etb"
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -2087,7 +2174,7 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "19 producteur(s), 4 payoff(s), 22 carte(s) distincte(s)."
+        "evidence": "22 producteur(s), 4 payoff(s), 22 carte(s) distincte(s)."
       },
       {
         "id": "sacrifice",
@@ -2237,6 +2324,7 @@
               "tokens",
               "sacrifice",
               "death-payoff",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:any"
             ],
@@ -2696,6 +2784,7 @@
               "tokens",
               "sacrifice",
               "death-payoff",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:any"
             ],
@@ -2870,7 +2959,7 @@
         {
           "turn": 4,
           "commander": 81,
-          "engine": 20,
+          "engine": 21,
           "interaction": 55,
           "resource": 60,
           "burst": 0
@@ -2878,7 +2967,7 @@
         {
           "turn": 5,
           "commander": 92,
-          "engine": 36,
+          "engine": 37,
           "interaction": 62,
           "resource": 72,
           "burst": 0
@@ -2886,7 +2975,7 @@
         {
           "turn": 6,
           "commander": 95,
-          "engine": 46,
+          "engine": 47,
           "interaction": 67,
           "resource": 78,
           "burst": 0
@@ -2911,7 +3000,7 @@
           "tokens",
           "sacrifice",
           "death-payoff",
-          "counter-payoff"
+          "counter-producer"
         ],
         "aeon": null
       },

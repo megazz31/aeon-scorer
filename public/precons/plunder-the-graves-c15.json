@@ -41,9 +41,9 @@
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "3e4c6a5d69b728a91a47ff6b16b2812c387118b07f3e7042b967ef641f064048",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Sakura-Tribe Elder\n1 Satyr Wayfinder\n1 Viridian Emissary\n1 Wall of Blossoms\n1 Viridian Zealot\n1 Korozda Guildmage\n1 Lotleth Troll\n1 Blood Bairn\n1 Phyrexian Rager\n1 Skullwinder\n1 Wood Elves\n1 Eternal Witness\n1 Corpse Augur\n1 Centaur Vinecrasher\n1 Bloodspore Thrinax\n1 Jarad, Golgari Lich Lord\n1 Shriekmaw\n1 Indrik Stomphowler\n1 Kessig Cagebreakers\n1 Banshee of the Dread Choir\n1 Phyrexian Plaguelord\n1 Acidic Slime\n1 Mycoloth\n1 Mazirek, Kraul Death Priest\n1 Vulturous Zombie\n1 Great Oak Guardian\n1 Champion of Stray Souls\n1 Extractor Demon\n1 Thief of Blood\n1 Pathbreaker Ibex\n1 Cloudthresher\n1 Butcher of Malakir\n1 Eater of Hope\n1 Scourge of Nel Toth\n1 Caller of the Pack\n1 Terastodon\n1 Verdant Force\n1 Mulch\n1 Victimize\n1 Primal Growth\n1 Ambition's Cost\n1 Sever the Bloodline\n1 Barter in Blood\n1 Rise from the Grave\n1 Spider Spawning\n1 Overwhelming Stampede\n1 Dread Summons\n1 Altar's Reap\n1 Tribute to the Wild\n1 Golgari Charm\n1 Grisly Salvage\n1 Putrefy\n1 Wretched Confluence\n1 Skullclamp\n1 Sol Ring\n1 Golgari Signet\n1 Lightning Greaves\n1 Thought Vessel\n1 Bonehoard\n1 Eldrazi Monument\n1 Diabolic Servitude\n1 Command Tower\n1 Evolving Wilds\n1 Golgari Guildgate\n1 Golgari Rot Farm\n1 Grim Backwoods\n1 High Market\n1 Jungle Hollow\n1 Polluted Mire\n1 Slippery Karst\n1 Tainted Wood\n1 Terramorphic Expanse\n1 Vivid Grove\n1 Vivid Marsh\n4 Swamp\n3 Swamp\n3 Swamp\n3 Swamp\n3 Forest\n3 Forest\n3 Forest\n3 Forest",
   "oracleCards": [
@@ -853,6 +853,7 @@
       "tags": [
         "creature",
         "tokens",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:plus1"
       ],
@@ -1849,13 +1850,14 @@
       {
         "id": "counters",
         "name": "Marqueurs",
-        "strength": 59,
-        "cohesion": 59,
+        "strength": 58,
+        "cohesion": 58,
         "producers": [
           "Bloodspore Thrinax",
           "Centaur Vinecrasher",
           "Lotleth Troll",
           "Mazirek, Kraul Death Priest",
+          "Mycoloth",
           "Thief of Blood",
           "Vulturous Zombie"
         ],
@@ -1868,9 +1870,9 @@
           "Centaur Vinecrasher",
           "Lotleth Troll",
           "Mazirek, Kraul Death Priest",
+          "Mycoloth",
           "Thief of Blood",
-          "Vulturous Zombie",
-          "Mycoloth"
+          "Vulturous Zombie"
         ],
         "producerCards": [
           {
@@ -1958,6 +1960,29 @@
             }
           },
           {
+            "name": "Mycoloth",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
             "name": "Thief of Blood",
             "cmc": 6,
             "tags": [
@@ -2009,6 +2034,7 @@
             "tags": [
               "creature",
               "tokens",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:plus1"
             ],
@@ -2055,7 +2081,7 @@
         "payoffTags": [
           "counter-payoff"
         ],
-        "evidence": "6 producteur(s), 2 payoff(s), 7 carte(s) distincte(s)."
+        "evidence": "7 producteur(s), 2 payoff(s), 7 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2443,6 +2469,7 @@
         "tags": [
           "creature",
           "tokens",
+          "counter-producer",
           "counter-payoff",
           "counter-kind:plus1"
         ],

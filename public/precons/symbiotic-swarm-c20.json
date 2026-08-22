@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 35,
-    "p20": 23,
-    "p80": 48,
-    "peak": 79,
+    "median": 37,
+    "p20": 24,
+    "p80": 50,
+    "peak": 84,
     "coverage": 94,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "7a693b5c8f1090cad963c7f5d3f395ed7a768330a47ce747a2416960cbd39478",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Ajani Unyielding\n1 Tayam, Luminous Enigma\n1 Nikara, Lair Scavenger\n1 Yannik, Scavenging Sentinel\n1 Avenging Huntbonder\n1 Cartographer's Hawk\n1 Vitality Hunter\n1 Daring Fiendbonder\n1 Slippery Bogbonder\n1 Akroma, Angel of Wrath\n1 Angel of Finality\n1 Cataclysmic Gearhulk\n1 Kalemne's Captain\n1 Odric, Lunarch Marshal\n1 Reveillark\n1 Solemn Recruit\n1 Sunblast Angel\n1 Zetalpa, Primal Dawn\n1 Cairn Wanderer\n1 Soul of Innistrad\n1 Soulflayer\n1 Hornet Queen\n1 Majestic Myriarch\n1 Splinterfright\n1 Archon of Valor's Reach\n1 Karametra, God of Harvests\n1 Void Beckoner\n1 Titanoth Rex\n1 Aerial Responder\n1 Vampire Nighthawk\n1 Acidic Slime\n1 Sakura-Tribe Elder\n1 Satyr Wayfinder\n1 Skullwinder\n1 Nyx Weaver\n1 Selective Adaptation\n1 Ever After\n1 Duneblast\n1 Unbreakable Bond\n1 Unburial Rites\n1 Cultivate\n1 Harmonize\n1 Obscuring Haze\n1 Blood Curdle\n1 Abzan Charm\n1 Deathsprout\n1 Despark\n1 Grisly Salvage\n1 Netherborn Altar\n1 Mimic Vat\n1 Bonder's Ornament\n1 Arcane Signet\n1 Commander's Sphere\n1 Sol Ring\n1 Swiftfoot Boots\n1 Together Forever\n1 Abzan Ascendancy\n1 Deadbridge Chant\n1 Martial Impetus\n1 Parasitic Impetus\n1 Predatory Impetus\n1 Nesting Grounds\n1 Canopy Vista\n1 Caves of Koilos\n1 Exotic Orchard\n1 Gavony Township\n1 Grim Backwoods\n1 Sungrass Prairie\n1 Blighted Woodland\n1 Command Tower\n1 Golgari Rot Farm\n1 Krosan Verge\n1 Memorial to Folly\n1 Myriad Landscape\n1 Orzhov Basilica\n1 Sandsteppe Citadel\n1 Selesnya Sanctuary\n1 Blossoming Sands\n1 Evolving Wilds\n1 Jungle Hollow\n1 Scoured Barrens\n3 Plains\n2 Plains\n2 Plains\n3 Swamp\n2 Swamp\n2 Swamp\n2 Forest\n1 Forest\n1 Forest",
   "oracleCards": [
@@ -140,6 +140,7 @@
       "producedMana": [],
       "tags": [
         "removal",
+        "counter-producer",
         "counter-kind:plus1",
         "counter-kind:loyalty"
       ],
@@ -238,6 +239,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -278,6 +280,7 @@
       "tags": [
         "instant",
         "removal",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -506,6 +509,7 @@
       "tags": [
         "creature",
         "protection",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -826,7 +830,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "wipe"
+        "wipe",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1026,6 +1032,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:any"
       ],
@@ -1367,6 +1374,7 @@
         "creature",
         "protection",
         "etb",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -1579,6 +1587,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -1598,8 +1607,9 @@
       "tags": [
         "enchantment",
         "etb",
+        "counter-producer",
         "counter-payoff",
-        "counter-kind:generic"
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1674,6 +1684,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:generic",
         "lifegain"
       ],
@@ -1693,6 +1704,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -1738,24 +1750,24 @@
   ],
   "result": {
     "profile": {
-      "median": 35,
-      "floor": 23,
-      "ceiling": 48,
-      "peak": 79,
-      "dispersion": 25,
-      "variance": 25,
-      "consistency": 62,
-      "commanderDelta": 5,
+      "median": 37,
+      "floor": 24,
+      "ceiling": 50,
+      "peak": 84,
+      "dispersion": 26,
+      "variance": 26,
+      "consistency": 61,
+      "commanderDelta": 6,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 24,
-      "consistency": 62,
-      "explosiveness": 18,
-      "synergy": 49,
+      "consistency": 61,
+      "explosiveness": 19,
+      "synergy": 60,
       "interaction": 30,
-      "resilience": 57
+      "resilience": 58
     },
     "roles": {
       "lands": 38,
@@ -1772,6 +1784,444 @@
       "unknownManaLands": 0
     },
     "packages": [
+      {
+        "id": "counters",
+        "name": "Marqueurs",
+        "strength": 90,
+        "cohesion": 90,
+        "producers": [
+          "Abzan Ascendancy",
+          "Ajani Unyielding",
+          "Avenging Huntbonder",
+          "Blood Curdle",
+          "Daring Fiendbonder",
+          "Gavony Township",
+          "Kalemne's Captain",
+          "Netherborn Altar",
+          "Slippery Bogbonder",
+          "Solemn Recruit"
+        ],
+        "payoffs": [
+          "Netherborn Altar",
+          "Tayam, Luminous Enigma",
+          "Together Forever"
+        ],
+        "members": [
+          "Abzan Ascendancy",
+          "Ajani Unyielding",
+          "Avenging Huntbonder",
+          "Blood Curdle",
+          "Daring Fiendbonder",
+          "Gavony Township",
+          "Kalemne's Captain",
+          "Netherborn Altar",
+          "Slippery Bogbonder",
+          "Solemn Recruit",
+          "Tayam, Luminous Enigma",
+          "Titanoth Rex",
+          "Together Forever",
+          "Vitality Hunter",
+          "Void Beckoner"
+        ],
+        "producerCards": [
+          {
+            "name": "Abzan Ascendancy",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "death-payoff",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Ajani Unyielding",
+            "cmc": 6,
+            "tags": [
+              "removal",
+              "counter-producer",
+              "counter-kind:plus1",
+              "counter-kind:loyalty"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Avenging Huntbonder",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Blood Curdle",
+            "cmc": 4,
+            "tags": [
+              "instant",
+              "removal",
+              "counter-producer",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Daring Fiendbonder",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "protection",
+              "counter-producer",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Gavony Township",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Kalemne's Captain",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "wipe",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Netherborn Altar",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:any"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Slippery Bogbonder",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "protection",
+              "etb",
+              "counter-producer",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Solemn Recruit",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Tayam, Luminous Enigma",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion",
+              "graveyard-setup",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Titanoth Rex",
+            "cmc": 9,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 7,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 9
+            }
+          },
+          {
+            "name": "Together Forever",
+            "cmc": 2,
+            "tags": [
+              "enchantment",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Vitality Hunter",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:generic",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Void Beckoner",
+            "cmc": 8,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 6,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 8
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Netherborn Altar",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:any"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Tayam, Luminous Enigma",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion",
+              "graveyard-setup",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Together Forever",
+            "cmc": 2,
+            "tags": [
+              "enchantment",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          }
+        ],
+        "producerTags": [
+          "counter-producer"
+        ],
+        "payoffTags": [
+          "counter-payoff"
+        ],
+        "evidence": "15 producteur(s), 3 payoff(s), 15 carte(s) distincte(s)."
+      },
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
@@ -2062,201 +2512,6 @@
         "evidence": "3 producteur(s), 9 payoff(s), 10 carte(s) distincte(s)."
       },
       {
-        "id": "counters",
-        "name": "Marqueurs",
-        "strength": 62,
-        "cohesion": 62,
-        "producers": [
-          "Abzan Ascendancy",
-          "Gavony Township",
-          "Solemn Recruit",
-          "Tayam, Luminous Enigma"
-        ],
-        "payoffs": [
-          "Netherborn Altar",
-          "Tayam, Luminous Enigma",
-          "Together Forever"
-        ],
-        "members": [
-          "Abzan Ascendancy",
-          "Gavony Township",
-          "Solemn Recruit",
-          "Tayam, Luminous Enigma",
-          "Netherborn Altar",
-          "Together Forever"
-        ],
-        "producerCards": [
-          {
-            "name": "Abzan Ascendancy",
-            "cmc": 3,
-            "tags": [
-              "enchantment",
-              "tokens",
-              "death-payoff",
-              "etb",
-              "counter-producer",
-              "counter-kind:plus1"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [
-                [
-                  "W"
-                ],
-                [
-                  "B"
-                ],
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Gavony Township",
-            "cmc": 0,
-            "tags": [
-              "land",
-              "mana",
-              "counter-producer",
-              "counter-kind:plus1"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [],
-              "total": 0
-            }
-          },
-          {
-            "name": "Solemn Recruit",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "counter-producer",
-              "counter-kind:plus1"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "W"
-                ],
-                [
-                  "W"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Tayam, Luminous Enigma",
-            "cmc": 4,
-            "tags": [
-              "creature",
-              "recursion",
-              "graveyard-setup",
-              "etb",
-              "counter-producer",
-              "counter-payoff",
-              "counter-kind:generic"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "W"
-                ],
-                [
-                  "B"
-                ],
-                [
-                  "G"
-                ]
-              ],
-              "total": 4
-            }
-          }
-        ],
-        "payoffCards": [
-          {
-            "name": "Netherborn Altar",
-            "cmc": 2,
-            "tags": [
-              "artifact",
-              "counter-payoff",
-              "counter-kind:any"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "B"
-                ]
-              ],
-              "total": 2
-            }
-          },
-          {
-            "name": "Tayam, Luminous Enigma",
-            "cmc": 4,
-            "tags": [
-              "creature",
-              "recursion",
-              "graveyard-setup",
-              "etb",
-              "counter-producer",
-              "counter-payoff",
-              "counter-kind:generic"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "W"
-                ],
-                [
-                  "B"
-                ],
-                [
-                  "G"
-                ]
-              ],
-              "total": 4
-            }
-          },
-          {
-            "name": "Together Forever",
-            "cmc": 2,
-            "tags": [
-              "enchantment",
-              "etb",
-              "counter-payoff",
-              "counter-kind:generic"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [
-                [
-                  "W"
-                ],
-                [
-                  "W"
-                ]
-              ],
-              "total": 2
-            }
-          }
-        ],
-        "producerTags": [
-          "counter-producer"
-        ],
-        "payoffTags": [
-          "counter-payoff"
-        ],
-        "evidence": "4 producteur(s), 3 payoff(s), 6 carte(s) distincte(s)."
-      },
-      {
         "id": "early-commander",
         "name": "Accélération du commandant",
         "strength": 45,
@@ -2389,12 +2644,15 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 11,
+      "score": 20,
       "connected": [
         "Abzan Ascendancy",
+        "Ajani Unyielding",
         "Gavony Township",
+        "Kalemne's Captain",
         "Netherborn Altar",
-        "Solemn Recruit"
+        "Solemn Recruit",
+        "Together Forever"
       ],
       "tags": [
         "counter-producer",
@@ -2409,16 +2667,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 26,
-      "median": 35,
-      "high": 44,
-      "ceiling": 44,
-      "peak": 69,
+      "floor": 27,
+      "median": 36,
+      "high": 45,
+      "ceiling": 45,
+      "peak": 74,
       "iqr": 14,
-      "consistency": 70,
+      "consistency": 69,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 61,
+      "recoveryAfterDisruption": 62,
       "turnProfile": [
         {
           "turn": 1,
@@ -2431,7 +2689,7 @@
         {
           "turn": 2,
           "commander": 0,
-          "engine": 0,
+          "engine": 1,
           "interaction": 3,
           "resource": 16,
           "burst": 0
@@ -2439,7 +2697,7 @@
         {
           "turn": 3,
           "commander": 5,
-          "engine": 2,
+          "engine": 3,
           "interaction": 14,
           "resource": 29,
           "burst": 4
@@ -2447,7 +2705,7 @@
         {
           "turn": 4,
           "commander": 27,
-          "engine": 7,
+          "engine": 10,
           "interaction": 36,
           "resource": 44,
           "burst": 8
@@ -2455,7 +2713,7 @@
         {
           "turn": 5,
           "commander": 61,
-          "engine": 13,
+          "engine": 20,
           "interaction": 50,
           "resource": 57,
           "burst": 9
@@ -2463,7 +2721,7 @@
         {
           "turn": 6,
           "commander": 75,
-          "engine": 18,
+          "engine": 27,
           "interaction": 61,
           "resource": 65,
           "burst": 10
@@ -2471,7 +2729,7 @@
         {
           "turn": 7,
           "commander": 82,
-          "engine": 21,
+          "engine": 32,
           "interaction": 68,
           "resource": 71,
           "burst": 12
@@ -2567,6 +2825,17 @@
         "aeon": null
       },
       {
+        "name": "Kalemne's Captain",
+        "impact": 2.1,
+        "tags": [
+          "creature",
+          "wipe",
+          "counter-producer",
+          "counter-kind:plus1"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Abzan Ascendancy",
         "impact": 1.9,
         "tags": [
@@ -2595,16 +2864,6 @@
           "instant",
           "land-ramp",
           "removal"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Sakura-Tribe Elder",
-        "impact": 1.9,
-        "tags": [
-          "creature",
-          "land-ramp",
-          "sacrifice"
         ],
         "aeon": null
       }

@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 36,
-    "p20": 26,
-    "p80": 50,
+    "median": 37,
+    "p20": 27,
+    "p80": 51,
     "peak": 81,
     "coverage": 92,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "cb98329652473a6f72b22b25faac6bcae34e6e8023dcf3959202d19d06cd9499",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Hull Breach\n1 Cultivate\n1 Explore\n1 Farseek\n1 Rampant Growth\n1 Starstorm\n1 Aetherize\n1 Inspiring Call\n1 Harrow\n1 Icon of Ancestry\n1 Herald's Horn\n1 Sol Ring\n1 Arcane Signet\n1 Abundance\n1 Death's Presence\n1 Hardened Scales\n1 Bred for the Hunt\n1 New Horizons\n1 Overgrowth\n1 Cinder Glade\n1 Exotic Orchard\n1 Game Trail\n1 Temple of Abandon\n1 Temple of Epiphany\n1 Temple of Mystery\n1 Ash Barrens\n1 Frontier Bivouac\n1 Unclaimed Territory\n1 Cave of Temptation\n1 Command Tower\n1 Evolving Wilds\n1 Opal Palace\n1 Path of Ancestry\n1 Rugged Highlands\n1 Terramorphic Expanse\n1 Thornwood Falls\n7 Mountain\n7 Island\n8 Forest\n1 Magus Lucea Kane\n1 Genestealer Patriarch\n1 Exocrine\n1 The Red Terror\n1 Screamer-Killer\n1 Biophagus\n1 Bone Sabres\n1 Broodlord\n1 Clamavus\n1 Haruspex\n1 Hierophant Bio-Titan\n1 Hormagaunt Horde\n1 Lictor\n1 Nexos\n1 Old One Eye\n1 Sporocyst\n1 Termagant Swarm\n1 Tervigon\n1 Toxicrene\n1 Tyrant Guard\n1 Atalan Jackal\n1 Deathleaper, Terror Weapon\n1 The First Tyrannic War\n1 Gargoyle Flock\n1 Ghyrson Starn, Kelermorph\n1 Malanthrope\n1 Mawloc\n1 Ravener\n1 Shadow in the Warp\n1 Tyranid Harridan\n1 Tyranid Prime\n1 Winged Hive Tyrant\n1 Zoanthrope\n1 Genestealer Locus\n1 Acolyte Hybrid\n1 Aberrant\n1 Purestrain Genestealer\n1 Tyranid Invasion\n1 Trygon Prime\n1 Venomthrope\n1 Goliath Truck",
   "oracleCards": [
@@ -217,6 +217,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -616,6 +617,7 @@
       "tags": [
         "creature",
         "tokens",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -1569,7 +1571,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1677,9 +1681,9 @@
   ],
   "result": {
     "profile": {
-      "median": 36,
-      "floor": 26,
-      "ceiling": 50,
+      "median": 37,
+      "floor": 27,
+      "ceiling": 51,
       "peak": 81,
       "dispersion": 25,
       "variance": 25,
@@ -1689,10 +1693,10 @@
       "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 34,
+      "speed": 36,
       "consistency": 61,
       "explosiveness": 12,
-      "synergy": 72,
+      "synergy": 73,
       "interaction": 23,
       "resilience": 23
     },
@@ -1718,6 +1722,7 @@
         "cohesion": 100,
         "producers": [
           "Biophagus",
+          "Bone Sabres",
           "Cave of Temptation",
           "Death's Presence",
           "Goliath Truck",
@@ -1725,8 +1730,7 @@
           "Magus Lucea Kane",
           "Malanthrope",
           "New Horizons",
-          "Opal Palace",
-          "Purestrain Genestealer"
+          "Opal Palace"
         ],
         "payoffs": [
           "Clamavus",
@@ -1736,6 +1740,7 @@
         ],
         "members": [
           "Biophagus",
+          "Bone Sabres",
           "Cave of Temptation",
           "Death's Presence",
           "Goliath Truck",
@@ -1748,6 +1753,7 @@
           "The First Tyrannic War",
           "The Red Terror",
           "Trygon Prime",
+          "Tyranid Prime",
           "Clamavus",
           "Hardened Scales",
           "Hierophant Bio-Titan",
@@ -1772,6 +1778,24 @@
                 ]
               ],
               "total": 2
+            }
+          },
+          {
+            "name": "Bone Sabres",
+            "cmc": 3,
+            "tags": [
+              "artifact",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
             }
           },
           {
@@ -2011,6 +2035,27 @@
               ],
               "total": 4
             }
+          },
+          {
+            "name": "Tyranid Prime",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
           }
         ],
         "payoffCards": [
@@ -2099,7 +2144,7 @@
         "payoffTags": [
           "counter-payoff"
         ],
-        "evidence": "13 producteur(s), 4 payoff(s), 17 carte(s) distincte(s)."
+        "evidence": "15 producteur(s), 4 payoff(s), 19 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2499,9 +2544,10 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 51,
+      "score": 57,
       "connected": [
         "Biophagus",
+        "Bone Sabres",
         "Cave of Temptation",
         "Clamavus",
         "Death's Presence",
@@ -2518,7 +2564,8 @@
         "Termagant Swarm",
         "The First Tyrannic War",
         "The Red Terror",
-        "Trygon Prime"
+        "Trygon Prime",
+        "Tyranid Prime"
       ],
       "tags": [
         "death-payoff",
@@ -2544,7 +2591,7 @@
       "iqr": 14,
       "consistency": 69,
       "commanderMedianTurn": 5,
-      "engineMedianTurn": 5,
+      "engineMedianTurn": 4,
       "recoveryAfterDisruption": 41,
       "turnProfile": [
         {
@@ -2574,7 +2621,7 @@
         {
           "turn": 4,
           "commander": 18,
-          "engine": 16,
+          "engine": 18,
           "interaction": 26,
           "resource": 25,
           "burst": 0
@@ -2582,7 +2629,7 @@
         {
           "turn": 5,
           "commander": 46,
-          "engine": 24,
+          "engine": 25,
           "interaction": 31,
           "resource": 31,
           "burst": 0
@@ -2590,7 +2637,7 @@
         {
           "turn": 6,
           "commander": 69,
-          "engine": 30,
+          "engine": 31,
           "interaction": 34,
           "resource": 36,
           "burst": 0
@@ -2598,7 +2645,7 @@
         {
           "turn": 7,
           "commander": 80,
-          "engine": 34,
+          "engine": 35,
           "interaction": 38,
           "resource": 41,
           "burst": 0

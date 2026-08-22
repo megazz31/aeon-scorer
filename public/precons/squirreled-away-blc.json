@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 53,
-    "p20": 41,
-    "p80": 66,
+    "median": 54,
+    "p20": 42,
+    "p80": 65,
     "peak": 89,
     "coverage": 95,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "05c01355e0db690766cbf76fba9b57efc755caf80657b6a8cdad9e2d70c8de82",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 The Odd Acorn Gang\n1 Garruk, Cursed Huntsman\n1 Chittering Witch\n1 Insatiable Frugivore\n1 Moonstone Eulogist\n1 Swarmyard Massacre\n1 Hazel's Brewmaster\n1 Woe Strider\n1 Saw in Half\n1 Ogre Slumlord\n1 Decree of Pain\n1 Gourmand's Talent\n1 Rootcast Apprenticeship\n1 Scurry of Squirrels\n1 End-Raze Forerunners\n1 Arasta of the Endless Web\n1 Deep Forest Hermit\n1 Toski, Bearer of Secrets\n1 Beastmaster Ascension\n1 Second Harvest\n1 Shamanic Revelation\n1 Chatterfang, Squirrel General\n1 Temple of Malady\n1 Casualties of War\n1 Windgrace's Judgment\n1 Maskwood Nexus\n1 Academy Manufactor\n1 Woodland Cemetery\n1 Necroblossom Snarl\n1 Oran-Rief, the Vastwood\n1 Swarmyard\n1 Exotic Orchard\n1 Llanowar Wastes\n1 Grim Backwoods\n1 Viridescent Bog\n1 Twilight Mire\n1 Gilded Goose\n1 Chitterspitter\n1 Maelstrom Pulse\n1 Beledros Witherbloom\n1 Idol of Oblivion\n1 Sword of the Squeak\n1 Morbid Opportunist\n1 Nadier's Nightblade\n1 Plumb the Forbidden\n1 Bastion of Remembrance\n1 Plaguecrafter\n1 Cache Grab\n1 Chatterstorm\n1 Poison-Tip Archer\n1 Moldervine Reclamation\n1 Ravenous Squirrel\n1 Skyfisher Spider\n1 Binding the Old Gods\n1 Golgari Rot Farm\n1 Jungle Hollow\n1 Haunted Mire\n1 Nested Shambler\n1 Deadly Dispute\n1 Zulaport Cutthroat\n1 Squirrel Sovereign\n1 Prosperous Innkeeper\n1 Haywire Mite\n1 Tireless Provisioner\n1 Squirrel Nest\n1 Honored Dreyleader\n1 Tear Asunder\n1 Wolfwillow Haven\n1 Putrefy\n1 Arcane Signet\n1 Golgari Signet\n1 Talisman of Resilience\n1 Sol Ring\n1 Skullclamp\n1 Terramorphic Expanse\n1 Path of Ancestry\n1 Evolving Wilds\n1 Command Tower\n1 Tranquil Thicket\n1 Bojuka Bog\n1 Tainted Wood\n1 Barren Moor\n4 Swamp\n4 Swamp\n5 Forest\n4 Forest",
   "oracleCards": [
@@ -156,6 +156,7 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "counter-producer",
         "counter-kind:quest"
       ],
       "isCommander": false
@@ -336,6 +337,7 @@
         "tokens",
         "token-payoff",
         "sacrifice",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:any"
       ],
@@ -522,6 +524,7 @@
         "draw",
         "removal",
         "tokens",
+        "counter-producer",
         "counter-kind:loyalty"
       ],
       "isCommander": false
@@ -771,6 +774,7 @@
         "artifact",
         "draw",
         "tokens",
+        "token-payoff",
         "sacrifice"
       ],
       "isCommander": false
@@ -1799,12 +1803,12 @@
   ],
   "result": {
     "profile": {
-      "median": 53,
-      "floor": 41,
-      "ceiling": 66,
+      "median": 54,
+      "floor": 42,
+      "ceiling": 65,
       "peak": 89,
-      "dispersion": 25,
-      "variance": 25,
+      "dispersion": 24,
+      "variance": 24,
       "consistency": 58,
       "commanderDelta": 11,
       "coverage": 95,
@@ -1852,6 +1856,7 @@
         ],
         "payoffs": [
           "Chitterspitter",
+          "Idol of Oblivion",
           "Nadier's Nightblade",
           "Rootcast Apprenticeship",
           "Second Harvest"
@@ -2029,6 +2034,7 @@
               "tokens",
               "token-payoff",
               "sacrifice",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:any"
             ],
@@ -2091,6 +2097,7 @@
               "draw",
               "removal",
               "tokens",
+              "counter-producer",
               "counter-kind:loyalty"
             ],
             "manaReq": {
@@ -2175,6 +2182,7 @@
               "artifact",
               "draw",
               "tokens",
+              "token-payoff",
               "sacrifice"
             ],
             "manaReq": {
@@ -2450,6 +2458,7 @@
               "tokens",
               "token-payoff",
               "sacrifice",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:any"
             ],
@@ -2461,6 +2470,22 @@
                 ]
               ],
               "total": 3
+            }
+          },
+          {
+            "name": "Idol of Oblivion",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "tokens",
+              "token-payoff",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
             }
           },
           {
@@ -2529,7 +2554,7 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "28 producteur(s), 4 payoff(s), 29 carte(s) distincte(s)."
+        "evidence": "28 producteur(s), 5 payoff(s), 29 carte(s) distincte(s)."
       },
       {
         "id": "sacrifice",
@@ -2989,6 +3014,7 @@
               "tokens",
               "token-payoff",
               "sacrifice",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:any"
             ],
@@ -3039,6 +3065,7 @@
               "artifact",
               "draw",
               "tokens",
+              "token-payoff",
               "sacrifice"
             ],
             "manaReq": {
@@ -3535,8 +3562,8 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 41,
-      "median": 50,
+      "floor": 42,
+      "median": 51,
       "high": 60,
       "ceiling": 60,
       "peak": 84,
@@ -3557,7 +3584,7 @@
         {
           "turn": 2,
           "commander": 2,
-          "engine": 10,
+          "engine": 11,
           "interaction": 22,
           "resource": 35,
           "burst": 0
@@ -3565,7 +3592,7 @@
         {
           "turn": 3,
           "commander": 28,
-          "engine": 28,
+          "engine": 31,
           "interaction": 45,
           "resource": 51,
           "burst": 0
@@ -3573,7 +3600,7 @@
         {
           "turn": 4,
           "commander": 76,
-          "engine": 50,
+          "engine": 54,
           "interaction": 68,
           "resource": 65,
           "burst": 0
@@ -3581,7 +3608,7 @@
         {
           "turn": 5,
           "commander": 92,
-          "engine": 62,
+          "engine": 67,
           "interaction": 76,
           "resource": 73,
           "burst": 0
@@ -3589,7 +3616,7 @@
         {
           "turn": 6,
           "commander": 95,
-          "engine": 70,
+          "engine": 74,
           "interaction": 82,
           "resource": 79,
           "burst": 0
@@ -3597,7 +3624,7 @@
         {
           "turn": 7,
           "commander": 97,
-          "engine": 76,
+          "engine": 80,
           "interaction": 86,
           "resource": 82,
           "burst": 0
@@ -3670,6 +3697,7 @@
           "artifact",
           "draw",
           "tokens",
+          "token-payoff",
           "sacrifice"
         ],
         "aeon": null
@@ -3693,6 +3721,7 @@
           "draw",
           "removal",
           "tokens",
+          "counter-producer",
           "counter-kind:loyalty"
         ],
         "aeon": null

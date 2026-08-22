@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 51,
-    "p20": 39,
+    "p20": 40,
     "p80": 64,
     "peak": 91,
     "coverage": 94,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "b128c835750b09830f77780fca91149008f9b066e5d3ba49a55509e22e3e9644",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Liberty Prime, Recharged\n1 Automated Assembly Line\n1 Brotherhood Scribe\n1 Overencumbered\n1 The Prydwen, Steel Flagship\n1 Sentry Bot\n1 Vault 13: Dweller's Journey\n1 Curie, Emergent Intelligence\n1 James, Wandering Dad // Follow Him\n1 Nick Valentine, Private Eye\n1 Synth Infiltrator\n1 Assaultron Dominator\n1 The Motherlode, Excavator\n1 Plasma Caster\n1 Synth Eradicator\n1 Arcade Gannon\n1 Electrosiphon\n1 Red Death, Shipwrecker\n1 Rex, Cyber-Hound\n1 Sentinel Sarah Lyons\n1 Shaun, Father of Synths\n1 Vault 112: Sadistic Simulation\n1 Brotherhood Vertibird\n1 T-45 Power Armor\n1 Ferrous Lake\n1 HELIOS One\n1 Austere Command\n1 Open the Vaults\n1 Mechanized Production\n1 One with the Machine\n1 Wake the Past\n1 Mystic Forge\n1 Panharmonicon\n1 Solemn Simulacrum\n1 Steel Overseer\n1 Clifftop Retreat\n1 Exotic Orchard\n1 Glacial Fortress\n1 Irrigated Farmland\n1 Prairie Stream\n1 Skycloud Expanse\n1 Spire of Industry\n1 Sulfur Falls\n1 Temple of Enlightenment\n1 Temple of Epiphany\n1 Treasure Vault\n1 Paladin Danse, Steel Maverick\n1 Nerd Rage\n1 Robobrain War Mind\n1 Bottle-Cap Blast\n1 Elder Owyn Lyons\n1 Behemoth of Vault 0\n1 C.A.M.P.\n1 Endurance Bobblehead\n1 Expert-Level Safe\n1 Intelligence Bobblehead\n1 Nuka-Cola Vending Machine\n1 Crush Contraband\n1 Dispatch\n1 Swords to Plowshares\n1 Glimmer of Genius\n1 Thirst for Knowledge\n1 Whirler Rogue\n1 Loyal Apprentice\n1 Unexpected Windfall\n1 Arcane Signet\n1 Everflowing Chalice\n1 Lightning Greaves\n1 Mind Stone\n1 Sol Ring\n1 Talisman of Conviction\n1 Talisman of Creativity\n1 Talisman of Progress\n1 Thought Vessel\n1 Wayfarer's Bauble\n1 Ash Barrens\n1 Buried Ruin\n1 Command Tower\n1 Evolving Wilds\n1 Myriad Landscape\n1 Mystic Monastery\n1 Path of Ancestry\n1 Razortide Bridge\n1 Rustvale Bridge\n1 Silverbluff Bridge\n1 Terramorphic Expanse\n3 Island\n2 Island\n2 Mountain\n2 Mountain\n2 Plains\n2 Plains",
   "oracleCards": [
@@ -60,6 +60,7 @@
         "draw",
         "recursion",
         "graveyard-setup",
+        "counter-producer",
         "counter-kind:quest"
       ],
       "isCommander": false
@@ -120,6 +121,7 @@
         "creature",
         "artifact",
         "etb",
+        "counter-producer",
         "counter-kind:energy"
       ],
       "isCommander": false
@@ -1517,6 +1519,7 @@
       "tags": [
         "artifact",
         "etb",
+        "counter-producer",
         "counter-kind:energy",
         "lifegain"
       ],
@@ -1795,6 +1798,7 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "counter-producer",
         "counter-kind:stun",
         "counter-kind:energy",
         "exile-cast",
@@ -1882,13 +1886,13 @@
   "result": {
     "profile": {
       "median": 51,
-      "floor": 39,
+      "floor": 40,
       "ceiling": 64,
       "peak": 91,
-      "dispersion": 25,
-      "variance": 25,
+      "dispersion": 24,
+      "variance": 24,
       "consistency": 59,
-      "commanderDelta": 14,
+      "commanderDelta": 13,
       "coverage": 94,
       "dataCoverage": 94
     },
@@ -1896,7 +1900,7 @@
       "speed": 43,
       "consistency": 59,
       "explosiveness": 23,
-      "synergy": 92,
+      "synergy": 87,
       "interaction": 34,
       "resilience": 40
     },
@@ -2009,6 +2013,7 @@
               "creature",
               "artifact",
               "etb",
+              "counter-producer",
               "counter-kind:energy"
             ],
             "manaReq": {
@@ -2513,6 +2518,7 @@
             "tags": [
               "artifact",
               "etb",
+              "counter-producer",
               "counter-kind:energy",
               "lifegain"
             ],
@@ -2834,6 +2840,7 @@
               "draw",
               "recursion",
               "graveyard-setup",
+              "counter-producer",
               "counter-kind:quest"
             ],
             "manaReq": {
@@ -2923,6 +2930,7 @@
               "draw",
               "recursion",
               "graveyard-setup",
+              "counter-producer",
               "counter-kind:quest"
             ],
             "manaReq": {
@@ -3003,6 +3011,181 @@
           "recursion"
         ],
         "evidence": "4 producteur(s), 4 payoff(s), 7 carte(s) distincte(s)."
+      },
+      {
+        "id": "counters",
+        "name": "Marqueurs",
+        "strength": 56,
+        "cohesion": 56,
+        "producers": [
+          "Assaultron Dominator",
+          "Everflowing Chalice",
+          "Sentry Bot",
+          "T-45 Power Armor",
+          "Vault 112: Sadistic Simulation"
+        ],
+        "payoffs": [
+          "Everflowing Chalice",
+          "Rex, Cyber-Hound"
+        ],
+        "members": [
+          "Assaultron Dominator",
+          "Everflowing Chalice",
+          "Sentry Bot",
+          "T-45 Power Armor",
+          "Vault 112: Sadistic Simulation",
+          "Rex, Cyber-Hound"
+        ],
+        "producerCards": [
+          {
+            "name": "Assaultron Dominator",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "artifact",
+              "etb",
+              "counter-producer",
+              "counter-kind:energy"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Everflowing Chalice",
+            "cmc": 0,
+            "tags": [
+              "artifact",
+              "mana",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:charge"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Sentry Bot",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "artifact",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1",
+              "counter-kind:energy"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "T-45 Power Armor",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "etb",
+              "counter-producer",
+              "counter-kind:energy",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Vault 112: Sadistic Simulation",
+            "cmc": 4,
+            "tags": [
+              "enchantment",
+              "counter-producer",
+              "counter-kind:stun",
+              "counter-kind:energy",
+              "exile-cast",
+              "cheat",
+              "free"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 4
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Everflowing Chalice",
+            "cmc": 0,
+            "tags": [
+              "artifact",
+              "mana",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:charge"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Rex, Cyber-Hound",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "artifact",
+              "graveyard-setup",
+              "counter-payoff",
+              "counter-kind:energy"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          }
+        ],
+        "producerTags": [
+          "counter-producer"
+        ],
+        "payoffTags": [
+          "counter-payoff"
+        ],
+        "evidence": "5 producteur(s), 2 payoff(s), 6 carte(s) distincte(s)."
       }
     ],
     "combos": [],
@@ -3075,7 +3258,7 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 37,
+      "floor": 38,
       "median": 46,
       "high": 56,
       "ceiling": 56,
@@ -3113,7 +3296,7 @@
         {
           "turn": 4,
           "commander": 77,
-          "engine": 37,
+          "engine": 38,
           "interaction": 38,
           "resource": 57,
           "burst": 14
@@ -3121,7 +3304,7 @@
         {
           "turn": 5,
           "commander": 91,
-          "engine": 51,
+          "engine": 53,
           "interaction": 49,
           "resource": 69,
           "burst": 18
@@ -3129,7 +3312,7 @@
         {
           "turn": 6,
           "commander": 94,
-          "engine": 59,
+          "engine": 61,
           "interaction": 55,
           "resource": 75,
           "burst": 20
@@ -3137,7 +3320,7 @@
         {
           "turn": 7,
           "commander": 96,
-          "engine": 65,
+          "engine": 67,
           "interaction": 60,
           "resource": 79,
           "burst": 22
@@ -3145,6 +3328,19 @@
       ]
     },
     "drivers": [
+      {
+        "name": "Vault 112: Sadistic Simulation",
+        "impact": 4.4,
+        "tags": [
+          "enchantment",
+          "counter-producer",
+          "counter-kind:stun",
+          "counter-kind:energy",
+          "exile-cast",
+          "cheat"
+        ],
+        "aeon": null
+      },
       {
         "name": "Mechanized Production",
         "impact": 4.2,
@@ -3163,19 +3359,6 @@
           "artifact",
           "mana",
           "fast-mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Vault 112: Sadistic Simulation",
-        "impact": 3.7,
-        "tags": [
-          "enchantment",
-          "counter-kind:stun",
-          "counter-kind:energy",
-          "exile-cast",
-          "cheat",
-          "free"
         ],
         "aeon": null
       },
@@ -3233,6 +3416,7 @@
           "draw",
           "recursion",
           "graveyard-setup",
+          "counter-producer",
           "counter-kind:quest"
         ],
         "aeon": null
@@ -3272,13 +3456,13 @@
         "aeon": null
       },
       {
-        "name": "Robobrain War Mind",
+        "name": "Rex, Cyber-Hound",
         "impact": 2.9,
         "tags": [
           "creature",
           "artifact",
-          "draw",
-          "etb",
+          "graveyard-setup",
+          "counter-payoff",
           "counter-kind:energy"
         ],
         "aeon": null

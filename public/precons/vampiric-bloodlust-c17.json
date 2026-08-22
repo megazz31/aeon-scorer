@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 34,
-    "p20": 23,
-    "p80": 47,
-    "peak": 71,
-    "coverage": 92,
+    "median": 38,
+    "p20": 24,
+    "p80": 51,
+    "peak": 80,
+    "coverage": 93,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "f10d66e90102d26cd595458e3113c340ec33202f57dc103e757d9b4710dca3a6",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Licia, Sanguine Tribune\n1 Mathas, Fiend Seeker\n1 Kheru Mind-Eater\n1 Patron of the Vein\n1 Bloodsworn Steward\n1 Crimson Honor Guard\n1 Anowon, the Ruin Sage\n1 Bloodlord of Vaasgoth\n1 Blood Baron of Vizkopa\n1 Butcher of Malakir\n1 Captivating Vampire\n1 Dark Impostor\n1 Drana, Kalastria Bloodchief\n1 Malakir Bloodwitch\n1 Sangromancer\n1 Skeletal Vampire\n1 Vein Drinker\n1 Bloodline Necromancer\n1 Blood Artist\n1 Bloodhusk Ritualist\n1 Falkenrath Noble\n1 Pawn of Ulamog\n1 Vampire Nighthawk\n1 Rakish Heir\n1 Stromkirk Captain\n1 Tithe Drinker\n1 New Blood\n1 Disrupt Decorum\n1 Kindred Charge\n1 Fell the Mighty\n1 Blood Tribute\n1 Consuming Vapors\n1 Damnable Pact\n1 Merciless Eviction\n1 Ambition's Cost\n1 Read the Bones\n1 Syphon Mind\n1 Teferi's Protection\n1 Crackling Doom\n1 Return to Dust\n1 Swords to Plowshares\n1 Go for the Throat\n1 Skeletal Scrying\n1 Mortify\n1 Blade of the Bloodchief\n1 Door of Destinies\n1 Well of Lost Dreams\n1 Heirloom Blade\n1 Boros Signet\n1 Orzhov Signet\n1 Rakdos Signet\n1 Skullclamp\n1 Sol Ring\n1 Worn Powerstone\n1 Kindred Boon\n1 Blind Obedience\n1 Black Market\n1 Sanguine Bond\n1 Underworld Connections\n1 Outpost Siege\n1 Curse of Vitality\n1 Curse of Disturbance\n3 Swamp\n3 Swamp\n2 Swamp\n2 Mountain\n1 Mountain\n1 Mountain\n1 Plains\n1 Plains\n1 Plains\n1 Path of Ancestry\n1 Akoum Refuge\n1 Bloodfell Caves\n1 Bojuka Bog\n1 Boros Garrison\n1 Boros Guildgate\n1 Cinder Barrens\n1 Command Tower\n1 Evolving Wilds\n1 Forsaken Sanctuary\n1 Kabira Crossroads\n1 Nomad Outpost\n1 Opal Palace\n1 Orzhov Basilica\n1 Orzhov Guildgate\n1 Rakdos Carnarium\n1 Rakdos Guildgate\n1 Scoured Barrens\n1 Stone Quarry\n1 Terramorphic Expanse\n1 Urborg Volcano\n1 Wind-Scarred Crag",
   "oracleCards": [
@@ -120,6 +120,7 @@
         "enchantment",
         "mana",
         "death-payoff",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:charge"
       ],
@@ -292,7 +293,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-producer"
       ],
       "isCommander": false
     },
@@ -641,6 +643,7 @@
       "tags": [
         "artifact",
         "etb",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:charge"
       ],
@@ -852,6 +855,7 @@
         "enchantment",
         "protection",
         "etb",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -934,6 +938,7 @@
       "tags": [
         "creature",
         "death-payoff",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -1785,22 +1790,22 @@
   ],
   "result": {
     "profile": {
-      "median": 34,
-      "floor": 23,
-      "ceiling": 47,
-      "peak": 71,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 62,
-      "commanderDelta": 4,
-      "coverage": 92,
-      "dataCoverage": 92
+      "median": 38,
+      "floor": 24,
+      "ceiling": 51,
+      "peak": 80,
+      "dispersion": 27,
+      "variance": 27,
+      "consistency": 59,
+      "commanderDelta": 5,
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
-      "speed": 28,
-      "consistency": 62,
-      "explosiveness": 10,
-      "synergy": 46,
+      "speed": 30,
+      "consistency": 59,
+      "explosiveness": 12,
+      "synergy": 67,
       "interaction": 43,
       "resilience": 32
     },
@@ -1819,6 +1824,434 @@
       "unknownManaLands": 0
     },
     "packages": [
+      {
+        "id": "lifegain",
+        "name": "Points de vie / Synergies",
+        "strength": 100,
+        "cohesion": 100,
+        "producers": [
+          "Akoum Refuge",
+          "Blood Artist",
+          "Blood Baron of Vizkopa",
+          "Blood Tribute",
+          "Bloodfell Caves",
+          "Bloodline Necromancer",
+          "Consuming Vapors",
+          "Curse of Vitality",
+          "Falkenrath Noble",
+          "Kabira Crossroads"
+        ],
+        "payoffs": [
+          "Licia, Sanguine Tribune",
+          "Sanguine Bond",
+          "Well of Lost Dreams"
+        ],
+        "members": [
+          "Akoum Refuge",
+          "Blood Artist",
+          "Blood Baron of Vizkopa",
+          "Blood Tribute",
+          "Bloodfell Caves",
+          "Bloodline Necromancer",
+          "Consuming Vapors",
+          "Curse of Vitality",
+          "Falkenrath Noble",
+          "Kabira Crossroads",
+          "Licia, Sanguine Tribune",
+          "Malakir Bloodwitch",
+          "Sangromancer",
+          "Scoured Barrens",
+          "Tithe Drinker",
+          "Vampire Nighthawk",
+          "Wind-Scarred Crag",
+          "Sanguine Bond",
+          "Well of Lost Dreams"
+        ],
+        "producerCards": [
+          {
+            "name": "Akoum Refuge",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Blood Artist",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "death-payoff",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Blood Baron of Vizkopa",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "protection",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Blood Tribute",
+            "cmc": 6,
+            "tags": [
+              "sorcery",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Bloodfell Caves",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Bloodline Necromancer",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Consuming Vapors",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Curse of Vitality",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Falkenrath Noble",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "death-payoff",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Kabira Crossroads",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Licia, Sanguine Tribune",
+            "cmc": 8,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 8
+            }
+          },
+          {
+            "name": "Malakir Bloodwitch",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "protection",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Sangromancer",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Scoured Barrens",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Tithe Drinker",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Vampire Nighthawk",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Wind-Scarred Crag",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Licia, Sanguine Tribune",
+            "cmc": 8,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 8
+            }
+          },
+          {
+            "name": "Sanguine Bond",
+            "cmc": 5,
+            "tags": [
+              "enchantment",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Well of Lost Dreams",
+            "cmc": 4,
+            "tags": [
+              "artifact",
+              "draw",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
+            }
+          }
+        ],
+        "producerTags": [
+          "lifegain"
+        ],
+        "payoffTags": [
+          "life-payoff"
+        ],
+        "evidence": "17 producteur(s), 3 payoff(s), 19 carte(s) distincte(s)."
+      },
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
@@ -1997,15 +2430,15 @@
     "simulation": {
       "iterations": 3200,
       "floor": 26,
-      "median": 34,
-      "high": 43,
-      "ceiling": 43,
-      "peak": 62,
-      "iqr": 14,
-      "consistency": 70,
+      "median": 36,
+      "high": 45,
+      "ceiling": 45,
+      "peak": 69,
+      "iqr": 15,
+      "consistency": 67,
       "commanderMedianTurn": 5,
-      "engineMedianTurn": null,
-      "recoveryAfterDisruption": 64,
+      "engineMedianTurn": 5,
+      "recoveryAfterDisruption": 65,
       "turnProfile": [
         {
           "turn": 1,
@@ -2026,7 +2459,7 @@
         {
           "turn": 3,
           "commander": 4,
-          "engine": 0,
+          "engine": 1,
           "interaction": 33,
           "resource": 34,
           "burst": 0
@@ -2034,7 +2467,7 @@
         {
           "turn": 4,
           "commander": 23,
-          "engine": 0,
+          "engine": 6,
           "interaction": 47,
           "resource": 50,
           "burst": 0
@@ -2042,7 +2475,7 @@
         {
           "turn": 5,
           "commander": 42,
-          "engine": 0,
+          "engine": 12,
           "interaction": 57,
           "resource": 59,
           "burst": 0
@@ -2050,7 +2483,7 @@
         {
           "turn": 6,
           "commander": 60,
-          "engine": 0,
+          "engine": 16,
           "interaction": 65,
           "resource": 65,
           "burst": 0
@@ -2058,7 +2491,7 @@
         {
           "turn": 7,
           "commander": 73,
-          "engine": 0,
+          "engine": 21,
           "interaction": 71,
           "resource": 69,
           "burst": 0
@@ -2073,6 +2506,16 @@
           "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Well of Lost Dreams",
+        "impact": 2.9,
+        "tags": [
+          "artifact",
+          "draw",
+          "life-payoff"
         ],
         "aeon": null
       },
@@ -2105,16 +2548,6 @@
           "artifact",
           "draw",
           "death-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Well of Lost Dreams",
-        "impact": 2.2,
-        "tags": [
-          "artifact",
-          "draw",
-          "life-payoff"
         ],
         "aeon": null
       },

@@ -30,14 +30,14 @@
     "median": 42,
     "p20": 32,
     "p80": 52,
-    "peak": 77,
+    "peak": 78,
     "coverage": 92,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "fd44bbd26047a9d032ec0b383566925cae70ad2e268fdf001ac0ec7071da9c0a",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Gandalf, Westward Voyager\n1 Raise the Palisade\n1 Trap the Trespassers\n1 Arwen, Weaver of Hope\n1 Galadhrim Ambush\n1 Haldir, Lórien Lieutenant\n1 Legolas Greenleaf\n1 Mirkwood Elk\n1 Travel Through Caradhras\n1 Windswift Slice\n1 Círdan the Shipwright\n1 Elrond of the White Council\n1 Erestor of the Council\n1 Mirkwood Trapper\n1 Radagast, Wizard of Wilds\n1 Sail into the West\n1 Song of Eärendil\n1 Lothlórien Blade\n1 Model of Unity\n1 Colossal Whale\n1 Devastation Tide\n1 Mystic Confluence\n1 Plea for Power\n1 Swan Song\n1 Asceticism\n1 Elvish Archdruid\n1 Elvish Piper\n1 Elvish Warmaster\n1 Genesis Wave\n1 Heroic Intervention\n1 Hornet Queen\n1 Inscription of Abundance\n1 Overwhelming Stampede\n1 Realm Seekers\n1 Seeds of Renewal\n1 Sylvan Offering\n1 Exotic Orchard\n1 Flooded Grove\n1 Hinterland Harbor\n1 Rejuvenating Springs\n1 Vineglimmer Snarl\n1 Lórien Revealed\n1 Celeborn the Wise\n1 Elven Farsight\n1 Wose Pathfinder\n1 Learn from the Past\n1 Opt\n1 Preordain\n1 Arbor Elf\n1 Beast Within\n1 Cultivate\n1 Elvish Mystic\n1 Elvish Visionary\n1 Farhaven Elf\n1 Mirror of Galadriel\n1 Lignify\n1 Paradise Druid\n1 Rampant Growth\n1 Reclamation Sage\n1 Wood Elves\n1 Growth Spiral\n1 Arcane Signet\n1 Commander's Sphere\n1 Lightning Greaves\n1 Sol Ring\n1 Whispersilk Cloak\n1 Ash Barrens\n1 Command Tower\n1 Field of Ruin\n1 Lonely Sandbar\n1 Thornwood Falls\n1 Tranquil Thicket\n1 Woodland Stream\n6 Island\n5 Island\n8 Forest\n7 Forest",
   "oracleCards": [
@@ -1266,6 +1266,7 @@
         "enchantment",
         "mana",
         "tokens",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -1365,6 +1366,7 @@
       "producedMana": [],
       "tags": [
         "instant",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:stun"
       ],
@@ -1517,7 +1519,7 @@
       "median": 42,
       "floor": 32,
       "ceiling": 52,
-      "peak": 77,
+      "peak": 78,
       "dispersion": 20,
       "variance": 20,
       "consistency": 66,
@@ -1529,7 +1531,7 @@
       "speed": 39,
       "consistency": 66,
       "explosiveness": 15,
-      "synergy": 47,
+      "synergy": 49,
       "interaction": 38,
       "resilience": 39
     },
@@ -1815,19 +1817,21 @@
       {
         "id": "counters",
         "name": "Marqueurs",
-        "strength": 55,
-        "cohesion": 55,
+        "strength": 61,
+        "cohesion": 61,
         "producers": [
           "Arwen, Weaver of Hope",
           "Elrond of the White Council",
           "Haldir, Lórien Lieutenant",
           "Inscription of Abundance",
           "Legolas Greenleaf",
-          "Realm Seekers"
+          "Realm Seekers",
+          "Trap the Trespassers"
         ],
         "payoffs": [
           "Elrond of the White Council",
-          "Haldir, Lórien Lieutenant"
+          "Haldir, Lórien Lieutenant",
+          "Trap the Trespassers"
         ],
         "members": [
           "Arwen, Weaver of Hope",
@@ -1835,7 +1839,8 @@
           "Haldir, Lórien Lieutenant",
           "Inscription of Abundance",
           "Legolas Greenleaf",
-          "Realm Seekers"
+          "Realm Seekers",
+          "Trap the Trespassers"
         ],
         "producerCards": [
           {
@@ -1963,6 +1968,25 @@
               ],
               "total": 6
             }
+          },
+          {
+            "name": "Trap the Trespassers",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:stun"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
           }
         ],
         "payoffCards": [
@@ -2008,6 +2032,25 @@
               ],
               "total": 1
             }
+          },
+          {
+            "name": "Trap the Trespassers",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:stun"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
           }
         ],
         "producerTags": [
@@ -2016,7 +2059,7 @@
         "payoffTags": [
           "counter-payoff"
         ],
-        "evidence": "6 producteur(s), 2 payoff(s), 6 carte(s) distincte(s)."
+        "evidence": "7 producteur(s), 3 payoff(s), 7 carte(s) distincte(s)."
       }
     ],
     "combos": [],

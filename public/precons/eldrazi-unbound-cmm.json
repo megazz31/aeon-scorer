@@ -32,9 +32,9 @@
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "69d860ff5e2311a6949e0ea42adab83f5fa3f27b127b799545c36fc467e60885",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Omarthis, Ghostfire Initiate\n1 Kozilek, the Great Distortion\n1 Abstruse Archaic\n1 Calamity of the Titans\n1 Desecrate Reality\n1 Flayer of Loyalties\n1 Rise of the Eldrazi\n1 Skittering Cicada\n1 Ugin's Mastery\n1 Darksteel Monolith\n1 All Is Dust\n1 Endbringer\n1 Endless One\n1 It That Betrays\n1 Matter Reshaper\n1 Oblivion Sower\n1 Ugin, the Ineffable\n1 Ancient Stone Idol\n1 Duplicant\n1 Endless Atlas\n1 Forsaken Monument\n1 Hangarback Walker\n1 Investigator's Journal\n1 Kaldra Compleat\n1 Mazemind Tome\n1 Metalwork Colossus\n1 Mirage Mirror\n1 Myriad Construct\n1 Mystic Forge\n1 Perilous Vault\n1 Phyrexian Triniform\n1 Solemn Simulacrum\n1 Soul of New Phyrexia\n1 Steel Hellkite\n1 Stonecoil Serpent\n1 Transmogrifying Wand\n1 Arch of Orazca\n1 Blast Zone\n1 Bonders' Enclave\n1 Geier Reach Sanitarium\n1 Mirrorpool\n1 Ruins of Oran-Rief\n1 Scavenger Grounds\n1 Sea Gate Wreckage\n1 Shrine of the Forsaken Gods\n1 Tyrite Sanctum\n1 War Room\n1 Burnished Hart\n1 Geode Golem\n1 Lightning Greaves\n1 Meteor Golem\n1 Sol Ring\n1 Thought Vessel\n1 Thran Dynamo\n1 Unstable Obelisk\n1 Reliquary Tower\n1 Rogue's Passage\n1 Artisan of Kozilek\n1 Bane of Bala Ged\n1 Not of This World\n1 Spatial Contortion\n1 Titan's Presence\n1 Warping Wail\n1 Crashing Drawbridge\n1 Dreamstone Hedron\n1 Everflowing Chalice\n1 Fireshrieker\n1 Hedron Archive\n1 Mind Stone\n1 Ornithopter of Paradise\n1 Palladium Myr\n1 Scaretiller\n1 Suspicious Bookcase\n1 Worn Powerstone\n1 Arcane Lighthouse\n1 Eldrazi Temple\n1 Forge of Heroes\n1 Guildless Commons\n1 Mage-Ring Network\n1 Temple of the False God\n1 Tomb of the Spirit Dragon\n1 Urza's Mine\n1 Urza's Power Plant\n1 Urza's Tower\n8 Wastes\n7 Wastes",
   "oracleCards": [
@@ -673,6 +673,7 @@
       "tags": [
         "land",
         "mana",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:storage",
         "counter-kind:age"
@@ -708,6 +709,7 @@
       "tags": [
         "artifact",
         "draw",
+        "counter-producer",
         "counter-kind:age",
         "lifegain"
       ],
@@ -1597,16 +1599,16 @@
       "peak": 77,
       "dispersion": 29,
       "variance": 29,
-      "consistency": 58,
-      "commanderDelta": 4,
+      "consistency": 57,
+      "commanderDelta": 3,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 25,
-      "consistency": 58,
+      "consistency": 57,
       "explosiveness": 14,
-      "synergy": 53,
+      "synergy": 54,
       "interaction": 35,
       "resilience": 42
     },
@@ -1628,8 +1630,8 @@
       {
         "id": "counters",
         "name": "Marqueurs",
-        "strength": 84,
-        "cohesion": 84,
+        "strength": 87,
+        "cohesion": 87,
         "producers": [
           "Blast Zone",
           "Endless One",
@@ -1637,10 +1639,10 @@
           "Forge of Heroes",
           "Hangarback Walker",
           "Investigator's Journal",
+          "Mage-Ring Network",
+          "Mazemind Tome",
           "Myriad Construct",
-          "Omarthis, Ghostfire Initiate",
-          "Ruins of Oran-Rief",
-          "Stonecoil Serpent"
+          "Omarthis, Ghostfire Initiate"
         ],
         "payoffs": [
           "Everflowing Chalice",
@@ -1655,13 +1657,14 @@
           "Forge of Heroes",
           "Hangarback Walker",
           "Investigator's Journal",
+          "Mage-Ring Network",
+          "Mazemind Tome",
           "Myriad Construct",
           "Omarthis, Ghostfire Initiate",
           "Ruins of Oran-Rief",
           "Stonecoil Serpent",
           "Transmogrifying Wand",
-          "Tyrite Sanctum",
-          "Mage-Ring Network"
+          "Tyrite Sanctum"
         ],
         "producerCards": [
           {
@@ -1758,6 +1761,39 @@
               "etb",
               "counter-producer",
               "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Mage-Ring Network",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:storage",
+              "counter-kind:age"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Mazemind Tome",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "counter-producer",
+              "counter-kind:age",
+              "lifegain"
             ],
             "manaReq": {
               "generic": 2,
@@ -1910,6 +1946,7 @@
             "tags": [
               "land",
               "mana",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:storage",
               "counter-kind:age"
@@ -1944,7 +1981,7 @@
         "payoffTags": [
           "counter-payoff"
         ],
-        "evidence": "12 producteur(s), 4 payoff(s), 13 carte(s) distincte(s)."
+        "evidence": "14 producteur(s), 4 payoff(s), 14 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2134,7 +2171,7 @@
       "ceiling": 52,
       "peak": 71,
       "iqr": 16,
-      "consistency": 66,
+      "consistency": 65,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 3,
       "recoveryAfterDisruption": 69,
@@ -2150,7 +2187,7 @@
         {
           "turn": 2,
           "commander": 0,
-          "engine": 11,
+          "engine": 12,
           "interaction": 13,
           "resource": 37,
           "burst": 0
@@ -2158,7 +2195,7 @@
         {
           "turn": 3,
           "commander": 5,
-          "engine": 14,
+          "engine": 15,
           "interaction": 27,
           "resource": 43,
           "burst": 1
@@ -2166,7 +2203,7 @@
         {
           "turn": 4,
           "commander": 23,
-          "engine": 16,
+          "engine": 18,
           "interaction": 38,
           "resource": 57,
           "burst": 5
@@ -2174,7 +2211,7 @@
         {
           "turn": 5,
           "commander": 50,
-          "engine": 19,
+          "engine": 21,
           "interaction": 48,
           "resource": 65,
           "burst": 8
@@ -2182,7 +2219,7 @@
         {
           "turn": 6,
           "commander": 71,
-          "engine": 22,
+          "engine": 23,
           "interaction": 58,
           "resource": 71,
           "burst": 10
@@ -2190,7 +2227,7 @@
         {
           "turn": 7,
           "commander": 80,
-          "engine": 25,
+          "engine": 26,
           "interaction": 66,
           "resource": 75,
           "burst": 12
@@ -2313,6 +2350,18 @@
         "aeon": null
       },
       {
+        "name": "Mazemind Tome",
+        "impact": 2.5,
+        "tags": [
+          "artifact",
+          "draw",
+          "counter-producer",
+          "counter-kind:age",
+          "lifegain"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Solemn Simulacrum",
         "impact": 2.5,
         "tags": [
@@ -2322,17 +2371,6 @@
           "land-ramp",
           "death-payoff",
           "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Dreamstone Hedron",
-        "impact": 2.4,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
         ],
         "aeon": null
       }

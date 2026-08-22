@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 51,
-    "p20": 37,
-    "p80": 63,
-    "peak": 87,
+    "median": 52,
+    "p20": 39,
+    "p80": 65,
+    "peak": 88,
     "coverage": 93,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "85bf3bb3019a5404fd7522b75f684248564370c568c002af8c5fb7f1d2fb6d71",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Neriv, Crackling Vanguard\n1 Ainok Strike Leader\n1 Ironwill Forger\n1 Will of the Mardu\n1 Bone Devourer\n1 Within Range\n1 Goldlust Triad\n1 Infantry Shield\n1 Redoubled Stormsinger\n1 Adeline, Resplendent Cathar\n1 Angel of Invention\n1 Commander's Insignia\n1 Divine Visitation\n1 Emeria Angel\n1 Grand Crescendo\n1 Hero of Bladehold\n1 Hour of Reckoning\n1 Legion Loyalty\n1 Selfless Spirit\n1 Sun Titan\n1 Tocasia's Welcome\n1 Twilight Drover\n1 Chittering Witch\n1 Eliminate the Competition\n1 Gix, Yawgmoth Praetor\n1 Mindblade Render\n1 Ophiomancer\n1 Yahenni, Undying Partisan\n1 Grenzo, Havoc Raiser\n1 Legion Warboss\n1 Ogre Battledriver\n1 Siege-Gang Commander\n1 Tempt with Vengeance\n1 Kaya, Geist Hunter\n1 Blade of Selves\n1 Idol of Oblivion\n1 Myr Battlesphere\n1 Solemn Simulacrum\n1 Battlefield Forge\n1 Canyon Slough\n1 Castle Ardenvale\n1 Castle Embereth\n1 Caves of Koilos\n1 Clifftop Retreat\n1 Dragonskull Summit\n1 Exotic Orchard\n1 Fetid Heath\n1 Isolated Chapel\n1 Shattered Sanctum\n1 Smoldering Marsh\n1 Temple of Silence\n1 Temple of Triumph\n1 Vault of the Archangel\n1 Windbrisk Heights\n1 Shadow Summoning\n1 Lightning Greaves\n1 Skullclamp\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Goldnight Commander\n1 Lingering Souls\n1 Release the Dogs\n1 Stroke of Midnight\n1 Swords to Plowshares\n1 Bastion of Remembrance\n1 Bitter Triumph\n1 Deadly Dispute\n1 Morbid Opportunist\n1 Viscera Seer\n1 Abrade\n1 Beetleback Chief\n1 Loyal Apprentice\n1 Nomad Outpost\n1 Aron, Benalia's Ruin\n1 Thalisse, Reverent Medium\n1 Fellwar Stone\n1 Talisman of Conviction\n1 Talisman of Hierarchy\n1 Wayfarer's Bauble\n1 Bojuka Bog\n1 Path of Ancestry\n1 Shattered Landscape\n1 Terramorphic Expanse\n3 Plains\n2 Plains\n3 Swamp\n2 Swamp\n3 Mountain\n2 Mountain",
   "oracleCards": [
@@ -113,6 +113,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "lifegain"
       ],
       "isCommander": false
@@ -774,7 +775,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "wipe"
+        "wipe",
+        "token-payoff"
       ],
       "isCommander": false
     },
@@ -792,6 +794,7 @@
         "artifact",
         "draw",
         "tokens",
+        "token-payoff",
         "sacrifice"
       ],
       "isCommander": false
@@ -907,7 +910,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "tokens"
+        "tokens",
+        "counter-producer"
       ],
       "isCommander": false
     },
@@ -1599,7 +1603,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "tokens"
+        "tokens",
+        "token-payoff"
       ],
       "isCommander": false
     },
@@ -1805,14 +1810,14 @@
   ],
   "result": {
     "profile": {
-      "median": 51,
-      "floor": 37,
-      "ceiling": 63,
-      "peak": 87,
-      "dispersion": 26,
-      "variance": 26,
+      "median": 52,
+      "floor": 39,
+      "ceiling": 65,
+      "peak": 88,
+      "dispersion": 25,
+      "variance": 25,
       "consistency": 58,
-      "commanderDelta": 12,
+      "commanderDelta": 11,
       "coverage": 93,
       "dataCoverage": 93
     },
@@ -1820,7 +1825,7 @@
       "speed": 48,
       "consistency": 58,
       "explosiveness": 20,
-      "synergy": 81,
+      "synergy": 82,
       "interaction": 46,
       "resilience": 36
     },
@@ -1858,9 +1863,12 @@
         ],
         "payoffs": [
           "Ainok Strike Leader",
+          "Hour of Reckoning",
+          "Idol of Oblivion",
           "Kaya, Geist Hunter",
           "Neriv, Crackling Vanguard",
-          "Redoubled Stormsinger"
+          "Redoubled Stormsinger",
+          "Thalisse, Reverent Medium"
         ],
         "members": [
           "Adeline, Resplendent Cathar",
@@ -1890,7 +1898,8 @@
           "Thalisse, Reverent Medium",
           "Twilight Drover",
           "Will of the Mardu",
-          "Within Range"
+          "Within Range",
+          "Hour of Reckoning"
         ],
         "producerCards": [
           {
@@ -2119,6 +2128,7 @@
               "artifact",
               "draw",
               "tokens",
+              "token-payoff",
               "sacrifice"
             ],
             "manaReq": {
@@ -2156,7 +2166,8 @@
             "cmc": 3,
             "tags": [
               "creature",
-              "tokens"
+              "tokens",
+              "counter-producer"
             ],
             "manaReq": {
               "generic": 2,
@@ -2360,7 +2371,8 @@
             "cmc": 5,
             "tags": [
               "creature",
-              "tokens"
+              "tokens",
+              "token-payoff"
             ],
             "manaReq": {
               "generic": 3,
@@ -2452,6 +2464,46 @@
             }
           },
           {
+            "name": "Hour of Reckoning",
+            "cmc": 7,
+            "tags": [
+              "sorcery",
+              "wipe",
+              "token-payoff"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Idol of Oblivion",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "tokens",
+              "token-payoff",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
             "name": "Kaya, Geist Hunter",
             "cmc": 3,
             "tags": [
@@ -2519,6 +2571,27 @@
               ],
               "total": 3
             }
+          },
+          {
+            "name": "Thalisse, Reverent Medium",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens",
+              "token-payoff"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
           }
         ],
         "producerTags": [
@@ -2527,7 +2600,7 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "28 producteur(s), 4 payoff(s), 28 carte(s) distincte(s)."
+        "evidence": "28 producteur(s), 7 payoff(s), 29 carte(s) distincte(s)."
       },
       {
         "id": "sacrifice",
@@ -2868,7 +2941,7 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 77,
+      "score": 80,
       "connected": [
         "Adeline, Resplendent Cathar",
         "Ainok Strike Leader",
@@ -2881,6 +2954,7 @@
         "Goldlust Triad",
         "Grand Crescendo",
         "Hero of Bladehold",
+        "Hour of Reckoning",
         "Idol of Oblivion",
         "Kaya, Geist Hunter",
         "Legion Warboss",
@@ -2912,12 +2986,12 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 35,
-      "median": 45,
-      "high": 54,
-      "ceiling": 54,
-      "peak": 78,
-      "iqr": 15,
+      "floor": 37,
+      "median": 46,
+      "high": 56,
+      "ceiling": 56,
+      "peak": 80,
+      "iqr": 16,
       "consistency": 66,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 4,
@@ -2934,7 +3008,7 @@
         {
           "turn": 2,
           "commander": 4,
-          "engine": 1,
+          "engine": 2,
           "interaction": 24,
           "resource": 22,
           "burst": 8
@@ -2942,7 +3016,7 @@
         {
           "turn": 3,
           "commander": 60,
-          "engine": 12,
+          "engine": 17,
           "interaction": 40,
           "resource": 45,
           "burst": 11
@@ -2950,7 +3024,7 @@
         {
           "turn": 4,
           "commander": 83,
-          "engine": 31,
+          "engine": 39,
           "interaction": 49,
           "resource": 58,
           "burst": 12
@@ -2958,7 +3032,7 @@
         {
           "turn": 5,
           "commander": 88,
-          "engine": 43,
+          "engine": 52,
           "interaction": 52,
           "resource": 64,
           "burst": 12
@@ -2966,7 +3040,7 @@
         {
           "turn": 6,
           "commander": 92,
-          "engine": 51,
+          "engine": 62,
           "interaction": 56,
           "resource": 69,
           "burst": 12
@@ -2974,7 +3048,7 @@
         {
           "turn": 7,
           "commander": 94,
-          "engine": 57,
+          "engine": 69,
           "interaction": 61,
           "resource": 73,
           "burst": 13
@@ -3073,6 +3147,7 @@
           "artifact",
           "draw",
           "tokens",
+          "token-payoff",
           "sacrifice"
         ],
         "aeon": null

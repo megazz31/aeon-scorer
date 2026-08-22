@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 45,
-    "p20": 30,
+    "median": 47,
+    "p20": 31,
     "p80": 58,
-    "peak": 88,
+    "peak": 89,
     "coverage": 94,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "8f3afb359499648a31a47be33633c0ec987fc4250050badc9edc1ebb153301e4",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Sophia, Dogged Detective\n1 Armed with Proof\n1 Merchant of Truth\n1 Serene Sleuth\n1 Detective of the Month\n1 Follow the Bodies\n1 Tangletrove Kelp\n1 Innocuous Researcher\n1 On the Trail\n1 Knowledge Is Power\n1 Ransom Note\n1 Aerial Extortionist\n1 Bennie Bracks, Zoologist\n1 Farewell\n1 Fumigate\n1 Organic Extinction\n1 Search the Premises\n1 Alandra, Sky Dreamer\n1 Confirm Suspicions\n1 Ethereal Investigator\n1 Finale of Revelation\n1 Kappa Cannoneer\n1 Mechanized Production\n1 Nadir Kraken\n1 Shimmer Dragon\n1 Teferi's Ageless Insight\n1 Tezzeret, Betrayer of Flesh\n1 Thought Monitor\n1 Hornet Queen\n1 Jolrael, Mwonvuli Recluse\n1 Killer Service\n1 Tireless Tracker\n1 Adrix and Nev, Twincasters\n1 Chulane, Teller of Tales\n1 Disorder in the Court\n1 Esix, Fractal Bloom\n1 Hydroid Krasis\n1 Koma, Cosmos Serpent\n1 Lonis, Cryptozoologist\n1 Selvala, Explorer Returned\n1 Academy Manufactor\n1 Idol of Oblivion\n1 Inspiring Statuary\n1 Nettlecyst\n1 Psychosis Crawler\n1 Canopy Vista\n1 Exotic Orchard\n1 Irrigated Farmland\n1 Prairie Stream\n1 Scattered Groves\n1 Skycloud Expanse\n1 Spire of Industry\n1 Sungrass Prairie\n1 Temple of Enlightenment\n1 Temple of Mystery\n1 Temple of Plenty\n1 Swords to Plowshares\n1 Erdwal Illuminator\n1 Junk Winder\n1 Ongoing Investigation\n1 Whirler Rogue\n1 Graf Mole\n1 Ulvenwald Mysteries\n1 Wilderness Reclamation\n1 Wavesifter\n1 Arcane Signet\n1 Azorius Signet\n1 Simic Signet\n1 Sol Ring\n1 Talisman of Curiosity\n1 Talisman of Progress\n1 Talisman of Unity\n1 Azorius Chancery\n1 Magnifying Glass\n1 Command Tower\n1 Krosan Verge\n1 Lonely Sandbar\n1 Path of Ancestry\n1 Reliquary Tower\n1 Seaside Citadel\n1 Secluded Steppe\n1 Selesnya Sanctuary\n1 Simic Growth Chamber\n1 Temple of the False God\n1 Tranquil Thicket\n2 Plains\n1 Plains\n3 Island\n3 Island\n3 Forest\n2 Forest",
   "oracleCards": [
@@ -219,7 +219,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "draw"
+        "draw",
+        "token-payoff"
       ],
       "isCommander": false
     },
@@ -590,6 +591,7 @@
         "artifact",
         "draw",
         "tokens",
+        "token-payoff",
         "sacrifice"
       ],
       "isCommander": false
@@ -1843,22 +1845,22 @@
   ],
   "result": {
     "profile": {
-      "median": 45,
-      "floor": 30,
+      "median": 47,
+      "floor": 31,
       "ceiling": 58,
-      "peak": 88,
+      "peak": 89,
       "dispersion": 28,
       "variance": 28,
       "consistency": 57,
-      "commanderDelta": 12,
+      "commanderDelta": 13,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
-      "speed": 35,
+      "speed": 38,
       "consistency": 57,
-      "explosiveness": 18,
-      "synergy": 90,
+      "explosiveness": 19,
+      "synergy": 91,
       "interaction": 19,
       "resilience": 29
     },
@@ -1896,6 +1898,8 @@
         ],
         "payoffs": [
           "Adrix and Nev, Twincasters",
+          "Bennie Bracks, Zoologist",
+          "Idol of Oblivion",
           "Junk Winder",
           "Killer Service"
         ],
@@ -1930,6 +1934,7 @@
           "Wavesifter",
           "Whirler Rogue",
           "Adrix and Nev, Twincasters",
+          "Bennie Bracks, Zoologist",
           "Junk Winder"
         ],
         "producerCards": [
@@ -2148,6 +2153,7 @@
               "artifact",
               "draw",
               "tokens",
+              "token-payoff",
               "sacrifice"
             ],
             "manaReq": {
@@ -2530,6 +2536,40 @@
             }
           },
           {
+            "name": "Bennie Bracks, Zoologist",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "draw",
+              "token-payoff"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Idol of Oblivion",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "tokens",
+              "token-payoff",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
             "name": "Junk Winder",
             "cmc": 7,
             "tags": [
@@ -2577,7 +2617,7 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "29 producteur(s), 3 payoff(s), 31 carte(s) distincte(s)."
+        "evidence": "29 producteur(s), 5 payoff(s), 32 carte(s) distincte(s)."
       },
       {
         "id": "artifacts",
@@ -2676,6 +2716,7 @@
               "artifact",
               "draw",
               "tokens",
+              "token-payoff",
               "sacrifice"
             ],
             "manaReq": {
@@ -3126,12 +3167,13 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 90,
+      "score": 93,
       "connected": [
         "Academy Manufactor",
         "Adrix and Nev, Twincasters",
         "Alandra, Sky Dreamer",
         "Armed with Proof",
+        "Bennie Bracks, Zoologist",
         "Confirm Suspicions",
         "Detective of the Month",
         "Disorder in the Court",
@@ -3176,15 +3218,15 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
-      "median": 43,
-      "high": 53,
-      "ceiling": 53,
-      "peak": 81,
+      "floor": 34,
+      "median": 45,
+      "high": 54,
+      "ceiling": 54,
+      "peak": 84,
       "iqr": 16,
       "consistency": 65,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": 5,
+      "engineMedianTurn": 4,
       "recoveryAfterDisruption": 85,
       "turnProfile": [
         {
@@ -3206,7 +3248,7 @@
         {
           "turn": 3,
           "commander": 37,
-          "engine": 10,
+          "engine": 13,
           "interaction": 11,
           "resource": 29,
           "burst": 2
@@ -3214,7 +3256,7 @@
         {
           "turn": 4,
           "commander": 73,
-          "engine": 31,
+          "engine": 39,
           "interaction": 22,
           "resource": 50,
           "burst": 7
@@ -3222,7 +3264,7 @@
         {
           "turn": 5,
           "commander": 85,
-          "engine": 46,
+          "engine": 56,
           "interaction": 32,
           "resource": 64,
           "burst": 9
@@ -3230,7 +3272,7 @@
         {
           "turn": 6,
           "commander": 90,
-          "engine": 56,
+          "engine": 66,
           "interaction": 40,
           "resource": 73,
           "burst": 10
@@ -3238,7 +3280,7 @@
         {
           "turn": 7,
           "commander": 92,
-          "engine": 64,
+          "engine": 73,
           "interaction": 46,
           "resource": 78,
           "burst": 12
@@ -3284,6 +3326,7 @@
           "artifact",
           "draw",
           "tokens",
+          "token-payoff",
           "sacrifice"
         ],
         "aeon": null
@@ -3318,6 +3361,16 @@
           "artifact",
           "mana",
           "tokens"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Bennie Bracks, Zoologist",
+        "impact": 2.9,
+        "tags": [
+          "creature",
+          "draw",
+          "token-payoff"
         ],
         "aeon": null
       },
@@ -3359,17 +3412,6 @@
           "creature",
           "token-doubler",
           "token-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Tangletrove Kelp",
-        "impact": 2.8,
-        "tags": [
-          "creature",
-          "artifact",
-          "draw",
-          "sacrifice"
         ],
         "aeon": null
       }

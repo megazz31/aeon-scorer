@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 40,
+    "median": 42,
     "p20": 29,
-    "p80": 53,
-    "peak": 82,
+    "p80": 55,
+    "peak": 85,
     "coverage": 92,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "7322b81ec3e890190f3fe42886bb7f65f615f0cd9fa92caf0550091e1581eaca",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Kaima, the Fractured Calm\n1 Ox of Agonas\n1 Akki Battle Squad\n1 Kami of Celebration\n1 Komainu Battle Armor\n1 Ascendant Acolyte\n1 Kosei, Penitent Warlord\n1 Rampant Rejuvenator\n1 Tanuki Transplanter\n1 Orochi Merge-Keeper\n1 Towashi Guide-Bot\n1 Walking Skyscraper\n1 Agitator Ant\n1 Goblin Razerunners\n1 Krenko, Tin Street Kingpin\n1 Taurean Mauler\n1 Acidic Slime\n1 Champion of Lambholt\n1 Fertilid\n1 Forgotten Ancient\n1 Genesis Hydra\n1 Loyal Guardian\n1 Primeval Protector\n1 Rishkar, Peema Renegade\n1 Sakura-Tribe Elder\n1 Spearbreaker Behemoth\n1 Whiptongue Hydra\n1 Grumgully, the Generous\n1 Ulasht, the Hate Seed\n1 Collision of Realms\n1 Smoke Spirits' Aid\n1 Chain Reaction\n1 Kodama's Reach\n1 Rampant Growth\n1 Rishkar's Expertise\n1 Shamanic Revelation\n1 Soul's Majesty\n1 Vastwood Surge\n1 Decimate\n1 Silkguard\n1 Chaos Warp\n1 Starstorm\n1 Beast Within\n1 Hunter's Insight\n1 Mage Slayer\n1 Arcane Signet\n1 Blackblade Reforged\n1 Bonehoard\n1 Fireshrieker\n1 Sol Ring\n1 Swiftfoot Boots\n1 Sword of Vengeance\n1 Unquenchable Fury\n1 Concord with the Kami\n1 One with the Kami\n1 Invigorating Hot Spring\n1 Elemental Mastery\n1 Shifting Shadow\n1 Bear Umbra\n1 Ordeal of Nylea\n1 Snake Umbra\n1 Rhythm of the Wild\n1 Cinder Glade\n1 Command Tower\n1 Exotic Orchard\n1 Game Trail\n1 Gruul Turf\n2 Mossfire Valley\n1 Opal Palace\n1 Oran-Rief, the Vastwood\n1 Raging Ravine\n1 Temple of Abandon\n6 Mountain\n6 Mountain\n7 Forest\n7 Forest",
   "oracleCards": [
@@ -93,6 +93,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-payoff",
         "extra-combat"
       ],
       "isCommander": false
@@ -279,6 +280,7 @@
         "tokens",
         "etb",
         "counter-producer",
+        "counter-payoff",
         "counter-kind:plus1"
       ],
       "isCommander": true
@@ -640,6 +642,7 @@
         "enchantment",
         "etb",
         "counter-producer",
+        "counter-payoff",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -679,6 +682,7 @@
       "tags": [
         "creature",
         "counter-producer",
+        "counter-payoff",
         "counter-kind:plus1",
         "exile-cast",
         "exile-payoff"
@@ -853,7 +857,8 @@
       "tags": [
         "enchantment",
         "tokens",
-        "death-payoff"
+        "death-payoff",
+        "counter-payoff"
       ],
       "isCommander": false
     },
@@ -1063,7 +1068,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "enchantment"
+        "enchantment",
+        "counter-producer"
       ],
       "isCommander": false
     },
@@ -1182,6 +1188,7 @@
         "instant",
         "protection",
         "counter-producer",
+        "counter-payoff",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1405,6 +1412,7 @@
         "draw",
         "etb",
         "counter-producer",
+        "counter-payoff",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1481,7 +1489,8 @@
       "tags": [
         "creature",
         "artifact",
-        "protection"
+        "protection",
+        "counter-payoff"
       ],
       "isCommander": false
     },
@@ -1509,24 +1518,24 @@
   ],
   "result": {
     "profile": {
-      "median": 40,
+      "median": 42,
       "floor": 29,
-      "ceiling": 53,
-      "peak": 82,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 61,
-      "commanderDelta": 12,
+      "ceiling": 55,
+      "peak": 85,
+      "dispersion": 26,
+      "variance": 26,
+      "consistency": 59,
+      "commanderDelta": 13,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 35,
-      "consistency": 61,
-      "explosiveness": 13,
+      "speed": 37,
+      "consistency": 59,
+      "explosiveness": 14,
       "synergy": 79,
       "interaction": 23,
-      "resilience": 25
+      "resilience": 26
     },
     "roles": {
       "lands": 37,
@@ -1563,7 +1572,11 @@
         "payoffs": [
           "Ascendant Acolyte",
           "Concord with the Kami",
+          "Invigorating Hot Spring",
+          "Kami of Celebration",
           "Rishkar, Peema Renegade",
+          "Silkguard",
+          "Towashi Guide-Bot",
           "Ulasht, the Hate Seed"
         ],
         "members": [
@@ -1788,6 +1801,7 @@
               "enchantment",
               "etb",
               "counter-producer",
+              "counter-payoff",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -1830,6 +1844,7 @@
             "tags": [
               "creature",
               "counter-producer",
+              "counter-payoff",
               "counter-kind:plus1",
               "exile-cast",
               "exile-payoff"
@@ -2015,6 +2030,7 @@
               "instant",
               "protection",
               "counter-producer",
+              "counter-payoff",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -2054,6 +2070,7 @@
               "draw",
               "etb",
               "counter-producer",
+              "counter-payoff",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -2169,6 +2186,50 @@
             }
           },
           {
+            "name": "Invigorating Hot Spring",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Kami of Celebration",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1",
+              "exile-cast",
+              "exile-payoff"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
             "name": "Rishkar, Peema Renegade",
             "cmc": 3,
             "tags": [
@@ -2187,6 +2248,44 @@
                 ]
               ],
               "total": 3
+            }
+          },
+          {
+            "name": "Silkguard",
+            "cmc": 1,
+            "tags": [
+              "instant",
+              "protection",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Towashi Guide-Bot",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "artifact",
+              "draw",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
             }
           },
           {
@@ -2220,7 +2319,7 @@
         "payoffTags": [
           "counter-payoff"
         ],
-        "evidence": "27 producteur(s), 4 payoff(s), 27 carte(s) distincte(s)."
+        "evidence": "27 producteur(s), 8 payoff(s), 27 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2358,6 +2457,7 @@
               "tokens",
               "etb",
               "counter-producer",
+              "counter-payoff",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -2415,6 +2515,7 @@
       "tags": [
         "tokens",
         "counter-producer",
+        "counter-payoff",
         "token-payoff"
       ]
     },
@@ -2426,21 +2527,21 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 29,
-      "median": 36,
-      "high": 46,
-      "ceiling": 46,
-      "peak": 70,
-      "iqr": 14,
-      "consistency": 69,
+      "floor": 31,
+      "median": 40,
+      "high": 49,
+      "ceiling": 49,
+      "peak": 76,
+      "iqr": 15,
+      "consistency": 67,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 67,
+      "engineMedianTurn": 4,
+      "recoveryAfterDisruption": 68,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
-          "engine": 0,
+          "engine": 1,
           "interaction": 0,
           "resource": 0,
           "burst": 0
@@ -2448,7 +2549,7 @@
         {
           "turn": 2,
           "commander": 4,
-          "engine": 0,
+          "engine": 3,
           "interaction": 1,
           "resource": 2,
           "burst": 0
@@ -2456,7 +2557,7 @@
         {
           "turn": 3,
           "commander": 29,
-          "engine": 3,
+          "engine": 11,
           "interaction": 14,
           "resource": 21,
           "burst": 0
@@ -2464,7 +2565,7 @@
         {
           "turn": 4,
           "commander": 74,
-          "engine": 17,
+          "engine": 34,
           "interaction": 26,
           "resource": 39,
           "burst": 1
@@ -2472,7 +2573,7 @@
         {
           "turn": 5,
           "commander": 87,
-          "engine": 26,
+          "engine": 48,
           "interaction": 33,
           "resource": 50,
           "burst": 3
@@ -2480,7 +2581,7 @@
         {
           "turn": 6,
           "commander": 91,
-          "engine": 32,
+          "engine": 56,
           "interaction": 39,
           "resource": 57,
           "burst": 6
@@ -2488,7 +2589,7 @@
         {
           "turn": 7,
           "commander": 94,
-          "engine": 37,
+          "engine": 62,
           "interaction": 45,
           "resource": 62,
           "burst": 8
@@ -2552,7 +2653,7 @@
           "draw",
           "etb",
           "counter-producer",
-          "counter-kind:plus1"
+          "counter-payoff"
         ],
         "aeon": null
       },

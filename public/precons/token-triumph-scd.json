@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 38,
-    "p20": 29,
-    "p80": 47,
-    "peak": 66,
-    "coverage": 90,
+    "median": 50,
+    "p20": 40,
+    "p80": 59,
+    "peak": 82,
+    "coverage": 93,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "e2aa0e3150ec2142c45a0efcda545331f63b1c376463fa0d4a1483218d0977c6",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 Ajani, Caller of the Pride\n1 Citywide Bust\n1 Commander's Insignia\n1 Dawn of Hope\n1 Dictate of Heliod\n1 Felidar Retreat\n1 Hour of Reckoning\n1 Mentor of the Meek\n1 White Sun's Zenith\n1 Champion of Lambholt\n1 Citanul Hierophants\n1 Collective Unconscious\n1 Harvest Season\n1 Hornet Nest\n1 Hornet Queen\n1 Rishkar, Peema Renegade\n1 Scavenging Ooze\n1 Thunderfoot Baloth\n1 Verdant Force\n1 Aura Mutation\n1 Camaraderie\n1 Collective Blessing\n1 Dauntless Escort\n1 March of the Multitudes\n1 Trostani Discordant\n1 Idol of Oblivion\n1 Slate of Ancestry\n1 Canopy Vista\n1 Fortified Village\n1 Temple of Plenty\n1 Conclave Tribunal\n1 Devouring Light\n1 Path to Exile\n1 Rootborn Defenses\n1 Valor in Akros\n1 Avacyn's Pilgrim\n1 Curse of Bounty\n1 Eternal Witness\n1 Farhaven Elf\n1 Great Oak Guardian\n1 Harmonize\n1 Jade Mage\n1 Jaspera Sentinel\n1 Karametra's Favor\n1 Leafkin Druid\n1 Loyal Guardian\n1 Nissa's Expedition\n1 Nullmage Shepherd\n1 Overrun\n1 Overwhelming Instinct\n1 Presence of Gond\n1 Reclamation Sage\n1 Scatter the Seeds\n1 Sporemound\n1 Voice of Many\n1 Maja, Bretagard Protector\n1 Selesnya Evangel\n1 Selesnya Guildmage\n1 Sylvan Reclamation\n1 Arcane Signet\n1 Commander's Sphere\n1 Sol Ring\n1 Talisman of Unity\n1 Blossoming Sands\n1 Command Tower\n1 Elfhame Palace\n1 Graypelt Refuge\n1 Holdout Settlement\n1 Tranquil Expanse\n1 Vitu-Ghazi, the City-Tree\n4 Forest\n4 Forest\n4 Forest\n3 Forest\n4 Plains\n4 Plains\n3 Plains\n3 Plains",
   "oracleCards": [
@@ -754,7 +754,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "wipe"
+        "wipe",
+        "token-payoff"
       ],
       "isCommander": false
     },
@@ -772,6 +773,7 @@
         "artifact",
         "draw",
         "tokens",
+        "token-payoff",
         "sacrifice"
       ],
       "isCommander": false
@@ -1483,22 +1485,22 @@
   ],
   "result": {
     "profile": {
-      "median": 38,
-      "floor": 29,
-      "ceiling": 47,
-      "peak": 66,
-      "dispersion": 18,
-      "variance": 18,
-      "consistency": 70,
-      "commanderDelta": 11,
-      "coverage": 90,
-      "dataCoverage": 90
+      "median": 50,
+      "floor": 40,
+      "ceiling": 59,
+      "peak": 82,
+      "dispersion": 19,
+      "variance": 19,
+      "consistency": 67,
+      "commanderDelta": 12,
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
-      "speed": 39,
-      "consistency": 70,
-      "explosiveness": 9,
-      "synergy": 15,
+      "speed": 41,
+      "consistency": 67,
+      "explosiveness": 11,
+      "synergy": 88,
       "interaction": 48,
       "resilience": 34
     },
@@ -1516,10 +1518,495 @@
       "avgCmc": 3.5833333333333335,
       "unknownManaLands": 0
     },
-    "packages": [],
+    "packages": [
+      {
+        "id": "tokens",
+        "name": "Tokens / conversion",
+        "strength": 100,
+        "cohesion": 100,
+        "producers": [
+          "Ajani, Caller of the Pride",
+          "Aura Mutation",
+          "Dawn of Hope",
+          "Felidar Retreat",
+          "Hornet Nest",
+          "Hornet Queen",
+          "Idol of Oblivion",
+          "Jade Mage",
+          "Maja, Bretagard Protector",
+          "March of the Multitudes"
+        ],
+        "payoffs": [
+          "Hour of Reckoning",
+          "Idol of Oblivion"
+        ],
+        "members": [
+          "Ajani, Caller of the Pride",
+          "Aura Mutation",
+          "Dawn of Hope",
+          "Felidar Retreat",
+          "Hornet Nest",
+          "Hornet Queen",
+          "Idol of Oblivion",
+          "Jade Mage",
+          "Maja, Bretagard Protector",
+          "March of the Multitudes",
+          "Presence of Gond",
+          "Scatter the Seeds",
+          "Selesnya Evangel",
+          "Selesnya Guildmage",
+          "Sporemound",
+          "Trostani Discordant",
+          "Verdant Force",
+          "Vitu-Ghazi, the City-Tree",
+          "White Sun's Zenith",
+          "Hour of Reckoning"
+        ],
+        "producerCards": [
+          {
+            "name": "Ajani, Caller of the Pride",
+            "cmc": 3,
+            "tags": [
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Aura Mutation",
+            "cmc": 2,
+            "tags": [
+              "instant",
+              "removal",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Dawn of Hope",
+            "cmc": 2,
+            "tags": [
+              "enchantment",
+              "draw",
+              "tokens",
+              "lifegain",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Felidar Retreat",
+            "cmc": 4,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "etb",
+              "landfall",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Hornet Nest",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Hornet Queen",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Idol of Oblivion",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "tokens",
+              "token-payoff",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Jade Mage",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Maja, Bretagard Protector",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb",
+              "landfall"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "March of the Multitudes",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "tokens",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Presence of Gond",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Scatter the Seeds",
+            "cmc": 5,
+            "tags": [
+              "instant",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Selesnya Evangel",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Selesnya Guildmage",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "G",
+                  "W"
+                ],
+                [
+                  "G",
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Sporemound",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb",
+              "landfall"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Trostani Discordant",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Verdant Force",
+            "cmc": 8,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 8
+            }
+          },
+          {
+            "name": "Vitu-Ghazi, the City-Tree",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "White Sun's Zenith",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Hour of Reckoning",
+            "cmc": 7,
+            "tags": [
+              "sorcery",
+              "wipe",
+              "token-payoff"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Idol of Oblivion",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "tokens",
+              "token-payoff",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          }
+        ],
+        "producerTags": [
+          "tokens"
+        ],
+        "payoffTags": [
+          "token-payoff"
+        ],
+        "evidence": "19 producteur(s), 2 payoff(s), 20 carte(s) distincte(s)."
+      }
+    ],
     "combos": [],
     "commanderSynergy": {
-      "score": 54,
+      "score": 57,
       "connected": [
         "Ajani, Caller of the Pride",
         "Aura Mutation",
@@ -1527,6 +2014,7 @@
         "Felidar Retreat",
         "Hornet Nest",
         "Hornet Queen",
+        "Hour of Reckoning",
         "Idol of Oblivion",
         "Jade Mage",
         "Maja, Bretagard Protector",
@@ -1555,14 +2043,14 @@
     "simulation": {
       "iterations": 3200,
       "floor": 35,
-      "median": 41,
-      "high": 47,
-      "ceiling": 47,
-      "peak": 62,
-      "iqr": 10,
-      "consistency": 79,
+      "median": 42,
+      "high": 49,
+      "ceiling": 49,
+      "peak": 69,
+      "iqr": 11,
+      "consistency": 76,
       "commanderMedianTurn": 3,
-      "engineMedianTurn": null,
+      "engineMedianTurn": 5,
       "recoveryAfterDisruption": 93,
       "turnProfile": [
         {
@@ -1576,7 +2064,7 @@
         {
           "turn": 2,
           "commander": 34,
-          "engine": 0,
+          "engine": 1,
           "interaction": 19,
           "resource": 14,
           "burst": 0
@@ -1584,7 +2072,7 @@
         {
           "turn": 3,
           "commander": 76,
-          "engine": 0,
+          "engine": 5,
           "interaction": 37,
           "resource": 35,
           "burst": 0
@@ -1592,7 +2080,7 @@
         {
           "turn": 4,
           "commander": 93,
-          "engine": 0,
+          "engine": 9,
           "interaction": 52,
           "resource": 55,
           "burst": 0
@@ -1600,7 +2088,7 @@
         {
           "turn": 5,
           "commander": 96,
-          "engine": 0,
+          "engine": 12,
           "interaction": 59,
           "resource": 65,
           "burst": 0
@@ -1608,7 +2096,7 @@
         {
           "turn": 6,
           "commander": 97,
-          "engine": 0,
+          "engine": 16,
           "interaction": 65,
           "resource": 72,
           "burst": 0
@@ -1616,7 +2104,7 @@
         {
           "turn": 7,
           "commander": 98,
-          "engine": 0,
+          "engine": 19,
           "interaction": 69,
           "resource": 75,
           "burst": 0
@@ -1624,6 +2112,18 @@
       ]
     },
     "drivers": [
+      {
+        "name": "Dawn of Hope",
+        "impact": 3.4,
+        "tags": [
+          "enchantment",
+          "draw",
+          "tokens",
+          "lifegain",
+          "life-payoff"
+        ],
+        "aeon": null
+      },
       {
         "name": "Sol Ring",
         "impact": 3,
@@ -1635,14 +2135,14 @@
         "aeon": null
       },
       {
-        "name": "Dawn of Hope",
-        "impact": 2.7,
+        "name": "Idol of Oblivion",
+        "impact": 2.8,
         "tags": [
-          "enchantment",
+          "artifact",
           "draw",
           "tokens",
-          "lifegain",
-          "life-payoff"
+          "token-payoff",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -1688,60 +2188,55 @@
         "aeon": null
       },
       {
-        "name": "Idol of Oblivion",
-        "impact": 2.1,
+        "name": "Aura Mutation",
+        "impact": 2.2,
         "tags": [
-          "artifact",
-          "draw",
-          "tokens",
-          "sacrifice"
+          "instant",
+          "removal",
+          "tokens"
         ],
         "aeon": null
       },
       {
-        "name": "Harmonize",
-        "impact": 1.7,
+        "name": "Hour of Reckoning",
+        "impact": 2,
         "tags": [
           "sorcery",
-          "draw"
+          "wipe",
+          "token-payoff"
         ],
         "aeon": null
       },
       {
-        "name": "Slate of Ancestry",
-        "impact": 1.7,
+        "name": "Felidar Retreat",
+        "impact": 1.9,
         "tags": [
-          "artifact",
-          "draw"
+          "enchantment",
+          "tokens",
+          "etb",
+          "landfall",
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
       {
-        "name": "Voice of Many",
-        "impact": 1.7,
+        "name": "Hornet Nest",
+        "impact": 1.9,
         "tags": [
           "creature",
-          "draw",
-          "etb"
+          "tokens"
         ],
         "aeon": null
       },
       {
-        "name": "Camaraderie",
-        "impact": 1.6,
+        "name": "Maja, Bretagard Protector",
+        "impact": 1.8,
         "tags": [
-          "sorcery",
-          "draw",
-          "lifegain"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Collective Unconscious",
-        "impact": 1.6,
-        "tags": [
-          "sorcery",
-          "draw"
+          "creature",
+          "tokens",
+          "etb",
+          "landfall"
         ],
         "aeon": null
       }

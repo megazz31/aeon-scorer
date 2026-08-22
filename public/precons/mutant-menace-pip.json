@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 43,
-    "p20": 29,
+    "p20": 31,
     "p80": 55,
     "peak": 86,
     "coverage": 94,
     "engineVersion": "3.2.0",
     "semanticVersion": "3.2.0-semantic-9",
     "oracleSnapshotHash": "29256fcf9bfc43d814bcbc1fc21683f68ee03541421a83ae68a9b3f16dd40499",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T22:03:55.931Z"
+    "analyzedAt": "2026-08-22T06:49:00.503Z"
   },
   "decklist": "1 The Master, Transcendent\n1 Jason Bright, Glowing Prophet\n1 Mirelurk Queen\n1 Piper Wright, Publick Reporter\n1 Radstorm\n1 Struggle for Project Purity\n1 Feral Ghoul\n1 Hancock, Ghoulish Mayor\n1 Nuclear Fallout\n1 Screeching Scorchbeast\n1 Vault 12: The Necropolis\n1 Harold and Bob, First Numens\n1 Lily Bowen, Raging Grandma\n1 Power Fist\n1 Rampaging Yao Guai\n1 Strong, the Brutish Thespian\n1 Tato Farmer\n1 Watchful Radstag\n1 Agent Frank Horrigan\n1 Alpha Deathclaw\n1 Atomize\n1 Marcus, Mutant Mayor\n1 Mutational Advantage\n1 Vault 87: Forced Evolution\n1 Nuka-Nuke Launcher\n1 Recon Craft Theta\n1 Mariposa Military Base\n1 Overflowing Basin\n1 Viridescent Bog\n1 Fraying Sanity\n1 Inexorable Tide\n1 Branching Evolution\n1 Guardian Project\n1 Hardened Scales\n1 Tireless Tracker\n1 Biomass Mutation\n1 Casualties of War\n1 Find // Finality\n1 Darkwater Catacombs\n1 Drowned Catacomb\n1 Exotic Orchard\n1 Fetid Pools\n1 Hinterland Harbor\n1 Nesting Grounds\n1 Sunken Hollow\n1 Temple of Deceit\n1 Temple of Malady\n1 Temple of Mystery\n1 Woodland Cemetery\n1 Vexing Radgull\n1 Bloatfly Swarm\n1 Infesting Radroach\n1 Cathedral Acolyte\n1 Glowing One\n1 Lumbering Megasloth\n1 Contaminated Drink\n1 Nightkin Ambusher\n1 Raul, Trouble Shooter\n1 Young Deathclaws\n1 Strength Bobblehead\n1 Cultivate\n1 Farseek\n1 Harmonize\n1 Inspiring Call\n1 Rampant Growth\n1 Corpsejack Menace\n1 Putrefy\n1 Winding Constrictor\n1 Arcane Signet\n1 Contagion Clasp\n1 Sol Ring\n1 Talisman of Curiosity\n1 Talisman of Dominance\n1 Talisman of Resilience\n1 Ash Barrens\n1 Command Tower\n1 Evolving Wilds\n1 Mortuary Mire\n1 Opulent Palace\n1 Path of Ancestry\n1 Tainted Isle\n1 Tainted Wood\n1 Temple of the False God\n1 Terramorphic Expanse\n3 Swamp\n2 Swamp\n3 Forest\n2 Forest\n3 Island\n2 Island",
   "oracleCards": [
@@ -80,7 +80,9 @@
       "tags": [
         "creature",
         "removal",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -594,6 +596,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:any"
       ],
       "isCommander": false
@@ -1112,6 +1115,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1780,7 +1784,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "tokens"
+        "tokens",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1842,7 +1848,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-producer"
       ],
       "isCommander": false
     }
@@ -1850,21 +1857,21 @@
   "result": {
     "profile": {
       "median": 43,
-      "floor": 29,
+      "floor": 31,
       "ceiling": 55,
       "peak": 86,
-      "dispersion": 26,
-      "variance": 26,
-      "consistency": 62,
+      "dispersion": 24,
+      "variance": 24,
+      "consistency": 61,
       "commanderDelta": 11,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 39,
-      "consistency": 62,
+      "consistency": 61,
       "explosiveness": 13,
-      "synergy": 77,
+      "synergy": 80,
       "interaction": 14,
       "resilience": 31
     },
@@ -1890,15 +1897,15 @@
         "cohesion": 100,
         "producers": [
           "Agent Frank Horrigan",
+          "Alpha Deathclaw",
           "Atomize",
           "Bloatfly Swarm",
           "Cathedral Acolyte",
           "Contagion Clasp",
           "Feral Ghoul",
           "Find // Finality",
-          "Inexorable Tide",
-          "Jason Bright, Glowing Prophet",
-          "Lily Bowen, Raging Grandma"
+          "Hancock, Ghoulish Mayor",
+          "Inexorable Tide"
         ],
         "payoffs": [
           "Bloatfly Swarm",
@@ -1912,12 +1919,14 @@
         ],
         "members": [
           "Agent Frank Horrigan",
+          "Alpha Deathclaw",
           "Atomize",
           "Bloatfly Swarm",
           "Cathedral Acolyte",
           "Contagion Clasp",
           "Feral Ghoul",
           "Find // Finality",
+          "Hancock, Ghoulish Mayor",
           "Inexorable Tide",
           "Jason Bright, Glowing Prophet",
           "Lily Bowen, Raging Grandma",
@@ -1925,6 +1934,7 @@
           "Mirelurk Queen",
           "Mutational Advantage",
           "Piper Wright, Publick Reporter",
+          "Power Fist",
           "Radstorm",
           "Rampaging Yao Guai",
           "Recon Craft Theta",
@@ -1934,6 +1944,7 @@
           "Vault 12: The Necropolis",
           "Vault 87: Forced Evolution",
           "Vexing Radgull",
+          "Watchful Radstag",
           "Hardened Scales",
           "Inspiring Call",
           "Lumbering Megasloth",
@@ -1962,6 +1973,29 @@
                 ]
               ],
               "total": 7
+            }
+          },
+          {
+            "name": "Alpha Deathclaw",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "removal",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 6
             }
           },
           {
@@ -2091,6 +2125,24 @@
                 ]
               ],
               "total": 8
+            }
+          },
+          {
+            "name": "Hancock, Ghoulish Mayor",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:any"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
             }
           },
           {
@@ -2239,6 +2291,24 @@
               "colored": [
                 [
                   "U"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Power Fist",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
                 ]
               ],
               "total": 2
@@ -2428,6 +2498,25 @@
               ],
               "total": 2
             }
+          },
+          {
+            "name": "Watchful Radstag",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
           }
         ],
         "payoffCards": [
@@ -2599,7 +2688,7 @@
         "payoffTags": [
           "counter-payoff"
         ],
-        "evidence": "23 producteur(s), 8 payoff(s), 28 carte(s) distincte(s)."
+        "evidence": "27 producteur(s), 8 payoff(s), 32 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2939,15 +3028,17 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 77,
+      "score": 88,
       "connected": [
         "Agent Frank Horrigan",
+        "Alpha Deathclaw",
         "Atomize",
         "Bloatfly Swarm",
         "Cathedral Acolyte",
         "Contagion Clasp",
         "Feral Ghoul",
         "Find // Finality",
+        "Hancock, Ghoulish Mayor",
         "Hardened Scales",
         "Inexorable Tide",
         "Inspiring Call",
@@ -2959,6 +3050,7 @@
         "Mirelurk Queen",
         "Mutational Advantage",
         "Piper Wright, Publick Reporter",
+        "Power Fist",
         "Radstorm",
         "Rampaging Yao Guai",
         "Recon Craft Theta",
@@ -2967,7 +3059,8 @@
         "Tireless Tracker",
         "Vault 12: The Necropolis",
         "Vault 87: Forced Evolution",
-        "Vexing Radgull"
+        "Vexing Radgull",
+        "Watchful Radstag"
       ],
       "tags": [
         "counter-producer",
@@ -2982,13 +3075,13 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 31,
+      "floor": 32,
       "median": 40,
       "high": 49,
       "ceiling": 49,
       "peak": 77,
       "iqr": 14,
-      "consistency": 70,
+      "consistency": 69,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
       "recoveryAfterDisruption": 78,
@@ -3012,7 +3105,7 @@
         {
           "turn": 3,
           "commander": 18,
-          "engine": 12,
+          "engine": 14,
           "interaction": 6,
           "resource": 25,
           "burst": 0
@@ -3020,7 +3113,7 @@
         {
           "turn": 4,
           "commander": 68,
-          "engine": 33,
+          "engine": 36,
           "interaction": 17,
           "resource": 46,
           "burst": 0
@@ -3028,7 +3121,7 @@
         {
           "turn": 5,
           "commander": 86,
-          "engine": 47,
+          "engine": 50,
           "interaction": 25,
           "resource": 59,
           "burst": 0
@@ -3036,7 +3129,7 @@
         {
           "turn": 6,
           "commander": 91,
-          "engine": 55,
+          "engine": 58,
           "interaction": 31,
           "resource": 65,
           "burst": 0
@@ -3044,7 +3137,7 @@
         {
           "turn": 7,
           "commander": 94,
-          "engine": 62,
+          "engine": 63,
           "interaction": 38,
           "resource": 71,
           "burst": 0
