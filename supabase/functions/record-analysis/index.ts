@@ -2,7 +2,7 @@ import 'jsr:@supabase/functions-js/edge-runtime.d.ts'
 import { createClient } from 'npm:@supabase/supabase-js@2'
 
 const ENGINE_VERSION='3.2.0'
-const SEMANTIC_VERSION='3.2.0-semantic-9'
+const SEMANTIC_VERSION='3.2.0-semantic-10'
 const cors={'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'authorization, apikey, content-type','Access-Control-Allow-Methods':'POST, OPTIONS','Content-Type':'application/json'}
 const json=(body:unknown,status=200)=>new Response(JSON.stringify(body),{status,headers:cors})
 const clean=(v:unknown,n=200)=>String(v??'').trim().slice(0,n)
