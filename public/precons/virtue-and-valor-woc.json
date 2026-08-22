@@ -29,15 +29,15 @@
   "analysis": {
     "median": 46,
     "p20": 34,
-    "p80": 57,
-    "peak": 84,
+    "p80": 59,
+    "peak": 86,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "13a9e59c9902b7d524f5463c0d252b6d52bbc56ff9de06d930cd24eb476adead",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Gylwain, Casting Director\n1 Liberated Livestock\n1 Ox Drover\n1 Songbirds' Blessing\n1 Unfinished Business\n1 Giant Inheritance\n1 Knickknack Ouphe\n1 Loamcrafter Faun\n1 Timber Paladin\n1 Ajani's Chosen\n1 Angelic Destiny\n1 Archon of Sun's Grace\n1 Austere Command\n1 Celestial Archon\n1 Daybreak Coronet\n1 Eidolon of Countless Battles\n1 Kor Spiritdancer\n1 Mantle of the Ancients\n1 Realm-Cloaked Giant // Cast Off\n1 Retether\n1 Shalai, Voice of Plenty\n1 Starfield Mystic\n1 Sun Titan\n1 Timely Ward\n1 Tithe Taker\n1 Umbra Mystic\n1 Winds of Rath\n1 Bear Umbra\n1 Eidolon of Blossoms\n1 Enchantress's Presence\n1 Indomitable Might\n1 Rishkar's Expertise\n1 Sanctum Weaver\n1 Setessan Champion\n1 Verdant Embrace\n1 Canopy Vista\n1 Castle Ardenvale\n1 Fortified Village\n1 Hall of Heliod's Generosity\n1 Sungrass Prairie\n1 Temple of Plenty\n1 Danitha Capashen, Paragon\n1 Ethereal Armor\n1 Generous Gift\n1 Sage's Reverie\n1 Spectral Steel\n1 Swords to Plowshares\n1 Transcendent Envoy\n1 Ancestral Mask\n1 Aura Gnarlid\n1 Careful Cultivation\n1 Destiny Spinner\n1 Fertile Ground\n1 Kenrith's Transformation\n1 Paradise Druid\n1 Snake Umbra\n1 Sylvan Ranger\n1 Utopia Sprawl\n1 Warbriar Blessing\n1 Jukai Naturalist\n1 Pollenbright Wings\n1 Siona, Captain of the Pyleas\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Krosan Verge\n1 Myriad Landscape\n1 Vitu-Ghazi, the City-Tree\n1 Tanglespan Lookout\n1 Syr Armont, the Redeemer\n8 Forest\n7 Forest\n7 Plains\n7 Plains",
   "oracleCards": [
@@ -464,7 +464,8 @@
         "W"
       ],
       "tags": [
-        "enchantment"
+        "enchantment",
+        "mana"
       ],
       "isCommander": false
     },
@@ -1305,6 +1306,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "tokens",
         "stax"
       ],
       "isCommander": false
@@ -1382,6 +1384,7 @@
       ],
       "tags": [
         "enchantment",
+        "mana",
         "etb"
       ],
       "isCommander": false
@@ -1467,22 +1470,22 @@
     "profile": {
       "median": 46,
       "floor": 34,
-      "ceiling": 57,
-      "peak": 84,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 62,
-      "commanderDelta": 9,
+      "ceiling": 59,
+      "peak": 86,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 61,
+      "commanderDelta": 8,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 42,
-      "consistency": 62,
+      "consistency": 61,
       "explosiveness": 13,
-      "synergy": 66,
-      "interaction": 31,
-      "resilience": 52
+      "synergy": 67,
+      "interaction": 37,
+      "resilience": 50
     },
     "roles": {
       "lands": 39,
@@ -1766,7 +1769,8 @@
             "name": "Fertile Ground",
             "cmc": 2,
             "tags": [
-              "enchantment"
+              "enchantment",
+              "mana"
             ],
             "manaReq": {
               "generic": 1,
@@ -2016,6 +2020,7 @@
             "cmc": 1,
             "tags": [
               "enchantment",
+              "mana",
               "etb"
             ],
             "manaReq": {
@@ -2228,7 +2233,8 @@
             "name": "Fertile Ground",
             "cmc": 2,
             "tags": [
-              "enchantment"
+              "enchantment",
+              "mana"
             ],
             "manaReq": {
               "generic": 1,
@@ -2295,6 +2301,7 @@
             "cmc": 1,
             "tags": [
               "enchantment",
+              "mana",
               "etb"
             ],
             "manaReq": {
@@ -2337,7 +2344,7 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 34,
+      "score": 37,
       "connected": [
         "Ajani's Chosen",
         "Archon of Sun's Grace",
@@ -2349,6 +2356,7 @@
         "Pollenbright Wings",
         "Siona, Captain of the Pyleas",
         "Syr Armont, the Redeemer",
+        "Tithe Taker",
         "Verdant Embrace",
         "Vitu-Ghazi, the City-Tree"
       ],
@@ -2364,73 +2372,73 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 34,
-      "median": 42,
+      "iterations": 100,
+      "floor": 33,
+      "median": 41,
       "high": 51,
       "ceiling": 51,
-      "peak": 75,
+      "peak": 77,
       "iqr": 14,
-      "consistency": 70,
+      "consistency": 69,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 88,
+      "recoveryAfterDisruption": 86,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 4,
+          "interaction": 7,
           "resource": 0,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 3,
+          "commander": 2,
           "engine": 0,
-          "interaction": 14,
-          "resource": 20,
+          "interaction": 19,
+          "resource": 16,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 30,
-          "engine": 8,
-          "interaction": 25,
-          "resource": 51,
+          "commander": 28,
+          "engine": 10,
+          "interaction": 33,
+          "resource": 45,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 80,
           "engine": 23,
-          "interaction": 34,
-          "resource": 72,
-          "burst": 2
+          "interaction": 39,
+          "resource": 60,
+          "burst": 1
         },
         {
           "turn": 5,
-          "commander": 90,
+          "commander": 95,
           "engine": 31,
-          "interaction": 40,
-          "resource": 80,
+          "interaction": 45,
+          "resource": 74,
           "burst": 4
         },
         {
           "turn": 6,
-          "commander": 94,
-          "engine": 36,
-          "interaction": 46,
-          "resource": 86,
-          "burst": 7
+          "commander": 96,
+          "engine": 33,
+          "interaction": 50,
+          "resource": 78,
+          "burst": 8
         },
         {
           "turn": 7,
           "commander": 96,
-          "engine": 40,
+          "engine": 39,
           "interaction": 50,
-          "resource": 90,
-          "burst": 9
+          "resource": 83,
+          "burst": 11
         }
       ]
     },
@@ -2453,6 +2461,25 @@
           "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Utopia Sprawl",
+        "impact": 3.2,
+        "tags": [
+          "enchantment",
+          "mana",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Fertile Ground",
+        "impact": 3.1,
+        "tags": [
+          "enchantment",
+          "mana"
         ],
         "aeon": null
       },
@@ -2538,29 +2565,11 @@
           "protection"
         ],
         "aeon": null
-      },
-      {
-        "name": "Sage's Reverie",
-        "impact": 2.4,
-        "tags": [
-          "enchantment",
-          "draw",
-          "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Fertile Ground",
-        "impact": 2.3,
-        "tags": [
-          "enchantment"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 41,
-    "p20": 27,
-    "p80": 53,
-    "peak": 85,
-    "coverage": 93,
+    "p20": 31,
+    "p80": 55,
+    "peak": 86,
+    "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "599b38d6d035ae0ddb1ceb0f0144d14db1ad0ecabe0d9409d5475fcfc6721440",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Angel of Glory's Rise\n1 Bastion Protector\n1 Custodi Soulbinders\n1 Dearly Departed\n1 Herald of War\n1 Knight of the White Orchid\n1 Mikaeus, the Lunarch\n1 Odric, Master Tactician\n1 Riders of Gavony\n1 Victory's Envoy\n1 Champion of Lambholt\n1 Gyre Sage\n1 Kessig Cagebreakers\n1 Somberwald Sage\n1 Verdurous Gearhulk\n1 Wild Beastmaster\n1 Heron's Grace Champion\n1 Sigarda, Heron's Grace\n1 Abzan Falconer\n1 Ainok Bond-Kin\n1 Elite Scaleguard\n1 Orzhov Advokist\n1 Avacyn's Pilgrim\n1 Eternal Witness\n1 Yavimaya Elder\n1 Enduring Scalelord\n1 Juniper Order Ranger\n1 Trostani's Summoner\n1 Cleansing Nova\n1 Hour of Reckoning\n1 Shamanic Revelation\n1 Bestial Menace\n1 Biogenic Upgrade\n1 Growth Spasm\n1 Unbreakable Formation\n1 Return to Dust\n1 Swords to Plowshares\n1 Beast Within\n1 Inspiring Call\n1 Lifecrafter's Bestiary\n1 Arcane Signet\n1 Sol Ring\n1 Swiftfoot Boots\n1 Talisman of Unity\n1 Citadel Siege\n1 Death's Presence\n1 Canopy Vista\n1 Exotic Orchard\n1 Fortified Village\n1 Sungrass Prairie\n1 Temple of Plenty\n1 Blighted Woodland\n1 Command Tower\n1 Krosan Verge\n1 Myriad Landscape\n1 Path of Ancestry\n1 Rogue's Passage\n1 Selesnya Sanctuary\n1 Temple of the False God\n12 Forest\n12 Plains\n1 Kyler, Sigardian Emissary\n1 Celestial Judgment\n1 Curse of Conformity\n1 Moorland Rescuer\n1 Sigarda's Vanguard\n1 Stalwart Pathlighter\n1 Wall of Mourning\n1 Celebrate the Harvest\n1 Curse of Clinging Webs\n1 Heronblade Elite\n1 Kurbis, Harvest Celebrant\n1 Ruinous Intrusion\n1 Sigardian Zealot\n1 Somberwald Beastmaster\n1 Dawnhart Wardens\n1 Moonsilver Key",
   "oracleCards": [
@@ -289,7 +289,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -1587,22 +1588,22 @@
   "result": {
     "profile": {
       "median": 41,
-      "floor": 27,
-      "ceiling": 53,
-      "peak": 85,
-      "dispersion": 26,
-      "variance": 26,
-      "consistency": 60,
-      "commanderDelta": 10,
-      "coverage": 93,
-      "dataCoverage": 93
+      "floor": 31,
+      "ceiling": 55,
+      "peak": 86,
+      "dispersion": 24,
+      "variance": 24,
+      "consistency": 64,
+      "commanderDelta": 11,
+      "coverage": 94,
+      "dataCoverage": 94
     },
     "dimensions": {
       "speed": 33,
-      "consistency": 60,
+      "consistency": 64,
       "explosiveness": 13,
       "synergy": 74,
-      "interaction": 30,
+      "interaction": 26,
       "resilience": 38
     },
     "roles": {
@@ -1612,10 +1613,10 @@
       "tutors": 0,
       "repeatableTutors": 0,
       "draw": 4,
-      "interaction": 7,
+      "interaction": 8,
       "protection": 7,
       "recursion": 3,
-      "wipes": 3,
+      "wipes": 4,
       "avgCmc": 3.8548387096774195,
       "unknownManaLands": 0
     },
@@ -2664,17 +2665,17 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 29,
+      "iterations": 100,
+      "floor": 31,
       "median": 38,
-      "high": 47,
-      "ceiling": 47,
-      "peak": 75,
-      "iqr": 15,
-      "consistency": 68,
+      "high": 48,
+      "ceiling": 48,
+      "peak": 76,
+      "iqr": 12,
+      "consistency": 73,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 66,
+      "recoveryAfterDisruption": 68,
       "turnProfile": [
         {
           "turn": 1,
@@ -2686,50 +2687,50 @@
         },
         {
           "turn": 2,
-          "commander": 3,
+          "commander": 2,
           "engine": 0,
-          "interaction": 10,
+          "interaction": 11,
           "resource": 1,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 25,
-          "engine": 6,
-          "interaction": 19,
+          "commander": 26,
+          "engine": 4,
+          "interaction": 17,
           "resource": 17,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 74,
-          "engine": 16,
-          "interaction": 34,
-          "resource": 31,
+          "commander": 77,
+          "engine": 14,
+          "interaction": 29,
+          "resource": 26,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 87,
-          "engine": 27,
-          "interaction": 42,
-          "resource": 41,
+          "engine": 30,
+          "interaction": 38,
+          "resource": 38,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 92,
-          "engine": 37,
-          "interaction": 49,
-          "resource": 48,
+          "engine": 40,
+          "interaction": 50,
+          "resource": 47,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 95,
-          "engine": 45,
+          "engine": 44,
           "interaction": 57,
-          "resource": 54,
+          "resource": 53,
           "burst": 0
         }
       ]
@@ -2865,7 +2866,7 @@
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

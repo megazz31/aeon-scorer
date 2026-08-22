@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 50,
+    "median": 51,
     "p20": 37,
-    "p80": 62,
+    "p80": 66,
     "peak": 88,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "7153d5aaa4933d411daead210c109788a3d30347696cb9311114c262069f72fd",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Muzzio, Visionary Architect\n1 Geth, Lord of the Vault\n1 Herald of Anguish\n1 Jhoira, Weatherlight Captain\n1 Silas Renn, Seeker Adept\n1 Emry, Lurker of the Loch\n1 Master Transmuter\n1 Padeem, Consul of Innovation\n1 Workshop Elders\n1 Fain, the Broker\n1 Audacious Reshapers\n1 Hellkite Igniter\n1 Slobad, Goblin Tinkerer\n1 Brudiclad, Telchor Engineer\n1 Metalwork Colossus\n1 Traxos, Scourge of Kroog\n1 Blasphemous Act\n1 Expressive Iteration\n1 Thoughtcast\n1 Feed the Swarm\n1 Faithless Looting\n1 Chaos Warp\n1 Bedevil\n1 Fact or Fiction\n1 Thirst for Knowledge\n1 Abrade\n1 Lithoform Engine\n1 Cursed Mirror\n1 Idol of Oblivion\n1 Mirrorworks\n1 Oblivion Stone\n1 Spine of Ish Sah\n1 Strionic Resonator\n1 Trading Post\n1 Oni-Cult Anvil\n1 Dreamstone Hedron\n1 Fellwar Stone\n1 Hedron Archive\n1 Ichor Wellspring\n1 Mind Stone\n1 Servo Schematic\n1 Sol Ring\n1 Thran Dynamo\n1 Mnemonic Sphere\n1 Executioner's Capsule\n1 Arcane Signet\n1 Commander's Sphere\n1 Dimir Signet\n1 Mycosynth Wellspring\n1 Nihil Spellbomb\n1 Prophetic Prism\n1 Rakdos Signet\n1 Wayfarer's Bauble\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Shadowblood Ridge\n1 Smoldering Marsh\n1 Temple of Deceit\n1 Temple of Epiphany\n1 Temple of Malice\n1 Buried Ruin\n1 Crumbling Necropolis\n1 Dimir Aqueduct\n1 Izzet Boilerworks\n1 Myriad Landscape\n1 Rakdos Carnarium\n1 Reliquary Tower\n1 Ash Barrens\n1 Command Tower\n1 Drossforge Bridge\n1 Great Furnace\n1 Mistvault Bridge\n1 Path of Ancestry\n1 Seat of the Synod\n1 Silverbluff Bridge\n1 Terramorphic Expanse\n1 Vault of Whispers\n2 Swamp\n2 Swamp\n3 Island\n2 Island\n2 Mountain\n2 Mountain\n1 Ashnod the Uncaring\n1 Glint Raker\n1 Terisiare's Devastation\n1 Blast-Furnace Hellkite\n1 Farid, Enterprising Salvager\n1 Machine God's Effigy\n1 Scavenged Brawler\n1 Smelting Vat\n1 Wondrous Crucible",
   "oracleCards": [
@@ -96,6 +96,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -170,7 +171,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -589,6 +591,7 @@
       "tags": [
         "sorcery",
         "draw",
+        "recursion",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -1151,6 +1154,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "wipe",
         "sacrifice",
         "counter-producer",
         "counter-kind:fate"
@@ -1646,6 +1650,7 @@
       ],
       "tags": [
         "sorcery",
+        "mana",
         "wipe",
         "tokens",
         "artifact-payoff"
@@ -1813,6 +1818,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "protection",
         "graveyard-setup",
         "exile-cast",
         "cheat",
@@ -1843,24 +1849,24 @@
   ],
   "result": {
     "profile": {
-      "median": 50,
+      "median": 51,
       "floor": 37,
-      "ceiling": 62,
+      "ceiling": 66,
       "peak": 88,
-      "dispersion": 26,
-      "variance": 26,
-      "consistency": 59,
+      "dispersion": 28,
+      "variance": 28,
+      "consistency": 54,
       "commanderDelta": 12,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
-      "speed": 33,
-      "consistency": 59,
+      "speed": 39,
+      "consistency": 54,
       "explosiveness": 13,
-      "synergy": 87,
-      "interaction": 48,
-      "resilience": 37
+      "synergy": 88,
+      "interaction": 57,
+      "resilience": 41
     },
     "roles": {
       "lands": 37,
@@ -1869,10 +1875,10 @@
       "tutors": 0,
       "repeatableTutors": 0,
       "draw": 15,
-      "interaction": 9,
-      "protection": 2,
-      "recursion": 2,
-      "wipes": 1,
+      "interaction": 11,
+      "protection": 3,
+      "recursion": 3,
+      "wipes": 3,
       "avgCmc": 3.7096774193548385,
       "unknownManaLands": 0
     },
@@ -2317,6 +2323,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "wipe",
               "sacrifice",
               "counter-producer",
               "counter-kind:fate"
@@ -2591,6 +2598,7 @@
             "cmc": 7,
             "tags": [
               "artifact",
+              "protection",
               "graveyard-setup",
               "exile-cast",
               "cheat",
@@ -2781,6 +2789,7 @@
             "cmc": 4,
             "tags": [
               "sorcery",
+              "mana",
               "wipe",
               "tokens",
               "artifact-payoff"
@@ -2829,8 +2838,8 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 66,
-        "cohesion": 66,
+        "strength": 69,
+        "cohesion": 69,
         "producers": [
           "Emry, Lurker of the Loch",
           "Faithless Looting",
@@ -2841,6 +2850,7 @@
         ],
         "payoffs": [
           "Buried Ruin",
+          "Faithless Looting",
           "Metalwork Colossus",
           "Trading Post"
         ],
@@ -2879,6 +2889,7 @@
             "tags": [
               "sorcery",
               "draw",
+              "recursion",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -2956,6 +2967,7 @@
             "cmc": 7,
             "tags": [
               "artifact",
+              "protection",
               "graveyard-setup",
               "exile-cast",
               "cheat",
@@ -2982,6 +2994,25 @@
               "generic": 0,
               "colored": [],
               "total": 0
+            }
+          },
+          {
+            "name": "Faithless Looting",
+            "cmc": 1,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 1
             }
           },
           {
@@ -3026,7 +3057,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "6 producteur(s), 3 payoff(s), 8 carte(s) distincte(s)."
+        "evidence": "6 producteur(s), 4 payoff(s), 8 carte(s) distincte(s)."
       },
       {
         "id": "tokens",
@@ -3202,6 +3233,7 @@
             "cmc": 4,
             "tags": [
               "sorcery",
+              "mana",
               "wipe",
               "tokens",
               "artifact-payoff"
@@ -3564,82 +3596,83 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
+      "iterations": 100,
       "floor": 40,
-      "median": 49,
-      "high": 59,
-      "ceiling": 59,
+      "median": 50,
+      "high": 61,
+      "ceiling": 61,
       "peak": 84,
-      "iqr": 15,
-      "consistency": 67,
-      "commanderMedianTurn": 5,
+      "iqr": 18,
+      "consistency": 61,
+      "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 86,
+      "recoveryAfterDisruption": 85,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 5,
-          "resource": 14,
+          "interaction": 10,
+          "resource": 29,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 1,
-          "engine": 3,
-          "interaction": 22,
-          "resource": 33,
+          "engine": 1,
+          "interaction": 20,
+          "resource": 42,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 12,
-          "engine": 23,
-          "interaction": 39,
-          "resource": 53,
+          "commander": 18,
+          "engine": 29,
+          "interaction": 48,
+          "resource": 58,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 45,
-          "engine": 50,
-          "interaction": 52,
-          "resource": 69,
-          "burst": 1
+          "commander": 49,
+          "engine": 48,
+          "interaction": 61,
+          "resource": 70,
+          "burst": 2
         },
         {
           "turn": 5,
-          "commander": 74,
-          "engine": 65,
-          "interaction": 60,
-          "resource": 77,
-          "burst": 3
+          "commander": 73,
+          "engine": 63,
+          "interaction": 70,
+          "resource": 78,
+          "burst": 4
         },
         {
           "turn": 6,
-          "commander": 87,
-          "engine": 73,
-          "interaction": 66,
-          "resource": 81,
-          "burst": 5
+          "commander": 84,
+          "engine": 70,
+          "interaction": 72,
+          "resource": 82,
+          "burst": 7
         },
         {
           "turn": 7,
-          "commander": 92,
-          "engine": 79,
-          "interaction": 71,
+          "commander": 87,
+          "engine": 73,
+          "interaction": 78,
           "resource": 85,
-          "burst": 7
+          "burst": 9
         }
       ]
     },
     "drivers": [
       {
         "name": "Wondrous Crucible",
-        "impact": 5.5,
+        "impact": 6.1,
         "tags": [
           "artifact",
+          "protection",
           "graveyard-setup",
           "exile-cast",
           "cheat",
@@ -3667,6 +3700,18 @@
           "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Terisiare's Devastation",
+        "impact": 4.1,
+        "tags": [
+          "sorcery",
+          "mana",
+          "wipe",
+          "tokens",
+          "artifact-payoff"
         ],
         "aeon": null
       },
@@ -3751,31 +3796,20 @@
         "aeon": null
       },
       {
-        "name": "Hedron Archive",
-        "impact": 3.2,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Terisiare's Devastation",
+        "name": "Faithless Looting",
         "impact": 3.2,
         "tags": [
           "sorcery",
-          "wipe",
-          "tokens",
-          "artifact-payoff"
+          "draw",
+          "recursion",
+          "graveyard-setup"
         ],
         "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

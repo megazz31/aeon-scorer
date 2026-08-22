@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 48,
-    "p20": 35,
+    "median": 51,
+    "p20": 37,
     "p80": 61,
     "peak": 87,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "d9968f8a7fea7a1c8c42b1cb89ad5f1356f626478ac186a0448e997bb59cb8ab",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Oreskos Explorer\n1 Karlov of the Ghost Council\n1 Underworld Coinsmith\n1 Burnished Hart\n1 Bastion Protector\n1 Dawnglare Invoker\n1 Ghostblade Eidolon\n1 Kor Sanctifiers\n1 Monk Idealist\n1 Mesa Enchantress\n1 Nighthowler\n1 Corpse Augur\n1 Fate Unraveler\n1 Ajani's Chosen\n1 Doomwake Giant\n1 Dreadbringer Lampads\n1 Celestial Ancient\n1 Celestial Archon\n1 Herald of the Host\n1 Banshee of the Dread Choir\n1 Thief of Blood\n1 Treasury Thrull\n1 Sandstone Oracle\n1 Silent Sentinel\n1 Teysa, Envoy of Ghosts\n1 Ancient Craving\n1 Gild\n1 Dawn to Dusk\n1 Righteous Confluence\n1 Open the Vaults\n1 Deadly Tempest\n1 Death Grasp\n1 Sol Ring\n1 Wayfarer's Bauble\n1 Lightning Greaves\n1 Orzhov Signet\n1 Thought Vessel\n1 Crystal Chimes\n1 Orzhov Cluestone\n1 Phyrexian Reclamation\n1 Seal of Cleansing\n1 Grave Peril\n1 Banishing Light\n1 Cage of Hands\n1 Karmic Justice\n1 Vow of Duty\n1 Fallen Ideal\n1 Seal of Doom\n1 Vow of Malice\n1 Aura of Silence\n1 Grasp of Fate\n1 Shielded by Faith\n1 Phyrexian Arena\n1 Underworld Connections\n1 Daxos's Torment\n1 Marshal's Anthem\n1 Dictate of Heliod\n1 Sigil of the Empty Throne\n1 Black Market\n1 Necromancer's Covenant\n1 Barren Moor\n1 Command Tower\n1 Evolving Wilds\n1 Ghost Quarter\n1 New Benalia\n1 Orzhov Basilica\n1 Orzhov Guildgate\n1 Rogue's Passage\n1 Scoured Barrens\n1 Secluded Steppe\n1 Tainted Field\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Vivid Marsh\n1 Vivid Meadow\n3 Plains\n3 Plains\n3 Plains\n2 Plains\n4 Swamp\n3 Swamp\n3 Swamp\n3 Swamp",
   "oracleCards": [
@@ -131,7 +131,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -151,6 +152,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -608,6 +610,7 @@
       ],
       "tags": [
         "sorcery",
+        "mana",
         "removal",
         "tokens"
       ],
@@ -664,7 +667,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -737,7 +741,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "protection"
       ],
       "isCommander": false
     },
@@ -1174,6 +1179,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -1554,24 +1560,24 @@
   ],
   "result": {
     "profile": {
-      "median": 48,
-      "floor": 35,
+      "median": 51,
+      "floor": 37,
       "ceiling": 61,
       "peak": 87,
-      "dispersion": 26,
-      "variance": 26,
-      "consistency": 60,
-      "commanderDelta": 8,
+      "dispersion": 24,
+      "variance": 24,
+      "consistency": 61,
+      "commanderDelta": 11,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
-      "speed": 41,
-      "consistency": 60,
+      "speed": 43,
+      "consistency": 61,
       "explosiveness": 12,
-      "synergy": 63,
-      "interaction": 58,
-      "resilience": 54
+      "synergy": 64,
+      "interaction": 64,
+      "resilience": 57
     },
     "roles": {
       "lands": 39,
@@ -1581,7 +1587,7 @@
       "repeatableTutors": 0,
       "draw": 7,
       "interaction": 12,
-      "protection": 3,
+      "protection": 4,
       "recursion": 7,
       "wipes": 2,
       "avgCmc": 3.6666666666666665,
@@ -2469,10 +2475,12 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 17,
+      "score": 23,
       "connected": [
         "Ajani's Chosen",
+        "Banshee of the Dread Choir",
         "Gild",
+        "Herald of the Host",
         "Necromancer's Covenant",
         "Righteous Confluence",
         "Sigil of the Empty Throne",
@@ -2490,72 +2498,72 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 36,
-      "median": 45,
-      "high": 55,
-      "ceiling": 55,
-      "peak": 80,
-      "iqr": 15,
-      "consistency": 68,
+      "iterations": 100,
+      "floor": 38,
+      "median": 48,
+      "high": 56,
+      "ceiling": 56,
+      "peak": 81,
+      "iqr": 14,
+      "consistency": 69,
       "commanderMedianTurn": 3,
-      "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 87,
+      "engineMedianTurn": 4,
+      "recoveryAfterDisruption": 90,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 7,
-          "resource": 4,
+          "interaction": 5,
+          "resource": 19,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 9,
-          "engine": 0,
-          "interaction": 23,
-          "resource": 13,
+          "commander": 6,
+          "engine": 1,
+          "interaction": 28,
+          "resource": 27,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 68,
-          "engine": 7,
-          "interaction": 48,
-          "resource": 39,
+          "commander": 77,
+          "engine": 6,
+          "interaction": 55,
+          "resource": 54,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 87,
-          "engine": 22,
-          "interaction": 62,
-          "resource": 58,
+          "commander": 90,
+          "engine": 27,
+          "interaction": 67,
+          "resource": 69,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 92,
-          "engine": 34,
-          "interaction": 71,
-          "resource": 68,
-          "burst": 0
-        },
-        {
-          "turn": 6,
-          "commander": 95,
-          "engine": 42,
-          "interaction": 77,
+          "commander": 94,
+          "engine": 37,
+          "interaction": 70,
           "resource": 76,
           "burst": 0
         },
         {
+          "turn": 6,
+          "commander": 98,
+          "engine": 44,
+          "interaction": 77,
+          "resource": 79,
+          "burst": 0
+        },
+        {
           "turn": 7,
-          "commander": 96,
-          "engine": 47,
-          "interaction": 81,
-          "resource": 81,
+          "commander": 98,
+          "engine": 46,
+          "interaction": 80,
+          "resource": 86,
           "burst": 0
         }
       ]
@@ -2649,6 +2657,17 @@
         "aeon": null
       },
       {
+        "name": "Gild",
+        "impact": 2.3,
+        "tags": [
+          "sorcery",
+          "mana",
+          "removal",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Mesa Enchantress",
         "impact": 2.3,
         "tags": [
@@ -2677,21 +2696,11 @@
           "constellation"
         ],
         "aeon": null
-      },
-      {
-        "name": "Banishing Light",
-        "impact": 1.8,
-        "tags": [
-          "enchantment",
-          "removal",
-          "etb"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

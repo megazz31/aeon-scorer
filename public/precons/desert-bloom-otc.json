@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 46,
-    "p20": 35,
-    "p80": 56,
+    "median": 50,
+    "p20": 40,
+    "p80": 60,
     "peak": 86,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "e0ecccbe861fe37463acf790a832926554ee96cc93c8be2e5ade216e01af8023",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Kirri, Talented Sprout\n1 Scavenger Grounds\n1 Sun Titan\n1 Omnath, Locus of Rage\n1 Descend upon the Sinful\n1 Chromatic Lantern\n1 Marshal's Anthem\n1 Sheltered Thicket\n1 Scute Swarm\n1 Hour of Promise\n1 Oracle of Mul Daya\n1 Ramunap Excavator\n1 Scattered Groves\n1 World Shaper\n1 Nesting Dragon\n1 Turntimber Sower\n1 Sevinne's Reclamation\n1 Ancient Greenwarden\n1 Titania, Protector of Argoth\n1 Return of the Wildspeaker\n1 Perennial Behemoth\n1 Avenger of Zendikar\n1 Hazezon, Shaper of Sand\n1 Escape to the Wilds\n1 Heaven // Earth\n1 Genesis Hydra\n1 Sunscorched Divide\n1 The Mending of Dominaria\n1 Decimate\n1 Sand Scout\n1 Embrace the Unknown\n1 Dune Chanter\n1 Cataclysmic Prospecting\n1 Vengeful Regrowth\n1 Angel of Indemnity\n1 Cactus Preserve\n1 Rumbleweed\n1 Terramorphic Expanse\n1 Evolving Wilds\n1 Swiftfoot Boots\n1 Explore\n1 Sol Ring\n1 Satyr Wayfinder\n1 Perpetual Timepiece\n1 Crawling Sensation\n1 Painted Bluffs\n1 Command Tower\n1 Magmatic Insight\n1 Krosan Verge\n1 Desert of the True\n1 Skullwinder\n1 Desert of the Indomitable\n1 Jungle Shrine\n1 Bitter Reunion\n1 Desert of the Fervent\n1 Valorous Stance\n1 Dunes of the Dead\n1 Shefet Dunes\n1 Hashep Oasis\n1 Elvish Rejuvenator\n1 Winding Way\n1 Springbloom Druid\n1 Arcane Signet\n1 Unholy Heat\n1 Thrilling Discovery\n1 Electric Revelation\n1 Eccentric Farmer\n1 Harrow\n1 Ramunap Ruins\n1 Path to Exile\n1 Requisition Raid\n1 Bovine Intervention\n1 Map the Frontier\n1 Conduit Pylons\n1 Mirage Mesa\n1 Wreck and Rebuild\n1 Angel of the Ruins\n1 Bristling Backwoods\n1 Creosote Heath\n1 Abraded Bluffs\n1 Scaretiller\n1 Nantuko Cultivator\n3 Plains\n3 Plains\n2 Mountain\n2 Mountain\n4 Forest\n3 Forest",
   "oracleCards": [
@@ -99,6 +99,7 @@
       "tags": [
         "creature",
         "recursion",
+        "tokens",
         "etb",
         "lifegain"
       ],
@@ -119,6 +120,7 @@
       "tags": [
         "creature",
         "artifact",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -267,6 +269,7 @@
       "tags": [
         "sorcery",
         "mana",
+        "wipe",
         "tokens"
       ],
       "isCommander": false
@@ -436,6 +439,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -457,6 +461,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -478,6 +483,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -563,6 +569,7 @@
       "tags": [
         "instant",
         "draw",
+        "recursion",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -600,6 +607,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "exile-cast"
       ],
       "isCommander": false
@@ -776,7 +784,9 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "sorcery"
+        "sorcery",
+        "wipe",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -1306,6 +1316,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -1408,6 +1419,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -1732,6 +1744,7 @@
         "sorcery",
         "land-ramp",
         "removal",
+        "recursion",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -1762,24 +1775,24 @@
   ],
   "result": {
     "profile": {
-      "median": 46,
-      "floor": 35,
-      "ceiling": 56,
+      "median": 50,
+      "floor": 40,
+      "ceiling": 60,
       "peak": 86,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 68,
-      "commanderDelta": 3,
+      "dispersion": 20,
+      "variance": 20,
+      "consistency": 70,
+      "commanderDelta": 4,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 32,
-      "consistency": 68,
-      "explosiveness": 13,
-      "synergy": 75,
-      "interaction": 41,
-      "resilience": 84
+      "consistency": 70,
+      "explosiveness": 12,
+      "synergy": 76,
+      "interaction": 51,
+      "resilience": 99
     },
     "roles": {
       "lands": 40,
@@ -1787,11 +1800,11 @@
       "fastMana": 1,
       "tutors": 2,
       "repeatableTutors": 0,
-      "draw": 6,
-      "interaction": 7,
+      "draw": 7,
+      "interaction": 9,
       "protection": 2,
-      "recursion": 17,
-      "wipes": 1,
+      "recursion": 21,
+      "wipes": 3,
       "avgCmc": 3.5762711864406778,
       "unknownManaLands": 0
     },
@@ -1817,13 +1830,13 @@
           "Ancient Greenwarden",
           "Angel of Indemnity",
           "Eccentric Farmer",
+          "Electric Revelation",
+          "Embrace the Unknown",
           "Hazezon, Shaper of Sand",
+          "Heaven // Earth",
           "Kirri, Talented Sprout",
           "Marshal's Anthem",
-          "Perennial Behemoth",
-          "Ramunap Excavator",
-          "Scaretiller",
-          "Sevinne's Reclamation"
+          "Perennial Behemoth"
         ],
         "members": [
           "Bitter Reunion",
@@ -1839,7 +1852,9 @@
           "Wreck and Rebuild",
           "Ancient Greenwarden",
           "Angel of Indemnity",
+          "Embrace the Unknown",
           "Hazezon, Shaper of Sand",
+          "Heaven // Earth",
           "Kirri, Talented Sprout",
           "Marshal's Anthem",
           "Perennial Behemoth",
@@ -1950,6 +1965,7 @@
             "tags": [
               "instant",
               "draw",
+              "recursion",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -2044,6 +2060,7 @@
               "sorcery",
               "land-ramp",
               "removal",
+              "recursion",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -2088,6 +2105,7 @@
             "tags": [
               "creature",
               "recursion",
+              "tokens",
               "etb",
               "lifegain"
             ],
@@ -2121,6 +2139,43 @@
             }
           },
           {
+            "name": "Electric Revelation",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "draw",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Embrace the Unknown",
+            "cmc": 3,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "exile-cast"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
             "name": "Hazezon, Shaper of Sand",
             "cmc": 3,
             "tags": [
@@ -2140,6 +2195,31 @@
                 ],
                 [
                   "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Heaven // Earth",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "sorcery",
+              "wipe",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "R"
+                ],
+                [
+                  "R"
                 ]
               ],
               "total": 3
@@ -2392,6 +2472,29 @@
               ],
               "total": 4
             }
+          },
+          {
+            "name": "Wreck and Rebuild",
+            "cmc": 3,
+            "tags": [
+              "sorcery",
+              "land-ramp",
+              "removal",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
           }
         ],
         "producerTags": [
@@ -2400,7 +2503,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "11 producteur(s), 17 payoff(s), 25 carte(s) distincte(s)."
+        "evidence": "11 producteur(s), 21 payoff(s), 27 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2580,6 +2683,7 @@
               "sorcery",
               "land-ramp",
               "removal",
+              "recursion",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -2830,6 +2934,7 @@
               "sorcery",
               "land-ramp",
               "removal",
+              "recursion",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -2879,8 +2984,9 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 40,
+      "score": 43,
       "connected": [
+        "Angel of Indemnity",
         "Avenger of Zendikar",
         "Cataclysmic Prospecting",
         "Crawling Sensation",
@@ -2908,77 +3014,89 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 31,
-      "median": 38,
-      "high": 46,
-      "ceiling": 46,
+      "iterations": 100,
+      "floor": 35,
+      "median": 42,
+      "high": 50,
+      "ceiling": 50,
       "peak": 74,
-      "iqr": 12,
-      "consistency": 73,
-      "commanderMedianTurn": 7,
+      "iqr": 11,
+      "consistency": 75,
+      "commanderMedianTurn": 6,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 84,
+      "recoveryAfterDisruption": 88,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 12,
-          "resource": 2,
+          "interaction": 16,
+          "resource": 29,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 0,
           "engine": 0,
-          "interaction": 27,
-          "resource": 13,
+          "interaction": 30,
+          "resource": 30,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 0,
           "engine": 6,
-          "interaction": 35,
-          "resource": 37,
+          "interaction": 43,
+          "resource": 55,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 0,
-          "engine": 26,
-          "interaction": 43,
-          "resource": 65,
+          "engine": 32,
+          "interaction": 54,
+          "resource": 69,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 3,
-          "engine": 51,
-          "interaction": 49,
-          "resource": 83,
+          "engine": 55,
+          "interaction": 67,
+          "resource": 87,
           "burst": 0
         },
         {
           "turn": 6,
-          "commander": 11,
-          "engine": 67,
-          "interaction": 55,
-          "resource": 89,
+          "commander": 18,
+          "engine": 69,
+          "interaction": 69,
+          "resource": 90,
           "burst": 0
         },
         {
           "turn": 7,
-          "commander": 24,
-          "engine": 75,
-          "interaction": 59,
-          "resource": 93,
+          "commander": 27,
+          "engine": 76,
+          "interaction": 74,
+          "resource": 96,
           "burst": 0
         }
       ]
     },
     "drivers": [
+      {
+        "name": "Wreck and Rebuild",
+        "impact": 4.7,
+        "tags": [
+          "sorcery",
+          "land-ramp",
+          "removal",
+          "recursion",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
       {
         "name": "Explore",
         "impact": 4,
@@ -2986,17 +3104,6 @@
           "sorcery",
           "draw",
           "land-ramp"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Wreck and Rebuild",
-        "impact": 4,
-        "tags": [
-          "sorcery",
-          "land-ramp",
-          "removal",
-          "graveyard-setup"
         ],
         "aeon": null
       },
@@ -3022,12 +3129,45 @@
         "aeon": null
       },
       {
+        "name": "Electric Revelation",
+        "impact": 3.1,
+        "tags": [
+          "instant",
+          "draw",
+          "recursion",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Ancient Greenwarden",
         "impact": 2.9,
         "tags": [
           "creature",
           "recursion",
           "trigger-doubler"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Heaven // Earth",
+        "impact": 2.9,
+        "tags": [
+          "instant",
+          "sorcery",
+          "wipe",
+          "recursion"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Cataclysmic Prospecting",
+        "impact": 2.8,
+        "tags": [
+          "sorcery",
+          "mana",
+          "wipe",
+          "tokens"
         ],
         "aeon": null
       },
@@ -3054,6 +3194,18 @@
         "aeon": null
       },
       {
+        "name": "Angel of Indemnity",
+        "impact": 2.5,
+        "tags": [
+          "creature",
+          "recursion",
+          "tokens",
+          "etb",
+          "lifegain"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Bitter Reunion",
         "impact": 2.5,
         "tags": [
@@ -3064,54 +3216,11 @@
           "etb"
         ],
         "aeon": null
-      },
-      {
-        "name": "Dune Chanter",
-        "impact": 2.5,
-        "tags": [
-          "creature",
-          "mana",
-          "graveyard-setup",
-          "lifegain"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Elvish Rejuvenator",
-        "impact": 2.5,
-        "tags": [
-          "creature",
-          "land-ramp",
-          "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Thrilling Discovery",
-        "impact": 2.5,
-        "tags": [
-          "sorcery",
-          "draw",
-          "graveyard-setup",
-          "lifegain"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Titania, Protector of Argoth",
-        "impact": 2.5,
-        "tags": [
-          "creature",
-          "recursion",
-          "tokens",
-          "etb"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

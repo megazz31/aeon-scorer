@@ -29,15 +29,15 @@
   "analysis": {
     "median": 37,
     "p20": 25,
-    "p80": 46,
+    "p80": 49,
     "peak": 68,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "bad8d47151ecd764e1371c756cdc9cb1f4677039e8d24e1cc4025e95401c7106",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Feather, Radiant Arbiter\n1 Immortal Obligation\n1 Otherworldly Escort\n1 Redemption Arc\n1 Trouble in Pairs\n1 Havoc Eater\n1 Hot Pursuit\n1 Mob Verdict\n1 Prisoner's Dilemma\n1 Take the Bait\n1 Ransom Note\n1 Angel of the Ruins\n1 Comeuppance\n1 Darien, King of Kjeldor\n1 Duelist's Heritage\n1 Elspeth, Sun's Champion\n1 Keeper of the Accord\n1 Loran of the Third Path\n1 Promise of Loyalty\n1 Selfless Squire\n1 Sevinne's Reclamation\n1 Smuggler's Share\n1 Stalking Leonin\n1 Sun Titan\n1 Windborn Muse\n1 Winds of Rath\n1 Agitator Ant\n1 Brash Taunter\n1 Disrupt Decorum\n1 Etali, Primal Storm\n1 Fiendish Duo\n1 Frontier Warmonger\n1 Kazuul, Tyrant of the Cliffs\n1 Spectacular Showdown\n1 Vengeful Ancestor\n1 Anya, Merciless Angel\n1 Boros Reckoner\n1 Deflecting Palm\n1 Gisela, Blade of Goldnight\n1 Ancient Stone Idol\n1 Solemn Simulacrum\n1 Steel Hellkite\n1 Tome of Legends\n1 Castle Ardenvale\n1 Exotic Orchard\n1 Furycalm Snarl\n1 Kher Keep\n1 Labyrinth of Skophos\n1 Needle Spires\n1 Scavenger Grounds\n1 Slayers' Stronghold\n1 Temple of Triumph\n1 Throne of the High City\n1 War Room\n1 Ghostly Prison\n1 Gideon's Sacrifice\n1 Martial Impetus\n1 Orzhov Advokist\n1 Seal of Cleansing\n1 Soul Snare\n1 Vow of Duty\n1 Wall of Omens\n1 Curse of Opulence\n1 Rite of the Raging Storm\n1 Shiny Impetus\n1 Vow of Lightning\n1 Arcane Signet\n1 Bloodthirsty Blade\n1 Fellwar Stone\n1 Mind Stone\n1 Sol Ring\n1 Talisman of Conviction\n1 Thought Vessel\n1 Access Tunnel\n1 Ash Barrens\n1 Boros Garrison\n1 Command Tower\n1 Escape Tunnel\n1 Myriad Landscape\n1 Reliquary Tower\n1 Rogue's Passage\n1 Sunhome, Fortress of the Legion\n1 Temple of the False God\n5 Plains\n4 Plains\n4 Mountain\n3 Mountain",
   "oracleCards": [
@@ -111,6 +111,7 @@
       "tags": [
         "creature",
         "artifact",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -170,6 +171,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -329,6 +331,7 @@
       ],
       "tags": [
         "enchantment",
+        "mana",
         "tokens"
       ],
       "isCommander": false
@@ -990,7 +993,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -1352,7 +1356,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "artifact"
+        "artifact",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -1684,22 +1689,22 @@
     "profile": {
       "median": 37,
       "floor": 25,
-      "ceiling": 46,
+      "ceiling": 49,
       "peak": 68,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 66,
-      "commanderDelta": 6,
+      "dispersion": 24,
+      "variance": 24,
+      "consistency": 62,
+      "commanderDelta": 7,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 33,
-      "consistency": 66,
+      "consistency": 62,
       "explosiveness": 10,
       "synergy": 36,
-      "interaction": 39,
-      "resilience": 36
+      "interaction": 37,
+      "resilience": 42
     },
     "roles": {
       "lands": 37,
@@ -1707,11 +1712,11 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 9,
-      "interaction": 7,
+      "draw": 10,
+      "interaction": 8,
       "protection": 3,
-      "recursion": 2,
-      "wipes": 2,
+      "recursion": 3,
+      "wipes": 3,
       "avgCmc": 3.6451612903225805,
       "unknownManaLands": 0
     },
@@ -1764,6 +1769,7 @@
             "cmc": 1,
             "tags": [
               "enchantment",
+              "mana",
               "tokens"
             ],
             "manaReq": {
@@ -1901,73 +1907,73 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 31,
-      "median": 39,
-      "high": 45,
-      "ceiling": 45,
-      "peak": 62,
-      "iqr": 11,
-      "consistency": 75,
+      "iterations": 100,
+      "floor": 32,
+      "median": 40,
+      "high": 48,
+      "ceiling": 48,
+      "peak": 63,
+      "iqr": 13,
+      "consistency": 71,
       "commanderMedianTurn": 4,
       "engineMedianTurn": null,
-      "recoveryAfterDisruption": 81,
+      "recoveryAfterDisruption": 86,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 8,
-          "resource": 13,
+          "interaction": 5,
+          "resource": 21,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 3,
+          "commander": 2,
           "engine": 0,
-          "interaction": 14,
-          "resource": 28,
+          "interaction": 12,
+          "resource": 38,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 29,
+          "commander": 33,
           "engine": 0,
-          "interaction": 29,
-          "resource": 49,
-          "burst": 0
+          "interaction": 31,
+          "resource": 62,
+          "burst": 1
         },
         {
           "turn": 4,
           "commander": 72,
           "engine": 0,
-          "interaction": 43,
-          "resource": 62,
-          "burst": 1
+          "interaction": 39,
+          "resource": 72,
+          "burst": 2
         },
         {
           "turn": 5,
           "commander": 83,
           "engine": 0,
-          "interaction": 49,
-          "resource": 67,
-          "burst": 4
-        },
-        {
-          "turn": 6,
-          "commander": 88,
-          "engine": 0,
-          "interaction": 55,
-          "resource": 72,
+          "interaction": 47,
+          "resource": 81,
           "burst": 6
         },
         {
-          "turn": 7,
-          "commander": 91,
+          "turn": 6,
+          "commander": 90,
           "engine": 0,
-          "interaction": 60,
-          "resource": 76,
-          "burst": 8
+          "interaction": 58,
+          "resource": 83,
+          "burst": 5
+        },
+        {
+          "turn": 7,
+          "commander": 92,
+          "engine": 0,
+          "interaction": 62,
+          "resource": 84,
+          "burst": 7
         }
       ]
     },
@@ -2001,6 +2007,16 @@
           "draw",
           "mana",
           "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Curse of Opulence",
+        "impact": 2.9,
+        "tags": [
+          "enchantment",
+          "mana",
+          "tokens"
         ],
         "aeon": null
       },
@@ -2059,15 +2075,6 @@
         "aeon": null
       },
       {
-        "name": "Curse of Opulence",
-        "impact": 2,
-        "tags": [
-          "enchantment",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Keeper of the Accord",
         "impact": 2,
         "tags": [
@@ -2098,7 +2105,7 @@
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

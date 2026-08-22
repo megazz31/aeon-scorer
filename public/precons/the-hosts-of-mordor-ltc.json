@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 44,
-    "p20": 32,
-    "p80": 56,
-    "peak": 83,
-    "coverage": 92,
+    "median": 47,
+    "p20": 35,
+    "p80": 59,
+    "peak": 86,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "97929c1179cefa5aaaf01aecea0d9b3d39a5eaaa0fe899b22f3296ddf3bcbf96",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Saruman, the White Hand\n1 Corsairs of Umbar\n1 Monstrosity of the Lake\n1 Subjugate the Hobbits\n1 Shelob, Dread Weaver\n1 Cavern-Hoard Dragon\n1 Orcish Siegemaster\n1 Rampaging War Mammoth\n1 The Balrog of Moria\n1 Gríma, Saruman's Footman\n1 In the Darkness Bind Them\n1 Lidless Gaze\n1 Lord of the Nazgûl\n1 Moria Scavenger\n1 Summons of Saruman\n1 Too Greedily, Too Deep\n1 Wake the Dragon\n1 Relic of Sauron\n1 The Black Gate\n1 Decree of Pain\n1 Languish\n1 Living Death\n1 Reanimate\n1 Blasphemous Act\n1 Goblin Dark-Dwellers\n1 Inferno Titan\n1 Knollspine Dragon\n1 Scourge of the Throne\n1 Siege-Gang Commander\n1 Treasure Nabber\n1 Hostage Taker\n1 Notion Thief\n1 Choked Estuary\n1 Desolate Lighthouse\n1 Dragonskull Summit\n1 Drowned Catacomb\n1 Foreboding Ruins\n1 Frostboil Snarl\n1 Smoldering Marsh\n1 Sulfur Falls\n1 Sulfurous Springs\n1 Sunken Hollow\n1 Underground River\n1 Treason of Isengard\n1 Bitter Downfall\n1 Troll of Khazad-dûm\n1 Voracious Fell Beast\n1 Fiery Inscription\n1 Grishnákh, Brash Instigator\n1 Arcane Denial\n1 Boon of the Wish-Giver\n1 Consider\n1 Deep Analysis\n1 Fact or Fiction\n1 Forbidden Alchemy\n1 Feed the Swarm\n1 Merciless Executioner\n1 Revenge of Ravens\n1 Anger\n1 Faithless Looting\n1 The Mouth of Sauron\n1 Goblin Cratermaker\n1 Guttersnipe\n1 Shiny Impetus\n1 Thrill of Possibility\n1 Extract from Darkness\n1 Arcane Signet\n1 Basalt Monolith\n1 Commander's Sphere\n1 Everflowing Chalice\n1 Mind Stone\n1 Sol Ring\n1 Worn Powerstone\n1 Command Tower\n1 Crumbling Necropolis\n1 Evolving Wilds\n1 Field of Ruin\n1 Path of Ancestry\n1 Rogue's Passage\n1 Terramorphic Expanse\n3 Island\n3 Island\n3 Swamp\n3 Swamp\n4 Mountain\n3 Mountain",
   "oracleCards": [
@@ -149,7 +149,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -356,7 +357,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "draw"
+        "draw",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -518,6 +520,7 @@
       "tags": [
         "sorcery",
         "draw",
+        "recursion",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -593,7 +596,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -873,6 +877,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "exile-cast"
       ],
       "isCommander": false
@@ -929,7 +934,6 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "wipe",
         "etb"
       ],
       "isCommander": false
@@ -968,8 +972,10 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "etb",
         "counter-producer",
+        "counter-kind:plus1",
         "counter-kind:stun"
       ],
       "isCommander": false
@@ -1088,7 +1094,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1187,6 +1194,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "protection",
         "tokens",
         "counter-producer",
         "counter-kind:plus1",
@@ -1420,6 +1428,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "graveyard-setup",
         "tokens",
         "counter-producer",
@@ -1503,6 +1512,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "mana",
         "removal",
         "tokens"
@@ -1639,7 +1649,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1700,6 +1711,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -1726,24 +1738,24 @@
   ],
   "result": {
     "profile": {
-      "median": 44,
-      "floor": 32,
-      "ceiling": 56,
-      "peak": 83,
-      "dispersion": 24,
-      "variance": 24,
+      "median": 47,
+      "floor": 35,
+      "ceiling": 59,
+      "peak": 86,
+      "dispersion": 25,
+      "variance": 25,
       "consistency": 62,
       "commanderDelta": 6,
-      "coverage": 92,
-      "dataCoverage": 92
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
-      "speed": 25,
+      "speed": 26,
       "consistency": 62,
       "explosiveness": 24,
-      "synergy": 79,
-      "interaction": 50,
-      "resilience": 30
+      "synergy": 86,
+      "interaction": 40,
+      "resilience": 54
     },
     "roles": {
       "lands": 38,
@@ -1751,10 +1763,10 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 14,
+      "draw": 18,
       "interaction": 9,
-      "protection": 1,
-      "recursion": 1,
+      "protection": 2,
+      "recursion": 7,
       "wipes": 3,
       "avgCmc": 4.098360655737705,
       "unknownManaLands": 0
@@ -1851,7 +1863,8 @@
             "name": "Blasphemous Act",
             "cmc": 9,
             "tags": [
-              "sorcery"
+              "sorcery",
+              "wipe"
             ],
             "manaReq": {
               "generic": 8,
@@ -1927,7 +1940,8 @@
             "cmc": 4,
             "tags": [
               "sorcery",
-              "draw"
+              "draw",
+              "recursion"
             ],
             "manaReq": {
               "generic": 3,
@@ -1980,6 +1994,7 @@
             "tags": [
               "sorcery",
               "draw",
+              "recursion",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -2013,7 +2028,8 @@
             "name": "Forbidden Alchemy",
             "cmc": 3,
             "tags": [
-              "instant"
+              "instant",
+              "recursion"
             ],
             "manaReq": {
               "generic": 2,
@@ -2050,6 +2066,7 @@
             "cmc": 4,
             "tags": [
               "sorcery",
+              "recursion",
               "exile-cast"
             ],
             "manaReq": {
@@ -2124,6 +2141,7 @@
             "cmc": 2,
             "tags": [
               "sorcery",
+              "recursion",
               "graveyard-setup",
               "tokens",
               "counter-producer",
@@ -2206,6 +2224,7 @@
             "cmc": 6,
             "tags": [
               "sorcery",
+              "recursion",
               "tokens"
             ],
             "manaReq": {
@@ -2285,6 +2304,7 @@
             "cmc": 4,
             "tags": [
               "creature",
+              "protection",
               "tokens",
               "counter-producer",
               "counter-kind:plus1",
@@ -2315,6 +2335,337 @@
           "spellslinger"
         ],
         "evidence": "22 producteur(s), 4 payoff(s), 26 carte(s) distincte(s)."
+      },
+      {
+        "id": "graveyard",
+        "name": "Cimetière / récursion",
+        "strength": 92,
+        "cohesion": 92,
+        "producers": [
+          "Consider",
+          "Desolate Lighthouse",
+          "Faithless Looting",
+          "Moria Scavenger",
+          "Relic of Sauron",
+          "Summons of Saruman",
+          "Thrill of Possibility"
+        ],
+        "payoffs": [
+          "Deep Analysis",
+          "Faithless Looting",
+          "Forbidden Alchemy",
+          "Goblin Dark-Dwellers",
+          "Lidless Gaze",
+          "Summons of Saruman",
+          "Wake the Dragon"
+        ],
+        "members": [
+          "Consider",
+          "Desolate Lighthouse",
+          "Faithless Looting",
+          "Moria Scavenger",
+          "Relic of Sauron",
+          "Summons of Saruman",
+          "Thrill of Possibility",
+          "Deep Analysis",
+          "Forbidden Alchemy",
+          "Goblin Dark-Dwellers",
+          "Lidless Gaze",
+          "Wake the Dragon"
+        ],
+        "producerCards": [
+          {
+            "name": "Consider",
+            "cmc": 1,
+            "tags": [
+              "instant",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Desolate Lighthouse",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "draw",
+              "mana",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Faithless Looting",
+            "cmc": 1,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Moria Scavenger",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "draw",
+              "graveyard-setup",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Relic of Sauron",
+            "cmc": 4,
+            "tags": [
+              "artifact",
+              "draw",
+              "mana",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
+            }
+          },
+          {
+            "name": "Summons of Saruman",
+            "cmc": 2,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "graveyard-setup",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1",
+              "spellslinger",
+              "cheat",
+              "free"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Thrill of Possibility",
+            "cmc": 2,
+            "tags": [
+              "instant",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Deep Analysis",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Faithless Looting",
+            "cmc": 1,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Forbidden Alchemy",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Goblin Dark-Dwellers",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb",
+              "cheat",
+              "free"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Lidless Gaze",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "exile-cast"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Summons of Saruman",
+            "cmc": 2,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "graveyard-setup",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1",
+              "spellslinger",
+              "cheat",
+              "free"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Wake the Dragon",
+            "cmc": 6,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 6
+            }
+          }
+        ],
+        "producerTags": [
+          "graveyard-setup"
+        ],
+        "payoffTags": [
+          "recursion"
+        ],
+        "evidence": "7 producteur(s), 7 payoff(s), 12 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2500,17 +2851,21 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 61,
+      "score": 72,
       "connected": [
         "Cavern-Hoard Dragon",
         "Consider",
         "Corsairs of Umbar",
+        "Deep Analysis",
         "Desolate Lighthouse",
         "Faithless Looting",
+        "Forbidden Alchemy",
         "Goblin Dark-Dwellers",
         "Grishnákh, Brash Instigator",
         "In the Darkness Bind Them",
+        "Lidless Gaze",
         "Lord of the Nazgûl",
+        "Monstrosity of the Lake",
         "Moria Scavenger",
         "Relic of Sauron",
         "Saruman, the White Hand",
@@ -2540,93 +2895,93 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 33,
-      "median": 41,
-      "high": 50,
-      "ceiling": 50,
-      "peak": 73,
+      "iterations": 100,
+      "floor": 35,
+      "median": 43,
+      "high": 53,
+      "ceiling": 53,
+      "peak": 78,
       "iqr": 14,
       "consistency": 70,
       "commanderMedianTurn": 6,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 77,
+      "recoveryAfterDisruption": 89,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 9,
-          "resource": 15,
+          "interaction": 6,
+          "resource": 12,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 0,
-          "engine": 0,
-          "interaction": 29,
-          "resource": 34,
-          "burst": 5
+          "engine": 3,
+          "interaction": 22,
+          "resource": 42,
+          "burst": 11
         },
         {
           "turn": 3,
           "commander": 0,
-          "engine": 2,
-          "interaction": 39,
-          "resource": 45,
-          "burst": 9
+          "engine": 6,
+          "interaction": 28,
+          "resource": 55,
+          "burst": 11
         },
         {
           "turn": 4,
-          "commander": 4,
-          "engine": 13,
-          "interaction": 54,
-          "resource": 65,
-          "burst": 19
+          "commander": 5,
+          "engine": 23,
+          "interaction": 44,
+          "resource": 74,
+          "burst": 17
         },
         {
           "turn": 5,
-          "commander": 11,
-          "engine": 22,
-          "interaction": 61,
-          "resource": 74,
-          "burst": 24
+          "commander": 9,
+          "engine": 42,
+          "interaction": 55,
+          "resource": 85,
+          "burst": 26
         },
         {
           "turn": 6,
-          "commander": 22,
-          "engine": 30,
-          "interaction": 65,
-          "resource": 79,
+          "commander": 23,
+          "engine": 47,
+          "interaction": 58,
+          "resource": 90,
           "burst": 27
         },
         {
           "turn": 7,
-          "commander": 35,
-          "engine": 35,
-          "interaction": 70,
-          "resource": 84,
-          "burst": 31
+          "commander": 40,
+          "engine": 54,
+          "interaction": 64,
+          "resource": 94,
+          "burst": 32
         }
       ]
     },
     "drivers": [
       {
         "name": "Summons of Saruman",
-        "impact": 4.9,
+        "impact": 6.3,
         "tags": [
           "sorcery",
+          "recursion",
           "graveyard-setup",
           "tokens",
           "counter-producer",
-          "counter-kind:plus1",
-          "spellslinger"
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
       {
         "name": "Goblin Dark-Dwellers",
-        "impact": 4.3,
+        "impact": 5,
         "tags": [
           "creature",
           "recursion",
@@ -2658,12 +3013,45 @@
         "aeon": null
       },
       {
+        "name": "Faithless Looting",
+        "impact": 3.9,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Deep Analysis",
+        "impact": 3.8,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
           "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "The Balrog of Moria",
+        "impact": 3.6,
+        "tags": [
+          "creature",
+          "draw",
+          "mana",
+          "removal",
+          "tokens"
         ],
         "aeon": null
       },
@@ -2700,42 +3088,11 @@
         "aeon": null
       },
       {
-        "name": "Shiny Impetus",
-        "impact": 2.8,
-        "tags": [
-          "enchantment",
-          "mana",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Consider",
-        "impact": 2.5,
+        "impact": 3.2,
         "tags": [
           "instant",
           "draw",
-          "graveyard-setup"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Faithless Looting",
-        "impact": 2.5,
-        "tags": [
-          "sorcery",
-          "draw",
-          "graveyard-setup"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Relic of Sauron",
-        "impact": 2.5,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
           "graveyard-setup"
         ],
         "aeon": null
@@ -2743,7 +3100,7 @@
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

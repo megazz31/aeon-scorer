@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 48,
-    "p20": 36,
-    "p80": 58,
-    "peak": 88,
+    "median": 49,
+    "p20": 39,
+    "p80": 59,
+    "peak": 89,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "79815ac3b45cebd3790e9175a0feda678fd9d44b6b6410ce8baba65cb16d9013",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 The Reaper, King No More\n1 Wickersmith's Tools\n1 Sinister Gnarlbark\n1 Eventide's Shadow\n1 Aberrant Return\n1 Dread Tiller\n1 Grave Venerations\n1 Oft-Nabbed Goat\n1 Village Pillagers\n1 Puca's Covenant\n1 Ferrafor, Young Yew\n1 Tree of Perdition\n1 Vernal Fen\n1 Festering Thicket\n1 Necroskitter\n1 Ignoble Hierarch\n1 Nesting Grounds\n1 Massacre Girl, Known Killer\n1 Grave Titan\n1 Vraska, Betrayal's Sting\n1 The Scorpion God\n1 Liliana, Death Wielder\n1 Chimil, the Inner Sun\n1 Carnifex Demon\n1 Puppeteer Clique\n1 Dusk Urchins\n1 Black Sun's Zenith\n1 Painful Truths\n1 Persist\n1 Midnight Banshee\n1 Chain Reaction\n1 Archfiend of Ifnir\n1 Channeler Initiate\n1 Hapatra, Vizier of Poisons\n1 Glissa Sunslayer\n1 Everlasting Torment\n1 Assassin's Trophy\n1 Grim Poppet\n1 Canyon Slough\n1 Sheltered Thicket\n1 Exotic Orchard\n1 Smoldering Marsh\n1 Cinder Glade\n1 Dragonskull Summit\n1 Rootbound Crag\n1 Woodland Cemetery\n1 Lasting Tarfire\n1 Burning Curiosity\n1 Hoarder's Greed\n1 Blowfly Infestation\n1 Fire Covenant\n1 Sol Ring\n1 Arcane Signet\n1 Command Tower\n1 Cathartic Reunion\n1 Skinrender\n1 Soul Snuffers\n1 Incremental Blight\n1 Infernal Grasp\n1 Evolution Sage\n1 Devoted Druid\n1 Flourishing Defenses\n1 Harmonize\n1 Putrefy\n1 Binding the Old Gods\n1 Kulrath Knight\n1 Contagion Clasp\n1 Savage Lands\n1 Ifnir Deadlands\n1 Night's Whisper\n1 Wickerbough Elder\n1 Terminate\n1 Commander's Sphere\n1 Cathartic Pyre\n1 Evolving Wilds\n1 Terramorphic Expanse\n1 Path of Ancestry\n1 Riveteers Overlook\n1 Rakdos Carnarium\n1 Gruul Turf\n1 Golgari Rot Farm\n8 Swamp\n4 Mountain\n6 Forest",
   "oracleCards": [
@@ -98,6 +98,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "counter-producer",
         "counter-kind:minus1"
       ],
@@ -139,6 +140,7 @@
       "tags": [
         "creature",
         "draw",
+        "protection",
         "counter-producer",
         "counter-kind:minus1"
       ],
@@ -241,6 +243,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -314,7 +317,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -571,6 +575,8 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "counter-producer",
+        "counter-kind:minus1",
         "stax"
       ],
       "isCommander": false
@@ -673,6 +679,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -1017,7 +1024,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-kind:generic"
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1074,7 +1082,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "draw"
+        "draw",
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1130,6 +1140,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:minus1"
       ],
       "isCommander": false
@@ -1420,6 +1431,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -1680,8 +1692,9 @@
         "mana",
         "tokens",
         "etb",
+        "counter-producer",
         "counter-payoff",
-        "counter-kind:generic"
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1787,24 +1800,24 @@
   ],
   "result": {
     "profile": {
-      "median": 48,
-      "floor": 36,
-      "ceiling": 58,
-      "peak": 88,
-      "dispersion": 22,
-      "variance": 22,
-      "consistency": 64,
-      "commanderDelta": 12,
+      "median": 49,
+      "floor": 39,
+      "ceiling": 59,
+      "peak": 89,
+      "dispersion": 20,
+      "variance": 20,
+      "consistency": 67,
+      "commanderDelta": 11,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 38,
-      "consistency": 64,
-      "explosiveness": 13,
-      "synergy": 77,
-      "interaction": 47,
-      "resilience": 42
+      "consistency": 67,
+      "explosiveness": 14,
+      "synergy": 81,
+      "interaction": 43,
+      "resilience": 43
     },
     "roles": {
       "lands": 39,
@@ -1812,11 +1825,11 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 14,
-      "interaction": 9,
+      "draw": 15,
+      "interaction": 10,
       "protection": 0,
       "recursion": 4,
-      "wipes": 0,
+      "wipes": 1,
       "avgCmc": 3.6666666666666665,
       "unknownManaLands": 0
     },
@@ -1856,12 +1869,16 @@
           "Devoted Druid",
           "Dread Tiller",
           "Dusk Urchins",
+          "Everlasting Torment",
           "Evolution Sage",
           "Grim Poppet",
           "Hapatra, Vizier of Poisons",
           "Incremental Blight",
+          "Kulrath Knight",
           "Liliana, Death Wielder",
+          "Massacre Girl, Known Killer",
           "Midnight Banshee",
+          "Necroskitter",
           "Oft-Nabbed Goat",
           "Puppeteer Clique",
           "Sinister Gnarlbark",
@@ -1869,12 +1886,12 @@
           "Soul Snuffers",
           "The Reaper, King No More",
           "The Scorpion God",
+          "Village Pillagers",
           "Vraska, Betrayal's Sting",
           "Wickerbough Elder",
           "Wickersmith's Tools",
           "Lasting Tarfire",
-          "Puca's Covenant",
-          "Village Pillagers"
+          "Puca's Covenant"
         ],
         "producerCards": [
           {
@@ -2081,6 +2098,26 @@
             }
           },
           {
+            "name": "Everlasting Torment",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "counter-producer",
+              "counter-kind:minus1",
+              "stax"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B",
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
             "name": "Evolution Sage",
             "cmc": 3,
             "tags": [
@@ -2161,6 +2198,29 @@
             }
           },
           {
+            "name": "Kulrath Knight",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B",
+                  "R"
+                ],
+                [
+                  "B",
+                  "R"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
             "name": "Liliana, Death Wielder",
             "cmc": 7,
             "tags": [
@@ -2180,6 +2240,28 @@
                 ]
               ],
               "total": 7
+            }
+          },
+          {
+            "name": "Massacre Girl, Known Killer",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "draw",
+              "counter-producer",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
             }
           },
           {
@@ -2204,6 +2286,27 @@
                 ]
               ],
               "total": 6
+            }
+          },
+          {
+            "name": "Necroskitter",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
             }
           },
           {
@@ -2351,6 +2454,31 @@
               "colored": [
                 [
                   "B"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Village Pillagers",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "mana",
+              "tokens",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
                 ],
                 [
                   "R"
@@ -2513,8 +2641,9 @@
               "mana",
               "tokens",
               "etb",
+              "counter-producer",
               "counter-payoff",
-              "counter-kind:generic"
+              "counter-kind:minus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -2537,7 +2666,7 @@
           "counter-payoff",
           "modified-payoff"
         ],
-        "evidence": "26 producteur(s), 5 payoff(s), 29 carte(s) distincte(s)."
+        "evidence": "31 producteur(s), 5 payoff(s), 33 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2861,6 +2990,7 @@
             "tags": [
               "creature",
               "draw",
+              "protection",
               "counter-producer",
               "counter-kind:minus1"
             ],
@@ -2886,7 +3016,7 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 82,
+      "score": 96,
       "connected": [
         "Aberrant Return",
         "Archfiend of Ifnir",
@@ -2899,13 +3029,17 @@
         "Devoted Druid",
         "Dread Tiller",
         "Dusk Urchins",
+        "Everlasting Torment",
         "Evolution Sage",
         "Grim Poppet",
         "Hapatra, Vizier of Poisons",
         "Ifnir Deadlands",
         "Incremental Blight",
+        "Kulrath Knight",
         "Liliana, Death Wielder",
+        "Massacre Girl, Known Killer",
         "Midnight Banshee",
+        "Necroskitter",
         "Oft-Nabbed Goat",
         "Puca's Covenant",
         "Puppeteer Clique",
@@ -2914,6 +3048,7 @@
         "Soul Snuffers",
         "The Reaper, King No More",
         "The Scorpion God",
+        "Village Pillagers",
         "Vraska, Betrayal's Sting",
         "Wickerbough Elder",
         "Wickersmith's Tools"
@@ -2929,72 +3064,72 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 35,
+      "iterations": 100,
+      "floor": 36,
       "median": 43,
       "high": 51,
       "ceiling": 51,
-      "peak": 79,
-      "iqr": 12,
-      "consistency": 73,
+      "peak": 80,
+      "iqr": 11,
+      "consistency": 76,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 89,
+      "recoveryAfterDisruption": 92,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 0,
+          "resource": 13,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 0,
           "engine": 0,
-          "interaction": 14,
-          "resource": 21,
+          "interaction": 12,
+          "resource": 31,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 17,
-          "engine": 8,
-          "interaction": 33,
-          "resource": 46,
+          "commander": 12,
+          "engine": 9,
+          "interaction": 30,
+          "resource": 45,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 64,
-          "engine": 22,
-          "interaction": 53,
-          "resource": 72,
+          "commander": 67,
+          "engine": 21,
+          "interaction": 48,
+          "resource": 75,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 84,
+          "commander": 88,
           "engine": 31,
           "interaction": 62,
-          "resource": 83,
+          "resource": 89,
           "burst": 0
         },
         {
           "turn": 6,
-          "commander": 89,
-          "engine": 36,
+          "commander": 93,
+          "engine": 35,
           "interaction": 68,
-          "resource": 88,
+          "resource": 89,
           "burst": 0
         },
         {
           "turn": 7,
-          "commander": 93,
-          "engine": 41,
-          "interaction": 73,
-          "resource": 92,
+          "commander": 95,
+          "engine": 40,
+          "interaction": 74,
+          "resource": 94,
           "burst": 0
         }
       ]
@@ -3096,6 +3231,17 @@
         "aeon": null
       },
       {
+        "name": "Massacre Girl, Known Killer",
+        "impact": 2.9,
+        "tags": [
+          "creature",
+          "draw",
+          "counter-producer",
+          "counter-kind:minus1"
+        ],
+        "aeon": null
+      },
+      {
         "name": "The Scorpion God",
         "impact": 2.9,
         "tags": [
@@ -3114,8 +3260,8 @@
           "mana",
           "tokens",
           "etb",
-          "counter-payoff",
-          "counter-kind:generic"
+          "counter-producer",
+          "counter-payoff"
         ],
         "aeon": null
       },
@@ -3128,23 +3274,11 @@
           "removal"
         ],
         "aeon": null
-      },
-      {
-        "name": "Channeler Initiate",
-        "impact": 2.6,
-        "tags": [
-          "creature",
-          "mana",
-          "etb",
-          "counter-producer",
-          "counter-kind:minus1"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

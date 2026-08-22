@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 47,
-    "p20": 34,
-    "p80": 57,
+    "p20": 37,
+    "p80": 59,
     "peak": 83,
-    "coverage": 91,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "2acaae6b507e99ae95a33369cfc3a2a56d7b67a53ffe92466e12341d6b376ff7",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Azorius Chancery\n1 Bant Panorama\n1 Coastal Tower\n1 Elfhame Palace\n4 Forest\n3 Forest\n3 Forest\n3 Island\n3 Island\n3 Island\n1 Miren, the Moaning Well\n3 Plains\n3 Plains\n3 Plains\n1 Rupture Spire\n1 Seaside Citadel\n1 Selesnya Sanctuary\n1 Simic Growth Chamber\n1 Terramorphic Expanse\n1 Treva's Ruins\n1 Auramancer\n1 Azorius Guildmage\n1 Borderland Ranger\n1 Coiling Oracle\n1 Court Hussar\n1 Elvish Visionary\n1 Jungle Barrier\n1 Jungle Lion\n1 Kami of Ancient Law\n1 Krosan Tusker\n1 Looter il-Kor\n1 Man-o'-War\n1 Merfolk Looter\n1 Mistmeadow Witch\n1 Mulldrifter\n1 Noble Templar\n1 Phantom Centaur\n1 Questing Phelddagrif\n1 Raven Familiar\n1 Sakura-Tribe Elder\n1 Shoreline Ranger\n1 Stonecloaker\n1 Willbender\n1 Wirewood Guardian\n1 Wood Elves\n1 Yavimaya Enchantress\n1 Armadillo Cloak\n1 Azorius Signet\n1 Capsize\n1 Compulsive Research\n1 Concordant Crossroads\n1 Condemn\n1 Confiscate\n1 Copy Enchantment\n1 Decree of Justice\n1 Dismantling Blow\n1 Empyrial Armor\n1 Enlightened Tutor\n1 Fact or Fiction\n1 Faith's Fetters\n1 Fertile Ground\n1 Ghostly Prison\n1 Hinder\n1 Illusionary Mask\n1 Mirari's Wake\n1 Momentary Blink\n1 Moment's Peace\n1 Oblivion Ring\n1 Overwhelming Intellect\n1 Prison Term\n1 Rampant Growth\n1 Relic of Progenitus\n1 Resurrection\n1 Rhystic Study\n1 Seal of Cleansing\n1 Selesnya Signet\n1 Simic Signet\n1 Sterling Grove\n1 Swords to Plowshares\n1 Temporal Spring",
   "oracleCards": [
@@ -362,6 +362,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "draw",
         "tokens"
       ],
       "isCommander": false
@@ -518,7 +519,8 @@
         "W"
       ],
       "tags": [
-        "enchantment"
+        "enchantment",
+        "mana"
       ],
       "isCommander": false
     },
@@ -682,7 +684,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -821,7 +824,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -841,6 +845,7 @@
       "tags": [
         "instant",
         "protection",
+        "recursion",
         "blink"
       ],
       "isCommander": false
@@ -877,7 +882,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1250,7 +1256,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1316,6 +1323,7 @@
         "enchantment",
         "tutor",
         "repeatable-tutor",
+        "protection",
         "sacrifice"
       ],
       "isCommander": false
@@ -1449,7 +1457,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1493,23 +1502,23 @@
   "result": {
     "profile": {
       "median": 47,
-      "floor": 34,
-      "ceiling": 57,
+      "floor": 37,
+      "ceiling": 59,
       "peak": 83,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 67,
-      "commanderDelta": 5,
-      "coverage": 91,
-      "dataCoverage": 91
+      "dispersion": 22,
+      "variance": 22,
+      "consistency": 66,
+      "commanderDelta": 4,
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
       "speed": 37,
-      "consistency": 67,
-      "explosiveness": 16,
+      "consistency": 66,
+      "explosiveness": 17,
       "synergy": 52,
-      "interaction": 70,
-      "resilience": 36
+      "interaction": 63,
+      "resilience": 48
     },
     "roles": {
       "lands": 39,
@@ -1517,10 +1526,10 @@
       "fastMana": 0,
       "tutors": 2,
       "repeatableTutors": 1,
-      "draw": 10,
+      "draw": 15,
       "interaction": 14,
-      "protection": 3,
-      "recursion": 2,
+      "protection": 4,
+      "recursion": 4,
       "wipes": 1,
       "avgCmc": 3,
       "unknownManaLands": 0
@@ -1590,6 +1599,7 @@
             "tags": [
               "instant",
               "protection",
+              "recursion",
               "blink"
             ],
             "manaReq": {
@@ -1852,20 +1862,24 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 59,
-        "cohesion": 59,
+        "strength": 58,
+        "cohesion": 58,
         "producers": [
           "Looter il-Kor",
           "Merfolk Looter"
         ],
         "payoffs": [
           "Auramancer",
+          "Moment's Peace",
+          "Momentary Blink",
           "Resurrection"
         ],
         "members": [
           "Looter il-Kor",
           "Merfolk Looter",
           "Auramancer",
+          "Moment's Peace",
+          "Momentary Blink",
           "Resurrection"
         ],
         "producerCards": [
@@ -1926,6 +1940,42 @@
             }
           },
           {
+            "name": "Moment's Peace",
+            "cmc": 2,
+            "tags": [
+              "instant",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Momentary Blink",
+            "cmc": 2,
+            "tags": [
+              "instant",
+              "protection",
+              "recursion",
+              "blink"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
             "name": "Resurrection",
             "cmc": 4,
             "tags": [
@@ -1952,7 +2002,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "2 producteur(s), 2 payoff(s), 4 carte(s) distincte(s)."
+        "evidence": "2 producteur(s), 4 payoff(s), 6 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -1999,7 +2049,8 @@
             "name": "Fertile Ground",
             "cmc": 2,
             "tags": [
-              "enchantment"
+              "enchantment",
+              "mana"
             ],
             "manaReq": {
               "generic": 1,
@@ -2131,24 +2182,24 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 35,
+      "iterations": 100,
+      "floor": 37,
       "median": 44,
-      "high": 52,
-      "ceiling": 52,
+      "high": 53,
+      "ceiling": 53,
       "peak": 74,
-      "iqr": 13,
-      "consistency": 70,
+      "iqr": 14,
+      "consistency": 69,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 78,
+      "recoveryAfterDisruption": 89,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 11,
-          "resource": 6,
+          "interaction": 5,
+          "resource": 5,
           "burst": 0
         },
         {
@@ -2156,48 +2207,48 @@
           "commander": 0,
           "engine": 0,
           "interaction": 33,
-          "resource": 21,
-          "burst": 7
+          "resource": 25,
+          "burst": 10
         },
         {
           "turn": 3,
-          "commander": 13,
-          "engine": 4,
-          "interaction": 61,
-          "resource": 47,
+          "commander": 17,
+          "engine": 10,
+          "interaction": 54,
+          "resource": 55,
           "burst": 10
         },
         {
           "turn": 4,
           "commander": 39,
-          "engine": 14,
-          "interaction": 74,
-          "resource": 63,
-          "burst": 12
+          "engine": 16,
+          "interaction": 67,
+          "resource": 80,
+          "burst": 14
         },
         {
           "turn": 5,
-          "commander": 69,
-          "engine": 18,
-          "interaction": 79,
-          "resource": 71,
-          "burst": 13
+          "commander": 66,
+          "engine": 21,
+          "interaction": 72,
+          "resource": 88,
+          "burst": 14
         },
         {
           "turn": 6,
-          "commander": 81,
-          "engine": 23,
-          "interaction": 84,
-          "resource": 77,
+          "commander": 77,
+          "engine": 24,
+          "interaction": 76,
+          "resource": 89,
           "burst": 14
         },
         {
           "turn": 7,
-          "commander": 86,
-          "engine": 26,
-          "interaction": 86,
-          "resource": 81,
-          "burst": 15
+          "commander": 79,
+          "engine": 31,
+          "interaction": 83,
+          "resource": 93,
+          "burst": 14
         }
       ]
     },
@@ -2219,6 +2270,17 @@
           "creature",
           "draw",
           "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Momentary Blink",
+        "impact": 3,
+        "tags": [
+          "instant",
+          "protection",
+          "recursion",
+          "blink"
         ],
         "aeon": null
       },
@@ -2283,6 +2345,15 @@
         "aeon": null
       },
       {
+        "name": "Fertile Ground",
+        "impact": 2.4,
+        "tags": [
+          "enchantment",
+          "mana"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Jungle Barrier",
         "impact": 2.4,
         "tags": [
@@ -2301,30 +2372,11 @@
           "counterspell"
         ],
         "aeon": null
-      },
-      {
-        "name": "Mulldrifter",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "draw",
-          "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Rhystic Study",
-        "impact": 2.3,
-        "tags": [
-          "enchantment",
-          "draw"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

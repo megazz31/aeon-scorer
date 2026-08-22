@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 50,
-    "p20": 36,
-    "p80": 62,
+    "median": 52,
+    "p20": 38,
+    "p80": 61,
     "peak": 91,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "a423137ae5a7d9902fc813977d3de141b7bab09cafa3acba4a4eceeadffde7d5",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Kotis, Sibsig Champion\n1 Diviner of Mist\n1 Afterlife from the Loam\n1 Teval's Judgment\n1 Welcome the Dead\n1 Floral Evoker\n1 Steward of the Harvest\n1 Will of the Sultai\n1 Colossal Grave-Reaver\n1 Gravecrawler\n1 Life from the Loam\n1 Casualties of War\n1 Amphin Mutineer\n1 River Kelpie\n1 Dauthi Voidwalker\n1 Disciple of Bolas\n1 Junji, the Midnight Sky\n1 Lethal Scheme\n1 Living Death\n1 Lord of the Forsaken\n1 Necromantic Selection\n1 Necropolis Fiend\n1 Noxious Gearhulk\n1 Ob Nixilis, the Fallen\n1 Tasigur, the Golden Fang\n1 Woe Strider\n1 Avenger of Zendikar\n1 Conduit of Worlds\n1 Multani, Yavimaya's Avatar\n1 Shigeki, Jukai Visionary\n1 Consuming Aberration\n1 Jarad, Golgari Lich Lord\n1 Lord of Extinction\n1 Meren of Clan Nel Toth\n1 Command Beacon\n1 Crypt of Agadeem\n1 Darkwater Catacombs\n1 Dreamroot Cascade\n1 Drownyard Temple\n1 Exotic Orchard\n1 Fetid Pools\n1 Hinterland Harbor\n1 Llanowar Wastes\n1 Sunken Hollow\n1 Temple of Malady\n1 Woodland Cemetery\n1 Essence Anchor\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Forbidden Alchemy\n1 Hedron Crab\n1 Treasure Cruise\n1 Wonder\n1 Phyrexian Reclamation\n1 Reassembling Skeleton\n1 Stitcher's Supplier\n1 Victimize\n1 Kishla Skimmer\n1 Crawling Sensation\n1 Cultivate\n1 Farseek\n1 Grapple with the Past\n1 Harrow\n1 Opulent Palace\n1 Rampant Growth\n1 Sakura-Tribe Elder\n1 Satyr Wayfinder\n1 Springbloom Druid\n1 Tear Asunder\n1 Timeless Witness\n1 Grisly Salvage\n1 Nyx Weaver\n1 Putrefy\n1 Skull Prophet\n1 Millikin\n1 Cephalid Coliseum\n1 Contaminated Aquifer\n1 Foreboding Landscape\n1 Golgari Rot Farm\n1 Haunted Mire\n1 Memorial to Folly\n1 Myriad Landscape\n1 Terramorphic Expanse\n2 Island\n2 Island\n3 Swamp\n2 Swamp\n3 Forest\n3 Forest",
   "oracleCards": [
@@ -74,6 +74,8 @@
       "tags": [
         "creature",
         "removal",
+        "recursion",
+        "tokens",
         "etb"
       ],
       "isCommander": false
@@ -544,6 +546,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -584,7 +587,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -606,6 +610,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "land-ramp",
         "mana",
         "sacrifice"
@@ -903,6 +908,7 @@
       "producedMana": [],
       "tags": [
         "instant",
+        "draw",
         "removal",
         "counter-producer",
         "counter-kind:plus1"
@@ -1658,6 +1664,7 @@
       "tags": [
         "creature",
         "recursion",
+        "tokens",
         "etb"
       ],
       "isCommander": false
@@ -1713,6 +1720,7 @@
       "tags": [
         "sorcery",
         "draw",
+        "recursion",
         "graveyard-setup",
         "tokens"
       ],
@@ -1752,6 +1760,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "recursion",
         "tokens",
         "sacrifice",
         "sac-outlet",
@@ -1803,24 +1812,24 @@
   ],
   "result": {
     "profile": {
-      "median": 50,
-      "floor": 36,
-      "ceiling": 62,
+      "median": 52,
+      "floor": 38,
+      "ceiling": 61,
       "peak": 91,
-      "dispersion": 26,
-      "variance": 26,
-      "consistency": 60,
-      "commanderDelta": 12,
+      "dispersion": 23,
+      "variance": 23,
+      "consistency": 65,
+      "commanderDelta": 11,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
-      "speed": 38,
-      "consistency": 60,
-      "explosiveness": 21,
-      "synergy": 82,
-      "interaction": 23,
-      "resilience": 85
+      "speed": 37,
+      "consistency": 65,
+      "explosiveness": 18,
+      "synergy": 84,
+      "interaction": 24,
+      "resilience": 99
     },
     "roles": {
       "lands": 37,
@@ -1828,10 +1837,10 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 6,
+      "draw": 7,
       "interaction": 6,
       "protection": 0,
-      "recursion": 17,
+      "recursion": 21,
       "wipes": 1,
       "avgCmc": 3.725806451612903,
       "unknownManaLands": 0
@@ -1855,16 +1864,16 @@
           "Welcome the Dead"
         ],
         "payoffs": [
+          "Amphin Mutineer",
           "Conduit of Worlds",
           "Diviner of Mist",
           "Drownyard Temple",
           "Floral Evoker",
+          "Forbidden Alchemy",
           "Grapple with the Past",
           "Gravecrawler",
           "Jarad, Golgari Lich Lord",
-          "Kotis, Sibsig Champion",
-          "Life from the Loam",
-          "Lord of the Forsaken"
+          "Kotis, Sibsig Champion"
         ],
         "members": [
           "Colossal Grave-Reaver",
@@ -1877,9 +1886,11 @@
           "Stitcher's Supplier",
           "Tasigur, the Golden Fang",
           "Welcome the Dead",
+          "Amphin Mutineer",
           "Conduit of Worlds",
           "Drownyard Temple",
           "Floral Evoker",
+          "Forbidden Alchemy",
           "Gravecrawler",
           "Jarad, Golgari Lich Lord",
           "Kotis, Sibsig Champion",
@@ -1891,7 +1902,8 @@
           "Reassembling Skeleton",
           "Shigeki, Jukai Visionary",
           "Timeless Witness",
-          "Will of the Sultai"
+          "Will of the Sultai",
+          "Woe Strider"
         ],
         "producerCards": [
           {
@@ -2076,6 +2088,7 @@
             "tags": [
               "sorcery",
               "draw",
+              "recursion",
               "graveyard-setup",
               "tokens"
             ],
@@ -2091,6 +2104,26 @@
           }
         ],
         "payoffCards": [
+          {
+            "name": "Amphin Mutineer",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "removal",
+              "recursion",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
           {
             "name": "Conduit of Worlds",
             "cmc": 4,
@@ -2162,6 +2195,23 @@
               "colored": [
                 [
                   "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Forbidden Alchemy",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
                 ]
               ],
               "total": 3
@@ -2430,6 +2480,7 @@
             "tags": [
               "creature",
               "recursion",
+              "tokens",
               "etb"
             ],
             "manaReq": {
@@ -2440,6 +2491,26 @@
                 ],
                 [
                   "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Welcome the Dead",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion",
+              "graveyard-setup",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
                 ]
               ],
               "total": 4
@@ -2463,6 +2534,28 @@
               ],
               "total": 5
             }
+          },
+          {
+            "name": "Woe Strider",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "recursion",
+              "tokens",
+              "sacrifice",
+              "sac-outlet",
+              "etb",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
           }
         ],
         "producerTags": [
@@ -2471,7 +2564,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "10 producteur(s), 19 payoff(s), 25 carte(s) distincte(s)."
+        "evidence": "10 producteur(s), 23 payoff(s), 28 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2527,6 +2620,7 @@
             "cmc": 0,
             "tags": [
               "land",
+              "draw",
               "land-ramp",
               "mana",
               "sacrifice"
@@ -2780,6 +2874,7 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "recursion",
               "tokens",
               "sacrifice",
               "sac-outlet",
@@ -3044,8 +3139,9 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 77,
+      "score": 82,
       "connected": [
+        "Amphin Mutineer",
         "Avenger of Zendikar",
         "Colossal Grave-Reaver",
         "Conduit of Worlds",
@@ -3054,6 +3150,7 @@
         "Drownyard Temple",
         "Essence Anchor",
         "Floral Evoker",
+        "Forbidden Alchemy",
         "Grapple with the Past",
         "Gravecrawler",
         "Jarad, Golgari Lich Lord",
@@ -3089,73 +3186,73 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
+      "iterations": 100,
       "floor": 36,
       "median": 46,
-      "high": 55,
-      "ceiling": 55,
+      "high": 53,
+      "ceiling": 53,
       "peak": 84,
-      "iqr": 14,
-      "consistency": 68,
+      "iqr": 12,
+      "consistency": 74,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 90,
+      "recoveryAfterDisruption": 94,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
-          "engine": 1,
+          "engine": 0,
           "interaction": 0,
-          "resource": 26,
+          "resource": 35,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 0,
-          "engine": 4,
-          "interaction": 4,
-          "resource": 39,
-          "burst": 1
+          "engine": 1,
+          "interaction": 3,
+          "resource": 38,
+          "burst": 0
         },
         {
           "turn": 3,
-          "commander": 18,
-          "engine": 20,
-          "interaction": 14,
-          "resource": 59,
-          "burst": 5
+          "commander": 15,
+          "engine": 12,
+          "interaction": 15,
+          "resource": 63,
+          "burst": 3
         },
         {
           "turn": 4,
-          "commander": 63,
-          "engine": 41,
-          "interaction": 27,
-          "resource": 79,
-          "burst": 11
+          "commander": 67,
+          "engine": 38,
+          "interaction": 28,
+          "resource": 84,
+          "burst": 6
         },
         {
           "turn": 5,
-          "commander": 81,
-          "engine": 57,
-          "interaction": 36,
-          "resource": 87,
-          "burst": 16
+          "commander": 83,
+          "engine": 59,
+          "interaction": 35,
+          "resource": 90,
+          "burst": 12
         },
         {
           "turn": 6,
-          "commander": 87,
-          "engine": 66,
-          "interaction": 43,
-          "resource": 91,
-          "burst": 19
+          "commander": 86,
+          "engine": 67,
+          "interaction": 40,
+          "resource": 95,
+          "burst": 16
         },
         {
           "turn": 7,
-          "commander": 90,
+          "commander": 89,
           "engine": 74,
-          "interaction": 49,
-          "resource": 94,
-          "burst": 22
+          "interaction": 47,
+          "resource": 96,
+          "burst": 19
         }
       ]
     },
@@ -3218,6 +3315,30 @@
         "aeon": null
       },
       {
+        "name": "Amphin Mutineer",
+        "impact": 3.4,
+        "tags": [
+          "creature",
+          "removal",
+          "recursion",
+          "tokens",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Welcome the Dead",
+        "impact": 3.4,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion",
+          "graveyard-setup",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Lord of the Forsaken",
         "impact": 3.1,
         "tags": [
@@ -3243,13 +3364,15 @@
         "aeon": null
       },
       {
-        "name": "Welcome the Dead",
-        "impact": 2.7,
+        "name": "Woe Strider",
+        "impact": 2.8,
         "tags": [
-          "sorcery",
-          "draw",
-          "graveyard-setup",
-          "tokens"
+          "creature",
+          "recursion",
+          "tokens",
+          "sacrifice",
+          "sac-outlet",
+          "etb"
         ],
         "aeon": null
       },
@@ -3270,31 +3393,11 @@
           "land-ramp"
         ],
         "aeon": null
-      },
-      {
-        "name": "Sakura-Tribe Elder",
-        "impact": 2.6,
-        "tags": [
-          "creature",
-          "land-ramp",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Skull Prophet",
-        "impact": 2.6,
-        "tags": [
-          "creature",
-          "mana",
-          "graveyard-setup"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

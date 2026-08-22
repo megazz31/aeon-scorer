@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 45,
+    "median": 43,
     "p20": 31,
-    "p80": 55,
+    "p80": 58,
     "peak": 81,
-    "coverage": 92,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "83b86df044ac870f29282283301467fa25babbcdc6154adec5c3a122e0a3ce4c",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Vihaan, Goldwaker\n1 Council's Judgment\n1 Heliod's Intervention\n1 Angelic Sell-Sword\n1 We Ride at Dawn\n1 Massacre Girl\n1 Fain, the Broker\n1 Witch of the Moors\n1 Nighthawk Scavenger\n1 Curtains' Call\n1 Misfortune Teller\n1 Painful Truths\n1 Kamber, the Plunderer\n1 Ogre Slumlord\n1 Hex\n1 Mari, the Killing Quill\n1 Discreet Retreat\n1 Charred Graverobber\n1 Back in Town\n1 Marshland Bloodcaster\n1 Veinwitch Coven\n1 Rankle, Master of Pranks\n1 Dire Fleet Ravager\n1 Mirror Entity\n1 Dire Fleet Daredevil\n1 Captain Lannery Storm\n1 Seize the Spotlight\n1 Grenzo, Havoc Raiser\n1 Angrath's Marauders\n1 Captivating Crew\n1 Rain of Riches\n1 Laurine, the Diversion\n1 Mass Mutiny\n1 Dead Before Sunrise\n1 Graywater's Fixer\n1 Life Insurance\n1 Breena, the Demagogue\n1 Queen Marchesa\n1 Idol of Oblivion\n1 Academy Manufactor\n1 Bounty Board\n1 Fetid Heath\n1 Command Beacon\n1 Vault of the Archangel\n1 Dragonskull Summit\n1 Temple of Silence\n1 Temple of Malice\n1 Exotic Orchard\n1 Temple of Triumph\n1 Clifftop Retreat\n1 Isolated Chapel\n1 Bonders' Enclave\n1 Caves of Koilos\n1 Battlefield Forge\n1 Sulfurous Springs\n1 Rugged Prairie\n1 Desolate Mire\n1 Shadowblood Ridge\n1 Canyon Slough\n1 Smoldering Marsh\n1 Blackcleave Cliffs\n1 Mistmeadow Skulk\n1 Requisition Raid\n1 Changeling Outcast\n1 Feed the Swarm\n1 Deadly Dispute\n1 Morbid Opportunist\n1 Aetherborn Marauder\n1 Tenured Inkcaster\n1 Shoot the Sheriff\n1 Lightning Greaves\n1 Impulsive Pilferer\n1 Shiny Impetus\n1 Humble Defector\n1 Glittering Stockpile\n1 Boros Charm\n1 Arcane Signet\n1 Trailblazer's Boots\n1 Bandit's Haul\n1 Orzhov Signet\n1 Sol Ring\n1 Rakdos Signet\n1 Command Tower\n1 Bojuka Bog\n1 Path of Ancestry\n1 Rogue's Passage\n1 Demolition Field\n1 Tainted Peak\n1 Sunhome, Fortress of the Legion\n1 Nomad Outpost\n1 Temple of the False God\n1 Plains\n1 Plains\n2 Swamp\n2 Swamp\n1 Mountain\n1 Mountain",
   "oracleCards": [
@@ -350,6 +350,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -376,8 +377,7 @@
         "creature",
         "mana",
         "tokens",
-        "sacrifice",
-        "death-payoff"
+        "sacrifice"
       ],
       "isCommander": false
     },
@@ -535,7 +535,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -858,7 +859,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "recursion",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -973,6 +976,7 @@
       "tags": [
         "creature",
         "mana",
+        "recursion",
         "tokens",
         "death-payoff"
       ],
@@ -1071,7 +1075,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "protection"
       ],
       "isCommander": false
     },
@@ -1491,7 +1496,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "wipe",
+        "draw",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -1992,24 +1997,24 @@
   ],
   "result": {
     "profile": {
-      "median": 45,
+      "median": 43,
       "floor": 31,
-      "ceiling": 55,
+      "ceiling": 58,
       "peak": 81,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 62,
-      "commanderDelta": 9,
-      "coverage": 92,
-      "dataCoverage": 92
+      "dispersion": 27,
+      "variance": 27,
+      "consistency": 60,
+      "commanderDelta": 7,
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
       "speed": 40,
-      "consistency": 62,
+      "consistency": 60,
       "explosiveness": 11,
       "synergy": 63,
-      "interaction": 42,
-      "resilience": 43
+      "interaction": 37,
+      "resilience": 50
     },
     "roles": {
       "lands": 37,
@@ -2017,10 +2022,10 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 10,
+      "draw": 11,
       "interaction": 6,
-      "protection": 2,
-      "recursion": 4,
+      "protection": 3,
+      "recursion": 6,
       "wipes": 1,
       "avgCmc": 3.2580645161290325,
       "unknownManaLands": 0
@@ -2261,15 +2266,14 @@
       {
         "id": "sacrifice",
         "name": "Sacrifice / mort",
-        "strength": 68,
-        "cohesion": 68,
+        "strength": 66,
+        "cohesion": 66,
         "producers": [
           "Deadly Dispute",
           "Fain, the Broker",
           "Laurine, the Diversion"
         ],
         "payoffs": [
-          "Captain Lannery Storm",
           "Impulsive Pilferer",
           "Life Insurance",
           "Massacre Girl",
@@ -2279,7 +2283,6 @@
           "Deadly Dispute",
           "Fain, the Broker",
           "Laurine, the Diversion",
-          "Captain Lannery Storm",
           "Impulsive Pilferer",
           "Life Insurance",
           "Massacre Girl",
@@ -2351,31 +2354,12 @@
         ],
         "payoffCards": [
           {
-            "name": "Captain Lannery Storm",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "mana",
-              "tokens",
-              "sacrifice",
-              "death-payoff"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
             "name": "Impulsive Pilferer",
             "cmc": 1,
             "tags": [
               "creature",
               "mana",
+              "recursion",
               "tokens",
               "death-payoff"
             ],
@@ -2461,20 +2445,19 @@
         "payoffTags": [
           "death-payoff"
         ],
-        "evidence": "3 producteur(s), 5 payoff(s), 8 carte(s) distincte(s)."
+        "evidence": "3 producteur(s), 4 payoff(s), 7 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 56,
-        "cohesion": 56,
+        "strength": 53,
+        "cohesion": 53,
         "producers": [
           "Arcane Signet",
           "Bandit's Haul",
           "Bounty Board",
           "Captain Lannery Storm",
           "Glittering Stockpile",
-          "Impulsive Pilferer",
           "Orzhov Signet",
           "Rakdos Signet",
           "Shiny Impetus",
@@ -2489,7 +2472,6 @@
           "Bounty Board",
           "Captain Lannery Storm",
           "Glittering Stockpile",
-          "Impulsive Pilferer",
           "Orzhov Signet",
           "Rakdos Signet",
           "Shiny Impetus",
@@ -2548,8 +2530,7 @@
               "creature",
               "mana",
               "tokens",
-              "sacrifice",
-              "death-payoff"
+              "sacrifice"
             ],
             "manaReq": {
               "generic": 2,
@@ -2579,25 +2560,6 @@
                 ]
               ],
               "total": 3
-            }
-          },
-          {
-            "name": "Impulsive Pilferer",
-            "cmc": 1,
-            "tags": [
-              "creature",
-              "mana",
-              "tokens",
-              "death-payoff"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 1
             }
           },
           {
@@ -2689,12 +2651,12 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 10 source(s) persistante(s) vers un commandant MV 4."
+        "evidence": "0 accélérateur(s) burst + 9 source(s) persistante(s) vers un commandant MV 4."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 55,
+      "score": 58,
       "connected": [
         "Academy Manufactor",
         "Angelic Sell-Sword",
@@ -2702,6 +2664,7 @@
         "Captain Lannery Storm",
         "Deadly Dispute",
         "Fain, the Broker",
+        "Graywater's Fixer",
         "Idol of Oblivion",
         "Impulsive Pilferer",
         "Kamber, the Plunderer",
@@ -2730,72 +2693,72 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 33,
-      "median": 42,
-      "high": 50,
-      "ceiling": 50,
+      "iterations": 100,
+      "floor": 32,
+      "median": 40,
+      "high": 51,
+      "ceiling": 51,
       "peak": 71,
       "iqr": 14,
-      "consistency": 70,
+      "consistency": 68,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 86,
+      "recoveryAfterDisruption": 81,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 12,
-          "resource": 9,
+          "interaction": 11,
+          "resource": 16,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 1,
-          "engine": 1,
-          "interaction": 27,
-          "resource": 27,
+          "engine": 2,
+          "interaction": 24,
+          "resource": 25,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 19,
-          "engine": 3,
-          "interaction": 35,
-          "resource": 47,
+          "commander": 24,
+          "engine": 5,
+          "interaction": 33,
+          "resource": 50,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 62,
-          "engine": 9,
-          "interaction": 45,
-          "resource": 66,
+          "commander": 65,
+          "engine": 11,
+          "interaction": 38,
+          "resource": 72,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 81,
-          "engine": 16,
-          "interaction": 51,
-          "resource": 76,
+          "commander": 77,
+          "engine": 15,
+          "interaction": 49,
+          "resource": 74,
           "burst": 0
         },
         {
           "turn": 6,
-          "commander": 88,
-          "engine": 23,
-          "interaction": 55,
-          "resource": 80,
+          "commander": 83,
+          "engine": 21,
+          "interaction": 54,
+          "resource": 79,
           "burst": 0
         },
         {
           "turn": 7,
-          "commander": 92,
-          "engine": 28,
-          "interaction": 59,
-          "resource": 84,
+          "commander": 88,
+          "engine": 24,
+          "interaction": 57,
+          "resource": 85,
           "burst": 0
         }
       ]
@@ -2803,13 +2766,12 @@
     "drivers": [
       {
         "name": "Captain Lannery Storm",
-        "impact": 4.6,
+        "impact": 3.9,
         "tags": [
           "creature",
           "mana",
           "tokens",
-          "sacrifice",
-          "death-payoff"
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2854,6 +2816,7 @@
         "tags": [
           "creature",
           "mana",
+          "recursion",
           "tokens",
           "death-payoff"
         ],
@@ -2940,7 +2903,7 @@
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

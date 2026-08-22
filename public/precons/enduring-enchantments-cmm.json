@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 46,
-    "p20": 31,
-    "p80": 56,
+    "p20": 34,
+    "p80": 54,
     "peak": 89,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "7be47f9113c8da231222d5b7616a66e3ae6c7aabcb19292bef097af7bbbd0b15",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Narci, Fable Singer\n1 Battle at the Helvault\n1 Boon of the Spirit Realm\n1 Ondu Spiritdancer\n1 Cacophony Unleashed\n1 Demon of Fate's Design\n1 Ghoulish Impetus\n1 Composer of Spring\n1 Nyxborn Behemoth\n1 Archon of Sun's Grace\n1 Felidar Retreat\n1 Grasp of Fate\n1 Heliod, God of the Sun\n1 Mesa Enchantress\n1 Sigil of the Empty Throne\n1 Starfield Mystic\n1 Starfield of Nyx\n1 Cunning Rhetoric\n1 Doomwake Giant\n1 Dreadhorde Invasion\n1 Erebos, Bleak-Hearted\n1 Abundance\n1 Arasta of the Endless Web\n1 Courser of Kruphix\n1 Dryad of the Ilysian Grove\n1 Eidolon of Blossoms\n1 Enchantress's Presence\n1 Herald of the Pantheon\n1 The Mending of Dominaria\n1 Sanctum Weaver\n1 Sandwurm Convergence\n1 Setessan Champion\n1 Verduran Enchantress\n1 Battle for Bretagard\n1 Calix, Destiny's Hand\n1 Culling Ritual\n1 Mirari's Wake\n1 Sythis, Harvest's Hand\n1 Canopy Vista\n1 Exotic Orchard\n1 Fortified Village\n1 Necroblossom Snarl\n1 Shineshadow Snarl\n1 Sungrass Prairie\n1 Temple of Malady\n1 Temple of Plenty\n1 Temple of Silence\n1 Path to Exile\n1 Extinguish All Hope\n1 Kodama's Reach\n1 Arcane Signet\n1 Sol Ring\n1 Ash Barrens\n1 Command Tower\n1 Cast Out\n1 Love Song of Night and Day\n1 Omen of the Sun\n1 Spirited Companion\n1 The Eldest Reborn\n1 Mindwrack Harpy\n1 The Binding of the Titans\n1 Destiny Spinner\n1 Farseek\n1 Font of Fertility\n1 Greater Tanuki\n1 Khalni Heart Expedition\n1 Nessian Wanderer\n1 Omen of the Hunt\n1 Rampant Growth\n1 Binding the Old Gods\n1 Jukai Naturalist\n1 Nyx Weaver\n1 Satyr Enchanter\n1 Golgari Rot Farm\n1 Krosan Verge\n1 Orzhov Basilica\n1 Sandsteppe Citadel\n1 Selesnya Sanctuary\n1 Tainted Field\n1 Tainted Wood\n3 Plains\n3 Plains\n3 Swamp\n2 Swamp\n4 Forest\n4 Forest",
   "oracleCards": [
@@ -157,6 +157,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -316,6 +317,7 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "draw",
         "removal",
         "etb"
       ],
@@ -402,7 +404,8 @@
       ],
       "tags": [
         "sorcery",
-        "mana"
+        "mana",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -1023,7 +1026,6 @@
         "creature",
         "draw",
         "sacrifice",
-        "death-payoff",
         "lifegain"
       ],
       "isCommander": false
@@ -1753,23 +1755,23 @@
   "result": {
     "profile": {
       "median": 46,
-      "floor": 31,
-      "ceiling": 56,
+      "floor": 34,
+      "ceiling": 54,
       "peak": 89,
-      "dispersion": 25,
-      "variance": 25,
-      "consistency": 61,
-      "commanderDelta": 7,
+      "dispersion": 20,
+      "variance": 20,
+      "consistency": 65,
+      "commanderDelta": 6,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
-      "speed": 34,
-      "consistency": 61,
-      "explosiveness": 14,
+      "speed": 32,
+      "consistency": 65,
+      "explosiveness": 15,
       "synergy": 73,
-      "interaction": 29,
-      "resilience": 48
+      "interaction": 33,
+      "resilience": 50
     },
     "roles": {
       "lands": 37,
@@ -1777,11 +1779,11 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 11,
-      "interaction": 8,
+      "draw": 12,
+      "interaction": 9,
       "protection": 4,
       "recursion": 5,
-      "wipes": 2,
+      "wipes": 3,
       "avgCmc": 3.6129032258064515,
       "unknownManaLands": 0
     },
@@ -2017,6 +2019,7 @@
             "cmc": 4,
             "tags": [
               "enchantment",
+              "draw",
               "removal",
               "etb"
             ],
@@ -3910,71 +3913,71 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 35,
+      "iterations": 100,
+      "floor": 37,
       "median": 45,
-      "high": 53,
-      "ceiling": 53,
+      "high": 51,
+      "ceiling": 51,
       "peak": 84,
-      "iqr": 14,
-      "consistency": 69,
+      "iqr": 12,
+      "consistency": 74,
       "commanderMedianTurn": 5,
-      "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 84,
+      "engineMedianTurn": 5,
+      "recoveryAfterDisruption": 89,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 3,
-          "resource": 0,
+          "interaction": 7,
+          "resource": 10,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 0,
-          "engine": 1,
-          "interaction": 7,
-          "resource": 11,
+          "engine": 0,
+          "interaction": 12,
+          "resource": 21,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 5,
-          "engine": 15,
-          "interaction": 17,
-          "resource": 39,
+          "commander": 3,
+          "engine": 12,
+          "interaction": 21,
+          "resource": 40,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 38,
-          "engine": 45,
-          "interaction": 34,
-          "resource": 66,
+          "commander": 31,
+          "engine": 37,
+          "interaction": 38,
+          "resource": 72,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 69,
-          "engine": 63,
-          "interaction": 47,
-          "resource": 78,
+          "commander": 71,
+          "engine": 59,
+          "interaction": 56,
+          "resource": 85,
           "burst": 0
         },
         {
           "turn": 6,
-          "commander": 81,
-          "engine": 73,
-          "interaction": 54,
-          "resource": 84,
+          "commander": 84,
+          "engine": 72,
+          "interaction": 64,
+          "resource": 90,
           "burst": 0
         },
         {
           "turn": 7,
-          "commander": 87,
-          "engine": 79,
-          "interaction": 61,
+          "commander": 85,
+          "engine": 77,
+          "interaction": 69,
           "resource": 87,
           "burst": 0
         }
@@ -4072,6 +4075,17 @@
         "aeon": null
       },
       {
+        "name": "Cast Out",
+        "impact": 3.2,
+        "tags": [
+          "enchantment",
+          "draw",
+          "removal",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Dryad of the Ilysian Grove",
         "impact": 3.2,
         "tags": [
@@ -4100,24 +4114,11 @@
           "draw"
         ],
         "aeon": null
-      },
-      {
-        "name": "Setessan Champion",
-        "impact": 3,
-        "tags": [
-          "creature",
-          "draw",
-          "etb",
-          "constellation",
-          "counter-producer",
-          "counter-kind:plus1"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

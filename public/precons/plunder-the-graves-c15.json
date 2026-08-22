@@ -34,16 +34,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 42,
-    "p20": 28,
-    "p80": 55,
-    "peak": 85,
+    "p20": 32,
+    "p80": 54,
+    "peak": 86,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "3e4c6a5d69b728a91a47ff6b16b2812c387118b07f3e7042b967ef641f064048",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Sakura-Tribe Elder\n1 Satyr Wayfinder\n1 Viridian Emissary\n1 Wall of Blossoms\n1 Viridian Zealot\n1 Korozda Guildmage\n1 Lotleth Troll\n1 Blood Bairn\n1 Phyrexian Rager\n1 Skullwinder\n1 Wood Elves\n1 Eternal Witness\n1 Corpse Augur\n1 Centaur Vinecrasher\n1 Bloodspore Thrinax\n1 Jarad, Golgari Lich Lord\n1 Shriekmaw\n1 Indrik Stomphowler\n1 Kessig Cagebreakers\n1 Banshee of the Dread Choir\n1 Phyrexian Plaguelord\n1 Acidic Slime\n1 Mycoloth\n1 Mazirek, Kraul Death Priest\n1 Vulturous Zombie\n1 Great Oak Guardian\n1 Champion of Stray Souls\n1 Extractor Demon\n1 Thief of Blood\n1 Pathbreaker Ibex\n1 Cloudthresher\n1 Butcher of Malakir\n1 Eater of Hope\n1 Scourge of Nel Toth\n1 Caller of the Pack\n1 Terastodon\n1 Verdant Force\n1 Mulch\n1 Victimize\n1 Primal Growth\n1 Ambition's Cost\n1 Sever the Bloodline\n1 Barter in Blood\n1 Rise from the Grave\n1 Spider Spawning\n1 Overwhelming Stampede\n1 Dread Summons\n1 Altar's Reap\n1 Tribute to the Wild\n1 Golgari Charm\n1 Grisly Salvage\n1 Putrefy\n1 Wretched Confluence\n1 Skullclamp\n1 Sol Ring\n1 Golgari Signet\n1 Lightning Greaves\n1 Thought Vessel\n1 Bonehoard\n1 Eldrazi Monument\n1 Diabolic Servitude\n1 Command Tower\n1 Evolving Wilds\n1 Golgari Guildgate\n1 Golgari Rot Farm\n1 Grim Backwoods\n1 High Market\n1 Jungle Hollow\n1 Polluted Mire\n1 Slippery Karst\n1 Tainted Wood\n1 Terramorphic Expanse\n1 Vivid Grove\n1 Vivid Marsh\n4 Swamp\n3 Swamp\n3 Swamp\n3 Swamp\n3 Forest\n3 Forest\n3 Forest\n3 Forest",
   "oracleCards": [
@@ -117,7 +117,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -134,8 +135,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery",
-        "wipe"
+        "sorcery"
       ],
       "isCommander": false
     },
@@ -189,7 +189,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -224,7 +225,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -282,6 +284,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "wipe",
         "etb"
       ],
       "isCommander": false
@@ -452,6 +455,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "recursion",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -757,7 +761,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "protection"
       ],
       "isCommander": false
     },
@@ -796,6 +801,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "death-payoff",
         "counter-producer",
         "counter-kind:plus1"
       ],
@@ -948,6 +954,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -1077,7 +1084,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "removal"
+        "removal",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -1152,6 +1160,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -1191,6 +1200,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -1536,23 +1546,23 @@
   "result": {
     "profile": {
       "median": 42,
-      "floor": 28,
-      "ceiling": 55,
-      "peak": 85,
-      "dispersion": 27,
-      "variance": 27,
-      "consistency": 60,
+      "floor": 32,
+      "ceiling": 54,
+      "peak": 86,
+      "dispersion": 23,
+      "variance": 23,
+      "consistency": 61,
       "commanderDelta": 9,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
-      "speed": 32,
-      "consistency": 60,
-      "explosiveness": 13,
-      "synergy": 60,
-      "interaction": 39,
-      "resilience": 54
+      "speed": 30,
+      "consistency": 61,
+      "explosiveness": 14,
+      "synergy": 63,
+      "interaction": 31,
+      "resilience": 68
     },
     "roles": {
       "lands": 38,
@@ -1562,8 +1572,8 @@
       "repeatableTutors": 0,
       "draw": 7,
       "interaction": 11,
-      "protection": 1,
-      "recursion": 8,
+      "protection": 2,
+      "recursion": 11,
       "wipes": 2,
       "avgCmc": 4,
       "unknownManaLands": 0
@@ -1572,8 +1582,8 @@
       {
         "id": "sacrifice",
         "name": "Sacrifice / mort",
-        "strength": 87,
-        "cohesion": 87,
+        "strength": 93,
+        "cohesion": 93,
         "producers": [
           "Altar's Reap",
           "Blood Bairn",
@@ -1587,6 +1597,7 @@
           "Butcher of Malakir",
           "Corpse Augur",
           "Diabolic Servitude",
+          "Mazirek, Kraul Death Priest",
           "Skullclamp",
           "Viridian Emissary"
         ],
@@ -1601,6 +1612,7 @@
           "Butcher of Malakir",
           "Corpse Augur",
           "Diabolic Servitude",
+          "Mazirek, Kraul Death Priest",
           "Skullclamp",
           "Viridian Emissary"
         ],
@@ -1806,6 +1818,28 @@
             }
           },
           {
+            "name": "Mazirek, Kraul Death Priest",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "death-payoff",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
             "name": "Skullclamp",
             "cmc": 1,
             "tags": [
@@ -1845,7 +1879,7 @@
         "payoffTags": [
           "death-payoff"
         ],
-        "evidence": "7 producteur(s), 5 payoff(s), 12 carte(s) distincte(s)."
+        "evidence": "7 producteur(s), 6 payoff(s), 13 carte(s) distincte(s)."
       },
       {
         "id": "counters",
@@ -1943,6 +1977,7 @@
             "cmc": 5,
             "tags": [
               "creature",
+              "death-payoff",
               "counter-producer",
               "counter-kind:plus1"
             ],
@@ -2253,7 +2288,7 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 33,
+      "score": 36,
       "connected": [
         "Altar's Reap",
         "Blood Bairn",
@@ -2264,6 +2299,7 @@
         "Grim Backwoods",
         "High Market",
         "Jarad, Golgari Lich Lord",
+        "Mazirek, Kraul Death Priest",
         "Phyrexian Plaguelord",
         "Skullclamp",
         "Viridian Emissary"
@@ -2281,72 +2317,72 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 32,
-      "median": 41,
+      "iterations": 100,
+      "floor": 35,
+      "median": 42,
       "high": 51,
       "ceiling": 51,
-      "peak": 78,
+      "peak": 80,
       "iqr": 14,
-      "consistency": 68,
+      "consistency": 69,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 84,
+      "engineMedianTurn": 6,
+      "recoveryAfterDisruption": 91,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
-          "engine": 1,
+          "engine": 2,
           "interaction": 0,
-          "resource": 14,
+          "resource": 30,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 2,
-          "engine": 3,
-          "interaction": 7,
-          "resource": 27,
+          "commander": 1,
+          "engine": 2,
+          "interaction": 4,
+          "resource": 46,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 24,
-          "engine": 6,
-          "interaction": 23,
-          "resource": 45,
+          "commander": 19,
+          "engine": 2,
+          "interaction": 21,
+          "resource": 59,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 71,
-          "engine": 13,
-          "interaction": 45,
-          "resource": 65,
+          "engine": 8,
+          "interaction": 35,
+          "resource": 79,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 88,
-          "engine": 20,
-          "interaction": 59,
-          "resource": 76,
+          "commander": 91,
+          "engine": 19,
+          "interaction": 54,
+          "resource": 87,
           "burst": 0
         },
         {
           "turn": 6,
-          "commander": 92,
-          "engine": 28,
-          "interaction": 68,
-          "resource": 81,
+          "commander": 96,
+          "engine": 32,
+          "interaction": 64,
+          "resource": 88,
           "burst": 0
         },
         {
           "turn": 7,
-          "commander": 95,
-          "engine": 35,
-          "interaction": 73,
-          "resource": 85,
+          "commander": 96,
+          "engine": 42,
+          "interaction": 66,
+          "resource": 93,
           "burst": 0
         }
       ]
@@ -2437,6 +2473,17 @@
         "aeon": null
       },
       {
+        "name": "Mazirek, Kraul Death Priest",
+        "impact": 2.1,
+        "tags": [
+          "creature",
+          "death-payoff",
+          "counter-producer",
+          "counter-kind:plus1"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Golgari Signet",
         "impact": 1.9,
         "tags": [
@@ -2463,23 +2510,11 @@
           "mana"
         ],
         "aeon": null
-      },
-      {
-        "name": "Mycoloth",
-        "impact": 1.8,
-        "tags": [
-          "creature",
-          "tokens",
-          "counter-producer",
-          "counter-payoff",
-          "counter-kind:plus1"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

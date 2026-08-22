@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 38,
+    "median": 37,
     "p20": 27,
-    "p80": 48,
+    "p80": 46,
     "peak": 69,
-    "coverage": 93,
+    "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "c0de87d3c125d24ad99e7b442633bc368d22ef11cd13783908249e6a0025ae2e",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Experiment One\n1 Elvish Visionary\n1 Sakura-Tribe Elder\n1 Plaxmanta\n1 Coiling Oracle\n1 Caller of the Claw\n1 Loaming Shaman\n1 Noble Quarry\n1 Skullwinder\n1 Viridian Shaman\n1 Eternal Witness\n1 Ohran Viper\n1 Kaseto, Orochi Archmage\n1 Lorescale Coatl\n1 Trygon Predator\n1 Cold-Eyed Selkie\n1 Wistful Selkie\n1 Solemn Simulacrum\n1 Forgotten Ancient\n1 Patagia Viper\n1 Thelonite Hermit\n1 Ninja of the Deep Hours\n1 Chameleon Colossus\n1 Mystic Snake\n1 Stingerfling Spider\n1 Broodbirth Viper\n1 Illusory Ambusher\n1 Mulldrifter\n1 Arbor Colossus\n1 Great Oak Guardian\n1 Bane of Progress\n1 Prime Speaker Zegana\n1 Caller of the Pack\n1 Rampant Growth\n1 Kodama's Reach\n1 Overrun\n1 Desert Twister\n1 Verdant Confluence\n1 Biomantic Mastery\n1 Ezuri's Predation\n1 Rapid Hybridization\n1 Arachnogenesis\n1 Krosan Grip\n1 Snakeform\n1 Cobra Trap\n1 Mirror Match\n1 Synthetic Destiny\n1 Sol Ring\n1 Simic Signet\n1 Swiftfoot Boots\n1 Thought Vessel\n1 Simic Keyrune\n1 Sword of Vengeance\n1 Bident of Thassa\n1 Scytheclaw\n1 Orochi Hatchery\n1 Beastmaster Ascension\n1 Day of the Dragons\n1 Command Beacon\n1 Command Tower\n1 Evolving Wilds\n1 High Market\n1 Llanowar Reborn\n1 Mosswort Bridge\n1 Novijen, Heart of Progress\n1 Oran-Rief, the Vastwood\n1 Reliquary Tower\n1 Simic Growth Chamber\n1 Simic Guildgate\n1 Terramorphic Expanse\n1 Thornwood Falls\n1 Vivid Creek\n1 Vivid Grove\n1 Zoetic Cavern\n4 Forest\n4 Forest\n3 Forest\n3 Forest\n3 Island\n3 Island\n3 Island\n2 Island",
   "oracleCards": [
@@ -171,7 +171,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "draw"
+        "draw",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -207,7 +208,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -961,6 +963,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "protection",
         "sacrifice",
         "etb"
       ],
@@ -1072,7 +1075,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -1541,24 +1545,24 @@
   ],
   "result": {
     "profile": {
-      "median": 38,
+      "median": 37,
       "floor": 27,
-      "ceiling": 48,
+      "ceiling": 46,
       "peak": 69,
-      "dispersion": 21,
-      "variance": 21,
+      "dispersion": 20,
+      "variance": 20,
       "consistency": 66,
-      "commanderDelta": 8,
-      "coverage": 93,
-      "dataCoverage": 93
+      "commanderDelta": 7,
+      "coverage": 94,
+      "dataCoverage": 94
     },
     "dimensions": {
       "speed": 32,
       "consistency": 66,
       "explosiveness": 12,
       "synergy": 40,
-      "interaction": 39,
-      "resilience": 41
+      "interaction": 38,
+      "resilience": 43
     },
     "roles": {
       "lands": 41,
@@ -1568,7 +1572,7 @@
       "repeatableTutors": 0,
       "draw": 13,
       "interaction": 11,
-      "protection": 3,
+      "protection": 4,
       "recursion": 3,
       "wipes": 3,
       "avgCmc": 3.793103448275862,
@@ -1745,17 +1749,17 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 32,
-      "median": 39,
-      "high": 46,
-      "ceiling": 46,
+      "iterations": 100,
+      "floor": 31,
+      "median": 38,
+      "high": 44,
+      "ceiling": 44,
       "peak": 62,
       "iqr": 12,
       "consistency": 75,
       "commanderMedianTurn": 4,
       "engineMedianTurn": null,
-      "recoveryAfterDisruption": 84,
+      "recoveryAfterDisruption": 86,
       "turnProfile": [
         {
           "turn": 1,
@@ -1763,55 +1767,55 @@
           "engine": 0,
           "interaction": 3,
           "resource": 0,
-          "burst": 8
+          "burst": 5
         },
         {
           "turn": 2,
-          "commander": 3,
+          "commander": 0,
           "engine": 0,
-          "interaction": 7,
-          "resource": 9,
-          "burst": 7
+          "interaction": 8,
+          "resource": 7,
+          "burst": 5
         },
         {
           "turn": 3,
-          "commander": 31,
+          "commander": 28,
           "engine": 0,
           "interaction": 27,
-          "resource": 43,
-          "burst": 6
-        },
-        {
-          "turn": 4,
-          "commander": 74,
-          "engine": 0,
-          "interaction": 43,
-          "resource": 65,
-          "burst": 4
-        },
-        {
-          "turn": 5,
-          "commander": 88,
-          "engine": 0,
-          "interaction": 54,
-          "resource": 77,
+          "resource": 44,
           "burst": 3
         },
         {
-          "turn": 6,
-          "commander": 92,
+          "turn": 4,
+          "commander": 69,
           "engine": 0,
-          "interaction": 64,
-          "resource": 84,
+          "interaction": 42,
+          "resource": 72,
+          "burst": 3
+        },
+        {
+          "turn": 5,
+          "commander": 85,
+          "engine": 0,
+          "interaction": 49,
+          "resource": 82,
           "burst": 2
         },
         {
-          "turn": 7,
-          "commander": 94,
+          "turn": 6,
+          "commander": 90,
           "engine": 0,
-          "interaction": 71,
-          "resource": 88,
+          "interaction": 56,
+          "resource": 91,
           "burst": 1
+        },
+        {
+          "turn": 7,
+          "commander": 93,
+          "engine": 0,
+          "interaction": 62,
+          "resource": 93,
+          "burst": 0
         }
       ]
     },
@@ -1823,6 +1827,16 @@
           "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Broodbirth Viper",
+        "impact": 2.5,
+        "tags": [
+          "creature",
+          "draw",
+          "tokens"
         ],
         "aeon": null
       },
@@ -1878,15 +1892,6 @@
         "aeon": null
       },
       {
-        "name": "Broodbirth Viper",
-        "impact": 2.2,
-        "tags": [
-          "creature",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Illusory Ambusher",
         "impact": 2.2,
         "tags": [
@@ -1935,7 +1940,7 @@
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 39,
-    "p20": 28,
-    "p80": 49,
-    "peak": 69,
+    "p20": 30,
+    "p80": 53,
+    "peak": 76,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "d896e8651e59c0d3ae9062a1846d775842094ed1fe43376ff15bf5fce2467aab",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Archon of Redemption\n1 Cartographer's Hawk\n1 Cleansing Nova\n1 Emeria Angel\n1 Gideon Jura\n1 Hanged Executioner\n1 Remorseful Cleric\n1 Sephara, Sky's Blade\n1 Steel-Plume Marshal\n1 Storm Herd\n1 True Conviction\n1 Angler Turtle\n1 Bident of Thassa\n1 Diluvian Primordial\n1 Ever-Watching Threshold\n1 Faerie Formation\n1 Gravitational Shift\n1 Inspired Sphinx\n1 Sharding Sphinx\n1 Sphinx of Enlightenment\n1 Windreader Sphinx\n1 Absorb\n1 Skycat Sovereign\n1 Sphinx's Revelation\n1 Time Wipe\n1 Moorland Haunt\n1 Port Town\n1 Prairie Stream\n1 Temple of Enlightenment\n1 Aven Gagglemaster\n1 Banishing Light\n1 Condemn\n1 Crush Contraband\n1 Disenchant\n1 Generous Gift\n1 Kangee's Lieutenant\n1 Rally of Wings\n1 Soul Snare\n1 Swords to Plowshares\n1 Vow of Duty\n1 Aetherize\n1 Counterspell\n1 Favorable Winds\n1 Negate\n1 Tide Skimmer\n1 Warden of Evos Isle\n1 Winged Words\n1 Cloudblazer\n1 Empyrean Eagle\n1 Jubilant Skybonder\n1 Kangee, Sky Warden\n1 Migratory Route\n1 Staggering Insight\n1 Thunderclap Wyvern\n1 Arcane Signet\n1 Azorius Signet\n1 Commander's Sphere\n1 Hedron Archive\n1 Pilgrim's Eye\n1 Sky Diamond\n1 Skyscanner\n1 Sol Ring\n1 Talisman of Progress\n1 Thought Vessel\n1 Coastal Tower\n1 Command Tower\n1 Meandering River\n1 Sejiri Refuge\n1 Tranquil Cove\n4 Plains\n4 Plains\n4 Plains\n3 Plains\n4 Island\n4 Island\n4 Island\n3 Island",
   "oracleCards": [
@@ -74,7 +74,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -725,7 +726,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "recursion",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -767,6 +770,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "draw",
         "tokens"
       ],
       "isCommander": false
@@ -1433,23 +1437,23 @@
   "result": {
     "profile": {
       "median": 39,
-      "floor": 28,
-      "ceiling": 49,
-      "peak": 69,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 68,
-      "commanderDelta": 2,
+      "floor": 30,
+      "ceiling": 53,
+      "peak": 76,
+      "dispersion": 23,
+      "variance": 23,
+      "consistency": 64,
+      "commanderDelta": 1,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 28,
-      "consistency": 68,
-      "explosiveness": 9,
+      "consistency": 64,
+      "explosiveness": 11,
       "synergy": 40,
-      "interaction": 72,
-      "resilience": 26
+      "interaction": 74,
+      "resilience": 31
     },
     "roles": {
       "lands": 39,
@@ -1457,11 +1461,11 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 14,
-      "interaction": 14,
+      "draw": 15,
+      "interaction": 15,
       "protection": 2,
-      "recursion": 0,
-      "wipes": 2,
+      "recursion": 1,
+      "wipes": 3,
       "avgCmc": 3.716666666666667,
       "unknownManaLands": 0
     },
@@ -1634,17 +1638,17 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 32,
+      "iterations": 100,
+      "floor": 33,
       "median": 39,
-      "high": 46,
-      "ceiling": 46,
-      "peak": 62,
-      "iqr": 11,
-      "consistency": 77,
+      "high": 49,
+      "ceiling": 49,
+      "peak": 67,
+      "iqr": 12,
+      "consistency": 73,
       "commanderMedianTurn": 5,
       "engineMedianTurn": null,
-      "recoveryAfterDisruption": 71,
+      "recoveryAfterDisruption": 75,
       "turnProfile": [
         {
           "turn": 1,
@@ -1658,49 +1662,49 @@
           "turn": 2,
           "commander": 0,
           "engine": 0,
-          "interaction": 32,
+          "interaction": 27,
           "resource": 7,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 5,
+          "commander": 3,
           "engine": 0,
-          "interaction": 62,
-          "resource": 37,
+          "interaction": 65,
+          "resource": 49,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 19,
+          "commander": 20,
           "engine": 0,
-          "interaction": 76,
-          "resource": 59,
-          "burst": 0
+          "interaction": 77,
+          "resource": 67,
+          "burst": 2
         },
         {
           "turn": 5,
-          "commander": 39,
+          "commander": 40,
           "engine": 0,
-          "interaction": 82,
-          "resource": 70,
-          "burst": 1
+          "interaction": 83,
+          "resource": 73,
+          "burst": 3
         },
         {
           "turn": 6,
           "commander": 63,
           "engine": 0,
-          "interaction": 86,
-          "resource": 77,
-          "burst": 3
+          "interaction": 90,
+          "resource": 79,
+          "burst": 7
         },
         {
           "turn": 7,
-          "commander": 74,
+          "commander": 71,
           "engine": 0,
-          "interaction": 88,
-          "resource": 82,
-          "burst": 5
+          "interaction": 92,
+          "resource": 80,
+          "burst": 7
         }
       ]
     },
@@ -1806,6 +1810,16 @@
         "aeon": null
       },
       {
+        "name": "Migratory Route",
+        "impact": 2,
+        "tags": [
+          "sorcery",
+          "draw",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Sephara, Sky's Blade",
         "impact": 2,
         "tags": [
@@ -1815,20 +1829,11 @@
           "free"
         ],
         "aeon": null
-      },
-      {
-        "name": "Arcane Signet",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 44,
-    "p20": 34,
-    "p80": 55,
-    "peak": 78,
+    "median": 42,
+    "p20": 32,
+    "p80": 56,
+    "peak": 79,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "0a3edb9119227f753943125c3a73fc54fb2f1c29afd760fb3e8cfd3d7dd0a98f",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Nahiri, the Harbinger\n1 Kelsien, the Plague\n1 Trynn, Champion of Freedom\n1 Silvar, Devourer of the Free\n1 Verge Rangers\n1 Species Specialist\n1 Titan Hunter\n1 Fireflux Squad\n1 Frontier Warmonger\n1 Bounty Agent\n1 Dearly Departed\n1 Frontline Medic\n1 Knight of the White Orchid\n1 Magus of the Disk\n1 Odric, Master Tactician\n1 Riders of Gavony\n1 Thalia's Lieutenant\n1 Thraben Doomsayer\n1 Disciple of Bolas\n1 Xathrid Necromancer\n1 Alesha, Who Smiles at Death\n1 Captivating Crew\n1 Fumiko the Lowblood\n1 Magus of the Wheel\n1 Titan of Eternal Fire\n1 Adriana, Captain of the Guard\n1 General's Enforcer\n1 Banisher Priest\n1 Cavalry Pegasus\n1 Devout Chaplain\n1 Zulaport Cutthroat\n1 Humble Defector\n1 Garna, the Bloodflame\n1 Citywide Bust\n1 Cleansing Nova\n1 Increasing Devotion\n1 Painful Truths\n1 Ambition's Cost\n1 Call the Coppercoats\n1 Flawless Maneuver\n1 Unexpectedly Absent\n1 Crackling Doom\n1 Dire Tactics\n1 Terminate\n1 Sanctuary Blade\n1 Bonder's Ornament\n1 Arcane Signet\n1 Boros Signet\n1 Commander's Sphere\n1 Heirloom Blade\n1 Orzhov Signet\n1 Rakdos Signet\n1 Skullclamp\n1 Sol Ring\n1 Molten Echoes\n1 Outpost Siege\n1 Shared Animosity\n1 Sanctuary Lockdown\n1 Bastion of Remembrance\n1 Martial Impetus\n1 Parasitic Impetus\n1 Shiny Impetus\n1 Vigilante Justice\n1 Battlefield Forge\n1 Exotic Orchard\n1 Shadowblood Ridge\n1 Smoldering Marsh\n1 Spinerock Knoll\n1 Windbrisk Heights\n1 Bojuka Bog\n1 Boros Garrison\n1 Command Tower\n1 Myriad Landscape\n1 Nomad Outpost\n1 Orzhov Basilica\n1 Path of Ancestry\n1 Rakdos Carnarium\n1 Temple of the False God\n1 Unclaimed Territory\n1 Bloodfell Caves\n1 Evolving Wilds\n1 Scoured Barrens\n1 Wind-Scarred Crag\n2 Mountain\n1 Mountain\n1 Mountain\n3 Plains\n3 Plains\n2 Plains\n2 Swamp\n1 Swamp\n1 Swamp",
   "oracleCards": [
@@ -763,6 +763,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -1770,24 +1771,24 @@
   ],
   "result": {
     "profile": {
-      "median": 44,
-      "floor": 34,
-      "ceiling": 55,
-      "peak": 78,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 67,
-      "commanderDelta": 6,
+      "median": 42,
+      "floor": 32,
+      "ceiling": 56,
+      "peak": 79,
+      "dispersion": 24,
+      "variance": 24,
+      "consistency": 66,
+      "commanderDelta": 4,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 38,
-      "consistency": 67,
-      "explosiveness": 19,
-      "synergy": 43,
-      "interaction": 59,
-      "resilience": 36
+      "consistency": 66,
+      "explosiveness": 15,
+      "synergy": 47,
+      "interaction": 55,
+      "resilience": 38
     },
     "roles": {
       "lands": 36,
@@ -1798,12 +1799,123 @@
       "draw": 9,
       "interaction": 11,
       "protection": 6,
-      "recursion": 1,
+      "recursion": 2,
       "wipes": 3,
       "avgCmc": 3.2222222222222223,
       "unknownManaLands": 0
     },
     "packages": [
+      {
+        "id": "graveyard",
+        "name": "Cimetière / récursion",
+        "strength": 59,
+        "cohesion": 59,
+        "producers": [
+          "Magus of the Wheel",
+          "Nahiri, the Harbinger"
+        ],
+        "payoffs": [
+          "Alesha, Who Smiles at Death",
+          "Increasing Devotion"
+        ],
+        "members": [
+          "Magus of the Wheel",
+          "Nahiri, the Harbinger",
+          "Alesha, Who Smiles at Death",
+          "Increasing Devotion"
+        ],
+        "producerCards": [
+          {
+            "name": "Magus of the Wheel",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "draw",
+              "graveyard-setup",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Nahiri, the Harbinger",
+            "cmc": 4,
+            "tags": [
+              "draw",
+              "tutor",
+              "repeatable-tutor",
+              "removal",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Alesha, Who Smiles at Death",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Increasing Devotion",
+            "cmc": 5,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          }
+        ],
+        "producerTags": [
+          "graveyard-setup"
+        ],
+        "payoffTags": [
+          "recursion"
+        ],
+        "evidence": "2 producteur(s), 2 payoff(s), 4 carte(s) distincte(s)."
+      },
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
@@ -2003,77 +2115,89 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 34,
-      "median": 41,
+      "iterations": 100,
+      "floor": 32,
+      "median": 39,
       "high": 49,
       "ceiling": 49,
       "peak": 67,
-      "iqr": 12,
-      "consistency": 73,
+      "iqr": 13,
+      "consistency": 71,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": null,
-      "recoveryAfterDisruption": 80,
+      "engineMedianTurn": 6,
+      "recoveryAfterDisruption": 77,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 8,
-          "resource": 6,
-          "burst": 14
+          "interaction": 9,
+          "resource": 7,
+          "burst": 11
         },
         {
           "turn": 2,
-          "commander": 1,
+          "commander": 0,
           "engine": 0,
-          "interaction": 23,
-          "resource": 16,
-          "burst": 12
+          "interaction": 26,
+          "resource": 18,
+          "burst": 11
         },
         {
           "turn": 3,
-          "commander": 22,
+          "commander": 19,
           "engine": 0,
-          "interaction": 45,
-          "resource": 35,
-          "burst": 13
+          "interaction": 46,
+          "resource": 39,
+          "burst": 11
         },
         {
           "turn": 4,
-          "commander": 66,
+          "commander": 53,
           "engine": 0,
-          "interaction": 64,
-          "resource": 54,
-          "burst": 14
+          "interaction": 59,
+          "resource": 52,
+          "burst": 7
         },
         {
           "turn": 5,
-          "commander": 84,
+          "commander": 79,
           "engine": 0,
-          "interaction": 73,
-          "resource": 63,
-          "burst": 14
+          "interaction": 67,
+          "resource": 62,
+          "burst": 7
         },
         {
           "turn": 6,
-          "commander": 89,
-          "engine": 0,
-          "interaction": 77,
-          "resource": 68,
-          "burst": 14
+          "commander": 86,
+          "engine": 2,
+          "interaction": 73,
+          "resource": 69,
+          "burst": 8
         },
         {
           "turn": 7,
-          "commander": 93,
-          "engine": 0,
-          "interaction": 81,
-          "resource": 71,
-          "burst": 15
+          "commander": 90,
+          "engine": 1,
+          "interaction": 75,
+          "resource": 72,
+          "burst": 9
         }
       ]
     },
     "drivers": [
+      {
+        "name": "Nahiri, the Harbinger",
+        "impact": 4.7,
+        "tags": [
+          "draw",
+          "tutor",
+          "repeatable-tutor",
+          "removal",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
       {
         "name": "Flawless Maneuver",
         "impact": 4.3,
@@ -2082,18 +2206,6 @@
           "protection",
           "cheat",
           "free"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Nahiri, the Harbinger",
-        "impact": 4,
-        "tags": [
-          "draw",
-          "tutor",
-          "repeatable-tutor",
-          "removal",
-          "graveyard-setup"
         ],
         "aeon": null
       },
@@ -2129,6 +2241,17 @@
         "aeon": null
       },
       {
+        "name": "Magus of the Wheel",
+        "impact": 2.4,
+        "tags": [
+          "creature",
+          "draw",
+          "graveyard-setup",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Skullclamp",
         "impact": 2.4,
         "tags": [
@@ -2146,6 +2269,15 @@
           "counterspell",
           "protection",
           "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Alesha, Who Smiles at Death",
+        "impact": 2.2,
+        "tags": [
+          "creature",
+          "recursion"
         ],
         "aeon": null
       },
@@ -2172,36 +2304,19 @@
         "aeon": null
       },
       {
-        "name": "Arcane Signet",
-        "impact": 1.9,
+        "name": "Increasing Devotion",
+        "impact": 2,
         "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Boros Signet",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Orzhov Signet",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana"
+          "sorcery",
+          "recursion",
+          "tokens"
         ],
         "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

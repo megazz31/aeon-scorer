@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 55,
-    "p20": 41,
-    "p80": 68,
-    "peak": 91,
-    "coverage": 92,
+    "median": 58,
+    "p20": 46,
+    "p80": 71,
+    "peak": 94,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "fd924018e645a9ade6c2d714e13e717b726ca043ccd180097722ac3df2c23e2b",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Parnesse, the Subtle Brush\n1 Bloodsoaked Champion\n1 Cormela, Glamour Thief\n1 Dogged Detective\n1 Goblin Electromancer\n1 Kess, Dissident Mage\n1 Puppeteer Clique\n1 Rekindling Phoenix\n1 Spellbinding Soprano\n1 Squee, the Immortal\n1 Sinister Concierge\n1 Syrix, Carrier of the Flame\n1 Skyclave Shade\n1 Woe Strider\n1 Army of the Damned\n1 Bedevil\n1 Call the Skybreaker\n1 Chain Reaction\n1 Clone Legion\n1 Damnable Pact\n1 Deep Analysis\n1 Drawn from Dreams\n1 Dread Summons\n1 Feed the Swarm\n1 Flawless Forgery\n1 Hex\n1 Maestros Confluence\n1 Make an Example\n1 Ponder\n1 Preordain\n1 Reign of the Pit\n1 River's Rebuke\n1 Sever the Bloodline\n1 Talrand's Invocation\n1 Xander's Pact\n1 Zndrsplt's Judgment\n1 A Little Chat\n1 Dig Through Time\n1 Fact or Fiction\n1 Frantic Search\n1 Maestros Charm\n1 Mystic Confluence\n1 Waste Management\n1 Arcane Signet\n1 Audacious Swap\n1 Body Count\n1 Commander's Sphere\n1 Dimir Signet\n1 Fellwar Stone\n1 Izzet Signet\n1 Lightning Greaves\n1 Rakdos Signet\n1 Sol Ring\n1 Mimic Vat\n1 Smuggler's Buggy\n1 Twinning Staff\n1 Wayfarer's Bauble\n1 Cryptic Pursuit\n1 Determined Iteration\n1 Double Vision\n1 Extravagant Replication\n1 Rite of the Raging Storm\n1 Maestros Theater\n1 Ash Barrens\n1 Command Tower\n1 Crumbling Necropolis\n1 Grixis Panorama\n1 Myriad Landscape\n1 Path of Ancestry\n1 Thriving Bluff\n1 Thriving Isle\n1 Thriving Moor\n1 Cascade Bluffs\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Foreboding Ruins\n1 Shadowblood Ridge\n1 Smoldering Marsh\n1 Sunken Hollow\n1 Temple of Epiphany\n4 Island\n3 Island\n3 Swamp\n3 Swamp\n3 Mountain\n2 Mountain",
   "oracleCards": [
@@ -115,6 +115,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -133,6 +134,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -227,6 +229,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -267,7 +270,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -483,7 +487,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "draw"
+        "draw",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -501,6 +506,7 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "tokens",
         "sacrifice"
       ],
       "isCommander": false
@@ -905,7 +911,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "protection"
       ],
       "isCommander": false
     },
@@ -998,6 +1005,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "wipe",
         "tokens",
         "death-payoff"
       ],
@@ -1194,7 +1202,6 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "wipe",
         "tokens"
       ],
       "isCommander": false
@@ -1251,7 +1258,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -1269,7 +1277,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "removal"
+        "removal",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -1410,6 +1419,8 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "recursion",
+        "tokens",
         "spellslinger"
       ],
       "isCommander": false
@@ -1676,6 +1687,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "recursion",
         "tokens",
         "sacrifice",
         "sac-outlet",
@@ -1722,24 +1734,24 @@
   ],
   "result": {
     "profile": {
-      "median": 55,
-      "floor": 41,
-      "ceiling": 68,
-      "peak": 91,
+      "median": 58,
+      "floor": 46,
+      "ceiling": 71,
+      "peak": 94,
       "dispersion": 26,
       "variance": 26,
-      "consistency": 58,
+      "consistency": 59,
       "commanderDelta": 14,
-      "coverage": 92,
-      "dataCoverage": 92
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
       "speed": 44,
-      "consistency": 58,
+      "consistency": 59,
       "explosiveness": 26,
-      "synergy": 85,
-      "interaction": 47,
-      "resilience": 60
+      "synergy": 91,
+      "interaction": 57,
+      "resilience": 81
     },
     "roles": {
       "lands": 37,
@@ -1748,10 +1760,10 @@
       "tutors": 0,
       "repeatableTutors": 0,
       "draw": 7,
-      "interaction": 10,
-      "protection": 0,
-      "recursion": 9,
-      "wipes": 1,
+      "interaction": 12,
+      "protection": 1,
+      "recursion": 15,
+      "wipes": 3,
       "avgCmc": 3.6451612903225805,
       "unknownManaLands": 0
     },
@@ -1840,6 +1852,7 @@
             "cmc": 8,
             "tags": [
               "sorcery",
+              "recursion",
               "tokens"
             ],
             "manaReq": {
@@ -1922,6 +1935,7 @@
             "cmc": 7,
             "tags": [
               "sorcery",
+              "recursion",
               "tokens"
             ],
             "manaReq": {
@@ -1943,7 +1957,8 @@
             "name": "Chain Reaction",
             "cmc": 4,
             "tags": [
-              "sorcery"
+              "sorcery",
+              "wipe"
             ],
             "manaReq": {
               "generic": 2,
@@ -2003,7 +2018,8 @@
             "cmc": 4,
             "tags": [
               "sorcery",
-              "draw"
+              "draw",
+              "recursion"
             ],
             "manaReq": {
               "generic": 3,
@@ -2288,7 +2304,6 @@
             "cmc": 6,
             "tags": [
               "sorcery",
-              "wipe",
               "tokens"
             ],
             "manaReq": {
@@ -2308,7 +2323,8 @@
             "name": "River's Rebuke",
             "cmc": 6,
             "tags": [
-              "sorcery"
+              "sorcery",
+              "wipe"
             ],
             "manaReq": {
               "generic": 4,
@@ -2328,7 +2344,8 @@
             "cmc": 4,
             "tags": [
               "sorcery",
-              "removal"
+              "removal",
+              "recursion"
             ],
             "manaReq": {
               "generic": 3,
@@ -2487,6 +2504,8 @@
             "cmc": 2,
             "tags": [
               "creature",
+              "recursion",
+              "tokens",
               "spellslinger"
             ],
             "manaReq": {
@@ -2525,34 +2544,41 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 69,
-        "cohesion": 69,
+        "strength": 93,
+        "cohesion": 93,
         "producers": [
           "Dogged Detective",
           "Frantic Search"
         ],
         "payoffs": [
+          "Army of the Damned",
           "Bloodsoaked Champion",
+          "Call the Skybreaker",
           "Cormela, Glamour Thief",
+          "Deep Analysis",
           "Dogged Detective",
           "Kess, Dissident Mage",
           "Maestros Confluence",
           "Rekindling Phoenix",
-          "Skyclave Shade",
-          "Squee, the Immortal",
-          "Syrix, Carrier of the Flame"
+          "Sever the Bloodline"
         ],
         "members": [
           "Dogged Detective",
           "Frantic Search",
+          "Army of the Damned",
           "Bloodsoaked Champion",
+          "Call the Skybreaker",
           "Cormela, Glamour Thief",
+          "Deep Analysis",
           "Kess, Dissident Mage",
           "Maestros Confluence",
           "Rekindling Phoenix",
+          "Sever the Bloodline",
           "Skyclave Shade",
+          "Spellbinding Soprano",
           "Squee, the Immortal",
-          "Syrix, Carrier of the Flame"
+          "Syrix, Carrier of the Flame",
+          "Woe Strider"
         ],
         "producerCards": [
           {
@@ -2595,6 +2621,30 @@
         ],
         "payoffCards": [
           {
+            "name": "Army of the Damned",
+            "cmc": 8,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 8
+            }
+          },
+          {
             "name": "Bloodsoaked Champion",
             "cmc": 1,
             "tags": [
@@ -2609,6 +2659,29 @@
                 ]
               ],
               "total": 1
+            }
+          },
+          {
+            "name": "Call the Skybreaker",
+            "cmc": 7,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "U",
+                  "R"
+                ],
+                [
+                  "U",
+                  "R"
+                ]
+              ],
+              "total": 7
             }
           },
           {
@@ -2630,6 +2703,24 @@
                 ],
                 [
                   "R"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Deep Analysis",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
                 ]
               ],
               "total": 4
@@ -2726,6 +2817,24 @@
             }
           },
           {
+            "name": "Sever the Bloodline",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "removal",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
             "name": "Skyclave Shade",
             "cmc": 2,
             "tags": [
@@ -2741,6 +2850,25 @@
               "colored": [
                 [
                   "B"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Spellbinding Soprano",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "recursion",
+              "tokens",
+              "spellslinger"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
                 ]
               ],
               "total": 2
@@ -2787,6 +2915,28 @@
               ],
               "total": 4
             }
+          },
+          {
+            "name": "Woe Strider",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "recursion",
+              "tokens",
+              "sacrifice",
+              "sac-outlet",
+              "etb",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
           }
         ],
         "producerTags": [
@@ -2795,7 +2945,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "2 producteur(s), 9 payoff(s), 10 carte(s) distincte(s)."
+        "evidence": "2 producteur(s), 15 payoff(s), 16 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2949,14 +3099,14 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 40,
-      "median": 50,
-      "high": 60,
-      "ceiling": 60,
-      "peak": 85,
+      "iterations": 100,
+      "floor": 42,
+      "median": 52,
+      "high": 62,
+      "ceiling": 62,
+      "peak": 89,
       "iqr": 15,
-      "consistency": 66,
+      "consistency": 67,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 4,
       "recoveryAfterDisruption": 95,
@@ -2966,56 +3116,56 @@
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 7,
+          "resource": 11,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 5,
-          "engine": 2,
-          "interaction": 13,
-          "resource": 29,
-          "burst": 1
+          "commander": 4,
+          "engine": 3,
+          "interaction": 10,
+          "resource": 33,
+          "burst": 0
         },
         {
           "turn": 3,
-          "commander": 62,
-          "engine": 15,
-          "interaction": 34,
-          "resource": 57,
+          "commander": 54,
+          "engine": 16,
+          "interaction": 42,
+          "resource": 65,
           "burst": 9
         },
         {
           "turn": 4,
-          "commander": 86,
-          "engine": 35,
-          "interaction": 52,
-          "resource": 74,
-          "burst": 20
+          "commander": 81,
+          "engine": 44,
+          "interaction": 63,
+          "resource": 80,
+          "burst": 19
         },
         {
           "turn": 5,
-          "commander": 91,
-          "engine": 49,
-          "interaction": 62,
-          "resource": 82,
-          "burst": 26
+          "commander": 87,
+          "engine": 56,
+          "interaction": 72,
+          "resource": 90,
+          "burst": 24
         },
         {
           "turn": 6,
-          "commander": 94,
-          "engine": 55,
-          "interaction": 68,
-          "resource": 86,
-          "burst": 29
+          "commander": 89,
+          "engine": 61,
+          "interaction": 79,
+          "resource": 95,
+          "burst": 28
         },
         {
           "turn": 7,
-          "commander": 96,
-          "engine": 61,
-          "interaction": 73,
-          "resource": 89,
-          "burst": 33
+          "commander": 92,
+          "engine": 65,
+          "interaction": 85,
+          "resource": 98,
+          "burst": 34
         }
       ]
     },
@@ -3054,6 +3204,27 @@
         "aeon": null
       },
       {
+        "name": "Deep Analysis",
+        "impact": 3.8,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Spellbinding Soprano",
+        "impact": 3.4,
+        "tags": [
+          "creature",
+          "recursion",
+          "tokens",
+          "spellslinger"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Mystic Confluence",
         "impact": 3.2,
         "tags": [
@@ -3070,6 +3241,16 @@
           "instant",
           "draw",
           "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Sever the Bloodline",
+        "impact": 3.1,
+        "tags": [
+          "sorcery",
+          "removal",
+          "recursion"
         ],
         "aeon": null
       },
@@ -3107,51 +3288,19 @@
         "aeon": null
       },
       {
-        "name": "Commander's Sphere",
+        "name": "Army of the Damned",
         "impact": 2.6,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Rekindling Phoenix",
-        "impact": 2.6,
-        "tags": [
-          "creature",
-          "recursion",
-          "tokens",
-          "sacrifice",
-          "death-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Cormela, Glamour Thief",
-        "impact": 2.5,
-        "tags": [
-          "creature",
-          "mana",
-          "recursion"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Damnable Pact",
-        "impact": 2.5,
         "tags": [
           "sorcery",
-          "draw"
+          "recursion",
+          "tokens"
         ],
         "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

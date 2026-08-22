@@ -98,7 +98,9 @@ assert.equal(has(card("Dead Man's Chest",'Enchantment — Aura',"Enchant creatur
 assert.equal(has(card('Markov Enforcer','Creature — Vampire Soldier','Whenever this creature or another Vampire you control enters, this creature fights up to one target creature an opponent controls. Whenever a creature dealt damage by this creature this turn dies, create a Blood token.'),'death-payoff'),false)
 assert.equal(has(card('Vampiric Dragon','Creature — Vampire Dragon','Flying. Whenever a creature dealt damage by this creature this turn dies, put a +1/+1 counter on this creature. {1}{R}: This creature deals 1 damage to target creature.'),'death-payoff'),false)
 assert.equal(has(card("Nurgle's Rot",'Enchantment — Aura',"Enchant creature an opponent controls. When enchanted creature dies, return this card to its owner's hand and you create a 1/3 black Demon creature token named Plaguebearer of Nurgle."),'death-payoff'),false)
-assert.equal(has(card('Moonstone Eulogist','Creature — Vampire Cleric','Flying. Whenever a creature an opponent controls dies, you create a Blood token. Whenever you sacrifice an artifact, put a +1/+1 counter on this creature and you gain 1 life.'),'death-payoff'),true)
+assert.equal(has(card('Mayhem Devil','Creature — Devil','Whenever a player sacrifices a permanent, Mayhem Devil deals 1 damage to any target.'),'death-payoff'),true)
+assert.equal(has(card('Moonstone Eulogist','Creature — Vampire Cleric','Flying. Whenever a creature an opponent controls dies, you create a Blood token. Whenever you sacrifice an artifact, put a +1/+1 counter on this creature and you gain 1 life.'),'artifact-payoff'),true)
+assert.equal(has(card('Moonstone Eulogist','Creature — Vampire Cleric','Flying. Whenever a creature an opponent controls dies, you create a Blood token. Whenever you sacrifice an artifact, put a +1/+1 counter on this creature and you gain 1 life.'),'death-payoff'),false)
 assert.equal(has(card('Bastion of Remembrance','Enchantment','Whenever a creature you control dies, each opponent loses 1 life and you gain 1 life.'),'death-payoff'),true)
 assert.equal(has(card('Poison-Tip Archer','Creature — Elf Archer','Whenever another creature dies, each opponent loses 1 life.'),'death-payoff'),true)
 assert.equal(has(card('Death Tyrant','Creature — Beholder Skeleton','Whenever an attacking creature you control or a blocking creature an opponent controls dies, create a 2/2 black Zombie creature token.'),'death-payoff'),true)
@@ -140,5 +142,54 @@ assert.equal(has(akki,'modified-payoff'),true)
 assert.equal(has(akki,'counter-payoff'),false)
 assert.equal(has(card('Idol of Oblivion','Artifact','{T}: Draw a card. Activate only if you created a token this turn.'),'token-payoff'),true)
 assert.equal(has(card('Thalisse, Reverent Medium','Legendary Creature — Human Wizard','At the beginning of each end step, create X 1/1 white Spirit creature tokens with flying, where X is the number of tokens you created this turn.'),'token-payoff'),true)
+
+// Wipes include destroy all, exile all, mass -X/-X, and mass damage sweepers.
+assert.equal(has(card('Wrath of God','Sorcery','Destroy all creatures. They can\'t be regenerated.'),'wipe'),true)
+assert.equal(has(card('Blasphemous Act','Sorcery','This spell costs {1} less to cast for each creature on the battlefield. Blasphemous Act deals 13 damage to each creature.'),'wipe'),true)
+assert.equal(has(card('Chain Reaction','Sorcery','Chain Reaction deals X damage to each creature, where X is the number of creatures on the battlefield.'),'wipe'),true)
+assert.equal(has(card('Starstorm','Instant','Starstorm deals X damage to each creature.'),'wipe'),true)
+assert.equal(has(card('Toxic Deluge','Sorcery','As an additional cost to cast this spell, pay X life. All creatures get -X/-X until end of turn.'),'wipe'),true)
+assert.equal(has(card('Farewell','Sorcery','Choose one or more —\n• Exile all artifacts.\n• Exile all creatures.\n• Exile all enchantments.\n• Exile all graveyards.'),'wipe'),true)
+
+// Recursion keywords include flashback, unearth, escape, retrace, jump-start, etc.
+assert.equal(has(card('Faithless Looting','Sorcery','Draw two cards, then discard two cards.\nFlashback {2}{R}'),'recursion'),true)
+assert.equal(has(card('Salvation Colossus','Creature — Artifact','Unearth—Pay eight {E}.'),'recursion'),true)
+assert.equal(has(card('Kroxa, Titan of Death\'s Hunger','Legendary Creature — Elder Giant','Escape—{B}{B}{R}{R}, Exile five other cards from your graveyard.'),'recursion'),true)
+assert.equal(has(card('Spitting Image','Sorcery','Create a token that\'s a copy of target creature.\nRetrace'),'recursion'),true)
+
+// Protection includes hexproof, shroud, ward, indestructible, phase out, protection from.
+assert.equal(has(card('Lightning Greaves','Artifact — Equipment','Equipped creature has haste and shroud.\nEquip {0}'),'protection'),true)
+assert.equal(has(card('Canopy Gargantuan','Creature — Beast','Flying, ward {2}'),'protection'),true)
+assert.equal(has(card('Shielding Plax','Enchantment — Aura','Enchanted creature can\'t be the target of spells or abilities your opponents control.'),'protection'),true)
+
+// Fight, bite, and targeted edict removal.
+assert.equal(has(card('Domri, Anarch of Bolas','Legendary Planeswalker — Domri','−2: Target creature you control fights target creature you don\'t control.'),'removal'),true)
+assert.equal(has(card('Windswift Slice','Instant','Target creature you control deals damage equal to its power to target creature you don\'t control.'),'removal'),true)
+assert.equal(has(card('Archon of Cruelty','Creature — Archon','Whenever this creature enters or attacks, target opponent sacrifices a creature or planeswalker of their choice...'),'removal'),true)
+
+// Draw includes cycling, connive, and multi-player draw.
+assert.equal(has(card('Happily Ever After','Enchantment','When this enchantment enters, each player gains 5 life and draws a card.'),'draw'),true)
+assert.equal(has(card('Lethal Scheme','Instant','Each creature that convoked this spell connives.'),'draw'),true)
+assert.equal(has(card('Forgotten Cave','Land','Cycling {R}'),'draw'),true)
+
+// Land ramp includes multi-land placement and library reveals.
+assert.equal(has(card('Expand the Sphere','Sorcery','Look at the top six cards of your library. Put up to two land cards from among them onto the battlefield tapped...'),'land-ramp'),true)
+assert.equal(has(card('Wrenn and Seven','Legendary Planeswalker — Wrenn','0: Put any number of land cards from your hand onto the battlefield tapped.'),'land-ramp'),true)
+
+// Spellslinger includes Prowess and Magecraft.
+assert.equal(has(card('Monastery Mentor','Creature — Human Monk','Prowess\nWhenever you cast a noncreature spell, create a 1/1 white Monk creature token with prowess.'),'spellslinger'),true)
+assert.equal(has(card('Elsha of the Infinite','Legendary Creature — Djinn Monk','Prowess\nYou may cast noncreature spells from the top of your library.'),'spellslinger'),true)
+
+// Mana sources include land auras, scaling dorks, and scaling lands.
+assert.equal(has(card('Wild Growth','Enchantment — Aura','Enchant land\nWhenever enchanted land is tapped for mana, its controller adds {G}.'),'mana'),true)
+assert.equal(has(card('Fertile Ground','Enchantment — Aura','Enchant land\nWhenever enchanted land is tapped for mana, its controller adds an additional one mana of any color.'),'mana'),true)
+assert.equal(has(card('Marwyn, the Nurturer','Legendary Creature — Elf Druid','{T}: Add an amount of {G} equal to Marwyn\'s power.'),'mana'),true)
+assert.deepEqual(sourceColors(card('Wild Growth','Enchantment — Aura','Enchant land\nWhenever enchanted land is tapped for mana, its controller adds {G}.')),['G'])
+assert.deepEqual(sourceColors(card('Fertile Ground','Enchantment — Aura','Enchant land\nWhenever enchanted land is tapped for mana, its controller adds an additional one mana of any color.')),['W','U','B','R','G'])
+assert.deepEqual(sourceColors(card('Marwyn, the Nurturer','Legendary Creature — Elf Druid','{T}: Add an amount of {G} equal to Marwyn\'s power.')),['G'])
+
+// Non-creature sacrifice (artifacts/clues/treasures) must not become creature death payoffs.
+assert.equal(has(card('Moonstone Eulogist','Creature — Vampire Cleric','Flying. Whenever a creature an opponent controls dies, you create a Blood token. Whenever you sacrifice an artifact, put a +1/+1 counter on this creature and you gain 1 life.'),'death-payoff'),false)
+assert.equal(has(card('Tireless Tracker','Creature — Human Scout','Landfall — Whenever a land you control enters, investigate. Whenever you sacrifice a Clue, put a +1/+1 counter on this creature.'),'death-payoff'),false)
 
 console.log('SEMANTIC DIRECTION REGRESSION OK — causal draw/counters/stax/mana/removal/blink/tokens/death/lands/life precision')

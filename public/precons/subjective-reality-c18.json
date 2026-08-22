@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 34,
-    "p20": 23,
-    "p80": 46,
-    "peak": 76,
+    "median": 37,
+    "p20": 24,
+    "p80": 48,
+    "peak": 77,
     "coverage": 88,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "272856fb73309f2ad52d17fcd700901c8bb9b1a3ba45695fae78c54a0a1224c4",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Enigma Sphinx\n1 Serra Avatar\n1 Adarkar Valkyrie\n1 Conundrum Sphinx\n1 Djinn of Wishes\n1 Jeskai Infiltrator\n1 Sphinx of Jwar Isle\n1 Sphinx of Uthuun\n1 Phyrexian Delver\n1 Duskmantle Seer\n1 High Priest of Penance\n1 Silent-Blade Oni\n1 Mulldrifter\n1 Ninja of the Deep Hours\n1 Sigiled Starfish\n1 Pilgrim's Eye\n1 Terminus\n1 Entreat the Angels\n1 Army of the Damned\n1 Akroma's Vengeance\n1 Devastation Tide\n1 Dream Cache\n1 Ponder\n1 Portent\n1 Treasure Hunt\n1 Utter End\n1 Banishing Stroke\n1 Return to Dust\n1 Brainstorm\n1 Predict\n1 Telling Time\n1 Esper Charm\n1 Mortify\n1 Azorius Signet\n1 Commander's Sphere\n1 Crystal Ball\n1 Dimir Signet\n1 Mind Stone\n1 Orzhov Signet\n1 Seer's Lantern\n1 Sol Ring\n1 Lightform\n1 Cloudform\n3 Plains\n3 Plains\n2 Plains\n2 Island\n2 Island\n1 Island\n1 Swamp\n1 Swamp\n1 Swamp\n1 Arcane Sanctum\n1 Azorius Chancery\n1 Azorius Guildgate\n1 Barren Moor\n1 Command Tower\n1 Dimir Aqueduct\n1 Dimir Guildgate\n1 Dismal Backwater\n1 Forsaken Sanctuary\n1 Halimar Depths\n1 Jwar Isle Refuge\n1 Lonely Sandbar\n1 Meandering River\n1 Mortuary Mire\n1 New Benalia\n1 Orzhov Basilica\n1 Orzhov Guildgate\n1 Scoured Barrens\n1 Secluded Steppe\n1 Sejiri Refuge\n1 Submerged Boneyard\n1 Tranquil Cove\n1 Varina, Lich Queen\n1 Yennett, Cryptic Sovereign\n1 Boreas Charger\n1 Magus of the Balance\n1 Aminatou's Augury\n1 Primordial Mist\n1 Entreat the Dead\n1 Night Incarnate\n1 Skull Storm\n1 Sower of Discord\n1 Yuriko, the Tiger's Shadow\n1 Isolated Watchtower\n1 Aethermage's Touch\n1 Loyal Unicorn\n1 Loyal Subordinate\n1 Geode Golem\n1 Forge of Heroes\n1 Crib Swap",
   "oracleCards": [
@@ -92,6 +92,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "draw",
         "wipe"
       ],
       "isCommander": false
@@ -177,6 +178,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -283,6 +285,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -899,6 +902,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -1368,6 +1372,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -1536,7 +1541,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "protection"
       ],
       "isCommander": false
     },
@@ -1759,24 +1765,24 @@
   ],
   "result": {
     "profile": {
-      "median": 34,
-      "floor": 23,
-      "ceiling": 46,
-      "peak": 76,
-      "dispersion": 23,
-      "variance": 23,
-      "consistency": 63,
-      "commanderDelta": 12,
+      "median": 37,
+      "floor": 24,
+      "ceiling": 48,
+      "peak": 77,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 66,
+      "commanderDelta": 13,
       "coverage": 88,
       "dataCoverage": 88
     },
     "dimensions": {
       "speed": 30,
-      "consistency": 63,
-      "explosiveness": 19,
+      "consistency": 66,
+      "explosiveness": 17,
       "synergy": 24,
-      "interaction": 36,
-      "resilience": 34
+      "interaction": 46,
+      "resilience": 41
     },
     "roles": {
       "lands": 40,
@@ -1784,10 +1790,10 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 12,
+      "draw": 13,
       "interaction": 10,
-      "protection": 1,
-      "recursion": 2,
+      "protection": 2,
+      "recursion": 3,
       "wipes": 3,
       "avgCmc": 3.9491525423728815,
       "unknownManaLands": 0
@@ -1839,73 +1845,73 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 30,
-      "median": 38,
-      "high": 46,
-      "ceiling": 46,
-      "peak": 69,
-      "iqr": 13,
-      "consistency": 72,
+      "iterations": 100,
+      "floor": 31,
+      "median": 40,
+      "high": 48,
+      "ceiling": 48,
+      "peak": 70,
+      "iqr": 11,
+      "consistency": 75,
       "commanderMedianTurn": 4,
       "engineMedianTurn": null,
-      "recoveryAfterDisruption": 83,
+      "recoveryAfterDisruption": 88,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 5,
+          "resource": 18,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 1,
+          "commander": 0,
           "engine": 0,
-          "interaction": 3,
-          "resource": 23,
+          "interaction": 1,
+          "resource": 36,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 29,
+          "commander": 24,
           "engine": 0,
-          "interaction": 20,
-          "resource": 39,
-          "burst": 3
+          "interaction": 24,
+          "resource": 49,
+          "burst": 1
         },
         {
           "turn": 4,
-          "commander": 66,
+          "commander": 72,
           "engine": 0,
-          "interaction": 42,
-          "resource": 59,
-          "burst": 11
+          "interaction": 55,
+          "resource": 66,
+          "burst": 8
         },
         {
           "turn": 5,
-          "commander": 78,
+          "commander": 87,
           "engine": 0,
-          "interaction": 56,
-          "resource": 69,
-          "burst": 20
+          "interaction": 67,
+          "resource": 72,
+          "burst": 16
         },
         {
           "turn": 6,
-          "commander": 84,
+          "commander": 91,
           "engine": 0,
-          "interaction": 63,
-          "resource": 75,
-          "burst": 28
+          "interaction": 75,
+          "resource": 76,
+          "burst": 22
         },
         {
           "turn": 7,
-          "commander": 87,
+          "commander": 93,
           "engine": 0,
-          "interaction": 70,
+          "interaction": 82,
           "resource": 80,
-          "burst": 34
+          "burst": 27
         }
       ]
     },
@@ -1978,6 +1984,16 @@
         "aeon": null
       },
       {
+        "name": "Akroma's Vengeance",
+        "impact": 2.8,
+        "tags": [
+          "sorcery",
+          "draw",
+          "wipe"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Commander's Sphere",
         "impact": 2.6,
         "tags": [
@@ -2028,20 +2044,11 @@
           "draw"
         ],
         "aeon": null
-      },
-      {
-        "name": "Ninja of the Deep Hours",
-        "impact": 2.2,
-        "tags": [
-          "creature",
-          "draw"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

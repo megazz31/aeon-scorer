@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 47,
-    "p20": 33,
-    "p80": 57,
-    "peak": 88,
+    "median": 48,
+    "p20": 39,
+    "p80": 59,
+    "peak": 89,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "a5200f1fb1bda69842e24457a325d1dc0239c761438818a6ef3eb056e5d516d3",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Phabine, Boss's Confidant\n1 Leafkin Druid\n1 Sakura-Tribe Elder\n1 Agitator Ant\n1 Bess, Soul Nourisher\n1 Champion of Lambholt\n1 Magus of the Wheel\n1 Orzhov Advokist\n1 Rumor Gatherer\n1 Scute Swarm\n1 Selvala, Explorer Returned\n1 Wood Elves\n1 Zurzoth, Chaos Rider\n1 Arasta of the Endless Web\n1 Life of the Party\n1 Master of Ceremonies\n1 Rose Room Treasurer\n1 Sizzling Soloist\n1 Boss's Chauffeur\n1 Gahiji, Honored One\n1 Kazuul, Tyrant of the Cliffs\n1 Thunderfoot Baloth\n1 Cabaretti Confluence\n1 Camaraderie\n1 Cultivate\n1 Fell the Mighty\n1 Harmonize\n1 Indulge // Excess\n1 Martial Coup\n1 Seize the Spotlight\n1 Shamanic Revelation\n1 Sylvan Offering\n1 Vivien's Stampede\n1 Artifact Mutation\n1 Aura Mutation\n1 Beast Within\n1 Boros Charm\n1 Cabaretti Charm\n1 Crash the Party\n1 Call the Coppercoats\n1 Grand Crescendo\n1 March of the Multitudes\n1 Path to Exile\n1 Sol Ring\n1 Arcane Signet\n1 Bloodthirsty Blade\n1 Fellwar Stone\n1 Idol of Oblivion\n1 Commander's Sphere\n1 Scepter of Celebration\n1 False Floor\n1 Intangible Virtue\n1 Awakening Zone\n1 Beastmaster Ascension\n1 Duelist's Heritage\n1 Killer Service\n1 Prosperous Partnership\n1 Felidar Retreat\n1 Outpost Siege\n1 Assemble the Legion\n1 Sandwurm Convergence\n1 Ash Barrens\n1 Cabaretti Courtyard\n1 Canopy Vista\n1 Castle Ardenvale\n1 Castle Embereth\n1 Cinder Glade\n1 Command Tower\n1 Exotic Orchard\n1 Fortified Village\n1 Game Trail\n1 Jungle Shrine\n1 Mossfire Valley\n1 Myriad Landscape\n1 Naya Panorama\n1 Path of Ancestry\n1 Rugged Prairie\n1 Sungrass Prairie\n1 Temple of Triumph\n1 Thriving Bluff\n1 Thriving Grove\n1 Thriving Heath\n1 Windbrisk Heights\n2 Plains\n2 Plains\n2 Mountain\n2 Mountain\n4 Forest\n4 Forest",
   "oracleCards": [
@@ -136,6 +136,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -878,6 +879,7 @@
       "tags": [
         "sorcery",
         "mana",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -1798,24 +1800,24 @@
   ],
   "result": {
     "profile": {
-      "median": 47,
-      "floor": 33,
-      "ceiling": 57,
-      "peak": 88,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 62,
-      "commanderDelta": 12,
+      "median": 48,
+      "floor": 39,
+      "ceiling": 59,
+      "peak": 89,
+      "dispersion": 20,
+      "variance": 20,
+      "consistency": 65,
+      "commanderDelta": 11,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
-      "speed": 39,
-      "consistency": 62,
+      "speed": 40,
+      "consistency": 65,
       "explosiveness": 17,
       "synergy": 80,
-      "interaction": 40,
-      "resilience": 26
+      "interaction": 43,
+      "resilience": 29
     },
     "roles": {
       "lands": 38,
@@ -1826,7 +1828,7 @@
       "draw": 13,
       "interaction": 8,
       "protection": 2,
-      "recursion": 0,
+      "recursion": 1,
       "wipes": 3,
       "avgCmc": 3.459016393442623,
       "unknownManaLands": 0
@@ -2176,6 +2178,7 @@
             "tags": [
               "sorcery",
               "mana",
+              "recursion",
               "tokens"
             ],
             "manaReq": {
@@ -3191,73 +3194,73 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 33,
-      "median": 42,
+      "iterations": 100,
+      "floor": 35,
+      "median": 41,
       "high": 50,
       "ceiling": 50,
       "peak": 79,
-      "iqr": 14,
-      "consistency": 70,
+      "iqr": 12,
+      "consistency": 74,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": 4.5,
-      "recoveryAfterDisruption": 75,
+      "engineMedianTurn": 4,
+      "recoveryAfterDisruption": 73,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 3,
-          "resource": 0,
-          "burst": 8
+          "interaction": 5,
+          "resource": 5,
+          "burst": 10
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 1,
           "engine": 1,
-          "interaction": 14,
-          "resource": 8,
-          "burst": 8
+          "interaction": 23,
+          "resource": 13,
+          "burst": 10
         },
         {
           "turn": 3,
-          "commander": 18,
-          "engine": 10,
-          "interaction": 27,
+          "commander": 10,
+          "engine": 7,
+          "interaction": 26,
           "resource": 26,
-          "burst": 7
+          "burst": 9
         },
         {
           "turn": 4,
-          "commander": 65,
-          "engine": 25,
-          "interaction": 45,
-          "resource": 47,
+          "commander": 66,
+          "engine": 26,
+          "interaction": 50,
+          "resource": 50,
           "burst": 5
         },
         {
           "turn": 5,
-          "commander": 84,
-          "engine": 37,
-          "interaction": 55,
-          "resource": 60,
-          "burst": 3
+          "commander": 80,
+          "engine": 35,
+          "interaction": 59,
+          "resource": 61,
+          "burst": 2
         },
         {
           "turn": 6,
-          "commander": 90,
-          "engine": 44,
-          "interaction": 61,
+          "commander": 87,
+          "engine": 38,
+          "interaction": 67,
           "resource": 69,
-          "burst": 3
+          "burst": 2
         },
         {
           "turn": 7,
-          "commander": 93,
+          "commander": 92,
           "engine": 51,
-          "interaction": 66,
-          "resource": 75,
-          "burst": 2
+          "interaction": 73,
+          "resource": 74,
+          "burst": 1
         }
       ]
     },
@@ -3302,6 +3305,17 @@
           "mana",
           "tokens",
           "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Indulge // Excess",
+        "impact": 3.4,
+        "tags": [
+          "sorcery",
+          "mana",
+          "recursion",
+          "tokens"
         ],
         "aeon": null
       },
@@ -3375,16 +3389,6 @@
         "aeon": null
       },
       {
-        "name": "Indulge // Excess",
-        "impact": 2.7,
-        "tags": [
-          "sorcery",
-          "mana",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Rose Room Treasurer",
         "impact": 2.7,
         "tags": [
@@ -3398,7 +3402,7 @@
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 51,
-    "p20": 40,
-    "p80": 64,
+    "median": 52,
+    "p20": 41,
+    "p80": 65,
     "peak": 91,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "b128c835750b09830f77780fca91149008f9b066e5d3ba49a55509e22e3e9644",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Liberty Prime, Recharged\n1 Automated Assembly Line\n1 Brotherhood Scribe\n1 Overencumbered\n1 The Prydwen, Steel Flagship\n1 Sentry Bot\n1 Vault 13: Dweller's Journey\n1 Curie, Emergent Intelligence\n1 James, Wandering Dad // Follow Him\n1 Nick Valentine, Private Eye\n1 Synth Infiltrator\n1 Assaultron Dominator\n1 The Motherlode, Excavator\n1 Plasma Caster\n1 Synth Eradicator\n1 Arcade Gannon\n1 Electrosiphon\n1 Red Death, Shipwrecker\n1 Rex, Cyber-Hound\n1 Sentinel Sarah Lyons\n1 Shaun, Father of Synths\n1 Vault 112: Sadistic Simulation\n1 Brotherhood Vertibird\n1 T-45 Power Armor\n1 Ferrous Lake\n1 HELIOS One\n1 Austere Command\n1 Open the Vaults\n1 Mechanized Production\n1 One with the Machine\n1 Wake the Past\n1 Mystic Forge\n1 Panharmonicon\n1 Solemn Simulacrum\n1 Steel Overseer\n1 Clifftop Retreat\n1 Exotic Orchard\n1 Glacial Fortress\n1 Irrigated Farmland\n1 Prairie Stream\n1 Skycloud Expanse\n1 Spire of Industry\n1 Sulfur Falls\n1 Temple of Enlightenment\n1 Temple of Epiphany\n1 Treasure Vault\n1 Paladin Danse, Steel Maverick\n1 Nerd Rage\n1 Robobrain War Mind\n1 Bottle-Cap Blast\n1 Elder Owyn Lyons\n1 Behemoth of Vault 0\n1 C.A.M.P.\n1 Endurance Bobblehead\n1 Expert-Level Safe\n1 Intelligence Bobblehead\n1 Nuka-Cola Vending Machine\n1 Crush Contraband\n1 Dispatch\n1 Swords to Plowshares\n1 Glimmer of Genius\n1 Thirst for Knowledge\n1 Whirler Rogue\n1 Loyal Apprentice\n1 Unexpected Windfall\n1 Arcane Signet\n1 Everflowing Chalice\n1 Lightning Greaves\n1 Mind Stone\n1 Sol Ring\n1 Talisman of Conviction\n1 Talisman of Creativity\n1 Talisman of Progress\n1 Thought Vessel\n1 Wayfarer's Bauble\n1 Ash Barrens\n1 Buried Ruin\n1 Command Tower\n1 Evolving Wilds\n1 Myriad Landscape\n1 Mystic Monastery\n1 Path of Ancestry\n1 Razortide Bridge\n1 Rustvale Bridge\n1 Silverbluff Bridge\n1 Terramorphic Expanse\n3 Island\n2 Island\n2 Mountain\n2 Mountain\n2 Plains\n2 Plains",
   "oracleCards": [
@@ -101,6 +101,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -416,6 +417,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "protection",
         "recursion",
         "etb",
         "artifact-payoff"
@@ -668,6 +670,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -748,7 +751,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "protection"
       ],
       "isCommander": false
     },
@@ -948,8 +952,7 @@
         "artifact",
         "mana",
         "tokens",
-        "sacrifice",
-        "death-payoff"
+        "sacrifice"
       ],
       "isCommander": false
     },
@@ -1166,7 +1169,8 @@
         "R"
       ],
       "tags": [
-        "creature"
+        "creature",
+        "mana"
       ],
       "isCommander": false
     },
@@ -1885,24 +1889,24 @@
   ],
   "result": {
     "profile": {
-      "median": 51,
-      "floor": 40,
-      "ceiling": 64,
+      "median": 52,
+      "floor": 41,
+      "ceiling": 65,
       "peak": 91,
       "dispersion": 24,
       "variance": 24,
-      "consistency": 59,
-      "commanderDelta": 13,
+      "consistency": 60,
+      "commanderDelta": 14,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 43,
-      "consistency": 59,
+      "consistency": 60,
       "explosiveness": 23,
       "synergy": 87,
-      "interaction": 34,
-      "resilience": 40
+      "interaction": 36,
+      "resilience": 44
     },
     "roles": {
       "lands": 37,
@@ -1912,7 +1916,7 @@
       "repeatableTutors": 0,
       "draw": 11,
       "interaction": 7,
-      "protection": 2,
+      "protection": 4,
       "recursion": 3,
       "wipes": 2,
       "avgCmc": 3.2419354838709675,
@@ -2196,7 +2200,8 @@
             "name": "Lightning Greaves",
             "cmc": 2,
             "tags": [
-              "artifact"
+              "artifact",
+              "protection"
             ],
             "manaReq": {
               "generic": 2,
@@ -2257,8 +2262,7 @@
               "artifact",
               "mana",
               "tokens",
-              "sacrifice",
-              "death-payoff"
+              "sacrifice"
             ],
             "manaReq": {
               "generic": 3,
@@ -2675,6 +2679,7 @@
             "cmc": 4,
             "tags": [
               "creature",
+              "protection",
               "recursion",
               "etb",
               "artifact-payoff"
@@ -2966,6 +2971,7 @@
             "cmc": 4,
             "tags": [
               "creature",
+              "protection",
               "recursion",
               "etb",
               "artifact-payoff"
@@ -3258,73 +3264,73 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 38,
-      "median": 46,
-      "high": 56,
-      "ceiling": 56,
+      "iterations": 100,
+      "floor": 39,
+      "median": 47,
+      "high": 57,
+      "ceiling": 57,
       "peak": 84,
       "iqr": 15,
-      "consistency": 67,
+      "consistency": 68,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 90,
+      "recoveryAfterDisruption": 94,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 11,
-          "resource": 9,
+          "interaction": 13,
+          "resource": 29,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 2,
+          "commander": 0,
           "engine": 1,
-          "interaction": 14,
-          "resource": 14,
+          "interaction": 13,
+          "resource": 29,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 38,
-          "engine": 12,
-          "interaction": 22,
-          "resource": 31,
-          "burst": 4
+          "commander": 36,
+          "engine": 13,
+          "interaction": 23,
+          "resource": 36,
+          "burst": 5
         },
         {
           "turn": 4,
-          "commander": 77,
-          "engine": 38,
-          "interaction": 38,
-          "resource": 57,
-          "burst": 14
+          "commander": 72,
+          "engine": 35,
+          "interaction": 41,
+          "resource": 56,
+          "burst": 15
         },
         {
           "turn": 5,
-          "commander": 91,
+          "commander": 89,
           "engine": 53,
-          "interaction": 49,
-          "resource": 69,
-          "burst": 18
+          "interaction": 52,
+          "resource": 73,
+          "burst": 21
         },
         {
           "turn": 6,
-          "commander": 94,
-          "engine": 61,
-          "interaction": 55,
-          "resource": 75,
-          "burst": 20
+          "commander": 93,
+          "engine": 65,
+          "interaction": 60,
+          "resource": 76,
+          "burst": 23
         },
         {
           "turn": 7,
           "commander": 96,
-          "engine": 67,
-          "interaction": 60,
-          "resource": 79,
-          "burst": 22
+          "engine": 69,
+          "interaction": 63,
+          "resource": 82,
+          "burst": 28
         }
       ]
     },
@@ -3372,6 +3378,18 @@
           "mana",
           "graveyard-setup",
           "tokens"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Elder Owyn Lyons",
+        "impact": 3.5,
+        "tags": [
+          "creature",
+          "protection",
+          "recursion",
+          "etb",
+          "artifact-payoff"
         ],
         "aeon": null
       },
@@ -3433,17 +3451,6 @@
         "aeon": null
       },
       {
-        "name": "Elder Owyn Lyons",
-        "impact": 2.9,
-        "tags": [
-          "creature",
-          "recursion",
-          "etb",
-          "artifact-payoff"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Liberty Prime, Recharged",
         "impact": 2.9,
         "tags": [
@@ -3471,7 +3478,7 @@
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

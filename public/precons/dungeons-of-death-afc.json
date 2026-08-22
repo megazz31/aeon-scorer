@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 51,
-    "p20": 39,
-    "p80": 61,
-    "peak": 87,
-    "coverage": 94,
+    "median": 50,
+    "p20": 37,
+    "p80": 59,
+    "peak": 85,
+    "coverage": 95,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "8ceb4c24c9fe16ac36938793fdab2795167b79e234e8f05cec6c7eef0e4e1481",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Cataclysmic Gearhulk\n1 Eternal Dragon\n1 Karmic Guide\n1 Sun Titan\n1 Sunblast Angel\n1 Champion of Wits\n1 Curator of Mysteries\n1 Phantasmal Image\n1 Doomed Necromancer\n1 Ashen Rider\n1 Baleful Strix\n1 Hostage Taker\n1 Solemn Simulacrum\n1 Ronom Unicorn\n1 Wall of Omens\n1 Merfolk Looter\n1 Mulldrifter\n1 Murder of Crows\n1 Plaguecrafter\n1 Reassembling Skeleton\n1 Shriekmaw\n1 Cloudblazer\n1 Necrotic Sliver\n1 Obsessive Stitcher\n1 Burnished Hart\n1 Meteor Golem\n1 Necromantic Selection\n1 Unburial Rites\n1 Victimize\n1 Utter End\n1 Swords to Plowshares\n1 Forbidden Alchemy\n1 Despark\n1 Vanish into Memory\n1 Arcane Signet\n1 Commander's Sphere\n1 Fellwar Stone\n1 Sol Ring\n1 Wayfarer's Bauble\n1 Lightning Greaves\n1 Propaganda\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Geier Reach Sanitarium\n1 High Market\n1 Nimbus Maze\n1 Port Town\n1 Prairie Stream\n1 Sunken Hollow\n1 Evolving Wilds\n1 Arcane Sanctum\n1 Azorius Chancery\n1 Command Tower\n1 Dimir Aqueduct\n1 Esper Panorama\n1 Orzhov Basilica\n1 Terramorphic Expanse\n1 Thriving Heath\n1 Thriving Isle\n1 Thriving Moor\n2 Plains\n2 Plains\n2 Plains\n1 Plains\n2 Island\n1 Island\n1 Island\n1 Island\n2 Swamp\n2 Swamp\n2 Swamp\n1 Swamp\n1 Nihiloor\n1 Immovable Rod\n1 Radiant Solar\n1 Revivify\n1 Thorough Investigation\n1 Arcane Endeavor\n1 Minn, Wily Illusionist\n1 Phantom Steed\n1 Rod of Absorption\n1 Grave Endeavor\n1 Wand of Orcus\n1 Extract Brain\n1 Midnight Pathlighter\n1 Minimus Containment\n1 Hama Pashar, Ruin Seeker\n1 Dungeon Map\n1 Bucknard's Everfull Purse\n1 Clay Golem\n1 Component Pouch",
   "oracleCards": [
@@ -243,7 +243,9 @@
       "tags": [
         "creature",
         "draw",
+        "recursion",
         "graveyard-setup",
+        "tokens",
         "etb"
       ],
       "isCommander": false
@@ -285,7 +287,8 @@
         "creature",
         "artifact",
         "removal",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -393,7 +396,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -532,6 +536,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "recursion"
       ],
       "isCommander": false
@@ -631,7 +636,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -802,7 +808,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "protection"
       ],
       "isCommander": false
     },
@@ -1123,7 +1130,6 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "wipe",
         "etb"
       ],
       "isCommander": false
@@ -1511,8 +1517,7 @@
       "tags": [
         "enchantment",
         "tokens",
-        "sacrifice",
-        "death-payoff"
+        "sacrifice"
       ],
       "isCommander": false
     },
@@ -1725,24 +1730,24 @@
   ],
   "result": {
     "profile": {
-      "median": 51,
-      "floor": 39,
-      "ceiling": 61,
-      "peak": 87,
+      "median": 50,
+      "floor": 37,
+      "ceiling": 59,
+      "peak": 85,
       "dispersion": 22,
       "variance": 22,
-      "consistency": 64,
-      "commanderDelta": 10,
-      "coverage": 94,
-      "dataCoverage": 94
+      "consistency": 66,
+      "commanderDelta": 7,
+      "coverage": 95,
+      "dataCoverage": 95
     },
     "dimensions": {
-      "speed": 36,
-      "consistency": 64,
-      "explosiveness": 24,
-      "synergy": 69,
-      "interaction": 56,
-      "resilience": 60
+      "speed": 35,
+      "consistency": 66,
+      "explosiveness": 27,
+      "synergy": 72,
+      "interaction": 49,
+      "resilience": 66
     },
     "roles": {
       "lands": 39,
@@ -1750,11 +1755,11 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 12,
-      "interaction": 15,
-      "protection": 1,
-      "recursion": 9,
-      "wipes": 3,
+      "draw": 14,
+      "interaction": 14,
+      "protection": 2,
+      "recursion": 11,
+      "wipes": 2,
       "avgCmc": 3.6333333333333333,
       "unknownManaLands": 0
     },
@@ -1762,8 +1767,8 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 82,
-        "cohesion": 82,
+        "strength": 85,
+        "cohesion": 85,
         "producers": [
           "Champion of Wits",
           "Merfolk Looter",
@@ -1771,15 +1776,16 @@
           "Obsessive Stitcher"
         ],
         "payoffs": [
+          "Champion of Wits",
           "Doomed Necromancer",
           "Eternal Dragon",
+          "Forbidden Alchemy",
           "Grave Endeavor",
           "Karmic Guide",
           "Obsessive Stitcher",
           "Reassembling Skeleton",
           "Revivify",
-          "Sun Titan",
-          "Unburial Rites"
+          "Sun Titan"
         ],
         "members": [
           "Champion of Wits",
@@ -1788,6 +1794,7 @@
           "Obsessive Stitcher",
           "Doomed Necromancer",
           "Eternal Dragon",
+          "Forbidden Alchemy",
           "Grave Endeavor",
           "Karmic Guide",
           "Reassembling Skeleton",
@@ -1802,7 +1809,9 @@
             "tags": [
               "creature",
               "draw",
+              "recursion",
               "graveyard-setup",
+              "tokens",
               "etb"
             ],
             "manaReq": {
@@ -1881,6 +1890,27 @@
         ],
         "payoffCards": [
           {
+            "name": "Champion of Wits",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "draw",
+              "recursion",
+              "graveyard-setup",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
             "name": "Doomed Necromancer",
             "cmc": 3,
             "tags": [
@@ -1903,6 +1933,7 @@
             "cmc": 7,
             "tags": [
               "creature",
+              "draw",
               "recursion"
             ],
             "manaReq": {
@@ -1916,6 +1947,23 @@
                 ]
               ],
               "total": 7
+            }
+          },
+          {
+            "name": "Forbidden Alchemy",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
             }
           },
           {
@@ -2064,16 +2112,17 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "4 producteur(s), 9 payoff(s), 12 carte(s) distincte(s)."
+        "evidence": "4 producteur(s), 11 payoff(s), 13 carte(s) distincte(s)."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 34,
+      "score": 37,
       "connected": [
         "Champion of Wits",
         "Doomed Necromancer",
         "Eternal Dragon",
+        "Forbidden Alchemy",
         "Grave Endeavor",
         "Karmic Guide",
         "Merfolk Looter",
@@ -2096,73 +2145,73 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 38,
-      "median": 46,
-      "high": 54,
-      "ceiling": 54,
-      "peak": 79,
+      "iterations": 100,
+      "floor": 35,
+      "median": 44,
+      "high": 51,
+      "ceiling": 51,
+      "peak": 75,
       "iqr": 12,
-      "consistency": 73,
+      "consistency": 75,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 91,
+      "engineMedianTurn": 5.5,
+      "recoveryAfterDisruption": 87,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 4,
-          "resource": 8,
+          "resource": 5,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 4,
           "engine": 0,
-          "interaction": 19,
-          "resource": 30,
-          "burst": 5
+          "interaction": 18,
+          "resource": 26,
+          "burst": 4
         },
         {
           "turn": 3,
-          "commander": 44,
+          "commander": 45,
           "engine": 2,
-          "interaction": 39,
+          "interaction": 36,
           "resource": 51,
           "burst": 12
         },
         {
           "turn": 4,
-          "commander": 76,
-          "engine": 8,
-          "interaction": 63,
-          "resource": 71,
-          "burst": 18
-        },
-        {
-          "turn": 5,
-          "commander": 86,
-          "engine": 15,
-          "interaction": 74,
-          "resource": 83,
+          "commander": 75,
+          "engine": 7,
+          "interaction": 54,
+          "resource": 68,
           "burst": 22
         },
         {
+          "turn": 5,
+          "commander": 83,
+          "engine": 12,
+          "interaction": 67,
+          "resource": 80,
+          "burst": 23
+        },
+        {
           "turn": 6,
-          "commander": 91,
-          "engine": 21,
-          "interaction": 81,
+          "commander": 89,
+          "engine": 17,
+          "interaction": 75,
           "resource": 89,
-          "burst": 26
+          "burst": 28
         },
         {
           "turn": 7,
           "commander": 93,
-          "engine": 26,
-          "interaction": 86,
+          "engine": 23,
+          "interaction": 80,
           "resource": 92,
-          "burst": 30
+          "burst": 31
         }
       ]
     },
@@ -2201,6 +2250,19 @@
         "aeon": null
       },
       {
+        "name": "Champion of Wits",
+        "impact": 3.5,
+        "tags": [
+          "creature",
+          "draw",
+          "recursion",
+          "graveyard-setup",
+          "tokens",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Obsessive Stitcher",
         "impact": 3.1,
         "tags": [
@@ -2219,6 +2281,16 @@
           "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Eternal Dragon",
+        "impact": 2.9,
+        "tags": [
+          "creature",
+          "draw",
+          "recursion"
         ],
         "aeon": null
       },
@@ -2275,35 +2347,11 @@
           "graveyard-setup"
         ],
         "aeon": null
-      },
-      {
-        "name": "Solemn Simulacrum",
-        "impact": 2.5,
-        "tags": [
-          "creature",
-          "artifact",
-          "draw",
-          "land-ramp",
-          "death-payoff",
-          "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Champion of Wits",
-        "impact": 2.4,
-        "tags": [
-          "creature",
-          "draw",
-          "graveyard-setup",
-          "etb"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

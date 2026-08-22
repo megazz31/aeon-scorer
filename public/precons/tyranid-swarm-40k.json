@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 37,
-    "p20": 27,
-    "p80": 51,
-    "peak": 81,
-    "coverage": 92,
+    "median": 42,
+    "p20": 28,
+    "p80": 54,
+    "peak": 84,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "cb98329652473a6f72b22b25faac6bcae34e6e8023dcf3959202d19d06cd9499",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Hull Breach\n1 Cultivate\n1 Explore\n1 Farseek\n1 Rampant Growth\n1 Starstorm\n1 Aetherize\n1 Inspiring Call\n1 Harrow\n1 Icon of Ancestry\n1 Herald's Horn\n1 Sol Ring\n1 Arcane Signet\n1 Abundance\n1 Death's Presence\n1 Hardened Scales\n1 Bred for the Hunt\n1 New Horizons\n1 Overgrowth\n1 Cinder Glade\n1 Exotic Orchard\n1 Game Trail\n1 Temple of Abandon\n1 Temple of Epiphany\n1 Temple of Mystery\n1 Ash Barrens\n1 Frontier Bivouac\n1 Unclaimed Territory\n1 Cave of Temptation\n1 Command Tower\n1 Evolving Wilds\n1 Opal Palace\n1 Path of Ancestry\n1 Rugged Highlands\n1 Terramorphic Expanse\n1 Thornwood Falls\n7 Mountain\n7 Island\n8 Forest\n1 Magus Lucea Kane\n1 Genestealer Patriarch\n1 Exocrine\n1 The Red Terror\n1 Screamer-Killer\n1 Biophagus\n1 Bone Sabres\n1 Broodlord\n1 Clamavus\n1 Haruspex\n1 Hierophant Bio-Titan\n1 Hormagaunt Horde\n1 Lictor\n1 Nexos\n1 Old One Eye\n1 Sporocyst\n1 Termagant Swarm\n1 Tervigon\n1 Toxicrene\n1 Tyrant Guard\n1 Atalan Jackal\n1 Deathleaper, Terror Weapon\n1 The First Tyrannic War\n1 Gargoyle Flock\n1 Ghyrson Starn, Kelermorph\n1 Malanthrope\n1 Mawloc\n1 Ravener\n1 Shadow in the Warp\n1 Tyranid Harridan\n1 Tyranid Prime\n1 Winged Hive Tyrant\n1 Zoanthrope\n1 Genestealer Locus\n1 Acolyte Hybrid\n1 Aberrant\n1 Purestrain Genestealer\n1 Tyranid Invasion\n1 Trygon Prime\n1 Venomthrope\n1 Goliath Truck",
   "oracleCards": [
@@ -113,7 +113,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -153,6 +154,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -636,7 +638,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "protection"
       ],
       "isCommander": false
     },
@@ -752,6 +755,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "protection",
         "counter-payoff",
         "counter-kind:plus1"
       ],
@@ -1064,7 +1068,8 @@
         "G"
       ],
       "tags": [
-        "enchantment"
+        "enchantment",
+        "mana"
       ],
       "isCommander": false
     },
@@ -1258,7 +1263,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "draw",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -1535,6 +1542,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "protection",
         "tokens"
       ],
       "isCommander": false
@@ -1674,6 +1682,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "protection",
         "etb"
       ],
       "isCommander": false
@@ -1681,24 +1690,24 @@
   ],
   "result": {
     "profile": {
-      "median": 37,
-      "floor": 27,
-      "ceiling": 51,
-      "peak": 81,
-      "dispersion": 25,
-      "variance": 25,
+      "median": 42,
+      "floor": 28,
+      "ceiling": 54,
+      "peak": 84,
+      "dispersion": 26,
+      "variance": 26,
       "consistency": 61,
-      "commanderDelta": 7,
-      "coverage": 92,
-      "dataCoverage": 92
+      "commanderDelta": 10,
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
-      "speed": 36,
+      "speed": 37,
       "consistency": 61,
-      "explosiveness": 12,
+      "explosiveness": 13,
       "synergy": 73,
-      "interaction": 23,
-      "resilience": 23
+      "interaction": 39,
+      "resilience": 30
     },
     "roles": {
       "lands": 39,
@@ -1706,11 +1715,11 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 3,
-      "interaction": 3,
-      "protection": 3,
+      "draw": 4,
+      "interaction": 5,
+      "protection": 7,
       "recursion": 2,
-      "wipes": 0,
+      "wipes": 2,
       "avgCmc": 3.316666666666667,
       "unknownManaLands": 0
     },
@@ -2101,6 +2110,7 @@
             "cmc": 12,
             "tags": [
               "creature",
+              "protection",
               "counter-payoff",
               "counter-kind:plus1"
             ],
@@ -2288,7 +2298,8 @@
             "name": "Overgrowth",
             "cmc": 3,
             "tags": [
-              "enchantment"
+              "enchantment",
+              "mana"
             ],
             "manaReq": {
               "generic": 2,
@@ -2583,72 +2594,72 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 25,
-      "median": 32,
-      "high": 42,
-      "ceiling": 42,
-      "peak": 67,
+      "iterations": 100,
+      "floor": 28,
+      "median": 37,
+      "high": 46,
+      "ceiling": 46,
+      "peak": 72,
       "iqr": 14,
       "consistency": 69,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 41,
+      "recoveryAfterDisruption": 50,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 3,
+          "resource": 16,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 0,
-          "engine": 3,
-          "interaction": 6,
-          "resource": 7,
+          "engine": 1,
+          "interaction": 5,
+          "resource": 15,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 2,
-          "engine": 7,
-          "interaction": 17,
-          "resource": 14,
-          "burst": 0
-        },
-        {
-          "turn": 4,
-          "commander": 18,
-          "engine": 18,
-          "interaction": 26,
+          "commander": 3,
+          "engine": 10,
+          "interaction": 24,
           "resource": 25,
           "burst": 0
         },
         {
-          "turn": 5,
-          "commander": 46,
-          "engine": 25,
-          "interaction": 31,
+          "turn": 4,
+          "commander": 20,
+          "engine": 21,
+          "interaction": 45,
           "resource": 31,
           "burst": 0
         },
         {
+          "turn": 5,
+          "commander": 40,
+          "engine": 24,
+          "interaction": 53,
+          "resource": 40,
+          "burst": 0
+        },
+        {
           "turn": 6,
-          "commander": 69,
+          "commander": 66,
           "engine": 31,
-          "interaction": 34,
-          "resource": 36,
+          "interaction": 57,
+          "resource": 45,
           "burst": 0
         },
         {
           "turn": 7,
-          "commander": 80,
-          "engine": 35,
-          "interaction": 38,
-          "resource": 41,
+          "commander": 76,
+          "engine": 37,
+          "interaction": 64,
+          "resource": 50,
           "burst": 0
         }
       ]
@@ -2695,6 +2706,16 @@
           "protection",
           "counter-payoff",
           "counter-kind:plus1"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Starstorm",
+        "impact": 3,
+        "tags": [
+          "instant",
+          "draw",
+          "wipe"
         ],
         "aeon": null
       },
@@ -2750,6 +2771,15 @@
         "aeon": null
       },
       {
+        "name": "Overgrowth",
+        "impact": 2.4,
+        "tags": [
+          "enchantment",
+          "mana"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Bred for the Hunt",
         "impact": 2.3,
         "tags": [
@@ -2758,34 +2788,11 @@
           "counter-kind:plus1"
         ],
         "aeon": null
-      },
-      {
-        "name": "Haruspex",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "mana",
-          "death-payoff",
-          "counter-producer",
-          "counter-kind:plus1"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Hormagaunt Horde",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "recursion",
-          "etb",
-          "landfall"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

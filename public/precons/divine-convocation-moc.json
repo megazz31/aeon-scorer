@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 39,
-    "p20": 25,
-    "p80": 50,
-    "peak": 81,
+    "p20": 24,
+    "p80": 51,
+    "peak": 79,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "a751caa40645b714bc2782a8b4fd680f6d289ba3e7ae6c44b1dd9888cfe8a208",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Saint Traft and Rem Karolus\n1 Wand of the Worldsoul\n1 Flockchaser Phantom\n1 Wildfire Awakener\n1 Ichor Elixir\n1 Path of the Ghosthunter\n1 Deluxe Dragster\n1 Mistmeadow Vanisher\n1 Nesting Dovehawk\n1 Kykar, Wind's Fury\n1 Elspeth, Sun's Champion\n1 The Locust God\n1 Angel of Finality\n1 Angel of Salvation\n1 Austere Command\n1 Chasm Skulker\n1 Cultivator's Caravan\n1 Emeria Angel\n1 Exotic Orchard\n1 Frostboil Snarl\n1 Furycalm Snarl\n1 Hour of Reckoning\n1 Keeper of the Accord\n1 Kher Keep\n1 Mentor of the Meek\n1 Nadir Kraken\n1 Port Town\n1 Prairie Stream\n1 Secure the Wastes\n1 Skycloud Expanse\n1 Temple of Enlightenment\n1 Temple of Epiphany\n1 Temple of Triumph\n1 Venerated Loxodon\n1 Whirlwind of Thought\n1 Cloud of Faeries\n1 Command Tower\n1 Commander's Sphere\n1 Ephemeral Shields\n1 Evolving Wilds\n1 Fractured Powerstone\n1 Goblin Instigator\n1 Goblin Medics\n1 Impact Tremors\n1 Spirited Companion\n1 Suture Priest\n1 Terramorphic Expanse\n1 Village Bell-Ringer\n1 Banisher Priest\n1 Arcane Signet\n1 Battle Screech\n1 Chant of Vitu-Ghazi\n1 Conclave Tribunal\n1 Devouring Light\n1 Duergar Hedge-Mage\n1 Fallowsage\n1 Flight of Equenauts\n1 Improbable Alliance\n1 Migratory Route\n1 Mystic Monastery\n1 Rogue's Passage\n1 Seraph of the Masses\n1 Skullclamp\n1 Sol Ring\n1 Stoke the Flames\n1 Swords to Plowshares\n1 Tetsuko Umezawa, Fugitive\n1 Wear // Tear\n1 Temporal Cleansing\n1 Meeting of Minds\n1 Shatter the Source\n1 Wrenn's Resolve\n1 Cut Short\n1 Joyful Stormsculptor\n1 Artistic Refusal\n8 Plains\n8 Island\n8 Mountain",
   "oracleCards": [
@@ -172,6 +172,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -229,6 +230,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -893,6 +895,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "draw",
         "tokens"
       ],
       "isCommander": false
@@ -995,6 +998,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "tokens",
         "token-payoff",
         "etb",
         "counter-producer",
@@ -1589,23 +1593,23 @@
   "result": {
     "profile": {
       "median": 39,
-      "floor": 25,
-      "ceiling": 50,
-      "peak": 81,
-      "dispersion": 25,
-      "variance": 25,
-      "consistency": 62,
-      "commanderDelta": 3,
+      "floor": 24,
+      "ceiling": 51,
+      "peak": 79,
+      "dispersion": 28,
+      "variance": 28,
+      "consistency": 61,
+      "commanderDelta": 2,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 30,
-      "consistency": 62,
-      "explosiveness": 14,
+      "consistency": 61,
+      "explosiveness": 12,
       "synergy": 65,
-      "interaction": 44,
-      "resilience": 22
+      "interaction": 47,
+      "resilience": 27
     },
     "roles": {
       "lands": 39,
@@ -1613,10 +1617,10 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 10,
+      "draw": 12,
       "interaction": 13,
       "protection": 1,
-      "recursion": 0,
+      "recursion": 1,
       "wipes": 3,
       "avgCmc": 3.7,
       "unknownManaLands": 0
@@ -1656,13 +1660,13 @@
           "Kykar, Wind's Fury",
           "Migratory Route",
           "Nadir Kraken",
+          "Nesting Dovehawk",
           "Path of the Ghosthunter",
           "Saint Traft and Rem Karolus",
           "Secure the Wastes",
           "The Locust God",
           "Wildfire Awakener",
-          "Hour of Reckoning",
-          "Nesting Dovehawk"
+          "Hour of Reckoning"
         ],
         "producerCards": [
           {
@@ -1670,6 +1674,7 @@
             "cmc": 4,
             "tags": [
               "sorcery",
+              "recursion",
               "tokens"
             ],
             "manaReq": {
@@ -1871,6 +1876,7 @@
             "cmc": 5,
             "tags": [
               "sorcery",
+              "draw",
               "tokens"
             ],
             "manaReq": {
@@ -1906,6 +1912,27 @@
                 ]
               ],
               "total": 3
+            }
+          },
+          {
+            "name": "Nesting Dovehawk",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "tokens",
+              "token-payoff",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
             }
           },
           {
@@ -2039,6 +2066,7 @@
             "cmc": 4,
             "tags": [
               "creature",
+              "tokens",
               "token-payoff",
               "etb",
               "counter-producer",
@@ -2061,7 +2089,7 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "17 producteur(s), 2 payoff(s), 19 carte(s) distincte(s)."
+        "evidence": "18 producteur(s), 2 payoff(s), 19 carte(s) distincte(s)."
       },
       {
         "id": "spells",
@@ -2154,6 +2182,7 @@
             "cmc": 4,
             "tags": [
               "sorcery",
+              "recursion",
               "tokens"
             ],
             "manaReq": {
@@ -2289,6 +2318,7 @@
             "cmc": 5,
             "tags": [
               "sorcery",
+              "draw",
               "tokens"
             ],
             "manaReq": {
@@ -2758,73 +2788,73 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 28,
+      "iterations": 100,
+      "floor": 27,
       "median": 37,
-      "high": 45,
-      "ceiling": 45,
-      "peak": 70,
-      "iqr": 13,
-      "consistency": 71,
+      "high": 46,
+      "ceiling": 46,
+      "peak": 68,
+      "iqr": 14,
+      "consistency": 69,
       "commanderMedianTurn": 6,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 64,
+      "recoveryAfterDisruption": 71,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 3,
-          "resource": 7,
+          "interaction": 6,
+          "resource": 6,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 0,
           "engine": 0,
-          "interaction": 9,
-          "resource": 19,
+          "interaction": 12,
+          "resource": 23,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 2,
-          "engine": 1,
-          "interaction": 30,
-          "resource": 33,
-          "burst": 1
+          "commander": 4,
+          "engine": 2,
+          "interaction": 28,
+          "resource": 34,
+          "burst": 0
         },
         {
           "turn": 4,
           "commander": 9,
-          "engine": 6,
-          "interaction": 49,
-          "resource": 50,
-          "burst": 2
+          "engine": 9,
+          "interaction": 54,
+          "resource": 51,
+          "burst": 1
         },
         {
           "turn": 5,
-          "commander": 30,
-          "engine": 19,
-          "interaction": 60,
-          "resource": 58,
-          "burst": 6
+          "commander": 31,
+          "engine": 16,
+          "interaction": 62,
+          "resource": 67,
+          "burst": 5
         },
         {
           "turn": 6,
-          "commander": 56,
-          "engine": 26,
+          "commander": 59,
+          "engine": 19,
           "interaction": 71,
-          "resource": 65,
-          "burst": 9
+          "resource": 75,
+          "burst": 4
         },
         {
           "turn": 7,
-          "commander": 69,
-          "engine": 31,
-          "interaction": 78,
-          "resource": 70,
-          "burst": 10
+          "commander": 67,
+          "engine": 27,
+          "interaction": 77,
+          "resource": 83,
+          "burst": 7
         }
       ]
     },
@@ -2883,6 +2913,16 @@
         "aeon": null
       },
       {
+        "name": "Migratory Route",
+        "impact": 3.4,
+        "tags": [
+          "sorcery",
+          "draw",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Commander's Sphere",
         "impact": 3.3,
         "tags": [
@@ -2926,6 +2966,16 @@
         "aeon": null
       },
       {
+        "name": "Battle Screech",
+        "impact": 2.7,
+        "tags": [
+          "sorcery",
+          "recursion",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Hour of Reckoning",
         "impact": 2.7,
         "tags": [
@@ -2934,31 +2984,11 @@
           "token-payoff"
         ],
         "aeon": null
-      },
-      {
-        "name": "Emeria Angel",
-        "impact": 2.6,
-        "tags": [
-          "creature",
-          "tokens",
-          "etb",
-          "landfall"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Elspeth, Sun's Champion",
-        "impact": 2.4,
-        "tags": [
-          "wipe",
-          "tokens"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

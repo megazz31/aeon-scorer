@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 47,
-    "p20": 35,
-    "p80": 57,
-    "peak": 82,
-    "coverage": 91,
+    "p20": 37,
+    "p80": 59,
+    "peak": 87,
+    "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "377e7e051cef8a29175a248d2976b10031300dc1f776223484951506f189c38e",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Archfiend of Depravity\n1 Bloodgift Demon\n1 Deadly Tempest\n1 Dredge the Mire\n1 Ob Nixilis Reignited\n1 Profane Command\n1 Rakshasa Debaser\n1 Reign of the Pit\n1 Sangromancer\n1 Scythe Specter\n1 Sepulchral Primordial\n1 Soul Shatter\n1 Titan Hunter\n1 Blasphemous Act\n1 Brash Taunter\n1 Chaos Warp\n1 Combustible Gearhulk\n1 Dictate of the Twin Gods\n1 Fiery Confluence\n1 Geode Rager\n1 Kazuul, Tyrant of the Cliffs\n1 Magmatic Force\n1 Sunbird's Invocation\n1 Tectonic Giant\n1 Wild Ricochet\n1 Wildfire Devils\n1 Kaervek the Merciless\n1 Spiteful Visions\n1 Stormfist Crusader\n1 Theater of Horrors\n1 Coveted Jewel\n1 Solemn Simulacrum\n1 Foreboding Ruins\n1 Smoldering Marsh\n1 Stensia Bloodhall\n1 Temple of Malice\n1 Ambition's Cost\n1 Feed the Swarm\n1 Indulgent Tormentor\n1 Read the Bones\n1 Sign in Blood\n1 Syphon Mind\n1 Vampire Nighthawk\n1 Abrade\n1 Explosion of Riches\n1 Guttersnipe\n1 Hate Mirage\n1 Mana Geyser\n1 Thermo-Alchemist\n1 Breath of Malfegor\n1 Rakdos Charm\n1 Terminate\n1 Unlicensed Disintegration\n1 Arcane Signet\n1 Burnished Hart\n1 Commander's Sphere\n1 Lightning Greaves\n1 Nihil Spellbomb\n1 Rakdos Signet\n1 Sol Ring\n1 Talisman of Indulgence\n1 Wayfarer's Bauble\n1 Worn Powerstone\n1 Akoum Refuge\n1 Bloodfell Caves\n1 Cinder Barrens\n1 Command Tower\n1 Molten Slagheap\n1 Myriad Landscape\n1 Urborg Volcano\n4 Swamp\n4 Swamp\n4 Swamp\n3 Swamp\n4 Mountain\n4 Mountain\n3 Mountain\n3 Mountain",
   "oracleCards": [
@@ -153,7 +153,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -582,7 +583,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "draw"
+        "draw",
+        "removal"
       ],
       "isCommander": false
     },
@@ -653,7 +655,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "protection"
       ],
       "isCommander": false
     },
@@ -870,7 +873,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "recursion",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -905,7 +910,6 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "wipe",
         "tokens"
       ],
       "isCommander": false
@@ -1449,23 +1453,23 @@
   "result": {
     "profile": {
       "median": 47,
-      "floor": 35,
-      "ceiling": 57,
-      "peak": 82,
+      "floor": 37,
+      "ceiling": 59,
+      "peak": 87,
       "dispersion": 22,
       "variance": 22,
-      "consistency": 63,
-      "commanderDelta": 6,
-      "coverage": 91,
-      "dataCoverage": 91
+      "consistency": 66,
+      "commanderDelta": 5,
+      "coverage": 92,
+      "dataCoverage": 92
     },
     "dimensions": {
       "speed": 34,
-      "consistency": 63,
-      "explosiveness": 17,
+      "consistency": 66,
+      "explosiveness": 19,
       "synergy": 56,
-      "interaction": 65,
-      "resilience": 32
+      "interaction": 66,
+      "resilience": 35
     },
     "roles": {
       "lands": 40,
@@ -1474,9 +1478,9 @@
       "tutors": 0,
       "repeatableTutors": 0,
       "draw": 13,
-      "interaction": 12,
-      "protection": 1,
-      "recursion": 1,
+      "interaction": 13,
+      "protection": 2,
+      "recursion": 2,
       "wipes": 2,
       "avgCmc": 4,
       "unknownManaLands": 0
@@ -1568,7 +1572,8 @@
             "name": "Blasphemous Act",
             "cmc": 9,
             "tags": [
-              "sorcery"
+              "sorcery",
+              "wipe"
             ],
             "manaReq": {
               "generic": 8,
@@ -1805,7 +1810,6 @@
             "cmc": 6,
             "tags": [
               "sorcery",
-              "wipe",
               "tokens"
             ],
             "manaReq": {
@@ -2233,73 +2237,73 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
+      "iterations": 100,
       "floor": 38,
-      "median": 46,
+      "median": 45,
       "high": 54,
       "ceiling": 54,
-      "peak": 76,
-      "iqr": 13,
-      "consistency": 72,
+      "peak": 81,
+      "iqr": 11,
+      "consistency": 75,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 85,
+      "recoveryAfterDisruption": 83,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 6,
-          "resource": 6,
+          "interaction": 4,
+          "resource": 4,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 4,
+          "commander": 3,
           "engine": 0,
-          "interaction": 35,
-          "resource": 23,
+          "interaction": 36,
+          "resource": 16,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 33,
-          "engine": 5,
-          "interaction": 56,
-          "resource": 41,
-          "burst": 3
+          "commander": 30,
+          "engine": 6,
+          "interaction": 57,
+          "resource": 36,
+          "burst": 2
         },
         {
           "turn": 4,
           "commander": 82,
-          "engine": 16,
-          "interaction": 69,
-          "resource": 62,
+          "engine": 20,
+          "interaction": 70,
+          "resource": 59,
           "burst": 9
         },
         {
           "turn": 5,
-          "commander": 92,
-          "engine": 21,
-          "interaction": 77,
-          "resource": 74,
-          "burst": 13
+          "commander": 88,
+          "engine": 24,
+          "interaction": 80,
+          "resource": 72,
+          "burst": 10
         },
         {
           "turn": 6,
           "commander": 95,
-          "engine": 24,
-          "interaction": 81,
-          "resource": 81,
-          "burst": 16
+          "engine": 31,
+          "interaction": 84,
+          "resource": 82,
+          "burst": 13
         },
         {
           "turn": 7,
-          "commander": 97,
-          "engine": 27,
-          "interaction": 85,
-          "resource": 85,
-          "burst": 20
+          "commander": 96,
+          "engine": 34,
+          "interaction": 86,
+          "resource": 83,
+          "burst": 17
         }
       ]
     },
@@ -2371,6 +2375,16 @@
         "aeon": null
       },
       {
+        "name": "Indulgent Tormentor",
+        "impact": 3,
+        "tags": [
+          "creature",
+          "draw",
+          "removal"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Ob Nixilis Reignited",
         "impact": 3,
         "tags": [
@@ -2418,20 +2432,11 @@
           "recursion"
         ],
         "aeon": null
-      },
-      {
-        "name": "Sign in Blood",
-        "impact": 2.5,
-        "tags": [
-          "sorcery",
-          "draw"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

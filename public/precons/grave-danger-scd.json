@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 46,
-    "p20": 34,
-    "p80": 57,
-    "peak": 86,
+    "median": 44,
+    "p20": 32,
+    "p80": 56,
+    "peak": 84,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "8e0dcf4eb46345c0b8c4ae4f056e9ccf94dbb6bd7ae4db423f6c280f79cfad1d",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Geralf's Mindcrusher\n1 Laboratory Drudge\n1 Army of the Damned\n1 Cemetery Reaper\n1 Champion of the Perished\n1 Crippling Fear\n1 Gravespawn Sovereign\n1 Josu Vess, Lich Knight\n1 Liliana, Untouched by Death\n1 Liliana's Mastery\n1 Liliana's Standard Bearer\n1 Midnight Reaper\n1 Necromantic Selection\n1 Necrotic Hex\n1 Open the Graves\n1 Overseer of the Damned\n1 Scourge of Nel Toth\n1 Unbreathing Horde\n1 Zombie Apocalypse\n1 Enter the God-Eternals\n1 Havengul Lich\n1 Undermine\n1 Vela the Night-Clad\n1 Grimoire of the Dead\n1 Choked Estuary\n1 Sunken Hollow\n1 Temple of Deceit\n1 Deep Analysis\n1 Distant Melody\n1 Eternal Skylord\n1 Lazotep Plating\n1 Sinister Sabotage\n1 Cruel Revival\n1 Curse of Disturbance\n1 Feed the Swarm\n1 Fleshbag Marauder\n1 Gray Merchant of Asphodel\n1 Lazotep Reaver\n1 Liliana's Devotee\n1 Lord of the Accursed\n1 Lotleth Giant\n1 Loyal Subordinate\n1 Mire Triton\n1 Murder\n1 Spark Reaper\n1 Syphon Flesh\n1 Undead Augur\n1 Vampiric Rites\n1 Vengeful Dead\n1 Victimize\n1 Vizier of the Scorpion\n1 Withered Wretch\n1 Diregraf Captain\n1 Gleaming Overseer\n1 Pilfered Plans\n1 Arcane Signet\n1 Commander's Sphere\n1 Dimir Signet\n1 Heraldic Banner\n1 Sol Ring\n1 Talisman of Dominance\n1 Unstable Obelisk\n1 Wayfarer's Bauble\n1 Command Tower\n1 Dismal Backwater\n1 Jwar Isle Refuge\n1 Salt Marsh\n1 Submerged Boneyard\n4 Island\n3 Island\n3 Island\n3 Island\n5 Swamp\n5 Swamp\n4 Swamp\n4 Swamp",
   "oracleCards": [
@@ -77,6 +77,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -257,7 +258,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "draw"
+        "draw",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -420,7 +422,6 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "wipe",
         "etb"
       ],
       "isCommander": false
@@ -924,7 +925,6 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "wipe",
         "tokens"
       ],
       "isCommander": false
@@ -1447,24 +1447,24 @@
   ],
   "result": {
     "profile": {
-      "median": 46,
-      "floor": 34,
-      "ceiling": 57,
-      "peak": 86,
+      "median": 44,
+      "floor": 32,
+      "ceiling": 56,
+      "peak": 84,
       "dispersion": 24,
       "variance": 24,
       "consistency": 61,
-      "commanderDelta": 7,
+      "commanderDelta": 5,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 35,
       "consistency": 61,
-      "explosiveness": 13,
-      "synergy": 63,
-      "interaction": 49,
-      "resilience": 44
+      "explosiveness": 12,
+      "synergy": 66,
+      "interaction": 38,
+      "resilience": 50
     },
     "roles": {
       "lands": 39,
@@ -1473,10 +1473,10 @@
       "tutors": 0,
       "repeatableTutors": 0,
       "draw": 10,
-      "interaction": 13,
+      "interaction": 11,
       "protection": 2,
-      "recursion": 4,
-      "wipes": 4,
+      "recursion": 6,
+      "wipes": 2,
       "avgCmc": 3.7333333333333334,
       "unknownManaLands": 0
     },
@@ -1527,6 +1527,7 @@
             "cmc": 8,
             "tags": [
               "sorcery",
+              "recursion",
               "tokens"
             ],
             "manaReq": {
@@ -1759,7 +1760,6 @@
             "cmc": 7,
             "tags": [
               "sorcery",
-              "wipe",
               "tokens"
             ],
             "manaReq": {
@@ -1934,8 +1934,8 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 71,
-        "cohesion": 71,
+        "strength": 74,
+        "cohesion": 74,
         "producers": [
           "Grimoire of the Dead",
           "Liliana, Untouched by Death",
@@ -1943,7 +1943,9 @@
           "Sinister Sabotage"
         ],
         "payoffs": [
+          "Army of the Damned",
           "Cruel Revival",
+          "Deep Analysis",
           "Liliana, Untouched by Death",
           "Scourge of Nel Toth",
           "Zombie Apocalypse"
@@ -1953,7 +1955,9 @@
           "Liliana, Untouched by Death",
           "Mire Triton",
           "Sinister Sabotage",
+          "Army of the Damned",
           "Cruel Revival",
+          "Deep Analysis",
           "Scourge of Nel Toth",
           "Zombie Apocalypse"
         ],
@@ -2038,6 +2042,30 @@
         ],
         "payoffCards": [
           {
+            "name": "Army of the Damned",
+            "cmc": 8,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 8
+            }
+          },
+          {
             "name": "Cruel Revival",
             "cmc": 5,
             "tags": [
@@ -2053,6 +2081,24 @@
                 ]
               ],
               "total": 5
+            }
+          },
+          {
+            "name": "Deep Analysis",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
             }
           },
           {
@@ -2127,7 +2173,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "4 producteur(s), 4 payoff(s), 7 carte(s) distincte(s)."
+        "evidence": "4 producteur(s), 6 payoff(s), 9 carte(s) distincte(s)."
       },
       {
         "id": "sacrifice",
@@ -2475,9 +2521,11 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 20,
+      "score": 26,
       "connected": [
+        "Army of the Damned",
         "Cruel Revival",
+        "Deep Analysis",
         "Grimoire of the Dead",
         "Liliana, Untouched by Death",
         "Mire Triton",
@@ -2498,72 +2546,72 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 37,
-      "median": 45,
-      "high": 54,
-      "ceiling": 54,
-      "peak": 80,
+      "iterations": 100,
+      "floor": 34,
+      "median": 42,
+      "high": 51,
+      "ceiling": 51,
+      "peak": 76,
       "iqr": 14,
       "consistency": 69,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 88,
+      "recoveryAfterDisruption": 86,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 6,
+          "resource": 7,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 4,
+          "commander": 2,
           "engine": 0,
-          "interaction": 14,
-          "resource": 19,
+          "interaction": 9,
+          "resource": 21,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 35,
+          "commander": 34,
           "engine": 5,
-          "interaction": 37,
-          "resource": 47,
+          "interaction": 32,
+          "resource": 50,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 82,
-          "engine": 17,
-          "interaction": 54,
-          "resource": 67,
+          "commander": 75,
+          "engine": 16,
+          "interaction": 41,
+          "resource": 73,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 92,
-          "engine": 27,
-          "interaction": 63,
-          "resource": 76,
+          "commander": 84,
+          "engine": 25,
+          "interaction": 49,
+          "resource": 80,
           "burst": 0
         },
         {
           "turn": 6,
-          "commander": 95,
-          "engine": 36,
-          "interaction": 72,
-          "resource": 81,
+          "commander": 94,
+          "engine": 31,
+          "interaction": 60,
+          "resource": 90,
           "burst": 0
         },
         {
           "turn": 7,
-          "commander": 97,
-          "engine": 43,
-          "interaction": 78,
-          "resource": 85,
+          "commander": 98,
+          "engine": 38,
+          "interaction": 62,
+          "resource": 93,
           "burst": 0
         }
       ]
@@ -2587,6 +2635,16 @@
           "draw",
           "mana",
           "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Deep Analysis",
+        "impact": 3.1,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion"
         ],
         "aeon": null
       },
@@ -2617,6 +2675,16 @@
           "sorcery",
           "wipe",
           "recursion"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Army of the Damned",
+        "impact": 2.6,
+        "tags": [
+          "sorcery",
+          "recursion",
+          "tokens"
         ],
         "aeon": null
       },
@@ -2673,33 +2741,11 @@
           "recursion"
         ],
         "aeon": null
-      },
-      {
-        "name": "Necrotic Hex",
-        "impact": 2.4,
-        "tags": [
-          "sorcery",
-          "wipe",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Spark Reaper",
-        "impact": 2.4,
-        "tags": [
-          "creature",
-          "draw",
-          "sacrifice",
-          "sac-outlet",
-          "lifegain"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

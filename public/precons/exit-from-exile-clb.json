@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 47,
-    "p20": 36,
-    "p80": 56,
-    "peak": 84,
+    "p20": 37,
+    "p80": 60,
+    "peak": 89,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "8d88859927f926fd9733c9793c3493afdb4f7923dd60b19caba81332bf33798a",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Vivien, Champion of the Wilds\n1 Xenagos, the Reveler\n1 Aurora Phoenix\n1 Bonecrusher Giant // Stomp\n1 Dire Fleet Daredevil\n1 Dream Pillager\n1 Etali, Primal Storm\n1 Greater Gargadon\n1 Izzet Chemister\n1 Laelia, the Blade Reforged\n1 Tectonic Giant\n1 Urabrask the Hidden\n1 Wild-Magic Sorcerer\n1 Arasta of the Endless Web\n1 Battle Mammoth\n1 End-Raze Forerunners\n1 Hornet Queen\n1 Lovestruck Beast // Heart's Desire\n1 Managorger Hydra\n1 Sweet-Gum Recluse\n1 Embereth Shieldbreaker // Battle Display\n1 Sakura-Tribe Elder\n1 Bloodbraid Elf\n1 Grumgully, the Generous\n1 Ignite the Future\n1 Jeska's Will\n1 Mizzium Mortars\n1 Ezuri's Predation\n1 Escape to the Wilds\n1 Nature's Lore\n1 Light Up the Stage\n1 Beanstalk Giant // Fertile Footsteps\n1 Cultivate\n1 Explore\n1 Kodama's Reach\n1 Search for Tomorrow\n1 Terramorph\n1 Three Visits\n1 Return of the Wildspeaker\n1 Demon Bolt\n1 Beast Within\n1 Natural Reclamation\n1 Chaos Wand\n1 Arcane Signet\n1 Sol Ring\n1 Outpost Siege\n1 Stolen Strategy\n1 Warstorm Surge\n1 Primeval Bounty\n1 Sandwurm Convergence\n1 Castle Embereth\n1 Cinder Glade\n1 Game Trail\n1 Kessig Wolf Run\n1 Mossfire Valley\n1 Mosswort Bridge\n1 Raging Ravine\n1 Spinerock Knoll\n1 Temple of Abandon\n1 Command Tower\n1 Ash Barrens\n1 Blighted Woodland\n1 Gruul Turf\n1 Highland Forest\n1 Myriad Landscape\n1 Temple of the False God\n3 Mountain\n3 Mountain\n3 Mountain\n2 Mountain\n3 Forest\n3 Forest\n3 Forest\n3 Forest\n1 Durnan of the Yawning Portal\n1 Passionate Archaeologist\n1 Delayed Blast Fireball\n1 Nalfeshnee\n1 Green Slime\n1 Journey to the Lost City\n1 Tlincalli Hunter // Retrieve Prey\n1 Venture Forth\n1 Sarevok's Tome\n1 Volcanic Torrent",
   "oracleCards": [
@@ -96,6 +96,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -737,6 +738,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "exile-cast",
         "cheat",
         "free"
@@ -1520,7 +1522,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -1556,6 +1559,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "wipe",
         "exile-payoff"
       ],
       "isCommander": false
@@ -1577,6 +1581,7 @@
         "R"
       ],
       "tags": [
+        "land-ramp",
         "mana",
         "tokens"
       ],
@@ -1586,23 +1591,23 @@
   "result": {
     "profile": {
       "median": 47,
-      "floor": 36,
-      "ceiling": 56,
-      "peak": 84,
-      "dispersion": 19,
-      "variance": 19,
-      "consistency": 66,
+      "floor": 37,
+      "ceiling": 60,
+      "peak": 89,
+      "dispersion": 23,
+      "variance": 23,
+      "consistency": 63,
       "commanderDelta": 12,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
-      "speed": 35,
-      "consistency": 66,
-      "explosiveness": 35,
-      "synergy": 85,
-      "interaction": 35,
-      "resilience": 22
+      "speed": 33,
+      "consistency": 63,
+      "explosiveness": 36,
+      "synergy": 86,
+      "interaction": 42,
+      "resilience": 29
     },
     "roles": {
       "lands": 39,
@@ -1611,10 +1616,10 @@
       "tutors": 0,
       "repeatableTutors": 0,
       "draw": 3,
-      "interaction": 5,
+      "interaction": 7,
       "protection": 0,
-      "recursion": 1,
-      "wipes": 0,
+      "recursion": 2,
+      "wipes": 2,
       "avgCmc": 4.183333333333334,
       "unknownManaLands": 0
     },
@@ -1783,6 +1788,7 @@
             "cmc": 4,
             "tags": [
               "sorcery",
+              "recursion",
               "exile-cast",
               "cheat",
               "free"
@@ -2072,6 +2078,7 @@
             "cmc": 4,
             "tags": [
               "creature",
+              "wipe",
               "exile-payoff"
             ],
             "manaReq": {
@@ -2096,8 +2103,8 @@
       {
         "id": "lands",
         "name": "Lands / Landfall",
-        "strength": 68,
-        "cohesion": 68,
+        "strength": 72,
+        "cohesion": 72,
         "producers": [
           "Beanstalk Giant // Fertile Footsteps",
           "Escape to the Wilds",
@@ -2107,7 +2114,8 @@
           "Sakura-Tribe Elder",
           "Search for Tomorrow",
           "Terramorph",
-          "Three Visits"
+          "Three Visits",
+          "Xenagos, the Reveler"
         ],
         "payoffs": [
           "Primeval Bounty"
@@ -2122,6 +2130,7 @@
           "Search for Tomorrow",
           "Terramorph",
           "Three Visits",
+          "Xenagos, the Reveler",
           "Primeval Bounty"
         ],
         "producerCards": [
@@ -2291,6 +2300,27 @@
               ],
               "total": 2
             }
+          },
+          {
+            "name": "Xenagos, the Reveler",
+            "cmc": 4,
+            "tags": [
+              "land-ramp",
+              "mana",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
           }
         ],
         "payoffCards": [
@@ -2324,7 +2354,7 @@
         "payoffTags": [
           "landfall"
         ],
-        "evidence": "9 producteur(s), 1 payoff(s), 10 carte(s) distincte(s)."
+        "evidence": "10 producteur(s), 1 payoff(s), 11 carte(s) distincte(s)."
       }
     ],
     "combos": [],
@@ -2376,72 +2406,72 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 31,
-      "median": 38,
-      "high": 45,
-      "ceiling": 45,
-      "peak": 70,
-      "iqr": 12,
-      "consistency": 75,
+      "iterations": 100,
+      "floor": 32,
+      "median": 39,
+      "high": 49,
+      "ceiling": 49,
+      "peak": 77,
+      "iqr": 13,
+      "consistency": 72,
       "commanderMedianTurn": 3,
-      "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 74,
+      "engineMedianTurn": 6,
+      "recoveryAfterDisruption": 82,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 0,
+          "resource": 13,
           "burst": 14
         },
         {
           "turn": 2,
           "commander": 3,
           "engine": 0,
-          "interaction": 7,
-          "resource": 0,
-          "burst": 13
+          "interaction": 8,
+          "resource": 14,
+          "burst": 16
         },
         {
           "turn": 3,
-          "commander": 60,
-          "engine": 2,
-          "interaction": 25,
-          "resource": 1,
-          "burst": 23
+          "commander": 56,
+          "engine": 4,
+          "interaction": 32,
+          "resource": 12,
+          "burst": 24
         },
         {
           "turn": 4,
-          "commander": 88,
-          "engine": 9,
-          "interaction": 39,
-          "resource": 7,
+          "commander": 86,
+          "engine": 10,
+          "interaction": 46,
+          "resource": 22,
           "burst": 34
         },
         {
           "turn": 5,
-          "commander": 94,
+          "commander": 95,
           "engine": 18,
-          "interaction": 45,
-          "resource": 16,
-          "burst": 39
+          "interaction": 54,
+          "resource": 32,
+          "burst": 38
         },
         {
           "turn": 6,
-          "commander": 96,
-          "engine": 27,
-          "interaction": 49,
-          "resource": 22,
-          "burst": 43
+          "commander": 98,
+          "engine": 30,
+          "interaction": 61,
+          "resource": 37,
+          "burst": 46
         },
         {
           "turn": 7,
-          "commander": 97,
-          "engine": 33,
-          "interaction": 53,
-          "resource": 27,
+          "commander": 98,
+          "engine": 38,
+          "interaction": 61,
+          "resource": 39,
           "burst": 47
         }
       ]
@@ -2454,6 +2484,18 @@
           "artifact",
           "mana",
           "etb",
+          "exile-cast",
+          "cheat",
+          "free"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Ignite the Future",
+        "impact": 5.1,
+        "tags": [
+          "sorcery",
+          "recursion",
           "exile-cast",
           "cheat",
           "free"
@@ -2476,17 +2518,6 @@
         "impact": 4.4,
         "tags": [
           "artifact",
-          "exile-cast",
-          "cheat",
-          "free"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Ignite the Future",
-        "impact": 4.4,
-        "tags": [
-          "sorcery",
           "exile-cast",
           "cheat",
           "free"
@@ -2521,6 +2552,16 @@
           "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Xenagos, the Reveler",
+        "impact": 3,
+        "tags": [
+          "land-ramp",
+          "mana",
+          "tokens"
         ],
         "aeon": null
       },
@@ -2567,20 +2608,11 @@
           "land-ramp"
         ],
         "aeon": null
-      },
-      {
-        "name": "Terramorph",
-        "impact": 2.3,
-        "tags": [
-          "sorcery",
-          "land-ramp"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

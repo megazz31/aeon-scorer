@@ -32,17 +32,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 41,
-    "p20": 27,
-    "p80": 53,
-    "peak": 76,
-    "coverage": 91,
+    "median": 44,
+    "p20": 35,
+    "p80": 57,
+    "peak": 82,
+    "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "5000f53ac87e4f9a98fa7248ae339ac6c5ef91a170a017cb9088df8a633fd1c6",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Goblin Welder\n1 Epochrasite\n1 Myr Retriever\n1 Myr Sire\n1 Bottle Gnomes\n1 Cathodion\n1 Junk Diver\n1 Palladium Myr\n1 Pilgrim's Eye\n1 Tuktuk the Explorer\n1 Dualcaster Mage\n1 Feldon of the Third Path\n1 Solemn Simulacrum\n1 Flametongue Kavu\n1 Beetleback Chief\n1 Ingot Chewer\n1 Steel Hellkite\n1 Wurmcoil Engine\n1 Spitebellows\n1 Hoard-Smelter Dragon\n1 Warmonger Hellkite\n1 Myr Battlesphere\n1 Pentavus\n1 Tyrant's Familiar\n1 Bosh, Iron Golem\n1 Bogardan Hellkite\n1 Faithless Looting\n1 Whipflare\n1 Scrap Mastery\n1 Incite Rebellion\n1 Blasphemous Act\n1 Impact Resonance\n1 Chaos Warp\n1 Volcanic Offering\n1 Word of Seizing\n1 Magmaquake\n1 Starstorm\n1 Everflowing Chalice\n1 Panic Spellbomb\n1 Sol Ring\n1 Wayfarer's Bauble\n1 Fire Diamond\n1 Ichor Wellspring\n1 Liquimetal Coating\n1 Mind Stone\n1 Mycosynth Wellspring\n1 Ruby Medallion\n1 Swiftfoot Boots\n1 Commander's Sphere\n1 Jalum Tome\n1 Pristine Talisman\n1 Unstable Obelisk\n1 Trading Post\n1 Caged Sun\n1 Dreamstone Hedron\n1 Loreseeker's Stone\n1 Spine of Ish Sah\n1 Darksteel Citadel\n1 Great Furnace\n1 Bitter Feud\n1 Arcane Lighthouse\n1 Buried Ruin\n1 Dormant Volcano\n1 Flamekin Village\n1 Forgotten Cave\n1 Ghost Quarter\n1 Phyrexia's Core\n1 Reliquary Tower\n1 Smoldering Crater\n1 Temple of the False God\n8 Mountain\n7 Mountain\n7 Mountain\n7 Mountain",
   "oracleCards": [
@@ -115,7 +115,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -213,6 +214,7 @@
       ],
       "tags": [
         "artifact",
+        "mana",
         "etb"
       ],
       "isCommander": false
@@ -436,6 +438,7 @@
       "tags": [
         "sorcery",
         "draw",
+        "recursion",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -535,6 +538,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -765,7 +769,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -1060,6 +1065,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -1151,7 +1157,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "draw",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -1167,7 +1175,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "artifact"
+        "artifact",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -1390,24 +1399,24 @@
   ],
   "result": {
     "profile": {
-      "median": 41,
-      "floor": 27,
-      "ceiling": 53,
-      "peak": 76,
-      "dispersion": 26,
-      "variance": 26,
-      "consistency": 60,
-      "commanderDelta": 7,
-      "coverage": 91,
-      "dataCoverage": 91
+      "median": 44,
+      "floor": 35,
+      "ceiling": 57,
+      "peak": 82,
+      "dispersion": 22,
+      "variance": 22,
+      "consistency": 62,
+      "commanderDelta": 6,
+      "coverage": 92,
+      "dataCoverage": 92
     },
     "dimensions": {
       "speed": 36,
-      "consistency": 60,
-      "explosiveness": 10,
-      "synergy": 53,
-      "interaction": 23,
-      "resilience": 39
+      "consistency": 62,
+      "explosiveness": 11,
+      "synergy": 52,
+      "interaction": 40,
+      "resilience": 44
     },
     "roles": {
       "lands": 41,
@@ -1415,11 +1424,11 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 10,
-      "interaction": 6,
+      "draw": 11,
+      "interaction": 10,
       "protection": 1,
-      "recursion": 3,
-      "wipes": 0,
+      "recursion": 4,
+      "wipes": 4,
       "avgCmc": 3.793103448275862,
       "unknownManaLands": 0
     },
@@ -1632,8 +1641,8 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 63,
-        "cohesion": 63,
+        "strength": 60,
+        "cohesion": 60,
         "producers": [
           "Faithless Looting",
           "Jalum Tome",
@@ -1641,6 +1650,7 @@
         ],
         "payoffs": [
           "Buried Ruin",
+          "Faithless Looting",
           "Junk Diver",
           "Myr Retriever",
           "Trading Post"
@@ -1660,6 +1670,7 @@
             "tags": [
               "sorcery",
               "draw",
+              "recursion",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -1723,6 +1734,25 @@
             }
           },
           {
+            "name": "Faithless Looting",
+            "cmc": 1,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
             "name": "Junk Diver",
             "cmc": 3,
             "tags": [
@@ -1778,15 +1808,14 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "3 producteur(s), 4 payoff(s), 6 carte(s) distincte(s)."
+        "evidence": "3 producteur(s), 5 payoff(s), 6 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 56,
-        "cohesion": 56,
+        "strength": 53,
+        "cohesion": 53,
         "producers": [
-          "Cathodion",
           "Commander's Sphere",
           "Everflowing Chalice",
           "Fire Diamond",
@@ -1801,7 +1830,6 @@
           "Daretti, Scrap Savant"
         ],
         "members": [
-          "Cathodion",
           "Commander's Sphere",
           "Everflowing Chalice",
           "Fire Diamond",
@@ -1814,21 +1842,6 @@
           "Daretti, Scrap Savant"
         ],
         "producerCards": [
-          {
-            "name": "Cathodion",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "artifact",
-              "mana",
-              "death-payoff"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
           {
             "name": "Commander's Sphere",
             "cmc": 3,
@@ -1981,7 +1994,7 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 10 source(s) persistante(s) vers un commandant MV 4."
+        "evidence": "0 accélérateur(s) burst + 9 source(s) persistante(s) vers un commandant MV 4."
       }
     ],
     "combos": [],
@@ -2007,72 +2020,72 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 35,
-      "median": 44,
-      "high": 53,
-      "ceiling": 53,
-      "peak": 71,
-      "iqr": 15,
-      "consistency": 68,
+      "iterations": 100,
+      "floor": 40,
+      "median": 46,
+      "high": 56,
+      "ceiling": 56,
+      "peak": 77,
+      "iqr": 13,
+      "consistency": 71,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 88,
+      "engineMedianTurn": 4.5,
+      "recoveryAfterDisruption": 93,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
-          "engine": 1,
-          "interaction": 8,
-          "resource": 25,
+          "engine": 0,
+          "interaction": 7,
+          "resource": 37,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 8,
-          "engine": 3,
-          "interaction": 10,
-          "resource": 40,
+          "commander": 7,
+          "engine": 4,
+          "interaction": 20,
+          "resource": 57,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 37,
-          "engine": 8,
-          "interaction": 17,
-          "resource": 51,
+          "engine": 11,
+          "interaction": 28,
+          "resource": 67,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 85,
-          "engine": 14,
-          "interaction": 26,
-          "resource": 66,
+          "commander": 84,
+          "engine": 17,
+          "interaction": 45,
+          "resource": 71,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 95,
-          "engine": 19,
-          "interaction": 36,
-          "resource": 72,
-          "burst": 0
-        },
-        {
-          "turn": 6,
-          "commander": 97,
+          "commander": 96,
           "engine": 23,
-          "interaction": 41,
+          "interaction": 57,
           "resource": 77,
           "burst": 0
         },
         {
-          "turn": 7,
+          "turn": 6,
           "commander": 98,
-          "engine": 27,
-          "interaction": 46,
-          "resource": 79,
+          "engine": 30,
+          "interaction": 61,
+          "resource": 76,
+          "burst": 0
+        },
+        {
+          "turn": 7,
+          "commander": 99,
+          "engine": 34,
+          "interaction": 74,
+          "resource": 82,
           "burst": 0
         }
       ]
@@ -2124,6 +2137,17 @@
         "aeon": null
       },
       {
+        "name": "Faithless Looting",
+        "impact": 3.2,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Solemn Simulacrum",
         "impact": 3.2,
         "tags": [
@@ -2137,6 +2161,16 @@
         "aeon": null
       },
       {
+        "name": "Starstorm",
+        "impact": 3,
+        "tags": [
+          "instant",
+          "draw",
+          "wipe"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Unstable Obelisk",
         "impact": 2.6,
         "tags": [
@@ -2144,27 +2178,6 @@
           "mana",
           "removal",
           "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Cathodion",
-        "impact": 2.5,
-        "tags": [
-          "creature",
-          "artifact",
-          "mana",
-          "death-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Faithless Looting",
-        "impact": 2.5,
-        "tags": [
-          "sorcery",
-          "draw",
-          "graveyard-setup"
         ],
         "aeon": null
       },
@@ -2214,7 +2227,7 @@
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

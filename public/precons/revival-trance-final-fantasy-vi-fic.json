@@ -35,16 +35,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 49,
-    "p20": 34,
+    "p20": 38,
     "p80": 62,
-    "peak": 88,
+    "peak": 91,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "00a70e5929326b02a11c9f747a699cf7534312d5abff884580c9c90d543a5883",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Celes, Rune Knight\n1 Coin of Fate\n1 Cyan, Vengeful Samurai\n1 General Leo Cristophe\n1 Espers to Magicite\n1 The Falcon, Airship Restored\n1 Interceptor, Shadow's Hound\n1 Rejoin the Fight\n1 Shadow, Mysterious Assassin\n1 Siegfried, Famed Swordsman\n1 Gau, Feral Youth\n1 Gogo, Mysterious Mime\n1 Sabin, Master Monk\n1 Snort\n1 Strago and Relm\n1 Summon: Esper Valigarmanda\n1 Umaro, Raging Yeti\n1 Banon, the Returners' Leader\n1 Edgar, Master Machinist\n1 Kefka, Dancing Mad\n1 Locke, Treasure Hunter\n1 Mog, Moogle Warrior\n1 Setzer, Wandering Gambler\n1 The Warring Triad\n1 Sun Titan\n1 Tragic Arrogance\n1 Archfiend of Depravity\n1 Reanimate\n1 Rise of the Dark Realms\n1 Sepulchral Primordial\n1 Combustible Gearhulk\n1 Flayer of the Hatebound\n1 Ruin Grinder\n1 Bedevil\n1 Legions to Ashes\n1 Priest of Fell Rites\n1 Ruinous Ultimatum\n1 Key to the City\n1 Solemn Simulacrum\n1 Battlefield Forge\n1 Clifftop Retreat\n1 Desolate Mire\n1 Dragonskull Summit\n1 Exotic Orchard\n1 Fetid Heath\n1 Foreboding Ruins\n1 Furycalm Snarl\n1 Graven Cairns\n1 High Market\n1 Isolated Chapel\n1 Rugged Prairie\n1 Shadowblood Ridge\n1 Shineshadow Snarl\n1 Smoldering Marsh\n1 Sulfurous Springs\n1 Sunscorched Divide\n1 Phoenix Down\n1 Laughing Mad\n1 Angel of the Ruins\n1 Palace Jailer\n1 Morbid Opportunist\n1 Night's Whisper\n1 Pitiless Plunderer\n1 Stitch Together\n1 Stitcher's Supplier\n1 Anger\n1 Big Score\n1 Crackling Doom\n1 Mortify\n1 Arcane Signet\n1 Commander's Sphere\n1 Meteor Golem\n1 Millikin\n1 Mind Stone\n1 Sol Ring\n1 Swiftfoot Boots\n1 Talisman of Conviction\n1 Talisman of Indulgence\n1 Wayfarer's Bauble\n1 Ash Barrens\n1 Demolition Field\n1 Evolving Wilds\n1 Geothermal Bog\n1 Nomad Outpost\n1 Path of Ancestry\n1 Rogue's Passage\n1 Sacred Peaks\n1 Sunlit Marsh\n1 Command Tower\n2 Plains\n1 Plains\n1 Plains\n1 Swamp\n1 Swamp\n1 Swamp\n1 Mountain\n1 Mountain\n1 Mountain",
   "oracleCards": [
@@ -63,6 +63,7 @@
       "tags": [
         "creature",
         "artifact",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -137,6 +138,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -502,6 +504,7 @@
       "producedMana": [],
       "tags": [
         "instant",
+        "wipe",
         "tokens"
       ],
       "isCommander": false
@@ -852,6 +855,7 @@
       "tags": [
         "instant",
         "draw",
+        "recursion",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -1308,6 +1312,7 @@
       "tags": [
         "creature",
         "artifact",
+        "draw",
         "death-payoff"
       ],
       "isCommander": false
@@ -1532,7 +1537,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "draw",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -1882,7 +1889,8 @@
       ],
       "tags": [
         "creature",
-        "artifact"
+        "artifact",
+        "mana"
       ],
       "isCommander": false
     },
@@ -1942,23 +1950,23 @@
   "result": {
     "profile": {
       "median": 49,
-      "floor": 34,
+      "floor": 38,
       "ceiling": 62,
-      "peak": 88,
-      "dispersion": 27,
-      "variance": 27,
-      "consistency": 58,
-      "commanderDelta": 10,
+      "peak": 91,
+      "dispersion": 24,
+      "variance": 24,
+      "consistency": 62,
+      "commanderDelta": 8,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
-      "speed": 35,
-      "consistency": 58,
-      "explosiveness": 19,
-      "synergy": 87,
-      "interaction": 32,
-      "resilience": 62
+      "speed": 34,
+      "consistency": 62,
+      "explosiveness": 18,
+      "synergy": 88,
+      "interaction": 35,
+      "resilience": 69
     },
     "roles": {
       "lands": 37,
@@ -1966,11 +1974,11 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 11,
-      "interaction": 8,
+      "draw": 14,
+      "interaction": 9,
       "protection": 2,
-      "recursion": 9,
-      "wipes": 2,
+      "recursion": 11,
+      "wipes": 3,
       "avgCmc": 3.7419354838709675,
       "unknownManaLands": 0
     },
@@ -1996,12 +2004,13 @@
           "Edgar, Master Machinist",
           "General Leo Cristophe",
           "Interceptor, Shadow's Hound",
+          "Laughing Mad",
           "Phoenix Down",
           "Priest of Fell Rites",
           "Sabin, Master Monk",
+          "Snort",
           "Stitch Together",
-          "Sun Titan",
-          "The Falcon, Airship Restored"
+          "Sun Titan"
         ],
         "members": [
           "Banon, the Returners' Leader",
@@ -2021,6 +2030,7 @@
           "Interceptor, Shadow's Hound",
           "Phoenix Down",
           "Priest of Fell Rites",
+          "Snort",
           "Stitch Together",
           "Sun Titan",
           "The Falcon, Airship Restored"
@@ -2155,6 +2165,7 @@
             "tags": [
               "instant",
               "draw",
+              "recursion",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -2330,6 +2341,25 @@
             }
           },
           {
+            "name": "Laughing Mad",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "draw",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
             "name": "Phoenix Down",
             "cmc": 1,
             "tags": [
@@ -2384,6 +2414,24 @@
                 ]
               ],
               "total": 5
+            }
+          },
+          {
+            "name": "Snort",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 4
             }
           },
           {
@@ -2452,12 +2500,12 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "12 producteur(s), 9 payoff(s), 20 carte(s) distincte(s)."
+        "evidence": "12 producteur(s), 11 payoff(s), 21 carte(s) distincte(s)."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 55,
+      "score": 58,
       "connected": [
         "Banon, the Returners' Leader",
         "Big Score",
@@ -2475,6 +2523,7 @@
         "Rejoin the Fight",
         "Sabin, Master Monk",
         "Siegfried, Famed Swordsman",
+        "Snort",
         "Stitch Together",
         "Stitcher's Supplier",
         "Sun Titan",
@@ -2492,14 +2541,14 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 35,
-      "median": 45,
-      "high": 55,
-      "ceiling": 55,
-      "peak": 81,
-      "iqr": 15,
-      "consistency": 66,
+      "iterations": 100,
+      "floor": 36,
+      "median": 44,
+      "high": 54,
+      "ceiling": 54,
+      "peak": 84,
+      "iqr": 14,
+      "consistency": 70,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
       "recoveryAfterDisruption": 93,
@@ -2508,57 +2557,57 @@
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 5,
-          "resource": 5,
+          "interaction": 3,
+          "resource": 10,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 4,
-          "engine": 2,
-          "interaction": 9,
-          "resource": 26,
-          "burst": 1
+          "commander": 1,
+          "engine": 0,
+          "interaction": 4,
+          "resource": 27,
+          "burst": 0
         },
         {
           "turn": 3,
-          "commander": 46,
-          "engine": 8,
-          "interaction": 22,
-          "resource": 53,
+          "commander": 41,
+          "engine": 3,
+          "interaction": 23,
+          "resource": 57,
           "burst": 6
         },
         {
           "turn": 4,
-          "commander": 79,
-          "engine": 24,
-          "interaction": 36,
-          "resource": 77,
-          "burst": 9
+          "commander": 72,
+          "engine": 17,
+          "interaction": 39,
+          "resource": 81,
+          "burst": 6
         },
         {
           "turn": 5,
-          "commander": 88,
-          "engine": 39,
-          "interaction": 44,
-          "resource": 85,
-          "burst": 11
+          "commander": 85,
+          "engine": 37,
+          "interaction": 49,
+          "resource": 86,
+          "burst": 9
         },
         {
           "turn": 6,
-          "commander": 92,
-          "engine": 49,
-          "interaction": 51,
-          "resource": 90,
+          "commander": 88,
+          "engine": 46,
+          "interaction": 58,
+          "resource": 92,
           "burst": 14
         },
         {
           "turn": 7,
-          "commander": 94,
+          "commander": 91,
           "engine": 56,
-          "interaction": 57,
-          "resource": 92,
-          "burst": 17
+          "interaction": 62,
+          "resource": 93,
+          "burst": 15
         }
       ]
     },
@@ -2596,6 +2645,27 @@
           "mana",
           "graveyard-setup",
           "tokens"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Laughing Mad",
+        "impact": 3.1,
+        "tags": [
+          "instant",
+          "draw",
+          "recursion",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Snort",
+        "impact": 3.1,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion"
         ],
         "aeon": null
       },
@@ -2673,33 +2743,11 @@
           "etb"
         ],
         "aeon": null
-      },
-      {
-        "name": "Laughing Mad",
-        "impact": 2.4,
-        "tags": [
-          "instant",
-          "draw",
-          "graveyard-setup"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Combustible Gearhulk",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "artifact",
-          "draw",
-          "graveyard-setup",
-          "etb"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

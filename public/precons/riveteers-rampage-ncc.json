@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 38,
-    "p20": 28,
-    "p80": 49,
+    "median": 39,
+    "p20": 29,
+    "p80": 48,
     "peak": 79,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "c39aec349ac5d0c521d6a5115d5d53a80d866b32aa25116f47db1b2fa6a1439b",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 The Beamtown Bullies\n1 Jolene, the Plunder Queen\n1 Caldaia Guardian\n1 Mezzio Mugger\n1 Wave of Rats\n1 Weathered Sentinels\n1 Bellowing Mauler\n1 Grime Gorger\n1 First Responder\n1 Deathbringer Regent\n1 Disciple of Bolas\n1 Noxious Gearhulk\n1 Etali, Primal Storm\n1 Inferno Titan\n1 Stalking Vengeance\n1 Avenger of Zendikar\n1 Giant Adephage\n1 Greenwarden of Murasa\n1 Mitotic Slime\n1 Thragtusk\n1 Treeshaker Chimera\n1 Woodfall Primus\n1 World Shaper\n1 Kresh the Bloodbraided\n1 Solemn Simulacrum\n1 Artisan of Kozilek\n1 Indrik Stomphowler\n1 Overgrown Battlement\n1 Temur Sabertooth\n1 Riveteers Confluence\n1 Aether Snap\n1 Painful Truths\n1 Blasphemous Act\n1 Life's Legacy\n1 Victimize\n1 Explore\n1 Farseek\n1 Kodama's Reach\n1 Migration Path\n1 Rampant Growth\n1 Chaos Warp\n1 Riveteers Charm\n1 Windgrace's Judgment\n1 Terminate\n1 Arcane Signet\n1 Commander's Sphere\n1 Fellwar Stone\n1 Sol Ring\n1 Dodgy Jalopy\n1 Glittering Stockpile\n1 Lifecrafter's Bestiary\n1 Protection Racket\n1 Industrial Advancement\n1 Rain of Riches\n1 Turf War\n1 Next of Kin\n1 Evolutionary Leap\n1 Warstorm Surge\n1 Garruk's Uprising\n1 Deathreap Ritual\n1 Cinder Glade\n1 Exotic Orchard\n1 Foreboding Ruins\n1 Game Trail\n1 Kessig Wolf Run\n1 Mossfire Valley\n1 Mosswort Bridge\n1 Shadowblood Ridge\n1 Smoldering Marsh\n1 Spinerock Knoll\n1 Temple of Malady\n1 Twilight Mire\n1 Ash Barrens\n1 Blighted Woodland\n1 Command Tower\n1 Jund Panorama\n1 Myriad Landscape\n1 Path of Ancestry\n1 Riveteers Overlook\n1 Savage Lands\n1 Temple of the False God\n1 Thriving Bluff\n1 Thriving Grove\n1 Thriving Moor\n2 Swamp\n2 Swamp\n3 Mountain\n2 Mountain\n3 Forest\n3 Forest",
   "oracleCards": [
@@ -113,6 +113,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -170,7 +171,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -931,7 +933,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1810,24 +1813,24 @@
   ],
   "result": {
     "profile": {
-      "median": 38,
-      "floor": 28,
-      "ceiling": 49,
+      "median": 39,
+      "floor": 29,
+      "ceiling": 48,
       "peak": 79,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 67,
+      "dispersion": 19,
+      "variance": 19,
+      "consistency": 70,
       "commanderDelta": 5,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 28,
-      "consistency": 67,
-      "explosiveness": 17,
+      "consistency": 70,
+      "explosiveness": 19,
       "synergy": 51,
-      "interaction": 28,
-      "resilience": 39
+      "interaction": 29,
+      "resilience": 40
     },
     "roles": {
       "lands": 39,
@@ -1835,11 +1838,11 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 11,
-      "interaction": 8,
+      "draw": 12,
+      "interaction": 9,
       "protection": 2,
       "recursion": 3,
-      "wipes": 2,
+      "wipes": 3,
       "avgCmc": 4.266666666666667,
       "unknownManaLands": 0
     },
@@ -2324,73 +2327,73 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
+      "iterations": 100,
       "floor": 32,
       "median": 39,
-      "high": 46,
-      "ceiling": 46,
+      "high": 45,
+      "ceiling": 45,
       "peak": 70,
-      "iqr": 11,
-      "consistency": 76,
+      "iqr": 9,
+      "consistency": 79,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 85,
+      "recoveryAfterDisruption": 89,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 0,
-          "burst": 14
+          "resource": 5,
+          "burst": 12
         },
         {
           "turn": 2,
-          "commander": 1,
+          "commander": 0,
           "engine": 0,
-          "interaction": 4,
-          "resource": 6,
-          "burst": 11
+          "interaction": 5,
+          "resource": 10,
+          "burst": 12
         },
         {
           "turn": 3,
-          "commander": 40,
+          "commander": 42,
           "engine": 0,
           "interaction": 16,
-          "resource": 28,
-          "burst": 9
+          "resource": 36,
+          "burst": 14
         },
         {
           "turn": 4,
-          "commander": 78,
-          "engine": 5,
-          "interaction": 33,
+          "commander": 76,
+          "engine": 1,
+          "interaction": 34,
           "resource": 54,
-          "burst": 7
+          "burst": 10
         },
         {
           "turn": 5,
-          "commander": 88,
-          "engine": 12,
+          "commander": 89,
+          "engine": 11,
           "interaction": 45,
-          "resource": 67,
-          "burst": 7
+          "resource": 70,
+          "burst": 13
         },
         {
           "turn": 6,
-          "commander": 92,
-          "engine": 17,
-          "interaction": 53,
-          "resource": 74,
-          "burst": 8
+          "commander": 95,
+          "engine": 16,
+          "interaction": 51,
+          "resource": 76,
+          "burst": 11
         },
         {
           "turn": 7,
-          "commander": 94,
-          "engine": 22,
-          "interaction": 60,
+          "commander": 98,
+          "engine": 21,
+          "interaction": 61,
           "resource": 79,
-          "burst": 9
+          "burst": 11
         }
       ]
     },
@@ -2523,7 +2526,7 @@
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

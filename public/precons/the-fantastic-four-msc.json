@@ -35,17 +35,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 50,
-    "p20": 35,
-    "p80": 60,
-    "peak": 88,
+    "median": 51,
+    "p20": 41,
+    "p80": 62,
+    "peak": 89,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "481956eb837d05daacbbf191de0b64fe7f875fba7c95ce89c2e0dbf94407c935",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Mister Fantastic\n1 Human Torch\n1 The Thing\n1 Galactus, Devourer of Worlds\n1 Silver Surfer, Galactus's Herald\n1 Invisible Force Field\n1 Ultimate Nullification\n1 Council of Reeds\n1 Fantastic Elasticity\n1 Lockjaw, Slobbering Teleporter\n1 Valeria Richards, Precocious\n1 Alicia Masters, Skilled Sculptor\n1 Flame On!\n1 Franklin Richards, Ascendant\n1 Nova Flame\n1 It's Clobberin' Time!\n1 Medusa, Inhuman Queen\n1 Black Bolt, Inhuman King\n1 Cosmic Crucible\n1 Crystal, Inhuman Princess\n1 Dragon Man, Reformed Robot\n1 First Family\n1 Namor, Atlantean King\n1 Power Pack\n1 Willie Lumpkin, Postman\n1 The Fantasticar\n1 H.E.R.B.I.E., Lovable Robot\n1 Negative Zone Portal\n1 Unstable Molecule Suit\n1 Cleansing Nova\n1 Clever Concealment\n1 Collective Effort\n1 Monologue Tax\n1 Promise of Loyalty\n1 Tragic Arrogance\n1 Quantum Misalignment\n1 Recurring Insight\n1 Into the Time Vortex\n1 Seize the Day\n1 Path of Discovery\n1 Galvanic Iteration\n1 Taunt from the Rampart\n1 Whirlwind of Thought\n1 Chromatic Lantern\n1 Mirage Mirror\n1 Canopy Vista\n1 Cinder Glade\n1 Clifftop Retreat\n1 Exotic Orchard\n1 Fabled Passage\n1 Glacial Fortress\n1 Hinterland Harbor\n1 Prairie Stream\n1 Radiant Summit\n1 Rejuvenating Springs\n1 Rootbound Crag\n1 Scorched Geyser\n1 Sodden Verdure\n1 Sulfur Falls\n1 Sunpetal Grove\n1 Terramorphic Expanse\n1 Mind's Dilation\n1 Annie Joins Up\n1 Genesis Ultimatum\n1 Mister Fantastic, Reed Richards\n1 Baxter Building\n1 Bovine Intervention\n1 Cut a Deal\n1 Path to Exile\n1 Deep Analysis\n1 Cultivate\n1 Farseek\n1 Terramorph\n1 Three Visits\n1 Expressive Iteration\n1 Hull Breach\n1 Arcane Signet\n1 Lightning Greaves\n1 Sol Ring\n1 Command Tower\n1 Evolving Wilds\n1 Path of Ancestry\n3 Plains\n2 Plains\n2 Island\n2 Island\n2 Mountain\n1 Mountain\n3 Forest\n2 Forest",
   "oracleCards": [
@@ -460,7 +460,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "draw"
+        "draw",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -701,7 +702,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -938,7 +940,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "protection"
       ],
       "isCommander": false
     },
@@ -1432,6 +1435,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "extra-combat"
       ],
       "isCommander": false
@@ -1767,24 +1771,24 @@
   ],
   "result": {
     "profile": {
-      "median": 50,
-      "floor": 35,
-      "ceiling": 60,
-      "peak": 88,
-      "dispersion": 25,
-      "variance": 25,
-      "consistency": 63,
-      "commanderDelta": 9,
+      "median": 51,
+      "floor": 41,
+      "ceiling": 62,
+      "peak": 89,
+      "dispersion": 21,
+      "variance": 21,
+      "consistency": 66,
+      "commanderDelta": 8,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 40,
-      "consistency": 63,
+      "consistency": 66,
       "explosiveness": 14,
       "synergy": 77,
-      "interaction": 52,
-      "resilience": 40
+      "interaction": 54,
+      "resilience": 50
     },
     "roles": {
       "lands": 37,
@@ -1794,8 +1798,8 @@
       "repeatableTutors": 0,
       "draw": 10,
       "interaction": 11,
-      "protection": 4,
-      "recursion": 2,
+      "protection": 5,
+      "recursion": 5,
       "wipes": 3,
       "avgCmc": 3.693548387096774,
       "unknownManaLands": 0
@@ -1983,7 +1987,8 @@
             "cmc": 4,
             "tags": [
               "sorcery",
-              "draw"
+              "draw",
+              "recursion"
             ],
             "manaReq": {
               "generic": 3,
@@ -2091,7 +2096,8 @@
             "name": "Galvanic Iteration",
             "cmc": 2,
             "tags": [
-              "instant"
+              "instant",
+              "recursion"
             ],
             "manaReq": {
               "generic": 0,
@@ -2307,6 +2313,7 @@
             "cmc": 4,
             "tags": [
               "sorcery",
+              "recursion",
               "extra-combat"
             ],
             "manaReq": {
@@ -2588,73 +2595,73 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 36,
-      "median": 46,
+      "iterations": 100,
+      "floor": 38,
+      "median": 45,
       "high": 54,
       "ceiling": 54,
       "peak": 81,
-      "iqr": 14,
-      "consistency": 69,
+      "iqr": 12,
+      "consistency": 73,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 89,
+      "recoveryAfterDisruption": 86,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 6,
-          "resource": 8,
+          "interaction": 7,
+          "resource": 6,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 6,
+          "commander": 8,
           "engine": 0,
-          "interaction": 22,
-          "resource": 19,
+          "interaction": 31,
+          "resource": 22,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 66,
-          "engine": 2,
-          "interaction": 41,
-          "resource": 40,
+          "commander": 63,
+          "engine": 1,
+          "interaction": 42,
+          "resource": 39,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 89,
-          "engine": 22,
-          "interaction": 56,
-          "resource": 61,
+          "commander": 85,
+          "engine": 24,
+          "interaction": 59,
+          "resource": 63,
           "burst": 2
         },
         {
           "turn": 5,
-          "commander": 94,
-          "engine": 39,
+          "commander": 89,
+          "engine": 40,
           "interaction": 65,
-          "resource": 69,
-          "burst": 6
+          "resource": 73,
+          "burst": 5
         },
         {
           "turn": 6,
-          "commander": 96,
+          "commander": 90,
           "engine": 47,
-          "interaction": 71,
-          "resource": 75,
-          "burst": 9
+          "interaction": 70,
+          "resource": 82,
+          "burst": 8
         },
         {
           "turn": 7,
-          "commander": 97,
-          "engine": 54,
-          "interaction": 76,
-          "resource": 80,
-          "burst": 12
+          "commander": 94,
+          "engine": 56,
+          "interaction": 78,
+          "resource": 88,
+          "burst": 10
         }
       ]
     },
@@ -2677,6 +2684,16 @@
           "enchantment",
           "cheat",
           "free"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Deep Analysis",
+        "impact": 3.1,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion"
         ],
         "aeon": null
       },
@@ -2731,6 +2748,16 @@
         "aeon": null
       },
       {
+        "name": "Seize the Day",
+        "impact": 2.8,
+        "tags": [
+          "sorcery",
+          "recursion",
+          "extra-combat"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Crystal, Inhuman Princess",
         "impact": 2.4,
         "tags": [
@@ -2750,15 +2777,6 @@
         "aeon": null
       },
       {
-        "name": "Deep Analysis",
-        "impact": 2.4,
-        "tags": [
-          "sorcery",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
         "name": "First Family",
         "impact": 2.4,
         "tags": [
@@ -2766,21 +2784,11 @@
           "draw"
         ],
         "aeon": null
-      },
-      {
-        "name": "Black Bolt, Inhuman King",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "removal",
-          "spellslinger"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

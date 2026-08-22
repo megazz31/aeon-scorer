@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 42,
-    "p20": 29,
-    "p80": 53,
-    "peak": 81,
-    "coverage": 92,
+    "median": 44,
+    "p20": 30,
+    "p80": 56,
+    "peak": 86,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "8b22cf7bec7b57f12953c9f3da78d695b88b22814e7e97624577f40fb67ddf93",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Tifa, Martial Artist\n1 Cid, Freeflier Pilot\n1 Cloud's Limit Break\n1 Elena, Turk Recruit\n1 Heidegger, Shinra Executive\n1 Helitrooper\n1 SOLDIER Military Program\n1 Ultimate Magic: Holy\n1 Avalanche of Sector 7\n1 Cait Sith, Fortune Teller\n1 Summon: Kujata\n1 Ultimate Magic: Meteor\n1 Vincent, Vengeful Atoner\n1 Yuffie, Materia Hunter\n1 Bugenhagen, Wise Elder\n1 Lifestream's Blessing\n1 Professor Hojo\n1 Summoning Materia\n1 Aerith, Last Ancient\n1 Barret, Avalanche Leader\n1 Red XIII, Proud Warrior\n1 Sephiroth, Fallen Hero\n1 Conformer Shuriken\n1 Wrecking Ball Arm\n1 Austere Command\n1 Bastion Protector\n1 Bronze Guardian\n1 Clever Concealment\n1 Puresteel Paladin\n1 Unfinished Business\n1 Vanquish the Horde\n1 Chaos Warp\n1 Hellkite Tyrant\n1 Professional Face-Breaker\n1 Decimate\n1 Armory Automaton\n1 Champion's Helm\n1 Conqueror's Flail\n1 Darksteel Plate\n1 Inspiring Statuary\n1 Sword of the Animist\n1 Battlefield Forge\n1 Bonders' Enclave\n1 Brushland\n1 Canopy Vista\n1 Cinder Glade\n1 Clifftop Retreat\n1 Exotic Orchard\n1 Fire-Lit Thicket\n1 Fortified Village\n1 Furycalm Snarl\n1 Game Trail\n1 Mossfire Valley\n1 Rootbound Crag\n1 Rugged Prairie\n1 Scavenger Grounds\n1 Slayers' Stronghold\n1 Spire of Industry\n1 Sungrass Prairie\n1 Sunpetal Grove\n1 Sunscorched Divide\n1 Zack Fair\n1 Barret Wallace\n1 Dispatch\n1 Secret Rendezvous\n1 Furious Rise\n1 Vandalblast\n1 Cultivate\n1 Harmonize\n1 Nature's Lore\n1 Rampant Growth\n1 Behemoth Sledge\n1 Arcane Signet\n1 Colossus Hammer\n1 Explorer's Scope\n1 Hero's Blade\n1 Hero's Heirloom\n1 Lightning Greaves\n1 Mask of Memory\n1 Skullclamp\n1 Sol Ring\n1 Trailblazer's Boots\n1 Ash Barrens\n1 Evolving Wilds\n1 Jungle Shrine\n1 Path of Ancestry\n1 Radiant Grove\n1 Sacred Peaks\n1 Wooded Ridgeline\n1 Command Tower\n1 Mountain\n1 Mountain\n1 Mountain\n1 Forest\n1 Forest\n1 Forest\n1 Plains\n1 Plains\n1 Plains",
   "oracleCards": [
@@ -122,6 +122,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -292,6 +293,7 @@
       "tags": [
         "creature",
         "artifact",
+        "protection",
         "artifact-payoff"
       ],
       "isCommander": false
@@ -1058,7 +1060,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "protection"
       ],
       "isCommander": false
     },
@@ -1716,7 +1719,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -1873,24 +1877,24 @@
   ],
   "result": {
     "profile": {
-      "median": 42,
-      "floor": 29,
-      "ceiling": 53,
-      "peak": 81,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 62,
+      "median": 44,
+      "floor": 30,
+      "ceiling": 56,
+      "peak": 86,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 59,
       "commanderDelta": 5,
-      "coverage": 92,
-      "dataCoverage": 92
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
-      "speed": 37,
-      "consistency": 62,
-      "explosiveness": 12,
+      "speed": 40,
+      "consistency": 59,
+      "explosiveness": 13,
       "synergy": 61,
-      "interaction": 39,
-      "resilience": 52
+      "interaction": 47,
+      "resilience": 55
     },
     "roles": {
       "lands": 37,
@@ -1899,10 +1903,10 @@
       "tutors": 0,
       "repeatableTutors": 0,
       "draw": 8,
-      "interaction": 7,
-      "protection": 6,
+      "interaction": 8,
+      "protection": 8,
       "recursion": 6,
-      "wipes": 3,
+      "wipes": 4,
       "avgCmc": 3.0483870967741935,
       "unknownManaLands": 0
     },
@@ -2006,6 +2010,7 @@
             "tags": [
               "creature",
               "artifact",
+              "protection",
               "artifact-payoff"
             ],
             "manaReq": {
@@ -2155,7 +2160,8 @@
             "name": "Lightning Greaves",
             "cmc": 2,
             "tags": [
-              "artifact"
+              "artifact",
+              "protection"
             ],
             "manaReq": {
               "generic": 2,
@@ -2267,6 +2273,7 @@
             "tags": [
               "creature",
               "artifact",
+              "protection",
               "artifact-payoff"
             ],
             "manaReq": {
@@ -2873,73 +2880,73 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 29,
-      "median": 38,
-      "high": 46,
-      "ceiling": 46,
-      "peak": 69,
-      "iqr": 14,
-      "consistency": 70,
+      "iterations": 100,
+      "floor": 30,
+      "median": 39,
+      "high": 48,
+      "ceiling": 48,
+      "peak": 76,
+      "iqr": 15,
+      "consistency": 67,
       "commanderMedianTurn": 5,
-      "engineMedianTurn": 5,
+      "engineMedianTurn": 4,
       "recoveryAfterDisruption": 77,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 12,
-          "resource": 15,
+          "interaction": 8,
+          "resource": 22,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 0,
           "engine": 0,
-          "interaction": 22,
-          "resource": 31,
+          "interaction": 18,
+          "resource": 35,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 5,
-          "engine": 6,
-          "interaction": 33,
-          "resource": 51,
+          "commander": 1,
+          "engine": 10,
+          "interaction": 35,
+          "resource": 48,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 28,
-          "engine": 13,
-          "interaction": 42,
+          "commander": 14,
+          "engine": 22,
+          "interaction": 52,
           "resource": 65,
-          "burst": 1
+          "burst": 0
         },
         {
           "turn": 5,
-          "commander": 62,
-          "engine": 20,
-          "interaction": 48,
+          "commander": 59,
+          "engine": 32,
+          "interaction": 57,
           "resource": 74,
-          "burst": 3
+          "burst": 0
         },
         {
           "turn": 6,
-          "commander": 76,
-          "engine": 25,
-          "interaction": 52,
-          "resource": 78,
-          "burst": 5
+          "commander": 74,
+          "engine": 38,
+          "interaction": 64,
+          "resource": 79,
+          "burst": 2
         },
         {
           "turn": 7,
-          "commander": 82,
-          "engine": 30,
-          "interaction": 57,
-          "resource": 83,
-          "burst": 7
+          "commander": 84,
+          "engine": 41,
+          "interaction": 67,
+          "resource": 79,
+          "burst": 3
         }
       ]
     },
@@ -3069,7 +3076,7 @@
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 46,
+    "median": 47,
     "p20": 34,
-    "p80": 56,
-    "peak": 80,
+    "p80": 59,
+    "peak": 81,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "097317bafcce412f76c2fa3882ea04d130103d64cf3a4bf212f28adac931364a",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Arthur, Marigold Knight\n1 Elspeth, Sun's Champion\n1 Jazal Goldmane\n1 Martial Coup\n1 Storm of Souls\n1 Selfless Spirit\n1 Murmuration\n1 Blade Splicer\n1 Hanged Executioner\n1 Loyal Warhound\n1 Restoration Angel\n1 Jacked Rabbit\n1 Skyclave Apparition\n1 Dusk // Dawn\n1 Boss's Chauffeur\n1 Angel of the Ruins\n1 Luminous Broodmoth\n1 Sun Titan\n1 Pollywog Prodigy\n1 Fortune Teller's Talent\n1 Aether Channeler\n1 Pull from Tomorrow\n1 Shield Broker\n1 Stolen by the Fae\n1 Rapid Augmenter\n1 Bident of Thassa\n1 Curiosity Crafter\n1 Devilish Valet\n1 Siege-Gang Commander\n1 Echoing Assault\n1 Agate Instigator\n1 Calamity of Cinders\n1 Rose Room Treasurer\n1 Combat Celebrant\n1 Inferno Titan\n1 Time Wipe\n1 Solemn Simulacrum\n1 Helm of the Host\n1 Glacial Fortress\n1 Adarkar Wastes\n1 Temple of Enlightenment\n1 Castle Ardenvale\n1 Seachrome Coast\n1 Sulfur Falls\n1 Cascade Bluffs\n1 Exotic Orchard\n1 Clifftop Retreat\n1 Shivan Reef\n1 Temple of Triumph\n1 Battlefield Forge\n1 Skycloud Expanse\n1 Temple of Epiphany\n1 Ferrous Lake\n1 Rugged Prairie\n1 Sunscorched Divide\n1 Spirited Companion\n1 Inspiring Overseer\n1 Cut a Deal\n1 Path to Exile\n1 Illusory Ambusher\n1 Rowdy Research\n1 Plumecreed Escort\n1 Rapid Hybridization\n1 Junk Winder\n1 Aetherize\n1 Chart a Course\n1 Tetsuko Umezawa, Fugitive\n1 Thopter Engineer\n1 Cloudblazer\n1 Arcane Signet\n1 Boros Signet\n1 Ornithopter of Paradise\n1 Azorius Signet\n1 Izzet Signet\n1 Circuit Mender\n1 Fellwar Stone\n1 Sol Ring\n1 Mind Stone\n1 Terramorphic Expanse\n1 Path of Ancestry\n1 Thriving Heath\n1 Evolving Wilds\n1 Thriving Isle\n1 Thriving Bluff\n1 Command Tower\n1 Mystic Monastery\n3 Plains\n2 Plains\n2 Island\n2 Island\n2 Mountain\n2 Mountain",
   "oracleCards": [
@@ -98,7 +98,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -116,6 +117,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "tokens",
         "etb"
       ],
       "isCommander": false
@@ -135,6 +137,7 @@
       "tags": [
         "creature",
         "artifact",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -1851,31 +1854,32 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "tokens"
       ],
       "isCommander": true
     }
   ],
   "result": {
     "profile": {
-      "median": 46,
+      "median": 47,
       "floor": 34,
-      "ceiling": 56,
-      "peak": 80,
-      "dispersion": 22,
-      "variance": 22,
-      "consistency": 62,
-      "commanderDelta": 6,
+      "ceiling": 59,
+      "peak": 81,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 59,
+      "commanderDelta": 10,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 41,
-      "consistency": 62,
-      "explosiveness": 11,
-      "synergy": 59,
-      "interaction": 44,
-      "resilience": 44
+      "consistency": 59,
+      "explosiveness": 10,
+      "synergy": 74,
+      "interaction": 48,
+      "resilience": 43
     },
     "roles": {
       "lands": 38,
@@ -1883,11 +1887,11 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 15,
-      "interaction": 8,
+      "draw": 16,
+      "interaction": 9,
       "protection": 3,
       "recursion": 3,
-      "wipes": 4,
+      "wipes": 5,
       "avgCmc": 3.557377049180328,
       "unknownManaLands": 0
     },
@@ -1895,10 +1899,11 @@
       {
         "id": "tokens",
         "name": "Tokens / conversion",
-        "strength": 98,
-        "cohesion": 98,
+        "strength": 100,
+        "cohesion": 100,
         "producers": [
           "Aether Channeler",
+          "Agate Instigator",
           "Blade Splicer",
           "Boss's Chauffeur",
           "Castle Ardenvale",
@@ -1906,8 +1911,7 @@
           "Elspeth, Sun's Champion",
           "Hanged Executioner",
           "Helm of the Host",
-          "Jacked Rabbit",
-          "Martial Coup"
+          "Jacked Rabbit"
         ],
         "payoffs": [
           "Curiosity Crafter",
@@ -1916,6 +1920,7 @@
         ],
         "members": [
           "Aether Channeler",
+          "Agate Instigator",
           "Blade Splicer",
           "Boss's Chauffeur",
           "Castle Ardenvale",
@@ -1951,6 +1956,24 @@
                 ]
               ],
               "total": 3
+            }
+          },
+          {
+            "name": "Agate Instigator",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
             }
           },
           {
@@ -2282,7 +2305,7 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "15 producteur(s), 3 payoff(s), 17 carte(s) distincte(s)."
+        "evidence": "16 producteur(s), 3 payoff(s), 18 carte(s) distincte(s)."
       },
       {
         "id": "graveyard",
@@ -2427,9 +2450,31 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 0,
-      "connected": [],
-      "tags": []
+      "score": 50,
+      "connected": [
+        "Aether Channeler",
+        "Agate Instigator",
+        "Blade Splicer",
+        "Boss's Chauffeur",
+        "Castle Ardenvale",
+        "Curiosity Crafter",
+        "Echoing Assault",
+        "Elspeth, Sun's Champion",
+        "Hanged Executioner",
+        "Helm of the Host",
+        "Jacked Rabbit",
+        "Junk Winder",
+        "Martial Coup",
+        "Murmuration",
+        "Rose Room Treasurer",
+        "Siege-Gang Commander",
+        "Stolen by the Fae",
+        "Thopter Engineer"
+      ],
+      "tags": [
+        "tokens",
+        "token-payoff"
+      ]
     },
     "aeon": {
       "available": false,
@@ -2438,72 +2483,72 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 35,
+      "iterations": 100,
+      "floor": 34,
       "median": 43,
-      "high": 51,
-      "ceiling": 51,
+      "high": 52,
+      "ceiling": 52,
       "peak": 71,
-      "iqr": 13,
-      "consistency": 71,
+      "iqr": 15,
+      "consistency": 67,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 94,
+      "recoveryAfterDisruption": 90,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 7,
+          "interaction": 12,
           "resource": 0,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 2,
+          "commander": 3,
           "engine": 0,
-          "interaction": 18,
-          "resource": 16,
+          "interaction": 24,
+          "resource": 18,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 64,
-          "engine": 1,
-          "interaction": 36,
-          "resource": 56,
+          "commander": 60,
+          "engine": 2,
+          "interaction": 37,
+          "resource": 47,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 88,
+          "commander": 86,
           "engine": 7,
-          "interaction": 47,
-          "resource": 74,
+          "interaction": 52,
+          "resource": 71,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 93,
-          "engine": 15,
-          "interaction": 53,
-          "resource": 82,
+          "engine": 13,
+          "interaction": 61,
+          "resource": 78,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 95,
-          "engine": 20,
-          "interaction": 60,
-          "resource": 88,
+          "engine": 19,
+          "interaction": 68,
+          "resource": 83,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 96,
-          "engine": 26,
-          "interaction": 65,
-          "resource": 91,
+          "engine": 22,
+          "interaction": 72,
+          "resource": 90,
           "burst": 0
         }
       ]
@@ -2636,7 +2681,7 @@
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 51,
-    "p20": 38,
+    "p20": 36,
     "p80": 64,
-    "peak": 91,
+    "peak": 90,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "4b3860739ce7df360da0aa5de59ee0db7f246a61bad66943b60bd71ff7a7c377",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Rashmi and Ragavan\n1 Schema Thief\n1 Sandsteppe War Riders\n1 Cutthroat Negotiator\n1 Hedron Detonator\n1 Ichor Elixir\n1 Path of the Animist\n1 Pain Distributor\n1 Dance with Calamity\n1 Pia and Kiran Nalaar\n1 Feldon of the Third Path\n1 Chaos Warp\n1 Stroke of Genius\n1 Academy Manufactor\n1 Aid from the Cowl\n1 Bloodforged Battle-Axe\n1 Brass's Bounty\n1 Cinder Glade\n1 Echo Storm\n1 Everquill Phoenix\n1 Exotic Orchard\n1 Fiery Confluence\n1 Frostboil Snarl\n1 Game Trail\n1 Gilded Goose\n1 Hellkite Igniter\n1 Imprisoned in the Moon\n1 Inspiring Statuary\n1 Master of Etherium\n1 Masterful Replication\n1 Perplexing Test\n1 Rise and Shine\n1 Saheeli's Artistry\n1 Sharding Sphinx\n1 Shimmer Dragon\n1 Skyclave Relic\n1 Spell Swindle\n1 Spine of Ish Sah\n1 Temple of Abandon\n1 Temple of Epiphany\n1 Temple of Mystery\n1 Thopter Assembly\n1 Thopter Spy Network\n1 Tireless Tracker\n1 Vedalken Humiliator\n1 Vineglimmer Snarl\n1 Workshop Elders\n1 Command Tower\n1 Crack Open\n1 Evolving Wilds\n1 Fractured Powerstone\n1 Gruul Signet\n1 Izzet Signet\n1 Path of Ancestry\n1 Reverse Engineer\n1 Root Out\n1 Simic Growth Chamber\n1 Simic Signet\n1 Terramorphic Expanse\n1 Thoughtcast\n1 Replicating Ring\n1 Arcane Signet\n1 Combine Chrysalis\n1 Curse of Opulence\n1 Frontier Bivouac\n1 Ghirapur Aether Grid\n1 Junk Winder\n1 Myriad Landscape\n1 Reality Shift\n1 Saheeli, Sublime Artificer\n1 Sol Ring\n1 Struggle // Survive\n1 Tireless Provisioner\n1 Vampires' Vengeance\n1 Weirding Wood\n1 Whirler Rogue\n8 Island\n8 Mountain\n7 Forest",
   "oracleCards": [
@@ -270,6 +270,7 @@
       ],
       "tags": [
         "enchantment",
+        "mana",
         "tokens"
       ],
       "isCommander": false
@@ -1133,7 +1134,8 @@
       "tags": [
         "creature",
         "token-payoff",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1359,7 +1361,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "sorcery"
+        "sorcery",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -1546,7 +1549,6 @@
         "creature",
         "tokens",
         "sacrifice",
-        "death-payoff",
         "etb",
         "landfall",
         "counter-producer",
@@ -1682,23 +1684,23 @@
   "result": {
     "profile": {
       "median": 51,
-      "floor": 38,
+      "floor": 36,
       "ceiling": 64,
-      "peak": 91,
-      "dispersion": 26,
-      "variance": 26,
-      "consistency": 58,
+      "peak": 90,
+      "dispersion": 27,
+      "variance": 27,
+      "consistency": 55,
       "commanderDelta": 12,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 38,
-      "consistency": 58,
-      "explosiveness": 18,
+      "consistency": 55,
+      "explosiveness": 15,
       "synergy": 94,
-      "interaction": 40,
-      "resilience": 28
+      "interaction": 37,
+      "resilience": 33
     },
     "roles": {
       "lands": 38,
@@ -1709,7 +1711,7 @@
       "draw": 6,
       "interaction": 8,
       "protection": 2,
-      "recursion": 1,
+      "recursion": 2,
       "wipes": 1,
       "avgCmc": 3.819672131147541,
       "unknownManaLands": 0
@@ -1865,6 +1867,7 @@
             "cmc": 1,
             "tags": [
               "enchantment",
+              "mana",
               "tokens"
             ],
             "manaReq": {
@@ -2284,7 +2287,6 @@
               "creature",
               "tokens",
               "sacrifice",
-              "death-payoff",
               "etb",
               "landfall",
               "counter-producer",
@@ -2410,7 +2412,8 @@
             "tags": [
               "creature",
               "token-payoff",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -3050,6 +3053,7 @@
             "cmc": 1,
             "tags": [
               "enchantment",
+              "mana",
               "tokens"
             ],
             "manaReq": {
@@ -3344,7 +3348,6 @@
               "creature",
               "tokens",
               "sacrifice",
-              "death-payoff",
               "etb",
               "landfall",
               "counter-producer",
@@ -3422,17 +3425,17 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
+      "iterations": 100,
       "floor": 40,
-      "median": 49,
-      "high": 59,
-      "ceiling": 59,
+      "median": 50,
+      "high": 60,
+      "ceiling": 60,
       "peak": 87,
-      "iqr": 15,
-      "consistency": 66,
+      "iqr": 17,
+      "consistency": 63,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 75,
+      "recoveryAfterDisruption": 80,
       "turnProfile": [
         {
           "turn": 1,
@@ -3444,51 +3447,51 @@
         },
         {
           "turn": 2,
-          "commander": 1,
-          "engine": 5,
-          "interaction": 7,
-          "resource": 1,
+          "commander": 2,
+          "engine": 3,
+          "interaction": 4,
+          "resource": 2,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 20,
-          "engine": 30,
-          "interaction": 26,
+          "commander": 23,
+          "engine": 37,
+          "interaction": 25,
           "resource": 15,
-          "burst": 3
+          "burst": 2
         },
         {
           "turn": 4,
-          "commander": 61,
-          "engine": 57,
-          "interaction": 46,
-          "resource": 35,
-          "burst": 7
+          "commander": 59,
+          "engine": 62,
+          "interaction": 42,
+          "resource": 43,
+          "burst": 3
         },
         {
           "turn": 5,
-          "commander": 83,
-          "engine": 71,
-          "interaction": 56,
-          "resource": 46,
-          "burst": 11
+          "commander": 82,
+          "engine": 75,
+          "interaction": 57,
+          "resource": 54,
+          "burst": 7
         },
         {
           "turn": 6,
-          "commander": 90,
-          "engine": 79,
-          "interaction": 62,
-          "resource": 52,
-          "burst": 15
+          "commander": 91,
+          "engine": 82,
+          "interaction": 63,
+          "resource": 58,
+          "burst": 14
         },
         {
           "turn": 7,
           "commander": 94,
-          "engine": 85,
-          "interaction": 67,
-          "resource": 58,
-          "burst": 18
+          "engine": 84,
+          "interaction": 66,
+          "resource": 70,
+          "burst": 15
         }
       ]
     },
@@ -3564,6 +3567,16 @@
         "aeon": null
       },
       {
+        "name": "Curse of Opulence",
+        "impact": 3.6,
+        "tags": [
+          "enchantment",
+          "mana",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Dance with Calamity",
         "impact": 3.6,
         "tags": [
@@ -3617,22 +3630,11 @@
           "tokens"
         ],
         "aeon": null
-      },
-      {
-        "name": "Academy Manufactor",
-        "impact": 2.9,
-        "tags": [
-          "creature",
-          "artifact",
-          "mana",
-          "tokens"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."

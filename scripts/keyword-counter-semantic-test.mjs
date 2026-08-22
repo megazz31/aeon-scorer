@@ -39,12 +39,29 @@ for(const [name,oracle] of [
 
 expectKind('Blight Test','As an additional cost to cast this spell, blight 2.','minus1')
 expectKind('Persist Test','Persist','minus1')
+expectKind('Wither Test','Wither','minus1')
+expectKind('Infect Test','Infect','minus1')
 assert.equal(has(card('Blight Test','As an additional cost to cast this spell, blight 2.'),'counter-kind:plus1'),false,'blight must not map to +1/+1')
 assert.equal(has(card('Persist Test','Persist'),'counter-kind:plus1'),false,'persist must not map to +1/+1')
+
+// Variable X counter keywords
+expectKind('Clay Golem Test','{6}: Monstrosity X.','plus1')
+expectKind('Sandsteppe War Riders Test','Bolster X, where X is...','plus1')
+
+// Hyphenated false positives must NOT become counter producers
+const goldenThrone=card('The Golden Throne','Arcane Life-support — If you would lose the game, instead exile The Golden Throne and your life total becomes 1.','Artifact')
+assert.equal(has(goldenThrone,'counter-producer'),false,'life-support must not trigger support keyword')
+const grothama=card('Grothama, All-Devouring','Other creatures have "Whenever this creature attacks, you may have it fight Grothama, All-Devouring."','Legendary Creature')
+assert.equal(has(grothama,'counter-producer'),false,'all-devouring must not trigger devour keyword')
 
 assert.equal(has(card('Incubate Test','When this creature enters, incubate 2.'),'tokens'),true,'incubate creates a token')
 assert.equal(has(card('Fabricate Test','Fabricate 2'),'tokens'),true,'fabricate can create Servo tokens')
 assert.equal(has(card('Amass Test','Amass Zombies 2'),'tokens'),true,'amass can create an Army token')
+assert.equal(has(card('Populate Test','Populate.'),'tokens'),true,'populate creates a token copy')
+assert.equal(has(card('Living Weapon Test','Living weapon'),'tokens'),true,'living weapon creates a Germ token')
+assert.equal(has(card('Myriad Test','Myriad'),'tokens'),true,'myriad creates attacking tokens')
+assert.equal(has(card('Encore Test','Encore {4}{U}{U}'),'tokens'),true,'encore creates tokens')
+assert.equal(has(card('Offspring Test','Offspring {1}'),'tokens'),true,'offspring creates a token copy')
 
 const akki=card('Akki Battle Squad','Whenever one or more modified creatures you control attack, untap all modified creatures you control.','Creature — Goblin Samurai')
 assert.equal(has(akki,'modified-payoff'),true,'modified is a dedicated payoff role')

@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 52,
-    "p20": 36,
-    "p80": 67,
-    "peak": 90,
+    "median": 56,
+    "p20": 41,
+    "p80": 70,
+    "peak": 89,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-13",
     "oracleSnapshotHash": "e61314f48e7dab55c545460458c3f21c570e0f706db362fb983e28914554af2b",
     "scryfallOracleDate": "2026-08-22",
-    "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "iterations": 100,
+    "analyzedAt": "2026-08-22T09:33:58.752Z"
   },
   "decklist": "1 Marvo, Deep Operative\n1 Case of the Shifting Visage\n1 Copy Catchers\n1 Final-Word Phantom\n1 Watcher of Hours\n1 Charnel Serenade\n1 Eye of Duskmantle\n1 Foreboding Steamboat\n1 Unshakable Tail\n1 Counterpoint\n1 Ransom Note\n1 Amphin Mutineer\n1 Dream Eater\n1 Mission Briefing\n1 Phyrexian Metamorph\n1 Sphinx of the Second Sun\n1 Vizier of Many Faces\n1 Black Sun's Zenith\n1 Dogged Detective\n1 Doom Whisperer\n1 Grave Titan\n1 Massacre Wurm\n1 Overseer of the Damned\n1 Phyrexian Arena\n1 Pile On\n1 Reanimate\n1 Rise of the Dark Realms\n1 Toxic Deluge\n1 Twilight Prophet\n1 Baleful Strix\n1 Connive // Concoct\n1 Lazav, the Multifarious\n1 Master of Death\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Drownyard Temple\n1 Fetid Pools\n1 Hostile Desert\n1 River of Tears\n1 Sunken Hollow\n1 Brainstorm\n1 Consider\n1 Curate\n1 Deep Analysis\n1 Enhanced Surveillance\n1 Ephara's Dispersal\n1 Mulldrifter\n1 Nightveil Sprite\n1 Otherworldly Gaze\n1 Thoughtbound Phantasm\n1 Animate Dead\n1 Necromancy\n1 Price of Fame\n1 Ravenous Chupacabra\n1 Shriekmaw\n1 Sinister Starfish\n1 Syr Konrad, the Grim\n1 Whispering Snitch\n1 Dimir Spybug\n1 Discovery // Dispersal\n1 Disinformation Campaign\n1 Notion Rain\n1 Arcane Signet\n1 Dimir Signet\n1 Everflowing Chalice\n1 Mind Stone\n1 Sol Ring\n1 Talisman of Dominance\n1 Thought Vessel\n1 Ash Barrens\n1 Bojuka Bog\n1 Command Tower\n1 Dimir Aqueduct\n1 Myriad Landscape\n1 Mystic Sanctuary\n1 Port of Karfell\n1 Reliquary Tower\n1 Rogue's Passage\n1 Tainted Isle\n1 Temple of the False God\n1 Tocasia's Dig Site\n5 Island\n4 Island\n5 Swamp\n4 Swamp",
   "oracleCards": [
@@ -56,6 +56,8 @@
       "tags": [
         "creature",
         "removal",
+        "recursion",
+        "tokens",
         "etb"
       ],
       "isCommander": false
@@ -114,6 +116,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -417,7 +420,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "draw"
+        "draw",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -698,6 +702,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -1062,6 +1067,7 @@
       "producedMana": [],
       "tags": [
         "instant",
+        "recursion",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -1639,7 +1645,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "recursion",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -1657,6 +1665,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "protection",
         "graveyard-setup",
         "counter-kind:time"
       ],
@@ -1684,24 +1693,24 @@
   ],
   "result": {
     "profile": {
-      "median": 52,
-      "floor": 36,
-      "ceiling": 67,
-      "peak": 90,
-      "dispersion": 31,
-      "variance": 31,
-      "consistency": 52,
+      "median": 56,
+      "floor": 41,
+      "ceiling": 70,
+      "peak": 89,
+      "dispersion": 29,
+      "variance": 29,
+      "consistency": 55,
       "commanderDelta": 14,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
-      "speed": 46,
-      "consistency": 52,
+      "speed": 49,
+      "consistency": 55,
       "explosiveness": 16,
-      "synergy": 97,
+      "synergy": 99,
       "interaction": 35,
-      "resilience": 46
+      "resilience": 62
     },
     "roles": {
       "lands": 37,
@@ -1711,8 +1720,8 @@
       "repeatableTutors": 0,
       "draw": 11,
       "interaction": 8,
-      "protection": 0,
-      "recursion": 5,
+      "protection": 1,
+      "recursion": 9,
       "wipes": 1,
       "avgCmc": 3.5,
       "unknownManaLands": 0
@@ -1736,11 +1745,14 @@
           "Dogged Detective"
         ],
         "payoffs": [
+          "Amphin Mutineer",
           "Charnel Serenade",
           "Connive // Concoct",
           "Counterpoint",
+          "Deep Analysis",
           "Dogged Detective",
           "Drownyard Temple",
+          "Otherworldly Gaze",
           "Port of Karfell",
           "Unshakable Tail"
         ],
@@ -1775,8 +1787,11 @@
           "Unshakable Tail",
           "Watcher of Hours",
           "Whispering Snitch",
+          "Amphin Mutineer",
           "Counterpoint",
-          "Drownyard Temple"
+          "Deep Analysis",
+          "Drownyard Temple",
+          "Vizier of Many Faces"
         ],
         "producerCards": [
           {
@@ -2172,6 +2187,7 @@
             "cmc": 1,
             "tags": [
               "instant",
+              "recursion",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -2329,6 +2345,7 @@
             "cmc": 6,
             "tags": [
               "creature",
+              "protection",
               "graveyard-setup",
               "counter-kind:time"
             ],
@@ -2362,6 +2379,26 @@
           }
         ],
         "payoffCards": [
+          {
+            "name": "Amphin Mutineer",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "removal",
+              "recursion",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
           {
             "name": "Charnel Serenade",
             "cmc": 6,
@@ -2438,6 +2475,24 @@
             }
           },
           {
+            "name": "Deep Analysis",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
             "name": "Dogged Detective",
             "cmc": 2,
             "tags": [
@@ -2468,6 +2523,24 @@
               "generic": 0,
               "colored": [],
               "total": 0
+            }
+          },
+          {
+            "name": "Otherworldly Gaze",
+            "cmc": 1,
+            "tags": [
+              "instant",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 1
             }
           },
           {
@@ -2507,6 +2580,27 @@
               ],
               "total": 3
             }
+          },
+          {
+            "name": "Vizier of Many Faces",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
           }
         ],
         "producerTags": [
@@ -2515,13 +2609,14 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "30 producteur(s), 7 payoff(s), 32 carte(s) distincte(s)."
+        "evidence": "30 producteur(s), 11 payoff(s), 35 carte(s) distincte(s)."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 88,
+      "score": 96,
       "connected": [
+        "Amphin Mutineer",
         "Case of the Shifting Visage",
         "Charnel Serenade",
         "Connive // Concoct",
@@ -2529,6 +2624,7 @@
         "Copy Catchers",
         "Counterpoint",
         "Curate",
+        "Deep Analysis",
         "Dimir Spybug",
         "Discovery // Dispersal",
         "Disinformation Campaign",
@@ -2552,6 +2648,7 @@
         "Thoughtbound Phantasm",
         "Tocasia's Dig Site",
         "Unshakable Tail",
+        "Vizier of Many Faces",
         "Watcher of Hours",
         "Whispering Snitch"
       ],
@@ -2568,73 +2665,73 @@
       "top": []
     },
     "simulation": {
-      "iterations": 3200,
-      "floor": 37,
-      "median": 48,
-      "high": 60,
-      "ceiling": 60,
+      "iterations": 100,
+      "floor": 41,
+      "median": 52,
+      "high": 63,
+      "ceiling": 63,
       "peak": 84,
-      "iqr": 19,
-      "consistency": 59,
+      "iqr": 17,
+      "consistency": 62,
       "commanderMedianTurn": 3,
-      "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 91,
+      "engineMedianTurn": 3,
+      "recoveryAfterDisruption": 95,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 4,
-          "interaction": 8,
-          "resource": 30,
-          "burst": 0
-        },
-        {
-          "turn": 2,
-          "commander": 9,
-          "engine": 12,
           "interaction": 9,
           "resource": 46,
           "burst": 0
         },
         {
+          "turn": 2,
+          "commander": 13,
+          "engine": 18,
+          "interaction": 13,
+          "resource": 61,
+          "burst": 1
+        },
+        {
           "turn": 3,
-          "commander": 73,
-          "engine": 25,
-          "interaction": 23,
-          "resource": 63,
+          "commander": 78,
+          "engine": 34,
+          "interaction": 21,
+          "resource": 70,
           "burst": 2
         },
         {
           "turn": 4,
-          "commander": 88,
-          "engine": 34,
-          "interaction": 39,
-          "resource": 72,
-          "burst": 6
+          "commander": 89,
+          "engine": 47,
+          "interaction": 41,
+          "resource": 84,
+          "burst": 7
         },
         {
           "turn": 5,
           "commander": 91,
-          "engine": 42,
-          "interaction": 49,
-          "resource": 79,
-          "burst": 12
+          "engine": 53,
+          "interaction": 46,
+          "resource": 91,
+          "burst": 18
         },
         {
           "turn": 6,
-          "commander": 93,
-          "engine": 47,
-          "interaction": 56,
-          "resource": 82,
-          "burst": 16
+          "commander": 92,
+          "engine": 59,
+          "interaction": 59,
+          "resource": 95,
+          "burst": 25
         },
         {
           "turn": 7,
-          "commander": 95,
-          "engine": 53,
-          "interaction": 61,
-          "resource": 86,
-          "burst": 19
+          "commander": 93,
+          "engine": 61,
+          "interaction": 65,
+          "resource": 97,
+          "burst": 29
         }
       ]
     },
@@ -2659,6 +2756,28 @@
           "draw",
           "cheat",
           "free"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Amphin Mutineer",
+        "impact": 3.4,
+        "tags": [
+          "creature",
+          "removal",
+          "recursion",
+          "tokens",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Deep Analysis",
+        "impact": 3.1,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion"
         ],
         "aeon": null
       },
@@ -2749,32 +2868,11 @@
           "etb"
         ],
         "aeon": null
-      },
-      {
-        "name": "Phyrexian Arena",
-        "impact": 2.3,
-        "tags": [
-          "enchantment",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Charnel Serenade",
-        "impact": 2.1,
-        "tags": [
-          "sorcery",
-          "recursion",
-          "graveyard-setup",
-          "counter-kind:time",
-          "counter-kind:finality"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
     "methodology": {
-      "iterations": 3200,
+      "iterations": 100,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
