@@ -67,7 +67,7 @@ function deathPayoff(o){
 function counterKinds(o){
   const s=o.toLowerCase(),out=[],add=k=>{if(!out.includes(k))out.push(k)}
   for(const [kind,re] of [
-    ['plus1',/\+1\/\+1 counters?/],['minus1',/-1\/-1 counters?/],['charge',/charge counters?/],['poison',/poison counters?/],['stun',/stun counters?/],['shield',/shield counters?/],['lore',/lore counters?/],['time',/time counters?/],['oil',/oil counters?/],['experience',/experience counters?/],['energy',/energy counters?|\{e\}/],['rad',/rad counters?/],['loyalty',/loyalty counters?/],['finality',/finality counters?/],['quest',/quest counters?/],['storage',/storage counters?/],['muster',/muster counters?/],['verse',/verse counters?/],['brick',/brick counters?/],['age',/age counters?/],['fate',/fate counters?/],['spore',/spore counters?/],['slime',/slime counters?/]
+    ['plus1',/\+1\/\+1 counters?|\b(?:evolve|adapt\s*\d+|amass\b|support\s*\d+|bolster\s*\d+|graft\s*\d+|modular\s*\d+|outlast\b|renown\s*\d+|backup\s*\d+|monstrosity\s*\d+|explore\b)\b/],['minus1',/-1\/-1 counters?/],['charge',/charge counters?/],['poison',/poison counters?/],['stun',/stun counters?/],['shield',/shield counters?/],['lore',/lore counters?/],['time',/time counters?/],['oil',/oil counters?/],['experience',/experience counters?/],['energy',/energy counters?|\{e\}/],['rad',/rad counters?/],['loyalty',/loyalty counters?/],['finality',/finality counters?/],['quest',/quest counters?/],['storage',/storage counters?/],['muster',/muster counters?/],['verse',/verse counters?/],['brick',/brick counters?/],['age',/age counters?/],['fate',/fate counters?/],['spore',/spore counters?/],['slime',/slime counters?/]
   ])if(re.test(s))add(kind)
   if(/\bproliferate\b/.test(s))add('wild')
   const concrete=out.some(k=>k!=='wild'&&k!=='generic'),counterNoun=/\b(?:a|an|one|two|three|four|five|x|any number of|one or more|those|these|that|the|each|number of)(?: [a-z0-9+/-]+){0,3} counters?\b|\b[a-z][a-z'-]{2,} counters?\b|\bcounters? on\b|\bcounter from\b|\bcounter to\b/
@@ -76,15 +76,24 @@ function counterKinds(o){
   return out
 }
 function counterRoles(o){
-  const s=o.toLowerCase(),putCounter=/put (?:a |one |two |three |x |up to [a-z]+ )?(?:\+1\/\+1 |[-+]?\d+\/[-+]?\d+ )?counters? on/,
-    producer=clauses(s).some(c=>{const actionable=c.replace(/\b(?:if|whenever) you put [^,]*counters? on[^,]*(?:,\s*|$)/,'');return putCounter.test(actionable)||/enters(?: the battlefield)? with [^.]*counters? on/.test(actionable)||/\bproliferate\b/.test(actionable)}),
+  const s=o.toLowerCase(),
+    putCounter=/\bput\s+[^.\n;]{0,80}\bcounters?\s+(?:from\s+[^.\n;]{0,40}\s+)?on(?:to)?\b/,
+    entersWith=/\benters?(?: the battlefield)? with [^.\n;]{0,60}\bcounters?\b/,
+    keywordProducer=/\b(?:evolve|adapt\b|amass\b|support\b|bolster\b|graft\b|modular\b|outlast\b|renown\b|backup\b|monstrosity\b|explore\b|connive\b|blight\b|fabricate\b|riot\b|bloodthirst\b|undying\b|persist\b|unleash\b|scavenge\b|training\b|mentor\b|incubate\b|devour\b)\b/.test(s),
+    producer=keywordProducer||clauses(s).some(c=>{
+      if(/\binstead\b/.test(c)&&/\b(?:if|would)\b/.test(c))return false
+      const actionable=c.replace(/\b(?:if|whenever) (?:you|a player|[a-z]+) (?:would )?put [^,]*counters? on[^,]*(?:,\s*|$)/,'')
+        .replace(/\b(?:if|whenever) [^,]*counters? (?:would be|are|is) put on[^,]*(?:,\s*|$)/,'')
+      return putCounter.test(actionable)||entersWith.test(actionable)||/\bproliferate\b/.test(actionable)
+    }),
     removeOwn=/remove (?:a|one|two|three|x|any number of) counters? from [^.]{0,100}(?:you control|this)/.test(s),
-    payoff=/for each [^.]*counter|with (?:a|one or more|\w+) counters? on|has (?:a|one or more|\w+) counters? on|whenever one or more counters? (?:are|is) put|\b(?:if|whenever) you put [^.]*counters? on/.test(s)||removeOwn,
+    modifiedPayoff=/\bmodified (?:creature|creatures)\b|creatures with counters/.test(s),
+    payoff=/for each [^.]*counter|with (?:a|one or more|\w+) counters? on|has (?:a|one or more|\w+) counters? on|whenever one or more counters? (?:are|is) put|\b(?:if|whenever) you put [^.]*counters? on/.test(s)||removeOwn||modifiedPayoff,
     doubler=/twice that many(?: of those)? counters|double the number of [^.]*counters|additional [^.]*counter would be put|that many plus one [^.]*counters/.test(s)
   return {producer,payoff,doubler,kinds:counterKinds(s)}
 }
 function investigatesForYou(c){if(!/\binvestigate(?:s|d)?\b/.test(c))return false;if(/(?:target|each|an?) opponents? [^.]{0,80}investigates?|(?:its|that|their) controller investigates?|that player investigates?/.test(c)&&!/\byou [^.]{0,50}investigate/.test(c))return false;return /\byou [^.]{0,50}investigate|(?:^|,|\bthen\b)\s*investigate(?:s|d)?\b|\binvestigate(?:s|d)?(?:\s+(?:x|twice|three times|\d+ times))?\b/.test(c)}
-function tokenRoles(o){const s=o.toLowerCase(),cs=clauses(s),producer=/create [^.]*\btokens?\b/.test(s)||cs.some(investigatesForYou),payoff=/\btokens?\b you control|creature \btokens?\b (?:you control )?(?:get|have)|whenever [^.]*\btokens?\b[^.]*enters|whenever one or more \btokens?\b|whenever you create [^.]*\btokens?\b|sacrifice (?:a|one or more) \btokens?\b/.test(s),doubler=/if [^.]*would create [^.]*\btokens?\b[^.]*twice|twice that many [^.]*\btokens?\b|create twice that many [^.]*\btokens?\b/.test(s);return {producer,payoff,doubler}}
+function tokenRoles(o){const s=o.toLowerCase(),cs=clauses(s),producer=/create [^.]*\btokens?\b/.test(s)||cs.some(investigatesForYou)||/\bamass\b/.test(s),payoff=/\btokens?\b you control|creature \btokens?\b (?:you control )?(?:get|have)|whenever [^.]*\btokens?\b[^.]*enters|whenever one or more \btokens?\b|whenever you create [^.]*\btokens?\b|sacrifice (?:a|one or more) \btokens?\b|\bif you created a token\b|\bnumber of tokens you created\b|\bfor each token you control\b|\bfor each creature token you control\b|\bdestroy all nontoken creatures\b/.test(s),doubler=/if [^.]*would create [^.]*\btokens?\b[^.]*twice|twice that many [^.]*\btokens?\b|create twice that many [^.]*\btokens?\b/.test(s);return {producer,payoff,doubler}}
 const triggerDoubler=o=>/triggers? an additional time|trigger an additional time|causes? [^.]* ability to trigger an additional time/i.test(o)
 function artifactPayoff(o){const s=withoutReminderText(o).toLowerCase();return clauses(s).some(c=>{if(/opponent/.test(c)&&/artifact/.test(c)&&!/artifacts? you control/.test(c))return false;return /artifacts? you control/.test(c)||/whenever (?:an|another|one or more) artifacts? [^.]*enters[^.]*under your control/.test(c)||/whenever you cast (?:an? )?artifact/.test(c)||/artifact spells? you cast/.test(c)||/for each artifact you control/.test(c)||/whenever you sacrifice (?:an|another|one or more) artifacts?/.test(c)||/whenever (?:an|another) artifact you control [^.]*graveyard/.test(c)})}
 const constellation=o=>/\bconstellation\b|whenever an enchantment [^.]* enters|whenever another enchantment [^.]* enters/i.test(o)

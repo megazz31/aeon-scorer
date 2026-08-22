@@ -10,6 +10,7 @@ const MOTIFS=[
   {id:'spells',name:'Spellslinger',producers:['instant','sorcery'],payoffs:['spellslinger'],minP:10,minY:2},
   {id:'exile',name:'Jeu depuis l’exil',producers:['exile-cast'],payoffs:['exile-payoff'],minP:2,minY:1},
   {id:'artifacts',name:'Artefacts',producers:['artifact'],payoffs:['artifact-payoff'],minP:5,minY:2},
+  {id:'lifegain',name:'Points de vie / Synergies',producers:['lifegain'],payoffs:['life-payoff'],minP:3,minY:2},
 ]
 const hasTag=(c,t)=>c.tags?.includes(t)
 const uniqByName=xs=>{const seen=new Set(),out=[];for(const x of xs){const k=x.name.toLowerCase();if(!seen.has(k)){seen.add(k);out.push(x)}}return out}
