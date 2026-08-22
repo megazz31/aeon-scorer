@@ -1,6 +1,8 @@
 -- P5 Aeon Match sessions: authenticated organizer, anonymous fast join.
 -- Sessions store only public Rule 0 share codes, never private deck payloads.
 
+create extension if not exists pgcrypto with schema extensions;
+
 create table if not exists public.match_sessions (
   code text primary key check (code ~ '^[a-f0-9]{10}$'),
   created_by uuid not null references auth.users(id) on delete cascade,
@@ -37,7 +39,7 @@ begin
   if (select count(*) from public.match_sessions where created_by=uid and expires_at>now() and status<>'closed')>=5 then raise exception 'too_many_active_sessions'; end if;
   token:=replace(gen_random_uuid()::text,'-','')||replace(gen_random_uuid()::text,'-','');
   loop c:=substr(replace(gen_random_uuid()::text,'-',''),1,10);exit when not exists(select 1 from public.match_sessions where code=c);end loop;
-  insert into public.match_sessions(code,created_by,organizer_token_hash,max_players) values(c,uid,encode(digest(token,'sha256'),'hex'),p_max_players);
+  insert into public.match_sessions(code,created_by,organizer_token_hash,max_players) values(c,uid,encode(extensions.digest(token,'sha256'),'hex'),p_max_players);
   return jsonb_build_object('code',c,'organizerToken',token,'status','open','maxPlayers',p_max_players,'expiresAt',(select expires_at from public.match_sessions where code=c));
 end $$;
 
@@ -81,7 +83,7 @@ begin
   if p_status not in ('open','locked','closed') then raise exception 'invalid_status'; end if;
   select * into s from public.match_sessions where code=p_code;
   if not found or s.expires_at<now() then raise exception 'session_not_found'; end if;
-  if encode(digest(coalesce(p_organizer_token,''),'sha256'),'hex')<>s.organizer_token_hash then raise exception 'invalid_organizer_token'; end if;
+  if encode(extensions.digest(coalesce(p_organizer_token,''),'sha256'),'hex')<>s.organizer_token_hash then raise exception 'invalid_organizer_token'; end if;
   update public.match_sessions set status=p_status where code=p_code;
   return jsonb_build_object('code',p_code,'status',p_status);
 end $$;
