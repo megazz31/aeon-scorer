@@ -69,18 +69,20 @@ const legacyTimeline=buildClassThreatAnswerTimeline([
 assert.equal(legacyTimeline.modelVersion,'threat-answer-v2')
 assert.equal(legacyTimeline.confidence.classSpecificTiming,'legacy')
 
-// Full pod propagation: V2 temporal evidence activates the V4/V3 product chain.
+// Full pod propagation: Temporal V2 + Threat Objects activate Threat–Answer V4 and Agency Pod V5.
 const pod=buildPodIntelligence([{result:temporalResult,cards},{result:temporalResult,cards}])
-assert.equal(pod.modelVersion,'pod-intelligence-v4')
-assert.equal(pod.threatAnswer.modelVersion,'threat-answer-v3')
+assert.equal(pod.modelVersion,'pod-intelligence-v5')
+assert.equal(pod.threatAnswer.modelVersion,'threat-answer-v4')
 assert.equal(pod.podMatch.modelVersion,'advanced-pod-match-v4')
 assert.equal(pod.gameQuality.modelVersion,'game-quality-v3')
 assert.equal(pod.confidence.answerTiming,'class-specific-v2')
+assert.equal(pod.agencyTimeline?.modelVersion,'agency-timeline-v1')
 const legacyPod=buildPodIntelligence([{result:legacyResult,cards},{result:legacyResult,cards}])
 assert.equal(legacyPod.modelVersion,'pod-intelligence-v3')
 assert.equal(legacyPod.threatAnswer.modelVersion,'threat-answer-v2')
 assert.notEqual(legacyPod.podMatch.modelVersion,'advanced-pod-match-v4')
 assert.equal(legacyPod.gameQuality.modelVersion,'game-quality-v2')
+assert.equal(legacyPod.agencyTimeline,null)
 
 // Public share exposes aggregates only, never answer-card names or Oracle text.
 const shared=buildShareableIntelligence(temporalResult,cards),text=JSON.stringify(shared)
