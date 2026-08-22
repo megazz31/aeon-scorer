@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import fs from 'node:fs'
 import { buildClassThreatAnswerTimeline } from '../src/engine/threatAnswerTimeline.js'
 import { buildAgencyTimeline,AGENCY_TIMELINE_MODEL_VERSION } from '../src/engine/agencyTimeline.js'
 import { buildPodIntelligence } from '../src/engine/roadmapEngine.js'
@@ -56,4 +57,12 @@ assert.equal(pod.agencyTimeline.modelVersion,AGENCY_TIMELINE_MODEL_VERSION)
 assert.deepEqual(pod.gameQuality,buildGameQualityForecast(pod.decks,pod.podMatch,pod.threatAnswer),'Agency V1 must remain diagnostic and outside Game Quality arithmetic')
 assert.equal(pod.gameQuality.notes.some(x=>/Agency Timeline V1 is diagnostic only/.test(x)),true)
 
-console.log('AGENCY TIMELINE V1 OK — Threat-Answer V4 preserves worst-window arithmetic and seat participation diagnostics stay outside Game Quality scoring')
+// Product wiring: both Pod Match and Aeon Match expose Agency while Reality prediction stays unchanged.
+const podPage=fs.readFileSync(new URL('../src/ProductPages.jsx',import.meta.url),'utf8'),matchPage=fs.readFileSync(new URL('../src/AeonMatchPage.jsx',import.meta.url),'utf8')
+for(const source of [podPage,matchPage]){assert.ok(source.includes('agencyTimeline'));assert.ok(source.includes('Agency diagnostic'));assert.ok(source.includes('maxParticipationGap'));assert.ok(source.includes('firstMeaningfulAgencyTurn'));assert.ok(source.includes('firstMaterialPressureTurn'))}
+assert.ok(matchPage.includes('const predictionFrom=intel=>'))
+assert.equal(/predictionFrom=intel=>[^\n]*agency/i.test(matchPage),false,'Reality prediction must not absorb Agency in V1')
+assert.ok(podPage.includes('Agency is a structural participation diagnostic and is not included in the Game Quality score.'))
+assert.ok(matchPage.includes('Agency is a diagnostic only and does not alter the matching objective.'))
+
+console.log('AGENCY TIMELINE V1 OK — Threat-Answer V4 preserves worst-window arithmetic, Agency is user-visible and remains outside Game Quality/Reality scoring')
