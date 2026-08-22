@@ -29,6 +29,7 @@ function result(overrides={}){
 const cards=[
   {name:'Artifact Engine',type:'Artifact',oracle:'SECRET ORACLE: Artifacts you control have ward {1}.',tags:['artifact-payoff']},
   {name:'Grave Loop',type:'Creature',oracle:'Return target card from your graveyard to your hand.',tags:['recursion']},
+  {name:'Hidden Counter',type:'Instant',oracle:'Counter target spell.',tags:['counterspell'],interaction:4},
   {name:'Piece A',type:'Artifact',oracle:'',tags:[]},{name:'Piece B',type:'Creature',oracle:'',tags:[]},
 ]
 
@@ -40,6 +41,8 @@ assert.ok(highIntel.spof.dependencies.commander.score>lowIntel.spof.dependencies
 assert.ok(lowIntel.spof.dependencies.artifact.score>0)
 assert.equal(lowIntel.comboAccessibility.lines.length,1)
 assert.ok(lowIntel.vulnerability.classes.commanderRemoval.score>=0)
+assert.equal(lowIntel.answerProfile.classes.stack.count,1)
+assert.ok(lowIntel.threatProfile.threats.length>0)
 
 const shareable=buildShareableIntelligence(low,cards),shareText=JSON.stringify(shareable)
 assert.equal(shareable.privacy.decklist,false)
@@ -47,18 +50,24 @@ assert.equal(shareable.privacy.oracle,false)
 assert.equal(shareable.privacy.evidenceCards,false)
 assert.equal(shareText.includes('SECRET ORACLE'),false)
 assert.equal(shareText.includes('Artifact Engine'),false)
+assert.equal(shareText.includes('Hidden Counter'),false)
 assert.equal(shareText.includes('private evidence'),false)
+assert.equal(shareable.answerProfile.classes.stack.count,1)
 const shareRow={share_code:'abc123def456',deck_name:'Safe deck',commander_names:['Commander A'],median:48,p20:40,p80:57,peak:68,coverage:92,dimensions:low.dimensions,packages:low.packages,combo_summary:low.combos,product_intelligence:shareable,engine_version:'3.2.0',semantic_version:'test',iterations:3200}
 const roundtrip=roadmapResultFromShare(shareRow)
 assert.equal(roundtrip.spof.dependencies.commander.score,shareable.spof.dependencies.commander.score)
 assert.equal(roundtrip.horizon.curves.interaction.points.length,7)
+assert.equal(roundtrip.answerProfile.classes.stack.count,1)
+assert.ok(roundtrip.threatProfile.threats.length>0)
 
 const compatible=buildPodIntelligence([{result:low,cards},{result:result({profile:{median:49,floor:41,ceiling:58,peak:70}}),cards},{result:result({profile:{median:51,floor:42,ceiling:60,peak:72}}),cards},{result:result({profile:{median:50,floor:40,ceiling:59,peak:71}}),cards}])
 const mismatched=buildPodIntelligence([{result:high,cards},{result:low,cards},{result:low,cards},{result:low,cards}])
+assert.equal(compatible.threatAnswer.modelVersion,'threat-answer-v2')
 assert.ok(mismatched.podMatch.mismatch>compatible.podMatch.mismatch)
 assert.ok(mismatched.gameQuality.risk.score>=compatible.gameQuality.risk.score)
 assert.ok(mismatched.adaptiveRule0.questions.length<=3)
 assert.equal(mismatched.threatAnswer.decks.length,4)
+assert.ok(mismatched.threatAnswer.decks.some(d=>d.turns.some(x=>Array.isArray(x.answerClasses)&&x.answerClasses.length)))
 
 const players=[1,2,3,4,5,6,7,8].map((id,i)=>({id:`p${id}`,analysis:i<4?result({profile:{median:45+i,floor:36,ceiling:55,peak:66}}):result({profile:{median:70+(i-4),floor:60,ceiling:80,peak:92}})}))
 const matched=formPods(players)
@@ -98,4 +107,4 @@ assert.equal(summarizeRealityObservations(observations).count,12)
 assert.equal(calibrationReadiness(observations,{minGames:20,minPlaygroups:4}).ready,false)
 assert.equal(calibrationReadiness(observations,{minGames:10,minPlaygroups:3}).ready,true)
 
-console.log('P2-P7 ROADMAP MODELS OK — intelligence, privacy, pod quality, exact/large matchmaking, deck doctor and reality contracts')
+console.log('P2-P7 ROADMAP MODELS OK — intelligence, share privacy, class Threat-Answer V2, exact/large matchmaking, deck doctor and reality contracts')
