@@ -1,0 +1,26 @@
+name: P2-P7 product validation
+
+on:
+  push:
+    branches: [product-p2-p7-roadmap]
+  pull_request:
+    branches: [product-p0-p1]
+
+permissions:
+  contents: read
+
+jobs:
+  product:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install
+        run: npm install --no-audit --no-fund
+      - name: Product contracts
+        run: npm run test:product
+      - name: Build
+        run: npm run build
