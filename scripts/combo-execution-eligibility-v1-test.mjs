@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import fs from 'node:fs'
 import { buildComboExecutionEligibility,COMBO_EXECUTION_ELIGIBILITY_MODEL_VERSION } from '../src/engine/comboExecutionEligibility.js'
 import { buildComboAccessibility } from '../src/engine/comboAccessibility.js'
 import { buildThreatObjects,THREAT_OBJECT_MODEL_VERSION } from '../src/engine/threatObjects.js'
@@ -73,4 +74,9 @@ assert.equal(shared.privacy.comboPieceNames,false)
 for(const secret of [pieceA.name,pieceB.name,'Thoracle + Consultation','PRIVATE ORACLE A','PRIVATE ORACLE B'])assert.equal(text.includes(secret),false,`public execution-prerequisite payload leaked ${secret}`)
 assert.equal(/"cards"\s*:/.test(text),false)
 
-console.log('COMBO EXECUTION ELIGIBILITY V1 OK — structured blockers are deterministic, protection is contextual, Threat Profile V4 preserves threat arithmetic and public payloads stay sanitized')
+const workspace=fs.readFileSync(new URL('../src/ProductWorkspace.jsx',import.meta.url),'utf8')
+assert.ok(workspace.includes('Execution eligibility'))
+assert.ok(workspace.includes('strict blocker(s)'))
+assert.ok(workspace.includes('do not claim those requirements are absent in the real game'))
+
+console.log('COMBO EXECUTION ELIGIBILITY V1 OK — structured blockers are deterministic, protection is contextual, Threat Profile V4 preserves threat arithmetic, local diagnostics are explicit and public payloads stay sanitized')
