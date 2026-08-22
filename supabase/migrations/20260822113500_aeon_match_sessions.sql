@@ -50,14 +50,15 @@ as $$
 declare s public.match_sessions%rowtype; n integer;
 begin
   p_code:=lower(trim(coalesce(p_code,'')));p_share_code:=lower(trim(coalesce(p_share_code,'')));
-  select * into s from public.match_sessions where code=p_code;
+  select * into s from public.match_sessions where code=p_code for update;
   if not found or s.expires_at<now() then raise exception 'session_not_found'; end if;
   if s.status<>'open' then raise exception 'session_not_open'; end if;
   if not exists(select 1 from public.analysis_shares where share_code=p_share_code and revoked_at is null) then raise exception 'share_not_found'; end if;
+  if exists(select 1 from public.match_session_entries where session_code=p_code and share_code=p_share_code) then return jsonb_build_object('ok',true,'alreadyJoined',true,'code',p_code,'shareCode',p_share_code); end if;
   select count(*) into n from public.match_session_entries where session_code=p_code;
   if n>=s.max_players then raise exception 'session_full'; end if;
-  insert into public.match_session_entries(session_code,share_code) values(p_code,p_share_code) on conflict do nothing;
-  return jsonb_build_object('ok',true,'code',p_code,'shareCode',p_share_code);
+  insert into public.match_session_entries(session_code,share_code) values(p_code,p_share_code);
+  return jsonb_build_object('ok',true,'alreadyJoined',false,'code',p_code,'shareCode',p_share_code);
 end $$;
 
 create or replace function public.aeon_read_match_session(p_code text)
