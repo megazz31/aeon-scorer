@@ -1,3 +1,5 @@
+import { buildClassThreatAnswerTimeline } from './threatAnswerTimeline.js'
+
 const clamp=(n,a=0,b=100)=>Math.max(a,Math.min(b,n))
 const avg=xs=>xs.length?xs.reduce((s,x)=>s+x,0)/xs.length:0
 const level=n=>n>=70?'high':n>=40?'moderate':'low'
@@ -13,7 +15,7 @@ export function buildThreatAnswerTimeline(results=[]){
     const opponents=decks.filter((_,i)=>i!==index),answer=Math.round(avg(opponents.map(o=>pointAt(o,'interaction',turn))))
     const gap=Math.max(0,threat-answer)
     return {turn,threat,answer,gap,level:level(gap)}
-  })})),confidence:{productCalibration:'experimental'},notes:['Threat is a V1 proxy from burst/high-impact access plus engine access.','Answer is current-turn general interaction availability, not yet threat-class-specific.','P3 V2 must split stack/creature/artifact/enchantment/graveyard answer classes.']}
+  })})),confidence:{productCalibration:'experimental'},notes:['Threat is a V1 proxy from burst/high-impact access plus engine access.','Answer is current-turn general interaction availability; class-specific V2 is preferred when semantic profiles exist.']}
 }
 
 export function buildAdaptiveRule0(results=[]){
@@ -28,14 +30,15 @@ export function buildAdaptiveRule0(results=[]){
   return {modelVersion:'adaptive-rule0-v1',questions:unique,confidence:{productCalibration:'experimental'},notes:['Questions are generated only from material detected uncertainties.','Answers must affect matchmaking interpretation, not semantic truth.']}
 }
 
-export function buildAdvancedPodMatch(results=[]){
-  const decks=results.filter(Boolean),pairs=[]
+function threatExposureByDeck(timeline,decks){const out=decks.map(()=>0);for(const d of timeline?.decks||[])out[d.index]=Math.max(0,...(d.turns||[]).map(x=>Number(x.gap||0)));return out}
+export function buildAdvancedPodMatch(results=[],suppliedThreatTimeline=null){
+  const decks=results.filter(Boolean),pairs=[],threatTimeline=suppliedThreatTimeline||buildClassThreatAnswerTimeline(decks)||buildThreatAnswerTimeline(decks),threatExposure=threatExposureByDeck(threatTimeline,decks)
   for(let i=0;i<decks.length;i++)for(let j=i+1;j<decks.length;j++){
     const a=decks[i],b=decks[j],medianGap=Math.abs((a.profile?.median||0)-(b.profile?.median||0)),peakGap=Math.abs((a.profile?.peak||0)-(b.profile?.peak||0)),speedGap=Math.abs((a.dimensions?.speed||0)-(b.dimensions?.speed||0)),explosiveGap=Math.abs((a.dimensions?.explosiveness||0)-(b.dimensions?.explosiveness||0)),volGap=Math.abs((a.experience?.dimensions?.volatility?.score||0)-(b.experience?.dimensions?.volatility?.score||0)),overlap=rangeOverlap(a,b)
-    const frictionA=Math.max(0,...Object.values(a.friction?.signals||{}).map(x=>x.score||0)),frictionB=Math.max(0,...Object.values(b.friction?.signals||{}).map(x=>x.score||0)),frictionGap=Math.abs(frictionA-frictionB)
-    const mismatch=Math.round(clamp(medianGap*1.6+peakGap*.8+speedGap*.7+explosiveGap*.5+volGap*.35+frictionGap*.25+(100-overlap)*.35))
-    pairs.push({a:i,b:j,mismatch,level:level(mismatch),reasons:{medianGap,peakGap,speedGap,explosivenessGap:explosiveGap,volatilityGap:volGap,frictionGap,rangeOverlap:Math.round(overlap)}})
+    const frictionA=Math.max(0,...Object.values(a.friction?.signals||{}).map(x=>x.score||0)),frictionB=Math.max(0,...Object.values(b.friction?.signals||{}).map(x=>x.score||0)),frictionGap=Math.abs(frictionA-frictionB),threatGap=Math.max(threatExposure[i]||0,threatExposure[j]||0)
+    const mismatch=Math.round(clamp(medianGap*1.6+peakGap*.8+speedGap*.7+explosiveGap*.5+volGap*.35+frictionGap*.25+(100-overlap)*.35+threatGap*.35))
+    pairs.push({a:i,b:j,mismatch,level:level(mismatch),reasons:{medianGap,peakGap,speedGap,explosivenessGap:explosiveGap,volatilityGap:volGap,frictionGap,rangeOverlap:Math.round(overlap),threatAnswerExposure:Math.round(threatGap)}})
   }
   const worst=[...pairs].sort((a,b)=>b.mismatch-a.mismatch)[0]||null,score=Math.round(avg(pairs.map(p=>p.mismatch)))
-  return {modelVersion:'advanced-pod-match-v1',deckCount:decks.length,mismatch:score,level:level(score),pairs,worstPair:worst,confidence:{productCalibration:'experimental'},notes:['Compatibility remains decomposed; the aggregate is a convenience summary, not semantic truth.','Threat-class-specific answer matching is deferred to P3 V2.']}
+  return {modelVersion:'advanced-pod-match-v2',deckCount:decks.length,mismatch:score,level:level(score),pairs,worstPair:worst,threatAnswerModel:threatTimeline?.modelVersion||null,confidence:{productCalibration:'experimental'},notes:['Compatibility remains decomposed; the aggregate is a convenience summary, not semantic truth.','Threat–Answer exposure is now an explicit independent mismatch term and remains visible in pair reasons.']}
 }
