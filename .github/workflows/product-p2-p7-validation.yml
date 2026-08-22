@@ -14,9 +14,9 @@ permissions:
   contents: read
 
 jobs:
-  product:
+  quality:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -24,7 +24,17 @@ jobs:
           node-version: 22
       - name: Install
         run: npm install --no-audit --no-fund
+      - name: Smoke
+        run: npm run smoke
+      - name: Semantic contracts
+        run: npm run test:semantic
+      - name: Metamorphic contracts
+        run: npm run test:metamorphic
       - name: Product contracts
         run: npm run test:product
+      - name: Public precon contract
+        run: npm run test:public-precons
+      - name: Adversarial audit
+        run: npm run audit
       - name: Build
         run: npm run build
