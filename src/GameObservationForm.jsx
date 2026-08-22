@@ -5,7 +5,7 @@ import { buildPodIntelligence } from './engine/roadmapEngine.js'
 
 const lang=()=>localStorage.getItem('aeon-lang')==='fr'?'fr':'en'
 const t=(en,fr)=>lang()==='fr'?fr:en
-export default function GameObservationForm({rows=[],podModelVersion='pod-intelligence-v1',prediction=null}){
+export default function GameObservationForm({rows=[],podModelVersion='pod-intelligence-v2',prediction=null}){
   const[turnBand,setTurnBand]=useState('5-7'),[winType,setWinType]=useState('combat'),[balance,setBalance]=useState('balanced'),[dominantEvent,setDominantEvent]=useState('normal-game'),[state,setState]=useState(''),[busy,setBusy]=useState(false)
   const effectivePrediction=useMemo(()=>{if(prediction?.riskScore!=null)return prediction;const advanced=rows.length>1?buildPodIntelligence(rows.map(roadmapResultFromShare)):null,worst=advanced?.threatAnswer?.decks?.flatMap(d=>d.turns||[]).reduce((m,x)=>Math.max(m,Number(x.gap||0)),0)||0;return {riskScore:advanced?.gameQuality?.risk?.score||0,riskLevel:advanced?.gameQuality?.risk?.level||'low',podMismatch:advanced?.podMatch?.mismatch||0,threatGap:worst}},[rows,prediction])
   async function submit(){setBusy(true);setState('');try{await submitGameObservation({shareCodes:rows.map(r=>r.share_code).filter(Boolean),podModelVersion,engineVersions:rows.map(r=>r.engine_version).filter(Boolean),semanticVersions:rows.map(r=>r.semantic_version).filter(Boolean),prediction:effectivePrediction,turnBand,winType,balance,dominantEvent});setState(t('Observation recorded. Thank you.','Observation enregistrée. Merci.'))}catch(e){setState(e.message||String(e))}finally{setBusy(false)}}
