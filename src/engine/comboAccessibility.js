@@ -19,7 +19,7 @@ const COMBO_BOUNDARIES={
 
 function structuralLine(result,combo){
   const names=new Set((result.commanderNames||[]).map(key)),pieces=combo.cards||[],commanderPieces=pieces.filter(n=>names.has(key(n))).length,tutors=Number(result.roles?.tutors||0)+Number(result.roles?.repeatableTutors||0),draw=Number(result.roles?.draw||0),fastMana=Number(result.roles?.fastMana||0),burstT5=result.horizon?.curves?.burst?.points?.find(x=>x.turn===5)?.value||0,piecePenalty=Math.max(0,pieces.length-2)*16,base=34+tutors*3+draw*.8+fastMana*2+burstT5*.12+commanderPieces*8-piecePenalty,score=Math.round(clamp(base))
-  return {score,level:level(score),commanderPieces,method:'structural-access-proxy-v1',signals:{tutors,draw,fastMana,burstT5}}
+  return {score,level:level(score),commanderPieces,method:'structural-access-proxy',signals:{tutors,draw,fastMana,burstT5}}
 }
 
 function chooseRatio(n,k){
