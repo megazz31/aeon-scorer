@@ -16,7 +16,7 @@ export function buildThreatAnswerTimeline(results=[]){
     const opponents=decks.filter((_,i)=>i!==index),answer=Math.round(avg(opponents.map(o=>pointAt(o,'interaction',turn))))
     const gap=Math.max(0,threat-answer)
     return {turn,threat,answer,gap,level:level(gap)}
-  })})),confidence:{productCalibration:'experimental'},notes:['Threat is a V1 proxy from burst/high-impact access plus engine access.','Answer is current-turn general interaction availability; class-specific V2 is preferred when semantic profiles exist.']}
+  })})),confidence:{productCalibration:'experimental'},notes:['Threat is a V1 proxy from burst/high-impact access plus engine access.','Answer is general interaction access; class-specific Threat–Answer is preferred when semantic profiles exist.']}
 }
 
 export function buildAdaptiveRule0(results=[],answers={}){
@@ -42,6 +42,6 @@ export function buildAdvancedPodMatch(results=[],suppliedThreatTimeline=null,int
     const mismatch=Math.round(clamp(medianGap*1.6+peakGap*.8+speedGap*.7+explosiveGap*.5+volGap*.35+frictionGap*.25+(100-overlap)*.35+threatGap*.35+intentPressureGap*.30+intentConflict*.55))
     pairs.push({a:i,b:j,mismatch,level:level(mismatch),reasons:{medianGap,peakGap,speedGap,explosivenessGap:explosiveGap,volatilityGap:volGap,frictionGap,rangeOverlap:Math.round(overlap),threatAnswerExposure:Math.round(threatGap),declaredIntentGap:Math.round(intentPressureGap),declaredIntentConflict:Math.round(intentConflict)}})
   }
-  const worst=[...pairs].sort((a,b)=>b.mismatch-a.mismatch)[0]||null,score=Math.round(avg(pairs.map(p=>p.mismatch)))
-  return {modelVersion:intentOverlay?.answersApplied?'advanced-pod-match-v3':'advanced-pod-match-v2',deckCount:decks.length,mismatch:score,level:level(score),pairs,worstPair:worst,threatAnswerModel:threatTimeline?.modelVersion||null,intentModel:intentOverlay?.modelVersion||null,confidence:{productCalibration:'experimental',declaredIntent:intentOverlay?.answersApplied?'applied':'not-applied'},notes:['Compatibility remains decomposed; the aggregate is a convenience summary, not semantic truth.','Threat–Answer exposure remains an explicit mismatch term.','When supplied, Rule 0 answers affect only declared experience compatibility through a separate intent overlay; objective deck capability is unchanged.']}
+  const worst=[...pairs].sort((a,b)=>b.mismatch-a.mismatch)[0]||null,score=Math.round(avg(pairs.map(p=>p.mismatch))),usesAnswerTimingV2=threatTimeline?.modelVersion==='threat-answer-v3'
+  return {modelVersion:usesAnswerTimingV2?'advanced-pod-match-v4':intentOverlay?.answersApplied?'advanced-pod-match-v3':'advanced-pod-match-v2',deckCount:decks.length,mismatch:score,level:level(score),pairs,worstPair:worst,threatAnswerModel:threatTimeline?.modelVersion||null,intentModel:intentOverlay?.modelVersion||null,confidence:{productCalibration:'experimental',declaredIntent:intentOverlay?.answersApplied?'applied':'not-applied',answerTiming:usesAnswerTimingV2?'class-specific-v2':'legacy'},notes:['Compatibility remains decomposed; the aggregate is a convenience summary, not semantic truth.','Threat–Answer exposure remains an explicit mismatch term.','When supplied, Rule 0 answers affect only declared experience compatibility through a separate intent overlay; objective deck capability is unchanged.','V4 denotes that Threat–Answer exposure is fed by class-specific Answer Timing V2.']}
 }
