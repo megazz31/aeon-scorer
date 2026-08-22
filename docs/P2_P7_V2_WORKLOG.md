@@ -59,10 +59,30 @@ It reports the class, score, level, critical turn and threat id. It is deliberat
 
 Answer Debt is visible in `/pod` and the leading debt is shown for every generated `/match` table.
 
+### Direct local Moxfield / Archidekt Match import
+
+Local `/match` now accepts a mixture of:
+
+- versioned Aeon share codes/links; and
+- public Moxfield / Archidekt deck URLs.
+
+External URLs reuse the existing audited `/api/import-deck` normalizer, then resolve cards through the existing Scryfall client and run an **in-memory 1,800-sequence analysis**. No imported decklist is persisted by this flow.
+
+Safety / product boundaries:
+
+- maximum 8 external deck URLs in one local Match batch;
+- up to 64 total entries when the rest are versioned Aeon shares;
+- persistent LGS sessions remain share-only;
+- local external imports are clearly labelled as quick local analyses;
+- a table containing any non-persisted local import is **not eligible for Aeon Reality submission**, because it lacks the versioned public-share identity required by the calibration contract;
+- users can create normal versioned Aeon shares first if they want the game included in Reality data.
+
+This reduces casual/local onboarding friction without weakening the audited persistent-session or P7 evidence boundaries.
+
 ## Validation
 
-Validated non-document code commit: `385be2c7b022e447d10bc641752a61a4dacafa26`  
-Workflow: `P2-P7 product validation #198`  
+Latest validated non-document code commit: `949bf288d89e76e94f4cf2dd8f45a939871d0024`  
+Workflow: `P2-P7 product validation #206`  
 Conclusion: **SUCCESS**
 
 Passed together:
@@ -75,7 +95,7 @@ Passed together:
 6. Adversarial audit;
 7. Build.
 
-New regression coverage proves:
+Regression coverage proves:
 
 - Rule 0 answers can change compatibility while the underlying deck profile/combos remain identical;
 - rejected land-denial acceptance creates an explicit product-intent conflict;
@@ -83,9 +103,10 @@ New regression coverage proves:
 - an exact small-N Aeon Match result has no improving single cross-table swap;
 - Answer Debt is produced on a structurally under-covered threat;
 - `/match` is wired to Pod Repair, `buildPodIntelligence` and exact pre-game Reality prediction;
-- `/pod` is wired to adaptive Rule 0 and exact prediction persistence.
-
-The branch HEAD after validation only removes a temporary documentation marker; comparison from `385be2c…` to `35bd708…` contains no code change.
+- `/pod` is wired to adaptive Rule 0 and exact prediction persistence;
+- direct local Match imports reuse `/api/import-deck`, Scryfall resolution and `analyzePower`;
+- direct external imports are capped at 8 and stay non-persistent;
+- Reality is disabled when a generated table is not fully backed by versioned Aeon shares.
 
 ## Still deliberately pending
 
@@ -96,4 +117,4 @@ The branch HEAD after validation only removes a temporary documentation marker; 
 5. Causal non-commander SPOF suppression.
 6. Exact Combo Accessibility T5/T7/T9.
 7. Real-world P7 calibration.
-8. LGS direct Moxfield/Archidekt session joining remains a design/performance/security task; the current import API can be reused, but anonymous session persistence still expects an Aeon share and should not be bypassed with an unaudited ingest path.
+8. Persistent LGS direct Moxfield/Archidekt session joining remains a separate design/performance/security task; anonymous persistent session ingestion still expects an Aeon share and should not be bypassed with an unaudited storage path.
