@@ -21,9 +21,9 @@ export function explainVariantDelta(base={},variant={}){
 }
 
 function objectiveValue(candidate,objective){
-  const r=candidate.analysis||candidate
-  if(objective.type==='reduce-peak-preserve-median')return Math.abs((r.profile?.median||0)-objective.targetMedian)*Number(objective.medianPenalty||2)+(r.profile?.peak||0)
-  if(objective.type==='reduce-commander-dependency')return (r.spof?.dependencies?.commander?.score||0)+Math.abs((r.profile?.median||0)-Number(objective.targetMedian??r.profile?.median||0))*Number(objective.medianPenalty||1)
+  const r=candidate.analysis||candidate,targetMedian=Number(objective.targetMedian??r.profile?.median??0)
+  if(objective.type==='reduce-peak-preserve-median')return Math.abs((r.profile?.median||0)-targetMedian)*Number(objective.medianPenalty||2)+(r.profile?.peak||0)
+  if(objective.type==='reduce-commander-dependency')return (r.spof?.dependencies?.commander?.score||0)+Math.abs((r.profile?.median||0)-targetMedian)*Number(objective.medianPenalty||1)
   if(objective.type==='increase-interaction')return -(r.dimensions?.interaction||0)+Math.max(0,Number(objective.minMedian||0)-(r.profile?.median||0))*3
   if(objective.type==='target-pod')return Number(candidate.podMismatch??100)
   if(objective.path)return Number(get(r,objective.path)??0)*Number(objective.direction==='max'?-1:1)
@@ -31,6 +31,8 @@ function objectiveValue(candidate,objective){
 }
 
 export function selectConstrainedVariant(base={},candidates=[],objective={type:'reduce-peak-preserve-median'},constraints={}){
+  const effectiveObjective={...objective}
+  if(['reduce-peak-preserve-median','reduce-commander-dependency'].includes(effectiveObjective.type)&&effectiveObjective.targetMedian==null)effectiveObjective.targetMedian=Number(base.profile?.median||0)
   const valid=candidates.filter(c=>c?.analysis||c?.profile).filter(c=>{
     const r=c.analysis||c
     if(constraints.minMedian!=null&&(r.profile?.median||0)<constraints.minMedian)return false
@@ -38,7 +40,7 @@ export function selectConstrainedVariant(base={},candidates=[],objective={type:'
     if(constraints.maxPeak!=null&&(r.profile?.peak||0)>constraints.maxPeak)return false
     if(constraints.maxCommanderDependency!=null&&(r.spof?.dependencies?.commander?.score||0)>constraints.maxCommanderDependency)return false
     return true
-  }).map(c=>({...c,__objective:objectiveValue(c,objective)})).sort((a,b)=>a.__objective-b.__objective)
+  }).map(c=>({...c,__objective:objectiveValue(c,effectiveObjective)})).sort((a,b)=>a.__objective-b.__objective)
   const finalists=valid.slice(0,5).map(c=>({id:c.id||c.name||null,objective:c.__objective,analysis:c.analysis||c,explanation:explainVariantDelta(base,c.analysis||c)}))
-  return {modelVersion:'deck-doctor-v1',objective,constraints,finalists,best:finalists[0]||null,confidence:{candidateGeneration:'external',evaluation:'analysis-derived',productCalibration:'experimental'},notes:['V1 optimizes only among supplied legal/analyzed candidates.','Card candidate generation, legality/budget filtering and full-run confirmation remain upstream responsibilities.']}
+  return {modelVersion:'deck-doctor-v1',objective:effectiveObjective,constraints,finalists,best:finalists[0]||null,confidence:{candidateGeneration:'external',evaluation:'analysis-derived',productCalibration:'experimental'},notes:['V1 optimizes only among supplied legal/analyzed candidates.','Card candidate generation, legality/budget filtering and full-run confirmation remain upstream responsibilities.']}
 }
