@@ -35,6 +35,6 @@ export function buildPodIntelligence(decks=[]){
     const result=d.result||d.analysis||d,cards=d.cards||[],deckIntelligence=d.deckIntelligence||suppliedDeckIntelligence(result)||buildDeckIntelligence(result,cards)
     return {...result,...deckIntelligence}
   })
-  const threatAnswer=buildClassThreatAnswerTimeline(enriched)||buildThreatAnswerTimeline(enriched),adaptiveRule0=buildAdaptiveRule0(enriched),podMatch=buildAdvancedPodMatch(enriched),gameQuality=buildGameQualityForecast(enriched,podMatch,threatAnswer)
-  return {modelVersion:'pod-intelligence-v1',decks:enriched,threatAnswer,adaptiveRule0,podMatch,gameQuality,confidence:{productCalibration:'experimental'},notes:['All P3/P4 conclusions remain evidence-bearing and experimental until P7 calibration.']}
+  const threatAnswer=buildClassThreatAnswerTimeline(enriched)||buildThreatAnswerTimeline(enriched),adaptiveRule0=buildAdaptiveRule0(enriched),podMatch=buildAdvancedPodMatch(enriched,threatAnswer),gameQuality=buildGameQualityForecast(enriched,podMatch,threatAnswer)
+  return {modelVersion:'pod-intelligence-v2',decks:enriched,threatAnswer,adaptiveRule0,podMatch,gameQuality,confidence:{productCalibration:'experimental'},notes:['Threat–Answer exposure is included in Pod Match V2.','All P3/P4 conclusions remain evidence-bearing and experimental until P7 calibration.']}
 }
