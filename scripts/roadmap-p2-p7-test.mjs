@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { buildDeckIntelligence,buildPodIntelligence,buildShareableIntelligence } from '../src/engine/roadmapEngine.js'
+import { buildAdvancedPodMatch } from '../src/engine/podIntelligence.js'
 import { formPods,repairPod } from '../src/engine/matchmaking.js'
 import { explainVariantDelta,selectConstrainedVariant } from '../src/engine/deckDoctor.js'
 import { validateGameObservation,summarizeRealityObservations,calibrationReadiness } from '../src/engine/realityModel.js'
@@ -63,11 +64,25 @@ const players=[1,2,3,4,5,6,7,8].map((id,i)=>({id:`p${id}`,analysis:i<4?result({p
 const matched=formPods(players)
 assert.equal(matched.pods.length,2)
 assert.equal(matched.unassigned.length,0)
+assert.equal(matched.algorithm,'exact-partition-small-n')
+assert.equal(matched.optimality,'exact-for-current-objective')
 assert.deepEqual(matched.pods.flatMap(p=>p.players.map(x=>x.id)).sort(),players.map(x=>x.id).sort())
+function choose4WithFirst(xs){const first=xs[0],rest=xs.slice(1),out=[];for(let a=0;a<rest.length;a++)for(let b=a+1;b<rest.length;b++)for(let c=b+1;c<rest.length;c++)out.push([first,rest[a],rest[b],rest[c]]);return out}
+let bruteBest=Infinity
+for(const pod of choose4WithFirst(players)){const chosen=new Set(pod),other=players.filter(p=>!chosen.has(p)),score=buildAdvancedPodMatch(pod.map(p=>p.analysis)).mismatch+buildAdvancedPodMatch(other.map(p=>p.analysis)).mismatch;bruteBest=Math.min(bruteBest,score)}
+assert.equal(matched.totalMismatch,bruteBest)
 const badPod=[players[0],players[1],players[2],players[7]],alts=[players[3],players[4],players[5],players[6]]
 const repair=repairPod(badPod,alts)
 assert.ok(repair.repairs.length>0)
 assert.ok(repair.repairs[0].after<repair.repairs[0].before)
+
+const players64=Array.from({length:64},(_,i)=>({id:`large-${String(i).padStart(2,'0')}`,analysis:result({profile:{median:35+(i%30),floor:28+(i%28),ceiling:48+(i%30),peak:60+(i%35)},dimensions:{speed:30+(i*7)%55,explosiveness:25+(i*11)%65,interaction:20+(i*13)%65}})}))
+const largeA=formPods(players64),largeB=formPods(players64)
+assert.equal(largeA.pods.length,16)
+assert.equal(largeA.algorithm,'deterministic-greedy-local-swap')
+assert.equal(largeA.optimality,'heuristic')
+assert.deepEqual(largeA.pods.map(p=>p.players.map(x=>x.id)),largeB.pods.map(p=>p.players.map(x=>x.id)))
+assert.equal(largeA.totalMismatch,largeB.totalMismatch)
 
 const base=result({profile:{median:50,floor:40,ceiling:60,peak:85}}),variantA=result({profile:{median:50,floor:40,ceiling:59,peak:72}}),variantB=result({profile:{median:43,floor:35,ceiling:52,peak:60}})
 const explanation=explainVariantDelta(base,variantA)
@@ -83,4 +98,4 @@ assert.equal(summarizeRealityObservations(observations).count,12)
 assert.equal(calibrationReadiness(observations,{minGames:20,minPlaygroups:4}).ready,false)
 assert.equal(calibrationReadiness(observations,{minGames:10,minPlaygroups:3}).ready,true)
 
-console.log('P2-P7 ROADMAP MODELS OK — intelligence, privacy, pod quality, matchmaking, deck doctor and reality contracts')
+console.log('P2-P7 ROADMAP MODELS OK — intelligence, privacy, pod quality, exact/large matchmaking, deck doctor and reality contracts')
