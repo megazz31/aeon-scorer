@@ -93,4 +93,16 @@ assert.ok(podPage.includes('rule0Answers'))
 assert.ok(podPage.includes('rule0AnswerKey'))
 assert.ok(podPage.includes('prediction={observationPrediction}'))
 
-console.log('P2-P7 V2 OK — adaptive Rule 0 overlay, Answer Debt, cross-table repair audit and Match Reality wiring')
+// Direct URL Match import reuses the audited importer locally, is bounded, non-persistent and excluded from Reality.
+assert.ok(matchPage.includes("fetch('/api/import-deck'"))
+assert.ok(matchPage.includes('parseDecklist'))
+assert.ok(matchPage.includes('fetchCards'))
+assert.ok(matchPage.includes('analyzePower'))
+assert.ok(matchPage.includes('1800'))
+assert.ok(matchPage.includes('externalCount>8'))
+assert.ok(matchPage.includes("source:'local-url'"))
+assert.ok(matchPage.includes('shareBacked'))
+assert.ok(matchPage.includes('Reality feedback is disabled'))
+assert.ok(matchPage.includes('Persistent event sessions use versioned Aeon shares'))
+
+console.log('P2-P7 V2 OK — adaptive Rule 0 overlay, Answer Debt, cross-table repair audit, Match Reality and bounded local URL import')
