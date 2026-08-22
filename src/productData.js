@@ -8,7 +8,6 @@ export const GAME_CHANGERS_SOURCE={
 }
 export const GAME_CHANGER_REVIEW_MAX_AGE_DAYS=120
 
-// Official October 2025 list + February 9, 2026 additions Farewell and Biorhythm; reviewed against the live Wizards Commander page on 2026-08-21.
 export const GAME_CHANGERS=new Set([
   'Drannith Magistrate','Humility','Serra’s Sanctum',"Serra's Sanctum",'Smothering Tithe','Enlightened Tutor',"Teferi's Protection",
   'Consecrated Sphinx','Cyclonic Rift','Force of Will','Fierce Guardianship','Gifts Ungiven','Intuition','Mystical Tutor','Narset, Parter of Veils','Rhystic Study',"Thassa's Oracle",
@@ -44,7 +43,11 @@ export function deckDiff(before='',after=''){
 }
 
 const num=x=>Number.isFinite(Number(x))?Number(x):0
-export function normalizedShare(row){return {code:row.share_code||row.code,deckName:row.deck_name||row.deckName||'Deck',commanderNames:row.commander_names||row.commanderNames||[],median:num(row.median),p20:num(row.p20),p80:num(row.p80),peak:num(row.peak),coverage:num(row.coverage),dimensions:row.dimensions||{},packages:row.packages||[],combos:row.combo_summary||row.combos||[],gameChangers:row.game_changers||row.gameChangers||[],bracketSignals:row.bracket_signals||row.bracketSignals||{},engineVersion:row.engine_version||row.engineVersion,semanticVersion:row.semantic_version||row.semanticVersion,iterations:num(row.iterations)}}
+export function normalizedShare(row){return {code:row.share_code||row.code,deckName:row.deck_name||row.deckName||'Deck',commanderNames:row.commander_names||row.commanderNames||[],median:num(row.median),p20:num(row.p20),p80:num(row.p80),peak:num(row.peak),coverage:num(row.coverage),dimensions:row.dimensions||{},packages:row.packages||[],combos:row.combo_summary||row.combos||[],gameChangers:row.game_changers||row.gameChangers||[],bracketSignals:row.bracket_signals||row.bracketSignals||{},productIntelligence:row.product_intelligence||row.productIntelligence||{},engineVersion:row.engine_version||row.engineVersion,semanticVersion:row.semantic_version||row.semanticVersion,iterations:num(row.iterations)}}
+export function roadmapResultFromShare(row){
+  const d=normalizedShare(row),pi=d.productIntelligence||{},maxTurn=Math.max(0,...Object.values(pi.horizon?.curves||{}).flatMap(c=>(c.points||[]).map(p=>Number(p.turn)||0)))||7
+  return {profile:{median:d.median,floor:d.p20,ceiling:d.p80,peak:d.peak,coverage:d.coverage,commanderDelta:0},dimensions:d.dimensions,packages:d.packages,combos:d.combos,commanderNames:d.commanderNames,experience:pi.experience||{dimensions:{}},friction:pi.friction||{signals:{}},horizon:pi.horizon||{curves:{}},spof:pi.spof||null,comboAccessibility:pi.comboAccessibility||null,vulnerability:pi.vulnerability||null,answerProfile:pi.answerProfile||null,threatProfile:pi.threatProfile||null,methodology:{maxTurn},shareCode:d.code,deckName:d.deckName}
+}
 
 export const POD_ASYMMETRY_THRESHOLDS={peak:15,dispersion:10,explosiveness:20,speed:20,consistency:20}
 const dimensionGap=(a,b,key)=>Math.abs(num(a?.dimensions?.[key])-num(b?.dimensions?.[key]))

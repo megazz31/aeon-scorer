@@ -1,0 +1,40 @@
+name: P2-P7 product validation
+
+on:
+  push:
+    branches: [product-p2-p7-roadmap]
+    paths-ignore:
+      - 'docs/PLAN.md'
+  pull_request:
+    branches: [product-p0-p1]
+    paths-ignore:
+      - 'docs/PLAN.md'
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install
+        run: npm install --no-audit --no-fund
+      - name: Smoke
+        run: npm run smoke
+      - name: Semantic contracts
+        run: npm run test:semantic
+      - name: Metamorphic contracts
+        run: npm run test:metamorphic
+      - name: Product contracts
+        run: npm run test:product
+      - name: Public precon contract
+        run: npm run test:public-precons
+      - name: Adversarial audit
+        run: npm run audit
+      - name: Build
+        run: npm run build
