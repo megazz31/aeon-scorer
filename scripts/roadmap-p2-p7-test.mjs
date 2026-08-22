@@ -3,7 +3,7 @@ import { buildDeckIntelligence,buildPodIntelligence,buildShareableIntelligence }
 import { buildAdvancedPodMatch } from '../src/engine/podIntelligence.js'
 import { formPods,repairPod } from '../src/engine/matchmaking.js'
 import { explainVariantDelta,selectConstrainedVariant } from '../src/engine/deckDoctor.js'
-import { validateGameObservation,summarizeRealityObservations,calibrationReadiness } from '../src/engine/realityModel.js'
+import { validateGameObservation,summarizeRealityObservations,evaluateRealityCalibration,calibrationReadiness } from '../src/engine/realityModel.js'
 import { roadmapResultFromShare } from '../src/productData.js'
 
 function result(overrides={}){
@@ -99,12 +99,30 @@ assert.equal(explanation.changes.peak,-13)
 const doctor=selectConstrainedVariant(base,[{id:'A',analysis:variantA},{id:'B',analysis:variantB}],{type:'reduce-peak-preserve-median'},{minMedian:47})
 assert.equal(doctor.best.id,'A')
 
-const valid=validateGameObservation({turnBand:'5-7',winType:'combat',balance:'balanced',dominantEvent:'normal-game',podModelVersion:'pod-intelligence-v1',playgroupKey:'g1'})
+const predictionFields={predictedRiskScore:20,predictedRiskLevel:'low',predictedPodMismatch:18,predictedThreatGap:12}
+const valid=validateGameObservation({turnBand:'5-7',winType:'combat',balance:'balanced',dominantEvent:'normal-game',podModelVersion:'pod-intelligence-v1',podFingerprint:'1'.padStart(64,'0'),...predictionFields})
 assert.equal(valid.ok,true)
-assert.equal(validateGameObservation({turnBand:'bad',winType:'combat',balance:'balanced',podModelVersion:'x'}).ok,false)
-const observations=Array.from({length:12},(_,i)=>({turnBand:'5-7',winType:'combat',balance:i%4?'balanced':'unbalanced',dominantEvent:i%4?'normal-game':'runaway-start',podModelVersion:'pod-intelligence-v1',playgroupKey:`g${i%3}`}))
-assert.equal(summarizeRealityObservations(observations).count,12)
-assert.equal(calibrationReadiness(observations,{minGames:20,minPlaygroups:4}).ready,false)
-assert.equal(calibrationReadiness(observations,{minGames:10,minPlaygroups:3}).ready,true)
+assert.equal(validateGameObservation({turnBand:'bad',winType:'combat',balance:'balanced',dominantEvent:'normal-game',podModelVersion:'x',...predictionFields}).ok,false)
+assert.equal(validateGameObservation({turnBand:'5-7',winType:'combat',balance:'balanced',dominantEvent:'normal-game',podModelVersion:'x'}).ok,false)
 
-console.log('P2-P7 ROADMAP MODELS OK — intelligence, share privacy, class Threat-Answer V2, exact/large matchmaking, deck doctor and reality contracts')
+const observations=Array.from({length:12},(_,i)=>{
+  const severe=i%4===0,pod=String((i%3)+1).padStart(64,'0')
+  return {turnBand:'5-7',winType:severe?'combo':'combat',balance:severe?'unbalanced':'balanced',dominantEvent:severe?'unanswered-combo':'normal-game',podModelVersion:'pod-intelligence-v1',podFingerprint:pod,predictedRiskScore:severe?82:18,predictedRiskLevel:severe?'high':'low',predictedPodMismatch:severe?76:20,predictedThreatGap:severe?72:14}
+})
+const realitySummary=summarizeRealityObservations(observations),calibration=evaluateRealityCalibration(observations)
+assert.equal(realitySummary.count,12)
+assert.equal(realitySummary.distinctPods,3)
+assert.equal(calibration.count,12)
+assert.equal(calibration.auc,1)
+assert.ok(calibration.brier<calibration.baselineBrier)
+assert.ok(calibration.brierImprovement>0)
+assert.ok(calibration.calibrationMae>=0&&calibration.calibrationMae<=1)
+assert.equal(calibration.bands.find(x=>x.band==='high').count,3)
+assert.equal(calibrationReadiness(observations,{minGames:20,minDistinctPods:3}).ready,false)
+const ready=calibrationReadiness(observations,{minGames:10,minDistinctPods:3})
+assert.equal(ready.ready,true)
+assert.equal(ready.requirements.holdoutRequired,true)
+assert.equal(ready.requirements.baselineComparisonRequired,true)
+assert.equal(ready.requirements.calibrationCurveRequired,true)
+
+console.log('P2-P7 ROADMAP MODELS OK — intelligence, share privacy, class Threat-Answer V2, exact/large matchmaking, deck doctor and reality calibration contracts')
