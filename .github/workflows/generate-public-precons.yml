@@ -6,6 +6,8 @@ on:
       - 'scripts/generate-public-precons.mjs'
       - 'scripts/update-public-precon-doc.mjs'
       - 'scripts/public-precon-contract-test.mjs'
+      - 'scripts/sentinel-precons-test.mjs'
+      - 'scripts/semantic-precon-delta.mjs'
       - 'src/engine/**'
       - 'src/version.js'
       - '.github/workflows/generate-public-precons.yml'
@@ -41,10 +43,13 @@ jobs:
             echo "Snapshot attempt ${attempt}/3"
             git fetch origin public-precon-library
             git reset --hard origin/public-precon-library
+            baseline=$(git rev-parse HEAD^)
 
             npm run precons:generate
             node scripts/update-public-precon-doc.mjs
+            npm run test:semantic:fast
             npm run test:public-precons
+            node scripts/semantic-precon-delta.mjs "$baseline"
 
             git add public/precons docs/PUBLIC_PRECONS.md
             if git diff --cached --quiet; then
@@ -62,3 +67,11 @@ jobs:
 
           echo "Could not publish a snapshot derived from the current branch after 3 attempts."
           exit 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: semantic-precon-delta
+          path: |
+            calibration/semantic-precon-delta.json
+            calibration/semantic-precon-delta.md
+          if-no-files-found: warn

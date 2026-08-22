@@ -128,14 +128,16 @@ assert.deepEqual(sourceColors(card('Share the Spoils','Enchantment',"During each
 assert.deepEqual(sourceColors(card('Arcane Signet','Artifact','{T}: Add one mana of any color in your commander’s color identity.')),['W','U','B','R','G'])
 assert.deepEqual(sourceColors(card('Fertile Ground','Enchantment — Aura','Whenever enchanted land is tapped for mana, its controller adds an additional one mana of any color.',{producedMana:['W','U','B','R','G']})),['W','U','B','R','G'])
 
-// Keyword counter producers and payoffs without explicit standard phrasing
+// Keyword counter producers and payoffs without explicit standard phrasing.
 assert.equal(has(card('Fathom Mage','Creature — Human Wizard','Evolve\nWhenever a +1/+1 counter is put on this creature, you may draw a card.'),'counter-producer'),true)
 assert.equal(has(card('Gyre Sage','Creature — Elf Druid','Evolve\n{T}: Add {G} for each +1/+1 counter on this creature.'),'counter-producer'),true)
 assert.equal(has(card('Dreadhorde Invasion','Enchantment','At the beginning of your upkeep, you lose 1 life and amass Zombies 1.'),'counter-producer'),true)
 assert.equal(has(card('Dreadhorde Invasion','Enchantment','At the beginning of your upkeep, you lose 1 life and amass Zombies 1.'),'tokens'),true)
 assert.equal(has(card('Together Forever','Enchantment','When this enchantment enters, support 2.'),'counter-producer'),true)
 assert.equal(has(card('Elite Scaleguard','Creature — Human Soldier','When this creature enters, bolster 2.'),'counter-producer'),true)
-assert.equal(has(card('Akki Battle Squad','Creature — Goblin Samurai','Whenever one or more modified creatures you control attack, untap all modified creatures you control.'),'counter-payoff'),true)
+const akki=card('Akki Battle Squad','Creature — Goblin Samurai','Whenever one or more modified creatures you control attack, untap all modified creatures you control.')
+assert.equal(has(akki,'modified-payoff'),true)
+assert.equal(has(akki,'counter-payoff'),false)
 assert.equal(has(card('Idol of Oblivion','Artifact','{T}: Draw a card. Activate only if you created a token this turn.'),'token-payoff'),true)
 assert.equal(has(card('Thalisse, Reverent Medium','Legendary Creature — Human Wizard','At the beginning of each end step, create X 1/1 white Spirit creature tokens with flying, where X is the number of tokens you created this turn.'),'token-payoff'),true)
 

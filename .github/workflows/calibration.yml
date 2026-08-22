@@ -24,8 +24,8 @@ jobs:
           EOF
       - name: Smoke test
         run: npm run smoke
-      - name: Micro semantic truth tests
-        run: npm run test:semantic
+      - name: Semantic truth + sentinel precons
+        run: npm run test:semantic:fast
       - name: Metamorphic independent verification
         run: npm run test:metamorphic
       - name: Adversarial audit
