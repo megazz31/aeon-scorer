@@ -18,7 +18,7 @@
 
 | Phase | Focus | Status |
 |---|---|---|
-| P2 | Experience Intelligence | **IN PROGRESS — Fingerprint V1 implemented** |
+| P2 | Experience Intelligence | **IN PROGRESS — Fingerprint V1 + Friction V1 implemented** |
 | P3 | Pod Intelligence | PLANNED |
 | P4 | Game Quality Engine | PLANNED |
 | P5 | Aeon Match | PLANNED |
@@ -62,17 +62,45 @@
 - Validation run `P2-P7 product validation #2` completed successfully: product contracts **green**, build **green**.
 - Opened draft PR #10 against `product-p0-p1` for isolated review.
 
+#### 2026-08-22 — Table Friction V1 implemented
+
+- Added `src/engine/frictionModel.js` with model version `friction-v1`.
+- `analyzePower()` now exposes `result.friction` after Experience Fingerprint calculation.
+- V1 signals:
+  - Resource denial / taxes;
+  - Mass land denial;
+  - Commander lockout;
+  - Theft / control exchange;
+  - Extra-turn recurrence;
+  - Forced discard / sacrifice;
+  - Restriction stacking potential;
+  - Long sequencing potential.
+- Friction is explicitly descriptive and non-moralized; no global “salt/toxic” score is produced.
+- Recurring/persistent effects count more than one-shot effects and redundant restrictions increase evidence strength.
+- `lockPotential` requires multiple persistent restrictions and explicitly does **not** claim a deterministic hard lock.
+- Long sequencing reuses the Experience Fingerprint turn-complexity evidence rather than inventing a separate opaque heuristic.
+- Added `scripts/friction-model-test.mjs` to `npm run test:product`.
+- Adversarial tests include:
+  - stacked persistent restrictions > single tax effect;
+  - one-shot mass land destruction remains one-shot evidence;
+  - theft is surfaced;
+  - observer-only “whenever an opponent discards” does not become forced discard;
+  - extra-turn text is surfaced;
+  - moralized labels are absent from model output.
+- Deterministic-loop classification is intentionally deferred until combo evidence carries reliable loop/prerequisite metadata.
+
 ### Known P2 V1 limitations
 
 - `dependency` is intentionally command-zone focused until SPOF V1 adds generalized counterfactual dependency.
 - `inevitability` is a structural proxy, not a validated real-game inevitability probability.
 - `turnComplexity` uses semantic/recurrence evidence but is not yet calibrated against observed turn duration.
-- No UI surface is added yet; model/output contract comes first.
+- Friction V1 detects structural Oracle patterns but does not yet model multi-card hard locks as proven deterministic states.
+- No UI surface is added yet; model/output contracts come first.
 - PR #10 is stacked on P0/P1 and will ultimately need to follow the validated upstream branch state before production merge.
 
 ### Current next action
 
-Implement **Table Friction V1** as a separate neutral evidence model, with recurrence/redundancy weighting and adversarial tests before any UI exposure.
+Implement **Goldfish Horizon V1** from existing sequence simulation outputs, with fixed event definitions and deterministic/convergence tests. It must remain a temporal access model, not a hidden “chance to win” curve.
 
 ---
 
@@ -285,33 +313,32 @@ Use existing Aeon evidence first. Avoid new hand-maintained card lists unless a 
 - fixtures separate glass-cannon, grind, interactive-control and commander-centric patterns;
 - no fingerprint field directly modifies the core power score.
 
-## 5.2 Table Friction Profile — NEXT
+## 5.2 Table Friction Profile — IMPLEMENTED V1
 
 ### User question
 
 > “What should the table know before this deck is played?”
 
-### Candidate signals
+### V1 signals
 
-- resource denial;
-- repeated taxes/stax;
+- resource denial / taxes;
 - mass land denial;
 - commander lockout;
-- theft/control exchange;
-- recurring extra turns;
-- deterministic/repeated loops;
-- repeated forced discard/sacrifice;
-- hard/soft locks;
-- long solitaire sequencing.
+- theft / control exchange;
+- extra-turn recurrence;
+- forced discard / sacrifice;
+- restriction stacking potential;
+- long sequencing potential.
 
 ### Rules
 
 - descriptive, never moral;
 - recurrence/redundancy matters more than one-off presence;
 - every signal links to evidence;
-- observer-only text cannot create false friction.
+- observer-only text cannot create false friction;
+- deterministic hard-lock claims are not made without deterministic evidence.
 
-## 5.3 Goldfish Horizon
+## 5.3 Goldfish Horizon — NEXT
 
 ### User question
 
@@ -699,8 +726,8 @@ Use holdout separation, playgroup leakage protection, calibration curves, baseli
 
 # 15. Implementation sequence
 
-1. **Experience Fingerprint + Table Friction** — Fingerprint V1 implemented, Friction next.
-2. **Goldfish Horizon + SPOF**.
+1. **Experience Fingerprint + Table Friction** — V1 models implemented.
+2. **Goldfish Horizon + SPOF** — next.
 3. **Threat–Answer Timeline**.
 4. **Adaptive Rule 0**.
 5. **Game Quality / Non-Game Risk V1**.
