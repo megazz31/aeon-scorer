@@ -109,13 +109,14 @@
 - Model notes explicitly state that Horizon is temporal access, not a win-probability curve.
 - Validation run `P2-P7 product validation #22` completed successfully: product contracts **green**, build **green**.
 
-#### 2026-08-22 — P2 isolation audit
+#### 2026-08-22 — P2 isolation audit and CI hygiene
 
-- Latest validation run `P2-P7 product validation #24` completed successfully: product contracts **green**, build **green**.
-- Compared branch head against `product-p0-p1` base.
-- `src/engine/powerModel.js` contains **6 added lines and 0 deleted lines** across this P2 pass.
-- Those additions are only model imports plus `result.experience`, `result.friction` and `result.horizon` assignments.
+- Validation runs `#24`, `#26` and `#28` completed successfully: product contracts **green**, build **green**.
+- Compared branch implementation against `product-p0-p1` base: the P2 product layer adds outputs without editing the existing power/calibration formulas.
+- At the isolation checkpoint, `src/engine/powerModel.js` contained **6 added lines and 0 deleted lines**: product-model imports plus `result.experience`, `result.friction` and `result.horizon` assignments.
 - No existing Aeon structural/calibration formula was edited in this branch.
+- Updated `.github/workflows/product-p2-p7-validation.yml` so commits touching only `docs/PLAN.md` are ignored by CI. This keeps the roadmap continuously current without wasting validation runs.
+- Code/workflow changes still trigger `npm run test:product` + build.
 - PR #10 remains draft and unmerged.
 
 ### Known P2 V1 limitations
