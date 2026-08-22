@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import fs from 'node:fs'
 import { buildComboAccessibility as buildComboAccessibilityV2,_comboAccessMath } from '../src/engine/comboAccessibility.js'
 import { buildComboAccessibility as buildComboAccessibilityV1 } from '../src/engine/gameQuality.js'
 import { buildDeckIntelligence,buildShareableIntelligence } from '../src/engine/roadmapEngine.js'
@@ -75,4 +76,11 @@ assert.equal(shared.comboAccessibility.lines[0].timing.windows.length,3)
 for(const secret of ['PRIVATE PIECE A','PRIVATE PIECE B','PRIVATE TWO PIECE LINE','PRIVATE ORACLE A','PRIVATE ORACLE B'])assert.equal(text.includes(secret),false,`public share leaked ${secret}`)
 assert.equal(/"cards"\s*:/.test(text),false,'public combo payload must not expose combo card arrays')
 
-console.log('COMBO ACCESS V2 OK — V1 structural scores preserved, T5/T7/T9 raw-draw piece presence is exact/monotone, tutors stay unmodeled and public payloads remain sanitized')
+// Local workspace exposes the diagnostic with explicit non-execution language; it is not added to Reality/Game Quality scoring.
+const workspace=fs.readFileSync(new URL('../src/ProductWorkspace.jsx',import.meta.url),'utf8')
+assert.ok(workspace.includes('COMBO ACCESS · V2'))
+assert.ok(workspace.includes('ComboTiming'))
+assert.ok(workspace.includes('This is NOT the probability that the combo can be executed or wins the game.'))
+assert.ok(workspace.includes("<ComboTiming comboAccessibility={localIntelligence?.comboAccessibility}/>"))
+
+console.log('COMBO ACCESS V2 OK — V1 structural scores preserved, T5/T7/T9 raw-draw piece presence is exact/monotone, tutors stay unmodeled, local UI is explicit and public payloads remain sanitized')
