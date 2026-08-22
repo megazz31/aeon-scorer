@@ -34,23 +34,25 @@ jobs:
       - name: Generate, validate and publish current snapshot
         env:
           AEON_PRECON_ITERATIONS: '3200'
+          AEON_SEMANTIC_BASELINE_REF: '1acf8fddd674da89c6c5fec6a12ea8f56a01c93d'
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           # Always derive the published snapshot from the latest branch head.
+          # semantic-10 is compared to the last validated semantic-9 snapshot,
+          # not to the accidentally regenerated c21efa1 snapshot carrying the same label.
           for attempt in 1 2 3; do
             echo "Snapshot attempt ${attempt}/3"
             git fetch origin public-precon-library
             git reset --hard origin/public-precon-library
-            baseline=$(git rev-parse HEAD^)
 
             npm run precons:generate
             node scripts/update-public-precon-doc.mjs
             npm run test:semantic:fast
             npm run test:public-precons
-            node scripts/semantic-precon-delta.mjs "$baseline"
+            node scripts/semantic-precon-delta.mjs "$AEON_SEMANTIC_BASELINE_REF"
 
             git add public/precons docs/PUBLIC_PRECONS.md calibration/semantic-precon-delta.json calibration/semantic-precon-delta.md
             if git diff --cached --quiet; then
