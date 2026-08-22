@@ -7,7 +7,7 @@ import { buildAnswerDebt } from './answerDebt.js'
 
 export function buildDeckIntelligence(result={},cards=[]){
   const spof=buildSpofProfile(result,cards),withSpof={...result,spof},comboAccessibility=buildComboAccessibility(withSpof,cards),withCombo={...withSpof,comboAccessibility},vulnerability=buildVulnerabilityMatrix(withCombo),answerProfile=buildAnswerProfile(withCombo,cards),threatProfile=buildThreatProfile({...withCombo,vulnerability},cards)
-  return {modelVersion:'deck-intelligence-v1',spof,comboAccessibility,vulnerability,answerProfile,threatProfile,confidence:{productCalibration:'experimental'}}
+  return {modelVersion:'deck-intelligence-v2',spof,comboAccessibility,vulnerability,answerProfile,threatProfile,confidence:{productCalibration:'experimental'}}
 }
 
 const stripEvidenceMetric=m=>m?{score:Number(m.score||0),level:m.level||'low',method:m.method||null}:null
@@ -22,20 +22,20 @@ export function buildShareableIntelligence(result={},cards=[]){
   const vulnerability={modelVersion:deck.vulnerability.modelVersion,classes:{},highest:(deck.vulnerability.highest||[]).map(x=>({kind:x.kind,score:x.score,level:x.level,method:x.method}))}
   for(const [key,value] of Object.entries(deck.vulnerability.classes||{}))vulnerability.classes[key]=stripEvidenceMetric(value)
   const answerProfile={modelVersion:deck.answerProfile.modelVersion,interactionCards:deck.answerProfile.interactionCards,classes:{}}
-  for(const [key,value] of Object.entries(deck.answerProfile.classes||{}))answerProfile.classes[key]={count:value.count,density:value.density,availabilityScale:value.availabilityScale,level:value.level,turns:(value.turns||[]).map(p=>({turn:Number(p.turn),value:Number(p.value)}))}
+  for(const [key,value] of Object.entries(deck.answerProfile.classes||{}))answerProfile.classes[key]={count:value.count,density:value.density,availabilityScale:value.availabilityScale,meanManaValue:value.meanManaValue,earliestManaTurn:value.earliestManaTurn,timingMethod:value.timingMethod,level:value.level,turns:(value.turns||[]).map(p=>({turn:Number(p.turn),value:Number(p.value)}))}
   const threatProfile={modelVersion:deck.threatProfile.modelVersion,threats:(deck.threatProfile.threats||[]).map(x=>({id:x.id,strength:x.strength,level:x.level,answers:x.answers,turns:(x.turns||[]).map(p=>({turn:Number(p.turn),value:Number(p.value)}))}))}
-  return {modelVersion:'share-intelligence-v1',experience,friction,horizon,spof,comboAccessibility,vulnerability,answerProfile,threatProfile,confidence:{productCalibration:'experimental'},privacy:{decklist:false,oracle:false,evidenceCards:false}}
+  return {modelVersion:'share-intelligence-v2',experience,friction,horizon,spof,comboAccessibility,vulnerability,answerProfile,threatProfile,confidence:{productCalibration:'experimental'},privacy:{decklist:false,oracle:false,evidenceCards:false}}
 }
 
 function suppliedDeckIntelligence(result){
   if(!result?.spof&&!result?.comboAccessibility&&!result?.vulnerability&&!result?.answerProfile&&!result?.threatProfile)return null
-  return {modelVersion:'deck-intelligence-v1',spof:result.spof||{dependencies:{}},comboAccessibility:result.comboAccessibility||{lines:[]},vulnerability:result.vulnerability||{classes:{}},answerProfile:result.answerProfile||{classes:{}},threatProfile:result.threatProfile||{threats:[]},confidence:{productCalibration:'experimental'}}
+  return {modelVersion:'deck-intelligence-v2',spof:result.spof||{dependencies:{}},comboAccessibility:result.comboAccessibility||{lines:[]},vulnerability:result.vulnerability||{classes:{}},answerProfile:result.answerProfile||{classes:{}},threatProfile:result.threatProfile||{threats:[]},confidence:{productCalibration:'experimental'}}
 }
 export function buildPodIntelligence(decks=[],options={}){
   const enriched=decks.filter(Boolean).map(d=>{
     const result=d.result||d.analysis||d,cards=d.cards||[],deckIntelligence=d.deckIntelligence||suppliedDeckIntelligence(result)||buildDeckIntelligence(result,cards)
     return {...result,...deckIntelligence}
   })
-  const threatAnswer=buildClassThreatAnswerTimeline(enriched)||buildThreatAnswerTimeline(enriched),answerDebt=buildAnswerDebt(enriched),adaptiveRule0=buildAdaptiveRule0(enriched,options.rule0Answers||{}),podMatch=buildAdvancedPodMatch(enriched,threatAnswer,adaptiveRule0.intentOverlay),gameQuality=buildGameQualityForecast(enriched,podMatch,threatAnswer)
-  return {modelVersion:'pod-intelligence-v3',decks:enriched,threatAnswer,answerDebt,adaptiveRule0,podMatch,gameQuality,confidence:{productCalibration:'experimental',declaredIntent:adaptiveRule0.intentOverlay?.answersApplied?'applied':'not-applied'},notes:['Threat–Answer exposure is included in Pod Match.','Answer Debt summarizes class-specific under-coverage without introducing a new probability model.','Adaptive Rule 0 answers alter only the explicit declared-intent compatibility overlay; they never rewrite detected capability or semantic truth.','All P3/P4 conclusions remain evidence-bearing and experimental until P7 calibration.']}
+  const threatAnswer=buildClassThreatAnswerTimeline(enriched)||buildThreatAnswerTimeline(enriched),answerDebt=buildAnswerDebt(enriched),adaptiveRule0=buildAdaptiveRule0(enriched,options.rule0Answers||{}),podMatch=buildAdvancedPodMatch(enriched,threatAnswer,adaptiveRule0.intentOverlay),gameQuality=buildGameQualityForecast(enriched,podMatch,threatAnswer),answerTimingV2=threatAnswer?.modelVersion==='threat-answer-v3'
+  return {modelVersion:answerTimingV2?'pod-intelligence-v4':'pod-intelligence-v3',decks:enriched,threatAnswer,answerDebt,adaptiveRule0,podMatch,gameQuality,confidence:{productCalibration:'experimental',declaredIntent:adaptiveRule0.intentOverlay?.answersApplied?'applied':'not-applied',answerTiming:answerTimingV2?'class-specific-v2':'legacy'},notes:[answerTimingV2?'Answer Timing V2 uses actual answer-card counts and mana-value gating under Temporal V2 first-access evidence.':'Legacy/fallback answer timing remains active for this pod.','Threat–Answer exposure is included in Pod Match.','Answer Debt summarizes class-specific under-coverage without introducing a new probability model.','Adaptive Rule 0 answers alter only the explicit declared-intent compatibility overlay; they never rewrite detected capability or semantic truth.','All P3/P4 conclusions remain evidence-bearing and experimental until P7 calibration.']}
 }
