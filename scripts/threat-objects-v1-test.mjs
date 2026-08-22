@@ -60,7 +60,7 @@ assert.deepEqual(reversed,built)
 // Public serialization keeps useful aggregate threat evidence but strips private combo/card evidence.
 const cards=[{name:'SECRET ANSWER CARD',type:'Instant',oracle:'SECRET ORACLE TEXT. Counter target spell.',tags:['counterspell'],interaction:4,cmc:2}]
 const shared=buildShareableIntelligence(result,cards),text=JSON.stringify(shared)
-assert.equal(shared.modelVersion,'share-intelligence-v3')
+assert.equal(shared.modelVersion,'share-intelligence-v4')
 assert.equal(shared.threatProfile.modelVersion,'threat-profile-v3')
 assert.equal(shared.threatProfile.threatObjectModel,THREAT_OBJECT_MODEL_VERSION)
 assert.ok(shared.threatProfile.threats.some(x=>x.id==='combo'&&x.prerequisites.unknown.includes('tutor-eligibility')))

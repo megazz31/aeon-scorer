@@ -86,7 +86,7 @@ assert.equal(legacyPod.agencyTimeline,null)
 
 // Public share exposes aggregates only, never answer-card names or Oracle text.
 const shared=buildShareableIntelligence(temporalResult,cards),text=JSON.stringify(shared)
-assert.equal(shared.modelVersion,'share-intelligence-v3')
+assert.equal(shared.modelVersion,'share-intelligence-v4')
 assert.equal(shared.answerProfile.classes.stack.meanManaValue,2)
 assert.equal(shared.answerProfile.classes.stack.earliestManaTurn,2)
 assert.equal(shared.answerProfile.classes.stack.timingMethod,'class-card-draw-mv-envelope')

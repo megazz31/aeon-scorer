@@ -1,219 +1,287 @@
-# Aeon Scorer — Product Plan P2 → P7
+# Aeon Scorer — Product Roadmap & Validation Ledger
 
-> Final engineering roadmap and audit journal for the P2→P7 Commander Intelligence layer.
+> Living source of truth for the P2→P7 product-intelligence stack and its evidence-hardening follow-ups.
 >
-> This document deliberately separates **implemented engineering**, **experimental product intelligence**, **database deployment**, and **scientific calibration/promotion**. Those states must never be conflated.
+> Detailed implementation trails live in the dedicated worklogs. This file records the **current truth**: what exists, what is validated, what remains experimental, and what is still genuinely unresolved.
 
 ---
 
-# 0. Final branch status
+# 0. Non-negotiable policy
 
-**Working branch:** `product-p2-p7-roadmap`  
-**Validation PR:** `#10`  
-**Base branch:** `product-p0-p1` at `1f92c521857cd2245a786c52dcbcc9573f736a9c`  
-**Validated code commit:** `7d8443268a1049290ad619ec7bf4a0b4ce499a45`  
-**Full validation:** `P2-P7 product validation #184` — **SUCCESS**  
-**Merge policy:** PR remains draft; **no merge without explicit approval**.
-
-## Final status matrix
-
-| Phase | Focus | Engineering status | Promotion status |
-|---|---|---|---|
-| P2 | Experience Intelligence | **IMPLEMENTED V1** | Experimental |
-| P3 | Pod Intelligence | **IMPLEMENTED V2** | Experimental |
-| P4 | Game Quality Engine | **IMPLEMENTED V2** | Categorical only; no exact probability |
-| P5 | Aeon Match | **IMPLEMENTED V1** | Migration/staging deployment still required |
-| P6 | Causal Deck Doctor | **IMPLEMENTED V1** | Candidate generation intentionally external |
-| P7 | Aeon Reality | **Instrumentation + evaluation IMPLEMENTED** | Scientific promotion blocked on real observations + holdout |
-
-**P2→P7 engineering roadmap: complete for this validation branch.**  
-**Exact good-game probability: intentionally NOT promoted.**  
-**SQL migrations in Git: code-ready, not evidence of deployment.**
+- Every product increment is developed on a separate stacked validation branch / draft PR.
+- **No merge, retarget or production promotion without explicit user approval.**
+- Core Aeon power semantics and product intelligence remain separated unless a dedicated validated promotion explicitly changes that contract.
+- Semantic-engine integration is managed separately; the product stack will be replayed/revalidated on the eventual semantic baseline when requested.
+- Documentation-only commits after a validated code checkpoint are ignored by product CI by design. Any later non-document change requires the full gate again.
 
 ---
 
-# 1. Product thesis and invariants
+# 1. Product thesis
 
-Aeon must not become another Commander tool whose primary promise is “your deck is a 7/10”.
-
-The product direction is:
-
-> **Understand what a deck can do, when it can do it, what it depends on, whether the table can answer it, whether the pod is structurally compatible, and what minimal action can repair a bad game before it starts.**
+Aeon must answer more than “what number is this deck?”.
 
 North star:
 
 > **Will these decks produce the kind of Commander game these players want to play?**
 
-Non-negotiable invariants:
+The product should explain:
 
-1. no moralized salt/toxic deck score;
-2. Brackets, Game Changers, Spellbook and feedback remain context/evidence, not semantic truth;
-3. no hidden collapse of every signal into one opaque score;
-4. no exact good-game probability before P7 promotion gates pass;
-5. human intent is requested only where it changes interpretation;
-6. public shares never expose decklists, Oracle evidence, private evidence-card lists or user-private payloads;
-7. observations never rewrite semantic truth or core power automatically;
-8. important product outputs carry explicit model versions/confidence;
-9. P2→P7 remains parallel to the existing Aeon 0–100 scoring model.
+1. what a deck can do;
+2. when its important resources/threats become accessible;
+3. what it structurally depends on;
+4. what kinds of answers the table can present and when;
+5. whether each seat is likely to have meaningful agency before opposing pressure becomes material;
+6. whether a pod is structurally compatible;
+7. how a bad table can be repaired with the least intrusive action;
+8. what the models still do **not** know.
 
-## Core-score isolation audit
-
-Against base `1f92c521857cd2245a786c52dcbcc9573f736a9c`, `src/engine/powerModel.js` contains exactly **6 added lines and 0 deleted lines**:
-
-- three product-model imports;
-- `result.experience`;
-- `result.friction`;
-- `result.horizon`.
-
-No existing P20 / median / P80 / peak formula, simulation coefficient or calibration coefficient is modified by this roadmap branch.
+No moralized salt/toxic score. No fabricated exact probability. No hidden promotion of heuristic evidence into semantic truth.
 
 ---
 
-# 2. P2 — Experience Intelligence — IMPLEMENTED V1
+# 2. Current stack status
 
-## Experience Fingerprint
+| PR | Branch | Main scope | Authoritative validation | Status |
+|---|---|---|---|---|
+| #10 | `product-p2-p7-roadmap` | Original P2→P7 engineering roadmap | #184 SUCCESS | validated / draft / unmerged |
+| #11 | `product-p2-p7-v2` | Adaptive Rule 0 V2, Pod Repair V2, Reality-in-Match, Answer Debt, lower-friction local imports | #206 SUCCESS | validated / draft / unmerged |
+| #12 | `product-temporal-first-access` | True First-Access Horizon | #214 SUCCESS | validated / draft / unmerged |
+| #13 | `product-answer-timing-v2` | Class-specific Answer Timing V2 | #219 SUCCESS | validated / draft / unmerged |
+| #14 | `product-threat-objects-v1` | Explicit Threat Objects V1 + privacy hardening | #228 SUCCESS | validated / draft / unmerged |
+| #15 | `product-agency-timeline-v1` | Threat–Answer V4 + Agency Timeline V1 | #239 SUCCESS | validated / draft / unmerged |
+| #16 | `product-spof-suppression-v1` | Paired non-commander SPOF suppression stress | #246 SUCCESS | validated / draft / unmerged |
+| #17 | `product-combo-access-v2` | Temporal Combo Accessibility V2 | #260 SUCCESS | validated / draft / unmerged |
 
-**Model:** `experience-v1` — tempo, explosiveness, volatility, interaction, resilience, inevitability, dependency and turn complexity. Outputs are bounded, evidence-bearing and independent from hidden raw-score rewrites.
+Current validated code checkpoint for PR #17:
 
-## Table Friction
+`604f6e0c8ffbe7500ae1aa997bb09a076a9abd4f`
 
-**Model:** `friction-v1` — descriptive signals for resource denial/taxes, mass land denial, commander lockout, theft/control exchange, extra-turn recurrence, forced discard/sacrifice, restriction stacking and long sequencing. No moralized salt score.
-
-## Goldfish Horizon
-
-**Model:** `goldfish-horizon-v1` — commander `online-by-turn`; engine/interaction/resource/burst `available-on-turn`. Aeon does not fabricate cumulative first-access probabilities. Local UI exposes first ≥50% milestones with their true semantics.
-
-## Single Point of Failure
-
-**Model:** `spof-v1`  
-**Commander counterfactual:** `commander-tax-counterfactual-v1`
-
-Paired fixed-seed scenarios: baseline, +2 tax, +4 tax, unavailable. Tests enforce monotonic access degradation. Graveyard/artifact/enchantment/creature-board dependencies remain explicit semantic proxies until causal suppression simulation exists.
+PR #17 documentation continues after that code checkpoint only.
 
 ---
 
-# 3. P3 — Pod Intelligence — IMPLEMENTED V2
+# 3. Core-score isolation
 
-**Answer Profile:** `answer-profile-v1` with stack, creature, artifact, enchantment, graveyard and wipe classes.  
-**Threat Profile:** `threat-profile-v1` with combo/engine/board/extra-turn threat classes.  
-**Threat–Answer:** preferred `threat-answer-v2`; compares each threat by turn against relevant opponent answer classes.  
-**Adaptive Rule 0:** `adaptive-rule0-v1`; at most three high-information intent questions.  
-**Pod Match:** `advanced-pod-match-v2` under `pod-intelligence-v2`.
+The original P2→P7 branch added product outputs to `powerModel.js` without rewriting the existing Aeon 0–100 formulas. Subsequent evidence-hardening PRs #12→#17 have continued to avoid core-score changes.
 
-Pod Match explicitly combines median/range, peak, speed, explosiveness, volatility, friction and **Threat–Answer exposure**. A dedicated regression proves that an exposed Threat–Answer window independently increases mismatch.
+As of PR #17:
 
-Older P0/P1 shares without P2→P7 intelligence retain the original range-comparison fallback.
+- no new `cardFeatures.js` change in the Combo V2 diff;
+- no `packageGraph.js` change;
+- no `powerModel.js` change;
+- no `sequenceSimulator.js` / `sequenceSimulatorMulti.js` change;
+- no semantic-version change;
+- no Pod Match / Game Quality numeric coefficient change;
+- no Reality schema/prediction change.
 
----
-
-# 4. P4 — Game Quality Engine — IMPLEMENTED V2
-
-**Game Quality:** `game-quality-v2` combines multi-axis mismatch, exposed Threat–Answer windows, commander SPOF, friction and vulnerability-versus-opponent-answer hard counters. Output remains categorical and experimental, never an exact win/good-game probability.
-
-**Combo Accessibility:** `combo-access-v1` separates combo presence from structural accessibility. `T5/T7/T9` are declared target windows but `timing.status = not-simulated`; exact probabilities are intentionally absent until piece/zone/tutor-prerequisite simulation exists.
-
-**Vulnerability Matrix:** `vulnerability-v2` covers commander removal, graveyard hate, artifact/enchantment suppression, wipes, creature removal, Rule of Law, counterspells, resource denial and exile interaction. Only commander-removal can currently use paired causal counterfactual evidence; other classes remain explicit proxies.
+Any future score promotion requires a dedicated, explicit ablation/calibration decision rather than accidental propagation.
 
 ---
 
-# 5. P5 — Aeon Match — IMPLEMENTED V1
+# 4. P2 — Experience Intelligence
 
-**Model:** `aeon-match-v1`
+## Experience Fingerprint — IMPLEMENTED
 
-- complete pools up to 12 players: exact exhaustive partition for the current objective;
-- larger pools: deterministic greedy construction + improving cross-table swaps;
-- 64-player deterministic regression;
-- complete tables of four; remainder is explicitly `unassigned`;
-- no global-optimum claim for large pools.
+**Model:** `experience-v1`
 
-**Pod Repair:** `pod-repair-v1` prefers rearrangement/alternate registered deck before asking a player to modify a deck.
+Dimensions: tempo, explosiveness, volatility, interaction, resilience, inevitability, dependency, turn complexity. Evidence-bearing and bounded. The raw Aeon median does not secretly drive every dimension.
 
-**LGS/event route:** `/match`
+## Table Friction — IMPLEMENTED
 
-- authenticated organizer creation;
-- anonymous join by public Rule 0 share;
-- 4–64 session capacity;
-- six-hour expiry;
-- open/locked/closed state;
-- organizer secret stored only as SHA-256 hash server-side;
-- transactional capacity check;
-- idempotent repeated joins;
-- public share codes only;
-- direct Vercel `/match?session=…` routing;
-- QR-ready join URL without third-party QR data transfer.
+**Model:** `friction-v1`
 
-Migration presence in Git is not considered deployment.
+Descriptive signals for denial/taxes, mass land denial, commander lockout, theft/control exchange, extra-turn recurrence, forced discard/sacrifice, restriction stacking and long sequencing. No moral judgment or salt score.
 
----
+## True First-Access Horizon — IMPLEMENTED / VALIDATED
 
-# 6. P6 — Causal Deck Doctor — IMPLEMENTED V1
+**Model:** `goldfish-horizon-v2`
 
-**Causal What-if:** `deck-doctor-explain-v1` explains P20/median/P80/peak, speed, interaction, resilience, explosiveness, commander dependency, turn complexity and package-strength deltas.
+PR #12 added deterministic cumulative first-access evidence while retaining historical per-turn availability separately. Regressions enforce bounded monotonic curves and isolation from the main power profile.
 
-**Constrained selection:** `deck-doctor-v1` supports bounded objectives including peak reduction, commander-dependency reduction, interaction increase and target-pod compatibility.
+## SPOF — IMPLEMENTED / HARDENED
 
-**Targeted Pod Tuning:** `targeted-pod-tuning-v1` evaluates supplied analyzed variants against the actual pod peers through `pod-intelligence-v2` and reports mismatch improvement.
+**Models:**
 
-Boundary: V1 ranks supplied legal/analyzed candidates. It does not elevate opaque card-generation or generic LLM suggestions into semantic evidence. Pod Repair remains preferred before opt-in tuning.
+- `commander-tax-counterfactual-v1`;
+- `dependency-suppression-counterfactual-v1`;
+- `spof-v2`.
+
+Commander dependency uses paired baseline / +2 / +4 / unavailable stress. Non-commander graveyard/artifact/enchantment/creature-board dependencies now have paired contributor-suppression evidence with fixed seeds and deck-cardinality preservation.
+
+**Promotion boundary:** non-commander semantic dependency scores remain unchanged in V1 of the suppression layer (`scorePromotion = semantic-score-unchanged-v1`). Counterfactual deltas are diagnostic until a promotion study justifies more.
 
 ---
 
-# 7. P7 — Aeon Reality — INSTRUMENTATION + EVALUATION IMPLEMENTED
+# 5. P3 — Pod Intelligence
 
-## Observation contract
+## Answer Profile V2 — IMPLEMENTED / VALIDATED
 
-**Summary model:** `aeon-reality-v1`
+Class-specific response timing for:
 
-Stored bounded fields:
+- stack;
+- creature;
+- artifact;
+- enchantment;
+- graveyard;
+- wipe.
 
-- turn band, win type, perceived balance, dominant event;
-- pod size (2–8 at the observation contract layer);
-- pod model version;
-- bounded engine/semantic versions;
-- anonymized SHA-256 pod fingerprint;
-- actual pre-game aggregate prediction: risk score/level, Pod Match mismatch and maximum Threat–Answer gap.
+Under Temporal V2, response curves use actual answer-card counts plus mana-value gating. Historical snapshots retain the explicit scaled-general-interaction fallback.
 
-Safeguards:
+## Threat Objects V1 — IMPLEMENTED / VALIDATED
 
-- missing prediction is rejected; it cannot silently become `0/low`;
-- risk level must agree with score bands;
-- predictions are bounded 0–100;
-- version arrays/string lengths are bounded;
-- same-pod submissions use a transaction advisory lock before hourly rate limiting;
-- observation table is not readable by normal anon/authenticated roles.
+**Models:** `threat-object-v1`, `threat-profile-v3`.
 
-Not stored: decklists, Oracle text, card names/lists, raw share codes, email, IP address or user agent.
+Threats carry:
 
-## Calibration evaluation
+- stable family/id;
+- strength/level;
+- aggregate source evidence;
+- known and unknown prerequisites;
+- answer classes;
+- temporal semantics/source;
+- T25/T50/T75 milestones;
+- critical window.
 
-**Evaluation:** `reality-calibration-eval-v1`  
-**Readiness:** `calibration-readiness-v2`
+Threat Object adoption does not change historical threat strength/answer/turn arithmetic by itself.
 
-Implemented plumbing: severe-imbalance prevalence, Brier, prevalence baseline Brier, Brier improvement, AUC, calibration bands/MAE, distinct-pod count and counts by pod size.
+## Threat–Answer V4 — IMPLEMENTED / VALIDATED
 
-Synthetic fixtures validate the evaluation plumbing only. They are **not evidence of real-world calibration**.
+Keeps every Threat Object window while preserving the historical worst-window `decks[].turns` calculation exactly for existing consumers.
 
-## Scientific promotion gate
+## Answer Debt V1 — IMPLEMENTED
 
-No exact public probability until real data passes sufficient volume/diversity, positive+negative outcomes, held-out evaluation, baseline superiority, calibration review, pod-size cohort review, leakage protection and no material cohort failure. `calibrationReadiness()` is necessary but not sufficient; promotion still requires a held-out evidence decision.
+Translates Threat–Answer into class-specific under-coverage: which answer class is missing, how large the gap is, on what turn, and against which threat.
+
+## Adaptive Rule 0 V2 — IMPLEMENTED
+
+Declared intent creates a separate overlay for combo intent, extra-turn intent and land-denial acceptance. Human intent can change compatibility but **never rewrites detected capability or semantic truth**.
 
 ---
 
-# 8. Privacy and sharing
+# 6. P4 — Game Quality Intelligence
 
-Public Rule 0 intelligence is sanitized twice: client-side and in the SQL share RPC. Allowed public information is limited to scores/levels, model versions, sanitized temporal curves and sanitized SPOF/vulnerability/answer/threat profiles. Decklist, Oracle text, evidence-card names/lists and private analysis payloads are stripped. Sentinel-private-string regressions verify this boundary.
+## Advanced Pod Match — IMPLEMENTED
+
+Multi-axis mismatch includes normal range, peak, speed, explosiveness, volatility, friction, Threat–Answer exposure and declared-intent overlay when supplied.
+
+## Game Quality — IMPLEMENTED / CATEGORICAL
+
+Current model remains an experimental categorical risk forecast, not a literal probability of a “good game”. It combines pod mismatch, exposed threat windows, SPOF/friction and explicit vulnerability-vs-answer hard counters.
+
+## Agency Timeline V1 — IMPLEMENTED / DIAGNOSTIC
+
+PR #15 estimates per seat:
+
+- development agency;
+- relevant-response agency;
+- opponent structural pressure;
+- first meaningful agency turn;
+- first material pressure turn;
+- maximum participation gap;
+- whether material pressure arrives before meaningful agency.
+
+It is visible in `/pod` and `/match`.
+
+**Promotion boundary:** Agency does not currently alter Pod Match, Game Quality, Aeon power or Reality prediction. Real-game ablation/calibration is required before numerical promotion.
+
+## Combo Accessibility V2 — IMPLEMENTED / VALIDATED
+
+**Models:** `combo-access-v2`, `combo-piece-timing-v1`.
+
+PR #17 preserves the historical structural Combo Accessibility score exactly and adds separate T5/T7/T9 **raw-draw piece-presence** evidence.
+
+Meaning:
+
+> probability that every required library piece name has appeared in the opening seven plus one raw draw per turn by the target turn.
+
+Command-zone pieces are modeled separately.
+
+This is explicitly **not execution probability**. Tutors, mulligan selection, execution mana, special zones, activations, loop conditions and protection remain excluded unless explicitly modeled later.
+
+Public `share-intelligence-v4` exposes only sanitized timing aggregates. Combo names, piece names, `cards[]` arrays and Oracle text remain private. A local `COMBO ACCESS · V2` panel shows T5/T7/T9 values with explicit non-execution wording.
 
 ---
 
-# 9. Final validation and audit
+# 7. P5 — Aeon Match
 
-## Full CI gate
+## Matchmaking — IMPLEMENTED
 
-Validated code commit: `7d8443268a1049290ad619ec7bf4a0b4ce499a45`  
-Workflow: `P2-P7 product validation #184`  
-Conclusion: **SUCCESS**
+- exact complete-pool partition for small pools up to the current exact threshold;
+- deterministic greedy/local-swap optimization for larger pools;
+- explicit optimality label;
+- no global-optimum claim for heuristic large-N results.
 
-Every step passed:
+## Pod Repair V2 — IMPLEMENTED / EXPOSED
+
+Audits cross-table 1↔1 swaps and reports real before/after mismatch improvement. If no improving swap exists, Aeon reports that the one-swap neighborhood was audited.
+
+## Event / LGS flow — IMPLEMENTED ENGINEERING
+
+Persistent sessions use versioned Aeon shares. Local Match can also consume a bounded number of public Moxfield/Archidekt URLs for non-persisted quick analysis.
+
+Reality feedback is disabled for tables containing non-versioned local imports.
+
+**Deployment boundary:** migrations/code in Git are not proof of staging or production deployment.
+
+---
+
+# 8. P6 — Causal Deck Doctor
+
+Implemented capabilities:
+
+- explain measured deltas between supplied analyzed variants;
+- constrained variant selection;
+- target-pod compatibility evaluation;
+- prefer pod rearrangement/alternate registered deck before asking a player to edit a deck.
+
+Boundary: Aeon ranks supplied analyzed/legal candidates. Autonomous card generation is not semantic evidence.
+
+---
+
+# 9. P7 — Aeon Reality
+
+Instrumentation and evaluation plumbing exist for bounded post-game observations and the exact pre-game prediction shown to the table.
+
+Implemented evaluation primitives include:
+
+- severe-imbalance prevalence;
+- Brier score;
+- prevalence baseline Brier;
+- Brier improvement;
+- AUC;
+- calibration bands/MAE;
+- distinct-pod count;
+- pod-size cohorts;
+- readiness requirements for holdout/baseline/calibration review.
+
+**Scientific boundary:** synthetic fixtures prove plumbing, not real-world accuracy. No exact public good-game probability until real observations pass holdout, baseline-superiority, calibration and cohort review.
+
+---
+
+# 10. Privacy invariants
+
+Public intelligence must never leak private deck evidence simply because a new product model is added.
+
+Validated protections now include:
+
+- no decklist in public product intelligence;
+- no Oracle text;
+- no private evidence-card lists;
+- no suppressed SPOF contributor names;
+- no combo-piece names;
+- no combo-line names in sanitized Combo Accessibility;
+- no combo `cards[]` arrays;
+- no raw private counterfactual payloads.
+
+Threat/answer/timing information exposed publicly is aggregate and versioned.
+
+PR #14 validation notably discovered and fixed a pre-existing leak where Combo Accessibility line/highest names could reveal combo pieces.
+
+---
+
+# 11. Validation discipline
+
+Every authoritative validation runs the complete branch gate:
 
 1. Smoke;
 2. Semantic contracts;
@@ -223,318 +291,93 @@ Every step passed:
 6. Adversarial audit;
 7. Build.
 
-Product regressions cover Experience independence, friction semantics, Horizon no-fake-cumulative behavior, paired SPOF tax stress, Threat–Answer mismatch contribution, hard-counter risk, exact 8-player matching, deterministic 64-player matching, targeted pod tuning, sanitized share round-trip, mandatory P7 prediction/pod size/risk consistency, Brier/AUC/calibration plumbing, secure sessions, transaction-safe observation rate limiting and direct `/match` routing.
+A feature is not called validated because its dedicated unit test passes; the entire stack must pass together after the final non-document change.
 
-## Base→validated-code audit
+PR #17 example:
 
-Base: `1f92c521857cd2245a786c52dcbcc9573f736a9c`  
-Code: `7d8443268a1049290ad619ec7bf4a0b4ce499a45`
-
-Findings:
-
-- branch is ahead of base and not behind;
-- changed files are confined to expected P2→P7 models/tests/workflow/SQL/product UI/routing/documentation;
-- `sequenceSimulator.js` and `sequenceSimulatorMulti.js` are unchanged in the final branch diff;
-- `powerModel.js` remains +6 / -0 with no existing score formula change;
-- no unrelated subsystem change detected;
-- PR #10 remained open, draft, mergeable and unmerged during validation.
-
-## Documentation-only finalization
-
-The final `PLAN.md` commit occurs after validated code `7d844326…` and is ignored by CI by design. The branch-head audit must therefore prove the difference from `7d844326…` is documentation only. Any later non-document change requires the complete CI gate again.
+- #250 stopped on an old share-version expectation;
+- #252 stopped on the next old share-version expectation;
+- #254 reached and passed `COMBO ACCESS V2 OK`, then stopped on an old deck-intelligence version expectation;
+- #256 passed the full core stack;
+- #260 passed the full stack again after local UI finalization and is authoritative.
 
 ---
 
-# 10. Explicit evidence boundaries
+# 12. Remaining real gaps after PR #17
 
-These are intentional boundaries, not hidden unfinished work:
+The product scope is now substantially narrower. These are the current genuine gaps; completed items must not be re-listed as unfinished.
 
-1. Horizon interaction/resource/burst is `available-on-turn`; true cumulative first access requires new simulator instrumentation.
-2. Non-commander SPOF remains proxy-based until causal suppression simulation is interpretable.
-3. Threat-class timing scales simulated interaction availability; it is not rules-complete casting simulation.
-4. Exact Combo T5/T7/T9 probability is not emitted without prerequisite-aware simulation.
-5. Aeon Match beyond 12 players is deterministic heuristic, not a claimed global optimum.
-6. Deck Doctor evaluates supplied analyzed candidates; autonomous card generation is not semantic truth.
-7. P7 is not scientifically calibrated until real observations + holdout promotion gates pass.
-8. SQL in Git is not proof of staging/production deployment.
+## 12.1 Combo Execution Eligibility / prerequisite depth — NEXT
 
-Removing these warnings without adding the missing evidence is a regression.
+Convert Combo V2’s current reason strings into structured prerequisite objects:
+
+- requirement kind;
+- known / unknown / unsupported state;
+- evidence source;
+- relevant zone;
+- mana/activation requirement where representable;
+- whether the current engine can evaluate it;
+- why exact execution timing is blocked.
+
+Threat Objects should consume these structured prerequisites instead of maintaining a separate vague combo-prerequisite vocabulary.
+
+**Do not promote execution probability yet.** The purpose of this step is to make the missing causal/rules requirements machine-readable.
+
+## 12.2 Tutor eligibility modeling
+
+Raw tutor counts must never inflate piece-presence timing. A later model may include tutors only after Aeon can determine which tutors can actually find which combo piece, from which zone and under what restrictions.
+
+## 12.3 Execution mana / zones / loop-state modeling
+
+For selected lines only, future exactness requires explicit support for things such as:
+
+- cast/activation sequencing;
+- positive-mana loop requirement;
+- graveyard/exile setup;
+- imprint/aura targets;
+- X/counter thresholds;
+- storm/resource thresholds;
+- command-zone availability/tax;
+- protection/recovery windows.
+
+Unsupported lines must stay unsupported rather than receiving false precision.
+
+## 12.4 SPOF suppression promotion study
+
+Compare semantic dependency scores against paired suppression deltas across curated decks and later real-game evidence before deciding whether counterfactual deltas should affect promoted vulnerability/Game Quality scoring.
+
+## 12.5 Agency ablation/calibration
+
+Use Reality observations to test whether Agency adds predictive information beyond existing Game Quality inputs before any numeric promotion.
+
+## 12.6 P7 real-world calibration
+
+Still requires held-out real observations, baseline superiority, calibration curves, cohort/leakage review and explicit promotion decision.
+
+## 12.7 Persistent direct LGS import
+
+Still intentionally deferred until server-side provenance, identity, abuse/cost control and calibration provenance are safe.
+
+## 12.8 Final integration replay
+
+When the separately managed semantic baseline is ready, replay/revalidate the complete product stack before integrated production promotion.
 
 ---
 
-# 11. Post-branch release gates
-
-## Engineering integration
-
-Before merge: explicit user approval, deliberate draft removal, upstream `product-p0-p1` integration-path review, and no non-document commit bypassing full CI.
-
-## Database deployment
-
-After approved integration: apply migrations to non-production; smoke sanitized share creation, observation submission and Match create/join/lock/close; verify anon/authenticated RLS/grants; then consider production promotion.
-
-## Scientific P7 promotion
-
-Collect real observations; evaluate held-out AUC/Brier/calibration, baseline superiority, pod-size cohorts and leakage. Until this succeeds, Game Quality remains categorical experimental guidance.
-
----
-
-# 12. Definition of completion
-
-PR #10 engineering validation is complete only when:
-
-- all P2→P7 models above exist with explicit versions/boundaries;
-- privacy/deployment contracts pass;
-- full Aeon quality suite passes on the last non-document code commit;
-- base→code audit finds no score-coefficient or unrelated changes;
-- later branch-head changes are documentation-only;
-- this plan and PR metadata describe the actual implementation;
-- PR remains open/draft/unmerged pending explicit approval.
-
-Correct final statement:
-
-> **P2→P7 engineering validation is complete. P7 scientific calibration and database deployment remain deliberately gated promotion steps, not hidden unfinished engineering.**
-
----
-
-# 13. Post-roadmap V2 follow-up — PR #11
-
-The original P2→P7 roadmap above remains the historical record of PR #10. A stacked follow-up closes the largest product gaps identified during the post-roadmap competitive/product audit.
-
-**Working branch:** `product-p2-p7-v2`  
-**Validation PR:** `#11`  
-**Base branch:** `product-p2-p7-roadmap`  
-**Latest validated non-document code commit:** `949bf288d89e76e94f4cf2dd8f45a939871d0024`  
-**Latest full validation:** `P2-P7 product validation #206` — **SUCCESS**  
-**Merge policy:** PR remains draft; **no merge without explicit approval**.
-
-## 13.1 Semantic integration gate
-
-The user reported that semantic-12 had been launched. GitHub was audited before and after the V2 product work.
-
-Repository-visible state at the latest audit:
-
-- PR #8 `public-precon-library` HEAD: `d076a9eb9322629b8a2879815a982ca9a22487d6`;
-- `src/version.js` on PR #8: `3.2.0-semantic-10`;
-- PR #8 remains open, draft, mergeable and unmerged;
-- no GitHub branch, indexed commit, PR or issue exposing `semantic-11` or `semantic-12` was found.
-
-Therefore semantic-12 may have been started outside the repository-visible workflow, but it is **not currently auditable from GitHub**. PR #11 intentionally does not touch semantic card evaluation. The complete product stack must be replayed/revalidated on semantic-12 (or later) once that semantic version is actually pushed.
-
-## 13.2 Adaptive Rule 0 V2 — IMPLEMENTED
-
-**Models:** `rule0-intent-v1`, `adaptive-rule0-v2`, `advanced-pod-match-v3`, `pod-intelligence-v3`.
-
-Changes:
-
-- Rule 0 questions expose bounded answer choices;
-- combo intent, extra-turn intent and land-denial acceptance feed an explicit declared-intent overlay;
-- answering a question recalculates Pod Match/Game Quality immediately in `/pod`;
-- pair reasons expose declared-intent gap/conflict separately;
-- objective deck profile, detected combos, Threat–Answer evidence and Aeon power remain unchanged;
-- P7 receives the exact post-answer pre-game prediction shown to the players.
-
-This closes the previous gap where Aeon generated smart questions but did not use the answers.
-
-## 13.3 Pod Repair V2 — IMPLEMENTED / EXPOSED
-
-**Model:** `pod-repair-v2`.
-
-Aeon Match audits every remaining 1↔1 cross-table swap for the generated assignment.
-
-For an improving repair it reports:
-
-- the two players/decks to swap;
-- source tables;
-- total mismatch before/after;
-- both affected table mismatches;
-- measured improvement.
-
-A repair is always a true two-way swap: no duplicate assignment and no player is silently dropped.
-
-When no improving one-swap exists, Aeon reports the number of swaps evaluated and marks the solution locally optimal for that one-swap neighborhood. This is especially useful as an explicit proof check after exact small-N matching and as an audit of the large-N local optimizer.
-
-## 13.4 Aeon Reality inside Aeon Match — IMPLEMENTED
-
-Every generated `/match` table receives its own `pod-intelligence-v3` assessment and displays Game Quality.
-
-For tables backed entirely by versioned Aeon shares, the post-game observation form receives exactly the prediction displayed before the game:
-
-- risk score/level;
-- Pod Match mismatch;
-- maximum Threat–Answer gap;
-- table model version.
-
-No separate recomputation is allowed to silently substitute a different pre-game prediction.
-
-## 13.5 Answer Debt V1 — NEW / IMPLEMENTED
-
-**Model:** `answer-debt-v1`.
-
-Purpose: translate Threat–Answer into an immediately actionable table diagnostic.
-
-For each answer class:
-
-- stack;
-- creature;
-- artifact;
-- enchantment;
-- graveyard;
-- wipe;
-
-Aeon computes the largest turn-specific gap between a threat requiring that class and the combined class-specific coverage of the other seats.
-
-Output includes answer class, debt score/level, critical turn, associated threat id and supporting examples.
-
-Answer Debt is deliberately an aggregation of existing Threat/Answer evidence, **not a new probability model**. It is visible in `/pod`, and the leading debt is shown for every `/match` table.
-
-## 13.6 Lower-friction local Match import — IMPLEMENTED
-
-Local `/match` now accepts a mixture of:
-
-- versioned Aeon share codes/links; and
-- public Moxfield / Archidekt deck URLs.
-
-External URLs reuse the existing `/api/import-deck` normalizer, then the existing Scryfall resolver and `analyzePower`. Each external deck receives an **in-memory 1,800-sequence quick analysis**.
-
-Boundaries:
-
-- maximum 8 external URLs per local Match batch;
-- up to 64 total entries when remaining entries are versioned shares;
-- no imported external decklist is persisted by this flow;
-- persistent LGS sessions remain share-only;
-- local external analyses are visibly labelled;
-- any table containing a non-persisted local import is excluded from Aeon Reality submission, because it lacks the versioned public-share identity required by the calibration contract.
-
-This intentionally improves ad-hoc/casual onboarding without weakening the persistence and evidence boundaries of LGS sessions or P7.
-
-## 13.7 Latest V2 validation
-
-Run #206 passed the complete branch gate together:
-
-1. Smoke ✅
-2. Semantic contracts ✅
-3. Metamorphic contracts ✅
-4. Product contracts ✅
-5. Public precon contract ✅
-6. Adversarial audit ✅
-7. Build ✅
-
-Dedicated V2 regressions prove:
-
-- declared Rule 0 intent can change compatibility without mutating deck capability;
-- a rejected experience characteristic creates an explicit intent conflict;
-- a deliberately poor two-table assignment produces a real improving cross-table swap;
-- an exact small-N result has no improving 1↔1 cross-table swap;
-- Answer Debt identifies a structurally under-covered answer class;
-- `/pod` preserves the exact adaptive prediction for Reality;
-- `/match` is wired to Pod Repair, table intelligence and exact pre-game Reality prediction;
-- direct local URL import reuses the existing audited import endpoint and Scryfall resolution path;
-- direct imports are capped at 8, run at 1,800 local sequences, stay non-persistent, and cannot enter Reality data without first becoming versioned Aeon shares.
-
-## 13.8 Remaining priority work after V2 — historical snapshot
-
-This list is retained as the state immediately after PR #11. Several items have since been completed in the stacked follow-ups documented below.
-
-1. **Final semantic integration** — still externally gated.
-2. **True First-Access Horizon** — completed in PR #12.
-3. **Card-level Answer Timing** — completed in PR #13 with explicit MV/draw-envelope boundaries.
-4. **Threat Objects** — completed in PR #14.
-5. **Causal non-commander SPOF** — paired suppression evidence completed in PR #16; score promotion remains intentionally withheld.
-6. **Exact Combo Accessibility T5/T7/T9** — remains the next major unresolved temporal proxy.
-7. **Real-world P7 calibration** — remains scientifically gated on real observations/holdout.
-8. **Persistent direct LGS import** — remains intentionally share-first.
-9. **Agency Timeline** — completed diagnostically in PR #15; scoring promotion remains withheld pending ablation/real data.
-
-Strategic order remains:
-
-> **close trustworthy temporal/causal evidence gaps → collect real games → calibrate/ablate → only then promote probabilistic or scoring claims.**
-
----
-
-# 14. Stacked evidence-hardening follow-ups — PR #12 → PR #16
-
-The V2 audit exposed several places where useful product outputs still relied on structural proxies. PRs #12–#16 replace those proxies incrementally while preserving the core-score and privacy invariants.
-
-## 14.1 PR #12 — True First-Access Horizon — VALIDATED
-
-**Branch:** `product-temporal-first-access`  
-**Model:** `goldfish-horizon-v2` plus deterministic first-access sampling.
-
-Aeon now exposes true cumulative first-access curves when instrumented evidence is available, while retaining the historical per-turn availability curves separately. Curves are bounded, monotonic and reproducible under fixed seeds. A regression verifies that enabling the sampler leaves the existing power profile/dimensions/main turn profile unchanged.
-
-This resolves the old evidence-boundary item “Horizon available-on-turn only” for the product intelligence path without rewriting the main scoring simulation.
-
-## 14.2 PR #13 — Answer Timing V2 — VALIDATED
-
-**Branch:** `product-answer-timing-v2`  
-**Models:** `answer-profile-v2`, `threat-answer-v3` when V2 timing is actually present.
-
-Relevant answer classes now incorporate actual answer-card counts and mana-value gating under Temporal V2 first-access evidence. Cheap stack interaction can therefore become available earlier than expensive wipes. Historical analyses retain the exact prior scaled-general-interaction fallback and are not relabelled as V2.
-
-Public serialization exposes only safe aggregates such as `meanManaValue`, `earliestManaTurn` and timing method; answer-card names/Oracle text remain private.
-
-## 14.3 PR #14 — Threat Objects V1 — VALIDATED
-
-**Branch:** `product-threat-objects-v1`  
-**Models:** `threat-object-v1`, `threat-profile-v3`, `deck-intelligence-v3`, `share-intelligence-v3`.
-
-Material threat rows now carry explicit family, strength, aggregate evidence, known/unknown prerequisites, answer classes, temporal source/semantics, T25/T50/T75 and critical window. Legacy threat IDs and numeric consumer fields remain compatible.
-
-Validation discovered and fixed a real pre-existing privacy leak: public Combo Accessibility no longer exposes combo-line/highest names that can reveal combo-piece card names.
-
-Authoritative validation: **P2-P7 product validation #228 — SUCCESS**.
-
-## 14.4 PR #15 — Threat–Answer V4 + Agency Timeline V1 — VALIDATED
-
-**Branch:** `product-agency-timeline-v1`  
-**Models:** `threat-answer-v4`, `agency-timeline-v1`, `pod-intelligence-v5` on the V4 path.
-
-Threat–Answer V4 preserves every explicit Threat Object window while retaining the historical worst-window `decks[].turns` surface. Regression coverage proves the worst-window arithmetic remains identical to the equivalent V3 calculation.
-
-Agency Timeline V1 derives per-seat development agency, relevant-response agency, opponent structural pressure, first meaningful agency turn, first material pressure turn and maximum participation gap. It is visible in `/pod` and `/match`.
-
-Agency remains diagnostic only: no Aeon power, Pod Match, Game Quality or Reality prediction coefficient/schema change. Dedicated regressions enforce that isolation.
-
-Validated non-document code: `30434f30dc8c0fec056c5c1a9636fcf401ee7697`  
-Authoritative validation: **P2-P7 product validation #239 — SUCCESS**.
-
-## 14.5 PR #16 — SPOF Suppression V1 — VALIDATED
-
-**Branch:** `product-spof-suppression-v1`  
-**Models:** `dependency-suppression-counterfactual-v1`, `spof-v2`.
-
-For graveyard, artifact, enchantment and creature-board dependencies Aeon now runs paired fixed-seed stress scenarios. Matching dependency contributors are converted to inert dead draws so deck cardinality/draw positions remain preserved; affected package evidence and combo lines are invalidated for the counterfactual scenario.
-
-Outputs include signed deltas for median, peak, engine T4/T5 and resource T5 plus suppressed-card count. Non-applicable classes are explicit.
-
-The existing semantic SPOF score is deliberately **not** replaced by these deltas in V1. `scorePromotion = semantic-score-unchanged-v1` makes the non-promotion boundary explicit. The counterfactual is a contributor-suppression stress model, not a literal simulation of every hate permanent/rules interaction.
-
-The full suppression payload remains local/private; public shares do not expose suppressed contributor names or the private counterfactual payload.
-
-Validated non-document code: `478275866454cd2d4ddbcc3dfd5f7818efe7ce46`  
-Authoritative validation: **P2-P7 product validation #246 — SUCCESS**.
-
-Base→code audit from PR #15 documentation head `8233df507b6e52b4d19ae1dd52e18416d21ca36e` to validated code:
-
-- ahead 7 / behind 0;
-- six changed files only;
-- no `cardFeatures.js`, `packageGraph.js`, `powerModel.js` or sequence-simulator change;
-- no semantic-version change;
-- no Aeon power / Pod Match / Game Quality coefficient change;
-- no Reality contract change.
-
-## 14.6 Current unresolved scope after PR #16
-
-The remaining high-value work inside the current product scope is now narrower:
-
-1. **Combo Accessibility V2 temporal evidence** — replace `timing.status = not-simulated` only for combo lines whose pieces/zones/tutor eligibility/mana/prerequisites can be represented honestly. Unsupported lines must stay explicit rather than receiving fabricated T5/T7/T9 probabilities.
-2. **Threat Object prerequisite depth** — enrich zones/protection/recovery only where upstream combo/semantic evidence supports it; do not infer unknown prerequisites from labels.
-3. **SPOF suppression promotion study** — compare semantic proxy versus paired suppression deltas across curated decks/real games before allowing those deltas into promoted vulnerability/Game Quality scores.
-4. **Agency ablation/calibration** — collect Reality evidence before deciding whether Agency should affect Game Quality numerically.
-5. **Real-world P7 calibration** — held-out AUC/Brier/calibration, baseline superiority and cohort review remain required before any exact good-game probability.
-6. **Persistent direct LGS import** — intentionally deferred until server-side provenance, identity and cost controls are safe.
-7. **Final semantic integration/replay** — handled separately; the whole product stack must be replayed/revalidated on the eventual repository-visible semantic baseline before integrated promotion.
-
-**Current next implementation target:** Combo Accessibility V2 temporal evidence.
-
-All PRs in this stack remain **open / draft / unmerged**. No merge, retarget or production promotion occurs without explicit approval.
+# 13. Definition of “complete” for a product increment
+
+A stacked increment is complete only when:
+
+- implementation contract exists and is versioned;
+- unsupported evidence is explicit rather than silently coerced;
+- dedicated regressions pass;
+- privacy boundary is reviewed;
+- full CI passes after the last non-document change;
+- base→validated-code audit finds no unrelated or accidental score changes;
+- dedicated worklog is finalized;
+- this roadmap reflects the new truth;
+- PR remains draft/unmerged pending explicit approval.
+
+Current next implementation target:
+
+> **Combo Execution Eligibility / structured prerequisite depth.**
