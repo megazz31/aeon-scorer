@@ -18,7 +18,7 @@
 
 | Phase | Focus | Status |
 |---|---|---|
-| P2 | Experience Intelligence | **IN PROGRESS — Fingerprint V1 + Friction V1 implemented** |
+| P2 | Experience Intelligence | **IN PROGRESS — Fingerprint V1 + Friction V1 + Horizon V1 implemented** |
 | P3 | Pod Intelligence | PLANNED |
 | P4 | Game Quality Engine | PLANNED |
 | P5 | Aeon Match | PLANNED |
@@ -89,18 +89,40 @@
   - moralized labels are absent from model output.
 - Deterministic-loop classification is intentionally deferred until combo evidence carries reliable loop/prerequisite metadata.
 
+#### 2026-08-22 — Goldfish Horizon V1 implemented and validated
+
+- Added `src/engine/goldfishHorizon.js` with model version `goldfish-horizon-v1`.
+- `analyzePower()` now exposes `result.horizon`.
+- V1 exposes temporal curves for:
+  - commander online;
+  - engine operational;
+  - meaningful interaction available;
+  - draw/recursion resource action available;
+  - burst/high-impact line available.
+- Each curve exposes 25/50/75 threshold milestones where available.
+- Critical semantic decision: **do not turn the existing on-turn simulator values into fake cumulative first-access probabilities**.
+- Therefore V1 explicitly distinguishes:
+  - commander: `online-by-turn`;
+  - engine / interaction / resource / burst: `available-on-turn`.
+- Added `scripts/goldfish-horizon-test.mjs` to `npm run test:product`.
+- Test locks a deliberately non-monotonic engine series to ensure Aeon does not silently force it into a cumulative-looking curve.
+- Model notes explicitly state that Horizon is temporal access, not a win-probability curve.
+- Validation run `P2-P7 product validation #22` completed successfully: product contracts **green**, build **green**.
+
 ### Known P2 V1 limitations
 
 - `dependency` is intentionally command-zone focused until SPOF V1 adds generalized counterfactual dependency.
 - `inevitability` is a structural proxy, not a validated real-game inevitability probability.
 - `turnComplexity` uses semantic/recurrence evidence but is not yet calibrated against observed turn duration.
 - Friction V1 detects structural Oracle patterns but does not yet model multi-card hard locks as proven deterministic states.
+- Goldfish Horizon V1 is limited by the current simulator horizon (`maxTurn`, currently 7 in standard analysis) and does not fabricate T8–T10 values.
+- True cumulative “first access by turn” for interaction/resource/burst requires the sequence simulator to record first-access events explicitly; that extension is deferred rather than approximated incorrectly.
 - No UI surface is added yet; model/output contracts come first.
 - PR #10 is stacked on P0/P1 and will ultimately need to follow the validated upstream branch state before production merge.
 
 ### Current next action
 
-Implement **Goldfish Horizon V1** from existing sequence simulation outputs, with fixed event definitions and deterministic/convergence tests. It must remain a temporal access model, not a hidden “chance to win” curve.
+Design and implement the **SPOF counterfactual contract** before scoring SPOF itself. First target is a clean commander-unavailable / commander-tax experiment path that reuses fixed seeds and cannot recursively trigger product models. Generalized graveyard/artifact/enchantment suppression will only be added where the counterfactual remains interpretable.
 
 ---
 
@@ -338,30 +360,33 @@ Use existing Aeon evidence first. Avoid new hand-maintained card lists unless a 
 - observer-only text cannot create false friction;
 - deterministic hard-lock claims are not made without deterministic evidence.
 
-## 5.3 Goldfish Horizon — NEXT
+## 5.3 Goldfish Horizon — IMPLEMENTED V1
 
 ### User question
 
 > “When does this deck become operational or threatening?”
 
-### Candidate cumulative events T1–T10
+### V1 curves
 
-- usable mana threshold;
-- commander castable;
-- commander + engine online;
-- primary package online;
-- meaningful interaction available;
-- must-answer threat accessible;
-- combo line accessible.
+- commander online (`online-by-turn`);
+- engine operational (`available-on-turn`);
+- meaningful interaction (`available-on-turn`);
+- draw/recursion resource action (`available-on-turn`);
+- burst/high-impact line (`available-on-turn`).
+
+### Critical V1 rule
+
+Do not relabel an on-turn probability as cumulative first-access probability. True first-access curves require first-access events to be tracked inside the simulator.
 
 ### Acceptance criteria
 
-- fixed-seed deterministic mode;
-- convergence checks;
-- event definitions documented;
-- `engine online` never silently means `winning`.
+- fixed-seed deterministic upstream simulation;
+- original turn-profile semantics preserved;
+- thresholds documented;
+- no hidden assumption that `engine online` equals `winning`;
+- no fabricated turns beyond the simulator horizon.
 
-## 5.4 Single Point of Failure — SPOF
+## 5.4 Single Point of Failure — SPOF — NEXT
 
 ### User question
 
@@ -391,7 +416,9 @@ Use existing Aeon evidence first. Avoid new hand-maintained card lists unless a 
 - based on causal delta, not card count;
 - distinguish dependency from synergy;
 - expose absolute/relative delta;
-- counterfactual assumptions explicit.
+- counterfactual assumptions explicit;
+- fixed seed between baseline and counterfactual where comparison is stochastic;
+- product-model hooks disabled inside counterfactual runs to prevent recursive analysis.
 
 ---
 
@@ -727,7 +754,7 @@ Use holdout separation, playgroup leakage protection, calibration curves, baseli
 # 15. Implementation sequence
 
 1. **Experience Fingerprint + Table Friction** — V1 models implemented.
-2. **Goldfish Horizon + SPOF** — next.
+2. **Goldfish Horizon + SPOF** — Horizon V1 implemented; SPOF next.
 3. **Threat–Answer Timeline**.
 4. **Adaptive Rule 0**.
 5. **Game Quality / Non-Game Risk V1**.
