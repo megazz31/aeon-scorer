@@ -16,6 +16,7 @@ const result={
 }
 
 const built=buildThreatObjects(result)
+assert.equal(THREAT_OBJECT_MODEL_VERSION,'threat-object-v2')
 assert.equal(built.modelVersion,THREAT_OBJECT_MODEL_VERSION)
 assert.deepEqual(built.objects.map(x=>x.id),['combo','artifact-engine','graveyard-engine','creature-board','extra-turn-loop','enchantment-engine'])
 for(const threat of built.objects){
@@ -36,18 +37,20 @@ assert.equal(combo.strength,76)
 assert.equal(combo.milestones.at50,5)
 assert.equal(combo.criticalWindow.startTurn,5)
 assert.ok(combo.prerequisites.unknown.includes('tutor-eligibility'))
+assert.equal(combo.executionPrerequisites,undefined,'legacy combo input must retain explicit fallback without inventing structured eligibility')
 assert.equal(combo.sourceEvidence.find(x=>x.id==='detected-lines').score,2)
 const artifact=built.objects.find(x=>x.id==='artifact-engine')
 assert.equal(artifact.strength,68)
 assert.ok(artifact.sourceEvidence.some(x=>x.kind==='package'&&x.id==='artifacts'))
 assert.deepEqual(artifact.turns,result.horizon.curves.engine.points.map(p=>({turn:p.turn,value:Math.round(p.value*.68)})))
 
-// Threat Profile V3 is an additive representation change: legacy consumer fields remain identical in shape/meaning.
+// Threat Profile V4 is an additive prerequisite-depth representation change: legacy consumer fields remain identical in shape/meaning.
 const profile=buildThreatProfile(result,[])
-assert.equal(profile.modelVersion,'threat-profile-v3')
+assert.equal(profile.modelVersion,'threat-profile-v4')
 assert.equal(profile.threatObjectModel,THREAT_OBJECT_MODEL_VERSION)
 assert.strictEqual(profile.objects,profile.threats)
 for(const threat of profile.threats){for(const field of ['id','strength','level','answers','turns'])assert.ok(field in threat)}
+assert.equal(profile.confidence.prerequisites,'explicit-partial')
 
 // Fallback timing remains explicit when the source Horizon is historical availability.
 const fallback=buildThreatObjects({...result,horizon:{...result.horizon,curves:{...result.horizon.curves,engine:curve([8,22,41,35,50,44,60],'available-on-turn'),burst:curve([3,12,28,20,33,29,40],'available-on-turn')}}})
@@ -60,14 +63,14 @@ assert.deepEqual(reversed,built)
 // Public serialization keeps useful aggregate threat evidence but strips private combo/card evidence.
 const cards=[{name:'SECRET ANSWER CARD',type:'Instant',oracle:'SECRET ORACLE TEXT. Counter target spell.',tags:['counterspell'],interaction:4,cmc:2}]
 const shared=buildShareableIntelligence(result,cards),text=JSON.stringify(shared)
-assert.equal(shared.modelVersion,'share-intelligence-v4')
-assert.equal(shared.threatProfile.modelVersion,'threat-profile-v3')
+assert.equal(shared.modelVersion,'share-intelligence-v5')
+assert.equal(shared.threatProfile.modelVersion,'threat-profile-v4')
 assert.equal(shared.threatProfile.threatObjectModel,THREAT_OBJECT_MODEL_VERSION)
-assert.ok(shared.threatProfile.threats.some(x=>x.id==='combo'&&x.prerequisites.unknown.includes('tutor-eligibility')))
+assert.ok(shared.threatProfile.threats.some(x=>x.id==='combo'&&x.prerequisites.unknown.includes('execution-prerequisites-not-modeled')))
 assert.equal(text.includes('PRIVATE COMBO NAME'),false)
 assert.equal(text.includes('SECRET PIECE A'),false)
 assert.equal(text.includes('SECRET PIECE B'),false)
 assert.equal(text.includes('SECRET ANSWER CARD'),false)
 assert.equal(text.includes('SECRET ORACLE TEXT'),false)
 
-console.log('THREAT OBJECTS V1 OK — deterministic explicit evidence/prerequisites/timing with legacy threat compatibility and sanitized sharing')
+console.log('THREAT OBJECTS V2 OK — deterministic threat arithmetic, structured-prerequisite compatibility/fallback and sanitized Threat Profile V4 sharing')

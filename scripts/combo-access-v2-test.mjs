@@ -66,10 +66,10 @@ assert.ok(missing.windows.every(x=>x.piecePresence===null))
 
 // Product intelligence versioning + public privacy: timing aggregates are useful, combo/card names remain absent.
 const deck=buildDeckIntelligence(base,cards)
-assert.equal(deck.modelVersion,'deck-intelligence-v4')
+assert.equal(deck.modelVersion,'deck-intelligence-v5')
 assert.equal(deck.comboAccessibility.modelVersion,'combo-access-v2')
 const shared=buildShareableIntelligence(base,cards),text=JSON.stringify(shared)
-assert.equal(shared.modelVersion,'share-intelligence-v4')
+assert.equal(shared.modelVersion,'share-intelligence-v5')
 assert.equal(shared.privacy.comboPieceNames,false)
 assert.equal(shared.comboAccessibility.lines[0].timing.status,'piece-presence-supported')
 assert.equal(shared.comboAccessibility.lines[0].timing.windows.length,3)
