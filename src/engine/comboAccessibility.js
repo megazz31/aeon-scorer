@@ -1,21 +1,11 @@
+import { buildComboExecutionEligibility,comboRequirementIds } from './comboExecutionEligibility.js'
+
 export const COMBO_ACCESS_MODEL_VERSION='combo-access-v2'
 
 const clamp=(n,a=0,b=100)=>Math.max(a,Math.min(b,n))
 const level=n=>n>=70?'high':n>=40?'moderate':'low'
 const TARGET_TURNS=[5,7,9]
 const key=s=>String(s||'').trim().toLowerCase()
-
-const COMBO_BOUNDARIES={
-  'thoracle + consultation':['library-empty-condition','stack-sequencing','protection-window'],
-  'thoracle + pact':['library-empty-condition','singleton-name-constraint','stack-sequencing','protection-window'],
-  'dramatic scepter':['imprint-state','nonland-mana-positive-loop','activation-cost','protection-window'],
-  'heliod ballista':['x-cost','counter-threshold','lifelink-activation','protection-window'],
-  'exquisite bond':['life-change-trigger','both-permanents-survive'],
-  'exquisite vito':['life-change-trigger','both-permanents-survive'],
-  'painter stone':['activation-cost','color-setting-state','replacement-effect-risk'],
-  'worldgorger':['graveyard-zone-piece','aura-targeting-sequence','loop-exit-condition'],
-  'breach freeze':['graveyard-resource-threshold','escape-cost','storm-count','mana-loop'],
-}
 
 function structuralLine(result,combo){
   const names=new Set((result.commanderNames||[]).map(key)),pieces=combo.cards||[],commanderPieces=pieces.filter(n=>names.has(key(n))).length,tutors=Number(result.roles?.tutors||0)+Number(result.roles?.repeatableTutors||0),draw=Number(result.roles?.draw||0),fastMana=Number(result.roles?.fastMana||0),burstT5=result.horizon?.curves?.burst?.points?.find(x=>x.turn===5)?.value||0,piecePenalty=Math.max(0,pieces.length-2)*16,base=34+tutors*3+draw*.8+fastMana*2+burstT5*.12+commanderPieces*8-piecePenalty,score=Math.round(clamp(base))
@@ -59,7 +49,7 @@ function resolutionFor(result,cards,combo){
 }
 
 function temporalEvidence(result,cards,combo){
-  const resolved=resolutionFor(result,cards,combo),pieceCount=(combo.cards||[]).length,boundaries=COMBO_BOUNDARIES[key(combo.name)]||['execution-prerequisites-not-modeled'],supported=pieceCount>=2&&resolved.missing.length===0&&resolved.librarySize>0
+  const resolved=resolutionFor(result,cards,combo),pieceCount=(combo.cards||[]).length,boundaries=comboRequirementIds(combo.name),supported=pieceCount>=2&&resolved.missing.length===0&&resolved.librarySize>0
   const windows=TARGET_TURNS.map(turn=>{
     const rawDraws=Math.min(resolved.librarySize,7+turn),prob=supported?atLeastOneEachProbability(resolved.librarySize,rawDraws,resolved.libraryGroups.map(x=>x.copies)):null
     return {turn,piecePresence:prob==null?null:Math.round(prob*1000)/10,rawDraws}
@@ -83,17 +73,18 @@ function temporalEvidence(result,cards,combo){
 export function buildComboAccessibility(result={},cards=[]){
   const combos=result.combos||[]
   const lines=combos.map((combo,index)=>{
-    const structural=structuralLine(result,combo),timing=temporalEvidence(result,cards,combo)
-    return {index,name:combo.name||(combo.cards||[]).join(' + '),cards:[...(combo.cards||[])],...structural,timing}
+    const structural=structuralLine(result,combo),timing=temporalEvidence(result,cards,combo),executionEligibility=buildComboExecutionEligibility(combo.name,timing)
+    return {index,name:combo.name||(combo.cards||[]).join(' + '),cards:[...(combo.cards||[])],...structural,timing,executionEligibility}
   })
-  const highest=[...lines].sort((a,b)=>b.score-a.score||a.index-b.index)[0]||null,supportedTiming=lines.filter(x=>x.timing.status==='piece-presence-supported').length
+  const highest=[...lines].sort((a,b)=>b.score-a.score||a.index-b.index)[0]||null,supportedTiming=lines.filter(x=>x.timing.status==='piece-presence-supported').length,blockedExecution=lines.filter(x=>x.executionEligibility?.exactExecutionTiming==='blocked').length
   return {
     modelVersion:COMBO_ACCESS_MODEL_VERSION,
     lines,
     highest,
     timing:{status:lines.length?(supportedTiming?'piece-presence-modeled':'unsupported'):'not-applicable',targetWindows:TARGET_TURNS.map(turn=>`T${turn}`),supportedLines:supportedTiming,totalLines:lines.length,metric:'piece-presence-not-execution'},
-    confidence:{productCalibration:'experimental',structuralScore:'v1-unchanged',piecePresence:'combinatorial-raw-draw',executionProbability:'not-modeled'},
-    notes:['V2 keeps the historical structural accessibility score unchanged and adds a separate temporal piece-presence layer.','T5/T7/T9 piecePresence is the probability that every required library piece name has appeared in the raw opening-seven-plus-draws sample; command-zone pieces are counted separately.','These values do not include mulligan selection, tutors, execution mana, special zones, activation costs, loop prerequisites or protection windows.','No line receives an exact execution or win probability unless those prerequisites become explicitly modeled in a later version.'],
+    executionEligibility:{modelVersion:'combo-execution-eligibility-v1',blockedLines:blockedExecution,totalLines:lines.length,exactExecutionTiming:blockedExecution?'blocked':'not-promoted'},
+    confidence:{productCalibration:'experimental',structuralScore:'v1-unchanged',piecePresence:'combinatorial-raw-draw',executionProbability:'not-modeled',executionPrerequisites:'structured-v1'},
+    notes:['V2 keeps the historical structural accessibility score unchanged and adds a separate temporal piece-presence layer.','T5/T7/T9 piecePresence is the probability that every required library piece name has appeared in the raw opening-seven-plus-draws sample; command-zone pieces are counted separately.','Structured execution eligibility now describes exactly which known/unknown/unsupported prerequisite dimensions block exact execution timing.','No line receives an exact execution or win probability unless those prerequisites become explicitly modeled in a later version.'],
   }
 }
 
