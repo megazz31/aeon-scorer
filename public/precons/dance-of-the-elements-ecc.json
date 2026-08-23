@@ -19,7 +19,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/DanceOfTheElements_ECC.json",
-  "sourceRevision": "2026-08-21",
+  "sourceRevision": "2026-08-22",
   "productAliases": [
     {
       "name": "Dance of the Elements",
@@ -36,11 +36,11 @@
     "peak": 70,
     "coverage": 90,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-10",
+    "semanticVersion": "3.2.0-semantic-11",
     "oracleSnapshotHash": "880bb3c452aa02ad1f9c9f53c65fd9c469020209018a3c10e55e925c9a06966a",
-    "scryfallOracleDate": "2026-08-22",
+    "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-22T07:19:58.642Z"
+    "analyzedAt": "2026-08-23T11:54:12.664Z"
   },
   "decklist": "1 Mass of Mysteries\n1 Elemental Spectacle\n1 Springleaf Parade\n1 Jubilation\n1 Impulsivity\n1 Lamentation\n1 Belonging\n1 Subterfuge\n1 Rain-Slicked Copse\n1 Sodden Verdure\n1 Abundant Countryside\n1 Endurance\n1 Fury\n1 Haunting Voyage\n1 Avenger of Zendikar\n1 Cavalier of Thorns\n1 Greenwarden of Murasa\n1 Selvala, Heart of the Wilds\n1 Titan of Industry\n1 Muldrotha, the Gravetide\n1 Omnath, Locus of Rage\n1 Yarok, the Desecrated\n1 Omnath, Locus of the Roil\n1 Timeless Lotus\n1 Shatter the Sky\n1 Hoofprints of the Stag\n1 Slithermuse\n1 Descendants' Fury\n1 Blasphemous Act\n1 Cream of the Crop\n1 Kindred Summons\n1 Bane of Progress\n1 Realmwalker\n1 Return of the Wildspeaker\n1 Faeburrow Elder\n1 Vernal Sovereign\n1 Horde of Notions\n1 Maelstrom Wanderer\n1 Jegantha, the Wellspring\n1 Chromatic Lantern\n1 Primal Beyond\n1 Raging Ravine\n1 Exotic Orchard\n1 Flamekin Village\n1 Path to Exile\n1 Mulldrifter\n1 Reality Shift\n1 Shriekmaw\n1 Shimmercreep\n1 Flamebraider\n1 Crib Swap\n1 Secluded Courtyard\n1 Sol Ring\n1 Command Tower\n1 Arcane Signet\n1 Distant Melody\n1 Incandescent Soulstoke\n1 Eclipsed Flamekin\n1 Foundation Breaker\n1 Garruk's Uprising\n1 Risen Reef\n1 Fellwar Stone\n1 Unclaimed Territory\n1 Ancient Ziggurat\n1 Frontier Bivouac\n1 Sandsteppe Citadel\n1 Savage Lands\n1 Opulent Palace\n1 Seaside Citadel\n1 Jungle Shrine\n1 Smokebraider\n1 Ingot Chewer\n1 Fertile Ground\n1 Abundant Growth\n1 Kodama's Reach\n1 Cultivate\n1 Path of Ancestry\n1 Thriving Grove\n1 Thriving Heath\n1 Thriving Isle\n1 Opal Palace\n1 Thriving Bluff\n1 Thriving Moor\n2 Plains\n2 Island\n2 Swamp\n2 Mountain\n8 Forest",
   "oracleCards": [
@@ -1996,10 +1996,12 @@
         "tokens",
         "death-payoff",
         "token-payoff",
-        "sac-outlet",
-        "sac-enabler"
+        "sac-outlet"
       ]
     },
+    "commanderNames": [
+      "Ashling, the Limitless"
+    ],
     "aeon": {
       "available": false,
       "score": null,
@@ -2075,7 +2077,234 @@
           "resource": 73,
           "burst": 16
         }
-      ]
+      ],
+      "firstAccess": {
+        "modelVersion": "first-access-sampler-v1",
+        "iterations": 800,
+        "maxTurn": 7,
+        "curves": {
+          "commander": {
+            "id": "commander-first-access",
+            "semantics": "cumulative-first-access",
+            "points": [
+              {
+                "turn": 1,
+                "value": 0
+              },
+              {
+                "turn": 2,
+                "value": 8
+              },
+              {
+                "turn": 3,
+                "value": 55
+              },
+              {
+                "turn": 4,
+                "value": 86
+              },
+              {
+                "turn": 5,
+                "value": 93
+              },
+              {
+                "turn": 6,
+                "value": 95
+              },
+              {
+                "turn": 7,
+                "value": 96
+              }
+            ],
+            "observedWithinHorizon": 768
+          },
+          "engine": {
+            "id": "engine-first-access",
+            "semantics": "cumulative-first-access",
+            "points": [
+              {
+                "turn": 1,
+                "value": 0
+              },
+              {
+                "turn": 2,
+                "value": 0
+              },
+              {
+                "turn": 3,
+                "value": 0
+              },
+              {
+                "turn": 4,
+                "value": 0
+              },
+              {
+                "turn": 5,
+                "value": 0
+              },
+              {
+                "turn": 6,
+                "value": 0
+              },
+              {
+                "turn": 7,
+                "value": 0
+              }
+            ],
+            "observedWithinHorizon": 0
+          },
+          "interaction": {
+            "id": "interaction-first-access",
+            "semantics": "cumulative-first-access",
+            "points": [
+              {
+                "turn": 1,
+                "value": 5
+              },
+              {
+                "turn": 2,
+                "value": 13
+              },
+              {
+                "turn": 3,
+                "value": 28
+              },
+              {
+                "turn": 4,
+                "value": 48
+              },
+              {
+                "turn": 5,
+                "value": 61
+              },
+              {
+                "turn": 6,
+                "value": 68
+              },
+              {
+                "turn": 7,
+                "value": 73
+              }
+            ],
+            "observedWithinHorizon": 586
+          },
+          "resource": {
+            "id": "resource-first-access",
+            "semantics": "cumulative-first-access",
+            "points": [
+              {
+                "turn": 1,
+                "value": 0
+              },
+              {
+                "turn": 2,
+                "value": 1
+              },
+              {
+                "turn": 3,
+                "value": 12
+              },
+              {
+                "turn": 4,
+                "value": 38
+              },
+              {
+                "turn": 5,
+                "value": 56
+              },
+              {
+                "turn": 6,
+                "value": 67
+              },
+              {
+                "turn": 7,
+                "value": 73
+              }
+            ],
+            "observedWithinHorizon": 584
+          },
+          "burst": {
+            "id": "burst-first-access",
+            "semantics": "cumulative-first-access",
+            "points": [
+              {
+                "turn": 1,
+                "value": 0
+              },
+              {
+                "turn": 2,
+                "value": 0
+              },
+              {
+                "turn": 3,
+                "value": 1
+              },
+              {
+                "turn": 4,
+                "value": 4
+              },
+              {
+                "turn": 5,
+                "value": 9
+              },
+              {
+                "turn": 6,
+                "value": 14
+              },
+              {
+                "turn": 7,
+                "value": 18
+              }
+            ],
+            "observedWithinHorizon": 144
+          }
+        },
+        "commanders": {
+          "Ashling, the Limitless": {
+            "id": "commander-first-access",
+            "semantics": "cumulative-first-access",
+            "points": [
+              {
+                "turn": 1,
+                "value": 0
+              },
+              {
+                "turn": 2,
+                "value": 8
+              },
+              {
+                "turn": 3,
+                "value": 55
+              },
+              {
+                "turn": 4,
+                "value": 86
+              },
+              {
+                "turn": 5,
+                "value": 93
+              },
+              {
+                "turn": 6,
+                "value": 95
+              },
+              {
+                "turn": 7,
+                "value": 96
+              }
+            ],
+            "observedWithinHorizon": 768
+          }
+        },
+        "confidence": {
+          "sampling": "high"
+        },
+        "notes": [
+          "Each sample reuses the existing sequence simulator with one sequence and records the first turn each availability signal becomes true.",
+          "The sampler uses an independent deterministic RNG stream so it cannot alter the main Aeon power simulation.",
+          "Probabilities use all sampled sequences as denominator; a sequence with no access inside the horizon remains a miss."
+        ]
+      }
     },
     "drivers": [
       {
@@ -2205,9 +2434,899 @@
     "warnings": [],
     "methodology": {
       "iterations": 3200,
+      "firstAccessIterations": 800,
       "model": "sequence-access-v3.2-semantic",
       "maxTurn": 7,
+      "commandZoneCount": 1,
+      "separateCommanderTax": false,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+    },
+    "experience": {
+      "modelVersion": "experience-v1",
+      "dimensions": {
+        "tempo": {
+          "score": 31,
+          "level": "moderate",
+          "evidence": [
+            {
+              "signal": "speed",
+              "value": 31,
+              "source": "aeon-dimension",
+              "reason": "Existing Aeon speed dimension; no power-score feedback."
+            }
+          ]
+        },
+        "explosiveness": {
+          "score": 13,
+          "level": "low",
+          "evidence": [
+            {
+              "signal": "explosiveness",
+              "value": 13,
+              "source": "aeon-dimension",
+              "reason": "Existing Aeon explosiveness dimension; no power-score feedback."
+            }
+          ]
+        },
+        "volatility": {
+          "score": 81,
+          "level": "very-high",
+          "evidence": [
+            {
+              "signal": "normal-range-width",
+              "value": 21,
+              "source": "profile",
+              "reason": "P20–P80 spread."
+            },
+            {
+              "signal": "high-roll-tail",
+              "value": 26,
+              "source": "profile",
+              "reason": "Peak distance above P80."
+            }
+          ]
+        },
+        "interaction": {
+          "score": 39,
+          "level": "moderate",
+          "evidence": [
+            {
+              "signal": "interaction",
+              "value": 39,
+              "source": "aeon-dimension",
+              "reason": "Existing Aeon interaction-access dimension."
+            }
+          ]
+        },
+        "resilience": {
+          "score": 37,
+          "level": "moderate",
+          "evidence": [
+            {
+              "signal": "resilience",
+              "value": 37,
+              "source": "aeon-dimension",
+              "reason": "Existing Aeon recovery/resilience dimension."
+            }
+          ]
+        },
+        "inevitability": {
+          "score": 31,
+          "level": "moderate",
+          "evidence": [
+            {
+              "signal": "synergy",
+              "value": 9,
+              "source": "aeon-dimension",
+              "reason": "Structural package/commander synergy."
+            },
+            {
+              "signal": "consistency",
+              "value": 67,
+              "source": "aeon-dimension",
+              "reason": "Ability to reproduce normal game plans."
+            },
+            {
+              "signal": "resilience",
+              "value": 37,
+              "source": "aeon-dimension",
+              "reason": "Ability to keep the engine relevant."
+            },
+            {
+              "signal": "package-cohesion",
+              "value": 0,
+              "source": "package-model",
+              "reason": "Average cohesion of the three strongest packages."
+            }
+          ]
+        },
+        "dependency": {
+          "score": 50,
+          "level": "high",
+          "evidence": [
+            {
+              "signal": "commander-delta",
+              "value": 9,
+              "source": "profile",
+              "reason": "Observed command-zone contribution proxy."
+            },
+            {
+              "signal": "commander-synergy",
+              "value": 32,
+              "source": "package-model",
+              "reason": "Share of the deck connected to commander semantics."
+            },
+            {
+              "signal": "scope-v1",
+              "value": 0,
+              "source": "model-note",
+              "reason": "V1 dependency is command-zone focused; generalized SPOF arrives later in P2."
+            }
+          ]
+        },
+        "turnComplexity": {
+          "score": 22,
+          "level": "low",
+          "evidence": [
+            {
+              "signal": "recurring-cards",
+              "value": 19,
+              "source": "semantic",
+              "reason": "Cards with recurring/triggered actions."
+            },
+            {
+              "signal": "chain-payoffs",
+              "value": 8,
+              "source": "semantic",
+              "reason": "Cards that convert repeated package events into additional actions."
+            },
+            {
+              "signal": "activated-cards",
+              "value": 20,
+              "source": "semantic",
+              "reason": "Cards exposing repeatable activated decisions."
+            },
+            {
+              "signal": "packages",
+              "value": 0,
+              "source": "package-model",
+              "reason": "Independent engines increase sequencing branches."
+            }
+          ]
+        }
+      },
+      "confidence": {
+        "semantic": "high",
+        "simulation": "high",
+        "productCalibration": "experimental",
+        "evidenceCoverage": "full"
+      },
+      "notes": [
+        "Experience Fingerprint V1 is parallel product intelligence and does not modify the Aeon 0–100 power score.",
+        "Inevitability and dependency are structural proxies until P2 SPOF and P7 real-game calibration mature."
+      ]
+    },
+    "friction": {
+      "modelVersion": "friction-v1",
+      "signals": {
+        "resourceDenial": {
+          "id": "resource-denial",
+          "label": "Resource denial / taxes",
+          "level": "none",
+          "score": 0,
+          "evidence": [],
+          "note": null
+        },
+        "massLandDenial": {
+          "id": "mass-land-denial",
+          "label": "Mass land denial",
+          "level": "none",
+          "score": 0,
+          "evidence": [],
+          "note": null
+        },
+        "commanderLockout": {
+          "id": "commander-lockout",
+          "label": "Commander lockout",
+          "level": "none",
+          "score": 0,
+          "evidence": [],
+          "note": null
+        },
+        "theft": {
+          "id": "theft",
+          "label": "Theft / control exchange",
+          "level": "none",
+          "score": 0,
+          "evidence": [],
+          "note": null
+        },
+        "extraTurns": {
+          "id": "extra-turns",
+          "label": "Extra-turn recurrence",
+          "level": "none",
+          "score": 0,
+          "evidence": [],
+          "note": null
+        },
+        "forcedDiscardSacrifice": {
+          "id": "forced-discard-sacrifice",
+          "label": "Forced discard / sacrifice",
+          "level": "none",
+          "score": 0,
+          "evidence": [],
+          "note": null
+        },
+        "lockPotential": {
+          "id": "lock-potential",
+          "label": "Restriction stacking potential",
+          "level": "none",
+          "score": 0,
+          "evidence": [],
+          "note": "V1 requires multiple persistent restriction effects; it does not claim a deterministic hard lock."
+        },
+        "longSequencing": {
+          "id": "long-sequencing",
+          "label": "Long sequencing potential",
+          "level": "low",
+          "score": 22,
+          "evidence": [
+            {
+              "name": "Experience Fingerprint",
+              "reason": "Turn Complexity proxy from recurring/chained semantic actions.",
+              "recurring": true,
+              "weight": 1.2222222222222223
+            }
+          ],
+          "note": "Derived from Experience Fingerprint turn-complexity evidence; not calibrated to real clock time."
+        }
+      },
+      "notable": [],
+      "confidence": {
+        "productCalibration": "experimental",
+        "evidenceCoverage": "full"
+      },
+      "notes": [
+        "Table Friction is descriptive, not moralized: signals describe table-relevant characteristics rather than good/bad behavior.",
+        "V1 intentionally omits deterministic-loop classification until combo evidence contains reliable loop/prerequisite metadata."
+      ]
+    },
+    "horizon": {
+      "modelVersion": "goldfish-horizon-v2",
+      "maxTurn": 7,
+      "iterations": 3200,
+      "firstAccessIterations": 800,
+      "curves": {
+        "commander": {
+          "id": "commander-first-access",
+          "label": "Commander first online",
+          "semantics": "cumulative-first-access",
+          "points": [
+            {
+              "turn": 1,
+              "value": 0
+            },
+            {
+              "turn": 2,
+              "value": 8
+            },
+            {
+              "turn": 3,
+              "value": 55
+            },
+            {
+              "turn": 4,
+              "value": 86
+            },
+            {
+              "turn": 5,
+              "value": 93
+            },
+            {
+              "turn": 6,
+              "value": 95
+            },
+            {
+              "turn": 7,
+              "value": 96
+            }
+          ],
+          "observedWithinHorizon": 768,
+          "milestones": {
+            "at25": 3,
+            "at50": 3,
+            "at75": 4
+          }
+        },
+        "engine": {
+          "id": "engine-first-access",
+          "label": "Engine first operational",
+          "semantics": "cumulative-first-access",
+          "points": [
+            {
+              "turn": 1,
+              "value": 0
+            },
+            {
+              "turn": 2,
+              "value": 0
+            },
+            {
+              "turn": 3,
+              "value": 0
+            },
+            {
+              "turn": 4,
+              "value": 0
+            },
+            {
+              "turn": 5,
+              "value": 0
+            },
+            {
+              "turn": 6,
+              "value": 0
+            },
+            {
+              "turn": 7,
+              "value": 0
+            }
+          ],
+          "observedWithinHorizon": 0,
+          "milestones": {
+            "at25": null,
+            "at50": null,
+            "at75": null
+          }
+        },
+        "interaction": {
+          "id": "interaction-first-access",
+          "label": "First meaningful interaction access",
+          "semantics": "cumulative-first-access",
+          "points": [
+            {
+              "turn": 1,
+              "value": 5
+            },
+            {
+              "turn": 2,
+              "value": 13
+            },
+            {
+              "turn": 3,
+              "value": 28
+            },
+            {
+              "turn": 4,
+              "value": 48
+            },
+            {
+              "turn": 5,
+              "value": 61
+            },
+            {
+              "turn": 6,
+              "value": 68
+            },
+            {
+              "turn": 7,
+              "value": 73
+            }
+          ],
+          "observedWithinHorizon": 586,
+          "milestones": {
+            "at25": 3,
+            "at50": 5,
+            "at75": null
+          }
+        },
+        "resource": {
+          "id": "resource-first-access",
+          "label": "First draw / recursion access",
+          "semantics": "cumulative-first-access",
+          "points": [
+            {
+              "turn": 1,
+              "value": 0
+            },
+            {
+              "turn": 2,
+              "value": 1
+            },
+            {
+              "turn": 3,
+              "value": 12
+            },
+            {
+              "turn": 4,
+              "value": 38
+            },
+            {
+              "turn": 5,
+              "value": 56
+            },
+            {
+              "turn": 6,
+              "value": 67
+            },
+            {
+              "turn": 7,
+              "value": 73
+            }
+          ],
+          "observedWithinHorizon": 584,
+          "milestones": {
+            "at25": 4,
+            "at50": 5,
+            "at75": null
+          }
+        },
+        "burst": {
+          "id": "burst-first-access",
+          "label": "First burst / high-impact access",
+          "semantics": "cumulative-first-access",
+          "points": [
+            {
+              "turn": 1,
+              "value": 0
+            },
+            {
+              "turn": 2,
+              "value": 0
+            },
+            {
+              "turn": 3,
+              "value": 1
+            },
+            {
+              "turn": 4,
+              "value": 4
+            },
+            {
+              "turn": 5,
+              "value": 9
+            },
+            {
+              "turn": 6,
+              "value": 14
+            },
+            {
+              "turn": 7,
+              "value": 18
+            }
+          ],
+          "observedWithinHorizon": 144,
+          "milestones": {
+            "at25": null,
+            "at50": null,
+            "at75": null
+          }
+        }
+      },
+      "availabilityCurves": {
+        "commander": {
+          "id": "commander-online",
+          "label": "Commander online",
+          "semantics": "online-by-turn",
+          "points": [
+            {
+              "turn": 1,
+              "value": 0
+            },
+            {
+              "turn": 2,
+              "value": 7
+            },
+            {
+              "turn": 3,
+              "value": 53
+            },
+            {
+              "turn": 4,
+              "value": 84
+            },
+            {
+              "turn": 5,
+              "value": 93
+            },
+            {
+              "turn": 6,
+              "value": 95
+            },
+            {
+              "turn": 7,
+              "value": 96
+            }
+          ],
+          "milestones": {
+            "at25": 3,
+            "at50": 3,
+            "at75": 4
+          }
+        },
+        "engine": {
+          "id": "engine-operational",
+          "label": "Engine operational",
+          "semantics": "available-on-turn",
+          "points": [
+            {
+              "turn": 1,
+              "value": 0
+            },
+            {
+              "turn": 2,
+              "value": 0
+            },
+            {
+              "turn": 3,
+              "value": 0
+            },
+            {
+              "turn": 4,
+              "value": 0
+            },
+            {
+              "turn": 5,
+              "value": 0
+            },
+            {
+              "turn": 6,
+              "value": 0
+            },
+            {
+              "turn": 7,
+              "value": 0
+            }
+          ],
+          "milestones": {
+            "at25": null,
+            "at50": null,
+            "at75": null
+          }
+        },
+        "interaction": {
+          "id": "interaction-available",
+          "label": "Meaningful interaction available",
+          "semantics": "available-on-turn",
+          "points": [
+            {
+              "turn": 1,
+              "value": 5
+            },
+            {
+              "turn": 2,
+              "value": 12
+            },
+            {
+              "turn": 3,
+              "value": 25
+            },
+            {
+              "turn": 4,
+              "value": 45
+            },
+            {
+              "turn": 5,
+              "value": 59
+            },
+            {
+              "turn": 6,
+              "value": 67
+            },
+            {
+              "turn": 7,
+              "value": 73
+            }
+          ],
+          "milestones": {
+            "at25": 3,
+            "at50": 5,
+            "at75": null
+          }
+        },
+        "resource": {
+          "id": "resource-action",
+          "label": "Draw / recursion action available",
+          "semantics": "available-on-turn",
+          "points": [
+            {
+              "turn": 1,
+              "value": 0
+            },
+            {
+              "turn": 2,
+              "value": 2
+            },
+            {
+              "turn": 3,
+              "value": 14
+            },
+            {
+              "turn": 4,
+              "value": 37
+            },
+            {
+              "turn": 5,
+              "value": 55
+            },
+            {
+              "turn": 6,
+              "value": 66
+            },
+            {
+              "turn": 7,
+              "value": 73
+            }
+          ],
+          "milestones": {
+            "at25": 4,
+            "at50": 5,
+            "at75": null
+          }
+        },
+        "burst": {
+          "id": "burst-access",
+          "label": "Burst / high-impact line available",
+          "semantics": "available-on-turn",
+          "points": [
+            {
+              "turn": 1,
+              "value": 0
+            },
+            {
+              "turn": 2,
+              "value": 0
+            },
+            {
+              "turn": 3,
+              "value": 1
+            },
+            {
+              "turn": 4,
+              "value": 4
+            },
+            {
+              "turn": 5,
+              "value": 8
+            },
+            {
+              "turn": 6,
+              "value": 12
+            },
+            {
+              "turn": 7,
+              "value": 16
+            }
+          ],
+          "milestones": {
+            "at25": null,
+            "at50": null,
+            "at75": null
+          }
+        }
+      },
+      "firstAccessCurves": {
+        "commander": {
+          "id": "commander-first-access",
+          "label": "Commander first online",
+          "semantics": "cumulative-first-access",
+          "points": [
+            {
+              "turn": 1,
+              "value": 0
+            },
+            {
+              "turn": 2,
+              "value": 8
+            },
+            {
+              "turn": 3,
+              "value": 55
+            },
+            {
+              "turn": 4,
+              "value": 86
+            },
+            {
+              "turn": 5,
+              "value": 93
+            },
+            {
+              "turn": 6,
+              "value": 95
+            },
+            {
+              "turn": 7,
+              "value": 96
+            }
+          ],
+          "observedWithinHorizon": 768,
+          "milestones": {
+            "at25": 3,
+            "at50": 3,
+            "at75": 4
+          }
+        },
+        "engine": {
+          "id": "engine-first-access",
+          "label": "Engine first operational",
+          "semantics": "cumulative-first-access",
+          "points": [
+            {
+              "turn": 1,
+              "value": 0
+            },
+            {
+              "turn": 2,
+              "value": 0
+            },
+            {
+              "turn": 3,
+              "value": 0
+            },
+            {
+              "turn": 4,
+              "value": 0
+            },
+            {
+              "turn": 5,
+              "value": 0
+            },
+            {
+              "turn": 6,
+              "value": 0
+            },
+            {
+              "turn": 7,
+              "value": 0
+            }
+          ],
+          "observedWithinHorizon": 0,
+          "milestones": {
+            "at25": null,
+            "at50": null,
+            "at75": null
+          }
+        },
+        "interaction": {
+          "id": "interaction-first-access",
+          "label": "First meaningful interaction access",
+          "semantics": "cumulative-first-access",
+          "points": [
+            {
+              "turn": 1,
+              "value": 5
+            },
+            {
+              "turn": 2,
+              "value": 13
+            },
+            {
+              "turn": 3,
+              "value": 28
+            },
+            {
+              "turn": 4,
+              "value": 48
+            },
+            {
+              "turn": 5,
+              "value": 61
+            },
+            {
+              "turn": 6,
+              "value": 68
+            },
+            {
+              "turn": 7,
+              "value": 73
+            }
+          ],
+          "observedWithinHorizon": 586,
+          "milestones": {
+            "at25": 3,
+            "at50": 5,
+            "at75": null
+          }
+        },
+        "resource": {
+          "id": "resource-first-access",
+          "label": "First draw / recursion access",
+          "semantics": "cumulative-first-access",
+          "points": [
+            {
+              "turn": 1,
+              "value": 0
+            },
+            {
+              "turn": 2,
+              "value": 1
+            },
+            {
+              "turn": 3,
+              "value": 12
+            },
+            {
+              "turn": 4,
+              "value": 38
+            },
+            {
+              "turn": 5,
+              "value": 56
+            },
+            {
+              "turn": 6,
+              "value": 67
+            },
+            {
+              "turn": 7,
+              "value": 73
+            }
+          ],
+          "observedWithinHorizon": 584,
+          "milestones": {
+            "at25": 4,
+            "at50": 5,
+            "at75": null
+          }
+        },
+        "burst": {
+          "id": "burst-first-access",
+          "label": "First burst / high-impact access",
+          "semantics": "cumulative-first-access",
+          "points": [
+            {
+              "turn": 1,
+              "value": 0
+            },
+            {
+              "turn": 2,
+              "value": 0
+            },
+            {
+              "turn": 3,
+              "value": 1
+            },
+            {
+              "turn": 4,
+              "value": 4
+            },
+            {
+              "turn": 5,
+              "value": 9
+            },
+            {
+              "turn": 6,
+              "value": 14
+            },
+            {
+              "turn": 7,
+              "value": 18
+            }
+          ],
+          "observedWithinHorizon": 144,
+          "milestones": {
+            "at25": null,
+            "at50": null,
+            "at75": null
+          }
+        }
+      },
+      "confidence": {
+        "simulation": "high",
+        "firstAccess": "high",
+        "productCalibration": "experimental"
+      },
+      "provenance": {
+        "preferred": "first-access-sampler-v1",
+        "mainSimulationIterations": 3200,
+        "firstAccessIterations": 800
+      },
+      "notes": [
+        "Goldfish Horizon is a temporal access profile, not a win-probability curve.",
+        "V2 prefers true cumulative P(first access ≤ turn) curves from an independent deterministic sub-sample while preserving the historical on-turn curves in availabilityCurves.",
+        "The first-access sampler cannot alter the main power simulation because it uses a separate RNG stream after score calculation."
+      ]
     }
   }
 }
