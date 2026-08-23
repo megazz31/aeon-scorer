@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 44,
-    "p20": 34,
-    "p80": 55,
-    "peak": 85,
+    "median": 47,
+    "p20": 33,
+    "p80": 57,
+    "peak": 88,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "4b1cfe4b13dc734d9333ea011c893831f3b3c0d90860de5d7f1272d6000ad2b5",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "a5200f1fb1bda69842e24457a325d1dc0239c761438818a6ef3eb056e5d516d3",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Phabine, Boss's Confidant\n1 Leafkin Druid\n1 Sakura-Tribe Elder\n1 Agitator Ant\n1 Bess, Soul Nourisher\n1 Champion of Lambholt\n1 Magus of the Wheel\n1 Orzhov Advokist\n1 Rumor Gatherer\n1 Scute Swarm\n1 Selvala, Explorer Returned\n1 Wood Elves\n1 Zurzoth, Chaos Rider\n1 Arasta of the Endless Web\n1 Life of the Party\n1 Master of Ceremonies\n1 Rose Room Treasurer\n1 Sizzling Soloist\n1 Boss's Chauffeur\n1 Gahiji, Honored One\n1 Kazuul, Tyrant of the Cliffs\n1 Thunderfoot Baloth\n1 Cabaretti Confluence\n1 Camaraderie\n1 Cultivate\n1 Fell the Mighty\n1 Harmonize\n1 Indulge // Excess\n1 Martial Coup\n1 Seize the Spotlight\n1 Shamanic Revelation\n1 Sylvan Offering\n1 Vivien's Stampede\n1 Artifact Mutation\n1 Aura Mutation\n1 Beast Within\n1 Boros Charm\n1 Cabaretti Charm\n1 Crash the Party\n1 Call the Coppercoats\n1 Grand Crescendo\n1 March of the Multitudes\n1 Path to Exile\n1 Sol Ring\n1 Arcane Signet\n1 Bloodthirsty Blade\n1 Fellwar Stone\n1 Idol of Oblivion\n1 Commander's Sphere\n1 Scepter of Celebration\n1 False Floor\n1 Intangible Virtue\n1 Awakening Zone\n1 Beastmaster Ascension\n1 Duelist's Heritage\n1 Killer Service\n1 Prosperous Partnership\n1 Felidar Retreat\n1 Outpost Siege\n1 Assemble the Legion\n1 Sandwurm Convergence\n1 Ash Barrens\n1 Cabaretti Courtyard\n1 Canopy Vista\n1 Castle Ardenvale\n1 Castle Embereth\n1 Cinder Glade\n1 Command Tower\n1 Exotic Orchard\n1 Fortified Village\n1 Game Trail\n1 Jungle Shrine\n1 Mossfire Valley\n1 Myriad Landscape\n1 Naya Panorama\n1 Path of Ancestry\n1 Rugged Prairie\n1 Sungrass Prairie\n1 Temple of Triumph\n1 Thriving Bluff\n1 Thriving Grove\n1 Thriving Heath\n1 Windbrisk Heights\n2 Plains\n2 Plains\n2 Mountain\n2 Mountain\n4 Forest\n4 Forest",
   "oracleCards": [
@@ -156,6 +156,7 @@
       "tags": [
         "enchantment",
         "tokens",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:muster"
       ],
@@ -235,6 +236,7 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "counter-producer",
         "counter-kind:quest"
       ],
       "isCommander": false
@@ -562,6 +564,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -853,7 +856,9 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "draw",
         "tokens",
+        "token-payoff",
         "sacrifice"
       ],
       "isCommander": false
@@ -934,8 +939,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "tokens",
-        "stax"
+        "tokens"
       ],
       "isCommander": false
     },
@@ -1033,6 +1037,8 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
+        "graveyard-setup",
         "sacrifice"
       ],
       "isCommander": false
@@ -1090,6 +1096,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "mana",
         "tokens"
       ],
@@ -1535,18 +1542,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1781,6 +1789,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "graveyard-setup",
         "tokens"
       ],
@@ -1789,24 +1798,24 @@
   ],
   "result": {
     "profile": {
-      "median": 44,
-      "floor": 34,
-      "ceiling": 55,
-      "peak": 85,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 65,
+      "median": 47,
+      "floor": 33,
+      "ceiling": 57,
+      "peak": 88,
+      "dispersion": 24,
+      "variance": 24,
+      "consistency": 62,
       "commanderDelta": 12,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
-      "speed": 38,
-      "consistency": 65,
-      "explosiveness": 16,
-      "synergy": 79,
+      "speed": 39,
+      "consistency": 62,
+      "explosiveness": 17,
+      "synergy": 80,
       "interaction": 40,
-      "resilience": 19
+      "resilience": 26
     },
     "roles": {
       "lands": 38,
@@ -1814,12 +1823,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 8,
-      "interaction": 9,
+      "draw": 13,
+      "interaction": 8,
       "protection": 2,
       "recursion": 0,
       "wipes": 3,
-      "avgCmc": 3.442622950819672,
+      "avgCmc": 3.459016393442623,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1841,6 +1850,7 @@
           "Castle Ardenvale"
         ],
         "payoffs": [
+          "Idol of Oblivion",
           "Intangible Virtue",
           "Killer Service",
           "Phabine, Boss's Confidant"
@@ -1926,6 +1936,7 @@
             "tags": [
               "enchantment",
               "tokens",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:muster"
             ],
@@ -2148,7 +2159,9 @@
             "cmc": 2,
             "tags": [
               "artifact",
+              "draw",
               "tokens",
+              "token-payoff",
               "sacrifice"
             ],
             "manaReq": {
@@ -2183,8 +2196,7 @@
             "cmc": 5,
             "tags": [
               "creature",
-              "tokens",
-              "stax"
+              "tokens"
             ],
             "manaReq": {
               "generic": 3,
@@ -2269,6 +2281,7 @@
             "cmc": 4,
             "tags": [
               "creature",
+              "draw",
               "mana",
               "tokens"
             ],
@@ -2445,6 +2458,7 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "draw",
               "graveyard-setup",
               "tokens"
             ],
@@ -2460,6 +2474,22 @@
           }
         ],
         "payoffCards": [
+          {
+            "name": "Idol of Oblivion",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "tokens",
+              "token-payoff",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
           {
             "name": "Intangible Virtue",
             "cmc": 2,
@@ -2529,7 +2559,7 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "29 producteur(s), 3 payoff(s), 30 carte(s) distincte(s)."
+        "evidence": "29 producteur(s), 4 payoff(s), 30 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2674,6 +2704,236 @@
         "evidence": "4 producteur(s), 2 payoff(s), 6 carte(s) distincte(s)."
       },
       {
+        "id": "counters",
+        "name": "Marqueurs",
+        "strength": 58,
+        "cohesion": 58,
+        "producers": [
+          "Agitator Ant",
+          "Assemble the Legion",
+          "Bess, Soul Nourisher",
+          "Boss's Chauffeur",
+          "Champion of Lambholt",
+          "Felidar Retreat",
+          "Orzhov Advokist"
+        ],
+        "payoffs": [
+          "Assemble the Legion",
+          "Boss's Chauffeur"
+        ],
+        "members": [
+          "Agitator Ant",
+          "Assemble the Legion",
+          "Bess, Soul Nourisher",
+          "Boss's Chauffeur",
+          "Champion of Lambholt",
+          "Felidar Retreat",
+          "Orzhov Advokist"
+        ],
+        "producerCards": [
+          {
+            "name": "Agitator Ant",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Assemble the Legion",
+            "cmc": 5,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:muster"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Bess, Soul Nourisher",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Boss's Chauffeur",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens",
+              "death-payoff",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Champion of Lambholt",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Felidar Retreat",
+            "cmc": 4,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "etb",
+              "landfall",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Orzhov Advokist",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Assemble the Legion",
+            "cmc": 5,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:muster"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Boss's Chauffeur",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens",
+              "death-payoff",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          }
+        ],
+        "producerTags": [
+          "counter-producer"
+        ],
+        "payoffTags": [
+          "counter-payoff",
+          "modified-payoff"
+        ],
+        "evidence": "7 producteur(s), 2 payoff(s), 7 carte(s) distincte(s)."
+      },
+      {
         "id": "early-commander",
         "name": "Accélération du commandant",
         "strength": 53,
@@ -2742,6 +3002,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2823,15 +3084,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2930,16 +3192,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 31,
-      "median": 38,
-      "high": 46,
-      "ceiling": 46,
-      "peak": 73,
-      "iqr": 12,
-      "consistency": 74,
+      "floor": 33,
+      "median": 42,
+      "high": 50,
+      "ceiling": 50,
+      "peak": 79,
+      "iqr": 14,
+      "consistency": 70,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 58,
+      "engineMedianTurn": 4.5,
+      "recoveryAfterDisruption": 75,
       "turnProfile": [
         {
           "turn": 1,
@@ -2954,56 +3216,68 @@
           "commander": 0,
           "engine": 1,
           "interaction": 14,
-          "resource": 0,
+          "resource": 8,
           "burst": 8
         },
         {
           "turn": 3,
-          "commander": 14,
-          "engine": 6,
-          "interaction": 26,
-          "resource": 8,
+          "commander": 18,
+          "engine": 10,
+          "interaction": 27,
+          "resource": 26,
           "burst": 7
         },
         {
           "turn": 4,
-          "commander": 63,
-          "engine": 17,
+          "commander": 65,
+          "engine": 25,
           "interaction": 45,
-          "resource": 23,
+          "resource": 47,
           "burst": 5
         },
         {
           "turn": 5,
-          "commander": 83,
-          "engine": 27,
-          "interaction": 57,
-          "resource": 36,
+          "commander": 84,
+          "engine": 37,
+          "interaction": 55,
+          "resource": 60,
           "burst": 3
         },
         {
           "turn": 6,
           "commander": 90,
-          "engine": 33,
-          "interaction": 64,
-          "resource": 46,
+          "engine": 44,
+          "interaction": 61,
+          "resource": 69,
           "burst": 3
         },
         {
           "turn": 7,
           "commander": 93,
-          "engine": 38,
-          "interaction": 70,
-          "resource": 53,
+          "engine": 51,
+          "interaction": 66,
+          "resource": 75,
           "burst": 2
         }
       ]
     },
     "drivers": [
       {
+        "name": "Master of Ceremonies",
+        "impact": 4.1,
+        "tags": [
+          "creature",
+          "draw",
+          "mana",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
@@ -3032,6 +3306,30 @@
         "aeon": null
       },
       {
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Felidar Retreat",
+        "impact": 3.3,
+        "tags": [
+          "enchantment",
+          "tokens",
+          "etb",
+          "landfall",
+          "counter-producer",
+          "counter-kind:plus1"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Selvala, Explorer Returned",
         "impact": 3.3,
         "tags": [
@@ -3039,6 +3337,17 @@
           "draw",
           "mana",
           "lifegain"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Zurzoth, Chaos Rider",
+        "impact": 3.3,
+        "tags": [
+          "creature",
+          "draw",
+          "graveyard-setup",
+          "tokens"
         ],
         "aeon": null
       },
@@ -3054,20 +3363,22 @@
         "aeon": null
       },
       {
-        "name": "Indulge // Excess",
-        "impact": 2.7,
+        "name": "Idol of Oblivion",
+        "impact": 2.8,
         "tags": [
-          "sorcery",
-          "mana",
-          "tokens"
+          "artifact",
+          "draw",
+          "tokens",
+          "token-payoff",
+          "sacrifice"
         ],
         "aeon": null
       },
       {
-        "name": "Master of Ceremonies",
+        "name": "Indulge // Excess",
         "impact": 2.7,
         "tags": [
-          "creature",
+          "sorcery",
           "mana",
           "tokens"
         ],
@@ -3081,50 +3392,6 @@
           "mana",
           "tokens",
           "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Cabaretti Confluence",
-        "impact": 2.6,
-        "tags": [
-          "sorcery",
-          "removal",
-          "tokens",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Felidar Retreat",
-        "impact": 2.6,
-        "tags": [
-          "enchantment",
-          "tokens",
-          "etb",
-          "landfall",
-          "counter-producer",
-          "counter-kind:plus1"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Kazuul, Tyrant of the Cliffs",
-        "impact": 2.6,
-        "tags": [
-          "creature",
-          "tokens",
-          "stax"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Martial Coup",
-        "impact": 2.6,
-        "tags": [
-          "sorcery",
-          "wipe",
-          "tokens"
         ],
         "aeon": null
       }

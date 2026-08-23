@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 49,
-    "p20": 36,
-    "p80": 59,
-    "peak": 85,
+    "median": 52,
+    "p20": 39,
+    "p80": 64,
+    "peak": 90,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "5bea24a16bfd4ffee063bef7f5260eef8b7e380ee9c5af166b0c37950a86cc31",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "41cbe9263709439939379debd57333f59ae43f946d598fac4b6781a706a952af",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Leori, Sparktouched Hunter\n1 Mangara, the Diplomat\n1 Gatewatch Beacon\n1 Onakke Oathkeeper\n1 Teyo, Geometric Tactician\n1 Sparkshaper Visionary\n1 Vronos, Masked Inquisitor\n1 Chandra, Legacy of Fire\n1 Guff Rewrites History\n1 Jaya's Phoenix\n1 Ajani Steadfast\n1 Deploy the Gatewatch\n1 Elspeth, Sun's Champion\n1 Gideon Jura\n1 Norn's Annex\n1 Oath of Gideon\n1 Promise of Loyalty\n1 Semester's End\n1 Urza's Ruinous Blast\n1 Deepglow Skate\n1 Jace Beleren\n1 Jace, Architect of Thought\n1 Jace, Mirror Mage\n1 Oath of Jace\n1 Spark Double\n1 Blasphemous Act\n1 Chandra, Awakened Inferno\n1 Chandra, Torch of Defiance\n1 Repeated Reverberation\n1 Sarkhan the Masterless\n1 Nahiri, the Harbinger\n1 Narset of the Ancient Way\n1 Narset, Enlightened Master\n1 Oath of Teferi\n1 The Chain Veil\n1 Nevinyrral's Disk\n1 Silent Arbiter\n1 Cascade Bluffs\n1 Exotic Orchard\n1 Frostboil Snarl\n1 Furycalm Snarl\n1 Karn's Bastion\n1 Mobilized District\n1 Mystic Gate\n1 Port Town\n1 Prairie Stream\n1 Rugged Prairie\n1 Skycloud Expanse\n1 Temple of Enlightenment\n1 Temple of Epiphany\n1 Temple of Triumph\n1 Cartographer's Hawk\n1 Path to Exile\n1 Kazuul, Tyrant of the Cliffs\n1 Arcane Signet\n1 Fellwar Stone\n1 Sol Ring\n1 Command Tower\n1 Myriad Landscape\n1 Reliquary Tower\n1 Grateful Apparition\n1 Oreskos Explorer\n1 Swords to Plowshares\n1 The Wanderer\n1 Flux Channeler\n1 Fog Bank\n1 Narset, Parter of Veils\n1 Thrummingbird\n1 Saheeli, Sublime Artificer\n1 Wall of Denial\n1 Azorius Signet\n1 Boros Signet\n1 Honor-Worn Shaku\n1 Izzet Signet\n1 Talisman of Conviction\n1 Talisman of Creativity\n1 Talisman of Progress\n1 Wayfarer's Bauble\n1 Forge of Heroes\n1 Interplanar Beacon\n1 Mystic Monastery\n4 Island\n3 Island\n2 Mountain\n2 Mountain\n4 Plains\n3 Plains",
   "oracleCards": [
@@ -284,6 +284,7 @@
         "draw",
         "mana",
         "tokens",
+        "counter-producer",
         "counter-kind:loyalty"
       ],
       "isCommander": true
@@ -701,6 +702,7 @@
       ],
       "producedMana": [],
       "tags": [
+        "draw",
         "tokens",
         "etb",
         "counter-kind:loyalty"
@@ -759,8 +761,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "tokens",
-        "stax"
+        "tokens"
       ],
       "isCommander": false
     },
@@ -948,6 +949,7 @@
         "W"
       ],
       "tags": [
+        "draw",
         "mana",
         "graveyard-setup",
         "lifegain",
@@ -990,7 +992,9 @@
         "U"
       ],
       "producedMana": [],
-      "tags": [],
+      "tags": [
+        "stax"
+      ],
       "isCommander": false
     },
     {
@@ -1084,7 +1088,9 @@
       "producedMana": [],
       "tags": [
         "enchantment",
-        "etb"
+        "protection",
+        "etb",
+        "blink"
       ],
       "isCommander": false
     },
@@ -1102,7 +1108,9 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "protection",
         "recursion",
+        "blink",
         "stax"
       ],
       "isCommander": false
@@ -1334,7 +1342,9 @@
       "producedMana": [],
       "tags": [
         "instant",
+        "protection",
         "etb",
+        "blink",
         "counter-producer",
         "counter-kind:plus1",
         "counter-kind:loyalty"
@@ -1380,18 +1390,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1605,6 +1616,7 @@
       ],
       "producedMana": [],
       "tags": [
+        "draw",
         "tokens",
         "etb"
       ],
@@ -1735,24 +1747,24 @@
   ],
   "result": {
     "profile": {
-      "median": 49,
-      "floor": 36,
-      "ceiling": 59,
-      "peak": 85,
-      "dispersion": 23,
-      "variance": 23,
-      "consistency": 65,
-      "commanderDelta": 7,
+      "median": 52,
+      "floor": 39,
+      "ceiling": 64,
+      "peak": 90,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 62,
+      "commanderDelta": 9,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 39,
-      "consistency": 65,
-      "explosiveness": 24,
-      "synergy": 62,
-      "interaction": 53,
-      "resilience": 34
+      "speed": 40,
+      "consistency": 62,
+      "explosiveness": 25,
+      "synergy": 73,
+      "interaction": 55,
+      "resilience": 41
     },
     "roles": {
       "lands": 38,
@@ -1760,20 +1772,20 @@
       "fastMana": 1,
       "tutors": 1,
       "repeatableTutors": 1,
-      "draw": 4,
+      "draw": 7,
       "interaction": 11,
-      "protection": 3,
+      "protection": 6,
       "recursion": 2,
       "wipes": 3,
-      "avgCmc": 3.4918032786885247,
+      "avgCmc": 3.5081967213114753,
       "unknownManaLands": 0
     },
     "packages": [
       {
         "id": "artifacts",
         "name": "Artefacts",
-        "strength": 97,
-        "cohesion": 97,
+        "strength": 100,
+        "cohesion": 100,
         "producers": [
           "Arcane Signet",
           "Azorius Signet",
@@ -1801,6 +1813,7 @@
           "Nevinyrral's Disk",
           "Norn's Annex",
           "Silent Arbiter",
+          "Sol Ring",
           "Talisman of Conviction",
           "Talisman of Creativity",
           "Talisman of Progress",
@@ -1957,6 +1970,20 @@
             }
           },
           {
+            "name": "Sol Ring",
+            "cmc": 1,
+            "tags": [
+              "artifact",
+              "mana",
+              "fast-mana"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
             "name": "Talisman of Conviction",
             "cmc": 2,
             "tags": [
@@ -2073,7 +2100,272 @@
         "payoffTags": [
           "artifact-payoff"
         ],
-        "evidence": "15 producteur(s), 2 payoff(s), 17 carte(s) distincte(s)."
+        "evidence": "16 producteur(s), 2 payoff(s), 18 carte(s) distincte(s)."
+      },
+      {
+        "id": "blink-etb",
+        "name": "Blink / ETB",
+        "strength": 72,
+        "cohesion": 72,
+        "producers": [
+          "Oath of Teferi",
+          "Onakke Oathkeeper",
+          "Semester's End"
+        ],
+        "payoffs": [
+          "Deepglow Skate",
+          "Gatewatch Beacon",
+          "Jace, Mirror Mage",
+          "Oath of Gideon",
+          "Oath of Jace",
+          "Oath of Teferi",
+          "Oreskos Explorer",
+          "Teyo, Geometric Tactician"
+        ],
+        "members": [
+          "Oath of Teferi",
+          "Onakke Oathkeeper",
+          "Semester's End",
+          "Deepglow Skate",
+          "Gatewatch Beacon",
+          "Jace, Mirror Mage",
+          "Oath of Gideon",
+          "Oath of Jace",
+          "Oreskos Explorer",
+          "Teyo, Geometric Tactician"
+        ],
+        "producerCards": [
+          {
+            "name": "Oath of Teferi",
+            "cmc": 5,
+            "tags": [
+              "enchantment",
+              "protection",
+              "etb",
+              "blink"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Onakke Oathkeeper",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "protection",
+              "recursion",
+              "blink",
+              "stax"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Semester's End",
+            "cmc": 4,
+            "tags": [
+              "instant",
+              "protection",
+              "etb",
+              "blink",
+              "counter-producer",
+              "counter-kind:plus1",
+              "counter-kind:loyalty"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Deepglow Skate",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-kind:any"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Gatewatch Beacon",
+            "cmc": 3,
+            "tags": [
+              "artifact",
+              "mana",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:loyalty"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Jace, Mirror Mage",
+            "cmc": 3,
+            "tags": [
+              "draw",
+              "tokens",
+              "etb",
+              "counter-kind:loyalty"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Oath of Gideon",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "etb",
+              "counter-producer",
+              "counter-kind:loyalty"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Oath of Jace",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "draw",
+              "graveyard-setup",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Oath of Teferi",
+            "cmc": 5,
+            "tags": [
+              "enchantment",
+              "protection",
+              "etb",
+              "blink"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Oreskos Explorer",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Teyo, Geometric Tactician",
+            "cmc": 3,
+            "tags": [
+              "draw",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          }
+        ],
+        "producerTags": [
+          "blink"
+        ],
+        "payoffTags": [
+          "etb"
+        ],
+        "evidence": "3 producteur(s), 8 payoff(s), 10 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2212,15 +2504,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2285,6 +2578,7 @@
               "draw",
               "mana",
               "tokens",
+              "counter-producer",
               "counter-kind:loyalty"
             ],
             "manaReq": {
@@ -2355,6 +2649,7 @@
             "name": "Narset of the Ancient Way",
             "cmc": 4,
             "tags": [
+              "draw",
               "mana",
               "graveyard-setup",
               "lifegain",
@@ -2419,7 +2714,9 @@
             "cmc": 2,
             "tags": [
               "creature",
+              "protection",
               "recursion",
+              "blink",
               "stax"
             ],
             "manaReq": {
@@ -2444,18 +2741,28 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 20,
+      "score": 45,
       "connected": [
+        "Ajani Steadfast",
         "Elspeth, Sun's Champion",
+        "Flux Channeler",
+        "Forge of Heroes",
+        "Gatewatch Beacon",
+        "Grateful Apparition",
         "Jace, Mirror Mage",
+        "Karn's Bastion",
         "Kazuul, Tyrant of the Cliffs",
         "Oath of Gideon",
         "Saheeli, Sublime Artificer",
         "Sarkhan the Masterless",
-        "Teyo, Geometric Tactician"
+        "Semester's End",
+        "Spark Double",
+        "Teyo, Geometric Tactician",
+        "Thrummingbird"
       ],
       "tags": [
         "tokens",
+        "counter-producer",
         "token-payoff"
       ]
     },
@@ -2467,16 +2774,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 36,
-      "median": 45,
-      "high": 53,
-      "ceiling": 53,
-      "peak": 77,
-      "iqr": 14,
-      "consistency": 70,
+      "floor": 39,
+      "median": 48,
+      "high": 58,
+      "ceiling": 58,
+      "peak": 84,
+      "iqr": 15,
+      "consistency": 67,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 80,
+      "recoveryAfterDisruption": 86,
       "turnProfile": [
         {
           "turn": 1,
@@ -2488,51 +2795,51 @@
         },
         {
           "turn": 2,
-          "commander": 0,
-          "engine": 0,
-          "interaction": 17,
-          "resource": 5,
-          "burst": 0
+          "commander": 2,
+          "engine": 1,
+          "interaction": 20,
+          "resource": 8,
+          "burst": 1
         },
         {
           "turn": 3,
-          "commander": 35,
-          "engine": 6,
-          "interaction": 37,
-          "resource": 25,
-          "burst": 9
+          "commander": 39,
+          "engine": 9,
+          "interaction": 41,
+          "resource": 37,
+          "burst": 10
         },
         {
           "turn": 4,
-          "commander": 75,
-          "engine": 14,
-          "interaction": 59,
-          "resource": 42,
+          "commander": 76,
+          "engine": 22,
+          "interaction": 61,
+          "resource": 57,
           "burst": 18
         },
         {
           "turn": 5,
           "commander": 85,
-          "engine": 19,
+          "engine": 30,
           "interaction": 69,
-          "resource": 48,
+          "resource": 64,
           "burst": 24
         },
         {
           "turn": 6,
           "commander": 89,
-          "engine": 23,
+          "engine": 36,
           "interaction": 75,
-          "resource": 53,
+          "resource": 68,
           "burst": 27
         },
         {
           "turn": 7,
           "commander": 92,
-          "engine": 27,
+          "engine": 41,
           "interaction": 79,
-          "resource": 57,
-          "burst": 30
+          "resource": 72,
+          "burst": 31
         }
       ]
     },
@@ -2562,12 +2869,59 @@
         "aeon": null
       },
       {
+        "name": "Sol Ring",
+        "impact": 4.4,
+        "tags": [
+          "artifact",
+          "mana",
+          "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Jace, Architect of Thought",
         "impact": 4.2,
         "tags": [
           "exile-cast",
           "cheat",
           "free"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Gatewatch Beacon",
+        "impact": 3.8,
+        "tags": [
+          "artifact",
+          "mana",
+          "etb",
+          "counter-producer",
+          "counter-payoff",
+          "counter-kind:loyalty"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Narset of the Ancient Way",
+        "impact": 3.8,
+        "tags": [
+          "draw",
+          "mana",
+          "graveyard-setup",
+          "lifegain",
+          "spellslinger"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Onakke Oathkeeper",
+        "impact": 3.8,
+        "tags": [
+          "creature",
+          "protection",
+          "recursion",
+          "blink",
+          "stax"
         ],
         "aeon": null
       },
@@ -2582,30 +2936,8 @@
         "aeon": null
       },
       {
-        "name": "Sol Ring",
-        "impact": 3.7,
-        "tags": [
-          "mana",
-          "fast-mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Gatewatch Beacon",
-        "impact": 3.1,
-        "tags": [
-          "artifact",
-          "mana",
-          "etb",
-          "counter-producer",
-          "counter-payoff",
-          "counter-kind:loyalty"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Oath of Jace",
-        "impact": 3,
+        "impact": 3.7,
         "tags": [
           "enchantment",
           "draw",
@@ -2615,43 +2947,28 @@
         "aeon": null
       },
       {
+        "name": "Jace, Mirror Mage",
+        "impact": 2.8,
+        "tags": [
+          "draw",
+          "tokens",
+          "etb",
+          "counter-kind:loyalty"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Teyo, Geometric Tactician",
+        "impact": 2.8,
+        "tags": [
+          "draw",
+          "tokens",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Arcane Signet",
-        "impact": 2.6,
-        "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Azorius Signet",
-        "impact": 2.6,
-        "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Boros Signet",
-        "impact": 2.6,
-        "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Fellwar Stone",
-        "impact": 2.6,
-        "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Izzet Signet",
         "impact": 2.6,
         "tags": [
           "artifact",

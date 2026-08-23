@@ -30,17 +30,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 36,
-    "p20": 24,
+    "median": 37,
+    "p20": 25,
     "p80": 47,
-    "peak": 81,
+    "peak": 80,
     "coverage": 90,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
+    "semanticVersion": "3.2.0-semantic-10",
     "oracleSnapshotHash": "8ad744755aead40984b3381c78f5ac02d8502dec66ed1770118a465e9529519d",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Archelos, Lagoon Mystic\n1 Atla Palani, Nest Tender\n1 Baleful Strix\n1 Chromanticore\n1 Coiling Oracle\n1 O-Kagachi, Vengeful Kami\n1 Faeburrow Elder\n1 Fusion Elemental\n1 Zaxara, the Exemplary\n1 Hero of Precinct One\n1 Illuna, Apex of Wishes\n1 Knight of New Alara\n1 Maelstrom Archangel\n1 Nethroi, Apex of Death\n1 Rienne, Angel of Rebirth\n1 Selvala, Explorer Returned\n1 Solemn Simulacrum\n1 Surrak Dragonclaw\n1 Transguild Courier\n1 Glint-Eye Nephilim\n1 Xyris, the Writhing Storm\n1 Cultivate\n1 Duneblast\n1 Explore\n1 Explosive Vegetation\n1 Farseek\n1 Kodama's Reach\n1 Lavalanche\n1 Merciless Eviction\n1 Migration Path\n1 Painful Truths\n1 Radiant Flames\n1 Search for Tomorrow\n1 Time Wipe\n1 Abzan Charm\n1 Beast Within\n1 Echoing Truth\n1 Growth Spiral\n1 Terminate\n1 Naya Charm\n1 Path to Exile\n1 Sultai Charm\n1 Sylvan Reclamation\n1 Arcane Signet\n1 Coalition Relic\n1 Fellwar Stone\n1 Commander's Sphere\n1 Prophetic Prism\n1 Abundant Growth\n1 Maelstrom Nexus\n1 Path to the World Tree\n1 Bad River\n1 Arcane Sanctum\n1 Canopy Vista\n1 Cascading Cataracts\n1 Cinder Glade\n1 Command Tower\n1 Crumbling Necropolis\n1 Crystal Quarry\n1 Evolving Wilds\n1 Exotic Orchard\n1 Flood Plain\n1 Frontier Bivouac\n1 Grasslands\n1 Jungle Shrine\n1 Krosan Verge\n1 Mountain Valley\n1 Murmuring Bosk\n1 Mystic Monastery\n1 Nomad Outpost\n1 Opulent Palace\n1 Prairie Stream\n1 Rocky Tar Pit\n1 Sandsteppe Citadel\n1 Savage Lands\n1 Seaside Citadel\n1 Smoldering Marsh\n1 Sunken Hollow\n1 Terramorphic Expanse\n1 Jenson Carthalion, Druid Exile\n1 Two-Headed Hellkite\n1 Tiller Engine\n1 Unite the Coalition\n1 Fallaji Wayfarer\n1 Iridian Maelstrom\n1 Mana Cannons\n1 Primeval Spawn\n1 Obsidian Obelisk\n3 Forest\n2 Mountain\n2 Island\n2 Plains\n2 Swamp",
   "oracleCards": [
@@ -174,7 +174,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "tokens"
+        "tokens",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -345,6 +346,7 @@
       "tags": [
         "artifact",
         "mana",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:charge"
       ],
@@ -409,6 +411,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -919,6 +922,7 @@
         "mana",
         "recursion",
         "tokens",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:plus1"
       ],
@@ -1755,6 +1759,7 @@
       "producedMana": [],
       "tags": [
         "instant",
+        "draw",
         "removal",
         "graveyard-setup"
       ],
@@ -1994,6 +1999,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "tokens"
       ],
       "isCommander": false
@@ -2030,24 +2036,24 @@
   ],
   "result": {
     "profile": {
-      "median": 36,
-      "floor": 24,
+      "median": 37,
+      "floor": 25,
       "ceiling": 47,
-      "peak": 81,
+      "peak": 80,
       "dispersion": 22,
       "variance": 22,
       "consistency": 64,
-      "commanderDelta": 5,
+      "commanderDelta": 6,
       "coverage": 90,
       "dataCoverage": 90
     },
     "dimensions": {
       "speed": 30,
       "consistency": 64,
-      "explosiveness": 12,
+      "explosiveness": 11,
       "synergy": 62,
       "interaction": 28,
-      "resilience": 27
+      "resilience": 28
     },
     "roles": {
       "lands": 39,
@@ -2055,7 +2061,7 @@
       "fastMana": 0,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 13,
+      "draw": 16,
       "interaction": 9,
       "protection": 0,
       "recursion": 2,
@@ -2412,6 +2418,7 @@
             "tags": [
               "artifact",
               "mana",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:charge"
             ],
@@ -2426,6 +2433,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2623,6 +2631,7 @@
               "mana",
               "recursion",
               "tokens",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:plus1"
             ],
@@ -2703,6 +2712,7 @@
             "cmc": 3,
             "tags": [
               "instant",
+              "draw",
               "removal",
               "graveyard-setup"
             ],
@@ -2799,6 +2809,7 @@
       "tags": [
         "recursion",
         "tokens",
+        "counter-producer",
         "counter-payoff",
         "token-payoff",
         "graveyard-setup"
@@ -2812,16 +2823,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 27,
-      "median": 35,
-      "high": 42,
-      "ceiling": 42,
+      "floor": 28,
+      "median": 36,
+      "high": 43,
+      "ceiling": 43,
       "peak": 70,
       "iqr": 12,
       "consistency": 73,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 66,
+      "recoveryAfterDisruption": 70,
       "turnProfile": [
         {
           "turn": 1,
@@ -2844,7 +2855,7 @@
           "commander": 2,
           "engine": 4,
           "interaction": 16,
-          "resource": 16,
+          "resource": 17,
           "burst": 0
         },
         {
@@ -2852,7 +2863,7 @@
           "commander": 24,
           "engine": 7,
           "interaction": 33,
-          "resource": 38,
+          "resource": 41,
           "burst": 3
         },
         {
@@ -2860,7 +2871,7 @@
           "commander": 56,
           "engine": 11,
           "interaction": 49,
-          "resource": 57,
+          "resource": 63,
           "burst": 6
         },
         {
@@ -2868,7 +2879,7 @@
           "commander": 73,
           "engine": 13,
           "interaction": 59,
-          "resource": 66,
+          "resource": 72,
           "burst": 9
         },
         {
@@ -2876,7 +2887,7 @@
           "commander": 82,
           "engine": 16,
           "interaction": 67,
-          "resource": 73,
+          "resource": 80,
           "burst": 11
         }
       ]
@@ -2936,6 +2947,17 @@
         "aeon": null
       },
       {
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Prophetic Prism",
         "impact": 3.3,
         "tags": [
@@ -2971,6 +2993,17 @@
         "aeon": null
       },
       {
+        "name": "Sultai Charm",
+        "impact": 3.2,
+        "tags": [
+          "instant",
+          "draw",
+          "removal",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Search for Tomorrow",
         "impact": 3.1,
         "tags": [
@@ -2986,25 +3019,6 @@
           "creature",
           "draw",
           "graveyard-setup"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Jenson Carthalion, Druid Exile",
-        "impact": 2.8,
-        "tags": [
-          "creature",
-          "mana",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Farseek",
-        "impact": 2.6,
-        "tags": [
-          "sorcery",
-          "land-ramp"
         ],
         "aeon": null
       }

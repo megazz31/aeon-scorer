@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 43,
-    "p20": 32,
-    "p80": 52,
+    "median": 44,
+    "p20": 34,
+    "p80": 55,
     "peak": 78,
-    "coverage": 91,
+    "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "53edd2757142bc9591e7b3f14f7d266b0bac9a384140998c76abd3c197776f84",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "0a3edb9119227f753943125c3a73fc54fb2f1c29afd760fb3e8cfd3d7dd0a98f",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Nahiri, the Harbinger\n1 Kelsien, the Plague\n1 Trynn, Champion of Freedom\n1 Silvar, Devourer of the Free\n1 Verge Rangers\n1 Species Specialist\n1 Titan Hunter\n1 Fireflux Squad\n1 Frontier Warmonger\n1 Bounty Agent\n1 Dearly Departed\n1 Frontline Medic\n1 Knight of the White Orchid\n1 Magus of the Disk\n1 Odric, Master Tactician\n1 Riders of Gavony\n1 Thalia's Lieutenant\n1 Thraben Doomsayer\n1 Disciple of Bolas\n1 Xathrid Necromancer\n1 Alesha, Who Smiles at Death\n1 Captivating Crew\n1 Fumiko the Lowblood\n1 Magus of the Wheel\n1 Titan of Eternal Fire\n1 Adriana, Captain of the Guard\n1 General's Enforcer\n1 Banisher Priest\n1 Cavalry Pegasus\n1 Devout Chaplain\n1 Zulaport Cutthroat\n1 Humble Defector\n1 Garna, the Bloodflame\n1 Citywide Bust\n1 Cleansing Nova\n1 Increasing Devotion\n1 Painful Truths\n1 Ambition's Cost\n1 Call the Coppercoats\n1 Flawless Maneuver\n1 Unexpectedly Absent\n1 Crackling Doom\n1 Dire Tactics\n1 Terminate\n1 Sanctuary Blade\n1 Bonder's Ornament\n1 Arcane Signet\n1 Boros Signet\n1 Commander's Sphere\n1 Heirloom Blade\n1 Orzhov Signet\n1 Rakdos Signet\n1 Skullclamp\n1 Sol Ring\n1 Molten Echoes\n1 Outpost Siege\n1 Shared Animosity\n1 Sanctuary Lockdown\n1 Bastion of Remembrance\n1 Martial Impetus\n1 Parasitic Impetus\n1 Shiny Impetus\n1 Vigilante Justice\n1 Battlefield Forge\n1 Exotic Orchard\n1 Shadowblood Ridge\n1 Smoldering Marsh\n1 Spinerock Knoll\n1 Windbrisk Heights\n1 Bojuka Bog\n1 Boros Garrison\n1 Command Tower\n1 Myriad Landscape\n1 Nomad Outpost\n1 Orzhov Basilica\n1 Path of Ancestry\n1 Rakdos Carnarium\n1 Temple of the False God\n1 Unclaimed Territory\n1 Bloodfell Caves\n1 Evolving Wilds\n1 Scoured Barrens\n1 Wind-Scarred Crag\n2 Mountain\n1 Mountain\n1 Mountain\n3 Plains\n3 Plains\n2 Plains\n2 Swamp\n1 Swamp\n1 Swamp",
   "oracleCards": [
@@ -443,6 +443,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -653,9 +654,7 @@
         "creature",
         "counterspell",
         "protection",
-        "sacrifice",
-        "counter-kind:generic",
-        "stax"
+        "sacrifice"
       ],
       "isCommander": false
     },
@@ -727,7 +726,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -744,7 +744,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -860,6 +861,8 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
+        "graveyard-setup",
         "sacrifice"
       ],
       "isCommander": false
@@ -1364,7 +1367,8 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "draw"
+        "draw",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -1391,18 +1395,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1423,6 +1428,7 @@
       "tags": [
         "creature",
         "draw",
+        "death-payoff",
         "etb"
       ],
       "isCommander": false
@@ -1636,7 +1642,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "removal"
       ],
       "isCommander": false
     },
@@ -1763,24 +1770,24 @@
   ],
   "result": {
     "profile": {
-      "median": 43,
-      "floor": 32,
-      "ceiling": 52,
+      "median": 44,
+      "floor": 34,
+      "ceiling": 55,
       "peak": 78,
-      "dispersion": 20,
-      "variance": 20,
-      "consistency": 69,
-      "commanderDelta": 7,
-      "coverage": 91,
-      "dataCoverage": 91
+      "dispersion": 21,
+      "variance": 21,
+      "consistency": 67,
+      "commanderDelta": 6,
+      "coverage": 92,
+      "dataCoverage": 92
     },
     "dimensions": {
       "speed": 38,
-      "consistency": 69,
-      "explosiveness": 20,
+      "consistency": 67,
+      "explosiveness": 19,
       "synergy": 43,
-      "interaction": 54,
-      "resilience": 33
+      "interaction": 59,
+      "resilience": 36
     },
     "roles": {
       "lands": 36,
@@ -1788,12 +1795,12 @@
       "fastMana": 1,
       "tutors": 1,
       "repeatableTutors": 1,
-      "draw": 6,
-      "interaction": 10,
+      "draw": 9,
+      "interaction": 11,
       "protection": 6,
       "recursion": 1,
       "wipes": 3,
-      "avgCmc": 3.2063492063492065,
+      "avgCmc": 3.2222222222222223,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1871,6 +1878,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -1926,15 +1934,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           }
         ],
@@ -1995,16 +2004,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 32,
-      "median": 39,
-      "high": 46,
-      "ceiling": 46,
-      "peak": 66,
-      "iqr": 11,
-      "consistency": 75,
+      "floor": 34,
+      "median": 41,
+      "high": 49,
+      "ceiling": 49,
+      "peak": 67,
+      "iqr": 12,
+      "consistency": 73,
       "commanderMedianTurn": 4,
       "engineMedianTurn": null,
-      "recoveryAfterDisruption": 73,
+      "recoveryAfterDisruption": 80,
       "turnProfile": [
         {
           "turn": 1,
@@ -2016,50 +2025,50 @@
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 1,
           "engine": 0,
-          "interaction": 19,
-          "resource": 10,
+          "interaction": 23,
+          "resource": 16,
           "burst": 12
         },
         {
           "turn": 3,
-          "commander": 18,
+          "commander": 22,
           "engine": 0,
-          "interaction": 40,
-          "resource": 24,
+          "interaction": 45,
+          "resource": 35,
           "burst": 13
         },
         {
           "turn": 4,
-          "commander": 64,
+          "commander": 66,
           "engine": 0,
-          "interaction": 59,
-          "resource": 43,
+          "interaction": 64,
+          "resource": 54,
           "burst": 14
         },
         {
           "turn": 5,
           "commander": 84,
           "engine": 0,
-          "interaction": 69,
-          "resource": 51,
+          "interaction": 73,
+          "resource": 63,
           "burst": 14
         },
         {
           "turn": 6,
           "commander": 89,
           "engine": 0,
-          "interaction": 74,
-          "resource": 57,
+          "interaction": 77,
+          "resource": 68,
           "burst": 14
         },
         {
           "turn": 7,
           "commander": 93,
           "engine": 0,
-          "interaction": 77,
-          "resource": 61,
+          "interaction": 81,
+          "resource": 71,
           "burst": 15
         }
       ]
@@ -2092,21 +2101,20 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
         "aeon": null
       },
       {
-        "name": "Frontline Medic",
-        "impact": 3.1,
+        "name": "Commander's Sphere",
+        "impact": 3.3,
         "tags": [
-          "creature",
-          "counterspell",
-          "protection",
-          "sacrifice",
-          "counter-kind:generic",
-          "stax"
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2125,7 +2133,19 @@
         "impact": 2.4,
         "tags": [
           "artifact",
-          "draw"
+          "draw",
+          "death-payoff"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Frontline Medic",
+        "impact": 2.3,
+        "tags": [
+          "creature",
+          "counterspell",
+          "protection",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2135,6 +2155,7 @@
         "tags": [
           "creature",
           "draw",
+          "death-payoff",
           "etb"
         ],
         "aeon": null
@@ -2170,15 +2191,6 @@
       },
       {
         "name": "Orzhov Signet",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Rakdos Signet",
         "impact": 1.9,
         "tags": [
           "artifact",

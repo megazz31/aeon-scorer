@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 47,
-    "p20": 33,
-    "p80": 57,
+    "p20": 34,
+    "p80": 59,
     "peak": 89,
-    "coverage": 92,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "97ace6d67d7b548836cbd2105c1980f1470f78131718fd4d9a9e7f7c4ea53117",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "cbcc2013c98d8ac9782fb386980bb3eb50858d1c6040ed4bc29838658384d7e0",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Muddle, the Ever-Changing\n1 Inspired Skypainter // Maestro's Gift\n1 Abstract Performance\n1 Dirgur Focusmage // Braingeyser\n1 Leitmotif Composer\n1 Furygale Flocking\n1 Prismari Pianist\n1 Renegade Bull\n1 Coastal Peak\n1 Scorched Geyser\n1 Turbulent Springs\n1 Faerie Mastermind\n1 Chain Reaction\n1 Determined Iteration\n1 Harmonic Prodigy\n1 Fabled Passage\n1 Archmage Emeritus\n1 Brazen Borrower // Petty Theft\n1 Curiosity Crafter\n1 Dig Through Time\n1 Replication Technique\n1 Rite of Replication\n1 Thunderclap Drake\n1 Blasphemous Act\n1 Chaos Warp\n1 Creative Technique\n1 Cursed Mirror\n1 Dance with Calamity\n1 Goldspan Dragon\n1 Manaform Hellkite\n1 Mirrorwing Dragon\n1 Plargg and Nassari\n1 Redoubled Stormsinger\n1 Rionya, Fire Dancer\n1 Rousing Refrain\n1 Surge to Victory\n1 Twinflame\n1 Volcanic Salvo\n1 Brudiclad, Telchor Engineer\n1 Galazeth Prismari\n1 Magma Opus\n1 Prismari Command\n1 Veyran, Voice of Duality\n1 Solemn Simulacrum\n1 Cascade Bluffs\n1 Exotic Orchard\n1 Ferrous Lake\n1 Frostboil Snarl\n1 Hall of Oracles\n1 Restless Spire\n1 Shivan Reef\n1 Sulfur Falls\n1 Temple of Epiphany\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Prismari Charm\n1 Spectacle Summit\n1 Terramorphic Expanse\n1 Aether Gale\n1 Arcane Denial\n1 Deep Analysis\n1 Reality Shift\n1 Resculpt\n1 Treasure Cruise\n1 Abrade\n1 Big Score\n1 Mana Geyser\n1 Storm-Kiln Artist\n1 Throes of Chaos\n1 Volcanic Torrent\n1 Expressive Iteration\n1 Rootha, Mercurial Artist\n1 Stormcatch Mentor\n1 Fellwar Stone\n1 Lightning Greaves\n1 Talisman of Creativity\n1 Molten Tributary\n1 Mystic Sanctuary\n1 Path of Ancestry\n1 Prismari Campus\n1 Reliquary Tower\n1 Study Hall\n1 Temple of the False God\n4 Island\n4 Island\n4 Mountain\n3 Mountain",
   "oracleCards": [
@@ -111,8 +111,7 @@
       "tags": [
         "instant",
         "draw",
-        "counterspell",
-        "counter-kind:generic"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -293,7 +292,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "removal"
       ],
       "isCommander": false
     },
@@ -1066,7 +1066,6 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "draw",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -1087,7 +1086,6 @@
       "tags": [
         "instant",
         "draw",
-        "mana",
         "removal"
       ],
       "isCommander": false
@@ -1388,18 +1386,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1691,7 +1690,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1793,22 +1793,22 @@
   "result": {
     "profile": {
       "median": 47,
-      "floor": 33,
-      "ceiling": 57,
+      "floor": 34,
+      "ceiling": 59,
       "peak": 89,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 62,
-      "commanderDelta": 9,
-      "coverage": 92,
-      "dataCoverage": 92
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 61,
+      "commanderDelta": 10,
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
       "speed": 31,
-      "consistency": 62,
+      "consistency": 61,
       "explosiveness": 19,
-      "synergy": 80,
-      "interaction": 44,
+      "synergy": 81,
+      "interaction": 49,
       "resilience": 27
     },
     "roles": {
@@ -1818,11 +1818,11 @@
       "tutors": 0,
       "repeatableTutors": 0,
       "draw": 12,
-      "interaction": 5,
+      "interaction": 6,
       "protection": 0,
       "recursion": 0,
       "wipes": 0,
-      "avgCmc": 4.065573770491803,
+      "avgCmc": 4.081967213114754,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1962,8 +1962,7 @@
             "tags": [
               "instant",
               "draw",
-              "counterspell",
-              "counter-kind:generic"
+              "counterspell"
             ],
             "manaReq": {
               "generic": 1,
@@ -2057,7 +2056,8 @@
             "name": "Chaos Warp",
             "cmc": 3,
             "tags": [
-              "instant"
+              "instant",
+              "removal"
             ],
             "manaReq": {
               "generic": 2,
@@ -2284,7 +2284,6 @@
             "cmc": 2,
             "tags": [
               "instant",
-              "draw",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -2306,7 +2305,6 @@
             "tags": [
               "instant",
               "draw",
-              "mana",
               "removal"
             ],
             "manaReq": {
@@ -2456,7 +2454,8 @@
             "name": "Treasure Cruise",
             "cmc": 8,
             "tags": [
-              "sorcery"
+              "sorcery",
+              "draw"
             ],
             "manaReq": {
               "generic": 7,
@@ -3230,14 +3229,15 @@
       {
         "id": "artifacts",
         "name": "Artefacts",
-        "strength": 67,
-        "cohesion": 67,
+        "strength": 70,
+        "cohesion": 70,
         "producers": [
           "Arcane Signet",
           "Brudiclad, Telchor Engineer",
           "Cursed Mirror",
           "Fellwar Stone",
           "Lightning Greaves",
+          "Sol Ring",
           "Solemn Simulacrum",
           "Talisman of Creativity"
         ],
@@ -3251,6 +3251,7 @@
           "Cursed Mirror",
           "Fellwar Stone",
           "Lightning Greaves",
+          "Sol Ring",
           "Solemn Simulacrum",
           "Talisman of Creativity",
           "Galazeth Prismari",
@@ -3336,6 +3337,20 @@
             }
           },
           {
+            "name": "Sol Ring",
+            "cmc": 1,
+            "tags": [
+              "artifact",
+              "mana",
+              "fast-mana"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
             "name": "Solemn Simulacrum",
             "cmc": 4,
             "tags": [
@@ -3417,7 +3432,7 @@
         "payoffTags": [
           "artifact-payoff"
         ],
-        "evidence": "7 producteur(s), 2 payoff(s), 9 carte(s) distincte(s)."
+        "evidence": "8 producteur(s), 2 payoff(s), 10 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -3489,15 +3504,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -3574,16 +3590,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 36,
-      "median": 45,
-      "high": 53,
-      "ceiling": 53,
+      "floor": 37,
+      "median": 46,
+      "high": 55,
+      "ceiling": 55,
       "peak": 84,
-      "iqr": 13,
-      "consistency": 71,
+      "iqr": 14,
+      "consistency": 69,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 85,
+      "recoveryAfterDisruption": 83,
       "turnProfile": [
         {
           "turn": 1,
@@ -3595,50 +3611,50 @@
         },
         {
           "turn": 2,
-          "commander": 0,
-          "engine": 0,
-          "interaction": 15,
-          "resource": 11,
+          "commander": 3,
+          "engine": 1,
+          "interaction": 18,
+          "resource": 10,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 15,
-          "engine": 7,
-          "interaction": 37,
-          "resource": 36,
-          "burst": 1
+          "commander": 19,
+          "engine": 11,
+          "interaction": 42,
+          "resource": 33,
+          "burst": 2
         },
         {
           "turn": 4,
-          "commander": 69,
-          "engine": 37,
-          "interaction": 47,
-          "resource": 62,
-          "burst": 7
+          "commander": 70,
+          "engine": 40,
+          "interaction": 52,
+          "resource": 58,
+          "burst": 8
         },
         {
           "turn": 5,
           "commander": 87,
-          "engine": 65,
-          "interaction": 51,
-          "resource": 72,
+          "engine": 66,
+          "interaction": 57,
+          "resource": 68,
           "burst": 21
         },
         {
           "turn": 6,
           "commander": 92,
-          "engine": 76,
-          "interaction": 54,
-          "resource": 77,
+          "engine": 77,
+          "interaction": 60,
+          "resource": 74,
           "burst": 30
         },
         {
           "turn": 7,
           "commander": 95,
           "engine": 83,
-          "interaction": 57,
-          "resource": 81,
+          "interaction": 63,
+          "resource": 78,
           "burst": 38
         }
       ]
@@ -3664,6 +3680,16 @@
           "exile-cast",
           "cheat",
           "free"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Sol Ring",
+        "impact": 4.4,
+        "tags": [
+          "artifact",
+          "mana",
+          "fast-mana"
         ],
         "aeon": null
       },
@@ -3735,17 +3761,6 @@
         "aeon": null
       },
       {
-        "name": "Prismari Command",
-        "impact": 4.1,
-        "tags": [
-          "instant",
-          "draw",
-          "mana",
-          "removal"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Storm-Kiln Artist",
         "impact": 4.1,
         "tags": [
@@ -3774,8 +3789,7 @@
         "tags": [
           "instant",
           "draw",
-          "counterspell",
-          "counter-kind:generic"
+          "counterspell"
         ],
         "aeon": null
       }

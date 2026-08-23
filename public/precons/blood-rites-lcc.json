@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 54,
+    "median": 55,
     "p20": 43,
-    "p80": 65,
-    "peak": 88,
+    "p80": 67,
+    "peak": 89,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "438457f67654db47d7ffaee66de6a7fc77286e6d75157c240c9bf402ae57cd66",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "6bddf5e638305b913605ef66ce63aeee3047c7c63b127b94fe90d8fd29e87954",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Carmen, Cruel Skymarcher\n1 Charismatic Conqueror\n1 Elenda's Hierophant\n1 March of the Canonized\n1 Redemption Choir\n1 Dusk Legion Sergeant\n1 Master of Dark Rites\n1 Promise of Aclazotz // Foul Rebirth\n1 Order of Sacred Dusk\n1 Austere Command\n1 Kindred Boon\n1 Mavren Fein, Dusk Apostle\n1 Radiant Destiny\n1 Welcoming Vampire\n1 Bloodghast\n1 Bloodtracker\n1 Butcher of Malakir\n1 Champion of Dusk\n1 Cordial Vampire\n1 Crossway Troublemakers\n1 Damn\n1 Drana, Liberator of Malakir\n1 Exquisite Blood\n1 Glass-Cast Heart\n1 New Blood\n1 Nighthawk Scavenger\n1 Olivia's Wrath\n1 Pact of the Serpent\n1 Patron of the Vein\n1 Sanctum Seeker\n1 Timothar, Baron of Bats\n1 Twilight Prophet\n1 Yahenni, Undying Partisan\n1 Elenda, the Dusk Rose\n1 Sorin, Lord of Innistrad\n1 Utter End\n1 Vona, Butcher of Magan\n1 Blade of the Bloodchief\n1 Isolated Chapel\n1 Shineshadow Snarl\n1 Temple of Silence\n1 Vault of the Archangel\n1 Voldaren Estate\n1 Windbrisk Heights\n1 Martyr of Dusk\n1 Return to Dust\n1 Swords to Plowshares\n1 Blood Artist\n1 Bloodline Necromancer\n1 Dusk Legion Zealot\n1 Falkenrath Noble\n1 Indulgent Aristocrat\n1 Oathsworn Vampire\n1 Village Rites\n1 Viscera Seer\n1 Bartolomé del Presidio\n1 Cruel Celebrant\n1 Etchings of the Chosen\n1 Legion Lieutenant\n1 Arcane Signet\n1 Commander's Sphere\n1 Heirloom Blade\n1 Mind Stone\n1 Orzhov Signet\n1 Sol Ring\n1 Swiftfoot Boots\n1 Talisman of Hierarchy\n1 Wayfarer's Bauble\n1 Bojuka Bog\n1 Command Tower\n1 Myriad Landscape\n1 Orzhov Basilica\n1 Path of Ancestry\n1 Rogue's Passage\n1 Secluded Courtyard\n1 Tainted Field\n1 Temple of the False God\n1 Unclaimed Territory\n4 Plains\n4 Plains\n7 Swamp\n6 Swamp",
   "oracleCards": [
@@ -363,6 +363,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -480,7 +481,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "sacrifice"
+        "sacrifice",
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -639,7 +642,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -704,6 +708,7 @@
         "enchantment",
         "protection",
         "etb",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -823,6 +828,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -1225,18 +1231,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1671,22 +1678,22 @@
   ],
   "result": {
     "profile": {
-      "median": 54,
+      "median": 55,
       "floor": 43,
-      "ceiling": 65,
-      "peak": 88,
-      "dispersion": 22,
-      "variance": 22,
-      "consistency": 62,
+      "ceiling": 67,
+      "peak": 89,
+      "dispersion": 24,
+      "variance": 24,
+      "consistency": 61,
       "commanderDelta": 12,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
-      "speed": 52,
-      "consistency": 62,
+      "speed": 53,
+      "consistency": 61,
       "explosiveness": 18,
-      "synergy": 91,
+      "synergy": 92,
       "interaction": 36,
       "resilience": 50
     },
@@ -1696,12 +1703,12 @@
       "fastMana": 2,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 7,
+      "draw": 9,
       "interaction": 7,
       "protection": 4,
       "recursion": 5,
       "wipes": 1,
-      "avgCmc": 3.129032258064516,
+      "avgCmc": 3.1451612903225805,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1729,7 +1736,7 @@
           "Elenda's Hierophant",
           "Elenda, the Dusk Rose",
           "Falkenrath Noble",
-          "Martyr of Dusk"
+          "Heirloom Blade"
         ],
         "members": [
           "Bartolomé del Presidio",
@@ -1748,6 +1755,7 @@
           "Elenda's Hierophant",
           "Elenda, the Dusk Rose",
           "Falkenrath Noble",
+          "Heirloom Blade",
           "Martyr of Dusk",
           "Timothar, Baron of Bats"
         ],
@@ -2080,6 +2088,19 @@
             }
           },
           {
+            "name": "Heirloom Blade",
+            "cmc": 3,
+            "tags": [
+              "artifact",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [],
+              "total": 3
+            }
+          },
+          {
             "name": "Martyr of Dusk",
             "cmc": 2,
             "tags": [
@@ -2129,12 +2150,568 @@
         "payoffTags": [
           "death-payoff"
         ],
-        "evidence": "7 producteur(s), 11 payoff(s), 18 carte(s) distincte(s)."
+        "evidence": "7 producteur(s), 12 payoff(s), 19 carte(s) distincte(s)."
+      },
+      {
+        "id": "lifegain",
+        "name": "Points de vie / Synergies",
+        "strength": 100,
+        "cohesion": 100,
+        "producers": [
+          "Blood Artist",
+          "Bloodline Necromancer",
+          "Carmen, Cruel Skymarcher",
+          "Charismatic Conqueror",
+          "Crossway Troublemakers",
+          "Cruel Celebrant",
+          "Elenda's Hierophant",
+          "Elenda, the Dusk Rose",
+          "Exquisite Blood",
+          "Falkenrath Noble"
+        ],
+        "payoffs": [
+          "Elenda's Hierophant",
+          "Oathsworn Vampire"
+        ],
+        "members": [
+          "Blood Artist",
+          "Bloodline Necromancer",
+          "Carmen, Cruel Skymarcher",
+          "Charismatic Conqueror",
+          "Crossway Troublemakers",
+          "Cruel Celebrant",
+          "Elenda's Hierophant",
+          "Elenda, the Dusk Rose",
+          "Exquisite Blood",
+          "Falkenrath Noble",
+          "Glass-Cast Heart",
+          "Indulgent Aristocrat",
+          "March of the Canonized",
+          "Martyr of Dusk",
+          "Mavren Fein, Dusk Apostle",
+          "Nighthawk Scavenger",
+          "Order of Sacred Dusk",
+          "Redemption Choir",
+          "Sanctum Seeker",
+          "Sorin, Lord of Innistrad",
+          "Twilight Prophet",
+          "Vault of the Archangel",
+          "Vona, Butcher of Magan",
+          "Oathsworn Vampire"
+        ],
+        "producerCards": [
+          {
+            "name": "Blood Artist",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "death-payoff",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Bloodline Necromancer",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Carmen, Cruel Skymarcher",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "recursion",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Charismatic Conqueror",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Crossway Troublemakers",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "draw",
+              "death-payoff",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Cruel Celebrant",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "death-payoff",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Elenda's Hierophant",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens",
+              "death-payoff",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Elenda, the Dusk Rose",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "tokens",
+              "death-payoff",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Exquisite Blood",
+            "cmc": 5,
+            "tags": [
+              "enchantment",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Falkenrath Noble",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "death-payoff",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Glass-Cast Heart",
+            "cmc": 3,
+            "tags": [
+              "artifact",
+              "tokens",
+              "sacrifice",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Indulgent Aristocrat",
+            "cmc": 1,
+            "tags": [
+              "creature",
+              "sacrifice",
+              "sac-outlet",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "March of the Canonized",
+            "cmc": 2,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Martyr of Dusk",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "tokens",
+              "death-payoff",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Mavren Fein, Dusk Apostle",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Nighthawk Scavenger",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Order of Sacred Dusk",
+            "cmc": 8,
+            "tags": [
+              "creature",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 6,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 8
+            }
+          },
+          {
+            "name": "Redemption Choir",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Sanctum Seeker",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Sorin, Lord of Innistrad",
+            "cmc": 4,
+            "tags": [
+              "tokens",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Twilight Prophet",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Vault of the Archangel",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Vona, Butcher of Magan",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "removal",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Elenda's Hierophant",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens",
+              "death-payoff",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Oathsworn Vampire",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
+            }
+          }
+        ],
+        "producerTags": [
+          "lifegain"
+        ],
+        "payoffTags": [
+          "life-payoff"
+        ],
+        "evidence": "23 producteur(s), 2 payoff(s), 24 carte(s) distincte(s)."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 69,
+      "score": 71,
       "connected": [
         "Bartolomé del Presidio",
         "Blade of the Bloodchief",
@@ -2149,6 +2726,7 @@
         "Etchings of the Chosen",
         "Falkenrath Noble",
         "Glass-Cast Heart",
+        "Heirloom Blade",
         "Indulgent Aristocrat",
         "March of the Canonized",
         "Martyr of Dusk",
@@ -2178,13 +2756,13 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 37,
-      "median": 45,
-      "high": 54,
-      "ceiling": 54,
-      "peak": 77,
+      "floor": 39,
+      "median": 48,
+      "high": 57,
+      "ceiling": 57,
+      "peak": 80,
       "iqr": 14,
-      "consistency": 70,
+      "consistency": 69,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 4,
       "recoveryAfterDisruption": 91,
@@ -2199,24 +2777,24 @@
         },
         {
           "turn": 2,
-          "commander": 9,
-          "engine": 6,
-          "interaction": 19,
-          "resource": 21,
+          "commander": 13,
+          "engine": 7,
+          "interaction": 20,
+          "resource": 24,
           "burst": 7
         },
         {
           "turn": 3,
-          "commander": 73,
-          "engine": 18,
-          "interaction": 28,
-          "resource": 44,
+          "commander": 76,
+          "engine": 24,
+          "interaction": 29,
+          "resource": 45,
           "burst": 6
         },
         {
           "turn": 4,
           "commander": 92,
-          "engine": 31,
+          "engine": 42,
           "interaction": 39,
           "resource": 60,
           "burst": 4
@@ -2224,25 +2802,25 @@
         {
           "turn": 5,
           "commander": 96,
-          "engine": 38,
+          "engine": 51,
           "interaction": 48,
           "resource": 71,
           "burst": 3
         },
         {
           "turn": 6,
-          "commander": 97,
-          "engine": 45,
+          "commander": 98,
+          "engine": 59,
           "interaction": 55,
-          "resource": 76,
+          "resource": 77,
           "burst": 2
         },
         {
           "turn": 7,
           "commander": 98,
-          "engine": 50,
+          "engine": 64,
           "interaction": 60,
-          "resource": 80,
+          "resource": 81,
           "burst": 1
         }
       ]
@@ -2262,22 +2840,71 @@
         "aeon": null
       },
       {
+        "name": "Crossway Troublemakers",
+        "impact": 3.5,
+        "tags": [
+          "creature",
+          "draw",
+          "death-payoff",
+          "lifegain"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Sol Ring",
         "impact": 3,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
         "aeon": null
       },
       {
-        "name": "Crossway Troublemakers",
-        "impact": 2.8,
+        "name": "Commander's Sphere",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Elenda's Hierophant",
+        "impact": 2.6,
         "tags": [
           "creature",
-          "draw",
+          "tokens",
           "death-payoff",
+          "counter-producer",
+          "counter-kind:plus1",
           "lifegain"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Elenda, the Dusk Rose",
+        "impact": 2.6,
+        "tags": [
+          "creature",
+          "tokens",
+          "death-payoff",
+          "counter-producer",
+          "counter-kind:plus1",
+          "lifegain"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mind Stone",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2293,6 +2920,26 @@
         "aeon": null
       },
       {
+        "name": "Blood Artist",
+        "impact": 2.3,
+        "tags": [
+          "creature",
+          "death-payoff",
+          "lifegain"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Cruel Celebrant",
+        "impact": 2.3,
+        "tags": [
+          "creature",
+          "death-payoff",
+          "lifegain"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Welcoming Vampire",
         "impact": 2.3,
         "tags": [
@@ -2302,84 +2949,12 @@
         "aeon": null
       },
       {
-        "name": "Yahenni, Undying Partisan",
-        "impact": 2.1,
+        "name": "Falkenrath Noble",
+        "impact": 2.2,
         "tags": [
           "creature",
-          "protection",
-          "sacrifice",
-          "sac-outlet",
-          "counter-producer",
-          "counter-kind:plus1"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Elenda's Hierophant",
-        "impact": 1.9,
-        "tags": [
-          "creature",
-          "tokens",
           "death-payoff",
-          "counter-producer",
-          "counter-kind:plus1",
           "lifegain"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Elenda, the Dusk Rose",
-        "impact": 1.9,
-        "tags": [
-          "creature",
-          "tokens",
-          "death-payoff",
-          "counter-producer",
-          "counter-kind:plus1",
-          "lifegain"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Dusk Legion Zealot",
-        "impact": 1.8,
-        "tags": [
-          "creature",
-          "draw",
-          "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Timothar, Baron of Bats",
-        "impact": 1.8,
-        "tags": [
-          "creature",
-          "graveyard-setup",
-          "tokens",
-          "sacrifice",
-          "death-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Bloodtracker",
-        "impact": 1.7,
-        "tags": [
-          "creature",
-          "draw",
-          "counter-producer",
-          "counter-payoff",
-          "counter-kind:plus1"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Pact of the Serpent",
-        "impact": 1.7,
-        "tags": [
-          "sorcery",
-          "draw"
         ],
         "aeon": null
       }

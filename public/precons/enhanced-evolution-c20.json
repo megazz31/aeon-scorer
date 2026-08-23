@@ -30,15 +30,15 @@
   "analysis": {
     "median": 33,
     "p20": 23,
-    "p80": 43,
-    "peak": 75,
-    "coverage": 90,
+    "p80": 44,
+    "peak": 74,
+    "coverage": 91,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "f258d338920e3de80f7c17f08728096fafdf6bbeacbdb43d07bd0707646cf4d2",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "7cbd3c574934af794f84424689ca9c16a9f629f0f8aeaaed45c11eaf3b709064",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Nissa, Steward of Elements\n1 Zaxara, the Exemplary\n1 Cazur, Ruthless Stalker\n1 Ukkima, Stalking Shadow\n1 Souvenir Snatcher\n1 Tidal Barracuda\n1 Boneyard Mycodrax\n1 Mindleecher\n1 Capricopian\n1 Sawtusk Demolisher\n1 Beast Whisperer\n1 Genesis Hydra\n1 Hungering Hydra\n1 Masked Admirers\n1 Predator Ooze\n1 Vastwood Hydra\n1 Vorapede\n1 Cold-Eyed Selkie\n1 Wydwen, the Biting Gale\n1 Silent Arbiter\n1 Archipelagore\n1 Dreamtail Heron\n1 Pouncing Shoreshark\n1 Cavern Whisperer\n1 Chittering Harvester\n1 Insatiable Hemophage\n1 Auspicious Starrix\n1 Fertilid\n1 Glowstone Recluse\n1 Migratory Greathorn\n1 Boneyard Lurker\n1 Trumpeting Gnarr\n1 Illusory Ambusher\n1 Mulldrifter\n1 Shriekmaw\n1 Heroes' Bane\n1 Reclamation Sage\n1 Yavimaya Dryad\n1 Trygon Predator\n1 Dredge the Mire\n1 Mind Spring\n1 Deadly Tempest\n1 Profane Command\n1 Animist's Awakening\n1 Find // Finality\n1 Gaze of Granite\n1 Villainous Wealth\n1 Migration Path\n1 Kodama's Reach\n1 Deadly Rollick\n1 Beast Within\n1 Krosan Grip\n1 Putrefy\n1 Manascape Refractor\n1 Lifecrafter's Bestiary\n1 Bonder's Ornament\n1 Arcane Signet\n1 Sol Ring\n1 Psychic Impetus\n1 Parasitic Impetus\n1 Predatory Impetus\n1 Propaganda\n1 Darkwater Catacombs\n1 Endless Sands\n1 Exotic Orchard\n1 Llanowar Wastes\n1 Sunken Hollow\n1 Blighted Woodland\n1 Command Tower\n1 Dimir Aqueduct\n1 Golgari Rot Farm\n1 Mortuary Mire\n1 Myriad Landscape\n1 Opulent Palace\n1 Rogue's Passage\n1 Simic Growth Chamber\n1 Soaring Seacliff\n1 Temple of the False God\n1 Dismal Backwater\n1 Jungle Hollow\n1 Thornwood Falls\n2 Swamp\n2 Swamp\n1 Swamp\n4 Forest\n4 Forest\n3 Forest\n1 Island\n1 Island",
   "oracleCards": [
@@ -226,7 +226,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1184,18 +1186,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "3e3f0bcd-0796-494d-bf51-94b33c1671e9",
-      "scryfallId": "3e3f0bcd-0796-494d-bf51-94b33c1671e9",
+      "oracleId": "ea9709b6-4c37-4d5a-b04d-cd4c42e4f9dd",
+      "scryfallId": "ac943e31-26bc-4b54-b73f-460e6e402d86",
       "name": "Propaganda",
-      "type": "",
-      "oracle": "Creatures can't attack you unless their controller pays {2} for each creature they control that's attacking you.\nCreatures can't attack you unless their controller pays {2} for each creature they control that's attacking you.",
-      "manaCost": "{2}{U} // {2}{U}",
-      "cmc": 0,
+      "type": "Enchantment",
+      "oracle": "Creatures can't attack you unless their controller pays {2} for each creature they control that's attacking you.",
+      "manaCost": "{2}{U}",
+      "cmc": 3,
       "colorIdentity": [
         "U"
       ],
       "producedMana": [],
       "tags": [
+        "enchantment",
         "stax"
       ],
       "isCommander": false
@@ -1371,18 +1374,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1618,7 +1622,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1693,22 +1699,22 @@
     "profile": {
       "median": 33,
       "floor": 23,
-      "ceiling": 43,
-      "peak": 75,
+      "ceiling": 44,
+      "peak": 74,
       "dispersion": 20,
       "variance": 20,
-      "consistency": 67,
+      "consistency": 66,
       "commanderDelta": 3,
-      "coverage": 90,
-      "dataCoverage": 90
+      "coverage": 91,
+      "dataCoverage": 91
     },
     "dimensions": {
-      "speed": 29,
-      "consistency": 67,
+      "speed": 28,
+      "consistency": 66,
       "explosiveness": 19,
       "synergy": 36,
-      "interaction": 40,
-      "resilience": 31
+      "interaction": 44,
+      "resilience": 32
     },
     "roles": {
       "lands": 37,
@@ -1721,7 +1727,7 @@
       "protection": 1,
       "recursion": 4,
       "wipes": 2,
-      "avgCmc": 3.6129032258064515,
+      "avgCmc": 3.6774193548387095,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1775,15 +1781,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -1858,16 +1865,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 24,
-      "median": 31,
-      "high": 38,
-      "ceiling": 38,
+      "floor": 25,
+      "median": 32,
+      "high": 39,
+      "ceiling": 39,
       "peak": 62,
-      "iqr": 11,
-      "consistency": 76,
+      "iqr": 12,
+      "consistency": 75,
       "commanderMedianTurn": 6,
       "engineMedianTurn": null,
-      "recoveryAfterDisruption": 54,
+      "recoveryAfterDisruption": 55,
       "turnProfile": [
         {
           "turn": 1,
@@ -1881,31 +1888,31 @@
           "turn": 2,
           "commander": 0,
           "engine": 0,
-          "interaction": 2,
-          "resource": 3,
+          "interaction": 4,
+          "resource": 4,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 0,
+          "commander": 1,
           "engine": 0,
-          "interaction": 24,
-          "resource": 18,
-          "burst": 3
+          "interaction": 29,
+          "resource": 20,
+          "burst": 4
         },
         {
           "turn": 4,
-          "commander": 6,
+          "commander": 8,
           "engine": 0,
-          "interaction": 46,
-          "resource": 39,
+          "interaction": 50,
+          "resource": 40,
           "burst": 11
         },
         {
           "turn": 5,
-          "commander": 23,
+          "commander": 24,
           "engine": 0,
-          "interaction": 59,
+          "interaction": 62,
           "resource": 54,
           "burst": 15
         },
@@ -1913,16 +1920,16 @@
           "turn": 6,
           "commander": 47,
           "engine": 0,
-          "interaction": 68,
-          "resource": 63,
+          "interaction": 70,
+          "resource": 64,
           "burst": 18
         },
         {
           "turn": 7,
           "commander": 61,
           "engine": 0,
-          "interaction": 75,
-          "resource": 69,
+          "interaction": 76,
+          "resource": 70,
           "burst": 20
         }
       ]
@@ -1943,6 +1950,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],

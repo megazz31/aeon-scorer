@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 49,
-    "p20": 36,
-    "p80": 60,
-    "peak": 88,
+    "median": 51,
+    "p20": 38,
+    "p80": 64,
+    "peak": 91,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "882f24d912017cdd6f93e66d4bd25025450d4094219aa68fce2b220739deab85",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "4b3860739ce7df360da0aa5de59ee0db7f246a61bad66943b60bd71ff7a7c377",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Rashmi and Ragavan\n1 Schema Thief\n1 Sandsteppe War Riders\n1 Cutthroat Negotiator\n1 Hedron Detonator\n1 Ichor Elixir\n1 Path of the Animist\n1 Pain Distributor\n1 Dance with Calamity\n1 Pia and Kiran Nalaar\n1 Feldon of the Third Path\n1 Chaos Warp\n1 Stroke of Genius\n1 Academy Manufactor\n1 Aid from the Cowl\n1 Bloodforged Battle-Axe\n1 Brass's Bounty\n1 Cinder Glade\n1 Echo Storm\n1 Everquill Phoenix\n1 Exotic Orchard\n1 Fiery Confluence\n1 Frostboil Snarl\n1 Game Trail\n1 Gilded Goose\n1 Hellkite Igniter\n1 Imprisoned in the Moon\n1 Inspiring Statuary\n1 Master of Etherium\n1 Masterful Replication\n1 Perplexing Test\n1 Rise and Shine\n1 Saheeli's Artistry\n1 Sharding Sphinx\n1 Shimmer Dragon\n1 Skyclave Relic\n1 Spell Swindle\n1 Spine of Ish Sah\n1 Temple of Abandon\n1 Temple of Epiphany\n1 Temple of Mystery\n1 Thopter Assembly\n1 Thopter Spy Network\n1 Tireless Tracker\n1 Vedalken Humiliator\n1 Vineglimmer Snarl\n1 Workshop Elders\n1 Command Tower\n1 Crack Open\n1 Evolving Wilds\n1 Fractured Powerstone\n1 Gruul Signet\n1 Izzet Signet\n1 Path of Ancestry\n1 Reverse Engineer\n1 Root Out\n1 Simic Growth Chamber\n1 Simic Signet\n1 Terramorphic Expanse\n1 Thoughtcast\n1 Replicating Ring\n1 Arcane Signet\n1 Combine Chrysalis\n1 Curse of Opulence\n1 Frontier Bivouac\n1 Ghirapur Aether Grid\n1 Junk Winder\n1 Myriad Landscape\n1 Reality Shift\n1 Saheeli, Sublime Artificer\n1 Sol Ring\n1 Struggle // Survive\n1 Tireless Provisioner\n1 Vampires' Vengeance\n1 Weirding Wood\n1 Whirler Rogue\n8 Island\n8 Mountain\n7 Forest",
   "oracleCards": [
@@ -153,7 +153,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "removal"
       ],
       "isCommander": false
     },
@@ -1017,6 +1018,7 @@
         "artifact",
         "mana",
         "tokens",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -1034,7 +1036,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1053,6 +1056,7 @@
       "tags": [
         "sorcery",
         "artifact-payoff",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1071,7 +1075,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "removal"
+        "removal",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -1127,7 +1132,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "token-payoff"
+        "token-payoff",
+        "counter-producer"
       ],
       "isCommander": false
     },
@@ -1182,6 +1188,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "protection",
         "artifact-payoff"
       ],
@@ -1258,18 +1265,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1297,8 +1305,7 @@
         "instant",
         "mana",
         "counterspell",
-        "tokens",
-        "counter-kind:generic"
+        "tokens"
       ],
       "isCommander": false
     },
@@ -1491,7 +1498,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1536,6 +1544,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "tokens",
         "sacrifice",
         "death-payoff",
         "etb",
@@ -1624,6 +1633,7 @@
       "tags": [
         "enchantment",
         "mana",
+        "tokens",
         "etb"
       ],
       "isCommander": false
@@ -1663,6 +1673,7 @@
       "tags": [
         "creature",
         "artifact-payoff",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1670,24 +1681,24 @@
   ],
   "result": {
     "profile": {
-      "median": 49,
-      "floor": 36,
-      "ceiling": 60,
-      "peak": 88,
-      "dispersion": 23,
-      "variance": 23,
-      "consistency": 60,
+      "median": 51,
+      "floor": 38,
+      "ceiling": 64,
+      "peak": 91,
+      "dispersion": 26,
+      "variance": 26,
+      "consistency": 58,
       "commanderDelta": 12,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 38,
-      "consistency": 60,
+      "consistency": 58,
       "explosiveness": 18,
-      "synergy": 91,
-      "interaction": 34,
-      "resilience": 26
+      "synergy": 94,
+      "interaction": 40,
+      "resilience": 28
     },
     "roles": {
       "lands": 38,
@@ -1695,12 +1706,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 3,
-      "interaction": 7,
+      "draw": 6,
+      "interaction": 8,
       "protection": 2,
       "recursion": 1,
       "wipes": 1,
-      "avgCmc": 3.80327868852459,
+      "avgCmc": 3.819672131147541,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1743,6 +1754,7 @@
           "Pia and Kiran Nalaar",
           "Rashmi and Ragavan",
           "Replicating Ring",
+          "Root Out",
           "Saheeli's Artistry",
           "Saheeli, Sublime Artificer",
           "Schema Thief",
@@ -1752,7 +1764,9 @@
           "Thopter Assembly",
           "Thopter Spy Network",
           "Tireless Provisioner",
+          "Tireless Tracker",
           "Vampires' Vengeance",
+          "Weirding Wood",
           "Whirler Rogue",
           "Junk Winder",
           "Sandsteppe War Riders"
@@ -2062,11 +2076,30 @@
               "artifact",
               "mana",
               "tokens",
+              "counter-producer",
               "counter-kind:generic"
             ],
             "manaReq": {
               "generic": 3,
               "colored": [],
+              "total": 3
+            }
+          },
+          {
+            "name": "Root Out",
+            "cmc": 3,
+            "tags": [
+              "sorcery",
+              "removal",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
               "total": 3
             }
           },
@@ -2174,8 +2207,7 @@
               "instant",
               "mana",
               "counterspell",
-              "tokens",
-              "counter-kind:generic"
+              "tokens"
             ],
             "manaReq": {
               "generic": 3,
@@ -2246,6 +2278,29 @@
             }
           },
           {
+            "name": "Tireless Tracker",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens",
+              "sacrifice",
+              "death-payoff",
+              "etb",
+              "landfall",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
             "name": "Vampires' Vengeance",
             "cmc": 3,
             "tags": [
@@ -2257,6 +2312,25 @@
               "colored": [
                 [
                   "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Weirding Wood",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "mana",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
                 ]
               ],
               "total": 3
@@ -2335,7 +2409,8 @@
             "cmc": 4,
             "tags": [
               "creature",
-              "token-payoff"
+              "token-payoff",
+              "counter-producer"
             ],
             "manaReq": {
               "generic": 3,
@@ -2354,7 +2429,7 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "27 producteur(s), 3 payoff(s), 29 carte(s) distincte(s)."
+        "evidence": "30 producteur(s), 3 payoff(s), 32 carte(s) distincte(s)."
       },
       {
         "id": "artifacts",
@@ -2400,6 +2475,7 @@
           "Sharding Sphinx",
           "Simic Signet",
           "Skyclave Relic",
+          "Sol Ring",
           "Spine of Ish Sah",
           "Thopter Assembly",
           "Ghirapur Aether Grid",
@@ -2568,6 +2644,7 @@
               "artifact",
               "mana",
               "tokens",
+              "counter-producer",
               "counter-kind:generic"
             ],
             "manaReq": {
@@ -2624,6 +2701,20 @@
               "generic": 3,
               "colored": [],
               "total": 3
+            }
+          },
+          {
+            "name": "Sol Ring",
+            "cmc": 1,
+            "tags": [
+              "artifact",
+              "mana",
+              "fast-mana"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
             }
           },
           {
@@ -2796,6 +2887,7 @@
             "tags": [
               "sorcery",
               "artifact-payoff",
+              "counter-producer",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -2836,6 +2928,7 @@
             "cmc": 6,
             "tags": [
               "creature",
+              "draw",
               "protection",
               "artifact-payoff"
             ],
@@ -2880,6 +2973,7 @@
             "tags": [
               "creature",
               "artifact-payoff",
+              "counter-producer",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -2899,7 +2993,7 @@
         "payoffTags": [
           "artifact-payoff"
         ],
-        "evidence": "16 producteur(s), 12 payoff(s), 26 carte(s) distincte(s)."
+        "evidence": "17 producteur(s), 12 payoff(s), 27 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -3051,6 +3145,7 @@
               "artifact",
               "mana",
               "tokens",
+              "counter-producer",
               "counter-kind:generic"
             ],
             "manaReq": {
@@ -3090,15 +3185,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -3127,6 +3223,7 @@
             "tags": [
               "enchantment",
               "mana",
+              "tokens",
               "etb"
             ],
             "manaReq": {
@@ -3245,6 +3342,7 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "tokens",
               "sacrifice",
               "death-payoff",
               "etb",
@@ -3274,7 +3372,7 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 84,
+      "score": 95,
       "connected": [
         "Academy Manufactor",
         "Bloodforged Battle-Axe",
@@ -3293,6 +3391,8 @@
         "Pia and Kiran Nalaar",
         "Rashmi and Ragavan",
         "Replicating Ring",
+        "Rise and Shine",
+        "Root Out",
         "Saheeli's Artistry",
         "Saheeli, Sublime Artificer",
         "Sandsteppe War Riders",
@@ -3305,7 +3405,9 @@
         "Tireless Provisioner",
         "Tireless Tracker",
         "Vampires' Vengeance",
-        "Whirler Rogue"
+        "Weirding Wood",
+        "Whirler Rogue",
+        "Workshop Elders"
       ],
       "tags": [
         "tokens",
@@ -3321,16 +3423,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 38,
-      "median": 47,
-      "high": 55,
-      "ceiling": 55,
-      "peak": 82,
-      "iqr": 14,
-      "consistency": 68,
+      "floor": 40,
+      "median": 49,
+      "high": 59,
+      "ceiling": 59,
+      "peak": 87,
+      "iqr": 15,
+      "consistency": 66,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 70,
+      "recoveryAfterDisruption": 75,
       "turnProfile": [
         {
           "turn": 1,
@@ -3342,50 +3444,50 @@
         },
         {
           "turn": 2,
-          "commander": 0,
-          "engine": 2,
-          "interaction": 5,
-          "resource": 0,
+          "commander": 1,
+          "engine": 5,
+          "interaction": 7,
+          "resource": 1,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 15,
-          "engine": 25,
-          "interaction": 20,
-          "resource": 12,
-          "burst": 2
+          "commander": 20,
+          "engine": 30,
+          "interaction": 26,
+          "resource": 15,
+          "burst": 3
         },
         {
           "turn": 4,
-          "commander": 58,
-          "engine": 53,
-          "interaction": 40,
-          "resource": 26,
+          "commander": 61,
+          "engine": 57,
+          "interaction": 46,
+          "resource": 35,
           "burst": 7
         },
         {
           "turn": 5,
           "commander": 83,
-          "engine": 69,
-          "interaction": 50,
-          "resource": 33,
+          "engine": 71,
+          "interaction": 56,
+          "resource": 46,
           "burst": 11
         },
         {
           "turn": 6,
           "commander": 90,
-          "engine": 77,
-          "interaction": 57,
-          "resource": 36,
-          "burst": 14
+          "engine": 79,
+          "interaction": 62,
+          "resource": 52,
+          "burst": 15
         },
         {
           "turn": 7,
           "commander": 94,
-          "engine": 84,
-          "interaction": 61,
-          "resource": 40,
+          "engine": 85,
+          "interaction": 67,
+          "resource": 58,
           "burst": 18
         }
       ]
@@ -3405,12 +3507,23 @@
         "aeon": null
       },
       {
+        "name": "Sol Ring",
+        "impact": 4.4,
+        "tags": [
+          "artifact",
+          "mana",
+          "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Replicating Ring",
         "impact": 4.2,
         "tags": [
           "artifact",
           "mana",
           "tokens",
+          "counter-producer",
           "counter-kind:generic"
         ],
         "aeon": null
@@ -3447,15 +3560,6 @@
           "draw",
           "mana",
           "tokens"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Sol Ring",
-        "impact": 3.7,
-        "tags": [
-          "mana",
-          "fast-mana"
         ],
         "aeon": null
       },
@@ -3510,8 +3614,7 @@
           "instant",
           "mana",
           "counterspell",
-          "tokens",
-          "counter-kind:generic"
+          "tokens"
         ],
         "aeon": null
       },

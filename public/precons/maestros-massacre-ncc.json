@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 55,
-    "p20": 42,
-    "p80": 66,
+    "p20": 41,
+    "p80": 68,
     "peak": 91,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "d5bb5bdedb5574699fa74f88643871a6181e12b22fb7741097f553fc92d816af",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "fd924018e645a9ade6c2d714e13e717b726ca043ccd180097722ac3df2c23e2b",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Parnesse, the Subtle Brush\n1 Bloodsoaked Champion\n1 Cormela, Glamour Thief\n1 Dogged Detective\n1 Goblin Electromancer\n1 Kess, Dissident Mage\n1 Puppeteer Clique\n1 Rekindling Phoenix\n1 Spellbinding Soprano\n1 Squee, the Immortal\n1 Sinister Concierge\n1 Syrix, Carrier of the Flame\n1 Skyclave Shade\n1 Woe Strider\n1 Army of the Damned\n1 Bedevil\n1 Call the Skybreaker\n1 Chain Reaction\n1 Clone Legion\n1 Damnable Pact\n1 Deep Analysis\n1 Drawn from Dreams\n1 Dread Summons\n1 Feed the Swarm\n1 Flawless Forgery\n1 Hex\n1 Maestros Confluence\n1 Make an Example\n1 Ponder\n1 Preordain\n1 Reign of the Pit\n1 River's Rebuke\n1 Sever the Bloodline\n1 Talrand's Invocation\n1 Xander's Pact\n1 Zndrsplt's Judgment\n1 A Little Chat\n1 Dig Through Time\n1 Fact or Fiction\n1 Frantic Search\n1 Maestros Charm\n1 Mystic Confluence\n1 Waste Management\n1 Arcane Signet\n1 Audacious Swap\n1 Body Count\n1 Commander's Sphere\n1 Dimir Signet\n1 Fellwar Stone\n1 Izzet Signet\n1 Lightning Greaves\n1 Rakdos Signet\n1 Sol Ring\n1 Mimic Vat\n1 Smuggler's Buggy\n1 Twinning Staff\n1 Wayfarer's Bauble\n1 Cryptic Pursuit\n1 Determined Iteration\n1 Double Vision\n1 Extravagant Replication\n1 Rite of the Raging Storm\n1 Maestros Theater\n1 Ash Barrens\n1 Command Tower\n1 Crumbling Necropolis\n1 Grixis Panorama\n1 Myriad Landscape\n1 Path of Ancestry\n1 Thriving Bluff\n1 Thriving Isle\n1 Thriving Moor\n1 Cascade Bluffs\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Foreboding Ruins\n1 Shadowblood Ridge\n1 Smoldering Marsh\n1 Sunken Hollow\n1 Temple of Epiphany\n4 Island\n3 Island\n3 Swamp\n3 Swamp\n3 Mountain\n2 Mountain",
   "oracleCards": [
@@ -151,6 +151,7 @@
       "producedMana": [],
       "tags": [
         "instant",
+        "removal",
         "cheat",
         "free"
       ],
@@ -206,7 +207,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "draw"
       ],
       "isCommander": false
     },
@@ -350,6 +352,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -1053,9 +1056,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counterspell",
-        "counter-kind:generic",
-        "stax"
+        "draw",
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -1074,9 +1076,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature",
-        "counter-kind:generic",
-        "stax"
+        "creature"
       ],
       "isCommander": false
     },
@@ -1134,8 +1134,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery",
-        "draw"
+        "sorcery"
       ],
       "isCommander": false
     },
@@ -1153,7 +1152,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1310,6 +1311,7 @@
         "creature",
         "removal",
         "death-payoff",
+        "counter-producer",
         "counter-kind:time"
       ],
       "isCommander": false
@@ -1376,18 +1378,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1720,22 +1723,22 @@
   "result": {
     "profile": {
       "median": 55,
-      "floor": 42,
-      "ceiling": 66,
+      "floor": 41,
+      "ceiling": 68,
       "peak": 91,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 61,
+      "dispersion": 26,
+      "variance": 26,
+      "consistency": 58,
       "commanderDelta": 14,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 44,
-      "consistency": 61,
+      "consistency": 58,
       "explosiveness": 26,
       "synergy": 85,
-      "interaction": 43,
+      "interaction": 47,
       "resilience": 60
     },
     "roles": {
@@ -1744,12 +1747,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 5,
+      "draw": 7,
       "interaction": 10,
       "protection": 0,
       "recursion": 9,
       "wipes": 1,
-      "avgCmc": 3.629032258064516,
+      "avgCmc": 3.6451612903225805,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1860,6 +1863,7 @@
             "cmc": 4,
             "tags": [
               "instant",
+              "removal",
               "cheat",
               "free"
             ],
@@ -1900,7 +1904,8 @@
             "name": "Body Count",
             "cmc": 3,
             "tags": [
-              "instant"
+              "instant",
+              "draw"
             ],
             "manaReq": {
               "generic": 2,
@@ -2229,9 +2234,8 @@
             "cmc": 5,
             "tags": [
               "instant",
-              "counterspell",
-              "counter-kind:generic",
-              "stax"
+              "draw",
+              "counterspell"
             ],
             "manaReq": {
               "generic": 3,
@@ -2267,8 +2271,7 @@
             "name": "Preordain",
             "cmc": 1,
             "tags": [
-              "sorcery",
-              "draw"
+              "sorcery"
             ],
             "manaReq": {
               "generic": 0,
@@ -2948,75 +2951,86 @@
     "simulation": {
       "iterations": 3200,
       "floor": 40,
-      "median": 49,
-      "high": 58,
-      "ceiling": 58,
-      "peak": 84,
-      "iqr": 14,
-      "consistency": 69,
+      "median": 50,
+      "high": 60,
+      "ceiling": 60,
+      "peak": 85,
+      "iqr": 15,
+      "consistency": 66,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 94,
+      "recoveryAfterDisruption": 95,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 10,
+          "resource": 7,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 3,
+          "commander": 5,
           "engine": 2,
-          "interaction": 11,
-          "resource": 32,
-          "burst": 0
+          "interaction": 13,
+          "resource": 29,
+          "burst": 1
         },
         {
           "turn": 3,
-          "commander": 58,
-          "engine": 13,
-          "interaction": 31,
+          "commander": 62,
+          "engine": 15,
+          "interaction": 34,
           "resource": 57,
           "burst": 9
         },
         {
           "turn": 4,
           "commander": 86,
-          "engine": 34,
-          "interaction": 48,
-          "resource": 73,
+          "engine": 35,
+          "interaction": 52,
+          "resource": 74,
           "burst": 20
         },
         {
           "turn": 5,
           "commander": 91,
           "engine": 49,
-          "interaction": 60,
-          "resource": 80,
+          "interaction": 62,
+          "resource": 82,
           "burst": 26
         },
         {
           "turn": 6,
           "commander": 94,
           "engine": 55,
-          "interaction": 67,
-          "resource": 84,
+          "interaction": 68,
+          "resource": 86,
           "burst": 29
         },
         {
           "turn": 7,
           "commander": 96,
           "engine": 61,
-          "interaction": 72,
-          "resource": 87,
-          "burst": 32
+          "interaction": 73,
+          "resource": 89,
+          "burst": 33
         }
       ]
     },
     "drivers": [
+      {
+        "name": "Audacious Swap",
+        "impact": 5.2,
+        "tags": [
+          "instant",
+          "removal",
+          "cheat",
+          "free"
+        ],
+        "aeon": null
+      },
       {
         "name": "Flawless Forgery",
         "impact": 5.1,
@@ -3030,22 +3044,22 @@
         "aeon": null
       },
       {
-        "name": "Audacious Swap",
-        "impact": 4.4,
-        "tags": [
-          "instant",
-          "cheat",
-          "free"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Smuggler's Buggy",
         "impact": 4.2,
         "tags": [
           "artifact",
           "cheat",
           "free"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mystic Confluence",
+        "impact": 3.2,
+        "tags": [
+          "instant",
+          "draw",
+          "counterspell"
         ],
         "aeon": null
       },
@@ -3086,19 +3100,20 @@
         "name": "Sol Ring",
         "impact": 3,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
         "aeon": null
       },
       {
-        "name": "Mystic Confluence",
+        "name": "Commander's Sphere",
         "impact": 2.6,
         "tags": [
-          "instant",
-          "counterspell",
-          "counter-kind:generic",
-          "stax"
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -3126,15 +3141,6 @@
       },
       {
         "name": "Damnable Pact",
-        "impact": 2.5,
-        "tags": [
-          "sorcery",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Ponder",
         "impact": 2.5,
         "tags": [
           "sorcery",

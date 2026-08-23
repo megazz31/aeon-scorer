@@ -32,17 +32,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 35,
-    "p20": 24,
-    "p80": 46,
-    "peak": 70,
+    "median": 37,
+    "p20": 25,
+    "p80": 49,
+    "peak": 71,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "c2f7775738dd0e60ca7e3968d80e4d0cebbeb7cebde3d6876a8db5f745adb195",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "c2b127ef0f20a78a1e98ec6a626de615739541f7c6a20e86813334b43db138c9",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Elvish Mystic\n1 Elvish Skysweeper\n1 Essence Warden\n1 Joraga Warcaller\n1 Llanowar Elves\n1 Sylvan Safekeeper\n1 Elvish Visionary\n1 Priest of Titania\n1 Sylvan Ranger\n1 Thornweald Archer\n1 Wellwisher\n1 Farhaven Elf\n1 Imperious Perfect\n1 Reclamation Sage\n1 Timberwatch Elf\n1 Titania's Chosen\n1 Wood Elves\n1 Elvish Archdruid\n1 Ezuri, Renegade Leader\n1 Drove of Elves\n1 Immaculate Magistrate\n1 Wren's Run Packmaster\n1 Lys Alana Huntmaster\n1 Masked Admirers\n1 Wolfbriar Elemental\n1 Creeperhulk\n1 Silklash Spider\n1 Titania, Protector of Argoth\n1 Grave Sifter\n1 Primordial Sage\n1 Rampaging Baloths\n1 Soul of the Harvest\n1 Thunderfoot Baloth\n1 Siege Behemoth\n1 Tornado Elemental\n1 Terastodon\n1 Lifeblood Hydra\n1 Hunting Triad\n1 Whirlwind\n1 Overwhelming Stampede\n1 Overrun\n1 Grim Flowering\n1 Collective Unconscious\n1 Desert Twister\n1 Wave of Vitriol\n1 Praetor's Counsel\n1 Sylvan Offering\n1 Harrow\n1 Fresh Meat\n1 Skullclamp\n1 Sol Ring\n1 Emerald Medallion\n1 Moss Diamond\n1 Swiftfoot Boots\n1 Commander's Sphere\n1 Assault Suit\n1 Seer's Sundial\n1 Predator, Flagship\n1 Loreseeker's Stone\n1 Beastmaster Ascension\n1 Song of the Dryads\n1 Wolfcaller's Howl\n1 Crystal Vein\n1 Evolving Wilds\n1 Gargoyle Castle\n1 Ghost Quarter\n1 Haunted Fengraf\n1 Havenwood Battleground\n1 Jungle Basin\n1 Myriad Landscape\n1 Oran-Rief, the Vastwood\n1 Slippery Karst\n1 Terramorphic Expanse\n1 Tranquil Thicket\n7 Forest\n6 Forest\n6 Forest\n6 Forest",
   "oracleCards": [
@@ -75,6 +75,7 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "counter-producer",
         "counter-kind:quest"
       ],
       "isCommander": false
@@ -115,6 +116,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -412,6 +414,7 @@
         "G"
       ],
       "tags": [
+        "draw",
         "mana",
         "removal",
         "tokens"
@@ -669,6 +672,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "death-payoff",
         "etb",
         "counter-producer",
@@ -708,7 +712,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1024,7 +1029,8 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "draw"
+        "draw",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -1050,18 +1056,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1468,24 +1475,24 @@
   ],
   "result": {
     "profile": {
-      "median": 35,
-      "floor": 24,
-      "ceiling": 46,
-      "peak": 70,
-      "dispersion": 22,
-      "variance": 22,
-      "consistency": 64,
-      "commanderDelta": 7,
+      "median": 37,
+      "floor": 25,
+      "ceiling": 49,
+      "peak": 71,
+      "dispersion": 24,
+      "variance": 24,
+      "consistency": 63,
+      "commanderDelta": 8,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 29,
-      "consistency": 64,
-      "explosiveness": 10,
+      "speed": 34,
+      "consistency": 63,
+      "explosiveness": 9,
       "synergy": 50,
-      "interaction": 31,
-      "resilience": 33
+      "interaction": 32,
+      "resilience": 35
     },
     "roles": {
       "lands": 37,
@@ -1493,12 +1500,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 8,
+      "draw": 11,
       "interaction": 6,
       "protection": 3,
       "recursion": 3,
       "wipes": 2,
-      "avgCmc": 3.7419354838709675,
+      "avgCmc": 3.7580645161290325,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1675,6 +1682,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -1789,15 +1797,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -1824,6 +1833,7 @@
             "name": "Freyalise, Llanowar's Fury",
             "cmc": 5,
             "tags": [
+              "draw",
               "mana",
               "removal",
               "tokens"
@@ -1874,47 +1884,47 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 28,
-      "median": 36,
-      "high": 43,
-      "ceiling": 43,
+      "floor": 29,
+      "median": 37,
+      "high": 45,
+      "ceiling": 45,
       "peak": 62,
-      "iqr": 12,
-      "consistency": 73,
-      "commanderMedianTurn": 5,
+      "iqr": 13,
+      "consistency": 72,
+      "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 62,
+      "recoveryAfterDisruption": 67,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 14,
+          "interaction": 13,
           "resource": 14,
           "burst": 1
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 1,
           "engine": 0,
-          "interaction": 18,
-          "resource": 22,
+          "interaction": 19,
+          "resource": 25,
           "burst": 1
         },
         {
           "turn": 3,
-          "commander": 10,
+          "commander": 14,
           "engine": 1,
-          "interaction": 24,
-          "resource": 28,
+          "interaction": 25,
+          "resource": 33,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 45,
+          "commander": 46,
           "engine": 3,
-          "interaction": 34,
-          "resource": 42,
+          "interaction": 35,
+          "resource": 48,
           "burst": 0
         },
         {
@@ -1922,15 +1932,15 @@
           "commander": 75,
           "engine": 6,
           "interaction": 42,
-          "resource": 54,
+          "resource": 60,
           "burst": 0
         },
         {
           "turn": 6,
-          "commander": 86,
+          "commander": 87,
           "engine": 8,
           "interaction": 49,
-          "resource": 62,
+          "resource": 69,
           "burst": 0
         },
         {
@@ -1938,7 +1948,7 @@
           "commander": 92,
           "engine": 10,
           "interaction": 55,
-          "resource": 68,
+          "resource": 75,
           "burst": 0
         }
       ]
@@ -1948,8 +1958,20 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2000,7 +2022,8 @@
         "impact": 2.4,
         "tags": [
           "artifact",
-          "draw"
+          "draw",
+          "death-payoff"
         ],
         "aeon": null
       },
@@ -2048,15 +2071,6 @@
           "artifact",
           "mana",
           "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Priest of Titania",
-        "impact": 1.9,
-        "tags": [
-          "creature",
-          "mana"
         ],
         "aeon": null
       }

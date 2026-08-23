@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 33,
-    "p20": 23,
-    "p80": 42,
-    "peak": 65,
+    "median": 36,
+    "p20": 26,
+    "p80": 47,
+    "peak": 67,
     "coverage": 91,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "6d04e6cd8d40c4efb1aa8115af4eb97ba84fde24d6bf4ecb0b51eb47db22a8e7",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "993c4a5cd35949cc49d57c18e36ecfd521660955619a6307d0e9181662efc16b",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Ureni of the Unwritten\n1 Deceptive Frostkite\n1 Hammerhead Tyrant\n1 Will of the Temur\n1 Parapet Thrasher\n1 Thundermane Dragon\n1 Zenith Festival\n1 Become the Avalanche\n1 Broodcaller Scourge\n1 Keiga, the Tide Star\n1 Reflections of Littjara\n1 Atsushi, the Blazing Sky\n1 Blasphemous Act\n1 Chaos Warp\n1 Dragonmaster Outcast\n1 Gadrak, the Crown-Scourge\n1 Glorybringer\n1 Hellkite Courser\n1 Lathliss, Dragon Queen\n1 Leyline Tyrant\n1 Nesting Dragon\n1 Nogi, Draco-Zealot\n1 Opportunistic Dragon\n1 Scourge of the Throne\n1 Skarrgan Hellkite\n1 Spit Flame\n1 Storm's Wrath\n1 Stormbreath Dragon\n1 Taurean Mauler\n1 Territorial Hellkite\n1 Thunderbreak Regent\n1 Vengeful Ancestor\n1 Verix Bladewing\n1 Frontier Siege\n1 Selvala's Stampede\n1 Atarka, World Render\n1 Dragonlord Atarka\n1 Harbinger of the Hunt\n1 Sarkhan, Soul Aflame\n1 Temur Ascendancy\n1 Dragon's Hoard\n1 Steel Hellkite\n1 Cinder Glade\n1 Exotic Orchard\n1 Flooded Grove\n1 Haven of the Spirit Dragon\n1 Hinterland Harbor\n1 Karplusan Forest\n1 Kessig Wolf Run\n1 Mossfire Valley\n1 Mosswort Bridge\n1 Rockfall Vale\n1 Rootbound Crag\n1 Sheltered Thicket\n1 Shivan Reef\n1 Sulfur Falls\n1 Temple of Abandon\n1 Temple of Mystery\n1 Yavimaya Coast\n1 Dragon Tempest\n1 Breaching Dragonstorm\n1 Temple of the Dragon Queen\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Stormshriek Feral // Flush Out\n1 Encroaching Dragonstorm\n1 Draconic Lore\n1 Rapid Hybridization\n1 Reality Shift\n1 Dragonlord's Servant\n1 Rapacious Dragon\n1 Whirlwing Stormbrood // Dynamic Soar\n1 Beast Within\n1 Elemental Bond\n1 Farseek\n1 Evolving Wilds\n1 Frontier Bivouac\n1 Kodama's Reach\n1 Migration Path\n1 Fellwar Stone\n1 Talisman of Creativity\n1 Talisman of Impulse\n1 Bountiful Landscape\n1 Path of Ancestry\n2 Island\n1 Island\n3 Mountain\n3 Mountain\n3 Forest\n2 Forest",
   "oracleCards": [
@@ -230,7 +230,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "removal"
       ],
       "isCommander": false
     },
@@ -349,8 +350,10 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "etb",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -1062,6 +1065,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "removal",
         "exile-cast"
       ],
       "isCommander": false
@@ -1328,23 +1332,25 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1416,7 +1422,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "protection"
+        "protection",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1761,6 +1769,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "draw",
         "tokens"
       ],
       "isCommander": false
@@ -1809,24 +1818,24 @@
   ],
   "result": {
     "profile": {
-      "median": 33,
-      "floor": 23,
-      "ceiling": 42,
-      "peak": 65,
-      "dispersion": 19,
-      "variance": 19,
-      "consistency": 69,
-      "commanderDelta": 6,
+      "median": 36,
+      "floor": 26,
+      "ceiling": 47,
+      "peak": 67,
+      "dispersion": 21,
+      "variance": 21,
+      "consistency": 67,
+      "commanderDelta": 7,
       "coverage": 91,
       "dataCoverage": 91
     },
     "dimensions": {
-      "speed": 30,
-      "consistency": 69,
+      "speed": 35,
+      "consistency": 67,
       "explosiveness": 15,
-      "synergy": 35,
-      "interaction": 28,
-      "resilience": 26
+      "synergy": 37,
+      "interaction": 37,
+      "resilience": 27
     },
     "roles": {
       "lands": 37,
@@ -1834,12 +1843,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 5,
-      "interaction": 3,
+      "draw": 7,
+      "interaction": 5,
       "protection": 1,
       "recursion": 1,
       "wipes": 0,
-      "avgCmc": 4.096774193548387,
+      "avgCmc": 4.112903225806452,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1945,8 +1954,10 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 5,
+      "score": 11,
       "connected": [
+        "Skarrgan Hellkite",
+        "Stormbreath Dragon",
         "Taurean Mauler",
         "Whirlwing Stormbrood // Dynamic Soar"
       ],
@@ -1962,71 +1973,71 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 27,
-      "median": 34,
-      "high": 40,
-      "ceiling": 40,
-      "peak": 57,
-      "iqr": 10,
-      "consistency": 78,
-      "commanderMedianTurn": 4,
+      "floor": 29,
+      "median": 36,
+      "high": 43,
+      "ceiling": 43,
+      "peak": 59,
+      "iqr": 11,
+      "consistency": 76,
+      "commanderMedianTurn": 3,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 77,
+      "recoveryAfterDisruption": 78,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 6,
+          "interaction": 5,
           "resource": 0,
           "burst": 8
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 1,
           "engine": 0,
-          "interaction": 12,
-          "resource": 0,
+          "interaction": 14,
+          "resource": 1,
           "burst": 8
         },
         {
           "turn": 3,
-          "commander": 43,
+          "commander": 48,
           "engine": 0,
-          "interaction": 22,
-          "resource": 13,
-          "burst": 6
+          "interaction": 28,
+          "resource": 15,
+          "burst": 7
         },
         {
           "turn": 4,
-          "commander": 81,
+          "commander": 82,
           "engine": 1,
-          "interaction": 30,
-          "resource": 25,
+          "interaction": 40,
+          "resource": 26,
           "burst": 8
         },
         {
           "turn": 5,
           "commander": 90,
           "engine": 2,
-          "interaction": 33,
-          "resource": 34,
+          "interaction": 45,
+          "resource": 37,
           "burst": 10
         },
         {
           "turn": 6,
           "commander": 93,
           "engine": 3,
-          "interaction": 36,
-          "resource": 41,
+          "interaction": 49,
+          "resource": 45,
           "burst": 11
         },
         {
           "turn": 7,
           "commander": 95,
           "engine": 4,
-          "interaction": 39,
-          "resource": 48,
+          "interaction": 53,
+          "resource": 52,
           "burst": 12
         }
       ]
@@ -2045,9 +2056,23 @@
         "aeon": null
       },
       {
+        "name": "Dragon's Hoard",
+        "impact": 3.1,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "etb",
+          "counter-producer",
+          "counter-kind:generic"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Sol Ring",
         "impact": 3,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
@@ -2093,6 +2118,16 @@
         "aeon": null
       },
       {
+        "name": "Will of the Temur",
+        "impact": 1.9,
+        "tags": [
+          "sorcery",
+          "draw",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Nesting Dragon",
         "impact": 1.8,
         "tags": [
@@ -2113,17 +2148,6 @@
         "aeon": null
       },
       {
-        "name": "Dragon's Hoard",
-        "impact": 1.7,
-        "tags": [
-          "artifact",
-          "mana",
-          "etb",
-          "counter-kind:generic"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Become the Avalanche",
         "impact": 1.6,
         "tags": [
@@ -2138,16 +2162,6 @@
         "tags": [
           "instant",
           "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Frontier Siege",
-        "impact": 1.6,
-        "tags": [
-          "enchantment",
-          "mana",
-          "etb"
         ],
         "aeon": null
       }

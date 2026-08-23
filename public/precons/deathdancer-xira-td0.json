@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 36,
-    "p20": 24,
-    "p80": 46,
+    "p20": 25,
+    "p80": 48,
     "peak": 71,
     "coverage": 88,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
+    "semanticVersion": "3.2.0-semantic-10",
     "oracleSnapshotHash": "57cf59fb555204839b99800365001a0ae82fc8ea07cc444f1af103bfa27cad26",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Barren Moor\n1 Darigaaz's Caldera\n4 Forest\n3 Forest\n3 Forest\n1 Forgotten Cave\n1 Ghost Quarter\n1 Golgari Rot Farm\n1 Gruul Turf\n1 Jund Panorama\n3 Mountain\n2 Mountain\n2 Mountain\n1 Rakdos Carnarium\n1 Rupture Spire\n1 Savage Lands\n3 Swamp\n3 Swamp\n2 Swamp\n1 Terramorphic Expanse\n1 Tranquil Thicket\n1 Abyssal Gatekeeper\n1 Anarchist\n1 Anger\n1 Avatar of Woe\n1 Brawn\n1 Carrion Feeder\n1 Chartooth Cougar\n1 Civic Wayfinder\n1 Elvish Visionary\n1 Eternal Witness\n1 Flametongue Kavu\n1 Genesis\n1 Golgari Grave-Troll\n1 Golgari Thug\n1 Hissing Iguanar\n1 Keldon Vandals\n1 Krosan Tusker\n1 Nezumi Graverobber // Nighteyes the Desecrator\n1 Penumbra Bobcat\n1 Rootbreaker Wurm\n1 Sakura-Tribe Elder\n1 Shambling Shell\n1 Shriekmaw\n1 Stinkweed Imp\n1 Twisted Abomination\n1 Vampiric Dragon\n1 Werebear\n1 Wickerbough Elder\n1 Wild Mongrel\n1 Wirewood Guardian\n1 Yavimaya Elder\n1 All Hallow's Eve\n1 Ancient Grudge\n1 Animate Dead\n1 Ashes to Ashes\n1 Buried Alive\n1 Cauldron Dance\n1 Chain Lightning\n1 Constant Mists\n1 Dread Return\n1 Edge of Autumn\n1 Elven Cache\n1 Explosive Vegetation\n1 Fires of Yavimaya\n1 Golgari Signet\n1 Grim Harvest\n1 Gruul Signet\n1 Harmonize\n1 Kodama's Reach\n1 Life from the Loam\n1 Lightning Bolt\n1 Lightning Greaves\n1 Massacre\n1 Phyrexian Arena\n1 Putrefy\n1 Rakdos Signet\n1 Reaping the Graves\n1 Recollect\n1 Resounding Thunder\n1 Skullclamp\n1 Terminate\n1 Terror",
   "oracleCards": [
@@ -1261,7 +1261,8 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "draw"
+        "draw",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -1523,6 +1524,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "sacrifice",
         "death-payoff"
       ],
@@ -1532,8 +1534,8 @@
   "result": {
     "profile": {
       "median": 36,
-      "floor": 24,
-      "ceiling": 46,
+      "floor": 25,
+      "ceiling": 48,
       "peak": 71,
       "dispersion": 22,
       "variance": 22,
@@ -1548,7 +1550,7 @@
       "explosiveness": 10,
       "synergy": 0,
       "interaction": 59,
-      "resilience": 59
+      "resilience": 60
     },
     "roles": {
       "lands": 37,
@@ -1556,7 +1558,7 @@
       "fastMana": 0,
       "tutors": 1,
       "repeatableTutors": 0,
-      "draw": 4,
+      "draw": 5,
       "interaction": 12,
       "protection": 0,
       "recursion": 10,
@@ -1579,16 +1581,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 32,
+      "floor": 33,
       "median": 40,
-      "high": 47,
-      "ceiling": 47,
+      "high": 48,
+      "ceiling": 48,
       "peak": 66,
       "iqr": 12,
       "consistency": 74,
       "commanderMedianTurn": 4,
       "engineMedianTurn": null,
-      "recoveryAfterDisruption": 85,
+      "recoveryAfterDisruption": 86,
       "turnProfile": [
         {
           "turn": 1,
@@ -1611,7 +1613,7 @@
           "commander": 41,
           "engine": 0,
           "interaction": 49,
-          "resource": 47,
+          "resource": 48,
           "burst": 2
         },
         {
@@ -1619,7 +1621,7 @@
           "commander": 63,
           "engine": 0,
           "interaction": 63,
-          "resource": 62,
+          "resource": 64,
           "burst": 5
         },
         {
@@ -1627,7 +1629,7 @@
           "commander": 73,
           "engine": 0,
           "interaction": 70,
-          "resource": 72,
+          "resource": 74,
           "burst": 8
         },
         {
@@ -1635,7 +1637,7 @@
           "commander": 80,
           "engine": 0,
           "interaction": 75,
-          "resource": 79,
+          "resource": 81,
           "burst": 10
         },
         {
@@ -1643,7 +1645,7 @@
           "commander": 84,
           "engine": 0,
           "interaction": 79,
-          "resource": 83,
+          "resource": 85,
           "burst": 11
         }
       ]
@@ -1665,7 +1667,8 @@
         "impact": 2.4,
         "tags": [
           "artifact",
-          "draw"
+          "draw",
+          "death-payoff"
         ],
         "aeon": null
       },
@@ -1717,6 +1720,17 @@
         "aeon": null
       },
       {
+        "name": "Yavimaya Elder",
+        "impact": 1.7,
+        "tags": [
+          "creature",
+          "draw",
+          "sacrifice",
+          "death-payoff"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Keldon Vandals",
         "impact": 1.6,
         "tags": [
@@ -1751,15 +1765,6 @@
         "tags": [
           "creature",
           "recursion"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Buried Alive",
-        "impact": 1.3,
-        "tags": [
-          "sorcery",
-          "tutor"
         ],
         "aeon": null
       }

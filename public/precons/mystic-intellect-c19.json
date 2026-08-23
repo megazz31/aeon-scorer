@@ -31,14 +31,14 @@
     "median": 42,
     "p20": 30,
     "p80": 53,
-    "peak": 90,
+    "peak": 89,
     "coverage": 91,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "c86e3d7796989e89e4fccff220cce32d9601a5a5b158854e5652f34bee13ae3a",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "d27709cb36dcedc596ca29c2c0f6fedcdbe575025664cd881a76a5fbe11542c3",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Ral Zarek\n1 Elsha of the Infinite\n1 Pramikon, Sky Rampart\n1 Thalia's Geistcaller\n1 Wall of Stolen Identity\n1 Backdraft Hellkite\n1 Dockside Extortionist\n1 Gerrard, Weatherlight Hero\n1 Pristine Angel\n1 Sun Titan\n1 Clever Impersonator\n1 Zetalpa, Primal Dawn\n1 River Kelpie\n1 Talrand, Sky Summoner\n1 Pristine Skywise\n1 Cliffside Rescuer\n1 Scaretiller\n1 Guttersnipe\n1 Crackling Drake\n1 Burnished Hart\n1 Sevinne's Reclamation\n1 Mass Diminish\n1 Ignite the Future\n1 Divine Reckoning\n1 Dusk // Dawn\n1 Increasing Devotion\n1 Storm Herd\n1 Devil's Play\n1 Deep Analysis\n1 Mystic Retrieval\n1 Runic Repetition\n1 Faithless Looting\n1 Rolling Temblor\n1 Mandate of Peace\n1 Increasing Vengeance\n1 Magmaquake\n1 Refuse // Cooperate\n1 Leadership Vacuum\n1 Prismatic Strands\n1 Purify the Grave\n1 Ray of Distortion\n1 Chemister's Insight\n1 Fact or Fiction\n1 Fervent Denial\n1 Oona's Grace\n1 Think Twice\n1 Desperate Ravings\n1 Farm // Market\n1 Empowered Autogenerator\n1 Bloodthirsty Blade\n1 Armillary Sphere\n1 Azorius Locket\n1 Commander's Sphere\n1 Izzet Locket\n1 Sol Ring\n1 Jace's Sanctum\n1 Ghostly Prison\n1 Secrets of the Dead\n1 Burning Vengeance\n1 Exotic Orchard\n1 Prairie Stream\n3 Plains\n3 Plains\n3 Plains\n3 Island\n3 Island\n2 Island\n2 Mountain\n1 Mountain\n1 Mountain\n1 Ash Barrens\n1 Azorius Chancery\n1 Boros Garrison\n1 Boros Guildgate\n1 Command Tower\n1 Evolving Wilds\n1 Highland Lake\n1 Izzet Boilerworks\n1 Izzet Guildgate\n1 Myriad Landscape\n1 Mystic Monastery\n1 Stone Quarry\n1 Swiftwater Cliffs\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Tranquil Cove\n1 Wind-Scarred Crag",
   "oracleCards": [
@@ -117,6 +117,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -329,6 +330,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -508,7 +510,9 @@
       ],
       "tags": [
         "artifact",
+        "mana",
         "etb",
+        "counter-producer",
         "counter-kind:charge"
       ],
       "isCommander": false
@@ -604,6 +608,7 @@
       "tags": [
         "instant",
         "sorcery",
+        "draw",
         "removal",
         "graveyard-setup"
       ],
@@ -623,8 +628,7 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counterspell",
-        "counter-kind:generic"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -844,6 +848,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -1241,7 +1246,9 @@
       "tags": [
         "creature",
         "draw",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1355,18 +1362,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1639,21 +1647,21 @@
       "median": 42,
       "floor": 30,
       "ceiling": 53,
-      "peak": 90,
+      "peak": 89,
       "dispersion": 23,
       "variance": 23,
-      "consistency": 63,
+      "consistency": 62,
       "commanderDelta": 6,
       "coverage": 91,
       "dataCoverage": 91
     },
     "dimensions": {
       "speed": 30,
-      "consistency": 63,
-      "explosiveness": 23,
+      "consistency": 62,
+      "explosiveness": 22,
       "synergy": 68,
-      "interaction": 30,
-      "resilience": 59
+      "interaction": 31,
+      "resilience": 60
     },
     "roles": {
       "lands": 40,
@@ -1661,12 +1669,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 10,
+      "draw": 14,
       "interaction": 7,
       "protection": 5,
       "recursion": 8,
       "wipes": 1,
-      "avgCmc": 3.694915254237288,
+      "avgCmc": 3.711864406779661,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1882,6 +1890,7 @@
             "tags": [
               "instant",
               "sorcery",
+              "draw",
               "removal",
               "graveyard-setup"
             ],
@@ -1903,8 +1912,7 @@
             "cmc": 5,
             "tags": [
               "instant",
-              "counterspell",
-              "counter-kind:generic"
+              "counterspell"
             ],
             "manaReq": {
               "generic": 3,
@@ -2400,6 +2408,7 @@
             "tags": [
               "instant",
               "sorcery",
+              "draw",
               "removal",
               "graveyard-setup"
             ],
@@ -2609,6 +2618,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2623,6 +2633,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2656,6 +2667,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2667,15 +2679,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           }
         ],
@@ -2736,16 +2749,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 29,
-      "median": 37,
-      "high": 45,
-      "ceiling": 45,
+      "floor": 30,
+      "median": 38,
+      "high": 46,
+      "ceiling": 46,
       "peak": 80,
       "iqr": 13,
-      "consistency": 72,
+      "consistency": 71,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 83,
+      "recoveryAfterDisruption": 84,
       "turnProfile": [
         {
           "turn": 1,
@@ -2759,32 +2772,32 @@
           "turn": 2,
           "commander": 0,
           "engine": 0,
-          "interaction": 12,
-          "resource": 15,
+          "interaction": 14,
+          "resource": 18,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 2,
+          "commander": 5,
           "engine": 1,
-          "interaction": 21,
-          "resource": 38,
+          "interaction": 22,
+          "resource": 42,
           "burst": 1
         },
         {
           "turn": 4,
-          "commander": 20,
-          "engine": 10,
+          "commander": 21,
+          "engine": 11,
           "interaction": 34,
-          "resource": 68,
+          "resource": 69,
           "burst": 10
         },
         {
           "turn": 5,
-          "commander": 58,
+          "commander": 59,
           "engine": 27,
-          "interaction": 44,
-          "resource": 79,
+          "interaction": 45,
+          "resource": 80,
           "burst": 16
         },
         {
@@ -2792,7 +2805,7 @@
           "commander": 76,
           "engine": 38,
           "interaction": 52,
-          "resource": 85,
+          "resource": 87,
           "burst": 19
         },
         {
@@ -2800,7 +2813,7 @@
           "commander": 83,
           "engine": 47,
           "interaction": 58,
-          "resource": 89,
+          "resource": 90,
           "burst": 22
         }
       ]
@@ -2818,6 +2831,18 @@
         "aeon": null
       },
       {
+        "name": "Farm // Market",
+        "impact": 3.8,
+        "tags": [
+          "instant",
+          "sorcery",
+          "draw",
+          "removal",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Secrets of the Dead",
         "impact": 3.7,
         "tags": [
@@ -2831,6 +2856,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
@@ -2843,6 +2869,39 @@
           "sorcery",
           "wipe",
           "recursion"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Azorius Locket",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Izzet Locket",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2887,41 +2946,6 @@
           "artifact",
           "land-ramp",
           "recursion"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Ral Zarek",
-        "impact": 2.5,
-        "tags": [
-          "extra-turn"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Think Twice",
-        "impact": 2.5,
-        "tags": [
-          "instant",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Chemister's Insight",
-        "impact": 2.4,
-        "tags": [
-          "instant",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Deep Analysis",
-        "impact": 2.4,
-        "tags": [
-          "sorcery",
-          "draw"
         ],
         "aeon": null
       }

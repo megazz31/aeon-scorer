@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 41,
-    "p20": 32,
-    "p80": 51,
-    "peak": 76,
-    "coverage": 92,
+    "median": 45,
+    "p20": 33,
+    "p80": 56,
+    "peak": 81,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "009577198c3198f2924f1c6583a027103d23c2f7219b5b6f309f5885293dbe66",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "8c0f85fd7a41f2fe79ae4abb95abbf9e9b7c46f57ad6c88cca3f7b66c6a9d79a",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Gideon, Champion of Justice\n1 Felisa, Fang of Silverquill\n1 Combat Calligrapher\n1 Guardian Archon\n1 Nils, Discipline Enforcer\n1 Scholarship Sponsor\n1 Author of Shadows\n1 Bold Plagiarist\n1 Fain, the Broker\n1 Keen Duelist\n1 Angel of Serenity\n1 Boreas Charger\n1 Hunted Lammasu\n1 Knight of the White Orchid\n1 Selfless Squire\n1 Stalking Leonin\n1 Sunscorch Regent\n1 Windborn Muse\n1 Zetalpa, Primal Dawn\n1 Deathbringer Regent\n1 Necropolis Regent\n1 Deathbringer Liege\n1 Magister of Worth\n1 Teysa, Envoy of Ghosts\n1 Elite Scaleguard\n1 Oreskos Explorer\n1 Orzhov Advokist\n1 Promise of Loyalty\n1 Incarnation Technique\n1 Tragic Arrogance\n1 Infernal Offering\n1 Secret Rendezvous\n1 Stinging Study\n1 Inkshield\n1 Oblation\n1 Utter End\n1 Fracture\n1 Tempting Contract\n1 Coveted Jewel\n1 Pendant of Prosperity\n1 Victory Chimes\n1 Arcane Signet\n1 Bloodthirsty Blade\n1 Mind Stone\n1 Orzhov Signet\n1 Sol Ring\n1 Spectral Searchlight\n1 Cunning Rhetoric\n1 Citadel Siege\n1 Together Forever\n1 Ghostly Prison\n1 Martial Impetus\n1 Soul Snare\n1 Vow of Duty\n1 Curse of Disturbance\n1 Parasitic Impetus\n1 Caves of Koilos\n1 Exotic Orchard\n1 Mikokoro, Center of the Sea\n1 Temple of Silence\n1 Silverquill Campus\n1 Study Hall\n1 Barren Moor\n1 Bojuka Bog\n1 Command Tower\n1 Myriad Landscape\n1 Opal Palace\n1 Orzhov Basilica\n1 Secluded Steppe\n1 Tainted Field\n1 Temple of the False God\n7 Plains\n7 Plains\n5 Swamp\n5 Swamp\n1 Duelist's Heritage\n1 Debtors' Knell\n1 Ambition's Cost\n1 Rogue's Passage",
   "oracleCards": [
@@ -191,6 +191,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -463,6 +464,7 @@
       "tags": [
         "creature",
         "etb",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -530,7 +532,8 @@
         "creature",
         "tokens",
         "death-payoff",
-        "counter-kind:generic"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -586,6 +589,7 @@
       "tags": [
         "wipe",
         "protection",
+        "counter-producer",
         "counter-kind:loyalty"
       ],
       "isCommander": false
@@ -641,7 +645,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "recursion"
+        "recursion",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -789,6 +794,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -828,6 +834,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -849,8 +856,7 @@
         "counter-producer",
         "counter-payoff",
         "counter-kind:plus1",
-        "counter-kind:any",
-        "stax"
+        "counter-kind:any"
       ],
       "isCommander": false
     },
@@ -867,7 +873,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "removal"
       ],
       "isCommander": false
     },
@@ -1009,6 +1016,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "draw",
         "land-ramp",
         "etb"
       ],
@@ -1121,7 +1129,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1140,6 +1149,7 @@
       "tags": [
         "creature",
         "etb",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1168,18 +1178,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1439,8 +1450,9 @@
       "tags": [
         "enchantment",
         "etb",
+        "counter-producer",
         "counter-payoff",
-        "counter-kind:generic"
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1554,24 +1566,24 @@
   ],
   "result": {
     "profile": {
-      "median": 41,
-      "floor": 32,
-      "ceiling": 51,
-      "peak": 76,
-      "dispersion": 19,
-      "variance": 19,
-      "consistency": 67,
-      "commanderDelta": 7,
-      "coverage": 92,
-      "dataCoverage": 92
+      "median": 45,
+      "floor": 33,
+      "ceiling": 56,
+      "peak": 81,
+      "dispersion": 22,
+      "variance": 22,
+      "consistency": 64,
+      "commanderDelta": 9,
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
       "speed": 38,
-      "consistency": 67,
+      "consistency": 64,
       "explosiveness": 11,
-      "synergy": 49,
-      "interaction": 48,
-      "resilience": 32
+      "synergy": 69,
+      "interaction": 50,
+      "resilience": 34
     },
     "roles": {
       "lands": 40,
@@ -1579,27 +1591,31 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 3,
+      "draw": 6,
       "interaction": 12,
       "protection": 4,
       "recursion": 2,
       "wipes": 5,
-      "avgCmc": 3.864406779661017,
+      "avgCmc": 3.8813559322033897,
       "unknownManaLands": 0
     },
     "packages": [
       {
         "id": "counters",
         "name": "Marqueurs",
-        "strength": 62,
-        "cohesion": 62,
+        "strength": 83,
+        "cohesion": 83,
         "producers": [
+          "Bold Plagiarist",
           "Citadel Siege",
+          "Elite Scaleguard",
           "Fain, the Broker",
+          "Felisa, Fang of Silverquill",
+          "Gideon, Champion of Justice",
+          "Necropolis Regent",
           "Nils, Discipline Enforcer",
           "Opal Palace",
-          "Orzhov Advokist",
-          "Sunscorch Regent"
+          "Orzhov Advokist"
         ],
         "payoffs": [
           "Fain, the Broker",
@@ -1607,15 +1623,39 @@
           "Together Forever"
         ],
         "members": [
+          "Bold Plagiarist",
           "Citadel Siege",
+          "Elite Scaleguard",
           "Fain, the Broker",
+          "Felisa, Fang of Silverquill",
+          "Gideon, Champion of Justice",
+          "Necropolis Regent",
           "Nils, Discipline Enforcer",
           "Opal Palace",
           "Orzhov Advokist",
+          "Selfless Squire",
           "Sunscorch Regent",
           "Together Forever"
         ],
         "producerCards": [
+          {
+            "name": "Bold Plagiarist",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
           {
             "name": "Citadel Siege",
             "cmc": 4,
@@ -1636,6 +1676,25 @@
                 ]
               ],
               "total": 4
+            }
+          },
+          {
+            "name": "Elite Scaleguard",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
             }
           },
           {
@@ -1662,6 +1721,75 @@
             }
           },
           {
+            "name": "Felisa, Fang of Silverquill",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "tokens",
+              "death-payoff",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Gideon, Champion of Justice",
+            "cmc": 4,
+            "tags": [
+              "wipe",
+              "protection",
+              "counter-producer",
+              "counter-kind:loyalty"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Necropolis Regent",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
             "name": "Nils, Discipline Enforcer",
             "cmc": 3,
             "tags": [
@@ -1669,8 +1797,7 @@
               "counter-producer",
               "counter-payoff",
               "counter-kind:plus1",
-              "counter-kind:any",
-              "stax"
+              "counter-kind:any"
             ],
             "manaReq": {
               "generic": 2,
@@ -1717,6 +1844,25 @@
             }
           },
           {
+            "name": "Selfless Squire",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
             "name": "Sunscorch Regent",
             "cmc": 5,
             "tags": [
@@ -1736,6 +1882,29 @@
                 ]
               ],
               "total": 5
+            }
+          },
+          {
+            "name": "Together Forever",
+            "cmc": 2,
+            "tags": [
+              "enchantment",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
             }
           }
         ],
@@ -1771,8 +1940,7 @@
               "counter-producer",
               "counter-payoff",
               "counter-kind:plus1",
-              "counter-kind:any",
-              "stax"
+              "counter-kind:any"
             ],
             "manaReq": {
               "generic": 2,
@@ -1790,8 +1958,9 @@
             "tags": [
               "enchantment",
               "etb",
+              "counter-producer",
               "counter-payoff",
-              "counter-kind:generic"
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
@@ -1811,21 +1980,27 @@
           "counter-producer"
         ],
         "payoffTags": [
-          "counter-payoff"
+          "counter-payoff",
+          "modified-payoff"
         ],
-        "evidence": "6 producteur(s), 3 payoff(s), 7 carte(s) distincte(s)."
+        "evidence": "13 producteur(s), 3 payoff(s), 13 carte(s) distincte(s)."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 17,
+      "score": 32,
       "connected": [
         "Citadel Siege",
+        "Elite Scaleguard",
         "Fain, the Broker",
+        "Felisa, Fang of Silverquill",
+        "Necropolis Regent",
         "Nils, Discipline Enforcer",
         "Opal Palace",
         "Orzhov Advokist",
-        "Sunscorch Regent"
+        "Selfless Squire",
+        "Sunscorch Regent",
+        "Together Forever"
       ],
       "tags": [
         "counter-producer"
@@ -1839,16 +2014,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 32,
-      "median": 38,
-      "high": 45,
-      "ceiling": 45,
-      "peak": 65,
-      "iqr": 11,
-      "consistency": 76,
+      "floor": 33,
+      "median": 41,
+      "high": 49,
+      "ceiling": 49,
+      "peak": 70,
+      "iqr": 12,
+      "consistency": 73,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 76,
+      "recoveryAfterDisruption": 79,
       "turnProfile": [
         {
           "turn": 1,
@@ -1860,50 +2035,50 @@
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 5,
           "engine": 0,
-          "interaction": 12,
+          "interaction": 15,
           "resource": 8,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 52,
-          "engine": 1,
-          "interaction": 31,
-          "resource": 11,
+          "commander": 55,
+          "engine": 3,
+          "interaction": 33,
+          "resource": 16,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 85,
-          "engine": 4,
-          "interaction": 55,
-          "resource": 22,
+          "commander": 86,
+          "engine": 10,
+          "interaction": 56,
+          "resource": 29,
           "burst": 0
         },
         {
           "turn": 5,
-          "commander": 93,
-          "engine": 8,
-          "interaction": 68,
-          "resource": 34,
+          "commander": 94,
+          "engine": 17,
+          "interaction": 69,
+          "resource": 41,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 96,
-          "engine": 10,
+          "engine": 22,
           "interaction": 75,
-          "resource": 40,
+          "resource": 48,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 97,
-          "engine": 12,
+          "engine": 25,
           "interaction": 81,
-          "resource": 45,
+          "resource": 52,
           "burst": 0
         }
       ]
@@ -1924,21 +2099,42 @@
         "name": "Sol Ring",
         "impact": 3,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
         "aeon": null
       },
       {
-        "name": "Nils, Discipline Enforcer",
-        "impact": 2.3,
+        "name": "Gideon, Champion of Justice",
+        "impact": 2.7,
         "tags": [
-          "creature",
+          "wipe",
+          "protection",
           "counter-producer",
-          "counter-payoff",
-          "counter-kind:plus1",
-          "counter-kind:any",
-          "stax"
+          "counter-kind:loyalty"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mind Stone",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Pendant of Prosperity",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "draw",
+          "land-ramp",
+          "etb"
         ],
         "aeon": null
       },
@@ -1956,16 +2152,6 @@
         "aeon": null
       },
       {
-        "name": "Gideon, Champion of Justice",
-        "impact": 2,
-        "tags": [
-          "wipe",
-          "protection",
-          "counter-kind:loyalty"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Tempting Contract",
         "impact": 2,
         "tags": [
@@ -1976,7 +2162,28 @@
         "aeon": null
       },
       {
+        "name": "Felisa, Fang of Silverquill",
+        "impact": 1.9,
+        "tags": [
+          "creature",
+          "tokens",
+          "death-payoff",
+          "counter-producer",
+          "counter-kind:plus1"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Ambition's Cost",
+        "impact": 1.7,
+        "tags": [
+          "sorcery",
+          "draw"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Secret Rendezvous",
         "impact": 1.7,
         "tags": [
           "sorcery",
@@ -2000,36 +2207,6 @@
           "creature",
           "protection",
           "tokens"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Citadel Siege",
-        "impact": 1.5,
-        "tags": [
-          "enchantment",
-          "etb",
-          "counter-producer",
-          "counter-kind:plus1"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Deathbringer Liege",
-        "impact": 1.5,
-        "tags": [
-          "creature",
-          "removal"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Orzhov Advokist",
-        "impact": 1.5,
-        "tags": [
-          "creature",
-          "counter-producer",
-          "counter-kind:plus1"
         ],
         "aeon": null
       }

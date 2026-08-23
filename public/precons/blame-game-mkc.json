@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 36,
-    "p20": 26,
-    "p80": 45,
-    "peak": 71,
+    "median": 37,
+    "p20": 25,
+    "p80": 46,
+    "peak": 68,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "00aa2c1462d1d63e7ae3b34e3ebbb3d1c53a31e4f56a207f7557b6b62212f64f",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "bad8d47151ecd764e1371c756cdc9cb1f4677039e8d24e1cc4025e95401c7106",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Feather, Radiant Arbiter\n1 Immortal Obligation\n1 Otherworldly Escort\n1 Redemption Arc\n1 Trouble in Pairs\n1 Havoc Eater\n1 Hot Pursuit\n1 Mob Verdict\n1 Prisoner's Dilemma\n1 Take the Bait\n1 Ransom Note\n1 Angel of the Ruins\n1 Comeuppance\n1 Darien, King of Kjeldor\n1 Duelist's Heritage\n1 Elspeth, Sun's Champion\n1 Keeper of the Accord\n1 Loran of the Third Path\n1 Promise of Loyalty\n1 Selfless Squire\n1 Sevinne's Reclamation\n1 Smuggler's Share\n1 Stalking Leonin\n1 Sun Titan\n1 Windborn Muse\n1 Winds of Rath\n1 Agitator Ant\n1 Brash Taunter\n1 Disrupt Decorum\n1 Etali, Primal Storm\n1 Fiendish Duo\n1 Frontier Warmonger\n1 Kazuul, Tyrant of the Cliffs\n1 Spectacular Showdown\n1 Vengeful Ancestor\n1 Anya, Merciless Angel\n1 Boros Reckoner\n1 Deflecting Palm\n1 Gisela, Blade of Goldnight\n1 Ancient Stone Idol\n1 Solemn Simulacrum\n1 Steel Hellkite\n1 Tome of Legends\n1 Castle Ardenvale\n1 Exotic Orchard\n1 Furycalm Snarl\n1 Kher Keep\n1 Labyrinth of Skophos\n1 Needle Spires\n1 Scavenger Grounds\n1 Slayers' Stronghold\n1 Temple of Triumph\n1 Throne of the High City\n1 War Room\n1 Ghostly Prison\n1 Gideon's Sacrifice\n1 Martial Impetus\n1 Orzhov Advokist\n1 Seal of Cleansing\n1 Soul Snare\n1 Vow of Duty\n1 Wall of Omens\n1 Curse of Opulence\n1 Rite of the Raging Storm\n1 Shiny Impetus\n1 Vow of Lightning\n1 Arcane Signet\n1 Bloodthirsty Blade\n1 Fellwar Stone\n1 Mind Stone\n1 Sol Ring\n1 Talisman of Conviction\n1 Thought Vessel\n1 Access Tunnel\n1 Ash Barrens\n1 Boros Garrison\n1 Command Tower\n1 Escape Tunnel\n1 Myriad Landscape\n1 Reliquary Tower\n1 Rogue's Passage\n1 Sunhome, Fortress of the Legion\n1 Temple of the False God\n5 Plains\n4 Plains\n4 Mountain\n3 Mountain",
   "oracleCards": [
@@ -702,8 +702,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "tokens",
-        "stax"
+        "tokens"
       ],
       "isCommander": false
     },
@@ -779,6 +778,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -814,6 +814,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -913,7 +914,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": true
     },
@@ -1022,6 +1024,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "draw",
         "graveyard-setup",
         "sacrifice",
         "etb"
@@ -1154,6 +1157,7 @@
       "tags": [
         "creature",
         "etb",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1237,24 +1241,24 @@
       "tags": [
         "enchantment",
         "draw",
-        "mana",
         "tokens"
       ],
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1312,6 +1316,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -1523,6 +1528,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "draw",
         "etb",
         "counter-producer",
         "counter-kind:age"
@@ -1632,6 +1638,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -1675,24 +1682,24 @@
   ],
   "result": {
     "profile": {
-      "median": 36,
-      "floor": 26,
-      "ceiling": 45,
-      "peak": 71,
-      "dispersion": 20,
-      "variance": 20,
-      "consistency": 68,
-      "commanderDelta": 5,
+      "median": 37,
+      "floor": 25,
+      "ceiling": 46,
+      "peak": 68,
+      "dispersion": 21,
+      "variance": 21,
+      "consistency": 66,
+      "commanderDelta": 6,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 33,
-      "consistency": 68,
-      "explosiveness": 11,
+      "consistency": 66,
+      "explosiveness": 10,
       "synergy": 36,
       "interaction": 39,
-      "resilience": 31
+      "resilience": 36
     },
     "roles": {
       "lands": 37,
@@ -1700,12 +1707,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 5,
-      "interaction": 8,
+      "draw": 9,
+      "interaction": 7,
       "protection": 3,
       "recursion": 2,
       "wipes": 2,
-      "avgCmc": 3.629032258064516,
+      "avgCmc": 3.6451612903225805,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1787,6 +1794,7 @@
             "cmc": 2,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -1816,15 +1824,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -1859,7 +1868,8 @@
             "name": "Nelly Borca, Impulsive Accuser",
             "cmc": 4,
             "tags": [
-              "creature"
+              "creature",
+              "draw"
             ],
             "manaReq": {
               "generic": 2,
@@ -1892,71 +1902,71 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 29,
-      "median": 36,
-      "high": 42,
-      "ceiling": 42,
+      "floor": 31,
+      "median": 39,
+      "high": 45,
+      "ceiling": 45,
       "peak": 62,
       "iqr": 11,
-      "consistency": 77,
+      "consistency": 75,
       "commanderMedianTurn": 4,
       "engineMedianTurn": null,
-      "recoveryAfterDisruption": 68,
+      "recoveryAfterDisruption": 81,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 8,
-          "resource": 0,
+          "resource": 13,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 3,
           "engine": 0,
-          "interaction": 12,
-          "resource": 5,
+          "interaction": 14,
+          "resource": 28,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 25,
+          "commander": 29,
           "engine": 0,
-          "interaction": 27,
-          "resource": 24,
+          "interaction": 29,
+          "resource": 49,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 71,
+          "commander": 72,
           "engine": 0,
-          "interaction": 44,
-          "resource": 41,
+          "interaction": 43,
+          "resource": 62,
           "burst": 1
         },
         {
           "turn": 5,
           "commander": 83,
           "engine": 0,
-          "interaction": 52,
-          "resource": 48,
+          "interaction": 49,
+          "resource": 67,
           "burst": 4
         },
         {
           "turn": 6,
           "commander": 88,
           "engine": 0,
-          "interaction": 58,
-          "resource": 54,
+          "interaction": 55,
+          "resource": 72,
           "burst": 6
         },
         {
           "turn": 7,
           "commander": 91,
           "engine": 0,
-          "interaction": 64,
-          "resource": 59,
+          "interaction": 60,
+          "resource": 76,
           "burst": 8
         }
       ]
@@ -1977,19 +1987,20 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
         "aeon": null
       },
       {
-        "name": "Smuggler's Share",
-        "impact": 3.5,
+        "name": "Mind Stone",
+        "impact": 3.3,
         "tags": [
-          "enchantment",
+          "artifact",
           "draw",
           "mana",
-          "tokens"
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2004,6 +2015,16 @@
         "aeon": null
       },
       {
+        "name": "Smuggler's Share",
+        "impact": 2.6,
+        "tags": [
+          "enchantment",
+          "draw",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Solemn Simulacrum",
         "impact": 2.5,
         "tags": [
@@ -2013,6 +2034,18 @@
           "land-ramp",
           "death-payoff",
           "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Tome of Legends",
+        "impact": 2.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "etb",
+          "counter-producer",
+          "counter-kind:age"
         ],
         "aeon": null
       },
@@ -2059,26 +2092,6 @@
         "tags": [
           "artifact",
           "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Kazuul, Tyrant of the Cliffs",
-        "impact": 1.9,
-        "tags": [
-          "creature",
-          "tokens",
-          "stax"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Mind Stone",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana",
-          "sacrifice"
         ],
         "aeon": null
       }

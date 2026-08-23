@@ -6,10 +6,11 @@ const MOTIFS=[
   {id:'sacrifice',name:'Sacrifice / mort',producers:['sac-outlet','sac-enabler'],payoffs:['death-payoff'],minP:2,minY:2},
   {id:'graveyard',name:'Cimetière / récursion',producers:['graveyard-setup'],payoffs:['recursion'],minP:2,minY:2},
   {id:'lands',name:'Lands / Landfall',producers:['land-ramp'],payoffs:['landfall'],minP:2,minY:1},
-  {id:'counters',name:'Marqueurs',producers:['counter-producer'],payoffs:['counter-payoff'],minP:3,minY:2},
+  {id:'counters',name:'Marqueurs',producers:['counter-producer'],payoffs:['counter-payoff','modified-payoff'],minP:3,minY:2},
   {id:'spells',name:'Spellslinger',producers:['instant','sorcery'],payoffs:['spellslinger'],minP:10,minY:2},
   {id:'exile',name:'Jeu depuis l’exil',producers:['exile-cast'],payoffs:['exile-payoff'],minP:2,minY:1},
   {id:'artifacts',name:'Artefacts',producers:['artifact'],payoffs:['artifact-payoff'],minP:5,minY:2},
+  {id:'lifegain',name:'Points de vie / Synergies',producers:['lifegain'],payoffs:['life-payoff'],minP:3,minY:2},
 ]
 const hasTag=(c,t)=>c.tags?.includes(t)
 const uniqByName=xs=>{const seen=new Set(),out=[];for(const x of xs){const k=x.name.toLowerCase();if(!seen.has(k)){seen.add(k);out.push(x)}}return out}
@@ -31,6 +32,8 @@ export function isImmediateLandRamp(c){
   return true
 }
 function counterKinds(c){return new Set((c?.tags||[]).filter(t=>t.startsWith('counter-kind:')).map(t=>t.slice(13)))}
+const MODIFIED_COUNTER_KINDS=new Set(['plus1','minus1','stun','shield','finality'])
+function counterProducerCanModify(c){const kinds=counterKinds(c);return [...kinds].some(k=>MODIFIED_COUNTER_KINDS.has(k))}
 function opponentOnlyCounterProducer(c){
   if(counterKinds(c).has('wild'))return false
   const cs=semanticClauses(c).filter(s=>/put [^.]*counters? on/.test(s))
@@ -40,6 +43,7 @@ function opponentOnlyCounterProducer(c){
 }
 function counterPayoffUsesOpponent(c){const o=semanticText(c);return /opponents? (?:has|have|with) [^.]*counters?|counters? on (?:an |each )?opponents?|poison counters? (?:an |each |your )?opponents?|for each [^.]*counter [^.]*opponent/.test(o)}
 function counterCompatible(a,b){
+  if(hasTag(b,'modified-payoff')&&counterProducerCanModify(a)&&!opponentOnlyCounterProducer(a))return true
   const ak=counterKinds(a),bk=counterKinds(b);if(!ak.size||!bk.size)return false
   if(opponentOnlyCounterProducer(a)&&!counterPayoffUsesOpponent(b))return false
   if(ak.has('wild')||bk.has('wild')||ak.has('any')||bk.has('any'))return true
@@ -86,7 +90,7 @@ export function detectPackages(cards,commander=null){
   }
   return out.sort((a,b)=>b.cohesion-a.cohesion)
 }
-const COMMANDER_ENGINE_TAGS=new Set(['blink','tokens','token-payoff','sac-outlet','sac-enabler','death-payoff','recursion','graveyard-setup','constellation','counter-producer','counter-payoff','artifact-payoff','exile-cast','exile-payoff','landfall','spellslinger','lifegain','life-payoff'])
+const COMMANDER_ENGINE_TAGS=new Set(['blink','tokens','token-payoff','sac-outlet','sac-enabler','death-payoff','recursion','graveyard-setup','constellation','counter-producer','counter-payoff','modified-payoff','artifact-payoff','exile-cast','exile-payoff','landfall','spellslinger','lifegain','life-payoff'])
 export function commanderSynergy(cards,commander){
   if(!commander)return {score:0,connected:[],tags:[]}
   const semantic=new Set((commander.tags||[]).filter(t=>COMMANDER_ENGINE_TAGS.has(t)))
@@ -94,10 +98,11 @@ export function commanderSynergy(cards,commander){
   const pair=(a,b)=>{if(semantic.has(a))semantic.add(b)}
   pair('blink','etb');pair('tokens','token-payoff');pair('token-payoff','tokens');pair('sac-outlet','death-payoff');pair('sac-enabler','death-payoff');pair('death-payoff','sac-outlet');pair('death-payoff','sac-enabler');pair('recursion','graveyard-setup');pair('graveyard-setup','recursion');pair('constellation','enchantment');pair('artifact-payoff','artifact');pair('exile-cast','exile-payoff');pair('exile-payoff','exile-cast');pair('landfall','land-ramp');pair('spellslinger','instant');pair('spellslinger','sorcery');pair('lifegain','life-payoff');pair('life-payoff','lifegain')
   if(selfEtbTrigger(commander))semantic.add('blink')
-  const counterEngine=semantic.has('counter-producer')||semantic.has('counter-payoff')
+  const counterEngine=semantic.has('counter-producer')||semantic.has('counter-payoff')||semantic.has('modified-payoff')
   const nonlands=cards.filter(c=>!c.isLand),connected=semantic.size?uniqByName(cards.filter(c=>{
-    if(c.tags.some(t=>semantic.has(t)&&t!=='counter-producer'&&t!=='counter-payoff'))return true
-    return counterEngine&&(hasTag(c,'counter-producer')||hasTag(c,'counter-payoff'))&&(hasTag(commander,'counter-producer')?counterCompatible(commander,c):counterCompatible(c,commander))
+    if(c.tags.some(t=>semantic.has(t)&&t!=='counter-producer'&&t!=='counter-payoff'&&t!=='modified-payoff'))return true
+    const counterRole=hasTag(c,'counter-producer')||hasTag(c,'counter-payoff')||hasTag(c,'modified-payoff')
+    return counterEngine&&counterRole&&(hasTag(commander,'counter-producer')?counterCompatible(commander,c):counterCompatible(c,commander))
   })):[]
   const score=Math.min(100,Math.round(connected.length/Math.max(1,nonlands.length)*170))
   return {score,connected:connected.map(c=>c.name),tags:[...semantic]}

@@ -29,15 +29,15 @@
   "analysis": {
     "median": 46,
     "p20": 32,
-    "p80": 56,
-    "peak": 87,
+    "p80": 57,
+    "peak": 88,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "80a845cd261386c170164b670d6c2b356b68194c6b9f562bf84f78fb181073f6",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "4961729acea881346d74adca4f3f9a41ee81f70949de889dcb888a37c81a939a",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Angel of Finality\n1 Angel of Serenity\n1 Arcane Artisan\n1 Brago, King Eternal\n1 Burnished Hart\n1 Cloudblazer\n1 Cloudgoat Ranger\n1 Empyrean Eagle\n1 Ethereal Valkyrie\n1 Evangel of Heliod\n1 Flickerwisp\n1 Geist-Honored Monk\n1 Goldnight Commander\n1 Hero of Bretagard\n1 Inspired Sphinx\n1 Kor Cartographer\n1 Meteor Golem\n1 Mist Raven\n1 Mistmeadow Witch\n1 Mulldrifter\n1 Restoration Angel\n1 Sage of the Beyond\n1 Sea Gate Oracle\n1 Soulherder\n1 Stoic Farmer\n1 Sun Titan\n1 Surtland Elementalist\n1 Thunderclap Wyvern\n1 Vega, the Watcher\n1 Wall of Omens\n1 Whirler Rogue\n1 Behold the Multiverse\n1 Cosmic Intervention\n1 Eerie Interlude\n1 Ghostly Flicker\n1 Iron Verdict\n1 Momentary Blink\n1 Return to Dust\n1 Saw It Coming\n1 Synthetic Destiny\n1 Warhorn Blast\n1 Cleansing Nova\n1 Curse of the Swine\n1 Migratory Route\n1 Ravenform\n1 Spectral Deluge\n1 Storm Herd\n1 Tales of the Ancestors\n1 Windfall\n1 Banishing Light\n1 Day of the Dragons\n1 Ghostly Prison\n1 Marshal's Anthem\n1 Niko Defies Destiny\n1 Arcane Signet\n1 Azorius Signet\n1 Commander's Sphere\n1 Marble Diamond\n1 Mind Stone\n1 Replicating Ring\n1 Sky Diamond\n1 Sol Ring\n1 Swiftfoot Boots\n1 Azorius Chancery\n1 Azorius Guildgate\n1 Command Tower\n1 Cryptic Caves\n1 Gates of Istfell\n1 Glacial Floodplain\n12 Island\n1 Meandering River\n1 Myriad Landscape\n1 Opal Palace\n13 Plains\n1 Sejiri Refuge\n1 Tranquil Cove",
   "oracleCards": [
@@ -219,8 +219,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant",
-        "draw"
+        "instant"
       ],
       "isCommander": false
     },
@@ -359,6 +358,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -395,6 +395,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -529,8 +530,8 @@
       "tags": [
         "creature",
         "tempo-interaction",
-        "blink",
-        "etb"
+        "etb",
+        "blink"
       ],
       "isCommander": false
     },
@@ -670,6 +671,7 @@
       "tags": [
         "creature",
         "protection",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -688,6 +690,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "tokens",
         "etb"
       ],
@@ -862,6 +865,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -1090,6 +1094,7 @@
         "artifact",
         "mana",
         "tokens",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -1163,8 +1168,7 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counterspell",
-        "counter-kind:generic"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -1232,18 +1236,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1544,7 +1549,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "draw",
+        "graveyard-setup"
       ],
       "isCommander": false
     }
@@ -1553,22 +1560,22 @@
     "profile": {
       "median": 46,
       "floor": 32,
-      "ceiling": 56,
-      "peak": 87,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 62,
+      "ceiling": 57,
+      "peak": 88,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 59,
       "commanderDelta": 7,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 32,
-      "consistency": 62,
+      "consistency": 59,
       "explosiveness": 14,
       "synergy": 65,
-      "interaction": 51,
-      "resilience": 43
+      "interaction": 53,
+      "resilience": 44
     },
     "roles": {
       "lands": 36,
@@ -1576,12 +1583,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 7,
+      "draw": 10,
       "interaction": 13,
       "protection": 8,
       "recursion": 3,
       "wipes": 4,
-      "avgCmc": 3.9682539682539684,
+      "avgCmc": 3.984126984126984,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1689,8 +1696,8 @@
             "tags": [
               "creature",
               "tempo-interaction",
-              "blink",
-              "etb"
+              "etb",
+              "blink"
             ],
             "manaReq": {
               "generic": 1,
@@ -1980,8 +1987,8 @@
             "tags": [
               "creature",
               "tempo-interaction",
-              "blink",
-              "etb"
+              "etb",
+              "blink"
             ],
             "manaReq": {
               "generic": 1,
@@ -2039,6 +2046,7 @@
             "cmc": 7,
             "tags": [
               "creature",
+              "draw",
               "tokens",
               "etb"
             ],
@@ -2333,6 +2341,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2361,6 +2370,7 @@
             "cmc": 2,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2399,6 +2409,7 @@
               "artifact",
               "mana",
               "tokens",
+              "counter-producer",
               "counter-kind:generic"
             ],
             "manaReq": {
@@ -2423,15 +2434,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           }
         ],
@@ -2487,55 +2499,55 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 36,
-      "median": 45,
-      "high": 53,
-      "ceiling": 53,
-      "peak": 82,
-      "iqr": 14,
-      "consistency": 70,
+      "floor": 37,
+      "median": 46,
+      "high": 55,
+      "ceiling": 55,
+      "peak": 84,
+      "iqr": 15,
+      "consistency": 67,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 78,
+      "recoveryAfterDisruption": 80,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 8,
+          "resource": 15,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 2,
           "engine": 0,
-          "interaction": 6,
-          "resource": 12,
+          "interaction": 8,
+          "resource": 21,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 24,
-          "engine": 3,
-          "interaction": 33,
-          "resource": 27,
+          "commander": 29,
+          "engine": 5,
+          "interaction": 36,
+          "resource": 36,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 75,
-          "engine": 24,
-          "interaction": 58,
-          "resource": 47,
+          "commander": 76,
+          "engine": 26,
+          "interaction": 59,
+          "resource": 51,
           "burst": 1
         },
         {
           "turn": 5,
           "commander": 89,
-          "engine": 46,
+          "engine": 47,
           "interaction": 69,
-          "resource": 57,
+          "resource": 60,
           "burst": 2
         },
         {
@@ -2543,15 +2555,15 @@
           "commander": 93,
           "engine": 56,
           "interaction": 76,
-          "resource": 63,
+          "resource": 67,
           "burst": 3
         },
         {
           "turn": 7,
           "commander": 95,
           "engine": 63,
-          "interaction": 80,
-          "resource": 68,
+          "interaction": 81,
+          "resource": 71,
           "burst": 5
         }
       ]
@@ -2572,6 +2584,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
@@ -2584,6 +2597,28 @@
           "creature",
           "draw",
           "wipe"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mind Stone",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2604,7 +2639,19 @@
           "artifact",
           "mana",
           "tokens",
+          "counter-producer",
           "counter-kind:generic"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Inspired Sphinx",
+        "impact": 2.6,
+        "tags": [
+          "creature",
+          "draw",
+          "tokens",
+          "etb"
         ],
         "aeon": null
       },
@@ -2649,35 +2696,6 @@
           "draw",
           "etb",
           "lifegain"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Mulldrifter",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "draw",
-          "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Vega, the Watcher",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Brago, King Eternal",
-        "impact": 2.1,
-        "tags": [
-          "creature",
-          "protection",
-          "blink"
         ],
         "aeon": null
       }

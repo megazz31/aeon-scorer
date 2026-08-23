@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 55,
-    "p20": 45,
-    "p80": 66,
+    "median": 58,
+    "p20": 48,
+    "p80": 69,
     "peak": 92,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "a9023b58da79ba1e716d385f50240f86458f2d7367b1d7815337970ef24a653a",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "3850129a86f820c1183f7536ea52e282ed3162ffa64dfc78a2631076c4c249eb",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Primo, the Unbounded\n1 Owlin Spiralmancer\n1 Expansion Algorithm\n1 Nexus Mentality\n1 Kinetic Ooze\n1 Lattice Library\n1 Nev, the Practical Dean\n1 Yavimaya Bloomsage // Channel\n1 Striding Shotcaller // Run the Play\n1 Brass Infiniscope\n1 Turbulent Wilderness\n1 Commander's Insight\n1 Ingenious Prodigy\n1 Pull from Tomorrow\n1 Benevolent Hydra\n1 Unbound Flourishing\n1 Fabled Passage\n1 Curse of the Swine\n1 Deekah, Fractal Theorist\n1 Entrancing Melody\n1 Perplexing Test\n1 Stroke of Genius\n1 Zimone's Hypothesis\n1 Animist's Awakening\n1 Forgotten Ancient\n1 Fractal Harness\n1 Goldvein Hydra\n1 Guardian Augmenter\n1 Hardened Scales\n1 Lifeblood Hydra\n1 Mana Bloom\n1 Open the Way\n1 Ozolith, the Shattered Spire\n1 Primal Might\n1 Primordial Hydra\n1 Silkguard\n1 Steelbane Hydra\n1 Altered Ego\n1 Biomass Mutation\n1 Elusive Otter // Grove's Bounty\n1 The Goose Mother\n1 Hydroid Krasis\n1 Oversimplify\n1 Quandrix Command\n1 Tanazir Quandrix\n1 Zimone, All-Questioning\n1 Astral Cornucopia\n1 Elementalist's Palette\n1 Hangarback Walker\n1 Stonecoil Serpent\n1 Alchemist's Refuge\n1 Exotic Orchard\n1 Flooded Grove\n1 Hinterland Harbor\n1 Oran-Rief, the Vastwood\n1 Overflowing Basin\n1 Rain-Slicked Copse\n1 Sodden Verdure\n1 Temple of Mystery\n1 Vineglimmer Snarl\n1 Yavimaya Coast\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Quandrix Charm\n1 Paradox Gardens\n1 Terramorphic Expanse\n1 Rapid Hybridization\n1 Beast Within\n1 Kami of Whispered Hopes\n1 Nature's Lore\n1 Three Visits\n1 Tyvar's Stand\n1 Decisive Denial\n1 Eureka Moment\n1 Quandrix Apprentice\n1 Troyan, Gutsy Explorer\n1 Zimone, Quandrix Prodigy\n1 Opal Palace\n1 Path of Ancestry\n1 Quandrix Campus\n1 Reliquary Tower\n1 Rogue's Passage\n1 Study Hall\n1 Tangled Islet\n1 Temple of the False God\n4 Island\n3 Island\n3 Forest\n3 Forest",
   "oracleCards": [
@@ -297,8 +297,7 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counter-kind:generic",
-        "stax"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -343,6 +342,7 @@
       "tags": [
         "artifact",
         "mana",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:charge"
       ],
@@ -735,6 +735,7 @@
       ],
       "tags": [
         "creature",
+        "mana",
         "counter-doubler",
         "counter-payoff",
         "counter-kind:plus1"
@@ -799,6 +800,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "death-payoff",
         "etb",
         "counter-producer",
@@ -1240,9 +1242,7 @@
       "tags": [
         "instant",
         "removal",
-        "counterspell",
-        "counter-kind:generic",
-        "stax"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -1261,6 +1261,7 @@
       "producedMana": [],
       "tags": [
         "instant",
+        "counterspell",
         "counter-producer",
         "counter-kind:plus1"
       ],
@@ -1358,6 +1359,7 @@
         "instant",
         "protection",
         "counter-producer",
+        "modified-payoff",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1385,18 +1387,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1668,6 +1671,7 @@
       ],
       "tags": [
         "creature",
+        "draw",
         "mana",
         "graveyard-setup"
       ],
@@ -1816,6 +1820,7 @@
       "tags": [
         "creature",
         "tokens",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1883,23 +1888,23 @@
   ],
   "result": {
     "profile": {
-      "median": 55,
-      "floor": 45,
-      "ceiling": 66,
+      "median": 58,
+      "floor": 48,
+      "ceiling": 69,
       "peak": 92,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 63,
+      "dispersion": 22,
+      "variance": 22,
+      "consistency": 62,
       "commanderDelta": 13,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
-      "speed": 54,
-      "consistency": 63,
-      "explosiveness": 13,
-      "synergy": 96,
-      "interaction": 38,
+      "speed": 59,
+      "consistency": 62,
+      "explosiveness": 12,
+      "synergy": 97,
+      "interaction": 43,
       "resilience": 33
     },
     "roles": {
@@ -1908,12 +1913,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 11,
-      "interaction": 7,
+      "draw": 13,
+      "interaction": 8,
       "protection": 4,
       "recursion": 0,
       "wipes": 2,
-      "avgCmc": 2.370967741935484,
+      "avgCmc": 2.3870967741935485,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1927,12 +1932,12 @@
           "Astral Cornucopia",
           "Benevolent Hydra",
           "Deekah, Fractal Theorist",
+          "Elementalist's Palette",
           "Expansion Algorithm",
           "Forgotten Ancient",
           "Fractal Harness",
           "Goldvein Hydra",
-          "Hangarback Walker",
-          "Hydroid Krasis"
+          "Hangarback Walker"
         ],
         "payoffs": [
           "Astral Cornucopia",
@@ -1951,6 +1956,7 @@
           "Astral Cornucopia",
           "Benevolent Hydra",
           "Deekah, Fractal Theorist",
+          "Elementalist's Palette",
           "Expansion Algorithm",
           "Forgotten Ancient",
           "Fractal Harness",
@@ -1976,7 +1982,7 @@
           "The Goose Mother",
           "Yavimaya Bloomsage // Channel",
           "Zimone's Hypothesis",
-          "Elementalist's Palette",
+          "Zimone, All-Questioning",
           "Hardened Scales",
           "Kami of Whispered Hopes",
           "Nexus Mentality",
@@ -2064,6 +2070,22 @@
                 ]
               ],
               "total": 5
+            }
+          },
+          {
+            "name": "Elementalist's Palette",
+            "cmc": 3,
+            "tags": [
+              "artifact",
+              "mana",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:charge"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [],
+              "total": 3
             }
           },
           {
@@ -2261,6 +2283,7 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "draw",
               "death-payoff",
               "etb",
               "counter-producer",
@@ -2428,6 +2451,7 @@
             "cmc": 3,
             "tags": [
               "instant",
+              "counterspell",
               "counter-producer",
               "counter-kind:plus1"
             ],
@@ -2451,6 +2475,7 @@
               "instant",
               "protection",
               "counter-producer",
+              "modified-payoff",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -2603,6 +2628,28 @@
               ],
               "total": 5
             }
+          },
+          {
+            "name": "Zimone, All-Questioning",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
           }
         ],
         "payoffCards": [
@@ -2653,6 +2700,7 @@
             "tags": [
               "artifact",
               "mana",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:charge"
             ],
@@ -2727,6 +2775,7 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "mana",
               "counter-doubler",
               "counter-payoff",
               "counter-kind:plus1"
@@ -2827,6 +2876,26 @@
             }
           },
           {
+            "name": "Silkguard",
+            "cmc": 1,
+            "tags": [
+              "instant",
+              "protection",
+              "counter-producer",
+              "modified-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
             "name": "Tanazir Quandrix",
             "cmc": 5,
             "tags": [
@@ -2854,9 +2923,10 @@
           "counter-producer"
         ],
         "payoffTags": [
-          "counter-payoff"
+          "counter-payoff",
+          "modified-payoff"
         ],
-        "evidence": "29 producteur(s), 12 payoff(s), 34 carte(s) distincte(s)."
+        "evidence": "31 producteur(s), 13 payoff(s), 35 carte(s) distincte(s)."
       },
       {
         "id": "spells",
@@ -3014,8 +3084,7 @@
             "cmc": 2,
             "tags": [
               "instant",
-              "counter-kind:generic",
-              "stax"
+              "counterspell"
             ],
             "manaReq": {
               "generic": 0,
@@ -3251,9 +3320,7 @@
             "tags": [
               "instant",
               "removal",
-              "counterspell",
-              "counter-kind:generic",
-              "stax"
+              "counterspell"
             ],
             "manaReq": {
               "generic": 0,
@@ -3273,6 +3340,7 @@
             "cmc": 3,
             "tags": [
               "instant",
+              "counterspell",
               "counter-producer",
               "counter-kind:plus1"
             ],
@@ -3313,6 +3381,7 @@
               "instant",
               "protection",
               "counter-producer",
+              "modified-payoff",
               "counter-kind:plus1"
             ],
             "manaReq": {
@@ -3524,7 +3593,7 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 85,
+      "score": 88,
       "connected": [
         "Altered Ego",
         "Benevolent Hydra",
@@ -3556,7 +3625,8 @@
         "Tanazir Quandrix",
         "The Goose Mother",
         "Yavimaya Bloomsage // Channel",
-        "Zimone's Hypothesis"
+        "Zimone's Hypothesis",
+        "Zimone, All-Questioning"
       ],
       "tags": [
         "counter-producer",
@@ -3571,16 +3641,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 40,
-      "median": 48,
-      "high": 56,
-      "ceiling": 56,
+      "floor": 42,
+      "median": 50,
+      "high": 59,
+      "ceiling": 59,
       "peak": 84,
       "iqr": 13,
-      "consistency": 72,
-      "commanderMedianTurn": 4,
+      "consistency": 71,
+      "commanderMedianTurn": 3,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 90,
+      "recoveryAfterDisruption": 91,
       "turnProfile": [
         {
           "turn": 1,
@@ -3592,50 +3662,50 @@
         },
         {
           "turn": 2,
-          "commander": 5,
-          "engine": 13,
-          "interaction": 14,
-          "resource": 18,
+          "commander": 7,
+          "engine": 16,
+          "interaction": 15,
+          "resource": 19,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 47,
-          "engine": 34,
-          "interaction": 26,
-          "resource": 34,
+          "commander": 51,
+          "engine": 39,
+          "interaction": 31,
+          "resource": 37,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 83,
-          "engine": 61,
-          "interaction": 42,
-          "resource": 55,
+          "commander": 85,
+          "engine": 66,
+          "interaction": 48,
+          "resource": 59,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 95,
-          "engine": 75,
-          "interaction": 51,
-          "resource": 67,
+          "engine": 79,
+          "interaction": 57,
+          "resource": 71,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 97,
-          "engine": 82,
-          "interaction": 57,
-          "resource": 72,
+          "engine": 85,
+          "interaction": 63,
+          "resource": 76,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 98,
-          "engine": 85,
-          "interaction": 60,
-          "resource": 77,
+          "engine": 88,
+          "interaction": 66,
+          "resource": 80,
           "burst": 0
         }
       ]
@@ -3650,18 +3720,6 @@
           "draw",
           "counter-producer",
           "counter-kind:plus1"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Quandrix Charm",
-        "impact": 3.5,
-        "tags": [
-          "instant",
-          "removal",
-          "counterspell",
-          "counter-kind:generic",
-          "stax"
         ],
         "aeon": null
       },
@@ -3740,8 +3798,19 @@
         "name": "Sol Ring",
         "impact": 3,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Quandrix Charm",
+        "impact": 2.7,
+        "tags": [
+          "instant",
+          "removal",
+          "counterspell"
         ],
         "aeon": null
       },
@@ -3759,22 +3828,24 @@
         "aeon": null
       },
       {
-        "name": "Zimone, Quandrix Prodigy",
+        "name": "Quandrix Command",
         "impact": 2.6,
         "tags": [
-          "creature",
-          "draw",
-          "land-ramp"
+          "instant",
+          "counterspell",
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
       {
-        "name": "Brass Infiniscope",
-        "impact": 2.5,
+        "name": "Troyan, Gutsy Explorer",
+        "impact": 2.6,
         "tags": [
-          "artifact",
+          "creature",
           "draw",
-          "mana"
+          "mana",
+          "graveyard-setup"
         ],
         "aeon": null
       }

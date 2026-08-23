@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 37,
-    "p20": 25,
-    "p80": 50,
-    "peak": 72,
+    "median": 39,
+    "p20": 27,
+    "p80": 53,
+    "peak": 77,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "59e572f82136d8a9f34b8b38e68ab6b4f7474b52a11ba2f31042d211133ac175",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "86558e3bab6e1e2c3a1088d3b2d9e333de8f1ef12d05c09a728607360746088d",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Aquastrand Spider\n1 Deadly Recluse\n1 Sakura-Tribe Elder\n1 Scavenging Ooze\n1 Monk Realist\n1 Selesnya Evangel\n1 Golgari Guildmage\n1 Selesnya Guildmage\n1 Nantuko Husk\n1 Fertilid\n1 Spawnwrithe\n1 Vampire Nighthawk\n1 Spike Feeder\n1 Yavimaya Elder\n1 Squallmonger\n1 Penumbra Spider\n1 Sigil Captain\n1 Shriekmaw\n1 Dark Hatchling\n1 Teneb, the Harvester\n1 Hornet Queen\n1 Vish Kal, Blood Arbiter\n1 Symbiotic Wurm\n1 Celestial Force\n1 Karador, Ghost Chieftain\n1 Chorus of the Conclave\n1 Alliance of Arms\n1 Cultivate\n1 Harmonize\n1 Syphon Flesh\n1 Bestial Menace\n1 Hex\n1 Hour of Reckoning\n1 Death Mutation\n1 Storm Herd\n1 Doom Blade\n1 Tribute to the Wild\n1 Footbottom Feast\n1 Afterlife\n1 Mortify\n1 Nemesis Trap\n1 Cobra Trap\n1 Skullclamp\n1 Sol Ring\n1 Golgari Signet\n1 Lightning Greaves\n1 Orzhov Signet\n1 Selesnya Signet\n1 Darksteel Ingot\n1 Acorn Catapult\n1 Soul Snare\n1 Fists of Ironwood\n1 Necrogenesis\n1 Vow of Malice\n1 Awakening Zone\n1 Vow of Wildness\n1 Oblivion Ring\n1 Vow of Duty\n1 Attrition\n1 Aura Shards\n1 Barren Moor\n1 Command Tower\n1 Evolving Wilds\n1 Golgari Rot Farm\n1 Orzhov Basilica\n1 Rupture Spire\n1 Secluded Steppe\n1 Selesnya Sanctuary\n1 Temple of the False God\n1 Tranquil Thicket\n1 Vivid Grove\n1 Vivid Marsh\n1 Vivid Meadow\n2 Swamp\n2 Swamp\n2 Swamp\n2 Swamp\n3 Forest\n3 Forest\n2 Forest\n2 Forest\n2 Plains\n2 Plains\n2 Plains\n2 Plains",
   "oracleCards": [
@@ -106,6 +106,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -658,7 +659,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "wipe"
+        "wipe",
+        "token-payoff"
       ],
       "isCommander": false
     },
@@ -1116,23 +1118,25 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "draw"
+        "draw",
+        "death-payoff"
       ],
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1547,6 +1551,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "sacrifice",
         "death-payoff"
       ],
@@ -1555,24 +1560,24 @@
   ],
   "result": {
     "profile": {
-      "median": 37,
-      "floor": 25,
-      "ceiling": 50,
-      "peak": 72,
-      "dispersion": 25,
-      "variance": 25,
-      "consistency": 62,
+      "median": 39,
+      "floor": 27,
+      "ceiling": 53,
+      "peak": 77,
+      "dispersion": 26,
+      "variance": 26,
+      "consistency": 60,
       "commanderDelta": 9,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 27,
-      "consistency": 62,
-      "explosiveness": 9,
-      "synergy": 64,
-      "interaction": 50,
-      "resilience": 24
+      "speed": 29,
+      "consistency": 60,
+      "explosiveness": 10,
+      "synergy": 69,
+      "interaction": 51,
+      "resilience": 25
     },
     "roles": {
       "lands": 39,
@@ -1580,20 +1585,20 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 3,
+      "draw": 4,
       "interaction": 14,
       "protection": 1,
       "recursion": 2,
       "wipes": 1,
-      "avgCmc": 3.75,
+      "avgCmc": 3.7666666666666666,
       "unknownManaLands": 0
     },
     "packages": [
       {
         "id": "sacrifice",
         "name": "Sacrifice / mort",
-        "strength": 67,
-        "cohesion": 67,
+        "strength": 75,
+        "cohesion": 75,
         "producers": [
           "Attrition",
           "Golgari Guildmage",
@@ -1602,6 +1607,7 @@
         ],
         "payoffs": [
           "Penumbra Spider",
+          "Skullclamp",
           "Symbiotic Wurm",
           "Yavimaya Elder"
         ],
@@ -1611,6 +1617,7 @@
           "Nantuko Husk",
           "Vish Kal, Blood Arbiter",
           "Penumbra Spider",
+          "Skullclamp",
           "Symbiotic Wurm",
           "Yavimaya Elder"
         ],
@@ -1734,6 +1741,20 @@
             }
           },
           {
+            "name": "Skullclamp",
+            "cmc": 1,
+            "tags": [
+              "artifact",
+              "draw",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
             "name": "Symbiotic Wurm",
             "cmc": 8,
             "tags": [
@@ -1762,6 +1783,7 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "draw",
               "sacrifice",
               "death-payoff"
             ],
@@ -1786,7 +1808,7 @@
         "payoffTags": [
           "death-payoff"
         ],
-        "evidence": "4 producteur(s), 3 payoff(s), 7 carte(s) distincte(s)."
+        "evidence": "4 producteur(s), 4 payoff(s), 8 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -1908,15 +1930,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           }
         ],
@@ -1955,8 +1978,9 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 71,
+      "score": 79,
       "connected": [
+        "Aquastrand Spider",
         "Attrition",
         "Awakening Zone",
         "Bestial Menace",
@@ -1967,6 +1991,7 @@
         "Fists of Ironwood",
         "Golgari Guildmage",
         "Hornet Queen",
+        "Hour of Reckoning",
         "Nantuko Husk",
         "Necrogenesis",
         "Nemesis Trap",
@@ -1975,6 +2000,7 @@
         "Selesnya Evangel",
         "Selesnya Guildmage",
         "Sigil Captain",
+        "Skullclamp",
         "Spawnwrithe",
         "Spike Feeder",
         "Storm Herd",
@@ -2000,16 +2026,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 28,
-      "median": 36,
-      "high": 45,
-      "ceiling": 45,
-      "peak": 62,
-      "iqr": 13,
-      "consistency": 71,
+      "floor": 29,
+      "median": 37,
+      "high": 47,
+      "ceiling": 47,
+      "peak": 66,
+      "iqr": 15,
+      "consistency": 68,
       "commanderMedianTurn": 5,
-      "engineMedianTurn": 6,
-      "recoveryAfterDisruption": 53,
+      "engineMedianTurn": 5,
+      "recoveryAfterDisruption": 56,
       "turnProfile": [
         {
           "turn": 1,
@@ -2021,50 +2047,50 @@
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 1,
           "engine": 0,
-          "interaction": 17,
-          "resource": 13,
+          "interaction": 20,
+          "resource": 15,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 13,
-          "engine": 0,
-          "interaction": 38,
-          "resource": 23,
+          "commander": 15,
+          "engine": 1,
+          "interaction": 40,
+          "resource": 26,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 34,
-          "engine": 2,
+          "commander": 35,
+          "engine": 4,
           "interaction": 55,
-          "resource": 32,
+          "resource": 36,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 60,
-          "engine": 3,
-          "interaction": 65,
-          "resource": 37,
+          "engine": 6,
+          "interaction": 66,
+          "resource": 42,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 74,
-          "engine": 5,
+          "engine": 9,
           "interaction": 74,
-          "resource": 43,
+          "resource": 48,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 81,
-          "engine": 7,
+          "engine": 12,
           "interaction": 80,
-          "resource": 47,
+          "resource": 53,
           "burst": 0
         }
       ]
@@ -2074,6 +2100,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
@@ -2087,6 +2114,16 @@
           "removal",
           "tokens",
           "free"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Skullclamp",
+        "impact": 3.1,
+        "tags": [
+          "artifact",
+          "draw",
+          "death-payoff"
         ],
         "aeon": null
       },
@@ -2112,11 +2149,13 @@
         "aeon": null
       },
       {
-        "name": "Skullclamp",
+        "name": "Yavimaya Elder",
         "impact": 2.4,
         "tags": [
-          "artifact",
-          "draw"
+          "creature",
+          "draw",
+          "sacrifice",
+          "death-payoff"
         ],
         "aeon": null
       },
@@ -2175,15 +2214,6 @@
           "instant",
           "tokens",
           "free"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Footbottom Feast",
-        "impact": 1.7,
-        "tags": [
-          "instant",
-          "draw"
         ],
         "aeon": null
       }

@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 44,
-    "p20": 32,
+    "p20": 31,
     "p80": 56,
-    "peak": 83,
+    "peak": 84,
     "coverage": 89,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "b232c3b2a9322cebba3b600391704186caa0ae1558435074ee40799b3967768f",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "037491f3d206266dadedf8db05447cf53e71fa2d3c95c8f1f4f60dc390ef26b3",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Goblin Electromancer\n1 Jace's Archivist\n1 Gigantoplasm\n1 Talrand, Sky Summoner\n1 Psychosis Crawler\n1 Broodbirth Viper\n1 Illusory Ambusher\n1 Lone Revenant\n1 Warchief Giant\n1 Charmbreaker Devils\n1 Arjun, the Shifting Flame\n1 Etherium-Horn Sorcerer\n1 Melek, Izzet Paragon\n1 Dragon Mage\n1 Preordain\n1 Faithless Looting\n1 Vandalblast\n1 Mizzium Mortars\n1 Windfall\n1 Mystic Retrieval\n1 Stolen Goods\n1 Mizzix's Mastery\n1 Rite of Replication\n1 Sleep\n1 Chain Reaction\n1 Call the Skybreaker\n1 Blatant Thievery\n1 Epic Experiment\n1 Meteor Blast\n1 Blustersquall\n1 Brainstorm\n1 Echoing Truth\n1 Desperate Ravings\n1 Urza's Rage\n1 Counterflux\n1 Aetherize\n1 Fact or Fiction\n1 Reins of Power\n1 Steam Augury\n1 Mystic Confluence\n1 Word of Seizing\n1 Act of Aggression\n1 Prophetic Bolt\n1 Aethersnatch\n1 Mirror Match\n1 Firemind's Foresight\n1 Repeal\n1 Comet Storm\n1 Magmaquake\n1 Stroke of Genius\n1 Dominate\n1 Blue Sun's Zenith\n1 Sol Ring\n1 Izzet Signet\n1 Thought Vessel\n1 Worn Powerstone\n1 Seal of the Guildpact\n1 Awaken the Sky Tyrant\n1 Rite of the Raging Storm\n1 Thought Reflection\n1 Command Tower\n1 Evolving Wilds\n1 Izzet Boilerworks\n1 Izzet Guildgate\n1 Reliquary Tower\n1 Rogue's Passage\n1 Spinerock Knoll\n1 Swiftwater Cliffs\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Vivid Crag\n1 Vivid Creek\n4 Island\n4 Island\n3 Island\n3 Island\n4 Mountain\n3 Mountain\n3 Mountain\n3 Mountain",
   "oracleCards": [
@@ -106,8 +106,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature",
-        "draw"
+        "creature"
       ],
       "isCommander": false
     },
@@ -327,8 +326,7 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counterspell",
-        "counter-kind:generic"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -382,7 +380,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -669,7 +669,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -853,9 +855,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counterspell",
-        "counter-kind:generic",
-        "stax"
+        "draw",
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -891,8 +892,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery",
-        "draw"
+        "sorcery"
       ],
       "isCommander": false
     },
@@ -1071,18 +1071,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1398,7 +1399,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "draw",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -1442,23 +1445,23 @@
   "result": {
     "profile": {
       "median": 44,
-      "floor": 32,
+      "floor": 31,
       "ceiling": 56,
-      "peak": 83,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 64,
-      "commanderDelta": 13,
+      "peak": 84,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 62,
+      "commanderDelta": 14,
       "coverage": 89,
       "dataCoverage": 89
     },
     "dimensions": {
       "speed": 34,
-      "consistency": 64,
-      "explosiveness": 28,
+      "consistency": 62,
+      "explosiveness": 29,
       "synergy": 82,
-      "interaction": 18,
-      "resilience": 33
+      "interaction": 19,
+      "resilience": 34
     },
     "roles": {
       "lands": 39,
@@ -1466,12 +1469,12 @@
       "fastMana": 1,
       "tutors": 1,
       "repeatableTutors": 0,
-      "draw": 11,
+      "draw": 13,
       "interaction": 3,
       "protection": 1,
       "recursion": 2,
       "wipes": 0,
-      "avgCmc": 3.816666666666667,
+      "avgCmc": 3.8333333333333335,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1740,8 +1743,7 @@
             "cmc": 3,
             "tags": [
               "instant",
-              "counterspell",
-              "counter-kind:generic"
+              "counterspell"
             ],
             "manaReq": {
               "generic": 0,
@@ -1989,9 +1991,8 @@
             "cmc": 5,
             "tags": [
               "instant",
-              "counterspell",
-              "counter-kind:generic",
-              "stax"
+              "draw",
+              "counterspell"
             ],
             "manaReq": {
               "generic": 3,
@@ -2027,8 +2028,7 @@
             "name": "Preordain",
             "cmc": 1,
             "tags": [
-              "sorcery",
-              "draw"
+              "sorcery"
             ],
             "manaReq": {
               "generic": 0,
@@ -2226,7 +2226,9 @@
             "name": "Windfall",
             "cmc": 3,
             "tags": [
-              "sorcery"
+              "sorcery",
+              "draw",
+              "graveyard-setup"
             ],
             "manaReq": {
               "generic": 2,
@@ -2351,11 +2353,14 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 59,
-        "cohesion": 59,
+        "strength": 60,
+        "cohesion": 60,
         "producers": [
           "Desperate Ravings",
-          "Faithless Looting"
+          "Dragon Mage",
+          "Faithless Looting",
+          "Jace's Archivist",
+          "Windfall"
         ],
         "payoffs": [
           "Charmbreaker Devils",
@@ -2363,7 +2368,10 @@
         ],
         "members": [
           "Desperate Ravings",
+          "Dragon Mage",
           "Faithless Looting",
+          "Jace's Archivist",
+          "Windfall",
           "Charmbreaker Devils",
           "Mystic Retrieval"
         ],
@@ -2387,6 +2395,27 @@
             }
           },
           {
+            "name": "Dragon Mage",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
             "name": "Faithless Looting",
             "cmc": 1,
             "tags": [
@@ -2402,6 +2431,45 @@
                 ]
               ],
               "total": 1
+            }
+          },
+          {
+            "name": "Jace's Archivist",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Windfall",
+            "cmc": 3,
+            "tags": [
+              "sorcery",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
             }
           }
         ],
@@ -2448,7 +2516,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "2 producteur(s), 2 payoff(s), 4 carte(s) distincte(s)."
+        "evidence": "5 producteur(s), 2 payoff(s), 7 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2487,15 +2555,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2616,46 +2685,46 @@
     "simulation": {
       "iterations": 3200,
       "floor": 31,
-      "median": 39,
-      "high": 48,
-      "ceiling": 48,
-      "peak": 71,
-      "iqr": 13,
-      "consistency": 71,
+      "median": 40,
+      "high": 49,
+      "ceiling": 49,
+      "peak": 74,
+      "iqr": 14,
+      "consistency": 68,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 79,
+      "recoveryAfterDisruption": 81,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 4,
-          "resource": 15,
+          "resource": 11,
           "burst": 5
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 3,
           "engine": 0,
           "interaction": 8,
-          "resource": 33,
-          "burst": 9
+          "resource": 30,
+          "burst": 10
         },
         {
           "turn": 3,
-          "commander": 20,
+          "commander": 22,
           "engine": 6,
-          "interaction": 14,
-          "resource": 48,
-          "burst": 14
+          "interaction": 15,
+          "resource": 50,
+          "burst": 15
         },
         {
           "turn": 4,
-          "commander": 69,
+          "commander": 70,
           "engine": 12,
           "interaction": 20,
-          "resource": 61,
+          "resource": 63,
           "burst": 24
         },
         {
@@ -2663,7 +2732,7 @@
           "commander": 85,
           "engine": 21,
           "interaction": 25,
-          "resource": 70,
+          "resource": 73,
           "burst": 29
         },
         {
@@ -2671,15 +2740,15 @@
           "commander": 89,
           "engine": 27,
           "interaction": 29,
-          "resource": 77,
+          "resource": 81,
           "burst": 32
         },
         {
           "turn": 7,
           "commander": 93,
-          "engine": 35,
+          "engine": 36,
           "interaction": 32,
-          "resource": 83,
+          "resource": 86,
           "burst": 35
         }
       ]
@@ -2722,6 +2791,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
@@ -2748,6 +2818,26 @@
         "aeon": null
       },
       {
+        "name": "Mystic Confluence",
+        "impact": 3.2,
+        "tags": [
+          "instant",
+          "draw",
+          "counterspell"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Windfall",
+        "impact": 3.1,
+        "tags": [
+          "sorcery",
+          "draw",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Charmbreaker Devils",
         "impact": 2.8,
         "tags": [
@@ -2758,13 +2848,12 @@
         "aeon": null
       },
       {
-        "name": "Mystic Confluence",
-        "impact": 2.6,
+        "name": "Dragon Mage",
+        "impact": 2.8,
         "tags": [
-          "instant",
-          "counterspell",
-          "counter-kind:generic",
-          "stax"
+          "creature",
+          "draw",
+          "graveyard-setup"
         ],
         "aeon": null
       },
@@ -2778,26 +2867,8 @@
         "aeon": null
       },
       {
-        "name": "Preordain",
-        "impact": 2.5,
-        "tags": [
-          "sorcery",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Repeal",
         "impact": 2.5,
-        "tags": [
-          "instant",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Blue Sun's Zenith",
-        "impact": 2.4,
         "tags": [
           "instant",
           "draw"

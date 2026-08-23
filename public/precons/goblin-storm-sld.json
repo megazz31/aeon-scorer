@@ -26,17 +26,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 44,
-    "p20": 32,
-    "p80": 52,
-    "peak": 72,
-    "coverage": 91,
+    "median": 48,
+    "p20": 36,
+    "p80": 62,
+    "peak": 81,
+    "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "5fa69eba4e4674fc4a0cfede8f52bc2601c6f162a3213f598cbce0a71f69b3c9",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "4d1558d824022492062b51525a1a02129ebad04b65b7bec9131c14bd1a7aa059",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Krenko, Mob Boss\n1 Pashalik Mons\n1 Brightstone Ritual\n1 Broadside Bombardiers\n1 Conspicuous Snoop\n1 Empty the Warrens\n1 Grapeshot\n1 Skirk Prospector\n1 Roaming Throne\n1 Skullclamp\n1 Sol Ring\n1 Blasphemous Act\n1 Chaos Warp\n1 Frontline Heroism\n1 Goblin Bombardment\n1 Goblin Chieftain\n1 Goblin Dark-Dwellers\n1 Goblin Lackey\n1 Goblin Trashmaster\n1 Great Train Heist\n1 Grenzo, Havoc Raiser\n1 Howlsquad Heavy\n1 Past in Flames\n1 Redcap Gutter-Dweller\n1 Rundvelt Hordemaster\n1 Searslicer Goblin\n1 Siege-Gang Commander\n1 Siege-Gang Lieutenant\n1 Idol of Oblivion\n1 Ruby Medallion\n1 Throne of Eldraine\n1 Arena of Glory\n1 Castle Embereth\n1 Den of the Bugbear\n1 Fountainport\n1 Kher Keep\n1 Spinerock Knoll\n1 War Room\n1 Shinka, the Bloodsoaked Keep\n1 Ancestors' Aid\n1 Battle Hymn\n1 Boggart Shenanigans\n1 Crimson Wisps\n1 Daring Discovery\n1 Dragon Fodder\n1 Expedite\n1 Faithless Looting\n1 Fists of Flame\n1 Gempalm Incinerator\n1 General Kreat, the Boltbringer\n1 Glimpse the Impossible\n1 Goblin Bushwhacker\n1 Goblin Matron\n1 Goblin Negotiation\n1 Goblin Warchief\n1 Haze of Rage\n1 Impact Tremors\n1 Impulsive Pilferer\n1 Krenko's Command\n1 Mana Geyser\n1 Mogg War Marshal\n1 Quest for the Goblin Lord\n1 Renegade Tactics\n1 Sazacap's Brew\n1 Seething Song\n1 Spreading Insurrection\n1 Storm-Kiln Artist\n1 Vandalblast\n1 Wild Ride\n1 Witch's Mark\n1 Swiftfoot Boots\n1 Dwarven Mine\n1 Forgotten Cave\n1 Goblin Burrows\n1 Hidden Volcano\n1 Reliquary Tower\n1 Smoldering Crater\n7 Mountain\n8 Mountain\n7 Mountain",
   "oracleCards": [
@@ -213,7 +213,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "removal"
       ],
       "isCommander": false
     },
@@ -438,6 +439,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "tokens",
         "token-payoff",
@@ -836,7 +838,9 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "draw",
         "tokens",
+        "token-payoff",
         "sacrifice"
       ],
       "isCommander": false
@@ -977,6 +981,7 @@
       "tags": [
         "creature",
         "tokens",
+        "death-payoff",
         "etb"
       ],
       "isCommander": false
@@ -1052,6 +1057,7 @@
       "tags": [
         "enchantment",
         "etb",
+        "counter-producer",
         "counter-kind:quest"
       ],
       "isCommander": false
@@ -1318,7 +1324,8 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "draw"
+        "draw",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -1344,18 +1351,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1462,6 +1470,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "etb"
       ],
@@ -1499,6 +1508,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -1561,24 +1571,24 @@
   ],
   "result": {
     "profile": {
-      "median": 44,
-      "floor": 32,
-      "ceiling": 52,
-      "peak": 72,
-      "dispersion": 20,
-      "variance": 20,
-      "consistency": 69,
+      "median": 48,
+      "floor": 36,
+      "ceiling": 62,
+      "peak": 81,
+      "dispersion": 26,
+      "variance": 26,
+      "consistency": 60,
       "commanderDelta": 12,
-      "coverage": 91,
-      "dataCoverage": 91
+      "coverage": 92,
+      "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 52,
-      "consistency": 69,
+      "speed": 55,
+      "consistency": 60,
       "explosiveness": 15,
-      "synergy": 64,
-      "interaction": 15,
-      "resilience": 30
+      "synergy": 79,
+      "interaction": 22,
+      "resilience": 32
     },
     "roles": {
       "lands": 36,
@@ -1586,20 +1596,571 @@
       "fastMana": 2,
       "tutors": 1,
       "repeatableTutors": 0,
-      "draw": 8,
-      "interaction": 2,
+      "draw": 10,
+      "interaction": 3,
       "protection": 1,
       "recursion": 1,
       "wipes": 0,
-      "avgCmc": 2.6031746031746033,
+      "avgCmc": 2.619047619047619,
       "unknownManaLands": 0
     },
     "packages": [
       {
+        "id": "tokens",
+        "name": "Tokens / conversion",
+        "strength": 100,
+        "cohesion": 100,
+        "producers": [
+          "Ancestors' Aid",
+          "Den of the Bugbear",
+          "Dragon Fodder",
+          "Dwarven Mine",
+          "Empty the Warrens",
+          "Fountainport",
+          "Frontline Heroism",
+          "General Kreat, the Boltbringer",
+          "Glimpse the Impossible",
+          "Goblin Negotiation"
+        ],
+        "payoffs": [
+          "Fountainport",
+          "Idol of Oblivion"
+        ],
+        "members": [
+          "Ancestors' Aid",
+          "Den of the Bugbear",
+          "Dragon Fodder",
+          "Dwarven Mine",
+          "Empty the Warrens",
+          "Fountainport",
+          "Frontline Heroism",
+          "General Kreat, the Boltbringer",
+          "Glimpse the Impossible",
+          "Goblin Negotiation",
+          "Great Train Heist",
+          "Howlsquad Heavy",
+          "Idol of Oblivion",
+          "Impulsive Pilferer",
+          "Kher Keep",
+          "Krenko's Command",
+          "Krenko, Mob Boss",
+          "Mogg War Marshal",
+          "Pashalik Mons",
+          "Redcap Gutter-Dweller",
+          "Searslicer Goblin",
+          "Siege-Gang Commander",
+          "Siege-Gang Lieutenant",
+          "Storm-Kiln Artist",
+          "Witch's Mark"
+        ],
+        "producerCards": [
+          {
+            "name": "Ancestors' Aid",
+            "cmc": 2,
+            "tags": [
+              "instant",
+              "mana",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Den of the Bugbear",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Dragon Fodder",
+            "cmc": 2,
+            "tags": [
+              "sorcery",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Dwarven Mine",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Empty the Warrens",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Fountainport",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "draw",
+              "mana",
+              "tokens",
+              "token-payoff",
+              "sacrifice",
+              "sac-outlet"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Frontline Heroism",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "General Kreat, the Boltbringer",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Glimpse the Impossible",
+            "cmc": 3,
+            "tags": [
+              "sorcery",
+              "mana",
+              "tokens",
+              "sacrifice",
+              "exile-cast"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Goblin Negotiation",
+            "cmc": 2,
+            "tags": [
+              "sorcery",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Great Train Heist",
+            "cmc": 1,
+            "tags": [
+              "instant",
+              "mana",
+              "tokens",
+              "extra-combat"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Howlsquad Heavy",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "mana",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Idol of Oblivion",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "tokens",
+              "token-payoff",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Impulsive Pilferer",
+            "cmc": 1,
+            "tags": [
+              "creature",
+              "mana",
+              "tokens",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Kher Keep",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Krenko's Command",
+            "cmc": 2,
+            "tags": [
+              "sorcery",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Krenko, Mob Boss",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Mogg War Marshal",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "tokens",
+              "death-payoff",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Pashalik Mons",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens",
+              "sacrifice",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Redcap Gutter-Dweller",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "tokens",
+              "sacrifice",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1",
+              "exile-cast"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Searslicer Goblin",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Siege-Gang Commander",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens",
+              "sacrifice",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Siege-Gang Lieutenant",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "tokens",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Storm-Kiln Artist",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "mana",
+              "tokens",
+              "artifact-payoff",
+              "spellslinger"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Witch's Mark",
+            "cmc": 2,
+            "tags": [
+              "sorcery",
+              "draw",
+              "graveyard-setup",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Fountainport",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "draw",
+              "mana",
+              "tokens",
+              "token-payoff",
+              "sacrifice",
+              "sac-outlet"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Idol of Oblivion",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "tokens",
+              "token-payoff",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          }
+        ],
+        "producerTags": [
+          "tokens"
+        ],
+        "payoffTags": [
+          "token-payoff"
+        ],
+        "evidence": "25 producteur(s), 2 payoff(s), 25 carte(s) distincte(s)."
+      },
+      {
         "id": "sacrifice",
         "name": "Sacrifice / mort",
-        "strength": 67,
-        "cohesion": 67,
+        "strength": 68,
+        "cohesion": 68,
         "producers": [
           "Broadside Bombardiers",
           "Fountainport",
@@ -1607,16 +2168,20 @@
         ],
         "payoffs": [
           "Impulsive Pilferer",
+          "Mogg War Marshal",
           "Pashalik Mons",
-          "Rundvelt Hordemaster"
+          "Rundvelt Hordemaster",
+          "Skullclamp"
         ],
         "members": [
           "Broadside Bombardiers",
           "Fountainport",
           "Goblin Bombardment",
           "Impulsive Pilferer",
+          "Mogg War Marshal",
           "Pashalik Mons",
-          "Rundvelt Hordemaster"
+          "Rundvelt Hordemaster",
+          "Skullclamp"
         ],
         "producerCards": [
           {
@@ -1642,6 +2207,7 @@
             "cmc": 0,
             "tags": [
               "land",
+              "draw",
               "mana",
               "tokens",
               "token-payoff",
@@ -1694,6 +2260,25 @@
             }
           },
           {
+            "name": "Mogg War Marshal",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "tokens",
+              "death-payoff",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
             "name": "Pashalik Mons",
             "cmc": 3,
             "tags": [
@@ -1729,6 +2314,20 @@
               ],
               "total": 2
             }
+          },
+          {
+            "name": "Skullclamp",
+            "cmc": 1,
+            "tags": [
+              "artifact",
+              "draw",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
           }
         ],
         "producerTags": [
@@ -1738,7 +2337,7 @@
         "payoffTags": [
           "death-payoff"
         ],
-        "evidence": "3 producteur(s), 3 payoff(s), 6 carte(s) distincte(s)."
+        "evidence": "3 producteur(s), 5 payoff(s), 8 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -1821,15 +2420,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           }
         ],
@@ -1902,71 +2502,71 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 27,
-      "median": 35,
-      "high": 41,
-      "ceiling": 41,
-      "peak": 57,
-      "iqr": 11,
-      "consistency": 76,
+      "floor": 32,
+      "median": 40,
+      "high": 51,
+      "ceiling": 51,
+      "peak": 67,
+      "iqr": 15,
+      "consistency": 66,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 76,
+      "engineMedianTurn": 3,
+      "recoveryAfterDisruption": 82,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
-          "engine": 1,
+          "engine": 4,
           "interaction": 7,
-          "resource": 31,
+          "resource": 42,
           "burst": 6
         },
         {
           "turn": 2,
-          "commander": 0,
-          "engine": 2,
-          "interaction": 8,
-          "resource": 48,
+          "commander": 6,
+          "engine": 12,
+          "interaction": 10,
+          "resource": 64,
           "burst": 3
         },
         {
           "turn": 3,
-          "commander": 21,
-          "engine": 6,
-          "interaction": 10,
-          "resource": 54,
+          "commander": 22,
+          "engine": 21,
+          "interaction": 16,
+          "resource": 66,
           "burst": 2
         },
         {
           "turn": 4,
-          "commander": 73,
-          "engine": 8,
-          "interaction": 17,
-          "resource": 61,
+          "commander": 74,
+          "engine": 26,
+          "interaction": 24,
+          "resource": 71,
           "burst": 3
         },
         {
           "turn": 5,
           "commander": 87,
-          "engine": 9,
-          "interaction": 20,
-          "resource": 66,
+          "engine": 30,
+          "interaction": 28,
+          "resource": 75,
           "burst": 6
         },
         {
           "turn": 6,
           "commander": 91,
-          "engine": 11,
-          "interaction": 23,
-          "resource": 71,
+          "engine": 33,
+          "interaction": 32,
+          "resource": 79,
           "burst": 8
         },
         {
           "turn": 7,
           "commander": 95,
-          "engine": 12,
-          "interaction": 25,
-          "resource": 74,
+          "engine": 36,
+          "interaction": 35,
+          "resource": 81,
           "burst": 10
         }
       ]
@@ -1981,6 +2581,28 @@
           "etb",
           "cheat",
           "free"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Impulsive Pilferer",
+        "impact": 4.3,
+        "tags": [
+          "creature",
+          "mana",
+          "tokens",
+          "death-payoff"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Great Train Heist",
+        "impact": 4,
+        "tags": [
+          "instant",
+          "mana",
+          "tokens",
+          "extra-combat"
         ],
         "aeon": null
       },
@@ -2000,36 +2622,15 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
         "aeon": null
       },
       {
-        "name": "Impulsive Pilferer",
-        "impact": 3.6,
-        "tags": [
-          "creature",
-          "mana",
-          "tokens",
-          "death-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Great Train Heist",
-        "impact": 3.3,
-        "tags": [
-          "instant",
-          "mana",
-          "tokens",
-          "extra-combat"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Howlsquad Heavy",
-        "impact": 2.8,
+        "impact": 3.5,
         "tags": [
           "creature",
           "mana",
@@ -2039,16 +2640,17 @@
       },
       {
         "name": "Skullclamp",
-        "impact": 2.4,
+        "impact": 3.1,
         "tags": [
           "artifact",
-          "draw"
+          "draw",
+          "death-payoff"
         ],
         "aeon": null
       },
       {
         "name": "Glimpse the Impossible",
-        "impact": 2.1,
+        "impact": 2.8,
         "tags": [
           "sorcery",
           "mana",
@@ -2059,8 +2661,20 @@
         "aeon": null
       },
       {
+        "name": "Idol of Oblivion",
+        "impact": 2.8,
+        "tags": [
+          "artifact",
+          "draw",
+          "tokens",
+          "token-payoff",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Witch's Mark",
-        "impact": 2.1,
+        "impact": 2.8,
         "tags": [
           "sorcery",
           "draw",
@@ -2070,34 +2684,25 @@
         "aeon": null
       },
       {
+        "name": "Mogg War Marshal",
+        "impact": 2.7,
+        "tags": [
+          "creature",
+          "tokens",
+          "death-payoff",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Storm-Kiln Artist",
-        "impact": 2,
+        "impact": 2.7,
         "tags": [
           "creature",
           "mana",
           "tokens",
           "artifact-payoff",
           "spellslinger"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Pashalik Mons",
-        "impact": 1.9,
-        "tags": [
-          "creature",
-          "tokens",
-          "sacrifice",
-          "death-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Crimson Wisps",
-        "impact": 1.8,
-        "tags": [
-          "instant",
-          "draw"
         ],
         "aeon": null
       }

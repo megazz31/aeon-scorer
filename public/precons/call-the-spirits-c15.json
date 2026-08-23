@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 50,
-    "p20": 38,
+    "median": 48,
+    "p20": 35,
     "p80": 61,
-    "peak": 89,
-    "coverage": 92,
+    "peak": 87,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "82070c3f8a06eb1c89fb1d7418fba4461b58f8ce9b68e791a20b0d4aabdbf987",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "d9968f8a7fea7a1c8c42b1cb89ad5f1356f626478ac186a0448e997bb59cb8ab",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Oreskos Explorer\n1 Karlov of the Ghost Council\n1 Underworld Coinsmith\n1 Burnished Hart\n1 Bastion Protector\n1 Dawnglare Invoker\n1 Ghostblade Eidolon\n1 Kor Sanctifiers\n1 Monk Idealist\n1 Mesa Enchantress\n1 Nighthowler\n1 Corpse Augur\n1 Fate Unraveler\n1 Ajani's Chosen\n1 Doomwake Giant\n1 Dreadbringer Lampads\n1 Celestial Ancient\n1 Celestial Archon\n1 Herald of the Host\n1 Banshee of the Dread Choir\n1 Thief of Blood\n1 Treasury Thrull\n1 Sandstone Oracle\n1 Silent Sentinel\n1 Teysa, Envoy of Ghosts\n1 Ancient Craving\n1 Gild\n1 Dawn to Dusk\n1 Righteous Confluence\n1 Open the Vaults\n1 Deadly Tempest\n1 Death Grasp\n1 Sol Ring\n1 Wayfarer's Bauble\n1 Lightning Greaves\n1 Orzhov Signet\n1 Thought Vessel\n1 Crystal Chimes\n1 Orzhov Cluestone\n1 Phyrexian Reclamation\n1 Seal of Cleansing\n1 Grave Peril\n1 Banishing Light\n1 Cage of Hands\n1 Karmic Justice\n1 Vow of Duty\n1 Fallen Ideal\n1 Seal of Doom\n1 Vow of Malice\n1 Aura of Silence\n1 Grasp of Fate\n1 Shielded by Faith\n1 Phyrexian Arena\n1 Underworld Connections\n1 Daxos's Torment\n1 Marshal's Anthem\n1 Dictate of Heliod\n1 Sigil of the Empty Throne\n1 Black Market\n1 Necromancer's Covenant\n1 Barren Moor\n1 Command Tower\n1 Evolving Wilds\n1 Ghost Quarter\n1 New Benalia\n1 Orzhov Basilica\n1 Orzhov Guildgate\n1 Rogue's Passage\n1 Scoured Barrens\n1 Secluded Steppe\n1 Tainted Field\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Vivid Marsh\n1 Vivid Meadow\n3 Plains\n3 Plains\n3 Plains\n2 Plains\n4 Swamp\n3 Swamp\n3 Swamp\n3 Swamp",
   "oracleCards": [
@@ -94,7 +94,8 @@
       "tags": [
         "enchantment",
         "removal",
-        "sacrifice"
+        "sacrifice",
+        "stax"
       ],
       "isCommander": false
     },
@@ -191,6 +192,7 @@
         "enchantment",
         "mana",
         "death-payoff",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:charge"
       ],
@@ -684,7 +686,6 @@
         "removal",
         "counter-producer",
         "counter-kind:plus1",
-        "lifegain",
         "life-payoff"
       ],
       "isCommander": false
@@ -933,6 +934,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -1089,6 +1091,7 @@
       "tags": [
         "creature",
         "artifact",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -1232,18 +1235,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1439,7 +1443,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "enchantment"
+        "enchantment",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1549,24 +1554,24 @@
   ],
   "result": {
     "profile": {
-      "median": 50,
-      "floor": 38,
+      "median": 48,
+      "floor": 35,
       "ceiling": 61,
-      "peak": 89,
-      "dispersion": 23,
-      "variance": 23,
-      "consistency": 62,
+      "peak": 87,
+      "dispersion": 26,
+      "variance": 26,
+      "consistency": 60,
       "commanderDelta": 8,
-      "coverage": 92,
-      "dataCoverage": 92
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
       "speed": 41,
-      "consistency": 62,
-      "explosiveness": 13,
-      "synergy": 77,
+      "consistency": 60,
+      "explosiveness": 12,
+      "synergy": 63,
       "interaction": 58,
-      "resilience": 53
+      "resilience": 54
     },
     "roles": {
       "lands": 39,
@@ -1574,12 +1579,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 4,
+      "draw": 7,
       "interaction": 12,
       "protection": 3,
       "recursion": 7,
       "wipes": 2,
-      "avgCmc": 3.65,
+      "avgCmc": 3.6666666666666665,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1645,7 +1650,8 @@
             "tags": [
               "enchantment",
               "removal",
-              "sacrifice"
+              "sacrifice",
+              "stax"
             ],
             "manaReq": {
               "generic": 1,
@@ -1685,6 +1691,7 @@
               "enchantment",
               "mana",
               "death-payoff",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:charge"
             ],
@@ -2127,7 +2134,8 @@
             "name": "Underworld Connections",
             "cmc": 3,
             "tags": [
-              "enchantment"
+              "enchantment",
+              "draw"
             ],
             "manaReq": {
               "generic": 1,
@@ -2285,6 +2293,178 @@
           "constellation"
         ],
         "evidence": "28 producteur(s), 5 payoff(s), 29 carte(s) distincte(s)."
+      },
+      {
+        "id": "counters",
+        "name": "Marqueurs",
+        "strength": 50,
+        "cohesion": 50,
+        "producers": [
+          "Black Market",
+          "Celestial Ancient",
+          "Karlov of the Ghost Council",
+          "Thief of Blood"
+        ],
+        "payoffs": [
+          "Black Market",
+          "Thief of Blood"
+        ],
+        "members": [
+          "Black Market",
+          "Celestial Ancient",
+          "Karlov of the Ghost Council",
+          "Thief of Blood"
+        ],
+        "producerCards": [
+          {
+            "name": "Black Market",
+            "cmc": 5,
+            "tags": [
+              "enchantment",
+              "mana",
+              "death-payoff",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:charge"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Celestial Ancient",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Karlov of the Ghost Council",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "removal",
+              "counter-producer",
+              "counter-kind:plus1",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Thief of Blood",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 6
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Black Market",
+            "cmc": 5,
+            "tags": [
+              "enchantment",
+              "mana",
+              "death-payoff",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:charge"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Thief of Blood",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 6
+            }
+          }
+        ],
+        "producerTags": [
+          "counter-producer"
+        ],
+        "payoffTags": [
+          "counter-payoff",
+          "modified-payoff"
+        ],
+        "evidence": "4 producteur(s), 2 payoff(s), 4 carte(s) distincte(s)."
       }
     ],
     "combos": [],
@@ -2312,75 +2492,88 @@
     "simulation": {
       "iterations": 3200,
       "floor": 36,
-      "median": 44,
-      "high": 53,
-      "ceiling": 53,
+      "median": 45,
+      "high": 55,
+      "ceiling": 55,
       "peak": 80,
-      "iqr": 14,
-      "consistency": 70,
+      "iqr": 15,
+      "consistency": 68,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 85,
+      "recoveryAfterDisruption": 87,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 7,
-          "resource": 5,
+          "resource": 4,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 5,
+          "commander": 9,
           "engine": 0,
-          "interaction": 20,
-          "resource": 10,
+          "interaction": 23,
+          "resource": 13,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 65,
-          "engine": 5,
-          "interaction": 46,
-          "resource": 34,
+          "commander": 68,
+          "engine": 7,
+          "interaction": 48,
+          "resource": 39,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 87,
-          "engine": 20,
+          "engine": 22,
           "interaction": 62,
-          "resource": 54,
+          "resource": 58,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 92,
-          "engine": 33,
-          "interaction": 70,
-          "resource": 64,
+          "engine": 34,
+          "interaction": 71,
+          "resource": 68,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 95,
-          "engine": 41,
+          "engine": 42,
           "interaction": 77,
-          "resource": 71,
+          "resource": 76,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 96,
-          "engine": 46,
-          "interaction": 80,
-          "resource": 77,
+          "engine": 47,
+          "interaction": 81,
+          "resource": 81,
           "burst": 0
         }
       ]
     },
     "drivers": [
+      {
+        "name": "Black Market",
+        "impact": 3,
+        "tags": [
+          "enchantment",
+          "mana",
+          "death-payoff",
+          "counter-producer",
+          "counter-payoff",
+          "counter-kind:charge"
+        ],
+        "aeon": null
+      },
       {
         "name": "Phyrexian Arena",
         "impact": 3,
@@ -2394,8 +2587,43 @@
         "name": "Sol Ring",
         "impact": 3,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Aura of Silence",
+        "impact": 2.6,
+        "tags": [
+          "enchantment",
+          "removal",
+          "sacrifice",
+          "stax"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Orzhov Cluestone",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Karlov of the Ghost Council",
+        "impact": 2.4,
+        "tags": [
+          "creature",
+          "removal",
+          "counter-producer",
+          "counter-kind:plus1",
+          "life-payoff"
         ],
         "aeon": null
       },
@@ -2412,14 +2640,11 @@
         "aeon": null
       },
       {
-        "name": "Black Market",
-        "impact": 2.3,
+        "name": "Underworld Connections",
+        "impact": 2.4,
         "tags": [
           "enchantment",
-          "mana",
-          "death-payoff",
-          "counter-payoff",
-          "counter-kind:charge"
+          "draw"
         ],
         "aeon": null
       },
@@ -2454,51 +2679,12 @@
         "aeon": null
       },
       {
-        "name": "Aura of Silence",
-        "impact": 1.8,
-        "tags": [
-          "enchantment",
-          "removal",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Banishing Light",
         "impact": 1.8,
         "tags": [
           "enchantment",
           "removal",
           "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Grasp of Fate",
-        "impact": 1.8,
-        "tags": [
-          "enchantment",
-          "removal",
-          "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Phyrexian Reclamation",
-        "impact": 1.8,
-        "tags": [
-          "enchantment",
-          "recursion"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Seal of Cleansing",
-        "impact": 1.8,
-        "tags": [
-          "enchantment",
-          "removal",
-          "sacrifice"
         ],
         "aeon": null
       }

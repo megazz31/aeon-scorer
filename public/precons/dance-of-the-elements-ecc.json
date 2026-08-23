@@ -30,17 +30,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 32,
-    "p20": 23,
-    "p80": 41,
+    "median": 34,
+    "p20": 24,
+    "p80": 44,
     "peak": 70,
     "coverage": 90,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "8c143b67f1838e558bca7e96393998f0f22cec4f1e4a2a0294b546dd668562b6",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "880bb3c452aa02ad1f9c9f53c65fd9c469020209018a3c10e55e925c9a06966a",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Mass of Mysteries\n1 Elemental Spectacle\n1 Springleaf Parade\n1 Jubilation\n1 Impulsivity\n1 Lamentation\n1 Belonging\n1 Subterfuge\n1 Rain-Slicked Copse\n1 Sodden Verdure\n1 Abundant Countryside\n1 Endurance\n1 Fury\n1 Haunting Voyage\n1 Avenger of Zendikar\n1 Cavalier of Thorns\n1 Greenwarden of Murasa\n1 Selvala, Heart of the Wilds\n1 Titan of Industry\n1 Muldrotha, the Gravetide\n1 Omnath, Locus of Rage\n1 Yarok, the Desecrated\n1 Omnath, Locus of the Roil\n1 Timeless Lotus\n1 Shatter the Sky\n1 Hoofprints of the Stag\n1 Slithermuse\n1 Descendants' Fury\n1 Blasphemous Act\n1 Cream of the Crop\n1 Kindred Summons\n1 Bane of Progress\n1 Realmwalker\n1 Return of the Wildspeaker\n1 Faeburrow Elder\n1 Vernal Sovereign\n1 Horde of Notions\n1 Maelstrom Wanderer\n1 Jegantha, the Wellspring\n1 Chromatic Lantern\n1 Primal Beyond\n1 Raging Ravine\n1 Exotic Orchard\n1 Flamekin Village\n1 Path to Exile\n1 Mulldrifter\n1 Reality Shift\n1 Shriekmaw\n1 Shimmercreep\n1 Flamebraider\n1 Crib Swap\n1 Secluded Courtyard\n1 Sol Ring\n1 Command Tower\n1 Arcane Signet\n1 Distant Melody\n1 Incandescent Soulstoke\n1 Eclipsed Flamekin\n1 Foundation Breaker\n1 Garruk's Uprising\n1 Risen Reef\n1 Fellwar Stone\n1 Unclaimed Territory\n1 Ancient Ziggurat\n1 Frontier Bivouac\n1 Sandsteppe Citadel\n1 Savage Lands\n1 Opulent Palace\n1 Seaside Citadel\n1 Jungle Shrine\n1 Smokebraider\n1 Ingot Chewer\n1 Fertile Ground\n1 Abundant Growth\n1 Kodama's Reach\n1 Cultivate\n1 Path of Ancestry\n1 Thriving Grove\n1 Thriving Heath\n1 Thriving Isle\n1 Opal Palace\n1 Thriving Bluff\n1 Thriving Moor\n2 Plains\n2 Island\n2 Swamp\n2 Mountain\n8 Forest",
   "oracleCards": [
@@ -740,6 +740,7 @@
       "tags": [
         "enchantment",
         "tokens",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -1344,7 +1345,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1486,6 +1488,7 @@
       ],
       "tags": [
         "creature",
+        "mana",
         "etb"
       ],
       "isCommander": false
@@ -1559,7 +1562,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1610,18 +1614,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1863,6 +1868,7 @@
         "removal",
         "tokens",
         "etb",
+        "counter-producer",
         "counter-kind:shield",
         "lifegain"
       ],
@@ -1936,24 +1942,24 @@
   ],
   "result": {
     "profile": {
-      "median": 32,
-      "floor": 23,
-      "ceiling": 41,
+      "median": 34,
+      "floor": 24,
+      "ceiling": 44,
       "peak": 70,
-      "dispersion": 18,
-      "variance": 18,
-      "consistency": 69,
+      "dispersion": 21,
+      "variance": 21,
+      "consistency": 67,
       "commanderDelta": 9,
       "coverage": 90,
       "dataCoverage": 90
     },
     "dimensions": {
-      "speed": 27,
-      "consistency": 69,
-      "explosiveness": 14,
+      "speed": 31,
+      "consistency": 67,
+      "explosiveness": 13,
       "synergy": 9,
-      "interaction": 38,
-      "resilience": 36
+      "interaction": 39,
+      "resilience": 37
     },
     "roles": {
       "lands": 40,
@@ -1961,12 +1967,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 6,
+      "draw": 8,
       "interaction": 10,
       "protection": 0,
       "recursion": 4,
       "wipes": 2,
-      "avgCmc": 4.254237288135593,
+      "avgCmc": 4.271186440677966,
       "unknownManaLands": 0
     },
     "packages": [],
@@ -2002,16 +2008,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 32,
-      "median": 39,
-      "high": 45,
-      "ceiling": 45,
+      "floor": 33,
+      "median": 40,
+      "high": 47,
+      "ceiling": 47,
       "peak": 67,
-      "iqr": 10,
-      "consistency": 78,
-      "commanderMedianTurn": 4,
+      "iqr": 11,
+      "consistency": 76,
+      "commanderMedianTurn": 3,
       "engineMedianTurn": null,
-      "recoveryAfterDisruption": 79,
+      "recoveryAfterDisruption": 80,
       "turnProfile": [
         {
           "turn": 1,
@@ -2023,42 +2029,42 @@
         },
         {
           "turn": 2,
-          "commander": 3,
+          "commander": 7,
           "engine": 0,
-          "interaction": 10,
-          "resource": 0,
+          "interaction": 12,
+          "resource": 2,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 48,
+          "commander": 53,
           "engine": 0,
-          "interaction": 23,
-          "resource": 10,
-          "burst": 0
+          "interaction": 25,
+          "resource": 14,
+          "burst": 1
         },
         {
           "turn": 4,
-          "commander": 82,
+          "commander": 84,
           "engine": 0,
-          "interaction": 44,
-          "resource": 30,
+          "interaction": 45,
+          "resource": 37,
           "burst": 4
         },
         {
           "turn": 5,
-          "commander": 92,
+          "commander": 93,
           "engine": 0,
           "interaction": 59,
-          "resource": 47,
+          "resource": 55,
           "burst": 8
         },
         {
           "turn": 6,
           "commander": 95,
           "engine": 0,
-          "interaction": 66,
-          "resource": 57,
+          "interaction": 67,
+          "resource": 66,
           "burst": 12
         },
         {
@@ -2066,7 +2072,7 @@
           "commander": 96,
           "engine": 0,
           "interaction": 73,
-          "resource": 65,
+          "resource": 73,
           "burst": 16
         }
       ]
@@ -2098,6 +2104,7 @@
         "name": "Sol Ring",
         "impact": 3,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
@@ -2157,6 +2164,25 @@
         "aeon": null
       },
       {
+        "name": "Selvala, Heart of the Wilds",
+        "impact": 1.7,
+        "tags": [
+          "creature",
+          "mana",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Slithermuse",
+        "impact": 1.7,
+        "tags": [
+          "creature",
+          "draw"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Mulldrifter",
         "impact": 1.6,
         "tags": [
@@ -2167,35 +2193,11 @@
         "aeon": null
       },
       {
-        "name": "Springleaf Parade",
+        "name": "Return of the Wildspeaker",
         "impact": 1.6,
         "tags": [
-          "enchantment",
-          "mana",
-          "tokens",
-          "token-payoff",
-          "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Lamentation",
-        "impact": 1.5,
-        "tags": [
-          "creature",
-          "removal",
-          "etb",
-          "lifegain"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Yarok, the Desecrated",
-        "impact": 1.5,
-        "tags": [
-          "creature",
-          "lifegain",
-          "trigger-doubler"
+          "instant",
+          "draw"
         ],
         "aeon": null
       }

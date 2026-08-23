@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 36,
-    "p20": 26,
-    "p80": 47,
+    "median": 37,
+    "p20": 25,
+    "p80": 48,
     "peak": 67,
     "coverage": 89,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "3d5e385a273e6020a7fee6b1b1bffbfd08e981dfcb8514ac40a818f1dab3655e",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "362414b3fd2805f47175748fdafc97eef4c16c71d1af95801f948d719d5bf82d",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Alela, Cunning Conqueror\n1 Archmage of Echoes\n1 Malleable Impostor\n1 Misleading Signpost\n1 Shadow Puppeteers\n1 Blightwing Bandit\n1 Faerie Bladecrafter\n1 Nettling Nuisance\n1 Tegwyll's Scouring\n1 Brazen Borrower // Petty Theft\n1 Dig Through Time\n1 Faerie Formation\n1 Glen Elendra Archmage\n1 Hullbreaker Horror\n1 Illusionist's Gambit\n1 Midnight Clock\n1 Perplexing Test\n1 Reflections of Littjara\n1 Scion of Oona\n1 Sower of Temptation\n1 Theoretical Duplication\n1 Kindred Dominance\n1 Nightmare Unmaking\n1 Puppeteer Clique\n1 Rankle, Master of Pranks\n1 Thrilling Encore\n1 Glen Elendra Liege\n1 Nymris, Oona's Trickster\n1 Oona, Queen of the Fae\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Secluded Glen\n1 Sunken Hollow\n1 Temple of Deceit\n1 Mocking Sprite\n1 Picklock Prankster // Free the Fae\n1 Spell Stutter\n1 Obyra, Dreaming Duelist\n1 Spellscorn Coven // Take It Back\n1 Arcane Denial\n1 Cloud of Faeries\n1 Consider\n1 Distant Melody\n1 Fact or Fiction\n1 Faerie Seer\n1 Frantic Search\n1 Hypnotic Sprite // Mesmeric Glare\n1 Keep Watch\n1 Nightveil Sprite\n1 Opt\n1 Quickling\n1 Reality Shift\n1 Reconnaissance Mission\n1 Repulse\n1 Run Away Together\n1 Snap\n1 Reckless Spite\n1 Halo Forager\n1 Arcane Signet\n1 Dimir Signet\n1 Fellwar Stone\n1 Mind Stone\n1 Sol Ring\n1 Talisman of Dominance\n1 Wayfarer's Bauble\n1 Bojuka Bog\n1 Command Tower\n1 Dimir Aqueduct\n1 Faerie Conclave\n1 Myriad Landscape\n1 Path of Ancestry\n1 Tainted Isle\n1 Temple of the False God\n7 Island\n6 Island\n6 Swamp\n6 Swamp",
   "oracleCards": [
@@ -75,8 +75,7 @@
       "tags": [
         "instant",
         "draw",
-        "counterspell",
-        "counter-kind:generic"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -534,8 +533,10 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counterspell",
         "sacrifice",
-        "counter-kind:generic"
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -610,8 +611,7 @@
       "tags": [
         "creature",
         "instant",
-        "counterspell",
-        "counter-kind:generic"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -722,6 +722,7 @@
       "tags": [
         "artifact",
         "mana",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -740,6 +741,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -985,7 +987,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "instant"
+        "instant",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -1003,7 +1006,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1040,7 +1045,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "wipe"
+        "wipe",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -1227,18 +1233,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1276,9 +1283,7 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counterspell",
-        "counter-kind:generic",
-        "stax"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -1525,23 +1530,23 @@
   ],
   "result": {
     "profile": {
-      "median": 36,
-      "floor": 26,
-      "ceiling": 47,
+      "median": 37,
+      "floor": 25,
+      "ceiling": 48,
       "peak": 67,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 67,
-      "commanderDelta": 6,
+      "dispersion": 22,
+      "variance": 22,
+      "consistency": 66,
+      "commanderDelta": 7,
       "coverage": 89,
       "dataCoverage": 89
     },
     "dimensions": {
       "speed": 41,
-      "consistency": 67,
+      "consistency": 66,
       "explosiveness": 15,
       "synergy": 1,
-      "interaction": 44,
+      "interaction": 47,
       "resilience": 29
     },
     "roles": {
@@ -1550,12 +1555,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 9,
-      "interaction": 8,
+      "draw": 10,
+      "interaction": 9,
       "protection": 0,
       "recursion": 0,
       "wipes": 4,
-      "avgCmc": 3.4,
+      "avgCmc": 3.4166666666666665,
       "unknownManaLands": 0
     },
     "packages": [],
@@ -1579,13 +1584,13 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 34,
-      "median": 41,
-      "high": 48,
-      "ceiling": 48,
-      "peak": 64,
+      "floor": 35,
+      "median": 43,
+      "high": 50,
+      "ceiling": 50,
+      "peak": 65,
       "iqr": 11,
-      "consistency": 76,
+      "consistency": 75,
       "commanderMedianTurn": 3,
       "engineMedianTurn": null,
       "recoveryAfterDisruption": 92,
@@ -1595,30 +1600,30 @@
           "commander": 0,
           "engine": 0,
           "interaction": 9,
-          "resource": 11,
+          "resource": 10,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 3,
+          "commander": 9,
           "engine": 0,
-          "interaction": 22,
-          "resource": 22,
-          "burst": 0
+          "interaction": 24,
+          "resource": 24,
+          "burst": 1
         },
         {
           "turn": 3,
-          "commander": 68,
+          "commander": 71,
           "engine": 0,
-          "interaction": 35,
-          "resource": 44,
+          "interaction": 38,
+          "resource": 45,
           "burst": 6
         },
         {
           "turn": 4,
-          "commander": 92,
+          "commander": 93,
           "engine": 0,
-          "interaction": 47,
+          "interaction": 51,
           "resource": 59,
           "burst": 9
         },
@@ -1626,7 +1631,7 @@
           "turn": 5,
           "commander": 96,
           "engine": 0,
-          "interaction": 55,
+          "interaction": 60,
           "resource": 66,
           "burst": 10
         },
@@ -1634,7 +1639,7 @@
           "turn": 6,
           "commander": 98,
           "engine": 0,
-          "interaction": 61,
+          "interaction": 67,
           "resource": 70,
           "burst": 11
         },
@@ -1642,7 +1647,7 @@
           "turn": 7,
           "commander": 98,
           "engine": 0,
-          "interaction": 66,
+          "interaction": 71,
           "resource": 74,
           "burst": 13
         }
@@ -1666,8 +1671,7 @@
         "tags": [
           "instant",
           "draw",
-          "counterspell",
-          "counter-kind:generic"
+          "counterspell"
         ],
         "aeon": null
       },
@@ -1675,8 +1679,20 @@
         "name": "Sol Ring",
         "impact": 3,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mind Stone",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -1704,18 +1720,8 @@
         "impact": 2,
         "tags": [
           "creature",
-          "wipe"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Spell Stutter",
-        "impact": 2,
-        "tags": [
-          "instant",
-          "counterspell",
-          "counter-kind:generic",
-          "stax"
+          "wipe",
+          "graveyard-setup"
         ],
         "aeon": null
       },

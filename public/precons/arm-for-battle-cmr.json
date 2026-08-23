@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 42,
+    "median": 43,
     "p20": 34,
     "p80": 51,
-    "peak": 69,
+    "peak": 68,
     "coverage": 88,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "e9284fb3b7eb72e162df4300a31f514f8d669d44492dddce750f3f6214073cd3",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "abac55013aa5571073bd4db6cf731acb0d1ab4c3446f9fef407412eb15ffd86c",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Oreskos Explorer\n1 Relic Seeker\n1 Sram, Senior Edificer\n1 Brass Squire\n1 Danitha Capashen, Paragon\n1 Dualcaster Mage\n1 Flickerwisp\n1 Ironclad Slayer\n1 Kor Cartographer\n1 Odric, Lunarch Marshal\n1 Tiana, Ship's Caretaker\n1 Condemn\n1 Expedite\n1 Swords to Plowshares\n1 Abrade\n1 Boros Charm\n1 Comet Storm\n1 Dawn Charm\n1 Deflecting Palm\n1 Disenchant\n1 Fists of Flame\n1 Temur Battle Rage\n1 Valorous Stance\n1 Generous Gift\n1 Unbreakable Formation\n1 Volcanic Fallout\n1 Wear // Tear\n1 White Sun's Zenith\n1 Master Warcraft\n1 Return to Dust\n1 Wild Ricochet\n1 Word of Seizing\n1 Response // Resurgence\n1 Jaya's Immolating Inferno\n1 Martial Coup\n1 Relentless Assault\n1 Winds of Rath\n1 Bonesplitter\n1 Explorer's Scope\n1 Sol Ring\n1 Blackblade Reforged\n1 Blazing Sunsteel\n1 Boros Signet\n1 Hero's Blade\n1 Mask of Avacyn\n1 Ring of Thune\n1 Ring of Valkas\n1 Swiftfoot Boots\n1 Fireshrieker\n1 Haunted Cloak\n1 Loxodon Warhammer\n1 Sunforger\n1 Sword of Vengeance\n1 Sigarda's Aid\n1 Spirit Mantle\n1 Timely Ward\n1 Unquestioned Authority\n1 Faith Unbroken\n1 On Serra's Wings\n1 Boros Garrison\n1 Boros Guildgate\n1 Command Tower\n1 Encroaching Wastes\n1 Evolving Wilds\n1 Forgotten Cave\n1 Memorial to War\n5 Mountain\n4 Mountain\n1 Myriad Landscape\n7 Plains\n7 Plains\n1 Rogue's Passage\n1 Rupture Spire\n1 Secluded Steppe\n1 Slayers' Stronghold\n1 Stone Quarry\n1 Sunhome, Fortress of the Legion\n1 Terramorphic Expanse\n1 Transguild Promenade\n1 Wind-Scarred Crag",
   "oracleCards": [
@@ -261,7 +261,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "removal"
       ],
       "isCommander": false
     },
@@ -298,8 +299,7 @@
       "tags": [
         "instant",
         "counterspell",
-        "protection",
-        "counter-kind:generic"
+        "protection"
       ],
       "isCommander": false
     },
@@ -441,6 +441,7 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "removal",
         "etb"
       ],
       "isCommander": false
@@ -493,8 +494,8 @@
       "tags": [
         "creature",
         "tempo-interaction",
-        "blink",
-        "etb"
+        "etb",
+        "blink"
       ],
       "isCommander": false
     },
@@ -860,7 +861,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "tutor"
+        "tutor",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1039,18 +1042,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1512,14 +1516,14 @@
   ],
   "result": {
     "profile": {
-      "median": 42,
+      "median": 43,
       "floor": 34,
       "ceiling": 51,
-      "peak": 69,
+      "peak": 68,
       "dispersion": 17,
       "variance": 17,
       "consistency": 74,
-      "commanderDelta": 6,
+      "commanderDelta": 7,
       "coverage": 88,
       "dataCoverage": 88
     },
@@ -1528,8 +1532,8 @@
       "consistency": 74,
       "explosiveness": 15,
       "synergy": 0,
-      "interaction": 68,
-      "resilience": 39
+      "interaction": 74,
+      "resilience": 40
     },
     "roles": {
       "lands": 40,
@@ -1538,11 +1542,11 @@
       "tutors": 2,
       "repeatableTutors": 1,
       "draw": 4,
-      "interaction": 11,
+      "interaction": 13,
       "protection": 10,
       "recursion": 1,
       "wipes": 2,
-      "avgCmc": 2.6610169491525424,
+      "avgCmc": 2.6779661016949152,
       "unknownManaLands": 0
     },
     "packages": [],
@@ -1560,13 +1564,13 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
-      "median": 38,
-      "high": 45,
-      "ceiling": 45,
+      "floor": 34,
+      "median": 40,
+      "high": 46,
+      "ceiling": 46,
       "peak": 59,
       "iqr": 10,
-      "consistency": 79,
+      "consistency": 78,
       "commanderMedianTurn": 3,
       "engineMedianTurn": null,
       "recoveryAfterDisruption": 80,
@@ -1575,39 +1579,39 @@
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 20,
+          "interaction": 23,
           "resource": 3,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 3,
           "engine": 0,
-          "interaction": 41,
-          "resource": 19,
-          "burst": 0
+          "interaction": 49,
+          "resource": 21,
+          "burst": 1
         },
         {
           "turn": 3,
-          "commander": 71,
+          "commander": 73,
           "engine": 0,
-          "interaction": 62,
+          "interaction": 68,
           "resource": 36,
-          "burst": 7
+          "burst": 8
         },
         {
           "turn": 4,
           "commander": 90,
           "engine": 0,
-          "interaction": 70,
-          "resource": 42,
+          "interaction": 76,
+          "resource": 43,
           "burst": 10
         },
         {
           "turn": 5,
           "commander": 94,
           "engine": 0,
-          "interaction": 75,
+          "interaction": 81,
           "resource": 46,
           "burst": 11
         },
@@ -1615,7 +1619,7 @@
           "turn": 6,
           "commander": 96,
           "engine": 0,
-          "interaction": 78,
+          "interaction": 84,
           "resource": 49,
           "burst": 12
         },
@@ -1623,7 +1627,7 @@
           "turn": 7,
           "commander": 97,
           "engine": 0,
-          "interaction": 81,
+          "interaction": 87,
           "resource": 52,
           "burst": 13
         }
@@ -1646,6 +1650,7 @@
         "name": "Sol Ring",
         "impact": 3,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
@@ -1687,8 +1692,7 @@
         "tags": [
           "instant",
           "counterspell",
-          "protection",
-          "counter-kind:generic"
+          "protection"
         ],
         "aeon": null
       },
@@ -1734,8 +1738,8 @@
         "tags": [
           "creature",
           "tempo-interaction",
-          "blink",
-          "etb"
+          "etb",
+          "blink"
         ],
         "aeon": null
       },

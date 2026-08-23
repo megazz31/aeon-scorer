@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 39,
-    "p20": 30,
-    "p80": 47,
-    "peak": 74,
-    "coverage": 92,
+    "p20": 29,
+    "p80": 49,
+    "peak": 79,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "1f4798b0b266daca140cb8b69e639a6a3c67bbc72e35aa5f845b7128e35ea608",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "94132215839388be146dc58464815d2da0545d99b404ac3fe4f589fef7c4e1dc",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Abomination of Llanowar\n1 Beast Whisperer\n1 Canopy Tactician\n1 Cultivator of Blades\n1 Dwynen, Gilt-Leaf Daen\n1 Elderfang Ritualist\n1 Elvish Archdruid\n1 Elvish Mystic\n1 Elvish Rejuvenator\n1 End-Raze Forerunners\n1 Eyeblight Cullers\n1 Farhaven Elf\n1 Golgari Findbroker\n1 Harald, King of Skemfar\n1 Imperious Perfect\n1 Jagged-Scar Archers\n1 Jaspera Sentinel\n1 Llanowar Tribe\n1 Lys Alana Huntmaster\n1 Lys Alana Scarblade\n1 Marwyn, the Nurturer\n1 Masked Admirers\n1 Miara, Thorn of the Glade\n1 Nullmage Shepherd\n1 Numa, Joraga Chieftain\n1 Poison-Tip Archer\n1 Reclamation Sage\n1 Rhys the Exiled\n1 Ruthless Winnower\n1 Shaman of the Pack\n1 Skemfar Shadowsage\n1 Springbloom Druid\n1 Sylvan Messenger\n1 Timberwatch Elf\n1 Twinblade Assassins\n1 Voice of Many\n1 Voice of the Woods\n1 Wirewood Channeler\n1 Wolverine Riders\n1 Wood Elves\n1 Elven Ambush\n1 Poison the Cup\n1 Putrefy\n1 Tergrid's Shadow\n1 Ambition's Cost\n1 Bounty of Skemfar\n1 Casualties of War\n1 Eyeblight Massacre\n1 Elvish Promenade\n1 Harvest Season\n1 Pact of the Serpent\n1 Return Upon the Tide\n1 Roots of Wisdom\n1 Arcane Signet\n1 Serpent's Soul-Jar\n1 Sol Ring\n1 Binding the Old Gods\n1 Crown of Skemfar\n1 Elderfang Venom\n1 Pride of the Perfect\n1 Prowess of the Fair\n1 Moldervine Reclamation\n1 Command Tower\n16 Forest\n1 Foul Orchard\n1 Golgari Guildgate\n1 Golgari Rot Farm\n1 Jungle Hollow\n1 Myriad Landscape\n1 Path of Ancestry\n1 Skemfar Elderhall\n13 Swamp",
   "oracleCards": [
@@ -247,7 +247,10 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "tokens",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -303,6 +306,7 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "death-payoff",
         "lifegain"
       ],
       "isCommander": false
@@ -434,6 +438,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "graveyard-setup",
         "tokens",
         "death-payoff"
       ],
@@ -1119,7 +1124,8 @@
       "tags": [
         "sorcery",
         "draw",
-        "recursion"
+        "recursion",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -1154,7 +1160,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "exile-cast"
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -1222,18 +1228,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1405,7 +1412,8 @@
         "W"
       ],
       "tags": [
-        "creature"
+        "creature",
+        "mana"
       ],
       "isCommander": false
     },
@@ -1452,23 +1460,23 @@
   "result": {
     "profile": {
       "median": 39,
-      "floor": 30,
-      "ceiling": 47,
-      "peak": 74,
-      "dispersion": 16,
-      "variance": 16,
-      "consistency": 70,
+      "floor": 29,
+      "ceiling": 49,
+      "peak": 79,
+      "dispersion": 21,
+      "variance": 21,
+      "consistency": 68,
       "commanderDelta": 9,
-      "coverage": 92,
-      "dataCoverage": 92
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
       "speed": 34,
-      "consistency": 70,
-      "explosiveness": 11,
-      "synergy": 55,
+      "consistency": 68,
+      "explosiveness": 12,
+      "synergy": 56,
       "interaction": 27,
-      "resilience": 44
+      "resilience": 45
     },
     "roles": {
       "lands": 37,
@@ -1481,7 +1489,7 @@
       "protection": 0,
       "recursion": 6,
       "wipes": 1,
-      "avgCmc": 3.5806451612903225,
+      "avgCmc": 3.596774193548387,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1684,15 +1692,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -1738,12 +1747,213 @@
           }
         ],
         "evidence": "0 accélérateur(s) burst + 11 source(s) persistante(s) vers un commandant MV 4."
+      },
+      {
+        "id": "graveyard",
+        "name": "Cimetière / récursion",
+        "strength": 59,
+        "cohesion": 59,
+        "producers": [
+          "Eyeblight Cullers",
+          "Roots of Wisdom"
+        ],
+        "payoffs": [
+          "Crown of Skemfar",
+          "Elderfang Ritualist",
+          "Golgari Findbroker",
+          "Masked Admirers",
+          "Return Upon the Tide",
+          "Roots of Wisdom"
+        ],
+        "members": [
+          "Eyeblight Cullers",
+          "Roots of Wisdom",
+          "Crown of Skemfar",
+          "Elderfang Ritualist",
+          "Golgari Findbroker",
+          "Masked Admirers",
+          "Return Upon the Tide"
+        ],
+        "producerCards": [
+          {
+            "name": "Eyeblight Cullers",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "graveyard-setup",
+              "tokens",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Roots of Wisdom",
+            "cmc": 2,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Crown of Skemfar",
+            "cmc": 4,
+            "tags": [
+              "enchantment",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Elderfang Ritualist",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "recursion",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Golgari Findbroker",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Masked Admirers",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "draw",
+              "recursion",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Return Upon the Tide",
+            "cmc": 5,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Roots of Wisdom",
+            "cmc": 2,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          }
+        ],
+        "producerTags": [
+          "graveyard-setup"
+        ],
+        "payoffTags": [
+          "recursion"
+        ],
+        "evidence": "2 producteur(s), 6 payoff(s), 7 carte(s) distincte(s)."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 44,
+      "score": 47,
       "connected": [
+        "Cultivator of Blades",
         "Dwynen, Gilt-Leaf Daen",
         "Elderfang Venom",
         "Elven Ambush",
@@ -1777,15 +1987,15 @@
     "simulation": {
       "iterations": 3200,
       "floor": 30,
-      "median": 36,
-      "high": 41,
-      "ceiling": 41,
-      "peak": 62,
-      "iqr": 9,
-      "consistency": 80,
+      "median": 37,
+      "high": 44,
+      "ceiling": 44,
+      "peak": 67,
+      "iqr": 11,
+      "consistency": 77,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": null,
-      "recoveryAfterDisruption": 80,
+      "engineMedianTurn": 6,
+      "recoveryAfterDisruption": 81,
       "turnProfile": [
         {
           "turn": 1,
@@ -1797,48 +2007,48 @@
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 2,
           "engine": 0,
-          "interaction": 8,
-          "resource": 12,
+          "interaction": 9,
+          "resource": 14,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 16,
+          "commander": 19,
           "engine": 0,
-          "interaction": 15,
-          "resource": 23,
+          "interaction": 17,
+          "resource": 25,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 62,
-          "engine": 0,
+          "commander": 63,
+          "engine": 2,
           "interaction": 31,
-          "resource": 51,
+          "resource": 53,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 86,
-          "engine": 0,
-          "interaction": 41,
-          "resource": 69,
+          "engine": 5,
+          "interaction": 42,
+          "resource": 70,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 93,
-          "engine": 0,
-          "interaction": 48,
-          "resource": 76,
+          "engine": 9,
+          "interaction": 49,
+          "resource": 77,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 95,
-          "engine": 0,
+          "engine": 12,
           "interaction": 53,
           "resource": 81,
           "burst": 0
@@ -1850,6 +2060,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
@@ -1857,7 +2068,7 @@
       },
       {
         "name": "Masked Admirers",
-        "impact": 2.9,
+        "impact": 3.6,
         "tags": [
           "creature",
           "draw",
@@ -1868,11 +2079,12 @@
       },
       {
         "name": "Roots of Wisdom",
-        "impact": 2.5,
+        "impact": 3.2,
         "tags": [
           "sorcery",
           "draw",
-          "recursion"
+          "recursion",
+          "graveyard-setup"
         ],
         "aeon": null
       },
@@ -1916,6 +2128,16 @@
         "aeon": null
       },
       {
+        "name": "Return Upon the Tide",
+        "impact": 2,
+        "tags": [
+          "sorcery",
+          "recursion",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Arcane Signet",
         "impact": 1.9,
         "tags": [
@@ -1949,15 +2171,6 @@
         "tags": [
           "creature",
           "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Bounty of Skemfar",
-        "impact": 1.8,
-        "tags": [
-          "sorcery",
-          "land-ramp"
         ],
         "aeon": null
       }

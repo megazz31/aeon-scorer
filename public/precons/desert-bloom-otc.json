@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 44,
-    "p20": 34,
-    "p80": 55,
+    "median": 46,
+    "p20": 35,
+    "p80": 56,
     "peak": 86,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "33d5e6b8c75c989737a0b7d846ee2ac338483afec6aec740cc976645e64f49e9",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "e0ecccbe861fe37463acf790a832926554ee96cc93c8be2e5ade216e01af8023",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Kirri, Talented Sprout\n1 Scavenger Grounds\n1 Sun Titan\n1 Omnath, Locus of Rage\n1 Descend upon the Sinful\n1 Chromatic Lantern\n1 Marshal's Anthem\n1 Sheltered Thicket\n1 Scute Swarm\n1 Hour of Promise\n1 Oracle of Mul Daya\n1 Ramunap Excavator\n1 Scattered Groves\n1 World Shaper\n1 Nesting Dragon\n1 Turntimber Sower\n1 Sevinne's Reclamation\n1 Ancient Greenwarden\n1 Titania, Protector of Argoth\n1 Return of the Wildspeaker\n1 Perennial Behemoth\n1 Avenger of Zendikar\n1 Hazezon, Shaper of Sand\n1 Escape to the Wilds\n1 Heaven // Earth\n1 Genesis Hydra\n1 Sunscorched Divide\n1 The Mending of Dominaria\n1 Decimate\n1 Sand Scout\n1 Embrace the Unknown\n1 Dune Chanter\n1 Cataclysmic Prospecting\n1 Vengeful Regrowth\n1 Angel of Indemnity\n1 Cactus Preserve\n1 Rumbleweed\n1 Terramorphic Expanse\n1 Evolving Wilds\n1 Swiftfoot Boots\n1 Explore\n1 Sol Ring\n1 Satyr Wayfinder\n1 Perpetual Timepiece\n1 Crawling Sensation\n1 Painted Bluffs\n1 Command Tower\n1 Magmatic Insight\n1 Krosan Verge\n1 Desert of the True\n1 Skullwinder\n1 Desert of the Indomitable\n1 Jungle Shrine\n1 Bitter Reunion\n1 Desert of the Fervent\n1 Valorous Stance\n1 Dunes of the Dead\n1 Shefet Dunes\n1 Hashep Oasis\n1 Elvish Rejuvenator\n1 Winding Way\n1 Springbloom Druid\n1 Arcane Signet\n1 Unholy Heat\n1 Thrilling Discovery\n1 Electric Revelation\n1 Eccentric Farmer\n1 Harrow\n1 Ramunap Ruins\n1 Path to Exile\n1 Requisition Raid\n1 Bovine Intervention\n1 Map the Frontier\n1 Conduit Pylons\n1 Mirage Mesa\n1 Wreck and Rebuild\n1 Angel of the Ruins\n1 Bristling Backwoods\n1 Creosote Heath\n1 Abraded Bluffs\n1 Scaretiller\n1 Nantuko Cultivator\n3 Plains\n3 Plains\n2 Mountain\n2 Mountain\n4 Forest\n3 Forest",
   "oracleCards": [
@@ -354,6 +354,7 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "graveyard-setup",
         "tokens"
       ],
       "isCommander": false
@@ -503,6 +504,7 @@
       "tags": [
         "creature",
         "mana",
+        "graveyard-setup",
         "lifegain"
       ],
       "isCommander": false
@@ -541,6 +543,7 @@
       "tags": [
         "creature",
         "recursion",
+        "graveyard-setup",
         "etb"
       ],
       "isCommander": false
@@ -972,8 +975,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "draw",
         "etb",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1109,7 +1112,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -1205,7 +1209,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1427,18 +1432,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1551,7 +1557,8 @@
       "producedMana": [],
       "tags": [
         "enchantment",
-        "recursion"
+        "recursion",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -1703,6 +1710,7 @@
       "tags": [
         "creature",
         "recursion",
+        "graveyard-setup",
         "death-payoff"
       ],
       "isCommander": false
@@ -1723,7 +1731,8 @@
       "tags": [
         "sorcery",
         "land-ramp",
-        "removal"
+        "removal",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -1753,23 +1762,23 @@
   ],
   "result": {
     "profile": {
-      "median": 44,
-      "floor": 34,
-      "ceiling": 55,
+      "median": 46,
+      "floor": 35,
+      "ceiling": 56,
       "peak": 86,
       "dispersion": 21,
       "variance": 21,
-      "consistency": 69,
+      "consistency": 68,
       "commanderDelta": 3,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
-      "speed": 31,
-      "consistency": 69,
+      "speed": 32,
+      "consistency": 68,
       "explosiveness": 13,
       "synergy": 75,
-      "interaction": 40,
+      "interaction": 41,
       "resilience": 84
     },
     "roles": {
@@ -1783,7 +1792,7 @@
       "protection": 2,
       "recursion": 17,
       "wipes": 1,
-      "avgCmc": 3.559322033898305,
+      "avgCmc": 3.5762711864406778,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1795,8 +1804,14 @@
         "producers": [
           "Bitter Reunion",
           "Conduit Pylons",
+          "Crawling Sensation",
+          "Dune Chanter",
+          "Eccentric Farmer",
           "Electric Revelation",
-          "Thrilling Discovery"
+          "Perpetual Timepiece",
+          "The Mending of Dominaria",
+          "Thrilling Discovery",
+          "World Shaper"
         ],
         "payoffs": [
           "Ancient Greenwarden",
@@ -1813,11 +1828,17 @@
         "members": [
           "Bitter Reunion",
           "Conduit Pylons",
+          "Crawling Sensation",
+          "Dune Chanter",
+          "Eccentric Farmer",
           "Electric Revelation",
+          "Perpetual Timepiece",
+          "The Mending of Dominaria",
           "Thrilling Discovery",
+          "World Shaper",
+          "Wreck and Rebuild",
           "Ancient Greenwarden",
           "Angel of Indemnity",
-          "Eccentric Farmer",
           "Hazezon, Shaper of Sand",
           "Kirri, Talented Sprout",
           "Marshal's Anthem",
@@ -1827,11 +1848,9 @@
           "Sevinne's Reclamation",
           "Skullwinder",
           "Sun Titan",
-          "The Mending of Dominaria",
           "Titania, Protector of Argoth",
           "Turntimber Sower",
-          "Vengeful Regrowth",
-          "World Shaper"
+          "Vengeful Regrowth"
         ],
         "producerCards": [
           {
@@ -1870,6 +1889,62 @@
             }
           },
           {
+            "name": "Crawling Sensation",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "graveyard-setup",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Dune Chanter",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "mana",
+              "graveyard-setup",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Eccentric Farmer",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "recursion",
+              "graveyard-setup",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
             "name": "Electric Revelation",
             "cmc": 3,
             "tags": [
@@ -1885,6 +1960,40 @@
                 ]
               ],
               "total": 3
+            }
+          },
+          {
+            "name": "Perpetual Timepiece",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "The Mending of Dominaria",
+            "cmc": 5,
+            "tags": [
+              "enchantment",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 5
             }
           },
           {
@@ -1907,6 +2016,47 @@
                 ]
               ],
               "total": 2
+            }
+          },
+          {
+            "name": "World Shaper",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion",
+              "graveyard-setup",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Wreck and Rebuild",
+            "cmc": 3,
+            "tags": [
+              "sorcery",
+              "land-ramp",
+              "removal",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
             }
           }
         ],
@@ -1957,6 +2107,7 @@
             "tags": [
               "creature",
               "recursion",
+              "graveyard-setup",
               "etb"
             ],
             "manaReq": {
@@ -2145,7 +2296,8 @@
             "cmc": 5,
             "tags": [
               "enchantment",
-              "recursion"
+              "recursion",
+              "graveyard-setup"
             ],
             "manaReq": {
               "generic": 3,
@@ -2228,6 +2380,7 @@
             "tags": [
               "creature",
               "recursion",
+              "graveyard-setup",
               "death-payoff"
             ],
             "manaReq": {
@@ -2247,7 +2400,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "4 producteur(s), 17 payoff(s), 21 carte(s) distincte(s)."
+        "evidence": "11 producteur(s), 17 payoff(s), 25 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2426,7 +2579,8 @@
             "tags": [
               "sorcery",
               "land-ramp",
-              "removal"
+              "removal",
+              "graveyard-setup"
             ],
             "manaReq": {
               "generic": 1,
@@ -2606,6 +2760,7 @@
             "tags": [
               "creature",
               "mana",
+              "graveyard-setup",
               "lifegain"
             ],
             "manaReq": {
@@ -2656,15 +2811,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2673,7 +2829,8 @@
             "tags": [
               "sorcery",
               "land-ramp",
-              "removal"
+              "removal",
+              "graveyard-setup"
             ],
             "manaReq": {
               "generic": 1,
@@ -2752,13 +2909,13 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 28,
-      "median": 35,
-      "high": 43,
-      "ceiling": 43,
-      "peak": 71,
+      "floor": 31,
+      "median": 38,
+      "high": 46,
+      "ceiling": 46,
+      "peak": 74,
       "iqr": 12,
-      "consistency": 74,
+      "consistency": 73,
       "commanderMedianTurn": 7,
       "engineMedianTurn": 5,
       "recoveryAfterDisruption": 84,
@@ -2775,30 +2932,30 @@
           "turn": 2,
           "commander": 0,
           "engine": 0,
-          "interaction": 26,
-          "resource": 11,
+          "interaction": 27,
+          "resource": 13,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 0,
-          "engine": 3,
-          "interaction": 34,
-          "resource": 34,
+          "engine": 6,
+          "interaction": 35,
+          "resource": 37,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 0,
-          "engine": 15,
-          "interaction": 42,
-          "resource": 64,
+          "engine": 26,
+          "interaction": 43,
+          "resource": 65,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 3,
-          "engine": 31,
+          "engine": 51,
           "interaction": 49,
           "resource": 83,
           "burst": 0
@@ -2806,7 +2963,7 @@
         {
           "turn": 6,
           "commander": 11,
-          "engine": 43,
+          "engine": 67,
           "interaction": 55,
           "resource": 89,
           "burst": 0
@@ -2814,7 +2971,7 @@
         {
           "turn": 7,
           "commander": 24,
-          "engine": 52,
+          "engine": 75,
           "interaction": 59,
           "resource": 93,
           "burst": 0
@@ -2833,6 +2990,17 @@
         "aeon": null
       },
       {
+        "name": "Wreck and Rebuild",
+        "impact": 4,
+        "tags": [
+          "sorcery",
+          "land-ramp",
+          "removal",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Scaretiller",
         "impact": 3.7,
         "tags": [
@@ -2847,18 +3015,9 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Wreck and Rebuild",
-        "impact": 3.3,
-        "tags": [
-          "sorcery",
-          "land-ramp",
-          "removal"
         ],
         "aeon": null
       },
@@ -2907,6 +3066,17 @@
         "aeon": null
       },
       {
+        "name": "Dune Chanter",
+        "impact": 2.5,
+        "tags": [
+          "creature",
+          "mana",
+          "graveyard-setup",
+          "lifegain"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Elvish Rejuvenator",
         "impact": 2.5,
         "tags": [
@@ -2935,16 +3105,6 @@
           "recursion",
           "tokens",
           "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Electric Revelation",
-        "impact": 2.4,
-        "tags": [
-          "instant",
-          "draw",
-          "graveyard-setup"
         ],
         "aeon": null
       }

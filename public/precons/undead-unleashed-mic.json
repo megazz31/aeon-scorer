@@ -29,15 +29,15 @@
   "analysis": {
     "median": 49,
     "p20": 37,
-    "p80": 58,
+    "p80": 60,
     "peak": 88,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "4a01325fd9588878861060df74c4747e4bea6ab9d613d7cbbba71432a1a38aa0",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "a2fad3e921fc7e5af3316bec4a816e86486239ec71cfaf8fd8ff6a4e013e4276",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Liliana, Death's Majesty\n1 Forgotten Creation\n1 Havengul Runebinder\n1 Stitcher Geralf\n1 Undead Alchemist\n1 Butcher of Malakir\n1 Cemetery Reaper\n1 Death Baron\n1 Diregraf Colossus\n1 Eater of Hope\n1 Gravespawn Sovereign\n1 Midnight Reaper\n1 Overseer of the Damned\n1 Gisa and Geralf\n1 Eternal Skylord\n1 Corpse Augur\n1 Fleshbag Marauder\n1 Liliana's Devotee\n1 Lord of the Accursed\n1 Spark Reaper\n1 Undead Augur\n1 Diregraf Captain\n1 Gleaming Overseer\n1 Ruthless Deathfang\n1 Hour of Eternity\n1 Army of the Damned\n1 Dark Salvation\n1 Dread Summons\n1 Zombie Apocalypse\n1 Distant Melody\n1 Feed the Swarm\n1 Syphon Flesh\n1 Aetherspouts\n1 Go for the Throat\n1 Arcane Signet\n1 Charcoal Diamond\n1 Commander's Sphere\n1 Sky Diamond\n1 Sol Ring\n1 Talisman of Dominance\n1 Rooftop Storm\n1 Dreadhorde Invasion\n1 Endless Ranks of the Dead\n1 Liliana's Mastery\n1 Open the Graves\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Sunken Hollow\n1 Temple of Deceit\n1 Bojuka Bog\n1 Command Tower\n1 Dimir Aqueduct\n1 Mortuary Mire\n1 Myriad Landscape\n1 Path of Ancestry\n1 Tainted Isle\n1 Unclaimed Territory\n12 Island\n15 Swamp\n1 Eloise, Nephalia Sleuth\n1 Cleaver Skaab\n1 Curse of Unbinding\n1 Drown in Dreams\n1 Empty the Laboratory\n1 Hordewing Skaab\n1 Shadow Kin\n1 Crowded Crypt\n1 Curse of the Restless Dead\n1 Ghouls' Night Out\n1 Gorex, the Tombshell\n1 Prowling Geistcatcher\n1 Ravenous Rotbelly\n1 Tomb Tyrant",
   "oracleCards": [
@@ -260,6 +260,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -304,6 +305,7 @@
         "tokens",
         "sacrifice",
         "death-payoff",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:any"
       ],
@@ -516,7 +518,10 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "tokens",
         "token-payoff",
+        "counter-producer",
+        "counter-kind:plus1",
         "lifegain"
       ],
       "isCommander": false
@@ -575,6 +580,7 @@
       "tags": [
         "creature",
         "graveyard-setup",
+        "tokens",
         "token-payoff",
         "sacrifice",
         "death-payoff"
@@ -631,8 +637,11 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "tokens",
         "token-payoff",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -746,6 +755,7 @@
       "tags": [
         "creature",
         "recursion",
+        "graveyard-setup",
         "etb"
       ],
       "isCommander": false
@@ -766,8 +776,11 @@
       "tags": [
         "creature",
         "protection",
+        "tokens",
         "token-payoff",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -857,7 +870,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -913,6 +927,7 @@
       "tags": [
         "wipe",
         "recursion",
+        "graveyard-setup",
         "tokens"
       ],
       "isCommander": false
@@ -1210,18 +1225,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1521,21 +1537,21 @@
     "profile": {
       "median": 49,
       "floor": 37,
-      "ceiling": 58,
+      "ceiling": 60,
       "peak": 88,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 65,
+      "dispersion": 23,
+      "variance": 23,
+      "consistency": 62,
       "commanderDelta": 13,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 32,
-      "consistency": 65,
-      "explosiveness": 14,
-      "synergy": 87,
-      "interaction": 51,
+      "consistency": 62,
+      "explosiveness": 13,
+      "synergy": 88,
+      "interaction": 52,
       "resilience": 44
     },
     "roles": {
@@ -1544,12 +1560,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 7,
+      "draw": 9,
       "interaction": 9,
       "protection": 1,
       "recursion": 5,
       "wipes": 3,
-      "avgCmc": 3.9491525423728815,
+      "avgCmc": 3.9661016949152543,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1566,9 +1582,9 @@
           "Curse of the Restless Dead",
           "Diregraf Colossus",
           "Dread Summons",
-          "Endless Ranks of the Dead",
-          "Havengul Runebinder",
-          "Hour of Eternity"
+          "Dreadhorde Invasion",
+          "Eloise, Nephalia Sleuth",
+          "Endless Ranks of the Dead"
         ],
         "payoffs": [
           "Dreadhorde Invasion",
@@ -1584,7 +1600,11 @@
           "Curse of the Restless Dead",
           "Diregraf Colossus",
           "Dread Summons",
+          "Dreadhorde Invasion",
+          "Eloise, Nephalia Sleuth",
           "Endless Ranks of the Dead",
+          "Eternal Skylord",
+          "Gleaming Overseer",
           "Havengul Runebinder",
           "Hour of Eternity",
           "Liliana's Devotee",
@@ -1594,11 +1614,7 @@
           "Overseer of the Damned",
           "Stitcher Geralf",
           "Syphon Flesh",
-          "Undead Alchemist",
-          "Dreadhorde Invasion",
-          "Eloise, Nephalia Sleuth",
-          "Eternal Skylord",
-          "Gleaming Overseer"
+          "Undead Alchemist"
         ],
         "producerCards": [
           {
@@ -1672,6 +1688,7 @@
               "tokens",
               "sacrifice",
               "death-payoff",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:any"
             ],
@@ -1745,6 +1762,51 @@
             }
           },
           {
+            "name": "Dreadhorde Invasion",
+            "cmc": 2,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "token-payoff",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Eloise, Nephalia Sleuth",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "graveyard-setup",
+              "tokens",
+              "token-payoff",
+              "sacrifice",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
             "name": "Endless Ranks of the Dead",
             "cmc": 4,
             "tags": [
@@ -1762,6 +1824,52 @@
                 ]
               ],
               "total": 4
+            }
+          },
+          {
+            "name": "Eternal Skylord",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens",
+              "token-payoff",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Gleaming Overseer",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "protection",
+              "tokens",
+              "token-payoff",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
             }
           },
           {
@@ -1853,6 +1961,7 @@
             "tags": [
               "wipe",
               "recursion",
+              "graveyard-setup",
               "tokens"
             ],
             "manaReq": {
@@ -1972,7 +2081,10 @@
             "cmc": 2,
             "tags": [
               "enchantment",
+              "tokens",
               "token-payoff",
+              "counter-producer",
+              "counter-kind:plus1",
               "lifegain"
             ],
             "manaReq": {
@@ -1991,6 +2103,7 @@
             "tags": [
               "creature",
               "graveyard-setup",
+              "tokens",
               "token-payoff",
               "sacrifice",
               "death-payoff"
@@ -2013,8 +2126,11 @@
             "cmc": 5,
             "tags": [
               "creature",
+              "tokens",
               "token-payoff",
-              "etb"
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 4,
@@ -2032,8 +2148,11 @@
             "tags": [
               "creature",
               "protection",
+              "tokens",
               "token-payoff",
-              "etb"
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -2055,7 +2174,7 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "18 producteur(s), 4 payoff(s), 22 carte(s) distincte(s)."
+        "evidence": "22 producteur(s), 4 payoff(s), 22 carte(s) distincte(s)."
       },
       {
         "id": "sacrifice",
@@ -2205,6 +2324,7 @@
               "tokens",
               "sacrifice",
               "death-payoff",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:any"
             ],
@@ -2244,6 +2364,7 @@
             "tags": [
               "creature",
               "graveyard-setup",
+              "tokens",
               "token-payoff",
               "sacrifice",
               "death-payoff"
@@ -2373,6 +2494,218 @@
         "evidence": "3 producteur(s), 10 payoff(s), 13 carte(s) distincte(s)."
       },
       {
+        "id": "graveyard",
+        "name": "Cimetière / récursion",
+        "strength": 60,
+        "cohesion": 60,
+        "producers": [
+          "Eloise, Nephalia Sleuth",
+          "Gisa and Geralf",
+          "Liliana, Death's Majesty"
+        ],
+        "payoffs": [
+          "Gisa and Geralf",
+          "Gorex, the Tombshell",
+          "Liliana, Death's Majesty",
+          "Tomb Tyrant",
+          "Zombie Apocalypse"
+        ],
+        "members": [
+          "Eloise, Nephalia Sleuth",
+          "Gisa and Geralf",
+          "Liliana, Death's Majesty",
+          "Gorex, the Tombshell",
+          "Tomb Tyrant",
+          "Zombie Apocalypse"
+        ],
+        "producerCards": [
+          {
+            "name": "Eloise, Nephalia Sleuth",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "graveyard-setup",
+              "tokens",
+              "token-payoff",
+              "sacrifice",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Gisa and Geralf",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion",
+              "graveyard-setup",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Liliana, Death's Majesty",
+            "cmc": 5,
+            "tags": [
+              "wipe",
+              "recursion",
+              "graveyard-setup",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Gisa and Geralf",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion",
+              "graveyard-setup",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Gorex, the Tombshell",
+            "cmc": 8,
+            "tags": [
+              "creature",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 6,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 8
+            }
+          },
+          {
+            "name": "Liliana, Death's Majesty",
+            "cmc": 5,
+            "tags": [
+              "wipe",
+              "recursion",
+              "graveyard-setup",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Tomb Tyrant",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion",
+              "sacrifice",
+              "sac-outlet"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Zombie Apocalypse",
+            "cmc": 6,
+            "tags": [
+              "sorcery",
+              "wipe",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 6
+            }
+          }
+        ],
+        "producerTags": [
+          "graveyard-setup"
+        ],
+        "payoffTags": [
+          "recursion"
+        ],
+        "evidence": "3 producteur(s), 5 payoff(s), 6 carte(s) distincte(s)."
+      },
+      {
         "id": "early-commander",
         "name": "Accélération du commandant",
         "strength": 47,
@@ -2432,6 +2765,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2450,6 +2784,7 @@
               "tokens",
               "sacrifice",
               "death-payoff",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:any"
             ],
@@ -2479,15 +2814,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2585,71 +2921,71 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 36,
-      "median": 44,
-      "high": 51,
-      "ceiling": 51,
-      "peak": 80,
-      "iqr": 12,
-      "consistency": 74,
+      "floor": 37,
+      "median": 45,
+      "high": 54,
+      "ceiling": 54,
+      "peak": 81,
+      "iqr": 13,
+      "consistency": 71,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 83,
+      "recoveryAfterDisruption": 85,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 14,
+          "interaction": 13,
           "resource": 0,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 5,
           "engine": 0,
-          "interaction": 27,
-          "resource": 3,
+          "interaction": 30,
+          "resource": 6,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 26,
-          "engine": 2,
-          "interaction": 44,
-          "resource": 30,
+          "commander": 30,
+          "engine": 4,
+          "interaction": 45,
+          "resource": 33,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 80,
-          "engine": 19,
-          "interaction": 54,
-          "resource": 58,
+          "commander": 81,
+          "engine": 21,
+          "interaction": 55,
+          "resource": 60,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 92,
-          "engine": 34,
-          "interaction": 61,
-          "resource": 68,
+          "engine": 37,
+          "interaction": 62,
+          "resource": 72,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 95,
-          "engine": 43,
+          "engine": 47,
           "interaction": 67,
-          "resource": 75,
+          "resource": 78,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 97,
-          "engine": 50,
+          "engine": 54,
           "interaction": 73,
-          "resource": 80,
+          "resource": 83,
           "burst": 0
         }
       ]
@@ -2664,7 +3000,18 @@
           "tokens",
           "sacrifice",
           "death-payoff",
-          "counter-payoff"
+          "counter-producer"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Liliana, Death's Majesty",
+        "impact": 3.9,
+        "tags": [
+          "wipe",
+          "recursion",
+          "graveyard-setup",
+          "tokens"
         ],
         "aeon": null
       },
@@ -2672,18 +3019,33 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
         "aeon": null
       },
       {
-        "name": "Liliana, Death's Majesty",
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Eloise, Nephalia Sleuth",
         "impact": 3.2,
         "tags": [
-          "wipe",
-          "recursion",
-          "tokens"
+          "creature",
+          "graveyard-setup",
+          "tokens",
+          "token-payoff",
+          "sacrifice",
+          "death-payoff"
         ],
         "aeon": null
       },
@@ -2704,6 +3066,16 @@
           "creature",
           "draw",
           "death-payoff"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Zombie Apocalypse",
+        "impact": 2.7,
+        "tags": [
+          "sorcery",
+          "wipe",
+          "recursion"
         ],
         "aeon": null
       },
@@ -2747,37 +3119,6 @@
           "sacrifice",
           "sac-outlet",
           "lifegain"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Cemetery Reaper",
-        "impact": 2.2,
-        "tags": [
-          "creature",
-          "removal",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Forgotten Creation",
-        "impact": 2.2,
-        "tags": [
-          "creature",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Eloise, Nephalia Sleuth",
-        "impact": 2.1,
-        "tags": [
-          "creature",
-          "graveyard-setup",
-          "token-payoff",
-          "sacrifice",
-          "death-payoff"
         ],
         "aeon": null
       }

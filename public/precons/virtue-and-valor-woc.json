@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 44,
+    "median": 46,
     "p20": 34,
-    "p80": 55,
-    "peak": 83,
+    "p80": 57,
+    "peak": 84,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "2ae5eba40b1d70dd84cb24f5071bfcbba1cd69085dbd957d0787b0ce5d77076e",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "13a9e59c9902b7d524f5463c0d252b6d52bbc56ff9de06d930cd24eb476adead",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Gylwain, Casting Director\n1 Liberated Livestock\n1 Ox Drover\n1 Songbirds' Blessing\n1 Unfinished Business\n1 Giant Inheritance\n1 Knickknack Ouphe\n1 Loamcrafter Faun\n1 Timber Paladin\n1 Ajani's Chosen\n1 Angelic Destiny\n1 Archon of Sun's Grace\n1 Austere Command\n1 Celestial Archon\n1 Daybreak Coronet\n1 Eidolon of Countless Battles\n1 Kor Spiritdancer\n1 Mantle of the Ancients\n1 Realm-Cloaked Giant // Cast Off\n1 Retether\n1 Shalai, Voice of Plenty\n1 Starfield Mystic\n1 Sun Titan\n1 Timely Ward\n1 Tithe Taker\n1 Umbra Mystic\n1 Winds of Rath\n1 Bear Umbra\n1 Eidolon of Blossoms\n1 Enchantress's Presence\n1 Indomitable Might\n1 Rishkar's Expertise\n1 Sanctum Weaver\n1 Setessan Champion\n1 Verdant Embrace\n1 Canopy Vista\n1 Castle Ardenvale\n1 Fortified Village\n1 Hall of Heliod's Generosity\n1 Sungrass Prairie\n1 Temple of Plenty\n1 Danitha Capashen, Paragon\n1 Ethereal Armor\n1 Generous Gift\n1 Sage's Reverie\n1 Spectral Steel\n1 Swords to Plowshares\n1 Transcendent Envoy\n1 Ancestral Mask\n1 Aura Gnarlid\n1 Careful Cultivation\n1 Destiny Spinner\n1 Fertile Ground\n1 Kenrith's Transformation\n1 Paradise Druid\n1 Snake Umbra\n1 Sylvan Ranger\n1 Utopia Sprawl\n1 Warbriar Blessing\n1 Jukai Naturalist\n1 Pollenbright Wings\n1 Siona, Captain of the Pyleas\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Krosan Verge\n1 Myriad Landscape\n1 Vitu-Ghazi, the City-Tree\n1 Tanglespan Lookout\n1 Syr Armont, the Redeemer\n8 Forest\n7 Forest\n7 Plains\n7 Plains",
   "oracleCards": [
@@ -91,7 +91,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "enchantment"
+        "enchantment",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -911,6 +912,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "draw",
         "cheat",
         "free"
       ],
@@ -955,7 +957,8 @@
       ],
       "tags": [
         "creature",
-        "enchantment"
+        "enchantment",
+        "mana"
       ],
       "isCommander": false
     },
@@ -1041,18 +1044,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1300,7 +1304,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "stax"
       ],
       "isCommander": false
     },
@@ -1460,23 +1465,23 @@
   ],
   "result": {
     "profile": {
-      "median": 44,
+      "median": 46,
       "floor": 34,
-      "ceiling": 55,
-      "peak": 83,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 63,
+      "ceiling": 57,
+      "peak": 84,
+      "dispersion": 24,
+      "variance": 24,
+      "consistency": 62,
       "commanderDelta": 9,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 42,
-      "consistency": 63,
+      "consistency": 62,
       "explosiveness": 13,
       "synergy": 66,
-      "interaction": 22,
+      "interaction": 31,
       "resilience": 52
     },
     "roles": {
@@ -1485,12 +1490,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 9,
-      "interaction": 5,
+      "draw": 10,
+      "interaction": 6,
       "protection": 3,
       "recursion": 6,
       "wipes": 3,
-      "avgCmc": 3.283333333333333,
+      "avgCmc": 3.3,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1571,7 +1576,8 @@
             "name": "Angelic Destiny",
             "cmc": 4,
             "tags": [
-              "enchantment"
+              "enchantment",
+              "death-payoff"
             ],
             "manaReq": {
               "generic": 2,
@@ -1908,7 +1914,8 @@
             "cmc": 2,
             "tags": [
               "creature",
-              "enchantment"
+              "enchantment",
+              "mana"
             ],
             "manaReq": {
               "generic": 1,
@@ -2256,7 +2263,8 @@
             "cmc": 2,
             "tags": [
               "creature",
-              "enchantment"
+              "enchantment",
+              "mana"
             ],
             "manaReq": {
               "generic": 1,
@@ -2270,15 +2278,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2356,92 +2365,94 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
-      "median": 40,
-      "high": 48,
-      "ceiling": 48,
-      "peak": 73,
-      "iqr": 13,
-      "consistency": 72,
+      "floor": 34,
+      "median": 42,
+      "high": 51,
+      "ceiling": 51,
+      "peak": 75,
+      "iqr": 14,
+      "consistency": 70,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 87,
+      "recoveryAfterDisruption": 88,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 5,
+          "interaction": 4,
           "resource": 0,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 3,
           "engine": 0,
-          "interaction": 8,
-          "resource": 16,
+          "interaction": 14,
+          "resource": 20,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 27,
-          "engine": 7,
-          "interaction": 16,
-          "resource": 48,
+          "commander": 30,
+          "engine": 8,
+          "interaction": 25,
+          "resource": 51,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 79,
-          "engine": 22,
-          "interaction": 24,
-          "resource": 71,
-          "burst": 1
+          "commander": 80,
+          "engine": 23,
+          "interaction": 34,
+          "resource": 72,
+          "burst": 2
         },
         {
           "turn": 5,
           "commander": 90,
           "engine": 31,
-          "interaction": 31,
-          "resource": 79,
+          "interaction": 40,
+          "resource": 80,
           "burst": 4
         },
         {
           "turn": 6,
           "commander": 94,
           "engine": 36,
-          "interaction": 36,
-          "resource": 85,
+          "interaction": 46,
+          "resource": 86,
           "burst": 7
         },
         {
           "turn": 7,
           "commander": 96,
           "engine": 40,
-          "interaction": 40,
-          "resource": 88,
+          "interaction": 50,
+          "resource": 90,
           "burst": 9
         }
       ]
     },
     "drivers": [
       {
-        "name": "Sol Ring",
-        "impact": 3.7,
+        "name": "Rishkar's Expertise",
+        "impact": 5,
         "tags": [
-          "mana",
-          "fast-mana"
+          "sorcery",
+          "draw",
+          "cheat",
+          "free"
         ],
         "aeon": null
       },
       {
-        "name": "Rishkar's Expertise",
-        "impact": 3.6,
+        "name": "Sol Ring",
+        "impact": 3.7,
         "tags": [
-          "sorcery",
-          "cheat",
-          "free"
+          "artifact",
+          "mana",
+          "fast-mana"
         ],
         "aeon": null
       },
@@ -2499,6 +2510,16 @@
         "aeon": null
       },
       {
+        "name": "Sanctum Weaver",
+        "impact": 2.6,
+        "tags": [
+          "creature",
+          "enchantment",
+          "mana"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Kenrith's Transformation",
         "impact": 2.5,
         "tags": [
@@ -2533,15 +2554,6 @@
         "impact": 2.3,
         "tags": [
           "enchantment"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Kor Spiritdancer",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "draw"
         ],
         "aeon": null
       }

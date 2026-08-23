@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 40,
-    "p20": 28,
-    "p80": 52,
-    "peak": 83,
+    "median": 41,
+    "p20": 27,
+    "p80": 53,
+    "peak": 85,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "d4a810e5f55c2d681708f7dec805c5d327f4cfc4e1744102964e243946db610e",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "599b38d6d035ae0ddb1ceb0f0144d14db1ad0ecabe0d9409d5475fcfc6721440",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Angel of Glory's Rise\n1 Bastion Protector\n1 Custodi Soulbinders\n1 Dearly Departed\n1 Herald of War\n1 Knight of the White Orchid\n1 Mikaeus, the Lunarch\n1 Odric, Master Tactician\n1 Riders of Gavony\n1 Victory's Envoy\n1 Champion of Lambholt\n1 Gyre Sage\n1 Kessig Cagebreakers\n1 Somberwald Sage\n1 Verdurous Gearhulk\n1 Wild Beastmaster\n1 Heron's Grace Champion\n1 Sigarda, Heron's Grace\n1 Abzan Falconer\n1 Ainok Bond-Kin\n1 Elite Scaleguard\n1 Orzhov Advokist\n1 Avacyn's Pilgrim\n1 Eternal Witness\n1 Yavimaya Elder\n1 Enduring Scalelord\n1 Juniper Order Ranger\n1 Trostani's Summoner\n1 Cleansing Nova\n1 Hour of Reckoning\n1 Shamanic Revelation\n1 Bestial Menace\n1 Biogenic Upgrade\n1 Growth Spasm\n1 Unbreakable Formation\n1 Return to Dust\n1 Swords to Plowshares\n1 Beast Within\n1 Inspiring Call\n1 Lifecrafter's Bestiary\n1 Arcane Signet\n1 Sol Ring\n1 Swiftfoot Boots\n1 Talisman of Unity\n1 Citadel Siege\n1 Death's Presence\n1 Canopy Vista\n1 Exotic Orchard\n1 Fortified Village\n1 Sungrass Prairie\n1 Temple of Plenty\n1 Blighted Woodland\n1 Command Tower\n1 Krosan Verge\n1 Myriad Landscape\n1 Path of Ancestry\n1 Rogue's Passage\n1 Selesnya Sanctuary\n1 Temple of the False God\n12 Forest\n12 Plains\n1 Kyler, Sigardian Emissary\n1 Celestial Judgment\n1 Curse of Conformity\n1 Moorland Rescuer\n1 Sigarda's Vanguard\n1 Stalwart Pathlighter\n1 Wall of Mourning\n1 Celebrate the Harvest\n1 Curse of Clinging Webs\n1 Heronblade Elite\n1 Kurbis, Harvest Celebrant\n1 Ruinous Intrusion\n1 Sigardian Zealot\n1 Somberwald Beastmaster\n1 Dawnhart Wardens\n1 Moonsilver Key",
   "oracleCards": [
@@ -55,6 +55,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -73,6 +74,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -500,6 +502,7 @@
       "tags": [
         "creature",
         "etb",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -647,6 +650,7 @@
       "tags": [
         "creature",
         "mana",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:plus1"
       ],
@@ -712,6 +716,7 @@
       ],
       "tags": [
         "creature",
+        "mana",
         "etb",
         "counter-producer",
         "counter-kind:plus1"
@@ -732,7 +737,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "wipe"
+        "wipe",
+        "token-payoff"
       ],
       "isCommander": false
     },
@@ -1243,18 +1249,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1570,6 +1577,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "sacrifice",
         "death-payoff"
       ],
@@ -1578,24 +1586,24 @@
   ],
   "result": {
     "profile": {
-      "median": 40,
-      "floor": 28,
-      "ceiling": 52,
-      "peak": 83,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 62,
-      "commanderDelta": 9,
+      "median": 41,
+      "floor": 27,
+      "ceiling": 53,
+      "peak": 85,
+      "dispersion": 26,
+      "variance": 26,
+      "consistency": 60,
+      "commanderDelta": 10,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 33,
-      "consistency": 62,
+      "consistency": 60,
       "explosiveness": 13,
-      "synergy": 72,
-      "interaction": 29,
-      "resilience": 36
+      "synergy": 74,
+      "interaction": 30,
+      "resilience": 38
     },
     "roles": {
       "lands": 37,
@@ -1603,12 +1611,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 3,
+      "draw": 4,
       "interaction": 7,
       "protection": 7,
       "recursion": 3,
       "wipes": 3,
-      "avgCmc": 3.838709677419355,
+      "avgCmc": 3.8548387096774195,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1618,16 +1626,16 @@
         "strength": 100,
         "cohesion": 100,
         "producers": [
+          "Abzan Falconer",
+          "Ainok Bond-Kin",
           "Champion of Lambholt",
           "Citadel Siege",
           "Custodi Soulbinders",
           "Dearly Departed",
           "Death's Presence",
+          "Elite Scaleguard",
           "Enduring Scalelord",
-          "Herald of War",
-          "Heronblade Elite",
-          "Juniper Order Ranger",
-          "Kurbis, Harvest Celebrant"
+          "Gyre Sage"
         ],
         "payoffs": [
           "Biogenic Upgrade",
@@ -1637,12 +1645,16 @@
           "Kyler, Sigardian Emissary"
         ],
         "members": [
+          "Abzan Falconer",
+          "Ainok Bond-Kin",
           "Champion of Lambholt",
           "Citadel Siege",
           "Custodi Soulbinders",
           "Dearly Departed",
           "Death's Presence",
+          "Elite Scaleguard",
           "Enduring Scalelord",
+          "Gyre Sage",
           "Herald of War",
           "Heronblade Elite",
           "Juniper Order Ranger",
@@ -1654,10 +1666,45 @@
           "Unbreakable Formation",
           "Victory's Envoy",
           "Biogenic Upgrade",
-          "Gyre Sage",
           "Inspiring Call"
         ],
         "producerCards": [
+          {
+            "name": "Abzan Falconer",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Ainok Bond-Kin",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
           {
             "name": "Champion of Lambholt",
             "cmc": 3,
@@ -1764,6 +1811,25 @@
             }
           },
           {
+            "name": "Elite Scaleguard",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
             "name": "Enduring Scalelord",
             "cmc": 6,
             "tags": [
@@ -1782,6 +1848,26 @@
                 ]
               ],
               "total": 6
+            }
+          },
+          {
+            "name": "Gyre Sage",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "mana",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
             }
           },
           {
@@ -1811,6 +1897,7 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "mana",
               "etb",
               "counter-producer",
               "counter-kind:plus1"
@@ -2018,6 +2105,7 @@
             "tags": [
               "creature",
               "mana",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:plus1"
             ],
@@ -2101,9 +2189,250 @@
           "counter-producer"
         ],
         "payoffTags": [
-          "counter-payoff"
+          "counter-payoff",
+          "modified-payoff"
         ],
-        "evidence": "16 producteur(s), 5 payoff(s), 19 carte(s) distincte(s)."
+        "evidence": "20 producteur(s), 5 payoff(s), 22 carte(s) distincte(s)."
+      },
+      {
+        "id": "tokens",
+        "name": "Tokens / conversion",
+        "strength": 66,
+        "cohesion": 66,
+        "producers": [
+          "Bestial Menace",
+          "Curse of Clinging Webs",
+          "Custodi Soulbinders",
+          "Growth Spasm",
+          "Kessig Cagebreakers",
+          "Sigarda, Heron's Grace",
+          "Somberwald Beastmaster",
+          "Trostani's Summoner"
+        ],
+        "payoffs": [
+          "Hour of Reckoning",
+          "Somberwald Beastmaster"
+        ],
+        "members": [
+          "Bestial Menace",
+          "Curse of Clinging Webs",
+          "Custodi Soulbinders",
+          "Growth Spasm",
+          "Kessig Cagebreakers",
+          "Sigarda, Heron's Grace",
+          "Somberwald Beastmaster",
+          "Trostani's Summoner",
+          "Hour of Reckoning"
+        ],
+        "producerCards": [
+          {
+            "name": "Bestial Menace",
+            "cmc": 5,
+            "tags": [
+              "sorcery",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Curse of Clinging Webs",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Custodi Soulbinders",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Growth Spasm",
+            "cmc": 3,
+            "tags": [
+              "sorcery",
+              "land-ramp",
+              "mana",
+              "tokens",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Kessig Cagebreakers",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Sigarda, Heron's Grace",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "protection",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Somberwald Beastmaster",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "tokens",
+              "token-payoff",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 6,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Trostani's Summoner",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 7
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Hour of Reckoning",
+            "cmc": 7,
+            "tags": [
+              "sorcery",
+              "wipe",
+              "token-payoff"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Somberwald Beastmaster",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "tokens",
+              "token-payoff",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 6,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 7
+            }
+          }
+        ],
+        "producerTags": [
+          "tokens"
+        ],
+        "payoffTags": [
+          "token-payoff"
+        ],
+        "evidence": "8 producteur(s), 2 payoff(s), 9 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2191,6 +2520,7 @@
             "tags": [
               "creature",
               "mana",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:plus1"
             ],
@@ -2209,6 +2539,7 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "mana",
               "etb",
               "counter-producer",
               "counter-kind:plus1"
@@ -2225,15 +2556,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2296,14 +2628,17 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 52,
+      "score": 60,
       "connected": [
+        "Abzan Falconer",
+        "Ainok Bond-Kin",
         "Biogenic Upgrade",
         "Champion of Lambholt",
         "Citadel Siege",
         "Custodi Soulbinders",
         "Dearly Departed",
         "Death's Presence",
+        "Elite Scaleguard",
         "Enduring Scalelord",
         "Gyre Sage",
         "Herald of War",
@@ -2330,16 +2665,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 28,
-      "median": 36,
-      "high": 45,
-      "ceiling": 45,
-      "peak": 71,
-      "iqr": 13,
-      "consistency": 71,
+      "floor": 29,
+      "median": 38,
+      "high": 47,
+      "ceiling": 47,
+      "peak": 75,
+      "iqr": 15,
+      "consistency": 68,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 62,
+      "recoveryAfterDisruption": 66,
       "turnProfile": [
         {
           "turn": 1,
@@ -2351,67 +2686,58 @@
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 3,
           "engine": 0,
-          "interaction": 9,
-          "resource": 0,
+          "interaction": 10,
+          "resource": 1,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 21,
-          "engine": 4,
-          "interaction": 18,
-          "resource": 13,
+          "commander": 25,
+          "engine": 6,
+          "interaction": 19,
+          "resource": 17,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 73,
-          "engine": 13,
-          "interaction": 33,
-          "resource": 25,
+          "commander": 74,
+          "engine": 16,
+          "interaction": 34,
+          "resource": 31,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 87,
-          "engine": 23,
+          "engine": 27,
           "interaction": 42,
-          "resource": 35,
+          "resource": 41,
           "burst": 0
         },
         {
           "turn": 6,
-          "commander": 91,
-          "engine": 31,
+          "commander": 92,
+          "engine": 37,
           "interaction": 49,
-          "resource": 42,
+          "resource": 48,
           "burst": 0
         },
         {
           "turn": 7,
-          "commander": 94,
-          "engine": 38,
-          "interaction": 56,
-          "resource": 48,
+          "commander": 95,
+          "engine": 45,
+          "interaction": 57,
+          "resource": 54,
           "burst": 0
         }
       ]
     },
     "drivers": [
       {
-        "name": "Sol Ring",
-        "impact": 3.7,
-        "tags": [
-          "mana",
-          "fast-mana"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Growth Spasm",
-        "impact": 3.1,
+        "impact": 3.8,
         "tags": [
           "sorcery",
           "land-ramp",
@@ -2422,12 +2748,35 @@
         "aeon": null
       },
       {
+        "name": "Sol Ring",
+        "impact": 3.7,
+        "tags": [
+          "artifact",
+          "mana",
+          "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Gyre Sage",
         "impact": 3.1,
         "tags": [
           "creature",
           "mana",
+          "counter-producer",
           "counter-payoff",
+          "counter-kind:plus1"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Heronblade Elite",
+        "impact": 3.1,
+        "tags": [
+          "creature",
+          "mana",
+          "etb",
+          "counter-producer",
           "counter-kind:plus1"
         ],
         "aeon": null
@@ -2454,17 +2803,6 @@
         "aeon": null
       },
       {
-        "name": "Heronblade Elite",
-        "impact": 2.2,
-        "tags": [
-          "creature",
-          "etb",
-          "counter-producer",
-          "counter-kind:plus1"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Angel of Glory's Rise",
         "impact": 2,
         "tags": [
@@ -2472,6 +2810,28 @@
           "wipe",
           "recursion",
           "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Custodi Soulbinders",
+        "impact": 2,
+        "tags": [
+          "creature",
+          "tokens",
+          "etb",
+          "counter-producer",
+          "counter-kind:plus1"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Hour of Reckoning",
+        "impact": 2,
+        "tags": [
+          "sorcery",
+          "wipe",
+          "token-payoff"
         ],
         "aeon": null
       },
@@ -2494,31 +2854,11 @@
         "aeon": null
       },
       {
-        "name": "Talisman of Unity",
+        "name": "Curse of Clinging Webs",
         "impact": 1.9,
         "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Somberwald Sage",
-        "impact": 1.8,
-        "tags": [
-          "creature",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Ruinous Intrusion",
-        "impact": 1.7,
-        "tags": [
-          "instant",
-          "removal",
-          "counter-producer",
-          "counter-kind:plus1"
+          "enchantment",
+          "tokens"
         ],
         "aeon": null
       }

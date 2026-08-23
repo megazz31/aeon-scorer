@@ -26,17 +26,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 39,
-    "p20": 28,
-    "p80": 48,
-    "peak": 71,
-    "coverage": 93,
+    "median": 45,
+    "p20": 32,
+    "p80": 57,
+    "peak": 84,
+    "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "c2a5a0d23a4b01f6742f08e91ffd80e87e9d045eb745169d73e36ac182088817",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "67f80a73ca48c3d1245fa2007e988f2d7f0b437a63db178360fdfe6778a7eab3",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Bruna, the Fading Light // Brisela, Voice of Nightmares\n1 Ajani, Strength of the Pride\n1 Angel of Destiny\n1 Angel of Finality\n1 Angel of Serenity\n1 Angel of the Ruins\n1 Angel of Vitality\n1 Angelic Accord\n1 Angelic Field Marshal\n1 Arcane Signet\n1 Arch of Orazca\n1 Archangel of Thune\n1 Archangel of Tithes\n1 Arden Angel\n1 Austere Command\n1 Bishop of Wings\n1 Bonders' Enclave\n1 Breathkeeper Seraph\n1 Cleansing Nova\n1 Commander's Plate\n1 Cosmos Elixir\n1 Court of Grace\n1 Dawn of Hope\n1 Dawnbreak Reclaimer\n1 Dismantling Wave\n1 Emeria Shepherd\n1 Emeria, the Sky Ruin\n1 Endless Atlas\n1 Entreat the Angels\n1 Everflowing Chalice\n1 Giada, Font of Hope\n1 Griffin Aerie\n1 Heirloom Blade\n1 Invoke the Divine\n1 Karoo\n1 Keeper of the Accord\n1 Kindred Boon\n1 Lightning Greaves\n1 Marble Diamond\n1 Mazemind Tome\n1 Mind Stone\n1 Myriad Landscape\n1 Nykthos Paragon\n1 Nykthos, Shrine to Nyx\n1 Oketra's Monument\n1 Path of Ancestry\n1 Path to Exile\n1 Pearl Medallion\n8 Plains\n8 Plains\n7 Plains\n7 Plains\n1 Righteous Valkyrie\n1 Search for Glory\n1 Sephara, Sky's Blade\n1 Seraph Sanctuary\n1 Serra Ascendant\n1 Shattered Angel\n1 Sol Ring\n1 Speaker of the Heavens\n1 Starnheim Aspirant\n1 Sunblast Angel\n1 Swiftfoot Boots\n1 Sword of the Animist\n1 Swords to Plowshares\n1 Thalia's Lancers\n1 The Book of Exalted Deeds\n1 Tome of Legends\n1 Urza's Incubator\n1 Valkyrie Harbinger\n1 Vanquisher's Banner\n1 War Room\n1 Well of Lost Dreams",
   "oracleCards": [
@@ -148,7 +148,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "lifegain"
+        "life-payoff"
       ],
       "isCommander": false
     },
@@ -223,6 +223,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -317,6 +318,7 @@
       "tags": [
         "creature",
         "tokens",
+        "death-payoff",
         "etb",
         "lifegain"
       ],
@@ -336,6 +338,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -555,7 +558,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "draw"
       ],
       "isCommander": false
     },
@@ -669,7 +673,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -750,6 +755,7 @@
         "enchantment",
         "protection",
         "etb",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -802,6 +808,8 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "draw",
+        "counter-producer",
         "counter-kind:age",
         "lifegain"
       ],
@@ -821,6 +829,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -861,8 +870,8 @@
       "tags": [
         "creature",
         "enchantment",
+        "counter-producer",
         "counter-kind:plus1",
-        "lifegain",
         "life-payoff"
       ],
       "isCommander": false
@@ -1097,18 +1106,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1253,8 +1263,8 @@
       "tags": [
         "artifact",
         "tokens",
-        "counter-kind:generic",
-        "stax"
+        "counter-producer",
+        "counter-kind:generic"
       ],
       "isCommander": false
     },
@@ -1270,6 +1280,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "draw",
         "etb",
         "counter-producer",
         "counter-kind:age"
@@ -1342,6 +1353,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -1359,7 +1371,6 @@
       "tags": [
         "artifact",
         "draw",
-        "lifegain",
         "life-payoff"
       ],
       "isCommander": false
@@ -1367,24 +1378,24 @@
   ],
   "result": {
     "profile": {
-      "median": 39,
-      "floor": 28,
-      "ceiling": 48,
-      "peak": 71,
-      "dispersion": 19,
-      "variance": 19,
-      "consistency": 71,
-      "commanderDelta": 6,
-      "coverage": 93,
-      "dataCoverage": 93
+      "median": 45,
+      "floor": 32,
+      "ceiling": 57,
+      "peak": 84,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 63,
+      "commanderDelta": 7,
+      "coverage": 94,
+      "dataCoverage": 94
     },
     "dimensions": {
-      "speed": 34,
-      "consistency": 71,
-      "explosiveness": 10,
-      "synergy": 33,
-      "interaction": 52,
-      "resilience": 32
+      "speed": 37,
+      "consistency": 63,
+      "explosiveness": 12,
+      "synergy": 52,
+      "interaction": 48,
+      "resilience": 40
     },
     "roles": {
       "lands": 39,
@@ -1392,15 +1403,482 @@
       "fastMana": 1,
       "tutors": 2,
       "repeatableTutors": 0,
-      "draw": 4,
-      "interaction": 10,
+      "draw": 8,
+      "interaction": 9,
       "protection": 4,
       "recursion": 3,
       "wipes": 4,
-      "avgCmc": 3.55,
+      "avgCmc": 3.566666666666667,
       "unknownManaLands": 0
     },
     "packages": [
+      {
+        "id": "lifegain",
+        "name": "Points de vie / Synergies",
+        "strength": 100,
+        "cohesion": 100,
+        "producers": [
+          "Ajani, Strength of the Pride",
+          "Archangel of Thune",
+          "Bishop of Wings",
+          "Cosmos Elixir",
+          "Dawn of Hope",
+          "Invoke the Divine",
+          "Mazemind Tome",
+          "Righteous Valkyrie",
+          "Search for Glory",
+          "Sephara, Sky's Blade"
+        ],
+        "payoffs": [
+          "Ajani, Strength of the Pride",
+          "Angel of Vitality",
+          "Archangel of Thune",
+          "Dawn of Hope",
+          "Nykthos Paragon",
+          "Well of Lost Dreams"
+        ],
+        "members": [
+          "Ajani, Strength of the Pride",
+          "Archangel of Thune",
+          "Bishop of Wings",
+          "Cosmos Elixir",
+          "Dawn of Hope",
+          "Invoke the Divine",
+          "Mazemind Tome",
+          "Righteous Valkyrie",
+          "Search for Glory",
+          "Sephara, Sky's Blade",
+          "Seraph Sanctuary",
+          "Serra Ascendant",
+          "Shattered Angel",
+          "Speaker of the Heavens",
+          "Valkyrie Harbinger",
+          "Angel of Vitality",
+          "Nykthos Paragon",
+          "Well of Lost Dreams"
+        ],
+        "producerCards": [
+          {
+            "name": "Ajani, Strength of the Pride",
+            "cmc": 4,
+            "tags": [
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Archangel of Thune",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Bishop of Wings",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "tokens",
+              "death-payoff",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Cosmos Elixir",
+            "cmc": 4,
+            "tags": [
+              "artifact",
+              "draw",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
+            }
+          },
+          {
+            "name": "Dawn of Hope",
+            "cmc": 2,
+            "tags": [
+              "enchantment",
+              "draw",
+              "tokens",
+              "lifegain",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Invoke the Divine",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "removal",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Mazemind Tome",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "counter-producer",
+              "counter-kind:age",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Righteous Valkyrie",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Search for Glory",
+            "cmc": 3,
+            "tags": [
+              "sorcery",
+              "tutor",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Sephara, Sky's Blade",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "protection",
+              "lifegain",
+              "free"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Seraph Sanctuary",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Serra Ascendant",
+            "cmc": 1,
+            "tags": [
+              "creature",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Shattered Angel",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Speaker of the Heavens",
+            "cmc": 1,
+            "tags": [
+              "creature",
+              "tokens",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Valkyrie Harbinger",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "tokens",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 6
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Ajani, Strength of the Pride",
+            "cmc": 4,
+            "tags": [
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Angel of Vitality",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Archangel of Thune",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Dawn of Hope",
+            "cmc": 2,
+            "tags": [
+              "enchantment",
+              "draw",
+              "tokens",
+              "lifegain",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Nykthos Paragon",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "enchantment",
+              "counter-producer",
+              "counter-kind:plus1",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Well of Lost Dreams",
+            "cmc": 4,
+            "tags": [
+              "artifact",
+              "draw",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
+            }
+          }
+        ],
+        "producerTags": [
+          "lifegain"
+        ],
+        "payoffTags": [
+          "life-payoff"
+        ],
+        "evidence": "15 producteur(s), 6 payoff(s), 18 carte(s) distincte(s)."
+      },
       {
         "id": "lands",
         "name": "Lands / Landfall",
@@ -1578,6 +2056,7 @@
             "cmc": 2,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -1589,15 +2068,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           }
         ],
@@ -1640,71 +2120,71 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 31,
-      "median": 38,
-      "high": 44,
-      "ceiling": 44,
-      "peak": 62,
-      "iqr": 10,
-      "consistency": 77,
+      "floor": 37,
+      "median": 46,
+      "high": 55,
+      "ceiling": 55,
+      "peak": 79,
+      "iqr": 14,
+      "consistency": 68,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": 7,
-      "recoveryAfterDisruption": 60,
+      "engineMedianTurn": 5,
+      "recoveryAfterDisruption": 79,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 13,
-          "resource": 7,
+          "resource": 30,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 2,
-          "engine": 0,
-          "interaction": 16,
-          "resource": 11,
+          "commander": 7,
+          "engine": 2,
+          "interaction": 19,
+          "resource": 47,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 37,
-          "engine": 0,
-          "interaction": 42,
-          "resource": 19,
+          "commander": 40,
+          "engine": 11,
+          "interaction": 38,
+          "resource": 56,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 85,
-          "engine": 0,
-          "interaction": 56,
-          "resource": 30,
+          "engine": 23,
+          "interaction": 52,
+          "resource": 62,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 93,
-          "engine": 0,
-          "interaction": 66,
-          "resource": 40,
+          "engine": 33,
+          "interaction": 61,
+          "resource": 66,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 96,
-          "engine": 1,
-          "interaction": 72,
-          "resource": 47,
+          "engine": 42,
+          "interaction": 68,
+          "resource": 70,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 98,
-          "engine": 1,
-          "interaction": 77,
-          "resource": 55,
+          "engine": 49,
+          "interaction": 73,
+          "resource": 75,
           "burst": 0
         }
       ]
@@ -1714,6 +2194,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
@@ -1721,12 +2202,43 @@
       },
       {
         "name": "Dawn of Hope",
-        "impact": 2.7,
+        "impact": 3.4,
         "tags": [
           "enchantment",
           "draw",
           "tokens",
           "lifegain",
+          "life-payoff"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mind Stone",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Cosmos Elixir",
+        "impact": 2.9,
+        "tags": [
+          "artifact",
+          "draw",
+          "lifegain"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Well of Lost Dreams",
+        "impact": 2.9,
+        "tags": [
+          "artifact",
+          "draw",
           "life-payoff"
         ],
         "aeon": null
@@ -1742,6 +2254,29 @@
         "aeon": null
       },
       {
+        "name": "Sephara, Sky's Blade",
+        "impact": 2.7,
+        "tags": [
+          "creature",
+          "protection",
+          "lifegain",
+          "free"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mazemind Tome",
+        "impact": 2.5,
+        "tags": [
+          "artifact",
+          "draw",
+          "counter-producer",
+          "counter-kind:age",
+          "lifegain"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Sword of the Animist",
         "impact": 2.4,
         "tags": [
@@ -1751,12 +2286,14 @@
         "aeon": null
       },
       {
-        "name": "Cosmos Elixir",
-        "impact": 2.2,
+        "name": "Tome of Legends",
+        "impact": 2.3,
         "tags": [
           "artifact",
           "draw",
-          "lifegain"
+          "etb",
+          "counter-producer",
+          "counter-kind:age"
         ],
         "aeon": null
       },
@@ -1771,17 +2308,6 @@
         "aeon": null
       },
       {
-        "name": "Well of Lost Dreams",
-        "impact": 2.2,
-        "tags": [
-          "artifact",
-          "draw",
-          "lifegain",
-          "life-payoff"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Emeria Shepherd",
         "impact": 2.1,
         "tags": [
@@ -1789,50 +2315,6 @@
           "recursion",
           "etb",
           "landfall"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Everflowing Chalice",
-        "impact": 2,
-        "tags": [
-          "artifact",
-          "mana",
-          "etb",
-          "counter-producer",
-          "counter-payoff",
-          "counter-kind:charge"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Sephara, Sky's Blade",
-        "impact": 2,
-        "tags": [
-          "creature",
-          "protection",
-          "lifegain",
-          "free"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "The Book of Exalted Deeds",
-        "impact": 2,
-        "tags": [
-          "artifact",
-          "tokens",
-          "counter-kind:generic",
-          "stax"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Arcane Signet",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana"
         ],
         "aeon": null
       }

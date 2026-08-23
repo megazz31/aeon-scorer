@@ -32,17 +32,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 43,
-    "p20": 31,
-    "p80": 55,
-    "peak": 83,
+    "median": 47,
+    "p20": 34,
+    "p80": 59,
+    "peak": 85,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "f2f1b4d15b5750fb132bf882fd9d510ca6bb70c7394e3c3b28e20c77d087f792",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "19793b90f04f2f7e066783ae7cfbce6241d1935432292300a27d59d2a4f49762",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Beacon of Unrest\n1 Living Death\n1 Mutilate\n1 Dread Return\n1 Defile\n1 Darkness\n1 Go for the Throat\n1 Caged Sun\n1 Endless Atlas\n1 Gilded Lotus\n1 Mystic Forge\n1 Sculpting Steel\n1 Cranial Plating\n1 Hedron Archive\n1 Mask of Memory\n1 Sol Ring\n1 Arcane Signet\n1 Commander's Sphere\n1 Mind Stone\n1 Thought Vessel\n1 Unstable Obelisk\n1 Wayfarer's Bauble\n1 Barren Moor\n1 Myriad Landscape\n1 Reliquary Tower\n1 Desert of the Glorified\n1 Polluted Mire\n1 Vault of Whispers\n10 Swamp\n10 Swamp\n10 Swamp\n1 Imotekh the Stormlord\n1 Anrakyr the Traveller\n1 Biotransference\n1 Chronomancer\n1 Cryptek\n1 Illuminor Szeras\n1 Lokhust Heavy Destroyer\n1 Lychguard\n1 Necron Deathmark\n1 Necron Overlord\n1 Out of the Tombs\n1 Royal Warden\n1 Shard of the Nightbringer\n1 Shard of the Void Dragon\n1 Skorpekh Lord\n1 Technomancer\n1 Their Name Is Death\n1 Their Number Is Legion\n1 Tomb Blade\n1 Trazyn the Infinite\n1 Triarch Stalker\n1 The War in Heaven\n1 Canoptek Scarab Swarm\n1 Canoptek Spyder\n1 Canoptek Tomb Sentinel\n1 Canoptek Wraith\n1 Convergence of Dominion\n1 Cryptothrall\n1 Ghost Ark\n1 Necron Monolith\n1 Resurrection Orb\n1 Sceptre of Eternal Glory\n1 Tomb Fortress\n1 Flayed One\n1 Hexmark Destroyer\n1 Plasmancer\n1 Psychomancer\n1 Sautekh Immortal\n1 Skorpekh Destroyer\n1 Triarch Praetorian\n1 Night Scythe",
   "oracleCards": [
@@ -252,6 +252,7 @@
       "tags": [
         "creature",
         "artifact",
+        "draw",
         "sacrifice",
         "sac-outlet"
       ],
@@ -275,6 +276,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -291,7 +293,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -433,7 +436,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "draw"
       ],
       "isCommander": false
     },
@@ -452,6 +456,7 @@
       "tags": [
         "creature",
         "artifact",
+        "graveyard-setup",
         "etb",
         "lifegain"
       ],
@@ -526,6 +531,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -678,6 +684,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -768,6 +775,7 @@
       "tags": [
         "artifact",
         "protection",
+        "graveyard-setup",
         "tokens"
       ],
       "isCommander": false
@@ -823,6 +831,7 @@
       "tags": [
         "enchantment",
         "recursion",
+        "counter-producer",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -917,6 +926,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "death-payoff",
         "lifegain"
       ],
       "isCommander": false
@@ -1076,18 +1086,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1126,7 +1137,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "artifact"
+        "artifact",
+        "graveyard-setup"
       ],
       "isCommander": true
     },
@@ -1146,6 +1158,7 @@
         "creature",
         "artifact",
         "recursion",
+        "graveyard-setup",
         "etb"
       ],
       "isCommander": false
@@ -1165,6 +1178,7 @@
       "tags": [
         "enchantment",
         "draw",
+        "graveyard-setup",
         "counter-kind:generic"
       ],
       "isCommander": false
@@ -1204,8 +1218,7 @@
         "recursion",
         "tokens",
         "artifact-payoff",
-        "lifegain",
-        "exile-cast"
+        "lifegain"
       ],
       "isCommander": false
     },
@@ -1264,6 +1277,7 @@
         "land",
         "mana",
         "recursion",
+        "graveyard-setup",
         "etb"
       ],
       "isCommander": false
@@ -1385,24 +1399,24 @@
   ],
   "result": {
     "profile": {
-      "median": 43,
-      "floor": 31,
-      "ceiling": 55,
-      "peak": 83,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 62,
-      "commanderDelta": 5,
+      "median": 47,
+      "floor": 34,
+      "ceiling": 59,
+      "peak": 85,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 61,
+      "commanderDelta": 8,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 38,
-      "consistency": 62,
+      "consistency": 61,
       "explosiveness": 12,
-      "synergy": 58,
-      "interaction": 30,
-      "resilience": 42
+      "synergy": 70,
+      "interaction": 31,
+      "resilience": 47
     },
     "roles": {
       "lands": 37,
@@ -1410,12 +1424,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 4,
+      "draw": 9,
       "interaction": 7,
       "protection": 2,
       "recursion": 5,
       "wipes": 3,
-      "avgCmc": 3.774193548387097,
+      "avgCmc": 3.7903225806451615,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1484,6 +1498,7 @@
           "Sculpting Steel",
           "Skorpekh Destroyer",
           "Skorpekh Lord",
+          "Sol Ring",
           "Technomancer",
           "Thought Vessel",
           "Tomb Blade",
@@ -1606,6 +1621,7 @@
             "tags": [
               "creature",
               "artifact",
+              "draw",
               "sacrifice",
               "sac-outlet"
             ],
@@ -1624,6 +1640,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -1637,7 +1654,8 @@
             "name": "Convergence of Dominion",
             "cmc": 3,
             "tags": [
-              "artifact"
+              "artifact",
+              "graveyard-setup"
             ],
             "manaReq": {
               "generic": 3,
@@ -1693,7 +1711,8 @@
             "name": "Endless Atlas",
             "cmc": 2,
             "tags": [
-              "artifact"
+              "artifact",
+              "draw"
             ],
             "manaReq": {
               "generic": 2,
@@ -1707,6 +1726,7 @@
             "tags": [
               "creature",
               "artifact",
+              "graveyard-setup",
               "etb",
               "lifegain"
             ],
@@ -1750,6 +1770,7 @@
             "cmc": 4,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -1882,6 +1903,7 @@
             "cmc": 2,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -1930,6 +1952,7 @@
             "tags": [
               "artifact",
               "protection",
+              "graveyard-setup",
               "tokens"
             ],
             "manaReq": {
@@ -2018,6 +2041,7 @@
             "cmc": 2,
             "tags": [
               "artifact",
+              "death-payoff",
               "lifegain"
             ],
             "manaReq": {
@@ -2133,12 +2157,27 @@
             }
           },
           {
+            "name": "Sol Ring",
+            "cmc": 1,
+            "tags": [
+              "artifact",
+              "mana",
+              "fast-mana"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
             "name": "Technomancer",
             "cmc": 7,
             "tags": [
               "creature",
               "artifact",
               "recursion",
+              "graveyard-setup",
               "etb"
             ],
             "manaReq": {
@@ -2396,8 +2435,7 @@
               "recursion",
               "tokens",
               "artifact-payoff",
-              "lifegain",
-              "exile-cast"
+              "lifegain"
             ],
             "manaReq": {
               "generic": 0,
@@ -2425,7 +2463,307 @@
         "payoffTags": [
           "artifact-payoff"
         ],
-        "evidence": "48 producteur(s), 6 payoff(s), 50 carte(s) distincte(s)."
+        "evidence": "49 producteur(s), 6 payoff(s), 51 carte(s) distincte(s)."
+      },
+      {
+        "id": "graveyard",
+        "name": "Cimetière / récursion",
+        "strength": 85,
+        "cohesion": 85,
+        "producers": [
+          "Convergence of Dominion",
+          "Flayed One",
+          "Mask of Memory",
+          "Necron Monolith",
+          "Technomancer",
+          "The War in Heaven",
+          "Tomb Fortress"
+        ],
+        "payoffs": [
+          "Dread Return",
+          "Lychguard",
+          "Out of the Tombs",
+          "Technomancer",
+          "Their Number Is Legion",
+          "Tomb Fortress"
+        ],
+        "members": [
+          "Convergence of Dominion",
+          "Flayed One",
+          "Mask of Memory",
+          "Necron Monolith",
+          "Technomancer",
+          "The War in Heaven",
+          "Tomb Fortress",
+          "Dread Return",
+          "Lychguard",
+          "Out of the Tombs",
+          "Their Number Is Legion"
+        ],
+        "producerCards": [
+          {
+            "name": "Convergence of Dominion",
+            "cmc": 3,
+            "tags": [
+              "artifact",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [],
+              "total": 3
+            }
+          },
+          {
+            "name": "Flayed One",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "artifact",
+              "graveyard-setup",
+              "etb",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Mask of Memory",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Necron Monolith",
+            "cmc": 7,
+            "tags": [
+              "artifact",
+              "protection",
+              "graveyard-setup",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 7,
+              "colored": [],
+              "total": 7
+            }
+          },
+          {
+            "name": "Technomancer",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "artifact",
+              "recursion",
+              "graveyard-setup",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "The War in Heaven",
+            "cmc": 6,
+            "tags": [
+              "enchantment",
+              "draw",
+              "graveyard-setup",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Tomb Fortress",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "recursion",
+              "graveyard-setup",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Dread Return",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Lychguard",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "artifact",
+              "recursion",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Out of the Tombs",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "recursion",
+              "counter-producer",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Technomancer",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "artifact",
+              "recursion",
+              "graveyard-setup",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Their Number Is Legion",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "tokens",
+              "artifact-payoff",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Tomb Fortress",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "recursion",
+              "graveyard-setup",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          }
+        ],
+        "producerTags": [
+          "graveyard-setup"
+        ],
+        "payoffTags": [
+          "recursion"
+        ],
+        "evidence": "7 producteur(s), 6 payoff(s), 11 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2475,6 +2813,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2508,6 +2847,7 @@
             "cmc": 2,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2519,15 +2859,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2579,7 +2920,8 @@
             "cmc": 4,
             "tags": [
               "creature",
-              "artifact"
+              "artifact",
+              "graveyard-setup"
             ],
             "manaReq": {
               "generic": 1,
@@ -2603,9 +2945,24 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 0,
-      "connected": [],
-      "tags": []
+      "score": 30,
+      "connected": [
+        "Convergence of Dominion",
+        "Dread Return",
+        "Flayed One",
+        "Lychguard",
+        "Mask of Memory",
+        "Necron Monolith",
+        "Out of the Tombs",
+        "Technomancer",
+        "The War in Heaven",
+        "Their Number Is Legion",
+        "Tomb Fortress"
+      ],
+      "tags": [
+        "graveyard-setup",
+        "recursion"
+      ]
     },
     "aeon": {
       "available": false,
@@ -2615,71 +2972,71 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 35,
-      "median": 43,
-      "high": 52,
-      "ceiling": 52,
-      "peak": 76,
-      "iqr": 13,
-      "consistency": 71,
+      "floor": 38,
+      "median": 47,
+      "high": 56,
+      "ceiling": 56,
+      "peak": 80,
+      "iqr": 14,
+      "consistency": 69,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 76,
+      "recoveryAfterDisruption": 86,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 9,
+          "resource": 10,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 0,
-          "engine": 2,
-          "interaction": 8,
-          "resource": 21,
+          "commander": 1,
+          "engine": 6,
+          "interaction": 10,
+          "resource": 37,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 25,
-          "engine": 21,
-          "interaction": 17,
-          "resource": 35,
+          "commander": 29,
+          "engine": 26,
+          "interaction": 19,
+          "resource": 51,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 75,
-          "engine": 40,
-          "interaction": 35,
-          "resource": 49,
+          "commander": 76,
+          "engine": 47,
+          "interaction": 36,
+          "resource": 66,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 90,
-          "engine": 49,
+          "engine": 57,
           "interaction": 44,
-          "resource": 58,
+          "resource": 74,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 94,
-          "engine": 55,
-          "interaction": 50,
-          "resource": 63,
+          "engine": 64,
+          "interaction": 51,
+          "resource": 79,
           "burst": 0
         },
         {
           "turn": 7,
-          "commander": 96,
-          "engine": 58,
-          "interaction": 55,
-          "resource": 68,
+          "commander": 97,
+          "engine": 69,
+          "interaction": 56,
+          "resource": 83,
           "burst": 0
         }
       ]
@@ -2687,10 +3044,43 @@
     "drivers": [
       {
         "name": "Sol Ring",
-        "impact": 3.7,
+        "impact": 4.4,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commander's Sphere",
+        "impact": 4,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mind Stone",
+        "impact": 4,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mask of Memory",
+        "impact": 3.7,
+        "tags": [
+          "artifact",
+          "draw",
+          "graveyard-setup"
         ],
         "aeon": null
       },
@@ -2706,12 +3096,36 @@
         "aeon": null
       },
       {
-        "name": "Mask of Memory",
-        "impact": 3,
+        "name": "Hedron Archive",
+        "impact": 3.2,
         "tags": [
           "artifact",
           "draw",
-          "graveyard-setup"
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Chronomancer",
+        "impact": 3,
+        "tags": [
+          "creature",
+          "artifact",
+          "draw",
+          "sacrifice",
+          "sac-outlet"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Necron Monolith",
+        "impact": 3,
+        "tags": [
+          "artifact",
+          "protection",
+          "graveyard-setup",
+          "tokens"
         ],
         "aeon": null
       },
@@ -2749,61 +3163,14 @@
         "aeon": null
       },
       {
-        "name": "Arcane Signet",
-        "impact": 2.6,
+        "name": "Their Number Is Legion",
+        "impact": 2.7,
         "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Mind Stone",
-        "impact": 2.6,
-        "tags": [
-          "artifact",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Thought Vessel",
-        "impact": 2.6,
-        "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Wayfarer's Bauble",
-        "impact": 2.6,
-        "tags": [
-          "artifact",
-          "land-ramp",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Commander's Sphere",
-        "impact": 2.5,
-        "tags": [
-          "artifact",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Canoptek Tomb Sentinel",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "artifact",
-          "removal",
-          "etb"
+          "sorcery",
+          "recursion",
+          "tokens",
+          "artifact-payoff",
+          "lifegain"
         ],
         "aeon": null
       }

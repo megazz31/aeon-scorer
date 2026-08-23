@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 42,
+    "median": 43,
     "p20": 33,
-    "p80": 50,
-    "peak": 74,
+    "p80": 53,
+    "peak": 76,
     "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "28be2f552c32d5f37b916b03219449f2b30cf2c275e3c7b7b87eb55c0d1da843",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "cf6732d88a7d8d077d6a305eff79d277508caa9feee3eb75647f570ef519bc15",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Moira and Teshar\n1 Ichor Elixir\n1 Blight Titan\n1 Darksteel Splicer\n1 Excise the Imperfect\n1 Filigree Vector\n1 Path of the Schemer\n1 Bitterthorn, Nissa's Animus\n1 Vulpine Harvester\n1 Cataclysmic Gearhulk\n1 Massacre Wurm\n1 Noxious Gearhulk\n1 Phyrexian Scriptures\n1 Phyrexian Triniform\n1 Soul of New Phyrexia\n1 Ancient Stone Idol\n1 Angel of the Ruins\n1 Blade Splicer\n1 Coveted Jewel\n1 Duplicant\n1 Exotic Orchard\n1 Fetid Heath\n1 Karn's Bastion\n1 Myr Battlesphere\n1 Nettlecyst\n1 Phyrexian Delver\n1 Phyrexian Rebirth\n1 Psychosis Crawler\n1 Scrap Trawler\n1 Sculpting Steel\n1 Scytheclaw\n1 Shineshadow Snarl\n1 Spire of Industry\n1 Temple of Silence\n1 Utter End\n1 Vault of the Archangel\n1 Yawgmoth's Vile Offering\n1 Bojuka Bog\n1 Command Tower\n1 Commander's Sphere\n1 Evolving Wilds\n1 First-Sphere Gargantua\n1 Fractured Powerstone\n1 Goldmire Bridge\n1 Night's Whisper\n1 Orzhov Locket\n1 Orzhov Signet\n1 Path of Ancestry\n1 Phyrexian Ghoul\n1 Phyrexian Rager\n1 Silverquill Campus\n1 Terramorphic Expanse\n1 Wayfarer's Bauble\n1 Hedron Archive\n1 Ambition's Cost\n1 Arcane Signet\n1 Bloodline Pretender\n1 Bone Shredder\n1 Burnished Hart\n1 Despark\n1 Go for the Throat\n1 Graveshifter\n1 Keskit, the Flesh Sculptor\n1 Master Splicer\n1 Meteor Golem\n1 Mind Stone\n1 Mortify\n1 Shattered Angel\n1 Shimmer Myr\n1 Sol Ring\n1 Swords to Plowshares\n1 Tainted Field\n1 Talisman of Hierarchy\n1 Victimize\n1 Compleated Huntmaster\n1 Phyrexian Gargantua\n10 Plains\n13 Swamp",
   "oracleCards": [
@@ -167,7 +167,11 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "graveyard-setup",
+        "tokens",
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -246,7 +250,9 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "tokens",
         "counter-producer",
+        "counter-kind:plus1",
         "counter-kind:wild"
       ],
       "isCommander": true
@@ -327,6 +333,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -346,8 +353,11 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "tokens",
         "sacrifice",
-        "sac-outlet"
+        "sac-outlet",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -650,6 +660,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -780,6 +791,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -912,6 +924,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -1277,18 +1290,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1571,24 +1585,24 @@
   ],
   "result": {
     "profile": {
-      "median": 42,
+      "median": 43,
       "floor": 33,
-      "ceiling": 50,
-      "peak": 74,
-      "dispersion": 17,
-      "variance": 17,
-      "consistency": 69,
-      "commanderDelta": 6,
+      "ceiling": 53,
+      "peak": 76,
+      "dispersion": 20,
+      "variance": 20,
+      "consistency": 67,
+      "commanderDelta": 8,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 30,
-      "consistency": 69,
+      "consistency": 67,
       "explosiveness": 10,
-      "synergy": 47,
-      "interaction": 58,
-      "resilience": 40
+      "synergy": 54,
+      "interaction": 59,
+      "resilience": 41
     },
     "roles": {
       "lands": 38,
@@ -1596,12 +1610,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 6,
+      "draw": 10,
       "interaction": 11,
       "protection": 2,
       "recursion": 4,
       "wipes": 2,
-      "avgCmc": 4.081967213114754,
+      "avgCmc": 4.098360655737705,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1634,8 +1648,11 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "tokens",
               "sacrifice",
-              "sac-outlet"
+              "sac-outlet",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -1796,6 +1813,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -1823,6 +1841,7 @@
             "cmc": 2,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -1837,6 +1856,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -1861,15 +1881,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -1906,7 +1927,9 @@
             "cmc": 4,
             "tags": [
               "creature",
+              "tokens",
               "counter-producer",
+              "counter-kind:plus1",
               "counter-kind:wild"
             ],
             "manaReq": {
@@ -1928,15 +1951,26 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 11,
+      "score": 36,
       "connected": [
+        "Ancient Stone Idol",
+        "Blade Splicer",
+        "Blight Titan",
         "Bloodline Pretender",
+        "Compleated Huntmaster",
+        "Darksteel Splicer",
         "Filigree Vector",
         "Karn's Bastion",
-        "Phyrexian Scriptures"
+        "Master Splicer",
+        "Myr Battlesphere",
+        "Phyrexian Rebirth",
+        "Phyrexian Scriptures",
+        "Phyrexian Triniform"
       ],
       "tags": [
-        "counter-producer"
+        "tokens",
+        "counter-producer",
+        "token-payoff"
       ]
     },
     "aeon": {
@@ -1948,15 +1982,15 @@
     "simulation": {
       "iterations": 3200,
       "floor": 35,
-      "median": 41,
-      "high": 47,
-      "ceiling": 47,
-      "peak": 66,
-      "iqr": 10,
-      "consistency": 78,
+      "median": 42,
+      "high": 49,
+      "ceiling": 49,
+      "peak": 67,
+      "iqr": 11,
+      "consistency": 76,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 78,
+      "recoveryAfterDisruption": 81,
       "turnProfile": [
         {
           "turn": 1,
@@ -1968,26 +2002,26 @@
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 5,
           "engine": 0,
-          "interaction": 25,
-          "resource": 7,
+          "interaction": 28,
+          "resource": 9,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 35,
+          "commander": 41,
           "engine": 0,
-          "interaction": 47,
-          "resource": 25,
+          "interaction": 49,
+          "resource": 31,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 81,
+          "commander": 83,
           "engine": 2,
-          "interaction": 62,
-          "resource": 49,
+          "interaction": 63,
+          "resource": 54,
           "burst": 0
         },
         {
@@ -1995,7 +2029,7 @@
           "commander": 92,
           "engine": 3,
           "interaction": 70,
-          "resource": 61,
+          "resource": 65,
           "burst": 0
         },
         {
@@ -2003,7 +2037,7 @@
           "commander": 95,
           "engine": 4,
           "interaction": 76,
-          "resource": 68,
+          "resource": 72,
           "burst": 0
         },
         {
@@ -2011,7 +2045,7 @@
           "commander": 97,
           "engine": 5,
           "interaction": 81,
-          "resource": 74,
+          "resource": 77,
           "burst": 0
         }
       ]
@@ -2021,8 +2055,42 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mind Stone",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Orzhov Locket",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2034,6 +2102,17 @@
           "draw",
           "mana",
           "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Hedron Archive",
+        "impact": 2.5,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2066,16 +2145,6 @@
         "aeon": null
       },
       {
-        "name": "Mind Stone",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Orzhov Signet",
         "impact": 1.9,
         "tags": [
@@ -2099,35 +2168,6 @@
         "tags": [
           "artifact",
           "land-ramp",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Commander's Sphere",
-        "impact": 1.8,
-        "tags": [
-          "artifact",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Night's Whisper",
-        "impact": 1.8,
-        "tags": [
-          "sorcery",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Orzhov Locket",
-        "impact": 1.8,
-        "tags": [
-          "artifact",
-          "mana",
           "sacrifice"
         ],
         "aeon": null

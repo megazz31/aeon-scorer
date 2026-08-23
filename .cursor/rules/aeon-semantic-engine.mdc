@@ -1,0 +1,33 @@
+---
+description: Aeon Scorer semantic engineering, MTG rules ground truth and immutable versioning standards
+globs: src/engine/**/*.js,scripts/**/*.mjs,docs/**/*.md
+alwaysApply: true
+---
+
+# Aeon Scorer Semantic Engine Rules
+
+When modifying the evaluation engine, card tagging, package graphs, or precon benchmarks, you MUST enforce these standards:
+
+## 1. Immutable Semantic Versioning
+- **Never modify semantic logic under an existing semantic version.**
+- Any change in `src/engine/cardFeatures.js`, `src/engine/packageGraph.js`, or `src/engine/powerModel.js` that changes tags, packages, or scores requires bumping `SEMANTIC_VERSION` in `src/version.js` and in `supabase/functions/record-analysis/index.ts` (e.g. `semantic-9` -> `semantic-10`).
+- Always run `node scripts/semantic-precon-delta.mjs` to inspect delta distribution before regenerating corpus snapshots.
+
+## 2. MTG Comprehensive Rules Ground Truth
+- **Counter Kinds**:
+  - `plus1`: evolve, adapt, amass, support, bolster, graft, modular, outlast, renown, backup, monstrosity, explore, connive, fabricate, riot, bloodthirst, undying, unleash, scavenge, training, mentor, incubate, devour.
+  - `minus1`: blight, persist, wither, infect.
+  - Ensure every keyword in `keywordProducer` is matched with its accurate `counterKinds` mapping.
+- **Modified (CR 700.8)**:
+  - Do NOT alias `modified` directly to `counter-payoff`.
+  - Tag as `modified-payoff` and support it in package graph across `counters`, `equipment`, and `aura` synergies.
+- **Lifegain Causality**:
+  - Sources (`lifelink`, direct gain): `lifegain`.
+  - Observers / Triggers (*Ajani's Pridemate*, *Dina*): `life-payoff` ONLY. They are NEVER sources.
+
+## 3. Strict Testing Standards (Zero Permissive Tests)
+- In `scripts/sentinel-precons-test.mjs` and all test scripts:
+  - Throw `assert.fail()` immediately if a test deck or evidence file is missing. Never `console.warn` or `continue`.
+  - Validate median against expected snapshot within strict tolerance (`|actual - expected| <= 4.0`).
+  - Verify explicit signature packages on every sentinel deck.
+- Every test added to `package.json` must be wired into CI (`.github/workflows/generate-public-precons.yml`, `calibration.yml`) and `npm run quality:local`.

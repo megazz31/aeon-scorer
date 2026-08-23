@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 48,
-    "p20": 36,
-    "p80": 58,
+    "median": 49,
+    "p20": 34,
+    "p80": 62,
     "peak": 88,
     "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "b99b406fd42460d49f6ffdc59156c87e52126420ec6d13e2d5ca0e813c5b0648",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "00a70e5929326b02a11c9f747a699cf7534312d5abff884580c9c90d543a5883",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Celes, Rune Knight\n1 Coin of Fate\n1 Cyan, Vengeful Samurai\n1 General Leo Cristophe\n1 Espers to Magicite\n1 The Falcon, Airship Restored\n1 Interceptor, Shadow's Hound\n1 Rejoin the Fight\n1 Shadow, Mysterious Assassin\n1 Siegfried, Famed Swordsman\n1 Gau, Feral Youth\n1 Gogo, Mysterious Mime\n1 Sabin, Master Monk\n1 Snort\n1 Strago and Relm\n1 Summon: Esper Valigarmanda\n1 Umaro, Raging Yeti\n1 Banon, the Returners' Leader\n1 Edgar, Master Machinist\n1 Kefka, Dancing Mad\n1 Locke, Treasure Hunter\n1 Mog, Moogle Warrior\n1 Setzer, Wandering Gambler\n1 The Warring Triad\n1 Sun Titan\n1 Tragic Arrogance\n1 Archfiend of Depravity\n1 Reanimate\n1 Rise of the Dark Realms\n1 Sepulchral Primordial\n1 Combustible Gearhulk\n1 Flayer of the Hatebound\n1 Ruin Grinder\n1 Bedevil\n1 Legions to Ashes\n1 Priest of Fell Rites\n1 Ruinous Ultimatum\n1 Key to the City\n1 Solemn Simulacrum\n1 Battlefield Forge\n1 Clifftop Retreat\n1 Desolate Mire\n1 Dragonskull Summit\n1 Exotic Orchard\n1 Fetid Heath\n1 Foreboding Ruins\n1 Furycalm Snarl\n1 Graven Cairns\n1 High Market\n1 Isolated Chapel\n1 Rugged Prairie\n1 Shadowblood Ridge\n1 Shineshadow Snarl\n1 Smoldering Marsh\n1 Sulfurous Springs\n1 Sunscorched Divide\n1 Phoenix Down\n1 Laughing Mad\n1 Angel of the Ruins\n1 Palace Jailer\n1 Morbid Opportunist\n1 Night's Whisper\n1 Pitiless Plunderer\n1 Stitch Together\n1 Stitcher's Supplier\n1 Anger\n1 Big Score\n1 Crackling Doom\n1 Mortify\n1 Arcane Signet\n1 Commander's Sphere\n1 Meteor Golem\n1 Millikin\n1 Mind Stone\n1 Sol Ring\n1 Swiftfoot Boots\n1 Talisman of Conviction\n1 Talisman of Indulgence\n1 Wayfarer's Bauble\n1 Ash Barrens\n1 Demolition Field\n1 Evolving Wilds\n1 Geothermal Bog\n1 Nomad Outpost\n1 Path of Ancestry\n1 Rogue's Passage\n1 Sacred Peaks\n1 Sunlit Marsh\n1 Command Tower\n2 Plains\n1 Plains\n1 Plains\n1 Swamp\n1 Swamp\n1 Swamp\n1 Mountain\n1 Mountain\n1 Mountain",
   "oracleCards": [
@@ -246,7 +246,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "draw",
+        "graveyard-setup",
         "etb",
         "counter-producer",
         "counter-kind:plus1"
@@ -312,6 +312,7 @@
         "creature",
         "artifact",
         "draw",
+        "graveyard-setup",
         "etb"
       ],
       "isCommander": false
@@ -356,6 +357,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -580,7 +582,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -942,6 +946,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -1225,7 +1230,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -1484,6 +1490,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "graveyard-setup",
         "etb",
         "counter-producer",
         "counter-kind:plus1"
@@ -1525,24 +1532,24 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery",
-        "draw"
+        "sorcery"
       ],
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1600,6 +1607,8 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "graveyard-setup",
+        "death-payoff",
         "etb"
       ],
       "isCommander": false
@@ -1667,8 +1676,7 @@
         "enchantment",
         "mana",
         "counter-payoff",
-        "counter-kind:lore",
-        "exile-cast"
+        "counter-kind:lore"
       ],
       "isCommander": false
     },
@@ -1832,7 +1840,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "recursion"
+        "recursion",
+        "graveyard-setup"
       ],
       "isCommander": true
     },
@@ -1908,8 +1917,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature",
-        "draw"
+        "creature"
       ],
       "isCommander": false
     },
@@ -1933,22 +1941,22 @@
   ],
   "result": {
     "profile": {
-      "median": 48,
-      "floor": 36,
-      "ceiling": 58,
+      "median": 49,
+      "floor": 34,
+      "ceiling": 62,
       "peak": 88,
-      "dispersion": 22,
-      "variance": 22,
-      "consistency": 62,
-      "commanderDelta": 8,
+      "dispersion": 27,
+      "variance": 27,
+      "consistency": 58,
+      "commanderDelta": 10,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 35,
-      "consistency": 62,
+      "consistency": 58,
       "explosiveness": 19,
-      "synergy": 83,
+      "synergy": 87,
       "interaction": 32,
       "resilience": 62
     },
@@ -1958,12 +1966,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 12,
+      "draw": 11,
       "interaction": 8,
       "protection": 2,
       "recursion": 9,
       "wipes": 2,
-      "avgCmc": 3.725806451612903,
+      "avgCmc": 3.7419354838709675,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1975,10 +1983,13 @@
         "producers": [
           "Banon, the Returners' Leader",
           "Big Score",
+          "Celes, Rune Knight",
           "Coin of Fate",
+          "Combustible Gearhulk",
           "Key to the City",
           "Laughing Mad",
           "Mog, Moogle Warrior",
+          "Rejoin the Fight",
           "Sabin, Master Monk"
         ],
         "payoffs": [
@@ -1995,11 +2006,16 @@
         "members": [
           "Banon, the Returners' Leader",
           "Big Score",
+          "Celes, Rune Knight",
           "Coin of Fate",
+          "Combustible Gearhulk",
           "Key to the City",
           "Laughing Mad",
           "Mog, Moogle Warrior",
+          "Rejoin the Fight",
           "Sabin, Master Monk",
+          "Siegfried, Famed Swordsman",
+          "Stitcher's Supplier",
           "Edgar, Master Machinist",
           "General Leo Cristophe",
           "Interceptor, Shadow's Hound",
@@ -2052,6 +2068,32 @@
             }
           },
           {
+            "name": "Celes, Rune Knight",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "graveyard-setup",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "W"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
             "name": "Coin of Fate",
             "cmc": 2,
             "tags": [
@@ -2068,6 +2110,29 @@
                 ]
               ],
               "total": 2
+            }
+          },
+          {
+            "name": "Combustible Gearhulk",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "artifact",
+              "draw",
+              "graveyard-setup",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 6
             }
           },
           {
@@ -2127,6 +2192,23 @@
             }
           },
           {
+            "name": "Rejoin the Fight",
+            "cmc": 6,
+            "tags": [
+              "sorcery",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
             "name": "Sabin, Master Monk",
             "cmc": 5,
             "tags": [
@@ -2142,6 +2224,45 @@
                 ]
               ],
               "total": 5
+            }
+          },
+          {
+            "name": "Siegfried, Famed Swordsman",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "graveyard-setup",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Stitcher's Supplier",
+            "cmc": 1,
+            "tags": [
+              "creature",
+              "graveyard-setup",
+              "death-payoff",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 1
             }
           }
         ],
@@ -2331,16 +2452,18 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "7 producteur(s), 9 payoff(s), 15 carte(s) distincte(s)."
+        "evidence": "12 producteur(s), 9 payoff(s), 20 carte(s) distincte(s)."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 41,
+      "score": 55,
       "connected": [
         "Banon, the Returners' Leader",
         "Big Score",
+        "Celes, Rune Knight",
         "Coin of Fate",
+        "Combustible Gearhulk",
         "Edgar, Master Machinist",
         "General Leo Cristophe",
         "Interceptor, Shadow's Hound",
@@ -2349,8 +2472,11 @@
         "Mog, Moogle Warrior",
         "Phoenix Down",
         "Priest of Fell Rites",
+        "Rejoin the Fight",
         "Sabin, Master Monk",
+        "Siegfried, Famed Swordsman",
         "Stitch Together",
+        "Stitcher's Supplier",
         "Sun Titan",
         "The Falcon, Airship Restored"
       ],
@@ -2368,12 +2494,12 @@
     "simulation": {
       "iterations": 3200,
       "floor": 35,
-      "median": 43,
-      "high": 51,
-      "ceiling": 51,
-      "peak": 79,
-      "iqr": 13,
-      "consistency": 71,
+      "median": 45,
+      "high": 55,
+      "ceiling": 55,
+      "peak": 81,
+      "iqr": 15,
+      "consistency": 66,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
       "recoveryAfterDisruption": 93,
@@ -2383,55 +2509,55 @@
           "commander": 0,
           "engine": 0,
           "interaction": 5,
-          "resource": 4,
+          "resource": 5,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 3,
-          "engine": 1,
-          "interaction": 7,
-          "resource": 22,
-          "burst": 0
+          "commander": 4,
+          "engine": 2,
+          "interaction": 9,
+          "resource": 26,
+          "burst": 1
         },
         {
           "turn": 3,
-          "commander": 42,
-          "engine": 5,
-          "interaction": 21,
-          "resource": 51,
-          "burst": 5
+          "commander": 46,
+          "engine": 8,
+          "interaction": 22,
+          "resource": 53,
+          "burst": 6
         },
         {
           "turn": 4,
-          "commander": 77,
-          "engine": 18,
+          "commander": 79,
+          "engine": 24,
           "interaction": 36,
-          "resource": 79,
+          "resource": 77,
           "burst": 9
         },
         {
           "turn": 5,
           "commander": 88,
-          "engine": 29,
+          "engine": 39,
           "interaction": 44,
-          "resource": 88,
+          "resource": 85,
           "burst": 11
         },
         {
           "turn": 6,
           "commander": 92,
-          "engine": 38,
+          "engine": 49,
           "interaction": 51,
-          "resource": 92,
+          "resource": 90,
           "burst": 14
         },
         {
           "turn": 7,
           "commander": 94,
-          "engine": 44,
-          "interaction": 56,
-          "resource": 95,
+          "engine": 56,
+          "interaction": 57,
+          "resource": 92,
           "burst": 17
         }
       ]
@@ -2497,8 +2623,31 @@
         "name": "Sol Ring",
         "impact": 3,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commander's Sphere",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mind Stone",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2536,31 +2685,14 @@
         "aeon": null
       },
       {
-        "name": "Morbid Opportunist",
+        "name": "Combustible Gearhulk",
         "impact": 2.3,
         "tags": [
           "creature",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Priest of Fell Rites",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "recursion",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Shadow, Mysterious Assassin",
-        "impact": 2.3,
-        "tags": [
-          "creature",
+          "artifact",
           "draw",
-          "sacrifice"
+          "graveyard-setup",
+          "etb"
         ],
         "aeon": null
       }

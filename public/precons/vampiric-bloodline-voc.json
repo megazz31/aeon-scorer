@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 40,
-    "p20": 30,
-    "p80": 50,
+    "p20": 28,
+    "p80": 52,
     "peak": 79,
     "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "1db9a4199c695df049b9a8e1aaf3db606d9311eacf636737b6d08997ffc47bdb",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "28b5ae1fb1fb1587cb858abddab126132bcc884f1ff0fc911e1b63ccdea41d23",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Timothar, Baron of Bats\n1 Crossway Troublemakers\n1 Kamber, the Plunderer\n1 Shadowgrange Archfiend\n1 Laurine, the Diversion\n1 Markov Enforcer\n1 Midnight Arsonist\n1 Scion of Opulence\n1 Anowon, the Ruin Sage\n1 Bloodlord of Vaasgoth\n1 Bloodtracker\n1 Butcher of Malakir\n1 Champion of Dusk\n1 Cordial Vampire\n1 Dark Impostor\n1 Malakir Bloodwitch\n1 Necropolis Regent\n1 Nirkana Revenant\n1 Patron of the Vein\n1 Sanctum Seeker\n1 Stromkirk Condemned\n1 Anje's Ravager\n1 Bloodsworn Steward\n1 Crimson Honor Guard\n1 Falkenrath Gorger\n1 Stromkirk Occultist\n1 Vampiric Dragon\n1 Bloodtithe Harvester\n1 Blood Artist\n1 Bloodline Necromancer\n1 Falkenrath Noble\n1 Indulgent Aristocrat\n1 Vampire Nighthawk\n1 Rakish Heir\n1 Stromkirk Captain\n1 Olivia's Wrath\n1 Predators' Hour\n1 Imposing Grandeur\n1 Sinister Waltz\n1 Damnable Pact\n1 Avacyn's Judgment\n1 Blasphemous Act\n1 Mob Rule\n1 Ancient Craving\n1 Feed the Swarm\n1 Night's Whisper\n1 Vandalblast\n1 Urge to Feed\n1 Rakdos Charm\n1 Glass-Cast Heart\n1 Arcane Signet\n1 Charcoal Diamond\n1 Commander's Sphere\n1 Fire Diamond\n1 Rakdos Signet\n1 Sol Ring\n1 Swiftfoot Boots\n1 Unstable Obelisk\n1 Arterial Alchemy\n1 Underworld Connections\n1 Molten Echoes\n1 Stensia Masquerade\n1 Exotic Orchard\n1 Foreboding Ruins\n1 Shadowblood Ridge\n1 Smoldering Marsh\n1 Temple of Malice\n1 Command Tower\n1 Myriad Landscape\n1 Path of Ancestry\n1 Rakdos Carnarium\n1 Tainted Peak\n1 Temple of the False God\n1 Unclaimed Territory\n14 Swamp\n11 Mountain",
   "oracleCards": [
@@ -72,8 +72,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature",
-        "draw"
+        "creature"
       ],
       "isCommander": false
     },
@@ -223,7 +222,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -385,6 +386,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -638,7 +640,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "draw"
       ],
       "isCommander": false
     },
@@ -848,6 +851,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1178,18 +1182,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1446,7 +1451,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "enchantment"
+        "enchantment",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1550,23 +1556,23 @@
   "result": {
     "profile": {
       "median": 40,
-      "floor": 30,
-      "ceiling": 50,
+      "floor": 28,
+      "ceiling": 52,
       "peak": 79,
-      "dispersion": 20,
-      "variance": 20,
-      "consistency": 67,
+      "dispersion": 23,
+      "variance": 23,
+      "consistency": 64,
       "commanderDelta": 8,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
       "speed": 35,
-      "consistency": 67,
-      "explosiveness": 12,
+      "consistency": 64,
+      "explosiveness": 11,
       "synergy": 51,
-      "interaction": 42,
-      "resilience": 28
+      "interaction": 44,
+      "resilience": 29
     },
     "roles": {
       "lands": 37,
@@ -1574,12 +1580,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 7,
+      "draw": 9,
       "interaction": 8,
       "protection": 2,
       "recursion": 1,
       "wipes": 1,
-      "avgCmc": 3.661290322580645,
+      "avgCmc": 3.6774193548387095,
       "unknownManaLands": 0
     },
     "packages": [
@@ -2115,6 +2121,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2174,15 +2181,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2255,46 +2263,46 @@
     "simulation": {
       "iterations": 3200,
       "floor": 32,
-      "median": 39,
-      "high": 46,
-      "ceiling": 46,
-      "peak": 69,
-      "iqr": 11,
-      "consistency": 76,
+      "median": 40,
+      "high": 48,
+      "ceiling": 48,
+      "peak": 70,
+      "iqr": 12,
+      "consistency": 73,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 73,
+      "recoveryAfterDisruption": 76,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 5,
+          "interaction": 4,
           "resource": 0,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 4,
           "engine": 0,
-          "interaction": 21,
-          "resource": 9,
+          "interaction": 23,
+          "resource": 10,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 24,
+          "commander": 27,
           "engine": 3,
-          "interaction": 33,
-          "resource": 23,
+          "interaction": 35,
+          "resource": 24,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 77,
+          "commander": 78,
           "engine": 10,
-          "interaction": 46,
-          "resource": 42,
+          "interaction": 47,
+          "resource": 44,
           "burst": 0
         },
         {
@@ -2302,7 +2310,7 @@
           "commander": 89,
           "engine": 16,
           "interaction": 54,
-          "resource": 52,
+          "resource": 56,
           "burst": 0
         },
         {
@@ -2310,7 +2318,7 @@
           "commander": 93,
           "engine": 20,
           "interaction": 60,
-          "resource": 59,
+          "resource": 63,
           "burst": 0
         },
         {
@@ -2318,7 +2326,7 @@
           "commander": 96,
           "engine": 25,
           "interaction": 64,
-          "resource": 64,
+          "resource": 69,
           "burst": 0
         }
       ]
@@ -2341,8 +2349,20 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2377,15 +2397,6 @@
           "tokens",
           "sacrifice",
           "death-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Anje's Ravager",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "draw"
         ],
         "aeon": null
       },

@@ -1,4 +1,4 @@
-name: Aeon Scorer v3.2 quality
+name: Aeon Scorer v3.2 integrated quality
 on:
   pull_request:
     branches: [main, public-precon-library]
@@ -24,18 +24,18 @@ jobs:
           EOF
       - name: Smoke test
         run: npm run smoke
-      - name: Micro semantic truth tests
-        run: npm run test:semantic
+      - name: Semantic truth + sentinel precons
+        run: npm run test:semantic:fast
       - name: Metamorphic independent verification
         run: npm run test:metamorphic
       - name: Product contracts
         run: npm run test:product
+      - name: Public precon library contract
+        run: npm run test:public-precons
       - name: Adversarial audit
         run: npm run audit
       - name: Build application
         run: npm run build
-      - name: Public precon library contract
-        run: npm run test:public-precons
       - name: Macro benchmark 1800
         env:
           AEON_BENCH_ITERATIONS: '1800'
@@ -62,7 +62,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: v3.2-validation-report
+          name: v3.2-integrated-validation-report
           path: |
             calibration/latest.json
             calibration/latest.md

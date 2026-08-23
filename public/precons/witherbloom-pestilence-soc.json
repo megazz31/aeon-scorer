@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 55,
-    "p20": 46,
-    "p80": 67,
-    "peak": 93,
+    "median": 59,
+    "p20": 47,
+    "p80": 69,
+    "peak": 91,
     "coverage": 95,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "8c0c58588762d403669b89671f65f7e3f3d790dd6f2fc07f07bcd709169be661",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "09c89d740010c4efa0829045da5fd7c38250c5e4a34d988b9c6daaf07f045ec7",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Gorma, the Gullet\n1 Merchant of Venom\n1 Defiling Daemogoth\n1 Ominous Harvest\n1 Stensian Sanguinist // Exsanguinate\n1 Feral Appetite\n1 Pest Rescuer\n1 Ribtruss Roaster\n1 Eccentric Pestfinder // Turn Stones\n1 Immoral Bargain\n1 Turbulent Fen\n1 Ophiomancer\n1 Toxic Deluge\n1 Tendershoot Dryad\n1 Fabled Passage\n1 Blight Mound\n1 Bloodghast\n1 Final Act\n1 Jadar, Ghoulcaller of Nephalia\n1 Nether Traitor\n1 Priest of Forgotten Gods\n1 Smothering Abomination\n1 Veinwitch Coven\n1 Witch of the Moors\n1 Woe Strider\n1 Yahenni, Undying Partisan\n1 Awakening Zone\n1 Blossoming Bogbeast\n1 Gilded Goose\n1 Mycoloth\n1 Ohran Frostfang\n1 Pest Infestation\n1 Trudge Garden\n1 Assassin's Trophy\n1 Beledros Witherbloom\n1 Casualties of War\n1 Creakwood Liege\n1 Culling Ritual\n1 Gyome, Master Chef\n1 Mazirek, Kraul Death Priest\n1 Wight of the Reliquary\n1 Witherbloom Command\n1 Exotic Orchard\n1 Festering Thicket\n1 Grim Backwoods\n1 High Market\n1 Llanowar Wastes\n1 Necroblossom Snarl\n1 Temple of Malady\n1 Twilight Mire\n1 Vernal Fen\n1 Viridescent Bog\n1 Woodland Cemetery\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Teacher's Pest\n1 Witherbloom Charm\n1 Terramorphic Expanse\n1 Titan's Grave\n1 Blood Artist\n1 Infernal Grasp\n1 Morbid Opportunist\n1 Night's Whisper\n1 Pawn of Ulamog\n1 Plumb the Forbidden\n1 Umbral Collar Zealot\n1 Viscera Seer\n1 Zulaport Cutthroat\n1 Cultivate\n1 Elvish Mystic\n1 Sakura-Tribe Elder\n1 Springbloom Druid\n1 Deadly Brew\n1 Dina, Soul Steeper\n1 Moldervine Reclamation\n1 Mortality Spear\n1 Haywire Mite\n1 Bojuka Bog\n1 Haunted Mire\n1 Path of Ancestry\n1 Study Hall\n1 Witherbloom Campus\n4 Swamp\n4 Swamp\n4 Forest\n4 Forest",
   "oracleCards": [
@@ -402,7 +402,6 @@
         "creature",
         "sacrifice",
         "sac-outlet",
-        "lifegain",
         "life-payoff"
       ],
       "isCommander": false
@@ -634,6 +633,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "sacrifice",
         "sac-outlet"
@@ -919,6 +919,7 @@
       "tags": [
         "creature",
         "tokens",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:plus1"
       ],
@@ -1117,7 +1118,8 @@
       "tags": [
         "creature",
         "tokens",
-        "lifegain"
+        "lifegain",
+        "life-payoff"
       ],
       "isCommander": false
     },
@@ -1157,7 +1159,6 @@
       "tags": [
         "creature",
         "draw",
-        "mana",
         "sacrifice"
       ],
       "isCommander": false
@@ -1177,6 +1178,7 @@
       "tags": [
         "creature",
         "tokens",
+        "counter-producer",
         "counter-kind:plus1",
         "lifegain"
       ],
@@ -1222,18 +1224,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1454,7 +1457,6 @@
       "tags": [
         "enchantment",
         "tokens",
-        "lifegain",
         "life-payoff"
       ],
       "isCommander": false
@@ -1539,7 +1541,6 @@
       "tags": [
         "creature",
         "recursion",
-        "lifegain",
         "life-payoff"
       ],
       "isCommander": false
@@ -1802,23 +1803,23 @@
   ],
   "result": {
     "profile": {
-      "median": 55,
-      "floor": 46,
-      "ceiling": 67,
-      "peak": 93,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 62,
-      "commanderDelta": 14,
+      "median": 59,
+      "floor": 47,
+      "ceiling": 69,
+      "peak": 91,
+      "dispersion": 22,
+      "variance": 22,
+      "consistency": 61,
+      "commanderDelta": 15,
       "coverage": 95,
       "dataCoverage": 95
     },
     "dimensions": {
       "speed": 51,
-      "consistency": 62,
-      "explosiveness": 13,
-      "synergy": 84,
-      "interaction": 60,
+      "consistency": 61,
+      "explosiveness": 12,
+      "synergy": 94,
+      "interaction": 61,
       "resilience": 55
     },
     "roles": {
@@ -1832,7 +1833,7 @@
       "protection": 2,
       "recursion": 7,
       "wipes": 4,
-      "avgCmc": 3.032258064516129,
+      "avgCmc": 3.0483870967741935,
       "unknownManaLands": 0
     },
     "packages": [
@@ -1887,7 +1888,6 @@
               "creature",
               "sacrifice",
               "sac-outlet",
-              "lifegain",
               "life-payoff"
             ],
             "manaReq": {
@@ -1908,6 +1908,7 @@
             "cmc": 0,
             "tags": [
               "land",
+              "draw",
               "mana",
               "sacrifice",
               "sac-outlet"
@@ -2210,6 +2211,604 @@
         "evidence": "8 producteur(s), 8 payoff(s), 16 carte(s) distincte(s)."
       },
       {
+        "id": "lifegain",
+        "name": "Points de vie / Synergies",
+        "strength": 100,
+        "cohesion": 100,
+        "producers": [
+          "Beledros Witherbloom",
+          "Blight Mound",
+          "Blood Artist",
+          "Blossoming Bogbeast",
+          "Defiling Daemogoth",
+          "Eccentric Pestfinder // Turn Stones",
+          "Feral Appetite",
+          "Gorma, the Gullet",
+          "Haywire Mite",
+          "High Market"
+        ],
+        "payoffs": [
+          "Dina, Soul Steeper",
+          "Eccentric Pestfinder // Turn Stones",
+          "Mortality Spear",
+          "Pest Rescuer",
+          "Trudge Garden",
+          "Veinwitch Coven",
+          "Witch of the Moors"
+        ],
+        "members": [
+          "Beledros Witherbloom",
+          "Blight Mound",
+          "Blood Artist",
+          "Blossoming Bogbeast",
+          "Defiling Daemogoth",
+          "Eccentric Pestfinder // Turn Stones",
+          "Feral Appetite",
+          "Gorma, the Gullet",
+          "Haywire Mite",
+          "High Market",
+          "Moldervine Reclamation",
+          "Pest Infestation",
+          "Pest Rescuer",
+          "Ribtruss Roaster",
+          "Stensian Sanguinist // Exsanguinate",
+          "Teacher's Pest",
+          "Witherbloom Charm",
+          "Witherbloom Command",
+          "Zulaport Cutthroat",
+          "Dina, Soul Steeper",
+          "Mortality Spear",
+          "Trudge Garden",
+          "Veinwitch Coven",
+          "Witch of the Moors"
+        ],
+        "producerCards": [
+          {
+            "name": "Beledros Witherbloom",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "tokens",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Blight Mound",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "death-payoff",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Blood Artist",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "death-payoff",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Blossoming Bogbeast",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Defiling Daemogoth",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Eccentric Pestfinder // Turn Stones",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "sorcery",
+              "tokens",
+              "lifegain",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Feral Appetite",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "removal",
+              "tokens",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Gorma, the Gullet",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "death-payoff",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Haywire Mite",
+            "cmc": 1,
+            "tags": [
+              "creature",
+              "artifact",
+              "removal",
+              "sacrifice",
+              "death-payoff",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
+            "name": "High Market",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "sacrifice",
+              "sac-outlet",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Moldervine Reclamation",
+            "cmc": 5,
+            "tags": [
+              "enchantment",
+              "draw",
+              "death-payoff",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Pest Infestation",
+            "cmc": 1,
+            "tags": [
+              "sorcery",
+              "tokens",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Pest Rescuer",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens",
+              "lifegain",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Ribtruss Roaster",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Stensian Sanguinist // Exsanguinate",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "sorcery",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Teacher's Pest",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "recursion",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Witherbloom Charm",
+            "cmc": 2,
+            "tags": [
+              "instant",
+              "draw",
+              "removal",
+              "sacrifice",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Witherbloom Command",
+            "cmc": 2,
+            "tags": [
+              "sorcery",
+              "removal",
+              "recursion",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Zulaport Cutthroat",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "death-payoff",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Dina, Soul Steeper",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "sacrifice",
+              "sac-outlet",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Eccentric Pestfinder // Turn Stones",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "sorcery",
+              "tokens",
+              "lifegain",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Mortality Spear",
+            "cmc": 4,
+            "tags": [
+              "instant",
+              "removal",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Pest Rescuer",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens",
+              "lifegain",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Trudge Garden",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "tokens",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Veinwitch Coven",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "recursion",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Witch of the Moors",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "recursion",
+              "life-payoff"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 5
+            }
+          }
+        ],
+        "producerTags": [
+          "lifegain"
+        ],
+        "payoffTags": [
+          "life-payoff"
+        ],
+        "evidence": "19 producteur(s), 7 payoff(s), 24 carte(s) distincte(s)."
+      },
+      {
         "id": "graveyard",
         "name": "Cimetière / récursion",
         "strength": 66,
@@ -2365,7 +2964,6 @@
             "tags": [
               "creature",
               "recursion",
-              "lifegain",
               "life-payoff"
             ],
             "manaReq": {
@@ -2611,61 +3209,61 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 40,
-      "median": 47,
-      "high": 56,
-      "ceiling": 56,
+      "floor": 43,
+      "median": 52,
+      "high": 60,
+      "ceiling": 60,
       "peak": 84,
-      "iqr": 13,
-      "consistency": 71,
+      "iqr": 14,
+      "consistency": 69,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 92,
+      "recoveryAfterDisruption": 93,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 1,
           "interaction": 12,
-          "resource": 0,
+          "resource": 8,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 3,
-          "engine": 5,
-          "interaction": 28,
-          "resource": 21,
+          "commander": 5,
+          "engine": 6,
+          "interaction": 30,
+          "resource": 30,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 53,
-          "engine": 21,
-          "interaction": 48,
-          "resource": 50,
+          "commander": 57,
+          "engine": 28,
+          "interaction": 50,
+          "resource": 57,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 87,
-          "engine": 37,
-          "interaction": 64,
-          "resource": 71,
+          "commander": 88,
+          "engine": 52,
+          "interaction": 65,
+          "resource": 74,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 96,
-          "engine": 47,
-          "interaction": 73,
-          "resource": 81,
+          "engine": 66,
+          "interaction": 74,
+          "resource": 82,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 97,
-          "engine": 53,
+          "engine": 75,
           "interaction": 79,
           "resource": 86,
           "burst": 0
@@ -2673,7 +3271,7 @@
         {
           "turn": 7,
           "commander": 98,
-          "engine": 58,
+          "engine": 81,
           "interaction": 83,
           "resource": 89,
           "burst": 0
@@ -2681,6 +3279,40 @@
       ]
     },
     "drivers": [
+      {
+        "name": "Moldervine Reclamation",
+        "impact": 3.6,
+        "tags": [
+          "enchantment",
+          "draw",
+          "death-payoff",
+          "lifegain"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Witherbloom Charm",
+        "impact": 3.3,
+        "tags": [
+          "instant",
+          "draw",
+          "removal",
+          "sacrifice",
+          "lifegain"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Witherbloom Command",
+        "impact": 3.2,
+        "tags": [
+          "sorcery",
+          "removal",
+          "recursion",
+          "lifegain"
+        ],
+        "aeon": null
+      },
       {
         "name": "Bloodghast",
         "impact": 3,
@@ -2696,8 +3328,19 @@
         "name": "Sol Ring",
         "impact": 3,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Teacher's Pest",
+        "impact": 3,
+        "tags": [
+          "creature",
+          "recursion",
+          "lifegain"
         ],
         "aeon": null
       },
@@ -2712,17 +3355,6 @@
         "aeon": null
       },
       {
-        "name": "Moldervine Reclamation",
-        "impact": 2.9,
-        "tags": [
-          "enchantment",
-          "draw",
-          "death-payoff",
-          "lifegain"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Smothering Abomination",
         "impact": 2.9,
         "tags": [
@@ -2730,6 +3362,16 @@
           "draw",
           "sacrifice",
           "death-payoff"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Veinwitch Coven",
+        "impact": 2.9,
+        "tags": [
+          "creature",
+          "recursion",
+          "life-payoff"
         ],
         "aeon": null
       },
@@ -2746,65 +3388,23 @@
         "aeon": null
       },
       {
-        "name": "Priest of Forgotten Gods",
-        "impact": 2.6,
+        "name": "Witch of the Moors",
+        "impact": 2.8,
         "tags": [
           "creature",
-          "draw",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Wight of the Reliquary",
-        "impact": 2.6,
-        "tags": [
-          "creature",
-          "land-ramp",
-          "sacrifice",
-          "sac-outlet"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Witherbloom Charm",
-        "impact": 2.6,
-        "tags": [
-          "instant",
-          "draw",
-          "removal",
-          "sacrifice",
-          "lifegain"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Witherbloom Command",
-        "impact": 2.5,
-        "tags": [
-          "sorcery",
-          "removal",
           "recursion",
+          "life-payoff"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Blight Mound",
+        "impact": 2.6,
+        "tags": [
+          "enchantment",
+          "tokens",
+          "death-payoff",
           "lifegain"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Morbid Opportunist",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Nether Traitor",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "recursion"
         ],
         "aeon": null
       }

@@ -29,15 +29,15 @@
   "analysis": {
     "median": 38,
     "p20": 29,
-    "p80": 47,
+    "p80": 48,
     "peak": 68,
     "coverage": 89,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "8125ac4dc82e2f7c9701896250f6d4a16a459885425babdc0134797040809abd",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "910742d61c5462831025d45d46cfeeafd9a7e6b388cb58493f02221edc814f2e",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Archpriest of Iona\n1 Bygone Bishop\n1 Eight-and-a-Half-Tails\n1 Frontline Medic\n1 Galepowder Mage\n1 Glorious Protector\n1 Jazal Goldmane\n1 Magus of the Balance\n1 Mikaeus, the Lunarch\n1 Mirror Entity\n1 Order of Whiteclay\n1 Selfless Spirit\n1 Solemn Recruit\n1 Squad Commander\n1 Bloodsoaked Champion\n1 Butcher of Malakir\n1 Calculating Lich\n1 Dire Fleet Ravager\n1 Gonti, Lord of Luxury\n1 Grim Haruspex\n1 Grim Hireling\n1 Mardu Strike Leader\n1 Mindblade Render\n1 Nighthawk Scavenger\n1 Pontiff of Blight\n1 Puppeteer Clique\n1 Felisa, Fang of Silverquill\n1 High Priest of Penance\n1 Aven Mindcensor\n1 Irregular Cohort\n1 Mage's Attendant\n1 Mother of Runes\n1 Priest of Ancient Lore\n1 Rumor Gatherer\n1 Valiant Changeling\n1 Changeling Outcast\n1 Corpse Augur\n1 Malakir Blood-Priest\n1 Zulaport Cutthroat\n1 Austere Command\n1 Dusk // Dawn\n1 Sevinne's Reclamation\n1 Thwart the Grave\n1 Unbreakable Formation\n1 Despark\n1 Maskwood Nexus\n1 Arcane Signet\n1 Orzhov Signet\n1 Skullclamp\n1 Sol Ring\n1 Talisman of Hierarchy\n1 Firja's Retribution\n1 Castle Locthwain\n1 Mutavault\n1 Shambling Vent\n1 Temple of Silence\n1 Vault of the Archangel\n1 War Room\n1 Windbrisk Heights\n1 Command Tower\n1 Ash Barrens\n1 Bojuka Bog\n1 Mortuary Mire\n1 Myriad Landscape\n1 Orzhov Basilica\n1 Path of Ancestry\n1 Snowfield Sinkhole\n1 Starlit Sanctum\n1 Tainted Field\n3 Plains\n3 Plains\n2 Plains\n2 Plains\n3 Swamp\n3 Swamp\n2 Swamp\n2 Swamp\n1 Burakos, Party Leader\n1 Folk Hero\n1 Deep Gnome Terramancer\n1 Harper Recruiter\n1 Seasoned Dungeoneer\n1 Stick Together\n1 Black Market Connections\n1 Solemn Doomguide\n1 Multiclass Baldric\n1 Crib Swap",
   "oracleCards": [
@@ -147,6 +147,7 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "draw",
         "mana",
         "tokens"
       ],
@@ -242,7 +243,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -279,6 +281,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -469,7 +472,8 @@
         "creature",
         "tokens",
         "death-payoff",
-        "counter-kind:generic"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -526,9 +530,7 @@
         "creature",
         "counterspell",
         "protection",
-        "sacrifice",
-        "counter-kind:generic",
-        "stax"
+        "sacrifice"
       ],
       "isCommander": false
     },
@@ -714,11 +716,10 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counterspell",
         "tokens",
         "sacrifice",
-        "etb",
-        "counter-kind:generic",
-        "stax"
+        "etb"
       ],
       "isCommander": false
     },
@@ -1135,7 +1136,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1173,7 +1176,9 @@
       "tags": [
         "creature",
         "protection",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1250,7 +1255,8 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "draw"
+        "draw",
+        "death-payoff"
       ],
       "isCommander": false
     },
@@ -1277,18 +1283,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1569,6 +1576,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -1620,22 +1628,22 @@
     "profile": {
       "median": 38,
       "floor": 29,
-      "ceiling": 47,
+      "ceiling": 48,
       "peak": 68,
-      "dispersion": 18,
-      "variance": 18,
-      "consistency": 69,
+      "dispersion": 19,
+      "variance": 19,
+      "consistency": 68,
       "commanderDelta": 8,
       "coverage": 89,
       "dataCoverage": 89
     },
     "dimensions": {
       "speed": 42,
-      "consistency": 69,
-      "explosiveness": 12,
-      "synergy": 2,
+      "consistency": 68,
+      "explosiveness": 11,
+      "synergy": 4,
       "interaction": 48,
-      "resilience": 53
+      "resilience": 54
     },
     "roles": {
       "lands": 37,
@@ -1643,20 +1651,22 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 7,
+      "draw": 8,
       "interaction": 9,
       "protection": 7,
       "recursion": 5,
       "wipes": 2,
-      "avgCmc": 3.274193548387097,
+      "avgCmc": 3.2903225806451615,
       "unknownManaLands": 0
     },
     "packages": [],
     "combos": [],
     "commanderSynergy": {
-      "score": 8,
+      "score": 14,
       "connected": [
+        "Felisa, Fang of Silverquill",
         "Mikaeus, the Lunarch",
+        "Seasoned Dungeoneer",
         "Solemn Recruit",
         "Unbreakable Formation"
       ],
@@ -1672,39 +1682,39 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
-      "median": 39,
-      "high": 45,
-      "ceiling": 45,
+      "floor": 34,
+      "median": 40,
+      "high": 47,
+      "ceiling": 47,
       "peak": 62,
       "iqr": 10,
-      "consistency": 78,
+      "consistency": 77,
       "commanderMedianTurn": 3,
       "engineMedianTurn": null,
-      "recoveryAfterDisruption": 89,
+      "recoveryAfterDisruption": 91,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 8,
-          "resource": 9,
+          "resource": 23,
           "burst": 8
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 3,
           "engine": 0,
-          "interaction": 15,
-          "resource": 24,
+          "interaction": 17,
+          "resource": 37,
           "burst": 7
         },
         {
           "turn": 3,
-          "commander": 66,
+          "commander": 69,
           "engine": 0,
-          "interaction": 37,
-          "resource": 53,
+          "interaction": 39,
+          "resource": 62,
           "burst": 6
         },
         {
@@ -1712,7 +1722,7 @@
           "commander": 89,
           "engine": 0,
           "interaction": 52,
-          "resource": 65,
+          "resource": 71,
           "burst": 4
         },
         {
@@ -1720,7 +1730,7 @@
           "commander": 93,
           "engine": 0,
           "interaction": 58,
-          "resource": 71,
+          "resource": 76,
           "burst": 3
         },
         {
@@ -1728,7 +1738,7 @@
           "commander": 94,
           "engine": 0,
           "interaction": 63,
-          "resource": 76,
+          "resource": 80,
           "burst": 1
         },
         {
@@ -1736,22 +1746,20 @@
           "commander": 96,
           "engine": 0,
           "interaction": 67,
-          "resource": 80,
+          "resource": 84,
           "burst": 1
         }
       ]
     },
     "drivers": [
       {
-        "name": "Frontline Medic",
-        "impact": 3.1,
+        "name": "Black Market Connections",
+        "impact": 3.5,
         "tags": [
-          "creature",
-          "counterspell",
-          "protection",
-          "sacrifice",
-          "counter-kind:generic",
-          "stax"
+          "enchantment",
+          "draw",
+          "mana",
+          "tokens"
         ],
         "aeon": null
       },
@@ -1759,6 +1767,7 @@
         "name": "Sol Ring",
         "impact": 3,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],
@@ -1781,7 +1790,8 @@
         "impact": 2.4,
         "tags": [
           "artifact",
-          "draw"
+          "draw",
+          "death-payoff"
         ],
         "aeon": null
       },
@@ -1791,6 +1801,17 @@
         "tags": [
           "enchantment",
           "draw"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Frontline Medic",
+        "impact": 2.3,
+        "tags": [
+          "creature",
+          "counterspell",
+          "protection",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -1820,16 +1841,6 @@
           "creature",
           "draw",
           "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Black Market Connections",
-        "impact": 2.1,
-        "tags": [
-          "enchantment",
-          "mana",
-          "tokens"
         ],
         "aeon": null
       },

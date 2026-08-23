@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 42,
-    "p20": 29,
-    "p80": 53,
-    "peak": 81,
-    "coverage": 91,
+    "median": 46,
+    "p20": 33,
+    "p80": 58,
+    "peak": 84,
+    "coverage": 92,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "4d18d71cf60d24ee4b929759fffb91bec483e4b950a5ce25b4be2b127b6d9ac7",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "341f08b29eaf91203e673e1700b0a1c9806e7d927de735e28485272be36aa5ea",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Xolatoyac, the Smiling Flood\n1 Mist Dancer\n1 Ripples of Potential\n1 Wave Goodbye\n1 Bygone Marvels\n1 Deeproot Historian\n1 Topography Tracker\n1 Tributary Instructor\n1 Singer of Swift Rivers\n1 Benthic Biomancer\n1 Commit // Memory\n1 Coralhelm Commander\n1 Curse of the Swine\n1 Emperor Mihail II\n1 Herald of Secret Streams\n1 Kindred Discovery\n1 Kopala, Warden of Waves\n1 Master of the Pearl Trident\n1 Merfolk Sovereign\n1 Reflections of Littjara\n1 Seafloor Oracle\n1 Surgespanner\n1 Svyelun of Sea and Sky\n1 Thassa, God of the Sea\n1 Thieving Skydiver\n1 Branching Evolution\n1 Deeproot Elite\n1 Hardened Scales\n1 Realmwalker\n1 Ruinous Intrusion\n1 Cold-Eyed Selkie\n1 Kumena, Tyrant of Orazca\n1 Prime Speaker Zegana\n1 Quandrix Command\n1 Simic Ascendancy\n1 Tishana, Voice of Thunder\n1 Vorel of the Hull Clade\n1 Zegana, Utopian Speaker\n1 Metallic Mimic\n1 Alchemist's Refuge\n1 Hinterland Harbor\n1 Karn's Bastion\n1 Mosswort Bridge\n1 Temple of Mystery\n1 Vineglimmer Snarl\n1 Merfolk Cave-Diver\n1 Aetherize\n1 Deeproot Waters\n1 Merrow Reejerey\n1 Rapid Hybridization\n1 Ravenform\n1 Sage of Fables\n1 Stonybrook Banneret\n1 Beast Within\n1 Nicanzil, Current Conductor\n1 Evolution Sage\n1 Explore\n1 Inspiring Call\n1 Kodama's Reach\n1 Growth Spiral\n1 Kiora's Follower\n1 Merfolk Mistbinder\n1 Merfolk Skydiver\n1 Tatyova, Benthic Druid\n1 Arcane Signet\n1 Commander's Sphere\n1 Simic Signet\n1 Sol Ring\n1 Swiftfoot Boots\n1 Command Tower\n1 Llanowar Reborn\n1 Myriad Landscape\n1 Path of Ancestry\n1 Reliquary Tower\n1 Rogue's Passage\n1 Secluded Courtyard\n1 Simic Growth Chamber\n1 Temple of the False God\n1 Unclaimed Territory\n4 Forest\n3 Forest\n7 Island\n6 Island",
   "oracleCards": [
@@ -135,6 +135,7 @@
         "creature",
         "draw",
         "graveyard-setup",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -234,6 +235,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -253,7 +255,9 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "sorcery"
+        "sorcery",
+        "draw",
+        "removal"
       ],
       "isCommander": false
     },
@@ -460,7 +464,9 @@
       "tags": [
         "creature",
         "draw",
-        "land-ramp"
+        "land-ramp",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": true
     },
@@ -671,6 +677,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "counter-producer",
         "counter-kind:plus1"
       ],
@@ -693,7 +700,9 @@
       "tags": [
         "land",
         "mana",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -727,7 +736,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -943,6 +954,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "etb",
         "counter-producer",
         "counter-kind:plus1"
@@ -964,6 +976,7 @@
       "producedMana": [],
       "tags": [
         "instant",
+        "counterspell",
         "counter-producer",
         "counter-kind:plus1"
       ],
@@ -1131,6 +1144,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "etb",
         "counter-producer",
         "counter-kind:plus1"
@@ -1261,23 +1275,25 @@
       "tags": [
         "creature",
         "etb",
+        "counter-producer",
         "counter-kind:shield"
       ],
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1487,7 +1503,9 @@
       "tags": [
         "creature",
         "tokens",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1506,6 +1524,8 @@
       "tags": [
         "creature",
         "draw",
+        "death-payoff",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1610,6 +1630,7 @@
       "tags": [
         "creature",
         "etb",
+        "counter-producer",
         "counter-payoff",
         "counter-kind:generic"
       ],
@@ -1632,6 +1653,7 @@
         "creature",
         "draw",
         "etb",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1639,24 +1661,24 @@
   ],
   "result": {
     "profile": {
-      "median": 42,
-      "floor": 29,
-      "ceiling": 53,
-      "peak": 81,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 62,
-      "commanderDelta": 6,
-      "coverage": 91,
-      "dataCoverage": 91
+      "median": 46,
+      "floor": 33,
+      "ceiling": 58,
+      "peak": 84,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 59,
+      "commanderDelta": 11,
+      "coverage": 92,
+      "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 42,
-      "consistency": 62,
+      "speed": 44,
+      "consistency": 59,
       "explosiveness": 21,
-      "synergy": 53,
-      "interaction": 29,
-      "resilience": 34
+      "synergy": 71,
+      "interaction": 35,
+      "resilience": 36
     },
     "roles": {
       "lands": 36,
@@ -1664,31 +1686,31 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 12,
-      "interaction": 4,
+      "draw": 17,
+      "interaction": 6,
       "protection": 6,
       "recursion": 1,
       "wipes": 0,
-      "avgCmc": 3.0952380952380953,
+      "avgCmc": 3.111111111111111,
       "unknownManaLands": 0
     },
     "packages": [
       {
         "id": "counters",
         "name": "Marqueurs",
-        "strength": 94,
-        "cohesion": 94,
+        "strength": 100,
+        "cohesion": 100,
         "producers": [
+          "Benthic Biomancer",
           "Deeproot Elite",
           "Evolution Sage",
           "Karn's Bastion",
           "Kumena, Tyrant of Orazca",
+          "Llanowar Reborn",
+          "Merfolk Cave-Diver",
           "Merfolk Skydiver",
           "Metallic Mimic",
-          "Nicanzil, Current Conductor",
-          "Prime Speaker Zegana",
-          "Quandrix Command",
-          "Ripples of Potential"
+          "Nicanzil, Current Conductor"
         ],
         "payoffs": [
           "Hardened Scales",
@@ -1696,10 +1718,13 @@
           "Xolatoyac, the Smiling Flood"
         ],
         "members": [
+          "Benthic Biomancer",
           "Deeproot Elite",
           "Evolution Sage",
           "Karn's Bastion",
           "Kumena, Tyrant of Orazca",
+          "Llanowar Reborn",
+          "Merfolk Cave-Diver",
           "Merfolk Skydiver",
           "Metallic Mimic",
           "Nicanzil, Current Conductor",
@@ -1709,11 +1734,34 @@
           "Ruinous Intrusion",
           "Sage of Fables",
           "Simic Ascendancy",
+          "Topography Tracker",
+          "Tributary Instructor",
+          "Xolatoyac, the Smiling Flood",
+          "Zegana, Utopian Speaker",
           "Hardened Scales",
-          "Inspiring Call",
-          "Xolatoyac, the Smiling Flood"
+          "Inspiring Call"
         ],
         "producerCards": [
+          {
+            "name": "Benthic Biomancer",
+            "cmc": 1,
+            "tags": [
+              "creature",
+              "draw",
+              "graveyard-setup",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 1
+            }
+          },
           {
             "name": "Deeproot Elite",
             "cmc": 2,
@@ -1773,6 +1821,7 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "draw",
               "counter-producer",
               "counter-kind:plus1"
             ],
@@ -1782,6 +1831,40 @@
                 [
                   "G"
                 ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Llanowar Reborn",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "mana",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Merfolk Cave-Diver",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
                 [
                   "U"
                 ]
@@ -1855,6 +1938,7 @@
             "cmc": 6,
             "tags": [
               "creature",
+              "draw",
               "etb",
               "counter-producer",
               "counter-kind:plus1"
@@ -1883,6 +1967,7 @@
             "cmc": 3,
             "tags": [
               "instant",
+              "counterspell",
               "counter-producer",
               "counter-kind:plus1"
             ],
@@ -1942,6 +2027,7 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "draw",
               "etb",
               "counter-producer",
               "counter-kind:plus1"
@@ -1976,6 +2062,92 @@
                 ]
               ],
               "total": 2
+            }
+          },
+          {
+            "name": "Topography Tracker",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Tributary Instructor",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "draw",
+              "death-payoff",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Xolatoyac, the Smiling Flood",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:generic"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Zegana, Utopian Speaker",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "draw",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
             }
           }
         ],
@@ -2025,6 +2197,7 @@
             "tags": [
               "creature",
               "etb",
+              "counter-producer",
               "counter-payoff",
               "counter-kind:generic"
             ],
@@ -2046,9 +2219,10 @@
           "counter-producer"
         ],
         "payoffTags": [
-          "counter-payoff"
+          "counter-payoff",
+          "modified-payoff"
         ],
-        "evidence": "13 producteur(s), 3 payoff(s), 16 carte(s) distincte(s)."
+        "evidence": "20 producteur(s), 3 payoff(s), 22 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2233,6 +2407,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2318,15 +2493,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           }
         ],
@@ -2337,7 +2513,9 @@
             "tags": [
               "creature",
               "draw",
-              "land-ramp"
+              "land-ramp",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2358,9 +2536,33 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 0,
-      "connected": [],
-      "tags": []
+      "score": 57,
+      "connected": [
+        "Benthic Biomancer",
+        "Deeproot Elite",
+        "Evolution Sage",
+        "Hardened Scales",
+        "Inspiring Call",
+        "Karn's Bastion",
+        "Kumena, Tyrant of Orazca",
+        "Llanowar Reborn",
+        "Merfolk Cave-Diver",
+        "Merfolk Skydiver",
+        "Metallic Mimic",
+        "Nicanzil, Current Conductor",
+        "Prime Speaker Zegana",
+        "Quandrix Command",
+        "Ripples of Potential",
+        "Ruinous Intrusion",
+        "Sage of Fables",
+        "Simic Ascendancy",
+        "Topography Tracker",
+        "Tributary Instructor",
+        "Zegana, Utopian Speaker"
+      ],
+      "tags": [
+        "counter-producer"
+      ]
     },
     "aeon": {
       "available": false,
@@ -2370,71 +2572,71 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 30,
-      "median": 39,
-      "high": 47,
-      "ceiling": 47,
-      "peak": 70,
-      "iqr": 13,
-      "consistency": 71,
+      "floor": 32,
+      "median": 41,
+      "high": 50,
+      "ceiling": 50,
+      "peak": 73,
+      "iqr": 15,
+      "consistency": 67,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 75,
+      "engineMedianTurn": 4,
+      "recoveryAfterDisruption": 80,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
-          "engine": 0,
+          "engine": 1,
           "interaction": 5,
           "resource": 6,
           "burst": 8
         },
         {
           "turn": 2,
-          "commander": 0,
-          "engine": 1,
-          "interaction": 7,
-          "resource": 9,
-          "burst": 10
+          "commander": 3,
+          "engine": 2,
+          "interaction": 9,
+          "resource": 12,
+          "burst": 11
         },
         {
           "turn": 3,
-          "commander": 24,
-          "engine": 7,
-          "interaction": 22,
-          "resource": 31,
-          "burst": 12
+          "commander": 28,
+          "engine": 10,
+          "interaction": 27,
+          "resource": 40,
+          "burst": 13
         },
         {
           "turn": 4,
           "commander": 71,
-          "engine": 14,
-          "interaction": 32,
-          "resource": 52,
+          "engine": 17,
+          "interaction": 38,
+          "resource": 60,
           "burst": 14
         },
         {
           "turn": 5,
           "commander": 85,
-          "engine": 20,
-          "interaction": 38,
-          "resource": 62,
+          "engine": 23,
+          "interaction": 44,
+          "resource": 71,
           "burst": 13
         },
         {
           "turn": 6,
           "commander": 89,
-          "engine": 25,
-          "interaction": 41,
-          "resource": 70,
+          "engine": 28,
+          "interaction": 49,
+          "resource": 78,
           "burst": 14
         },
         {
           "turn": 7,
           "commander": 93,
-          "engine": 30,
-          "interaction": 44,
-          "resource": 75,
+          "engine": 32,
+          "interaction": 52,
+          "resource": 82,
           "burst": 14
         }
       ]
@@ -2486,8 +2688,32 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Benthic Biomancer",
+        "impact": 3.1,
+        "tags": [
+          "creature",
+          "draw",
+          "graveyard-setup",
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -2526,44 +2752,25 @@
         "aeon": null
       },
       {
-        "name": "Benthic Biomancer",
-        "impact": 2.4,
+        "name": "Tributary Instructor",
+        "impact": 2.9,
         "tags": [
           "creature",
           "draw",
-          "graveyard-setup",
+          "death-payoff",
+          "counter-producer",
           "counter-kind:plus1"
         ],
         "aeon": null
       },
       {
-        "name": "Cold-Eyed Selkie",
-        "impact": 2.3,
+        "name": "Kumena, Tyrant of Orazca",
+        "impact": 2.4,
         "tags": [
           "creature",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Evolution Sage",
-        "impact": 2.2,
-        "tags": [
-          "creature",
-          "etb",
-          "landfall",
-          "counter-producer",
-          "counter-kind:wild"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Kindred Discovery",
-        "impact": 2.2,
-        "tags": [
-          "enchantment",
           "draw",
-          "etb"
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       }

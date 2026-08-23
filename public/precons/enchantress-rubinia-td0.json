@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 46,
-    "p20": 33,
-    "p80": 56,
-    "peak": 82,
+    "median": 47,
+    "p20": 34,
+    "p80": 57,
+    "peak": 83,
     "coverage": 91,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
+    "semanticVersion": "3.2.0-semantic-10",
     "oracleSnapshotHash": "2acaae6b507e99ae95a33369cfc3a2a56d7b67a53ffe92466e12341d6b376ff7",
-    "scryfallOracleDate": "2026-08-21",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Azorius Chancery\n1 Bant Panorama\n1 Coastal Tower\n1 Elfhame Palace\n4 Forest\n3 Forest\n3 Forest\n3 Island\n3 Island\n3 Island\n1 Miren, the Moaning Well\n3 Plains\n3 Plains\n3 Plains\n1 Rupture Spire\n1 Seaside Citadel\n1 Selesnya Sanctuary\n1 Simic Growth Chamber\n1 Terramorphic Expanse\n1 Treva's Ruins\n1 Auramancer\n1 Azorius Guildmage\n1 Borderland Ranger\n1 Coiling Oracle\n1 Court Hussar\n1 Elvish Visionary\n1 Jungle Barrier\n1 Jungle Lion\n1 Kami of Ancient Law\n1 Krosan Tusker\n1 Looter il-Kor\n1 Man-o'-War\n1 Merfolk Looter\n1 Mistmeadow Witch\n1 Mulldrifter\n1 Noble Templar\n1 Phantom Centaur\n1 Questing Phelddagrif\n1 Raven Familiar\n1 Sakura-Tribe Elder\n1 Shoreline Ranger\n1 Stonecloaker\n1 Willbender\n1 Wirewood Guardian\n1 Wood Elves\n1 Yavimaya Enchantress\n1 Armadillo Cloak\n1 Azorius Signet\n1 Capsize\n1 Compulsive Research\n1 Concordant Crossroads\n1 Condemn\n1 Confiscate\n1 Copy Enchantment\n1 Decree of Justice\n1 Dismantling Blow\n1 Empyrial Armor\n1 Enlightened Tutor\n1 Fact or Fiction\n1 Faith's Fetters\n1 Fertile Ground\n1 Ghostly Prison\n1 Hinder\n1 Illusionary Mask\n1 Mirari's Wake\n1 Momentary Blink\n1 Moment's Peace\n1 Oblivion Ring\n1 Overwhelming Intellect\n1 Prison Term\n1 Rampant Growth\n1 Relic of Progenitus\n1 Resurrection\n1 Rhystic Study\n1 Seal of Cleansing\n1 Selesnya Signet\n1 Simic Signet\n1 Sterling Grove\n1 Swords to Plowshares\n1 Temporal Spring",
   "oracleCards": [
@@ -118,8 +118,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counterspell",
-        "counter-kind:generic"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -290,7 +289,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "removal"
       ],
       "isCommander": false
     },
@@ -573,8 +573,7 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counterspell",
-        "counter-kind:generic"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -738,6 +737,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -914,7 +914,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "counter-kind:generic"
+        "draw",
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -1081,8 +1082,7 @@
       "producedMana": [],
       "tags": [
         "enchantment",
-        "draw",
-        "stax"
+        "draw"
       ],
       "isCommander": false
     },
@@ -1371,7 +1371,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "removal"
       ],
       "isCommander": false
     },
@@ -1491,10 +1492,10 @@
   ],
   "result": {
     "profile": {
-      "median": 46,
-      "floor": 33,
-      "ceiling": 56,
-      "peak": 82,
+      "median": 47,
+      "floor": 34,
+      "ceiling": 57,
+      "peak": 83,
       "dispersion": 24,
       "variance": 24,
       "consistency": 67,
@@ -1507,8 +1508,8 @@
       "consistency": 67,
       "explosiveness": 16,
       "synergy": 52,
-      "interaction": 66,
-      "resilience": 34
+      "interaction": 70,
+      "resilience": 36
     },
     "roles": {
       "lands": 39,
@@ -1516,8 +1517,8 @@
       "fastMana": 0,
       "tutors": 2,
       "repeatableTutors": 1,
-      "draw": 8,
-      "interaction": 12,
+      "draw": 10,
+      "interaction": 14,
       "protection": 3,
       "recursion": 2,
       "wipes": 1,
@@ -1891,6 +1892,7 @@
             "cmc": 2,
             "tags": [
               "creature",
+              "draw",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -2130,22 +2132,22 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 34,
-      "median": 43,
-      "high": 51,
-      "ceiling": 51,
-      "peak": 73,
-      "iqr": 14,
+      "floor": 35,
+      "median": 44,
+      "high": 52,
+      "ceiling": 52,
+      "peak": 74,
+      "iqr": 13,
       "consistency": 70,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 74,
+      "recoveryAfterDisruption": 78,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 9,
+          "interaction": 11,
           "resource": 6,
           "burst": 0
         },
@@ -2153,48 +2155,48 @@
           "turn": 2,
           "commander": 0,
           "engine": 0,
-          "interaction": 29,
-          "resource": 17,
+          "interaction": 33,
+          "resource": 21,
           "burst": 7
         },
         {
           "turn": 3,
           "commander": 13,
           "engine": 4,
-          "interaction": 56,
-          "resource": 43,
+          "interaction": 61,
+          "resource": 47,
           "burst": 10
         },
         {
           "turn": 4,
           "commander": 39,
           "engine": 14,
-          "interaction": 70,
-          "resource": 58,
+          "interaction": 74,
+          "resource": 63,
           "burst": 12
         },
         {
           "turn": 5,
           "commander": 69,
           "engine": 18,
-          "interaction": 75,
-          "resource": 66,
+          "interaction": 79,
+          "resource": 71,
           "burst": 13
         },
         {
           "turn": 6,
           "commander": 81,
           "engine": 23,
-          "interaction": 79,
-          "resource": 71,
+          "interaction": 84,
+          "resource": 77,
           "burst": 14
         },
         {
           "turn": 7,
           "commander": 86,
           "engine": 26,
-          "interaction": 82,
-          "resource": 75,
+          "interaction": 86,
+          "resource": 81,
           "burst": 15
         }
       ]
@@ -2207,16 +2209,6 @@
           "artifact",
           "cheat",
           "free"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Rhystic Study",
-        "impact": 3.1,
-        "tags": [
-          "enchantment",
-          "draw",
-          "stax"
         ],
         "aeon": null
       },
@@ -2261,6 +2253,16 @@
         "aeon": null
       },
       {
+        "name": "Merfolk Looter",
+        "impact": 2.5,
+        "tags": [
+          "creature",
+          "draw",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Wood Elves",
         "impact": 2.5,
         "tags": [
@@ -2291,6 +2293,16 @@
         "aeon": null
       },
       {
+        "name": "Overwhelming Intellect",
+        "impact": 2.4,
+        "tags": [
+          "instant",
+          "draw",
+          "counterspell"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Mulldrifter",
         "impact": 2.3,
         "tags": [
@@ -2301,21 +2313,11 @@
         "aeon": null
       },
       {
-        "name": "Mistmeadow Witch",
-        "impact": 2.1,
+        "name": "Rhystic Study",
+        "impact": 2.3,
         "tags": [
-          "creature",
-          "tempo-interaction",
-          "blink"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Azorius Signet",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana"
+          "enchantment",
+          "draw"
         ],
         "aeon": null
       }

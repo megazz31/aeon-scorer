@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 38,
+    "median": 42,
     "p20": 25,
-    "p80": 50,
-    "peak": 86,
-    "coverage": 92,
+    "p80": 53,
+    "peak": 87,
+    "coverage": 93,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "dbdc4fc2779aa1c777cb92eb3439cde91cc06961af490b7508db7dce6efabf56",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "4865a01b799e4a5e3c8c0ef4d9390dac765b986b26c26462ed1dfa9cbbde55a2",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Admonition Angel\n1 Trove Warden\n1 Geode Rager\n1 Emeria Angel\n1 Emeria Shepherd\n1 Sun Titan\n1 Multani, Yavimaya's Avatar\n1 Rampaging Baloths\n1 Sylvan Advocate\n1 Waker of the Wilds\n1 Living Twister\n1 Mina and Denn, Wildborn\n1 Omnath, Locus of Rage\n1 Abzan Falconer\n1 Elite Scaleguard\n1 Kor Cartographer\n1 Acidic Slime\n1 Armorcraft Judge\n1 Elvish Rejuvenator\n1 Embodiment of Insight\n1 Evolution Sage\n1 Fertilid\n1 Keeper of Fables\n1 Satyr Wayfinder\n1 Sporemound\n1 Springbloom Druid\n1 Tuskguard Captain\n1 Yavimaya Elder\n1 Sandstone Oracle\n1 Scaretiller\n1 Murasa Rootgrazer\n1 Hour of Revelation\n1 Planar Outburst\n1 Nissa's Renewal\n1 Beanstalk Giant // Fertile Footsteps\n1 Circuitous Route\n1 Far Wanderings\n1 Harmonize\n1 Kodama's Reach\n1 Ground Assault\n1 Treacherous Terrain\n1 Return of the Wildspeaker\n1 Condemn\n1 Crush Contraband\n1 Harrow\n1 Inspiring Call\n1 Naya Charm\n1 Sylvan Reclamation\n1 Roiling Regrowth\n1 Seer's Sundial\n1 Arcane Signet\n1 Sol Ring\n1 Together Forever\n1 Abundance\n1 The Mending of Dominaria\n1 Rites of Flourishing\n1 Banishing Light\n1 Retreat to Emeria\n1 Khalni Heart Expedition\n1 Retreat to Kazandu\n1 Zendikar's Roil\n1 Needle Spires\n1 Blighted Woodland\n1 Boros Garrison\n1 Boros Guildgate\n1 Command Tower\n1 Cryptic Caves\n1 Evolving Wilds\n1 Gruul Guildgate\n1 Gruul Turf\n1 Jungle Shrine\n1 Krosan Verge\n1 Myriad Landscape\n1 Naya Panorama\n1 Selesnya Guildgate\n1 Selesnya Sanctuary\n1 Terramorphic Expanse\n7 Plains\n4 Mountain\n10 Forest\n1 Struggle // Survive",
   "oracleCards": [
@@ -73,6 +73,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -315,7 +316,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "removal"
       ],
       "isCommander": false
     },
@@ -351,6 +353,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -371,6 +374,7 @@
       "tags": [
         "creature",
         "etb",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -766,6 +770,7 @@
         "sacrifice",
         "etb",
         "landfall",
+        "counter-producer",
         "counter-kind:quest"
       ],
       "isCommander": false
@@ -1177,7 +1182,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1229,6 +1235,7 @@
       "tags": [
         "creature",
         "artifact",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -1334,18 +1341,19 @@
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1494,7 +1502,8 @@
       "producedMana": [],
       "tags": [
         "enchantment",
-        "recursion"
+        "recursion",
+        "graveyard-setup"
       ],
       "isCommander": false
     },
@@ -1513,8 +1522,9 @@
       "tags": [
         "enchantment",
         "etb",
+        "counter-producer",
         "counter-payoff",
-        "counter-kind:generic"
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1570,6 +1580,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:plus1"
       ],
       "isCommander": false
@@ -1607,6 +1618,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "sacrifice",
         "death-payoff"
       ],
@@ -1635,24 +1647,24 @@
   ],
   "result": {
     "profile": {
-      "median": 38,
+      "median": 42,
       "floor": 25,
-      "ceiling": 50,
-      "peak": 86,
-      "dispersion": 25,
-      "variance": 25,
-      "consistency": 62,
-      "commanderDelta": 10,
-      "coverage": 92,
-      "dataCoverage": 92
+      "ceiling": 53,
+      "peak": 87,
+      "dispersion": 27,
+      "variance": 27,
+      "consistency": 60,
+      "commanderDelta": 12,
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
       "speed": 31,
-      "consistency": 62,
+      "consistency": 60,
       "explosiveness": 15,
-      "synergy": 78,
-      "interaction": 14,
-      "resilience": 40
+      "synergy": 82,
+      "interaction": 24,
+      "resilience": 42
     },
     "roles": {
       "lands": 37,
@@ -1660,12 +1672,12 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 5,
-      "interaction": 5,
+      "draw": 8,
+      "interaction": 6,
       "protection": 1,
       "recursion": 6,
       "wipes": 2,
-      "avgCmc": 4.048387096774194,
+      "avgCmc": 4.064516129032258,
       "unknownManaLands": 0
     },
     "packages": [
@@ -2031,6 +2043,7 @@
               "sacrifice",
               "etb",
               "landfall",
+              "counter-producer",
               "counter-kind:quest"
             ],
             "manaReq": {
@@ -2227,12 +2240,16 @@
       {
         "id": "counters",
         "name": "Marqueurs",
-        "strength": 66,
-        "cohesion": 66,
+        "strength": 72,
+        "cohesion": 72,
         "producers": [
+          "Abzan Falconer",
+          "Elite Scaleguard",
           "Evolution Sage",
           "Fertilid",
           "Retreat to Kazandu",
+          "Together Forever",
+          "Tuskguard Captain",
           "Waker of the Wilds"
         ],
         "payoffs": [
@@ -2241,15 +2258,55 @@
           "Together Forever"
         ],
         "members": [
+          "Abzan Falconer",
+          "Elite Scaleguard",
           "Evolution Sage",
           "Fertilid",
           "Retreat to Kazandu",
+          "Together Forever",
+          "Tuskguard Captain",
           "Waker of the Wilds",
           "Armorcraft Judge",
-          "Inspiring Call",
-          "Together Forever"
+          "Inspiring Call"
         ],
         "producerCards": [
+          {
+            "name": "Abzan Falconer",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Elite Scaleguard",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
           {
             "name": "Evolution Sage",
             "cmc": 3,
@@ -2299,6 +2356,47 @@
               "counter-producer",
               "counter-kind:plus1",
               "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Together Forever",
+            "cmc": 2,
+            "tags": [
+              "enchantment",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Tuskguard Captain",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2379,8 +2477,9 @@
             "tags": [
               "enchantment",
               "etb",
+              "counter-producer",
               "counter-payoff",
-              "counter-kind:generic"
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 0,
@@ -2400,9 +2499,10 @@
           "counter-producer"
         ],
         "payoffTags": [
-          "counter-payoff"
+          "counter-payoff",
+          "modified-payoff"
         ],
-        "evidence": "4 producteur(s), 3 payoff(s), 7 carte(s) distincte(s)."
+        "evidence": "8 producteur(s), 3 payoff(s), 10 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2476,15 +2576,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           }
         ],
@@ -2521,11 +2622,13 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 80,
+      "score": 90,
       "connected": [
+        "Abzan Falconer",
         "Admonition Angel",
         "Armorcraft Judge",
         "Beanstalk Giant // Fertile Footsteps",
+        "Elite Scaleguard",
         "Elvish Rejuvenator",
         "Embodiment of Insight",
         "Emeria Angel",
@@ -2549,7 +2652,9 @@
         "Seer's Sundial",
         "Sporemound",
         "Terramorphic Expanse",
+        "Together Forever",
         "Trove Warden",
+        "Tuskguard Captain",
         "Waker of the Wilds",
         "Zendikar's Roil"
       ],
@@ -2567,71 +2672,71 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 26,
-      "median": 35,
-      "high": 43,
-      "ceiling": 43,
-      "peak": 75,
-      "iqr": 14,
-      "consistency": 70,
+      "floor": 28,
+      "median": 39,
+      "high": 47,
+      "ceiling": 47,
+      "peak": 79,
+      "iqr": 15,
+      "consistency": 68,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 63,
+      "recoveryAfterDisruption": 70,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 0,
-          "resource": 0,
+          "interaction": 2,
+          "resource": 8,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 0,
           "engine": 1,
-          "interaction": 0,
-          "resource": 0,
+          "interaction": 9,
+          "resource": 8,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 5,
-          "engine": 7,
-          "interaction": 5,
-          "resource": 9,
+          "commander": 8,
+          "engine": 9,
+          "interaction": 15,
+          "resource": 21,
           "burst": 0
         },
         {
           "turn": 4,
-          "commander": 53,
-          "engine": 24,
-          "interaction": 17,
-          "resource": 34,
+          "commander": 54,
+          "engine": 28,
+          "interaction": 27,
+          "resource": 44,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 75,
-          "engine": 43,
-          "interaction": 26,
-          "resource": 50,
+          "engine": 47,
+          "interaction": 37,
+          "resource": 60,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 82,
-          "engine": 54,
-          "interaction": 34,
-          "resource": 59,
+          "engine": 58,
+          "interaction": 44,
+          "resource": 69,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 87,
-          "engine": 62,
-          "interaction": 40,
-          "resource": 67,
+          "engine": 67,
+          "interaction": 49,
+          "resource": 75,
           "burst": 0
         }
       ]
@@ -2641,6 +2746,7 @@
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
+          "artifact",
           "mana",
           "fast-mana"
         ],

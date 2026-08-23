@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 47,
-    "p20": 33,
-    "p80": 61,
+    "median": 50,
+    "p20": 37,
+    "p80": 62,
     "peak": 89,
-    "coverage": 93,
+    "coverage": 94,
     "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-6",
-    "oracleSnapshotHash": "fe8e2ac5ebc3e28cedd8c8fd0f48878ca913d26c368fc28ce85dd557ba6eb90b",
-    "scryfallOracleDate": "2026-08-21",
+    "semanticVersion": "3.2.0-semantic-10",
+    "oracleSnapshotHash": "0b55ead286014047ba4ea6f20221429ba080fcaa9f04acd966d1c295b9cfd5c9",
+    "scryfallOracleDate": "2026-08-22",
     "iterations": 3200,
-    "analyzedAt": "2026-08-21T14:56:27.531Z"
+    "analyzedAt": "2026-08-22T07:19:58.642Z"
   },
   "decklist": "1 Tivit, Seller of Secrets\n1 Aerial Extortionist\n1 Cephalid Facetaker\n1 Skyway Robber\n1 Misfortune Teller\n1 Oskar, Rubbish Reclaimer\n1 Silent-Blade Oni\n1 Wrexial, the Risen Deep\n1 Alela, Artful Provocateur\n1 Fallen Shinobi\n1 Drana, Liberator of Malakir\n1 Archon of Coronation\n1 Sun Titan\n1 Champion of Wits\n1 Chasm Skulker\n1 Ghostly Pilferer\n1 Identity Thief\n1 Nadir Kraken\n1 Custodi Lich\n1 Graveblade Marauder\n1 Daxos of Meletis\n1 Dragonlord Ojutai\n1 Shadowmage Infiltrator\n1 Thief of Sanity\n1 Daring Saboteur\n1 Looter il-Kor\n1 Whirler Rogue\n1 Inkfathom Witch\n1 Jailbreak\n1 Writ of Return\n1 Austere Command\n1 Dusk // Dawn\n1 Stolen Identity\n1 Nightmare Unmaking\n1 Profane Command\n1 Treasure Cruise\n1 An Offer You Can't Refuse\n1 Change of Plans\n1 Lethal Scheme\n1 Obscura Charm\n1 Obscura Confluence\n1 Commit // Memory\n1 Utter End\n1 Swords to Plowshares\n1 In Too Deep\n1 Life Insurance\n1 Smuggler's Share\n1 Arcane Signet\n1 Azorius Signet\n1 Commander's Sphere\n1 Currency Converter\n1 Dimir Signet\n1 Fellwar Stone\n1 Mask of Riddles\n1 Mask of the Schemer\n1 Orzhov Signet\n1 Quietus Spike\n1 Strionic Resonator\n1 Sol Ring\n1 Swiftfoot Boots\n1 Wayfarer's Bauble\n1 Fetid Heath\n1 Creeping Tar Pit\n1 Sunken Hollow\n1 Choked Estuary\n1 Arcane Sanctum\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Port Town\n1 Prairie Stream\n1 Skycloud Expanse\n1 Temple of Silence\n1 Ash Barrens\n1 Command Tower\n1 Esper Panorama\n1 Myriad Landscape\n1 Obscura Storefront\n1 Path of Ancestry\n1 Rogue's Passage\n1 Thriving Heath\n1 Thriving Isle\n1 Thriving Moor\n3 Plains\n2 Plains\n3 Island\n3 Island\n3 Swamp\n3 Swamp",
   "oracleCards": [
@@ -105,8 +105,7 @@
       ],
       "tags": [
         "instant",
-        "mana",
-        "counter-kind:generic"
+        "counterspell"
       ],
       "isCommander": false
     },
@@ -264,6 +263,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "graveyard-setup",
         "etb"
       ],
@@ -283,7 +283,9 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "protection"
+        "protection",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -371,6 +373,7 @@
       ],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "sacrifice"
       ],
@@ -390,7 +393,9 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "sorcery"
+        "sorcery",
+        "draw",
+        "removal"
       ],
       "isCommander": false
     },
@@ -429,6 +434,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "draw",
         "mana",
         "graveyard-setup",
         "tokens"
@@ -750,7 +756,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "removal"
+        "tempo-interaction",
+        "blink"
       ],
       "isCommander": false
     },
@@ -768,6 +775,7 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "draw",
         "sacrifice"
       ],
       "isCommander": false
@@ -843,7 +851,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": true
     },
@@ -861,7 +871,9 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "removal"
+        "removal",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -937,7 +949,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1037,8 +1051,8 @@
       "tags": [
         "instant",
         "removal",
-        "recursion",
-        "counter-kind:generic"
+        "counterspell",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -1057,7 +1071,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1335,7 +1351,6 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "exile-cast",
         "cheat",
         "free"
       ],
@@ -1356,24 +1371,24 @@
       "tags": [
         "enchantment",
         "draw",
-        "mana",
         "tokens"
       ],
       "isCommander": false
     },
     {
-      "oracleId": "d74a72a2-d46a-41c2-a400-70571197b020",
-      "scryfallId": "d74a72a2-d46a-41c2-a400-70571197b020",
+      "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "scryfallId": "91fdb56b-54d5-4272-8319-505ff987fe9b",
       "name": "Sol Ring",
-      "type": "",
-      "oracle": "{T}: Add {C}{C}.\n{T}: Add {C}{C}.",
-      "manaCost": "{1} // {1}",
-      "cmc": 0,
+      "type": "Artifact",
+      "oracle": "{T}: Add {C}{C}.",
+      "manaCost": "{1}",
+      "cmc": 1,
       "colorIdentity": [],
       "producedMana": [
         "C"
       ],
       "tags": [
+        "artifact",
         "mana",
         "fast-mana"
       ],
@@ -1658,7 +1673,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1759,24 +1775,24 @@
   ],
   "result": {
     "profile": {
-      "median": 47,
-      "floor": 33,
-      "ceiling": 61,
+      "median": 50,
+      "floor": 37,
+      "ceiling": 62,
       "peak": 89,
-      "dispersion": 28,
-      "variance": 28,
-      "consistency": 58,
-      "commanderDelta": 5,
-      "coverage": 93,
-      "dataCoverage": 93
+      "dispersion": 26,
+      "variance": 26,
+      "consistency": 57,
+      "commanderDelta": 7,
+      "coverage": 94,
+      "dataCoverage": 94
     },
     "dimensions": {
       "speed": 39,
-      "consistency": 58,
-      "explosiveness": 23,
-      "synergy": 58,
-      "interaction": 44,
-      "resilience": 55
+      "consistency": 57,
+      "explosiveness": 22,
+      "synergy": 65,
+      "interaction": 51,
+      "resilience": 57
     },
     "roles": {
       "lands": 38,
@@ -1784,20 +1800,20 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 7,
-      "interaction": 10,
+      "draw": 13,
+      "interaction": 12,
       "protection": 3,
       "recursion": 7,
       "wipes": 2,
-      "avgCmc": 3.6065573770491803,
+      "avgCmc": 3.622950819672131,
       "unknownManaLands": 0
     },
     "packages": [
       {
         "id": "artifacts",
         "name": "Artefacts",
-        "strength": 89,
-        "cohesion": 89,
+        "strength": 93,
+        "cohesion": 93,
         "producers": [
           "Arcane Signet",
           "Azorius Signet",
@@ -1825,6 +1841,7 @@
           "Mask of the Schemer",
           "Orzhov Signet",
           "Quietus Spike",
+          "Sol Ring",
           "Strionic Resonator",
           "Swiftfoot Boots",
           "Wayfarer's Bauble",
@@ -1863,6 +1880,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -1877,6 +1895,7 @@
             "cmc": 1,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "graveyard-setup",
               "tokens"
@@ -1937,7 +1956,9 @@
             "name": "Mask of the Schemer",
             "cmc": 3,
             "tags": [
-              "artifact"
+              "artifact",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -1972,6 +1993,20 @@
               "generic": 3,
               "colored": [],
               "total": 3
+            }
+          },
+          {
+            "name": "Sol Ring",
+            "cmc": 1,
+            "tags": [
+              "artifact",
+              "mana",
+              "fast-mana"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
             }
           },
           {
@@ -2069,7 +2104,7 @@
         "payoffTags": [
           "artifact-payoff"
         ],
-        "evidence": "13 producteur(s), 2 payoff(s), 15 carte(s) distincte(s)."
+        "evidence": "14 producteur(s), 2 payoff(s), 16 carte(s) distincte(s)."
       },
       {
         "id": "graveyard",
@@ -2112,6 +2147,7 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "draw",
               "graveyard-setup",
               "etb"
             ],
@@ -2130,6 +2166,7 @@
             "cmc": 1,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "graveyard-setup",
               "tokens"
@@ -2247,8 +2284,8 @@
             "tags": [
               "instant",
               "removal",
-              "recursion",
-              "counter-kind:generic"
+              "counterspell",
+              "recursion"
             ],
             "manaReq": {
               "generic": 0,
@@ -2418,6 +2455,7 @@
             "cmc": 3,
             "tags": [
               "artifact",
+              "draw",
               "mana",
               "sacrifice"
             ],
@@ -2468,15 +2506,16 @@
           },
           {
             "name": "Sol Ring",
-            "cmc": 0,
+            "cmc": 1,
             "tags": [
+              "artifact",
               "mana",
               "fast-mana"
             ],
             "manaReq": {
-              "generic": 2,
+              "generic": 1,
               "colored": [],
-              "total": 2
+              "total": 1
             }
           },
           {
@@ -2499,7 +2538,9 @@
             "name": "Kamiz, Obscura Oculus",
             "cmc": 4,
             "tags": [
-              "creature"
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 1,
@@ -2523,9 +2564,19 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 0,
-      "connected": [],
-      "tags": []
+      "score": 20,
+      "connected": [
+        "Change of Plans",
+        "Chasm Skulker",
+        "Drana, Liberator of Malakir",
+        "Lethal Scheme",
+        "Mask of the Schemer",
+        "Nadir Kraken",
+        "Obscura Confluence"
+      ],
+      "tags": [
+        "counter-producer"
+      ]
     },
     "aeon": {
       "available": false,
@@ -2535,76 +2586,98 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 36,
-      "median": 45,
-      "high": 56,
-      "ceiling": 56,
+      "floor": 39,
+      "median": 48,
+      "high": 58,
+      "ceiling": 58,
       "peak": 84,
       "iqr": 16,
-      "consistency": 66,
+      "consistency": 65,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 88,
+      "recoveryAfterDisruption": 93,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
-          "interaction": 3,
-          "resource": 0,
+          "interaction": 7,
+          "resource": 6,
           "burst": 0
         },
         {
           "turn": 2,
-          "commander": 0,
+          "commander": 1,
           "engine": 0,
-          "interaction": 10,
-          "resource": 24,
+          "interaction": 19,
+          "resource": 36,
           "burst": 0
         },
         {
           "turn": 3,
-          "commander": 31,
-          "engine": 10,
-          "interaction": 30,
-          "resource": 55,
-          "burst": 5
+          "commander": 34,
+          "engine": 12,
+          "interaction": 39,
+          "resource": 67,
+          "burst": 6
         },
         {
           "turn": 4,
-          "commander": 76,
-          "engine": 23,
-          "interaction": 49,
-          "resource": 69,
+          "commander": 77,
+          "engine": 24,
+          "interaction": 56,
+          "resource": 79,
           "burst": 14
         },
         {
           "turn": 5,
           "commander": 88,
-          "engine": 32,
-          "interaction": 59,
-          "resource": 78,
+          "engine": 33,
+          "interaction": 65,
+          "resource": 85,
           "burst": 22
         },
         {
           "turn": 6,
           "commander": 93,
           "engine": 40,
-          "interaction": 66,
-          "resource": 82,
-          "burst": 28
+          "interaction": 71,
+          "resource": 89,
+          "burst": 29
         },
         {
           "turn": 7,
           "commander": 95,
-          "engine": 45,
-          "interaction": 71,
-          "resource": 86,
+          "engine": 46,
+          "interaction": 77,
+          "resource": 92,
           "burst": 34
         }
       ]
     },
     "drivers": [
+      {
+        "name": "Currency Converter",
+        "impact": 5,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "graveyard-setup",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Sol Ring",
+        "impact": 4.4,
+        "tags": [
+          "artifact",
+          "mana",
+          "fast-mana"
+        ],
+        "aeon": null
+      },
       {
         "name": "Fallen Shinobi",
         "impact": 4.2,
@@ -2620,7 +2693,6 @@
         "impact": 4.2,
         "tags": [
           "creature",
-          "exile-cast",
           "cheat",
           "free"
         ],
@@ -2647,33 +2719,24 @@
         "aeon": null
       },
       {
-        "name": "Sol Ring",
-        "impact": 3.7,
-        "tags": [
-          "mana",
-          "fast-mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Currency Converter",
-        "impact": 3.6,
+        "name": "Commander's Sphere",
+        "impact": 4,
         "tags": [
           "artifact",
+          "draw",
           "mana",
-          "graveyard-setup",
-          "tokens"
+          "sacrifice"
         ],
         "aeon": null
       },
       {
-        "name": "Smuggler's Share",
-        "impact": 3.5,
+        "name": "Obscura Charm",
+        "impact": 3.4,
         "tags": [
-          "enchantment",
-          "draw",
-          "mana",
-          "tokens"
+          "instant",
+          "removal",
+          "counterspell",
+          "recursion"
         ],
         "aeon": null
       },
@@ -2716,15 +2779,6 @@
           "creature",
           "draw",
           "graveyard-setup"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Mask of Riddles",
-        "impact": 3,
-        "tags": [
-          "artifact",
-          "draw"
         ],
         "aeon": null
       }
