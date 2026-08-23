@@ -27,9 +27,16 @@ assert(!detectPackages(fakeArtifactPool,null).some(p=>p.id==='artifacts'),'Clavi
 const bloodArtist=card('Blood Artist','Whenever Blood Artist or another creature dies, target player loses 1 life and you gain 1 life.',2,'Creature','{1}{B}')
 const cruel=card('Cruel Celebrant','Whenever a creature or planeswalker you control dies, each opponent loses 1 life and you gain 1 life.',2,'Creature','{W}{B}')
 const outlet=card('Carrion Feeder','Sacrifice a creature: Put a +1/+1 counter on Carrion Feeder.',1,'Creature','{B}')
-const sacPackage=detectPackages([outlet,dispute,bloodArtist,cruel],null).find(p=>p.id==='sacrifice')
-assert(sacPackage,'A real sacrifice package may combine repeatable outlets and one-shot enablers')
-assert(sacPackage.producers.includes('Deadly Dispute'))
-assert(sacPackage.producers.includes('Carrion Feeder'))
+const villageRites=card('Village Rites','As an additional cost to cast this spell, sacrifice a creature. Draw two cards.',1,'Instant','{B}')
 
-console.log('CLAVILENO SEMANTIC OK — ownership, reminder text, artifact payoff and sacrifice roles')
+const falseSacPackage=detectPackages([dispute,villageRites,bloodArtist,cruel],null).find(p=>p.id==='sacrifice')
+assert(!falseSacPackage,'One-shot sacrifice enablers alone must never create an operational sacrifice package')
+
+const sacPackage=detectPackages([outlet,dispute,bloodArtist,cruel],null).find(p=>p.id==='sacrifice')
+assert(sacPackage,'A real sacrifice package may combine a repeatable outlet with one-shot support')
+assert.deepEqual(sacPackage.producers,['Carrion Feeder'],'Only repeatable outlets may be operational sacrifice producers')
+assert(sacPackage.supporters.includes('Deadly Dispute'),'One-shot sacrifice cards remain visible as package support')
+assert.deepEqual(sacPackage.producerCards.map(c=>c.name),['Carrion Feeder'],'The sequence simulator must not receive one-shot enablers as operational producer cards')
+assert(sacPackage.supportCards.some(c=>c.name==='Deadly Dispute'))
+
+console.log('CLAVILENO SEMANTIC OK — ownership, reminder text, artifact payoff and operational sacrifice roles')

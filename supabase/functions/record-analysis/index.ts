@@ -1,8 +1,9 @@
 import 'jsr:@supabase/functions-js/edge-runtime.d.ts'
 import { createClient } from 'npm:@supabase/supabase-js@2'
 
-const ENGINE_VERSION='3.2.0'
-const SEMANTIC_VERSION='3.2.0-semantic-1'
+const ENGINE_VERSION='3.2.1'
+const SEMANTIC_VERSION='3.2.1-semantic-8'
+const SUPPORTED_VERSION_PAIRS=new Set([`${ENGINE_VERSION}|${SEMANTIC_VERSION}`,'3.2.0|3.2.0-semantic-1'])
 const cors={'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'authorization, apikey, content-type','Access-Control-Allow-Methods':'POST, OPTIONS','Content-Type':'application/json'}
 const json=(body:unknown,status=200)=>new Response(JSON.stringify(body),{status,headers:cors})
 const clean=(v:unknown,n=200)=>String(v??'').trim().slice(0,n)
@@ -17,7 +18,7 @@ Deno.serve(async(req:Request)=>{
   try{
     const body=await req.json(),decklist=clean(body.decklist,50000),commanderName=clean(body.commanderName,240),deckHash=clean(body.deckHash,128).toLowerCase(),engineVersion=clean(body.engineVersion,80),semanticVersion=clean(body.semanticVersion,80),iterations=Number(body.iterations),cards=canonicalCards(body.cards),result=body.result&&typeof body.result==='object'?body.result:null
     if(!decklist||!commanderName||!deckHash||!result)return json({error:'invalid_payload'},400)
-    if(engineVersion!==ENGINE_VERSION||semanticVersion!==SEMANTIC_VERSION)return json({error:'version_mismatch',expected:{engineVersion:ENGINE_VERSION,semanticVersion:SEMANTIC_VERSION}},409)
+    if(!SUPPORTED_VERSION_PAIRS.has(`${engineVersion}|${semanticVersion}`))return json({error:'version_mismatch',expected:{engineVersion:ENGINE_VERSION,semanticVersion:SEMANTIC_VERSION}},409)
     if(!/^[a-f0-9]{64}$/.test(deckHash))return json({error:'invalid_deck_hash'},400)
     if(!Number.isFinite(iterations)||iterations<100||iterations>20000)return json({error:'invalid_iterations'},400)
     const deckCount=commanderDeckCount(decklist);if(deckCount!==99&&deckCount!==100)return json({error:'invalid_commander_deck_size',count:deckCount},400)
@@ -35,9 +36,9 @@ Deno.serve(async(req:Request)=>{
     const deckId:string|null=body.deckId?clean(body.deckId,80):null
     if(deckId){if(!userId)return json({error:'deck_requires_auth'},401);const {data:deck,error}=await admin.from('decks').select('id,user_id').eq('id',deckId).maybeSingle();if(error||!deck||deck.user_id!==userId)return json({error:'deck_not_owned'},403)}
 
-    const since=new Date(Date.now()-10*60*1000).toISOString();let dupe=admin.from('analysis_runs').select('id,created_at').eq('deck_hash',deckHash).eq('engine_version',ENGINE_VERSION).eq('semantic_version',SEMANTIC_VERSION).eq('iterations',iterations).gte('created_at',since).order('created_at',{ascending:false}).limit(1);dupe=userId?dupe.eq('user_id',userId):dupe.is('user_id',null);const {data:recent,error:dupeError}=await dupe;if(dupeError)throw dupeError;if(recent?.length)return json({ok:true,duplicate:true,analysis:recent[0]})
+    const since=new Date(Date.now()-10*60*1000).toISOString();let dupe=admin.from('analysis_runs').select('id,created_at').eq('deck_hash',deckHash).eq('engine_version',engineVersion).eq('semantic_version',semanticVersion).eq('iterations',iterations).gte('created_at',since).order('created_at',{ascending:false}).limit(1);dupe=userId?dupe.eq('user_id',userId):dupe.is('user_id',null);const {data:recent,error:dupeError}=await dupe;if(dupeError)throw dupeError;if(recent?.length)return json({ok:true,duplicate:true,analysis:recent[0]})
 
-    const profile=(result as any)?.profile||{},payload={user_id:userId,deck_id:deckId,deck_hash:deckHash,deck_name:clean(body.deckName,140)||null,commander_name:commanderName,decklist,cards,result,engine_version:ENGINE_VERSION,semantic_version:SEMANTIC_VERSION,oracle_snapshot_hash:oracleSnapshotHash,source:'web',iterations,median:Number.isFinite(Number(profile.median))?Number(profile.median):null,p20:Number.isFinite(Number(profile.floor))?Number(profile.floor):null,p80:Number.isFinite(Number(profile.ceiling))?Number(profile.ceiling):null,peak:Number.isFinite(Number(profile.peak))?Number(profile.peak):null,coverage:Number.isFinite(Number(profile.coverage))?Number(profile.coverage):null}
+    const profile=(result as any)?.profile||{},payload={user_id:userId,deck_id:deckId,deck_hash:deckHash,deck_name:clean(body.deckName,140)||null,commander_name:commanderName,decklist,cards,result,engine_version:engineVersion,semantic_version:semanticVersion,oracle_snapshot_hash:oracleSnapshotHash,source:'web',iterations,median:Number.isFinite(Number(profile.median))?Number(profile.median):null,p20:Number.isFinite(Number(profile.floor))?Number(profile.floor):null,p80:Number.isFinite(Number(profile.ceiling))?Number(profile.ceiling):null,peak:Number.isFinite(Number(profile.peak))?Number(profile.peak):null,coverage:Number.isFinite(Number(profile.coverage))?Number(profile.coverage):null}
     const {data,error}=await admin.from('analysis_runs').insert(payload).select('id,created_at,oracle_snapshot_hash').single();if(error)throw error
     return json({ok:true,duplicate:false,analysis:data})
   }catch(e){console.error('record-analysis',e);return json({error:'record_failed',detail:e instanceof Error?e.message:String(e)},500)}

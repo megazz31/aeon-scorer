@@ -3,7 +3,7 @@ const MOTIFS=[
   {id:'blink-etb',name:'Blink / ETB',producers:['blink'],payoffs:['etb'],minP:2,minY:2},
   {id:'constellation',name:'Enchantements / Constellation',producers:['enchantment'],payoffs:['constellation'],minP:4,minY:1},
   {id:'tokens',name:'Tokens / conversion',producers:['tokens'],payoffs:['token-payoff'],minP:3,minY:2},
-  {id:'sacrifice',name:'Sacrifice / mort',producers:['sac-outlet','sac-enabler'],payoffs:['death-payoff'],minP:2,minY:2},
+  {id:'sacrifice',name:'Sacrifice / mort',producers:['sac-outlet'],supporters:['sac-enabler'],payoffs:['death-payoff'],minP:2,minTrueP:1,minY:2},
   {id:'graveyard',name:'Cimetière / récursion',producers:['graveyard-setup'],payoffs:['recursion'],minP:2,minY:2},
   {id:'lands',name:'Lands / Landfall',producers:['land-ramp'],payoffs:['landfall'],minP:2,minY:1},
   {id:'counters',name:'Marqueurs',producers:['counter-producer'],payoffs:['counter-payoff'],minP:3,minY:2},
@@ -30,25 +30,27 @@ export function detectPackages(cards,commander=null){
       const cmdCmc=Number(commander.cmc||0),meaningful=burst.length>=2||(cmdCmc>=4&&(burst.length+persistent.length)>=4)
       if(!meaningful)continue
       const cohesion=Math.min(100,Math.round(22+burst.length*13+persistent.length*3+Math.max(0,cmdCmc-3)*4)),members=uniqByName([...burst,...persistent])
-      out.push({id:m.id,name:m.name,strength:cohesion,cohesion,producers:previewNames(members),payoffs:[commander.name],members:allNames([...members,commander]),producerCards:members.map(mini),payoffCards:[mini(commander)],evidence:`${burst.length} accélérateur(s) burst + ${persistent.length} source(s) persistante(s) vers un commandant MV ${cmdCmc}.`})
+      out.push({id:m.id,name:m.name,strength:cohesion,cohesion,producers:previewNames(members),payoffs:[commander.name],members:allNames([...members,commander]),producerCards:members.map(mini),supportCards:[],payoffCards:[mini(commander)],evidence:`${burst.length} accélérateur(s) burst + ${persistent.length} source(s) persistante(s) vers un commandant MV ${cmdCmc}.`})
       continue
     }
-    const producers=roleCards(functionalPool,m.producers)
+    const producers=roleCards(functionalPool,m.producers),supporters=roleCards(functionalPool,m.supporters||[])
     const payoffs=m.id==='blink-etb'?uniqByName(functionalPool.filter(trueEtbPayoff)):roleCards(functionalPool,m.payoffs)
-    if(producers.length<(m.minP||2)||payoffs.length<(m.minY||1))continue
-    const members=uniqByName([...producers,...payoffs]),overlap=overlapCount(producers,payoffs),roleDistinct=Math.max(0,members.length-overlap)
+    const producerCount=producers.length+supporters.length,minTrueP=m.minTrueP??m.minP??2
+    if(producers.length<minTrueP||producerCount<(m.minP||2)||payoffs.length<(m.minY||1))continue
+    const functionalProducers=uniqByName([...producers,...supporters]),members=uniqByName([...functionalProducers,...payoffs]),overlap=overlapCount(functionalProducers,payoffs),roleDistinct=Math.max(0,members.length-overlap)
     if(members.length<3||roleDistinct<2)continue
-    const density=members.length/Math.max(1,nonlands.length),balance=Math.min(producers.length,payoffs.length)/Math.max(producers.length,payoffs.length),cohesion=Math.min(100,Math.round(24+members.length*3.3+density*52+balance*18))
-    out.push({id:m.id,name:m.name,strength:cohesion,cohesion,producers:previewNames(producers),payoffs:previewNames(payoffs),members:allNames(members),producerCards:producers.map(mini),payoffCards:payoffs.map(mini),producerTags:m.producers,payoffTags:m.payoffs,evidence:`${producers.length} producteur(s), ${payoffs.length} payoff(s), ${members.length} carte(s) distincte(s).`})
+    const density=members.length/Math.max(1,nonlands.length),balance=Math.min(producerCount,payoffs.length)/Math.max(producerCount,payoffs.length),cohesion=Math.min(100,Math.round(24+members.length*3.3+density*52+balance*18))
+    const evidence=supporters.length?`${producers.length} producteur(s) opérationnel(s), ${supporters.length} support(s) ponctuel(s), ${payoffs.length} payoff(s), ${members.length} carte(s) distincte(s).`:`${producers.length} producteur(s), ${payoffs.length} payoff(s), ${members.length} carte(s) distincte(s).`
+    out.push({id:m.id,name:m.name,strength:cohesion,cohesion,producers:previewNames(producers),supporters:previewNames(supporters),payoffs:previewNames(payoffs),members:allNames(members),producerCards:producers.map(mini),supportCards:supporters.map(mini),payoffCards:payoffs.map(mini),producerTags:m.producers,supporterTags:m.supporters||[],payoffTags:m.payoffs,evidence})
   }
   return out.sort((a,b)=>b.cohesion-a.cohesion)
 }
-const COMMANDER_ENGINE_TAGS=new Set(['blink','etb','tokens','token-payoff','sac-outlet','sac-enabler','death-payoff','recursion','graveyard-setup','constellation','counter-producer','counter-payoff','artifact-payoff','exile-cast','exile-payoff','landfall','spellslinger','lifegain','life-payoff'])
+const COMMANDER_ENGINE_TAGS=new Set(['blink','etb','tokens','token-payoff','sac-outlet','death-payoff','recursion','graveyard-setup','constellation','counter-producer','counter-payoff','artifact-payoff','exile-cast','exile-payoff','landfall','spellslinger','lifegain','life-payoff'])
 export function commanderSynergy(cards,commander){
   if(!commander)return {score:0,connected:[],tags:[]}
   const semantic=new Set((commander.tags||[]).filter(t=>COMMANDER_ENGINE_TAGS.has(t)))
   const pair=(a,b)=>{if(semantic.has(a))semantic.add(b)}
-  pair('blink','etb');pair('etb','blink');pair('tokens','token-payoff');pair('token-payoff','tokens');pair('sac-outlet','death-payoff');pair('sac-enabler','death-payoff');pair('death-payoff','sac-outlet');pair('death-payoff','sac-enabler');pair('recursion','graveyard-setup');pair('graveyard-setup','recursion');pair('constellation','enchantment');pair('counter-producer','counter-payoff');pair('counter-payoff','counter-producer');pair('artifact-payoff','artifact');pair('exile-cast','exile-payoff');pair('exile-payoff','exile-cast');pair('landfall','land-ramp');pair('spellslinger','instant');pair('spellslinger','sorcery');pair('lifegain','life-payoff');pair('life-payoff','lifegain')
+  pair('blink','etb');pair('etb','blink');pair('tokens','token-payoff');pair('token-payoff','tokens');pair('sac-outlet','death-payoff');pair('death-payoff','sac-outlet');pair('recursion','graveyard-setup');pair('graveyard-setup','recursion');pair('constellation','enchantment');pair('counter-producer','counter-payoff');pair('counter-payoff','counter-producer');pair('artifact-payoff','artifact');pair('exile-cast','exile-payoff');pair('exile-payoff','exile-cast');pair('landfall','land-ramp');pair('spellslinger','instant');pair('spellslinger','sorcery');pair('lifegain','life-payoff');pair('life-payoff','lifegain')
   const nonlands=cards.filter(c=>!c.isLand),connected=semantic.size?uniqByName(cards.filter(c=>c.tags.some(t=>semantic.has(t)))):[]
   const score=Math.min(100,Math.round(connected.length/Math.max(1,nonlands.length)*170))
   return {score,connected:connected.map(c=>c.name),tags:[...semantic]}

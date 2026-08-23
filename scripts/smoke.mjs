@@ -25,6 +25,14 @@ if(r.methodology?.model!==MODEL_ID) throw new Error(`Model id mismatch: ${r.meth
 const edge=readFileSync(new URL('../supabase/functions/record-analysis/index.ts',import.meta.url),'utf8')
 if(!edge.includes(`const ENGINE_VERSION='${ENGINE_VERSION}'`)) throw new Error('Frontend/record-analysis engine version mismatch')
 if(!edge.includes(`const SEMANTIC_VERSION='${SEMANTIC_VERSION}'`)) throw new Error('Frontend/record-analysis semantic version mismatch')
+if(!edge.includes("'3.2.0|3.2.0-semantic-1'")) throw new Error('record-analysis must remain rolling-compatible with current production during v3.2.1 deployment')
+if(!edge.includes('engine_version:engineVersion')||!edge.includes('semantic_version:semanticVersion')) throw new Error('record-analysis must persist the client release identity, not relabel old-client analyses as the candidate')
+if(!edge.includes(".eq('engine_version',engineVersion)")||!edge.includes(".eq('semantic_version',semanticVersion)")) throw new Error('record-analysis deduplication must be version-aware for rolling releases')
+
+const pkg=JSON.parse(readFileSync(new URL('../package.json',import.meta.url),'utf8'))
+const stamp=readFileSync(new URL('./stamp-calibration-report.mjs',import.meta.url),'utf8')
+if(!String(pkg.scripts?.benchmark||'').includes('stamp-calibration-report.mjs')) throw new Error('Successful benchmark runs must stamp calibration artifacts with current release identity')
+for(const id of ['ENGINE_VERSION','SEMANTIC_VERSION','MODEL_ID'])if(!stamp.includes(id))throw new Error(`Calibration artifact stamp is missing ${id}`)
 
 const stalePublicLabels=['Aeon Scorer v3.1','v3.1 calibration and validation','Calibration et validation v3.1','v3.1 validated','v3.1 validée']
 for(const path of ['../src/App.jsx','../src/sitePages.jsx']){
