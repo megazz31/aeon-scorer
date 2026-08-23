@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/LegendsLegacy_DMC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Legends' Legacy",
@@ -30,15 +30,15 @@
   "analysis": {
     "median": 39,
     "p20": 27,
-    "p80": 49,
-    "peak": 72,
+    "p80": 50,
+    "peak": 77,
     "coverage": 93,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "19e27fbf7bfffef1910e1adeb61be60fca94fc055dc16fc907e9f963947e9aed",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Adriana, Captain of the Guard\n1 Alesha, Who Smiles at Death\n1 Anafenza, Kin-Tree Spirit\n1 Arvad the Cursed\n1 Ashling the Pilgrim\n1 Bell Borca, Spectral Sergeant\n1 Captain Lannery Storm\n1 Kothophed, Soul Hoarder\n1 Drana, Liberator of Malakir\n1 Etali, Primal Storm\n1 Garna, the Bloodflame\n1 Jazal Goldmane\n1 Josu Vess, Lich Knight\n1 Kari Zev, Skyship Raider\n1 Krenko, Tin Street Kingpin\n1 Neheb, Dreadhorde Champion\n1 Odric, Lunarch Marshal\n1 Tajic, Blade of the Legion\n1 Teshar, Ancestor's Apostle\n1 Traxos, Scourge of Kroog\n1 Zetalpa, Primal Dawn\n1 Primevals' Glorious Rebirth\n1 Urza's Ruinous Blast\n1 Faithless Looting\n1 Kaya's Wrath\n1 Night's Whisper\n1 Read the Bones\n1 Ambition's Cost\n1 Bedevil\n1 Generous Gift\n1 Hero's Downfall\n1 Mortify\n1 Thrill of Possibility\n1 Unbreakable Formation\n1 Wear // Tear\n1 Blackblade Reforged\n1 Bontu's Monument\n1 Commander's Sphere\n1 Arcane Signet\n1 Fellwar Stone\n1 Hazoret's Monument\n1 Hedron Archive\n1 Hero's Blade\n1 Heroes' Podium\n1 Honor-Worn Shaku\n1 Oketra's Monument\n1 Sol Ring\n1 Sword of the Chosen\n1 Tenza, Godo's Maul\n1 The Circle of Loyalty\n1 Day of Destiny\n1 Battlefield Forge\n1 Bojuka Bog\n1 Boros Garrison\n1 Command Tower\n1 Dragonskull Summit\n1 Evolving Wilds\n1 Foreboding Ruins\n1 Geier Reach Sanitarium\n1 Mikokoro, Center of the Sea\n1 Mobilized District\n1 Nomad Outpost\n1 Orzhov Basilica\n1 Rakdos Carnarium\n1 Reliquary Tower\n1 Shivan Gorge\n1 Shizo, Death's Storehouse\n1 Smoldering Marsh\n1 Temple of Malice\n1 Temple of Silence\n1 Temple of Triumph\n1 Terramorphic Expanse\n1 Tyrite Sanctum\n1 Caves of Koilos\n1 Shanid, Sleepers' Scourge\n1 Zeriam, Golden Wind\n1 Bladewing, Deathless Tyrant\n1 Cadric, Soul Kindler\n1 Gerrard's Hourglass Pendant\n1 Moira, Urborg Haunt\n1 The Peregrine Dynamo\n1 Verrak, Warped Sengir\n1 The Reaver Cleaver\n5 Mountain\n6 Plains\n5 Swamp",
   "oracleCards": [
@@ -378,8 +378,7 @@
         "creature",
         "mana",
         "tokens",
-        "sacrifice",
-        "death-payoff"
+        "sacrifice"
       ],
       "isCommander": false
     },
@@ -585,6 +584,7 @@
       "tags": [
         "sorcery",
         "draw",
+        "recursion",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -1733,22 +1733,22 @@
     "profile": {
       "median": 39,
       "floor": 27,
-      "ceiling": 49,
-      "peak": 72,
-      "dispersion": 22,
-      "variance": 22,
-      "consistency": 65,
+      "ceiling": 50,
+      "peak": 77,
+      "dispersion": 23,
+      "variance": 23,
+      "consistency": 64,
       "commanderDelta": 7,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 37,
-      "consistency": 65,
-      "explosiveness": 10,
-      "synergy": 50,
+      "consistency": 64,
+      "explosiveness": 12,
+      "synergy": 51,
       "interaction": 29,
-      "resilience": 40
+      "resilience": 44
     },
     "roles": {
       "lands": 39,
@@ -1759,7 +1759,7 @@
       "draw": 10,
       "interaction": 7,
       "protection": 4,
-      "recursion": 3,
+      "recursion": 4,
       "wipes": 2,
       "avgCmc": 3.5166666666666666,
       "unknownManaLands": 0
@@ -1768,8 +1768,8 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 67,
-        "cohesion": 67,
+        "strength": 71,
+        "cohesion": 71,
         "producers": [
           "Faithless Looting",
           "Hazoret's Monument",
@@ -1778,6 +1778,7 @@
         ],
         "payoffs": [
           "Alesha, Who Smiles at Death",
+          "Faithless Looting",
           "Primevals' Glorious Rebirth",
           "Teshar, Ancestor's Apostle"
         ],
@@ -1797,6 +1798,7 @@
             "tags": [
               "sorcery",
               "draw",
+              "recursion",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -1883,6 +1885,25 @@
             }
           },
           {
+            "name": "Faithless Looting",
+            "cmc": 1,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
             "name": "Primevals' Glorious Rebirth",
             "cmc": 7,
             "tags": [
@@ -1927,7 +1948,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "4 producteur(s), 3 payoff(s), 7 carte(s) distincte(s)."
+        "evidence": "4 producteur(s), 4 payoff(s), 7 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -1975,8 +1996,7 @@
               "creature",
               "mana",
               "tokens",
-              "sacrifice",
-              "death-payoff"
+              "sacrifice"
             ],
             "manaReq": {
               "generic": 2,
@@ -2107,11 +2127,11 @@
       "iterations": 3200,
       "floor": 29,
       "median": 37,
-      "high": 44,
-      "ceiling": 44,
-      "peak": 62,
+      "high": 45,
+      "ceiling": 45,
+      "peak": 66,
       "iqr": 12,
-      "consistency": 74,
+      "consistency": 73,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
       "recoveryAfterDisruption": 79,
@@ -2135,7 +2155,7 @@
         {
           "turn": 3,
           "commander": 12,
-          "engine": 0,
+          "engine": 1,
           "interaction": 20,
           "resource": 46,
           "burst": 0
@@ -2143,7 +2163,7 @@
         {
           "turn": 4,
           "commander": 55,
-          "engine": 3,
+          "engine": 4,
           "interaction": 33,
           "resource": 63,
           "burst": 1
@@ -2151,7 +2171,7 @@
         {
           "turn": 5,
           "commander": 74,
-          "engine": 6,
+          "engine": 9,
           "interaction": 43,
           "resource": 71,
           "burst": 3
@@ -2159,7 +2179,7 @@
         {
           "turn": 6,
           "commander": 80,
-          "engine": 8,
+          "engine": 11,
           "interaction": 50,
           "resource": 76,
           "burst": 5
@@ -2167,7 +2187,7 @@
         {
           "turn": 7,
           "commander": 85,
-          "engine": 11,
+          "engine": 14,
           "interaction": 55,
           "resource": 79,
           "burst": 7
@@ -2231,22 +2251,22 @@
               },
               {
                 "turn": 4,
-                "value": 2
+                "value": 4
               },
               {
                 "turn": 5,
-                "value": 6
-              },
-              {
-                "turn": 6,
                 "value": 8
               },
               {
+                "turn": 6,
+                "value": 11
+              },
+              {
                 "turn": 7,
-                "value": 10
+                "value": 14
               }
             ],
-            "observedWithinHorizon": 79
+            "observedWithinHorizon": 109
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -2420,8 +2440,7 @@
           "creature",
           "mana",
           "tokens",
-          "sacrifice",
-          "death-payoff"
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2447,6 +2466,17 @@
         "aeon": null
       },
       {
+        "name": "Faithless Looting",
+        "impact": 3.2,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Hazoret's Monument",
         "impact": 3,
         "tags": [
@@ -2461,16 +2491,6 @@
         "impact": 2.9,
         "tags": [
           "creature",
-          "draw",
-          "graveyard-setup"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Faithless Looting",
-        "impact": 2.5,
-        "tags": [
-          "sorcery",
           "draw",
           "graveyard-setup"
         ],
@@ -2551,30 +2571,30 @@
           ]
         },
         "explosiveness": {
-          "score": 10,
+          "score": 12,
           "level": "low",
           "evidence": [
             {
               "signal": "explosiveness",
-              "value": 10,
+              "value": 12,
               "source": "aeon-dimension",
               "reason": "Existing Aeon explosiveness dimension; no power-score feedback."
             }
           ]
         },
         "volatility": {
-          "score": 79,
+          "score": 87,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 22,
+              "value": 23,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 23,
+              "value": 27,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -2593,42 +2613,42 @@
           ]
         },
         "resilience": {
-          "score": 40,
+          "score": 44,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 40,
+              "value": 44,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 53,
+          "score": 54,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 50,
+              "value": 51,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 65,
+              "value": 64,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
             {
               "signal": "resilience",
-              "value": 40,
+              "value": 44,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 55.5,
+              "value": 57.5,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
@@ -2659,7 +2679,7 @@
           ]
         },
         "turnComplexity": {
-          "score": 28,
+          "score": 27,
           "level": "moderate",
           "evidence": [
             {
@@ -2670,7 +2690,7 @@
             },
             {
               "signal": "chain-payoffs",
-              "value": 2,
+              "value": 1,
               "source": "semantic",
               "reason": "Cards that convert repeated package events into additional actions."
             },
@@ -2770,13 +2790,13 @@
           "id": "long-sequencing",
           "label": "Long sequencing potential",
           "level": "moderate",
-          "score": 28,
+          "score": 27,
           "evidence": [
             {
               "name": "Experience Fingerprint",
               "reason": "Turn Complexity proxy from recurring/chained semantic actions.",
               "recurring": true,
-              "weight": 1.5555555555555556
+              "weight": 1.5
             }
           ],
           "note": "Derived from Experience Fingerprint turn-complexity evidence; not calibrated to real clock time."
@@ -2861,22 +2881,22 @@
             },
             {
               "turn": 4,
-              "value": 2
+              "value": 4
             },
             {
               "turn": 5,
-              "value": 6
-            },
-            {
-              "turn": 6,
               "value": 8
             },
             {
+              "turn": 6,
+              "value": 11
+            },
+            {
               "turn": 7,
-              "value": 10
+              "value": 14
             }
           ],
-          "observedWithinHorizon": 79,
+          "observedWithinHorizon": 109,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -3063,23 +3083,23 @@
             },
             {
               "turn": 3,
-              "value": 0
+              "value": 1
             },
             {
               "turn": 4,
-              "value": 3
+              "value": 4
             },
             {
               "turn": 5,
-              "value": 6
+              "value": 9
             },
             {
               "turn": 6,
-              "value": 8
+              "value": 11
             },
             {
               "turn": 7,
-              "value": 11
+              "value": 14
             }
           ],
           "milestones": {
@@ -3270,22 +3290,22 @@
             },
             {
               "turn": 4,
-              "value": 2
+              "value": 4
             },
             {
               "turn": 5,
-              "value": 6
-            },
-            {
-              "turn": 6,
               "value": 8
             },
             {
+              "turn": 6,
+              "value": 11
+            },
+            {
               "turn": 7,
-              "value": 10
+              "value": 14
             }
           ],
-          "observedWithinHorizon": 79,
+          "observedWithinHorizon": 109,
           "milestones": {
             "at25": null,
             "at50": null,

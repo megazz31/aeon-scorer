@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/AvengersAssemble_MSC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Avengers Assemble",
@@ -36,15 +36,15 @@
   "analysis": {
     "median": 53,
     "p20": 44,
-    "p80": 62,
+    "p80": 61,
     "peak": 82,
     "coverage": 93,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "55774b0f578df4978509bf2b13c3daa71e96d32a55b3ace0dc149d44c5c085cd",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Avenge\n1 Falcon and Redwing\n1 Hercules, Olympian Hero\n1 Heroic Return\n1 Heroic Sacrifice\n1 Methods of the Mighty\n1 Winter Soldier, Reborn Avenger\n1 Iron Man, Armored Avenger\n1 Jarvis, Earth's Mightiest Butler\n1 Professor Hulk\n1 The Wasp, Winsome Avenger\n1 West Coast Expansion\n1 Firebird, Blazing Ranger\n1 Photon, Mighty Marvel\n1 She-Hulk, Wallbreaker\n1 War Machine, Avenging Arsenal\n1 Ant-Man, Elusive Avenger\n1 Black Widow, Agile Avenger\n1 Captain Marvel, Apex Avenger\n1 Director Nick Fury\n1 Hawkeye, Avenging Archer\n1 Love on the Battlefield\n1 Quicksilver, Speedster\n1 Scarlet Witch, Chaotic Avenger\n1 Shang-Chi and the Ten Rings\n1 Avengers Quinjet\n1 Hulkbuster Armor\n1 Jocasta, Automaton Avenger\n1 Vision, Synthezoid Avenger\n1 Austere Command\n1 Bastion Protector\n1 Dismantling Wave\n1 Folk Hero\n1 Gift of Immortality\n1 Kindred Discovery\n1 Door of Destinies\n1 Metallic Mimic\n1 Tome of Legends\n1 Clifftop Retreat\n1 Coastal Peak\n1 Exotic Orchard\n1 Frostboil Snarl\n1 Furycalm Snarl\n1 Glacial Fortress\n1 Glittering Massif\n1 Irrigated Farmland\n1 Plaza of Heroes\n1 Port Town\n1 Prairie Stream\n1 Radiant Summit\n1 Scavenger Grounds\n1 Scorched Geyser\n1 Spectator Seating\n1 Sulfur Falls\n1 Raise the Palisade\n1 Thor, Asgard's Avenger\n1 Captain Mar-Vell, Space-Born\n1 Patriot, Shield Wielder\n1 Speed, Young Avenger\n1 Captain America, Living Legend\n1 Avengers Tower\n1 Destroy Evil\n1 Make Your Move\n1 Swords to Plowshares\n1 Arcane Denial\n1 Reconnaissance Mission\n1 Rip Apart\n1 Arcane Signet\n1 Hero's Blade\n1 Relic of Legends\n1 Sol Ring\n1 Talisman of Conviction\n1 Talisman of Creativity\n1 Talisman of Progress\n1 Thought Vessel\n1 Command Tower\n1 Mystic Monastery\n1 Path of Ancestry\n1 Secluded Courtyard\n1 Unclaimed Territory\n1 Fellwar Stone\n1 Herald's Horn\n1 Rescue, Pepper Potts\n3 Plains\n3 Plains\n3 Island\n2 Island\n3 Mountain\n2 Mountain",
   "oracleCards": [
@@ -345,6 +345,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -422,6 +423,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "draw",
         "wipe"
       ],
       "isCommander": false
@@ -649,6 +651,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -819,6 +822,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -1797,10 +1801,10 @@
     "profile": {
       "median": 53,
       "floor": 44,
-      "ceiling": 62,
+      "ceiling": 61,
       "peak": 82,
-      "dispersion": 18,
-      "variance": 18,
+      "dispersion": 17,
+      "variance": 17,
       "consistency": 68,
       "commanderDelta": 9,
       "coverage": 93,
@@ -1812,7 +1816,7 @@
       "explosiveness": 21,
       "synergy": 83,
       "interaction": 55,
-      "resilience": 46
+      "resilience": 47
     },
     "roles": {
       "lands": 38,
@@ -1820,7 +1824,7 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 12,
+      "draw": 13,
       "interaction": 10,
       "protection": 5,
       "recursion": 3,
@@ -2304,23 +2308,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 37,
-      "median": 44,
+      "floor": 38,
+      "median": 45,
       "high": 51,
       "ceiling": 51,
-      "peak": 68,
+      "peak": 69,
       "iqr": 10,
       "consistency": 77,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 93,
+      "recoveryAfterDisruption": 94,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 13,
-          "resource": 0,
+          "resource": 18,
           "burst": 0
         },
         {
@@ -2328,7 +2332,7 @@
           "commander": 2,
           "engine": 0,
           "interaction": 28,
-          "resource": 22,
+          "resource": 31,
           "burst": 2
         },
         {
@@ -2336,7 +2340,7 @@
           "commander": 61,
           "engine": 0,
           "interaction": 46,
-          "resource": 53,
+          "resource": 58,
           "burst": 9
         },
         {
@@ -2344,7 +2348,7 @@
           "commander": 89,
           "engine": 3,
           "interaction": 59,
-          "resource": 72,
+          "resource": 76,
           "burst": 17
         },
         {
@@ -2352,7 +2356,7 @@
           "commander": 94,
           "engine": 6,
           "interaction": 67,
-          "resource": 81,
+          "resource": 84,
           "burst": 20
         },
         {
@@ -2360,7 +2364,7 @@
           "commander": 96,
           "engine": 9,
           "interaction": 72,
-          "resource": 87,
+          "resource": 88,
           "burst": 23
         },
         {
@@ -2368,7 +2372,7 @@
           "commander": 98,
           "engine": 11,
           "interaction": 76,
-          "resource": 90,
+          "resource": 91,
           "burst": 25
         }
       ],
@@ -2488,34 +2492,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 0
-              },
-              {
-                "turn": 2,
                 "value": 20
               },
               {
+                "turn": 2,
+                "value": 39
+              },
+              {
                 "turn": 3,
-                "value": 54
+                "value": 68
               },
               {
                 "turn": 4,
-                "value": 74
+                "value": 82
               },
               {
                 "turn": 5,
-                "value": 83
+                "value": 89
               },
               {
                 "turn": 6,
-                "value": 87
+                "value": 92
               },
               {
                 "turn": 7,
-                "value": 90
+                "value": 94
               }
             ],
-            "observedWithinHorizon": 721
+            "observedWithinHorizon": 751
           },
           "burst": {
             "id": "burst-first-access",
@@ -2655,6 +2659,16 @@
         "aeon": null
       },
       {
+        "name": "Dismantling Wave",
+        "impact": 2.9,
+        "tags": [
+          "sorcery",
+          "draw",
+          "wipe"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Heroic Sacrifice",
         "impact": 2.5,
         "tags": [
@@ -2714,16 +2728,6 @@
           "draw"
         ],
         "aeon": null
-      },
-      {
-        "name": "Kindred Discovery",
-        "impact": 2.2,
-        "tags": [
-          "enchantment",
-          "draw",
-          "etb"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
@@ -2769,13 +2773,13 @@
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 18,
+              "value": 17,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 20,
+              "value": 21,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -2794,12 +2798,12 @@
           ]
         },
         "resilience": {
-          "score": 46,
+          "score": 47,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 46,
+              "value": 47,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
@@ -2823,7 +2827,7 @@
             },
             {
               "signal": "resilience",
-              "value": 46,
+              "value": 47,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
@@ -3124,38 +3128,38 @@
           "points": [
             {
               "turn": 1,
-              "value": 0
-            },
-            {
-              "turn": 2,
               "value": 20
             },
             {
+              "turn": 2,
+              "value": 39
+            },
+            {
               "turn": 3,
-              "value": 54
+              "value": 68
             },
             {
               "turn": 4,
-              "value": 74
+              "value": 82
             },
             {
               "turn": 5,
-              "value": 83
+              "value": 89
             },
             {
               "turn": 6,
-              "value": 87
+              "value": 92
             },
             {
               "turn": 7,
-              "value": 90
+              "value": 94
             }
           ],
-          "observedWithinHorizon": 721,
+          "observedWithinHorizon": 751,
           "milestones": {
-            "at25": 3,
+            "at25": 2,
             "at50": 3,
-            "at75": 5
+            "at75": 4
           }
         },
         "burst": {
@@ -3328,37 +3332,37 @@
           "points": [
             {
               "turn": 1,
-              "value": 0
+              "value": 18
             },
             {
               "turn": 2,
-              "value": 22
+              "value": 31
             },
             {
               "turn": 3,
-              "value": 53
+              "value": 58
             },
             {
               "turn": 4,
-              "value": 72
+              "value": 76
             },
             {
               "turn": 5,
-              "value": 81
+              "value": 84
             },
             {
               "turn": 6,
-              "value": 87
+              "value": 88
             },
             {
               "turn": 7,
-              "value": 90
+              "value": 91
             }
           ],
           "milestones": {
-            "at25": 3,
+            "at25": 2,
             "at50": 3,
-            "at75": 5
+            "at75": 4
           }
         },
         "burst": {
@@ -3533,38 +3537,38 @@
           "points": [
             {
               "turn": 1,
-              "value": 0
-            },
-            {
-              "turn": 2,
               "value": 20
             },
             {
+              "turn": 2,
+              "value": 39
+            },
+            {
               "turn": 3,
-              "value": 54
+              "value": 68
             },
             {
               "turn": 4,
-              "value": 74
+              "value": 82
             },
             {
               "turn": 5,
-              "value": 83
+              "value": 89
             },
             {
               "turn": 6,
-              "value": 87
+              "value": 92
             },
             {
               "turn": 7,
-              "value": 90
+              "value": 94
             }
           ],
-          "observedWithinHorizon": 721,
+          "observedWithinHorizon": 751,
           "milestones": {
-            "at25": 3,
+            "at25": 2,
             "at50": 3,
-            "at75": 5
+            "at75": 4
           }
         },
         "burst": {

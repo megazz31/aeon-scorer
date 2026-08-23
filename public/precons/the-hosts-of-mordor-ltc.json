@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/TheHostsOfMordor_LTC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "The Hosts of Mordor",
@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 44,
-    "p20": 32,
-    "p80": 56,
-    "peak": 83,
-    "coverage": 92,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "median": 47,
+    "p20": 34,
+    "p80": 60,
+    "peak": 86,
+    "coverage": 93,
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "97929c1179cefa5aaaf01aecea0d9b3d39a5eaaa0fe899b22f3296ddf3bcbf96",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Saruman, the White Hand\n1 Corsairs of Umbar\n1 Monstrosity of the Lake\n1 Subjugate the Hobbits\n1 Shelob, Dread Weaver\n1 Cavern-Hoard Dragon\n1 Orcish Siegemaster\n1 Rampaging War Mammoth\n1 The Balrog of Moria\n1 Gríma, Saruman's Footman\n1 In the Darkness Bind Them\n1 Lidless Gaze\n1 Lord of the Nazgûl\n1 Moria Scavenger\n1 Summons of Saruman\n1 Too Greedily, Too Deep\n1 Wake the Dragon\n1 Relic of Sauron\n1 The Black Gate\n1 Decree of Pain\n1 Languish\n1 Living Death\n1 Reanimate\n1 Blasphemous Act\n1 Goblin Dark-Dwellers\n1 Inferno Titan\n1 Knollspine Dragon\n1 Scourge of the Throne\n1 Siege-Gang Commander\n1 Treasure Nabber\n1 Hostage Taker\n1 Notion Thief\n1 Choked Estuary\n1 Desolate Lighthouse\n1 Dragonskull Summit\n1 Drowned Catacomb\n1 Foreboding Ruins\n1 Frostboil Snarl\n1 Smoldering Marsh\n1 Sulfur Falls\n1 Sulfurous Springs\n1 Sunken Hollow\n1 Underground River\n1 Treason of Isengard\n1 Bitter Downfall\n1 Troll of Khazad-dûm\n1 Voracious Fell Beast\n1 Fiery Inscription\n1 Grishnákh, Brash Instigator\n1 Arcane Denial\n1 Boon of the Wish-Giver\n1 Consider\n1 Deep Analysis\n1 Fact or Fiction\n1 Forbidden Alchemy\n1 Feed the Swarm\n1 Merciless Executioner\n1 Revenge of Ravens\n1 Anger\n1 Faithless Looting\n1 The Mouth of Sauron\n1 Goblin Cratermaker\n1 Guttersnipe\n1 Shiny Impetus\n1 Thrill of Possibility\n1 Extract from Darkness\n1 Arcane Signet\n1 Basalt Monolith\n1 Commander's Sphere\n1 Everflowing Chalice\n1 Mind Stone\n1 Sol Ring\n1 Worn Powerstone\n1 Command Tower\n1 Crumbling Necropolis\n1 Evolving Wilds\n1 Field of Ruin\n1 Path of Ancestry\n1 Rogue's Passage\n1 Terramorphic Expanse\n3 Island\n3 Island\n3 Swamp\n3 Swamp\n4 Mountain\n3 Mountain",
   "oracleCards": [
@@ -149,7 +149,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -356,7 +357,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "draw"
+        "draw",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -518,6 +520,7 @@
       "tags": [
         "sorcery",
         "draw",
+        "recursion",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -593,7 +596,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -873,6 +877,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "exile-cast"
       ],
       "isCommander": false
@@ -929,7 +934,6 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "wipe",
         "etb"
       ],
       "isCommander": false
@@ -968,8 +972,10 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "etb",
         "counter-producer",
+        "counter-kind:plus1",
         "counter-kind:stun"
       ],
       "isCommander": false
@@ -1088,7 +1094,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1187,6 +1194,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "protection",
         "tokens",
         "counter-producer",
         "counter-kind:plus1",
@@ -1420,6 +1428,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "graveyard-setup",
         "tokens",
         "counter-producer",
@@ -1503,6 +1512,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "mana",
         "removal",
         "tokens"
@@ -1639,7 +1649,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1700,6 +1711,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -1726,24 +1738,24 @@
   ],
   "result": {
     "profile": {
-      "median": 44,
-      "floor": 32,
-      "ceiling": 56,
-      "peak": 83,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 62,
-      "commanderDelta": 6,
-      "coverage": 92,
-      "dataCoverage": 92
+      "median": 47,
+      "floor": 34,
+      "ceiling": 60,
+      "peak": 86,
+      "dispersion": 26,
+      "variance": 26,
+      "consistency": 58,
+      "commanderDelta": 7,
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
-      "speed": 25,
-      "consistency": 62,
-      "explosiveness": 24,
-      "synergy": 79,
-      "interaction": 50,
-      "resilience": 30
+      "speed": 26,
+      "consistency": 58,
+      "explosiveness": 25,
+      "synergy": 86,
+      "interaction": 45,
+      "resilience": 54
     },
     "roles": {
       "lands": 38,
@@ -1751,10 +1763,10 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 14,
+      "draw": 18,
       "interaction": 9,
-      "protection": 1,
-      "recursion": 1,
+      "protection": 2,
+      "recursion": 7,
       "wipes": 3,
       "avgCmc": 4.098360655737705,
       "unknownManaLands": 0
@@ -1851,7 +1863,8 @@
             "name": "Blasphemous Act",
             "cmc": 9,
             "tags": [
-              "sorcery"
+              "sorcery",
+              "wipe"
             ],
             "manaReq": {
               "generic": 8,
@@ -1927,7 +1940,8 @@
             "cmc": 4,
             "tags": [
               "sorcery",
-              "draw"
+              "draw",
+              "recursion"
             ],
             "manaReq": {
               "generic": 3,
@@ -1980,6 +1994,7 @@
             "tags": [
               "sorcery",
               "draw",
+              "recursion",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -2013,7 +2028,8 @@
             "name": "Forbidden Alchemy",
             "cmc": 3,
             "tags": [
-              "instant"
+              "instant",
+              "recursion"
             ],
             "manaReq": {
               "generic": 2,
@@ -2050,6 +2066,7 @@
             "cmc": 4,
             "tags": [
               "sorcery",
+              "recursion",
               "exile-cast"
             ],
             "manaReq": {
@@ -2124,6 +2141,7 @@
             "cmc": 2,
             "tags": [
               "sorcery",
+              "recursion",
               "graveyard-setup",
               "tokens",
               "counter-producer",
@@ -2206,6 +2224,7 @@
             "cmc": 6,
             "tags": [
               "sorcery",
+              "recursion",
               "tokens"
             ],
             "manaReq": {
@@ -2286,6 +2305,7 @@
             "cmc": 4,
             "tags": [
               "creature",
+              "protection",
               "tokens",
               "counter-producer",
               "counter-kind:plus1",
@@ -2317,6 +2337,339 @@
           "spellslinger"
         ],
         "evidence": "22 producteur(s), 4 payoff(s), 26 carte(s) distincte(s)."
+      },
+      {
+        "id": "graveyard",
+        "name": "Cimetière / récursion",
+        "strength": 92,
+        "cohesion": 92,
+        "producers": [
+          "Consider",
+          "Desolate Lighthouse",
+          "Faithless Looting",
+          "Moria Scavenger",
+          "Relic of Sauron",
+          "Summons of Saruman",
+          "Thrill of Possibility"
+        ],
+        "payoffs": [
+          "Deep Analysis",
+          "Faithless Looting",
+          "Forbidden Alchemy",
+          "Goblin Dark-Dwellers",
+          "Lidless Gaze",
+          "Summons of Saruman",
+          "Wake the Dragon"
+        ],
+        "members": [
+          "Consider",
+          "Desolate Lighthouse",
+          "Faithless Looting",
+          "Moria Scavenger",
+          "Relic of Sauron",
+          "Summons of Saruman",
+          "Thrill of Possibility",
+          "Deep Analysis",
+          "Forbidden Alchemy",
+          "Goblin Dark-Dwellers",
+          "Lidless Gaze",
+          "Wake the Dragon"
+        ],
+        "producerCards": [
+          {
+            "name": "Consider",
+            "cmc": 1,
+            "tags": [
+              "instant",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Desolate Lighthouse",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "draw",
+              "mana",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Faithless Looting",
+            "cmc": 1,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Moria Scavenger",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "draw",
+              "graveyard-setup",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Relic of Sauron",
+            "cmc": 4,
+            "tags": [
+              "artifact",
+              "draw",
+              "mana",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
+            }
+          },
+          {
+            "name": "Summons of Saruman",
+            "cmc": 2,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "graveyard-setup",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1",
+              "spellslinger",
+              "cheat",
+              "free"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Thrill of Possibility",
+            "cmc": 2,
+            "tags": [
+              "instant",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          }
+        ],
+        "supportCards": [],
+        "payoffCards": [
+          {
+            "name": "Deep Analysis",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Faithless Looting",
+            "cmc": 1,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Forbidden Alchemy",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Goblin Dark-Dwellers",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb",
+              "cheat",
+              "free"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Lidless Gaze",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "exile-cast"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Summons of Saruman",
+            "cmc": 2,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "graveyard-setup",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1",
+              "spellslinger",
+              "cheat",
+              "free"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Wake the Dragon",
+            "cmc": 6,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 6
+            }
+          }
+        ],
+        "producerTags": [
+          "graveyard-setup"
+        ],
+        "supportTags": [],
+        "payoffTags": [
+          "recursion"
+        ],
+        "evidence": "7 producteur(s), 7 payoff(s), 12 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2502,17 +2855,21 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 61,
+      "score": 72,
       "connected": [
         "Cavern-Hoard Dragon",
         "Consider",
         "Corsairs of Umbar",
+        "Deep Analysis",
         "Desolate Lighthouse",
         "Faithless Looting",
+        "Forbidden Alchemy",
         "Goblin Dark-Dwellers",
         "Grishnákh, Brash Instigator",
         "In the Darkness Bind Them",
+        "Lidless Gaze",
         "Lord of the Nazgûl",
+        "Monstrosity of the Lake",
         "Moria Scavenger",
         "Relic of Sauron",
         "Saruman, the White Hand",
@@ -2546,16 +2903,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
-      "median": 41,
-      "high": 50,
-      "ceiling": 50,
-      "peak": 73,
-      "iqr": 14,
-      "consistency": 70,
+      "floor": 35,
+      "median": 44,
+      "high": 54,
+      "ceiling": 54,
+      "peak": 79,
+      "iqr": 15,
+      "consistency": 66,
       "commanderMedianTurn": 6,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 77,
+      "recoveryAfterDisruption": 86,
       "turnProfile": [
         {
           "turn": 1,
@@ -2568,49 +2925,49 @@
         {
           "turn": 2,
           "commander": 0,
-          "engine": 0,
-          "interaction": 29,
-          "resource": 34,
+          "engine": 2,
+          "interaction": 28,
+          "resource": 39,
           "burst": 5
         },
         {
           "turn": 3,
           "commander": 0,
-          "engine": 2,
-          "interaction": 39,
-          "resource": 45,
+          "engine": 6,
+          "interaction": 35,
+          "resource": 52,
           "burst": 9
         },
         {
           "turn": 4,
           "commander": 4,
-          "engine": 13,
-          "interaction": 54,
-          "resource": 65,
+          "engine": 24,
+          "interaction": 49,
+          "resource": 76,
           "burst": 19
         },
         {
           "turn": 5,
           "commander": 11,
-          "engine": 22,
-          "interaction": 61,
-          "resource": 74,
+          "engine": 38,
+          "interaction": 56,
+          "resource": 85,
           "burst": 24
         },
         {
           "turn": 6,
           "commander": 22,
-          "engine": 30,
-          "interaction": 65,
-          "resource": 79,
+          "engine": 49,
+          "interaction": 60,
+          "resource": 89,
           "burst": 27
         },
         {
           "turn": 7,
           "commander": 35,
-          "engine": 35,
-          "interaction": 70,
-          "resource": 84,
+          "engine": 57,
+          "interaction": 65,
+          "resource": 93,
           "burst": 31
         }
       ],
@@ -2664,30 +3021,30 @@
               },
               {
                 "turn": 2,
-                "value": 0
+                "value": 1
               },
               {
                 "turn": 3,
-                "value": 2
+                "value": 7
               },
               {
                 "turn": 4,
-                "value": 14
+                "value": 28
               },
               {
                 "turn": 5,
-                "value": 23
+                "value": 41
               },
               {
                 "turn": 6,
-                "value": 29
+                "value": 51
               },
               {
                 "turn": 7,
-                "value": 34
+                "value": 59
               }
             ],
-            "observedWithinHorizon": 273
+            "observedWithinHorizon": 472
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -2699,30 +3056,30 @@
               },
               {
                 "turn": 2,
-                "value": 27
+                "value": 26
               },
               {
                 "turn": 3,
-                "value": 43
+                "value": 39
               },
               {
                 "turn": 4,
-                "value": 56
+                "value": 52
               },
               {
                 "turn": 5,
-                "value": 61
+                "value": 56
               },
               {
                 "turn": 6,
-                "value": 67
+                "value": 62
               },
               {
                 "turn": 7,
-                "value": 73
+                "value": 67
               }
             ],
-            "observedWithinHorizon": 580
+            "observedWithinHorizon": 534
           },
           "resource": {
             "id": "resource-first-access",
@@ -2734,30 +3091,30 @@
               },
               {
                 "turn": 2,
-                "value": 41
+                "value": 45
               },
               {
                 "turn": 3,
-                "value": 58
+                "value": 66
               },
               {
                 "turn": 4,
-                "value": 71
+                "value": 81
               },
               {
                 "turn": 5,
-                "value": 78
+                "value": 89
               },
               {
                 "turn": 6,
-                "value": 82
+                "value": 93
               },
               {
                 "turn": 7,
-                "value": 86
+                "value": 95
               }
             ],
-            "observedWithinHorizon": 686
+            "observedWithinHorizon": 762
           },
           "burst": {
             "id": "burst-first-access",
@@ -2777,7 +3134,7 @@
               },
               {
                 "turn": 4,
-                "value": 22
+                "value": 21
               },
               {
                 "turn": 5,
@@ -2792,7 +3149,7 @@
                 "value": 34
               }
             ],
-            "observedWithinHorizon": 270
+            "observedWithinHorizon": 269
           }
         },
         "commanders": {
@@ -2845,20 +3202,20 @@
     "drivers": [
       {
         "name": "Summons of Saruman",
-        "impact": 4.9,
+        "impact": 6.3,
         "tags": [
           "sorcery",
+          "recursion",
           "graveyard-setup",
           "tokens",
           "counter-producer",
-          "counter-kind:plus1",
-          "spellslinger"
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
       {
         "name": "Goblin Dark-Dwellers",
-        "impact": 4.3,
+        "impact": 5,
         "tags": [
           "creature",
           "recursion",
@@ -2890,12 +3247,45 @@
         "aeon": null
       },
       {
+        "name": "Faithless Looting",
+        "impact": 3.9,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Deep Analysis",
+        "impact": 3.8,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
           "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "The Balrog of Moria",
+        "impact": 3.6,
+        "tags": [
+          "creature",
+          "draw",
+          "mana",
+          "removal",
+          "tokens"
         ],
         "aeon": null
       },
@@ -2932,42 +3322,11 @@
         "aeon": null
       },
       {
-        "name": "Shiny Impetus",
-        "impact": 2.8,
-        "tags": [
-          "enchantment",
-          "mana",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Consider",
-        "impact": 2.5,
+        "impact": 3.2,
         "tags": [
           "instant",
           "draw",
-          "graveyard-setup"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Faithless Looting",
-        "impact": 2.5,
-        "tags": [
-          "sorcery",
-          "draw",
-          "graveyard-setup"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Relic of Sauron",
-        "impact": 2.5,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
           "graveyard-setup"
         ],
         "aeon": null
@@ -2987,114 +3346,114 @@
       "modelVersion": "experience-v1",
       "dimensions": {
         "tempo": {
-          "score": 25,
+          "score": 26,
           "level": "moderate",
           "evidence": [
             {
               "signal": "speed",
-              "value": 25,
+              "value": 26,
               "source": "aeon-dimension",
               "reason": "Existing Aeon speed dimension; no power-score feedback."
             }
           ]
         },
         "explosiveness": {
-          "score": 24,
-          "level": "low",
+          "score": 25,
+          "level": "moderate",
           "evidence": [
             {
               "signal": "explosiveness",
-              "value": 24,
+              "value": 25,
               "source": "aeon-dimension",
               "reason": "Existing Aeon explosiveness dimension; no power-score feedback."
             }
           ]
         },
         "volatility": {
-          "score": 89,
+          "score": 91,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 24,
+              "value": 26,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 27,
+              "value": 26,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
           ]
         },
         "interaction": {
-          "score": 50,
-          "level": "high",
+          "score": 45,
+          "level": "moderate",
           "evidence": [
             {
               "signal": "interaction",
-              "value": 50,
+              "value": 45,
               "source": "aeon-dimension",
               "reason": "Existing Aeon interaction-access dimension."
             }
           ]
         },
         "resilience": {
-          "score": 30,
-          "level": "moderate",
+          "score": 54,
+          "level": "high",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 30,
+              "value": 54,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 65,
+          "score": 71,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 79,
+              "value": 86,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 62,
+              "value": 58,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
             {
               "signal": "resilience",
-              "value": 30,
+              "value": 54,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 83,
+              "value": 86,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 51,
+          "score": 60,
           "level": "high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 6,
+              "value": 7,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 61,
+              "value": 72,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },
@@ -3107,8 +3466,8 @@
           ]
         },
         "turnComplexity": {
-          "score": 24,
-          "level": "low",
+          "score": 26,
+          "level": "moderate",
           "evidence": [
             {
               "signal": "recurring-cards",
@@ -3130,7 +3489,7 @@
             },
             {
               "signal": "packages",
-              "value": 2,
+              "value": 3,
               "source": "package-model",
               "reason": "Independent engines increase sequencing branches."
             }
@@ -3236,14 +3595,14 @@
         "longSequencing": {
           "id": "long-sequencing",
           "label": "Long sequencing potential",
-          "level": "low",
-          "score": 24,
+          "level": "moderate",
+          "score": 26,
           "evidence": [
             {
               "name": "Experience Fingerprint",
               "reason": "Turn Complexity proxy from recurring/chained semantic actions.",
               "recurring": true,
-              "weight": 1.3333333333333333
+              "weight": 1.4444444444444444
             }
           ],
           "note": "Derived from Experience Fingerprint turn-complexity evidence; not calibrated to real clock time."
@@ -3251,7 +3610,8 @@
       },
       "notable": [
         "theft",
-        "forced-discard-sacrifice"
+        "forced-discard-sacrifice",
+        "long-sequencing"
       ],
       "confidence": {
         "productCalibration": "experimental",
@@ -3320,33 +3680,33 @@
             },
             {
               "turn": 2,
-              "value": 0
+              "value": 1
             },
             {
               "turn": 3,
-              "value": 2
+              "value": 7
             },
             {
               "turn": 4,
-              "value": 14
+              "value": 28
             },
             {
               "turn": 5,
-              "value": 23
+              "value": 41
             },
             {
               "turn": 6,
-              "value": 29
+              "value": 51
             },
             {
               "turn": 7,
-              "value": 34
+              "value": 59
             }
           ],
-          "observedWithinHorizon": 273,
+          "observedWithinHorizon": 472,
           "milestones": {
-            "at25": 6,
-            "at50": null,
+            "at25": 4,
+            "at50": 6,
             "at75": null
           }
         },
@@ -3361,30 +3721,30 @@
             },
             {
               "turn": 2,
-              "value": 27
+              "value": 26
             },
             {
               "turn": 3,
-              "value": 43
+              "value": 39
             },
             {
               "turn": 4,
-              "value": 56
+              "value": 52
             },
             {
               "turn": 5,
-              "value": 61
+              "value": 56
             },
             {
               "turn": 6,
-              "value": 67
+              "value": 62
             },
             {
               "turn": 7,
-              "value": 73
+              "value": 67
             }
           ],
-          "observedWithinHorizon": 580,
+          "observedWithinHorizon": 534,
           "milestones": {
             "at25": 2,
             "at50": 4,
@@ -3402,34 +3762,34 @@
             },
             {
               "turn": 2,
-              "value": 41
+              "value": 45
             },
             {
               "turn": 3,
-              "value": 58
+              "value": 66
             },
             {
               "turn": 4,
-              "value": 71
+              "value": 81
             },
             {
               "turn": 5,
-              "value": 78
+              "value": 89
             },
             {
               "turn": 6,
-              "value": 82
+              "value": 93
             },
             {
               "turn": 7,
-              "value": 86
+              "value": 95
             }
           ],
-          "observedWithinHorizon": 686,
+          "observedWithinHorizon": 762,
           "milestones": {
             "at25": 2,
             "at50": 3,
-            "at75": 5
+            "at75": 4
           }
         },
         "burst": {
@@ -3451,7 +3811,7 @@
             },
             {
               "turn": 4,
-              "value": 22
+              "value": 21
             },
             {
               "turn": 5,
@@ -3466,7 +3826,7 @@
               "value": 34
             }
           ],
-          "observedWithinHorizon": 270,
+          "observedWithinHorizon": 269,
           "milestones": {
             "at25": 5,
             "at50": null,
@@ -3526,32 +3886,32 @@
             },
             {
               "turn": 2,
-              "value": 0
-            },
-            {
-              "turn": 3,
               "value": 2
             },
             {
+              "turn": 3,
+              "value": 6
+            },
+            {
               "turn": 4,
-              "value": 13
+              "value": 24
             },
             {
               "turn": 5,
-              "value": 22
+              "value": 38
             },
             {
               "turn": 6,
-              "value": 30
+              "value": 49
             },
             {
               "turn": 7,
-              "value": 35
+              "value": 57
             }
           ],
           "milestones": {
-            "at25": 6,
-            "at50": null,
+            "at25": 5,
+            "at50": 7,
             "at75": null
           }
         },
@@ -3566,32 +3926,32 @@
             },
             {
               "turn": 2,
-              "value": 29
+              "value": 28
             },
             {
               "turn": 3,
-              "value": 39
+              "value": 35
             },
             {
               "turn": 4,
-              "value": 54
+              "value": 49
             },
             {
               "turn": 5,
-              "value": 61
+              "value": 56
             },
             {
               "turn": 6,
-              "value": 65
+              "value": 60
             },
             {
               "turn": 7,
-              "value": 70
+              "value": 65
             }
           ],
           "milestones": {
             "at25": 2,
-            "at50": 4,
+            "at50": 5,
             "at75": null
           }
         },
@@ -3606,33 +3966,33 @@
             },
             {
               "turn": 2,
-              "value": 34
+              "value": 39
             },
             {
               "turn": 3,
-              "value": 45
+              "value": 52
             },
             {
               "turn": 4,
-              "value": 65
+              "value": 76
             },
             {
               "turn": 5,
-              "value": 74
+              "value": 85
             },
             {
               "turn": 6,
-              "value": 79
+              "value": 89
             },
             {
               "turn": 7,
-              "value": 84
+              "value": 93
             }
           ],
           "milestones": {
             "at25": 2,
-            "at50": 4,
-            "at75": 6
+            "at50": 3,
+            "at75": 4
           }
         },
         "burst": {
@@ -3729,33 +4089,33 @@
             },
             {
               "turn": 2,
-              "value": 0
+              "value": 1
             },
             {
               "turn": 3,
-              "value": 2
+              "value": 7
             },
             {
               "turn": 4,
-              "value": 14
+              "value": 28
             },
             {
               "turn": 5,
-              "value": 23
+              "value": 41
             },
             {
               "turn": 6,
-              "value": 29
+              "value": 51
             },
             {
               "turn": 7,
-              "value": 34
+              "value": 59
             }
           ],
-          "observedWithinHorizon": 273,
+          "observedWithinHorizon": 472,
           "milestones": {
-            "at25": 6,
-            "at50": null,
+            "at25": 4,
+            "at50": 6,
             "at75": null
           }
         },
@@ -3770,30 +4130,30 @@
             },
             {
               "turn": 2,
-              "value": 27
+              "value": 26
             },
             {
               "turn": 3,
-              "value": 43
+              "value": 39
             },
             {
               "turn": 4,
-              "value": 56
+              "value": 52
             },
             {
               "turn": 5,
-              "value": 61
+              "value": 56
             },
             {
               "turn": 6,
-              "value": 67
+              "value": 62
             },
             {
               "turn": 7,
-              "value": 73
+              "value": 67
             }
           ],
-          "observedWithinHorizon": 580,
+          "observedWithinHorizon": 534,
           "milestones": {
             "at25": 2,
             "at50": 4,
@@ -3811,34 +4171,34 @@
             },
             {
               "turn": 2,
-              "value": 41
+              "value": 45
             },
             {
               "turn": 3,
-              "value": 58
+              "value": 66
             },
             {
               "turn": 4,
-              "value": 71
+              "value": 81
             },
             {
               "turn": 5,
-              "value": 78
+              "value": 89
             },
             {
               "turn": 6,
-              "value": 82
+              "value": 93
             },
             {
               "turn": 7,
-              "value": 86
+              "value": 95
             }
           ],
-          "observedWithinHorizon": 686,
+          "observedWithinHorizon": 762,
           "milestones": {
             "at25": 2,
             "at50": 3,
-            "at75": 5
+            "at75": 4
           }
         },
         "burst": {
@@ -3860,7 +4220,7 @@
             },
             {
               "turn": 4,
-              "value": 22
+              "value": 21
             },
             {
               "turn": 5,
@@ -3875,7 +4235,7 @@
               "value": 34
             }
           ],
-          "observedWithinHorizon": 270,
+          "observedWithinHorizon": 269,
           "milestones": {
             "at25": 5,
             "at50": null,

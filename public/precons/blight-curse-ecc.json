@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/BlightCurse_ECC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Blight Curse",
@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 48,
-    "p20": 36,
-    "p80": 58,
+    "median": 49,
+    "p20": 38,
+    "p80": 59,
     "peak": 88,
     "coverage": 94,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "79815ac3b45cebd3790e9175a0feda678fd9d44b6b6410ce8baba65cb16d9013",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 The Reaper, King No More\n1 Wickersmith's Tools\n1 Sinister Gnarlbark\n1 Eventide's Shadow\n1 Aberrant Return\n1 Dread Tiller\n1 Grave Venerations\n1 Oft-Nabbed Goat\n1 Village Pillagers\n1 Puca's Covenant\n1 Ferrafor, Young Yew\n1 Tree of Perdition\n1 Vernal Fen\n1 Festering Thicket\n1 Necroskitter\n1 Ignoble Hierarch\n1 Nesting Grounds\n1 Massacre Girl, Known Killer\n1 Grave Titan\n1 Vraska, Betrayal's Sting\n1 The Scorpion God\n1 Liliana, Death Wielder\n1 Chimil, the Inner Sun\n1 Carnifex Demon\n1 Puppeteer Clique\n1 Dusk Urchins\n1 Black Sun's Zenith\n1 Painful Truths\n1 Persist\n1 Midnight Banshee\n1 Chain Reaction\n1 Archfiend of Ifnir\n1 Channeler Initiate\n1 Hapatra, Vizier of Poisons\n1 Glissa Sunslayer\n1 Everlasting Torment\n1 Assassin's Trophy\n1 Grim Poppet\n1 Canyon Slough\n1 Sheltered Thicket\n1 Exotic Orchard\n1 Smoldering Marsh\n1 Cinder Glade\n1 Dragonskull Summit\n1 Rootbound Crag\n1 Woodland Cemetery\n1 Lasting Tarfire\n1 Burning Curiosity\n1 Hoarder's Greed\n1 Blowfly Infestation\n1 Fire Covenant\n1 Sol Ring\n1 Arcane Signet\n1 Command Tower\n1 Cathartic Reunion\n1 Skinrender\n1 Soul Snuffers\n1 Incremental Blight\n1 Infernal Grasp\n1 Evolution Sage\n1 Devoted Druid\n1 Flourishing Defenses\n1 Harmonize\n1 Putrefy\n1 Binding the Old Gods\n1 Kulrath Knight\n1 Contagion Clasp\n1 Savage Lands\n1 Ifnir Deadlands\n1 Night's Whisper\n1 Wickerbough Elder\n1 Terminate\n1 Commander's Sphere\n1 Cathartic Pyre\n1 Evolving Wilds\n1 Terramorphic Expanse\n1 Path of Ancestry\n1 Riveteers Overlook\n1 Rakdos Carnarium\n1 Gruul Turf\n1 Golgari Rot Farm\n8 Swamp\n4 Mountain\n6 Forest",
   "oracleCards": [
@@ -98,6 +98,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "counter-producer",
         "counter-kind:minus1"
       ],
@@ -139,6 +140,7 @@
       "tags": [
         "creature",
         "draw",
+        "protection",
         "counter-producer",
         "counter-kind:minus1"
       ],
@@ -241,6 +243,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -314,7 +317,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -571,6 +575,8 @@
       "producedMana": [],
       "tags": [
         "enchantment",
+        "counter-producer",
+        "counter-kind:minus1",
         "stax"
       ],
       "isCommander": false
@@ -673,6 +679,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -1017,7 +1024,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-kind:generic"
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1074,7 +1082,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "draw"
+        "draw",
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1130,6 +1140,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "counter-producer",
         "counter-kind:minus1"
       ],
       "isCommander": false
@@ -1420,6 +1431,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -1680,8 +1692,9 @@
         "mana",
         "tokens",
         "etb",
+        "counter-producer",
         "counter-payoff",
-        "counter-kind:generic"
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1787,24 +1800,24 @@
   ],
   "result": {
     "profile": {
-      "median": 48,
-      "floor": 36,
-      "ceiling": 58,
+      "median": 49,
+      "floor": 38,
+      "ceiling": 59,
       "peak": 88,
       "dispersion": 22,
       "variance": 22,
-      "consistency": 64,
+      "consistency": 65,
       "commanderDelta": 13,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 38,
-      "consistency": 64,
+      "consistency": 65,
       "explosiveness": 13,
-      "synergy": 77,
-      "interaction": 47,
-      "resilience": 42
+      "synergy": 81,
+      "interaction": 49,
+      "resilience": 43
     },
     "roles": {
       "lands": 39,
@@ -1812,11 +1825,11 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 14,
-      "interaction": 9,
+      "draw": 15,
+      "interaction": 10,
       "protection": 0,
       "recursion": 4,
-      "wipes": 0,
+      "wipes": 1,
       "avgCmc": 3.6666666666666665,
       "unknownManaLands": 0
     },
@@ -1856,12 +1869,16 @@
           "Devoted Druid",
           "Dread Tiller",
           "Dusk Urchins",
+          "Everlasting Torment",
           "Evolution Sage",
           "Grim Poppet",
           "Hapatra, Vizier of Poisons",
           "Incremental Blight",
+          "Kulrath Knight",
           "Liliana, Death Wielder",
+          "Massacre Girl, Known Killer",
           "Midnight Banshee",
+          "Necroskitter",
           "Oft-Nabbed Goat",
           "Puppeteer Clique",
           "Sinister Gnarlbark",
@@ -1869,12 +1886,12 @@
           "Soul Snuffers",
           "The Reaper, King No More",
           "The Scorpion God",
+          "Village Pillagers",
           "Vraska, Betrayal's Sting",
           "Wickerbough Elder",
           "Wickersmith's Tools",
           "Lasting Tarfire",
-          "Puca's Covenant",
-          "Village Pillagers"
+          "Puca's Covenant"
         ],
         "producerCards": [
           {
@@ -2081,6 +2098,26 @@
             }
           },
           {
+            "name": "Everlasting Torment",
+            "cmc": 3,
+            "tags": [
+              "enchantment",
+              "counter-producer",
+              "counter-kind:minus1",
+              "stax"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B",
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
             "name": "Evolution Sage",
             "cmc": 3,
             "tags": [
@@ -2161,6 +2198,29 @@
             }
           },
           {
+            "name": "Kulrath Knight",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B",
+                  "R"
+                ],
+                [
+                  "B",
+                  "R"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
             "name": "Liliana, Death Wielder",
             "cmc": 7,
             "tags": [
@@ -2180,6 +2240,28 @@
                 ]
               ],
               "total": 7
+            }
+          },
+          {
+            "name": "Massacre Girl, Known Killer",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "draw",
+              "counter-producer",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
             }
           },
           {
@@ -2204,6 +2286,27 @@
                 ]
               ],
               "total": 6
+            }
+          },
+          {
+            "name": "Necroskitter",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
             }
           },
           {
@@ -2351,6 +2454,31 @@
               "colored": [
                 [
                   "B"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Village Pillagers",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "mana",
+              "tokens",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
                 ],
                 [
                   "R"
@@ -2514,8 +2642,9 @@
               "mana",
               "tokens",
               "etb",
+              "counter-producer",
               "counter-payoff",
-              "counter-kind:generic"
+              "counter-kind:minus1"
             ],
             "manaReq": {
               "generic": 3,
@@ -2539,7 +2668,7 @@
           "counter-payoff",
           "modified-payoff"
         ],
-        "evidence": "26 producteur(s), 5 payoff(s), 29 carte(s) distincte(s)."
+        "evidence": "31 producteur(s), 5 payoff(s), 33 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2865,6 +2994,7 @@
             "tags": [
               "creature",
               "draw",
+              "protection",
               "counter-producer",
               "counter-kind:minus1"
             ],
@@ -2890,7 +3020,7 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 82,
+      "score": 96,
       "connected": [
         "Aberrant Return",
         "Archfiend of Ifnir",
@@ -2903,13 +3033,17 @@
         "Devoted Druid",
         "Dread Tiller",
         "Dusk Urchins",
+        "Everlasting Torment",
         "Evolution Sage",
         "Grim Poppet",
         "Hapatra, Vizier of Poisons",
         "Ifnir Deadlands",
         "Incremental Blight",
+        "Kulrath Knight",
         "Liliana, Death Wielder",
+        "Massacre Girl, Known Killer",
         "Midnight Banshee",
+        "Necroskitter",
         "Oft-Nabbed Goat",
         "Puca's Covenant",
         "Puppeteer Clique",
@@ -2918,6 +3052,7 @@
         "Soul Snuffers",
         "The Reaper, King No More",
         "The Scorpion God",
+        "Village Pillagers",
         "Vraska, Betrayal's Sting",
         "Wickerbough Elder",
         "Wickersmith's Tools"
@@ -2937,23 +3072,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 35,
-      "median": 43,
-      "high": 51,
-      "ceiling": 51,
-      "peak": 79,
+      "floor": 36,
+      "median": 44,
+      "high": 52,
+      "ceiling": 52,
+      "peak": 80,
       "iqr": 12,
-      "consistency": 73,
+      "consistency": 74,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 89,
+      "recoveryAfterDisruption": 90,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 0,
+          "resource": 15,
           "burst": 0
         },
         {
@@ -2961,7 +3096,7 @@
           "commander": 0,
           "engine": 0,
           "interaction": 14,
-          "resource": 21,
+          "resource": 27,
           "burst": 0
         },
         {
@@ -2969,39 +3104,39 @@
           "commander": 17,
           "engine": 8,
           "interaction": 33,
-          "resource": 46,
+          "resource": 48,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 64,
-          "engine": 22,
-          "interaction": 53,
-          "resource": 72,
+          "engine": 25,
+          "interaction": 55,
+          "resource": 73,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 84,
-          "engine": 31,
-          "interaction": 62,
-          "resource": 83,
+          "engine": 35,
+          "interaction": 64,
+          "resource": 84,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 89,
-          "engine": 36,
-          "interaction": 68,
-          "resource": 88,
+          "engine": 41,
+          "interaction": 71,
+          "resource": 90,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 93,
-          "engine": 41,
-          "interaction": 73,
-          "resource": 92,
+          "engine": 46,
+          "interaction": 76,
+          "resource": 93,
           "burst": 0
         }
       ],
@@ -3063,22 +3198,22 @@
               },
               {
                 "turn": 4,
-                "value": 21
+                "value": 24
               },
               {
                 "turn": 5,
-                "value": 31
+                "value": 35
               },
               {
                 "turn": 6,
-                "value": 37
+                "value": 43
               },
               {
                 "turn": 7,
-                "value": 43
+                "value": 49
               }
             ],
-            "observedWithinHorizon": 343
+            "observedWithinHorizon": 393
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -3094,26 +3229,26 @@
               },
               {
                 "turn": 3,
-                "value": 35
+                "value": 36
               },
               {
                 "turn": 4,
-                "value": 52
+                "value": 54
               },
               {
                 "turn": 5,
-                "value": 61
+                "value": 63
               },
               {
                 "turn": 6,
-                "value": 68
+                "value": 71
               },
               {
                 "turn": 7,
-                "value": 72
+                "value": 75
               }
             ],
-            "observedWithinHorizon": 577
+            "observedWithinHorizon": 598
           },
           "resource": {
             "id": "resource-first-access",
@@ -3121,34 +3256,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 0
+                "value": 15
               },
               {
                 "turn": 2,
-                "value": 20
+                "value": 35
               },
               {
                 "turn": 3,
-                "value": 49
+                "value": 59
               },
               {
                 "turn": 4,
-                "value": 73
+                "value": 79
               },
               {
                 "turn": 5,
-                "value": 83
-              },
-              {
-                "turn": 6,
                 "value": 88
               },
               {
+                "turn": 6,
+                "value": 92
+              },
+              {
                 "turn": 7,
-                "value": 91
+                "value": 94
               }
             ],
-            "observedWithinHorizon": 730
+            "observedWithinHorizon": 751
           },
           "burst": {
             "id": "burst-first-access",
@@ -3330,6 +3465,17 @@
         "aeon": null
       },
       {
+        "name": "Massacre Girl, Known Killer",
+        "impact": 2.9,
+        "tags": [
+          "creature",
+          "draw",
+          "counter-producer",
+          "counter-kind:minus1"
+        ],
+        "aeon": null
+      },
+      {
         "name": "The Scorpion God",
         "impact": 2.9,
         "tags": [
@@ -3348,8 +3494,8 @@
           "mana",
           "tokens",
           "etb",
-          "counter-payoff",
-          "counter-kind:generic"
+          "counter-producer",
+          "counter-payoff"
         ],
         "aeon": null
       },
@@ -3360,18 +3506,6 @@
           "enchantment",
           "land-ramp",
           "removal"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Channeler Initiate",
-        "impact": 2.6,
-        "tags": [
-          "creature",
-          "mana",
-          "etb",
-          "counter-producer",
-          "counter-kind:minus1"
         ],
         "aeon": null
       }
@@ -3414,7 +3548,7 @@
           ]
         },
         "volatility": {
-          "score": 89,
+          "score": 88,
           "level": "very-high",
           "evidence": [
             {
@@ -3425,55 +3559,55 @@
             },
             {
               "signal": "high-roll-tail",
-              "value": 30,
+              "value": 29,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
           ]
         },
         "interaction": {
-          "score": 47,
+          "score": 49,
           "level": "moderate",
           "evidence": [
             {
               "signal": "interaction",
-              "value": 47,
+              "value": 49,
               "source": "aeon-dimension",
               "reason": "Existing Aeon interaction-access dimension."
             }
           ]
         },
         "resilience": {
-          "score": 42,
+          "score": 43,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 42,
+              "value": 43,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 65,
+          "score": 67,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 77,
+              "value": 81,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 64,
+              "value": 65,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
             {
               "signal": "resilience",
-              "value": 42,
+              "value": 43,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
@@ -3486,7 +3620,7 @@
           ]
         },
         "dependency": {
-          "score": 89,
+          "score": 95,
           "level": "very-high",
           "evidence": [
             {
@@ -3497,7 +3631,7 @@
             },
             {
               "signal": "commander-synergy",
-              "value": 82,
+              "value": 96,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },
@@ -3712,22 +3846,22 @@
             },
             {
               "turn": 4,
-              "value": 21
+              "value": 24
             },
             {
               "turn": 5,
-              "value": 31
+              "value": 35
             },
             {
               "turn": 6,
-              "value": 37
+              "value": 43
             },
             {
               "turn": 7,
-              "value": 43
+              "value": 49
             }
           ],
-          "observedWithinHorizon": 343,
+          "observedWithinHorizon": 393,
           "milestones": {
             "at25": 5,
             "at50": null,
@@ -3749,30 +3883,30 @@
             },
             {
               "turn": 3,
-              "value": 35
+              "value": 36
             },
             {
               "turn": 4,
-              "value": 52
+              "value": 54
             },
             {
               "turn": 5,
-              "value": 61
+              "value": 63
             },
             {
               "turn": 6,
-              "value": 68
+              "value": 71
             },
             {
               "turn": 7,
-              "value": 72
+              "value": 75
             }
           ],
-          "observedWithinHorizon": 577,
+          "observedWithinHorizon": 598,
           "milestones": {
             "at25": 3,
             "at50": 4,
-            "at75": null
+            "at75": 7
           }
         },
         "resource": {
@@ -3782,38 +3916,38 @@
           "points": [
             {
               "turn": 1,
-              "value": 0
+              "value": 15
             },
             {
               "turn": 2,
-              "value": 20
+              "value": 35
             },
             {
               "turn": 3,
-              "value": 49
+              "value": 59
             },
             {
               "turn": 4,
-              "value": 73
+              "value": 79
             },
             {
               "turn": 5,
-              "value": 83
-            },
-            {
-              "turn": 6,
               "value": 88
             },
             {
+              "turn": 6,
+              "value": 92
+            },
+            {
               "turn": 7,
-              "value": 91
+              "value": 94
             }
           ],
-          "observedWithinHorizon": 730,
+          "observedWithinHorizon": 751,
           "milestones": {
-            "at25": 3,
-            "at50": 4,
-            "at75": 5
+            "at25": 2,
+            "at50": 3,
+            "at75": 4
           }
         },
         "burst": {
@@ -3918,23 +4052,23 @@
             },
             {
               "turn": 4,
-              "value": 22
+              "value": 25
             },
             {
               "turn": 5,
-              "value": 31
+              "value": 35
             },
             {
               "turn": 6,
-              "value": 36
+              "value": 41
             },
             {
               "turn": 7,
-              "value": 41
+              "value": 46
             }
           ],
           "milestones": {
-            "at25": 5,
+            "at25": 4,
             "at50": null,
             "at75": null
           }
@@ -3958,25 +4092,25 @@
             },
             {
               "turn": 4,
-              "value": 53
+              "value": 55
             },
             {
               "turn": 5,
-              "value": 62
+              "value": 64
             },
             {
               "turn": 6,
-              "value": 68
+              "value": 71
             },
             {
               "turn": 7,
-              "value": 73
+              "value": 76
             }
           ],
           "milestones": {
             "at25": 3,
             "at50": 4,
-            "at75": null
+            "at75": 7
           }
         },
         "resource": {
@@ -3986,35 +4120,35 @@
           "points": [
             {
               "turn": 1,
-              "value": 0
+              "value": 15
             },
             {
               "turn": 2,
-              "value": 21
+              "value": 27
             },
             {
               "turn": 3,
-              "value": 46
+              "value": 48
             },
             {
               "turn": 4,
-              "value": 72
+              "value": 73
             },
             {
               "turn": 5,
-              "value": 83
+              "value": 84
             },
             {
               "turn": 6,
-              "value": 88
+              "value": 90
             },
             {
               "turn": 7,
-              "value": 92
+              "value": 93
             }
           ],
           "milestones": {
-            "at25": 3,
+            "at25": 2,
             "at50": 4,
             "at75": 5
           }
@@ -4121,22 +4255,22 @@
             },
             {
               "turn": 4,
-              "value": 21
+              "value": 24
             },
             {
               "turn": 5,
-              "value": 31
+              "value": 35
             },
             {
               "turn": 6,
-              "value": 37
+              "value": 43
             },
             {
               "turn": 7,
-              "value": 43
+              "value": 49
             }
           ],
-          "observedWithinHorizon": 343,
+          "observedWithinHorizon": 393,
           "milestones": {
             "at25": 5,
             "at50": null,
@@ -4158,30 +4292,30 @@
             },
             {
               "turn": 3,
-              "value": 35
+              "value": 36
             },
             {
               "turn": 4,
-              "value": 52
+              "value": 54
             },
             {
               "turn": 5,
-              "value": 61
+              "value": 63
             },
             {
               "turn": 6,
-              "value": 68
+              "value": 71
             },
             {
               "turn": 7,
-              "value": 72
+              "value": 75
             }
           ],
-          "observedWithinHorizon": 577,
+          "observedWithinHorizon": 598,
           "milestones": {
             "at25": 3,
             "at50": 4,
-            "at75": null
+            "at75": 7
           }
         },
         "resource": {
@@ -4191,38 +4325,38 @@
           "points": [
             {
               "turn": 1,
-              "value": 0
+              "value": 15
             },
             {
               "turn": 2,
-              "value": 20
+              "value": 35
             },
             {
               "turn": 3,
-              "value": 49
+              "value": 59
             },
             {
               "turn": 4,
-              "value": 73
+              "value": 79
             },
             {
               "turn": 5,
-              "value": 83
-            },
-            {
-              "turn": 6,
               "value": 88
             },
             {
+              "turn": 6,
+              "value": 92
+            },
+            {
               "turn": 7,
-              "value": 91
+              "value": 94
             }
           ],
-          "observedWithinHorizon": 730,
+          "observedWithinHorizon": 751,
           "milestones": {
-            "at25": 3,
-            "at50": 4,
-            "at75": 5
+            "at25": 2,
+            "at50": 3,
+            "at75": 4
           }
         },
         "burst": {

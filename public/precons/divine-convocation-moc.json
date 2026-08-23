@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/DivineConvocation_MOC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Divine Convocation",
@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 39,
-    "p20": 25,
-    "p80": 50,
-    "peak": 81,
+    "median": 40,
+    "p20": 29,
+    "p80": 51,
+    "peak": 82,
     "coverage": 93,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "a751caa40645b714bc2782a8b4fd680f6d289ba3e7ae6c44b1dd9888cfe8a208",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Saint Traft and Rem Karolus\n1 Wand of the Worldsoul\n1 Flockchaser Phantom\n1 Wildfire Awakener\n1 Ichor Elixir\n1 Path of the Ghosthunter\n1 Deluxe Dragster\n1 Mistmeadow Vanisher\n1 Nesting Dovehawk\n1 Kykar, Wind's Fury\n1 Elspeth, Sun's Champion\n1 The Locust God\n1 Angel of Finality\n1 Angel of Salvation\n1 Austere Command\n1 Chasm Skulker\n1 Cultivator's Caravan\n1 Emeria Angel\n1 Exotic Orchard\n1 Frostboil Snarl\n1 Furycalm Snarl\n1 Hour of Reckoning\n1 Keeper of the Accord\n1 Kher Keep\n1 Mentor of the Meek\n1 Nadir Kraken\n1 Port Town\n1 Prairie Stream\n1 Secure the Wastes\n1 Skycloud Expanse\n1 Temple of Enlightenment\n1 Temple of Epiphany\n1 Temple of Triumph\n1 Venerated Loxodon\n1 Whirlwind of Thought\n1 Cloud of Faeries\n1 Command Tower\n1 Commander's Sphere\n1 Ephemeral Shields\n1 Evolving Wilds\n1 Fractured Powerstone\n1 Goblin Instigator\n1 Goblin Medics\n1 Impact Tremors\n1 Spirited Companion\n1 Suture Priest\n1 Terramorphic Expanse\n1 Village Bell-Ringer\n1 Banisher Priest\n1 Arcane Signet\n1 Battle Screech\n1 Chant of Vitu-Ghazi\n1 Conclave Tribunal\n1 Devouring Light\n1 Duergar Hedge-Mage\n1 Fallowsage\n1 Flight of Equenauts\n1 Improbable Alliance\n1 Migratory Route\n1 Mystic Monastery\n1 Rogue's Passage\n1 Seraph of the Masses\n1 Skullclamp\n1 Sol Ring\n1 Stoke the Flames\n1 Swords to Plowshares\n1 Tetsuko Umezawa, Fugitive\n1 Wear // Tear\n1 Temporal Cleansing\n1 Meeting of Minds\n1 Shatter the Source\n1 Wrenn's Resolve\n1 Cut Short\n1 Joyful Stormsculptor\n1 Artistic Refusal\n8 Plains\n8 Island\n8 Mountain",
   "oracleCards": [
@@ -172,6 +172,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -229,6 +230,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -893,6 +895,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "draw",
         "tokens"
       ],
       "isCommander": false
@@ -995,6 +998,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "tokens",
         "token-payoff",
         "etb",
         "counter-producer",
@@ -1588,24 +1592,24 @@
   ],
   "result": {
     "profile": {
-      "median": 39,
-      "floor": 25,
-      "ceiling": 50,
-      "peak": 81,
-      "dispersion": 25,
-      "variance": 25,
-      "consistency": 62,
-      "commanderDelta": 3,
+      "median": 40,
+      "floor": 29,
+      "ceiling": 51,
+      "peak": 82,
+      "dispersion": 22,
+      "variance": 22,
+      "consistency": 64,
+      "commanderDelta": 2,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 30,
-      "consistency": 62,
+      "consistency": 64,
       "explosiveness": 14,
       "synergy": 65,
       "interaction": 44,
-      "resilience": 22
+      "resilience": 29
     },
     "roles": {
       "lands": 39,
@@ -1613,10 +1617,10 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 10,
+      "draw": 12,
       "interaction": 13,
       "protection": 1,
-      "recursion": 0,
+      "recursion": 1,
       "wipes": 3,
       "avgCmc": 3.7,
       "unknownManaLands": 0
@@ -1656,13 +1660,13 @@
           "Kykar, Wind's Fury",
           "Migratory Route",
           "Nadir Kraken",
+          "Nesting Dovehawk",
           "Path of the Ghosthunter",
           "Saint Traft and Rem Karolus",
           "Secure the Wastes",
           "The Locust God",
           "Wildfire Awakener",
-          "Hour of Reckoning",
-          "Nesting Dovehawk"
+          "Hour of Reckoning"
         ],
         "producerCards": [
           {
@@ -1670,6 +1674,7 @@
             "cmc": 4,
             "tags": [
               "sorcery",
+              "recursion",
               "tokens"
             ],
             "manaReq": {
@@ -1871,6 +1876,7 @@
             "cmc": 5,
             "tags": [
               "sorcery",
+              "draw",
               "tokens"
             ],
             "manaReq": {
@@ -1906,6 +1912,27 @@
                 ]
               ],
               "total": 3
+            }
+          },
+          {
+            "name": "Nesting Dovehawk",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "tokens",
+              "token-payoff",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
             }
           },
           {
@@ -2040,6 +2067,7 @@
             "cmc": 4,
             "tags": [
               "creature",
+              "tokens",
               "token-payoff",
               "etb",
               "counter-producer",
@@ -2063,7 +2091,7 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "17 producteur(s), 2 payoff(s), 19 carte(s) distincte(s)."
+        "evidence": "18 producteur(s), 2 payoff(s), 19 carte(s) distincte(s)."
       },
       {
         "id": "spells",
@@ -2156,6 +2184,7 @@
             "cmc": 4,
             "tags": [
               "sorcery",
+              "recursion",
               "tokens"
             ],
             "manaReq": {
@@ -2291,6 +2320,7 @@
             "cmc": 5,
             "tags": [
               "sorcery",
+              "draw",
               "tokens"
             ],
             "manaReq": {
@@ -2768,16 +2798,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 28,
+      "floor": 30,
       "median": 37,
       "high": 45,
       "ceiling": 45,
-      "peak": 70,
-      "iqr": 13,
-      "consistency": 71,
+      "peak": 71,
+      "iqr": 12,
+      "consistency": 73,
       "commanderMedianTurn": 6,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 64,
+      "recoveryAfterDisruption": 73,
       "turnProfile": [
         {
           "turn": 1,
@@ -2792,7 +2822,7 @@
           "commander": 0,
           "engine": 0,
           "interaction": 9,
-          "resource": 19,
+          "resource": 24,
           "burst": 0
         },
         {
@@ -2800,7 +2830,7 @@
           "commander": 2,
           "engine": 1,
           "interaction": 30,
-          "resource": 33,
+          "resource": 39,
           "burst": 1
         },
         {
@@ -2808,7 +2838,7 @@
           "commander": 9,
           "engine": 6,
           "interaction": 49,
-          "resource": 50,
+          "resource": 59,
           "burst": 2
         },
         {
@@ -2816,7 +2846,7 @@
           "commander": 30,
           "engine": 19,
           "interaction": 60,
-          "resource": 58,
+          "resource": 69,
           "burst": 6
         },
         {
@@ -2824,7 +2854,7 @@
           "commander": 56,
           "engine": 26,
           "interaction": 71,
-          "resource": 65,
+          "resource": 76,
           "burst": 9
         },
         {
@@ -2832,7 +2862,7 @@
           "commander": 69,
           "engine": 31,
           "interaction": 78,
-          "resource": 70,
+          "resource": 81,
           "burst": 10
         }
       ],
@@ -2956,30 +2986,30 @@
               },
               {
                 "turn": 2,
-                "value": 19
+                "value": 24
               },
               {
                 "turn": 3,
-                "value": 33
+                "value": 40
               },
               {
                 "turn": 4,
-                "value": 47
+                "value": 57
               },
               {
                 "turn": 5,
-                "value": 58
+                "value": 69
               },
               {
                 "turn": 6,
-                "value": 64
+                "value": 75
               },
               {
                 "turn": 7,
-                "value": 68
+                "value": 78
               }
             ],
-            "observedWithinHorizon": 545
+            "observedWithinHorizon": 626
           },
           "burst": {
             "id": "burst-first-access",
@@ -3007,14 +3037,14 @@
               },
               {
                 "turn": 6,
-                "value": 9
+                "value": 8
               },
               {
                 "turn": 7,
                 "value": 10
               }
             ],
-            "observedWithinHorizon": 78
+            "observedWithinHorizon": 77
           }
         },
         "commanders": {
@@ -3119,6 +3149,16 @@
         "aeon": null
       },
       {
+        "name": "Migratory Route",
+        "impact": 3.4,
+        "tags": [
+          "sorcery",
+          "draw",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Commander's Sphere",
         "impact": 3.3,
         "tags": [
@@ -3162,32 +3202,22 @@
         "aeon": null
       },
       {
+        "name": "Battle Screech",
+        "impact": 2.7,
+        "tags": [
+          "sorcery",
+          "recursion",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Hour of Reckoning",
         "impact": 2.7,
         "tags": [
           "sorcery",
           "wipe",
           "token-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Emeria Angel",
-        "impact": 2.6,
-        "tags": [
-          "creature",
-          "tokens",
-          "etb",
-          "landfall"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Elspeth, Sun's Champion",
-        "impact": 2.4,
-        "tags": [
-          "wipe",
-          "tokens"
         ],
         "aeon": null
       }
@@ -3230,12 +3260,12 @@
           ]
         },
         "volatility": {
-          "score": 97,
+          "score": 91,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 25,
+              "value": 22,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
@@ -3260,19 +3290,19 @@
           ]
         },
         "resilience": {
-          "score": 22,
-          "level": "low",
+          "score": 29,
+          "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 22,
+              "value": 29,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 58,
+          "score": 60,
           "level": "high",
           "evidence": [
             {
@@ -3283,13 +3313,13 @@
             },
             {
               "signal": "consistency",
-              "value": 62,
+              "value": 64,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
             {
               "signal": "resilience",
-              "value": 22,
+              "value": 29,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
@@ -3302,12 +3332,12 @@
           ]
         },
         "dependency": {
-          "score": 12,
+          "score": 8,
           "level": "low",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 3,
+              "value": 2,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
@@ -3594,34 +3624,34 @@
             },
             {
               "turn": 2,
-              "value": 19
+              "value": 24
             },
             {
               "turn": 3,
-              "value": 33
+              "value": 40
             },
             {
               "turn": 4,
-              "value": 47
+              "value": 57
             },
             {
               "turn": 5,
-              "value": 58
+              "value": 69
             },
             {
               "turn": 6,
-              "value": 64
+              "value": 75
             },
             {
               "turn": 7,
-              "value": 68
+              "value": 78
             }
           ],
-          "observedWithinHorizon": 545,
+          "observedWithinHorizon": 626,
           "milestones": {
             "at25": 3,
-            "at50": 5,
-            "at75": null
+            "at50": 4,
+            "at75": 6
           }
         },
         "burst": {
@@ -3651,14 +3681,14 @@
             },
             {
               "turn": 6,
-              "value": 9
+              "value": 8
             },
             {
               "turn": 7,
               "value": 10
             }
           ],
-          "observedWithinHorizon": 78,
+          "observedWithinHorizon": 77,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -3798,33 +3828,33 @@
             },
             {
               "turn": 2,
-              "value": 19
+              "value": 24
             },
             {
               "turn": 3,
-              "value": 33
+              "value": 39
             },
             {
               "turn": 4,
-              "value": 50
+              "value": 59
             },
             {
               "turn": 5,
-              "value": 58
+              "value": 69
             },
             {
               "turn": 6,
-              "value": 65
+              "value": 76
             },
             {
               "turn": 7,
-              "value": 70
+              "value": 81
             }
           ],
           "milestones": {
             "at25": 3,
             "at50": 4,
-            "at75": null
+            "at75": 6
           }
         },
         "burst": {
@@ -4003,34 +4033,34 @@
             },
             {
               "turn": 2,
-              "value": 19
+              "value": 24
             },
             {
               "turn": 3,
-              "value": 33
+              "value": 40
             },
             {
               "turn": 4,
-              "value": 47
+              "value": 57
             },
             {
               "turn": 5,
-              "value": 58
+              "value": 69
             },
             {
               "turn": 6,
-              "value": 64
+              "value": 75
             },
             {
               "turn": 7,
-              "value": 68
+              "value": 78
             }
           ],
-          "observedWithinHorizon": 545,
+          "observedWithinHorizon": 626,
           "milestones": {
             "at25": 3,
-            "at50": 5,
-            "at75": null
+            "at50": 4,
+            "at75": 6
           }
         },
         "burst": {
@@ -4060,14 +4090,14 @@
             },
             {
               "turn": 6,
-              "value": 9
+              "value": 8
             },
             {
               "turn": 7,
               "value": 10
             }
           ],
-          "observedWithinHorizon": 78,
+          "observedWithinHorizon": 77,
           "milestones": {
             "at25": null,
             "at50": null,

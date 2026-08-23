@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/SultaiArisen_TDC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Sultai Arisen",
@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 50,
-    "p20": 36,
+    "median": 52,
+    "p20": 38,
     "p80": 62,
     "peak": 91,
     "coverage": 93,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "a423137ae5a7d9902fc813977d3de141b7bab09cafa3acba4a4eceeadffde7d5",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Kotis, Sibsig Champion\n1 Diviner of Mist\n1 Afterlife from the Loam\n1 Teval's Judgment\n1 Welcome the Dead\n1 Floral Evoker\n1 Steward of the Harvest\n1 Will of the Sultai\n1 Colossal Grave-Reaver\n1 Gravecrawler\n1 Life from the Loam\n1 Casualties of War\n1 Amphin Mutineer\n1 River Kelpie\n1 Dauthi Voidwalker\n1 Disciple of Bolas\n1 Junji, the Midnight Sky\n1 Lethal Scheme\n1 Living Death\n1 Lord of the Forsaken\n1 Necromantic Selection\n1 Necropolis Fiend\n1 Noxious Gearhulk\n1 Ob Nixilis, the Fallen\n1 Tasigur, the Golden Fang\n1 Woe Strider\n1 Avenger of Zendikar\n1 Conduit of Worlds\n1 Multani, Yavimaya's Avatar\n1 Shigeki, Jukai Visionary\n1 Consuming Aberration\n1 Jarad, Golgari Lich Lord\n1 Lord of Extinction\n1 Meren of Clan Nel Toth\n1 Command Beacon\n1 Crypt of Agadeem\n1 Darkwater Catacombs\n1 Dreamroot Cascade\n1 Drownyard Temple\n1 Exotic Orchard\n1 Fetid Pools\n1 Hinterland Harbor\n1 Llanowar Wastes\n1 Sunken Hollow\n1 Temple of Malady\n1 Woodland Cemetery\n1 Essence Anchor\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Forbidden Alchemy\n1 Hedron Crab\n1 Treasure Cruise\n1 Wonder\n1 Phyrexian Reclamation\n1 Reassembling Skeleton\n1 Stitcher's Supplier\n1 Victimize\n1 Kishla Skimmer\n1 Crawling Sensation\n1 Cultivate\n1 Farseek\n1 Grapple with the Past\n1 Harrow\n1 Opulent Palace\n1 Rampant Growth\n1 Sakura-Tribe Elder\n1 Satyr Wayfinder\n1 Springbloom Druid\n1 Tear Asunder\n1 Timeless Witness\n1 Grisly Salvage\n1 Nyx Weaver\n1 Putrefy\n1 Skull Prophet\n1 Millikin\n1 Cephalid Coliseum\n1 Contaminated Aquifer\n1 Foreboding Landscape\n1 Golgari Rot Farm\n1 Haunted Mire\n1 Memorial to Folly\n1 Myriad Landscape\n1 Terramorphic Expanse\n2 Island\n2 Island\n3 Swamp\n2 Swamp\n3 Forest\n3 Forest",
   "oracleCards": [
@@ -74,6 +74,8 @@
       "tags": [
         "creature",
         "removal",
+        "recursion",
+        "tokens",
         "etb"
       ],
       "isCommander": false
@@ -544,6 +546,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -584,7 +587,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -606,6 +610,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "land-ramp",
         "mana",
         "sacrifice"
@@ -903,6 +908,7 @@
       "producedMana": [],
       "tags": [
         "instant",
+        "draw",
         "removal",
         "counter-producer",
         "counter-kind:plus1"
@@ -1658,6 +1664,7 @@
       "tags": [
         "creature",
         "recursion",
+        "tokens",
         "etb"
       ],
       "isCommander": false
@@ -1713,6 +1720,7 @@
       "tags": [
         "sorcery",
         "draw",
+        "recursion",
         "graveyard-setup",
         "tokens"
       ],
@@ -1752,6 +1760,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "recursion",
         "tokens",
         "sacrifice",
         "sac-outlet",
@@ -1803,24 +1812,24 @@
   ],
   "result": {
     "profile": {
-      "median": 50,
-      "floor": 36,
+      "median": 52,
+      "floor": 38,
       "ceiling": 62,
       "peak": 91,
-      "dispersion": 26,
-      "variance": 26,
-      "consistency": 60,
-      "commanderDelta": 11,
+      "dispersion": 24,
+      "variance": 24,
+      "consistency": 61,
+      "commanderDelta": 13,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 38,
-      "consistency": 60,
+      "consistency": 61,
       "explosiveness": 21,
-      "synergy": 82,
+      "synergy": 84,
       "interaction": 23,
-      "resilience": 85
+      "resilience": 99
     },
     "roles": {
       "lands": 37,
@@ -1828,10 +1837,10 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 6,
+      "draw": 7,
       "interaction": 6,
       "protection": 0,
-      "recursion": 17,
+      "recursion": 21,
       "wipes": 1,
       "avgCmc": 3.725806451612903,
       "unknownManaLands": 0
@@ -1855,16 +1864,16 @@
           "Welcome the Dead"
         ],
         "payoffs": [
+          "Amphin Mutineer",
           "Conduit of Worlds",
           "Diviner of Mist",
           "Drownyard Temple",
           "Floral Evoker",
+          "Forbidden Alchemy",
           "Grapple with the Past",
           "Gravecrawler",
           "Jarad, Golgari Lich Lord",
-          "Kotis, Sibsig Champion",
-          "Life from the Loam",
-          "Lord of the Forsaken"
+          "Kotis, Sibsig Champion"
         ],
         "members": [
           "Colossal Grave-Reaver",
@@ -1877,9 +1886,11 @@
           "Stitcher's Supplier",
           "Tasigur, the Golden Fang",
           "Welcome the Dead",
+          "Amphin Mutineer",
           "Conduit of Worlds",
           "Drownyard Temple",
           "Floral Evoker",
+          "Forbidden Alchemy",
           "Gravecrawler",
           "Jarad, Golgari Lich Lord",
           "Kotis, Sibsig Champion",
@@ -1891,7 +1902,8 @@
           "Reassembling Skeleton",
           "Shigeki, Jukai Visionary",
           "Timeless Witness",
-          "Will of the Sultai"
+          "Will of the Sultai",
+          "Woe Strider"
         ],
         "producerCards": [
           {
@@ -2076,6 +2088,7 @@
             "tags": [
               "sorcery",
               "draw",
+              "recursion",
               "graveyard-setup",
               "tokens"
             ],
@@ -2092,6 +2105,26 @@
         ],
         "supportCards": [],
         "payoffCards": [
+          {
+            "name": "Amphin Mutineer",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "removal",
+              "recursion",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
           {
             "name": "Conduit of Worlds",
             "cmc": 4,
@@ -2163,6 +2196,23 @@
               "colored": [
                 [
                   "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Forbidden Alchemy",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
                 ]
               ],
               "total": 3
@@ -2431,6 +2481,7 @@
             "tags": [
               "creature",
               "recursion",
+              "tokens",
               "etb"
             ],
             "manaReq": {
@@ -2441,6 +2492,26 @@
                 ],
                 [
                   "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Welcome the Dead",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion",
+              "graveyard-setup",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
                 ]
               ],
               "total": 4
@@ -2464,6 +2535,28 @@
               ],
               "total": 5
             }
+          },
+          {
+            "name": "Woe Strider",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "recursion",
+              "tokens",
+              "sacrifice",
+              "sac-outlet",
+              "etb",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
           }
         ],
         "producerTags": [
@@ -2473,7 +2566,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "10 producteur(s), 19 payoff(s), 25 carte(s) distincte(s)."
+        "evidence": "10 producteur(s), 23 payoff(s), 28 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2529,6 +2622,7 @@
             "cmc": 0,
             "tags": [
               "land",
+              "draw",
               "land-ramp",
               "mana",
               "sacrifice"
@@ -2784,6 +2878,7 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "recursion",
               "tokens",
               "sacrifice",
               "sac-outlet",
@@ -3051,8 +3146,9 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 77,
+      "score": 82,
       "connected": [
+        "Amphin Mutineer",
         "Avenger of Zendikar",
         "Colossal Grave-Reaver",
         "Conduit of Worlds",
@@ -3061,6 +3157,7 @@
         "Drownyard Temple",
         "Essence Anchor",
         "Floral Evoker",
+        "Forbidden Alchemy",
         "Grapple with the Past",
         "Gravecrawler",
         "Jarad, Golgari Lich Lord",
@@ -3100,23 +3197,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 36,
-      "median": 46,
+      "floor": 37,
+      "median": 47,
       "high": 55,
       "ceiling": 55,
       "peak": 84,
       "iqr": 14,
-      "consistency": 68,
+      "consistency": 69,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 90,
+      "recoveryAfterDisruption": 93,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 1,
           "interaction": 0,
-          "resource": 26,
+          "resource": 32,
           "burst": 0
         },
         {
@@ -3124,47 +3221,47 @@
           "commander": 0,
           "engine": 4,
           "interaction": 4,
-          "resource": 39,
+          "resource": 41,
           "burst": 1
         },
         {
           "turn": 3,
           "commander": 18,
-          "engine": 20,
+          "engine": 21,
           "interaction": 14,
-          "resource": 59,
+          "resource": 63,
           "burst": 5
         },
         {
           "turn": 4,
           "commander": 63,
-          "engine": 41,
+          "engine": 44,
           "interaction": 27,
-          "resource": 79,
+          "resource": 83,
           "burst": 11
         },
         {
           "turn": 5,
           "commander": 81,
-          "engine": 57,
+          "engine": 59,
           "interaction": 36,
-          "resource": 87,
+          "resource": 90,
           "burst": 16
         },
         {
           "turn": 6,
           "commander": 87,
-          "engine": 66,
+          "engine": 69,
           "interaction": 43,
-          "resource": 91,
+          "resource": 94,
           "burst": 19
         },
         {
           "turn": 7,
           "commander": 90,
-          "engine": 74,
+          "engine": 76,
           "interaction": 49,
-          "resource": 94,
+          "resource": 96,
           "burst": 22
         }
       ],
@@ -3226,22 +3323,22 @@
               },
               {
                 "turn": 4,
-                "value": 41
+                "value": 44
               },
               {
                 "turn": 5,
-                "value": 56
+                "value": 58
               },
               {
                 "turn": 6,
-                "value": 68
+                "value": 70
               },
               {
                 "turn": 7,
-                "value": 74
+                "value": 76
               }
             ],
-            "observedWithinHorizon": 590
+            "observedWithinHorizon": 608
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -3284,34 +3381,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 25
+                "value": 29
               },
               {
                 "turn": 2,
-                "value": 42
+                "value": 47
               },
               {
                 "turn": 3,
-                "value": 65
+                "value": 70
               },
               {
                 "turn": 4,
-                "value": 83
+                "value": 88
               },
               {
                 "turn": 5,
-                "value": 91
+                "value": 95
               },
               {
                 "turn": 6,
-                "value": 94
+                "value": 97
               },
               {
                 "turn": 7,
-                "value": 96
+                "value": 98
               }
             ],
-            "observedWithinHorizon": 768
+            "observedWithinHorizon": 786
           },
           "burst": {
             "id": "burst-first-access",
@@ -3455,6 +3552,30 @@
         "aeon": null
       },
       {
+        "name": "Amphin Mutineer",
+        "impact": 3.4,
+        "tags": [
+          "creature",
+          "removal",
+          "recursion",
+          "tokens",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Welcome the Dead",
+        "impact": 3.4,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion",
+          "graveyard-setup",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Lord of the Forsaken",
         "impact": 3.1,
         "tags": [
@@ -3480,13 +3601,15 @@
         "aeon": null
       },
       {
-        "name": "Welcome the Dead",
-        "impact": 2.7,
+        "name": "Woe Strider",
+        "impact": 2.8,
         "tags": [
-          "sorcery",
-          "draw",
-          "graveyard-setup",
-          "tokens"
+          "creature",
+          "recursion",
+          "tokens",
+          "sacrifice",
+          "sac-outlet",
+          "etb"
         ],
         "aeon": null
       },
@@ -3505,26 +3628,6 @@
         "tags": [
           "sorcery",
           "land-ramp"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Sakura-Tribe Elder",
-        "impact": 2.6,
-        "tags": [
-          "creature",
-          "land-ramp",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Skull Prophet",
-        "impact": 2.6,
-        "tags": [
-          "creature",
-          "mana",
-          "graveyard-setup"
         ],
         "aeon": null
       }
@@ -3567,12 +3670,12 @@
           ]
         },
         "volatility": {
-          "score": 96,
+          "score": 92,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 26,
+              "value": 24,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
@@ -3597,36 +3700,36 @@
           ]
         },
         "resilience": {
-          "score": 85,
+          "score": 99,
           "level": "very-high",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 85,
+              "value": 99,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 75,
+          "score": 79,
           "level": "very-high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 82,
+              "value": 84,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 60,
+              "value": 61,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
             {
               "signal": "resilience",
-              "value": 85,
+              "value": 99,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
@@ -3639,18 +3742,18 @@
           ]
         },
         "dependency": {
-          "score": 79,
+          "score": 89,
           "level": "very-high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 11,
+              "value": 13,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 77,
+              "value": 82,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },
@@ -3864,26 +3967,26 @@
             },
             {
               "turn": 4,
-              "value": 41
+              "value": 44
             },
             {
               "turn": 5,
-              "value": 56
+              "value": 58
             },
             {
               "turn": 6,
-              "value": 68
+              "value": 70
             },
             {
               "turn": 7,
-              "value": 74
+              "value": 76
             }
           ],
-          "observedWithinHorizon": 590,
+          "observedWithinHorizon": 608,
           "milestones": {
             "at25": 4,
             "at50": 5,
-            "at75": null
+            "at75": 7
           }
         },
         "interaction": {
@@ -3934,34 +4037,34 @@
           "points": [
             {
               "turn": 1,
-              "value": 25
+              "value": 29
             },
             {
               "turn": 2,
-              "value": 42
+              "value": 47
             },
             {
               "turn": 3,
-              "value": 65
+              "value": 70
             },
             {
               "turn": 4,
-              "value": 83
+              "value": 88
             },
             {
               "turn": 5,
-              "value": 91
+              "value": 95
             },
             {
               "turn": 6,
-              "value": 94
+              "value": 97
             },
             {
               "turn": 7,
-              "value": 96
+              "value": 98
             }
           ],
-          "observedWithinHorizon": 768,
+          "observedWithinHorizon": 786,
           "milestones": {
             "at25": 1,
             "at50": 3,
@@ -4066,29 +4169,29 @@
             },
             {
               "turn": 3,
-              "value": 20
+              "value": 21
             },
             {
               "turn": 4,
-              "value": 41
+              "value": 44
             },
             {
               "turn": 5,
-              "value": 57
+              "value": 59
             },
             {
               "turn": 6,
-              "value": 66
+              "value": 69
             },
             {
               "turn": 7,
-              "value": 74
+              "value": 76
             }
           ],
           "milestones": {
             "at25": 4,
             "at50": 5,
-            "at75": null
+            "at75": 7
           }
         },
         "interaction": {
@@ -4138,31 +4241,31 @@
           "points": [
             {
               "turn": 1,
-              "value": 26
+              "value": 32
             },
             {
               "turn": 2,
-              "value": 39
+              "value": 41
             },
             {
               "turn": 3,
-              "value": 59
+              "value": 63
             },
             {
               "turn": 4,
-              "value": 79
+              "value": 83
             },
             {
               "turn": 5,
-              "value": 87
+              "value": 90
             },
             {
               "turn": 6,
-              "value": 91
+              "value": 94
             },
             {
               "turn": 7,
-              "value": 94
+              "value": 96
             }
           ],
           "milestones": {
@@ -4273,26 +4376,26 @@
             },
             {
               "turn": 4,
-              "value": 41
+              "value": 44
             },
             {
               "turn": 5,
-              "value": 56
+              "value": 58
             },
             {
               "turn": 6,
-              "value": 68
+              "value": 70
             },
             {
               "turn": 7,
-              "value": 74
+              "value": 76
             }
           ],
-          "observedWithinHorizon": 590,
+          "observedWithinHorizon": 608,
           "milestones": {
             "at25": 4,
             "at50": 5,
-            "at75": null
+            "at75": 7
           }
         },
         "interaction": {
@@ -4343,34 +4446,34 @@
           "points": [
             {
               "turn": 1,
-              "value": 25
+              "value": 29
             },
             {
               "turn": 2,
-              "value": 42
+              "value": 47
             },
             {
               "turn": 3,
-              "value": 65
+              "value": 70
             },
             {
               "turn": 4,
-              "value": 83
+              "value": 88
             },
             {
               "turn": 5,
-              "value": 91
+              "value": 95
             },
             {
               "turn": 6,
-              "value": 94
+              "value": 97
             },
             {
               "turn": 7,
-              "value": 96
+              "value": 98
             }
           ],
-          "observedWithinHorizon": 768,
+          "observedWithinHorizon": 786,
           "milestones": {
             "at25": 1,
             "at50": 3,

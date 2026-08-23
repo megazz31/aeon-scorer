@@ -16,7 +16,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/DraconicDissent_CLB.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Draconic Dissent",
@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 34,
+    "median": 36,
     "p20": 23,
-    "p80": 46,
-    "peak": 73,
+    "p80": 49,
+    "peak": 77,
     "coverage": 90,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "5ef3ed7795c4dd1539c0dfaf9a9a39ce56ff1de1d96ee1ce0c9af483a579a503",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Will Kenrith\n1 Rowan Kenrith\n1 Keiga, the Tide Star\n1 Pursued Whale\n1 Sly Instigator\n1 Agitator Ant\n1 Avatar of Slaughter\n1 Brash Taunter\n1 Chaos Dragon\n1 Drakuseth, Maw of Flames\n1 Geode Rager\n1 Goblin Spymaster\n1 Kazuul, Tyrant of the Cliffs\n1 Ryusei, the Falling Star\n1 Territorial Hellkite\n1 Thunder Dragon\n1 Vengeful Ancestor\n1 Warmonger Hellkite\n1 Niv-Mizzet, Parun\n1 Solemn Simulacrum\n1 Steel Hellkite\n1 Stuffy Doll\n1 Burnished Hart\n1 Sprite Dragon\n1 Aether Gale\n1 Curse of the Swine\n1 Blasphemous Act\n1 Chain Reaction\n1 Disrupt Decorum\n1 Compulsive Research\n1 Domineering Will\n1 Reins of Power\n1 Chaos Warp\n1 Midnight Clock\n1 Dragon's Hoard\n1 Arcane Signet\n1 Mind Stone\n1 Wayfarer's Bauble\n1 Bloodthirsty Blade\n1 Fellwar Stone\n1 Hedron Archive\n1 Izzet Signet\n1 Sol Ring\n1 Talisman of Creativity\n1 Dissipation Field\n1 The Akroan War\n1 Psychic Impetus\n1 Shiny Impetus\n1 Curse of Verbosity\n1 Propaganda\n1 Curse of Opulence\n1 Castle Vantress\n1 Desolate Lighthouse\n1 Kher Keep\n1 Temple of Epiphany\n1 Wandering Fumarole\n1 Command Tower\n1 Ash Barrens\n1 Izzet Boilerworks\n1 Myriad Landscape\n1 Path of Ancestry\n1 Prismari Campus\n1 Reliquary Tower\n1 Temple of the False God\n1 Terrain Generator\n3 Island\n3 Island\n3 Island\n3 Island\n3 Mountain\n3 Mountain\n3 Mountain\n3 Mountain\n1 Baeloth Barrityl, Entertainer\n1 Clan Crafter\n1 Artificer Class\n1 Astral Dragon\n1 Mocking Doppelganger\n1 Bothersome Quasit\n1 Death Kiss\n1 Loot Dispute\n1 Spectacular Showdown\n1 Angler Turtle",
   "oracleCards": [
@@ -150,6 +150,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -222,7 +223,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -328,7 +330,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -449,6 +452,7 @@
       ],
       "tags": [
         "enchantment",
+        "mana",
         "tokens"
       ],
       "isCommander": false
@@ -502,7 +506,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -1141,7 +1146,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -1278,7 +1284,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "artifact"
+        "artifact",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -1378,6 +1385,7 @@
       ],
       "tags": [
         "land",
+        "land-ramp",
         "mana"
       ],
       "isCommander": false
@@ -1430,6 +1438,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "wipe",
         "etb"
       ],
       "isCommander": false
@@ -1530,23 +1539,23 @@
   ],
   "result": {
     "profile": {
-      "median": 34,
+      "median": 36,
       "floor": 23,
-      "ceiling": 46,
-      "peak": 73,
-      "dispersion": 23,
-      "variance": 23,
-      "consistency": 63,
+      "ceiling": 49,
+      "peak": 77,
+      "dispersion": 26,
+      "variance": 26,
+      "consistency": 62,
       "commanderDelta": 5,
       "coverage": 90,
       "dataCoverage": 90
     },
     "dimensions": {
       "speed": 31,
-      "consistency": 63,
+      "consistency": 62,
       "explosiveness": 11,
       "synergy": 50,
-      "interaction": 16,
+      "interaction": 25,
       "resilience": 26
     },
     "roles": {
@@ -1556,10 +1565,10 @@
       "tutors": 0,
       "repeatableTutors": 0,
       "draw": 9,
-      "interaction": 2,
+      "interaction": 7,
       "protection": 3,
       "recursion": 0,
-      "wipes": 0,
+      "wipes": 5,
       "avgCmc": 4.065573770491803,
       "unknownManaLands": 0
     },
@@ -1625,7 +1634,8 @@
             "name": "Blasphemous Act",
             "cmc": 9,
             "tags": [
-              "sorcery"
+              "sorcery",
+              "wipe"
             ],
             "manaReq": {
               "generic": 8,
@@ -1641,7 +1651,8 @@
             "name": "Chain Reaction",
             "cmc": 4,
             "tags": [
-              "sorcery"
+              "sorcery",
+              "wipe"
             ],
             "manaReq": {
               "generic": 2,
@@ -1907,6 +1918,7 @@
             "cmc": 1,
             "tags": [
               "enchantment",
+              "mana",
               "tokens"
             ],
             "manaReq": {
@@ -2085,10 +2097,11 @@
       {
         "id": "lands",
         "name": "Lands / Landfall",
-        "strength": 45,
-        "cohesion": 45,
+        "strength": 47,
+        "cohesion": 47,
         "producers": [
           "Solemn Simulacrum",
+          "Terrain Generator",
           "Wayfarer's Bauble"
         ],
         "payoffs": [
@@ -2096,6 +2109,7 @@
         ],
         "members": [
           "Solemn Simulacrum",
+          "Terrain Generator",
           "Wayfarer's Bauble",
           "Geode Rager"
         ],
@@ -2115,6 +2129,20 @@
               "generic": 4,
               "colored": [],
               "total": 4
+            }
+          },
+          {
+            "name": "Terrain Generator",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "land-ramp",
+              "mana"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
             }
           },
           {
@@ -2163,7 +2191,7 @@
         "payoffTags": [
           "landfall"
         ],
-        "evidence": "2 producteur(s), 1 payoff(s), 3 carte(s) distincte(s)."
+        "evidence": "3 producteur(s), 1 payoff(s), 4 carte(s) distincte(s)."
       }
     ],
     "combos": [],
@@ -2185,23 +2213,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 29,
-      "median": 37,
-      "high": 45,
-      "ceiling": 45,
-      "peak": 66,
-      "iqr": 13,
-      "consistency": 72,
+      "floor": 30,
+      "median": 39,
+      "high": 48,
+      "ceiling": 48,
+      "peak": 70,
+      "iqr": 14,
+      "consistency": 70,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 70,
+      "recoveryAfterDisruption": 71,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 8,
+          "resource": 15,
           "burst": 0
         },
         {
@@ -2209,46 +2237,46 @@
           "commander": 2,
           "engine": 0,
           "interaction": 2,
-          "resource": 14,
+          "resource": 21,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 18,
           "engine": 2,
-          "interaction": 12,
-          "resource": 31,
+          "interaction": 16,
+          "resource": 36,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 57,
           "engine": 9,
-          "interaction": 17,
-          "resource": 46,
+          "interaction": 28,
+          "resource": 49,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 81,
-          "engine": 15,
-          "interaction": 19,
-          "resource": 53,
+          "engine": 16,
+          "interaction": 37,
+          "resource": 54,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 88,
-          "engine": 21,
-          "interaction": 21,
-          "resource": 58,
+          "engine": 22,
+          "interaction": 45,
+          "resource": 59,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 92,
-          "engine": 25,
-          "interaction": 23,
+          "engine": 26,
+          "interaction": 52,
           "resource": 62,
           "burst": 0
         }
@@ -2315,18 +2343,18 @@
               },
               {
                 "turn": 5,
-                "value": 16
+                "value": 17
               },
               {
                 "turn": 6,
-                "value": 21
+                "value": 22
               },
               {
                 "turn": 7,
-                "value": 25
+                "value": 26
               }
             ],
-            "observedWithinHorizon": 203
+            "observedWithinHorizon": 206
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -2342,26 +2370,26 @@
               },
               {
                 "turn": 3,
-                "value": 12
+                "value": 16
               },
               {
                 "turn": 4,
-                "value": 19
+                "value": 30
               },
               {
                 "turn": 5,
-                "value": 22
+                "value": 40
               },
               {
                 "turn": 6,
-                "value": 25
+                "value": 50
               },
               {
                 "turn": 7,
-                "value": 27
+                "value": 57
               }
             ],
-            "observedWithinHorizon": 214
+            "observedWithinHorizon": 454
           },
           "resource": {
             "id": "resource-first-access",
@@ -2369,34 +2397,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 7
+                "value": 15
               },
               {
                 "turn": 2,
-                "value": 17
+                "value": 25
               },
               {
                 "turn": 3,
-                "value": 39
+                "value": 45
               },
               {
                 "turn": 4,
-                "value": 53
+                "value": 58
               },
               {
                 "turn": 5,
-                "value": 60
+                "value": 65
               },
               {
                 "turn": 6,
-                "value": 64
+                "value": 68
               },
               {
                 "turn": 7,
-                "value": 68
+                "value": 72
               }
             ],
-            "observedWithinHorizon": 546
+            "observedWithinHorizon": 575
           },
           "burst": {
             "id": "burst-first-access",
@@ -2530,6 +2558,16 @@
         "aeon": null
       },
       {
+        "name": "Curse of Opulence",
+        "impact": 2.9,
+        "tags": [
+          "enchantment",
+          "mana",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Shiny Impetus",
         "impact": 2.8,
         "tags": [
@@ -2597,15 +2635,6 @@
           "draw"
         ],
         "aeon": null
-      },
-      {
-        "name": "Niv-Mizzet, Parun",
-        "impact": 2.1,
-        "tags": [
-          "creature",
-          "draw"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
@@ -2646,30 +2675,30 @@
           ]
         },
         "volatility": {
-          "score": 87,
+          "score": 94,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 23,
+              "value": 26,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 27,
+              "value": 28,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
           ]
         },
         "interaction": {
-          "score": 16,
-          "level": "low",
+          "score": 25,
+          "level": "moderate",
           "evidence": [
             {
               "signal": "interaction",
-              "value": 16,
+              "value": 25,
               "source": "aeon-dimension",
               "reason": "Existing Aeon interaction-access dimension."
             }
@@ -2699,7 +2728,7 @@
             },
             {
               "signal": "consistency",
-              "value": 63,
+              "value": 62,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
@@ -2711,7 +2740,7 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 63.7,
+              "value": 64.3,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
@@ -2968,18 +2997,18 @@
             },
             {
               "turn": 5,
-              "value": 16
+              "value": 17
             },
             {
               "turn": 6,
-              "value": 21
+              "value": 22
             },
             {
               "turn": 7,
-              "value": 25
+              "value": 26
             }
           ],
-          "observedWithinHorizon": 203,
+          "observedWithinHorizon": 206,
           "milestones": {
             "at25": 7,
             "at50": null,
@@ -3001,29 +3030,29 @@
             },
             {
               "turn": 3,
-              "value": 12
+              "value": 16
             },
             {
               "turn": 4,
-              "value": 19
+              "value": 30
             },
             {
               "turn": 5,
-              "value": 22
+              "value": 40
             },
             {
               "turn": 6,
-              "value": 25
+              "value": 50
             },
             {
               "turn": 7,
-              "value": 27
+              "value": 57
             }
           ],
-          "observedWithinHorizon": 214,
+          "observedWithinHorizon": 454,
           "milestones": {
-            "at25": 6,
-            "at50": null,
+            "at25": 4,
+            "at50": 6,
             "at75": null
           }
         },
@@ -3034,36 +3063,36 @@
           "points": [
             {
               "turn": 1,
-              "value": 7
+              "value": 15
             },
             {
               "turn": 2,
-              "value": 17
+              "value": 25
             },
             {
               "turn": 3,
-              "value": 39
+              "value": 45
             },
             {
               "turn": 4,
-              "value": 53
+              "value": 58
             },
             {
               "turn": 5,
-              "value": 60
+              "value": 65
             },
             {
               "turn": 6,
-              "value": 64
+              "value": 68
             },
             {
               "turn": 7,
-              "value": 68
+              "value": 72
             }
           ],
-          "observedWithinHorizon": 546,
+          "observedWithinHorizon": 575,
           "milestones": {
-            "at25": 3,
+            "at25": 2,
             "at50": 4,
             "at75": null
           }
@@ -3174,15 +3203,15 @@
             },
             {
               "turn": 5,
-              "value": 15
+              "value": 16
             },
             {
               "turn": 6,
-              "value": 21
+              "value": 22
             },
             {
               "turn": 7,
-              "value": 25
+              "value": 26
             }
           ],
           "milestones": {
@@ -3206,28 +3235,28 @@
             },
             {
               "turn": 3,
-              "value": 12
+              "value": 16
             },
             {
               "turn": 4,
-              "value": 17
+              "value": 28
             },
             {
               "turn": 5,
-              "value": 19
+              "value": 37
             },
             {
               "turn": 6,
-              "value": 21
+              "value": 45
             },
             {
               "turn": 7,
-              "value": 23
+              "value": 52
             }
           ],
           "milestones": {
-            "at25": null,
-            "at50": null,
+            "at25": 4,
+            "at50": 7,
             "at75": null
           }
         },
@@ -3238,27 +3267,27 @@
           "points": [
             {
               "turn": 1,
-              "value": 8
+              "value": 15
             },
             {
               "turn": 2,
-              "value": 14
+              "value": 21
             },
             {
               "turn": 3,
-              "value": 31
+              "value": 36
             },
             {
               "turn": 4,
-              "value": 46
+              "value": 49
             },
             {
               "turn": 5,
-              "value": 53
+              "value": 54
             },
             {
               "turn": 6,
-              "value": 58
+              "value": 59
             },
             {
               "turn": 7,
@@ -3377,18 +3406,18 @@
             },
             {
               "turn": 5,
-              "value": 16
+              "value": 17
             },
             {
               "turn": 6,
-              "value": 21
+              "value": 22
             },
             {
               "turn": 7,
-              "value": 25
+              "value": 26
             }
           ],
-          "observedWithinHorizon": 203,
+          "observedWithinHorizon": 206,
           "milestones": {
             "at25": 7,
             "at50": null,
@@ -3410,29 +3439,29 @@
             },
             {
               "turn": 3,
-              "value": 12
+              "value": 16
             },
             {
               "turn": 4,
-              "value": 19
+              "value": 30
             },
             {
               "turn": 5,
-              "value": 22
+              "value": 40
             },
             {
               "turn": 6,
-              "value": 25
+              "value": 50
             },
             {
               "turn": 7,
-              "value": 27
+              "value": 57
             }
           ],
-          "observedWithinHorizon": 214,
+          "observedWithinHorizon": 454,
           "milestones": {
-            "at25": 6,
-            "at50": null,
+            "at25": 4,
+            "at50": 6,
             "at75": null
           }
         },
@@ -3443,36 +3472,36 @@
           "points": [
             {
               "turn": 1,
-              "value": 7
+              "value": 15
             },
             {
               "turn": 2,
-              "value": 17
+              "value": 25
             },
             {
               "turn": 3,
-              "value": 39
+              "value": 45
             },
             {
               "turn": 4,
-              "value": 53
+              "value": 58
             },
             {
               "turn": 5,
-              "value": 60
+              "value": 65
             },
             {
               "turn": 6,
-              "value": 64
+              "value": 68
             },
             {
               "turn": 7,
-              "value": 68
+              "value": 72
             }
           ],
-          "observedWithinHorizon": 546,
+          "observedWithinHorizon": 575,
           "milestones": {
-            "at25": 3,
+            "at25": 2,
             "at50": 4,
             "at75": null
           }

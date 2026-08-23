@@ -16,7 +16,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/CallTheSpirits_C15.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Call the Spirits",
@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 48,
-    "p20": 35,
-    "p80": 61,
+    "median": 49,
+    "p20": 36,
+    "p80": 60,
     "peak": 87,
     "coverage": 93,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "d9968f8a7fea7a1c8c42b1cb89ad5f1356f626478ac186a0448e997bb59cb8ab",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Oreskos Explorer\n1 Karlov of the Ghost Council\n1 Underworld Coinsmith\n1 Burnished Hart\n1 Bastion Protector\n1 Dawnglare Invoker\n1 Ghostblade Eidolon\n1 Kor Sanctifiers\n1 Monk Idealist\n1 Mesa Enchantress\n1 Nighthowler\n1 Corpse Augur\n1 Fate Unraveler\n1 Ajani's Chosen\n1 Doomwake Giant\n1 Dreadbringer Lampads\n1 Celestial Ancient\n1 Celestial Archon\n1 Herald of the Host\n1 Banshee of the Dread Choir\n1 Thief of Blood\n1 Treasury Thrull\n1 Sandstone Oracle\n1 Silent Sentinel\n1 Teysa, Envoy of Ghosts\n1 Ancient Craving\n1 Gild\n1 Dawn to Dusk\n1 Righteous Confluence\n1 Open the Vaults\n1 Deadly Tempest\n1 Death Grasp\n1 Sol Ring\n1 Wayfarer's Bauble\n1 Lightning Greaves\n1 Orzhov Signet\n1 Thought Vessel\n1 Crystal Chimes\n1 Orzhov Cluestone\n1 Phyrexian Reclamation\n1 Seal of Cleansing\n1 Grave Peril\n1 Banishing Light\n1 Cage of Hands\n1 Karmic Justice\n1 Vow of Duty\n1 Fallen Ideal\n1 Seal of Doom\n1 Vow of Malice\n1 Aura of Silence\n1 Grasp of Fate\n1 Shielded by Faith\n1 Phyrexian Arena\n1 Underworld Connections\n1 Daxos's Torment\n1 Marshal's Anthem\n1 Dictate of Heliod\n1 Sigil of the Empty Throne\n1 Black Market\n1 Necromancer's Covenant\n1 Barren Moor\n1 Command Tower\n1 Evolving Wilds\n1 Ghost Quarter\n1 New Benalia\n1 Orzhov Basilica\n1 Orzhov Guildgate\n1 Rogue's Passage\n1 Scoured Barrens\n1 Secluded Steppe\n1 Tainted Field\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Vivid Marsh\n1 Vivid Meadow\n3 Plains\n3 Plains\n3 Plains\n2 Plains\n4 Swamp\n3 Swamp\n3 Swamp\n3 Swamp",
   "oracleCards": [
@@ -131,7 +131,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -151,6 +152,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -608,6 +610,7 @@
       ],
       "tags": [
         "sorcery",
+        "mana",
         "removal",
         "tokens"
       ],
@@ -664,7 +667,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -737,7 +741,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "protection"
       ],
       "isCommander": false
     },
@@ -1174,6 +1179,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -1554,24 +1560,24 @@
   ],
   "result": {
     "profile": {
-      "median": 48,
-      "floor": 35,
-      "ceiling": 61,
+      "median": 49,
+      "floor": 36,
+      "ceiling": 60,
       "peak": 87,
-      "dispersion": 26,
-      "variance": 26,
-      "consistency": 60,
-      "commanderDelta": 8,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 59,
+      "commanderDelta": 9,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 41,
-      "consistency": 60,
+      "consistency": 59,
       "explosiveness": 12,
-      "synergy": 63,
+      "synergy": 64,
       "interaction": 58,
-      "resilience": 54
+      "resilience": 55
     },
     "roles": {
       "lands": 39,
@@ -1581,7 +1587,7 @@
       "repeatableTutors": 0,
       "draw": 7,
       "interaction": 12,
-      "protection": 3,
+      "protection": 4,
       "recursion": 7,
       "wipes": 2,
       "avgCmc": 3.6666666666666665,
@@ -2473,10 +2479,12 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 17,
+      "score": 23,
       "connected": [
         "Ajani's Chosen",
+        "Banshee of the Dread Choir",
         "Gild",
+        "Herald of the Host",
         "Necromancer's Covenant",
         "Righteous Confluence",
         "Sigil of the Empty Throne",
@@ -2498,13 +2506,13 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 36,
-      "median": 45,
+      "floor": 37,
+      "median": 46,
       "high": 55,
       "ceiling": 55,
       "peak": 80,
       "iqr": 15,
-      "consistency": 68,
+      "consistency": 67,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 5,
       "recoveryAfterDisruption": 87,
@@ -2514,7 +2522,7 @@
           "commander": 0,
           "engine": 0,
           "interaction": 7,
-          "resource": 4,
+          "resource": 17,
           "burst": 0
         },
         {
@@ -2522,7 +2530,7 @@
           "commander": 9,
           "engine": 0,
           "interaction": 23,
-          "resource": 13,
+          "resource": 24,
           "burst": 0
         },
         {
@@ -2530,7 +2538,7 @@
           "commander": 68,
           "engine": 7,
           "interaction": 48,
-          "resource": 39,
+          "resource": 46,
           "burst": 0
         },
         {
@@ -2538,7 +2546,7 @@
           "commander": 87,
           "engine": 22,
           "interaction": 62,
-          "resource": 58,
+          "resource": 62,
           "burst": 0
         },
         {
@@ -2546,7 +2554,7 @@
           "commander": 92,
           "engine": 34,
           "interaction": 71,
-          "resource": 68,
+          "resource": 70,
           "burst": 0
         },
         {
@@ -2554,7 +2562,7 @@
           "commander": 95,
           "engine": 42,
           "interaction": 77,
-          "resource": 76,
+          "resource": 77,
           "burst": 0
         },
         {
@@ -2562,7 +2570,7 @@
           "commander": 96,
           "engine": 47,
           "interaction": 81,
-          "resource": 81,
+          "resource": 82,
           "burst": 0
         }
       ],
@@ -2682,34 +2690,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 5
+                "value": 21
               },
               {
                 "turn": 2,
-                "value": 15
+                "value": 31
               },
               {
                 "turn": 3,
-                "value": 39
+                "value": 51
               },
               {
                 "turn": 4,
-                "value": 57
+                "value": 66
               },
               {
                 "turn": 5,
-                "value": 67
+                "value": 73
               },
               {
                 "turn": 6,
-                "value": 74
+                "value": 79
               },
               {
                 "turn": 7,
-                "value": 80
+                "value": 84
               }
             ],
-            "observedWithinHorizon": 636
+            "observedWithinHorizon": 671
           },
           "burst": {
             "id": "burst-first-access",
@@ -2883,6 +2891,17 @@
         "aeon": null
       },
       {
+        "name": "Gild",
+        "impact": 2.3,
+        "tags": [
+          "sorcery",
+          "mana",
+          "removal",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Mesa Enchantress",
         "impact": 2.3,
         "tags": [
@@ -2909,16 +2928,6 @@
           "tokens",
           "etb",
           "constellation"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Banishing Light",
-        "impact": 1.8,
-        "tags": [
-          "enchantment",
-          "removal",
-          "etb"
         ],
         "aeon": null
       }
@@ -2966,13 +2975,13 @@
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 26,
+              "value": 25,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 26,
+              "value": 27,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -2991,12 +3000,12 @@
           ]
         },
         "resilience": {
-          "score": 54,
+          "score": 55,
           "level": "high",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 54,
+              "value": 55,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
@@ -3008,19 +3017,19 @@
           "evidence": [
             {
               "signal": "synergy",
-              "value": 63,
+              "value": 64,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 60,
+              "value": 59,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
             {
               "signal": "resilience",
-              "value": 54,
+              "value": 55,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
@@ -3033,18 +3042,18 @@
           ]
         },
         "dependency": {
-          "score": 40,
+          "score": 46,
           "level": "moderate",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 8,
+              "value": 9,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 17,
+              "value": 23,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },
@@ -3329,38 +3338,38 @@
           "points": [
             {
               "turn": 1,
-              "value": 5
+              "value": 21
             },
             {
               "turn": 2,
-              "value": 15
+              "value": 31
             },
             {
               "turn": 3,
-              "value": 39
+              "value": 51
             },
             {
               "turn": 4,
-              "value": 57
+              "value": 66
             },
             {
               "turn": 5,
-              "value": 67
+              "value": 73
             },
             {
               "turn": 6,
-              "value": 74
+              "value": 79
             },
             {
               "turn": 7,
-              "value": 80
+              "value": 84
             }
           ],
-          "observedWithinHorizon": 636,
+          "observedWithinHorizon": 671,
           "milestones": {
-            "at25": 3,
-            "at50": 4,
-            "at75": 7
+            "at25": 2,
+            "at50": 3,
+            "at75": 6
           }
         },
         "burst": {
@@ -3533,31 +3542,31 @@
           "points": [
             {
               "turn": 1,
-              "value": 4
+              "value": 17
             },
             {
               "turn": 2,
-              "value": 13
+              "value": 24
             },
             {
               "turn": 3,
-              "value": 39
+              "value": 46
             },
             {
               "turn": 4,
-              "value": 58
+              "value": 62
             },
             {
               "turn": 5,
-              "value": 68
+              "value": 70
             },
             {
               "turn": 6,
-              "value": 76
+              "value": 77
             },
             {
               "turn": 7,
-              "value": 81
+              "value": 82
             }
           ],
           "milestones": {
@@ -3738,38 +3747,38 @@
           "points": [
             {
               "turn": 1,
-              "value": 5
+              "value": 21
             },
             {
               "turn": 2,
-              "value": 15
+              "value": 31
             },
             {
               "turn": 3,
-              "value": 39
+              "value": 51
             },
             {
               "turn": 4,
-              "value": 57
+              "value": 66
             },
             {
               "turn": 5,
-              "value": 67
+              "value": 73
             },
             {
               "turn": 6,
-              "value": 74
+              "value": 79
             },
             {
               "turn": 7,
-              "value": 80
+              "value": 84
             }
           ],
-          "observedWithinHorizon": 636,
+          "observedWithinHorizon": 671,
           "milestones": {
-            "at25": 3,
-            "at50": 4,
-            "at75": 7
+            "at25": 2,
+            "at50": 3,
+            "at75": 6
           }
         },
         "burst": {

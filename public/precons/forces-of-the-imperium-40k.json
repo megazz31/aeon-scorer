@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/ForcesOfTheImperium_40K.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Forces of the Imperium",
@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 44,
-    "p20": 32,
-    "p80": 53,
-    "peak": 79,
-    "coverage": 94,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "median": 45,
+    "p20": 33,
+    "p80": 56,
+    "peak": 81,
+    "coverage": 95,
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "25e0682364845f15e24c2b51b72deac94cd3f8533342b1039d2b4b14ab0bf022",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Bastion Protector\n1 Collective Effort\n1 Deploy to the Front\n1 Fell the Mighty\n1 Hour of Reckoning\n1 Launch the Fleet\n1 Martial Coup\n1 Entrapment Maneuver\n1 Utter End\n1 Swords to Plowshares\n1 Mortify\n1 Everflowing Chalice\n1 Mind Stone\n1 Skullclamp\n1 Sol Ring\n1 Talisman of Dominance\n1 Talisman of Hierarchy\n1 Talisman of Progress\n1 Arcane Signet\n1 Commander's Sphere\n1 Reconnaissance Mission\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Port Town\n1 Prairie Stream\n1 Skycloud Expanse\n1 Sunken Hollow\n1 Arcane Sanctum\n1 Ash Barrens\n1 Memorial to Glory\n1 Command Tower\n1 Dismal Backwater\n1 Evolving Wilds\n1 Path of Ancestry\n1 Scoured Barrens\n1 Terramorphic Expanse\n1 Tranquil Cove\n5 Island\n7 Swamp\n8 Plains\n1 Marneus Calgar\n1 Celestine, the Living Saint\n1 Defenders of Humanity\n1 For the Emperor!\n1 Space Marine Devastator\n1 Triumph of Saint Katherine\n1 Ultramarines Honour Guard\n1 Vexilus Praetor\n1 Zephyrim\n1 Sister of Silence\n1 Vanguard Suppressor\n1 Arco-Flagellant\n1 Primaris Eliminator\n1 Assault Intercessor\n1 Belisarius Cawl\n1 Birth of the Imperium\n1 Callidus Assassin\n1 Commissar Severina Raine\n1 Company Commander\n1 Cybernetica Datasmith\n1 Epistolary Librarian\n1 Exterminatus\n1 The Flesh Is Weak\n1 Inquisitor Eisenhorn\n1 Neyam Shai Murad\n1 Sister Hospitaller\n1 Sister Repentia\n1 The Golden Throne\n1 Inquisitorial Rosette\n1 Knight Paladin\n1 Reaver Titan\n1 Redemptor Dreadnought\n1 Thunderhawk Gunship\n1 And They Shall Know No Fear\n1 Grey Knight Paragon\n1 Space Marine Scout\n1 Thunderwolf Cavalry\n1 Sicarian Infiltrator\n1 Sanguinary Priest\n1 Deny the Witch\n1 Primaris Chaplain",
   "oracleCards": [
@@ -127,7 +127,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "protection"
+        "protection",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -145,6 +146,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -1179,6 +1181,7 @@
         "creature",
         "artifact",
         "draw",
+        "tokens",
         "etb"
       ],
       "isCommander": false
@@ -1316,6 +1319,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "tokens",
         "etb"
       ],
       "isCommander": false
@@ -1526,8 +1530,7 @@
         "artifact",
         "mana",
         "sacrifice",
-        "sac-outlet",
-        "counter-producer"
+        "sac-outlet"
       ],
       "isCommander": false
     },
@@ -1622,7 +1625,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -1659,7 +1663,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "draw"
+        "draw",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -1694,31 +1699,32 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "tokens"
       ],
       "isCommander": false
     }
   ],
   "result": {
     "profile": {
-      "median": 44,
-      "floor": 32,
-      "ceiling": 53,
-      "peak": 79,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 65,
-      "commanderDelta": 8,
-      "coverage": 94,
-      "dataCoverage": 94
+      "median": 45,
+      "floor": 33,
+      "ceiling": 56,
+      "peak": 81,
+      "dispersion": 22,
+      "variance": 22,
+      "consistency": 64,
+      "commanderDelta": 9,
+      "coverage": 95,
+      "dataCoverage": 95
     },
     "dimensions": {
-      "speed": 32,
-      "consistency": 65,
+      "speed": 34,
+      "consistency": 64,
       "explosiveness": 16,
-      "synergy": 61,
+      "synergy": 71,
       "interaction": 49,
-      "resilience": 44
+      "resilience": 45
     },
     "roles": {
       "lands": 37,
@@ -1738,9 +1744,10 @@
       {
         "id": "tokens",
         "name": "Tokens / conversion",
-        "strength": 85,
-        "cohesion": 85,
+        "strength": 100,
+        "cohesion": 100,
         "producers": [
+          "Arco-Flagellant",
           "Belisarius Cawl",
           "Birth of the Imperium",
           "Company Commander",
@@ -1749,14 +1756,14 @@
           "Entrapment Maneuver",
           "Inquisitor Eisenhorn",
           "Inquisitorial Rosette",
-          "Launch the Fleet",
-          "Marneus Calgar"
+          "Launch the Fleet"
         ],
         "payoffs": [
           "Hour of Reckoning",
           "Marneus Calgar"
         ],
         "members": [
+          "Arco-Flagellant",
           "Belisarius Cawl",
           "Birth of the Imperium",
           "Company Commander",
@@ -1769,10 +1776,33 @@
           "Marneus Calgar",
           "Martial Coup",
           "Memorial to Glory",
+          "Sicarian Infiltrator",
+          "Space Marine Devastator",
           "Thunderhawk Gunship",
+          "Ultramarines Honour Guard",
+          "Vanguard Suppressor",
+          "Zephyrim",
           "Hour of Reckoning"
         ],
         "producerCards": [
+          {
+            "name": "Arco-Flagellant",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "protection",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
           {
             "name": "Belisarius Cawl",
             "cmc": 4,
@@ -2009,6 +2039,44 @@
             }
           },
           {
+            "name": "Sicarian Infiltrator",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "artifact",
+              "draw",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Space Marine Devastator",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
             "name": "Thunderhawk Gunship",
             "cmc": 6,
             "tags": [
@@ -2020,6 +2088,58 @@
               "generic": 6,
               "colored": [],
               "total": 6
+            }
+          },
+          {
+            "name": "Ultramarines Honour Guard",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Vanguard Suppressor",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "draw",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Zephyrim",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
             }
           }
         ],
@@ -2082,7 +2202,7 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "13 producteur(s), 2 payoff(s), 14 carte(s) distincte(s)."
+        "evidence": "19 producteur(s), 2 payoff(s), 20 carte(s) distincte(s)."
       },
       {
         "id": "sacrifice",
@@ -2136,8 +2256,7 @@
               "artifact",
               "mana",
               "sacrifice",
-              "sac-outlet",
-              "counter-producer"
+              "sac-outlet"
             ],
             "manaReq": {
               "generic": 4,
@@ -2388,8 +2507,9 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 38,
+      "score": 55,
       "connected": [
+        "Arco-Flagellant",
         "Belisarius Cawl",
         "Birth of the Imperium",
         "Company Commander",
@@ -2403,7 +2523,12 @@
         "Marneus Calgar",
         "Martial Coup",
         "Memorial to Glory",
-        "Thunderhawk Gunship"
+        "Sicarian Infiltrator",
+        "Space Marine Devastator",
+        "Thunderhawk Gunship",
+        "Ultramarines Honour Guard",
+        "Vanguard Suppressor",
+        "Zephyrim"
       ],
       "tags": [
         "tokens",
@@ -2423,21 +2548,21 @@
       "iterations": 3200,
       "floor": 33,
       "median": 41,
-      "high": 48,
-      "ceiling": 48,
-      "peak": 69,
+      "high": 49,
+      "ceiling": 49,
+      "peak": 70,
       "iqr": 12,
-      "consistency": 74,
+      "consistency": 73,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": 6,
-      "recoveryAfterDisruption": 78,
+      "engineMedianTurn": 5,
+      "recoveryAfterDisruption": 79,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 4,
-          "resource": 6,
+          "resource": 13,
           "burst": 0
         },
         {
@@ -2445,7 +2570,7 @@
           "commander": 2,
           "engine": 0,
           "interaction": 12,
-          "resource": 13,
+          "resource": 20,
           "burst": 0
         },
         {
@@ -2453,7 +2578,7 @@
           "commander": 28,
           "engine": 1,
           "interaction": 33,
-          "resource": 33,
+          "resource": 37,
           "burst": 3
         },
         {
@@ -2461,31 +2586,31 @@
           "commander": 72,
           "engine": 4,
           "interaction": 55,
-          "resource": 56,
+          "resource": 59,
           "burst": 7
         },
         {
           "turn": 5,
           "commander": 84,
-          "engine": 8,
+          "engine": 10,
           "interaction": 67,
-          "resource": 68,
+          "resource": 70,
           "burst": 9
         },
         {
           "turn": 6,
           "commander": 89,
-          "engine": 13,
+          "engine": 14,
           "interaction": 75,
-          "resource": 75,
+          "resource": 76,
           "burst": 10
         },
         {
           "turn": 7,
           "commander": 92,
-          "engine": 17,
+          "engine": 19,
           "interaction": 80,
-          "resource": 81,
+          "resource": 82,
           "burst": 12
         }
       ],
@@ -2547,22 +2672,22 @@
               },
               {
                 "turn": 4,
-                "value": 5
+                "value": 6
               },
               {
                 "turn": 5,
-                "value": 10
+                "value": 12
               },
               {
                 "turn": 6,
-                "value": 15
+                "value": 17
               },
               {
                 "turn": 7,
-                "value": 19
+                "value": 21
               }
             ],
-            "observedWithinHorizon": 151
+            "observedWithinHorizon": 165
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -2605,34 +2730,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 6
+                "value": 13
               },
               {
                 "turn": 2,
-                "value": 14
+                "value": 22
               },
               {
                 "turn": 3,
-                "value": 33
+                "value": 40
               },
               {
                 "turn": 4,
-                "value": 59
+                "value": 63
               },
               {
                 "turn": 5,
-                "value": 71
+                "value": 74
               },
               {
                 "turn": 6,
-                "value": 78
+                "value": 80
               },
               {
                 "turn": 7,
-                "value": 82
+                "value": 85
               }
             ],
-            "observedWithinHorizon": 658
+            "observedWithinHorizon": 676
           },
           "burst": {
             "id": "burst-first-access",
@@ -2771,6 +2896,16 @@
         "aeon": null
       },
       {
+        "name": "Vanguard Suppressor",
+        "impact": 3.3,
+        "tags": [
+          "creature",
+          "draw",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Marneus Calgar",
         "impact": 3.2,
         "tags": [
@@ -2804,6 +2939,18 @@
         "aeon": null
       },
       {
+        "name": "Sicarian Infiltrator",
+        "impact": 2.8,
+        "tags": [
+          "creature",
+          "artifact",
+          "draw",
+          "tokens",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Birth of the Imperium",
         "impact": 2.7,
         "tags": [
@@ -2822,28 +2969,6 @@
           "tokens"
         ],
         "aeon": null
-      },
-      {
-        "name": "Cybernetica Datasmith",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "artifact",
-          "draw",
-          "protection"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Sister Repentia",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "draw",
-          "death-payoff",
-          "lifegain"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
@@ -2860,12 +2985,12 @@
       "modelVersion": "experience-v1",
       "dimensions": {
         "tempo": {
-          "score": 32,
+          "score": 34,
           "level": "moderate",
           "evidence": [
             {
               "signal": "speed",
-              "value": 32,
+              "value": 34,
               "source": "aeon-dimension",
               "reason": "Existing Aeon speed dimension; no power-score feedback."
             }
@@ -2884,18 +3009,18 @@
           ]
         },
         "volatility": {
-          "score": 81,
+          "score": 82,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 21,
+              "value": 22,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 26,
+              "value": 25,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -2914,60 +3039,60 @@
           ]
         },
         "resilience": {
-          "score": 44,
+          "score": 45,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 44,
+              "value": 45,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 59,
+          "score": 63,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 61,
+              "value": 71,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 65,
+              "value": 64,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
             {
               "signal": "resilience",
-              "value": 44,
+              "value": 45,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 64,
+              "value": 69,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 49,
-          "level": "moderate",
+          "score": 61,
+          "level": "high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 8,
+              "value": 9,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 38,
+              "value": 55,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },
@@ -3181,22 +3306,22 @@
             },
             {
               "turn": 4,
-              "value": 5
+              "value": 6
             },
             {
               "turn": 5,
-              "value": 10
+              "value": 12
             },
             {
               "turn": 6,
-              "value": 15
+              "value": 17
             },
             {
               "turn": 7,
-              "value": 19
+              "value": 21
             }
           ],
-          "observedWithinHorizon": 151,
+          "observedWithinHorizon": 165,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -3251,34 +3376,34 @@
           "points": [
             {
               "turn": 1,
-              "value": 6
+              "value": 13
             },
             {
               "turn": 2,
-              "value": 14
+              "value": 22
             },
             {
               "turn": 3,
-              "value": 33
+              "value": 40
             },
             {
               "turn": 4,
-              "value": 59
+              "value": 63
             },
             {
               "turn": 5,
-              "value": 71
+              "value": 74
             },
             {
               "turn": 6,
-              "value": 78
+              "value": 80
             },
             {
               "turn": 7,
-              "value": 82
+              "value": 85
             }
           ],
-          "observedWithinHorizon": 658,
+          "observedWithinHorizon": 676,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -3391,15 +3516,15 @@
             },
             {
               "turn": 5,
-              "value": 8
+              "value": 10
             },
             {
               "turn": 6,
-              "value": 13
+              "value": 14
             },
             {
               "turn": 7,
-              "value": 17
+              "value": 19
             }
           ],
           "milestones": {
@@ -3455,31 +3580,31 @@
           "points": [
             {
               "turn": 1,
-              "value": 6
-            },
-            {
-              "turn": 2,
               "value": 13
             },
             {
+              "turn": 2,
+              "value": 20
+            },
+            {
               "turn": 3,
-              "value": 33
+              "value": 37
             },
             {
               "turn": 4,
-              "value": 56
+              "value": 59
             },
             {
               "turn": 5,
-              "value": 68
+              "value": 70
             },
             {
               "turn": 6,
-              "value": 75
+              "value": 76
             },
             {
               "turn": 7,
-              "value": 81
+              "value": 82
             }
           ],
           "milestones": {
@@ -3590,22 +3715,22 @@
             },
             {
               "turn": 4,
-              "value": 5
+              "value": 6
             },
             {
               "turn": 5,
-              "value": 10
+              "value": 12
             },
             {
               "turn": 6,
-              "value": 15
+              "value": 17
             },
             {
               "turn": 7,
-              "value": 19
+              "value": 21
             }
           ],
-          "observedWithinHorizon": 151,
+          "observedWithinHorizon": 165,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -3660,34 +3785,34 @@
           "points": [
             {
               "turn": 1,
-              "value": 6
+              "value": 13
             },
             {
               "turn": 2,
-              "value": 14
+              "value": 22
             },
             {
               "turn": 3,
-              "value": 33
+              "value": 40
             },
             {
               "turn": 4,
-              "value": 59
+              "value": 63
             },
             {
               "turn": 5,
-              "value": 71
+              "value": 74
             },
             {
               "turn": 6,
-              "value": 78
+              "value": 80
             },
             {
               "turn": 7,
-              "value": 82
+              "value": 85
             }
           ],
-          "observedWithinHorizon": 658,
+          "observedWithinHorizon": 676,
           "milestones": {
             "at25": 3,
             "at50": 4,

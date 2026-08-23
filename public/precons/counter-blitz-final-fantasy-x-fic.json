@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/CounterBlitzFinalFantasyX_FIC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Counter Blitz (FINAL FANTASY X)",
@@ -35,16 +35,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 54,
-    "p20": 39,
+    "p20": 41,
     "p80": 66,
     "peak": 91,
     "coverage": 95,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "dc0763979e03786f4d6dfebe9b7145a2b75c4610f1058e4bec59baea14b06132",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Yuna, Grand Summoner\n1 Auron, Venerated Guardian\n1 Chocobo Knights\n1 Gatta and Luzzu\n1 Lord Jyscal Guado\n1 Protection Magic\n1 Summon: Ixion\n1 Summon: Yojimbo\n1 Summoner's Sending\n1 Blitzball Stadium\n1 Lulu, Stern Guardian\n1 O'aka, Traveling Merchant\n1 Rikku, Resourceful Guardian\n1 Summon: Valefor\n1 Maester Seymour\n1 Sphere Grid\n1 Summon: Magus Sisters\n1 Tromell, Seymour's Butler\n1 Yuna's Decision\n1 Yuna's Whistle\n1 Kimahri, Valiant Guardian\n1 Shelinda, Yevon Acolyte\n1 Sin, Unending Cataclysm\n1 Wakka, Devoted Guardian\n1 Collective Effort\n1 Damning Verdict\n1 Farewell\n1 Luminous Broodmoth\n1 Promise of Loyalty\n1 Resourceful Defense\n1 Scholar of New Horizons\n1 Sunscorch Regent\n1 Together Forever\n1 Chasm Skulker\n1 Inexorable Tide\n1 Pull from Tomorrow\n1 Bane of Progress\n1 Fight Rigging\n1 Forgotten Ancient\n1 Generous Patron\n1 Gyre Sage\n1 Hardened Scales\n1 Incubation Druid\n1 Path of Discovery\n1 Rampant Rejuvenator\n1 Tireless Tracker\n1 Altered Ego\n1 Endless Detour\n1 Fathom Mage\n1 Walking Ballista\n1 Brushland\n1 Canopy Vista\n1 Exotic Orchard\n1 Flooded Grove\n1 Fortified Village\n1 Glacial Fortress\n1 Hinterland Harbor\n1 Overflowing Basin\n1 Port Town\n1 Prairie Stream\n1 Skycloud Expanse\n1 Sungrass Prairie\n1 Sunpetal Grove\n1 Temple of Enlightenment\n1 Temple of Mystery\n1 Temple of Plenty\n1 Vineglimmer Snarl\n1 Destroy Evil\n1 Grateful Apparition\n1 Path to Exile\n1 An Offer You Can't Refuse\n1 Duskshell Crawler\n1 Farseek\n1 Inspiring Call\n1 Three Visits\n1 Bred for the Hunt\n1 Arcane Signet\n1 Everflowing Chalice\n1 Sol Ring\n1 Ash Barrens\n1 Evolving Wilds\n1 Forge of Heroes\n1 Idyllic Beachfront\n1 Nesting Grounds\n1 Path of Ancestry\n1 Radiant Grove\n1 Seaside Citadel\n1 Tangled Islet\n1 Temple of the False God\n1 Command Tower\n1 Island\n1 Island\n1 Island\n1 Forest\n1 Forest\n1 Forest\n1 Plains\n1 Plains\n1 Plains",
   "oracleCards": [
@@ -129,6 +129,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -192,6 +193,7 @@
         "etb",
         "counter-producer",
         "counter-payoff",
+        "counter-kind:plus1",
         "counter-kind:any"
       ],
       "isCommander": false
@@ -1829,7 +1831,6 @@
         "creature",
         "tokens",
         "sacrifice",
-        "death-payoff",
         "etb",
         "landfall",
         "counter-producer",
@@ -1985,6 +1986,7 @@
       "tags": [
         "sorcery",
         "draw",
+        "land-ramp",
         "recursion",
         "sacrifice"
       ],
@@ -2013,13 +2015,13 @@
   "result": {
     "profile": {
       "median": 54,
-      "floor": 39,
+      "floor": 41,
       "ceiling": 66,
       "peak": 91,
-      "dispersion": 27,
-      "variance": 27,
+      "dispersion": 25,
+      "variance": 25,
       "consistency": 58,
-      "commanderDelta": 14,
+      "commanderDelta": 13,
       "coverage": 95,
       "dataCoverage": 95
     },
@@ -2027,7 +2029,7 @@
       "speed": 52,
       "consistency": 58,
       "explosiveness": 18,
-      "synergy": 85,
+      "synergy": 86,
       "interaction": 51,
       "resilience": 31
     },
@@ -2197,6 +2199,7 @@
               "etb",
               "counter-producer",
               "counter-payoff",
+              "counter-kind:plus1",
               "counter-kind:any"
             ],
             "manaReq": {
@@ -2788,7 +2791,6 @@
               "creature",
               "tokens",
               "sacrifice",
-              "death-payoff",
               "etb",
               "landfall",
               "counter-producer",
@@ -2943,6 +2945,7 @@
               "etb",
               "counter-producer",
               "counter-payoff",
+              "counter-kind:plus1",
               "counter-kind:any"
             ],
             "manaReq": {
@@ -3187,12 +3190,13 @@
       {
         "id": "lands",
         "name": "Lands / Landfall",
-        "strength": 47,
-        "cohesion": 47,
+        "strength": 49,
+        "cohesion": 49,
         "producers": [
           "Evolving Wilds",
           "Farseek",
-          "Three Visits"
+          "Three Visits",
+          "Yuna's Decision"
         ],
         "payoffs": [
           "Tireless Tracker"
@@ -3201,6 +3205,7 @@
           "Evolving Wilds",
           "Farseek",
           "Three Visits",
+          "Yuna's Decision",
           "Tireless Tracker"
         ],
         "producerCards": [
@@ -3251,6 +3256,26 @@
               ],
               "total": 2
             }
+          },
+          {
+            "name": "Yuna's Decision",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "draw",
+              "land-ramp",
+              "recursion",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
           }
         ],
         "supportCards": [],
@@ -3262,7 +3287,6 @@
               "creature",
               "tokens",
               "sacrifice",
-              "death-payoff",
               "etb",
               "landfall",
               "counter-producer",
@@ -3286,7 +3310,7 @@
         "payoffTags": [
           "landfall"
         ],
-        "evidence": "3 producteur(s), 1 payoff(s), 4 carte(s) distincte(s)."
+        "evidence": "4 producteur(s), 1 payoff(s), 5 carte(s) distincte(s)."
       }
     ],
     "combos": [],
@@ -3356,7 +3380,7 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 38,
+      "floor": 39,
       "median": 49,
       "high": 58,
       "ceiling": 58,
@@ -3365,14 +3389,14 @@
       "consistency": 66,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 84,
+      "recoveryAfterDisruption": 85,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 2,
           "interaction": 7,
-          "resource": 3,
+          "resource": 11,
           "burst": 0
         },
         {
@@ -3380,7 +3404,7 @@
           "commander": 2,
           "engine": 8,
           "interaction": 20,
-          "resource": 13,
+          "resource": 21,
           "burst": 1
         },
         {
@@ -3388,23 +3412,23 @@
           "commander": 49,
           "engine": 33,
           "interaction": 39,
-          "resource": 35,
+          "resource": 40,
           "burst": 5
         },
         {
           "turn": 4,
           "commander": 80,
-          "engine": 57,
+          "engine": 56,
           "interaction": 56,
-          "resource": 52,
+          "resource": 56,
           "burst": 8
         },
         {
           "turn": 5,
           "commander": 87,
           "engine": 66,
-          "interaction": 65,
-          "resource": 58,
+          "interaction": 64,
+          "resource": 61,
           "burst": 9
         },
         {
@@ -3412,7 +3436,7 @@
           "commander": 90,
           "engine": 72,
           "interaction": 71,
-          "resource": 64,
+          "resource": 66,
           "burst": 10
         },
         {
@@ -3420,7 +3444,7 @@
           "commander": 93,
           "engine": 77,
           "interaction": 76,
-          "resource": 68,
+          "resource": 69,
           "burst": 11
         }
       ],
@@ -3443,26 +3467,26 @@
               },
               {
                 "turn": 3,
-                "value": 50
+                "value": 49
               },
               {
                 "turn": 4,
-                "value": 82
+                "value": 81
               },
               {
                 "turn": 5,
-                "value": 89
+                "value": 88
               },
               {
                 "turn": 6,
-                "value": 91
+                "value": 90
               },
               {
                 "turn": 7,
                 "value": 93
               }
             ],
-            "observedWithinHorizon": 747
+            "observedWithinHorizon": 744
           },
           "engine": {
             "id": "engine-first-access",
@@ -3482,7 +3506,7 @@
               },
               {
                 "turn": 4,
-                "value": 55
+                "value": 54
               },
               {
                 "turn": 5,
@@ -3490,14 +3514,14 @@
               },
               {
                 "turn": 6,
-                "value": 73
+                "value": 72
               },
               {
                 "turn": 7,
-                "value": 78
+                "value": 77
               }
             ],
-            "observedWithinHorizon": 621
+            "observedWithinHorizon": 619
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -3521,7 +3545,7 @@
               },
               {
                 "turn": 5,
-                "value": 69
+                "value": 70
               },
               {
                 "turn": 6,
@@ -3529,10 +3553,10 @@
               },
               {
                 "turn": 7,
-                "value": 80
+                "value": 81
               }
             ],
-            "observedWithinHorizon": 642
+            "observedWithinHorizon": 644
           },
           "resource": {
             "id": "resource-first-access",
@@ -3540,34 +3564,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 2
+                "value": 9
               },
               {
                 "turn": 2,
-                "value": 12
+                "value": 20
               },
               {
                 "turn": 3,
-                "value": 34
+                "value": 39
               },
               {
                 "turn": 4,
-                "value": 54
+                "value": 59
               },
               {
                 "turn": 5,
-                "value": 60
-              },
-              {
-                "turn": 6,
                 "value": 64
               },
               {
-                "turn": 7,
+                "turn": 6,
                 "value": 68
+              },
+              {
+                "turn": 7,
+                "value": 72
               }
             ],
-            "observedWithinHorizon": 541
+            "observedWithinHorizon": 573
           },
           "burst": {
             "id": "burst-first-access",
@@ -3602,7 +3626,7 @@
                 "value": 11
               }
             ],
-            "observedWithinHorizon": 84
+            "observedWithinHorizon": 85
           }
         },
         "commanders": {
@@ -3620,26 +3644,26 @@
               },
               {
                 "turn": 3,
-                "value": 50
+                "value": 49
               },
               {
                 "turn": 4,
-                "value": 82
+                "value": 81
               },
               {
                 "turn": 5,
-                "value": 89
+                "value": 88
               },
               {
                 "turn": 6,
-                "value": 91
+                "value": 90
               },
               {
                 "turn": 7,
                 "value": 93
               }
             ],
-            "observedWithinHorizon": 747
+            "observedWithinHorizon": 744
           }
         },
         "confidence": {
@@ -3666,6 +3690,18 @@
         "aeon": null
       },
       {
+        "name": "Yuna's Decision",
+        "impact": 3.9,
+        "tags": [
+          "sorcery",
+          "draw",
+          "land-ramp",
+          "recursion",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Blitzball Stadium",
         "impact": 3.1,
         "tags": [
@@ -3674,7 +3710,7 @@
           "etb",
           "counter-producer",
           "counter-payoff",
-          "counter-kind:any"
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
@@ -3756,9 +3792,9 @@
           "creature",
           "tokens",
           "sacrifice",
-          "death-payoff",
           "etb",
-          "landfall"
+          "landfall",
+          "counter-producer"
         ],
         "aeon": null
       },
@@ -3782,17 +3818,6 @@
           "counter-producer",
           "counter-payoff",
           "counter-kind:plus1"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Yuna's Decision",
-        "impact": 2.4,
-        "tags": [
-          "sorcery",
-          "draw",
-          "recursion",
-          "sacrifice"
         ],
         "aeon": null
       }
@@ -3835,12 +3860,12 @@
           ]
         },
         "volatility": {
-          "score": 92,
+          "score": 88,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 27,
+              "value": 25,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
@@ -3877,12 +3902,12 @@
           ]
         },
         "inevitability": {
-          "score": 64,
+          "score": 65,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 85,
+              "value": 86,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -3900,19 +3925,19 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 73.5,
+              "value": 74.5,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 100,
+          "score": 97,
           "level": "very-high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 14,
+              "value": 13,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
@@ -4088,29 +4113,29 @@
             },
             {
               "turn": 3,
-              "value": 50
+              "value": 49
             },
             {
               "turn": 4,
-              "value": 82
+              "value": 81
             },
             {
               "turn": 5,
-              "value": 89
+              "value": 88
             },
             {
               "turn": 6,
-              "value": 91
+              "value": 90
             },
             {
               "turn": 7,
               "value": 93
             }
           ],
-          "observedWithinHorizon": 747,
+          "observedWithinHorizon": 744,
           "milestones": {
             "at25": 3,
-            "at50": 3,
+            "at50": 4,
             "at75": 4
           }
         },
@@ -4133,7 +4158,7 @@
             },
             {
               "turn": 4,
-              "value": 55
+              "value": 54
             },
             {
               "turn": 5,
@@ -4141,14 +4166,14 @@
             },
             {
               "turn": 6,
-              "value": 73
+              "value": 72
             },
             {
               "turn": 7,
-              "value": 78
+              "value": 77
             }
           ],
-          "observedWithinHorizon": 621,
+          "observedWithinHorizon": 619,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -4178,7 +4203,7 @@
             },
             {
               "turn": 5,
-              "value": 69
+              "value": 70
             },
             {
               "turn": 6,
@@ -4186,10 +4211,10 @@
             },
             {
               "turn": 7,
-              "value": 80
+              "value": 81
             }
           ],
-          "observedWithinHorizon": 642,
+          "observedWithinHorizon": 644,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -4203,34 +4228,34 @@
           "points": [
             {
               "turn": 1,
-              "value": 2
+              "value": 9
             },
             {
               "turn": 2,
-              "value": 12
+              "value": 20
             },
             {
               "turn": 3,
-              "value": 34
+              "value": 39
             },
             {
               "turn": 4,
-              "value": 54
+              "value": 59
             },
             {
               "turn": 5,
-              "value": 60
-            },
-            {
-              "turn": 6,
               "value": 64
             },
             {
-              "turn": 7,
+              "turn": 6,
               "value": 68
+            },
+            {
+              "turn": 7,
+              "value": 72
             }
           ],
-          "observedWithinHorizon": 541,
+          "observedWithinHorizon": 573,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -4271,7 +4296,7 @@
               "value": 11
             }
           ],
-          "observedWithinHorizon": 84,
+          "observedWithinHorizon": 85,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -4339,7 +4364,7 @@
             },
             {
               "turn": 4,
-              "value": 57
+              "value": 56
             },
             {
               "turn": 5,
@@ -4383,7 +4408,7 @@
             },
             {
               "turn": 5,
-              "value": 65
+              "value": 64
             },
             {
               "turn": 6,
@@ -4407,31 +4432,31 @@
           "points": [
             {
               "turn": 1,
-              "value": 3
+              "value": 11
             },
             {
               "turn": 2,
-              "value": 13
+              "value": 21
             },
             {
               "turn": 3,
-              "value": 35
+              "value": 40
             },
             {
               "turn": 4,
-              "value": 52
+              "value": 56
             },
             {
               "turn": 5,
-              "value": 58
+              "value": 61
             },
             {
               "turn": 6,
-              "value": 64
+              "value": 66
             },
             {
               "turn": 7,
-              "value": 68
+              "value": 69
             }
           ],
           "milestones": {
@@ -4497,29 +4522,29 @@
             },
             {
               "turn": 3,
-              "value": 50
+              "value": 49
             },
             {
               "turn": 4,
-              "value": 82
+              "value": 81
             },
             {
               "turn": 5,
-              "value": 89
+              "value": 88
             },
             {
               "turn": 6,
-              "value": 91
+              "value": 90
             },
             {
               "turn": 7,
               "value": 93
             }
           ],
-          "observedWithinHorizon": 747,
+          "observedWithinHorizon": 744,
           "milestones": {
             "at25": 3,
-            "at50": 3,
+            "at50": 4,
             "at75": 4
           }
         },
@@ -4542,7 +4567,7 @@
             },
             {
               "turn": 4,
-              "value": 55
+              "value": 54
             },
             {
               "turn": 5,
@@ -4550,14 +4575,14 @@
             },
             {
               "turn": 6,
-              "value": 73
+              "value": 72
             },
             {
               "turn": 7,
-              "value": 78
+              "value": 77
             }
           ],
-          "observedWithinHorizon": 621,
+          "observedWithinHorizon": 619,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -4587,7 +4612,7 @@
             },
             {
               "turn": 5,
-              "value": 69
+              "value": 70
             },
             {
               "turn": 6,
@@ -4595,10 +4620,10 @@
             },
             {
               "turn": 7,
-              "value": 80
+              "value": 81
             }
           ],
-          "observedWithinHorizon": 642,
+          "observedWithinHorizon": 644,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -4612,34 +4637,34 @@
           "points": [
             {
               "turn": 1,
-              "value": 2
+              "value": 9
             },
             {
               "turn": 2,
-              "value": 12
+              "value": 20
             },
             {
               "turn": 3,
-              "value": 34
+              "value": 39
             },
             {
               "turn": 4,
-              "value": 54
+              "value": 59
             },
             {
               "turn": 5,
-              "value": 60
-            },
-            {
-              "turn": 6,
               "value": 64
             },
             {
-              "turn": 7,
+              "turn": 6,
               "value": 68
+            },
+            {
+              "turn": 7,
+              "value": 72
             }
           ],
-          "observedWithinHorizon": 541,
+          "observedWithinHorizon": 573,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -4680,7 +4705,7 @@
               "value": 11
             }
           ],
-          "observedWithinHorizon": 84,
+          "observedWithinHorizon": 85,
           "milestones": {
             "at25": null,
             "at50": null,

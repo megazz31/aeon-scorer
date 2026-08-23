@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/AbzanArmor_TDC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Abzan Armor",
@@ -33,12 +33,12 @@
     "p80": 53,
     "peak": 79,
     "coverage": 92,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "97df918ed645f29954b5133280f63029fdf84843b480e50bcab55a09275dc0b1",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Betor, Ancestor's Voice\n1 Protector of the Wastes\n1 Reunion of the House\n1 Jaws of Defeat\n1 Tip the Scales\n1 Will of the Abzan\n1 Arbor Adherent\n1 Canopy Gargantuan\n1 Rampart Architect\n1 Tree of Redemption\n1 Ikra Shidiqi, the Usurper\n1 Baldin, Century Herdmaster\n1 Expel the Interlopers\n1 Indomitable Ancients\n1 Rhox Faithmender\n1 Shalai, Voice of Plenty\n1 Wakestone Gargoyle\n1 Wall of Reverence\n1 Welcoming Vampire\n1 Zetalpa, Primal Dawn\n1 Arasta of the Endless Web\n1 Assault Formation\n1 Hornet Nest\n1 Seedborn Muse\n1 Sylvan Caryatid\n1 Towering Titan\n1 Anguished Unmaking\n1 Dragonlord Dromoka\n1 Faeburrow Elder\n1 Shadrix Silverquill\n1 Sidar Kondo of Jamuraa\n1 Colfenor's Urn\n1 Staff of Compleation\n1 Weathered Sentinels\n1 Canopy Vista\n1 Exotic Orchard\n1 Fortified Village\n1 Isolated Chapel\n1 Overgrown Farmland\n1 Sungrass Prairie\n1 Sunpetal Grove\n1 Temple of Malady\n1 Temple of Plenty\n1 Temple of Silence\n1 Twilight Mire\n1 Woodland Cemetery\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Nyx-Fleece Ram\n1 Slaughter the Strong\n1 Swords to Plowshares\n1 Wall of Omens\n1 Wingmantle Chaplain\n1 Behind the Scenes\n1 Blight Pile\n1 Feed the Swarm\n1 Infernal Grasp\n1 Wall of Limbs\n1 Arboreal Grazer\n1 Axebane Guardian\n1 Carven Caryatid\n1 Evolving Wilds\n1 Jaddi Offshoot\n1 Overgrown Battlement\n1 Sandsteppe Citadel\n1 Tower Defense\n1 Wall of Blossoms\n1 Wall of Roots\n1 Despark\n1 Indulging Patrician\n1 Crashing Drawbridge\n1 Orzhov Signet\n1 Selesnya Signet\n1 Swiftfoot Boots\n1 Walking Bulwark\n1 Access Tunnel\n1 Bojuka Bog\n1 Deceptive Landscape\n1 Path of Ancestry\n1 Radiant Grove\n3 Plains\n3 Plains\n3 Swamp\n2 Swamp\n4 Forest\n3 Forest",
   "oracleCards": [
@@ -315,6 +315,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "protection",
         "counter-producer",
         "counter-kind:plus1"
       ],
@@ -433,6 +434,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "land-ramp",
         "mana",
         "sacrifice"
@@ -1760,7 +1762,7 @@
       "explosiveness": 11,
       "synergy": 45,
       "interaction": 48,
-      "resilience": 39
+      "resilience": 40
     },
     "roles": {
       "lands": 38,
@@ -1770,7 +1772,7 @@
       "repeatableTutors": 0,
       "draw": 6,
       "interaction": 8,
-      "protection": 5,
+      "protection": 6,
       "recursion": 3,
       "wipes": 2,
       "avgCmc": 3.3442622950819674,
@@ -2306,6 +2308,7 @@
             "cmc": 0,
             "tags": [
               "land",
+              "draw",
               "land-ramp",
               "mana",
               "sacrifice"
@@ -2422,7 +2425,7 @@
           "commander": 0,
           "engine": 0,
           "interaction": 12,
-          "resource": 0,
+          "resource": 2,
           "burst": 0
         },
         {
@@ -2590,7 +2593,7 @@
             "points": [
               {
                 "turn": 1,
-                "value": 0
+                "value": 1
               },
               {
                 "turn": 2,
@@ -2598,11 +2601,11 @@
               },
               {
                 "turn": 3,
-                "value": 27
+                "value": 28
               },
               {
                 "turn": 4,
-                "value": 45
+                "value": 46
               },
               {
                 "turn": 5,
@@ -2610,14 +2613,14 @@
               },
               {
                 "turn": 6,
-                "value": 60
+                "value": 61
               },
               {
                 "turn": 7,
                 "value": 66
               }
             ],
-            "observedWithinHorizon": 528
+            "observedWithinHorizon": 531
           },
           "burst": {
             "id": "burst-first-access",
@@ -2897,12 +2900,12 @@
           ]
         },
         "resilience": {
-          "score": 39,
+          "score": 40,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 39,
+              "value": 40,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
@@ -2926,7 +2929,7 @@
             },
             {
               "signal": "resilience",
-              "value": 39,
+              "value": 40,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
@@ -3235,7 +3238,7 @@
           "points": [
             {
               "turn": 1,
-              "value": 0
+              "value": 1
             },
             {
               "turn": 2,
@@ -3243,11 +3246,11 @@
             },
             {
               "turn": 3,
-              "value": 27
+              "value": 28
             },
             {
               "turn": 4,
-              "value": 45
+              "value": 46
             },
             {
               "turn": 5,
@@ -3255,14 +3258,14 @@
             },
             {
               "turn": 6,
-              "value": 60
+              "value": 61
             },
             {
               "turn": 7,
               "value": 66
             }
           ],
-          "observedWithinHorizon": 528,
+          "observedWithinHorizon": 531,
           "milestones": {
             "at25": 3,
             "at50": 5,
@@ -3439,7 +3442,7 @@
           "points": [
             {
               "turn": 1,
-              "value": 0
+              "value": 2
             },
             {
               "turn": 2,
@@ -3644,7 +3647,7 @@
           "points": [
             {
               "turn": 1,
-              "value": 0
+              "value": 1
             },
             {
               "turn": 2,
@@ -3652,11 +3655,11 @@
             },
             {
               "turn": 3,
-              "value": 27
+              "value": 28
             },
             {
               "turn": 4,
-              "value": 45
+              "value": 46
             },
             {
               "turn": 5,
@@ -3664,14 +3667,14 @@
             },
             {
               "turn": 6,
-              "value": 60
+              "value": 61
             },
             {
               "turn": 7,
               "value": 66
             }
           ],
-          "observedWithinHorizon": 528,
+          "observedWithinHorizon": 531,
           "milestones": {
             "at25": 3,
             "at50": 5,

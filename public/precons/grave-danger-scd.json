@@ -16,7 +16,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/GraveDanger_SCD.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Grave Danger",
@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 46,
-    "p20": 34,
-    "p80": 57,
+    "p20": 33,
+    "p80": 58,
     "peak": 86,
     "coverage": 94,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "8e0dcf4eb46345c0b8c4ae4f056e9ccf94dbb6bd7ae4db423f6c280f79cfad1d",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Geralf's Mindcrusher\n1 Laboratory Drudge\n1 Army of the Damned\n1 Cemetery Reaper\n1 Champion of the Perished\n1 Crippling Fear\n1 Gravespawn Sovereign\n1 Josu Vess, Lich Knight\n1 Liliana, Untouched by Death\n1 Liliana's Mastery\n1 Liliana's Standard Bearer\n1 Midnight Reaper\n1 Necromantic Selection\n1 Necrotic Hex\n1 Open the Graves\n1 Overseer of the Damned\n1 Scourge of Nel Toth\n1 Unbreathing Horde\n1 Zombie Apocalypse\n1 Enter the God-Eternals\n1 Havengul Lich\n1 Undermine\n1 Vela the Night-Clad\n1 Grimoire of the Dead\n1 Choked Estuary\n1 Sunken Hollow\n1 Temple of Deceit\n1 Deep Analysis\n1 Distant Melody\n1 Eternal Skylord\n1 Lazotep Plating\n1 Sinister Sabotage\n1 Cruel Revival\n1 Curse of Disturbance\n1 Feed the Swarm\n1 Fleshbag Marauder\n1 Gray Merchant of Asphodel\n1 Lazotep Reaver\n1 Liliana's Devotee\n1 Lord of the Accursed\n1 Lotleth Giant\n1 Loyal Subordinate\n1 Mire Triton\n1 Murder\n1 Spark Reaper\n1 Syphon Flesh\n1 Undead Augur\n1 Vampiric Rites\n1 Vengeful Dead\n1 Victimize\n1 Vizier of the Scorpion\n1 Withered Wretch\n1 Diregraf Captain\n1 Gleaming Overseer\n1 Pilfered Plans\n1 Arcane Signet\n1 Commander's Sphere\n1 Dimir Signet\n1 Heraldic Banner\n1 Sol Ring\n1 Talisman of Dominance\n1 Unstable Obelisk\n1 Wayfarer's Bauble\n1 Command Tower\n1 Dismal Backwater\n1 Jwar Isle Refuge\n1 Salt Marsh\n1 Submerged Boneyard\n4 Island\n3 Island\n3 Island\n3 Island\n5 Swamp\n5 Swamp\n4 Swamp\n4 Swamp",
   "oracleCards": [
@@ -77,6 +77,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -257,7 +258,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "draw"
+        "draw",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -420,7 +422,6 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "wipe",
         "etb"
       ],
       "isCommander": false
@@ -924,7 +925,6 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "wipe",
         "tokens"
       ],
       "isCommander": false
@@ -1448,11 +1448,11 @@
   "result": {
     "profile": {
       "median": 46,
-      "floor": 34,
-      "ceiling": 57,
+      "floor": 33,
+      "ceiling": 58,
       "peak": 86,
-      "dispersion": 24,
-      "variance": 24,
+      "dispersion": 25,
+      "variance": 25,
       "consistency": 61,
       "commanderDelta": 8,
       "coverage": 94,
@@ -1462,9 +1462,9 @@
       "speed": 35,
       "consistency": 61,
       "explosiveness": 13,
-      "synergy": 63,
-      "interaction": 49,
-      "resilience": 44
+      "synergy": 66,
+      "interaction": 46,
+      "resilience": 50
     },
     "roles": {
       "lands": 39,
@@ -1473,10 +1473,10 @@
       "tutors": 0,
       "repeatableTutors": 0,
       "draw": 10,
-      "interaction": 13,
+      "interaction": 11,
       "protection": 2,
-      "recursion": 4,
-      "wipes": 4,
+      "recursion": 6,
+      "wipes": 2,
       "avgCmc": 3.7333333333333334,
       "unknownManaLands": 0
     },
@@ -1527,6 +1527,7 @@
             "cmc": 8,
             "tags": [
               "sorcery",
+              "recursion",
               "tokens"
             ],
             "manaReq": {
@@ -1759,7 +1760,6 @@
             "cmc": 7,
             "tags": [
               "sorcery",
-              "wipe",
               "tokens"
             ],
             "manaReq": {
@@ -1936,8 +1936,8 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 71,
-        "cohesion": 71,
+        "strength": 74,
+        "cohesion": 74,
         "producers": [
           "Grimoire of the Dead",
           "Liliana, Untouched by Death",
@@ -1945,7 +1945,9 @@
           "Sinister Sabotage"
         ],
         "payoffs": [
+          "Army of the Damned",
           "Cruel Revival",
+          "Deep Analysis",
           "Liliana, Untouched by Death",
           "Scourge of Nel Toth",
           "Zombie Apocalypse"
@@ -1955,7 +1957,9 @@
           "Liliana, Untouched by Death",
           "Mire Triton",
           "Sinister Sabotage",
+          "Army of the Damned",
           "Cruel Revival",
+          "Deep Analysis",
           "Scourge of Nel Toth",
           "Zombie Apocalypse"
         ],
@@ -2041,6 +2045,30 @@
         "supportCards": [],
         "payoffCards": [
           {
+            "name": "Army of the Damned",
+            "cmc": 8,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 8
+            }
+          },
+          {
             "name": "Cruel Revival",
             "cmc": 5,
             "tags": [
@@ -2056,6 +2084,24 @@
                 ]
               ],
               "total": 5
+            }
+          },
+          {
+            "name": "Deep Analysis",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
             }
           },
           {
@@ -2131,7 +2177,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "4 producteur(s), 4 payoff(s), 7 carte(s) distincte(s)."
+        "evidence": "4 producteur(s), 6 payoff(s), 9 carte(s) distincte(s)."
       },
       {
         "id": "sacrifice",
@@ -2482,9 +2528,11 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 20,
+      "score": 26,
       "connected": [
+        "Army of the Damned",
         "Cruel Revival",
+        "Deep Analysis",
         "Grimoire of the Dead",
         "Liliana, Untouched by Death",
         "Mire Triton",
@@ -2509,7 +2557,7 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 37,
+      "floor": 36,
       "median": 45,
       "high": 54,
       "ceiling": 54,
@@ -2532,7 +2580,7 @@
           "turn": 2,
           "commander": 4,
           "engine": 0,
-          "interaction": 14,
+          "interaction": 13,
           "resource": 19,
           "burst": 0
         },
@@ -2540,40 +2588,40 @@
           "turn": 3,
           "commander": 35,
           "engine": 5,
-          "interaction": 37,
+          "interaction": 34,
           "resource": 47,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 82,
-          "engine": 17,
-          "interaction": 54,
+          "engine": 18,
+          "interaction": 50,
           "resource": 67,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 92,
-          "engine": 27,
-          "interaction": 63,
+          "engine": 29,
+          "interaction": 59,
           "resource": 76,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 95,
-          "engine": 36,
-          "interaction": 72,
-          "resource": 81,
+          "engine": 38,
+          "interaction": 67,
+          "resource": 82,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 97,
-          "engine": 43,
-          "interaction": 78,
-          "resource": 85,
+          "engine": 45,
+          "interaction": 73,
+          "resource": 86,
           "burst": 0
         }
       ],
@@ -2639,18 +2687,18 @@
               },
               {
                 "turn": 5,
-                "value": 30
+                "value": 31
               },
               {
                 "turn": 6,
-                "value": 35
+                "value": 37
               },
               {
                 "turn": 7,
-                "value": 42
+                "value": 44
               }
             ],
-            "observedWithinHorizon": 337
+            "observedWithinHorizon": 355
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -2666,26 +2714,26 @@
               },
               {
                 "turn": 3,
-                "value": 40
+                "value": 37
               },
               {
                 "turn": 4,
-                "value": 58
+                "value": 52
               },
               {
                 "turn": 5,
-                "value": 66
+                "value": 60
               },
               {
                 "turn": 6,
-                "value": 74
+                "value": 67
               },
               {
                 "turn": 7,
-                "value": 79
+                "value": 72
               }
             ],
-            "observedWithinHorizon": 632
+            "observedWithinHorizon": 573
           },
           "resource": {
             "id": "resource-first-access",
@@ -2713,14 +2761,14 @@
               },
               {
                 "turn": 6,
-                "value": 80
+                "value": 81
               },
               {
                 "turn": 7,
                 "value": 85
               }
             ],
-            "observedWithinHorizon": 676
+            "observedWithinHorizon": 680
           },
           "burst": {
             "id": "burst-first-access",
@@ -2828,6 +2876,16 @@
         "aeon": null
       },
       {
+        "name": "Deep Analysis",
+        "impact": 3.1,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Midnight Reaper",
         "impact": 3,
         "tags": [
@@ -2854,6 +2912,16 @@
           "sorcery",
           "wipe",
           "recursion"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Army of the Damned",
+        "impact": 2.6,
+        "tags": [
+          "sorcery",
+          "recursion",
+          "tokens"
         ],
         "aeon": null
       },
@@ -2910,28 +2978,6 @@
           "recursion"
         ],
         "aeon": null
-      },
-      {
-        "name": "Necrotic Hex",
-        "impact": 2.4,
-        "tags": [
-          "sorcery",
-          "wipe",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Spark Reaper",
-        "impact": 2.4,
-        "tags": [
-          "creature",
-          "draw",
-          "sacrifice",
-          "sac-outlet",
-          "lifegain"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
@@ -2977,49 +3023,49 @@
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 24,
+              "value": 25,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 29,
+              "value": 28,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
           ]
         },
         "interaction": {
-          "score": 49,
+          "score": 46,
           "level": "moderate",
           "evidence": [
             {
               "signal": "interaction",
-              "value": 49,
+              "value": 46,
               "source": "aeon-dimension",
               "reason": "Existing Aeon interaction-access dimension."
             }
           ]
         },
         "resilience": {
-          "score": 44,
-          "level": "moderate",
+          "score": 50,
+          "level": "high",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 44,
+              "value": 50,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 60,
+          "score": 63,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 63,
+              "value": 66,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -3031,20 +3077,20 @@
             },
             {
               "signal": "resilience",
-              "value": 44,
+              "value": 50,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 75,
+              "value": 76,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 41,
+          "score": 44,
           "level": "moderate",
           "evidence": [
             {
@@ -3055,7 +3101,7 @@
             },
             {
               "signal": "commander-synergy",
-              "value": 20,
+              "value": 26,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },
@@ -3271,18 +3317,18 @@
             },
             {
               "turn": 5,
-              "value": 30
+              "value": 31
             },
             {
               "turn": 6,
-              "value": 35
+              "value": 37
             },
             {
               "turn": 7,
-              "value": 42
+              "value": 44
             }
           ],
-          "observedWithinHorizon": 337,
+          "observedWithinHorizon": 355,
           "milestones": {
             "at25": 5,
             "at50": null,
@@ -3304,30 +3350,30 @@
             },
             {
               "turn": 3,
-              "value": 40
+              "value": 37
             },
             {
               "turn": 4,
-              "value": 58
+              "value": 52
             },
             {
               "turn": 5,
-              "value": 66
+              "value": 60
             },
             {
               "turn": 6,
-              "value": 74
+              "value": 67
             },
             {
               "turn": 7,
-              "value": 79
+              "value": 72
             }
           ],
-          "observedWithinHorizon": 632,
+          "observedWithinHorizon": 573,
           "milestones": {
             "at25": 3,
             "at50": 4,
-            "at75": 7
+            "at75": null
           }
         },
         "resource": {
@@ -3357,14 +3403,14 @@
             },
             {
               "turn": 6,
-              "value": 80
+              "value": 81
             },
             {
               "turn": 7,
               "value": 85
             }
           ],
-          "observedWithinHorizon": 676,
+          "observedWithinHorizon": 680,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -3473,19 +3519,19 @@
             },
             {
               "turn": 4,
-              "value": 17
+              "value": 18
             },
             {
               "turn": 5,
-              "value": 27
+              "value": 29
             },
             {
               "turn": 6,
-              "value": 36
+              "value": 38
             },
             {
               "turn": 7,
-              "value": 43
+              "value": 45
             }
           ],
           "milestones": {
@@ -3505,33 +3551,33 @@
             },
             {
               "turn": 2,
-              "value": 14
+              "value": 13
             },
             {
               "turn": 3,
-              "value": 37
+              "value": 34
             },
             {
               "turn": 4,
-              "value": 54
+              "value": 50
             },
             {
               "turn": 5,
-              "value": 63
+              "value": 59
             },
             {
               "turn": 6,
-              "value": 72
+              "value": 67
             },
             {
               "turn": 7,
-              "value": 78
+              "value": 73
             }
           ],
           "milestones": {
             "at25": 3,
             "at50": 4,
-            "at75": 7
+            "at75": null
           }
         },
         "resource": {
@@ -3561,11 +3607,11 @@
             },
             {
               "turn": 6,
-              "value": 81
+              "value": 82
             },
             {
               "turn": 7,
-              "value": 85
+              "value": 86
             }
           ],
           "milestones": {
@@ -3680,18 +3726,18 @@
             },
             {
               "turn": 5,
-              "value": 30
+              "value": 31
             },
             {
               "turn": 6,
-              "value": 35
+              "value": 37
             },
             {
               "turn": 7,
-              "value": 42
+              "value": 44
             }
           ],
-          "observedWithinHorizon": 337,
+          "observedWithinHorizon": 355,
           "milestones": {
             "at25": 5,
             "at50": null,
@@ -3713,30 +3759,30 @@
             },
             {
               "turn": 3,
-              "value": 40
+              "value": 37
             },
             {
               "turn": 4,
-              "value": 58
+              "value": 52
             },
             {
               "turn": 5,
-              "value": 66
+              "value": 60
             },
             {
               "turn": 6,
-              "value": 74
+              "value": 67
             },
             {
               "turn": 7,
-              "value": 79
+              "value": 72
             }
           ],
-          "observedWithinHorizon": 632,
+          "observedWithinHorizon": 573,
           "milestones": {
             "at25": 3,
             "at50": 4,
-            "at75": 7
+            "at75": null
           }
         },
         "resource": {
@@ -3766,14 +3812,14 @@
             },
             {
               "turn": 6,
-              "value": 80
+              "value": 81
             },
             {
               "turn": 7,
               "value": 85
             }
           ],
-          "observedWithinHorizon": 676,
+          "observedWithinHorizon": 680,
           "milestones": {
             "at25": 3,
             "at50": 4,

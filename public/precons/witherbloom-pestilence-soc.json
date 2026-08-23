@@ -16,7 +16,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/WitherbloomPestilence_SOC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Witherbloom Pestilence",
@@ -28,16 +28,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 59,
-    "p20": 47,
+    "p20": 48,
     "p80": 69,
     "peak": 91,
     "coverage": 95,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "09c89d740010c4efa0829045da5fd7c38250c5e4a34d988b9c6daaf07f045ec7",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Gorma, the Gullet\n1 Merchant of Venom\n1 Defiling Daemogoth\n1 Ominous Harvest\n1 Stensian Sanguinist // Exsanguinate\n1 Feral Appetite\n1 Pest Rescuer\n1 Ribtruss Roaster\n1 Eccentric Pestfinder // Turn Stones\n1 Immoral Bargain\n1 Turbulent Fen\n1 Ophiomancer\n1 Toxic Deluge\n1 Tendershoot Dryad\n1 Fabled Passage\n1 Blight Mound\n1 Bloodghast\n1 Final Act\n1 Jadar, Ghoulcaller of Nephalia\n1 Nether Traitor\n1 Priest of Forgotten Gods\n1 Smothering Abomination\n1 Veinwitch Coven\n1 Witch of the Moors\n1 Woe Strider\n1 Yahenni, Undying Partisan\n1 Awakening Zone\n1 Blossoming Bogbeast\n1 Gilded Goose\n1 Mycoloth\n1 Ohran Frostfang\n1 Pest Infestation\n1 Trudge Garden\n1 Assassin's Trophy\n1 Beledros Witherbloom\n1 Casualties of War\n1 Creakwood Liege\n1 Culling Ritual\n1 Gyome, Master Chef\n1 Mazirek, Kraul Death Priest\n1 Wight of the Reliquary\n1 Witherbloom Command\n1 Exotic Orchard\n1 Festering Thicket\n1 Grim Backwoods\n1 High Market\n1 Llanowar Wastes\n1 Necroblossom Snarl\n1 Temple of Malady\n1 Twilight Mire\n1 Vernal Fen\n1 Viridescent Bog\n1 Woodland Cemetery\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Teacher's Pest\n1 Witherbloom Charm\n1 Terramorphic Expanse\n1 Titan's Grave\n1 Blood Artist\n1 Infernal Grasp\n1 Morbid Opportunist\n1 Night's Whisper\n1 Pawn of Ulamog\n1 Plumb the Forbidden\n1 Umbral Collar Zealot\n1 Viscera Seer\n1 Zulaport Cutthroat\n1 Cultivate\n1 Elvish Mystic\n1 Sakura-Tribe Elder\n1 Springbloom Druid\n1 Deadly Brew\n1 Dina, Soul Steeper\n1 Moldervine Reclamation\n1 Mortality Spear\n1 Haywire Mite\n1 Bojuka Bog\n1 Haunted Mire\n1 Path of Ancestry\n1 Study Hall\n1 Witherbloom Campus\n4 Swamp\n4 Swamp\n4 Forest\n4 Forest",
   "oracleCards": [
@@ -301,7 +301,8 @@
       ],
       "tags": [
         "sorcery",
-        "mana"
+        "mana",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -337,7 +338,6 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "wipe",
         "recursion"
       ],
       "isCommander": false
@@ -525,6 +525,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -819,6 +820,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "death-payoff",
         "counter-producer",
         "counter-kind:plus1"
       ],
@@ -838,7 +840,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "wipe",
+        "death-payoff",
         "etb",
         "counter-producer",
         "counter-kind:plus1"
@@ -1159,6 +1161,7 @@
       "tags": [
         "creature",
         "draw",
+        "mana",
         "sacrifice"
       ],
       "isCommander": false
@@ -1728,6 +1731,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "recursion",
         "tokens",
         "sacrifice",
         "sac-outlet",
@@ -1804,23 +1808,23 @@
   "result": {
     "profile": {
       "median": 59,
-      "floor": 47,
+      "floor": 48,
       "ceiling": 69,
       "peak": 91,
-      "dispersion": 22,
-      "variance": 22,
-      "consistency": 61,
-      "commanderDelta": 15,
+      "dispersion": 20,
+      "variance": 20,
+      "consistency": 62,
+      "commanderDelta": 14,
       "coverage": 95,
       "dataCoverage": 95
     },
     "dimensions": {
       "speed": 51,
-      "consistency": 61,
+      "consistency": 62,
       "explosiveness": 12,
-      "synergy": 94,
-      "interaction": 61,
-      "resilience": 55
+      "synergy": 95,
+      "interaction": 57,
+      "resilience": 59
     },
     "roles": {
       "lands": 37,
@@ -1829,10 +1833,10 @@
       "tutors": 0,
       "repeatableTutors": 0,
       "draw": 9,
-      "interaction": 12,
+      "interaction": 11,
       "protection": 2,
-      "recursion": 7,
-      "wipes": 4,
+      "recursion": 8,
+      "wipes": 3,
       "avgCmc": 3.0483870967741935,
       "unknownManaLands": 0
     },
@@ -1857,6 +1861,8 @@
           "Blood Artist",
           "Gorma, the Gullet",
           "Haywire Mite",
+          "Mazirek, Kraul Death Priest",
+          "Merchant of Venom",
           "Moldervine Reclamation",
           "Pawn of Ulamog",
           "Smothering Abomination",
@@ -1875,6 +1881,8 @@
           "Blood Artist",
           "Gorma, the Gullet",
           "Haywire Mite",
+          "Mazirek, Kraul Death Priest",
+          "Merchant of Venom",
           "Moldervine Reclamation",
           "Pawn of Ulamog",
           "Smothering Abomination",
@@ -1999,6 +2007,7 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "recursion",
               "tokens",
               "sacrifice",
               "sac-outlet",
@@ -2117,6 +2126,48 @@
             }
           },
           {
+            "name": "Mazirek, Kraul Death Priest",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "death-payoff",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Merchant of Venom",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "death-payoff",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
             "name": "Moldervine Reclamation",
             "cmc": 5,
             "tags": [
@@ -2211,7 +2262,7 @@
         "payoffTags": [
           "death-payoff"
         ],
-        "evidence": "8 producteur(s) opérationnel(s) + 0 support(s), 8 payoff(s), 16 carte(s) distincte(s)."
+        "evidence": "8 producteur(s) opérationnel(s) + 0 support(s), 10 payoff(s), 18 carte(s) distincte(s)."
       },
       {
         "id": "lifegain",
@@ -2816,8 +2867,8 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 66,
-        "cohesion": 66,
+        "strength": 70,
+        "cohesion": 70,
         "producers": [
           "Titan's Grave",
           "Umbral Collar Zealot"
@@ -2829,7 +2880,8 @@
           "Teacher's Pest",
           "Veinwitch Coven",
           "Witch of the Moors",
-          "Witherbloom Command"
+          "Witherbloom Command",
+          "Woe Strider"
         ],
         "members": [
           "Titan's Grave",
@@ -2840,7 +2892,8 @@
           "Teacher's Pest",
           "Veinwitch Coven",
           "Witch of the Moors",
-          "Witherbloom Command"
+          "Witherbloom Command",
+          "Woe Strider"
         ],
         "producerCards": [
           {
@@ -2907,7 +2960,6 @@
             "cmc": 2,
             "tags": [
               "sorcery",
-              "wipe",
               "recursion"
             ],
             "manaReq": {
@@ -3024,6 +3076,28 @@
               ],
               "total": 2
             }
+          },
+          {
+            "name": "Woe Strider",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "recursion",
+              "tokens",
+              "sacrifice",
+              "sac-outlet",
+              "etb",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
           }
         ],
         "producerTags": [
@@ -3033,7 +3107,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "2 producteur(s), 7 payoff(s), 9 carte(s) distincte(s)."
+        "evidence": "2 producteur(s), 8 payoff(s), 10 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -3220,13 +3294,13 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 43,
+      "floor": 44,
       "median": 52,
       "high": 60,
       "ceiling": 60,
       "peak": 84,
       "iqr": 14,
-      "consistency": 69,
+      "consistency": 70,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 4,
       "recoveryAfterDisruption": 93,
@@ -3236,55 +3310,55 @@
           "commander": 0,
           "engine": 1,
           "interaction": 12,
-          "resource": 8,
+          "resource": 14,
           "burst": 0
         },
         {
           "turn": 2,
           "commander": 5,
           "engine": 6,
-          "interaction": 30,
-          "resource": 30,
+          "interaction": 27,
+          "resource": 32,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 57,
           "engine": 28,
-          "interaction": 50,
-          "resource": 57,
+          "interaction": 46,
+          "resource": 58,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 88,
-          "engine": 52,
-          "interaction": 65,
-          "resource": 74,
+          "engine": 54,
+          "interaction": 61,
+          "resource": 75,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 96,
-          "engine": 66,
-          "interaction": 74,
-          "resource": 82,
+          "engine": 69,
+          "interaction": 70,
+          "resource": 83,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 97,
-          "engine": 75,
-          "interaction": 79,
-          "resource": 86,
+          "engine": 78,
+          "interaction": 75,
+          "resource": 88,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 98,
-          "engine": 81,
-          "interaction": 83,
-          "resource": 89,
+          "engine": 83,
+          "interaction": 79,
+          "resource": 90,
           "burst": 0
         }
       ],
@@ -3342,26 +3416,26 @@
               },
               {
                 "turn": 3,
-                "value": 27
+                "value": 28
               },
               {
                 "turn": 4,
-                "value": 51
+                "value": 53
               },
               {
                 "turn": 5,
-                "value": 66
+                "value": 69
               },
               {
                 "turn": 6,
-                "value": 75
+                "value": 78
               },
               {
                 "turn": 7,
-                "value": 81
+                "value": 83
               }
             ],
-            "observedWithinHorizon": 649
+            "observedWithinHorizon": 665
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -3373,30 +3447,30 @@
               },
               {
                 "turn": 2,
-                "value": 29
+                "value": 27
               },
               {
                 "turn": 3,
-                "value": 53
+                "value": 48
               },
               {
                 "turn": 4,
-                "value": 71
+                "value": 66
               },
               {
                 "turn": 5,
-                "value": 78
+                "value": 74
               },
               {
                 "turn": 6,
-                "value": 81
+                "value": 79
               },
               {
                 "turn": 7,
-                "value": 85
+                "value": 82
               }
             ],
-            "observedWithinHorizon": 679
+            "observedWithinHorizon": 655
           },
           "resource": {
             "id": "resource-first-access",
@@ -3404,34 +3478,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 9
+                "value": 15
               },
               {
                 "turn": 2,
-                "value": 27
+                "value": 32
               },
               {
                 "turn": 3,
-                "value": 57
+                "value": 62
               },
               {
                 "turn": 4,
-                "value": 77
+                "value": 81
               },
               {
                 "turn": 5,
-                "value": 84
-              },
-              {
-                "turn": 6,
                 "value": 87
               },
               {
-                "turn": 7,
+                "turn": 6,
                 "value": 90
+              },
+              {
+                "turn": 7,
+                "value": 92
               }
             ],
-            "observedWithinHorizon": 718
+            "observedWithinHorizon": 734
           },
           "burst": {
             "id": "burst-first-access",
@@ -3583,16 +3657,6 @@
         "aeon": null
       },
       {
-        "name": "Deadly Brew",
-        "impact": 2.9,
-        "tags": [
-          "sorcery",
-          "wipe",
-          "recursion"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Smothering Abomination",
         "impact": 2.9,
         "tags": [
@@ -3632,6 +3696,19 @@
           "creature",
           "recursion",
           "life-payoff"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Woe Strider",
+        "impact": 2.8,
+        "tags": [
+          "creature",
+          "recursion",
+          "tokens",
+          "sacrifice",
+          "sac-outlet",
+          "etb"
         ],
         "aeon": null
       },
@@ -3685,12 +3762,12 @@
           ]
         },
         "volatility": {
-          "score": 77,
-          "level": "very-high",
+          "score": 73,
+          "level": "high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 22,
+              "value": 20,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
@@ -3703,66 +3780,66 @@
           ]
         },
         "interaction": {
-          "score": 61,
+          "score": 57,
           "level": "high",
           "evidence": [
             {
               "signal": "interaction",
-              "value": 61,
+              "value": 57,
               "source": "aeon-dimension",
               "reason": "Existing Aeon interaction-access dimension."
             }
           ]
         },
         "resilience": {
-          "score": 55,
+          "score": 59,
           "level": "high",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 55,
+              "value": 59,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 76,
+          "score": 77,
           "level": "very-high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 94,
+              "value": 95,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 61,
+              "value": 62,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
             {
               "signal": "resilience",
-              "value": 55,
+              "value": 59,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 88.7,
+              "value": 90,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 100,
+          "score": 99,
           "level": "very-high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 15,
+              "value": 14,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
@@ -3781,7 +3858,7 @@
           ]
         },
         "turnComplexity": {
-          "score": 45,
+          "score": 47,
           "level": "moderate",
           "evidence": [
             {
@@ -3792,7 +3869,7 @@
             },
             {
               "signal": "chain-payoffs",
-              "value": 18,
+              "value": 20,
               "source": "semantic",
               "reason": "Cards that convert repeated package events into additional actions."
             },
@@ -3904,13 +3981,13 @@
           "id": "long-sequencing",
           "label": "Long sequencing potential",
           "level": "moderate",
-          "score": 45,
+          "score": 47,
           "evidence": [
             {
               "name": "Experience Fingerprint",
               "reason": "Turn Complexity proxy from recurring/chained semantic actions.",
               "recurring": true,
-              "weight": 2.5
+              "weight": 2.611111111111111
             }
           ],
           "note": "Derived from Experience Fingerprint turn-complexity evidence; not calibrated to real clock time."
@@ -3991,26 +4068,26 @@
             },
             {
               "turn": 3,
-              "value": 27
+              "value": 28
             },
             {
               "turn": 4,
-              "value": 51
+              "value": 53
             },
             {
               "turn": 5,
-              "value": 66
+              "value": 69
             },
             {
               "turn": 6,
-              "value": 75
+              "value": 78
             },
             {
               "turn": 7,
-              "value": 81
+              "value": 83
             }
           ],
-          "observedWithinHorizon": 649,
+          "observedWithinHorizon": 665,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -4028,34 +4105,34 @@
             },
             {
               "turn": 2,
-              "value": 29
+              "value": 27
             },
             {
               "turn": 3,
-              "value": 53
+              "value": 48
             },
             {
               "turn": 4,
-              "value": 71
+              "value": 66
             },
             {
               "turn": 5,
-              "value": 78
+              "value": 74
             },
             {
               "turn": 6,
-              "value": 81
+              "value": 79
             },
             {
               "turn": 7,
-              "value": 85
+              "value": 82
             }
           ],
-          "observedWithinHorizon": 679,
+          "observedWithinHorizon": 655,
           "milestones": {
             "at25": 2,
-            "at50": 3,
-            "at75": 5
+            "at50": 4,
+            "at75": 6
           }
         },
         "resource": {
@@ -4065,34 +4142,34 @@
           "points": [
             {
               "turn": 1,
-              "value": 9
+              "value": 15
             },
             {
               "turn": 2,
-              "value": 27
+              "value": 32
             },
             {
               "turn": 3,
-              "value": 57
+              "value": 62
             },
             {
               "turn": 4,
-              "value": 77
+              "value": 81
             },
             {
               "turn": 5,
-              "value": 84
-            },
-            {
-              "turn": 6,
               "value": 87
             },
             {
-              "turn": 7,
+              "turn": 6,
               "value": 90
+            },
+            {
+              "turn": 7,
+              "value": 92
             }
           ],
-          "observedWithinHorizon": 718,
+          "observedWithinHorizon": 734,
           "milestones": {
             "at25": 2,
             "at50": 3,
@@ -4201,19 +4278,19 @@
             },
             {
               "turn": 4,
-              "value": 52
+              "value": 54
             },
             {
               "turn": 5,
-              "value": 66
+              "value": 69
             },
             {
               "turn": 6,
-              "value": 75
+              "value": 78
             },
             {
               "turn": 7,
-              "value": 81
+              "value": 83
             }
           ],
           "milestones": {
@@ -4233,32 +4310,32 @@
             },
             {
               "turn": 2,
-              "value": 30
+              "value": 27
             },
             {
               "turn": 3,
-              "value": 50
+              "value": 46
             },
             {
               "turn": 4,
-              "value": 65
+              "value": 61
             },
             {
               "turn": 5,
-              "value": 74
+              "value": 70
             },
             {
               "turn": 6,
-              "value": 79
+              "value": 75
             },
             {
               "turn": 7,
-              "value": 83
+              "value": 79
             }
           ],
           "milestones": {
             "at25": 2,
-            "at50": 3,
+            "at50": 4,
             "at75": 6
           }
         },
@@ -4269,37 +4346,37 @@
           "points": [
             {
               "turn": 1,
-              "value": 8
+              "value": 14
             },
             {
               "turn": 2,
-              "value": 30
+              "value": 32
             },
             {
               "turn": 3,
-              "value": 57
+              "value": 58
             },
             {
               "turn": 4,
-              "value": 74
+              "value": 75
             },
             {
               "turn": 5,
-              "value": 82
+              "value": 83
             },
             {
               "turn": 6,
-              "value": 86
+              "value": 88
             },
             {
               "turn": 7,
-              "value": 89
+              "value": 90
             }
           ],
           "milestones": {
             "at25": 2,
             "at50": 3,
-            "at75": 5
+            "at75": 4
           }
         },
         "burst": {
@@ -4400,26 +4477,26 @@
             },
             {
               "turn": 3,
-              "value": 27
+              "value": 28
             },
             {
               "turn": 4,
-              "value": 51
+              "value": 53
             },
             {
               "turn": 5,
-              "value": 66
+              "value": 69
             },
             {
               "turn": 6,
-              "value": 75
+              "value": 78
             },
             {
               "turn": 7,
-              "value": 81
+              "value": 83
             }
           ],
-          "observedWithinHorizon": 649,
+          "observedWithinHorizon": 665,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -4437,34 +4514,34 @@
             },
             {
               "turn": 2,
-              "value": 29
+              "value": 27
             },
             {
               "turn": 3,
-              "value": 53
+              "value": 48
             },
             {
               "turn": 4,
-              "value": 71
+              "value": 66
             },
             {
               "turn": 5,
-              "value": 78
+              "value": 74
             },
             {
               "turn": 6,
-              "value": 81
+              "value": 79
             },
             {
               "turn": 7,
-              "value": 85
+              "value": 82
             }
           ],
-          "observedWithinHorizon": 679,
+          "observedWithinHorizon": 655,
           "milestones": {
             "at25": 2,
-            "at50": 3,
-            "at75": 5
+            "at50": 4,
+            "at75": 6
           }
         },
         "resource": {
@@ -4474,34 +4551,34 @@
           "points": [
             {
               "turn": 1,
-              "value": 9
+              "value": 15
             },
             {
               "turn": 2,
-              "value": 27
+              "value": 32
             },
             {
               "turn": 3,
-              "value": 57
+              "value": 62
             },
             {
               "turn": 4,
-              "value": 77
+              "value": 81
             },
             {
               "turn": 5,
-              "value": 84
-            },
-            {
-              "turn": 6,
               "value": 87
             },
             {
-              "turn": 7,
+              "turn": 6,
               "value": 90
+            },
+            {
+              "turn": 7,
+              "value": 92
             }
           ],
-          "observedWithinHorizon": 718,
+          "observedWithinHorizon": 734,
           "milestones": {
             "at25": 2,
             "at50": 3,

@@ -5,7 +5,7 @@ import { ENGINE_VERSION,SEMANTIC_VERSION } from '../src/version.js'
 import { filterPublicDecks,publicDeckColorKey,publicDeckSpread,publicDeckStatus,sortPublicDecks } from '../src/publicDecksModel.js'
 
 const root=path.resolve('.')
-const migration=await fs.readFile(path.join(root,'supabase/migrations/20260821110000_aeon_public_precon_library.sql'),'utf8')
+const migration=await fs.readFile(path.join(root,'supabase/migrations/20260821084705_aeon_public_precon_library.sql'),'utf8')
 const generator=await fs.readFile(path.join(root,'scripts/generate-public-precons.mjs'),'utf8')
 const page=await fs.readFile(path.join(root,'src/PublicDecksPage.jsx'),'utf8')
 const docs=await fs.readFile(path.join(root,'docs/PUBLIC_PRECONS.md'),'utf8')

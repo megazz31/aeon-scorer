@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/RuthlessRegiment_C20.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Ruthless Regiment",
@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 44,
-    "p20": 34,
-    "p80": 55,
-    "peak": 78,
+    "median": 45,
+    "p20": 35,
+    "p80": 56,
+    "peak": 80,
     "coverage": 92,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "0a3edb9119227f753943125c3a73fc54fb2f1c29afd760fb3e8cfd3d7dd0a98f",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Nahiri, the Harbinger\n1 Kelsien, the Plague\n1 Trynn, Champion of Freedom\n1 Silvar, Devourer of the Free\n1 Verge Rangers\n1 Species Specialist\n1 Titan Hunter\n1 Fireflux Squad\n1 Frontier Warmonger\n1 Bounty Agent\n1 Dearly Departed\n1 Frontline Medic\n1 Knight of the White Orchid\n1 Magus of the Disk\n1 Odric, Master Tactician\n1 Riders of Gavony\n1 Thalia's Lieutenant\n1 Thraben Doomsayer\n1 Disciple of Bolas\n1 Xathrid Necromancer\n1 Alesha, Who Smiles at Death\n1 Captivating Crew\n1 Fumiko the Lowblood\n1 Magus of the Wheel\n1 Titan of Eternal Fire\n1 Adriana, Captain of the Guard\n1 General's Enforcer\n1 Banisher Priest\n1 Cavalry Pegasus\n1 Devout Chaplain\n1 Zulaport Cutthroat\n1 Humble Defector\n1 Garna, the Bloodflame\n1 Citywide Bust\n1 Cleansing Nova\n1 Increasing Devotion\n1 Painful Truths\n1 Ambition's Cost\n1 Call the Coppercoats\n1 Flawless Maneuver\n1 Unexpectedly Absent\n1 Crackling Doom\n1 Dire Tactics\n1 Terminate\n1 Sanctuary Blade\n1 Bonder's Ornament\n1 Arcane Signet\n1 Boros Signet\n1 Commander's Sphere\n1 Heirloom Blade\n1 Orzhov Signet\n1 Rakdos Signet\n1 Skullclamp\n1 Sol Ring\n1 Molten Echoes\n1 Outpost Siege\n1 Shared Animosity\n1 Sanctuary Lockdown\n1 Bastion of Remembrance\n1 Martial Impetus\n1 Parasitic Impetus\n1 Shiny Impetus\n1 Vigilante Justice\n1 Battlefield Forge\n1 Exotic Orchard\n1 Shadowblood Ridge\n1 Smoldering Marsh\n1 Spinerock Knoll\n1 Windbrisk Heights\n1 Bojuka Bog\n1 Boros Garrison\n1 Command Tower\n1 Myriad Landscape\n1 Nomad Outpost\n1 Orzhov Basilica\n1 Path of Ancestry\n1 Rakdos Carnarium\n1 Temple of the False God\n1 Unclaimed Territory\n1 Bloodfell Caves\n1 Evolving Wilds\n1 Scoured Barrens\n1 Wind-Scarred Crag\n2 Mountain\n1 Mountain\n1 Mountain\n3 Plains\n3 Plains\n2 Plains\n2 Swamp\n1 Swamp\n1 Swamp",
   "oracleCards": [
@@ -763,6 +763,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -1770,24 +1771,24 @@
   ],
   "result": {
     "profile": {
-      "median": 44,
-      "floor": 34,
-      "ceiling": 55,
-      "peak": 78,
+      "median": 45,
+      "floor": 35,
+      "ceiling": 56,
+      "peak": 80,
       "dispersion": 21,
       "variance": 21,
-      "consistency": 67,
+      "consistency": 66,
       "commanderDelta": 7,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 38,
-      "consistency": 67,
-      "explosiveness": 19,
-      "synergy": 43,
+      "speed": 40,
+      "consistency": 66,
+      "explosiveness": 20,
+      "synergy": 47,
       "interaction": 59,
-      "resilience": 36
+      "resilience": 39
     },
     "roles": {
       "lands": 36,
@@ -1798,12 +1799,125 @@
       "draw": 9,
       "interaction": 11,
       "protection": 6,
-      "recursion": 1,
+      "recursion": 2,
       "wipes": 3,
       "avgCmc": 3.2222222222222223,
       "unknownManaLands": 0
     },
     "packages": [
+      {
+        "id": "graveyard",
+        "name": "Cimetière / récursion",
+        "strength": 59,
+        "cohesion": 59,
+        "producers": [
+          "Magus of the Wheel",
+          "Nahiri, the Harbinger"
+        ],
+        "payoffs": [
+          "Alesha, Who Smiles at Death",
+          "Increasing Devotion"
+        ],
+        "members": [
+          "Magus of the Wheel",
+          "Nahiri, the Harbinger",
+          "Alesha, Who Smiles at Death",
+          "Increasing Devotion"
+        ],
+        "producerCards": [
+          {
+            "name": "Magus of the Wheel",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "draw",
+              "graveyard-setup",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Nahiri, the Harbinger",
+            "cmc": 4,
+            "tags": [
+              "draw",
+              "tutor",
+              "repeatable-tutor",
+              "removal",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          }
+        ],
+        "supportCards": [],
+        "payoffCards": [
+          {
+            "name": "Alesha, Who Smiles at Death",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Increasing Devotion",
+            "cmc": 5,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          }
+        ],
+        "producerTags": [
+          "graveyard-setup"
+        ],
+        "supportTags": [],
+        "payoffTags": [
+          "recursion"
+        ],
+        "evidence": "2 producteur(s), 2 payoff(s), 4 carte(s) distincte(s)."
+      },
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
@@ -2011,12 +2125,12 @@
       "median": 41,
       "high": 49,
       "ceiling": 49,
-      "peak": 67,
-      "iqr": 12,
-      "consistency": 73,
+      "peak": 69,
+      "iqr": 13,
+      "consistency": 72,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": null,
-      "recoveryAfterDisruption": 80,
+      "engineMedianTurn": 5,
+      "recoveryAfterDisruption": 81,
       "turnProfile": [
         {
           "turn": 1,
@@ -2045,33 +2159,33 @@
         {
           "turn": 4,
           "commander": 66,
-          "engine": 0,
+          "engine": 1,
           "interaction": 64,
-          "resource": 54,
+          "resource": 55,
           "burst": 14
         },
         {
           "turn": 5,
           "commander": 84,
-          "engine": 0,
+          "engine": 3,
           "interaction": 73,
-          "resource": 63,
+          "resource": 65,
           "burst": 14
         },
         {
           "turn": 6,
           "commander": 89,
-          "engine": 0,
+          "engine": 4,
           "interaction": 77,
-          "resource": 68,
+          "resource": 70,
           "burst": 14
         },
         {
           "turn": 7,
           "commander": 93,
-          "engine": 0,
+          "engine": 5,
           "interaction": 81,
-          "resource": 71,
+          "resource": 74,
           "burst": 15
         }
       ],
@@ -2133,22 +2247,22 @@
               },
               {
                 "turn": 4,
-                "value": 0
+                "value": 1
               },
               {
                 "turn": 5,
-                "value": 0
+                "value": 2
               },
               {
                 "turn": 6,
-                "value": 0
+                "value": 2
               },
               {
                 "turn": 7,
-                "value": 0
+                "value": 4
               }
             ],
-            "observedWithinHorizon": 0
+            "observedWithinHorizon": 29
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -2199,26 +2313,26 @@
               },
               {
                 "turn": 3,
-                "value": 35
+                "value": 36
               },
               {
                 "turn": 4,
-                "value": 53
+                "value": 56
               },
               {
                 "turn": 5,
-                "value": 62
+                "value": 66
               },
               {
                 "turn": 6,
-                "value": 68
+                "value": 72
               },
               {
                 "turn": 7,
-                "value": 73
+                "value": 77
               }
             ],
-            "observedWithinHorizon": 586
+            "observedWithinHorizon": 613
           },
           "burst": {
             "id": "burst-first-access",
@@ -2305,6 +2419,18 @@
     },
     "drivers": [
       {
+        "name": "Nahiri, the Harbinger",
+        "impact": 4.7,
+        "tags": [
+          "draw",
+          "tutor",
+          "repeatable-tutor",
+          "removal",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Flawless Maneuver",
         "impact": 4.3,
         "tags": [
@@ -2312,18 +2438,6 @@
           "protection",
           "cheat",
           "free"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Nahiri, the Harbinger",
-        "impact": 4,
-        "tags": [
-          "draw",
-          "tutor",
-          "repeatable-tutor",
-          "removal",
-          "graveyard-setup"
         ],
         "aeon": null
       },
@@ -2359,6 +2473,17 @@
         "aeon": null
       },
       {
+        "name": "Magus of the Wheel",
+        "impact": 2.4,
+        "tags": [
+          "creature",
+          "draw",
+          "graveyard-setup",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Skullclamp",
         "impact": 2.4,
         "tags": [
@@ -2376,6 +2501,15 @@
           "counterspell",
           "protection",
           "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Alesha, Who Smiles at Death",
+        "impact": 2.2,
+        "tags": [
+          "creature",
+          "recursion"
         ],
         "aeon": null
       },
@@ -2402,29 +2536,12 @@
         "aeon": null
       },
       {
-        "name": "Arcane Signet",
-        "impact": 1.9,
+        "name": "Increasing Devotion",
+        "impact": 2,
         "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Boros Signet",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Orzhov Signet",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana"
+          "sorcery",
+          "recursion",
+          "tokens"
         ],
         "aeon": null
       }
@@ -2443,31 +2560,31 @@
       "modelVersion": "experience-v1",
       "dimensions": {
         "tempo": {
-          "score": 38,
+          "score": 40,
           "level": "moderate",
           "evidence": [
             {
               "signal": "speed",
-              "value": 38,
+              "value": 40,
               "source": "aeon-dimension",
               "reason": "Existing Aeon speed dimension; no power-score feedback."
             }
           ]
         },
         "explosiveness": {
-          "score": 19,
+          "score": 20,
           "level": "low",
           "evidence": [
             {
               "signal": "explosiveness",
-              "value": 19,
+              "value": 20,
               "source": "aeon-dimension",
               "reason": "Existing Aeon explosiveness dimension; no power-score feedback."
             }
           ]
         },
         "volatility": {
-          "score": 77,
+          "score": 78,
           "level": "very-high",
           "evidence": [
             {
@@ -2478,7 +2595,7 @@
             },
             {
               "signal": "high-roll-tail",
-              "value": 23,
+              "value": 24,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -2497,42 +2614,42 @@
           ]
         },
         "resilience": {
-          "score": 36,
+          "score": 39,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 36,
+              "value": 39,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 50,
+          "score": 52,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 43,
+              "value": 47,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 67,
+              "value": 66,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
             {
               "signal": "resilience",
-              "value": 36,
+              "value": 39,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 50,
+              "value": 54.5,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
@@ -2563,7 +2680,7 @@
           ]
         },
         "turnComplexity": {
-          "score": 27,
+          "score": 29,
           "level": "moderate",
           "evidence": [
             {
@@ -2586,7 +2703,7 @@
             },
             {
               "signal": "packages",
-              "value": 1,
+              "value": 2,
               "source": "package-model",
               "reason": "Independent engines increase sequencing branches."
             }
@@ -2687,13 +2804,13 @@
           "id": "long-sequencing",
           "label": "Long sequencing potential",
           "level": "moderate",
-          "score": 27,
+          "score": 29,
           "evidence": [
             {
               "name": "Experience Fingerprint",
               "reason": "Turn Complexity proxy from recurring/chained semantic actions.",
               "recurring": true,
-              "weight": 1.5
+              "weight": 1.6111111111111112
             }
           ],
           "note": "Derived from Experience Fingerprint turn-complexity evidence; not calibrated to real clock time."
@@ -2779,22 +2896,22 @@
             },
             {
               "turn": 4,
-              "value": 0
+              "value": 1
             },
             {
               "turn": 5,
-              "value": 0
+              "value": 2
             },
             {
               "turn": 6,
-              "value": 0
+              "value": 2
             },
             {
               "turn": 7,
-              "value": 0
+              "value": 4
             }
           ],
-          "observedWithinHorizon": 0,
+          "observedWithinHorizon": 29,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -2857,30 +2974,30 @@
             },
             {
               "turn": 3,
-              "value": 35
+              "value": 36
             },
             {
               "turn": 4,
-              "value": 53
+              "value": 56
             },
             {
               "turn": 5,
-              "value": 62
+              "value": 66
             },
             {
               "turn": 6,
-              "value": 68
+              "value": 72
             },
             {
               "turn": 7,
-              "value": 73
+              "value": 77
             }
           ],
-          "observedWithinHorizon": 586,
+          "observedWithinHorizon": 613,
           "milestones": {
             "at25": 3,
             "at50": 4,
-            "at75": null
+            "at75": 7
           }
         },
         "burst": {
@@ -2985,19 +3102,19 @@
             },
             {
               "turn": 4,
-              "value": 0
+              "value": 1
             },
             {
               "turn": 5,
-              "value": 0
+              "value": 3
             },
             {
               "turn": 6,
-              "value": 0
+              "value": 4
             },
             {
               "turn": 7,
-              "value": 0
+              "value": 5
             }
           ],
           "milestones": {
@@ -3065,19 +3182,19 @@
             },
             {
               "turn": 4,
-              "value": 54
+              "value": 55
             },
             {
               "turn": 5,
-              "value": 63
+              "value": 65
             },
             {
               "turn": 6,
-              "value": 68
+              "value": 70
             },
             {
               "turn": 7,
-              "value": 71
+              "value": 74
             }
           ],
           "milestones": {
@@ -3188,22 +3305,22 @@
             },
             {
               "turn": 4,
-              "value": 0
+              "value": 1
             },
             {
               "turn": 5,
-              "value": 0
+              "value": 2
             },
             {
               "turn": 6,
-              "value": 0
+              "value": 2
             },
             {
               "turn": 7,
-              "value": 0
+              "value": 4
             }
           ],
-          "observedWithinHorizon": 0,
+          "observedWithinHorizon": 29,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -3266,30 +3383,30 @@
             },
             {
               "turn": 3,
-              "value": 35
+              "value": 36
             },
             {
               "turn": 4,
-              "value": 53
+              "value": 56
             },
             {
               "turn": 5,
-              "value": 62
+              "value": 66
             },
             {
               "turn": 6,
-              "value": 68
+              "value": 72
             },
             {
               "turn": 7,
-              "value": 73
+              "value": 77
             }
           ],
-          "observedWithinHorizon": 586,
+          "observedWithinHorizon": 613,
           "milestones": {
             "at25": 3,
             "at50": 4,
-            "at75": null
+            "at75": 7
           }
         },
         "burst": {

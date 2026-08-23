@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/DevourForPower_CMD.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Devour for Power",
@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 31,
-    "p20": 21,
-    "p80": 46,
-    "peak": 70,
+    "median": 32,
+    "p20": 22,
+    "p80": 47,
+    "peak": 71,
     "coverage": 90,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "e17e20cc806e305c5d31fb36b060b738df7a62204c5f9e191b7e21954d1e9547",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Nezumi Graverobber // Nighteyes the Desecrator\n1 Skullbriar, the Walking Grave\n1 Riddlekeeper\n1 Fleshbag Marauder\n1 Eternal Witness\n1 Troll Ascetic\n1 Yavimaya Elder\n1 Solemn Simulacrum\n1 Brawn\n1 Wonder\n1 Sewer Nemesis\n1 Gravedigger\n1 Lhurgoyf\n1 Dreamborn Muse\n1 Mortivore\n1 Desecrator Hag\n1 Mulldrifter\n1 Acidic Slime\n1 Vulturous Zombie\n1 Dark Hatchling\n1 Extractor Demon\n1 Scythe Specter\n1 Wrexial, the Risen Deep\n1 Vorosh, the Hunter\n1 Triskelavus\n1 Slipstream Eel\n1 Butcher of Malakir\n1 Patron of the Nezumi\n1 Damia, Sage of Stone\n1 Szadek, Lord of Secrets\n1 Avatar of Woe\n1 Artisan of Kozilek\n1 Minds Aglow\n1 Shared Trauma\n1 Sign in Blood\n1 Stitch Together\n1 Cultivate\n1 Windfall\n1 Buried Alive\n1 Syphon Mind\n1 Unnerve\n1 Rise from the Grave\n1 Syphon Flesh\n1 Living Death\n1 Tribute to the Wild\n1 Spell Crumple\n1 Fact or Fiction\n1 Relic Crush\n1 Sol Ring\n1 Dimir Signet\n1 Golgari Signet\n1 Lightning Greaves\n1 Simic Signet\n1 Oblivion Stone\n1 Vow of Wildness\n1 Vow of Flight\n1 Vow of Malice\n1 Memory Erosion\n1 Grave Pact\n1 Barren Moor\n1 Command Tower\n1 Dimir Aqueduct\n1 Dreadship Reef\n1 Golgari Rot Farm\n1 Jwar Isle Refuge\n1 Lonely Sandbar\n1 Rupture Spire\n1 Simic Growth Chamber\n1 Svogthos, the Restless Tomb\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Tranquil Thicket\n2 Forest\n2 Forest\n2 Forest\n2 Forest\n2 Island\n2 Island\n2 Island\n2 Island\n3 Swamp\n3 Swamp\n3 Swamp\n2 Swamp",
   "oracleCards": [
@@ -117,6 +117,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -393,6 +394,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "recursion",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -428,7 +430,6 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "wipe",
         "etb"
       ],
       "isCommander": false
@@ -605,7 +606,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "protection"
       ],
       "isCommander": false
     },
@@ -642,6 +644,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -748,6 +751,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "wipe",
         "sacrifice",
         "counter-producer",
         "counter-kind:fate"
@@ -995,7 +999,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1241,6 +1246,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -1490,10 +1496,10 @@
   ],
   "result": {
     "profile": {
-      "median": 31,
-      "floor": 21,
-      "ceiling": 46,
-      "peak": 70,
+      "median": 32,
+      "floor": 22,
+      "ceiling": 47,
+      "peak": 71,
       "dispersion": 25,
       "variance": 25,
       "consistency": 60,
@@ -1505,9 +1511,9 @@
       "speed": 24,
       "consistency": 60,
       "explosiveness": 12,
-      "synergy": 37,
-      "interaction": 28,
-      "resilience": 38
+      "synergy": 36,
+      "interaction": 29,
+      "resilience": 44
     },
     "roles": {
       "lands": 40,
@@ -1515,10 +1521,10 @@
       "fastMana": 1,
       "tutors": 1,
       "repeatableTutors": 0,
-      "draw": 8,
+      "draw": 9,
       "interaction": 7,
-      "protection": 1,
-      "recursion": 4,
+      "protection": 2,
+      "recursion": 5,
       "wipes": 1,
       "avgCmc": 4.0508474576271185,
       "unknownManaLands": 0
@@ -1527,8 +1533,8 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 58,
-        "cohesion": 58,
+        "strength": 56,
+        "cohesion": 56,
         "producers": [
           "Extractor Demon",
           "Windfall"
@@ -1536,6 +1542,7 @@
         "payoffs": [
           "Artisan of Kozilek",
           "Eternal Witness",
+          "Extractor Demon",
           "Gravedigger",
           "Stitch Together"
         ],
@@ -1553,6 +1560,7 @@
             "cmc": 6,
             "tags": [
               "creature",
+              "recursion",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -1624,6 +1632,27 @@
             }
           },
           {
+            "name": "Extractor Demon",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
             "name": "Gravedigger",
             "cmc": 4,
             "tags": [
@@ -1669,7 +1698,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "2 producteur(s), 4 payoff(s), 6 carte(s) distincte(s)."
+        "evidence": "2 producteur(s), 5 payoff(s), 6 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -1793,23 +1822,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 27,
-      "median": 36,
-      "high": 46,
-      "ceiling": 46,
-      "peak": 65,
+      "floor": 29,
+      "median": 37,
+      "high": 47,
+      "ceiling": 47,
+      "peak": 66,
       "iqr": 15,
       "consistency": 66,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 6,
-      "recoveryAfterDisruption": 73,
+      "recoveryAfterDisruption": 76,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 4,
+          "resource": 24,
           "burst": 0
         },
         {
@@ -1817,47 +1846,47 @@
           "commander": 1,
           "engine": 0,
           "interaction": 8,
-          "resource": 16,
+          "resource": 33,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 22,
           "engine": 0,
-          "interaction": 22,
-          "resource": 38,
+          "interaction": 23,
+          "resource": 49,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 34,
           "engine": 1,
-          "interaction": 30,
-          "resource": 55,
+          "interaction": 31,
+          "resource": 62,
           "burst": 2
         },
         {
           "turn": 5,
           "commander": 60,
           "engine": 2,
-          "interaction": 39,
-          "resource": 65,
+          "interaction": 40,
+          "resource": 70,
           "burst": 3
         },
         {
           "turn": 6,
           "commander": 73,
           "engine": 4,
-          "interaction": 47,
-          "resource": 72,
+          "interaction": 48,
+          "resource": 76,
           "burst": 5
         },
         {
           "turn": 7,
           "commander": 79,
           "engine": 6,
-          "interaction": 54,
-          "resource": 78,
+          "interaction": 55,
+          "resource": 82,
           "burst": 7
         }
       ],
@@ -1934,7 +1963,7 @@
                 "value": 5
               }
             ],
-            "observedWithinHorizon": 38
+            "observedWithinHorizon": 40
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -1950,26 +1979,26 @@
               },
               {
                 "turn": 3,
-                "value": 25
+                "value": 27
               },
               {
                 "turn": 4,
-                "value": 32
+                "value": 35
               },
               {
                 "turn": 5,
-                "value": 42
+                "value": 44
               },
               {
                 "turn": 6,
-                "value": 48
+                "value": 50
               },
               {
                 "turn": 7,
-                "value": 53
+                "value": 55
               }
             ],
-            "observedWithinHorizon": 427
+            "observedWithinHorizon": 442
           },
           "resource": {
             "id": "resource-first-access",
@@ -1977,34 +2006,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 3
+                "value": 23
               },
               {
                 "turn": 2,
-                "value": 15
+                "value": 34
               },
               {
                 "turn": 3,
-                "value": 44
+                "value": 58
               },
               {
                 "turn": 4,
-                "value": 59
+                "value": 70
               },
               {
                 "turn": 5,
-                "value": 69
+                "value": 79
               },
               {
                 "turn": 6,
-                "value": 75
+                "value": 83
               },
               {
                 "turn": 7,
-                "value": 81
+                "value": 88
               }
             ],
-            "observedWithinHorizon": 644
+            "observedWithinHorizon": 706
           },
           "burst": {
             "id": "burst-first-access",
@@ -2152,6 +2181,16 @@
         "aeon": null
       },
       {
+        "name": "Extractor Demon",
+        "impact": 2.1,
+        "tags": [
+          "creature",
+          "recursion",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Dimir Signet",
         "impact": 1.9,
         "tags": [
@@ -2193,16 +2232,6 @@
         "tags": [
           "sorcery",
           "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Eternal Witness",
-        "impact": 1.7,
-        "tags": [
-          "creature",
-          "recursion",
-          "etb"
         ],
         "aeon": null
       }
@@ -2263,36 +2292,36 @@
           ]
         },
         "interaction": {
-          "score": 28,
+          "score": 29,
           "level": "moderate",
           "evidence": [
             {
               "signal": "interaction",
-              "value": 28,
+              "value": 29,
               "source": "aeon-dimension",
               "reason": "Existing Aeon interaction-access dimension."
             }
           ]
         },
         "resilience": {
-          "score": 38,
+          "score": 44,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 38,
+              "value": 44,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 46,
+          "score": 47,
           "level": "moderate",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 37,
+              "value": 36,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -2304,13 +2333,13 @@
             },
             {
               "signal": "resilience",
-              "value": 38,
+              "value": 44,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 50,
+              "value": 49,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
@@ -2587,7 +2616,7 @@
               "value": 5
             }
           ],
-          "observedWithinHorizon": 38,
+          "observedWithinHorizon": 40,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -2609,29 +2638,29 @@
             },
             {
               "turn": 3,
-              "value": 25
+              "value": 27
             },
             {
               "turn": 4,
-              "value": 32
+              "value": 35
             },
             {
               "turn": 5,
-              "value": 42
+              "value": 44
             },
             {
               "turn": 6,
-              "value": 48
+              "value": 50
             },
             {
               "turn": 7,
-              "value": 53
+              "value": 55
             }
           ],
-          "observedWithinHorizon": 427,
+          "observedWithinHorizon": 442,
           "milestones": {
             "at25": 3,
-            "at50": 7,
+            "at50": 6,
             "at75": null
           }
         },
@@ -2642,38 +2671,38 @@
           "points": [
             {
               "turn": 1,
-              "value": 3
+              "value": 23
             },
             {
               "turn": 2,
-              "value": 15
+              "value": 34
             },
             {
               "turn": 3,
-              "value": 44
+              "value": 58
             },
             {
               "turn": 4,
-              "value": 59
+              "value": 70
             },
             {
               "turn": 5,
-              "value": 69
+              "value": 79
             },
             {
               "turn": 6,
-              "value": 75
+              "value": 83
             },
             {
               "turn": 7,
-              "value": 81
+              "value": 88
             }
           ],
-          "observedWithinHorizon": 644,
+          "observedWithinHorizon": 706,
           "milestones": {
-            "at25": 3,
-            "at50": 4,
-            "at75": 6
+            "at25": 2,
+            "at50": 3,
+            "at75": 5
           }
         },
         "burst": {
@@ -2814,23 +2843,23 @@
             },
             {
               "turn": 3,
-              "value": 22
+              "value": 23
             },
             {
               "turn": 4,
-              "value": 30
+              "value": 31
             },
             {
               "turn": 5,
-              "value": 39
+              "value": 40
             },
             {
               "turn": 6,
-              "value": 47
+              "value": 48
             },
             {
               "turn": 7,
-              "value": 54
+              "value": 55
             }
           ],
           "milestones": {
@@ -2846,37 +2875,37 @@
           "points": [
             {
               "turn": 1,
-              "value": 4
+              "value": 24
             },
             {
               "turn": 2,
-              "value": 16
+              "value": 33
             },
             {
               "turn": 3,
-              "value": 38
+              "value": 49
             },
             {
               "turn": 4,
-              "value": 55
+              "value": 62
             },
             {
               "turn": 5,
-              "value": 65
+              "value": 70
             },
             {
               "turn": 6,
-              "value": 72
+              "value": 76
             },
             {
               "turn": 7,
-              "value": 78
+              "value": 82
             }
           ],
           "milestones": {
-            "at25": 3,
+            "at25": 2,
             "at50": 4,
-            "at75": 7
+            "at75": 6
           }
         },
         "burst": {
@@ -2996,7 +3025,7 @@
               "value": 5
             }
           ],
-          "observedWithinHorizon": 38,
+          "observedWithinHorizon": 40,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -3018,29 +3047,29 @@
             },
             {
               "turn": 3,
-              "value": 25
+              "value": 27
             },
             {
               "turn": 4,
-              "value": 32
+              "value": 35
             },
             {
               "turn": 5,
-              "value": 42
+              "value": 44
             },
             {
               "turn": 6,
-              "value": 48
+              "value": 50
             },
             {
               "turn": 7,
-              "value": 53
+              "value": 55
             }
           ],
-          "observedWithinHorizon": 427,
+          "observedWithinHorizon": 442,
           "milestones": {
             "at25": 3,
-            "at50": 7,
+            "at50": 6,
             "at75": null
           }
         },
@@ -3051,38 +3080,38 @@
           "points": [
             {
               "turn": 1,
-              "value": 3
+              "value": 23
             },
             {
               "turn": 2,
-              "value": 15
+              "value": 34
             },
             {
               "turn": 3,
-              "value": 44
+              "value": 58
             },
             {
               "turn": 4,
-              "value": 59
+              "value": 70
             },
             {
               "turn": 5,
-              "value": 69
+              "value": 79
             },
             {
               "turn": 6,
-              "value": 75
+              "value": 83
             },
             {
               "turn": 7,
-              "value": 81
+              "value": 88
             }
           ],
-          "observedWithinHorizon": 644,
+          "observedWithinHorizon": 706,
           "milestones": {
-            "at25": 3,
-            "at50": 4,
-            "at75": 6
+            "at25": 2,
+            "at50": 3,
+            "at75": 5
           }
         },
         "burst": {

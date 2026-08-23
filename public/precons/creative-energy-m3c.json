@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/CreativeEnergy_M3C.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Creative Energy",
@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 39,
+    "median": 40,
     "p20": 28,
     "p80": 50,
-    "peak": 73,
+    "peak": 74,
     "coverage": 95,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "31255f9379fd3775f0f854a18e3db4274a90990d21a55c02d4823ffa9b8f267b",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Cayth, Famed Mechanist\n1 Sphinx of the Revelation\n1 Filigree Racer\n1 Localized Destruction\n1 Aether Refinery\n1 Hourglass of the Lost\n1 Salvation Colossus\n1 Blaster Hulk\n1 Razorfield Ripper\n1 Silverquill Lecturer\n1 Overclocked Electromancer\n1 Stone Idol Generator\n1 Aurora Shifter\n1 Conversion Apparatus\n1 Gonti's Aether Heart\n1 Lightning Runner\n1 Aethertide Whale\n1 Aethergeode Miner\n1 Aethersphere Harvester\n1 Bident of Thassa\n1 Temple of Enlightenment\n1 Battlefield Forge\n1 Myr Battlesphere\n1 Grenzo, Havoc Raiser\n1 Brudiclad, Telchor Engineer\n1 Coveted Jewel\n1 Goldspan Dragon\n1 Legion Loyalty\n1 Mystic Gate\n1 Akroma's Will\n1 Adarkar Wastes\n1 Shivan Reef\n1 Coalition Relic\n1 Combustible Gearhulk\n1 Aetherworks Marvel\n1 Angel of Invention\n1 Confiscation Coup\n1 Aetherstorm Roc\n1 Aethersquall Ancient\n1 Frostboil Snarl\n1 Austere Command\n1 Furycalm Snarl\n1 Midnight Clock\n1 Professional Face-Breaker\n1 Farewell\n1 Port Town\n1 Temple of Triumph\n1 Solemn Simulacrum\n1 Temple of Epiphany\n1 Prairie Stream\n1 Skyclave Apparition\n1 Castle Vantress\n1 Jolted Awake\n1 Bespoke Battlewagon\n1 Roil Cartographer\n1 Unstable Amulet\n1 Amped Raptor\n1 Solar Transformer\n1 Scurry of Gremlins\n1 Izzet Generatorium\n1 Talisman of Conviction\n1 Tezzeret's Gambit\n1 Izzet Boilerworks\n1 Azorius Chancery\n1 Talisman of Progress\n1 Command Tower\n1 Burnished Hart\n1 Arcane Signet\n1 Sol Ring\n1 Era of Innovation\n1 Aether Hub\n1 Decoction Module\n1 Glimmer of Genius\n1 Whirler Virtuoso\n1 Talisman of Creativity\n1 Swords to Plowshares\n1 Wayfarer's Bauble\n1 Demolition Field\n1 Mystic Monastery\n5 Plains\n5 Plains\n3 Island\n2 Island\n3 Mountain\n2 Mountain",
   "oracleCards": [
@@ -756,6 +756,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "recursion",
         "etb",
         "counter-kind:energy"
       ],
@@ -987,6 +988,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "draw",
         "recursion",
         "counter-kind:energy"
       ],
@@ -1005,7 +1007,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "enchantment"
+        "enchantment",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -1316,6 +1319,7 @@
         "creature",
         "artifact",
         "protection",
+        "recursion",
         "counter-kind:energy"
       ],
       "isCommander": false
@@ -1763,14 +1767,14 @@
   ],
   "result": {
     "profile": {
-      "median": 39,
+      "median": 40,
       "floor": 28,
       "ceiling": 50,
-      "peak": 73,
+      "peak": 74,
       "dispersion": 22,
       "variance": 22,
       "consistency": 66,
-      "commanderDelta": 7,
+      "commanderDelta": 8,
       "coverage": 95,
       "dataCoverage": 95
     },
@@ -1778,9 +1782,9 @@
       "speed": 35,
       "consistency": 66,
       "explosiveness": 16,
-      "synergy": 47,
+      "synergy": 48,
       "interaction": 23,
-      "resilience": 37
+      "resilience": 44
     },
     "roles": {
       "lands": 38,
@@ -1788,10 +1792,10 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 10,
+      "draw": 11,
       "interaction": 6,
       "protection": 3,
-      "recursion": 2,
+      "recursion": 4,
       "wipes": 4,
       "avgCmc": 3.8524590163934427,
       "unknownManaLands": 0
@@ -2129,13 +2133,14 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 28,
+      "score": 31,
       "connected": [
         "Aether Refinery",
         "Angel of Invention",
         "Brudiclad, Telchor Engineer",
         "Cayth, Famed Mechanist",
         "Goldspan Dragon",
+        "Legion Loyalty",
         "Myr Battlesphere",
         "Professional Face-Breaker",
         "Scurry of Gremlins",
@@ -2159,15 +2164,15 @@
     "simulation": {
       "iterations": 3200,
       "floor": 32,
-      "median": 39,
+      "median": 40,
       "high": 47,
       "ceiling": 47,
-      "peak": 65,
-      "iqr": 11,
+      "peak": 66,
+      "iqr": 12,
       "consistency": 75,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 83,
+      "recoveryAfterDisruption": 85,
       "turnProfile": [
         {
           "turn": 1,
@@ -2190,7 +2195,7 @@
           "commander": 25,
           "engine": 2,
           "interaction": 16,
-          "resource": 37,
+          "resource": 38,
           "burst": 3
         },
         {
@@ -2198,7 +2203,7 @@
           "commander": 71,
           "engine": 3,
           "interaction": 26,
-          "resource": 58,
+          "resource": 61,
           "burst": 9
         },
         {
@@ -2206,7 +2211,7 @@
           "commander": 86,
           "engine": 4,
           "interaction": 37,
-          "resource": 68,
+          "resource": 72,
           "burst": 14
         },
         {
@@ -2214,7 +2219,7 @@
           "commander": 91,
           "engine": 5,
           "interaction": 46,
-          "resource": 75,
+          "resource": 79,
           "burst": 19
         },
         {
@@ -2222,7 +2227,7 @@
           "commander": 93,
           "engine": 5,
           "interaction": 52,
-          "resource": 80,
+          "resource": 84,
           "burst": 22
         }
       ],
@@ -2350,26 +2355,26 @@
               },
               {
                 "turn": 3,
-                "value": 40
+                "value": 41
               },
               {
                 "turn": 4,
-                "value": 58
+                "value": 62
               },
               {
                 "turn": 5,
-                "value": 70
+                "value": 73
               },
               {
                 "turn": 6,
-                "value": 75
+                "value": 79
               },
               {
                 "turn": 7,
-                "value": 79
+                "value": 83
               }
             ],
-            "observedWithinHorizon": 634
+            "observedWithinHorizon": 663
           },
           "burst": {
             "id": "burst-first-access",
@@ -2547,6 +2552,17 @@
         "aeon": null
       },
       {
+        "name": "Jolted Awake",
+        "impact": 2.5,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion",
+          "counter-kind:energy"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Coalition Relic",
         "impact": 2.4,
         "tags": [
@@ -2578,16 +2594,6 @@
           "sacrifice",
           "etb",
           "counter-kind:energy"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Bident of Thassa",
-        "impact": 2.2,
-        "tags": [
-          "enchantment",
-          "artifact",
-          "draw"
         ],
         "aeon": null
       }
@@ -2630,7 +2636,7 @@
           ]
         },
         "volatility": {
-          "score": 79,
+          "score": 80,
           "level": "very-high",
           "evidence": [
             {
@@ -2641,7 +2647,7 @@
             },
             {
               "signal": "high-roll-tail",
-              "value": 23,
+              "value": 24,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -2660,24 +2666,24 @@
           ]
         },
         "resilience": {
-          "score": 37,
+          "score": 44,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 37,
+              "value": 44,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 52,
+          "score": 53,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 47,
+              "value": 48,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -2689,7 +2695,7 @@
             },
             {
               "signal": "resilience",
-              "value": 37,
+              "value": 44,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
@@ -2702,18 +2708,18 @@
           ]
         },
         "dependency": {
-          "score": 41,
+          "score": 46,
           "level": "moderate",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 7,
+              "value": 8,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 28,
+              "value": 31,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },
@@ -3006,26 +3012,26 @@
             },
             {
               "turn": 3,
-              "value": 40
+              "value": 41
             },
             {
               "turn": 4,
-              "value": 58
+              "value": 62
             },
             {
               "turn": 5,
-              "value": 70
+              "value": 73
             },
             {
               "turn": 6,
-              "value": 75
+              "value": 79
             },
             {
               "turn": 7,
-              "value": 79
+              "value": 83
             }
           ],
-          "observedWithinHorizon": 634,
+          "observedWithinHorizon": 663,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -3210,23 +3216,23 @@
             },
             {
               "turn": 3,
-              "value": 37
+              "value": 38
             },
             {
               "turn": 4,
-              "value": 58
+              "value": 61
             },
             {
               "turn": 5,
-              "value": 68
+              "value": 72
             },
             {
               "turn": 6,
-              "value": 75
+              "value": 79
             },
             {
               "turn": 7,
-              "value": 80
+              "value": 84
             }
           ],
           "milestones": {
@@ -3415,26 +3421,26 @@
             },
             {
               "turn": 3,
-              "value": 40
+              "value": 41
             },
             {
               "turn": 4,
-              "value": 58
+              "value": 62
             },
             {
               "turn": 5,
-              "value": 70
+              "value": 73
             },
             {
               "turn": 6,
-              "value": 75
+              "value": 79
             },
             {
               "turn": 7,
-              "value": 79
+              "value": 83
             }
           ],
-          "observedWithinHorizon": 634,
+          "observedWithinHorizon": 663,
           "milestones": {
             "at25": 3,
             "at50": 4,

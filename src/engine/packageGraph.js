@@ -20,7 +20,13 @@ const previewNames=xs=>uniqByName(xs).slice(0,10).map(x=>x.name)
 const allNames=xs=>uniqByName(xs).map(x=>x.name)
 function roleCards(pool,tags){return uniqByName(pool.filter(c=>tags.some(t=>hasTag(c,t))))}
 function overlapCount(a,b){const s=new Set(a.map(x=>x.name.toLowerCase()));return b.filter(x=>s.has(x.name.toLowerCase())).length}
-const isManaPermanent=c=>!/\binstant\b|\bsorcery\b/i.test(c.type||'')&&(c.sourceColors?.length||0)>0
+const isManaPermanent=c=>{
+  if(/\binstant\b|\bsorcery\b/i.test(c.type||''))return false
+  if((c.sourceColors?.length||0)<=0)return false
+  const o=semanticText(c)
+  if(/whenever an opponent|when an opponent|whenever a creature dies|whenever a permanent dies|when this creature dies|deals combat damage/.test(o)&&!/\{t\}:|\btap:/.test(o))return false
+  return true
+}
 const isOneShotSpell=c=>/\binstant\b|\bsorcery\b/i.test(c.type||'')
 function semanticText(c){return String(c?.oracle||'').replace(/\([^)]*\)/g,' ').replace(/\s+/g,' ').trim().toLowerCase()}
 function semanticClauses(c){return semanticText(c).split(/[.\n;]+/).map(x=>x.trim()).filter(Boolean)}

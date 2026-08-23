@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/AuraOfCourage_AFC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Aura of Courage",
@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 41,
-    "p20": 31,
+    "p20": 32,
     "p80": 50,
     "peak": 73,
     "coverage": 92,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "f946aff939ff745de29222090a8c711fdf1852723215f3d62d657a9e8078e917",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Angel of Finality\n1 Puresteel Paladin\n1 Realm-Cloaked Giant // Cast Off\n1 Sram, Senior Edificer\n1 Prognostic Sphinx\n1 Cold-Eyed Selkie\n1 Fleecemane Lion\n1 Knight of Autumn\n1 Riverwise Augur\n1 Acidic Slime\n1 Paradise Druid\n1 Winds of Rath\n1 Serum Visions\n1 Nature's Lore\n1 Heroic Intervention\n1 Valorous Stance\n1 Brainstorm\n1 Bant Charm\n1 Argentum Armor\n1 Basilisk Collar\n1 Masterwork of Ingenuity\n1 Moonsilver Spear\n1 Sword of the Animist\n1 Behemoth Sledge\n1 Arcane Signet\n1 Colossus Hammer\n1 Explorer's Scope\n1 Sol Ring\n1 Swiftfoot Boots\n1 Viridian Longbow\n1 Imprisoned in the Moon\n1 Greater Good\n1 Verdant Embrace\n1 Angelic Gift\n1 Gryff's Boon\n1 Curse of Verbosity\n1 Eel Umbra\n1 Psychic Impetus\n1 Abundant Growth\n1 Fertile Ground\n1 Kenrith's Transformation\n1 Rancor\n1 Utopia Sprawl\n1 Wild Growth\n1 Shielding Plax\n1 Canopy Vista\n1 Exotic Orchard\n1 Fortified Village\n1 Lumbering Falls\n1 Port Town\n1 Prairie Stream\n1 Skycloud Expanse\n1 Sungrass Prairie\n1 Evolving Wilds\n1 Azorius Chancery\n1 Bant Panorama\n1 Command Tower\n1 Flood Plain\n1 Grasslands\n1 Halimar Depths\n1 Mishra's Factory\n1 Path of Ancestry\n1 Seaside Citadel\n1 Simic Growth Chamber\n1 Terramorphic Expanse\n1 Thriving Grove\n1 Thriving Heath\n1 Thriving Isle\n1 Vitu-Ghazi, the City-Tree\n1 Island\n1 Island\n1 Island\n1 Island\n2 Forest\n2 Forest\n2 Forest\n2 Forest\n1 Plains\n1 Plains\n1 Storvald, Frost Giant Jarl\n1 Fey Steed\n1 Holy Avenger\n1 Mantle of the Ancients\n1 Robe of Stars\n1 Valiant Endeavor\n1 Diviner's Portent\n1 Netherese Puzzle-Ward\n1 Winged Boots\n1 Belt of Giant Strength\n1 Song of Inspiration\n1 Catti-brie of Mithral Hall\n1 Ride the Avalanche\n1 Clay Golem\n1 Ebony Fly\n1 Sword of Hours",
   "oracleCards": [
@@ -354,7 +354,8 @@
         "creature",
         "artifact",
         "removal",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -558,7 +559,8 @@
         "W"
       ],
       "tags": [
-        "enchantment"
+        "enchantment",
+        "mana"
       ],
       "isCommander": false
     },
@@ -1322,6 +1324,7 @@
       "tags": [
         "enchantment",
         "draw",
+        "protection",
         "etb"
       ],
       "isCommander": false
@@ -1442,6 +1445,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "protection",
         "etb"
       ],
       "isCommander": false
@@ -1631,6 +1635,7 @@
       ],
       "tags": [
         "enchantment",
+        "mana",
         "etb"
       ],
       "isCommander": false
@@ -1649,6 +1654,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "wipe",
         "tokens"
       ],
       "isCommander": false
@@ -1742,7 +1748,8 @@
         "G"
       ],
       "tags": [
-        "enchantment"
+        "enchantment",
+        "mana"
       ],
       "isCommander": false
     },
@@ -1777,7 +1784,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "protection"
       ],
       "isCommander": false
     }
@@ -1785,11 +1793,11 @@
   "result": {
     "profile": {
       "median": 41,
-      "floor": 31,
+      "floor": 32,
       "ceiling": 50,
       "peak": 73,
-      "dispersion": 19,
-      "variance": 19,
+      "dispersion": 17,
+      "variance": 17,
       "consistency": 69,
       "commanderDelta": 5,
       "coverage": 92,
@@ -1801,7 +1809,7 @@
       "explosiveness": 10,
       "synergy": 42,
       "interaction": 35,
-      "resilience": 44
+      "resilience": 48
     },
     "roles": {
       "lands": 38,
@@ -1810,10 +1818,10 @@
       "tutors": 0,
       "repeatableTutors": 0,
       "draw": 14,
-      "interaction": 9,
-      "protection": 7,
+      "interaction": 10,
+      "protection": 10,
       "recursion": 2,
-      "wipes": 2,
+      "wipes": 3,
       "avgCmc": 2.7704918032786887,
       "unknownManaLands": 0
     },
@@ -2017,7 +2025,8 @@
             "name": "Fertile Ground",
             "cmc": 2,
             "tags": [
-              "enchantment"
+              "enchantment",
+              "mana"
             ],
             "manaReq": {
               "generic": 1,
@@ -2100,6 +2109,7 @@
             "cmc": 1,
             "tags": [
               "enchantment",
+              "mana",
               "etb"
             ],
             "manaReq": {
@@ -2116,7 +2126,8 @@
             "name": "Wild Growth",
             "cmc": 1,
             "tags": [
-              "enchantment"
+              "enchantment",
+              "mana"
             ],
             "manaReq": {
               "generic": 0,
@@ -2174,7 +2185,7 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 31,
+      "floor": 32,
       "median": 38,
       "high": 44,
       "ceiling": 44,
@@ -2213,7 +2224,7 @@
           "turn": 4,
           "commander": 67,
           "engine": 1,
-          "interaction": 40,
+          "interaction": 41,
           "resource": 72,
           "burst": 0
         },
@@ -2221,15 +2232,15 @@
           "turn": 5,
           "commander": 86,
           "engine": 2,
-          "interaction": 52,
+          "interaction": 55,
           "resource": 81,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 91,
-          "engine": 4,
-          "interaction": 59,
+          "engine": 3,
+          "interaction": 63,
           "resource": 86,
           "burst": 0
         },
@@ -2237,7 +2248,7 @@
           "turn": 7,
           "commander": 94,
           "engine": 4,
-          "interaction": 65,
+          "interaction": 68,
           "resource": 89,
           "burst": 0
         }
@@ -2335,22 +2346,22 @@
               },
               {
                 "turn": 4,
-                "value": 40
+                "value": 41
               },
               {
                 "turn": 5,
-                "value": 54
+                "value": 55
               },
               {
                 "turn": 6,
-                "value": 60
+                "value": 62
               },
               {
                 "turn": 7,
-                "value": 66
+                "value": 69
               }
             ],
-            "observedWithinHorizon": 524
+            "observedWithinHorizon": 552
           },
           "resource": {
             "id": "resource-first-access",
@@ -2513,12 +2524,40 @@
         "aeon": null
       },
       {
+        "name": "Utopia Sprawl",
+        "impact": 2.5,
+        "tags": [
+          "enchantment",
+          "mana",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Wild Growth",
+        "impact": 2.5,
+        "tags": [
+          "enchantment",
+          "mana"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Ebony Fly",
         "impact": 2.4,
         "tags": [
           "artifact",
           "mana",
           "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Fertile Ground",
+        "impact": 2.4,
+        "tags": [
+          "enchantment",
+          "mana"
         ],
         "aeon": null
       },
@@ -2561,34 +2600,6 @@
           "etb"
         ],
         "aeon": null
-      },
-      {
-        "name": "Sram, Senior Edificer",
-        "impact": 2.3,
-        "tags": [
-          "creature",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Netherese Puzzle-Ward",
-        "impact": 2.2,
-        "tags": [
-          "enchantment",
-          "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Bant Charm",
-        "impact": 2,
-        "tags": [
-          "instant",
-          "removal",
-          "counterspell"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
@@ -2629,12 +2640,12 @@
           ]
         },
         "volatility": {
-          "score": 73,
+          "score": 69,
           "level": "high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 19,
+              "value": 17,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
@@ -2659,19 +2670,19 @@
           ]
         },
         "resilience": {
-          "score": 44,
+          "score": 48,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 44,
+              "value": 48,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 53,
+          "score": 54,
           "level": "high",
           "evidence": [
             {
@@ -2688,7 +2699,7 @@
             },
             {
               "signal": "resilience",
-              "value": 44,
+              "value": 48,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
@@ -2958,22 +2969,22 @@
             },
             {
               "turn": 4,
-              "value": 40
+              "value": 41
             },
             {
               "turn": 5,
-              "value": 54
+              "value": 55
             },
             {
               "turn": 6,
-              "value": 60
+              "value": 62
             },
             {
               "turn": 7,
-              "value": 66
+              "value": 69
             }
           ],
-          "observedWithinHorizon": 524,
+          "observedWithinHorizon": 552,
           "milestones": {
             "at25": 4,
             "at50": 5,
@@ -3131,7 +3142,7 @@
             },
             {
               "turn": 6,
-              "value": 4
+              "value": 3
             },
             {
               "turn": 7,
@@ -3163,19 +3174,19 @@
             },
             {
               "turn": 4,
-              "value": 40
+              "value": 41
             },
             {
               "turn": 5,
-              "value": 52
+              "value": 55
             },
             {
               "turn": 6,
-              "value": 59
+              "value": 63
             },
             {
               "turn": 7,
-              "value": 65
+              "value": 68
             }
           ],
           "milestones": {
@@ -3367,22 +3378,22 @@
             },
             {
               "turn": 4,
-              "value": 40
+              "value": 41
             },
             {
               "turn": 5,
-              "value": 54
+              "value": 55
             },
             {
               "turn": 6,
-              "value": 60
+              "value": 62
             },
             {
               "turn": 7,
-              "value": 66
+              "value": 69
             }
           ],
-          "observedWithinHorizon": 524,
+          "observedWithinHorizon": 552,
           "milestones": {
             "at25": 4,
             "at50": 5,

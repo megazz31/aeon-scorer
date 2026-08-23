@@ -16,7 +16,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/UndeadUnleashed_MIC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Undead Unleashed",
@@ -29,15 +29,15 @@
   "analysis": {
     "median": 49,
     "p20": 37,
-    "p80": 60,
+    "p80": 59,
     "peak": 88,
     "coverage": 93,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "a2fad3e921fc7e5af3316bec4a816e86486239ec71cfaf8fd8ff6a4e013e4276",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Liliana, Death's Majesty\n1 Forgotten Creation\n1 Havengul Runebinder\n1 Stitcher Geralf\n1 Undead Alchemist\n1 Butcher of Malakir\n1 Cemetery Reaper\n1 Death Baron\n1 Diregraf Colossus\n1 Eater of Hope\n1 Gravespawn Sovereign\n1 Midnight Reaper\n1 Overseer of the Damned\n1 Gisa and Geralf\n1 Eternal Skylord\n1 Corpse Augur\n1 Fleshbag Marauder\n1 Liliana's Devotee\n1 Lord of the Accursed\n1 Spark Reaper\n1 Undead Augur\n1 Diregraf Captain\n1 Gleaming Overseer\n1 Ruthless Deathfang\n1 Hour of Eternity\n1 Army of the Damned\n1 Dark Salvation\n1 Dread Summons\n1 Zombie Apocalypse\n1 Distant Melody\n1 Feed the Swarm\n1 Syphon Flesh\n1 Aetherspouts\n1 Go for the Throat\n1 Arcane Signet\n1 Charcoal Diamond\n1 Commander's Sphere\n1 Sky Diamond\n1 Sol Ring\n1 Talisman of Dominance\n1 Rooftop Storm\n1 Dreadhorde Invasion\n1 Endless Ranks of the Dead\n1 Liliana's Mastery\n1 Open the Graves\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Sunken Hollow\n1 Temple of Deceit\n1 Bojuka Bog\n1 Command Tower\n1 Dimir Aqueduct\n1 Mortuary Mire\n1 Myriad Landscape\n1 Path of Ancestry\n1 Tainted Isle\n1 Unclaimed Territory\n12 Island\n15 Swamp\n1 Eloise, Nephalia Sleuth\n1 Cleaver Skaab\n1 Curse of Unbinding\n1 Drown in Dreams\n1 Empty the Laboratory\n1 Hordewing Skaab\n1 Shadow Kin\n1 Crowded Crypt\n1 Curse of the Restless Dead\n1 Ghouls' Night Out\n1 Gorex, the Tombshell\n1 Prowling Geistcatcher\n1 Ravenous Rotbelly\n1 Tomb Tyrant",
   "oracleCards": [
@@ -94,6 +94,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -699,7 +700,6 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "wipe",
         "etb"
       ],
       "isCommander": false
@@ -1181,6 +1181,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "removal",
         "sacrifice",
         "death-payoff"
       ],
@@ -1537,12 +1538,12 @@
     "profile": {
       "median": 49,
       "floor": 37,
-      "ceiling": 60,
+      "ceiling": 59,
       "peak": 88,
-      "dispersion": 23,
-      "variance": 23,
+      "dispersion": 22,
+      "variance": 22,
       "consistency": 62,
-      "commanderDelta": 12,
+      "commanderDelta": 13,
       "coverage": 93,
       "dataCoverage": 93
     },
@@ -1550,9 +1551,9 @@
       "speed": 32,
       "consistency": 62,
       "explosiveness": 13,
-      "synergy": 88,
-      "interaction": 52,
-      "resilience": 44
+      "synergy": 89,
+      "interaction": 48,
+      "resilience": 48
     },
     "roles": {
       "lands": 40,
@@ -1563,8 +1564,8 @@
       "draw": 9,
       "interaction": 9,
       "protection": 1,
-      "recursion": 5,
-      "wipes": 3,
+      "recursion": 6,
+      "wipes": 2,
       "avgCmc": 3.9661016949152543,
       "unknownManaLands": 0
     },
@@ -1622,6 +1623,7 @@
             "cmc": 8,
             "tags": [
               "sorcery",
+              "recursion",
               "tokens"
             ],
             "manaReq": {
@@ -2449,6 +2451,7 @@
             "cmc": 6,
             "tags": [
               "creature",
+              "removal",
               "sacrifice",
               "death-payoff"
             ],
@@ -2501,14 +2504,15 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 60,
-        "cohesion": 60,
+        "strength": 62,
+        "cohesion": 62,
         "producers": [
           "Eloise, Nephalia Sleuth",
           "Gisa and Geralf",
           "Liliana, Death's Majesty"
         ],
         "payoffs": [
+          "Army of the Damned",
           "Gisa and Geralf",
           "Gorex, the Tombshell",
           "Liliana, Death's Majesty",
@@ -2519,6 +2523,7 @@
           "Eloise, Nephalia Sleuth",
           "Gisa and Geralf",
           "Liliana, Death's Majesty",
+          "Army of the Damned",
           "Gorex, the Tombshell",
           "Tomb Tyrant",
           "Zombie Apocalypse"
@@ -2595,6 +2600,30 @@
         ],
         "supportCards": [],
         "payoffCards": [
+          {
+            "name": "Army of the Damned",
+            "cmc": 8,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 8
+            }
+          },
           {
             "name": "Gisa and Geralf",
             "cmc": 4,
@@ -2710,7 +2739,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "3 producteur(s), 5 payoff(s), 6 carte(s) distincte(s)."
+        "evidence": "3 producteur(s), 6 payoff(s), 7 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2932,8 +2961,8 @@
       "iterations": 3200,
       "floor": 37,
       "median": 45,
-      "high": 54,
-      "ceiling": 54,
+      "high": 53,
+      "ceiling": 53,
       "peak": 81,
       "iqr": 13,
       "consistency": 71,
@@ -2953,7 +2982,7 @@
           "turn": 2,
           "commander": 5,
           "engine": 0,
-          "interaction": 30,
+          "interaction": 29,
           "resource": 6,
           "burst": 0
         },
@@ -2961,7 +2990,7 @@
           "turn": 3,
           "commander": 30,
           "engine": 4,
-          "interaction": 45,
+          "interaction": 41,
           "resource": 33,
           "burst": 0
         },
@@ -2969,7 +2998,7 @@
           "turn": 4,
           "commander": 81,
           "engine": 21,
-          "interaction": 55,
+          "interaction": 51,
           "resource": 60,
           "burst": 0
         },
@@ -2977,7 +3006,7 @@
           "turn": 5,
           "commander": 92,
           "engine": 37,
-          "interaction": 62,
+          "interaction": 59,
           "resource": 72,
           "burst": 0
         },
@@ -2985,15 +3014,15 @@
           "turn": 6,
           "commander": 95,
           "engine": 47,
-          "interaction": 67,
-          "resource": 78,
+          "interaction": 66,
+          "resource": 79,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 97,
           "engine": 54,
-          "interaction": 73,
+          "interaction": 72,
           "resource": 83,
           "burst": 0
         }
@@ -3087,26 +3116,26 @@
               },
               {
                 "turn": 3,
-                "value": 47
+                "value": 45
               },
               {
                 "turn": 4,
-                "value": 57
+                "value": 54
               },
               {
                 "turn": 5,
-                "value": 64
+                "value": 62
               },
               {
                 "turn": 6,
-                "value": 72
+                "value": 70
               },
               {
                 "turn": 7,
-                "value": 77
+                "value": 75
               }
             ],
-            "observedWithinHorizon": 619
+            "observedWithinHorizon": 602
           },
           "resource": {
             "id": "resource-first-access",
@@ -3138,10 +3167,10 @@
               },
               {
                 "turn": 7,
-                "value": 83
+                "value": 84
               }
             ],
-            "observedWithinHorizon": 665
+            "observedWithinHorizon": 672
           },
           "burst": {
             "id": "burst-first-access",
@@ -3316,6 +3345,16 @@
         "aeon": null
       },
       {
+        "name": "Army of the Damned",
+        "impact": 2.6,
+        "tags": [
+          "sorcery",
+          "recursion",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Open the Graves",
         "impact": 2.5,
         "tags": [
@@ -3343,18 +3382,6 @@
           "creature",
           "draw",
           "death-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Spark Reaper",
-        "impact": 2.4,
-        "tags": [
-          "creature",
-          "draw",
-          "sacrifice",
-          "sac-outlet",
-          "lifegain"
         ],
         "aeon": null
       }
@@ -3402,49 +3429,49 @@
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 23,
+              "value": 22,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 28,
+              "value": 29,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
           ]
         },
         "interaction": {
-          "score": 52,
-          "level": "high",
+          "score": 48,
+          "level": "moderate",
           "evidence": [
             {
               "signal": "interaction",
-              "value": 52,
+              "value": 48,
               "source": "aeon-dimension",
               "reason": "Existing Aeon interaction-access dimension."
             }
           ]
         },
         "resilience": {
-          "score": 44,
+          "score": 48,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 44,
+              "value": 48,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 70,
+          "score": 72,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 88,
+              "value": 89,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -3456,25 +3483,25 @@
             },
             {
               "signal": "resilience",
-              "value": 44,
+              "value": 48,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 81.3,
+              "value": 82,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 89,
+          "score": 93,
           "level": "very-high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 12,
+              "value": 13,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
@@ -3750,26 +3777,26 @@
             },
             {
               "turn": 3,
-              "value": 47
+              "value": 45
             },
             {
               "turn": 4,
-              "value": 57
+              "value": 54
             },
             {
               "turn": 5,
-              "value": 64
+              "value": 62
             },
             {
               "turn": 6,
-              "value": 72
+              "value": 70
             },
             {
               "turn": 7,
-              "value": 77
+              "value": 75
             }
           ],
-          "observedWithinHorizon": 619,
+          "observedWithinHorizon": 602,
           "milestones": {
             "at25": 2,
             "at50": 4,
@@ -3807,10 +3834,10 @@
             },
             {
               "turn": 7,
-              "value": 83
+              "value": 84
             }
           ],
-          "observedWithinHorizon": 665,
+          "observedWithinHorizon": 672,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -3951,27 +3978,27 @@
             },
             {
               "turn": 2,
-              "value": 30
+              "value": 29
             },
             {
               "turn": 3,
-              "value": 45
+              "value": 41
             },
             {
               "turn": 4,
-              "value": 55
+              "value": 51
             },
             {
               "turn": 5,
-              "value": 62
+              "value": 59
             },
             {
               "turn": 6,
-              "value": 67
+              "value": 66
             },
             {
               "turn": 7,
-              "value": 73
+              "value": 72
             }
           ],
           "milestones": {
@@ -4007,7 +4034,7 @@
             },
             {
               "turn": 6,
-              "value": 78
+              "value": 79
             },
             {
               "turn": 7,
@@ -4159,26 +4186,26 @@
             },
             {
               "turn": 3,
-              "value": 47
+              "value": 45
             },
             {
               "turn": 4,
-              "value": 57
+              "value": 54
             },
             {
               "turn": 5,
-              "value": 64
+              "value": 62
             },
             {
               "turn": 6,
-              "value": 72
+              "value": 70
             },
             {
               "turn": 7,
-              "value": 77
+              "value": 75
             }
           ],
-          "observedWithinHorizon": 619,
+          "observedWithinHorizon": 602,
           "milestones": {
             "at25": 2,
             "at50": 4,
@@ -4216,10 +4243,10 @@
             },
             {
               "turn": 7,
-              "value": 83
+              "value": 84
             }
           ],
-          "observedWithinHorizon": 665,
+          "observedWithinHorizon": 672,
           "milestones": {
             "at25": 3,
             "at50": 4,

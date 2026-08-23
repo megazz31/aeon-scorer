@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/AhoyMateys_LCC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Ahoy Mateys",
@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 46,
-    "p20": 33,
-    "p80": 58,
-    "peak": 81,
+    "median": 48,
+    "p20": 34,
+    "p80": 61,
+    "peak": 86,
     "coverage": 93,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "dea4541d024e15be1032a6a13b62e24c0c635729306e31302cfd59790c68e8b5",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Don Andres, the Renegade\n1 The Indomitable\n1 Storm Fleet Negotiator\n1 Francisco, Fowl Marauder\n1 The Grim Captain's Locker\n1 Skeleton Crew\n1 Broadside Bombardiers\n1 Gemcutter Buccaneer\n1 Arm-Mounted Anchor\n1 Amphin Mutineer\n1 Bident of Thassa\n1 Corsair Captain\n1 Evacuation\n1 Timestream Navigator\n1 Warkite Marauder\n1 Black Market Connections\n1 Blood Money\n1 Dire Fleet Ravager\n1 Fathom Fleet Captain\n1 Lethal Scheme\n1 Angrath's Marauders\n1 Blasphemous Act\n1 Captain Lannery Storm\n1 Captivating Crew\n1 Chaos Warp\n1 Coercive Recruiter\n1 Dire Fleet Daredevil\n1 Kari Zev, Skyship Raider\n1 Port Razer\n1 Shared Animosity\n1 Admiral Beckett Brass\n1 Hostage Taker\n1 King Narfi's Betrayal\n1 Prismari Command\n1 Zara, Renegade Recruiter\n1 Icon of Ancestry\n1 Vanquisher's Banner\n1 Choked Estuary\n1 Desolate Lighthouse\n1 Exotic Orchard\n1 Foreboding Ruins\n1 Frostboil Snarl\n1 Geier Reach Sanitarium\n1 Nephalia Drownyard\n1 Smoldering Marsh\n1 Sulfur Falls\n1 Sunken Hollow\n1 Azure Fleet Admiral\n1 Enterprising Scallywag\n1 Daring Saboteur\n1 Departed Deckhand\n1 Distant Melody\n1 Ghost of Ramirez DePietro\n1 Malcolm, Keen-Eyed Navigator\n1 Merchant Raiders\n1 Siren Stormtamer\n1 Spectral Sailor\n1 Windfall\n1 Feed the Swarm\n1 Pitiless Plunderer\n1 Breeches, Brazen Plunderer\n1 Faithless Looting\n1 Rakdos Charm\n1 Ramirez DePietro, Pillager\n1 Arcane Signet\n1 Commander's Sphere\n1 Dimir Signet\n1 Herald's Horn\n1 Izzet Signet\n1 Rakdos Signet\n1 Sol Ring\n1 Wayfarer's Bauble\n1 Command Tower\n1 Crumbling Necropolis\n1 Evolving Wilds\n1 Path of Ancestry\n1 Port of Karfell\n1 Rogue's Passage\n1 Secluded Courtyard\n1 Terramorphic Expanse\n1 Thriving Bluff\n1 Thriving Isle\n1 Thriving Moor\n1 Unclaimed Territory\n3 Island\n3 Island\n2 Swamp\n2 Swamp\n3 Mountain\n2 Mountain",
   "oracleCards": [
@@ -99,6 +99,8 @@
       "tags": [
         "creature",
         "removal",
+        "recursion",
+        "tokens",
         "etb"
       ],
       "isCommander": false
@@ -229,7 +231,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -312,8 +315,7 @@
         "creature",
         "mana",
         "tokens",
-        "sacrifice",
-        "death-payoff"
+        "sacrifice"
       ],
       "isCommander": false
     },
@@ -741,6 +743,7 @@
       "tags": [
         "sorcery",
         "draw",
+        "recursion",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -1047,6 +1050,7 @@
       "producedMana": [],
       "tags": [
         "instant",
+        "draw",
         "removal",
         "counter-producer",
         "counter-kind:plus1"
@@ -1582,6 +1586,7 @@
       "producedMana": [],
       "tags": [
         "artifact",
+        "recursion",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -1813,24 +1818,24 @@
   ],
   "result": {
     "profile": {
-      "median": 46,
-      "floor": 33,
-      "ceiling": 58,
-      "peak": 81,
-      "dispersion": 25,
-      "variance": 25,
-      "consistency": 60,
+      "median": 48,
+      "floor": 34,
+      "ceiling": 61,
+      "peak": 86,
+      "dispersion": 27,
+      "variance": 27,
+      "consistency": 58,
       "commanderDelta": 7,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 40,
-      "consistency": 60,
-      "explosiveness": 17,
-      "synergy": 54,
+      "consistency": 58,
+      "explosiveness": 18,
+      "synergy": 60,
       "interaction": 54,
-      "resilience": 36
+      "resilience": 47
     },
     "roles": {
       "lands": 37,
@@ -1838,11 +1843,11 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 13,
-      "interaction": 11,
+      "draw": 14,
+      "interaction": 12,
       "protection": 1,
-      "recursion": 2,
-      "wipes": 2,
+      "recursion": 5,
+      "wipes": 3,
       "avgCmc": 3.2903225806451615,
       "unknownManaLands": 0
     },
@@ -1850,8 +1855,8 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 69,
-        "cohesion": 69,
+        "strength": 81,
+        "cohesion": 81,
         "producers": [
           "Arm-Mounted Anchor",
           "Daring Saboteur",
@@ -1862,8 +1867,11 @@
           "Windfall"
         ],
         "payoffs": [
+          "Amphin Mutineer",
+          "Faithless Looting",
           "Port of Karfell",
           "Skeleton Crew",
+          "The Grim Captain's Locker",
           "The Indomitable"
         ],
         "members": [
@@ -1874,6 +1882,7 @@
           "Port of Karfell",
           "The Grim Captain's Locker",
           "Windfall",
+          "Amphin Mutineer",
           "Skeleton Crew",
           "The Indomitable"
         ],
@@ -1931,6 +1940,7 @@
             "tags": [
               "sorcery",
               "draw",
+              "recursion",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -1965,6 +1975,7 @@
             "cmc": 4,
             "tags": [
               "artifact",
+              "recursion",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -1999,6 +2010,45 @@
         "supportCards": [],
         "payoffCards": [
           {
+            "name": "Amphin Mutineer",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "removal",
+              "recursion",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Faithless Looting",
+            "cmc": 1,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
             "name": "Port of Karfell",
             "cmc": 0,
             "tags": [
@@ -2022,6 +2072,24 @@
               "creature",
               "recursion",
               "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "The Grim Captain's Locker",
+            "cmc": 4,
+            "tags": [
+              "artifact",
+              "recursion",
+              "graveyard-setup"
             ],
             "manaReq": {
               "generic": 3,
@@ -2062,7 +2130,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "7 producteur(s), 3 payoff(s), 9 carte(s) distincte(s)."
+        "evidence": "7 producteur(s), 6 payoff(s), 10 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2118,8 +2186,7 @@
               "creature",
               "mana",
               "tokens",
-              "sacrifice",
-              "death-payoff"
+              "sacrifice"
             ],
             "manaReq": {
               "generic": 2,
@@ -2284,8 +2351,9 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 25,
+      "score": 27,
       "connected": [
+        "Amphin Mutineer",
         "Arm-Mounted Anchor",
         "Daring Saboteur",
         "Desolate Lighthouse",
@@ -2312,16 +2380,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 36,
-      "median": 45,
-      "high": 54,
-      "ceiling": 54,
-      "peak": 74,
-      "iqr": 15,
-      "consistency": 68,
+      "floor": 37,
+      "median": 47,
+      "high": 57,
+      "ceiling": 57,
+      "peak": 80,
+      "iqr": 16,
+      "consistency": 66,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 85,
+      "recoveryAfterDisruption": 89,
       "turnProfile": [
         {
           "turn": 1,
@@ -2334,7 +2402,7 @@
         {
           "turn": 2,
           "commander": 1,
-          "engine": 2,
+          "engine": 3,
           "interaction": 26,
           "resource": 44,
           "burst": 6
@@ -2342,41 +2410,41 @@
         {
           "turn": 3,
           "commander": 20,
-          "engine": 5,
+          "engine": 8,
           "interaction": 41,
-          "resource": 60,
+          "resource": 62,
           "burst": 8
         },
         {
           "turn": 4,
           "commander": 49,
-          "engine": 10,
+          "engine": 17,
           "interaction": 59,
-          "resource": 74,
+          "resource": 78,
           "burst": 10
         },
         {
           "turn": 5,
           "commander": 75,
-          "engine": 16,
+          "engine": 25,
           "interaction": 68,
-          "resource": 80,
+          "resource": 85,
           "burst": 12
         },
         {
           "turn": 6,
           "commander": 85,
-          "engine": 19,
-          "interaction": 73,
-          "resource": 84,
+          "engine": 30,
+          "interaction": 74,
+          "resource": 89,
           "burst": 13
         },
         {
           "turn": 7,
           "commander": 91,
-          "engine": 21,
-          "interaction": 78,
-          "resource": 86,
+          "engine": 34,
+          "interaction": 79,
+          "resource": 91,
           "burst": 14
         }
       ],
@@ -2426,34 +2494,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 1
+                "value": 2
               },
               {
                 "turn": 2,
-                "value": 3
-              },
-              {
-                "turn": 3,
                 "value": 4
               },
               {
+                "turn": 3,
+                "value": 8
+              },
+              {
                 "turn": 4,
-                "value": 10
+                "value": 17
               },
               {
                 "turn": 5,
-                "value": 16
+                "value": 26
               },
               {
                 "turn": 6,
-                "value": 20
+                "value": 32
               },
               {
                 "turn": 7,
-                "value": 22
+                "value": 36
               }
             ],
-            "observedWithinHorizon": 177
+            "observedWithinHorizon": 286
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -2488,7 +2556,7 @@
                 "value": 80
               }
             ],
-            "observedWithinHorizon": 639
+            "observedWithinHorizon": 643
           },
           "resource": {
             "id": "resource-first-access",
@@ -2500,30 +2568,30 @@
               },
               {
                 "turn": 2,
-                "value": 42
+                "value": 43
               },
               {
                 "turn": 3,
-                "value": 64
+                "value": 65
               },
               {
                 "turn": 4,
-                "value": 80
+                "value": 83
               },
               {
                 "turn": 5,
-                "value": 85
+                "value": 89
               },
               {
                 "turn": 6,
-                "value": 88
+                "value": 91
               },
               {
                 "turn": 7,
-                "value": 90
+                "value": 93
               }
             ],
-            "observedWithinHorizon": 719
+            "observedWithinHorizon": 744
           },
           "burst": {
             "id": "burst-first-access",
@@ -2616,8 +2684,7 @@
           "creature",
           "mana",
           "tokens",
-          "sacrifice",
-          "death-payoff"
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2653,6 +2720,18 @@
         "aeon": null
       },
       {
+        "name": "Amphin Mutineer",
+        "impact": 3.4,
+        "tags": [
+          "creature",
+          "removal",
+          "recursion",
+          "tokens",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Commander's Sphere",
         "impact": 3.3,
         "tags": [
@@ -2660,6 +2739,17 @@
           "draw",
           "mana",
           "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Faithless Looting",
+        "impact": 3.2,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion",
+          "graveyard-setup"
         ],
         "aeon": null
       },
@@ -2712,26 +2802,6 @@
           "tokens"
         ],
         "aeon": null
-      },
-      {
-        "name": "Timestream Navigator",
-        "impact": 2.6,
-        "tags": [
-          "creature",
-          "extra-turn"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Blood Money",
-        "impact": 2.5,
-        "tags": [
-          "sorcery",
-          "mana",
-          "wipe",
-          "tokens"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
@@ -2760,30 +2830,30 @@
           ]
         },
         "explosiveness": {
-          "score": 17,
+          "score": 18,
           "level": "low",
           "evidence": [
             {
               "signal": "explosiveness",
-              "value": 17,
+              "value": 18,
               "source": "aeon-dimension",
               "reason": "Existing Aeon explosiveness dimension; no power-score feedback."
             }
           ]
         },
         "volatility": {
-          "score": 85,
+          "score": 92,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 25,
+              "value": 27,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 23,
+              "value": 25,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -2802,49 +2872,49 @@
           ]
         },
         "resilience": {
-          "score": 36,
+          "score": 47,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 36,
+              "value": 47,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 54,
+          "score": 58,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 54,
+              "value": 60,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 60,
+              "value": 58,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
             {
               "signal": "resilience",
-              "value": 36,
+              "value": 47,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 64.5,
+              "value": 70.5,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 39,
+          "score": 40,
           "level": "moderate",
           "evidence": [
             {
@@ -2855,7 +2925,7 @@
             },
             {
               "signal": "commander-synergy",
-              "value": 25,
+              "value": 27,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },
@@ -2868,7 +2938,7 @@
           ]
         },
         "turnComplexity": {
-          "score": 32,
+          "score": 31,
           "level": "moderate",
           "evidence": [
             {
@@ -2879,7 +2949,7 @@
             },
             {
               "signal": "chain-payoffs",
-              "value": 3,
+              "value": 2,
               "source": "semantic",
               "reason": "Cards that convert repeated package events into additional actions."
             },
@@ -3005,13 +3075,13 @@
           "id": "long-sequencing",
           "label": "Long sequencing potential",
           "level": "moderate",
-          "score": 32,
+          "score": 31,
           "evidence": [
             {
               "name": "Experience Fingerprint",
               "reason": "Turn Complexity proxy from recurring/chained semantic actions.",
               "recurring": true,
-              "weight": 1.7777777777777777
+              "weight": 1.7222222222222223
             }
           ],
           "note": "Derived from Experience Fingerprint turn-complexity evidence; not calibrated to real clock time."
@@ -3085,36 +3155,36 @@
           "points": [
             {
               "turn": 1,
-              "value": 1
+              "value": 2
             },
             {
               "turn": 2,
-              "value": 3
-            },
-            {
-              "turn": 3,
               "value": 4
             },
             {
+              "turn": 3,
+              "value": 8
+            },
+            {
               "turn": 4,
-              "value": 10
+              "value": 17
             },
             {
               "turn": 5,
-              "value": 16
+              "value": 26
             },
             {
               "turn": 6,
-              "value": 20
+              "value": 32
             },
             {
               "turn": 7,
-              "value": 22
+              "value": 36
             }
           ],
-          "observedWithinHorizon": 177,
+          "observedWithinHorizon": 286,
           "milestones": {
-            "at25": null,
+            "at25": 5,
             "at50": null,
             "at75": null
           }
@@ -3153,7 +3223,7 @@
               "value": 80
             }
           ],
-          "observedWithinHorizon": 639,
+          "observedWithinHorizon": 643,
           "milestones": {
             "at25": 2,
             "at50": 4,
@@ -3171,30 +3241,30 @@
             },
             {
               "turn": 2,
-              "value": 42
+              "value": 43
             },
             {
               "turn": 3,
-              "value": 64
+              "value": 65
             },
             {
               "turn": 4,
-              "value": 80
+              "value": 83
             },
             {
               "turn": 5,
-              "value": 85
+              "value": 89
             },
             {
               "turn": 6,
-              "value": 88
+              "value": 91
             },
             {
               "turn": 7,
-              "value": 90
+              "value": 93
             }
           ],
-          "observedWithinHorizon": 719,
+          "observedWithinHorizon": 744,
           "milestones": {
             "at25": 1,
             "at50": 3,
@@ -3295,31 +3365,31 @@
             },
             {
               "turn": 2,
-              "value": 2
+              "value": 3
             },
             {
               "turn": 3,
-              "value": 5
+              "value": 8
             },
             {
               "turn": 4,
-              "value": 10
+              "value": 17
             },
             {
               "turn": 5,
-              "value": 16
+              "value": 25
             },
             {
               "turn": 6,
-              "value": 19
+              "value": 30
             },
             {
               "turn": 7,
-              "value": 21
+              "value": 34
             }
           ],
           "milestones": {
-            "at25": null,
+            "at25": 5,
             "at50": null,
             "at75": null
           }
@@ -3351,11 +3421,11 @@
             },
             {
               "turn": 6,
-              "value": 73
+              "value": 74
             },
             {
               "turn": 7,
-              "value": 78
+              "value": 79
             }
           ],
           "milestones": {
@@ -3379,29 +3449,29 @@
             },
             {
               "turn": 3,
-              "value": 60
+              "value": 62
             },
             {
               "turn": 4,
-              "value": 74
+              "value": 78
             },
             {
               "turn": 5,
-              "value": 80
+              "value": 85
             },
             {
               "turn": 6,
-              "value": 84
+              "value": 89
             },
             {
               "turn": 7,
-              "value": 86
+              "value": 91
             }
           ],
           "milestones": {
             "at25": 1,
             "at50": 3,
-            "at75": 5
+            "at75": 4
           }
         },
         "burst": {
@@ -3494,36 +3564,36 @@
           "points": [
             {
               "turn": 1,
-              "value": 1
+              "value": 2
             },
             {
               "turn": 2,
-              "value": 3
-            },
-            {
-              "turn": 3,
               "value": 4
             },
             {
+              "turn": 3,
+              "value": 8
+            },
+            {
               "turn": 4,
-              "value": 10
+              "value": 17
             },
             {
               "turn": 5,
-              "value": 16
+              "value": 26
             },
             {
               "turn": 6,
-              "value": 20
+              "value": 32
             },
             {
               "turn": 7,
-              "value": 22
+              "value": 36
             }
           ],
-          "observedWithinHorizon": 177,
+          "observedWithinHorizon": 286,
           "milestones": {
-            "at25": null,
+            "at25": 5,
             "at50": null,
             "at75": null
           }
@@ -3562,7 +3632,7 @@
               "value": 80
             }
           ],
-          "observedWithinHorizon": 639,
+          "observedWithinHorizon": 643,
           "milestones": {
             "at25": 2,
             "at50": 4,
@@ -3580,30 +3650,30 @@
             },
             {
               "turn": 2,
-              "value": 42
+              "value": 43
             },
             {
               "turn": 3,
-              "value": 64
+              "value": 65
             },
             {
               "turn": 4,
-              "value": 80
+              "value": 83
             },
             {
               "turn": 5,
-              "value": 85
+              "value": 89
             },
             {
               "turn": 6,
-              "value": 88
+              "value": 91
             },
             {
               "turn": 7,
-              "value": 90
+              "value": 93
             }
           ],
-          "observedWithinHorizon": 719,
+          "observedWithinHorizon": 744,
           "milestones": {
             "at25": 1,
             "at50": 3,

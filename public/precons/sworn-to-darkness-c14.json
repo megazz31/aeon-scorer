@@ -15,7 +15,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/SwornToDarkness_C14.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Sworn To Darkness",
@@ -27,16 +27,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 39,
-    "p20": 28,
+    "p20": 29,
     "p80": 49,
-    "peak": 68,
+    "peak": 67,
     "coverage": 92,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "5d6b6913390913d7626a26397a4a8e3bb2a4c7c3c9d5f140dda51fc0d411abda",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Skirsdag High Priest\n1 Nantuko Shade\n1 Vampire Hexmage\n1 Burnished Hart\n1 Flesh Carver\n1 Crypt Ghast\n1 Disciple of Bolas\n1 Evernight Shade\n1 Abyssal Persecutor\n1 Nekrataal\n1 Magus of the Coffers\n1 Raving Dead\n1 Shriekmaw\n1 Bloodgift Demon\n1 Demon of Wailing Agonies\n1 Drana, Kalastria Bloodchief\n1 Ghoulcaller Gisa\n1 Gray Merchant of Asphodel\n1 Morkrut Banshee\n1 Grave Titan\n1 Phyrexian Gargantua\n1 Pontiff of Blight\n1 Reaper from the Abyss\n1 Butcher of Malakir\n1 Overseer of the Damned\n1 Pestilence Demon\n1 Liliana's Reaver\n1 Xathrid Demon\n1 Sign in Blood\n1 Read the Bones\n1 Victimize\n1 Syphon Mind\n1 Dread Return\n1 Mutilate\n1 Infernal Offering\n1 Aether Snap\n1 Promise of Power\n1 Necromantic Selection\n1 Profane Command\n1 Dregs of Sorrow\n1 Black Sun's Zenith\n1 Spoils of Blood\n1 Tragic Slip\n1 Malicious Affliction\n1 Sudden Spoiling\n1 Tendrils of Corruption\n1 Annihilate\n1 Skeletal Scrying\n1 Wake the Dead\n1 Sol Ring\n1 Charcoal Diamond\n1 Jet Medallion\n1 Mind Stone\n1 Swiftfoot Boots\n1 Unstable Obelisk\n1 Worn Powerstone\n1 Lashwrithe\n1 Commander's Sphere\n1 Bad Moon\n1 Arcane Lighthouse\n1 Barren Moor\n1 Bojuka Bog\n1 Crypt of Agadeem\n1 Everglades\n1 Ghost Quarter\n1 Myriad Landscape\n1 Polluted Mire\n8 Swamp\n8 Swamp\n8 Swamp\n8 Swamp",
   "oracleCards": [
@@ -147,6 +147,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -306,7 +307,8 @@
         "B"
       ],
       "tags": [
-        "creature"
+        "creature",
+        "mana"
       ],
       "isCommander": false
     },
@@ -614,7 +616,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -898,6 +901,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -1344,9 +1348,9 @@
   "result": {
     "profile": {
       "median": 39,
-      "floor": 28,
+      "floor": 29,
       "ceiling": 49,
-      "peak": 68,
+      "peak": 67,
       "dispersion": 21,
       "variance": 21,
       "consistency": 65,
@@ -1357,10 +1361,10 @@
     "dimensions": {
       "speed": 26,
       "consistency": 65,
-      "explosiveness": 9,
-      "synergy": 47,
+      "explosiveness": 8,
+      "synergy": 48,
       "interaction": 53,
-      "resilience": 43
+      "resilience": 44
     },
     "roles": {
       "lands": 40,
@@ -1641,7 +1645,7 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 35,
+      "score": 37,
       "connected": [
         "Butcher of Malakir",
         "Disciple of Bolas",
@@ -1649,6 +1653,7 @@
         "Ghoulcaller Gisa",
         "Grave Titan",
         "Gray Merchant of Asphodel",
+        "Lashwrithe",
         "Liliana's Reaver",
         "Overseer of the Damned",
         "Promise of Power",
@@ -1676,23 +1681,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
-      "median": 40,
-      "high": 47,
-      "ceiling": 47,
+      "floor": 34,
+      "median": 41,
+      "high": 48,
+      "ceiling": 48,
       "peak": 62,
       "iqr": 12,
       "consistency": 74,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 6,
-      "recoveryAfterDisruption": 79,
+      "recoveryAfterDisruption": 81,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 22,
-          "resource": 9,
+          "resource": 23,
           "burst": 0
         },
         {
@@ -1700,7 +1705,7 @@
           "commander": 1,
           "engine": 0,
           "interaction": 37,
-          "resource": 32,
+          "resource": 42,
           "burst": 0
         },
         {
@@ -1708,7 +1713,7 @@
           "commander": 9,
           "engine": 0,
           "interaction": 41,
-          "resource": 39,
+          "resource": 47,
           "burst": 0
         },
         {
@@ -1716,7 +1721,7 @@
           "commander": 38,
           "engine": 0,
           "interaction": 57,
-          "resource": 62,
+          "resource": 67,
           "burst": 0
         },
         {
@@ -1724,7 +1729,7 @@
           "commander": 73,
           "engine": 1,
           "interaction": 70,
-          "resource": 75,
+          "resource": 77,
           "burst": 0
         },
         {
@@ -1732,7 +1737,7 @@
           "commander": 85,
           "engine": 1,
           "interaction": 77,
-          "resource": 81,
+          "resource": 82,
           "burst": 0
         },
         {
@@ -1740,7 +1745,7 @@
           "commander": 90,
           "engine": 2,
           "interaction": 83,
-          "resource": 85,
+          "resource": 86,
           "burst": 0
         }
       ],
@@ -1860,34 +1865,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 8
+                "value": 22
               },
               {
                 "turn": 2,
-                "value": 29
-              },
-              {
-                "turn": 3,
                 "value": 42
               },
               {
+                "turn": 3,
+                "value": 53
+              },
+              {
                 "turn": 4,
-                "value": 60
+                "value": 67
               },
               {
                 "turn": 5,
-                "value": 75
+                "value": 79
               },
               {
                 "turn": 6,
-                "value": 80
+                "value": 83
               },
               {
                 "turn": 7,
-                "value": 85
+                "value": 87
               }
             ],
-            "observedWithinHorizon": 682
+            "observedWithinHorizon": 698
           },
           "burst": {
             "id": "burst-first-access",
@@ -2122,19 +2127,19 @@
           ]
         },
         "explosiveness": {
-          "score": 9,
+          "score": 8,
           "level": "low",
           "evidence": [
             {
               "signal": "explosiveness",
-              "value": 9,
+              "value": 8,
               "source": "aeon-dimension",
               "reason": "Existing Aeon explosiveness dimension; no power-score feedback."
             }
           ]
         },
         "volatility": {
-          "score": 71,
+          "score": 69,
           "level": "high",
           "evidence": [
             {
@@ -2145,7 +2150,7 @@
             },
             {
               "signal": "high-roll-tail",
-              "value": 19,
+              "value": 18,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -2164,24 +2169,24 @@
           ]
         },
         "resilience": {
-          "score": 43,
+          "score": 44,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 43,
+              "value": 44,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 52,
+          "score": 53,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 47,
+              "value": 48,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -2193,7 +2198,7 @@
             },
             {
               "signal": "resilience",
-              "value": 43,
+              "value": 44,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
@@ -2206,7 +2211,7 @@
           ]
         },
         "dependency": {
-          "score": 44,
+          "score": 45,
           "level": "moderate",
           "evidence": [
             {
@@ -2217,7 +2222,7 @@
             },
             {
               "signal": "commander-synergy",
-              "value": 35,
+              "value": 37,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },
@@ -2501,37 +2506,37 @@
           "points": [
             {
               "turn": 1,
-              "value": 8
+              "value": 22
             },
             {
               "turn": 2,
-              "value": 29
-            },
-            {
-              "turn": 3,
               "value": 42
             },
             {
+              "turn": 3,
+              "value": 53
+            },
+            {
               "turn": 4,
-              "value": 60
+              "value": 67
             },
             {
               "turn": 5,
-              "value": 75
+              "value": 79
             },
             {
               "turn": 6,
-              "value": 80
+              "value": 83
             },
             {
               "turn": 7,
-              "value": 85
+              "value": 87
             }
           ],
-          "observedWithinHorizon": 682,
+          "observedWithinHorizon": 698,
           "milestones": {
             "at25": 2,
-            "at50": 4,
+            "at50": 3,
             "at75": 5
           }
         },
@@ -2705,31 +2710,31 @@
           "points": [
             {
               "turn": 1,
-              "value": 9
+              "value": 23
             },
             {
               "turn": 2,
-              "value": 32
+              "value": 42
             },
             {
               "turn": 3,
-              "value": 39
+              "value": 47
             },
             {
               "turn": 4,
-              "value": 62
+              "value": 67
             },
             {
               "turn": 5,
-              "value": 75
+              "value": 77
             },
             {
               "turn": 6,
-              "value": 81
+              "value": 82
             },
             {
               "turn": 7,
-              "value": 85
+              "value": 86
             }
           ],
           "milestones": {
@@ -2910,37 +2915,37 @@
           "points": [
             {
               "turn": 1,
-              "value": 8
+              "value": 22
             },
             {
               "turn": 2,
-              "value": 29
-            },
-            {
-              "turn": 3,
               "value": 42
             },
             {
+              "turn": 3,
+              "value": 53
+            },
+            {
               "turn": 4,
-              "value": 60
+              "value": 67
             },
             {
               "turn": 5,
-              "value": 75
+              "value": 79
             },
             {
               "turn": 6,
-              "value": 80
+              "value": 83
             },
             {
               "turn": 7,
-              "value": 85
+              "value": 87
             }
           ],
-          "observedWithinHorizon": 682,
+          "observedWithinHorizon": 698,
           "milestones": {
             "at25": 2,
-            "at50": 4,
+            "at50": 3,
             "at75": 5
           }
         },

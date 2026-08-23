@@ -16,7 +16,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/SilverquillStatement_C21.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Silverquill Statement",
@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 45,
-    "p20": 33,
+    "median": 46,
+    "p20": 34,
     "p80": 56,
-    "peak": 81,
+    "peak": 80,
     "coverage": 93,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "8c0f85fd7a41f2fe79ae4abb95abbf9e9b7c46f57ad6c88cca3f7b66c6a9d79a",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Gideon, Champion of Justice\n1 Felisa, Fang of Silverquill\n1 Combat Calligrapher\n1 Guardian Archon\n1 Nils, Discipline Enforcer\n1 Scholarship Sponsor\n1 Author of Shadows\n1 Bold Plagiarist\n1 Fain, the Broker\n1 Keen Duelist\n1 Angel of Serenity\n1 Boreas Charger\n1 Hunted Lammasu\n1 Knight of the White Orchid\n1 Selfless Squire\n1 Stalking Leonin\n1 Sunscorch Regent\n1 Windborn Muse\n1 Zetalpa, Primal Dawn\n1 Deathbringer Regent\n1 Necropolis Regent\n1 Deathbringer Liege\n1 Magister of Worth\n1 Teysa, Envoy of Ghosts\n1 Elite Scaleguard\n1 Oreskos Explorer\n1 Orzhov Advokist\n1 Promise of Loyalty\n1 Incarnation Technique\n1 Tragic Arrogance\n1 Infernal Offering\n1 Secret Rendezvous\n1 Stinging Study\n1 Inkshield\n1 Oblation\n1 Utter End\n1 Fracture\n1 Tempting Contract\n1 Coveted Jewel\n1 Pendant of Prosperity\n1 Victory Chimes\n1 Arcane Signet\n1 Bloodthirsty Blade\n1 Mind Stone\n1 Orzhov Signet\n1 Sol Ring\n1 Spectral Searchlight\n1 Cunning Rhetoric\n1 Citadel Siege\n1 Together Forever\n1 Ghostly Prison\n1 Martial Impetus\n1 Soul Snare\n1 Vow of Duty\n1 Curse of Disturbance\n1 Parasitic Impetus\n1 Caves of Koilos\n1 Exotic Orchard\n1 Mikokoro, Center of the Sea\n1 Temple of Silence\n1 Silverquill Campus\n1 Study Hall\n1 Barren Moor\n1 Bojuka Bog\n1 Command Tower\n1 Myriad Landscape\n1 Opal Palace\n1 Orzhov Basilica\n1 Secluded Steppe\n1 Tainted Field\n1 Temple of the False God\n7 Plains\n7 Plains\n5 Swamp\n5 Swamp\n1 Duelist's Heritage\n1 Debtors' Knell\n1 Ambition's Cost\n1 Rogue's Passage",
   "oracleCards": [
@@ -135,6 +135,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -1111,6 +1112,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -1231,7 +1233,8 @@
         "W"
       ],
       "tags": [
-        "artifact"
+        "artifact",
+        "mana"
       ],
       "isCommander": false
     },
@@ -1506,7 +1509,8 @@
         "C"
       ],
       "tags": [
-        "artifact"
+        "artifact",
+        "mana"
       ],
       "isCommander": false
     },
@@ -1566,20 +1570,20 @@
   ],
   "result": {
     "profile": {
-      "median": 45,
-      "floor": 33,
+      "median": 46,
+      "floor": 34,
       "ceiling": 56,
-      "peak": 81,
+      "peak": 80,
       "dispersion": 22,
       "variance": 22,
-      "consistency": 64,
+      "consistency": 63,
       "commanderDelta": 10,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
       "speed": 38,
-      "consistency": 64,
+      "consistency": 63,
       "explosiveness": 11,
       "synergy": 69,
       "interaction": 50,
@@ -2019,13 +2023,13 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
-      "median": 41,
-      "high": 49,
-      "ceiling": 49,
+      "floor": 34,
+      "median": 42,
+      "high": 50,
+      "ceiling": 50,
       "peak": 70,
-      "iqr": 12,
-      "consistency": 73,
+      "iqr": 13,
+      "consistency": 72,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 5,
       "recoveryAfterDisruption": 79,
@@ -2035,7 +2039,7 @@
           "commander": 0,
           "engine": 0,
           "interaction": 7,
-          "resource": 8,
+          "resource": 21,
           "burst": 0
         },
         {
@@ -2043,7 +2047,7 @@
           "commander": 5,
           "engine": 0,
           "interaction": 15,
-          "resource": 8,
+          "resource": 21,
           "burst": 0
         },
         {
@@ -2051,7 +2055,7 @@
           "commander": 55,
           "engine": 3,
           "interaction": 33,
-          "resource": 16,
+          "resource": 26,
           "burst": 0
         },
         {
@@ -2059,7 +2063,7 @@
           "commander": 86,
           "engine": 10,
           "interaction": 56,
-          "resource": 29,
+          "resource": 35,
           "burst": 0
         },
         {
@@ -2067,7 +2071,7 @@
           "commander": 94,
           "engine": 17,
           "interaction": 69,
-          "resource": 41,
+          "resource": 44,
           "burst": 0
         },
         {
@@ -2075,7 +2079,7 @@
           "commander": 96,
           "engine": 22,
           "interaction": 75,
-          "resource": 48,
+          "resource": 49,
           "burst": 0
         },
         {
@@ -2083,7 +2087,7 @@
           "commander": 97,
           "engine": 25,
           "interaction": 81,
-          "resource": 52,
+          "resource": 53,
           "burst": 0
         }
       ],
@@ -2203,34 +2207,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 7
+                "value": 21
               },
               {
                 "turn": 2,
-                "value": 8
+                "value": 25
               },
               {
                 "turn": 3,
-                "value": 17
+                "value": 33
               },
               {
                 "turn": 4,
-                "value": 32
+                "value": 46
               },
               {
                 "turn": 5,
-                "value": 44
+                "value": 56
               },
               {
                 "turn": 6,
-                "value": 52
+                "value": 62
               },
               {
                 "turn": 7,
-                "value": 58
+                "value": 67
               }
             ],
-            "observedWithinHorizon": 466
+            "observedWithinHorizon": 534
           },
           "burst": {
             "id": "burst-first-access",
@@ -2424,21 +2428,20 @@
         "aeon": null
       },
       {
+        "name": "Victory Chimes",
+        "impact": 1.7,
+        "tags": [
+          "artifact",
+          "mana"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Stinging Study",
         "impact": 1.6,
         "tags": [
           "instant",
           "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Teysa, Envoy of Ghosts",
-        "impact": 1.6,
-        "tags": [
-          "creature",
-          "protection",
-          "tokens"
         ],
         "aeon": null
       }
@@ -2481,7 +2484,7 @@
           ]
         },
         "volatility": {
-          "score": 82,
+          "score": 80,
           "level": "very-high",
           "evidence": [
             {
@@ -2492,7 +2495,7 @@
             },
             {
               "signal": "high-roll-tail",
-              "value": 25,
+              "value": 24,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -2523,7 +2526,7 @@
           ]
         },
         "inevitability": {
-          "score": 63,
+          "score": 62,
           "level": "high",
           "evidence": [
             {
@@ -2534,7 +2537,7 @@
             },
             {
               "signal": "consistency",
-              "value": 64,
+              "value": 63,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
@@ -2862,37 +2865,37 @@
           "points": [
             {
               "turn": 1,
-              "value": 7
+              "value": 21
             },
             {
               "turn": 2,
-              "value": 8
+              "value": 25
             },
             {
               "turn": 3,
-              "value": 17
+              "value": 33
             },
             {
               "turn": 4,
-              "value": 32
+              "value": 46
             },
             {
               "turn": 5,
-              "value": 44
+              "value": 56
             },
             {
               "turn": 6,
-              "value": 52
+              "value": 62
             },
             {
               "turn": 7,
-              "value": 58
+              "value": 67
             }
           ],
-          "observedWithinHorizon": 466,
+          "observedWithinHorizon": 534,
           "milestones": {
-            "at25": 4,
-            "at50": 6,
+            "at25": 2,
+            "at50": 5,
             "at75": null
           }
         },
@@ -3066,35 +3069,35 @@
           "points": [
             {
               "turn": 1,
-              "value": 8
+              "value": 21
             },
             {
               "turn": 2,
-              "value": 8
+              "value": 21
             },
             {
               "turn": 3,
-              "value": 16
+              "value": 26
             },
             {
               "turn": 4,
-              "value": 29
+              "value": 35
             },
             {
               "turn": 5,
-              "value": 41
+              "value": 44
             },
             {
               "turn": 6,
-              "value": 48
+              "value": 49
             },
             {
               "turn": 7,
-              "value": 52
+              "value": 53
             }
           ],
           "milestones": {
-            "at25": 4,
+            "at25": 3,
             "at50": 7,
             "at75": null
           }
@@ -3271,37 +3274,37 @@
           "points": [
             {
               "turn": 1,
-              "value": 7
+              "value": 21
             },
             {
               "turn": 2,
-              "value": 8
+              "value": 25
             },
             {
               "turn": 3,
-              "value": 17
+              "value": 33
             },
             {
               "turn": 4,
-              "value": 32
+              "value": 46
             },
             {
               "turn": 5,
-              "value": 44
+              "value": 56
             },
             {
               "turn": 6,
-              "value": 52
+              "value": 62
             },
             {
               "turn": 7,
-              "value": 58
+              "value": 67
             }
           ],
-          "observedWithinHorizon": 466,
+          "observedWithinHorizon": 534,
           "milestones": {
-            "at25": 4,
-            "at50": 6,
+            "at25": 2,
+            "at50": 5,
             "at75": null
           }
         },

@@ -16,7 +16,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/FaeDominion_WOC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Fae Dominion",
@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 37,
-    "p20": 25,
+    "median": 38,
+    "p20": 27,
     "p80": 48,
-    "peak": 67,
+    "peak": 68,
     "coverage": 89,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "362414b3fd2805f47175748fdafc97eef4c16c71d1af95801f948d719d5bf82d",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Alela, Cunning Conqueror\n1 Archmage of Echoes\n1 Malleable Impostor\n1 Misleading Signpost\n1 Shadow Puppeteers\n1 Blightwing Bandit\n1 Faerie Bladecrafter\n1 Nettling Nuisance\n1 Tegwyll's Scouring\n1 Brazen Borrower // Petty Theft\n1 Dig Through Time\n1 Faerie Formation\n1 Glen Elendra Archmage\n1 Hullbreaker Horror\n1 Illusionist's Gambit\n1 Midnight Clock\n1 Perplexing Test\n1 Reflections of Littjara\n1 Scion of Oona\n1 Sower of Temptation\n1 Theoretical Duplication\n1 Kindred Dominance\n1 Nightmare Unmaking\n1 Puppeteer Clique\n1 Rankle, Master of Pranks\n1 Thrilling Encore\n1 Glen Elendra Liege\n1 Nymris, Oona's Trickster\n1 Oona, Queen of the Fae\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Secluded Glen\n1 Sunken Hollow\n1 Temple of Deceit\n1 Mocking Sprite\n1 Picklock Prankster // Free the Fae\n1 Spell Stutter\n1 Obyra, Dreaming Duelist\n1 Spellscorn Coven // Take It Back\n1 Arcane Denial\n1 Cloud of Faeries\n1 Consider\n1 Distant Melody\n1 Fact or Fiction\n1 Faerie Seer\n1 Frantic Search\n1 Hypnotic Sprite // Mesmeric Glare\n1 Keep Watch\n1 Nightveil Sprite\n1 Opt\n1 Quickling\n1 Reality Shift\n1 Reconnaissance Mission\n1 Repulse\n1 Run Away Together\n1 Snap\n1 Reckless Spite\n1 Halo Forager\n1 Arcane Signet\n1 Dimir Signet\n1 Fellwar Stone\n1 Mind Stone\n1 Sol Ring\n1 Talisman of Dominance\n1 Wayfarer's Bauble\n1 Bojuka Bog\n1 Command Tower\n1 Dimir Aqueduct\n1 Faerie Conclave\n1 Myriad Landscape\n1 Path of Ancestry\n1 Tainted Isle\n1 Temple of the False God\n7 Island\n6 Island\n6 Swamp\n6 Swamp",
   "oracleCards": [
@@ -114,7 +114,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "protection"
       ],
       "isCommander": false
     },
@@ -213,6 +214,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -836,7 +838,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -1045,7 +1048,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "wipe",
+        "draw",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -1169,7 +1172,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "protection"
       ],
       "isCommander": false
     },
@@ -1210,6 +1214,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "protection",
         "tokens",
         "etb"
       ],
@@ -1530,14 +1535,14 @@
   ],
   "result": {
     "profile": {
-      "median": 37,
-      "floor": 25,
+      "median": 38,
+      "floor": 27,
       "ceiling": 48,
-      "peak": 67,
-      "dispersion": 22,
-      "variance": 22,
+      "peak": 68,
+      "dispersion": 21,
+      "variance": 21,
       "consistency": 66,
-      "commanderDelta": 7,
+      "commanderDelta": 6,
       "coverage": 89,
       "dataCoverage": 89
     },
@@ -1546,8 +1551,8 @@
       "consistency": 66,
       "explosiveness": 15,
       "synergy": 1,
-      "interaction": 47,
-      "resilience": 29
+      "interaction": 46,
+      "resilience": 34
     },
     "roles": {
       "lands": 39,
@@ -1555,9 +1560,9 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 10,
+      "draw": 12,
       "interaction": 9,
-      "protection": 0,
+      "protection": 3,
       "recursion": 0,
       "wipes": 4,
       "avgCmc": 3.4166666666666665,
@@ -1586,16 +1591,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 35,
+      "floor": 36,
       "median": 43,
       "high": 50,
       "ceiling": 50,
-      "peak": 65,
+      "peak": 66,
       "iqr": 11,
       "consistency": 75,
       "commanderMedianTurn": 3,
       "engineMedianTurn": null,
-      "recoveryAfterDisruption": 92,
+      "recoveryAfterDisruption": 94,
       "turnProfile": [
         {
           "turn": 1,
@@ -1610,23 +1615,23 @@
           "commander": 9,
           "engine": 0,
           "interaction": 24,
-          "resource": 24,
+          "resource": 29,
           "burst": 1
         },
         {
           "turn": 3,
           "commander": 71,
           "engine": 0,
-          "interaction": 38,
-          "resource": 45,
+          "interaction": 37,
+          "resource": 51,
           "burst": 6
         },
         {
           "turn": 4,
           "commander": 93,
           "engine": 0,
-          "interaction": 51,
-          "resource": 59,
+          "interaction": 50,
+          "resource": 67,
           "burst": 9
         },
         {
@@ -1634,15 +1639,15 @@
           "commander": 96,
           "engine": 0,
           "interaction": 60,
-          "resource": 66,
+          "resource": 73,
           "burst": 10
         },
         {
           "turn": 6,
           "commander": 98,
           "engine": 0,
-          "interaction": 67,
-          "resource": 70,
+          "interaction": 66,
+          "resource": 77,
           "burst": 11
         },
         {
@@ -1650,7 +1655,7 @@
           "commander": 98,
           "engine": 0,
           "interaction": 71,
-          "resource": 74,
+          "resource": 81,
           "burst": 13
         }
       ],
@@ -1743,26 +1748,26 @@
               },
               {
                 "turn": 3,
-                "value": 41
+                "value": 40
               },
               {
                 "turn": 4,
-                "value": 55
+                "value": 52
               },
               {
                 "turn": 5,
-                "value": 65
+                "value": 63
               },
               {
                 "turn": 6,
-                "value": 72
+                "value": 69
               },
               {
                 "turn": 7,
-                "value": 77
+                "value": 75
               }
             ],
-            "observedWithinHorizon": 617
+            "observedWithinHorizon": 600
           },
           "resource": {
             "id": "resource-first-access",
@@ -1774,30 +1779,30 @@
               },
               {
                 "turn": 2,
-                "value": 23
+                "value": 28
               },
               {
                 "turn": 3,
-                "value": 44
+                "value": 52
               },
               {
                 "turn": 4,
-                "value": 59
+                "value": 67
               },
               {
                 "turn": 5,
-                "value": 65
+                "value": 74
               },
               {
                 "turn": 6,
-                "value": 70
+                "value": 78
               },
               {
                 "turn": 7,
-                "value": 73
+                "value": 81
               }
             ],
-            "observedWithinHorizon": 587
+            "observedWithinHorizon": 651
           },
           "burst": {
             "id": "burst-first-access",
@@ -1926,6 +1931,16 @@
         "aeon": null
       },
       {
+        "name": "Rankle, Master of Pranks",
+        "impact": 2.2,
+        "tags": [
+          "creature",
+          "draw",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Reconnaissance Mission",
         "impact": 2.2,
         "tags": [
@@ -1945,12 +1960,12 @@
         "aeon": null
       },
       {
-        "name": "Rankle, Master of Pranks",
-        "impact": 2,
+        "name": "Cloud of Faeries",
+        "impact": 1.8,
         "tags": [
           "creature",
-          "wipe",
-          "graveyard-setup"
+          "draw",
+          "etb"
         ],
         "aeon": null
       },
@@ -1989,15 +2004,6 @@
           "instant",
           "draw",
           "graveyard-setup"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Keep Watch",
-        "impact": 1.7,
-        "tags": [
-          "instant",
-          "draw"
         ],
         "aeon": null
       }
@@ -2040,49 +2046,49 @@
           ]
         },
         "volatility": {
-          "score": 73,
+          "score": 72,
           "level": "high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 22,
+              "value": 21,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 19,
+              "value": 20,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
           ]
         },
         "interaction": {
-          "score": 47,
+          "score": 46,
           "level": "moderate",
           "evidence": [
             {
               "signal": "interaction",
-              "value": 47,
+              "value": 46,
               "source": "aeon-dimension",
               "reason": "Existing Aeon interaction-access dimension."
             }
           ]
         },
         "resilience": {
-          "score": 29,
+          "score": 34,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 29,
+              "value": 34,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 26,
+          "score": 27,
           "level": "moderate",
           "evidence": [
             {
@@ -2099,7 +2105,7 @@
             },
             {
               "signal": "resilience",
-              "value": 29,
+              "value": 34,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
@@ -2112,12 +2118,12 @@
           ]
         },
         "dependency": {
-          "score": 29,
+          "score": 25,
           "level": "moderate",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 7,
+              "value": 6,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
@@ -2387,26 +2393,26 @@
             },
             {
               "turn": 3,
-              "value": 41
+              "value": 40
             },
             {
               "turn": 4,
-              "value": 55
+              "value": 52
             },
             {
               "turn": 5,
-              "value": 65
+              "value": 63
             },
             {
               "turn": 6,
-              "value": 72
+              "value": 69
             },
             {
               "turn": 7,
-              "value": 77
+              "value": 75
             }
           ],
-          "observedWithinHorizon": 617,
+          "observedWithinHorizon": 600,
           "milestones": {
             "at25": 2,
             "at50": 4,
@@ -2424,34 +2430,34 @@
             },
             {
               "turn": 2,
-              "value": 23
+              "value": 28
             },
             {
               "turn": 3,
-              "value": 44
+              "value": 52
             },
             {
               "turn": 4,
-              "value": 59
+              "value": 67
             },
             {
               "turn": 5,
-              "value": 65
+              "value": 74
             },
             {
               "turn": 6,
-              "value": 70
+              "value": 78
             },
             {
               "turn": 7,
-              "value": 73
+              "value": 81
             }
           ],
-          "observedWithinHorizon": 587,
+          "observedWithinHorizon": 651,
           "milestones": {
-            "at25": 3,
-            "at50": 4,
-            "at75": null
+            "at25": 2,
+            "at50": 3,
+            "at75": 6
           }
         },
         "burst": {
@@ -2592,11 +2598,11 @@
             },
             {
               "turn": 3,
-              "value": 38
+              "value": 37
             },
             {
               "turn": 4,
-              "value": 51
+              "value": 50
             },
             {
               "turn": 5,
@@ -2604,7 +2610,7 @@
             },
             {
               "turn": 6,
-              "value": 67
+              "value": 66
             },
             {
               "turn": 7,
@@ -2628,33 +2634,33 @@
             },
             {
               "turn": 2,
-              "value": 24
+              "value": 29
             },
             {
               "turn": 3,
-              "value": 45
+              "value": 51
             },
             {
               "turn": 4,
-              "value": 59
+              "value": 67
             },
             {
               "turn": 5,
-              "value": 66
+              "value": 73
             },
             {
               "turn": 6,
-              "value": 70
+              "value": 77
             },
             {
               "turn": 7,
-              "value": 74
+              "value": 81
             }
           ],
           "milestones": {
-            "at25": 3,
-            "at50": 4,
-            "at75": null
+            "at25": 2,
+            "at50": 3,
+            "at75": 6
           }
         },
         "burst": {
@@ -2796,26 +2802,26 @@
             },
             {
               "turn": 3,
-              "value": 41
+              "value": 40
             },
             {
               "turn": 4,
-              "value": 55
+              "value": 52
             },
             {
               "turn": 5,
-              "value": 65
+              "value": 63
             },
             {
               "turn": 6,
-              "value": 72
+              "value": 69
             },
             {
               "turn": 7,
-              "value": 77
+              "value": 75
             }
           ],
-          "observedWithinHorizon": 617,
+          "observedWithinHorizon": 600,
           "milestones": {
             "at25": 2,
             "at50": 4,
@@ -2833,34 +2839,34 @@
             },
             {
               "turn": 2,
-              "value": 23
+              "value": 28
             },
             {
               "turn": 3,
-              "value": 44
+              "value": 52
             },
             {
               "turn": 4,
-              "value": 59
+              "value": 67
             },
             {
               "turn": 5,
-              "value": 65
+              "value": 74
             },
             {
               "turn": 6,
-              "value": 70
+              "value": 78
             },
             {
               "turn": 7,
-              "value": 73
+              "value": 81
             }
           ],
-          "observedWithinHorizon": 587,
+          "observedWithinHorizon": 651,
           "milestones": {
-            "at25": 3,
-            "at50": 4,
-            "at75": null
+            "at25": 2,
+            "at50": 3,
+            "at75": 6
           }
         },
         "burst": {

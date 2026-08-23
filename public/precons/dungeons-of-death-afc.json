@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/DungeonsOfDeath_AFC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Dungeons of Death",
@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 51,
-    "p20": 39,
+    "p20": 40,
     "p80": 61,
     "peak": 87,
-    "coverage": 94,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "coverage": 95,
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "8ceb4c24c9fe16ac36938793fdab2795167b79e234e8f05cec6c7eef0e4e1481",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Cataclysmic Gearhulk\n1 Eternal Dragon\n1 Karmic Guide\n1 Sun Titan\n1 Sunblast Angel\n1 Champion of Wits\n1 Curator of Mysteries\n1 Phantasmal Image\n1 Doomed Necromancer\n1 Ashen Rider\n1 Baleful Strix\n1 Hostage Taker\n1 Solemn Simulacrum\n1 Ronom Unicorn\n1 Wall of Omens\n1 Merfolk Looter\n1 Mulldrifter\n1 Murder of Crows\n1 Plaguecrafter\n1 Reassembling Skeleton\n1 Shriekmaw\n1 Cloudblazer\n1 Necrotic Sliver\n1 Obsessive Stitcher\n1 Burnished Hart\n1 Meteor Golem\n1 Necromantic Selection\n1 Unburial Rites\n1 Victimize\n1 Utter End\n1 Swords to Plowshares\n1 Forbidden Alchemy\n1 Despark\n1 Vanish into Memory\n1 Arcane Signet\n1 Commander's Sphere\n1 Fellwar Stone\n1 Sol Ring\n1 Wayfarer's Bauble\n1 Lightning Greaves\n1 Propaganda\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Geier Reach Sanitarium\n1 High Market\n1 Nimbus Maze\n1 Port Town\n1 Prairie Stream\n1 Sunken Hollow\n1 Evolving Wilds\n1 Arcane Sanctum\n1 Azorius Chancery\n1 Command Tower\n1 Dimir Aqueduct\n1 Esper Panorama\n1 Orzhov Basilica\n1 Terramorphic Expanse\n1 Thriving Heath\n1 Thriving Isle\n1 Thriving Moor\n2 Plains\n2 Plains\n2 Plains\n1 Plains\n2 Island\n1 Island\n1 Island\n1 Island\n2 Swamp\n2 Swamp\n2 Swamp\n1 Swamp\n1 Nihiloor\n1 Immovable Rod\n1 Radiant Solar\n1 Revivify\n1 Thorough Investigation\n1 Arcane Endeavor\n1 Minn, Wily Illusionist\n1 Phantom Steed\n1 Rod of Absorption\n1 Grave Endeavor\n1 Wand of Orcus\n1 Extract Brain\n1 Midnight Pathlighter\n1 Minimus Containment\n1 Hama Pashar, Ruin Seeker\n1 Dungeon Map\n1 Bucknard's Everfull Purse\n1 Clay Golem\n1 Component Pouch",
   "oracleCards": [
@@ -243,7 +243,9 @@
       "tags": [
         "creature",
         "draw",
+        "recursion",
         "graveyard-setup",
+        "tokens",
         "etb"
       ],
       "isCommander": false
@@ -285,7 +287,8 @@
         "creature",
         "artifact",
         "removal",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -393,7 +396,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "draw"
       ],
       "isCommander": false
     },
@@ -532,6 +536,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "draw",
         "recursion"
       ],
       "isCommander": false
@@ -631,7 +636,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "instant"
+        "instant",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -802,7 +808,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "protection"
       ],
       "isCommander": false
     },
@@ -1123,7 +1130,6 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "wipe",
         "etb"
       ],
       "isCommander": false
@@ -1511,8 +1517,7 @@
       "tags": [
         "enchantment",
         "tokens",
-        "sacrifice",
-        "death-payoff"
+        "sacrifice"
       ],
       "isCommander": false
     },
@@ -1726,23 +1731,23 @@
   "result": {
     "profile": {
       "median": 51,
-      "floor": 39,
+      "floor": 40,
       "ceiling": 61,
       "peak": 87,
-      "dispersion": 22,
-      "variance": 22,
-      "consistency": 64,
+      "dispersion": 21,
+      "variance": 21,
+      "consistency": 63,
       "commanderDelta": 10,
-      "coverage": 94,
-      "dataCoverage": 94
+      "coverage": 95,
+      "dataCoverage": 95
     },
     "dimensions": {
       "speed": 36,
-      "consistency": 64,
+      "consistency": 63,
       "explosiveness": 24,
-      "synergy": 69,
-      "interaction": 56,
-      "resilience": 60
+      "synergy": 72,
+      "interaction": 52,
+      "resilience": 68
     },
     "roles": {
       "lands": 39,
@@ -1750,11 +1755,11 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 12,
-      "interaction": 15,
-      "protection": 1,
-      "recursion": 9,
-      "wipes": 3,
+      "draw": 14,
+      "interaction": 14,
+      "protection": 2,
+      "recursion": 11,
+      "wipes": 2,
       "avgCmc": 3.6333333333333333,
       "unknownManaLands": 0
     },
@@ -1762,8 +1767,8 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 82,
-        "cohesion": 82,
+        "strength": 85,
+        "cohesion": 85,
         "producers": [
           "Champion of Wits",
           "Merfolk Looter",
@@ -1771,15 +1776,16 @@
           "Obsessive Stitcher"
         ],
         "payoffs": [
+          "Champion of Wits",
           "Doomed Necromancer",
           "Eternal Dragon",
+          "Forbidden Alchemy",
           "Grave Endeavor",
           "Karmic Guide",
           "Obsessive Stitcher",
           "Reassembling Skeleton",
           "Revivify",
-          "Sun Titan",
-          "Unburial Rites"
+          "Sun Titan"
         ],
         "members": [
           "Champion of Wits",
@@ -1788,6 +1794,7 @@
           "Obsessive Stitcher",
           "Doomed Necromancer",
           "Eternal Dragon",
+          "Forbidden Alchemy",
           "Grave Endeavor",
           "Karmic Guide",
           "Reassembling Skeleton",
@@ -1802,7 +1809,9 @@
             "tags": [
               "creature",
               "draw",
+              "recursion",
               "graveyard-setup",
+              "tokens",
               "etb"
             ],
             "manaReq": {
@@ -1882,6 +1891,27 @@
         "supportCards": [],
         "payoffCards": [
           {
+            "name": "Champion of Wits",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "draw",
+              "recursion",
+              "graveyard-setup",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
             "name": "Doomed Necromancer",
             "cmc": 3,
             "tags": [
@@ -1904,6 +1934,7 @@
             "cmc": 7,
             "tags": [
               "creature",
+              "draw",
               "recursion"
             ],
             "manaReq": {
@@ -1917,6 +1948,23 @@
                 ]
               ],
               "total": 7
+            }
+          },
+          {
+            "name": "Forbidden Alchemy",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
             }
           },
           {
@@ -2066,16 +2114,17 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "4 producteur(s), 9 payoff(s), 12 carte(s) distincte(s)."
+        "evidence": "4 producteur(s), 11 payoff(s), 13 carte(s) distincte(s)."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 34,
+      "score": 37,
       "connected": [
         "Champion of Wits",
         "Doomed Necromancer",
         "Eternal Dragon",
+        "Forbidden Alchemy",
         "Grave Endeavor",
         "Karmic Guide",
         "Merfolk Looter",
@@ -2107,11 +2156,11 @@
       "high": 54,
       "ceiling": 54,
       "peak": 79,
-      "iqr": 12,
-      "consistency": 73,
+      "iqr": 13,
+      "consistency": 72,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 91,
+      "recoveryAfterDisruption": 92,
       "turnProfile": [
         {
           "turn": 1,
@@ -2125,48 +2174,48 @@
           "turn": 2,
           "commander": 4,
           "engine": 0,
-          "interaction": 19,
+          "interaction": 18,
           "resource": 30,
           "burst": 5
         },
         {
           "turn": 3,
           "commander": 44,
-          "engine": 2,
-          "interaction": 39,
-          "resource": 51,
+          "engine": 3,
+          "interaction": 35,
+          "resource": 54,
           "burst": 12
         },
         {
           "turn": 4,
           "commander": 76,
-          "engine": 8,
-          "interaction": 63,
-          "resource": 71,
+          "engine": 10,
+          "interaction": 58,
+          "resource": 75,
           "burst": 18
         },
         {
           "turn": 5,
           "commander": 86,
-          "engine": 15,
-          "interaction": 74,
-          "resource": 83,
+          "engine": 17,
+          "interaction": 71,
+          "resource": 86,
           "burst": 22
         },
         {
           "turn": 6,
           "commander": 91,
-          "engine": 21,
-          "interaction": 81,
-          "resource": 89,
+          "engine": 24,
+          "interaction": 78,
+          "resource": 91,
           "burst": 26
         },
         {
           "turn": 7,
           "commander": 93,
-          "engine": 26,
-          "interaction": 86,
-          "resource": 92,
+          "engine": 29,
+          "interaction": 83,
+          "resource": 94,
           "burst": 30
         }
       ],
@@ -2224,26 +2273,26 @@
               },
               {
                 "turn": 3,
-                "value": 3
+                "value": 4
               },
               {
                 "turn": 4,
-                "value": 9
+                "value": 11
               },
               {
                 "turn": 5,
-                "value": 14
+                "value": 17
               },
               {
                 "turn": 6,
-                "value": 21
+                "value": 24
               },
               {
                 "turn": 7,
-                "value": 26
+                "value": 29
               }
             ],
-            "observedWithinHorizon": 206
+            "observedWithinHorizon": 230
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -2259,26 +2308,26 @@
               },
               {
                 "turn": 3,
-                "value": 40
+                "value": 37
               },
               {
                 "turn": 4,
-                "value": 62
+                "value": 58
               },
               {
                 "turn": 5,
-                "value": 74
+                "value": 71
               },
               {
                 "turn": 6,
-                "value": 82
+                "value": 79
               },
               {
                 "turn": 7,
-                "value": 87
+                "value": 85
               }
             ],
-            "observedWithinHorizon": 698
+            "observedWithinHorizon": 678
           },
           "resource": {
             "id": "resource-first-access",
@@ -2290,30 +2339,30 @@
               },
               {
                 "turn": 2,
-                "value": 29
+                "value": 30
               },
               {
                 "turn": 3,
-                "value": 55
+                "value": 57
               },
               {
                 "turn": 4,
-                "value": 74
+                "value": 77
               },
               {
                 "turn": 5,
-                "value": 86
+                "value": 88
               },
               {
                 "turn": 6,
-                "value": 92
+                "value": 93
               },
               {
                 "turn": 7,
-                "value": 95
+                "value": 96
               }
             ],
-            "observedWithinHorizon": 757
+            "observedWithinHorizon": 766
           },
           "burst": {
             "id": "burst-first-access",
@@ -2433,6 +2482,19 @@
         "aeon": null
       },
       {
+        "name": "Champion of Wits",
+        "impact": 3.5,
+        "tags": [
+          "creature",
+          "draw",
+          "recursion",
+          "graveyard-setup",
+          "tokens",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Obsessive Stitcher",
         "impact": 3.1,
         "tags": [
@@ -2451,6 +2513,16 @@
           "artifact",
           "mana",
           "fast-mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Eternal Dragon",
+        "impact": 2.9,
+        "tags": [
+          "creature",
+          "draw",
+          "recursion"
         ],
         "aeon": null
       },
@@ -2507,30 +2579,6 @@
           "graveyard-setup"
         ],
         "aeon": null
-      },
-      {
-        "name": "Solemn Simulacrum",
-        "impact": 2.5,
-        "tags": [
-          "creature",
-          "artifact",
-          "draw",
-          "land-ramp",
-          "death-payoff",
-          "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Champion of Wits",
-        "impact": 2.4,
-        "tags": [
-          "creature",
-          "draw",
-          "graveyard-setup",
-          "etb"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
@@ -2571,12 +2619,12 @@
           ]
         },
         "volatility": {
-          "score": 83,
+          "score": 81,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 22,
+              "value": 21,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
@@ -2589,61 +2637,61 @@
           ]
         },
         "interaction": {
-          "score": 56,
+          "score": 52,
           "level": "high",
           "evidence": [
             {
               "signal": "interaction",
-              "value": 56,
+              "value": 52,
               "source": "aeon-dimension",
               "reason": "Existing Aeon interaction-access dimension."
             }
           ]
         },
         "resilience": {
-          "score": 60,
+          "score": 68,
           "level": "high",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 60,
+              "value": 68,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 68,
+          "score": 70,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 69,
+              "value": 72,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 64,
+              "value": 63,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
             {
               "signal": "resilience",
-              "value": 60,
+              "value": 68,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 82,
+              "value": 85,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 55,
+          "score": 57,
           "level": "high",
           "evidence": [
             {
@@ -2654,7 +2702,7 @@
             },
             {
               "signal": "commander-synergy",
-              "value": 34,
+              "value": 37,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },
@@ -2667,7 +2715,7 @@
           ]
         },
         "turnComplexity": {
-          "score": 21,
+          "score": 20,
           "level": "low",
           "evidence": [
             {
@@ -2678,7 +2726,7 @@
             },
             {
               "signal": "chain-payoffs",
-              "value": 7,
+              "value": 6,
               "source": "semantic",
               "reason": "Cards that convert repeated package events into additional actions."
             },
@@ -2792,13 +2840,13 @@
           "id": "long-sequencing",
           "label": "Long sequencing potential",
           "level": "low",
-          "score": 21,
+          "score": 20,
           "evidence": [
             {
               "name": "Experience Fingerprint",
               "reason": "Turn Complexity proxy from recurring/chained semantic actions.",
               "recurring": true,
-              "weight": 1.1666666666666667
+              "weight": 1.1111111111111112
             }
           ],
           "note": "Derived from Experience Fingerprint turn-complexity evidence; not calibrated to real clock time."
@@ -2880,26 +2928,26 @@
             },
             {
               "turn": 3,
-              "value": 3
+              "value": 4
             },
             {
               "turn": 4,
-              "value": 9
+              "value": 11
             },
             {
               "turn": 5,
-              "value": 14
+              "value": 17
             },
             {
               "turn": 6,
-              "value": 21
+              "value": 24
             },
             {
               "turn": 7,
-              "value": 26
+              "value": 29
             }
           ],
-          "observedWithinHorizon": 206,
+          "observedWithinHorizon": 230,
           "milestones": {
             "at25": 7,
             "at50": null,
@@ -2921,26 +2969,26 @@
             },
             {
               "turn": 3,
-              "value": 40
+              "value": 37
             },
             {
               "turn": 4,
-              "value": 62
+              "value": 58
             },
             {
               "turn": 5,
-              "value": 74
+              "value": 71
             },
             {
               "turn": 6,
-              "value": 82
+              "value": 79
             },
             {
               "turn": 7,
-              "value": 87
+              "value": 85
             }
           ],
-          "observedWithinHorizon": 698,
+          "observedWithinHorizon": 678,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -2958,34 +3006,34 @@
             },
             {
               "turn": 2,
-              "value": 29
+              "value": 30
             },
             {
               "turn": 3,
-              "value": 55
+              "value": 57
             },
             {
               "turn": 4,
-              "value": 74
+              "value": 77
             },
             {
               "turn": 5,
-              "value": 86
+              "value": 88
             },
             {
               "turn": 6,
-              "value": 92
+              "value": 93
             },
             {
               "turn": 7,
-              "value": 95
+              "value": 96
             }
           ],
-          "observedWithinHorizon": 757,
+          "observedWithinHorizon": 766,
           "milestones": {
             "at25": 2,
             "at50": 3,
-            "at75": 5
+            "at75": 4
           }
         },
         "burst": {
@@ -3086,23 +3134,23 @@
             },
             {
               "turn": 3,
-              "value": 2
+              "value": 3
             },
             {
               "turn": 4,
-              "value": 8
+              "value": 10
             },
             {
               "turn": 5,
-              "value": 15
+              "value": 17
             },
             {
               "turn": 6,
-              "value": 21
+              "value": 24
             },
             {
               "turn": 7,
-              "value": 26
+              "value": 29
             }
           ],
           "milestones": {
@@ -3122,27 +3170,27 @@
             },
             {
               "turn": 2,
-              "value": 19
+              "value": 18
             },
             {
               "turn": 3,
-              "value": 39
+              "value": 35
             },
             {
               "turn": 4,
-              "value": 63
+              "value": 58
             },
             {
               "turn": 5,
-              "value": 74
+              "value": 71
             },
             {
               "turn": 6,
-              "value": 81
+              "value": 78
             },
             {
               "turn": 7,
-              "value": 86
+              "value": 83
             }
           ],
           "milestones": {
@@ -3166,29 +3214,29 @@
             },
             {
               "turn": 3,
-              "value": 51
+              "value": 54
             },
             {
               "turn": 4,
-              "value": 71
+              "value": 75
             },
             {
               "turn": 5,
-              "value": 83
+              "value": 86
             },
             {
               "turn": 6,
-              "value": 89
+              "value": 91
             },
             {
               "turn": 7,
-              "value": 92
+              "value": 94
             }
           ],
           "milestones": {
             "at25": 2,
             "at50": 3,
-            "at75": 5
+            "at75": 4
           }
         },
         "burst": {
@@ -3289,26 +3337,26 @@
             },
             {
               "turn": 3,
-              "value": 3
+              "value": 4
             },
             {
               "turn": 4,
-              "value": 9
+              "value": 11
             },
             {
               "turn": 5,
-              "value": 14
+              "value": 17
             },
             {
               "turn": 6,
-              "value": 21
+              "value": 24
             },
             {
               "turn": 7,
-              "value": 26
+              "value": 29
             }
           ],
-          "observedWithinHorizon": 206,
+          "observedWithinHorizon": 230,
           "milestones": {
             "at25": 7,
             "at50": null,
@@ -3330,26 +3378,26 @@
             },
             {
               "turn": 3,
-              "value": 40
+              "value": 37
             },
             {
               "turn": 4,
-              "value": 62
+              "value": 58
             },
             {
               "turn": 5,
-              "value": 74
+              "value": 71
             },
             {
               "turn": 6,
-              "value": 82
+              "value": 79
             },
             {
               "turn": 7,
-              "value": 87
+              "value": 85
             }
           ],
-          "observedWithinHorizon": 698,
+          "observedWithinHorizon": 678,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -3367,34 +3415,34 @@
             },
             {
               "turn": 2,
-              "value": 29
+              "value": 30
             },
             {
               "turn": 3,
-              "value": 55
+              "value": 57
             },
             {
               "turn": 4,
-              "value": 74
+              "value": 77
             },
             {
               "turn": 5,
-              "value": 86
+              "value": 88
             },
             {
               "turn": 6,
-              "value": 92
+              "value": 93
             },
             {
               "turn": 7,
-              "value": 95
+              "value": 96
             }
           ],
-          "observedWithinHorizon": 757,
+          "observedWithinHorizon": 766,
           "milestones": {
             "at25": 2,
             "at50": 3,
-            "at75": 5
+            "at75": 4
           }
         },
         "burst": {

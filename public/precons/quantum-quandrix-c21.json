@@ -16,7 +16,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/QuantumQuandrix_C21.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Quantum Quandrix",
@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 45,
-    "p20": 30,
-    "p80": 57,
-    "peak": 86,
-    "coverage": 93,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "median": 47,
+    "p20": 34,
+    "p80": 59,
+    "peak": 87,
+    "coverage": 94,
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "0d9f8fbd4196203afc4348afab368e8d8e0cb44f2a6bef2cc9578866ab82aea4",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Garruk, Primal Hunter\n1 Esix, Fractal Bloom\n1 Curiosity Crafter\n1 Deekah, Fractal Theorist\n1 Spawning Kraken\n1 Guardian Augmenter\n1 Ruxa, Patient Professor\n1 Desolation Twin\n1 Champion of Wits\n1 Crafty Cutpurse\n1 Reef Worm\n1 Arashi, the Sky Asunder\n1 Forgotten Ancient\n1 Hornet Nest\n1 Hornet Queen\n1 Hydra Broodmaster\n1 Incubation Druid\n1 Kazandu Tuskcaller\n1 Managorger Hydra\n1 Rampaging Baloths\n1 Terastodon\n1 Kaseto, Orochi Archmage\n1 Master Biomancer\n1 Biomathematician\n1 Quandrix Cultivator\n1 Zimone, Quandrix Prodigy\n1 Coiling Oracle\n1 Plaxcaster Frogling\n1 Trygon Predator\n1 Replication Technique\n1 Oversimplify\n1 Curse of the Swine\n1 Rite of Replication\n1 Shamanic Revelation\n1 Spitting Image\n1 Golden Ratio\n1 Rampant Growth\n1 Incubation // Incongruity\n1 Perplexing Test\n1 Theoretical Duplication\n1 Return of the Wildspeaker\n1 Biomass Mutation\n1 Eureka Moment\n1 Rapid Hybridization\n1 Beast Within\n1 Krosan Grip\n1 Fractal Harness\n1 Sequence Engine\n1 Geometric Nexus\n1 Idol of Oblivion\n1 Arcane Signet\n1 Simic Signet\n1 Sol Ring\n1 Paradox Zone\n1 Primal Empathy\n1 Exotic Orchard\n1 Lumbering Falls\n1 Mosswort Bridge\n1 Oran-Rief, the Vastwood\n1 Temple of Mystery\n1 Yavimaya Coast\n1 Quandrix Campus\n1 Study Hall\n1 Blighted Woodland\n1 Command Tower\n1 Llanowar Reborn\n1 Lonely Sandbar\n1 Myriad Landscape\n1 Novijen, Heart of Progress\n1 Opal Palace\n1 Simic Growth Chamber\n1 Temple of the False God\n1 Tranquil Thicket\n6 Forest\n5 Forest\n5 Island\n5 Island\n1 Commander's Insight\n1 Ezuri's Predation\n1 Kodama's Reach\n1 Nissa's Expedition\n1 Rogue's Passage",
   "oracleCards": [
@@ -56,6 +56,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "protection",
         "token-doubler",
         "token-payoff"
       ],
@@ -74,7 +75,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -194,7 +196,9 @@
       "tags": [
         "creature",
         "draw",
+        "recursion",
         "graveyard-setup",
+        "tokens",
         "etb"
       ],
       "isCommander": false
@@ -615,7 +619,8 @@
       "tags": [
         "creature",
         "tokens",
-        "counter-producer"
+        "counter-producer",
+        "counter-kind:plus1"
       ],
       "isCommander": false
     },
@@ -813,6 +818,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -1090,6 +1096,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "protection",
         "counter-producer",
         "counter-kind:plus1"
       ],
@@ -1462,6 +1469,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -1583,6 +1591,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -1653,24 +1662,24 @@
   ],
   "result": {
     "profile": {
-      "median": 45,
-      "floor": 30,
-      "ceiling": 57,
-      "peak": 86,
-      "dispersion": 27,
-      "variance": 27,
-      "consistency": 58,
-      "commanderDelta": 11,
-      "coverage": 93,
-      "dataCoverage": 93
+      "median": 47,
+      "floor": 34,
+      "ceiling": 59,
+      "peak": 87,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 59,
+      "commanderDelta": 12,
+      "coverage": 94,
+      "dataCoverage": 94
     },
     "dimensions": {
       "speed": 33,
-      "consistency": 58,
+      "consistency": 59,
       "explosiveness": 16,
-      "synergy": 82,
-      "interaction": 44,
-      "resilience": 30
+      "synergy": 83,
+      "interaction": 46,
+      "resilience": 39
     },
     "roles": {
       "lands": 40,
@@ -1679,10 +1688,10 @@
       "tutors": 0,
       "repeatableTutors": 0,
       "draw": 11,
-      "interaction": 8,
-      "protection": 1,
-      "recursion": 1,
-      "wipes": 2,
+      "interaction": 9,
+      "protection": 2,
+      "recursion": 3,
+      "wipes": 3,
       "avgCmc": 3.864406779661017,
       "unknownManaLands": 0
     },
@@ -1694,6 +1703,7 @@
         "cohesion": 100,
         "producers": [
           "Biomathematician",
+          "Champion of Wits",
           "Deekah, Fractal Theorist",
           "Desolation Twin",
           "Esix, Fractal Bloom",
@@ -1701,8 +1711,7 @@
           "Fractal Harness",
           "Garruk, Primal Hunter",
           "Geometric Nexus",
-          "Hornet Nest",
-          "Hornet Queen"
+          "Hornet Nest"
         ],
         "payoffs": [
           "Curiosity Crafter",
@@ -1710,6 +1719,7 @@
         ],
         "members": [
           "Biomathematician",
+          "Champion of Wits",
           "Deekah, Fractal Theorist",
           "Desolation Twin",
           "Esix, Fractal Bloom",
@@ -1750,6 +1760,27 @@
                 [
                   "G"
                 ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Champion of Wits",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "draw",
+              "recursion",
+              "graveyard-setup",
+              "tokens",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
                 [
                   "U"
                 ]
@@ -1941,7 +1972,8 @@
             "tags": [
               "creature",
               "tokens",
-              "counter-producer"
+              "counter-producer",
+              "counter-kind:plus1"
             ],
             "manaReq": {
               "generic": 4,
@@ -2130,6 +2162,7 @@
             "cmc": 6,
             "tags": [
               "sorcery",
+              "recursion",
               "tokens"
             ],
             "manaReq": {
@@ -2210,24 +2243,24 @@
         "payoffTags": [
           "token-payoff"
         ],
-        "evidence": "22 producteur(s), 2 payoff(s), 23 carte(s) distincte(s)."
+        "evidence": "23 producteur(s), 2 payoff(s), 24 carte(s) distincte(s)."
       },
       {
         "id": "counters",
         "name": "Marqueurs",
-        "strength": 93,
-        "cohesion": 93,
+        "strength": 97,
+        "cohesion": 97,
         "producers": [
           "Biomathematician",
           "Deekah, Fractal Theorist",
           "Forgotten Ancient",
           "Fractal Harness",
           "Geometric Nexus",
+          "Hydra Broodmaster",
           "Incubation Druid",
           "Llanowar Reborn",
           "Managorger Hydra",
-          "Master Biomancer",
-          "Novijen, Heart of Progress"
+          "Master Biomancer"
         ],
         "payoffs": [
           "Fractal Harness",
@@ -2239,6 +2272,7 @@
           "Forgotten Ancient",
           "Fractal Harness",
           "Geometric Nexus",
+          "Hydra Broodmaster",
           "Incubation Druid",
           "Llanowar Reborn",
           "Managorger Hydra",
@@ -2349,6 +2383,28 @@
               "generic": 2,
               "colored": [],
               "total": 2
+            }
+          },
+          {
+            "name": "Hydra Broodmaster",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "tokens",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 6
             }
           },
           {
@@ -2500,6 +2556,7 @@
             "cmc": 3,
             "tags": [
               "creature",
+              "protection",
               "counter-producer",
               "counter-kind:plus1"
             ],
@@ -2614,7 +2671,7 @@
           "counter-payoff",
           "modified-payoff"
         ],
-        "evidence": "16 producteur(s), 2 payoff(s), 16 carte(s) distincte(s)."
+        "evidence": "17 producteur(s), 2 payoff(s), 17 carte(s) distincte(s)."
       },
       {
         "id": "lands",
@@ -2887,6 +2944,7 @@
             "cmc": 4,
             "tags": [
               "creature",
+              "protection",
               "token-doubler",
               "token-payoff"
             ],
@@ -2909,9 +2967,10 @@
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 66,
+      "score": 69,
       "connected": [
         "Biomathematician",
+        "Champion of Wits",
         "Curiosity Crafter",
         "Deekah, Fractal Theorist",
         "Desolation Twin",
@@ -2951,23 +3010,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
-      "median": 43,
-      "high": 52,
-      "ceiling": 52,
-      "peak": 79,
+      "floor": 35,
+      "median": 44,
+      "high": 53,
+      "ceiling": 53,
+      "peak": 80,
       "iqr": 15,
-      "consistency": 66,
+      "consistency": 67,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 81,
+      "recoveryAfterDisruption": 82,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 4,
-          "resource": 1,
+          "resource": 15,
           "burst": 7
         },
         {
@@ -2975,7 +3034,7 @@
           "commander": 3,
           "engine": 0,
           "interaction": 9,
-          "resource": 9,
+          "resource": 22,
           "burst": 7
         },
         {
@@ -2983,39 +3042,39 @@
           "commander": 32,
           "engine": 7,
           "interaction": 32,
-          "resource": 34,
+          "resource": 43,
           "burst": 6
         },
         {
           "turn": 4,
           "commander": 74,
-          "engine": 19,
-          "interaction": 49,
-          "resource": 56,
+          "engine": 20,
+          "interaction": 51,
+          "resource": 60,
           "burst": 4
         },
         {
           "turn": 5,
           "commander": 89,
-          "engine": 30,
-          "interaction": 59,
-          "resource": 67,
+          "engine": 31,
+          "interaction": 61,
+          "resource": 72,
           "burst": 3
         },
         {
           "turn": 6,
           "commander": 93,
           "engine": 38,
-          "interaction": 64,
-          "resource": 74,
+          "interaction": 67,
+          "resource": 78,
           "burst": 2
         },
         {
           "turn": 7,
           "commander": 95,
           "engine": 43,
-          "interaction": 69,
-          "resource": 78,
+          "interaction": 72,
+          "resource": 81,
           "burst": 1
         }
       ],
@@ -3077,22 +3136,22 @@
               },
               {
                 "turn": 4,
-                "value": 19
+                "value": 20
               },
               {
                 "turn": 5,
-                "value": 28
+                "value": 29
               },
               {
                 "turn": 6,
-                "value": 35
+                "value": 36
               },
               {
                 "turn": 7,
-                "value": 40
+                "value": 41
               }
             ],
-            "observedWithinHorizon": 319
+            "observedWithinHorizon": 328
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -3112,22 +3171,22 @@
               },
               {
                 "turn": 4,
-                "value": 51
+                "value": 53
               },
               {
                 "turn": 5,
-                "value": 60
-              },
-              {
-                "turn": 6,
                 "value": 64
               },
               {
-                "turn": 7,
+                "turn": 6,
                 "value": 68
+              },
+              {
+                "turn": 7,
+                "value": 72
               }
             ],
-            "observedWithinHorizon": 545
+            "observedWithinHorizon": 576
           },
           "resource": {
             "id": "resource-first-access",
@@ -3135,34 +3194,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 0
+                "value": 16
               },
               {
                 "turn": 2,
-                "value": 6
+                "value": 22
               },
               {
                 "turn": 3,
-                "value": 34
+                "value": 46
               },
               {
                 "turn": 4,
-                "value": 58
+                "value": 67
               },
               {
                 "turn": 5,
-                "value": 69
+                "value": 76
               },
               {
                 "turn": 6,
-                "value": 77
+                "value": 83
               },
               {
                 "turn": 7,
-                "value": 82
+                "value": 87
               }
             ],
-            "observedWithinHorizon": 652
+            "observedWithinHorizon": 694
           },
           "burst": {
             "id": "burst-first-access",
@@ -3269,6 +3328,19 @@
         "aeon": null
       },
       {
+        "name": "Champion of Wits",
+        "impact": 3.5,
+        "tags": [
+          "creature",
+          "draw",
+          "recursion",
+          "graveyard-setup",
+          "tokens",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Fractal Harness",
         "impact": 3.3,
         "tags": [
@@ -3369,17 +3441,6 @@
           "counter-kind:charge"
         ],
         "aeon": null
-      },
-      {
-        "name": "Incubation Druid",
-        "impact": 2.6,
-        "tags": [
-          "creature",
-          "mana",
-          "counter-producer",
-          "counter-kind:plus1"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
@@ -3420,90 +3481,90 @@
           ]
         },
         "volatility": {
-          "score": 98,
+          "score": 92,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 27,
+              "value": 25,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 29,
+              "value": 28,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
           ]
         },
         "interaction": {
-          "score": 44,
+          "score": 46,
           "level": "moderate",
           "evidence": [
             {
               "signal": "interaction",
-              "value": 44,
+              "value": 46,
               "source": "aeon-dimension",
               "reason": "Existing Aeon interaction-access dimension."
             }
           ]
         },
         "resilience": {
-          "score": 30,
+          "score": 39,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 30,
+              "value": 39,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 64,
+          "score": 67,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 82,
+              "value": 83,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 58,
+              "value": 59,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
             {
               "signal": "resilience",
-              "value": 30,
+              "value": 39,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 80.7,
+              "value": 82,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 74,
-          "level": "high",
+          "score": 79,
+          "level": "very-high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 11,
+              "value": 12,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 66,
+              "value": 69,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },
@@ -3710,22 +3771,22 @@
             },
             {
               "turn": 4,
-              "value": 19
+              "value": 20
             },
             {
               "turn": 5,
-              "value": 28
+              "value": 29
             },
             {
               "turn": 6,
-              "value": 35
+              "value": 36
             },
             {
               "turn": 7,
-              "value": 40
+              "value": 41
             }
           ],
-          "observedWithinHorizon": 319,
+          "observedWithinHorizon": 328,
           "milestones": {
             "at25": 5,
             "at50": null,
@@ -3751,22 +3812,22 @@
             },
             {
               "turn": 4,
-              "value": 51
+              "value": 53
             },
             {
               "turn": 5,
-              "value": 60
-            },
-            {
-              "turn": 6,
               "value": 64
             },
             {
-              "turn": 7,
+              "turn": 6,
               "value": 68
+            },
+            {
+              "turn": 7,
+              "value": 72
             }
           ],
-          "observedWithinHorizon": 545,
+          "observedWithinHorizon": 576,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -3780,38 +3841,38 @@
           "points": [
             {
               "turn": 1,
-              "value": 0
+              "value": 16
             },
             {
               "turn": 2,
-              "value": 6
+              "value": 22
             },
             {
               "turn": 3,
-              "value": 34
+              "value": 46
             },
             {
               "turn": 4,
-              "value": 58
+              "value": 67
             },
             {
               "turn": 5,
-              "value": 69
+              "value": 76
             },
             {
               "turn": 6,
-              "value": 77
+              "value": 83
             },
             {
               "turn": 7,
-              "value": 82
+              "value": 87
             }
           ],
-          "observedWithinHorizon": 652,
+          "observedWithinHorizon": 694,
           "milestones": {
             "at25": 3,
             "at50": 4,
-            "at75": 6
+            "at75": 5
           }
         },
         "burst": {
@@ -3916,11 +3977,11 @@
             },
             {
               "turn": 4,
-              "value": 19
+              "value": 20
             },
             {
               "turn": 5,
-              "value": 30
+              "value": 31
             },
             {
               "turn": 6,
@@ -3956,24 +4017,24 @@
             },
             {
               "turn": 4,
-              "value": 49
+              "value": 51
             },
             {
               "turn": 5,
-              "value": 59
+              "value": 61
             },
             {
               "turn": 6,
-              "value": 64
+              "value": 67
             },
             {
               "turn": 7,
-              "value": 69
+              "value": 72
             }
           ],
           "milestones": {
             "at25": 3,
-            "at50": 5,
+            "at50": 4,
             "at75": null
           }
         },
@@ -3984,37 +4045,37 @@
           "points": [
             {
               "turn": 1,
-              "value": 1
+              "value": 15
             },
             {
               "turn": 2,
-              "value": 9
+              "value": 22
             },
             {
               "turn": 3,
-              "value": 34
+              "value": 43
             },
             {
               "turn": 4,
-              "value": 56
+              "value": 60
             },
             {
               "turn": 5,
-              "value": 67
+              "value": 72
             },
             {
               "turn": 6,
-              "value": 74
+              "value": 78
             },
             {
               "turn": 7,
-              "value": 78
+              "value": 81
             }
           ],
           "milestones": {
             "at25": 3,
             "at50": 4,
-            "at75": 7
+            "at75": 6
           }
         },
         "burst": {
@@ -4119,22 +4180,22 @@
             },
             {
               "turn": 4,
-              "value": 19
+              "value": 20
             },
             {
               "turn": 5,
-              "value": 28
+              "value": 29
             },
             {
               "turn": 6,
-              "value": 35
+              "value": 36
             },
             {
               "turn": 7,
-              "value": 40
+              "value": 41
             }
           ],
-          "observedWithinHorizon": 319,
+          "observedWithinHorizon": 328,
           "milestones": {
             "at25": 5,
             "at50": null,
@@ -4160,22 +4221,22 @@
             },
             {
               "turn": 4,
-              "value": 51
+              "value": 53
             },
             {
               "turn": 5,
-              "value": 60
-            },
-            {
-              "turn": 6,
               "value": 64
             },
             {
-              "turn": 7,
+              "turn": 6,
               "value": 68
+            },
+            {
+              "turn": 7,
+              "value": 72
             }
           ],
-          "observedWithinHorizon": 545,
+          "observedWithinHorizon": 576,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -4189,38 +4250,38 @@
           "points": [
             {
               "turn": 1,
-              "value": 0
+              "value": 16
             },
             {
               "turn": 2,
-              "value": 6
+              "value": 22
             },
             {
               "turn": 3,
-              "value": 34
+              "value": 46
             },
             {
               "turn": 4,
-              "value": 58
+              "value": 67
             },
             {
               "turn": 5,
-              "value": 69
+              "value": 76
             },
             {
               "turn": 6,
-              "value": 77
+              "value": 83
             },
             {
               "turn": 7,
-              "value": 82
+              "value": 87
             }
           ],
-          "observedWithinHorizon": 652,
+          "observedWithinHorizon": 694,
           "milestones": {
             "at25": 3,
             "at50": 4,
-            "at75": 6
+            "at75": 5
           }
         },
         "burst": {

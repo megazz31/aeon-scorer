@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/CabarettiCacophony_NCC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Cabaretti Cacophony",
@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 47,
-    "p20": 33,
-    "p80": 57,
+    "p20": 35,
+    "p80": 58,
     "peak": 88,
     "coverage": 94,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "a5200f1fb1bda69842e24457a325d1dc0239c761438818a6ef3eb056e5d516d3",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Phabine, Boss's Confidant\n1 Leafkin Druid\n1 Sakura-Tribe Elder\n1 Agitator Ant\n1 Bess, Soul Nourisher\n1 Champion of Lambholt\n1 Magus of the Wheel\n1 Orzhov Advokist\n1 Rumor Gatherer\n1 Scute Swarm\n1 Selvala, Explorer Returned\n1 Wood Elves\n1 Zurzoth, Chaos Rider\n1 Arasta of the Endless Web\n1 Life of the Party\n1 Master of Ceremonies\n1 Rose Room Treasurer\n1 Sizzling Soloist\n1 Boss's Chauffeur\n1 Gahiji, Honored One\n1 Kazuul, Tyrant of the Cliffs\n1 Thunderfoot Baloth\n1 Cabaretti Confluence\n1 Camaraderie\n1 Cultivate\n1 Fell the Mighty\n1 Harmonize\n1 Indulge // Excess\n1 Martial Coup\n1 Seize the Spotlight\n1 Shamanic Revelation\n1 Sylvan Offering\n1 Vivien's Stampede\n1 Artifact Mutation\n1 Aura Mutation\n1 Beast Within\n1 Boros Charm\n1 Cabaretti Charm\n1 Crash the Party\n1 Call the Coppercoats\n1 Grand Crescendo\n1 March of the Multitudes\n1 Path to Exile\n1 Sol Ring\n1 Arcane Signet\n1 Bloodthirsty Blade\n1 Fellwar Stone\n1 Idol of Oblivion\n1 Commander's Sphere\n1 Scepter of Celebration\n1 False Floor\n1 Intangible Virtue\n1 Awakening Zone\n1 Beastmaster Ascension\n1 Duelist's Heritage\n1 Killer Service\n1 Prosperous Partnership\n1 Felidar Retreat\n1 Outpost Siege\n1 Assemble the Legion\n1 Sandwurm Convergence\n1 Ash Barrens\n1 Cabaretti Courtyard\n1 Canopy Vista\n1 Castle Ardenvale\n1 Castle Embereth\n1 Cinder Glade\n1 Command Tower\n1 Exotic Orchard\n1 Fortified Village\n1 Game Trail\n1 Jungle Shrine\n1 Mossfire Valley\n1 Myriad Landscape\n1 Naya Panorama\n1 Path of Ancestry\n1 Rugged Prairie\n1 Sungrass Prairie\n1 Temple of Triumph\n1 Thriving Bluff\n1 Thriving Grove\n1 Thriving Heath\n1 Windbrisk Heights\n2 Plains\n2 Plains\n2 Mountain\n2 Mountain\n4 Forest\n4 Forest",
   "oracleCards": [
@@ -136,6 +136,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -878,6 +879,7 @@
       "tags": [
         "sorcery",
         "mana",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -1799,11 +1801,11 @@
   "result": {
     "profile": {
       "median": 47,
-      "floor": 33,
-      "ceiling": 57,
+      "floor": 35,
+      "ceiling": 58,
       "peak": 88,
-      "dispersion": 24,
-      "variance": 24,
+      "dispersion": 23,
+      "variance": 23,
       "consistency": 62,
       "commanderDelta": 12,
       "coverage": 94,
@@ -1815,7 +1817,7 @@
       "explosiveness": 17,
       "synergy": 80,
       "interaction": 40,
-      "resilience": 26
+      "resilience": 30
     },
     "roles": {
       "lands": 38,
@@ -1826,7 +1828,7 @@
       "draw": 13,
       "interaction": 8,
       "protection": 2,
-      "recursion": 0,
+      "recursion": 1,
       "wipes": 3,
       "avgCmc": 3.459016393442623,
       "unknownManaLands": 0
@@ -2176,6 +2178,7 @@
             "tags": [
               "sorcery",
               "mana",
+              "recursion",
               "tokens"
             ],
             "manaReq": {
@@ -3201,23 +3204,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
+      "floor": 34,
       "median": 42,
-      "high": 50,
-      "ceiling": 50,
-      "peak": 79,
+      "high": 51,
+      "ceiling": 51,
+      "peak": 80,
       "iqr": 14,
       "consistency": 70,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4.5,
-      "recoveryAfterDisruption": 75,
+      "recoveryAfterDisruption": 77,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 3,
-          "resource": 0,
+          "resource": 8,
           "burst": 8
         },
         {
@@ -3225,7 +3228,7 @@
           "commander": 0,
           "engine": 1,
           "interaction": 14,
-          "resource": 8,
+          "resource": 15,
           "burst": 8
         },
         {
@@ -3233,7 +3236,7 @@
           "commander": 18,
           "engine": 10,
           "interaction": 27,
-          "resource": 26,
+          "resource": 31,
           "burst": 7
         },
         {
@@ -3241,7 +3244,7 @@
           "commander": 65,
           "engine": 25,
           "interaction": 45,
-          "resource": 47,
+          "resource": 52,
           "burst": 5
         },
         {
@@ -3249,7 +3252,7 @@
           "commander": 84,
           "engine": 37,
           "interaction": 55,
-          "resource": 60,
+          "resource": 65,
           "burst": 3
         },
         {
@@ -3257,7 +3260,7 @@
           "commander": 90,
           "engine": 44,
           "interaction": 61,
-          "resource": 69,
+          "resource": 72,
           "burst": 3
         },
         {
@@ -3265,7 +3268,7 @@
           "commander": 93,
           "engine": 51,
           "interaction": 66,
-          "resource": 75,
+          "resource": 77,
           "burst": 2
         }
       ],
@@ -3385,34 +3388,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 0
-              },
-              {
-                "turn": 2,
                 "value": 8
               },
               {
+                "turn": 2,
+                "value": 15
+              },
+              {
                 "turn": 3,
-                "value": 26
+                "value": 32
               },
               {
                 "turn": 4,
-                "value": 48
+                "value": 54
               },
               {
                 "turn": 5,
-                "value": 61
+                "value": 67
               },
               {
                 "turn": 6,
-                "value": 70
+                "value": 76
               },
               {
                 "turn": 7,
-                "value": 75
+                "value": 81
               }
             ],
-            "observedWithinHorizon": 600
+            "observedWithinHorizon": 649
           },
           "burst": {
             "id": "burst-first-access",
@@ -3542,6 +3545,17 @@
         "aeon": null
       },
       {
+        "name": "Indulge // Excess",
+        "impact": 3.4,
+        "tags": [
+          "sorcery",
+          "mana",
+          "recursion",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Commander's Sphere",
         "impact": 3.3,
         "tags": [
@@ -3611,16 +3625,6 @@
         "aeon": null
       },
       {
-        "name": "Indulge // Excess",
-        "impact": 2.7,
-        "tags": [
-          "sorcery",
-          "mana",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Rose Room Treasurer",
         "impact": 2.7,
         "tags": [
@@ -3670,18 +3674,18 @@
           ]
         },
         "volatility": {
-          "score": 95,
+          "score": 91,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 24,
+              "value": 23,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 31,
+              "value": 30,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -3700,12 +3704,12 @@
           ]
         },
         "resilience": {
-          "score": 26,
+          "score": 30,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 26,
+              "value": 30,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
@@ -3729,7 +3733,7 @@
             },
             {
               "signal": "resilience",
-              "value": 26,
+              "value": 30,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
@@ -4045,38 +4049,38 @@
           "points": [
             {
               "turn": 1,
-              "value": 0
-            },
-            {
-              "turn": 2,
               "value": 8
             },
             {
+              "turn": 2,
+              "value": 15
+            },
+            {
               "turn": 3,
-              "value": 26
+              "value": 32
             },
             {
               "turn": 4,
-              "value": 48
+              "value": 54
             },
             {
               "turn": 5,
-              "value": 61
+              "value": 67
             },
             {
               "turn": 6,
-              "value": 70
+              "value": 76
             },
             {
               "turn": 7,
-              "value": 75
+              "value": 81
             }
           ],
-          "observedWithinHorizon": 600,
+          "observedWithinHorizon": 649,
           "milestones": {
             "at25": 3,
-            "at50": 5,
-            "at75": 7
+            "at50": 4,
+            "at75": 6
           }
         },
         "burst": {
@@ -4249,36 +4253,36 @@
           "points": [
             {
               "turn": 1,
-              "value": 0
-            },
-            {
-              "turn": 2,
               "value": 8
             },
             {
+              "turn": 2,
+              "value": 15
+            },
+            {
               "turn": 3,
-              "value": 26
+              "value": 31
             },
             {
               "turn": 4,
-              "value": 47
+              "value": 52
             },
             {
               "turn": 5,
-              "value": 60
+              "value": 65
             },
             {
               "turn": 6,
-              "value": 69
+              "value": 72
             },
             {
               "turn": 7,
-              "value": 75
+              "value": 77
             }
           ],
           "milestones": {
             "at25": 3,
-            "at50": 5,
+            "at50": 4,
             "at75": 7
           }
         },
@@ -4454,38 +4458,38 @@
           "points": [
             {
               "turn": 1,
-              "value": 0
-            },
-            {
-              "turn": 2,
               "value": 8
             },
             {
+              "turn": 2,
+              "value": 15
+            },
+            {
               "turn": 3,
-              "value": 26
+              "value": 32
             },
             {
               "turn": 4,
-              "value": 48
+              "value": 54
             },
             {
               "turn": 5,
-              "value": 61
+              "value": 67
             },
             {
               "turn": 6,
-              "value": 70
+              "value": 76
             },
             {
               "turn": 7,
-              "value": 75
+              "value": 81
             }
           ],
-          "observedWithinHorizon": 600,
+          "observedWithinHorizon": 649,
           "milestones": {
             "at25": 3,
-            "at50": 5,
-            "at75": 7
+            "at50": 4,
+            "at75": 6
           }
         },
         "burst": {

@@ -18,7 +18,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/EntropicUprising_C16.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Entropic Uprising",
@@ -29,17 +29,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 34,
-    "p20": 23,
-    "p80": 46,
-    "peak": 74,
-    "coverage": 92,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "median": 37,
+    "p20": 24,
+    "p80": 49,
+    "peak": 78,
+    "coverage": 93,
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "d5ab6e5713b651f10e0cf57c04877bb510327d0186d703bfdefbcfdfbfb66003",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Satyr Wayfinder\n1 Wall of Blossoms\n1 Coiling Oracle\n1 Thrasios, Triton Hero\n1 Goblin Spymaster\n1 Spellheart Chimera\n1 Vial Smasher the Fierce\n1 Academy Elite\n1 Gamekeeper\n1 Sangromancer\n1 Bloodbraid Elf\n1 Horizon Chimera\n1 Kydele, Chosen of Kruphix\n1 Glint-Eye Nephilim\n1 Aeon Chronicler\n1 Guiltfeeder\n1 Consuming Aberration\n1 Nath of the Gilt-Leaf\n1 Runehorn Hellkite\n1 Etherium-Horn Sorcerer\n1 Dragon Mage\n1 Blood Tyrant\n1 Wheel of Fate\n1 Windfall\n1 Parting Thoughts\n1 Far Wanderings\n1 Past in Flames\n1 Whispering Madness\n1 Decimate\n1 Devastation Tide\n1 Reforge the Soul\n1 Worm Harvest\n1 Spelltwine\n1 Whims of the Fates\n1 Grave Upheaval\n1 Cruel Entertainment\n1 Ghastly Conscription\n1 Volcanic Vision\n1 Treasure Cruise\n1 Treacherous Terrain\n1 Army of the Damned\n1 In Garruk's Wake\n1 Chain of Vapor\n1 Rakdos Charm\n1 Chaos Warp\n1 Ancient Excavation\n1 Evacuation\n1 Bituminous Blast\n1 Curtains' Call\n1 Sol Ring\n1 Fellwar Stone\n1 Rakdos Signet\n1 Simic Signet\n1 Chromatic Lantern\n1 Commander's Sphere\n1 Whispersilk Cloak\n1 Boompile\n1 Burgeoning\n1 Waste Not\n1 Frenzied Fugue\n1 Ash Barrens\n1 Command Tower\n1 Crumbling Necropolis\n1 Dismal Backwater\n1 Evolving Wilds\n1 Exotic Orchard\n1 Frontier Bivouac\n1 Jungle Hollow\n1 Opulent Palace\n1 Rakdos Carnarium\n1 Reliquary Tower\n1 Rugged Highlands\n1 Rupture Spire\n1 Savage Lands\n1 Shadowblood Ridge\n1 Simic Growth Chamber\n1 Swiftwater Cliffs\n1 Terramorphic Expanse\n1 Thornwood Falls\n2 Island\n2 Island\n1 Island\n2 Swamp\n2 Swamp\n1 Swamp\n2 Mountain\n2 Mountain\n1 Mountain\n2 Forest\n2 Forest\n1 Forest",
   "oracleCards": [
@@ -118,6 +118,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -136,6 +137,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -778,7 +780,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "draw"
       ],
       "isCommander": false
     },
@@ -996,7 +999,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -1469,7 +1473,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "draw"
       ],
       "isCommander": false
     },
@@ -1634,7 +1639,8 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact"
+        "artifact",
+        "protection"
       ],
       "isCommander": false
     },
@@ -1672,6 +1678,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens"
       ],
       "isCommander": false
@@ -1699,24 +1706,24 @@
   ],
   "result": {
     "profile": {
-      "median": 34,
-      "floor": 23,
-      "ceiling": 46,
-      "peak": 74,
-      "dispersion": 23,
-      "variance": 23,
-      "consistency": 64,
-      "commanderDelta": 3,
-      "coverage": 92,
-      "dataCoverage": 92
+      "median": 37,
+      "floor": 24,
+      "ceiling": 49,
+      "peak": 78,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 62,
+      "commanderDelta": 4,
+      "coverage": 93,
+      "dataCoverage": 93
     },
     "dimensions": {
       "speed": 27,
-      "consistency": 64,
-      "explosiveness": 13,
-      "synergy": 38,
+      "consistency": 62,
+      "explosiveness": 14,
+      "synergy": 52,
       "interaction": 32,
-      "resilience": 29
+      "resilience": 42
     },
     "roles": {
       "lands": 39,
@@ -1724,20 +1731,341 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 16,
+      "draw": 18,
       "interaction": 9,
-      "protection": 0,
-      "recursion": 1,
+      "protection": 1,
+      "recursion": 4,
       "wipes": 5,
       "avgCmc": 4.2,
       "unknownManaLands": 0
     },
     "packages": [
       {
+        "id": "graveyard",
+        "name": "Cimetière / récursion",
+        "strength": 86,
+        "cohesion": 86,
+        "producers": [
+          "Academy Elite",
+          "Ancient Excavation",
+          "Dragon Mage",
+          "Glint-Eye Nephilim",
+          "Reforge the Soul",
+          "Runehorn Hellkite",
+          "Wheel of Fate",
+          "Whispering Madness",
+          "Windfall"
+        ],
+        "payoffs": [
+          "Army of the Damned",
+          "Past in Flames",
+          "Volcanic Vision",
+          "Worm Harvest"
+        ],
+        "members": [
+          "Academy Elite",
+          "Ancient Excavation",
+          "Dragon Mage",
+          "Glint-Eye Nephilim",
+          "Reforge the Soul",
+          "Runehorn Hellkite",
+          "Wheel of Fate",
+          "Whispering Madness",
+          "Windfall",
+          "Army of the Damned",
+          "Past in Flames",
+          "Volcanic Vision",
+          "Worm Harvest"
+        ],
+        "producerCards": [
+          {
+            "name": "Academy Elite",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "draw",
+              "graveyard-setup",
+              "etb",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Ancient Excavation",
+            "cmc": 4,
+            "tags": [
+              "instant",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Dragon Mage",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Glint-Eye Nephilim",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "R"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Reforge the Soul",
+            "cmc": 5,
+            "tags": [
+              "sorcery",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Runehorn Hellkite",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Wheel of Fate",
+            "cmc": 0,
+            "tags": [
+              "sorcery",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Whispering Madness",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Windfall",
+            "cmc": 3,
+            "tags": [
+              "sorcery",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          }
+        ],
+        "supportCards": [],
+        "payoffCards": [
+          {
+            "name": "Army of the Damned",
+            "cmc": 8,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 8
+            }
+          },
+          {
+            "name": "Past in Flames",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Volcanic Vision",
+            "cmc": 7,
+            "tags": [
+              "sorcery",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Worm Harvest",
+            "cmc": 5,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B",
+                  "G"
+                ],
+                [
+                  "B",
+                  "G"
+                ],
+                [
+                  "B",
+                  "G"
+                ]
+              ],
+              "total": 5
+            }
+          }
+        ],
+        "producerTags": [
+          "graveyard-setup"
+        ],
+        "supportTags": [],
+        "payoffTags": [
+          "recursion"
+        ],
+        "evidence": "9 producteur(s), 4 payoff(s), 13 carte(s) distincte(s)."
+      },
+      {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 53,
-        "cohesion": 53,
+        "strength": 50,
+        "cohesion": 50,
         "producers": [
           "Burgeoning",
           "Chromatic Lantern",
@@ -1746,8 +2074,7 @@
           "Fellwar Stone",
           "Rakdos Signet",
           "Simic Signet",
-          "Sol Ring",
-          "Waste Not"
+          "Sol Ring"
         ],
         "payoffs": [
           "Yidris, Maelstrom Wielder"
@@ -1761,7 +2088,6 @@
           "Rakdos Signet",
           "Simic Signet",
           "Sol Ring",
-          "Waste Not",
           "Yidris, Maelstrom Wielder"
         ],
         "producerCards": [
@@ -1879,24 +2205,6 @@
               "colored": [],
               "total": 1
             }
-          },
-          {
-            "name": "Waste Not",
-            "cmc": 2,
-            "tags": [
-              "enchantment",
-              "draw",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "B"
-                ]
-              ],
-              "total": 2
-            }
           }
         ],
         "payoffCards": [
@@ -1926,7 +2234,7 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 9 source(s) persistante(s) vers un commandant MV 4."
+        "evidence": "0 accélérateur(s) burst + 8 source(s) persistante(s) vers un commandant MV 4."
       }
     ],
     "combos": [],
@@ -1946,23 +2254,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 29,
-      "median": 37,
-      "high": 45,
-      "ceiling": 45,
-      "peak": 67,
-      "iqr": 12,
-      "consistency": 73,
+      "floor": 30,
+      "median": 39,
+      "high": 47,
+      "ceiling": 47,
+      "peak": 70,
+      "iqr": 13,
+      "consistency": 71,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": null,
-      "recoveryAfterDisruption": 81,
+      "engineMedianTurn": 6,
+      "recoveryAfterDisruption": 85,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 0,
-          "resource": 11,
+          "resource": 18,
           "burst": 0
         },
         {
@@ -1970,7 +2278,7 @@
           "commander": 0,
           "engine": 0,
           "interaction": 3,
-          "resource": 19,
+          "resource": 25,
           "burst": 0
         },
         {
@@ -1978,39 +2286,39 @@
           "commander": 13,
           "engine": 0,
           "interaction": 19,
-          "resource": 37,
+          "resource": 44,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 48,
-          "engine": 0,
+          "engine": 2,
           "interaction": 37,
-          "resource": 59,
+          "resource": 67,
           "burst": 3
         },
         {
           "turn": 5,
           "commander": 67,
-          "engine": 0,
+          "engine": 5,
           "interaction": 49,
-          "resource": 72,
+          "resource": 80,
           "burst": 5
         },
         {
           "turn": 6,
           "commander": 76,
-          "engine": 0,
+          "engine": 9,
           "interaction": 57,
-          "resource": 80,
+          "resource": 87,
           "burst": 8
         },
         {
           "turn": 7,
           "commander": 82,
-          "engine": 0,
+          "engine": 13,
           "interaction": 63,
-          "resource": 85,
+          "resource": 91,
           "burst": 10
         }
       ],
@@ -2072,22 +2380,22 @@
               },
               {
                 "turn": 4,
-                "value": 0
+                "value": 1
               },
               {
                 "turn": 5,
-                "value": 0
+                "value": 4
               },
               {
                 "turn": 6,
-                "value": 0
+                "value": 7
               },
               {
                 "turn": 7,
-                "value": 0
+                "value": 13
               }
             ],
-            "observedWithinHorizon": 0
+            "observedWithinHorizon": 103
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -2130,34 +2438,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 8
-              },
-              {
-                "turn": 2,
                 "value": 15
               },
               {
+                "turn": 2,
+                "value": 23
+              },
+              {
                 "turn": 3,
-                "value": 36
+                "value": 43
               },
               {
                 "turn": 4,
-                "value": 59
+                "value": 68
               },
               {
                 "turn": 5,
-                "value": 71
-              },
-              {
-                "turn": 6,
                 "value": 80
               },
               {
+                "turn": 6,
+                "value": 88
+              },
+              {
                 "turn": 7,
-                "value": 85
+                "value": 92
               }
             ],
-            "observedWithinHorizon": 680
+            "observedWithinHorizon": 738
           },
           "burst": {
             "id": "burst-first-access",
@@ -2264,16 +2572,6 @@
         "aeon": null
       },
       {
-        "name": "Waste Not",
-        "impact": 3.4,
-        "tags": [
-          "enchantment",
-          "draw",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Commander's Sphere",
         "impact": 3.3,
         "tags": [
@@ -2281,6 +2579,56 @@
           "draw",
           "mana",
           "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Wheel of Fate",
+        "impact": 3.1,
+        "tags": [
+          "sorcery",
+          "draw",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Glint-Eye Nephilim",
+        "impact": 2.9,
+        "tags": [
+          "creature",
+          "draw",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Whispering Madness",
+        "impact": 2.9,
+        "tags": [
+          "sorcery",
+          "draw",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Dragon Mage",
+        "impact": 2.8,
+        "tags": [
+          "creature",
+          "draw",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Waste Not",
+        "impact": 2.7,
+        "tags": [
+          "enchantment",
+          "draw",
+          "tokens"
         ],
         "aeon": null
       },
@@ -2305,61 +2653,25 @@
         "aeon": null
       },
       {
-        "name": "Wheel of Fate",
+        "name": "Academy Elite",
         "impact": 2.4,
         "tags": [
-          "sorcery",
-          "draw",
-          "graveyard-setup"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Aeon Chronicler",
-        "impact": 2.2,
-        "tags": [
           "creature",
           "draw",
-          "counter-kind:time"
+          "graveyard-setup",
+          "etb",
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
       {
-        "name": "Glint-Eye Nephilim",
-        "impact": 2.2,
+        "name": "Ancient Excavation",
+        "impact": 2.4,
         "tags": [
-          "creature",
+          "instant",
           "draw",
           "graveyard-setup"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Whispering Madness",
-        "impact": 2.2,
-        "tags": [
-          "sorcery",
-          "draw",
-          "graveyard-setup"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Dragon Mage",
-        "impact": 2.1,
-        "tags": [
-          "creature",
-          "draw",
-          "graveyard-setup"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Fellwar Stone",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana"
         ],
         "aeon": null
       }
@@ -2390,30 +2702,30 @@
           ]
         },
         "explosiveness": {
-          "score": 13,
+          "score": 14,
           "level": "low",
           "evidence": [
             {
               "signal": "explosiveness",
-              "value": 13,
+              "value": 14,
               "source": "aeon-dimension",
               "reason": "Existing Aeon explosiveness dimension; no power-score feedback."
             }
           ]
         },
         "volatility": {
-          "score": 88,
+          "score": 94,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 23,
+              "value": 25,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 28,
+              "value": 29,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -2432,54 +2744,54 @@
           ]
         },
         "resilience": {
-          "score": 29,
+          "score": 42,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 29,
+              "value": 42,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 46,
-          "level": "moderate",
+          "score": 55,
+          "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 38,
+              "value": 52,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 64,
+              "value": 62,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
             {
               "signal": "resilience",
-              "value": 29,
+              "value": 42,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 53,
+              "value": 68,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 12,
+          "score": 16,
           "level": "low",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 3,
+              "value": 4,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
@@ -2498,7 +2810,7 @@
           ]
         },
         "turnComplexity": {
-          "score": 18,
+          "score": 20,
           "level": "low",
           "evidence": [
             {
@@ -2521,7 +2833,7 @@
             },
             {
               "signal": "packages",
-              "value": 1,
+              "value": 2,
               "source": "package-model",
               "reason": "Independent engines increase sequencing branches."
             }
@@ -2645,13 +2957,13 @@
           "id": "long-sequencing",
           "label": "Long sequencing potential",
           "level": "low",
-          "score": 18,
+          "score": 20,
           "evidence": [
             {
               "name": "Experience Fingerprint",
               "reason": "Turn Complexity proxy from recurring/chained semantic actions.",
               "recurring": true,
-              "weight": 1
+              "weight": 1.1111111111111112
             }
           ],
           "note": "Derived from Experience Fingerprint turn-complexity evidence; not calibrated to real clock time."
@@ -2735,22 +3047,22 @@
             },
             {
               "turn": 4,
-              "value": 0
+              "value": 1
             },
             {
               "turn": 5,
-              "value": 0
+              "value": 4
             },
             {
               "turn": 6,
-              "value": 0
+              "value": 7
             },
             {
               "turn": 7,
-              "value": 0
+              "value": 13
             }
           ],
-          "observedWithinHorizon": 0,
+          "observedWithinHorizon": 103,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -2805,38 +3117,38 @@
           "points": [
             {
               "turn": 1,
-              "value": 8
-            },
-            {
-              "turn": 2,
               "value": 15
             },
             {
+              "turn": 2,
+              "value": 23
+            },
+            {
               "turn": 3,
-              "value": 36
+              "value": 43
             },
             {
               "turn": 4,
-              "value": 59
+              "value": 68
             },
             {
               "turn": 5,
-              "value": 71
-            },
-            {
-              "turn": 6,
               "value": 80
             },
             {
+              "turn": 6,
+              "value": 88
+            },
+            {
               "turn": 7,
-              "value": 85
+              "value": 92
             }
           ],
-          "observedWithinHorizon": 680,
+          "observedWithinHorizon": 738,
           "milestones": {
             "at25": 3,
             "at50": 4,
-            "at75": 6
+            "at75": 5
           }
         },
         "burst": {
@@ -2941,19 +3253,19 @@
             },
             {
               "turn": 4,
-              "value": 0
+              "value": 2
             },
             {
               "turn": 5,
-              "value": 0
+              "value": 5
             },
             {
               "turn": 6,
-              "value": 0
+              "value": 9
             },
             {
               "turn": 7,
-              "value": 0
+              "value": 13
             }
           ],
           "milestones": {
@@ -3009,37 +3321,37 @@
           "points": [
             {
               "turn": 1,
-              "value": 11
+              "value": 18
             },
             {
               "turn": 2,
-              "value": 19
+              "value": 25
             },
             {
               "turn": 3,
-              "value": 37
+              "value": 44
             },
             {
               "turn": 4,
-              "value": 59
+              "value": 67
             },
             {
               "turn": 5,
-              "value": 72
-            },
-            {
-              "turn": 6,
               "value": 80
             },
             {
+              "turn": 6,
+              "value": 87
+            },
+            {
               "turn": 7,
-              "value": 85
+              "value": 91
             }
           ],
           "milestones": {
-            "at25": 3,
+            "at25": 2,
             "at50": 4,
-            "at75": 6
+            "at75": 5
           }
         },
         "burst": {
@@ -3144,22 +3456,22 @@
             },
             {
               "turn": 4,
-              "value": 0
+              "value": 1
             },
             {
               "turn": 5,
-              "value": 0
+              "value": 4
             },
             {
               "turn": 6,
-              "value": 0
+              "value": 7
             },
             {
               "turn": 7,
-              "value": 0
+              "value": 13
             }
           ],
-          "observedWithinHorizon": 0,
+          "observedWithinHorizon": 103,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -3214,38 +3526,38 @@
           "points": [
             {
               "turn": 1,
-              "value": 8
-            },
-            {
-              "turn": 2,
               "value": 15
             },
             {
+              "turn": 2,
+              "value": 23
+            },
+            {
               "turn": 3,
-              "value": 36
+              "value": 43
             },
             {
               "turn": 4,
-              "value": 59
+              "value": 68
             },
             {
               "turn": 5,
-              "value": 71
-            },
-            {
-              "turn": 6,
               "value": 80
             },
             {
+              "turn": 6,
+              "value": 88
+            },
+            {
               "turn": 7,
-              "value": 85
+              "value": 92
             }
           ],
-          "observedWithinHorizon": 680,
+          "observedWithinHorizon": 738,
           "milestones": {
             "at25": 3,
             "at50": 4,
-            "at75": 6
+            "at75": 5
           }
         },
         "burst": {

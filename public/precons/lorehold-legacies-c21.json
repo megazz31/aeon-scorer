@@ -16,7 +16,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/LoreholdLegacies_C21.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Lorehold Legacies",
@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 45,
-    "p20": 30,
+    "median": 46,
+    "p20": 32,
     "p80": 57,
-    "peak": 87,
+    "peak": 89,
     "coverage": 94,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "50ecb7eadb594914ad5905df10d8ef0d9a966c6fef837c40eb45bd1e58303e29",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Daretti, Scrap Savant\n1 Combustible Gearhulk\n1 Alibou, Ancient Witness\n1 Angel of the Ruins\n1 Bronze Guardian\n1 Digsite Engineer\n1 Losheel, Clockwork Scholar\n1 Audacious Reshapers\n1 Laelia, the Blade Reforged\n1 Ruin Grinder\n1 Triplicate Titan\n1 Sun Titan\n1 Feldon of the Third Path\n1 Hellkite Igniter\n1 Hellkite Tyrant\n1 Hoard-Smelter Dragon\n1 Pia Nalaar\n1 Jor Kadeen, the Prevailer\n1 Bosh, Iron Golem\n1 Duplicant\n1 Myr Battlesphere\n1 Scrap Trawler\n1 Solemn Simulacrum\n1 Steel Hellkite\n1 Steel Overseer\n1 Sanctum Gargoyle\n1 Quicksmith Genius\n1 Thopter Engineer\n1 Burnished Hart\n1 Meteor Golem\n1 Pilgrim's Eye\n1 Excavation Technique\n1 Wake the Past\n1 Cleansing Nova\n1 Rout\n1 Chain Reaction\n1 Secret Rendezvous\n1 Reconstruct History\n1 Rip Apart\n1 Faithless Looting\n1 Dispatch\n1 Return to Dust\n1 Boros Charm\n1 Archaeomancer's Map\n1 Battlemage's Bracers\n1 Cursed Mirror\n1 Key to the City\n1 Sculpting Steel\n1 Thousand-Year Elixir\n1 Dispeller's Capsule\n1 Arcane Signet\n1 Boros Locket\n1 Commander's Sphere\n1 Hedron Archive\n1 Ichor Wellspring\n1 Mind Stone\n1 Mycosynth Wellspring\n1 Sol Ring\n1 Unstable Obelisk\n1 Monologue Tax\n1 Darksteel Mutation\n1 Battlefield Forge\n1 Exotic Orchard\n1 Slayers' Stronghold\n1 Temple of Triumph\n1 Lorehold Campus\n1 Study Hall\n1 Ancient Den\n1 Boros Garrison\n1 Command Tower\n1 Darksteel Citadel\n1 Forgotten Cave\n1 Great Furnace\n1 Myriad Landscape\n1 Phyrexia's Core\n1 Rogue's Passage\n1 Secluded Steppe\n1 Sunhome, Fortress of the Legion\n1 Temple of the False God\n6 Mountain\n6 Mountain\n4 Plains\n4 Plains",
   "oracleCards": [
@@ -97,6 +97,7 @@
       "tags": [
         "creature",
         "artifact",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -302,6 +303,7 @@
       "tags": [
         "creature",
         "artifact",
+        "protection",
         "artifact-payoff"
       ],
       "isCommander": false
@@ -336,7 +338,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -630,6 +633,7 @@
       "tags": [
         "sorcery",
         "draw",
+        "recursion",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -669,6 +673,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -1239,6 +1244,7 @@
       "tags": [
         "creature",
         "artifact",
+        "draw",
         "death-payoff"
       ],
       "isCommander": false
@@ -1312,6 +1318,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana",
         "etb"
       ],
@@ -1407,7 +1414,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "artifact"
+        "artifact",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -1627,24 +1635,24 @@
   ],
   "result": {
     "profile": {
-      "median": 45,
-      "floor": 30,
+      "median": 46,
+      "floor": 32,
       "ceiling": 57,
-      "peak": 87,
-      "dispersion": 27,
-      "variance": 27,
-      "consistency": 61,
+      "peak": 89,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 60,
       "commanderDelta": 8,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 34,
-      "consistency": 61,
-      "explosiveness": 14,
+      "consistency": 60,
+      "explosiveness": 15,
       "synergy": 73,
-      "interaction": 30,
-      "resilience": 46
+      "interaction": 33,
+      "resilience": 51
     },
     "roles": {
       "lands": 38,
@@ -1652,11 +1660,11 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 12,
-      "interaction": 10,
-      "protection": 2,
-      "recursion": 5,
-      "wipes": 2,
+      "draw": 14,
+      "interaction": 12,
+      "protection": 3,
+      "recursion": 6,
+      "wipes": 4,
       "avgCmc": 3.8688524590163933,
       "unknownManaLands": 0
     },
@@ -1769,6 +1777,7 @@
             "tags": [
               "creature",
               "artifact",
+              "draw",
               "etb"
             ],
             "manaReq": {
@@ -1867,6 +1876,7 @@
             "tags": [
               "creature",
               "artifact",
+              "protection",
               "artifact-payoff"
             ],
             "manaReq": {
@@ -2132,6 +2142,7 @@
             "tags": [
               "creature",
               "artifact",
+              "draw",
               "death-payoff"
             ],
             "manaReq": {
@@ -2226,7 +2237,8 @@
             "cmc": 6,
             "tags": [
               "creature",
-              "artifact"
+              "artifact",
+              "wipe"
             ],
             "manaReq": {
               "generic": 6,
@@ -2321,6 +2333,7 @@
             "tags": [
               "creature",
               "artifact",
+              "protection",
               "artifact-payoff"
             ],
             "manaReq": {
@@ -2415,221 +2428,6 @@
           "artifact-payoff"
         ],
         "evidence": "36 producteur(s), 6 payoff(s), 39 carte(s) distincte(s)."
-      },
-      {
-        "id": "graveyard",
-        "name": "Cimetière / récursion",
-        "strength": 76,
-        "cohesion": 76,
-        "producers": [
-          "Combustible Gearhulk",
-          "Faithless Looting",
-          "Key to the City",
-          "Quicksmith Genius"
-        ],
-        "payoffs": [
-          "Daretti, Scrap Savant",
-          "Reconstruct History",
-          "Sanctum Gargoyle",
-          "Sun Titan",
-          "Wake the Past"
-        ],
-        "members": [
-          "Combustible Gearhulk",
-          "Faithless Looting",
-          "Key to the City",
-          "Quicksmith Genius",
-          "Daretti, Scrap Savant",
-          "Reconstruct History",
-          "Sanctum Gargoyle",
-          "Sun Titan",
-          "Wake the Past"
-        ],
-        "producerCards": [
-          {
-            "name": "Combustible Gearhulk",
-            "cmc": 6,
-            "tags": [
-              "creature",
-              "artifact",
-              "draw",
-              "graveyard-setup",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 4,
-              "colored": [
-                [
-                  "R"
-                ],
-                [
-                  "R"
-                ]
-              ],
-              "total": 6
-            }
-          },
-          {
-            "name": "Faithless Looting",
-            "cmc": 1,
-            "tags": [
-              "sorcery",
-              "draw",
-              "graveyard-setup"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 1
-            }
-          },
-          {
-            "name": "Key to the City",
-            "cmc": 2,
-            "tags": [
-              "artifact",
-              "draw",
-              "graveyard-setup"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [],
-              "total": 2
-            }
-          },
-          {
-            "name": "Quicksmith Genius",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "draw",
-              "graveyard-setup",
-              "etb",
-              "artifact-payoff"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 3
-            }
-          }
-        ],
-        "supportCards": [],
-        "payoffCards": [
-          {
-            "name": "Daretti, Scrap Savant",
-            "cmc": 4,
-            "tags": [
-              "recursion",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 4
-            }
-          },
-          {
-            "name": "Reconstruct History",
-            "cmc": 4,
-            "tags": [
-              "sorcery",
-              "recursion"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "R"
-                ],
-                [
-                  "W"
-                ]
-              ],
-              "total": 4
-            }
-          },
-          {
-            "name": "Sanctum Gargoyle",
-            "cmc": 4,
-            "tags": [
-              "creature",
-              "artifact",
-              "recursion",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "W"
-                ]
-              ],
-              "total": 4
-            }
-          },
-          {
-            "name": "Sun Titan",
-            "cmc": 6,
-            "tags": [
-              "creature",
-              "recursion",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 4,
-              "colored": [
-                [
-                  "W"
-                ],
-                [
-                  "W"
-                ]
-              ],
-              "total": 6
-            }
-          },
-          {
-            "name": "Wake the Past",
-            "cmc": 7,
-            "tags": [
-              "sorcery",
-              "recursion"
-            ],
-            "manaReq": {
-              "generic": 5,
-              "colored": [
-                [
-                  "R"
-                ],
-                [
-                  "W"
-                ]
-              ],
-              "total": 7
-            }
-          }
-        ],
-        "producerTags": [
-          "graveyard-setup"
-        ],
-        "supportTags": [],
-        "payoffTags": [
-          "recursion"
-        ],
-        "evidence": "4 producteur(s), 5 payoff(s), 9 carte(s) distincte(s)."
       },
       {
         "id": "sacrifice",
@@ -2737,6 +2535,7 @@
             "tags": [
               "creature",
               "artifact",
+              "draw",
               "death-payoff"
             ],
             "manaReq": {
@@ -2807,6 +2606,242 @@
           "death-payoff"
         ],
         "evidence": "4 producteur(s) opérationnel(s) + 0 support(s), 4 payoff(s), 8 carte(s) distincte(s)."
+      },
+      {
+        "id": "graveyard",
+        "name": "Cimetière / récursion",
+        "strength": 73,
+        "cohesion": 73,
+        "producers": [
+          "Combustible Gearhulk",
+          "Faithless Looting",
+          "Key to the City",
+          "Quicksmith Genius"
+        ],
+        "payoffs": [
+          "Daretti, Scrap Savant",
+          "Faithless Looting",
+          "Reconstruct History",
+          "Sanctum Gargoyle",
+          "Sun Titan",
+          "Wake the Past"
+        ],
+        "members": [
+          "Combustible Gearhulk",
+          "Faithless Looting",
+          "Key to the City",
+          "Quicksmith Genius",
+          "Daretti, Scrap Savant",
+          "Reconstruct History",
+          "Sanctum Gargoyle",
+          "Sun Titan",
+          "Wake the Past"
+        ],
+        "producerCards": [
+          {
+            "name": "Combustible Gearhulk",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "artifact",
+              "draw",
+              "graveyard-setup",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Faithless Looting",
+            "cmc": 1,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Key to the City",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Quicksmith Genius",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "draw",
+              "graveyard-setup",
+              "etb",
+              "artifact-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 3
+            }
+          }
+        ],
+        "supportCards": [],
+        "payoffCards": [
+          {
+            "name": "Daretti, Scrap Savant",
+            "cmc": 4,
+            "tags": [
+              "recursion",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Faithless Looting",
+            "cmc": 1,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Reconstruct History",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Sanctum Gargoyle",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "artifact",
+              "recursion",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Sun Titan",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "recursion",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Wake the Past",
+            "cmc": 7,
+            "tags": [
+              "sorcery",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 7
+            }
+          }
+        ],
+        "producerTags": [
+          "graveyard-setup"
+        ],
+        "supportTags": [],
+        "payoffTags": [
+          "recursion"
+        ],
+        "evidence": "4 producteur(s), 6 payoff(s), 9 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -3005,13 +3040,13 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 34,
-      "median": 44,
-      "high": 53,
-      "ceiling": 53,
-      "peak": 81,
-      "iqr": 14,
-      "consistency": 69,
+      "floor": 36,
+      "median": 45,
+      "high": 54,
+      "ceiling": 54,
+      "peak": 84,
+      "iqr": 15,
+      "consistency": 68,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
       "recoveryAfterDisruption": 84,
@@ -3021,7 +3056,7 @@
           "commander": 0,
           "engine": 0,
           "interaction": 5,
-          "resource": 6,
+          "resource": 20,
           "burst": 0
         },
         {
@@ -3029,47 +3064,47 @@
           "commander": 3,
           "engine": 1,
           "interaction": 14,
-          "resource": 26,
+          "resource": 36,
           "burst": 0
         },
         {
           "turn": 3,
           "commander": 17,
-          "engine": 12,
-          "interaction": 19,
-          "resource": 42,
+          "engine": 13,
+          "interaction": 20,
+          "resource": 48,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 66,
           "engine": 30,
-          "interaction": 34,
-          "resource": 65,
+          "interaction": 38,
+          "resource": 68,
           "burst": 1
         },
         {
           "turn": 5,
           "commander": 84,
-          "engine": 44,
-          "interaction": 47,
-          "resource": 75,
+          "engine": 45,
+          "interaction": 53,
+          "resource": 78,
           "burst": 3
         },
         {
           "turn": 6,
           "commander": 89,
-          "engine": 53,
-          "interaction": 55,
-          "resource": 82,
+          "engine": 54,
+          "interaction": 63,
+          "resource": 84,
           "burst": 6
         },
         {
           "turn": 7,
           "commander": 92,
           "engine": 61,
-          "interaction": 63,
-          "resource": 86,
+          "interaction": 70,
+          "resource": 88,
           "burst": 7
         }
       ],
@@ -3111,7 +3146,7 @@
                 "value": 93
               }
             ],
-            "observedWithinHorizon": 741
+            "observedWithinHorizon": 740
           },
           "engine": {
             "id": "engine-first-access",
@@ -3127,11 +3162,11 @@
               },
               {
                 "turn": 3,
-                "value": 12
+                "value": 13
               },
               {
                 "turn": 4,
-                "value": 30
+                "value": 31
               },
               {
                 "turn": 5,
@@ -3146,7 +3181,7 @@
                 "value": 60
               }
             ],
-            "observedWithinHorizon": 478
+            "observedWithinHorizon": 483
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -3162,26 +3197,26 @@
               },
               {
                 "turn": 3,
-                "value": 22
+                "value": 23
               },
               {
                 "turn": 4,
-                "value": 35
+                "value": 38
               },
               {
                 "turn": 5,
-                "value": 48
+                "value": 53
               },
               {
                 "turn": 6,
-                "value": 59
+                "value": 64
               },
               {
                 "turn": 7,
-                "value": 66
+                "value": 72
               }
             ],
-            "observedWithinHorizon": 528
+            "observedWithinHorizon": 578
           },
           "resource": {
             "id": "resource-first-access",
@@ -3189,34 +3224,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 7
+                "value": 21
               },
               {
                 "turn": 2,
-                "value": 26
+                "value": 39
               },
               {
                 "turn": 3,
-                "value": 46
+                "value": 56
               },
               {
                 "turn": 4,
-                "value": 65
+                "value": 72
               },
               {
                 "turn": 5,
-                "value": 75
+                "value": 81
               },
               {
                 "turn": 6,
-                "value": 82
+                "value": 87
               },
               {
                 "turn": 7,
-                "value": 87
+                "value": 91
               }
             ],
-            "observedWithinHorizon": 697
+            "observedWithinHorizon": 729
           },
           "burst": {
             "id": "burst-first-access",
@@ -3251,7 +3286,7 @@
                 "value": 7
               }
             ],
-            "observedWithinHorizon": 57
+            "observedWithinHorizon": 56
           }
         },
         "commanders": {
@@ -3288,7 +3323,7 @@
                 "value": 93
               }
             ],
-            "observedWithinHorizon": 741
+            "observedWithinHorizon": 740
           }
         },
         "confidence": {
@@ -3392,6 +3427,17 @@
         "aeon": null
       },
       {
+        "name": "Faithless Looting",
+        "impact": 3.2,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Hedron Archive",
         "impact": 3.2,
         "tags": [
@@ -3422,15 +3468,6 @@
           "win"
         ],
         "aeon": null
-      },
-      {
-        "name": "Arcane Signet",
-        "impact": 2.6,
-        "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
@@ -3459,54 +3496,54 @@
           ]
         },
         "explosiveness": {
-          "score": 14,
+          "score": 15,
           "level": "low",
           "evidence": [
             {
               "signal": "explosiveness",
-              "value": 14,
+              "value": 15,
               "source": "aeon-dimension",
               "reason": "Existing Aeon explosiveness dimension; no power-score feedback."
             }
           ]
         },
         "volatility": {
-          "score": 99,
+          "score": 98,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 27,
+              "value": 25,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 30,
+              "value": 32,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
           ]
         },
         "interaction": {
-          "score": 30,
+          "score": 33,
           "level": "moderate",
           "evidence": [
             {
               "signal": "interaction",
-              "value": 30,
+              "value": 33,
               "source": "aeon-dimension",
               "reason": "Existing Aeon interaction-access dimension."
             }
           ]
         },
         "resilience": {
-          "score": 46,
-          "level": "moderate",
+          "score": 51,
+          "level": "high",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 46,
+              "value": 51,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
@@ -3524,19 +3561,19 @@
             },
             {
               "signal": "consistency",
-              "value": 61,
+              "value": 60,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
             {
               "signal": "resilience",
-              "value": 46,
+              "value": 51,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 83.7,
+              "value": 82.7,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
@@ -3743,7 +3780,7 @@
               "value": 93
             }
           ],
-          "observedWithinHorizon": 741,
+          "observedWithinHorizon": 740,
           "milestones": {
             "at25": 4,
             "at50": 4,
@@ -3765,11 +3802,11 @@
             },
             {
               "turn": 3,
-              "value": 12
+              "value": 13
             },
             {
               "turn": 4,
-              "value": 30
+              "value": 31
             },
             {
               "turn": 5,
@@ -3784,7 +3821,7 @@
               "value": 60
             }
           ],
-          "observedWithinHorizon": 478,
+          "observedWithinHorizon": 483,
           "milestones": {
             "at25": 4,
             "at50": 6,
@@ -3806,29 +3843,29 @@
             },
             {
               "turn": 3,
-              "value": 22
+              "value": 23
             },
             {
               "turn": 4,
-              "value": 35
+              "value": 38
             },
             {
               "turn": 5,
-              "value": 48
+              "value": 53
             },
             {
               "turn": 6,
-              "value": 59
+              "value": 64
             },
             {
               "turn": 7,
-              "value": 66
+              "value": 72
             }
           ],
-          "observedWithinHorizon": 528,
+          "observedWithinHorizon": 578,
           "milestones": {
             "at25": 4,
-            "at50": 6,
+            "at50": 5,
             "at75": null
           }
         },
@@ -3839,37 +3876,37 @@
           "points": [
             {
               "turn": 1,
-              "value": 7
+              "value": 21
             },
             {
               "turn": 2,
-              "value": 26
+              "value": 39
             },
             {
               "turn": 3,
-              "value": 46
+              "value": 56
             },
             {
               "turn": 4,
-              "value": 65
+              "value": 72
             },
             {
               "turn": 5,
-              "value": 75
+              "value": 81
             },
             {
               "turn": 6,
-              "value": 82
+              "value": 87
             },
             {
               "turn": 7,
-              "value": 87
+              "value": 91
             }
           ],
-          "observedWithinHorizon": 697,
+          "observedWithinHorizon": 729,
           "milestones": {
             "at25": 2,
-            "at50": 4,
+            "at50": 3,
             "at75": 5
           }
         },
@@ -3907,7 +3944,7 @@
               "value": 7
             }
           ],
-          "observedWithinHorizon": 57,
+          "observedWithinHorizon": 56,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -3971,7 +4008,7 @@
             },
             {
               "turn": 3,
-              "value": 12
+              "value": 13
             },
             {
               "turn": 4,
@@ -3979,11 +4016,11 @@
             },
             {
               "turn": 5,
-              "value": 44
+              "value": 45
             },
             {
               "turn": 6,
-              "value": 53
+              "value": 54
             },
             {
               "turn": 7,
@@ -4011,28 +4048,28 @@
             },
             {
               "turn": 3,
-              "value": 19
+              "value": 20
             },
             {
               "turn": 4,
-              "value": 34
+              "value": 38
             },
             {
               "turn": 5,
-              "value": 47
+              "value": 53
             },
             {
               "turn": 6,
-              "value": 55
+              "value": 63
             },
             {
               "turn": 7,
-              "value": 63
+              "value": 70
             }
           ],
           "milestones": {
             "at25": 4,
-            "at50": 6,
+            "at50": 5,
             "at75": null
           }
         },
@@ -4043,31 +4080,31 @@
           "points": [
             {
               "turn": 1,
-              "value": 6
+              "value": 20
             },
             {
               "turn": 2,
-              "value": 26
+              "value": 36
             },
             {
               "turn": 3,
-              "value": 42
+              "value": 48
             },
             {
               "turn": 4,
-              "value": 65
+              "value": 68
             },
             {
               "turn": 5,
-              "value": 75
+              "value": 78
             },
             {
               "turn": 6,
-              "value": 82
+              "value": 84
             },
             {
               "turn": 7,
-              "value": 86
+              "value": 88
             }
           ],
           "milestones": {
@@ -4152,7 +4189,7 @@
               "value": 93
             }
           ],
-          "observedWithinHorizon": 741,
+          "observedWithinHorizon": 740,
           "milestones": {
             "at25": 4,
             "at50": 4,
@@ -4174,11 +4211,11 @@
             },
             {
               "turn": 3,
-              "value": 12
+              "value": 13
             },
             {
               "turn": 4,
-              "value": 30
+              "value": 31
             },
             {
               "turn": 5,
@@ -4193,7 +4230,7 @@
               "value": 60
             }
           ],
-          "observedWithinHorizon": 478,
+          "observedWithinHorizon": 483,
           "milestones": {
             "at25": 4,
             "at50": 6,
@@ -4215,29 +4252,29 @@
             },
             {
               "turn": 3,
-              "value": 22
+              "value": 23
             },
             {
               "turn": 4,
-              "value": 35
+              "value": 38
             },
             {
               "turn": 5,
-              "value": 48
+              "value": 53
             },
             {
               "turn": 6,
-              "value": 59
+              "value": 64
             },
             {
               "turn": 7,
-              "value": 66
+              "value": 72
             }
           ],
-          "observedWithinHorizon": 528,
+          "observedWithinHorizon": 578,
           "milestones": {
             "at25": 4,
-            "at50": 6,
+            "at50": 5,
             "at75": null
           }
         },
@@ -4248,37 +4285,37 @@
           "points": [
             {
               "turn": 1,
-              "value": 7
+              "value": 21
             },
             {
               "turn": 2,
-              "value": 26
+              "value": 39
             },
             {
               "turn": 3,
-              "value": 46
+              "value": 56
             },
             {
               "turn": 4,
-              "value": 65
+              "value": 72
             },
             {
               "turn": 5,
-              "value": 75
+              "value": 81
             },
             {
               "turn": 6,
-              "value": 82
+              "value": 87
             },
             {
               "turn": 7,
-              "value": 87
+              "value": 91
             }
           ],
-          "observedWithinHorizon": 697,
+          "observedWithinHorizon": 729,
           "milestones": {
             "at25": 2,
-            "at50": 4,
+            "at50": 3,
             "at75": 5
           }
         },
@@ -4316,7 +4353,7 @@
               "value": 7
             }
           ],
-          "observedWithinHorizon": 57,
+          "observedWithinHorizon": 56,
           "milestones": {
             "at25": null,
             "at50": null,

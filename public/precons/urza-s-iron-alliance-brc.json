@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/UrzaSIronAlliance_BRC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Urza's Iron Alliance",
@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 49,
-    "p20": 34,
+    "median": 50,
+    "p20": 35,
     "p80": 62,
     "peak": 88,
     "coverage": 94,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "4458385c5ace5715533f9b45613ba98293a6aa9ae4f41d07901a38820b2197cf",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Indomitable Archangel\n1 Ethersworn Adjudicator\n1 Noxious Gearhulk\n1 Alela, Artful Provocateur\n1 Angel of the Ruins\n1 Bronze Guardian\n1 Digsite Engineer\n1 Losheel, Clockwork Scholar\n1 Teshar, Ancestor's Apostle\n1 Master of Etherium\n1 Sai, Master Thopterist\n1 Sharding Sphinx\n1 Shimmer Dragon\n1 Thought Monitor\n1 Vedalken Humiliator\n1 Marionette Master\n1 Baleful Strix\n1 Sharuum the Hegemon\n1 Darksteel Juggernaut\n1 Etched Champion\n1 Myr Battlesphere\n1 Solemn Simulacrum\n1 Steel Hellkite\n1 Steel Overseer\n1 Filigree Attendant\n1 Whirler Rogue\n1 Armix, Filigree Thrasher\n1 Chief of the Foundry\n1 Etherium Sculptor\n1 Chrome Courier\n1 Austere Command\n1 Phyrexian Rebirth\n1 Urza's Ruinous Blast\n1 One with the Machine\n1 Vindicate\n1 Preordain\n1 Sphinx's Revelation\n1 Unbreakable Formation\n1 Swords to Plowshares\n1 Despark\n1 Bident of Thassa\n1 Cranial Plating\n1 Liquimetal Torque\n1 Relic of Progenitus\n1 Skullclamp\n1 Sol Ring\n1 Swiftfoot Boots\n1 Thought Vessel\n1 Arcane Signet\n1 Azorius Signet\n1 Dimir Signet\n1 Orzhov Signet\n1 Tempered Steel\n1 Thopter Spy Network\n1 Exotic Orchard\n1 Prairie Stream\n1 River of Tears\n1 Skycloud Expanse\n1 Spire of Industry\n1 Sunken Hollow\n1 Temple of Deceit\n1 Temple of Enlightenment\n1 Temple of Silence\n1 Arcane Sanctum\n1 Azorius Chancery\n1 Darksteel Citadel\n1 Dimir Aqueduct\n1 Orzhov Basilica\n1 Ancient Den\n1 Ash Barrens\n1 Bojuka Bog\n1 Command Tower\n1 Evolving Wilds\n1 Goldmire Bridge\n1 Mistvault Bridge\n1 Path of Ancestry\n1 Razortide Bridge\n1 Seat of the Synod\n1 Vault of Whispers\n2 Plains\n2 Plains\n2 Island\n2 Island\n2 Swamp\n1 Swamp\n1 Tawnos, Solemn Survivor\n1 Sanwell, Avenger Ace\n1 Scholar of New Horizons\n1 March of Progress\n1 Wire Surgeons\n1 Wreck Hunter\n1 Hexavus\n1 Kayla's Music Box\n1 Thopter Shop",
   "oracleCards": [
@@ -100,6 +100,7 @@
       "tags": [
         "creature",
         "artifact",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -185,6 +186,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -329,6 +331,7 @@
       "tags": [
         "creature",
         "artifact",
+        "protection",
         "artifact-payoff"
       ],
       "isCommander": false
@@ -705,6 +708,7 @@
       "producedMana": [],
       "tags": [
         "creature",
+        "protection",
         "artifact-payoff"
       ],
       "isCommander": false
@@ -1405,7 +1409,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "artifact"
+        "artifact",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -1855,7 +1860,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "recursion",
+        "tokens"
       ],
       "isCommander": false
     },
@@ -1875,6 +1882,7 @@
       ],
       "tags": [
         "creature",
+        "mana",
         "tokens",
         "etb"
       ],
@@ -1883,24 +1891,24 @@
   ],
   "result": {
     "profile": {
-      "median": 49,
-      "floor": 34,
+      "median": 50,
+      "floor": 35,
       "ceiling": 62,
       "peak": 88,
       "dispersion": 27,
       "variance": 27,
-      "consistency": 57,
+      "consistency": 56,
       "commanderDelta": 11,
       "coverage": 94,
       "dataCoverage": 94
     },
     "dimensions": {
       "speed": 37,
-      "consistency": 57,
-      "explosiveness": 13,
-      "synergy": 85,
-      "interaction": 43,
-      "resilience": 40
+      "consistency": 56,
+      "explosiveness": 12,
+      "synergy": 84,
+      "interaction": 44,
+      "resilience": 46
     },
     "roles": {
       "lands": 36,
@@ -1908,11 +1916,11 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 13,
-      "interaction": 8,
-      "protection": 5,
-      "recursion": 2,
-      "wipes": 4,
+      "draw": 14,
+      "interaction": 9,
+      "protection": 7,
+      "recursion": 3,
+      "wipes": 5,
       "avgCmc": 3.5238095238095237,
       "unknownManaLands": 0
     },
@@ -2019,6 +2027,7 @@
             "tags": [
               "creature",
               "artifact",
+              "draw",
               "etb"
             ],
             "manaReq": {
@@ -2128,6 +2137,7 @@
             "tags": [
               "creature",
               "artifact",
+              "protection",
               "artifact-payoff"
             ],
             "manaReq": {
@@ -2584,7 +2594,8 @@
             "cmc": 6,
             "tags": [
               "creature",
-              "artifact"
+              "artifact",
+              "wipe"
             ],
             "manaReq": {
               "generic": 6,
@@ -2734,6 +2745,7 @@
             "tags": [
               "creature",
               "artifact",
+              "protection",
               "artifact-payoff"
             ],
             "manaReq": {
@@ -2836,6 +2848,7 @@
             "cmc": 4,
             "tags": [
               "creature",
+              "protection",
               "artifact-payoff"
             ],
             "manaReq": {
@@ -2985,120 +2998,6 @@
         "evidence": "42 producteur(s), 15 payoff(s), 50 carte(s) distincte(s)."
       },
       {
-        "id": "graveyard",
-        "name": "Cimetière / récursion",
-        "strength": 59,
-        "cohesion": 59,
-        "producers": [
-          "Armix, Filigree Thrasher",
-          "Tawnos, Solemn Survivor"
-        ],
-        "payoffs": [
-          "Sharuum the Hegemon",
-          "Teshar, Ancestor's Apostle"
-        ],
-        "members": [
-          "Armix, Filigree Thrasher",
-          "Tawnos, Solemn Survivor",
-          "Sharuum the Hegemon",
-          "Teshar, Ancestor's Apostle"
-        ],
-        "producerCards": [
-          {
-            "name": "Armix, Filigree Thrasher",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "artifact",
-              "graveyard-setup",
-              "artifact-payoff"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "B"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Tawnos, Solemn Survivor",
-            "cmc": 2,
-            "tags": [
-              "creature",
-              "graveyard-setup",
-              "tokens",
-              "token-payoff",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "U"
-                ]
-              ],
-              "total": 2
-            }
-          }
-        ],
-        "supportCards": [],
-        "payoffCards": [
-          {
-            "name": "Sharuum the Hegemon",
-            "cmc": 6,
-            "tags": [
-              "creature",
-              "artifact",
-              "recursion",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "W"
-                ],
-                [
-                  "U"
-                ],
-                [
-                  "B"
-                ]
-              ],
-              "total": 6
-            }
-          },
-          {
-            "name": "Teshar, Ancestor's Apostle",
-            "cmc": 4,
-            "tags": [
-              "creature",
-              "recursion"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "W"
-                ]
-              ],
-              "total": 4
-            }
-          }
-        ],
-        "producerTags": [
-          "graveyard-setup"
-        ],
-        "supportTags": [],
-        "payoffTags": [
-          "recursion"
-        ],
-        "evidence": "2 producteur(s), 2 payoff(s), 4 carte(s) distincte(s)."
-      },
-      {
         "id": "early-commander",
         "name": "Accélération du commandant",
         "strength": 58,
@@ -3225,6 +3124,7 @@
             "cmc": 2,
             "tags": [
               "creature",
+              "mana",
               "tokens",
               "etb"
             ],
@@ -3269,6 +3169,143 @@
           }
         ],
         "evidence": "0 accélérateur(s) burst + 8 source(s) persistante(s) vers un commandant MV 6."
+      },
+      {
+        "id": "graveyard",
+        "name": "Cimetière / récursion",
+        "strength": 57,
+        "cohesion": 57,
+        "producers": [
+          "Armix, Filigree Thrasher",
+          "Tawnos, Solemn Survivor"
+        ],
+        "payoffs": [
+          "Sharuum the Hegemon",
+          "Teshar, Ancestor's Apostle",
+          "Wire Surgeons"
+        ],
+        "members": [
+          "Armix, Filigree Thrasher",
+          "Tawnos, Solemn Survivor",
+          "Sharuum the Hegemon",
+          "Teshar, Ancestor's Apostle",
+          "Wire Surgeons"
+        ],
+        "producerCards": [
+          {
+            "name": "Armix, Filigree Thrasher",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "artifact",
+              "graveyard-setup",
+              "artifact-payoff"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Tawnos, Solemn Survivor",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "graveyard-setup",
+              "tokens",
+              "token-payoff",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 2
+            }
+          }
+        ],
+        "supportCards": [],
+        "payoffCards": [
+          {
+            "name": "Sharuum the Hegemon",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "artifact",
+              "recursion",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "U"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Teshar, Ancestor's Apostle",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Wire Surgeons",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "recursion",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 6
+            }
+          }
+        ],
+        "producerTags": [
+          "graveyard-setup"
+        ],
+        "supportTags": [],
+        "payoffTags": [
+          "recursion"
+        ],
+        "evidence": "2 producteur(s), 3 payoff(s), 5 carte(s) distincte(s)."
       },
       {
         "id": "counters",
@@ -3498,6 +3535,7 @@
         "Thought Vessel",
         "Vault of Whispers",
         "Whirler Rogue",
+        "Wire Surgeons",
         "Wreck Hunter"
       ],
       "tags": [
@@ -3518,23 +3556,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 38,
-      "median": 48,
-      "high": 58,
-      "ceiling": 58,
+      "floor": 39,
+      "median": 49,
+      "high": 59,
+      "ceiling": 59,
       "peak": 84,
       "iqr": 16,
-      "consistency": 65,
+      "consistency": 64,
       "commanderMedianTurn": 5,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 82,
+      "recoveryAfterDisruption": 84,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 14,
-          "resource": 8,
+          "resource": 16,
           "burst": 0
         },
         {
@@ -3542,7 +3580,7 @@
           "commander": 1,
           "engine": 7,
           "interaction": 23,
-          "resource": 20,
+          "resource": 27,
           "burst": 0
         },
         {
@@ -3550,39 +3588,39 @@
           "commander": 5,
           "engine": 37,
           "interaction": 35,
-          "resource": 45,
+          "resource": 50,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 25,
           "engine": 65,
-          "interaction": 46,
-          "resource": 68,
+          "interaction": 47,
+          "resource": 71,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 45,
           "engine": 76,
-          "interaction": 54,
-          "resource": 76,
+          "interaction": 56,
+          "resource": 79,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 64,
           "engine": 83,
-          "interaction": 59,
-          "resource": 82,
+          "interaction": 63,
+          "resource": 85,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 75,
           "engine": 88,
-          "interaction": 65,
-          "resource": 86,
+          "interaction": 68,
+          "resource": 89,
           "burst": 0
         }
       ],
@@ -3652,14 +3690,14 @@
               },
               {
                 "turn": 6,
-                "value": 85
+                "value": 86
               },
               {
                 "turn": 7,
                 "value": 90
               }
             ],
-            "observedWithinHorizon": 722
+            "observedWithinHorizon": 723
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -3675,26 +3713,26 @@
               },
               {
                 "turn": 3,
-                "value": 40
+                "value": 41
               },
               {
                 "turn": 4,
-                "value": 49
+                "value": 50
               },
               {
                 "turn": 5,
-                "value": 57
+                "value": 59
               },
               {
                 "turn": 6,
-                "value": 64
+                "value": 67
               },
               {
                 "turn": 7,
-                "value": 70
+                "value": 73
               }
             ],
-            "observedWithinHorizon": 561
+            "observedWithinHorizon": 585
           },
           "resource": {
             "id": "resource-first-access",
@@ -3702,34 +3740,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 9
+                "value": 15
               },
               {
                 "turn": 2,
-                "value": 21
+                "value": 26
               },
               {
                 "turn": 3,
-                "value": 48
+                "value": 52
               },
               {
                 "turn": 4,
-                "value": 68
+                "value": 72
               },
               {
                 "turn": 5,
-                "value": 77
+                "value": 82
               },
               {
                 "turn": 6,
-                "value": 84
+                "value": 88
               },
               {
                 "turn": 7,
-                "value": 88
+                "value": 92
               }
             ],
-            "observedWithinHorizon": 700
+            "observedWithinHorizon": 736
           },
           "burst": {
             "id": "burst-first-access",
@@ -3965,12 +4003,12 @@
           ]
         },
         "explosiveness": {
-          "score": 13,
+          "score": 12,
           "level": "low",
           "evidence": [
             {
               "signal": "explosiveness",
-              "value": 13,
+              "value": 12,
               "source": "aeon-dimension",
               "reason": "Existing Aeon explosiveness dimension; no power-score feedback."
             }
@@ -3995,24 +4033,24 @@
           ]
         },
         "interaction": {
-          "score": 43,
+          "score": 44,
           "level": "moderate",
           "evidence": [
             {
               "signal": "interaction",
-              "value": 43,
+              "value": 44,
               "source": "aeon-dimension",
               "reason": "Existing Aeon interaction-access dimension."
             }
           ]
         },
         "resilience": {
-          "score": 40,
+          "score": 46,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 40,
+              "value": 46,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
@@ -4024,25 +4062,25 @@
           "evidence": [
             {
               "signal": "synergy",
-              "value": 85,
+              "value": 84,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 57,
+              "value": 56,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
             {
               "signal": "resilience",
-              "value": 40,
+              "value": 46,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 72.3,
+              "value": 71.7,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
@@ -4275,14 +4313,14 @@
             },
             {
               "turn": 6,
-              "value": 85
+              "value": 86
             },
             {
               "turn": 7,
               "value": 90
             }
           ],
-          "observedWithinHorizon": 722,
+          "observedWithinHorizon": 723,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -4304,29 +4342,29 @@
             },
             {
               "turn": 3,
-              "value": 40
+              "value": 41
             },
             {
               "turn": 4,
-              "value": 49
+              "value": 50
             },
             {
               "turn": 5,
-              "value": 57
+              "value": 59
             },
             {
               "turn": 6,
-              "value": 64
+              "value": 67
             },
             {
               "turn": 7,
-              "value": 70
+              "value": 73
             }
           ],
-          "observedWithinHorizon": 561,
+          "observedWithinHorizon": 585,
           "milestones": {
             "at25": 2,
-            "at50": 5,
+            "at50": 4,
             "at75": null
           }
         },
@@ -4337,37 +4375,37 @@
           "points": [
             {
               "turn": 1,
-              "value": 9
+              "value": 15
             },
             {
               "turn": 2,
-              "value": 21
+              "value": 26
             },
             {
               "turn": 3,
-              "value": 48
+              "value": 52
             },
             {
               "turn": 4,
-              "value": 68
+              "value": 72
             },
             {
               "turn": 5,
-              "value": 77
+              "value": 82
             },
             {
               "turn": 6,
-              "value": 84
+              "value": 88
             },
             {
               "turn": 7,
-              "value": 88
+              "value": 92
             }
           ],
-          "observedWithinHorizon": 700,
+          "observedWithinHorizon": 736,
           "milestones": {
-            "at25": 3,
-            "at50": 4,
+            "at25": 2,
+            "at50": 3,
             "at75": 5
           }
         },
@@ -4513,19 +4551,19 @@
             },
             {
               "turn": 4,
-              "value": 46
+              "value": 47
             },
             {
               "turn": 5,
-              "value": 54
+              "value": 56
             },
             {
               "turn": 6,
-              "value": 59
+              "value": 63
             },
             {
               "turn": 7,
-              "value": 65
+              "value": 68
             }
           ],
           "milestones": {
@@ -4541,36 +4579,36 @@
           "points": [
             {
               "turn": 1,
-              "value": 8
+              "value": 16
             },
             {
               "turn": 2,
-              "value": 20
+              "value": 27
             },
             {
               "turn": 3,
-              "value": 45
+              "value": 50
             },
             {
               "turn": 4,
-              "value": 68
+              "value": 71
             },
             {
               "turn": 5,
-              "value": 76
+              "value": 79
             },
             {
               "turn": 6,
-              "value": 82
+              "value": 85
             },
             {
               "turn": 7,
-              "value": 86
+              "value": 89
             }
           ],
           "milestones": {
-            "at25": 3,
-            "at50": 4,
+            "at25": 2,
+            "at50": 3,
             "at75": 5
           }
         },
@@ -4684,14 +4722,14 @@
             },
             {
               "turn": 6,
-              "value": 85
+              "value": 86
             },
             {
               "turn": 7,
               "value": 90
             }
           ],
-          "observedWithinHorizon": 722,
+          "observedWithinHorizon": 723,
           "milestones": {
             "at25": 3,
             "at50": 4,
@@ -4713,29 +4751,29 @@
             },
             {
               "turn": 3,
-              "value": 40
+              "value": 41
             },
             {
               "turn": 4,
-              "value": 49
+              "value": 50
             },
             {
               "turn": 5,
-              "value": 57
+              "value": 59
             },
             {
               "turn": 6,
-              "value": 64
+              "value": 67
             },
             {
               "turn": 7,
-              "value": 70
+              "value": 73
             }
           ],
-          "observedWithinHorizon": 561,
+          "observedWithinHorizon": 585,
           "milestones": {
             "at25": 2,
-            "at50": 5,
+            "at50": 4,
             "at75": null
           }
         },
@@ -4746,37 +4784,37 @@
           "points": [
             {
               "turn": 1,
-              "value": 9
+              "value": 15
             },
             {
               "turn": 2,
-              "value": 21
+              "value": 26
             },
             {
               "turn": 3,
-              "value": 48
+              "value": 52
             },
             {
               "turn": 4,
-              "value": 68
+              "value": 72
             },
             {
               "turn": 5,
-              "value": 77
+              "value": 82
             },
             {
               "turn": 6,
-              "value": 84
+              "value": 88
             },
             {
               "turn": 7,
-              "value": 88
+              "value": 92
             }
           ],
-          "observedWithinHorizon": 700,
+          "observedWithinHorizon": 736,
           "milestones": {
-            "at25": 3,
-            "at50": 4,
+            "at25": 2,
+            "at50": 3,
             "at75": 5
           }
         },

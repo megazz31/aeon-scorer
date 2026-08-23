@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/JeskaiStriker_TDC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Jeskai Striker",
@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 54,
-    "p20": 41,
-    "p80": 66,
+    "median": 56,
+    "p20": 44,
+    "p80": 67,
     "peak": 92,
     "coverage": 94,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "af9e46a00a3e5eb37d91b73c319c2d1d73a47e130cf45f740c5d78d2abb9f8eb",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Elsha, Threefold Master\n1 Aligned Heart\n1 Tempest Technique\n1 Adaptive Training Post\n1 Transcendent Dragon\n1 Voracious Bibliophile\n1 Caldera Pyremaw\n1 Transforming Flourish\n1 Will of the Jeskai\n1 Vanquish the Horde\n1 Narset's Reversal\n1 Dismantling Wave\n1 Mangara, the Diplomat\n1 Monastery Mentor\n1 Ancestral Vision\n1 Archmage Emeritus\n1 Baral's Expertise\n1 Curse of the Swine\n1 Haughty Djinn\n1 Lier, Disciple of the Drowned\n1 Rite of Replication\n1 Sublime Epiphany\n1 Electrodominance\n1 Manaform Hellkite\n1 Baral and Kari Zev\n1 Expansion // Explosion\n1 Magma Opus\n1 Prismari Command\n1 Time Wipe\n1 Velomachus Lorehold\n1 Veyran, Voice of Duality\n1 Whirlwind of Thought\n1 Adarkar Wastes\n1 Battlefield Forge\n1 Cascade Bluffs\n1 Clifftop Retreat\n1 Exotic Orchard\n1 Ferrous Lake\n1 Glacial Fortress\n1 Irrigated Farmland\n1 Prairie Stream\n1 Rugged Prairie\n1 Shivan Reef\n1 Skycloud Expanse\n1 Sulfur Falls\n1 Temple of Enlightenment\n1 Temple of Epiphany\n1 Temple of Triumph\n1 Young Pyromancer\n1 Goblin Electromancer\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Ghostly Prison\n1 Swords to Plowshares\n1 Compulsive Research\n1 Consider\n1 Deep Analysis\n1 Frantic Search\n1 Opt\n1 Ponder\n1 Pongify\n1 Preordain\n1 Think Twice\n1 Abrade\n1 Big Score\n1 Curse of Opulence\n1 Faithless Looting\n1 Guttersnipe\n1 Mana Geyser\n1 Shiny Impetus\n1 Storm-Kiln Artist\n1 Evolving Wilds\n1 Mystic Monastery\n1 Expressive Iteration\n1 Third Path Iconoclast\n1 Azorius Signet\n1 Boros Signet\n1 Fellwar Stone\n1 Izzet Signet\n1 Talisman of Progress\n1 Ash Barrens\n1 Path of Ancestry\n1 Perilous Landscape\n1 Reliquary Tower\n2 Plains\n2 Plains\n3 Island\n2 Island\n3 Mountain\n2 Mountain",
   "oracleCards": [
@@ -197,6 +197,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "mana"
       ],
       "isCommander": false
@@ -480,6 +481,7 @@
       ],
       "tags": [
         "enchantment",
+        "mana",
         "tokens"
       ],
       "isCommander": false
@@ -515,7 +517,8 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "draw"
+        "draw",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -533,6 +536,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "draw",
         "wipe"
       ],
       "isCommander": false
@@ -572,7 +576,8 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "tokens"
+        "tokens",
+        "spellslinger"
       ],
       "isCommander": false
     },
@@ -668,6 +673,7 @@
       "tags": [
         "sorcery",
         "draw",
+        "recursion",
         "graveyard-setup"
       ],
       "isCommander": false
@@ -849,6 +855,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "etb"
       ],
       "isCommander": false
@@ -907,7 +914,8 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -1129,6 +1137,7 @@
       ],
       "tags": [
         "land",
+        "draw",
         "land-ramp",
         "mana",
         "sacrifice"
@@ -1628,7 +1637,8 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "draw"
+        "draw",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -1825,7 +1835,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "sorcery"
+        "sorcery",
+        "draw",
+        "recursion"
       ],
       "isCommander": false
     },
@@ -1851,12 +1863,12 @@
   ],
   "result": {
     "profile": {
-      "median": 54,
-      "floor": 41,
-      "ceiling": 66,
+      "median": 56,
+      "floor": 44,
+      "ceiling": 67,
       "peak": 92,
-      "dispersion": 25,
-      "variance": 25,
+      "dispersion": 23,
+      "variance": 23,
       "consistency": 60,
       "commanderDelta": 5,
       "coverage": 94,
@@ -1868,7 +1880,7 @@
       "explosiveness": 32,
       "synergy": 59,
       "interaction": 53,
-      "resilience": 31
+      "resilience": 48
     },
     "roles": {
       "lands": 37,
@@ -1876,10 +1888,10 @@
       "fastMana": 1,
       "tutors": 0,
       "repeatableTutors": 0,
-      "draw": 18,
+      "draw": 20,
       "interaction": 11,
       "protection": 0,
-      "recursion": 0,
+      "recursion": 5,
       "wipes": 3,
       "avgCmc": 3.129032258064516,
       "unknownManaLands": 0
@@ -1906,13 +1918,13 @@
           "Adaptive Training Post",
           "Archmage Emeritus",
           "Caldera Pyremaw",
+          "Elsha, Threefold Master",
           "Goblin Electromancer",
           "Guttersnipe",
           "Haughty Djinn",
           "Manaform Hellkite",
           "Monastery Mentor",
-          "Storm-Kiln Artist",
-          "Third Path Iconoclast"
+          "Storm-Kiln Artist"
         ],
         "members": [
           "Abrade",
@@ -1948,6 +1960,7 @@
           "Adaptive Training Post",
           "Archmage Emeritus",
           "Caldera Pyremaw",
+          "Elsha, Threefold Master",
           "Goblin Electromancer",
           "Guttersnipe",
           "Haughty Djinn",
@@ -2091,7 +2104,8 @@
             "cmc": 4,
             "tags": [
               "sorcery",
-              "draw"
+              "draw",
+              "recursion"
             ],
             "manaReq": {
               "generic": 3,
@@ -2108,6 +2122,7 @@
             "cmc": 3,
             "tags": [
               "sorcery",
+              "draw",
               "wipe"
             ],
             "manaReq": {
@@ -2201,6 +2216,7 @@
             "tags": [
               "sorcery",
               "draw",
+              "recursion",
               "graveyard-setup"
             ],
             "manaReq": {
@@ -2444,7 +2460,8 @@
             "cmc": 2,
             "tags": [
               "instant",
-              "draw"
+              "draw",
+              "recursion"
             ],
             "manaReq": {
               "generic": 1,
@@ -2523,7 +2540,9 @@
             "name": "Will of the Jeskai",
             "cmc": 4,
             "tags": [
-              "sorcery"
+              "sorcery",
+              "draw",
+              "recursion"
             ],
             "manaReq": {
               "generic": 3,
@@ -2598,6 +2617,30 @@
                 ]
               ],
               "total": 5
+            }
+          },
+          {
+            "name": "Elsha, Threefold Master",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens",
+              "spellslinger"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "R"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
             }
           },
           {
@@ -2831,7 +2874,217 @@
         "payoffTags": [
           "spellslinger"
         ],
-        "evidence": "30 producteur(s), 14 payoff(s), 44 carte(s) distincte(s)."
+        "evidence": "30 producteur(s), 15 payoff(s), 45 carte(s) distincte(s)."
+      },
+      {
+        "id": "graveyard",
+        "name": "Cimetière / récursion",
+        "strength": 72,
+        "cohesion": 72,
+        "producers": [
+          "Big Score",
+          "Consider",
+          "Faithless Looting",
+          "Frantic Search"
+        ],
+        "payoffs": [
+          "Deep Analysis",
+          "Faithless Looting",
+          "Lier, Disciple of the Drowned",
+          "Think Twice",
+          "Will of the Jeskai"
+        ],
+        "members": [
+          "Big Score",
+          "Consider",
+          "Faithless Looting",
+          "Frantic Search",
+          "Deep Analysis",
+          "Lier, Disciple of the Drowned",
+          "Think Twice",
+          "Will of the Jeskai"
+        ],
+        "producerCards": [
+          {
+            "name": "Big Score",
+            "cmc": 4,
+            "tags": [
+              "instant",
+              "draw",
+              "mana",
+              "graveyard-setup",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Consider",
+            "cmc": 1,
+            "tags": [
+              "instant",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Faithless Looting",
+            "cmc": 1,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Frantic Search",
+            "cmc": 3,
+            "tags": [
+              "instant",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 3
+            }
+          }
+        ],
+        "supportCards": [],
+        "payoffCards": [
+          {
+            "name": "Deep Analysis",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Faithless Looting",
+            "cmc": 1,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Lier, Disciple of the Drowned",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "U"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Think Twice",
+            "cmc": 2,
+            "tags": [
+              "instant",
+              "draw",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "U"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Will of the Jeskai",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "draw",
+              "recursion"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 4
+            }
+          }
+        ],
+        "producerTags": [
+          "graveyard-setup"
+        ],
+        "supportTags": [],
+        "payoffTags": [
+          "recursion"
+        ],
+        "evidence": "4 producteur(s), 5 payoff(s), 8 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2909,6 +3162,7 @@
             "cmc": 1,
             "tags": [
               "enchantment",
+              "mana",
               "tokens"
             ],
             "manaReq": {
@@ -3038,23 +3292,23 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 45,
-      "median": 54,
-      "high": 64,
-      "ceiling": 64,
+      "floor": 47,
+      "median": 56,
+      "high": 65,
+      "ceiling": 65,
       "peak": 92,
-      "iqr": 15,
+      "iqr": 14,
       "consistency": 68,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 93,
+      "recoveryAfterDisruption": 95,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 8,
-          "resource": 19,
+          "resource": 33,
           "burst": 0
         },
         {
@@ -3062,47 +3316,47 @@
           "commander": 2,
           "engine": 2,
           "interaction": 21,
-          "resource": 38,
+          "resource": 46,
           "burst": 3
         },
         {
           "turn": 3,
           "commander": 32,
-          "engine": 24,
+          "engine": 27,
           "interaction": 43,
-          "resource": 61,
+          "resource": 69,
           "burst": 18
         },
         {
           "turn": 4,
           "commander": 74,
-          "engine": 57,
+          "engine": 62,
           "interaction": 57,
-          "resource": 78,
+          "resource": 84,
           "burst": 28
         },
         {
           "turn": 5,
           "commander": 87,
-          "engine": 73,
+          "engine": 78,
           "interaction": 65,
-          "resource": 86,
+          "resource": 90,
           "burst": 37
         },
         {
           "turn": 6,
           "commander": 91,
-          "engine": 80,
+          "engine": 85,
           "interaction": 72,
-          "resource": 90,
+          "resource": 93,
           "burst": 43
         },
         {
           "turn": 7,
           "commander": 94,
-          "engine": 85,
+          "engine": 90,
           "interaction": 77,
-          "resource": 93,
+          "resource": 96,
           "burst": 48
         }
       ],
@@ -3160,26 +3414,26 @@
               },
               {
                 "turn": 3,
-                "value": 24
+                "value": 27
               },
               {
                 "turn": 4,
-                "value": 55
+                "value": 61
               },
               {
                 "turn": 5,
-                "value": 70
-              },
-              {
-                "turn": 6,
                 "value": 77
               },
               {
-                "turn": 7,
+                "turn": 6,
                 "value": 83
+              },
+              {
+                "turn": 7,
+                "value": 89
               }
             ],
-            "observedWithinHorizon": 667
+            "observedWithinHorizon": 712
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -3222,34 +3476,34 @@
             "points": [
               {
                 "turn": 1,
-                "value": 19
+                "value": 30
               },
               {
                 "turn": 2,
-                "value": 39
+                "value": 50
               },
               {
                 "turn": 3,
-                "value": 64
+                "value": 73
               },
               {
                 "turn": 4,
-                "value": 81
+                "value": 89
               },
               {
                 "turn": 5,
-                "value": 88
+                "value": 93
               },
               {
                 "turn": 6,
-                "value": 92
+                "value": 96
               },
               {
                 "turn": 7,
-                "value": 94
+                "value": 97
               }
             ],
-            "observedWithinHorizon": 753
+            "observedWithinHorizon": 773
           },
           "burst": {
             "id": "burst-first-access",
@@ -3403,18 +3657,8 @@
         "aeon": null
       },
       {
-        "name": "Sol Ring",
-        "impact": 3.7,
-        "tags": [
-          "artifact",
-          "mana",
-          "fast-mana"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Big Score",
-        "impact": 3.6,
+        "impact": 4.3,
         "tags": [
           "instant",
           "draw",
@@ -3425,43 +3669,53 @@
         "aeon": null
       },
       {
-        "name": "Magma Opus",
-        "impact": 3.5,
-        "tags": [
-          "instant",
-          "draw",
-          "mana",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Sublime Epiphany",
-        "impact": 3.5,
-        "tags": [
-          "instant",
-          "draw",
-          "counterspell",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Prismari Command",
-        "impact": 3.2,
-        "tags": [
-          "instant",
-          "draw",
-          "removal"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Ancestral Vision",
-        "impact": 3.1,
+        "name": "Faithless Looting",
+        "impact": 3.9,
         "tags": [
           "sorcery",
-          "draw"
+          "draw",
+          "recursion",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Think Twice",
+        "impact": 3.9,
+        "tags": [
+          "instant",
+          "draw",
+          "recursion"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Deep Analysis",
+        "impact": 3.8,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Will of the Jeskai",
+        "impact": 3.8,
+        "tags": [
+          "sorcery",
+          "draw",
+          "recursion"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Sol Ring",
+        "impact": 3.7,
+        "tags": [
+          "artifact",
+          "mana",
+          "fast-mana"
         ],
         "aeon": null
       }
@@ -3504,18 +3758,18 @@
           ]
         },
         "volatility": {
-          "score": 89,
+          "score": 84,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 25,
+              "value": 23,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 26,
+              "value": 25,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -3534,19 +3788,19 @@
           ]
         },
         "resilience": {
-          "score": 31,
+          "score": 48,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 31,
+              "value": 48,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 56,
+          "score": 60,
           "level": "high",
           "evidence": [
             {
@@ -3563,13 +3817,13 @@
             },
             {
               "signal": "resilience",
-              "value": 31,
+              "value": 48,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 76.5,
+              "value": 75,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
@@ -3600,7 +3854,7 @@
           ]
         },
         "turnComplexity": {
-          "score": 30,
+          "score": 32,
           "level": "moderate",
           "evidence": [
             {
@@ -3611,7 +3865,7 @@
             },
             {
               "signal": "chain-payoffs",
-              "value": 15,
+              "value": 16,
               "source": "semantic",
               "reason": "Cards that convert repeated package events into additional actions."
             },
@@ -3623,7 +3877,7 @@
             },
             {
               "signal": "packages",
-              "value": 2,
+              "value": 3,
               "source": "package-model",
               "reason": "Independent engines increase sequencing branches."
             }
@@ -3718,13 +3972,13 @@
           "id": "long-sequencing",
           "label": "Long sequencing potential",
           "level": "moderate",
-          "score": 30,
+          "score": 32,
           "evidence": [
             {
               "name": "Experience Fingerprint",
               "reason": "Turn Complexity proxy from recurring/chained semantic actions.",
               "recurring": true,
-              "weight": 1.6666666666666667
+              "weight": 1.7777777777777777
             }
           ],
           "note": "Derived from Experience Fingerprint turn-complexity evidence; not calibrated to real clock time."
@@ -3805,30 +4059,30 @@
             },
             {
               "turn": 3,
-              "value": 24
+              "value": 27
             },
             {
               "turn": 4,
-              "value": 55
+              "value": 61
             },
             {
               "turn": 5,
-              "value": 70
-            },
-            {
-              "turn": 6,
               "value": 77
             },
             {
-              "turn": 7,
+              "turn": 6,
               "value": 83
+            },
+            {
+              "turn": 7,
+              "value": 89
             }
           ],
-          "observedWithinHorizon": 667,
+          "observedWithinHorizon": 712,
           "milestones": {
-            "at25": 4,
+            "at25": 3,
             "at50": 4,
-            "at75": 6
+            "at75": 5
           }
         },
         "interaction": {
@@ -3879,37 +4133,37 @@
           "points": [
             {
               "turn": 1,
-              "value": 19
+              "value": 30
             },
             {
               "turn": 2,
-              "value": 39
+              "value": 50
             },
             {
               "turn": 3,
-              "value": 64
+              "value": 73
             },
             {
               "turn": 4,
-              "value": 81
+              "value": 89
             },
             {
               "turn": 5,
-              "value": 88
+              "value": 93
             },
             {
               "turn": 6,
-              "value": 92
+              "value": 96
             },
             {
               "turn": 7,
-              "value": 94
+              "value": 97
             }
           ],
-          "observedWithinHorizon": 753,
+          "observedWithinHorizon": 773,
           "milestones": {
-            "at25": 2,
-            "at50": 3,
+            "at25": 1,
+            "at50": 2,
             "at75": 4
           }
         },
@@ -4011,29 +4265,29 @@
             },
             {
               "turn": 3,
-              "value": 24
+              "value": 27
             },
             {
               "turn": 4,
-              "value": 57
+              "value": 62
             },
             {
               "turn": 5,
-              "value": 73
+              "value": 78
             },
             {
               "turn": 6,
-              "value": 80
+              "value": 85
             },
             {
               "turn": 7,
-              "value": 85
+              "value": 90
             }
           ],
           "milestones": {
-            "at25": 4,
+            "at25": 3,
             "at50": 4,
-            "at75": 6
+            "at75": 5
           }
         },
         "interaction": {
@@ -4083,35 +4337,35 @@
           "points": [
             {
               "turn": 1,
-              "value": 19
+              "value": 33
             },
             {
               "turn": 2,
-              "value": 38
+              "value": 46
             },
             {
               "turn": 3,
-              "value": 61
+              "value": 69
             },
             {
               "turn": 4,
-              "value": 78
+              "value": 84
             },
             {
               "turn": 5,
-              "value": 86
-            },
-            {
-              "turn": 6,
               "value": 90
             },
             {
-              "turn": 7,
+              "turn": 6,
               "value": 93
+            },
+            {
+              "turn": 7,
+              "value": 96
             }
           ],
           "milestones": {
-            "at25": 2,
+            "at25": 1,
             "at50": 3,
             "at75": 4
           }
@@ -4214,30 +4468,30 @@
             },
             {
               "turn": 3,
-              "value": 24
+              "value": 27
             },
             {
               "turn": 4,
-              "value": 55
+              "value": 61
             },
             {
               "turn": 5,
-              "value": 70
-            },
-            {
-              "turn": 6,
               "value": 77
             },
             {
-              "turn": 7,
+              "turn": 6,
               "value": 83
+            },
+            {
+              "turn": 7,
+              "value": 89
             }
           ],
-          "observedWithinHorizon": 667,
+          "observedWithinHorizon": 712,
           "milestones": {
-            "at25": 4,
+            "at25": 3,
             "at50": 4,
-            "at75": 6
+            "at75": 5
           }
         },
         "interaction": {
@@ -4288,37 +4542,37 @@
           "points": [
             {
               "turn": 1,
-              "value": 19
+              "value": 30
             },
             {
               "turn": 2,
-              "value": 39
+              "value": 50
             },
             {
               "turn": 3,
-              "value": 64
+              "value": 73
             },
             {
               "turn": 4,
-              "value": 81
+              "value": 89
             },
             {
               "turn": 5,
-              "value": 88
+              "value": 93
             },
             {
               "turn": 6,
-              "value": 92
+              "value": 96
             },
             {
               "turn": 7,
-              "value": 94
+              "value": 97
             }
           ],
-          "observedWithinHorizon": 753,
+          "observedWithinHorizon": 773,
           "milestones": {
-            "at25": 2,
-            "at50": 3,
+            "at25": 1,
+            "at50": 2,
             "at75": 4
           }
         },

@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/CorruptingInfluence_ONC.json",
-  "sourceRevision": "2026-08-22",
+  "sourceRevision": "2026-08-23",
   "productAliases": [
     {
       "name": "Corrupting Influence",
@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 46,
-    "p20": 34,
-    "p80": 58,
+    "median": 47,
+    "p20": 35,
+    "p80": 59,
     "peak": 87,
-    "coverage": 93,
-    "engineVersion": "3.2.0",
-    "semanticVersion": "3.2.0-semantic-11",
+    "coverage": 94,
+    "engineVersion": "3.3.0",
+    "semanticVersion": "3.3.0-semantic-14",
     "oracleSnapshotHash": "f5eff017dd488e9bca8bc5ce3efbca5e4f0105517522a9588734ed879bc28581",
     "scryfallOracleDate": "2026-08-23",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T11:54:12.664Z"
+    "analyzedAt": "2026-08-23T19:10:50.610Z"
   },
   "decklist": "1 Bilious Skulldweller\n1 Blight Mamba\n1 Blightbelly Rat\n1 Cankerbloom\n1 Contaminant Grafter\n1 Evolution Sage\n1 Glissa's Retriever\n1 Grateful Apparition\n1 Ichor Rats\n1 Ichorclaw Myr\n1 Mycosynth Fiend\n1 Myr Convert\n1 Norn's Choirmaster\n1 Pestilent Syphoner\n1 Phyrexian Swarmlord\n1 Plague Myr\n1 Plague Stinger\n1 Scavenging Ooze\n1 Venomous Brutalizer\n1 Viridian Corrupter\n1 Vishgraz, the Doomhive\n1 Windborn Muse\n1 Caress of Phyrexia\n1 Culling Ritual\n1 Cultivate\n1 Expand the Sphere\n1 Feed the Infection\n1 Fumigate\n1 Geth's Summons\n1 Infectious Inquiry\n1 Merciless Eviction\n1 Night's Whisper\n1 Noxious Assault\n1 Painful Truths\n1 Phyresis Outbreak\n1 Phyrexian Rebirth\n1 Unnatural Restoration\n1 Vat Emergence\n1 Wurmquake\n1 Beast Within\n1 Carrion Call\n1 Mortify\n1 Noxious Revival\n1 Putrefy\n1 Swords to Plowshares\n1 Vraska's Fall\n1 Ghostly Prison\n1 Moldervine Reclamation\n1 Norn's Decree\n1 Arcane Signet\n1 Chromatic Lantern\n1 Commander's Sphere\n1 Contagion Clasp\n1 Fellwar Stone\n1 Glistening Sphere\n1 Golgari Signet\n1 Grafted Exoskeleton\n1 Norn's Annex\n1 Phyrexian Atlas\n1 Sol Ring\n1 Trailblazer's Boots\n1 Bojuka Bog\n1 Canopy Vista\n1 Command Tower\n1 Exotic Orchard\n1 Fortified Village\n1 Karn's Bastion\n1 Krosan Verge\n1 Myriad Landscape\n1 Necroblossom Snarl\n1 Path of Ancestry\n1 Sandsteppe Citadel\n1 Shineshadow Snarl\n1 Sungrass Prairie\n1 Tainted Field\n1 Tainted Wood\n1 Temple of Malady\n1 Temple of Plenty\n1 Temple of Silence\n6 Plains\n6 Swamp\n8 Forest",
   "oracleCards": [
@@ -112,7 +112,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -234,7 +236,9 @@
       "producedMana": [],
       "tags": [
         "instant",
-        "tokens"
+        "tokens",
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -365,7 +369,8 @@
       ],
       "tags": [
         "sorcery",
-        "mana"
+        "mana",
+        "wipe"
       ],
       "isCommander": false
     },
@@ -443,6 +448,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "land-ramp",
         "counter-producer",
         "counter-kind:wild"
       ],
@@ -668,7 +674,9 @@
       "producedMana": [],
       "tags": [
         "artifact",
-        "sacrifice"
+        "sacrifice",
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -706,6 +714,8 @@
       "tags": [
         "creature",
         "etb",
+        "counter-producer",
+        "counter-kind:minus1",
         "counter-kind:poison"
       ],
       "isCommander": false
@@ -722,7 +732,9 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "artifact"
+        "artifact",
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1131,6 +1143,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "wipe",
         "counter-payoff",
         "counter-kind:poison"
       ],
@@ -1193,7 +1206,9 @@
       "tags": [
         "creature",
         "tokens",
+        "counter-producer",
         "counter-payoff",
+        "counter-kind:minus1",
         "counter-kind:poison"
       ],
       "isCommander": false
@@ -1213,7 +1228,9 @@
       "tags": [
         "creature",
         "artifact",
-        "mana"
+        "mana",
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1230,7 +1247,9 @@
       ],
       "producedMana": [],
       "tags": [
-        "creature"
+        "creature",
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1623,7 +1642,9 @@
       "tags": [
         "creature",
         "removal",
-        "etb"
+        "etb",
+        "counter-producer",
+        "counter-kind:minus1"
       ],
       "isCommander": false
     },
@@ -1700,6 +1721,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "recursion",
         "tokens",
         "counter-payoff",
         "counter-kind:poison"
@@ -1709,24 +1731,24 @@
   ],
   "result": {
     "profile": {
-      "median": 46,
-      "floor": 34,
-      "ceiling": 58,
+      "median": 47,
+      "floor": 35,
+      "ceiling": 59,
       "peak": 87,
-      "dispersion": 24,
-      "variance": 24,
+      "dispersion": 23,
+      "variance": 23,
       "consistency": 62,
       "commanderDelta": 5,
-      "coverage": 93,
-      "dataCoverage": 93
+      "coverage": 94,
+      "dataCoverage": 94
     },
     "dimensions": {
       "speed": 40,
       "consistency": 62,
       "explosiveness": 13,
-      "synergy": 54,
-      "interaction": 61,
-      "resilience": 35
+      "synergy": 55,
+      "interaction": 65,
+      "resilience": 38
     },
     "roles": {
       "lands": 38,
@@ -1735,10 +1757,10 @@
       "tutors": 0,
       "repeatableTutors": 0,
       "draw": 8,
-      "interaction": 13,
+      "interaction": 15,
       "protection": 0,
-      "recursion": 3,
-      "wipes": 3,
+      "recursion": 4,
+      "wipes": 5,
       "avgCmc": 3.262295081967213,
       "unknownManaLands": 0
     },
@@ -1749,16 +1771,16 @@
         "strength": 100,
         "cohesion": 100,
         "producers": [
+          "Blight Mamba",
           "Blightbelly Rat",
           "Cankerbloom",
+          "Carrion Call",
           "Contagion Clasp",
           "Contaminant Grafter",
           "Evolution Sage",
           "Expand the Sphere",
           "Glistening Sphere",
-          "Grateful Apparition",
-          "Karn's Bastion",
-          "Norn's Choirmaster"
+          "Grafted Exoskeleton"
         ],
         "payoffs": [
           "Geth's Summons",
@@ -1769,27 +1791,53 @@
           "Wurmquake"
         ],
         "members": [
+          "Blight Mamba",
           "Blightbelly Rat",
           "Cankerbloom",
+          "Carrion Call",
           "Contagion Clasp",
           "Contaminant Grafter",
           "Evolution Sage",
           "Expand the Sphere",
           "Glistening Sphere",
+          "Grafted Exoskeleton",
           "Grateful Apparition",
+          "Ichor Rats",
+          "Ichorclaw Myr",
           "Karn's Bastion",
           "Norn's Choirmaster",
+          "Phyrexian Swarmlord",
+          "Plague Myr",
+          "Plague Stinger",
           "Unnatural Restoration",
           "Vat Emergence",
           "Venomous Brutalizer",
+          "Viridian Corrupter",
           "Geth's Summons",
           "Mycosynth Fiend",
           "Phyresis Outbreak",
-          "Phyrexian Swarmlord",
           "Vishgraz, the Doomhive",
           "Wurmquake"
         ],
         "producerCards": [
+          {
+            "name": "Blight Mamba",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
           {
             "name": "Blightbelly Rat",
             "cmc": 2,
@@ -1827,6 +1875,25 @@
                 ]
               ],
               "total": 2
+            }
+          },
+          {
+            "name": "Carrion Call",
+            "cmc": 4,
+            "tags": [
+              "instant",
+              "tokens",
+              "counter-producer",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
             }
           },
           {
@@ -1891,6 +1958,7 @@
             "cmc": 4,
             "tags": [
               "sorcery",
+              "land-ramp",
               "counter-producer",
               "counter-kind:wild"
             ],
@@ -1922,6 +1990,21 @@
             }
           },
           {
+            "name": "Grafted Exoskeleton",
+            "cmc": 4,
+            "tags": [
+              "artifact",
+              "sacrifice",
+              "counter-producer",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
+            }
+          },
+          {
             "name": "Grateful Apparition",
             "cmc": 2,
             "tags": [
@@ -1936,6 +2019,44 @@
                   "W"
                 ]
               ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Ichor Rats",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "etb",
+              "counter-producer",
+              "counter-kind:minus1",
+              "counter-kind:poison"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "B"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Ichorclaw Myr",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "artifact",
+              "counter-producer",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
               "total": 2
             }
           },
@@ -1974,6 +2095,64 @@
                 ]
               ],
               "total": 5
+            }
+          },
+          {
+            "name": "Phyrexian Swarmlord",
+            "cmc": 6,
+            "tags": [
+              "creature",
+              "tokens",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:minus1",
+              "counter-kind:poison"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 6
+            }
+          },
+          {
+            "name": "Plague Myr",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "artifact",
+              "mana",
+              "counter-producer",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Plague Stinger",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "B"
+                ]
+              ],
+              "total": 2
             }
           },
           {
@@ -2034,6 +2213,29 @@
               ],
               "total": 4
             }
+          },
+          {
+            "name": "Viridian Corrupter",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "removal",
+              "etb",
+              "counter-producer",
+              "counter-kind:minus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
           }
         ],
         "supportCards": [],
@@ -2083,6 +2285,7 @@
             "cmc": 3,
             "tags": [
               "sorcery",
+              "wipe",
               "counter-payoff",
               "counter-kind:poison"
             ],
@@ -2102,7 +2305,9 @@
             "tags": [
               "creature",
               "tokens",
+              "counter-producer",
               "counter-payoff",
+              "counter-kind:minus1",
               "counter-kind:poison"
             ],
             "manaReq": {
@@ -2149,6 +2354,7 @@
             "cmc": 6,
             "tags": [
               "sorcery",
+              "recursion",
               "tokens",
               "counter-payoff",
               "counter-kind:poison"
@@ -2175,7 +2381,7 @@
           "counter-payoff",
           "modified-payoff"
         ],
-        "evidence": "13 producteur(s), 6 payoff(s), 19 carte(s) distincte(s)."
+        "evidence": "22 producteur(s), 6 payoff(s), 27 carte(s) distincte(s)."
       },
       {
         "id": "early-commander",
@@ -2329,7 +2535,9 @@
             "tags": [
               "creature",
               "artifact",
-              "mana"
+              "mana",
+              "counter-producer",
+              "counter-kind:minus1"
             ],
             "manaReq": {
               "generic": 2,
@@ -2382,10 +2590,11 @@
       {
         "id": "lands",
         "name": "Lands / Landfall",
-        "strength": 45,
-        "cohesion": 45,
+        "strength": 47,
+        "cohesion": 47,
         "producers": [
           "Contaminant Grafter",
+          "Expand the Sphere",
           "Krosan Verge"
         ],
         "payoffs": [
@@ -2393,6 +2602,7 @@
         ],
         "members": [
           "Contaminant Grafter",
+          "Expand the Sphere",
           "Krosan Verge",
           "Evolution Sage"
         ],
@@ -2416,6 +2626,25 @@
                 ]
               ],
               "total": 5
+            }
+          },
+          {
+            "name": "Expand the Sphere",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "land-ramp",
+              "counter-producer",
+              "counter-kind:wild"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
             }
           },
           {
@@ -2465,7 +2694,7 @@
         "payoffTags": [
           "landfall"
         ],
-        "evidence": "2 producteur(s), 1 payoff(s), 3 carte(s) distincte(s)."
+        "evidence": "3 producteur(s), 1 payoff(s), 4 carte(s) distincte(s)."
       }
     ],
     "combos": [],
@@ -2485,13 +2714,13 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 36,
-      "median": 44,
-      "high": 53,
-      "ceiling": 53,
+      "floor": 37,
+      "median": 45,
+      "high": 54,
+      "ceiling": 54,
       "peak": 81,
-      "iqr": 13,
-      "consistency": 71,
+      "iqr": 14,
+      "consistency": 70,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
       "recoveryAfterDisruption": 80,
@@ -2516,40 +2745,40 @@
           "turn": 3,
           "commander": 21,
           "engine": 5,
-          "interaction": 46,
+          "interaction": 49,
           "resource": 28,
           "burst": 0
         },
         {
           "turn": 4,
           "commander": 71,
-          "engine": 16,
-          "interaction": 67,
+          "engine": 18,
+          "interaction": 71,
           "resource": 50,
           "burst": 0
         },
         {
           "turn": 5,
           "commander": 89,
-          "engine": 28,
-          "interaction": 75,
-          "resource": 63,
+          "engine": 31,
+          "interaction": 80,
+          "resource": 64,
           "burst": 0
         },
         {
           "turn": 6,
           "commander": 93,
-          "engine": 38,
-          "interaction": 81,
-          "resource": 70,
+          "engine": 41,
+          "interaction": 85,
+          "resource": 72,
           "burst": 0
         },
         {
           "turn": 7,
           "commander": 95,
-          "engine": 45,
-          "interaction": 84,
-          "resource": 74,
+          "engine": 48,
+          "interaction": 88,
+          "resource": 77,
           "burst": 0
         }
       ],
@@ -2576,22 +2805,22 @@
               },
               {
                 "turn": 4,
-                "value": 72
+                "value": 73
               },
               {
                 "turn": 5,
-                "value": 87
+                "value": 88
               },
               {
                 "turn": 6,
-                "value": 91
+                "value": 92
               },
               {
                 "turn": 7,
                 "value": 94
               }
             ],
-            "observedWithinHorizon": 753
+            "observedWithinHorizon": 755
           },
           "engine": {
             "id": "engine-first-access",
@@ -2611,22 +2840,22 @@
               },
               {
                 "turn": 4,
-                "value": 17
+                "value": 19
               },
               {
                 "turn": 5,
-                "value": 29
+                "value": 31
               },
               {
                 "turn": 6,
-                "value": 41
+                "value": 44
               },
               {
                 "turn": 7,
-                "value": 47
+                "value": 51
               }
             ],
-            "observedWithinHorizon": 378
+            "observedWithinHorizon": 404
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -2642,26 +2871,26 @@
               },
               {
                 "turn": 3,
-                "value": 49
+                "value": 52
               },
               {
                 "turn": 4,
-                "value": 68
+                "value": 72
               },
               {
                 "turn": 5,
-                "value": 78
+                "value": 82
               },
               {
                 "turn": 6,
-                "value": 83
+                "value": 86
               },
               {
                 "turn": 7,
-                "value": 87
+                "value": 89
               }
             ],
-            "observedWithinHorizon": 693
+            "observedWithinHorizon": 714
           },
           "resource": {
             "id": "resource-first-access",
@@ -2681,22 +2910,22 @@
               },
               {
                 "turn": 4,
-                "value": 49
+                "value": 50
               },
               {
                 "turn": 5,
-                "value": 61
+                "value": 63
               },
               {
                 "turn": 6,
-                "value": 69
+                "value": 71
               },
               {
                 "turn": 7,
-                "value": 74
+                "value": 77
               }
             ],
-            "observedWithinHorizon": 591
+            "observedWithinHorizon": 613
           },
           "burst": {
             "id": "burst-first-access",
@@ -2753,22 +2982,22 @@
               },
               {
                 "turn": 4,
-                "value": 72
+                "value": 73
               },
               {
                 "turn": 5,
-                "value": 87
+                "value": 88
               },
               {
                 "turn": 6,
-                "value": 91
+                "value": 92
               },
               {
                 "turn": 7,
                 "value": 94
               }
             ],
-            "observedWithinHorizon": 753
+            "observedWithinHorizon": 755
           }
         },
         "confidence": {
@@ -2817,6 +3046,29 @@
         "aeon": null
       },
       {
+        "name": "Plague Myr",
+        "impact": 2.6,
+        "tags": [
+          "creature",
+          "artifact",
+          "mana",
+          "counter-producer",
+          "counter-kind:minus1"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Expand the Sphere",
+        "impact": 2.5,
+        "tags": [
+          "sorcery",
+          "land-ramp",
+          "counter-producer",
+          "counter-kind:wild"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Glistening Sphere",
         "impact": 2.5,
         "tags": [
@@ -2836,6 +3088,16 @@
           "artifact",
           "mana",
           "counter-kind:poison"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Culling Ritual",
+        "impact": 2.3,
+        "tags": [
+          "sorcery",
+          "mana",
+          "wipe"
         ],
         "aeon": null
       },
@@ -2863,47 +3125,20 @@
         "aeon": null
       },
       {
+        "name": "Phyresis Outbreak",
+        "impact": 2.2,
+        "tags": [
+          "sorcery",
+          "wipe",
+          "counter-payoff",
+          "counter-kind:poison"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Arcane Signet",
         "impact": 1.9,
         "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Fellwar Stone",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Golgari Signet",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Myr Convert",
-        "impact": 1.9,
-        "tags": [
-          "creature",
-          "artifact",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Plague Myr",
-        "impact": 1.9,
-        "tags": [
-          "creature",
           "artifact",
           "mana"
         ],
@@ -2948,54 +3183,54 @@
           ]
         },
         "volatility": {
-          "score": 92,
+          "score": 88,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 24,
+              "value": 23,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 29,
+              "value": 28,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
           ]
         },
         "interaction": {
-          "score": 61,
+          "score": 65,
           "level": "high",
           "evidence": [
             {
               "signal": "interaction",
-              "value": 61,
+              "value": 65,
               "source": "aeon-dimension",
               "reason": "Existing Aeon interaction-access dimension."
             }
           ]
         },
         "resilience": {
-          "score": 35,
+          "score": 38,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 35,
+              "value": 38,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 55,
+          "score": 56,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 54,
+              "value": 55,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -3007,13 +3242,13 @@
             },
             {
               "signal": "resilience",
-              "value": 35,
+              "value": 38,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 67,
+              "value": 67.7,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
@@ -3224,22 +3459,22 @@
             },
             {
               "turn": 4,
-              "value": 72
+              "value": 73
             },
             {
               "turn": 5,
-              "value": 87
+              "value": 88
             },
             {
               "turn": 6,
-              "value": 91
+              "value": 92
             },
             {
               "turn": 7,
               "value": 94
             }
           ],
-          "observedWithinHorizon": 753,
+          "observedWithinHorizon": 755,
           "milestones": {
             "at25": 4,
             "at50": 4,
@@ -3265,25 +3500,25 @@
             },
             {
               "turn": 4,
-              "value": 17
+              "value": 19
             },
             {
               "turn": 5,
-              "value": 29
+              "value": 31
             },
             {
               "turn": 6,
-              "value": 41
+              "value": 44
             },
             {
               "turn": 7,
-              "value": 47
+              "value": 51
             }
           ],
-          "observedWithinHorizon": 378,
+          "observedWithinHorizon": 404,
           "milestones": {
             "at25": 5,
-            "at50": null,
+            "at50": 7,
             "at75": null
           }
         },
@@ -3302,29 +3537,29 @@
             },
             {
               "turn": 3,
-              "value": 49
+              "value": 52
             },
             {
               "turn": 4,
-              "value": 68
+              "value": 72
             },
             {
               "turn": 5,
-              "value": 78
+              "value": 82
             },
             {
               "turn": 6,
-              "value": 83
+              "value": 86
             },
             {
               "turn": 7,
-              "value": 87
+              "value": 89
             }
           ],
-          "observedWithinHorizon": 693,
+          "observedWithinHorizon": 714,
           "milestones": {
             "at25": 2,
-            "at50": 4,
+            "at50": 3,
             "at75": 5
           }
         },
@@ -3347,26 +3582,26 @@
             },
             {
               "turn": 4,
-              "value": 49
+              "value": 50
             },
             {
               "turn": 5,
-              "value": 61
+              "value": 63
             },
             {
               "turn": 6,
-              "value": 69
+              "value": 71
             },
             {
               "turn": 7,
-              "value": 74
+              "value": 77
             }
           ],
-          "observedWithinHorizon": 591,
+          "observedWithinHorizon": 613,
           "milestones": {
             "at25": 3,
-            "at50": 5,
-            "at75": null
+            "at50": 4,
+            "at75": 7
           }
         },
         "burst": {
@@ -3471,19 +3706,19 @@
             },
             {
               "turn": 4,
-              "value": 16
+              "value": 18
             },
             {
               "turn": 5,
-              "value": 28
+              "value": 31
             },
             {
               "turn": 6,
-              "value": 38
+              "value": 41
             },
             {
               "turn": 7,
-              "value": 45
+              "value": 48
             }
           ],
           "milestones": {
@@ -3507,23 +3742,23 @@
             },
             {
               "turn": 3,
-              "value": 46
+              "value": 49
             },
             {
               "turn": 4,
-              "value": 67
+              "value": 71
             },
             {
               "turn": 5,
-              "value": 75
+              "value": 80
             },
             {
               "turn": 6,
-              "value": 81
+              "value": 85
             },
             {
               "turn": 7,
-              "value": 84
+              "value": 88
             }
           ],
           "milestones": {
@@ -3555,21 +3790,21 @@
             },
             {
               "turn": 5,
-              "value": 63
+              "value": 64
             },
             {
               "turn": 6,
-              "value": 70
+              "value": 72
             },
             {
               "turn": 7,
-              "value": 74
+              "value": 77
             }
           ],
           "milestones": {
             "at25": 3,
             "at50": 4,
-            "at75": null
+            "at75": 7
           }
         },
         "burst": {
@@ -3633,22 +3868,22 @@
             },
             {
               "turn": 4,
-              "value": 72
+              "value": 73
             },
             {
               "turn": 5,
-              "value": 87
+              "value": 88
             },
             {
               "turn": 6,
-              "value": 91
+              "value": 92
             },
             {
               "turn": 7,
               "value": 94
             }
           ],
-          "observedWithinHorizon": 753,
+          "observedWithinHorizon": 755,
           "milestones": {
             "at25": 4,
             "at50": 4,
@@ -3674,25 +3909,25 @@
             },
             {
               "turn": 4,
-              "value": 17
+              "value": 19
             },
             {
               "turn": 5,
-              "value": 29
+              "value": 31
             },
             {
               "turn": 6,
-              "value": 41
+              "value": 44
             },
             {
               "turn": 7,
-              "value": 47
+              "value": 51
             }
           ],
-          "observedWithinHorizon": 378,
+          "observedWithinHorizon": 404,
           "milestones": {
             "at25": 5,
-            "at50": null,
+            "at50": 7,
             "at75": null
           }
         },
@@ -3711,29 +3946,29 @@
             },
             {
               "turn": 3,
-              "value": 49
+              "value": 52
             },
             {
               "turn": 4,
-              "value": 68
+              "value": 72
             },
             {
               "turn": 5,
-              "value": 78
+              "value": 82
             },
             {
               "turn": 6,
-              "value": 83
+              "value": 86
             },
             {
               "turn": 7,
-              "value": 87
+              "value": 89
             }
           ],
-          "observedWithinHorizon": 693,
+          "observedWithinHorizon": 714,
           "milestones": {
             "at25": 2,
-            "at50": 4,
+            "at50": 3,
             "at75": 5
           }
         },
@@ -3756,26 +3991,26 @@
             },
             {
               "turn": 4,
-              "value": 49
+              "value": 50
             },
             {
               "turn": 5,
-              "value": 61
+              "value": 63
             },
             {
               "turn": 6,
-              "value": 69
+              "value": 71
             },
             {
               "turn": 7,
-              "value": 74
+              "value": 77
             }
           ],
-          "observedWithinHorizon": 591,
+          "observedWithinHorizon": 613,
           "milestones": {
             "at25": 3,
-            "at50": 5,
-            "at75": null
+            "at50": 4,
+            "at75": 7
           }
         },
         "burst": {
