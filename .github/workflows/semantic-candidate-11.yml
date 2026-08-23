@@ -1,0 +1,107 @@
+name: Semantic 11 candidate validation
+
+on:
+  push:
+    branches: [integration/semantic11-product-v5]
+    paths:
+      - 'src/engine/packageGraph.js'
+      - 'src/version.js'
+      - 'supabase/functions/record-analysis/index.ts'
+      - 'scripts/clavileno-semantic-test.mjs'
+      - 'docs/SEMANTIC_11_SACRIFICE.md'
+      - '.github/workflows/semantic-candidate-11.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: semantic-11-candidate
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: integration/semantic11-product-v5
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install
+        run: npm install --no-audit --no-fund
+      - name: Generate semantic-11 snapshots and delta from semantic-10
+        env:
+          AEON_PRECON_ITERATIONS: '3200'
+          AEON_SEMANTIC_BASELINE_REF: 'd076a9eb9322629b8a2879815a982ca9a22487d6'
+        run: |
+          set -euo pipefail
+          npm run precons:generate
+          node scripts/update-public-precon-doc.mjs
+          node scripts/semantic-precon-delta.mjs "$AEON_SEMANTIC_BASELINE_REF"
+      - name: Commit candidate snapshots
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/precons docs/PUBLIC_PRECONS.md calibration/semantic-precon-delta.json calibration/semantic-precon-delta.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Generate semantic-11 public precon snapshot"
+            git push origin HEAD:integration/semantic11-product-v5
+          fi
+          echo "Validated commit: $(git rev-parse HEAD)"
+      - name: Smoke
+        run: npm run smoke
+      - name: Semantic truth + sentinel precons
+        run: npm run test:semantic:fast
+      - name: Metamorphic contracts
+        run: npm run test:metamorphic
+      - name: Product V5 contracts
+        run: npm run test:product
+      - name: Public precon contract
+        run: npm run test:public-precons
+      - name: Adversarial audit
+        run: npm run audit
+      - name: Build
+        run: npm run build
+      - name: Pin mid-power validation cohort
+        run: |
+          mkdir -p calibration/cache
+          cat > calibration/cache/arch_listing_MegazZ31.json <<'EOF'
+          {"results":[{"id":25464836},{"id":25449616},{"id":18888572},{"id":24925767},{"id":25449328},{"id":23299336},{"id":23299341},{"id":23294619},{"id":25448552}]}
+          EOF
+      - name: Macro benchmark 1800
+        env:
+          AEON_BENCH_ITERATIONS: '1800'
+          ARCHIDEKT_USERNAME: 'MegazZ31'
+        run: npm run benchmark
+      - name: Validate 1800
+        run: npm run validate:calibration
+      - name: Save 1800
+        run: cp calibration/latest.json calibration/run-1800.json
+      - name: Macro benchmark 3200
+        env:
+          AEON_BENCH_ITERATIONS: '3200'
+          ARCHIDEKT_USERNAME: 'MegazZ31'
+        run: npm run benchmark
+      - name: Validate 3200
+        run: npm run validate:calibration
+      - name: Save 3200
+        run: cp calibration/latest.json calibration/run-3200.json
+      - name: Convergence
+        run: npm run verify:sampling
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: semantic-11-candidate-validation
+          path: |
+            calibration/semantic-precon-delta.json
+            calibration/semantic-precon-delta.md
+            calibration/latest.json
+            calibration/latest.md
+            calibration/run-1800.json
+            calibration/run-3200.json
+          if-no-files-found: warn
