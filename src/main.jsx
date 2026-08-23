@@ -2,9 +2,26 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import CloudWorkspace from './CloudWorkspace.jsx'
+import ProductWorkspace from './ProductWorkspace.jsx'
+import PublicDecksPage from './PublicDecksPage.jsx'
+import AeonMatchPage from './AeonMatchPage.jsx'
+import { PodMatchPage,SharedAnalysisPage } from './ProductPages.jsx'
 import './styles.css'
 import './readability.css'
+import './publicDecks.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode><CloudWorkspace><App /></CloudWorkspace></React.StrictMode>
-)
+const path=window.location.pathname
+const publicDeckRoute=path==='/decklists-publiques'||path.startsWith('/decklists-publiques/')
+const shareRoute=path.startsWith('/a/')
+const podRoute=path==='/pod'
+const matchRoute=path==='/match'
+const publicLabel=localStorage.getItem('aeon-lang')==='fr'?'Decklists publiques':'Public decks'
+
+let page
+if(publicDeckRoute)page=<PublicDecksPage/>
+else if(shareRoute)page=<SharedAnalysisPage/>
+else if(podRoute)page=<PodMatchPage/>
+else if(matchRoute)page=<AeonMatchPage/>
+else page=<><ProductWorkspace><CloudWorkspace><App /></CloudWorkspace></ProductWorkspace><a className="publicLibraryShortcut" href="/decklists-publiques"><span>{publicLabel}</span></a></>
+
+ReactDOM.createRoot(document.getElementById('root')).render(<React.StrictMode>{page}</React.StrictMode>)

@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import { AEON_LABEL, MODEL_ID } from '../src/version.js'
 
 const path='calibration/latest.json'
 const report=JSON.parse(await fs.readFile(path,'utf8'))
@@ -6,7 +7,7 @@ const decks=report.decks||[]
 const median=xs=>{if(!xs.length)return 0;const a=[...xs].sort((x,y)=>x-y),m=Math.floor(a.length/2);return a.length%2?a[m]:(a[m-1]+a[m])/2}
 const strongPackages=d=>(d.packages||[]).filter(p=>(p.cohesion??p.strength??0)>=80).length
 
-report.model='sequence-access-v3.1-semantic'
+report.model=MODEL_ID
 const gates=(report.quality?.gates||[]).filter(g=>g.id!=='no-quota-core')
 const pre=decks.filter(d=>d.source==='precon')
 const cedh=decks.filter(d=>d.source==='cedh')
@@ -53,7 +54,7 @@ await fs.writeFile(path,JSON.stringify(report,null,2))
 
 let md=await fs.readFile('calibration/latest.md','utf8')
 const deckSection=md.includes('## Anchors')?md.slice(md.indexOf('## Anchors')):''
-const head=[`# Aeon Scorer v3.1 calibration report`,``,`Generated: ${report.generatedAt}`,`Model: ${report.model}`,`Iterations/deck: ${report.iterations}`,``,`## Macro quality gates: ${report.quality.score}/${report.quality.total}`,``]
+const head=[`# Aeon Scorer ${AEON_LABEL} calibration report`,``,`Generated: ${report.generatedAt}`,`Model: ${report.model}`,`Iterations/deck: ${report.iterations}`,``,`## Macro quality gates: ${report.quality.score}/${report.quality.total}`,``]
 for(const g of gates)head.push(`- ${g.ok?'✅':'❌'} **${g.id}** — ${g.detail}`)
 await fs.writeFile('calibration/latest.md',head.join('\n')+'\n\n'+deckSection)
 

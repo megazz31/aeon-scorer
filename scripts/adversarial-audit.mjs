@@ -74,7 +74,7 @@ assert(!/payoffs:\['counter-payoff','doubling'\]/.test(packages))
 assert(/COMMANDER_ENGINE_TAGS/.test(packages),'Commander synergy needs a functional-tag allowlist')
 assert(!/COMMANDER_ENGINE_TAGS=new Set\([^\n]*'enchantment'/.test(packages),'Raw permanent types must not seed commander synergy')
 assert(!/\['enchantment',\s*\/enchantment\//.test(features))
-assert(/withoutReminderText/.test(features)&&/spellslinger=o=>[^\n]*withoutReminderText/.test(features),'Reminder text must not create spellslinger roles')
+assert(/withoutReminderText/.test(features)&&/function spellslinger\(o\)\{const s=withoutReminderText/.test(features),'Reminder text must not create spellslinger roles')
 
 assert(/lion's eye diamond[^\n]*forCommander\?/.test(sequence),'LED must not be generic hand-casting mana')
 for(const name of ['chrome mox','mox diamond','mox opal','mox amber'])assert(sequence.includes(`n.includes('${name}')`),`${name} condition must be modeled explicitly`)

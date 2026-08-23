@@ -1,0 +1,80 @@
+name: Generate public precon library
+on:
+  push:
+    branches: [public-precon-library]
+    paths:
+      - 'scripts/generate-public-precons.mjs'
+      - 'scripts/update-public-precon-doc.mjs'
+      - 'scripts/public-precon-contract-test.mjs'
+      - 'scripts/sentinel-precons-test.mjs'
+      - 'scripts/semantic-precon-delta.mjs'
+      - 'src/engine/**'
+      - 'src/version.js'
+      - '.github/workflows/generate-public-precons.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: public-precon-generation
+  cancel-in-progress: true
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: public-precon-library
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install
+        run: npm install --no-audit --no-fund
+      - name: Generate, validate and publish current snapshot
+        env:
+          AEON_PRECON_ITERATIONS: '3200'
+          AEON_SEMANTIC_BASELINE_REF: '1acf8fddd674da89c6c5fec6a12ea8f56a01c93d'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Always derive the published snapshot from the latest branch head.
+          # semantic-10 is compared to the last validated semantic-9 snapshot,
+          # not to the accidentally regenerated c21efa1 snapshot carrying the same label.
+          for attempt in 1 2 3; do
+            echo "Snapshot attempt ${attempt}/3"
+            git fetch origin public-precon-library
+            git reset --hard origin/public-precon-library
+
+            npm run precons:generate
+            node scripts/update-public-precon-doc.mjs
+            npm run test:semantic:fast
+            npm run test:public-precons
+            node scripts/semantic-precon-delta.mjs "$AEON_SEMANTIC_BASELINE_REF"
+
+            git add public/precons docs/PUBLIC_PRECONS.md calibration/semantic-precon-delta.json calibration/semantic-precon-delta.md
+            if git diff --cached --quiet; then
+              echo "Public precon snapshot already current for $(git rev-parse HEAD)."
+              exit 0
+            fi
+
+            git commit -m "Generate Aeon public precon snapshot"
+            if git push origin HEAD:public-precon-library; then
+              exit 0
+            fi
+
+            echo "Branch advanced during generation; regenerating from the new head."
+          done
+
+          echo "Could not publish a snapshot derived from the current branch after 3 attempts."
+          exit 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: semantic-precon-delta
+          path: |
+            calibration/semantic-precon-delta.json
+            calibration/semantic-precon-delta.md
+          if-no-files-found: warn
