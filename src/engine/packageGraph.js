@@ -97,7 +97,8 @@ export function detectPackages(cards,commander=null){
     const members=uniqByName([...effectiveEvidence,...payoffs]),overlap=overlapCount(effectiveEvidence,payoffs),roleDistinct=Math.max(0,members.length-overlap)
     if(members.length<3||roleDistinct<2)continue
     const density=members.length/Math.max(1,nonlands.length),balance=Math.min(effectiveEvidence.length,payoffs.length)/Math.max(effectiveEvidence.length,payoffs.length),cohesion=Math.min(100,Math.round(24+members.length*3.3+density*52+balance*18))
-    out.push({id:m.id,name:m.name,strength:cohesion,cohesion,producers:previewNames(effectiveEvidence),payoffs:previewNames(payoffs),members:allNames(members),producerCards:producers.map(mini),supportCards:supports.map(mini),payoffCards:payoffs.map(mini),producerTags:m.producers,supportTags:m.supports||[],payoffTags:m.payoffs,evidence:`${producers.length} producteur(s) opérationnel(s), ${supports.length} support(s), ${payoffs.length} payoff(s), ${members.length} carte(s) distincte(s).`})
+    const evidence=m.supports?.length?`${producers.length} producteur(s) opérationnel(s) + ${supports.length} support(s), ${payoffs.length} payoff(s), ${members.length} carte(s) distincte(s).`:`${producers.length} producteur(s), ${payoffs.length} payoff(s), ${members.length} carte(s) distincte(s).`
+    out.push({id:m.id,name:m.name,strength:cohesion,cohesion,producers:previewNames(effectiveEvidence),payoffs:previewNames(payoffs),members:allNames(members),producerCards:producers.map(mini),supportCards:supports.map(mini),payoffCards:payoffs.map(mini),producerTags:m.producers,supportTags:m.supports||[],payoffTags:m.payoffs,evidence})
   }
   return out.sort((a,b)=>b.cohesion-a.cohesion)
 }
