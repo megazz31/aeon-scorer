@@ -1,9 +1,11 @@
 import { useEffect,useMemo,useState } from 'react'
 import { createPortal } from 'react-dom'
 import { productLabel,packageStrength } from './uxCopy.js'
+import { AEON_LABEL,SEMANTIC_VERSION } from './version.js'
 
 const language=()=>localStorage.getItem('aeon-lang')==='fr'?'fr':'en'
 const t=(en,fr)=>language()==='fr'?fr:en
+let PRECON_STATS=null
 
 const REPLACEMENTS_FR=new Map([
   ['Pod Match','Comparer 2–4 decks'],['Aeon Match','Former des tables de 4'],
@@ -21,6 +23,11 @@ const REPLACEMENTS_EN=new Map([
   ['Pod Match','Compare 2–4 decks'],['Aeon Match','Build tables of 4'],['Commander dependency','Commander impact'],['Median commander access','Commander castable'],['Median operational package','Engine online'],['Data coverage','Semantic coverage'],['Consistency','Output regularity'],['Accessible interaction','Available interaction'],['Recovery options','Resilience'],['Operational package','Engine online'],['Castable interaction','Available interaction'],['Castable resource','Available development'],['Accessible burst','Explosive acceleration'],['Producers:','Enablers:'],['Payoffs:','Beneficiaries:'],['Main drivers','Most influential cards'],['Aeon Experience Intelligence · experimental','Aeon Lab · experimental diagnostics'],['Goldfish Horizon','Unopposed speed'],['SPOF','Critical dependencies'],['Paired dependency suppression stress','Dependency stress test'],['SOURCE SYNC','DECK SOURCE'],['Compare in Pod Match','Compare 2–4 decks'],['Compare pod','Evaluate these decks'],['Share Rule 0 card','Share this deck'],['Aeon Pod Intelligence','Advanced table diagnostic'],['Multi-axis mismatch','Overall profile gap'],['Agency diagnostic','Participation capacity'],['Top Answer Debt','Main response weakness'],['Answer Debt','Response gap'],['cumulative-first-access','First reliable access'],['semantic-proxy+paired-suppression-evidence','Semantic evidence + stress test'],
 ])
 
+function applyCurrentPreconReference(){
+  const value=Number(PRECON_STATS?.reference?.median);if(!Number.isFinite(value))return
+  const tick=document.querySelector('.preconTick');if(tick){tick.style.left=`${Math.max(0,Math.min(100,value))}%`;const label=tick.querySelector('em');if(label)label.textContent=language()==='fr'?`Précons ${value}`:`Precons ${value}`}
+  document.querySelectorAll('.heroProof span').forEach(el=>{const text=String(el.textContent||'');if(/38 calibration decks|38 decks de calibration/i.test(text))el.textContent=language()==='fr'?`${PRECON_STATS.analyzed} préconstruits publics analysés`:`${PRECON_STATS.analyzed} public precons analyzed`})
+}
 function replaceExactText(root=document.body){
   if(!root)return
   const map=language()==='fr'?REPLACEMENTS_FR:REPLACEMENTS_EN
@@ -32,10 +39,12 @@ function replaceExactText(root=document.body){
   document.querySelectorAll('.aeonLab .intelligencePanel[open]').forEach(el=>el.removeAttribute('open'))
   const overview=document.querySelector('.diagOverview');if(overview&&!overview.querySelector('.uxMetricClarifier')){const note=document.createElement('p');note.className='note uxMetricClarifier';note.textContent=language()==='fr'?'« Impact du commandant » est le delta structurel estimé avec/sans commandant. « Résilience » agrège plusieurs signaux ; le pourcentage T5 ci-dessous mesure seulement l’accès à une option de reprise après le checkpoint T4.':'“Commander impact” is the estimated structural delta with/without the commander. “Resilience” aggregates several signals; the T5 percentage below only measures access to one recovery option after the T4 checkpoint.';overview.appendChild(note)}
   const firstDriver=document.querySelector('.driver');if(firstDriver&&firstDriver.parentElement&&!firstDriver.parentElement.querySelector('.uxDriverClarifier')){const note=document.createElement('p');note.className='note uxDriverClarifier';note.textContent=language()==='fr'?'L’indice d’influence classe les cartes entre elles dans ce deck. Ce n’est pas un nombre de points ajouté au score et il ne doit pas être comparé directement entre deux decks.':'The influence index ranks cards inside this deck. It is not a number of points added to the score and should not be compared directly across decks.';firstDriver.parentElement.insertBefore(note,firstDriver)}
+  const footer=document.querySelector('.footerInner>small');if(footer)footer.textContent=language()==='fr'?`Aeon Scorer ${AEON_LABEL} · modèle sémantique ${SEMANTIC_VERSION} · les identifiants techniques restent dans le Laboratoire Aeon.`:`Aeon Scorer ${AEON_LABEL} · semantic model ${SEMANTIC_VERSION} · technical model identifiers stay in Aeon Lab.`
+  applyCurrentPreconReference()
 }
 
 export function FriendlyCopyObserver(){
-  useEffect(()=>{let queued=false;const run=()=>{queued=false;replaceExactText()};run();const observer=new MutationObserver(()=>{if(!queued){queued=true;queueMicrotask(run)}});observer.observe(document.body,{subtree:true,childList:true,characterData:true});return()=>observer.disconnect()},[])
+  useEffect(()=>{let queued=false,dead=false;const run=()=>{queued=false;replaceExactText()};run();fetch('/api/precon-stats').then(r=>r.ok?r.json():null).then(x=>{if(x&&!dead){PRECON_STATS=x;run()}}).catch(()=>{});const observer=new MutationObserver(()=>{if(!queued){queued=true;queueMicrotask(run)}});observer.observe(document.body,{subtree:true,childList:true,characterData:true});return()=>{dead=true;observer.disconnect()}},[])
   return null
 }
 
@@ -54,7 +63,7 @@ export function WorkflowNav(){
   useEffect(()=>{const find=()=>setTarget(document.querySelector('.navLinks'));find();const o=new MutationObserver(find);o.observe(document.body,{subtree:true,childList:true});return()=>o.disconnect()},[])
   if(!target)return null
   const lang=language()
-  return createPortal(<span className="uxWorkflowNav" aria-label={t('Table tools','Outils de table')}><a href="/pod">{productLabel('compare',lang)}</a><a href="/match">{productLabel('tables',lang)}</a><a href="/tournoi">{productLabel('tournament',lang)}</a></span>,target)
+  return createPortal(<span className="uxWorkflowNav" aria-label={t('Deck and table tools','Decks et outils de table')}><a href="/decklists-publiques">{lang==='fr'?'Préconstruits':'Precons'}</a><a href="/pod">{productLabel('compare',lang)}</a><a href="/match">{productLabel('tables',lang)}</a><a href="/tournoi">{productLabel('tournament',lang)}</a></span>,target)
 }
 
 export function ResultActionBar({analysisReady=false,shareBusy=false,shareUrl='',onShare,onCompare,onTables,onTournament}){
