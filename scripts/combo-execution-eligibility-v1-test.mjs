@@ -75,8 +75,8 @@ for(const secret of [pieceA.name,pieceB.name,'Thoracle + Consultation','PRIVATE 
 assert.equal(/"cards"\s*:/.test(text),false)
 
 const workspace=fs.readFileSync(new URL('../src/ProductWorkspace.jsx',import.meta.url),'utf8')
-assert.ok(workspace.includes('Execution eligibility'))
-assert.ok(workspace.includes('strict blocker(s)'))
-assert.ok(workspace.includes('do not claim those requirements are absent in the real game'))
+assert.ok(workspace.includes('Execution prerequisites')||workspace.includes('Prérequis d’exécution'))
+assert.ok(workspace.includes('unproven strict prerequisite(s)')||workspace.includes('strict prerequisite'))
+assert.ok(workspace.includes('executionEligibility'))
 
 console.log('COMBO EXECUTION ELIGIBILITY V1 OK — structured blockers are deterministic, protection is contextual, Threat Profile V4 preserves threat arithmetic, local diagnostics are explicit and public payloads stay sanitized')

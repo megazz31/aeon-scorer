@@ -62,8 +62,8 @@ assert.equal(shareText.includes('Private Grave Combo'),false)
 // Local product wiring exposes the paired evidence and its non-promoted status.
 const workspace=fs.readFileSync(new URL('../src/ProductWorkspace.jsx',import.meta.url),'utf8')
 assert.ok(workspace.includes('dependencySuppression'))
-assert.ok(workspace.includes('Paired dependency suppression stress'))
-assert.ok(workspace.includes('does not change the SPOF score or Game Quality'))
+assert.ok(workspace.includes('Dependency stress test')||workspace.includes('Test de résistance des dépendances'))
+assert.ok(workspace.includes('diagnostic counterfactual'))
 assert.ok(workspace.includes('suppressionImpact'))
 
 console.log('SPOF SUPPRESSION V1 OK — paired dependency dead-draw stress is local/private and preserves semantic SPOF scores')

@@ -5,9 +5,10 @@ import { analyzePower } from './engine/powerModel.js'
 import { SITE_META,WhyPage,MethodPage,AboutPage } from './sitePages.jsx'
 import DeckImportPanel from './DeckImportPanel.jsx'
 import { AEON_LABEL,MODEL_ID } from './version.js'
+import { VALIDATED_CALIBRATION } from './calibrationReference.js'
 
 const SAMPLE=`1 Sol Ring\n1 Arcane Signet\n1 Swords to Plowshares\n1 Beast Within\n1 Cultivate\n1 Harmonize\n36 Forest`
-const CALIBRATION={precon:49,cedh:78}
+const CALIBRATION={precon:VALIDATED_CALIBRATION.preconMedian,cedh:VALIDATED_CALIBRATION.cedhMedian}
 const SITE_URL='https://aeon-scorer.vercel.app'
 const ROUTES=new Set(Object.keys(SITE_META.en))
 const HIDDEN_TAGS=new Set(['land','creature','enchantment','artifact','instant','sorcery','mana','sacrifice','graveyard-setup'])
@@ -113,7 +114,7 @@ export default function App(){
             <div className="heroKicker"><span className="statusDot"/>Aeon Scorer {AEON_LABEL} · {L('validated model','modèle validé')}</div>
             <h1>{L('Commander power is more than a bracket.','La puissance d’un deck ne se résume pas à un bracket.')}</h1>
             <p>{L('The five Commander Brackets describe intended play experience. Aeon Scorer estimates what your deck can actually produce through a ','Les cinq brackets Commander décrivent une expérience de jeu. Aeon Scorer estime ce que ton deck peut réellement produire avec une ')}<b>{L('median','médiane')}</b>, {L('a ','une ')}<b>{L('low output','sortie basse')}</b>, {L('a ','une ')}<b>{L('high output','sortie haute')}</b> {L('and a ','et un ')}<b>{L('peak','pic')}</b>.</p>
-            <div className="heroProof"><span>{L('38 calibration decks','38 decks de calibration')}</span><span>{L('1,800 / 3,200 sequences','1 800 / 3 200 séquences')}</span><span>{L('Micro + macro + convergence','Micro + macro + convergence')}</span></div>
+            <div className="heroProof"><span>{L(`${VALIDATED_CALIBRATION.benchmarkDecks} calibration decks`,`${VALIDATED_CALIBRATION.benchmarkDecks} decks de calibration`)}</span><span>{L('1,800 / 3,200 sequences','1 800 / 3 200 séquences')}</span><span>{L('Micro + macro + convergence','Micro + macro + convergence')}</span></div>
           </div>
           <aside className="heroExample" aria-label={L('Aeon Scorer result example','Exemple de résultat Aeon Scorer')}><div className="exampleLabel">{L('How to read it','Exemple de lecture')}</div><div className="exampleScore"><strong>55</strong><div><span>45–65</span><small>{L('usual range','plage habituelle')}</small></div></div><div className="examplePeak"><span>{L('Peak','Pic')}</span><b>85</b></div><p>{L('Same median ≠ same deck. The range and peak show what a single number hides.','Même médiane ≠ même deck. La plage et le pic montrent ce qu’un chiffre unique cache.')}</p></aside>
         </section>

@@ -59,8 +59,11 @@ assert.match(matchMigration,/grant execute on function public\.aeon_join_match_s
 assert.match(matchMigration,/revoke all on public\.match_sessions from public,anon,authenticated/)
 assert.match(matchMigration,/revoke all on public\.match_session_entries from public,anon,authenticated/)
 
-assert.match(main,/const matchRoute=path==='\/match'/)
-assert.match(main,/else if\(matchRoute\)page=<AeonMatchPage\/>/)
+const shell=readFileSync(new URL('../src/ProductRouteShell.jsx',import.meta.url),'utf8')
+
+assert.match(main,/path==='\/match'/)
+assert.match(main,/EventTablesPage/)
+assert.match(shell,/AeonMatchPage/)
 assert.match(vercel,/"source": "\/match", "destination": "\/index\.html"/)
 
 console.log('P2-P7 SECURITY/DEPLOYMENT CONTRACT OK — shares sanitized, sessions bounded/idempotent, observations prediction-bearing/pod-sized/transaction-rate-limited/privacy-bounded, /match directly routable')
