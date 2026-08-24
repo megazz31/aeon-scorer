@@ -71,7 +71,7 @@ export function WorkflowNav(){
   useEffect(()=>{const find=()=>setTarget(document.querySelector('.navLinks'));find();const o=new MutationObserver(find);o.observe(document.body,{subtree:true,childList:true});return()=>o.disconnect()},[])
   if(!target)return null
   const lang=language()
-  return createPortal(<span className="uxWorkflowNav" aria-label={t('Deck and table tools','Decks et outils de table')}><a href="/decklists-publiques">{lang==='fr'?'Préconstruits':'Precons'}</a><a href="/pod">{productLabel('compare',lang)}</a><a href="/match">{productLabel('tables',lang)}</a><a href="/tournoi">{productLabel('tournament',lang)}</a></span>,target)
+  return createPortal(<span className="uxWorkflowNav" aria-label={t('Deck and table tools','Decks et outils de table')}><a href="/decklists-publiques">{lang==='fr'?'Préconstruits':'Precons'}</a><a href="/pod">{lang==='fr'?'Comparer':'Compare'}</a><a href="/match">{lang==='fr'?'Tables de 4':'Tables of 4'}</a><a href="/tournoi">{lang==='fr'?'Tournoi':'Tournament'}</a></span>,target)
 }
 
 export function ResultActionBar({analysisReady=false,shareBusy=false,shareUrl='',onShare,onCompare,onTables,onTournament}){
