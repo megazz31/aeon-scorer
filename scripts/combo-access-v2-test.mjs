@@ -78,9 +78,9 @@ assert.equal(/"cards"\s*:/.test(text),false,'public combo payload must not expos
 
 // Local workspace exposes the diagnostic with explicit non-execution language; it is not added to Reality/Game Quality scoring.
 const workspace=fs.readFileSync(new URL('../src/ProductWorkspace.jsx',import.meta.url),'utf8')
-assert.ok(workspace.includes('COMBO ACCESS · V2'))
+assert.ok(workspace.includes('Combo-piece access')||workspace.includes('Accès aux pièces de combo'))
 assert.ok(workspace.includes('ComboTiming'))
-assert.ok(workspace.includes('This is NOT the probability that the combo can be executed or wins the game.'))
-assert.ok(workspace.includes("<ComboTiming comboAccessibility={localIntelligence?.comboAccessibility}/>"))
+assert.ok(workspace.includes('They are not execution or win probabilities.'))
+assert.ok(workspace.includes('<ComboTiming comboAccessibility={localIntelligence?.comboAccessibility}'))
 
 console.log('COMBO ACCESS V2 OK — V1 structural scores preserved, T5/T7/T9 raw-draw piece presence is exact/monotone, tutors stay unmodeled, local UI is explicit and public payloads remain sanitized')
