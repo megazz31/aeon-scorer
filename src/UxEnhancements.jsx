@@ -1,6 +1,6 @@
 import { useEffect,useMemo,useState } from 'react'
 import { createPortal } from 'react-dom'
-import { productLabel,packageStrength } from './uxCopy.js'
+import { productLabel,packageStrength,visibleTagLabels } from './uxCopy.js'
 import { AEON_LABEL,SEMANTIC_VERSION } from './version.js'
 import { VALIDATED_CALIBRATION } from './calibrationReference.js'
 
@@ -10,8 +10,8 @@ const t=(en,fr)=>language()==='fr'?fr:en
 const REPLACEMENTS_FR=new Map([
   ['Pod Match','Comparer 2–4 decks'],['Aeon Match','Former des tables de 4'],
   ['Dépendance commandant','Impact du commandant'],['Accès commandant médian','Commandant jouable'],['Package opérationnel médian','Moteur actif'],['Couverture des données','Couverture sémantique'],
-  ['Consistance','Régularité'],['Interaction accessible','Interaction disponible'],['Options de reprise','Résilience'],['Package opérationnel','Moteur actif'],['Interaction lançable','Interaction disponible'],['Ressource lançable','Développement disponible'],['Burst accessible','Accélération explosive'],
-  ['Producteurs:','Cartes qui activent :'],['Payoffs:','Cartes qui en profitent :'],['Principaux drivers','Cartes les plus influentes'],
+  ['Consistance','Régularité'],['Interaction accessible','Interaction disponible'],['Options de reprise','Résilience'],['Package opérationnel','Moteur actif'],['Package','Moteur actif'],['Interaction lançable','Interaction disponible'],['Ressource lançable','Développement disponible'],['Burst accessible','Accélération explosive'],['Burst','Accélération explosive'],
+  ['Producteurs:','Cartes qui activent :'],['Payoffs:','Cartes qui en profitent :'],['Principaux drivers','Cartes les plus influentes'],['PRINCIPAUX DRIVERS','CARTES LES PLUS INFLUENTES'],['Impact structurel','Influence relative dans ce deck'],
   ['Aeon Experience Intelligence · expérimental','Laboratoire Aeon · diagnostics expérimentaux'],['Horizon Goldfish','Vitesse sans opposition'],['SPOF','Dépendances critiques'],['Stress apparié de suppression des dépendances','Test de résistance des dépendances'],['SOURCE SYNC','SOURCE DU DECK'],
   ['resource Denial','Déni de ressources'],['forced Discard Sacrifice','Défausse / sacrifice forcés'],['lock Potential','Potentiel de verrouillage'],['long Sequencing','Tours longs / complexes'],['exile Interaction','Sensible à l’exil'],['enchantment Suppression','Sensible aux anti-enchantements'],['graveyard Hate','Sensible à la hate cimetière'],['turn Complexity','Complexité des tours'],
   ['low','Faible'],['moderate','Modéré'],['high','Élevé'],['very high','Très élevé'],['very-high','Très élevé'],
@@ -20,7 +20,7 @@ const REPLACEMENTS_FR=new Map([
   ['Aeon Pod Intelligence','Diagnostic avancé de la table'],['Mismatch multi-axes','Écart global de profils'],['Diagnostic Agency','Capacité à participer'],['Dette de réponse principale','Faiblesse de réponse principale'],['Answer Debt','Manque de réponses'],
 ])
 const REPLACEMENTS_EN=new Map([
-  ['Pod Match','Compare 2–4 decks'],['Aeon Match','Build tables of 4'],['Commander dependency','Commander impact'],['Median commander access','Commander castable'],['Median operational package','Engine online'],['Data coverage','Semantic coverage'],['Consistency','Output regularity'],['Accessible interaction','Available interaction'],['Recovery options','Resilience'],['Operational package','Engine online'],['Castable interaction','Available interaction'],['Castable resource','Available development'],['Accessible burst','Explosive acceleration'],['Producers:','Enablers:'],['Payoffs:','Beneficiaries:'],['Main drivers','Most influential cards'],['Aeon Experience Intelligence · experimental','Aeon Lab · experimental diagnostics'],['Goldfish Horizon','Unopposed speed'],['SPOF','Critical dependencies'],['Paired dependency suppression stress','Dependency stress test'],['SOURCE SYNC','DECK SOURCE'],['Compare in Pod Match','Compare 2–4 decks'],['Compare pod','Evaluate these decks'],['Share Rule 0 card','Share this deck'],['Aeon Pod Intelligence','Advanced table diagnostic'],['Multi-axis mismatch','Overall profile gap'],['Agency diagnostic','Participation capacity'],['Top Answer Debt','Main response weakness'],['Answer Debt','Response gap'],['cumulative-first-access','First reliable access'],['semantic-proxy+paired-suppression-evidence','Semantic evidence + stress test'],
+  ['Pod Match','Compare 2–4 decks'],['Aeon Match','Build tables of 4'],['Commander dependency','Commander impact'],['Median commander access','Commander castable'],['Median operational package','Engine online'],['Data coverage','Semantic coverage'],['Consistency','Output regularity'],['Accessible interaction','Available interaction'],['Recovery options','Resilience'],['Operational package','Engine online'],['Package','Engine online'],['Castable interaction','Available interaction'],['Castable resource','Available development'],['Accessible burst','Explosive acceleration'],['Burst','Explosive acceleration'],['Producers:','Enablers:'],['Payoffs:','Beneficiaries:'],['Main drivers','Most influential cards'],['MAIN DRIVERS','MOST INFLUENTIAL CARDS'],['Structural impact','Relative influence in this deck'],['Aeon Experience Intelligence · experimental','Aeon Lab · experimental diagnostics'],['Goldfish Horizon','Unopposed speed'],['SPOF','Critical dependencies'],['Paired dependency suppression stress','Dependency stress test'],['SOURCE SYNC','DECK SOURCE'],['Compare in Pod Match','Compare 2–4 decks'],['Compare pod','Evaluate these decks'],['Share Rule 0 card','Share this deck'],['Aeon Pod Intelligence','Advanced table diagnostic'],['Multi-axis mismatch','Overall profile gap'],['Agency diagnostic','Participation capacity'],['Top Answer Debt','Main response weakness'],['Answer Debt','Response gap'],['cumulative-first-access','First reliable access'],['semantic-proxy+paired-suppression-evidence','Semantic evidence + stress test'],
 ])
 
 function applyValidatedReferences(){
@@ -29,6 +29,12 @@ function applyValidatedReferences(){
   const cedhTick=document.querySelector('.cedhTick');if(cedhTick){cedhTick.style.left=`${cedh}%`;const label=cedhTick.querySelector('em');if(label)label.textContent=`cEDH ${cedh}`}
   document.querySelectorAll('.heroProof span').forEach(el=>{const text=String(el.textContent||'');if(/38 calibration decks|38 decks de calibration|39 calibration decks|39 decks de calibration/i.test(text))el.textContent=language()==='fr'?`${VALIDATED_CALIBRATION.benchmarkDecks} decks dans la cohorte de validation`:`${VALIDATED_CALIBRATION.benchmarkDecks} decks in the validation cohort`})
   document.querySelectorAll('.rangeLegend span').forEach(el=>{const text=String(el.textContent||'');if(/repères précon\/cEDH|Precon\/cEDH markers/i.test(text))el.textContent=language()==='fr'?`Repères de validation actuels : précon ${pre}, cEDH ${cedh}. Ce sont des médianes de cohorte, pas des seuils.`:`Current validation references: precon ${pre}, cEDH ${cedh}. These are cohort medians, not thresholds.`})
+}
+function applyPublicDiagnosticCopy(){
+  const lang=language()
+  document.querySelectorAll('.publicDriver strong').forEach(el=>{const x=String(el.textContent||'').trim();if(/^\d+(?:\.\d+)?$/.test(x))el.textContent=lang==='fr'?`indice ${x}`:`index ${x}`})
+  document.querySelectorAll('.publicDriver small').forEach(el=>{if(el.dataset.aeonFriendly==='1')return;const raw=String(el.textContent||'').split(' · ').map(x=>x.trim()).filter(Boolean);el.textContent=visibleTagLabels(raw,lang,6).join(' · ')||String(el.textContent||'');el.dataset.aeonFriendly='1'})
+  document.querySelectorAll('.publicPackage>div span').forEach(el=>{const x=String(el.textContent||'').trim(),m=x.match(/^(?:cohésion|cohesion)\s+(\d+(?:\.\d+)?)\/100$/i);if(m){const qualitative=packageStrength(Number(m[1]),lang);el.textContent=lang==='fr'?`Synergie ${qualitative.toLowerCase()} · indice ${m[1]}/100`:`${qualitative} synergy · index ${m[1]}/100`}})
 }
 function replaceExactText(root=document.body){
   if(!root)return
@@ -42,7 +48,7 @@ function replaceExactText(root=document.body){
   const overview=document.querySelector('.diagOverview');if(overview&&!overview.querySelector('.uxMetricClarifier')){const note=document.createElement('p');note.className='note uxMetricClarifier';note.textContent=language()==='fr'?'« Impact du commandant » est le delta structurel estimé avec/sans commandant. « Résilience » agrège plusieurs signaux ; le pourcentage T5 ci-dessous mesure seulement l’accès à une option de reprise après le checkpoint T4.':'“Commander impact” is the estimated structural delta with/without the commander. “Resilience” aggregates several signals; the T5 percentage below only measures access to one recovery option after the T4 checkpoint.';overview.appendChild(note)}
   const firstDriver=document.querySelector('.driver');if(firstDriver&&firstDriver.parentElement&&!firstDriver.parentElement.querySelector('.uxDriverClarifier')){const note=document.createElement('p');note.className='note uxDriverClarifier';note.textContent=language()==='fr'?'L’indice d’influence classe les cartes entre elles dans ce deck. Ce n’est pas un nombre de points ajouté au score et il ne doit pas être comparé directement entre deux decks.':'The influence index ranks cards inside this deck. It is not a number of points added to the score and should not be compared directly across decks.';firstDriver.parentElement.insertBefore(note,firstDriver)}
   const footer=document.querySelector('.footerInner>small');if(footer)footer.textContent=language()==='fr'?`Aeon Scorer ${AEON_LABEL} · modèle sémantique ${SEMANTIC_VERSION} · les identifiants techniques restent dans le Laboratoire Aeon.`:`Aeon Scorer ${AEON_LABEL} · semantic model ${SEMANTIC_VERSION} · technical model identifiers stay in Aeon Lab.`
-  applyValidatedReferences()
+  applyValidatedReferences();applyPublicDiagnosticCopy()
 }
 
 export function FriendlyCopyObserver(){
