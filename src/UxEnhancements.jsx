@@ -23,18 +23,20 @@ const REPLACEMENTS_EN=new Map([
   ['Pod Match','Compare 2–4 decks'],['Aeon Match','Build tables of 4'],['Commander dependency','Commander impact'],['Median commander access','Commander castable'],['Median operational package','Engine online'],['Data coverage','Semantic coverage'],['Consistency','Output regularity'],['Accessible interaction','Available interaction'],['Recovery options','Resilience'],['Operational package','Engine online'],['Package','Engine online'],['Castable interaction','Available interaction'],['Castable resource','Available development'],['Accessible burst','Explosive acceleration'],['Burst','Explosive acceleration'],['Producers:','Enablers:'],['Payoffs:','Beneficiaries:'],['Main drivers','Most influential cards'],['MAIN DRIVERS','MOST INFLUENTIAL CARDS'],['Structural impact','Relative influence in this deck'],['Aeon Experience Intelligence · experimental','Aeon Lab · experimental diagnostics'],['Goldfish Horizon','Unopposed speed'],['SPOF','Critical dependencies'],['Paired dependency suppression stress','Dependency stress test'],['SOURCE SYNC','DECK SOURCE'],['Compare in Pod Match','Compare 2–4 decks'],['Compare pod','Evaluate these decks'],['Share Rule 0 card','Share this deck'],['Aeon Pod Intelligence','Advanced table diagnostic'],['Multi-axis mismatch','Overall profile gap'],['Agency diagnostic','Participation capacity'],['Top Answer Debt','Main response weakness'],['Answer Debt','Response gap'],['cumulative-first-access','First reliable access'],['semantic-proxy+paired-suppression-evidence','Semantic evidence + stress test'],
 ])
 
+const setText=(el,value)=>{if(el&&el.textContent!==value)el.textContent=value}
+
 function applyValidatedReferences(){
   const pre=VALIDATED_CALIBRATION.preconMedian,cedh=VALIDATED_CALIBRATION.cedhMedian
-  const preTick=document.querySelector('.preconTick');if(preTick){preTick.style.left=`${pre}%`;const label=preTick.querySelector('em');if(label)label.textContent=language()==='fr'?`Précon calibration ${pre}`:`Precon calibration ${pre}`}
-  const cedhTick=document.querySelector('.cedhTick');if(cedhTick){cedhTick.style.left=`${cedh}%`;const label=cedhTick.querySelector('em');if(label)label.textContent=`cEDH ${cedh}`}
-  document.querySelectorAll('.heroProof span').forEach(el=>{const text=String(el.textContent||'');if(/38 calibration decks|38 decks de calibration|39 calibration decks|39 decks de calibration/i.test(text))el.textContent=language()==='fr'?`${VALIDATED_CALIBRATION.benchmarkDecks} decks dans la cohorte de validation`:`${VALIDATED_CALIBRATION.benchmarkDecks} decks in the validation cohort`})
-  document.querySelectorAll('.rangeLegend span').forEach(el=>{const text=String(el.textContent||'');if(/repères précon\/cEDH|Precon\/cEDH markers/i.test(text))el.textContent=language()==='fr'?`Repères de validation actuels : précon ${pre}, cEDH ${cedh}. Ce sont des médianes de cohorte, pas des seuils.`:`Current validation references: precon ${pre}, cEDH ${cedh}. These are cohort medians, not thresholds.`})
+  const preTick=document.querySelector('.preconTick');if(preTick){preTick.style.left=`${pre}%`;setText(preTick.querySelector('em'),language()==='fr'?`Précon calibration ${pre}`:`Precon calibration ${pre}`)}
+  const cedhTick=document.querySelector('.cedhTick');if(cedhTick){cedhTick.style.left=`${cedh}%`;setText(cedhTick.querySelector('em'),`cEDH ${cedh}`)}
+  document.querySelectorAll('.heroProof span').forEach(el=>{const text=String(el.textContent||'');if(/38 calibration decks|38 decks de calibration|39 calibration decks|39 decks de calibration/i.test(text))setText(el,language()==='fr'?`${VALIDATED_CALIBRATION.benchmarkDecks} decks dans la cohorte de validation`:`${VALIDATED_CALIBRATION.benchmarkDecks} decks in the validation cohort`)})
+  document.querySelectorAll('.rangeLegend span').forEach(el=>{const text=String(el.textContent||'');if(/repères précon\/cEDH|Precon\/cEDH markers/i.test(text))setText(el,language()==='fr'?`Repères de validation actuels : précon ${pre}, cEDH ${cedh}. Ce sont des médianes de cohorte, pas des seuils.`:`Current validation references: precon ${pre}, cEDH ${cedh}. These are cohort medians, not thresholds.`)})
 }
 function applyPublicDiagnosticCopy(){
   const lang=language()
-  document.querySelectorAll('.publicDriver strong').forEach(el=>{const x=String(el.textContent||'').trim();if(/^\d+(?:\.\d+)?$/.test(x))el.textContent=lang==='fr'?`indice ${x}`:`index ${x}`})
-  document.querySelectorAll('.publicDriver small').forEach(el=>{if(el.dataset.aeonFriendly==='1')return;const raw=String(el.textContent||'').split(' · ').map(x=>x.trim()).filter(Boolean);el.textContent=visibleTagLabels(raw,lang,6).join(' · ')||String(el.textContent||'');el.dataset.aeonFriendly='1'})
-  document.querySelectorAll('.publicPackage>div span').forEach(el=>{const x=String(el.textContent||'').trim(),m=x.match(/^(?:cohésion|cohesion)\s+(\d+(?:\.\d+)?)\/100$/i);if(m){const qualitative=packageStrength(Number(m[1]),lang);el.textContent=lang==='fr'?`Synergie ${qualitative.toLowerCase()} · indice ${m[1]}/100`:`${qualitative} synergy · index ${m[1]}/100`}})
+  document.querySelectorAll('.publicDriver strong').forEach(el=>{const x=String(el.textContent||'').trim();if(/^\d+(?:\.\d+)?$/.test(x))setText(el,lang==='fr'?`indice ${x}`:`index ${x}`)})
+  document.querySelectorAll('.publicDriver small').forEach(el=>{if(el.dataset.aeonFriendly==='1')return;const raw=String(el.textContent||'').split(' · ').map(x=>x.trim()).filter(Boolean);setText(el,visibleTagLabels(raw,lang,6).join(' · ')||String(el.textContent||''));el.dataset.aeonFriendly='1'})
+  document.querySelectorAll('.publicPackage>div span').forEach(el=>{const x=String(el.textContent||'').trim(),m=x.match(/^(?:cohésion|cohesion)\s+(\d+(?:\.\d+)?)\/100$/i);if(m){const qualitative=packageStrength(Number(m[1]),lang);setText(el,lang==='fr'?`Synergie ${qualitative.toLowerCase()} · indice ${m[1]}/100`:`${qualitative} synergy · index ${m[1]}/100`)}})
 }
 function replaceExactText(root=document.body){
   if(!root)return
@@ -42,17 +44,25 @@ function replaceExactText(root=document.body){
   const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT)
   const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode)
   for(const node of nodes){const raw=node.nodeValue||'',trimmed=raw.trim(),replacement=map.get(trimmed);if(!replacement||trimmed===replacement)continue;const lead=raw.match(/^\s*/)?.[0]||'',tail=raw.match(/\s*$/)?.[0]||'';node.nodeValue=`${lead}${replacement}${tail}`}
-  document.querySelectorAll('.driver strong').forEach(el=>{const x=String(el.textContent||'').trim();if(/^\d+(?:\.\d+)?$/.test(x))el.textContent=language()==='fr'?`indice ${x}`:`index ${x}`})
-  document.querySelectorAll('.pkg>div span').forEach(el=>{const x=String(el.textContent||'').trim(),m=x.match(/^(?:cohésion|cohesion)\s+(\d+(?:\.\d+)?)\/100$/i);if(m){const qualitative=packageStrength(Number(m[1]),language());el.textContent=language()==='fr'?`Synergie ${qualitative.toLowerCase()} · indice ${m[1]}/100`:`${qualitative} synergy · index ${m[1]}/100`}})
+  document.querySelectorAll('.driver strong').forEach(el=>{const x=String(el.textContent||'').trim();if(/^\d+(?:\.\d+)?$/.test(x))setText(el,language()==='fr'?`indice ${x}`:`index ${x}`)})
+  document.querySelectorAll('.pkg>div span').forEach(el=>{const x=String(el.textContent||'').trim(),m=x.match(/^(?:cohésion|cohesion)\s+(\d+(?:\.\d+)?)\/100$/i);if(m){const qualitative=packageStrength(Number(m[1]),language());setText(el,language()==='fr'?`Synergie ${qualitative.toLowerCase()} · indice ${m[1]}/100`:`${qualitative} synergy · index ${m[1]}/100`)}})
   document.querySelectorAll('.aeonLab .intelligencePanel[open]').forEach(el=>el.removeAttribute('open'))
   const overview=document.querySelector('.diagOverview');if(overview&&!overview.querySelector('.uxMetricClarifier')){const note=document.createElement('p');note.className='note uxMetricClarifier';note.textContent=language()==='fr'?'« Impact du commandant » est le delta structurel estimé avec/sans commandant. « Résilience » agrège plusieurs signaux ; le pourcentage T5 ci-dessous mesure seulement l’accès à une option de reprise après le checkpoint T4.':'“Commander impact” is the estimated structural delta with/without the commander. “Resilience” aggregates several signals; the T5 percentage below only measures access to one recovery option after the T4 checkpoint.';overview.appendChild(note)}
   const firstDriver=document.querySelector('.driver');if(firstDriver&&firstDriver.parentElement&&!firstDriver.parentElement.querySelector('.uxDriverClarifier')){const note=document.createElement('p');note.className='note uxDriverClarifier';note.textContent=language()==='fr'?'L’indice d’influence classe les cartes entre elles dans ce deck. Ce n’est pas un nombre de points ajouté au score et il ne doit pas être comparé directement entre deux decks.':'The influence index ranks cards inside this deck. It is not a number of points added to the score and should not be compared directly across decks.';firstDriver.parentElement.insertBefore(note,firstDriver)}
-  const footer=document.querySelector('.footerInner>small');if(footer)footer.textContent=language()==='fr'?`Aeon Scorer ${AEON_LABEL} · modèle sémantique ${SEMANTIC_VERSION} · les identifiants techniques restent dans le Laboratoire Aeon.`:`Aeon Scorer ${AEON_LABEL} · semantic model ${SEMANTIC_VERSION} · technical model identifiers stay in Aeon Lab.`
+  const footer=document.querySelector('.footerInner>small');if(footer)setText(footer,language()==='fr'?`Aeon Scorer ${AEON_LABEL} · modèle sémantique ${SEMANTIC_VERSION} · les identifiants techniques restent dans le Laboratoire Aeon.`:`Aeon Scorer ${AEON_LABEL} · semantic model ${SEMANTIC_VERSION} · technical model identifiers stay in Aeon Lab.`)
   applyValidatedReferences();applyPublicDiagnosticCopy()
 }
 
 export function FriendlyCopyObserver(){
-  useEffect(()=>{let queued=false;const run=()=>{queued=false;replaceExactText()};run();const observer=new MutationObserver(()=>{if(!queued){queued=true;queueMicrotask(run)}});observer.observe(document.body,{subtree:true,childList:true,characterData:true});return()=>observer.disconnect()},[])
+  useEffect(()=>{
+    let queued=false,dead=false
+    let observer=null
+    const observe=()=>observer?.observe(document.body,{subtree:true,childList:true,characterData:true})
+    const run=()=>{if(dead)return;queued=false;observer?.disconnect();try{replaceExactText()}finally{if(!dead)observe()}}
+    observer=new MutationObserver(()=>{if(!queued&&!dead){queued=true;queueMicrotask(run)}})
+    run()
+    return()=>{dead=true;observer?.disconnect()}
+  },[])
   return null
 }
 
