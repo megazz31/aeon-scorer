@@ -1,19 +1,37 @@
 const SUPABASE_URL='https://jrzzlcklctmqgemepucs.supabase.co'
 const PUBLISHABLE_KEY='sb_publishable_wrSl8JoCrvkBhh3hN6LiAg_M2yHrr1y'
 const SESSION_KEY='aeon-supabase-session-v1'
+const AUTH_REDIRECT='https://aeon-scorer.vercel.app'
 
 const baseHeaders=()=>({apikey:PUBLISHABLE_KEY,'Content-Type':'application/json'})
 const authHeaders=token=>({...baseHeaders(),...(token?{Authorization:`Bearer ${token}`}:{})})
-const cleanSession=s=>s?.access_token&&s?.user?{access_token:s.access_token,refresh_token:s.refresh_token,user:s.user,expires_at:s.expires_at||Math.floor(Date.now()/1000)+(s.expires_in||3600)}:null
+const cleanSession=s=>s?.access_token&&s?.user?{access_token:s.access_token,refresh_token:s.refresh_token,user:s.user,expires_at:s.expires_at||Math.floor(Date.now()/1000)+(Number(s.expires_in)||3600)}:null
 export const cloudConfig={url:SUPABASE_URL}
 
 function readStored(){try{return JSON.parse(localStorage.getItem(SESSION_KEY)||'null')}catch{return null}}
-function store(session){if(session)localStorage.setItem(SESSION_KEY,JSON.stringify(session));else localStorage.removeItem(SESSION_KEY)}
-async function payload(res){const text=await res.text();let body=null;try{body=text?JSON.parse(text):null}catch{body={message:text}}if(!res.ok)throw new Error(body?.msg||body?.message||body?.error_description||body?.error||`Supabase HTTP ${res.status}`);return body}
+function store(session){if(session)localStorage.setItem(SESSION_KEY,JSON.stringify(cleanSession(session)||session));else localStorage.removeItem(SESSION_KEY)}
+function authError(body,status){const message=body?.msg||body?.message||body?.error_description||body?.error||`Supabase HTTP ${status}`,e=new Error(message);e.code=body?.code||body?.error_code||body?.error||null;e.status=status;return e}
+async function payload(res){const text=await res.text();let body=null;try{body=text?JSON.parse(text):null}catch{body={message:text}}if(!res.ok)throw authError(body,res.status);return body}
+async function userForToken(accessToken){const res=await fetch(`${SUPABASE_URL}/auth/v1/user`,{headers:authHeaders(accessToken)});return payload(res)}
+function clearAuthRedirect(){if(typeof window==='undefined')return;const url=new URL(window.location.href);url.hash='';for(const k of ['error','error_code','error_description'])url.searchParams.delete(k);window.history.replaceState({},'',`${url.pathname}${url.search}`)}
+export async function consumeAuthRedirect(){
+  if(typeof window==='undefined')return null
+  const hash=window.location.hash?.replace(/^#/,'')||''
+  if(!hash)return null
+  const params=new URLSearchParams(hash),error=params.get('error')||params.get('error_code')
+  if(error){const e=new Error(params.get('error_description')||error);e.code=error;clearAuthRedirect();throw e}
+  const access_token=params.get('access_token'),refresh_token=params.get('refresh_token')
+  if(!access_token||!refresh_token)return null
+  const user=await userForToken(access_token),session=cleanSession({access_token,refresh_token,user,expires_in:Number(params.get('expires_in'))||3600})
+  if(!session)throw new Error('invalid_auth_callback')
+  store(session);const authEvent=params.get('type')||'redirect';clearAuthRedirect();return {...session,authEvent}
+}
 async function refresh(session){if(!session?.refresh_token)return null;try{const res=await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=refresh_token`,{method:'POST',headers:baseHeaders(),body:JSON.stringify({refresh_token:session.refresh_token})});const next=cleanSession(await payload(res));store(next);return next}catch{store(null);return null}}
-export async function restoreSession(){let s=readStored();if(!s)return null;if(!s.expires_at||s.expires_at<Math.floor(Date.now()/1000)+300)s=await refresh(s);if(!s)return null;try{const res=await fetch(`${SUPABASE_URL}/auth/v1/user`,{headers:authHeaders(s.access_token)});const user=await payload(res);s={...s,user};store(s);return s}catch{return refresh(s)}}
+export async function restoreSession(){const redirected=await consumeAuthRedirect();if(redirected)return redirected;let s=readStored();if(!s)return null;if(!s.expires_at||s.expires_at<Math.floor(Date.now()/1000)+300)s=await refresh(s);if(!s)return null;try{const user=await userForToken(s.access_token);s={...s,user};store(s);return s}catch{return refresh(s)}}
 export async function signIn(email,password){const res=await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`,{method:'POST',headers:baseHeaders(),body:JSON.stringify({email,password})});const s=cleanSession(await payload(res));store(s);return s}
-export async function signUp(email,password){const redirectTo='https://aeon-scorer.vercel.app';const res=await fetch(`${SUPABASE_URL}/auth/v1/signup?redirect_to=${encodeURIComponent(redirectTo)}`,{method:'POST',headers:baseHeaders(),body:JSON.stringify({email,password})});const body=await payload(res),s=cleanSession(body);if(s)store(s);return {session:s,user:body?.user||s?.user||null,needsConfirmation:!s}}
+export async function signUp(email,password){const res=await fetch(`${SUPABASE_URL}/auth/v1/signup?redirect_to=${encodeURIComponent(AUTH_REDIRECT)}`,{method:'POST',headers:baseHeaders(),body:JSON.stringify({email,password})});const body=await payload(res),s=cleanSession(body);if(s)store(s);return {session:s,user:body?.user||s?.user||null,needsConfirmation:!s}}
+export async function requestPasswordReset(email){const res=await fetch(`${SUPABASE_URL}/auth/v1/recover?redirect_to=${encodeURIComponent(AUTH_REDIRECT)}`,{method:'POST',headers:baseHeaders(),body:JSON.stringify({email})});await payload(res);return true}
+export async function updatePassword(session,password){if(!session?.access_token)throw new Error('authentication_required');const res=await fetch(`${SUPABASE_URL}/auth/v1/user`,{method:'PUT',headers:authHeaders(session.access_token),body:JSON.stringify({password})});const user=await payload(res),next={...session,user};store(next);return next}
 export async function signOut(session){try{if(session?.access_token)await fetch(`${SUPABASE_URL}/auth/v1/logout`,{headers:authHeaders(session.access_token),method:'POST'})}finally{store(null)}}
 async function rest(path,{method='GET',body,session,prefer}={}){const headers=authHeaders(session?.access_token);if(prefer)headers.Prefer=prefer;const res=await fetch(`${SUPABASE_URL}/rest/v1/${path}`,{method,headers,body:body===undefined?undefined:JSON.stringify(body)});return payload(res)}
 export async function listDecks(session){return rest(`decks?select=id,name,commander_name,original_decklist,deck_data,deck_hash,source_url,source_provider,source_deck_id,source_title,source_fingerprint,source_synced_at,last_modified,created_at,latest_analysis_at,engine_version,archived&archived=eq.false&order=last_modified.desc`,{session})}
