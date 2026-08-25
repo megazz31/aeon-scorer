@@ -23,7 +23,7 @@ patch('src/engine/cardFeatures.js',src=>{
   src=replaceOnce(
     src,
     "function exileCast(o){const s=withoutReminderText(o).toLowerCase();if(isGraveyardSpellReplay(s))return false;return /\\b(?:cast|play) [^.]{0,140} from exile\\b/.test(s)||/\\bexile .{0,280}\\b(?:you may|you can) (?:play|cast)\\b/.test(s)||/\\bexile .{0,280}\\bcast (?:it|them|those cards|any number|that card)\\b/.test(s)||/\\bplay (?:a land|lands?|a card|cards?) or cast (?:a spell|spells?) from among cards? exiled\\b/.test(s)}",
-    "function exileCast(o){const s=withoutReminderText(o).toLowerCase();if(isGraveyardSpellReplay(s))return false;return /\\b(?:cast|play) [^,.;]{0,140} from exile\\b/.test(s)||/\\bexile [^.;]{0,280}\\b(?:you may|you can) (?:play|cast)\\b/.test(s)||/\\bexile [^.;]{0,280}\\bcast (?:it|them|those cards|any number|that card)\\b/.test(s)||/\\bplay (?:a land|lands?|a card|cards?) or cast (?:a spell|spells?) from among cards? exiled\\b/.test(s)}",
+    "function exileCast(o){const s=withoutReminderText(o).toLowerCase();if(isGraveyardSpellReplay(s))return false;return /\\b(?:cast|play) [^,.;]{0,140} from exile\\b/.test(s)||/\\bexile .{0,280}\\b(?:you may|you can) (?:play|cast)\\b/.test(s)||/\\bexile .{0,280}\\bcast (?:it|them|those cards|any number|that card)\\b/.test(s)||/\\bplay (?:a land|lands?|a card|cards?) or cast (?:a spell|spells?) from among cards? exiled\\b/.test(s)}",
     'exile-cast clause locality'
   )
   return src
