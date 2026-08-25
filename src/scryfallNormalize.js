@@ -13,11 +13,17 @@ export function normalizeScryfallCard(d={}){
   const producedMana=Array.isArray(d.produced_mana)?d.produced_mana:(sameNameReversible?canonicalFace?.produced_mana||[]:uniq(faces.flatMap(f=>f?.produced_mana||[])))
   const colors=Array.isArray(d.colors)?d.colors:(sameNameReversible?canonicalFace?.colors||[]:uniq(faces.flatMap(f=>f?.colors||[])))
   const keywords=Array.isArray(d.keywords)&&d.keywords.length?d.keywords:uniq(faces.flatMap(f=>f?.keywords||[]))
+  const extraAliases=uniq([
+    d.printed_name,
+    d.flavor_name,
+    ...faces.flatMap(f=>[f?.printed_name,f?.flavor_name])
+  ]).filter(x=>x&&x!==name)
+  const aliases=uniq([...faceNames.filter(x=>x&&x!==name),...extraAliases])
   return {
     id:d.id,
     oracleId:d.oracle_id||d.id,
     name,
-    aliases:faceNames.filter(x=>x&&x!==name),
+    aliases,
     manaCost,
     cmc:Number(d.cmc||0),
     type,

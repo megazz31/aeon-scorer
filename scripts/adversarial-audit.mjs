@@ -23,6 +23,7 @@ assert(!has(graveHate,'graveyard-setup')&&!has(graveHate,'recursion'))
 
 assert(acceptableFuzzyName('Lightning Bolt',{name:'Lightning Bolt',aliases:[]}))
 assert(acceptableFuzzyName('Lightning Bol',{name:'Lightning Bolt',aliases:[]}))
+assert(acceptableFuzzyName('The Terminus of Return',{name:'The Soul Stone',aliases:['The Terminus of Return']}))
 assert(!acceptableFuzzyName('Lightning',{name:'Lightning Bolt',aliases:[]}),'Fuzzy fallback must not accept large prefix gaps')
 
 const list=parseDecklist('Commander\n1 Test Commander\nMainboard\n1 Sol Ring\nArcane Signet x1\n1x Command Tower\n1 Forest [M21]\n1 Island (M21) 265 *F*\nSideboard\n1 Demonic Tutor\n1 Vampiric Tutor\nMaybeboard\n1 Mana Crypt')

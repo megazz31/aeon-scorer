@@ -36,9 +36,11 @@ export function parseDecklist(text){
 
 async function request(url,options={},attempts=6){
   let last
+  const headers={'User-Agent':'AeonScorer/3.3 (+https://aeon-scorer.vercel.app)',...(options.headers||{})}
+  const opts={...options,headers}
   for(let i=0;i<attempts;i++){
     try{
-      const r=await fetch(url,options)
+      const r=await fetch(url,opts)
       if(r.ok)return r
       if(r.status===429||r.status>=500){
         const retry=Number(r.headers.get('retry-after')||0)
@@ -76,6 +78,9 @@ export async function fetchCards(entries,onProgress){
     for(const c of (data.data||[])){
       const n=normalizeScryfallCard(c);byName.set(c.name.toLowerCase(),n);byName.set(n.name.toLowerCase(),n)
       for(const f of (c.card_faces||[]))if(f.name)byName.set(f.name.toLowerCase(),n)
+      if(c.flavor_name)byName.set(c.flavor_name.toLowerCase(),n)
+      if(c.printed_name)byName.set(c.printed_name.toLowerCase(),n)
+      for(const a of (n.aliases||[]))byName.set(a.toLowerCase(),n)
     }
     for(const e of batch){
       const requested=cleanCardName(e.name)
