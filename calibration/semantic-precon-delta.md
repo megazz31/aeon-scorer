@@ -1,26 +1,26 @@
 # Semantic precon delta
 
-Baseline: `dfa527735fc436238ecdb6eeb41ebcc79d070b82`
-Semantic: `3.2.0-semantic-13` → `3.3.0-semantic-14`
+Baseline: `ac05c27f1583f6d7f62b6c851120c8cd854246ab`
+Semantic: `3.3.0-semantic-15` → `3.3.0-semantic-16`
 Matched analyzed decks: **163**
 
 | Metric | Mean Δ | Median Δ | Min | Max | + / 0 / - |
 |---|---:|---:|---:|---:|---:|
-| median | 0.12 | 0 | -3 | 5 | 61 / 53 / 49 |
-| p20 | -0.28 | 0 | -6 | 7 | 54 / 29 / 80 |
-| p80 | -0.10 | 0 | -5 | 5 | 64 / 31 / 68 |
-| peak | 0.06 | 0 | -5 | 6 | 59 / 47 / 57 |
-| coverage | 0 | 0 | 0 | 0 | 0 / 163 / 0 |
+| median | 0.31 | 0 | -1 | 6 | 49 / 97 / 17 |
+| p20 | 0.53 | 0 | -2 | 8 | 64 / 83 / 16 |
+| p80 | 0.36 | 0 | -2 | 6 | 56 / 85 / 22 |
+| peak | 0.56 | 0 | -2 | 7 | 54 / 93 / 16 |
+| coverage | 0.12 | 0 | 0 | 3 | 18 / 145 / 0 |
 
-Median |Δ| ≤ 1: **131/163**
+Median |Δ| ≤ 1: **152/163**
 Median |Δ| ≤ 2: **159/163**
-Peak |Δ| ≤ 2: **138/163**
+Peak |Δ| ≤ 2: **149/163**
 
 ## Outliers (|Δmedian| ≥ 3 or |Δpeak| ≥ 5)
-- Fae Dominion (fae-dominion-woc): median +1, P20 +4, P80 +3, peak +6, coverage +0
-- Ahoy Mateys (ahoy-mateys-lcc): median +5, P20 +4, P80 -1, peak +2, coverage +0
-- Aura of Courage (aura-of-courage-afc): median -1, P20 -1, P80 -1, peak -5, coverage +0
-- Limit Break (FINAL FANTASY VII) (limit-break-final-fantasy-vii-fic): median -2, P20 +0, P80 -2, peak -5, coverage +0
-- Eldrazi Incursion (eldrazi-incursion-m3c): median +3, P20 +4, P80 +3, peak +3, coverage +0
-- Elven Council (elven-council-ltc): median -3, P20 -2, P80 -2, peak +3, coverage +0
-- Ruthless Regiment (ruthless-regiment-c20): median +3, P20 +3, P80 +0, peak +1, coverage +0
+- Dance of the Elements (dance-of-the-elements-ecc): median +6, P20 +8, P80 +6, peak +7, coverage +3
+- Desert Bloom (desert-bloom-otc): median +1, P20 +1, P80 +2, peak +7, coverage +0
+- Mirror Mastery (mirror-mastery-cmd): median +4, P20 +4, P80 +2, peak +7, coverage +1
+- Sworn To Darkness (sworn-to-darkness-c14): median +1, P20 -1, P80 +1, peak +6, coverage +0
+- Everyone's Invited! (everyone-s-invited-sld): median +1, P20 +1, P80 +2, peak +5, coverage +0
+- Reap the Tides (reap-the-tides-cmr): median +3, P20 +2, P80 +2, peak +1, coverage +0
+- Veloci-Ramp-Tor (veloci-ramp-tor-lcc): median +3, P20 +2, P80 +2, peak +2, coverage +0

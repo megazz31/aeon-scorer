@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 41,
-    "p20": 29,
-    "p80": 53,
-    "peak": 85,
+    "median": 43,
+    "p20": 31,
+    "p80": 55,
+    "peak": 88,
     "coverage": 92,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-15",
+    "semanticVersion": "3.3.0-semantic-16",
     "oracleSnapshotHash": "099a201fd1cec55f1d983882f4c6ce3eb64316d63034304ddf27aee545641b44",
     "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-25T00:00:00.000Z"
+    "analyzedAt": "2026-08-25T20:36:31.318Z"
   },
   "decklist": "1 Coram, the Undertaker\n1 Bloodbraid Challenger\n1 Broodmate Tyrant\n1 Tempt with Mayhem\n1 Gluttonous Hellkite\n1 Pyrogoyf\n1 Polygoyf\n1 Barrowgoyf\n1 Sawhorn Nemesis\n1 Infested Thrinax\n1 Final Act\n1 Siege-Gang Lieutenant\n1 Tarmogoyf Nest\n1 Exterminator Magmarch\n1 Liliana, Death's Majesty\n1 Maelstrom Pulse\n1 Junji, the Midnight Sky\n1 Garruk, Apex Predator\n1 The Reaver Cleaver\n1 Temple of Malady\n1 Deadbridge Chant\n1 Kolaghan's Command\n1 Izoni, Thousand-Eyed\n1 Lhurgoyf\n1 Selvala, Heart of the Wilds\n1 Kessig Wolf Run\n1 Archon of Cruelty\n1 Maskwood Nexus\n1 Grist, the Hunger Tide\n1 Ignoble Hierarch\n1 Necrogoyf\n1 Mortivore\n1 Chandra's Ignition\n1 Viridescent Bog\n1 Find // Finality\n1 Mossfire Valley\n1 Ziatora, the Incinerator\n1 Canyon Slough\n1 Cinder Glade\n1 Exotic Orchard\n1 Shadowblood Ridge\n1 Sheltered Thicket\n1 Smoldering Marsh\n1 Temple of Abandon\n1 Temple of Malice\n1 Raging Ravine\n1 Terminate\n1 Demolition Field\n1 Command Tower\n1 Twisted Landscape\n1 Grisly Salvage\n1 Yavimaya Elder\n1 Bituminous Blast\n1 Bloodbraid Elf\n1 Eternal Witness\n1 Savage Lands\n1 Tainted Wood\n1 Burnished Hart\n1 Deathreap Ritual\n1 Arcane Signet\n1 Syr Konrad, the Grim\n1 Grapple with the Past\n1 Dakmor Salvage\n1 Accursed Marauder\n1 Brawn\n1 Faithless Looting\n1 Rampant Growth\n1 Anger\n1 Tranquil Thicket\n1 Stitcher's Supplier\n1 Graveshifter\n1 Talisman of Resilience\n1 Altar of the Goyf\n1 Syphon Mind\n1 Talisman of Indulgence\n1 Sakura-Tribe Elder\n1 Terramorphic Expanse\n1 Tainted Peak\n1 Riveteers Overlook\n1 Riveteers Charm\n1 Forgotten Cave\n1 Path of Ancestry\n1 Lightning Greaves\n1 Myriad Landscape\n1 Sol Ring\n1 Talisman of Impulse\n1 Evolving Wilds\n2 Swamp\n2 Swamp\n2 Mountain\n1 Mountain\n3 Forest\n2 Forest",
   "oracleCards": [
@@ -1869,23 +1869,23 @@
   ],
   "result": {
     "profile": {
-      "median": 41,
-      "floor": 29,
-      "ceiling": 53,
-      "peak": 85,
+      "median": 43,
+      "floor": 31,
+      "ceiling": 55,
+      "peak": 88,
       "dispersion": 24,
       "variance": 24,
-      "consistency": 61,
+      "consistency": 62,
       "commanderDelta": 7,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 30,
-      "consistency": 61,
+      "speed": 35,
+      "consistency": 62,
       "explosiveness": 14,
       "synergy": 62,
-      "interaction": 38,
+      "interaction": 39,
       "resilience": 55
     },
     "roles": {
@@ -2241,6 +2241,222 @@
         "evidence": "4 producteur(s), 10 payoff(s), 11 carte(s) distincte(s)."
       },
       {
+        "id": "early-commander",
+        "name": "Accélération du commandant",
+        "strength": 60,
+        "cohesion": 60,
+        "producers": [
+          "Arcane Signet",
+          "Burnished Hart",
+          "Ignoble Hierarch",
+          "Rampant Growth",
+          "Sakura-Tribe Elder",
+          "Selvala, Heart of the Wilds",
+          "Sol Ring",
+          "Talisman of Impulse",
+          "Talisman of Indulgence",
+          "Talisman of Resilience"
+        ],
+        "payoffs": [
+          "Disa the Restless"
+        ],
+        "members": [
+          "Arcane Signet",
+          "Burnished Hart",
+          "Ignoble Hierarch",
+          "Rampant Growth",
+          "Sakura-Tribe Elder",
+          "Selvala, Heart of the Wilds",
+          "Sol Ring",
+          "Talisman of Impulse",
+          "Talisman of Indulgence",
+          "Talisman of Resilience",
+          "Disa the Restless"
+        ],
+        "producerCards": [
+          {
+            "name": "Arcane Signet",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "mana"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Burnished Hart",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "artifact",
+              "sacrifice",
+              "land-ramp"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [],
+              "total": 3
+            }
+          },
+          {
+            "name": "Ignoble Hierarch",
+            "cmc": 1,
+            "tags": [
+              "creature",
+              "mana"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 1
+            }
+          },
+          {
+            "name": "Rampant Growth",
+            "cmc": 2,
+            "tags": [
+              "sorcery",
+              "land-ramp"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Sakura-Tribe Elder",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "land-ramp",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Selvala, Heart of the Wilds",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "mana",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Sol Ring",
+            "cmc": 1,
+            "tags": [
+              "artifact",
+              "mana",
+              "fast-mana"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
+            "name": "Talisman of Impulse",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "mana"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Talisman of Indulgence",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "mana"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Talisman of Resilience",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "mana"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          }
+        ],
+        "payoffCards": [
+          {
+            "name": "Disa the Restless",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "B"
+                ],
+                [
+                  "R"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 5
+            }
+          }
+        ],
+        "evidence": "0 accélérateur(s) burst + 10 source(s) persistante(s) réellement dans la fenêtre T4 ou avant vers un commandant MV 5."
+      },
+      {
         "id": "sacrifice",
         "name": "Sacrifice / mort",
         "strength": 58,
@@ -2416,205 +2632,6 @@
           "death-payoff"
         ],
         "evidence": "2 producteur(s) opérationnel(s) + 0 support(s), 4 payoff(s), 6 carte(s) distincte(s)."
-      },
-      {
-        "id": "early-commander",
-        "name": "Accélération du commandant",
-        "strength": 57,
-        "cohesion": 57,
-        "producers": [
-          "Arcane Signet",
-          "Ignoble Hierarch",
-          "Rampant Growth",
-          "Sakura-Tribe Elder",
-          "Selvala, Heart of the Wilds",
-          "Sol Ring",
-          "Talisman of Impulse",
-          "Talisman of Indulgence",
-          "Talisman of Resilience"
-        ],
-        "payoffs": [
-          "Disa the Restless"
-        ],
-        "members": [
-          "Arcane Signet",
-          "Ignoble Hierarch",
-          "Rampant Growth",
-          "Sakura-Tribe Elder",
-          "Selvala, Heart of the Wilds",
-          "Sol Ring",
-          "Talisman of Impulse",
-          "Talisman of Indulgence",
-          "Talisman of Resilience",
-          "Disa the Restless"
-        ],
-        "producerCards": [
-          {
-            "name": "Arcane Signet",
-            "cmc": 2,
-            "tags": [
-              "artifact",
-              "mana"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [],
-              "total": 2
-            }
-          },
-          {
-            "name": "Ignoble Hierarch",
-            "cmc": 1,
-            "tags": [
-              "creature",
-              "mana"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 1
-            }
-          },
-          {
-            "name": "Rampant Growth",
-            "cmc": 2,
-            "tags": [
-              "sorcery",
-              "land-ramp"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 2
-            }
-          },
-          {
-            "name": "Sakura-Tribe Elder",
-            "cmc": 2,
-            "tags": [
-              "creature",
-              "land-ramp",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 2
-            }
-          },
-          {
-            "name": "Selvala, Heart of the Wilds",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "mana",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "G"
-                ],
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Sol Ring",
-            "cmc": 1,
-            "tags": [
-              "artifact",
-              "mana",
-              "fast-mana"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [],
-              "total": 1
-            }
-          },
-          {
-            "name": "Talisman of Impulse",
-            "cmc": 2,
-            "tags": [
-              "artifact",
-              "mana"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [],
-              "total": 2
-            }
-          },
-          {
-            "name": "Talisman of Indulgence",
-            "cmc": 2,
-            "tags": [
-              "artifact",
-              "mana"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [],
-              "total": 2
-            }
-          },
-          {
-            "name": "Talisman of Resilience",
-            "cmc": 2,
-            "tags": [
-              "artifact",
-              "mana"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [],
-              "total": 2
-            }
-          }
-        ],
-        "payoffCards": [
-          {
-            "name": "Disa the Restless",
-            "cmc": 5,
-            "tags": [
-              "creature",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "B"
-                ],
-                [
-                  "R"
-                ],
-                [
-                  "G"
-                ]
-              ],
-              "total": 5
-            }
-          }
-        ],
-        "evidence": "0 accélérateur(s) burst + 9 source(s) persistante(s) réellement dans la fenêtre T4 ou avant vers un commandant MV 5."
       }
     ],
     "combos": [],
@@ -2656,26 +2673,28 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 31,
-      "median": 39,
-      "high": 48,
-      "ceiling": 48,
-      "peak": 77,
+      "floor": 32,
+      "median": 40,
+      "high": 49,
+      "ceiling": 49,
+      "peak": 80,
       "iqr": 14,
-      "consistency": 69,
-      "commanderMedianTurn": 5,
+      "consistency": 70,
+      "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 77,
+      "recoveryAfterDisruption": 76,
       "turnProfile": [
         {
           "turn": 1,
           "commander": 0,
           "engine": 0,
           "interaction": 1,
-          "resource": 36,
+          "resource": 37,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 2,
@@ -2685,62 +2704,76 @@
           "resource": 37,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 3,
-          "commander": 6,
-          "engine": 5,
+          "commander": 7,
+          "engine": 6,
           "interaction": 23,
           "resource": 45,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 4,
-          "commander": 39,
-          "engine": 12,
-          "interaction": 44,
-          "resource": 62,
+          "commander": 49,
+          "engine": 13,
+          "interaction": 45,
+          "resource": 64,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 5,
-          "commander": 73,
-          "engine": 20,
+          "commander": 80,
+          "engine": 21,
           "interaction": 55,
-          "resource": 72,
+          "resource": 71,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 6,
-          "commander": 87,
-          "engine": 28,
-          "interaction": 63,
+          "commander": 90,
+          "engine": 29,
+          "interaction": 64,
           "resource": 79,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 7,
-          "commander": 92,
-          "engine": 34,
-          "interaction": 70,
-          "resource": 83,
+          "commander": 94,
+          "engine": 35,
+          "interaction": 72,
+          "resource": 84,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         }
       ],
       "commanderMechanics": {
         "targetCostReduction": null,
-        "topLibraryCheat": null
+        "topLibraryCheat": null,
+        "typeCostReduction": null,
+        "commandZoneDeployment": null
       },
       "firstAccess": {
         "modelVersion": "first-access-sampler-v1",
@@ -2761,26 +2794,26 @@
               },
               {
                 "turn": 3,
-                "value": 7
+                "value": 8
               },
               {
                 "turn": 4,
-                "value": 36
+                "value": 46
               },
               {
                 "turn": 5,
-                "value": 71
+                "value": 77
               },
               {
                 "turn": 6,
-                "value": 85
+                "value": 89
               },
               {
                 "turn": 7,
-                "value": 92
+                "value": 93
               }
             ],
-            "observedWithinHorizon": 733
+            "observedWithinHorizon": 743
           },
           "engine": {
             "id": "engine-first-access",
@@ -2800,7 +2833,7 @@
               },
               {
                 "turn": 4,
-                "value": 12
+                "value": 13
               },
               {
                 "turn": 5,
@@ -2808,14 +2841,14 @@
               },
               {
                 "turn": 6,
-                "value": 27
+                "value": 28
               },
               {
                 "turn": 7,
-                "value": 33
+                "value": 34
               }
             ],
-            "observedWithinHorizon": 266
+            "observedWithinHorizon": 271
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -2831,26 +2864,26 @@
               },
               {
                 "turn": 3,
-                "value": 24
+                "value": 23
               },
               {
                 "turn": 4,
-                "value": 45
+                "value": 47
               },
               {
                 "turn": 5,
-                "value": 57
+                "value": 58
               },
               {
                 "turn": 6,
-                "value": 64
+                "value": 66
               },
               {
                 "turn": 7,
-                "value": 71
+                "value": 72
               }
             ],
-            "observedWithinHorizon": 564
+            "observedWithinHorizon": 576
           },
           "resource": {
             "id": "resource-first-access",
@@ -2858,7 +2891,7 @@
             "points": [
               {
                 "turn": 1,
-                "value": 37
+                "value": 38
               },
               {
                 "turn": 2,
@@ -2866,26 +2899,26 @@
               },
               {
                 "turn": 3,
-                "value": 61
+                "value": 60
               },
               {
                 "turn": 4,
-                "value": 75
+                "value": 77
               },
               {
                 "turn": 5,
-                "value": 83
+                "value": 84
               },
               {
                 "turn": 6,
-                "value": 87
+                "value": 88
               },
               {
                 "turn": 7,
-                "value": 90
+                "value": 91
               }
             ],
-            "observedWithinHorizon": 720
+            "observedWithinHorizon": 724
           },
           "burst": {
             "id": "burst-first-access",
@@ -2938,26 +2971,26 @@
               },
               {
                 "turn": 3,
-                "value": 7
+                "value": 8
               },
               {
                 "turn": 4,
-                "value": 36
+                "value": 46
               },
               {
                 "turn": 5,
-                "value": 71
+                "value": 77
               },
               {
                 "turn": 6,
-                "value": 85
+                "value": 89
               },
               {
                 "turn": 7,
-                "value": 92
+                "value": 93
               }
             ],
-            "observedWithinHorizon": 733
+            "observedWithinHorizon": 743
           }
         },
         "confidence": {
@@ -3113,7 +3146,9 @@
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
       "commanderMechanics": {
         "targetCostReduction": null,
-        "topLibraryCheat": null
+        "topLibraryCheat": null,
+        "typeCostReduction": null,
+        "commandZoneDeployment": null
       },
       "limitations": []
     },
@@ -3121,12 +3156,12 @@
       "modelVersion": "experience-v1",
       "dimensions": {
         "tempo": {
-          "score": 30,
+          "score": 35,
           "level": "moderate",
           "evidence": [
             {
               "signal": "speed",
-              "value": 30,
+              "value": 35,
               "source": "aeon-dimension",
               "reason": "Existing Aeon speed dimension; no power-score feedback."
             }
@@ -3145,7 +3180,7 @@
           ]
         },
         "volatility": {
-          "score": 96,
+          "score": 98,
           "level": "very-high",
           "evidence": [
             {
@@ -3156,19 +3191,19 @@
             },
             {
               "signal": "high-roll-tail",
-              "value": 32,
+              "value": 33,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
           ]
         },
         "interaction": {
-          "score": 38,
+          "score": 39,
           "level": "moderate",
           "evidence": [
             {
               "signal": "interaction",
-              "value": 38,
+              "value": 39,
               "source": "aeon-dimension",
               "reason": "Existing Aeon interaction-access dimension."
             }
@@ -3198,7 +3233,7 @@
             },
             {
               "signal": "consistency",
-              "value": 61,
+              "value": 62,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
@@ -3210,7 +3245,7 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 64,
+              "value": 65,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
@@ -3422,30 +3457,30 @@
             },
             {
               "turn": 3,
-              "value": 7
+              "value": 8
             },
             {
               "turn": 4,
-              "value": 36
+              "value": 46
             },
             {
               "turn": 5,
-              "value": 71
+              "value": 77
             },
             {
               "turn": 6,
-              "value": 85
+              "value": 89
             },
             {
               "turn": 7,
-              "value": 92
+              "value": 93
             }
           ],
-          "observedWithinHorizon": 733,
+          "observedWithinHorizon": 743,
           "milestones": {
             "at25": 4,
             "at50": 5,
-            "at75": 6
+            "at75": 5
           }
         },
         "engine": {
@@ -3467,7 +3502,7 @@
             },
             {
               "turn": 4,
-              "value": 12
+              "value": 13
             },
             {
               "turn": 5,
@@ -3475,14 +3510,14 @@
             },
             {
               "turn": 6,
-              "value": 27
+              "value": 28
             },
             {
               "turn": 7,
-              "value": 33
+              "value": 34
             }
           ],
-          "observedWithinHorizon": 266,
+          "observedWithinHorizon": 271,
           "milestones": {
             "at25": 6,
             "at50": null,
@@ -3504,26 +3539,26 @@
             },
             {
               "turn": 3,
-              "value": 24
+              "value": 23
             },
             {
               "turn": 4,
-              "value": 45
+              "value": 47
             },
             {
               "turn": 5,
-              "value": 57
+              "value": 58
             },
             {
               "turn": 6,
-              "value": 64
+              "value": 66
             },
             {
               "turn": 7,
-              "value": 71
+              "value": 72
             }
           ],
-          "observedWithinHorizon": 564,
+          "observedWithinHorizon": 576,
           "milestones": {
             "at25": 4,
             "at50": 5,
@@ -3537,7 +3572,7 @@
           "points": [
             {
               "turn": 1,
-              "value": 37
+              "value": 38
             },
             {
               "turn": 2,
@@ -3545,26 +3580,26 @@
             },
             {
               "turn": 3,
-              "value": 61
+              "value": 60
             },
             {
               "turn": 4,
-              "value": 75
+              "value": 77
             },
             {
               "turn": 5,
-              "value": 83
+              "value": 84
             },
             {
               "turn": 6,
-              "value": 87
+              "value": 88
             },
             {
               "turn": 7,
-              "value": 90
+              "value": 91
             }
           ],
-          "observedWithinHorizon": 720,
+          "observedWithinHorizon": 724,
           "milestones": {
             "at25": 1,
             "at50": 3,
@@ -3629,29 +3664,29 @@
             },
             {
               "turn": 3,
-              "value": 6
+              "value": 7
             },
             {
               "turn": 4,
-              "value": 39
+              "value": 49
             },
             {
               "turn": 5,
-              "value": 73
+              "value": 80
             },
             {
               "turn": 6,
-              "value": 87
+              "value": 90
             },
             {
               "turn": 7,
-              "value": 92
+              "value": 94
             }
           ],
           "milestones": {
             "at25": 4,
             "at50": 5,
-            "at75": 6
+            "at75": 5
           }
         },
         "engine": {
@@ -3669,23 +3704,23 @@
             },
             {
               "turn": 3,
-              "value": 5
+              "value": 6
             },
             {
               "turn": 4,
-              "value": 12
+              "value": 13
             },
             {
               "turn": 5,
-              "value": 20
+              "value": 21
             },
             {
               "turn": 6,
-              "value": 28
+              "value": 29
             },
             {
               "turn": 7,
-              "value": 34
+              "value": 35
             }
           ],
           "milestones": {
@@ -3713,7 +3748,7 @@
             },
             {
               "turn": 4,
-              "value": 44
+              "value": 45
             },
             {
               "turn": 5,
@@ -3721,11 +3756,11 @@
             },
             {
               "turn": 6,
-              "value": 63
+              "value": 64
             },
             {
               "turn": 7,
-              "value": 70
+              "value": 72
             }
           ],
           "milestones": {
@@ -3741,7 +3776,7 @@
           "points": [
             {
               "turn": 1,
-              "value": 36
+              "value": 37
             },
             {
               "turn": 2,
@@ -3753,11 +3788,11 @@
             },
             {
               "turn": 4,
-              "value": 62
+              "value": 64
             },
             {
               "turn": 5,
-              "value": 72
+              "value": 71
             },
             {
               "turn": 6,
@@ -3765,7 +3800,7 @@
             },
             {
               "turn": 7,
-              "value": 83
+              "value": 84
             }
           ],
           "milestones": {
@@ -3831,30 +3866,30 @@
             },
             {
               "turn": 3,
-              "value": 7
+              "value": 8
             },
             {
               "turn": 4,
-              "value": 36
+              "value": 46
             },
             {
               "turn": 5,
-              "value": 71
+              "value": 77
             },
             {
               "turn": 6,
-              "value": 85
+              "value": 89
             },
             {
               "turn": 7,
-              "value": 92
+              "value": 93
             }
           ],
-          "observedWithinHorizon": 733,
+          "observedWithinHorizon": 743,
           "milestones": {
             "at25": 4,
             "at50": 5,
-            "at75": 6
+            "at75": 5
           }
         },
         "engine": {
@@ -3876,7 +3911,7 @@
             },
             {
               "turn": 4,
-              "value": 12
+              "value": 13
             },
             {
               "turn": 5,
@@ -3884,14 +3919,14 @@
             },
             {
               "turn": 6,
-              "value": 27
+              "value": 28
             },
             {
               "turn": 7,
-              "value": 33
+              "value": 34
             }
           ],
-          "observedWithinHorizon": 266,
+          "observedWithinHorizon": 271,
           "milestones": {
             "at25": 6,
             "at50": null,
@@ -3913,26 +3948,26 @@
             },
             {
               "turn": 3,
-              "value": 24
+              "value": 23
             },
             {
               "turn": 4,
-              "value": 45
+              "value": 47
             },
             {
               "turn": 5,
-              "value": 57
+              "value": 58
             },
             {
               "turn": 6,
-              "value": 64
+              "value": 66
             },
             {
               "turn": 7,
-              "value": 71
+              "value": 72
             }
           ],
-          "observedWithinHorizon": 564,
+          "observedWithinHorizon": 576,
           "milestones": {
             "at25": 4,
             "at50": 5,
@@ -3946,7 +3981,7 @@
           "points": [
             {
               "turn": 1,
-              "value": 37
+              "value": 38
             },
             {
               "turn": 2,
@@ -3954,26 +3989,26 @@
             },
             {
               "turn": 3,
-              "value": 61
+              "value": 60
             },
             {
               "turn": 4,
-              "value": 75
+              "value": 77
             },
             {
               "turn": 5,
-              "value": 83
+              "value": 84
             },
             {
               "turn": 6,
-              "value": 87
+              "value": 88
             },
             {
               "turn": 7,
-              "value": 90
+              "value": 91
             }
           ],
-          "observedWithinHorizon": 720,
+          "observedWithinHorizon": 724,
           "milestones": {
             "at25": 1,
             "at50": 3,
