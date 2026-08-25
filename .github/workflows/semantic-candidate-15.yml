@@ -27,21 +27,24 @@ jobs:
           node-version: 22
       - name: Install
         run: npm install --no-audit --no-fund
+      - name: Apply one-shot semantic-15 finalizer
+        if: github.event_name == 'push'
+        run: node scripts/semantic15-finalize.mjs
       - name: Generate candidate precon snapshots for semantic gate
         env:
           AEON_PRECON_ITERATIONS: '3200'
         run: |
           npm run precons:generate
           node scripts/update-public-precon-doc.mjs
-      - name: Commit candidate snapshots on branch pushes
+      - name: Commit finalized candidate and snapshots on branch pushes
         if: github.event_name == 'push'
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/precons docs/PUBLIC_PRECONS.md
+          git add -A
           if ! git diff --cached --quiet; then
-            git commit -m "Generate semantic-15 public precon snapshots"
+            git commit -m "Finalize semantic-15 audited mechanics and snapshots"
             git push origin HEAD:semantic/15-audit-driven
           fi
       - name: Smoke
