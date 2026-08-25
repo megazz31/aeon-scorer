@@ -55,9 +55,37 @@ function RecoveryPanel({lang,session,onDone}){
  return <div className="cloudAuth"><h3>{t(lang,'Choose a new password','Choisir un nouveau mot de passe')}</h3><p>{t(lang,'Your reset link is valid. Set the new password for this Aeon account.','Ton lien de réinitialisation est valide. Définis le nouveau mot de passe de ce compte Aeon.')}</p><form onSubmit={submit}><label>{t(lang,'New password','Nouveau mot de passe')}<input type="password" autoComplete="new-password" minLength={6} value={password} onChange={e=>setPassword(e.target.value)} required/></label><label>{t(lang,'Confirm password','Confirmer le mot de passe')}<input type="password" autoComplete="new-password" minLength={6} value={confirmPassword} onChange={e=>setConfirmPassword(e.target.value)} required/></label><button className="cloudPrimary" disabled={busy}>{busy?t(lang,'Please wait…','Patiente…'):t(lang,'Update password','Mettre à jour le mot de passe')}</button></form>{message&&<p className="cloudMessage">{message}</p>}</div>
 }
 
+function extractCommanderNames(deck) {
+  if (!deck) return []
+  if (Array.isArray(deck.versions?.[0]?.commander_names) && deck.versions[0].commander_names.length > 0) {
+    return deck.versions[0].commander_names
+  }
+  if (Array.isArray(deck.latest?.result?.commanderNames) && deck.latest.result.commanderNames.length > 0) {
+    return deck.latest.result.commanderNames
+  }
+  if (Array.isArray(deck.deck_data?.commanderNames) && deck.deck_data.commanderNames.length > 0) {
+    return deck.deck_data.commanderNames
+  }
+  if (Array.isArray(deck.deck_data?.commanders) && deck.deck_data.commanders.length > 0) {
+    return deck.deck_data.commanders.map(c => typeof c === 'string' ? c : (c.nameEN || c.name || c.nameFR)).filter(Boolean)
+  }
+  if (deck.commander_name) {
+    return deck.commander_name.includes('+')
+      ? deck.commander_name.split('+').map(s => s.trim()).filter(Boolean)
+      : [deck.commander_name]
+  }
+  if (deck.deck_data?.commander) {
+    return deck.deck_data.commander.includes('+')
+      ? deck.deck_data.commander.split('+').map(s => s.trim()).filter(Boolean)
+      : [deck.deck_data.commander]
+  }
+  return []
+}
+
 function DeckRow({deck,lang,onLoad,onDelete}){
  const h=deck.latest,history=deck.history||[],versions=deck.versions||[]
- return <article className="cloudDeck"><div><b>{deck.name}</b><span>{deck.commander_name||'Commander'}</span>{deck.source_provider&&<small>{deck.source_provider==='moxfield'?'Moxfield':'Archidekt'} · {t(lang,'linked','lié')}</small>}</div>{h?<div className="cloudDeckScore"><strong>{h.median??'—'}</strong><span>{h.p20??'—'}–{h.p80??'—'} · {t(lang,'peak','pic')} {h.peak??'—'}</span></div>:<span className="cloudNoRun">{t(lang,'Never analyzed','Jamais analysé')}</span>}<small>{h?`${h.engine_version} · ${when(h.created_at)}`:deck.latest_analysis_at?when(deck.latest_analysis_at):t(lang,'Saved decklist','Decklist sauvegardée')}</small>{history.length>0&&<details className="cloudHistory" style={{gridColumn:'1 / -1'}}><summary>{t(lang,`Analysis history (${history.length})`,`Historique des analyses (${history.length})`)}</summary><div className="cloudHistoryList">{history.map(run=><div className="cloudHistoryRun" key={run.id}><div><b>v{run.engine_version}</b><span>{when(run.created_at)}</span></div><div><strong>{run.median??'—'}</strong><span>P20 {run.p20??'—'} · P80 {run.p80??'—'} · {t(lang,'peak','pic')} {run.peak??'—'}</span></div></div>)}</div></details>}{versions.length>1&&<details className="cloudHistory" style={{gridColumn:'1 / -1'}}><summary>{t(lang,`Decklist versions (${versions.length})`,`Versions de decklist (${versions.length})`)}</summary><div className="cloudHistoryList">{versions.slice(0,8).map(v=><div className="cloudHistoryRun" key={v.id}><div><b>{v.source_provider||t(lang,'Manual','Manuel')}</b><span>{when(v.created_at)}</span></div><div><span>{String(v.deck_hash||'').slice(0,10)}…</span></div></div>)}</div></details>}<div className="cloudDeckActions"><a href={`/pod?d=saved:${deck.id}`} title={t(lang,'Compare this deck in Pod Match','Comparer ce deck dans Pod Match')}>{t(lang,'Compare','Comparer')}</a><button onClick={()=>onLoad(deck)}>{t(lang,'Load & re-analyze','Charger & réanalyser')}</button><button className="danger" onClick={()=>onDelete(deck)}>{t(lang,'Delete','Supprimer')}</button></div></article>
+ const cmdDisplay=extractCommanderNames(deck).join(' + ')||'Commander'
+ return <article className="cloudDeck"><div><b>{deck.name}</b><span>{cmdDisplay}</span>{deck.source_provider&&<small>{deck.source_provider==='moxfield'?'Moxfield':'Archidekt'} · {t(lang,'linked','lié')}</small>}</div>{h?<div className="cloudDeckScore"><strong>{h.median??'—'}</strong><span>{h.p20??'—'}–{h.p80??'—'} · {t(lang,'peak','pic')} {h.peak??'—'}</span></div>:<span className="cloudNoRun">{t(lang,'Never analyzed','Jamais analysé')}</span>}<small>{h?`${h.engine_version} · ${when(h.created_at)}`:deck.latest_analysis_at?when(deck.latest_analysis_at):t(lang,'Saved decklist','Decklist sauvegardée')}</small>{history.length>0&&<details className="cloudHistory" style={{gridColumn:'1 / -1'}}><summary>{t(lang,`Analysis history (${history.length})`,`Historique des analyses (${history.length})`)}</summary><div className="cloudHistoryList">{history.map(run=><div className="cloudHistoryRun" key={run.id}><div><b>v{run.engine_version}</b><span>{when(run.created_at)}</span></div><div><strong>{run.median??'—'}</strong><span>P20 {run.p20??'—'} · P80 {run.p80??'—'} · {t(lang,'peak','pic')} {run.peak??'—'}</span></div></div>)}</div></details>}{versions.length>1&&<details className="cloudHistory" style={{gridColumn:'1 / -1'}}><summary>{t(lang,`Decklist versions (${versions.length})`,`Versions de decklist (${versions.length})`)}</summary><div className="cloudHistoryList">{versions.slice(0,8).map(v=><div className="cloudHistoryRun" key={v.id}><div><b>{v.source_provider||t(lang,'Manual','Manuel')}</b><span>{when(v.created_at)}</span></div><div><span>{String(v.deck_hash||'').slice(0,10)}…</span></div></div>)}</div></details>}<div className="cloudDeckActions"><a href={`/pod?d=saved:${deck.id}`} title={t(lang,'Compare this deck in Pod Match','Comparer ce deck dans Pod Match')}>{t(lang,'Compare','Comparer')}</a><button onClick={()=>onLoad(deck)}>{t(lang,'Load & re-analyze','Charger & réanalyser')}</button><button className="danger" onClick={()=>onDelete(deck)}>{t(lang,'Delete','Supprimer')}</button></div></article>
 }
 
 export default function CloudWorkspace({children}){
@@ -108,34 +136,9 @@ export default function CloudWorkspace({children}){
      window.history.pushState({},'','/');
      window.dispatchEvent(new PopStateEvent('popstate'));
    }
-   let c1='';
-   let c2='';
-   if(deck.versions?.[0]?.commander_names?.length>1){
-     c1=deck.versions[0].commander_names[0]||'';
-     c2=deck.versions[0].commander_names[1]||'';
-   }else if(deck.latest?.result?.commanderNames?.length>1){
-     c1=deck.latest.result.commanderNames[0]||'';
-     c2=deck.latest.result.commanderNames[1]||'';
-   }else if(deck.deck_data?.commanderNames?.length>1){
-     c1=deck.deck_data.commanderNames[0]||'';
-     c2=deck.deck_data.commanderNames[1]||'';
-   }else if(deck.commander_name){
-     if(deck.commander_name.includes('+')){
-       const parts=deck.commander_name.split('+').map(s=>s.trim()).filter(Boolean);
-       c1=parts[0]||'';
-       c2=parts[1]||'';
-     }else{
-       c1=deck.commander_name;
-     }
-   }else if(deck.deck_data?.commander){
-     if(deck.deck_data.commander.includes('+')){
-       const parts=deck.deck_data.commander.split('+').map(s=>s.trim()).filter(Boolean);
-       c1=parts[0]||'';
-       c2=parts[1]||'';
-     }else{
-       c1=deck.deck_data.commander;
-     }
-   }
+   const cmdNames=extractCommanderNames(deck);
+   const c1=cmdNames[0]||'';
+   const c2=cmdNames[1]||'';
 
    nativeSet(document.getElementById('decklist'),deck.original_decklist||'');
    nativeSet(document.getElementById('commander'),c1);

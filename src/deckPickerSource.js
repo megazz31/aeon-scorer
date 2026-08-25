@@ -116,19 +116,41 @@ export async function fetchUserSavedDecks(session = null) {
   return userDecksPromise
 }
 
+export function extractDeckCommanderNames(deck) {
+  if (!deck) return []
+  const latest = deck.latest || {}
+  const res = latest.result || {}
+  if (Array.isArray(res.commanderNames) && res.commanderNames.length > 0) {
+    return res.commanderNames
+  }
+  if (Array.isArray(deck.versions?.[0]?.commander_names) && deck.versions[0].commander_names.length > 0) {
+    return deck.versions[0].commander_names
+  }
+  if (Array.isArray(deck.deck_data?.commanderNames) && deck.deck_data.commanderNames.length > 0) {
+    return deck.deck_data.commanderNames
+  }
+  if (Array.isArray(deck.deck_data?.commanders) && deck.deck_data.commanders.length > 0) {
+    return deck.deck_data.commanders.map(c => typeof c === 'string' ? c : (c.nameEN || c.name || c.nameFR)).filter(Boolean)
+  }
+  if (deck.commander_name) {
+    return deck.commander_name.includes('+')
+      ? deck.commander_name.split('+').map(s => s.trim()).filter(Boolean)
+      : [deck.commander_name]
+  }
+  if (deck.deck_data?.commander) {
+    return deck.deck_data.commander.includes('+')
+      ? deck.deck_data.commander.split('+').map(s => s.trim()).filter(Boolean)
+      : [deck.deck_data.commander]
+  }
+  return []
+}
+
 export function savedDeckToShareRow(deck) {
   if (!deck) return null
   const latest = deck.latest || {}
   const res = latest.result || {}
   const profile = res.profile || {}
-  let commanderNames = []
-  if (Array.isArray(res.commanderNames) && res.commanderNames.length > 0) {
-    commanderNames = res.commanderNames
-  } else if (deck.commander_name) {
-    commanderNames = deck.commander_name.includes('+')
-      ? deck.commander_name.split('+').map(s => s.trim()).filter(Boolean)
-      : [deck.commander_name]
-  }
+  const commanderNames = extractDeckCommanderNames(deck)
   return {
     share_code: `saved:${deck.id}`,
     code: `saved:${deck.id}`,

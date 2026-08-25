@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { fetchPreconCatalog, fetchUserSavedDecks, POPULAR_PRECON_PRESETS } from './deckPickerSource.js'
+import { fetchPreconCatalog, fetchUserSavedDecks, extractDeckCommanderNames, POPULAR_PRECON_PRESETS } from './deckPickerSource.js'
 
 const lang = () => (typeof localStorage !== 'undefined' && localStorage.getItem('aeon-lang') === 'fr' ? 'fr' : 'en')
 const t = (en, fr) => (lang() === 'fr' ? fr : en)
@@ -49,7 +49,8 @@ export default function DeckPickerModal({
   const filteredUserDecks = useMemo(() => {
     const q = search.toLowerCase().trim()
     return userDecks.filter(d => {
-      return !q || d.name.toLowerCase().includes(q) || (d.commander_name || '').toLowerCase().includes(q)
+      const cmdStr = extractDeckCommanderNames(d).join(' ').toLowerCase()
+      return !q || d.name.toLowerCase().includes(q) || cmdStr.includes(q) || (d.commander_name || '').toLowerCase().includes(q)
     })
   }, [userDecks, search])
 
@@ -164,7 +165,9 @@ export default function DeckPickerModal({
               ) : (
                 filteredUserDecks.map(deck => {
                   const ref = `saved:${deck.id}`
-                  const meta = { name: deck.name, commander: deck.commander_name, median: deck.latest?.median ?? deck.latest?.result?.profile?.median }
+                  const cmdNames = extractDeckCommanderNames(deck)
+                  const cmdDisplay = cmdNames.join(' + ') || deck.commander_name || ''
+                  const meta = { name: deck.name, commander: cmdDisplay, median: deck.latest?.median ?? deck.latest?.result?.profile?.median }
                   const isSelected = selectedDecks.some(x => x.ref === ref)
                   return (
                     <div
@@ -175,7 +178,7 @@ export default function DeckPickerModal({
                       {multiSelect && <input type="checkbox" checked={isSelected} readOnly />}
                       <div className="deckPickerItemInfo">
                         <strong>{deck.name}</strong>
-                        <small>{deck.commander_name || t('No commander specified', 'Aucun commandant spécifié')}</small>
+                        <small>{cmdDisplay || t('No commander specified', 'Aucun commandant spécifié')}</small>
                       </div>
                       {meta.median != null && <span className="deckPickerScore">{meta.median}</span>}
                       {!multiSelect && <button className="deckPickerChooseBtn">{t('Select', 'Choisir')}</button>}
