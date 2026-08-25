@@ -120,7 +120,7 @@ function compactOracleEvidence(cards,commanderName){
 
 async function main(){
   await fs.rm(OUT,{recursive:true,force:true});await fs.mkdir(OUT,{recursive:true})
-  const generatedAt=new Date().toISOString(),oracleDate=generatedAt.slice(0,10),{decks,revision}=await loadMtgjson()
+  const generatedAt=process.env.AEON_PRECON_GENERATED_AT||new Date().toISOString(),oracleDate=generatedAt.slice(0,10),{decks,revision}=await loadMtgjson()
   const names=decks.flatMap(d=>[...d.mainNames,...d.commanderNames]),{map:cardsByName,missing}=await resolveScryfall(names)
   if(missing.length)console.warn(`Scryfall unresolved unique names: ${missing.length}`,missing.slice(0,30))
 

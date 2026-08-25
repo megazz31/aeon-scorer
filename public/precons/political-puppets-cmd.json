@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/PoliticalPuppets_CMD.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-25",
   "productAliases": [
     {
       "name": "Political Puppets",
@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 39,
-    "p20": 27,
-    "p80": 48,
-    "peak": 67,
-    "coverage": 89,
+    "median": 35,
+    "p20": 23,
+    "p80": 44,
+    "peak": 63,
+    "coverage": 86,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "35458e626e28cfcc4128ba09e6188be054048d669a376268e0fb3c28a6e3029e",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T00:00:00.000Z"
   },
   "decklist": "1 Goblin Cadets\n1 Spurnmage Advocate\n1 Jötun Grunt\n1 Wall of Omens\n1 Fog Bank\n1 Nin, the Pain Artist\n1 Azorius Guildmage\n1 Court Hussar\n1 Gomazoa\n1 Guard Gomazoa\n1 Vedalken Plotter\n1 Wall of Denial\n1 Plumeveil\n1 Flametongue Kavu\n1 Windborn Muse\n1 False Prophet\n1 Brion Stoutarm\n1 Ruhan of the Fomori\n1 Chromeshell Crab\n1 Izzet Chronarch\n1 Dominus of Fealty\n1 Rapacious One\n1 Numot, the Devastator\n1 Arbiter of Knollridge\n1 Breath of Darigaaz\n1 Trade Secrets\n1 Death by Dragons\n1 Austere Command\n1 Insurrection\n1 Skyscribing\n1 Brainstorm\n1 Flusterstorm\n1 Lash Out\n1 Punishing Fire\n1 Pollen Lullaby\n1 Perilous Research\n1 Vision Skeins\n1 Whirlpool Whelm\n1 Chaos Warp\n1 Oblation\n1 Murmurs from Beyond\n1 Repulse\n1 Spell Crumple\n1 Wild Ricochet\n1 Reins of Power\n1 Scattering Stroke\n1 Sol Ring\n1 Armillary Sphere\n1 Fellwar Stone\n1 Howling Mine\n1 Lightning Greaves\n1 Prophetic Prism\n1 Champion's Helm\n1 Darksteel Ingot\n1 Dreamstone Hedron\n1 Soul Snare\n1 Journey to Nowhere\n1 Vow of Lightning\n1 Ghostly Prison\n1 Vow of Duty\n1 Propaganda\n1 Vow of Flight\n1 Prison Term\n1 Crescendo of War\n1 Martyr's Bond\n1 Azorius Chancery\n1 Boros Garrison\n1 Command Tower\n1 Evolving Wilds\n1 Izzet Boilerworks\n1 Terramorphic Expanse\n2 Mountain\n2 Mountain\n2 Mountain\n2 Mountain\n2 Plains\n2 Plains\n2 Plains\n2 Plains\n3 Island\n3 Island\n3 Island\n3 Island",
   "oracleCards": [
@@ -348,7 +348,7 @@
       "tags": [
         "artifact",
         "mana",
-        "protection"
+        "self-protection"
       ],
       "isCommander": false
     },
@@ -1334,7 +1334,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "protection"
+        "self-protection"
       ],
       "isCommander": false
     },
@@ -1433,24 +1433,24 @@
   ],
   "result": {
     "profile": {
-      "median": 39,
-      "floor": 27,
-      "ceiling": 48,
-      "peak": 67,
-      "dispersion": 21,
-      "variance": 21,
+      "median": 35,
+      "floor": 23,
+      "ceiling": 44,
+      "peak": 63,
+      "dispersion": 20,
+      "variance": 20,
       "consistency": 67,
       "commanderDelta": 5,
-      "coverage": 89,
-      "dataCoverage": 89
+      "coverage": 86,
+      "dataCoverage": 86
     },
     "dimensions": {
       "speed": 39,
       "consistency": 67,
       "explosiveness": 9,
-      "synergy": 28,
+      "synergy": 1,
       "interaction": 62,
-      "resilience": 34
+      "resilience": 32
     },
     "roles": {
       "lands": 34,
@@ -1460,121 +1460,13 @@
       "repeatableTutors": 0,
       "draw": 9,
       "interaction": 14,
-      "protection": 4,
+      "protection": 2,
       "recursion": 2,
       "wipes": 3,
       "avgCmc": 3.169230769230769,
       "unknownManaLands": 0
     },
-    "packages": [
-      {
-        "id": "early-commander",
-        "name": "Accélération du commandant",
-        "strength": 38,
-        "cohesion": 38,
-        "producers": [
-          "Darksteel Ingot",
-          "Fellwar Stone",
-          "Prophetic Prism",
-          "Sol Ring"
-        ],
-        "payoffs": [
-          "Zedruu the Greathearted"
-        ],
-        "members": [
-          "Darksteel Ingot",
-          "Fellwar Stone",
-          "Prophetic Prism",
-          "Sol Ring",
-          "Zedruu the Greathearted"
-        ],
-        "producerCards": [
-          {
-            "name": "Darksteel Ingot",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "mana",
-              "protection"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
-          {
-            "name": "Fellwar Stone",
-            "cmc": 2,
-            "tags": [
-              "artifact",
-              "mana"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [],
-              "total": 2
-            }
-          },
-          {
-            "name": "Prophetic Prism",
-            "cmc": 2,
-            "tags": [
-              "artifact",
-              "draw",
-              "mana",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [],
-              "total": 2
-            }
-          },
-          {
-            "name": "Sol Ring",
-            "cmc": 1,
-            "tags": [
-              "artifact",
-              "mana",
-              "fast-mana"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [],
-              "total": 1
-            }
-          }
-        ],
-        "payoffCards": [
-          {
-            "name": "Zedruu the Greathearted",
-            "cmc": 4,
-            "tags": [
-              "creature",
-              "draw",
-              "lifegain"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "U"
-                ],
-                [
-                  "R"
-                ],
-                [
-                  "W"
-                ]
-              ],
-              "total": 4
-            }
-          }
-        ],
-        "evidence": "0 accélérateur(s) burst + 4 source(s) persistante(s) vers un commandant MV 4."
-      }
-    ],
+    "packages": [],
     "combos": [],
     "commanderSynergy": {
       "score": 3,
@@ -1614,7 +1506,9 @@
           "engine": 0,
           "interaction": 6,
           "resource": 3,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 2,
@@ -1622,7 +1516,9 @@
           "engine": 0,
           "interaction": 25,
           "resource": 27,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 3,
@@ -1630,7 +1526,9 @@
           "engine": 0,
           "interaction": 51,
           "resource": 45,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 4,
@@ -1638,7 +1536,9 @@
           "engine": 0,
           "interaction": 66,
           "resource": 55,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 5,
@@ -1646,7 +1546,9 @@
           "engine": 0,
           "interaction": 74,
           "resource": 63,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 6,
@@ -1654,7 +1556,9 @@
           "engine": 0,
           "interaction": 79,
           "resource": 69,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 7,
@@ -1662,9 +1566,15 @@
           "engine": 0,
           "interaction": 83,
           "resource": 73,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         }
       ],
+      "commanderMechanics": {
+        "targetCostReduction": null,
+        "topLibraryCheat": null
+      },
       "firstAccess": {
         "modelVersion": "first-access-sampler-v1",
         "iterations": 800,
@@ -1896,7 +1806,7 @@
     "drivers": [
       {
         "name": "Sol Ring",
-        "impact": 3.7,
+        "impact": 3,
         "tags": [
           "artifact",
           "mana",
@@ -1906,7 +1816,7 @@
       },
       {
         "name": "Prophetic Prism",
-        "impact": 3.3,
+        "impact": 2.6,
         "tags": [
           "artifact",
           "draw",
@@ -1922,16 +1832,6 @@
           "instant",
           "mana",
           "counterspell"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Darksteel Ingot",
-        "impact": 2.4,
-        "tags": [
-          "artifact",
-          "mana",
-          "protection"
         ],
         "aeon": null
       },
@@ -1961,15 +1861,6 @@
         "tags": [
           "sorcery",
           "draw"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Fellwar Stone",
-        "impact": 1.9,
-        "tags": [
-          "artifact",
-          "mana"
         ],
         "aeon": null
       },
@@ -2011,6 +1902,25 @@
           "draw"
         ],
         "aeon": null
+      },
+      {
+        "name": "Wall of Omens",
+        "impact": 1.8,
+        "tags": [
+          "creature",
+          "draw",
+          "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Repulse",
+        "impact": 1.7,
+        "tags": [
+          "instant",
+          "draw"
+        ],
+        "aeon": null
       }
     ],
     "warnings": [],
@@ -2021,7 +1931,12 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "commanderMechanics": {
+        "targetCostReduction": null,
+        "topLibraryCheat": null
+      },
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -2051,12 +1966,12 @@
           ]
         },
         "volatility": {
-          "score": 71,
+          "score": 69,
           "level": "high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 21,
+              "value": 20,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
@@ -2081,24 +1996,24 @@
           ]
         },
         "resilience": {
-          "score": 34,
+          "score": 32,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 34,
+              "value": 32,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 42,
+          "score": 27,
           "level": "moderate",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 28,
+              "value": 1,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -2110,13 +2025,13 @@
             },
             {
               "signal": "resilience",
-              "value": 34,
+              "value": 32,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 38,
+              "value": 0,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
@@ -2147,7 +2062,7 @@
           ]
         },
         "turnComplexity": {
-          "score": 15,
+          "score": 13,
           "level": "low",
           "evidence": [
             {
@@ -2170,7 +2085,7 @@
             },
             {
               "signal": "packages",
-              "value": 1,
+              "value": 0,
               "source": "package-model",
               "reason": "Independent engines increase sequencing branches."
             }
@@ -2302,13 +2217,13 @@
           "id": "long-sequencing",
           "label": "Long sequencing potential",
           "level": "low",
-          "score": 15,
+          "score": 13,
           "evidence": [
             {
               "name": "Experience Fingerprint",
               "reason": "Turn Complexity proxy from recurring/chained semantic actions.",
               "recurring": true,
-              "weight": 0.8333333333333334
+              "weight": 0.7222222222222222
             }
           ],
           "note": "Derived from Experience Fingerprint turn-complexity evidence; not calibrated to real clock time."

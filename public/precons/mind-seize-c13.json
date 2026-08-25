@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/MindSeize_C13.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-25",
   "productAliases": [
     {
       "name": "Mind Seize",
@@ -30,15 +30,15 @@
   "analysis": {
     "median": 45,
     "p20": 31,
-    "p80": 57,
+    "p80": 56,
     "peak": 87,
     "coverage": 91,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "7cd16bc7179a8d609a139803b12035f63a75ff9efb97f602ad08e832aac88b5c",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T00:00:00.000Z"
   },
   "decklist": "1 Augur of Bolas\n1 Baleful Force\n1 Baleful Strix\n1 Charmbreaker Devils\n1 Diviner Spirit\n1 Echo Mage\n1 Fog Bank\n1 Guard Gomazoa\n1 Guttersnipe\n1 Hooded Horror\n1 Jace's Archivist\n1 Mnemonic Wall\n1 Nekusar, the Mindrazer\n1 Nightscape Familiar\n1 Nivix Guildmage\n1 Terra Ravager\n1 Thraximundar\n1 True-Name Nemesis\n1 Uyo, Silent Prophet\n1 Vampire Nighthawk\n1 Viseling\n1 Army of the Damned\n1 Cruel Ultimatum\n1 Decree of Pain\n1 Fissure Vent\n1 Incendiary Command\n1 Infest\n1 Molten Disaster\n1 Phthisis\n1 Prosperity\n1 Skyscribing\n1 Strategic Planning\n1 Tempt with Reflections\n1 Annihilate\n1 Crosis's Charm\n1 Dismiss\n1 Grixis Charm\n1 Illusionist's Gambit\n1 Opportunity\n1 Soul Manipulation\n1 Starstorm\n1 Sudden Spoiling\n1 Vision Skeins\n1 Wild Ricochet\n1 Armillary Sphere\n1 Eye of Doom\n1 Mirari\n1 Obelisk of Grixis\n1 Sol Ring\n1 Swiftfoot Boots\n1 Temple Bell\n1 Wayfarer's Bauble\n1 Arcane Melee\n1 Curse of Chaos\n1 Curse of Inertia\n1 Curse of Shallow Graves\n1 Price of Knowledge\n1 Propaganda\n1 Spiteful Visions\n1 Akoum Refuge\n1 Bojuka Bog\n1 Command Tower\n1 Crumbling Necropolis\n1 Dimir Guildgate\n1 Evolving Wilds\n1 Grixis Panorama\n3 Island\n2 Island\n2 Island\n2 Island\n1 Izzet Boilerworks\n1 Izzet Guildgate\n1 Molten Slagheap\n2 Mountain\n1 Mountain\n1 Mountain\n1 Mountain\n1 Opal Palace\n1 Rakdos Carnarium\n1 Rakdos Guildgate\n1 Rupture Spire\n2 Swamp\n2 Swamp\n2 Swamp\n2 Swamp\n1 Temple of the False God\n1 Urza's Factory\n1 Vivid Creek\n1 Vivid Marsh",
   "oracleCards": [
@@ -319,8 +319,7 @@
       ],
       "tags": [
         "land",
-        "mana",
-        "etb"
+        "mana"
       ],
       "isCommander": false
     },
@@ -414,8 +413,7 @@
       ],
       "tags": [
         "land",
-        "mana",
-        "etb"
+        "mana"
       ],
       "isCommander": false
     },
@@ -753,8 +751,7 @@
       ],
       "tags": [
         "land",
-        "mana",
-        "etb"
+        "mana"
       ],
       "isCommander": false
     },
@@ -999,7 +996,6 @@
       "tags": [
         "land",
         "mana",
-        "etb",
         "counter-producer",
         "counter-kind:plus1"
       ],
@@ -1135,8 +1131,7 @@
       ],
       "tags": [
         "land",
-        "mana",
-        "etb"
+        "mana"
       ],
       "isCommander": false
     },
@@ -1432,8 +1427,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "protection",
-        "etb"
+        "self-protection"
       ],
       "isCommander": false
     },
@@ -1546,7 +1540,6 @@
       "tags": [
         "land",
         "mana",
-        "etb",
         "counter-kind:charge"
       ],
       "isCommander": false
@@ -1572,7 +1565,6 @@
       "tags": [
         "land",
         "mana",
-        "etb",
         "counter-kind:charge"
       ],
       "isCommander": false
@@ -1616,7 +1608,7 @@
     "profile": {
       "median": 45,
       "floor": 31,
-      "ceiling": 57,
+      "ceiling": 56,
       "peak": 87,
       "dispersion": 25,
       "variance": 25,
@@ -1631,7 +1623,7 @@
       "explosiveness": 14,
       "synergy": 87,
       "interaction": 44,
-      "resilience": 44
+      "resilience": 43
     },
     "roles": {
       "lands": 40,
@@ -1641,7 +1633,7 @@
       "repeatableTutors": 0,
       "draw": 16,
       "interaction": 15,
-      "protection": 2,
+      "protection": 1,
       "recursion": 5,
       "wipes": 6,
       "avgCmc": 3.8135593220338984,
@@ -2582,7 +2574,9 @@
           "engine": 0,
           "interaction": 8,
           "resource": 3,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 2,
@@ -2590,7 +2584,9 @@
           "engine": 0,
           "interaction": 12,
           "resource": 24,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 3,
@@ -2598,7 +2594,9 @@
           "engine": 2,
           "interaction": 31,
           "resource": 48,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 4,
@@ -2606,7 +2604,9 @@
           "engine": 10,
           "interaction": 49,
           "resource": 63,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 5,
@@ -2614,7 +2614,9 @@
           "engine": 18,
           "interaction": 62,
           "resource": 75,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 6,
@@ -2622,7 +2624,9 @@
           "engine": 27,
           "interaction": 70,
           "resource": 83,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 7,
@@ -2630,9 +2634,15 @@
           "engine": 36,
           "interaction": 77,
           "resource": 88,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         }
       ],
+      "commanderMechanics": {
+        "targetCostReduction": null,
+        "topLibraryCheat": null
+      },
       "firstAccess": {
         "modelVersion": "first-access-sampler-v1",
         "iterations": 800,
@@ -2994,7 +3004,12 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "commanderMechanics": {
+        "targetCostReduction": null,
+        "topLibraryCheat": null
+      },
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -3024,7 +3039,7 @@
           ]
         },
         "volatility": {
-          "score": 95,
+          "score": 97,
           "level": "very-high",
           "evidence": [
             {
@@ -3035,7 +3050,7 @@
             },
             {
               "signal": "high-roll-tail",
-              "value": 30,
+              "value": 31,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -3054,12 +3069,12 @@
           ]
         },
         "resilience": {
-          "score": 44,
+          "score": 43,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 44,
+              "value": 43,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
@@ -3083,7 +3098,7 @@
             },
             {
               "signal": "resilience",
-              "value": 44,
+              "value": 43,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },

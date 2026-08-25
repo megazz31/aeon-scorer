@@ -24,14 +24,16 @@ const shareRow = preconToShareRow(preconJson)
 assert.equal(shareRow.share_code, 'precon:blood-rites-lcc')
 assert.equal(shareRow.deck_name, 'Blood Rites')
 assert.deepEqual(shareRow.commander_names, ['Clavileño, First of the Blessed'])
-assert.equal(shareRow.median, 55)
+const bloodMedian = Number(preconJson.analysis?.median ?? preconJson.result?.profile?.median)
+assert.ok(Number.isFinite(bloodMedian), 'Blood Rites precon must expose its generated median')
+assert.equal(shareRow.median, bloodMedian)
 
 const norm = normalizedShare(shareRow)
 assert.equal(norm.deckName, 'Blood Rites')
-assert.equal(norm.median, 55)
+assert.equal(norm.median, bloodMedian)
 
 const roadmapRes = roadmapResultFromShare(shareRow)
-assert.equal(roadmapRes.profile.median, 55)
+assert.equal(roadmapRes.profile.median, bloodMedian)
 assert.equal(roadmapRes.deckName, 'Blood Rites')
 
 // 3. Test multi-precon pod intelligence & matchmaking

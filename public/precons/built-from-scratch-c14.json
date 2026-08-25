@@ -15,7 +15,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/BuiltFromScratch_C14.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-25",
   "productAliases": [
     {
       "name": "Built From Scratch",
@@ -38,11 +38,11 @@
     "peak": 80,
     "coverage": 92,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "5000f53ac87e4f9a98fa7248ae339ac6c5ef91a170a017cb9088df8a633fd1c6",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T00:00:00.000Z"
   },
   "decklist": "1 Goblin Welder\n1 Epochrasite\n1 Myr Retriever\n1 Myr Sire\n1 Bottle Gnomes\n1 Cathodion\n1 Junk Diver\n1 Palladium Myr\n1 Pilgrim's Eye\n1 Tuktuk the Explorer\n1 Dualcaster Mage\n1 Feldon of the Third Path\n1 Solemn Simulacrum\n1 Flametongue Kavu\n1 Beetleback Chief\n1 Ingot Chewer\n1 Steel Hellkite\n1 Wurmcoil Engine\n1 Spitebellows\n1 Hoard-Smelter Dragon\n1 Warmonger Hellkite\n1 Myr Battlesphere\n1 Pentavus\n1 Tyrant's Familiar\n1 Bosh, Iron Golem\n1 Bogardan Hellkite\n1 Faithless Looting\n1 Whipflare\n1 Scrap Mastery\n1 Incite Rebellion\n1 Blasphemous Act\n1 Impact Resonance\n1 Chaos Warp\n1 Volcanic Offering\n1 Word of Seizing\n1 Magmaquake\n1 Starstorm\n1 Everflowing Chalice\n1 Panic Spellbomb\n1 Sol Ring\n1 Wayfarer's Bauble\n1 Fire Diamond\n1 Ichor Wellspring\n1 Liquimetal Coating\n1 Mind Stone\n1 Mycosynth Wellspring\n1 Ruby Medallion\n1 Swiftfoot Boots\n1 Commander's Sphere\n1 Jalum Tome\n1 Pristine Talisman\n1 Unstable Obelisk\n1 Trading Post\n1 Caged Sun\n1 Dreamstone Hedron\n1 Loreseeker's Stone\n1 Spine of Ish Sah\n1 Darksteel Citadel\n1 Great Furnace\n1 Bitter Feud\n1 Arcane Lighthouse\n1 Buried Ruin\n1 Dormant Volcano\n1 Flamekin Village\n1 Forgotten Cave\n1 Ghost Quarter\n1 Phyrexia's Core\n1 Reliquary Tower\n1 Smoldering Crater\n1 Temple of the False God\n8 Mountain\n7 Mountain\n7 Mountain\n7 Mountain",
   "oracleCards": [
@@ -61,7 +61,7 @@
       "tags": [
         "land",
         "mana",
-        "protection"
+        "self-protection"
       ],
       "isCommander": false
     },
@@ -97,8 +97,7 @@
       ],
       "producedMana": [],
       "tags": [
-        "enchantment",
-        "etb"
+        "enchantment"
       ],
       "isCommander": false
     },
@@ -214,8 +213,7 @@
       ],
       "tags": [
         "artifact",
-        "mana",
-        "etb"
+        "mana"
       ],
       "isCommander": false
     },
@@ -315,7 +313,7 @@
         "land",
         "artifact",
         "mana",
-        "protection"
+        "self-protection"
       ],
       "isCommander": false
     },
@@ -394,7 +392,6 @@
         "creature",
         "artifact",
         "death-payoff",
-        "etb",
         "counter-producer",
         "counter-kind:plus1",
         "counter-kind:time"
@@ -416,7 +413,6 @@
       "tags": [
         "artifact",
         "mana",
-        "etb",
         "counter-producer",
         "counter-payoff",
         "counter-kind:charge"
@@ -478,8 +474,7 @@
       ],
       "tags": [
         "artifact",
-        "mana",
-        "etb"
+        "mana"
       ],
       "isCommander": false
     },
@@ -499,8 +494,7 @@
       ],
       "tags": [
         "land",
-        "mana",
-        "etb"
+        "mana"
       ],
       "isCommander": false
     },
@@ -539,8 +533,7 @@
       "tags": [
         "land",
         "draw",
-        "mana",
-        "etb"
+        "mana"
       ],
       "isCommander": false
     },
@@ -936,7 +929,6 @@
         "artifact",
         "tokens",
         "sacrifice",
-        "etb",
         "counter-producer",
         "counter-kind:plus1"
       ],
@@ -1066,8 +1058,7 @@
       "tags": [
         "land",
         "draw",
-        "mana",
-        "etb"
+        "mana"
       ],
       "isCommander": false
     },
@@ -1414,7 +1405,7 @@
       "speed": 36,
       "consistency": 61,
       "explosiveness": 10,
-      "synergy": 52,
+      "synergy": 50,
       "interaction": 40,
       "resilience": 44
     },
@@ -1540,7 +1531,6 @@
               "creature",
               "artifact",
               "death-payoff",
-              "etb",
               "counter-producer",
               "counter-kind:plus1",
               "counter-kind:time"
@@ -1818,57 +1808,33 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 53,
-        "cohesion": 53,
+        "strength": 41,
+        "cohesion": 41,
         "producers": [
-          "Commander's Sphere",
           "Everflowing Chalice",
           "Fire Diamond",
           "Mind Stone",
-          "Palladium Myr",
-          "Pristine Talisman",
           "Sol Ring",
-          "Unstable Obelisk",
           "Wayfarer's Bauble"
         ],
         "payoffs": [
           "Daretti, Scrap Savant"
         ],
         "members": [
-          "Commander's Sphere",
           "Everflowing Chalice",
           "Fire Diamond",
           "Mind Stone",
-          "Palladium Myr",
-          "Pristine Talisman",
           "Sol Ring",
-          "Unstable Obelisk",
           "Wayfarer's Bauble",
           "Daretti, Scrap Savant"
         ],
         "producerCards": [
-          {
-            "name": "Commander's Sphere",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "draw",
-              "mana",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
           {
             "name": "Everflowing Chalice",
             "cmc": 0,
             "tags": [
               "artifact",
               "mana",
-              "etb",
               "counter-producer",
               "counter-payoff",
               "counter-kind:charge"
@@ -1884,8 +1850,7 @@
             "cmc": 2,
             "tags": [
               "artifact",
-              "mana",
-              "etb"
+              "mana"
             ],
             "manaReq": {
               "generic": 2,
@@ -1909,34 +1874,6 @@
             }
           },
           {
-            "name": "Palladium Myr",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "artifact",
-              "mana"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
-          {
-            "name": "Pristine Talisman",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "mana",
-              "lifegain"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
-          {
             "name": "Sol Ring",
             "cmc": 1,
             "tags": [
@@ -1948,21 +1885,6 @@
               "generic": 1,
               "colored": [],
               "total": 1
-            }
-          },
-          {
-            "name": "Unstable Obelisk",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "mana",
-              "removal",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
             }
           },
           {
@@ -1999,7 +1921,7 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 9 source(s) persistante(s) vers un commandant MV 4."
+        "evidence": "0 accélérateur(s) burst + 5 source(s) persistante(s) réellement dans la fenêtre T3 ou avant vers un commandant MV 4."
       }
     ],
     "combos": [],
@@ -2046,7 +1968,9 @@
           "engine": 1,
           "interaction": 8,
           "resource": 38,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 2,
@@ -2054,7 +1978,9 @@
           "engine": 3,
           "interaction": 24,
           "resource": 53,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 3,
@@ -2062,7 +1988,9 @@
           "engine": 8,
           "interaction": 30,
           "resource": 61,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 4,
@@ -2070,7 +1998,9 @@
           "engine": 14,
           "interaction": 44,
           "resource": 74,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 5,
@@ -2078,7 +2008,9 @@
           "engine": 19,
           "interaction": 55,
           "resource": 78,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 6,
@@ -2086,7 +2018,9 @@
           "engine": 23,
           "interaction": 62,
           "resource": 81,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 7,
@@ -2094,9 +2028,15 @@
           "engine": 28,
           "interaction": 68,
           "resource": 83,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         }
       ],
+      "commanderMechanics": {
+        "targetCostReduction": null,
+        "topLibraryCheat": null
+      },
       "firstAccess": {
         "modelVersion": "first-access-sampler-v1",
         "iterations": 800,
@@ -2350,17 +2290,6 @@
         "aeon": null
       },
       {
-        "name": "Commander's Sphere",
-        "impact": 3.3,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Mind Stone",
         "impact": 3.3,
         "tags": [
@@ -2406,12 +2335,12 @@
         "aeon": null
       },
       {
-        "name": "Unstable Obelisk",
+        "name": "Commander's Sphere",
         "impact": 2.6,
         "tags": [
           "artifact",
+          "draw",
           "mana",
-          "removal",
           "sacrifice"
         ],
         "aeon": null
@@ -2458,6 +2387,18 @@
           "death-payoff"
         ],
         "aeon": null
+      },
+      {
+        "name": "Everflowing Chalice",
+        "impact": 2,
+        "tags": [
+          "artifact",
+          "mana",
+          "counter-producer",
+          "counter-payoff",
+          "counter-kind:charge"
+        ],
+        "aeon": null
       }
     ],
     "warnings": [],
@@ -2468,7 +2409,12 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "commanderMechanics": {
+        "targetCostReduction": null,
+        "topLibraryCheat": null
+      },
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -2540,12 +2486,12 @@
           ]
         },
         "inevitability": {
-          "score": 55,
+          "score": 53,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 52,
+              "value": 50,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -2563,7 +2509,7 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 62.3,
+              "value": 58.3,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }

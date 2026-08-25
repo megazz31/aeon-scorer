@@ -16,7 +16,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/GrowingThreat_MOC.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-25",
   "productAliases": [
     {
       "name": "Growing Threat",
@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 44,
-    "p20": 33,
-    "p80": 53,
-    "peak": 76,
+    "median": 45,
+    "p20": 35,
+    "p80": 54,
+    "peak": 77,
     "coverage": 94,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "cf6732d88a7d8d077d6a305eff79d277508caa9feee3eb75647f570ef519bc15",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T00:00:00.000Z"
   },
   "decklist": "1 Moira and Teshar\n1 Ichor Elixir\n1 Blight Titan\n1 Darksteel Splicer\n1 Excise the Imperfect\n1 Filigree Vector\n1 Path of the Schemer\n1 Bitterthorn, Nissa's Animus\n1 Vulpine Harvester\n1 Cataclysmic Gearhulk\n1 Massacre Wurm\n1 Noxious Gearhulk\n1 Phyrexian Scriptures\n1 Phyrexian Triniform\n1 Soul of New Phyrexia\n1 Ancient Stone Idol\n1 Angel of the Ruins\n1 Blade Splicer\n1 Coveted Jewel\n1 Duplicant\n1 Exotic Orchard\n1 Fetid Heath\n1 Karn's Bastion\n1 Myr Battlesphere\n1 Nettlecyst\n1 Phyrexian Delver\n1 Phyrexian Rebirth\n1 Psychosis Crawler\n1 Scrap Trawler\n1 Sculpting Steel\n1 Scytheclaw\n1 Shineshadow Snarl\n1 Spire of Industry\n1 Temple of Silence\n1 Utter End\n1 Vault of the Archangel\n1 Yawgmoth's Vile Offering\n1 Bojuka Bog\n1 Command Tower\n1 Commander's Sphere\n1 Evolving Wilds\n1 First-Sphere Gargantua\n1 Fractured Powerstone\n1 Goldmire Bridge\n1 Night's Whisper\n1 Orzhov Locket\n1 Orzhov Signet\n1 Path of Ancestry\n1 Phyrexian Ghoul\n1 Phyrexian Rager\n1 Silverquill Campus\n1 Terramorphic Expanse\n1 Wayfarer's Bauble\n1 Hedron Archive\n1 Ambition's Cost\n1 Arcane Signet\n1 Bloodline Pretender\n1 Bone Shredder\n1 Burnished Hart\n1 Despark\n1 Go for the Throat\n1 Graveshifter\n1 Keskit, the Flesh Sculptor\n1 Master Splicer\n1 Meteor Golem\n1 Mind Stone\n1 Mortify\n1 Shattered Angel\n1 Shimmer Myr\n1 Sol Ring\n1 Swords to Plowshares\n1 Tainted Field\n1 Talisman of Hierarchy\n1 Victimize\n1 Compleated Huntmaster\n1 Phyrexian Gargantua\n10 Plains\n13 Swamp",
   "oracleCards": [
@@ -401,7 +401,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "protection",
+        "self-protection",
         "tokens",
         "etb"
       ],
@@ -625,8 +625,7 @@
         "land",
         "artifact",
         "mana",
-        "protection",
-        "etb"
+        "self-protection"
       ],
       "isCommander": false
     },
@@ -974,8 +973,7 @@
       ],
       "tags": [
         "land",
-        "mana",
-        "etb"
+        "mana"
       ],
       "isCommander": false
     },
@@ -1267,8 +1265,7 @@
       ],
       "tags": [
         "land",
-        "mana",
-        "etb"
+        "mana"
       ],
       "isCommander": false
     },
@@ -1290,8 +1287,7 @@
       ],
       "tags": [
         "land",
-        "mana",
-        "etb"
+        "mana"
       ],
       "isCommander": false
     },
@@ -1591,14 +1587,14 @@
   ],
   "result": {
     "profile": {
-      "median": 44,
-      "floor": 33,
-      "ceiling": 53,
-      "peak": 76,
+      "median": 45,
+      "floor": 35,
+      "ceiling": 54,
+      "peak": 77,
       "dispersion": 20,
       "variance": 20,
       "consistency": 67,
-      "commanderDelta": 9,
+      "commanderDelta": 11,
       "coverage": 94,
       "dataCoverage": 94
     },
@@ -1606,9 +1602,9 @@
       "speed": 30,
       "consistency": 67,
       "explosiveness": 10,
-      "synergy": 57,
+      "synergy": 65,
       "interaction": 59,
-      "resilience": 47
+      "resilience": 46
     },
     "roles": {
       "lands": 38,
@@ -1618,7 +1614,7 @@
       "repeatableTutors": 0,
       "draw": 11,
       "interaction": 11,
-      "protection": 2,
+      "protection": 1,
       "recursion": 6,
       "wipes": 2,
       "avgCmc": 4.098360655737705,
@@ -1776,14 +1772,12 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 53,
-        "cohesion": 53,
+        "strength": 47,
+        "cohesion": 47,
         "producers": [
           "Arcane Signet",
-          "Commander's Sphere",
           "Fractured Powerstone",
           "Mind Stone",
-          "Orzhov Locket",
           "Orzhov Signet",
           "Sol Ring",
           "Talisman of Hierarchy",
@@ -1794,10 +1788,8 @@
         ],
         "members": [
           "Arcane Signet",
-          "Commander's Sphere",
           "Fractured Powerstone",
           "Mind Stone",
-          "Orzhov Locket",
           "Orzhov Signet",
           "Sol Ring",
           "Talisman of Hierarchy",
@@ -1816,21 +1808,6 @@
               "generic": 2,
               "colored": [],
               "total": 2
-            }
-          },
-          {
-            "name": "Commander's Sphere",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "draw",
-              "mana",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
             }
           },
           {
@@ -1859,21 +1836,6 @@
               "generic": 2,
               "colored": [],
               "total": 2
-            }
-          },
-          {
-            "name": "Orzhov Locket",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "draw",
-              "mana",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
             }
           },
           {
@@ -1956,12 +1918,12 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 9 source(s) persistante(s) vers un commandant MV 4."
+        "evidence": "0 accélérateur(s) burst + 7 source(s) persistante(s) réellement dans la fenêtre T3 ou avant vers un commandant MV 4."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 45,
+      "score": 81,
       "connected": [
         "Ancient Stone Idol",
         "Bitterthorn, Nissa's Animus",
@@ -1978,12 +1940,26 @@
         "Phyrexian Rebirth",
         "Phyrexian Scriptures",
         "Phyrexian Triniform",
-        "Scytheclaw"
+        "Scytheclaw",
+        "Bone Shredder",
+        "First-Sphere Gargantua",
+        "Keskit, the Flesh Sculptor",
+        "Massacre Wurm",
+        "Moira and Teshar",
+        "Phyrexian Delver",
+        "Phyrexian Gargantua",
+        "Phyrexian Ghoul",
+        "Phyrexian Rager",
+        "Psychosis Crawler",
+        "Shattered Angel",
+        "Soul of New Phyrexia",
+        "Vulpine Harvester"
       ],
       "tags": [
         "tokens",
         "counter-producer",
-        "token-payoff"
+        "token-payoff",
+        "tribal:phyrexian"
       ]
     },
     "commanderNames": [
@@ -2014,7 +1990,9 @@
           "engine": 0,
           "interaction": 11,
           "resource": 0,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 2,
@@ -2022,7 +2000,9 @@
           "engine": 0,
           "interaction": 28,
           "resource": 9,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 3,
@@ -2030,7 +2010,9 @@
           "engine": 0,
           "interaction": 49,
           "resource": 31,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 4,
@@ -2038,7 +2020,9 @@
           "engine": 2,
           "interaction": 63,
           "resource": 54,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 5,
@@ -2046,7 +2030,9 @@
           "engine": 3,
           "interaction": 70,
           "resource": 67,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 6,
@@ -2054,7 +2040,9 @@
           "engine": 4,
           "interaction": 76,
           "resource": 74,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 7,
@@ -2062,9 +2050,15 @@
           "engine": 5,
           "interaction": 81,
           "resource": 80,
-          "burst": 0
+          "burst": 0,
+          "commanderCheat": 0,
+          "targetReduction": 0
         }
       ],
+      "commanderMechanics": {
+        "targetCostReduction": null,
+        "topLibraryCheat": null
+      },
       "firstAccess": {
         "modelVersion": "first-access-sampler-v1",
         "iterations": 800,
@@ -2305,29 +2299,7 @@
         "aeon": null
       },
       {
-        "name": "Commander's Sphere",
-        "impact": 3.3,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Mind Stone",
-        "impact": 3.3,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Orzhov Locket",
         "impact": 3.3,
         "tags": [
           "artifact",
@@ -2356,6 +2328,28 @@
           "draw",
           "recursion",
           "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commander's Sphere",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Orzhov Locket",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2428,7 +2422,12 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "commanderMechanics": {
+        "targetCostReduction": null,
+        "topLibraryCheat": null
+      },
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -2488,24 +2487,24 @@
           ]
         },
         "resilience": {
-          "score": 47,
+          "score": 46,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 47,
+              "value": 46,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 58,
+          "score": 61,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 57,
+              "value": 65,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -2517,31 +2516,31 @@
             },
             {
               "signal": "resilience",
-              "value": 47,
+              "value": 46,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 60,
+              "value": 57,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 56,
-          "level": "high",
+          "score": 80,
+          "level": "very-high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 9,
+              "value": 11,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 45,
+              "value": 81,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },
