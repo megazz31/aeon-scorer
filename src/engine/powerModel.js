@@ -1,4 +1,5 @@
 import { featureDeck, cardFeatures } from './cardFeatures.js'
+import { augmentFeatureDeck } from './semanticAugment.js'
 import { detectPackages, commanderSynergy } from './packageGraph.js'
 import { detectKnownCombos } from './knownCombos.js'
 import { simulateSequences } from './sequenceSimulator.js'
@@ -30,7 +31,7 @@ function combinedCommanderSynergy(cards,commanders){
 
 export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=3000,options={}){
   const rawCommanders=(Array.isArray(rawCommander)?rawCommander:[rawCommander]).filter(Boolean).slice(0,2),commanders=rawCommanders.map(cardFeatures),commander=commanders[0]||null,multi=commanders.length>1
-  let cards=featureDeck(rawCards).sort(canonicalCardOrder)
+  let cards=augmentFeatureDeck(featureDeck(rawCards)).sort(canonicalCardOrder)
   if(commanders.length){const names=new Set(commanders.map(c=>c.name.toLowerCase()));cards=cards.filter(c=>!names.has(c.name.toLowerCase())||c.__keepIn99)}
   const packages=detectPackages(cards,commander),combos=detectKnownCombos(cards.concat(commanders)),cmdSyn=combinedCommanderSynergy(cards,commanders),roles=roleStats(cards)
   const sim=multi?simulateSequencesMulti(cards,commanders,packages,combos,iterations,7,seeded(hashSeed(cards,commanders,'with-command-v31'))):simulateSequences(cards,commander,packages,combos,iterations,7,seeded(hashSeed(cards,commander,'with-command-v31')))
