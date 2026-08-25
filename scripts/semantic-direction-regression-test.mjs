@@ -157,9 +157,10 @@ assert.equal(has(card('Salvation Colossus','Creature — Artifact','Unearth—Pa
 assert.equal(has(card('Kroxa, Titan of Death\'s Hunger','Legendary Creature — Elder Giant','Escape—{B}{B}{R}{R}, Exile five other cards from your graveyard.'),'recursion'),true)
 assert.equal(has(card('Spitting Image','Sorcery','Create a token that\'s a copy of target creature.\nRetrace'),'recursion'),true)
 
-// Protection includes hexproof, shroud, ward, indestructible, phase out, protection from.
+// Protection is deck-facing only when the card protects another resource; self-only durability stays separate.
 assert.equal(has(card('Lightning Greaves','Artifact — Equipment','Equipped creature has haste and shroud.\nEquip {0}'),'protection'),true)
-assert.equal(has(card('Canopy Gargantuan','Creature — Beast','Flying, ward {2}'),'protection'),true)
+assert.equal(has(card('Canopy Gargantuan','Creature — Beast','Flying, ward {2}'),'protection'),false)
+assert.equal(has(card('Canopy Gargantuan','Creature — Beast','Flying, ward {2}'),'self-protection'),true)
 assert.equal(has(card('Shielding Plax','Enchantment — Aura','Enchanted creature can\'t be the target of spells or abilities your opponents control.'),'protection'),true)
 
 // Fight, bite, and targeted edict removal.
