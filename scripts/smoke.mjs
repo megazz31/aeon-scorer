@@ -5,7 +5,7 @@ import { AEON_LABEL, ENGINE_VERSION, MODEL_ID, SEMANTIC_VERSION } from '../src/v
 
 if (AEON_LABEL !== 'v3.3') throw new Error(`Unexpected public version label: ${AEON_LABEL}`)
 if (ENGINE_VERSION !== '3.3.0') throw new Error(`Unexpected engine version: ${ENGINE_VERSION}`)
-if (SEMANTIC_VERSION !== '3.3.0-semantic-15') throw new Error(`Unexpected semantic version: ${SEMANTIC_VERSION}`)
+if (SEMANTIC_VERSION !== '3.3.0-semantic-16') throw new Error(`Unexpected semantic version: ${SEMANTIC_VERSION}`)
 
 const land = () => ({ name: 'Forest', type: 'Basic Land — Forest', oracle: '', cmc: 0, manaCost: '', id: crypto.randomUUID() })
 const card = (name, oracle, cmc, type = 'Instant') => ({ name, oracle, cmc, type, manaCost: '', id: crypto.randomUUID() })
@@ -29,7 +29,8 @@ if (r.methodology?.model !== MODEL_ID) throw new Error(`Model id mismatch: ${r.m
 const edge = readFileSync(new URL('../supabase/functions/record-analysis/index.ts', import.meta.url), 'utf8')
 if (!edge.includes(`const ENGINE_VERSION = '${ENGINE_VERSION}'`)) throw new Error('Frontend/record-analysis engine mismatch')
 if (!edge.includes(`const SEMANTIC_VERSION = '${SEMANTIC_VERSION}'`)) throw new Error('Frontend/record-analysis semantic mismatch')
-if (!edge.includes("'3.3.0|3.3.0-semantic-14'")) throw new Error('record-analysis must remain rolling-compatible with semantic-14 during semantic-15 rollout')
+if (!edge.includes("'3.3.0|3.3.0-semantic-15'")) throw new Error('record-analysis must remain rolling-compatible with semantic-15 during semantic-16 rollout')
+if (!edge.includes("'3.3.0|3.3.0-semantic-14'")) throw new Error('record-analysis must remain rolling-compatible with semantic-14 during semantic-16 rollout')
 if (!edge.includes("'3.2.0|3.2.0-semantic-1'")) throw new Error('record-analysis must remain rolling-compatible with legacy production 3.2.0|3.2.0-semantic-1')
 if (!edge.includes('engine_version: engineVersion') || !edge.includes('semantic_version: semanticVersion')) throw new Error('record-analysis must persist actual client versions')
 if (!edge.includes(".eq('engine_version', engineVersion)") || !edge.includes(".eq('semantic_version', semanticVersion)")) throw new Error('record-analysis deduplication must be version-aware')
