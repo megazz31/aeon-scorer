@@ -1,5 +1,5 @@
 import { isImmediateLandRamp } from './packageGraph.js'
-import { landManaSources,permanentRampSupport,burstNetSources,canPay,applyCommanderLondonBottom } from './sequenceSimulator.js'
+import { landManaSources,permanentRampSupport,burstNetSources,canPay,applyCommanderLondonBottom,immediateLandRampNetSources } from './sequenceSimulator.js'
 import { commanderPriorityProfile } from './commanderPair.js'
 import { combinedTargetGenericReduction, targetCostReductionStats, topLibraryCheatProfile, isTopLibraryCheatTarget } from './commanderMechanics.js'
 
@@ -9,7 +9,7 @@ const uniq=xs=>[...new Set(xs)]
 const isPermanentCard=c=>!/\binstant\b|\bsorcery\b/i.test(c.type||'')
 const isArtifact=c=>/\bartifact\b/i.test(c.type||'')
 const isBurst=c=>c.tags.includes('burst-mana')
-const isPermanentRamp=c=>!c.isLand&&!isBurst(c)&&(isImmediateLandRamp(c)||(isPermanentCard(c)&&(c.sourceColors?.length||0)>0))&&(c.cmc||0)<=3
+const isPermanentRamp=c=>{if(c.isLand||isBurst(c))return false;const landRamp=immediateLandRampNetSources(c),manaPermanent=isPermanentCard(c)&&(c.sourceColors?.length||0)>0;if(!landRamp&&!manaPermanent)return false;return (c.cmc||0)<=3||(landRamp>=2&&(c.cmc||0)<=4)}
 function alwaysTappedLand(c){const o=(c.oracle||'').toLowerCase();if(!/enters(?: the battlefield)? tapped/.test(o))return false;return !/unless|you may pay|if you control|if an opponent|reveal [^.]* from your hand|as [^.]* enters/.test(o)}
 function fetchLandInfo(c){if(!/\bland\b/i.test(c.type||''))return null;const o=(c.oracle||'').toLowerCase();if(!/search your library for [^.]*\b(?:basic land|plains|island|swamp|mountain|forest)\b[^.]*put [^.]*onto the battlefield/.test(o))return null;return {delayed:/put [^.]*onto the battlefield tapped/.test(o)||alwaysTappedLand(c),fabled:/if you control four or more lands, untap that land/.test(o)}}
 function source(options,origin='source',extra={}){return {options:uniq(Array.isArray(options)?options:['C']),origin,...extra}}
@@ -22,8 +22,8 @@ function paymentOptions(card,tax=0){const req=card.manaReq||{generic:Math.max(0,
 function concretePaymentIndices(card,sources,tax=0){const req=paymentOptions(card,tax);if(sources.length<req.total)return null;const pips=[...req.colored].sort((a,b)=>a.length-b.length),used=new Set();function place(i){if(i>=pips.length){const remaining=[];for(let s=0;s<sources.length;s++)if(!used.has(s))remaining.push(s);if(remaining.length<req.generic)return null;return new Set([...used,...remaining.slice(0,req.generic)])}for(let s=0;s<sources.length;s++){if(used.has(s)||!pips[i].some(c=>sources[s].options.includes(c)))continue;used.add(s);const result=place(i+1);if(result)return result;used.delete(s)}return null}return place(0)}
 function payAndRemain(card,sources,tax=0){for(const pool of expandManaPools(sources)){const used=concretePaymentIndices(card,pool,tax);if(used)return pool.filter((_,i)=>!used.has(i))}return null}
 function canPayPair(a,b,sources){const ra=paymentOptions(a),rb=paymentOptions(b),fake={cmc:ra.total+rb.total,manaReq:{generic:ra.generic+rb.generic,colored:[...ra.colored,...rb.colored],total:ra.total+rb.total}};return canPay(fake,sources)}
-function permanentRampSources(c,priority,support={}){const landRamp=isImmediateLandRamp(c),colors=support.colors?.length?support.colors:landRamp?(priority?.manaReq?.colored?.flat()||['W','U','B','R','G']):(c.sourceColors?.length?c.sourceColors:['C']);const count=landRamp?1:productionCount(c);return Array.from({length:count},()=>source(colors.length?colors:['C'],c.name))}
-function rampValue(c){return productionCount(c)-Number(c.cmc||0)+(isArtifact(c)?0.25:0)}
+function permanentRampSources(c,priority,support={}){const landRamp=immediateLandRampNetSources(c),colors=support.colors?.length?support.colors:landRamp?(priority?.manaReq?.colored?.flat()||['W','U','B','R','G']):(c.sourceColors?.length?c.sourceColors:['C']);const count=landRamp||productionCount(c);return Array.from({length:count},()=>source(colors.length?colors:['C'],c.name))}
+function rampValue(c){const landRamp=immediateLandRampNetSources(c),output=landRamp||productionCount(c);return output-Number(c.cmc||0)+(isArtifact(c)?0.25:0)}
 function burstPriority(c){const n=c.name.toLowerCase();if(/lotus petal|elvish spirit guide|simian spirit guide|lion's eye diamond|jeweled lotus/.test(n))return 0;if(/dark ritual|cabal ritual|rite of flame|mana vault|grim monolith/.test(n))return 1;if(/culling the weak/.test(n))return 2;return 1}
 function potentialSources(activeSources,hand,used,forCommander=false,battlefield=[]){const out=[...activeSources];const bursts=hand.filter(c=>!used.has(c)&&isBurst(c)).sort((a,b)=>burstPriority(a)-burstPriority(b)||a.name.localeCompare(b.name));for(const c of bursts)out.push(...burstNetSources(c,out,battlefield,forCommander));return out}
 function landColors(c){const out=[];for(const s of landManaSources(c,[c]))out.push(...(s.options||[]),...((s.filter?.outputs||[]).flat()));return uniq(out.length?out:['C'])}
@@ -40,7 +40,7 @@ function comboAccessible(hand,priorHand,battlefield,used,combos,currentSources,p
 function mechanicPayMulti(card,sources,onlineCommanders=[],sameTurnCommanders=[],postCommanderSources=null){if(canPay(card,sources))return true;const onlineReduction=combinedTargetGenericReduction(card,onlineCommanders);if(onlineReduction&&canPay(card,sources,0,onlineReduction))return true;const all=[...onlineCommanders,...sameTurnCommanders],allReduction=combinedTargetGenericReduction(card,all);return !!postCommanderSources&&allReduction>0&&canPay(card,postCommanderSources,0,allReduction)}
 function mechanicUnlockMulti(card,sources,onlineCommanders=[],sameTurnCommanders=[],postCommanderSources=null){if(canPay(card,sources))return false;return mechanicPayMulti(card,sources,onlineCommanders,sameTurnCommanders,postCommanderSources)}
 function resolveTopLibraryCheatMulti(lib,battlefield,profile){if(!profile?.look||!lib.length)return {triggered:false,hit:false,card:null,compressed:0};const looked=lib.splice(0,Math.min(profile.look,lib.length)),eligible=looked.filter(c=>isTopLibraryCheatTarget(c,profile)).sort((a,b)=>Number(b.cmc||0)-Number(a.cmc||0)||String(a.name||'').localeCompare(String(b.name||''))),chosen=eligible[0]||null;if(chosen)battlefield.push(chosen);for(const c of looked)if(c!==chosen)lib.push(c);return {triggered:true,hit:!!chosen,card:chosen,compressed:chosen?Number(chosen.cmc||0):0}}
-function keepOpeningHand(hand){const lands=hand.filter(c=>c.isLand).length,early=hand.some(c=>!c.isLand&&((c.cmc||0)<=2||c.tags?.includes('fast-mana')||isImmediateLandRamp(c)));return lands>=2&&lands<=5&&early}
+function keepOpeningHand(hand){const lands=hand.filter(c=>c.isLand).length,early=hand.some(c=>{if(c.isLand)return false;const ramp=immediateLandRampNetSources(c);return (c.cmc||0)<=2||c.tags?.includes('fast-mana')||(ramp>0&&((c.cmc||0)<=2||lands>=3))});return lands>=2&&lands<=5&&early}
 function openingHand(libBase,priority,rng){let lib=[],hand=[],mulligans=0;while(true){lib=shuffle(libBase,rng);hand=lib.splice(0,7);if(keepOpeningHand(hand)||mulligans>=2)break;mulligans++}const penalty=Math.max(0,mulligans-1),adjusted=applyCommanderLondonBottom(hand,penalty,priority);lib.push(...adjusted.bottom);return {lib,hand:adjusted.hand,mulligans,penalty}}
 
 export function planCommanderCasts(commanders=[],cmdTurns=[],castCounts=[],sources=[]){
@@ -66,6 +66,8 @@ export function simulateSequencesMulti(cards,commanders,packages,combos=[],itera
       const land=chooseLand(hand,used,priority,battlefield);if(land){used.add(land);battlefield.push(land);const landCount=battlefield.filter(c=>c.isLand).length,sources=landManaSources(land,battlefield),fetch=fetchLandInfo(land),fetchDelayed=!!fetch&&fetch.delayed&&!(fetch.fabled&&landCount>=4);if(alwaysTappedLand(land)||fetchDelayed)pendingSources.push(...sources);else activeSources.push(...sources)}
       let turnSources=[...activeSources]
       for(let rampCasts=0;rampCasts<8;rampCasts++){
+        const commanderNowSources=potentialSources(turnSources,hand,used,true,battlefield)
+        if(planCommanderCasts(cmd,cmdTurns,castCounts,commanderNowSources).indices.length)break
         const rampCandidates=castableCards(hand,used,turnSources,isPermanentRamp).map(card=>({card,support:permanentRampSupport(card,hand,used,battlefield,priority)})).filter(x=>x.support).sort((a,b)=>rampValue(b.card)-rampValue(a.card)||(a.card.cmc||0)-(b.card.cmc||0))
         const rampChoice=rampCandidates[0];if(!rampChoice)break
         const ramp=rampChoice.card,support=rampChoice.support,produced=permanentRampSources(ramp,priority,support),remaining=payAndRemain(ramp,turnSources)

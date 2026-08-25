@@ -7,7 +7,19 @@ const uniq=xs=>[...new Set(xs)]
 const isPermanentCard=c=>!/\binstant\b|\bsorcery\b/i.test(c.type||'')
 const isArtifact=c=>/\bartifact\b/i.test(c.type||'')
 const isBurst=c=>c.tags.includes('burst-mana')
-const isPermanentRamp=c=>!c.isLand&&!isBurst(c)&&(isImmediateLandRamp(c)||(isPermanentCard(c)&&(c.sourceColors?.length||0)>0))&&(c.cmc||0)<=3
+const numberWord=w=>({one:1,two:2,three:3,four:4,five:5,six:6}[String(w||'').toLowerCase()]||Number(w)||0)
+export function immediateLandRampNetSources(c){
+  if(!isImmediateLandRamp(c))return 0
+  const o=String(c?.oracle||'').replace(/\([^)]*\)/g,' ').replace(/\s+/g,' ').trim().toLowerCase()
+  let entered=1
+  if(!/put one (?:of (?:them|those cards) )?onto the battlefield/.test(o)){
+    const m=o.match(/search your library for (?:up to )?(one|two|three|four|five|six|\d+) [^.;]{0,100}\b(?:basic land|plains|island|swamp|mountain|forest|land) cards?\b/)
+    if(m&&/put (?:them|those cards) onto the battlefield/.test(o))entered=Math.max(1,numberWord(m[1]))
+  }
+  const landSacrifice=/additional cost[^.]{0,100}sacrifice (?:a|one) land|sacrifice (?:a|one) land[^.:]{0,80}:/.test(o)?1:0
+  return Math.max(0,entered-landSacrifice)
+}
+const isPermanentRamp=c=>{if(c.isLand||isBurst(c))return false;const landRamp=immediateLandRampNetSources(c),manaPermanent=isPermanentCard(c)&&(c.sourceColors?.length||0)>0;if(!landRamp&&!manaPermanent)return false;return (c.cmc||0)<=3||(landRamp>=2&&(c.cmc||0)<=4)}
 function alwaysTappedLand(c){const o=(c.oracle||'').toLowerCase();if(!/enters(?: the battlefield)? tapped/.test(o))return false;return !/unless|you may pay|if you control|if an opponent|reveal [^.]* from your hand|as [^.]* enters/.test(o)}
 function source(options,origin='source',extra={}){return {options:uniq(Array.isArray(options)?options:['C']),origin,...extra}}
 function fetchLandInfo(c){
@@ -75,8 +87,8 @@ export function permanentRampSupport(c,hand,used,battlefield,commander){
   if(n.includes('mox amber')){const legends=battlefield.filter(x=>/\blegendary\b/i.test(x.type||'')&&/\bcreature\b|\bplaneswalker\b/i.test(x.type||'')&&(x.colors||[]).length);const colors=uniq(legends.flatMap(x=>x.colors||[]));return colors.length?{consume:[],colors}:null}
   return {consume:[],colors:null}
 }
-function permanentRampSources(c,commander,support={}){const landRamp=isImmediateLandRamp(c),colors=support.colors?.length?support.colors:landRamp?(commander?.manaReq?.colored?.flat()||['W','U','B','R','G']):(c.sourceColors?.length?c.sourceColors:['C']);const count=landRamp?1:productionCount(c);return Array.from({length:count},()=>source(colors.length?colors:['C'],c.name))}
-function rampValue(c){return productionCount(c)-Number(c.cmc||0)+(isArtifact(c)?0.25:0)}
+function permanentRampSources(c,commander,support={}){const landRamp=immediateLandRampNetSources(c),colors=support.colors?.length?support.colors:landRamp?(commander?.manaReq?.colored?.flat()||['W','U','B','R','G']):(c.sourceColors?.length?c.sourceColors:['C']);const count=landRamp||productionCount(c);return Array.from({length:count},()=>source(colors.length?colors:['C'],c.name))}
+function rampValue(c){const landRamp=immediateLandRampNetSources(c),output=landRamp||productionCount(c);return output-Number(c.cmc||0)+(isArtifact(c)?0.25:0)}
 function burstPriority(c){const n=c.name.toLowerCase();if(/lotus petal|elvish spirit guide|simian spirit guide|lion's eye diamond|jeweled lotus/.test(n))return 0;if(/dark ritual|cabal ritual|rite of flame|mana vault|grim monolith/.test(n))return 1;if(/culling the weak/.test(n))return 2;return 1}
 function canProduceColor(sources,color){return expandManaPools(sources).some(pool=>pool.some(s=>s.options.includes(color)))}
 export function burstNetSources(c,baseSources,battlefield,forCommander=false){
@@ -115,12 +127,12 @@ function comboAccessible(hand,priorHand,battlefield,used,combos,currentSources,p
 function canPayWithCommanderMechanic(card,sources,commander,alreadyOnline=false,postCommanderSources=null){if(canPay(card,sources))return true;const reduction=targetGenericReduction(card,commander);if(!reduction)return false;if(alreadyOnline&&canPay(card,sources,0,reduction))return true;return !!postCommanderSources&&canPay(card,postCommanderSources,0,reduction)}
 function unlockedByCommanderMechanic(card,sources,commander,alreadyOnline=false,postCommanderSources=null){if(canPay(card,sources))return false;const reduction=targetGenericReduction(card,commander);if(!reduction)return false;return alreadyOnline?canPay(card,sources,0,reduction):!!postCommanderSources&&canPay(card,postCommanderSources,0,reduction)}
 function resolveTopLibraryCheat(lib,battlefield,profile){if(!profile?.look||!lib.length)return {triggered:false,hit:false,card:null,compressed:0};const looked=lib.splice(0,Math.min(profile.look,lib.length)),eligible=looked.filter(c=>isTopLibraryCheatTarget(c,profile)).sort((a,b)=>(Number(b.cmc||0)+Number(b.development||0)+Number(b.explosiveness||0))-(Number(a.cmc||0)+Number(a.development||0)+Number(a.explosiveness||0))||String(a.name||'').localeCompare(String(b.name||''))),chosen=eligible[0]||null;if(chosen)battlefield.push(chosen);for(const c of looked)if(c!==chosen)lib.push(c);return {triggered:true,hit:!!chosen,card:chosen,compressed:chosen?Number(chosen.cmc||0):0}}
-function castCommanderReducerSetup(hand,used,battlefield,turnSources,commander){let remaining=turnSources,casts=0;for(let n=0;n<3;n++){const candidates=hand.filter(c=>!used.has(c)&&isPermanentCard(c)&&typeCostReducerMatches(c,commander)&&(c.cmc||0)<=3&&canPay(c,remaining)).sort((a,b)=>(a.cmc||0)-(b.cmc||0)||(typeCostReductionProfile(b)?.amount||0)-(typeCostReductionProfile(a)?.amount||0)||a.name.localeCompare(b.name));const c=candidates[0];if(!c)break;const next=payAndRemain(c,remaining);if(!next)break;used.add(c);battlefield.push(c);remaining=next;casts++}return {remaining,casts}}
+function castCommanderReducerSetup(hand,used,battlefield,turnSources,commander){let remaining=turnSources,casts=0;for(let n=0;n<3;n++){const commanderSources=potentialSources(remaining,hand,used,true,battlefield),existingReduction=typeGenericReduction(commander,battlefield);if(canPay(commander,commanderSources,0,existingReduction))break;const candidates=hand.filter(c=>!used.has(c)&&isPermanentCard(c)&&typeCostReducerMatches(c,commander)&&(c.cmc||0)<=3&&canPay(c,remaining)).sort((a,b)=>(a.cmc||0)-(b.cmc||0)||(typeCostReductionProfile(b)?.amount||0)-(typeCostReductionProfile(a)?.amount||0)||a.name.localeCompare(b.name));const c=candidates[0];if(!c)break;const next=payAndRemain(c,remaining);if(!next)break;used.add(c);battlefield.push(c);remaining=next;casts++}return {remaining,casts}}
 function commandZoneDeployer(card){return commandZoneDeploymentProfile(card)}
-function keepOpeningHand(hand){const lands=hand.filter(c=>c.isLand).length,early=hand.some(c=>!c.isLand&&((c.cmc||0)<=2||c.tags?.includes('fast-mana')||isImmediateLandRamp(c)));return lands>=2&&lands<=5&&early}
+function keepOpeningHand(hand){const lands=hand.filter(c=>c.isLand).length,early=hand.some(c=>{if(c.isLand)return false;const ramp=immediateLandRampNetSources(c);return (c.cmc||0)<=2||c.tags?.includes('fast-mana')||(ramp>0&&((c.cmc||0)<=2||lands>=3))});return lands>=2&&lands<=5&&early}
 function bottomKeepValue(c,commander,landCount){
   if(c.isLand){const needs=new Set(commander?.manaReq?.colored?.flat()||[]),colorHits=inferredLandColors(c).filter(x=>needs.has(x)).length,temple=(c.name||'').toLowerCase()==='temple of the false god';return landCount>3?-8+colorHits+(alwaysTappedLand(c)?-1:0)-(temple?3:0):5+colorHits-(temple?8:0)}
-  let v=0;if(c.tags?.includes('fast-mana')||isImmediateLandRamp(c))v+=8;if((c.cmc||0)<=2)v+=4;if(c.tags?.includes('draw')||c.interaction>0)v+=2;if((c.cmc||0)>=5)v-=4;if((c.cmc||0)>=7)v-=2;return v
+  let v=0;const ramp=immediateLandRampNetSources(c);if(c.tags?.includes('fast-mana'))v+=8;if(ramp)v+=(c.cmc||0)<=2?8:(c.cmc||0)===3?5:ramp>=2?4:2;if((c.cmc||0)<=2)v+=4;if(c.tags?.includes('draw')||c.interaction>0)v+=2;if((c.cmc||0)>=5)v-=4;if((c.cmc||0)>=7)v-=2;return v
 }
 export function applyCommanderLondonBottom(hand,penalty,commander=null){if(penalty<=0)return {hand:[...hand],bottom:[]};const landCount=hand.filter(c=>c.isLand).length,ranked=[...hand].map((c,i)=>({c,i,v:bottomKeepValue(c,commander,landCount)})).sort((a,b)=>a.v-b.v||b.i-a.i),bottom=ranked.slice(0,Math.min(penalty,hand.length)).map(x=>x.c),bottomSet=new Set(bottom);return {hand:hand.filter(c=>!bottomSet.has(c)),bottom}}
 function openingHand(libBase,commander,rng){let lib=[],hand=[],mulligans=0;while(true){lib=shuffle(libBase,rng);hand=lib.splice(0,7);if(keepOpeningHand(hand)||mulligans>=2)break;mulligans++}const penalty=Math.max(0,mulligans-1),adjusted=applyCommanderLondonBottom(hand,penalty,commander);lib.push(...adjusted.bottom);return {lib,hand:adjusted.hand,mulligans,penalty}}
@@ -138,6 +150,8 @@ export function simulateSequences(cards,commander,packages,combos=[],iterations=
       const land=chooseLand(hand,used,commander,battlefield);if(land){used.add(land);battlefield.push(land);const landCount=battlefield.filter(c=>c.isLand).length,sources=landManaSources(land,battlefield),fetch=fetchLandInfo(land),fetchDelayed=!!fetch&&fetch.delayed&&!(fetch.fabled&&landCount>=4);if(alwaysTappedLand(land)||fetchDelayed)pendingSources.push(...sources);else activeSources.push(...sources);refreshConditionalLandSources(battlefield,activeSources)}
       let turnSources=[...activeSources]
       for(let rampCasts=0;rampCasts<8;rampCasts++){
+        const commanderNowSources=commander&&cmdTurn==null?potentialSources(turnSources,hand,used,true,battlefield):[],commanderNowReduction=commander&&cmdTurn==null?typeGenericReduction(commander,battlefield):0
+        if(commander&&cmdTurn==null&&canPay(commander,commanderNowSources,0,commanderNowReduction))break
         const rampCandidates=castableCards(hand,used,turnSources,isPermanentRamp).map(card=>({card,support:permanentRampSupport(card,hand,used,battlefield,commander)})).filter(x=>x.support).sort((a,b)=>rampValue(b.card)-rampValue(a.card)||(a.card.cmc||0)-(b.card.cmc||0))
         const rampChoice=rampCandidates[0];if(!rampChoice)break
         const ramp=rampChoice.card,support=rampChoice.support,produced=permanentRampSources(ramp,commander,support),remaining=payAndRemain(ramp,turnSources)
