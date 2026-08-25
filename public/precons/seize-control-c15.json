@@ -28,8 +28,8 @@
   "cardCount": 99,
   "analysis": {
     "median": 49,
-    "p20": 35,
-    "p80": 61,
+    "p20": 36,
+    "p80": 62,
     "peak": 88,
     "coverage": 90,
     "engineVersion": "3.3.0",
@@ -37,7 +37,7 @@
     "oracleSnapshotHash": "037491f3d206266dadedf8db05447cf53e71fa2d3c95c8f1f4f60dc390ef26b3",
     "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-25T13:41:05.940Z"
+    "analyzedAt": "2026-08-25T14:07:01.081Z"
   },
   "decklist": "1 Goblin Electromancer\n1 Jace's Archivist\n1 Gigantoplasm\n1 Talrand, Sky Summoner\n1 Psychosis Crawler\n1 Broodbirth Viper\n1 Illusory Ambusher\n1 Lone Revenant\n1 Warchief Giant\n1 Charmbreaker Devils\n1 Arjun, the Shifting Flame\n1 Etherium-Horn Sorcerer\n1 Melek, Izzet Paragon\n1 Dragon Mage\n1 Preordain\n1 Faithless Looting\n1 Vandalblast\n1 Mizzium Mortars\n1 Windfall\n1 Mystic Retrieval\n1 Stolen Goods\n1 Mizzix's Mastery\n1 Rite of Replication\n1 Sleep\n1 Chain Reaction\n1 Call the Skybreaker\n1 Blatant Thievery\n1 Epic Experiment\n1 Meteor Blast\n1 Blustersquall\n1 Brainstorm\n1 Echoing Truth\n1 Desperate Ravings\n1 Urza's Rage\n1 Counterflux\n1 Aetherize\n1 Fact or Fiction\n1 Reins of Power\n1 Steam Augury\n1 Mystic Confluence\n1 Word of Seizing\n1 Act of Aggression\n1 Prophetic Bolt\n1 Aethersnatch\n1 Mirror Match\n1 Firemind's Foresight\n1 Repeal\n1 Comet Storm\n1 Magmaquake\n1 Stroke of Genius\n1 Dominate\n1 Blue Sun's Zenith\n1 Sol Ring\n1 Izzet Signet\n1 Thought Vessel\n1 Worn Powerstone\n1 Seal of the Guildpact\n1 Awaken the Sky Tyrant\n1 Rite of the Raging Storm\n1 Thought Reflection\n1 Command Tower\n1 Evolving Wilds\n1 Izzet Boilerworks\n1 Izzet Guildgate\n1 Reliquary Tower\n1 Rogue's Passage\n1 Spinerock Knoll\n1 Swiftwater Cliffs\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Vivid Crag\n1 Vivid Creek\n4 Island\n4 Island\n3 Island\n3 Island\n4 Mountain\n3 Mountain\n3 Mountain\n3 Mountain",
   "oracleCards": [
@@ -423,6 +423,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
+        "graveyard-setup",
         "exile-cast",
         "cheat",
         "free"
@@ -635,8 +636,7 @@
       ],
       "tags": [
         "land",
-        "mana",
-        "etb"
+        "mana"
       ],
       "isCommander": false
     },
@@ -695,7 +695,7 @@
       "producedMana": [],
       "tags": [
         "creature",
-        "protection"
+        "self-protection"
       ],
       "isCommander": false
     },
@@ -823,7 +823,7 @@
       "producedMana": [],
       "tags": [
         "sorcery",
-        "exile-cast",
+        "recursion",
         "cheat",
         "free"
       ],
@@ -1055,8 +1055,7 @@
       "colorIdentity": [],
       "producedMana": [],
       "tags": [
-        "artifact",
-        "etb"
+        "artifact"
       ],
       "isCommander": false
     },
@@ -1113,7 +1112,6 @@
       "tags": [
         "land",
         "mana",
-        "etb",
         "cheat",
         "free"
       ],
@@ -1345,7 +1343,6 @@
       "tags": [
         "land",
         "mana",
-        "etb",
         "counter-kind:charge"
       ],
       "isCommander": false
@@ -1371,7 +1368,6 @@
       "tags": [
         "land",
         "mana",
-        "etb",
         "counter-kind:charge"
       ],
       "isCommander": false
@@ -1444,8 +1440,7 @@
       ],
       "tags": [
         "artifact",
-        "mana",
-        "etb"
+        "mana"
       ],
       "isCommander": false
     }
@@ -1453,23 +1448,23 @@
   "result": {
     "profile": {
       "median": 49,
-      "floor": 35,
-      "ceiling": 61,
+      "floor": 36,
+      "ceiling": 62,
       "peak": 88,
       "dispersion": 26,
       "variance": 26,
-      "consistency": 62,
-      "commanderDelta": 13,
+      "consistency": 61,
+      "commanderDelta": 14,
       "coverage": 90,
       "dataCoverage": 90
     },
     "dimensions": {
       "speed": 34,
-      "consistency": 62,
+      "consistency": 61,
       "explosiveness": 29,
-      "synergy": 93,
+      "synergy": 95,
       "interaction": 31,
-      "resilience": 44
+      "resilience": 47
     },
     "roles": {
       "lands": 39,
@@ -1479,8 +1474,8 @@
       "repeatableTutors": 0,
       "draw": 13,
       "interaction": 6,
-      "protection": 1,
-      "recursion": 5,
+      "protection": 0,
+      "recursion": 6,
       "wipes": 3,
       "avgCmc": 3.8333333333333335,
       "unknownManaLands": 0
@@ -1831,6 +1826,7 @@
             "cmc": 2,
             "tags": [
               "sorcery",
+              "graveyard-setup",
               "exile-cast",
               "cheat",
               "free"
@@ -1986,7 +1982,7 @@
             "cmc": 4,
             "tags": [
               "sorcery",
-              "exile-cast",
+              "recursion",
               "cheat",
               "free"
             ],
@@ -2369,11 +2365,12 @@
       {
         "id": "graveyard",
         "name": "Cimetière / récursion",
-        "strength": 75,
-        "cohesion": 75,
+        "strength": 84,
+        "cohesion": 84,
         "producers": [
           "Desperate Ravings",
           "Dragon Mage",
+          "Epic Experiment",
           "Faithless Looting",
           "Jace's Archivist",
           "Windfall"
@@ -2383,16 +2380,19 @@
           "Charmbreaker Devils",
           "Desperate Ravings",
           "Faithless Looting",
+          "Mizzix's Mastery",
           "Mystic Retrieval"
         ],
         "members": [
           "Desperate Ravings",
           "Dragon Mage",
+          "Epic Experiment",
           "Faithless Looting",
           "Jace's Archivist",
           "Windfall",
           "Call the Skybreaker",
           "Charmbreaker Devils",
+          "Mizzix's Mastery",
           "Mystic Retrieval"
         ],
         "producerCards": [
@@ -2434,6 +2434,29 @@
                 ]
               ],
               "total": 7
+            }
+          },
+          {
+            "name": "Epic Experiment",
+            "cmc": 2,
+            "tags": [
+              "sorcery",
+              "graveyard-setup",
+              "exile-cast",
+              "cheat",
+              "free"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [
+                [
+                  "U"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 2
             }
           },
           {
@@ -2577,6 +2600,25 @@
             }
           },
           {
+            "name": "Mizzix's Mastery",
+            "cmc": 4,
+            "tags": [
+              "sorcery",
+              "recursion",
+              "cheat",
+              "free"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
             "name": "Mystic Retrieval",
             "cmc": 4,
             "tags": [
@@ -2601,7 +2643,7 @@
         "payoffTags": [
           "recursion"
         ],
-        "evidence": "5 producteur(s), 5 payoff(s), 8 carte(s) distincte(s)."
+        "evidence": "6 producteur(s), 6 payoff(s), 10 carte(s) distincte(s)."
       }
     ],
     "combos": [],
@@ -2669,16 +2711,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
-      "median": 42,
-      "high": 52,
-      "ceiling": 52,
-      "peak": 78,
+      "floor": 34,
+      "median": 43,
+      "high": 53,
+      "ceiling": 53,
+      "peak": 79,
       "iqr": 15,
-      "consistency": 68,
+      "consistency": 67,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 5,
-      "recoveryAfterDisruption": 81,
+      "recoveryAfterDisruption": 83,
       "turnProfile": [
         {
           "turn": 1,
@@ -2686,57 +2728,75 @@
           "engine": 0,
           "interaction": 4,
           "resource": 11,
-          "burst": 5
+          "burst": 5,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 2,
           "commander": 3,
           "engine": 0,
           "interaction": 12,
-          "resource": 30,
-          "burst": 10
+          "resource": 31,
+          "burst": 10,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 3,
           "commander": 22,
           "engine": 7,
           "interaction": 22,
-          "resource": 50,
-          "burst": 15
+          "resource": 51,
+          "burst": 15,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 4,
           "commander": 70,
-          "engine": 14,
+          "engine": 16,
           "interaction": 35,
-          "resource": 63,
-          "burst": 24
+          "resource": 66,
+          "burst": 24,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 5,
           "commander": 85,
-          "engine": 25,
+          "engine": 27,
           "interaction": 43,
-          "resource": 74,
-          "burst": 29
+          "resource": 76,
+          "burst": 29,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 6,
           "commander": 89,
-          "engine": 32,
+          "engine": 36,
           "interaction": 49,
-          "resource": 81,
-          "burst": 32
+          "resource": 83,
+          "burst": 32,
+          "commanderCheat": 0,
+          "targetReduction": 0
         },
         {
           "turn": 7,
           "commander": 93,
-          "engine": 41,
+          "engine": 45,
           "interaction": 54,
-          "resource": 87,
-          "burst": 35
+          "resource": 88,
+          "burst": 35,
+          "commanderCheat": 0,
+          "targetReduction": 0
         }
       ],
+      "commanderMechanics": {
+        "targetCostReduction": null,
+        "topLibraryCheat": null
+      },
       "firstAccess": {
         "modelVersion": "first-access-sampler-v1",
         "iterations": 800,
@@ -2791,26 +2851,26 @@
               },
               {
                 "turn": 3,
-                "value": 6
+                "value": 7
               },
               {
                 "turn": 4,
-                "value": 15
+                "value": 16
               },
               {
                 "turn": 5,
-                "value": 25
+                "value": 27
               },
               {
                 "turn": 6,
-                "value": 33
+                "value": 35
               },
               {
                 "turn": 7,
-                "value": 42
+                "value": 45
               }
             ],
-            "observedWithinHorizon": 336
+            "observedWithinHorizon": 360
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -2861,26 +2921,26 @@
               },
               {
                 "turn": 3,
-                "value": 50
+                "value": 51
               },
               {
                 "turn": 4,
-                "value": 64
+                "value": 67
               },
               {
                 "turn": 5,
-                "value": 73
+                "value": 76
               },
               {
                 "turn": 6,
-                "value": 81
+                "value": 82
               },
               {
                 "turn": 7,
-                "value": 86
+                "value": 87
               }
             ],
-            "observedWithinHorizon": 687
+            "observedWithinHorizon": 698
           },
           "burst": {
             "id": "burst-first-access",
@@ -2967,21 +3027,22 @@
     },
     "drivers": [
       {
-        "name": "Epic Experiment",
-        "impact": 4.5,
+        "name": "Mizzix's Mastery",
+        "impact": 5.8,
         "tags": [
           "sorcery",
-          "exile-cast",
+          "recursion",
           "cheat",
           "free"
         ],
         "aeon": null
       },
       {
-        "name": "Mizzix's Mastery",
-        "impact": 4.4,
+        "name": "Epic Experiment",
+        "impact": 5.2,
         "tags": [
           "sorcery",
+          "graveyard-setup",
           "exile-cast",
           "cheat",
           "free"
@@ -3100,6 +3161,10 @@
       "commandZoneCount": 1,
       "separateCommanderTax": false,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "commanderMechanics": {
+        "targetCostReduction": null,
+        "topLibraryCheat": null
+      },
       "limitations": []
     },
     "experience": {
@@ -3130,7 +3195,7 @@
           ]
         },
         "volatility": {
-          "score": 93,
+          "score": 91,
           "level": "very-high",
           "evidence": [
             {
@@ -3141,7 +3206,7 @@
             },
             {
               "signal": "high-roll-tail",
-              "value": 27,
+              "value": 26,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -3160,54 +3225,54 @@
           ]
         },
         "resilience": {
-          "score": 44,
+          "score": 47,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 44,
+              "value": 47,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 73,
-          "level": "high",
+          "score": 75,
+          "level": "very-high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 93,
+              "value": 95,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 62,
+              "value": 61,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
             {
               "signal": "resilience",
-              "value": 44,
+              "value": 47,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 87.5,
+              "value": 92,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 97,
+          "score": 100,
           "level": "very-high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 13,
+              "value": 14,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
@@ -3467,26 +3532,26 @@
             },
             {
               "turn": 3,
-              "value": 6
+              "value": 7
             },
             {
               "turn": 4,
-              "value": 15
+              "value": 16
             },
             {
               "turn": 5,
-              "value": 25
+              "value": 27
             },
             {
               "turn": 6,
-              "value": 33
+              "value": 35
             },
             {
               "turn": 7,
-              "value": 42
+              "value": 45
             }
           ],
-          "observedWithinHorizon": 336,
+          "observedWithinHorizon": 360,
           "milestones": {
             "at25": 5,
             "at50": null,
@@ -3549,30 +3614,30 @@
             },
             {
               "turn": 3,
-              "value": 50
+              "value": 51
             },
             {
               "turn": 4,
-              "value": 64
+              "value": 67
             },
             {
               "turn": 5,
-              "value": 73
+              "value": 76
             },
             {
               "turn": 6,
-              "value": 81
+              "value": 82
             },
             {
               "turn": 7,
-              "value": 86
+              "value": 87
             }
           ],
-          "observedWithinHorizon": 687,
+          "observedWithinHorizon": 698,
           "milestones": {
             "at25": 2,
             "at50": 3,
-            "at75": 6
+            "at75": 5
           }
         },
         "burst": {
@@ -3677,19 +3742,19 @@
             },
             {
               "turn": 4,
-              "value": 14
+              "value": 16
             },
             {
               "turn": 5,
-              "value": 25
+              "value": 27
             },
             {
               "turn": 6,
-              "value": 32
+              "value": 36
             },
             {
               "turn": 7,
-              "value": 41
+              "value": 45
             }
           ],
           "milestones": {
@@ -3749,33 +3814,33 @@
             },
             {
               "turn": 2,
-              "value": 30
+              "value": 31
             },
             {
               "turn": 3,
-              "value": 50
+              "value": 51
             },
             {
               "turn": 4,
-              "value": 63
+              "value": 66
             },
             {
               "turn": 5,
-              "value": 74
+              "value": 76
             },
             {
               "turn": 6,
-              "value": 81
+              "value": 83
             },
             {
               "turn": 7,
-              "value": 87
+              "value": 88
             }
           ],
           "milestones": {
             "at25": 2,
             "at50": 3,
-            "at75": 6
+            "at75": 5
           }
         },
         "burst": {
@@ -3876,26 +3941,26 @@
             },
             {
               "turn": 3,
-              "value": 6
+              "value": 7
             },
             {
               "turn": 4,
-              "value": 15
+              "value": 16
             },
             {
               "turn": 5,
-              "value": 25
+              "value": 27
             },
             {
               "turn": 6,
-              "value": 33
+              "value": 35
             },
             {
               "turn": 7,
-              "value": 42
+              "value": 45
             }
           ],
-          "observedWithinHorizon": 336,
+          "observedWithinHorizon": 360,
           "milestones": {
             "at25": 5,
             "at50": null,
@@ -3958,30 +4023,30 @@
             },
             {
               "turn": 3,
-              "value": 50
+              "value": 51
             },
             {
               "turn": 4,
-              "value": 64
+              "value": 67
             },
             {
               "turn": 5,
-              "value": 73
+              "value": 76
             },
             {
               "turn": 6,
-              "value": 81
+              "value": 82
             },
             {
               "turn": 7,
-              "value": 86
+              "value": 87
             }
           ],
-          "observedWithinHorizon": 687,
+          "observedWithinHorizon": 698,
           "milestones": {
             "at25": 2,
             "at50": 3,
-            "at75": 6
+            "at75": 5
           }
         },
         "burst": {

@@ -1,3 +1,5 @@
+import { topLibraryCheatProfile, isTopLibraryCheatTarget } from './commanderMechanics.js'
+
 const MOTIFS=[
   {id:'early-commander',name:'Accélération du commandant',special:'commander'},
   {id:'blink-etb',name:'Blink / ETB',producers:['blink'],payoffs:['etb'],minP:2,minY:2},
@@ -97,8 +99,10 @@ function selfEtbTrigger(c){
   if(/\bwhen(?:ever)?\s+this\s+(?:creature|permanent|artifact|enchantment)\s+enters\b/.test(o))return true
   return !!name&&new RegExp(`\\bwhen(?:ever)?\\s+${name}\\s+enters\\b`).test(o)
 }
+function harmfulLeaveDownside(c){const o=semanticText(c);return /when(?:ever)? [^.]{0,100} leaves the battlefield[^.]{0,220}(?:you discard|discard \w+ cards?|you lose \d+ life|sacrifice \w+ creatures?|sacrifice \d+ creatures?)/.test(o)}
 function trueEtbPayoff(c){
   if(c.isLand||/\bland\b/i.test(c.type||''))return false
+  if(harmfulLeaveDownside(c))return false
   return semanticClauses(c).some(s=>{
     if(!/\bwhen(?:ever)?\b[^.\n;]{0,180}\benters(?: the battlefield)?\b/.test(s))return false
     const opponentOnly=/(?:land|creature|artifact|permanent|enchantment) an opponent controls enters|(?:land|creature|artifact|permanent|enchantment)s? your opponents? control enters|under an opponent'?s control enters/.test(s)
@@ -208,6 +212,8 @@ export function commanderSynergy(cards,commander){
   const custom=[]
   const scope=targetReductionScope(commander)
   if(scope){semantic.add('target-cost-reduction');custom.push(...cards.filter(c=>spellTargetsScope(c,scope)))}
+  const cheatProfile=topLibraryCheatProfile(commander)
+  if(cheatProfile){semantic.add('top-library-cheat');custom.push(...cards.filter(c=>isTopLibraryCheatTarget(c,cheatProfile)))}
   if(isEnchantmentCastPayoff(commander)){semantic.add('enchantment-cast-payoff');custom.push(...cards.filter(c=>/\benchantment\b/i.test(c.type||'')))}
   if(isEquipmentPayoff(commander)){semantic.add('equipment-payoff');custom.push(...cards.filter(isEquipmentCard))}
   const counterTriggerKind=commanderCounterTriggerKind(commander)
