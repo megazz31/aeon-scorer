@@ -16,7 +16,15 @@ function evidence(cards,commanders){const uniq=new Map();for(const c of [...feat
 
 function Panel({source}){
   const[second,setSecond]=useState(source?.commanderNames?.[1]||''),[status,setStatus]=useState(''),[error,setError]=useState(''),[pairKind,setPairKind]=useState(''),[result,setResult]=useState(null)
-  useEffect(()=>{if(source?.commanderNames?.[1])setSecond(source.commanderNames[1])},[source?.commanderNames?.join('|')])
+  useEffect(()=>{if(source?.commanderNames?.[1])setSecond(source.commanderNames[1]);else if(source?.commanderNames?.length===1)setSecond('')},[source?.commanderNames?.join('|')])
+  useEffect(()=>{
+    const onImport=e=>{
+      if(e.detail?.commanderNames?.length>1)setSecond(e.detail.commanderNames[1]||'')
+      else if(e.detail?.commanderNames?.length===1)setSecond('')
+    }
+    window.addEventListener('aeon-deck-imported',onImport)
+    return()=>window.removeEventListener('aeon-deck-imported',onImport)
+  },[])
   async function analyzePair(){
     const input=currentInput();setStatus(t('Resolving command zone…','Résolution de la command zone…'));setError('');setResult(null);setPairKind('')
     try{
@@ -31,9 +39,7 @@ function Panel({source}){
       const allowed=new Set(combinedColorIdentity([a,b])),offColor=main.filter(c=>(c.colorIdentity||[]).some(x=>!allowed.has(x)))
       if(offColor.length)throw new Error(t(`Combined color identity mismatch: ${[...new Set(offColor.map(c=>c.name))].slice(0,6).join(', ')}${offColor.length>6?'…':''}`,`Identité couleur combinée incompatible : ${[...new Set(offColor.map(c=>c.name))].slice(0,6).join(', ')}${offColor.length>6?'…':''}`))
       setStatus(t(`Simulating ${input.iterations.toLocaleString('en-US')} sequences…`,`Simulation de ${input.iterations.toLocaleString('fr-FR')} séquences…`));await new Promise(r=>setTimeout(r,20))
-      const out=analyzePower(fetched,[a,b],null,input.iterations,{record:false});setResult(out)
-      const commandZoneName=`${a.name} + ${b.name}`,deckHash=await hashDeck(input.decklist,commandZoneName),session=await restoreSession().catch(()=>null)
-      await recordAnalysis(session,{deckId:null,deckName:source?.deckName||commandZoneName,decklist:input.decklist,commanderName:commandZoneName,deckHash,engineVersion:ENGINE_VERSION,semanticVersion:SEMANTIC_VERSION,iterations:input.iterations,cards:evidence(fetched,[a,b]),result:{...out,commanderNames:[a.name,b.name],commanderPairKind:legal.kind}})
+      const out=analyzePower(fetched,[a,b],null,input.iterations,{record:true,emitProduct:true});setResult(out)
       setStatus('')
     }catch(e){setStatus('');setError(e.message||String(e))}
   }

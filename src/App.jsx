@@ -2,6 +2,7 @@ import { useEffect,useMemo,useState } from 'react'
 import { parseDecklist,fetchCards,fetchCard } from './scryfall.js'
 import { parseAeonShiftCsv } from './data/aeonshift.js'
 import { analyzePower } from './engine/powerModel.js'
+import { combinedColorIdentity,validateCommanderPair } from './engine/commanderPair.js'
 import { SITE_META,WhyPage,MethodPage,AboutPage } from './sitePages.jsx'
 import DeckImportPanel from './DeckImportPanel.jsx'
 import { AEON_LABEL,MODEL_ID } from './version.js'
@@ -74,29 +75,97 @@ export default function App(){
 
   function changeLanguage(next){if(next===lang)return;localStorage.setItem('aeon-lang',next);setLang(next);setError('');setStatus('')}
   function navigate(path){const next=ROUTES.has(path)?path:'/';if(window.location.pathname!==next)window.history.pushState({},'',next);setRoute(next);window.scrollTo({top:0,behavior:'smooth'})}
-  function applyDeckImport(data){setDeckText(data.decklist||'');setCommanderName(data.commanderName||'');setCommander(null);setResult(null);setError('');setStatus('');setView('summary')}
+  const nativeSet=(el,value)=>{if(!el)return;const proto=el instanceof HTMLTextAreaElement?HTMLTextAreaElement.prototype:HTMLInputElement.prototype;Object.getOwnPropertyDescriptor(proto,'value')?.set?.call(el,value);el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}))}
+
+  function applyDeckImport(data){
+    setDeckText(data.decklist||'')
+    let c1=data.commanderName||''
+    let c2=''
+    if(Array.isArray(data.commanderNames)&&data.commanderNames.length>1){
+      c1=data.commanderNames[0]
+      c2=data.commanderNames[1]
+    }else if(c1.includes('+')){
+      const parts=c1.split('+').map(s=>s.trim()).filter(Boolean)
+      c1=parts[0]||''
+      c2=parts[1]||''
+    }
+    setCommanderName(c1)
+    if(typeof document!=='undefined'){
+      const el1=document.getElementById('commander')
+      if(el1&&el1.value!==c1)nativeSet(el1,c1)
+      const el2=document.getElementById('commander2')
+      if(el2)nativeSet(el2,c2)
+    }
+    setCommander(null)
+    setResult(null)
+    setError('')
+    setStatus('')
+    setView('summary')
+  }
+
+  useEffect(()=>{
+    const onImport=e=>{if(e.detail)applyDeckImport(e.detail)}
+    window.addEventListener('aeon-deck-imported',onImport)
+    return()=>window.removeEventListener('aeon-deck-imported',onImport)
+  },[])
 
   async function analyze(){
     setError('');setResult(null)
     try{
       if(!parsed.length)throw new Error(L('Paste a decklist using the format "1 Card Name".','Colle une decklist au format "1 Nom de carte".'))
       if(!commanderName.trim())throw new Error(L('Enter the commander. Aeon Scorer does not score a Commander list without its commander.','Renseigne le commandant : Aeon Scorer ne score pas une liste Commander sans son commandant.'))
-      if(total!==99&&total!==100)throw new Error(L(`The list contains ${total} cards. Import exactly 99 cards when the commander is separate, or 100 when it is included. Two-commander Partner / Background configurations are not supported yet.`,`La liste contient ${total} cartes. Importe exactement 99 cartes si le commandant est séparé, ou 100 s’il est inclus. Les configurations Partner / Background à deux commandants ne sont pas encore gérées.`))
-      setStatus(`Scryfall: 0/${parsed.length}`)
-      const fetched=await fetchCards(parsed,(n,totalCards)=>setStatus(`Scryfall: ${n}/${totalCards}`))
-      if(fetched.length!==total)throw new Error(L(`${total-fetched.length} card(s) could not be resolved. Fix the list before scoring it; a partial list would distort the result.`,`${total-fetched.length} carte(s) n’ont pas été résolues. Corrige la liste avant de scorer : une liste partielle fausserait le résultat.`))
-      setStatus(L('Loading commander…','Chargement du commandant…'))
-      const cmd=await fetchCard(commanderName)
-      if(!cmd)throw new Error(L('Commander not found on Scryfall.','Commandant introuvable sur Scryfall.'))
-      const sameCommander=c=>(c.id&&cmd.id&&c.id===cmd.id)||c.name.toLowerCase()===cmd.name.toLowerCase()||(c.aliases||[]).some(a=>a.toLowerCase()===commanderName.trim().toLowerCase())
-      const commanderCopies=fetched.filter(sameCommander).length
-      if(commanderCopies>1)throw new Error(L(`The commander appears ${commanderCopies} times in the list. A single-commander analysis allows at most one copy.`,`Le commandant apparaît ${commanderCopies} fois dans la liste. Une analyse à commandant unique attend au maximum une copie.`))
-      if(commanderCopies===1&&total!==100)throw new Error(L('The commander is included in the list, so the total must be 100 cards.','Le commandant est inclus dans la liste : le total doit être 100 cartes.'))
-      if(commanderCopies===0&&total!==99)throw new Error(L('The commander is separate, so the main deck must contain exactly 99 cards.','Le commandant n’est pas dans la liste : le main deck doit contenir exactement 99 cartes.'))
-      const allowed=new Set(cmd.colorIdentity||[]),offColor=fetched.filter(c=>!sameCommander(c)&&(c.colorIdentity||[]).some(x=>!allowed.has(x)))
-      if(offColor.length)throw new Error(L(`Color identity mismatch with ${cmd.name}: ${[...new Set(offColor.map(c=>c.name))].slice(0,6).join(', ')}${offColor.length>6?'…':''}`,`Identité couleur incompatible avec ${cmd.name} : ${[...new Set(offColor.map(c=>c.name))].slice(0,6).join(', ')}${offColor.length>6?'…':''}`))
-      setCommander(cmd);setStatus(L(`Simulating ${iterations.toLocaleString('en-US')} sequences…`,`Simulation de ${iterations.toLocaleString('fr-FR')} séquences…`));await new Promise(r=>setTimeout(r,20))
-      setResult(analyzePower(fetched,cmd,aeonMap,iterations));setView('summary');setStatus('')
+      
+      const secondCommanderEl=typeof document!=='undefined'?document.getElementById('commander2'):null
+      const rawSecond=secondCommanderEl?.value?.trim()||(commanderName.includes('+')?commanderName.split('+')[1]?.trim():'')
+      const rawFirst=commanderName.includes('+')?commanderName.split('+')[0]?.trim():commanderName.trim()
+
+      if(rawSecond){
+        // Two-commander Partner / Background / Friends forever / Doctor's companion
+        if(total<98||total>100)throw new Error(L(`The list contains ${total} cards. Import 98 cards with separate commanders, or up to 100 lines when commanders are included. Two-commander Partner / Background configurations are fully supported.`,`La liste contient ${total} cartes. Importe 98 cartes si les commandants sont séparés, ou jusqu’à 100 lignes s’ils sont inclus. Les configurations Partner / Background à deux commandants sont pleinement gérées.`))
+        setStatus(`Scryfall: 0/${parsed.length}`)
+        const fetched=await fetchCards(parsed,(n,totalCards)=>setStatus(`Scryfall: ${n}/${totalCards}`))
+        if(fetched.length!==total)throw new Error(L(`${total-fetched.length} card(s) could not be resolved. Fix the list before scoring it; a partial list would distort the result.`,`${total-fetched.length} carte(s) n’ont pas été résolues. Corrige la liste avant de scorer : une liste partielle fausserait le résultat.`))
+        
+        setStatus(L('Resolving command zone…','Résolution de la command zone…'))
+        const [a,b]=await Promise.all([fetchCard(rawFirst),fetchCard(rawSecond)])
+        if(!a||!b)throw new Error(L('One commander could not be resolved on Scryfall.','Un des commandants est introuvable sur Scryfall.'))
+        const legal=validateCommanderPair(a,b)
+        if(!legal.ok)throw new Error(t(lang,legal.reason,'Cette paire ne présente pas une capacité de double commandant prise en charge.'))
+        
+        const norm=s=>String(s||'').trim().toLowerCase()
+        const cmdNames=new Set([norm(a.name),norm(b.name)])
+        const main=fetched.filter(c=>!cmdNames.has(norm(c.name)))
+        if(main.length!==98)throw new Error(L(`After removing the two commanders, Aeon finds ${main.length} library cards instead of 98.`,`Après retrait des deux commandants, Aeon trouve ${main.length} cartes en bibliothèque au lieu de 98.`))
+        
+        const allowed=new Set(combinedColorIdentity([a,b]))
+        const offColor=main.filter(c=>(c.colorIdentity||[]).some(x=>!allowed.has(x)))
+        if(offColor.length)throw new Error(L(`Combined color identity mismatch: ${[...new Set(offColor.map(c=>c.name))].slice(0,6).join(', ')}${offColor.length>6?'…':''}`,`Identité couleur combinée incompatible : ${[...new Set(offColor.map(c=>c.name))].slice(0,6).join(', ')}${offColor.length>6?'…':''}`))
+        
+        setCommander({name:`${a.name} + ${b.name}`,colorIdentity:combinedColorIdentity([a,b])})
+        setStatus(L(`Simulating ${iterations.toLocaleString('en-US')} sequences…`,`Simulation de ${iterations.toLocaleString('fr-FR')} séquences…`))
+        await new Promise(r=>setTimeout(r,20))
+        setResult(analyzePower(fetched,[a,b],aeonMap,iterations))
+        setView('summary')
+        setStatus('')
+      }else{
+        // Single commander
+        if(total!==99&&total!==100)throw new Error(L(`The list contains ${total} cards. Import exactly 99 cards when the commander is separate, or 100 when it is included. Two-commander Partner / Background configurations are supported by filling the second commander.`,`La liste contient ${total} cartes. Importe exactement 99 cartes si le commandant est séparé, ou 100 s’il est inclus. Les configurations Partner / Background à deux commandants sont gérées en renseignant le second commandant.`))
+        setStatus(`Scryfall: 0/${parsed.length}`)
+        const fetched=await fetchCards(parsed,(n,totalCards)=>setStatus(`Scryfall: ${n}/${totalCards}`))
+        if(fetched.length!==total)throw new Error(L(`${total-fetched.length} card(s) could not be resolved. Fix the list before scoring it; a partial list would distort the result.`,`${total-fetched.length} carte(s) n’ont pas été résolues. Corrige la liste avant de scorer : une liste partielle fausserait le résultat.`))
+        setStatus(L('Loading commander…','Chargement du commandant…'))
+        const cmd=await fetchCard(rawFirst)
+        if(!cmd)throw new Error(L('Commander not found on Scryfall.','Commandant introuvable sur Scryfall.'))
+        const sameCommander=c=>(c.id&&cmd.id&&c.id===cmd.id)||c.name.toLowerCase()===cmd.name.toLowerCase()||(c.aliases||[]).some(a=>a.toLowerCase()===rawFirst.toLowerCase())
+        const commanderCopies=fetched.filter(sameCommander).length
+        if(commanderCopies>1)throw new Error(L(`The commander appears ${commanderCopies} times in the list. A single-commander analysis allows at most one copy.`,`Le commandant apparaît ${commanderCopies} fois dans la liste. Une analyse à commandant unique attend au maximum une copie.`))
+        if(commanderCopies===1&&total!==100)throw new Error(L('The commander is included in the list, so the total must be 100 cards.','Le commandant est inclus dans la liste : le total doit être 100 cartes.'))
+        if(commanderCopies===0&&total!==99)throw new Error(L('The commander is separate, so the main deck must contain exactly 99 cards.','Le commandant n’est pas dans la liste : le main deck doit contenir exactement 99 cartes.'))
+        const allowed=new Set(cmd.colorIdentity||[]),offColor=fetched.filter(c=>!sameCommander(c)&&(c.colorIdentity||[]).some(x=>!allowed.has(x)))
+        if(offColor.length)throw new Error(L(`Color identity mismatch with ${cmd.name}: ${[...new Set(offColor.map(c=>c.name))].slice(0,6).join(', ')}${offColor.length>6?'…':''}`,`Identité couleur incompatible avec ${cmd.name} : ${[...new Set(offColor.map(c=>c.name))].slice(0,6).join(', ')}${offColor.length>6?'…':''}`))
+        setCommander(cmd);setStatus(L(`Simulating ${iterations.toLocaleString('en-US')} sequences…`,`Simulation de ${iterations.toLocaleString('fr-FR')} séquences…`));await new Promise(r=>setTimeout(r,20))
+        setResult(analyzePower(fetched,cmd,aeonMap,iterations));setView('summary');setStatus('')
+      }
     }catch(e){setError(e.message||String(e));setStatus('')}
   }
   async function importAeon(ev){const f=ev.target.files?.[0];if(!f)return;const map=parseAeonShiftCsv(await f.text());setAeonMap(map);if(!map.size)setError(L('AeonShift CSV was empty or not recognized.','CSV AeonShift non reconnu ou vide.'))}

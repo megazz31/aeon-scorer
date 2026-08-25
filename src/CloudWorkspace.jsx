@@ -5,7 +5,7 @@ import { ENGINE_VERSION,SEMANTIC_VERSION } from './version.js'
 const t=(lang,en,fr)=>lang==='fr'?fr:en
 const language=()=>localStorage.getItem('aeon-lang')==='fr'?'fr':'en'
 const nativeSet=(el,value)=>{if(!el)return;const proto=el instanceof HTMLTextAreaElement?HTMLTextAreaElement.prototype:HTMLInputElement.prototype;Object.getOwnPropertyDescriptor(proto,'value')?.set?.call(el,value);el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}))}
-const currentInput=()=>({decklist:document.getElementById('decklist')?.value||'',commander:document.getElementById('commander')?.value||''})
+const currentInput=()=>({decklist:document.getElementById('decklist')?.value||'',commander:document.getElementById('commander')?.value||'',commander2:document.getElementById('commander2')?.value?.trim()||''})
 const when=x=>x?new Intl.DateTimeFormat(language()==='fr'?'fr-FR':'en-US',{dateStyle:'medium',timeStyle:'short'}).format(new Date(x)):'—'
 function authMessage(error,lang){
  const raw=String(error?.message||error||''),code=String(error?.code||'').toLowerCase(),s=raw.toLowerCase()
@@ -67,11 +67,98 @@ export default function CloudWorkspace({children}){
  async function reload(s=session){if(!s)return;setBusy(true);try{const rows=await listDecks(s);const enriched=await Promise.all(rows.map(async d=>{const [history,versions]=await Promise.all([analysisHistory(s,d.id,8).catch(()=>[]),deckVersions(s,d.id,12).catch(()=>[])]);return {...d,history,versions,latest:history[0]||null}}));setDecks(enriched)}catch(e){setNotice(e.message||String(e))}finally{setBusy(false)}}
  useEffect(()=>{if(session)reload(session);else setDecks([])},[session?.user?.id])
  useEffect(()=>{
-   const hook=async({result,cards,commander,iterations})=>{try{const input=currentInput();if(!input.decklist||!commander?.name)return;const deckHash=await hashDeck(input.decklist,commander.name),uniq=new Map();for(const c of [...(cards||[]),commander].filter(Boolean)){const id=c.oracleId||c.id||c.name;if(!uniq.has(id))uniq.set(id,{oracleId:c.oracleId||c.id,scryfallId:c.scryfallId||c.id||null,name:c.name,oracle:c.oracle||'',type:c.type||'',tags:c.tags||[]})}const out=await recordAnalysis(session,{deckId:active?.id||null,deckName:active?.name||sourceMeta?.deckName||null,decklist:input.decklist,commanderName:commander.name,deckHash,engineVersion:ENGINE_VERSION,semanticVersion:SEMANTIC_VERSION,iterations,cards:[...uniq.values()],result});if(active&&out?.ok)reload(session)}catch(e){console.warn('Aeon cloud analysis logging failed',e)}}
+   const hook=async({result,cards,commander,commanders,iterations})=>{
+     try{
+       const input=currentInput();
+       const cmdList=(commanders?.length?commanders:[commander]).filter(Boolean);
+       if(!input.decklist||!cmdList.length)return;
+       const fullCommanderName=cmdList.map(c=>c.name).join(' + ');
+       const deckHash=await hashDeck(input.decklist,fullCommanderName),uniq=new Map();
+       for(const c of [...(cards||[]),...cmdList]){
+         const id=c.oracleId||c.id||c.name;
+         if(!uniq.has(id))uniq.set(id,{oracleId:c.oracleId||c.id,scryfallId:c.scryfallId||c.id||null,name:c.name,oracle:c.oracle||'',type:c.type||'',tags:c.tags||[]})
+       }
+       const out=await recordAnalysis(session,{deckId:active?.id||null,deckName:active?.name||sourceMeta?.deckName||null,decklist:input.decklist,commanderName:fullCommanderName,deckHash,engineVersion:ENGINE_VERSION,semanticVersion:SEMANTIC_VERSION,iterations,cards:[...uniq.values()],result});
+       if(active&&out?.ok)reload(session)
+     }catch(e){console.warn('Aeon cloud analysis logging failed',e)}
+   };
    window.__AEON_ANALYSIS_HOOK__=hook;return()=>{if(window.__AEON_ANALYSIS_HOOK__===hook)delete window.__AEON_ANALYSIS_HOOK__}
  },[session?.access_token,active?.id,active?.name,sourceMeta?.deckName])
- async function saveCurrent(){if(!session)return setOpen(true);const input=currentInput();if(!input.decklist||!input.commander)return setNotice(t(lang,'Paste a decklist and commander first.','Colle d’abord une decklist et un commandant.'));setBusy(true);try{const hash=await hashDeck(input.decklist,input.commander),name=(saveName||active?.name||sourceMeta?.deckName||input.commander).trim().slice(0,100),row=await saveDeck(session,{id:active?.id||null,name,commanderName:input.commander,decklist:input.decklist,deckHash:hash,engineVersion:ENGINE_VERSION,sourceUrl:sourceMeta?.sourceUrl||active?.source_url||null,sourceProvider:sourceMeta?.source||active?.source_provider||null,sourceDeckId:sourceMeta?.sourceId||active?.source_deck_id||null,sourceTitle:sourceMeta?.deckName||active?.source_title||null,sourceFingerprint:sourceMeta?.sourceFingerprint||hash});await saveDeckVersion(session,{deckId:row.id,deckHash:hash,commanderNames:[input.commander],decklist:input.decklist,sourceProvider:sourceMeta?.source||row.source_provider||null,sourceUrl:sourceMeta?.sourceUrl||row.source_url||null,sourceFingerprint:sourceMeta?.sourceFingerprint||hash});setActive(row);setSaveName(row.name);setNotice(t(lang,'Deck saved and versioned. Future analyses will be attached to its history.','Deck sauvegardé et versionné. Les prochaines analyses seront liées à son historique.'));await reload(session)}catch(e){setNotice(e.message||String(e))}finally{setBusy(false)}}
- function load(deck){nativeSet(document.getElementById('decklist'),deck.original_decklist);nativeSet(document.getElementById('commander'),deck.commander_name||deck.deck_data?.commander||'');setActive(deck);setSaveName(deck.name);const source=deck.source_url?{source:deck.source_provider,sourceUrl:deck.source_url,sourceId:deck.source_deck_id,deckName:deck.source_title||deck.name,decklist:deck.original_decklist,commanderName:deck.commander_name,sourceFingerprint:deck.source_fingerprint}:null;setSourceMeta(source);if(source)window.dispatchEvent(new CustomEvent('aeon-deck-imported',{detail:source}));setNotice(t(lang,'Deck loaded. Run a new analysis to compare it with older engine versions.','Deck chargé. Relance une analyse pour la comparer aux anciennes versions du moteur.'));setOpen(false);window.scrollTo({top:document.querySelector('.analyzerCard')?.offsetTop||0,behavior:'smooth'})}
+ async function saveCurrent(){
+   if(!session)return setOpen(true);
+   const input=currentInput();
+   const c1=input.commander?.trim()||'';
+   const c2=input.commander2?.trim()||'';
+   if(!input.decklist||!c1)return setNotice(t(lang,'Paste a decklist and commander first.','Colle d’abord une decklist et un commandant.'));
+   setBusy(true);
+   try{
+     const fullCommanderName=c2?`${c1} + ${c2}`:c1;
+     const cmdNames=c2?[c1,c2]:[c1];
+     const hash=await hashDeck(input.decklist,fullCommanderName),name=(saveName||active?.name||sourceMeta?.deckName||fullCommanderName).trim().slice(0,100);
+     const row=await saveDeck(session,{id:active?.id||null,name,commanderName:fullCommanderName,decklist:input.decklist,deckHash:hash,engineVersion:ENGINE_VERSION,sourceUrl:sourceMeta?.sourceUrl||active?.source_url||null,sourceProvider:sourceMeta?.source||active?.source_provider||null,sourceDeckId:sourceMeta?.sourceId||active?.source_deck_id||null,sourceTitle:sourceMeta?.deckName||active?.source_title||null,sourceFingerprint:sourceMeta?.sourceFingerprint||hash});
+     await saveDeckVersion(session,{deckId:row.id,deckHash:hash,commanderNames:cmdNames,decklist:input.decklist,sourceProvider:sourceMeta?.source||row.source_provider||null,sourceUrl:sourceMeta?.sourceUrl||row.source_url||null,sourceFingerprint:sourceMeta?.sourceFingerprint||hash});
+     setActive(row);
+     setSaveName(row.name);
+     setNotice(t(lang,'Deck saved and versioned. Future analyses will be attached to its history.','Deck sauvegardé et versionné. Les prochaines analyses seront liées à son historique.'));
+     await reload(session)
+   }catch(e){setNotice(e.message||String(e))}finally{setBusy(false)}
+ }
+ function load(deck){
+   if(window.location.pathname!=='/'){
+     window.history.pushState({},'','/');
+     window.dispatchEvent(new PopStateEvent('popstate'));
+   }
+   let c1='';
+   let c2='';
+   if(deck.versions?.[0]?.commander_names?.length>1){
+     c1=deck.versions[0].commander_names[0]||'';
+     c2=deck.versions[0].commander_names[1]||'';
+   }else if(deck.latest?.result?.commanderNames?.length>1){
+     c1=deck.latest.result.commanderNames[0]||'';
+     c2=deck.latest.result.commanderNames[1]||'';
+   }else if(deck.deck_data?.commanderNames?.length>1){
+     c1=deck.deck_data.commanderNames[0]||'';
+     c2=deck.deck_data.commanderNames[1]||'';
+   }else if(deck.commander_name){
+     if(deck.commander_name.includes('+')){
+       const parts=deck.commander_name.split('+').map(s=>s.trim()).filter(Boolean);
+       c1=parts[0]||'';
+       c2=parts[1]||'';
+     }else{
+       c1=deck.commander_name;
+     }
+   }else if(deck.deck_data?.commander){
+     if(deck.deck_data.commander.includes('+')){
+       const parts=deck.deck_data.commander.split('+').map(s=>s.trim()).filter(Boolean);
+       c1=parts[0]||'';
+       c2=parts[1]||'';
+     }else{
+       c1=deck.deck_data.commander;
+     }
+   }
+
+   nativeSet(document.getElementById('decklist'),deck.original_decklist||'');
+   nativeSet(document.getElementById('commander'),c1);
+   nativeSet(document.getElementById('commander2'),c2);
+   setActive(deck);
+   setSaveName(deck.name);
+   const commanderNames=[c1,c2].filter(Boolean);
+   const source={
+     source:deck.source_provider||'saved',
+     sourceUrl:deck.source_url||null,
+     sourceId:deck.source_deck_id||null,
+     deckName:deck.source_title||deck.name,
+     decklist:deck.original_decklist,
+     commanderName:c1,
+     commanderNames,
+     sourceFingerprint:deck.source_fingerprint||deck.deck_hash
+   };
+   setSourceMeta(source);
+   window.dispatchEvent(new CustomEvent('aeon-deck-imported',{detail:source}));
+   setNotice(t(lang,'Deck loaded. Run a new analysis to compare it with older engine versions.','Deck chargé. Relance une analyse pour la comparer aux anciennes versions du moteur.'));
+   setOpen(false);
+   window.scrollTo({top:document.querySelector('.analyzerCard')?.offsetTop||0,behavior:'smooth'});
+ }
  async function remove(deck){if(!confirm(t(lang,`Delete “${deck.name}” and its linked analysis history from your account?`,`Supprimer « ${deck.name} » et son historique d’analyses lié de ton compte ?`)))return;setBusy(true);try{await deleteDeck(session,deck.id);if(active?.id===deck.id){setActive(null);setSaveName('')}await reload(session)}finally{setBusy(false)}}
  async function eraseHistory(){if(!confirm(t(lang,'Delete every analysis stored for this account? Saved decklists will remain. This cannot be undone.','Supprimer toutes les analyses stockées pour ce compte ? Les decklists sauvegardées resteront. Cette action est irréversible.')))return;setBusy(true);try{const count=await deleteMyAnalysisData(session);setNotice(t(lang,`${Number(count)||0} stored analyses deleted. Your saved decklists remain.`,`${Number(count)||0} analyses stockées supprimées. Tes decklists sauvegardées restent.`));await reload(session)}catch(e){setNotice(e.message||String(e))}finally{setBusy(false)}}
  async function logout(){await signOut(session);setSession(null);setRecovery(false);setActive(null);setOpen(false)}

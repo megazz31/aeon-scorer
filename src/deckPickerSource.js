@@ -121,7 +121,14 @@ export function savedDeckToShareRow(deck) {
   const latest = deck.latest || {}
   const res = latest.result || {}
   const profile = res.profile || {}
-  const commanderNames = deck.commander_name ? [deck.commander_name] : []
+  let commanderNames = []
+  if (Array.isArray(res.commanderNames) && res.commanderNames.length > 0) {
+    commanderNames = res.commanderNames
+  } else if (deck.commander_name) {
+    commanderNames = deck.commander_name.includes('+')
+      ? deck.commander_name.split('+').map(s => s.trim()).filter(Boolean)
+      : [deck.commander_name]
+  }
   return {
     share_code: `saved:${deck.id}`,
     code: `saved:${deck.id}`,
