@@ -2,9 +2,10 @@ import 'jsr:@supabase/functions-js/edge-runtime.d.ts'
 import { createClient } from 'npm:@supabase/supabase-js@2'
 
 const ENGINE_VERSION = '3.3.0'
-const SEMANTIC_VERSION = '3.3.0-semantic-15'
+const SEMANTIC_VERSION = '3.3.0-semantic-16'
 const SUPPORTED_VERSION_PAIRS = new Set([
   `${ENGINE_VERSION}|${SEMANTIC_VERSION}`,
+  '3.3.0|3.3.0-semantic-15',
   '3.3.0|3.3.0-semantic-14',
   '3.2.0|3.2.0-semantic-1'
 ])
