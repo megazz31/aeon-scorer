@@ -3,6 +3,10 @@ import { loadAnalysisShare } from './supabaseClient.js'
 import { normalizedShare,podSummary,roadmapResultFromShare } from './productData.js'
 import { buildPodIntelligence } from './engine/roadmapEngine.js'
 import { rule0AnswerKey } from './engine/rule0Intent.js'
+import { resolveDeckReference } from './deckPickerSource.js'
+import DeckSlotPicker from './DeckSlotPicker.jsx'
+import DeckPresetsBar from './DeckPresetsBar.jsx'
+import DeckPickerModal from './DeckPickerModal.jsx'
 import GameObservationForm from './GameObservationForm.jsx'
 import './product.css'
 
@@ -31,14 +35,178 @@ const asymmetryLabel=code=>({
 }[code]||code)
 
 export function PodMatchPage(){
-  const initial=useMemo(()=>{const qs=new URLSearchParams(location.search),first=qs.get('d')||'';return [first,'','','']},[]),[inputs,setInputs]=useState(initial),[rows,setRows]=useState([]),[rule0Answers,setRule0Answers]=useState({}),[error,setError]=useState(''),[busy,setBusy]=useState(false)
-  async function compare(){setBusy(true);setError('');try{const codes=[...new Set(inputs.map(shareCode).filter(Boolean))].slice(0,4);if(codes.length<2)throw new Error(t('Add at least two Aeon share links/codes.','Ajoute au moins deux liens/codes de partage Aeon.'));const loaded=await Promise.all(codes.map(loadAnalysisShare));if(loaded.some(x=>!x))throw new Error(t('One share could not be loaded.','Un partage n’a pas pu être chargé.'));setRule0Answers({});setRows(loaded)}catch(e){setError(e.message||String(e))}finally{setBusy(false)}}
-  const summary=useMemo(()=>podSummary(rows),[rows]),supportsIntelligence=rows.length>1&&rows.every(r=>r.product_intelligence?.modelVersion),advanced=useMemo(()=>supportsIntelligence?buildPodIntelligence(rows.map(roadmapResultFromShare),{rule0Answers}):null,[rows,supportsIntelligence,rule0Answers]),label={close:t('Very close normal ranges','Plages habituelles très proches'),playable:t('Playable normal-range spread','Écart de plages jouable'),mismatch:t('Range mismatch to discuss','Écart de plages à discuter'),'need-more':t('Add decks','Ajoute des decks')}[summary.fit]
-  const worstWindow=advanced?.threatAnswer?.decks?.flatMap(d=>d.turns.map(x=>({...x,deckIndex:d.index}))).sort((a,b)=>b.gap-a.gap)[0],quality=advanced?.gameQuality,answerDebts=advanced?.answerDebt?.highest||[],agencyRisk=advanced?.agencyTimeline?.highestRisk||null,observationPrediction=advanced?{riskScore:quality?.risk?.score||0,riskLevel:quality?.risk?.level||'low',podMismatch:advanced.podMatch?.mismatch||0,threatGap:worstWindow?.gap||0}:null
-  return <main className="productPage wide"><a className="productBack" href="/">← Aeon Scorer</a><header className="productHero"><span>AEON POD MATCH · EXPERIMENTAL</span><h1>{t('Compare the table, not just one number.','Compare la table, pas seulement un chiffre.')}</h1><p>{t('Paste 2–4 Aeon share links. New intelligence-enabled shares compare experience, dependencies and class-specific temporal threat/answer windows; older shares keep the original range comparison.','Colle 2 à 4 liens Aeon. Les nouveaux partages comparent expérience, dépendances et fenêtres temporelles menace/réponse par classe ; les anciens gardent la comparaison de plages d’origine.')}</p></header>
-  <div className="podInputs">{inputs.map((v,i)=><input key={i} value={v} onChange={e=>setInputs(xs=>xs.map((x,j)=>j===i?e.target.value:x))} placeholder={`Deck ${i+1} · https://…/a/…`}/>)}</div><button className="productPrimary" onClick={compare} disabled={busy}>{busy?t('Loading…','Chargement…'):t('Compare pod','Comparer le pod')}</button>{error&&<div className="productError">{error}</div>}
-  {rows.length>1&&<section className="podResults"><div className={`podVerdict ${summary.fit}`}><b>{quality?t(`Game quality: ${quality.compatibility}`,`Qualité de partie : ${quality.compatibility}`):label}</b><span>{quality?t(`Experimental non-game risk: ${quality.risk.level} · ${quality.risk.score}/100`,`Risque expérimental de non-game : ${quality.risk.level} · ${quality.risk.score}/100`):t(`Median spread ${summary.medianSpread} · peak spread ${summary.peakSpread}`,`Écart médiane ${summary.medianSpread} · écart pic ${summary.peakSpread}`)}</span></div>{summary.decks.map((d,i)=><div className="podDeck" key={d.code||i}><div><b>{d.deckName}</b><small>{d.commanderNames.join(' + ')}</small></div><strong>{d.median}</strong><span>{d.p20}–{d.p80}</span><span>{t('peak','pic')} {d.peak}</span><Range d={d}/></div>)}
-  {advanced&&<div className="podWarnings"><b>{t('Aeon Pod Intelligence','Aeon Pod Intelligence')} · {advanced.modelVersion}</b><div><span>{t('Multi-axis mismatch','Mismatch multi-axes')}</span><small>{advanced.podMatch.mismatch}/100 · {advanced.podMatch.level}{advanced.adaptiveRule0.intentOverlay.answersApplied?` · ${advanced.adaptiveRule0.intentOverlay.answersApplied} Rule 0 answer(s) applied`:''}</small></div>{worstWindow&&<div><span>{t('Largest exposed threat window','Plus grande fenêtre de menace exposée')}</span><small>{summary.decks[worstWindow.deckIndex]?.deckName} · T{worstWindow.turn} · threat {worstWindow.threat} / answer {worstWindow.answer} · gap {worstWindow.gap}</small></div>}{agencyRisk&&<div><span>{t('Agency diagnostic','Diagnostic Agency')} · {summary.decks[agencyRisk.index]?.deckName}</span><small>{agencyRisk.riskLevel} · {t('max participation gap','gap de participation max')} {agencyRisk.maxParticipationGap}/100 · {t('meaningful agency','agence significative')} {agencyRisk.firstMeaningfulAgencyTurn?`T${agencyRisk.firstMeaningfulAgencyTurn}`:'—'} · {t('material pressure','pression matérielle')} {agencyRisk.firstMaterialPressureTurn?`T${agencyRisk.firstMaterialPressureTurn}`:'—'}{agencyRisk.pressureBeforeAgency?` · ${t('pressure arrives first','la pression arrive avant')}`:''}</small></div>}{answerDebts.map(d=><div key={`answer-debt-${d.answerClass}`}><span>{t('Answer Debt','Dette de réponse')} · {pretty(d.answerClass)}</span><small>{d.level} · {d.score}/100{d.worst?` · T${d.worst.turn} · ${pretty(d.worst.threatId)}`:''}</small></div>)}{advanced.gameQuality.reasons.slice(0,4).map((r,i)=><div key={`${r.signal}-${i}`}><span>{pretty(r.signal)}</span><small>{r.severity}{r.turn?` · T${r.turn}`:''}{r.answerClass?` · ${r.answerClass}`:''}</small></div>)}{advanced.adaptiveRule0.questions.map(q=>{const key=rule0AnswerKey(q.deckIndex,q.id),value=rule0Answers[key]||'';return <div key={key}><span>{t('Adaptive Rule 0','Rule 0 adaptative')} · {summary.decks[q.deckIndex]?.deckName}</span><small>{lang()==='fr'?(q.questionFr||q.question):q.question}</small><select value={value} onChange={e=>setRule0Answers(x=>({...x,[key]:e.target.value}))}><option value="">{t('Choose an answer…','Choisir une réponse…')}</option>{(q.choices||[]).map(c=><option key={c.value} value={c.value}>{lang()==='fr'?(c.labelFr||c.label):c.label}</option>)}</select></div>})}</div>}
-  {!advanced&&!!summary.warnings.length&&<div className="podWarnings"><b>{t('Aeon asymmetry flags','Alertes d’asymétrie Aeon')}</b>{summary.warnings.map((w,i)=><div key={w.key||i}><span>{asymmetryLabel(w.code)}</span><small>{summary.decks[w.a]?.deckName} ↔ {summary.decks[w.b]?.deckName} · Δ {w.gap}</small></div>)}</div>}
-  <p className="productNote">{advanced?t('Game Quality is a categorical experimental risk model, not a win-rate or exact good-game probability. Agency is a structural participation diagnostic and is not included in the Game Quality score. Answer Debt is a class-specific coverage diagnostic, and Rule 0 answers alter only declared experience compatibility; objective capability and Threat–Answer evidence remain unchanged.','Game Quality est un modèle de risque catégoriel expérimental, pas un win rate ni une probabilité exacte de bonne partie. Agency est un diagnostic structurel de participation et n’entre pas dans le score Game Quality. Answer Debt est un diagnostic de couverture par classe, et les réponses Rule 0 ne modifient que la compatibilité d’expérience déclarée ; les capacités objectives et les preuves Threat–Answer restent inchangées.'):summary.fit==='mismatch'?t('At least one pair has a large median gap or little overlap in its normal output bands. Discuss intent, combos and the asymmetry flags before starting.','Au moins une paire présente un gros écart de médiane ou peu de recouvrement des sorties habituelles. Discutez intention, combos et alertes d’asymétrie avant de lancer la partie.'):summary.warnings.length?t('Normal ranges overlap, but at least one deck has a materially different peak, variance or dimension profile. Treat this as a Rule 0 warning, not an automatic mismatch.','Les plages habituelles se recouvrent, mais au moins un deck présente un profil de pic, variance ou dimension sensiblement différent. C’est une alerte Rule 0, pas un mismatch automatique.'):t('The normal output bands overlap reasonably well and no major Aeon asymmetry flag fired. Pilot skill, matchup and politics still matter.','Les plages de sorties habituelles se recouvrent raisonnablement et aucune grosse asymétrie Aeon n’est détectée. Pilotage, matchup et politique restent importants.')}</p>{advanced&&<GameObservationForm rows={rows} podModelVersion={advanced.modelVersion} prediction={observationPrediction}/>}</section>}
-  </main>}
+  const initial=useMemo(()=>{
+    const qs=new URLSearchParams(location.search)
+    const first=qs.get('d')||(qs.get('precon')?`precon:${qs.get('precon')}`:'')
+    const multi=qs.get('decks')?qs.get('decks').split(',').map(x=>x.trim()).filter(Boolean):[]
+    if(multi.length>0){
+      return [multi[0]||'',multi[1]||'',multi[2]||'',multi[3]||'']
+    }
+    return [first,'','','']
+  },[])
+  const [inputs,setInputs]=useState(initial)
+  const [rows,setRows]=useState([])
+  const [rule0Answers,setRule0Answers]=useState({})
+  const [error,setError]=useState('')
+  const [busy,setBusy]=useState(false)
+  const [modalOpen,setModalOpen]=useState(false)
+
+  async function compare(customInputs=null){
+    setBusy(true);setError('')
+    try{
+      const currentInputs=customInputs||inputs
+      const cleanInputs=currentInputs.map(x=>String(x||'').trim()).filter(Boolean)
+      const uniqueInputs=[...new Set(cleanInputs)].slice(0,4)
+      if(uniqueInputs.length<2){
+        throw new Error(t('Add at least two decks (share links, precons, or saved decks).','Ajoute au moins deux decks (liens de partage, préconstruits ou decks sauvegardés).'))
+      }
+      const loaded=await Promise.all(uniqueInputs.map(x=>resolveDeckReference(x)))
+      if(loaded.some(x=>!x)){
+        throw new Error(t('One or more decks could not be loaded. Check that share links or deck names are valid.','Un ou plusieurs decks n’ont pas pu être chargés. Vérifie les liens ou identifiants.'))
+      }
+      setRule0Answers({})
+      setRows(loaded)
+    }catch(e){
+      setError(e.message||String(e))
+    }finally{
+      setBusy(false)
+    }
+  }
+
+  function handlePreset(refs){
+    const next=[refs[0]||'',refs[1]||'',refs[2]||'',refs[3]||'']
+    setInputs(next)
+    compare(next)
+  }
+
+  function handleMultiModalSelect(items){
+    const refs=items.map(x=>typeof x==='string'?x:x.ref)
+    const next=[refs[0]||'',refs[1]||'',refs[2]||'',refs[3]||'']
+    setInputs(next)
+    if(refs.length>=2){
+      compare(next)
+    }
+  }
+
+  useEffect(()=>{
+    if(inputs.filter(Boolean).length>=2){
+      compare(inputs)
+    }
+  },[])
+
+  const summary=useMemo(()=>podSummary(rows),[rows])
+  const supportsIntelligence=rows.length>1&&rows.every(r=>r.product_intelligence?.modelVersion||r.productIntelligence?.modelVersion)
+  const advanced=useMemo(()=>supportsIntelligence?buildPodIntelligence(rows.map(roadmapResultFromShare),{rule0Answers}):null,[rows,supportsIntelligence,rule0Answers])
+  const label={close:t('Very close normal ranges','Plages habituelles très proches'),playable:t('Playable normal-range spread','Écart de plages jouable'),mismatch:t('Range mismatch to discuss','Écart de plages à discuter'),'need-more':t('Add decks','Ajoute des decks')}[summary.fit]
+  const worstWindow=advanced?.threatAnswer?.decks?.flatMap(d=>d.turns.map(x=>({...x,deckIndex:d.index}))).sort((a,b)=>b.gap-a.gap)[0]
+  const quality=advanced?.gameQuality
+  const answerDebts=advanced?.answerDebt?.highest||[]
+  const agencyRisk=advanced?.agencyTimeline?.highestRisk||null
+  const observationPrediction=advanced?{riskScore:quality?.risk?.score||0,riskLevel:quality?.risk?.level||'low',podMismatch:advanced.podMatch?.mismatch||0,threatGap:worstWindow?.gap||0}:null
+
+  return <main className="productPage wide">
+    <a className="productBack" href="/">← Aeon Scorer</a>
+    <header className="productHero">
+      <span>AEON POD MATCH · EXPERIMENTAL</span>
+      <h1>{t('Compare the table, not just one number.','Compare la table, pas seulement un chiffre.')}</h1>
+      <p>{t('Compare 2–4 decks from your saved account, official preconstructed decks, or Aeon Rule 0 share links. Temporal threat/answer windows and experience dependencies are evaluated across all archetypes.','Compare 2 à 4 decks issus de ton compte, des préconstruits officiels ou de liens de partage Aeon. Les fenêtres temporelles menace/réponse et les dépendances d’expérience sont analysées en temps réel.')}</p>
+    </header>
+
+    <DeckPresetsBar
+      mode="pod"
+      onSelectRefs={handlePreset}
+      onOpenModal={()=>setModalOpen(true)}
+    />
+
+    <div className="podInputs">
+      {inputs.map((v,i)=>(
+        <DeckSlotPicker
+          key={i}
+          slotIndex={i}
+          value={v}
+          onChange={newVal=>setInputs(xs=>xs.map((x,j)=>j===i?newVal:x))}
+        />
+      ))}
+    </div>
+
+    <button className="productPrimary" onClick={()=>compare()} disabled={busy}>
+      {busy?t('Loading…','Chargement…'):t('Compare pod','Comparer le pod')}
+    </button>
+    {error&&<div className="productError">{error}</div>}
+
+    <DeckPickerModal
+      isOpen={modalOpen}
+      onClose={()=>setModalOpen(false)}
+      onSelect={handleMultiModalSelect}
+      multiSelect={true}
+    />
+
+    {rows.length>1&&<section className="podResults">
+      <div className={`podVerdict ${summary.fit}`}>
+        <b>{quality?t(`Game quality: ${quality.compatibility}`,`Qualité de partie : ${quality.compatibility}`):label}</b>
+        <span>{quality?t(`Experimental non-game risk: ${quality.risk.level} · ${quality.risk.score}/100`,`Risque expérimental de non-game : ${quality.risk.level} · ${quality.risk.score}/100`):t(`Median spread ${summary.medianSpread} · peak spread ${summary.peakSpread}`,`Écart médiane ${summary.medianSpread} · écart pic ${summary.peakSpread}`)}</span>
+      </div>
+      {summary.decks.map((d,i)=>(
+        <div className="podDeck" key={d.code||i}>
+          <div>
+            <b>{d.deckName}</b>
+            <small>{d.commanderNames.join(' + ')}</small>
+          </div>
+          <strong>{d.median}</strong>
+          <span>{d.p20}–{d.p80}</span>
+          <span>{t('peak','pic')} {d.peak}</span>
+          <Range d={d}/>
+        </div>
+      ))}
+      {advanced&&<div className="podWarnings">
+        <b>{t('Aeon Pod Intelligence','Aeon Pod Intelligence')} · {advanced.modelVersion}</b>
+        <div>
+          <span>{t('Multi-axis mismatch','Mismatch multi-axes')}</span>
+          <small>{advanced.podMatch.mismatch}/100 · {advanced.podMatch.level}{advanced.adaptiveRule0.intentOverlay.answersApplied?` · ${advanced.adaptiveRule0.intentOverlay.answersApplied} Rule 0 answer(s) applied`:''}</small>
+        </div>
+        {worstWindow&&<div>
+          <span>{t('Largest exposed threat window','Plus grande fenêtre de menace exposée')}</span>
+          <small>{summary.decks[worstWindow.deckIndex]?.deckName} · T{worstWindow.turn} · threat {worstWindow.threat} / answer {worstWindow.answer} · gap {worstWindow.gap}</small>
+        </div>}
+        {agencyRisk&&<div>
+          <span>{t('Agency diagnostic','Diagnostic Agency')} · {summary.decks[agencyRisk.index]?.deckName}</span>
+          <small>{agencyRisk.riskLevel} · {t('max participation gap','gap de participation max')} {agencyRisk.maxParticipationGap}/100 · {t('meaningful agency','agence significative')} {agencyRisk.firstMeaningfulAgencyTurn?`T${agencyRisk.firstMeaningfulAgencyTurn}`:'—'} · {t('material pressure','pression matérielle')} {agencyRisk.firstMaterialPressureTurn?`T${agencyRisk.firstMaterialPressureTurn}`:'—'}{agencyRisk.pressureBeforeAgency?` · ${t('pressure arrives first','la pression arrive avant')}`:''}</small>
+        </div>}
+        {answerDebts.map(d=>(
+          <div key={`answer-debt-${d.answerClass}`}>
+            <span>{t('Answer Debt','Dette de réponse')} · {pretty(d.answerClass)}</span>
+            <small>{d.level} · {d.score}/100{d.worst?` · T${d.worst.turn} · ${pretty(d.worst.threatId)}`:''}</small>
+          </div>
+        ))}
+        {advanced.gameQuality.reasons.slice(0,4).map((r,i)=>(
+          <div key={`${r.signal}-${i}`}>
+            <span>{pretty(r.signal)}</span>
+            <small>{r.severity}{r.turn?` · T${r.turn}`:''}{r.answerClass?` · ${r.answerClass}`:''}</small>
+          </div>
+        ))}
+        {advanced.adaptiveRule0.questions.map(q=>{
+          const key=rule0AnswerKey(q.deckIndex,q.id),value=rule0Answers[key]||''
+          return <div key={key}>
+            <span>{t('Adaptive Rule 0','Rule 0 adaptative')} · {summary.decks[q.deckIndex]?.deckName}</span>
+            <small>{lang()==='fr'?(q.questionFr||q.question):q.question}</small>
+            <select value={value} onChange={e=>setRule0Answers(x=>({...x,[key]:e.target.value}))}>
+              <option value="">{t('Choose an answer…','Choisir une réponse…')}</option>
+              {(q.choices||[]).map(c=><option key={c.value} value={c.value}>{lang()==='fr'?(c.labelFr||c.label):c.label}</option>)}
+            </select>
+          </div>
+        })}
+      </div>}
+      {!advanced&&!!summary.warnings.length&&<div className="podWarnings">
+        <b>{t('Aeon asymmetry flags','Alertes d’asymétrie Aeon')}</b>
+        {summary.warnings.map((w,i)=>(
+          <div key={w.key||i}>
+            <span>{asymmetryLabel(w.code)}</span>
+            <small>{summary.decks[w.a]?.deckName} ↔ {summary.decks[w.b]?.deckName} · Δ {w.gap}</small>
+          </div>
+        ))}
+      </div>}
+      <p className="productNote">{advanced?t('Game Quality is a categorical experimental risk model, not a win-rate or exact good-game probability. Agency is a structural participation diagnostic and is not included in the Game Quality score. Answer Debt is a class-specific coverage diagnostic, and Rule 0 answers alter only declared experience compatibility; objective capability and Threat–Answer evidence remain unchanged.','Game Quality est un modèle de risque catégoriel expérimental, pas un win rate ni une probabilité exacte de bonne partie. Agency est un diagnostic structurel de participation et n’entre pas dans le score Game Quality. Answer Debt est un diagnostic de couverture par classe, et les réponses Rule 0 ne modifient que la compatibilité d’expérience déclarée ; les capacités objectives et les preuves Threat–Answer restent inchangées.'):summary.fit==='mismatch'?t('At least one pair has a large median gap or little overlap in its normal output bands. Discuss intent, combos and the asymmetry flags before starting.','Au moins une paire présente un gros écart de médiane ou peu de recouvrement des sorties habituelles. Discutez intention, combos et alertes d’asymétrie avant de lancer la partie.'):summary.warnings.length?t('Normal ranges overlap, but at least one deck has a materially different peak, variance or dimension profile. Treat this as a Rule 0 warning, not an automatic mismatch.','Les plages habituelles se recouvrent, mais au moins un deck présente un profil de pic, variance ou dimension sensiblement différent. C’est une alerte Rule 0, pas un mismatch automatique.'):t('The normal output bands overlap reasonably well and no major Aeon asymmetry flag fired. Pilot skill, matchup and politics still matter.','Les plages de sorties habituelles se recouvrent raisonnablement et aucune grosse asymétrie Aeon n’est détectée. Pilotage, matchup et politique restent importants.')}</p>
+      {advanced&&<GameObservationForm rows={rows} podModelVersion={advanced.modelVersion} prediction={observationPrediction}/>}
+    </section>}
+  </main>
+}
