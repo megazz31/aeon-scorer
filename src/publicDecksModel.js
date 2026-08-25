@@ -22,6 +22,8 @@ export function publicDeckYear(deck){
   return Number.isFinite(y)?y:null
 }
 
+export function publicDeckIsVariant(deck){return deck?.analysisVariant===true&&!!deck?.variantOf}
+
 const num=v=>v===''||v===null||v===undefined?null:Number(v)
 const inRange=(value,min,max)=>{
   if(value===null||value===undefined||!Number.isFinite(Number(value)))return min===null&&max===null
@@ -43,7 +45,8 @@ export function filterPublicDecks(decks,filters={},versions={}){
   }
   return (decks||[]).filter(deck=>{
     if(search){
-      const hay=[deck.name,deck.commanderName,deck.productName,deck.setCode,deck.releaseDate].filter(Boolean).join(' ').toLowerCase()
+      const aliases=(deck.productAliases||[]).flatMap(x=>[x?.name,x?.fileName])
+      const hay=[deck.name,deck.commanderName,deck.originalCommanderName,deck.productName,deck.setCode,deck.releaseDate,...aliases].filter(Boolean).join(' ').toLowerCase()
       if(!hay.includes(search))return false
     }
     if(selectedColors.length){
@@ -82,7 +85,7 @@ export function sortPublicDecks(decks,sort='release',direction='desc'){
 }
 
 export function publicDeckStats(decks,versions={}){
-  const rows=decks||[],analyzed=rows.filter(d=>d.analysis).length,current=rows.filter(d=>publicDeckStatus(d,versions.engineVersion,versions.semanticVersion)==='current').length
+  const rows=(decks||[]).filter(d=>!publicDeckIsVariant(d)),analyzed=rows.filter(d=>d.analysis).length,current=rows.filter(d=>publicDeckStatus(d,versions.engineVersion,versions.semanticVersion)==='current').length
   const supported=rows.filter(d=>d.supported).length
   return {total:rows.length,supported,analyzed,current,pending:rows.filter(d=>publicDeckStatus(d,versions.engineVersion,versions.semanticVersion)==='pending').length,outdated:rows.filter(d=>publicDeckStatus(d,versions.engineVersion,versions.semanticVersion)==='outdated').length}
 }
