@@ -30,6 +30,13 @@ jobs:
       - name: Apply one-shot semantic-15 finalizer
         if: github.event_name == 'push'
         run: node scripts/semantic15-finalize.mjs
+      - name: Apply semantic-15 hotfix pass
+        if: github.event_name == 'push'
+        run: node scripts/semantic15-hotfix.mjs
+      - name: Fast semantic + product preflight
+        run: |
+          npm run test:semantic
+          npm run test:product
       - name: Generate candidate precon snapshots for semantic gate
         env:
           AEON_PRECON_ITERATIONS: '3200'
