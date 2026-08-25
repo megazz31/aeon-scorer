@@ -15,7 +15,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/ForgedInStone_C14.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Forged In Stone",
@@ -26,17 +26,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 34,
-    "p20": 23,
-    "p80": 44,
-    "peak": 65,
-    "coverage": 89,
+    "median": 44,
+    "p20": 32,
+    "p80": 54,
+    "peak": 73,
+    "coverage": 92,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "ee4eaced67c8dd1853efd0baf53b022b8bab4fe79201bb2c7ea080a88b3dfa46",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Containment Priest\n1 Whitemane Lion\n1 Grand Abolisher\n1 Kor Sanctifiers\n1 Mentor of the Meek\n1 Flickerwisp\n1 Hallowed Spiritkeeper\n1 Kemba, Kha Regent\n1 Silverblade Paladin\n1 Skyhunter Skirmisher\n1 Angelic Field Marshal\n1 Celestial Crusader\n1 Jazal Goldmane\n1 Geist-Honored Monk\n1 Requiem Angel\n1 Adarkar Valkyrie\n1 Sun Titan\n1 Sunblast Angel\n1 Twilight Shepherd\n1 Angel of the Dire Hour\n1 Serra Avatar\n1 Gift of Estates\n1 Spectral Procession\n1 Fell the Mighty\n1 Nomads' Assembly\n1 Deploy to the Front\n1 Martial Coup\n1 Decree of Justice\n1 Brave the Elements\n1 Condemn\n1 Afterlife\n1 Midnight Haunting\n1 Oblation\n1 Wing Shards\n1 Benevolent Offering\n1 Comeuppance\n1 Return to Dust\n1 White Sun's Zenith\n1 Masterwork of Ingenuity\n1 Skullclamp\n1 Sol Ring\n1 Marble Diamond\n1 Mask of Memory\n1 Pearl Medallion\n1 Swiftfoot Boots\n1 Commander's Sphere\n1 Loxodon Warhammer\n1 Strata Scythe\n1 Sword of Vengeance\n1 Assault Suit\n1 Bonehoard\n1 Moonsilver Spear\n1 Argentum Armor\n1 Loreseeker's Stone\n1 Armistice\n1 Mobilization\n1 Sacred Mesa\n1 Marshal's Anthem\n1 Cathars' Crusade\n1 True Conviction\n1 Arcane Lighthouse\n1 Drifting Meadow\n1 Emeria, the Sky Ruin\n1 Ghost Quarter\n1 Karoo\n1 Secluded Steppe\n1 Temple of the False God\n8 Plains\n8 Plains\n8 Plains\n8 Plains",
   "oracleCards": [
@@ -1297,22 +1297,22 @@
   ],
   "result": {
     "profile": {
-      "median": 34,
-      "floor": 23,
-      "ceiling": 44,
-      "peak": 65,
+      "median": 44,
+      "floor": 32,
+      "ceiling": 54,
+      "peak": 73,
       "dispersion": 21,
       "variance": 21,
-      "consistency": 65,
-      "commanderDelta": 9,
-      "coverage": 89,
-      "dataCoverage": 89
+      "consistency": 64,
+      "commanderDelta": 11,
+      "coverage": 92,
+      "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 28,
-      "consistency": 65,
+      "speed": 32,
+      "consistency": 64,
       "explosiveness": 9,
-      "synergy": 13,
+      "synergy": 75,
       "interaction": 61,
       "resilience": 31
     },
@@ -1330,10 +1330,221 @@
       "avgCmc": 3.6666666666666665,
       "unknownManaLands": 0
     },
-    "packages": [],
+    "packages": [
+      {
+        "id": "equipment",
+        "name": "Équipements / Voltron",
+        "strength": 76,
+        "cohesion": 76,
+        "producers": [
+          "Argentum Armor",
+          "Assault Suit",
+          "Bonehoard",
+          "Loxodon Warhammer",
+          "Mask of Memory",
+          "Masterwork of Ingenuity",
+          "Moonsilver Spear",
+          "Skullclamp",
+          "Strata Scythe",
+          "Swiftfoot Boots"
+        ],
+        "payoffs": [
+          "Kemba, Kha Regent"
+        ],
+        "members": [
+          "Argentum Armor",
+          "Assault Suit",
+          "Bonehoard",
+          "Loxodon Warhammer",
+          "Mask of Memory",
+          "Masterwork of Ingenuity",
+          "Moonsilver Spear",
+          "Skullclamp",
+          "Strata Scythe",
+          "Swiftfoot Boots",
+          "Sword of Vengeance",
+          "Kemba, Kha Regent"
+        ],
+        "producerCards": [
+          {
+            "name": "Argentum Armor",
+            "cmc": 6,
+            "tags": [
+              "artifact",
+              "removal"
+            ],
+            "manaReq": {
+              "generic": 6,
+              "colored": [],
+              "total": 6
+            }
+          },
+          {
+            "name": "Assault Suit",
+            "cmc": 4,
+            "tags": [
+              "artifact"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
+            }
+          },
+          {
+            "name": "Bonehoard",
+            "cmc": 4,
+            "tags": [
+              "artifact",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
+            }
+          },
+          {
+            "name": "Loxodon Warhammer",
+            "cmc": 3,
+            "tags": [
+              "artifact",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [],
+              "total": 3
+            }
+          },
+          {
+            "name": "Mask of Memory",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Masterwork of Ingenuity",
+            "cmc": 1,
+            "tags": [
+              "artifact"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
+            "name": "Moonsilver Spear",
+            "cmc": 4,
+            "tags": [
+              "artifact",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
+            }
+          },
+          {
+            "name": "Skullclamp",
+            "cmc": 1,
+            "tags": [
+              "artifact",
+              "draw",
+              "death-payoff"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [],
+              "total": 1
+            }
+          },
+          {
+            "name": "Strata Scythe",
+            "cmc": 3,
+            "tags": [
+              "artifact",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [],
+              "total": 3
+            }
+          },
+          {
+            "name": "Swiftfoot Boots",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "protection"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Sword of Vengeance",
+            "cmc": 3,
+            "tags": [
+              "artifact"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [],
+              "total": 3
+            }
+          }
+        ],
+        "supportCards": [],
+        "payoffCards": [
+          {
+            "name": "Kemba, Kha Regent",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          }
+        ],
+        "producerTags": [
+          "equipment-type"
+        ],
+        "supportTags": [],
+        "payoffTags": [
+          "equipment-payoff"
+        ],
+        "evidence": "11 équipement(s), 1 carte(s) qui les convertissent en avantage."
+      }
+    ],
     "combos": [],
     "commanderSynergy": {
-      "score": 45,
+      "score": 71,
       "connected": [
         "Benevolent Offering",
         "Bonehoard",
@@ -1350,11 +1561,21 @@
         "Requiem Angel",
         "Sacred Mesa",
         "Spectral Procession",
-        "White Sun's Zenith"
+        "White Sun's Zenith",
+        "Argentum Armor",
+        "Assault Suit",
+        "Loxodon Warhammer",
+        "Mask of Memory",
+        "Masterwork of Ingenuity",
+        "Skullclamp",
+        "Strata Scythe",
+        "Swiftfoot Boots",
+        "Sword of Vengeance"
       ],
       "tags": [
         "tokens",
-        "token-payoff"
+        "token-payoff",
+        "equipment-payoff"
       ]
     },
     "commanderNames": [
@@ -1368,15 +1589,15 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 31,
-      "median": 39,
-      "high": 46,
-      "ceiling": 46,
+      "floor": 32,
+      "median": 40,
+      "high": 47,
+      "ceiling": 47,
       "peak": 62,
       "iqr": 12,
-      "consistency": 74,
+      "consistency": 73,
       "commanderMedianTurn": 5,
-      "engineMedianTurn": null,
+      "engineMedianTurn": 4,
       "recoveryAfterDisruption": 65,
       "turnProfile": [
         {
@@ -1398,7 +1619,7 @@
         {
           "turn": 3,
           "commander": 10,
-          "engine": 0,
+          "engine": 2,
           "interaction": 54,
           "resource": 46,
           "burst": 0
@@ -1406,7 +1627,7 @@
         {
           "turn": 4,
           "commander": 26,
-          "engine": 0,
+          "engine": 6,
           "interaction": 64,
           "resource": 56,
           "burst": 0
@@ -1414,7 +1635,7 @@
         {
           "turn": 5,
           "commander": 67,
-          "engine": 0,
+          "engine": 8,
           "interaction": 71,
           "resource": 61,
           "burst": 0
@@ -1422,7 +1643,7 @@
         {
           "turn": 6,
           "commander": 79,
-          "engine": 0,
+          "engine": 9,
           "interaction": 77,
           "resource": 66,
           "burst": 0
@@ -1430,7 +1651,7 @@
         {
           "turn": 7,
           "commander": 86,
-          "engine": 0,
+          "engine": 10,
           "interaction": 82,
           "resource": 70,
           "burst": 0
@@ -1490,26 +1711,26 @@
               },
               {
                 "turn": 3,
-                "value": 0
+                "value": 4
               },
               {
                 "turn": 4,
-                "value": 0
+                "value": 7
               },
               {
                 "turn": 5,
-                "value": 0
+                "value": 9
               },
               {
                 "turn": 6,
-                "value": 0
+                "value": 10
               },
               {
                 "turn": 7,
-                "value": 0
+                "value": 12
               }
             ],
-            "observedWithinHorizon": 0
+            "observedWithinHorizon": 93
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -1666,6 +1887,26 @@
     },
     "drivers": [
       {
+        "name": "Skullclamp",
+        "impact": 3.1,
+        "tags": [
+          "artifact",
+          "draw",
+          "death-payoff"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mask of Memory",
+        "impact": 3,
+        "tags": [
+          "artifact",
+          "draw",
+          "graveyard-setup"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Sol Ring",
         "impact": 3,
         "tags": [
@@ -1687,32 +1928,21 @@
         "aeon": null
       },
       {
-        "name": "Skullclamp",
-        "impact": 2.4,
-        "tags": [
-          "artifact",
-          "draw",
-          "death-payoff"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Mask of Memory",
-        "impact": 2.3,
-        "tags": [
-          "artifact",
-          "draw",
-          "graveyard-setup"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Mentor of the Meek",
         "impact": 2.3,
         "tags": [
           "creature",
           "draw",
           "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Argentum Armor",
+        "impact": 2.2,
+        "tags": [
+          "artifact",
+          "removal"
         ],
         "aeon": null
       },
@@ -1727,11 +1957,29 @@
         "aeon": null
       },
       {
+        "name": "Kemba, Kha Regent",
+        "impact": 1.9,
+        "tags": [
+          "creature",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Martial Coup",
         "impact": 1.9,
         "tags": [
           "sorcery",
           "wipe",
+          "tokens"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Moonsilver Spear",
+        "impact": 1.9,
+        "tags": [
+          "artifact",
           "tokens"
         ],
         "aeon": null
@@ -1753,35 +2001,6 @@
           "draw"
         ],
         "aeon": null
-      },
-      {
-        "name": "Argentum Armor",
-        "impact": 1.5,
-        "tags": [
-          "artifact",
-          "removal"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Fell the Mighty",
-        "impact": 1.4,
-        "tags": [
-          "sorcery",
-          "wipe"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Flickerwisp",
-        "impact": 1.4,
-        "tags": [
-          "creature",
-          "tempo-interaction",
-          "etb",
-          "blink"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
@@ -1792,18 +2011,19 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
       "dimensions": {
         "tempo": {
-          "score": 28,
+          "score": 32,
           "level": "moderate",
           "evidence": [
             {
               "signal": "speed",
-              "value": 28,
+              "value": 32,
               "source": "aeon-dimension",
               "reason": "Existing Aeon speed dimension; no power-score feedback."
             }
@@ -1822,7 +2042,7 @@
           ]
         },
         "volatility": {
-          "score": 74,
+          "score": 71,
           "level": "high",
           "evidence": [
             {
@@ -1833,7 +2053,7 @@
             },
             {
               "signal": "high-roll-tail",
-              "value": 21,
+              "value": 19,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -1864,18 +2084,18 @@
           ]
         },
         "inevitability": {
-          "score": 30,
-          "level": "moderate",
+          "score": 63,
+          "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 13,
+              "value": 75,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 65,
+              "value": 64,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
@@ -1887,25 +2107,25 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 0,
+              "value": 76,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 56,
-          "level": "high",
+          "score": 76,
+          "level": "very-high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 9,
+              "value": 11,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 45,
+              "value": 71,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },
@@ -1918,7 +2138,7 @@
           ]
         },
         "turnComplexity": {
-          "score": 14,
+          "score": 16,
           "level": "low",
           "evidence": [
             {
@@ -1941,7 +2161,7 @@
             },
             {
               "signal": "packages",
-              "value": 0,
+              "value": 1,
               "source": "package-model",
               "reason": "Independent engines increase sequencing branches."
             }
@@ -1949,7 +2169,7 @@
         }
       },
       "confidence": {
-        "semantic": "moderate",
+        "semantic": "high",
         "simulation": "high",
         "productCalibration": "experimental",
         "evidenceCoverage": "full"
@@ -2029,13 +2249,13 @@
           "id": "long-sequencing",
           "label": "Long sequencing potential",
           "level": "low",
-          "score": 14,
+          "score": 16,
           "evidence": [
             {
               "name": "Experience Fingerprint",
               "reason": "Turn Complexity proxy from recurring/chained semantic actions.",
               "recurring": true,
-              "weight": 0.7777777777777778
+              "weight": 0.8888888888888888
             }
           ],
           "note": "Derived from Experience Fingerprint turn-complexity evidence; not calibrated to real clock time."
@@ -2115,26 +2335,26 @@
             },
             {
               "turn": 3,
-              "value": 0
+              "value": 4
             },
             {
               "turn": 4,
-              "value": 0
+              "value": 7
             },
             {
               "turn": 5,
-              "value": 0
+              "value": 9
             },
             {
               "turn": 6,
-              "value": 0
+              "value": 10
             },
             {
               "turn": 7,
-              "value": 0
+              "value": 12
             }
           ],
-          "observedWithinHorizon": 0,
+          "observedWithinHorizon": 93,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -2321,23 +2541,23 @@
             },
             {
               "turn": 3,
-              "value": 0
+              "value": 2
             },
             {
               "turn": 4,
-              "value": 0
+              "value": 6
             },
             {
               "turn": 5,
-              "value": 0
+              "value": 8
             },
             {
               "turn": 6,
-              "value": 0
+              "value": 9
             },
             {
               "turn": 7,
-              "value": 0
+              "value": 10
             }
           ],
           "milestones": {
@@ -2524,26 +2744,26 @@
             },
             {
               "turn": 3,
-              "value": 0
+              "value": 4
             },
             {
               "turn": 4,
-              "value": 0
+              "value": 7
             },
             {
               "turn": 5,
-              "value": 0
+              "value": 9
             },
             {
               "turn": 6,
-              "value": 0
+              "value": 10
             },
             {
               "turn": 7,
-              "value": 0
+              "value": 12
             }
           ],
-          "observedWithinHorizon": 0,
+          "observedWithinHorizon": 93,
           "milestones": {
             "at25": null,
             "at50": null,

@@ -15,7 +15,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/GuidedByNature_C14.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Guided By Nature",
@@ -32,17 +32,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 38,
-    "p20": 26,
-    "p80": 49,
-    "peak": 75,
+    "median": 40,
+    "p20": 28,
+    "p80": 51,
+    "peak": 77,
     "coverage": 93,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "c2b127ef0f20a78a1e98ec6a626de615739541f7c6a20e86813334b43db138c9",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Elvish Mystic\n1 Elvish Skysweeper\n1 Essence Warden\n1 Joraga Warcaller\n1 Llanowar Elves\n1 Sylvan Safekeeper\n1 Elvish Visionary\n1 Priest of Titania\n1 Sylvan Ranger\n1 Thornweald Archer\n1 Wellwisher\n1 Farhaven Elf\n1 Imperious Perfect\n1 Reclamation Sage\n1 Timberwatch Elf\n1 Titania's Chosen\n1 Wood Elves\n1 Elvish Archdruid\n1 Ezuri, Renegade Leader\n1 Drove of Elves\n1 Immaculate Magistrate\n1 Wren's Run Packmaster\n1 Lys Alana Huntmaster\n1 Masked Admirers\n1 Wolfbriar Elemental\n1 Creeperhulk\n1 Silklash Spider\n1 Titania, Protector of Argoth\n1 Grave Sifter\n1 Primordial Sage\n1 Rampaging Baloths\n1 Soul of the Harvest\n1 Thunderfoot Baloth\n1 Siege Behemoth\n1 Tornado Elemental\n1 Terastodon\n1 Lifeblood Hydra\n1 Hunting Triad\n1 Whirlwind\n1 Overwhelming Stampede\n1 Overrun\n1 Grim Flowering\n1 Collective Unconscious\n1 Desert Twister\n1 Wave of Vitriol\n1 Praetor's Counsel\n1 Sylvan Offering\n1 Harrow\n1 Fresh Meat\n1 Skullclamp\n1 Sol Ring\n1 Emerald Medallion\n1 Moss Diamond\n1 Swiftfoot Boots\n1 Commander's Sphere\n1 Assault Suit\n1 Seer's Sundial\n1 Predator, Flagship\n1 Loreseeker's Stone\n1 Beastmaster Ascension\n1 Song of the Dryads\n1 Wolfcaller's Howl\n1 Crystal Vein\n1 Evolving Wilds\n1 Gargoyle Castle\n1 Ghost Quarter\n1 Haunted Fengraf\n1 Havenwood Battleground\n1 Jungle Basin\n1 Myriad Landscape\n1 Oran-Rief, the Vastwood\n1 Slippery Karst\n1 Terramorphic Expanse\n1 Tranquil Thicket\n7 Forest\n6 Forest\n6 Forest\n6 Forest",
   "oracleCards": [
@@ -1480,14 +1480,14 @@
   ],
   "result": {
     "profile": {
-      "median": 38,
-      "floor": 26,
-      "ceiling": 49,
-      "peak": 75,
+      "median": 40,
+      "floor": 28,
+      "ceiling": 51,
+      "peak": 77,
       "dispersion": 23,
       "variance": 23,
       "consistency": 62,
-      "commanderDelta": 7,
+      "commanderDelta": 12,
       "coverage": 93,
       "dataCoverage": 93
     },
@@ -1495,7 +1495,7 @@
       "speed": 34,
       "consistency": 62,
       "explosiveness": 11,
-      "synergy": 50,
+      "synergy": 65,
       "interaction": 34,
       "resilience": 37
     },
@@ -1859,12 +1859,12 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 9 source(s) persistante(s) vers un commandant MV 5."
+        "evidence": "0 accélérateur(s) burst + 9 source(s) persistante(s) réellement dans la fenêtre T4 ou avant vers un commandant MV 5."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 30,
+      "score": 85,
       "connected": [
         "Fresh Meat",
         "Gargoyle Castle",
@@ -1876,11 +1876,33 @@
         "Titania, Protector of Argoth",
         "Wolfbriar Elemental",
         "Wolfcaller's Howl",
-        "Wren's Run Packmaster"
+        "Wren's Run Packmaster",
+        "Drove of Elves",
+        "Elvish Archdruid",
+        "Elvish Mystic",
+        "Elvish Skysweeper",
+        "Elvish Visionary",
+        "Essence Warden",
+        "Ezuri, Renegade Leader",
+        "Farhaven Elf",
+        "Immaculate Magistrate",
+        "Joraga Warcaller",
+        "Llanowar Elves",
+        "Masked Admirers",
+        "Priest of Titania",
+        "Reclamation Sage",
+        "Sylvan Ranger",
+        "Thornweald Archer",
+        "Timberwatch Elf",
+        "Titania's Chosen",
+        "Wellwisher",
+        "Wood Elves"
       ],
       "tags": [
         "tokens",
-        "token-payoff"
+        "token-payoff",
+        "tribal:elf",
+        "tribal:druid"
       ]
     },
     "commanderNames": [
@@ -2320,7 +2342,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -2392,12 +2415,12 @@
           ]
         },
         "inevitability": {
-          "score": 52,
+          "score": 57,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 50,
+              "value": 65,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -2422,18 +2445,18 @@
           ]
         },
         "dependency": {
-          "score": 42,
-          "level": "moderate",
+          "score": 86,
+          "level": "very-high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 7,
+              "value": 12,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 30,
+              "value": 85,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },

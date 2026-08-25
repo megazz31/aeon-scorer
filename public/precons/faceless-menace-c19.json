@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/FacelessMenace_C19.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Faceless Menace",
@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 41,
+    "median": 40,
     "p20": 30,
     "p80": 49,
     "peak": 77,
     "coverage": 91,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "8fd5a5e1097ff840bf7109121abc9a7046278f97cfd9dfbc525521f6d776d9b3",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Vraska the Unseen\n1 Rayami, First of the Fallen\n1 Volrath, the Shapestealer\n1 Kadena's Silencer\n1 Thought Sponge\n1 Thieving Amalgam\n1 Apex Altisaur\n1 Grismold, the Dreadsower\n1 Deathmist Raptor\n1 Hooded Hydra\n1 Chromeshell Crab\n1 Ixidron\n1 Kheru Spellsnatcher\n1 Stratus Dancer\n1 Thousand Winds\n1 Vesuvan Shapeshifter\n1 Bane of the Living\n1 Grim Haruspex\n1 Silumgar Assassin\n1 Den Protector\n1 Seedborn Muse\n1 Thelonite Hermit\n1 Sagu Mauler\n1 Voice of Many\n1 Scaretiller\n1 Willbender\n1 Skinthinner\n1 Ainok Survivalist\n1 Great Oak Guardian\n1 Nantuko Vigilante\n1 Sakura-Tribe Elder\n1 Icefeather Aven\n1 Road of Return\n1 Ghastly Conscription\n1 Hex\n1 Overwhelming Stampede\n1 Tempt with Discovery\n1 Mire in Misery\n1 Tezzeret's Gambit\n1 Cultivate\n1 Explore\n1 Farseek\n1 Urban Evolution\n1 Sudden Substitution\n1 Biomass Mutation\n1 Leadership Vacuum\n1 Echoing Truth\n1 Reality Shift\n1 Putrefy\n1 Sultai Charm\n1 Pendant of Prosperity\n1 Scroll of Fate\n1 Strionic Resonator\n1 Sol Ring\n1 Thran Dynamo\n1 Gift of Doom\n1 Trail of Mystery\n1 Bounty of the Luxa\n1 Secret Plans\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Llanowar Wastes\n1 Shrine of the Forsaken Gods\n1 Sunken Hollow\n1 Thespian's Stage\n1 Yavimaya Coast\n2 Island\n2 Island\n1 Island\n1 Swamp\n1 Swamp\n1 Swamp\n3 Forest\n2 Forest\n2 Forest\n1 Ash Barrens\n1 Bojuka Bog\n1 Command Tower\n1 Dimir Aqueduct\n1 Evolving Wilds\n1 Foul Orchard\n1 Golgari Guildgate\n1 Golgari Rot Farm\n1 Jungle Hollow\n1 Myriad Landscape\n1 Opulent Palace\n1 Reliquary Tower\n1 Simic Growth Chamber\n1 Simic Guildgate\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Thornwood Falls\n1 Woodland Stream",
   "oracleCards": [
@@ -1752,7 +1752,7 @@
   ],
   "result": {
     "profile": {
-      "median": 41,
+      "median": 40,
       "floor": 30,
       "ceiling": 49,
       "peak": 77,
@@ -1767,7 +1767,7 @@
       "speed": 36,
       "consistency": 69,
       "explosiveness": 15,
-      "synergy": 34,
+      "synergy": 33,
       "interaction": 56,
       "resilience": 43
     },
@@ -1988,12 +1988,11 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 41,
-        "cohesion": 41,
+        "strength": 38,
+        "cohesion": 38,
         "producers": [
           "Explore",
           "Farseek",
-          "Pendant of Prosperity",
           "Sakura-Tribe Elder",
           "Sol Ring"
         ],
@@ -2003,7 +2002,6 @@
         "members": [
           "Explore",
           "Farseek",
-          "Pendant of Prosperity",
           "Sakura-Tribe Elder",
           "Sol Ring",
           "Kadena, Slinking Sorcerer"
@@ -2042,21 +2040,6 @@
                 ]
               ],
               "total": 2
-            }
-          },
-          {
-            "name": "Pendant of Prosperity",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "draw",
-              "land-ramp",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
             }
           },
           {
@@ -2118,7 +2101,7 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 5 source(s) persistante(s) vers un commandant MV 4."
+        "evidence": "0 accélérateur(s) burst + 4 source(s) persistante(s) réellement dans la fenêtre T3 ou avant vers un commandant MV 4."
       }
     ],
     "combos": [],
@@ -2469,7 +2452,7 @@
       },
       {
         "name": "Pendant of Prosperity",
-        "impact": 3.3,
+        "impact": 2.6,
         "tags": [
           "artifact",
           "draw",
@@ -2571,7 +2554,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -2648,7 +2632,7 @@
           "evidence": [
             {
               "signal": "synergy",
-              "value": 34,
+              "value": 33,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -2666,7 +2650,7 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 46.5,
+              "value": 45,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }

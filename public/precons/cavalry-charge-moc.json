@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/CavalryCharge_MOC.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Cavalry Charge",
@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 40,
-    "p20": 30,
-    "p80": 51,
-    "peak": 74,
+    "median": 44,
+    "p20": 33,
+    "p80": 54,
+    "peak": 77,
     "coverage": 94,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "ea266bf2e7a84bf45422365f53644e55df85afe018f0c4bcc1682d1c0d3c5183",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Elenda and Azor\n1 Exsanguinator Cavalry\n1 Ichor Elixir\n1 Herald of Hoofbeats\n1 Locthwain Lancer\n1 Chivalric Alliance\n1 Path of the Enigma\n1 Vodalian Wave-Knight\n1 Conjurer's Mantle\n1 Ethersworn Adjudicator\n1 Hero of Bladehold\n1 Vona, Butcher of Magan\n1 Acclaimed Contender\n1 Adeline, Resplendent Cathar\n1 Aryel, Knight of Windgrace\n1 Choked Estuary\n1 Exotic Orchard\n1 Fell the Mighty\n1 Haakon, Stromgald Scourge\n1 Josu Vess, Lich Knight\n1 Knight Exemplar\n1 Knight of the White Orchid\n1 Knights' Charge\n1 Liliana's Standard Bearer\n1 Maul of the Skyclaves\n1 Midnight Reaper\n1 Murderous Rider // Swift End\n1 Painful Truths\n1 Port Town\n1 Prairie Stream\n1 Promise of Loyalty\n1 Pull from Tomorrow\n1 Shineshadow Snarl\n1 Sigiled Sword of Valeron\n1 Silverwing Squadron\n1 Sunken Hollow\n1 Temple of Deceit\n1 Temple of Enlightenment\n1 Temple of Silence\n1 Time Wipe\n1 Unbreakable Formation\n1 Valiant Knight\n1 Vanquisher's Banner\n1 Worthy Knight\n1 Bojuka Bog\n1 Command Tower\n1 Commander's Sphere\n1 Distant Melody\n1 Evolving Wilds\n1 Fractured Powerstone\n1 Orzhov Signet\n1 Path of Ancestry\n1 Read the Bones\n1 Smitten Swordmaster // Curry Favor\n1 Terramorphic Expanse\n1 Thriving Heath\n1 Thriving Isle\n1 Thriving Moor\n1 Arcane Sanctum\n1 Arcane Signet\n1 Arvad the Cursed\n1 Corpse Knight\n1 Despark\n1 Fellwar Stone\n1 Foulmire Knight // Profane Insight\n1 Herald's Horn\n1 Knight of the Last Breath\n1 Knights of the Black Rose\n1 Mind Stone\n1 Myriad Landscape\n1 Order of Midnight // Alter Fate\n1 Path to Exile\n1 Return to Dust\n1 Sol Ring\n1 Swords to Plowshares\n1 Syr Elenora, the Discerning\n1 Syr Konrad, the Grim\n1 Temple of the False God\n1 Wintermoor Commander\n1 Xerex Strobe-Knight\n8 Plains\n6 Island\n5 Swamp",
   "oracleCards": [
@@ -1704,14 +1704,14 @@
   ],
   "result": {
     "profile": {
-      "median": 40,
-      "floor": 30,
-      "ceiling": 51,
-      "peak": 74,
-      "dispersion": 22,
-      "variance": 22,
+      "median": 44,
+      "floor": 33,
+      "ceiling": 54,
+      "peak": 77,
+      "dispersion": 21,
+      "variance": 21,
       "consistency": 64,
-      "commanderDelta": 6,
+      "commanderDelta": 13,
       "coverage": 94,
       "dataCoverage": 94
     },
@@ -1719,7 +1719,7 @@
       "speed": 39,
       "consistency": 64,
       "explosiveness": 10,
-      "synergy": 42,
+      "synergy": 65,
       "interaction": 43,
       "resilience": 42
     },
@@ -1879,11 +1879,10 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 47,
-        "cohesion": 47,
+        "strength": 44,
+        "cohesion": 44,
         "producers": [
           "Arcane Signet",
-          "Commander's Sphere",
           "Fellwar Stone",
           "Fractured Powerstone",
           "Mind Stone",
@@ -1895,7 +1894,6 @@
         ],
         "members": [
           "Arcane Signet",
-          "Commander's Sphere",
           "Fellwar Stone",
           "Fractured Powerstone",
           "Mind Stone",
@@ -1915,21 +1913,6 @@
               "generic": 2,
               "colored": [],
               "total": 2
-            }
-          },
-          {
-            "name": "Commander's Sphere",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "draw",
-              "mana",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
             }
           },
           {
@@ -2028,22 +2011,53 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 7 source(s) persistante(s) vers un commandant MV 4."
+        "evidence": "0 accélérateur(s) burst + 6 source(s) persistante(s) réellement dans la fenêtre T3 ou avant vers un commandant MV 4."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 14,
+      "score": 99,
       "connected": [
         "Chivalric Alliance",
         "Haakon, Stromgald Scourge",
         "Knights' Charge",
         "Order of Midnight // Alter Fate",
-        "Pull from Tomorrow"
+        "Pull from Tomorrow",
+        "Acclaimed Contender",
+        "Adeline, Resplendent Cathar",
+        "Arvad the Cursed",
+        "Aryel, Knight of Windgrace",
+        "Corpse Knight",
+        "Elenda and Azor",
+        "Ethersworn Adjudicator",
+        "Exsanguinator Cavalry",
+        "Foulmire Knight // Profane Insight",
+        "Herald of Hoofbeats",
+        "Hero of Bladehold",
+        "Josu Vess, Lich Knight",
+        "Knight Exemplar",
+        "Knight of the Last Breath",
+        "Knight of the White Orchid",
+        "Knights of the Black Rose",
+        "Liliana's Standard Bearer",
+        "Locthwain Lancer",
+        "Midnight Reaper",
+        "Murderous Rider // Swift End",
+        "Silverwing Squadron",
+        "Smitten Swordmaster // Curry Favor",
+        "Syr Elenora, the Discerning",
+        "Syr Konrad, the Grim",
+        "Valiant Knight",
+        "Vodalian Wave-Knight",
+        "Vona, Butcher of Magan",
+        "Wintermoor Commander",
+        "Worthy Knight",
+        "Xerex Strobe-Knight"
       ],
       "tags": [
         "recursion",
-        "graveyard-setup"
+        "graveyard-setup",
+        "tribal:knight"
       ]
     },
     "commanderNames": [
@@ -2376,17 +2390,6 @@
         "aeon": null
       },
       {
-        "name": "Commander's Sphere",
-        "impact": 3.3,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Mind Stone",
         "impact": 3.3,
         "tags": [
@@ -2406,6 +2409,17 @@
           "protection",
           "tokens",
           "lifegain"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commander's Sphere",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2487,7 +2501,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -2517,12 +2532,12 @@
           ]
         },
         "volatility": {
-          "score": 79,
+          "score": 77,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 22,
+              "value": 21,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
@@ -2559,12 +2574,12 @@
           ]
         },
         "inevitability": {
-          "score": 50,
+          "score": 58,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 42,
+              "value": 65,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -2582,25 +2597,25 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 52,
+              "value": 50.5,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 30,
-          "level": "moderate",
+          "score": 97,
+          "level": "very-high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 6,
+              "value": 13,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 14,
+              "value": 99,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },

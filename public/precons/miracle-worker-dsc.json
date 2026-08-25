@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/MiracleWorker_DSC.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Miracle Worker",
@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 42,
-    "p20": 29,
-    "p80": 53,
-    "peak": 82,
+    "median": 44,
+    "p20": 30,
+    "p80": 56,
+    "peak": 85,
     "coverage": 93,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "e16a47bae4177e9598729b43b88a7000dec788c9d70e76854a44e95abe864a63",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 The Master of Keys\n1 Redress Fate\n1 Secret Arcade // Dusty Parlor\n1 Soaring Lightbringer\n1 Fear of Sleep Paralysis\n1 Ancient Cellarspawn\n1 Cramped Vents // Access Maze\n1 Metamorphosis Fanatic\n1 Phenomenon Investigators\n1 Mesa Enchantress\n1 Terminus\n1 Aminatou's Augury\n1 Utter End\n1 Entreat the Angels\n1 Monologue Tax\n1 Ondu Spiritdancer\n1 Sigil of the Empty Throne\n1 Starfield Mystic\n1 Timely Ward\n1 Verge Rangers\n1 Dream Eater\n1 Extravagant Replication\n1 Mirrormade\n1 One with the Multiverse\n1 Prognostic Sphinx\n1 Shark Typhoon\n1 Arvinox, the Mind Flail\n1 Demon of Fate's Design\n1 Doomwake Giant\n1 Nightmare Shepherd\n1 Athreos, Shroud-Veiled\n1 Inkshield\n1 Life Insurance\n1 Spirit-Sister's Call\n1 Time Wipe\n1 Solemn Simulacrum\n1 Adarkar Wastes\n1 Caves of Koilos\n1 Hall of Heliod's Generosity\n1 Temple of Deceit\n1 Temple of Enlightenment\n1 Temple of Silence\n1 Underground River\n1 Bottomless Pool // Locker Room\n1 Terramorphic Expanse\n1 Auramancer\n1 Swords to Plowshares\n1 Moon-Blessed Cleric\n1 Ponder\n1 Portent\n1 Telling Time\n1 Diabolic Vision\n1 Arcane Signet\n1 Sol Ring\n1 Command Tower\n1 Cast Out\n1 Return to Dust\n1 Sphere of Safety\n1 Arcane Denial\n1 Archetype of Imagination\n1 Brainstorm\n1 Otherworldly Gaze\n1 Thirst for Meaning\n1 The Eldest Reborn\n1 Read the Bones\n1 Azorius Signet\n1 Brainstone\n1 Burnished Hart\n1 Commander's Sphere\n1 Mind Stone\n1 Orzhov Signet\n1 Arcane Sanctum\n1 Ash Barrens\n1 Azorius Chancery\n1 Bojuka Bog\n1 Dimir Aqueduct\n1 Evolving Wilds\n1 Halimar Depths\n1 Obscura Storefront\n1 Orzhov Basilica\n1 Tainted Field\n1 Tainted Isle\n1 Thriving Heath\n1 Thriving Isle\n1 Thriving Moor\n3 Plains\n2 Plains\n2 Island\n2 Island\n3 Swamp\n2 Swamp",
   "oracleCards": [
@@ -1817,21 +1817,21 @@
   ],
   "result": {
     "profile": {
-      "median": 42,
-      "floor": 29,
-      "ceiling": 53,
-      "peak": 82,
-      "dispersion": 24,
-      "variance": 24,
-      "consistency": 63,
+      "median": 44,
+      "floor": 30,
+      "ceiling": 56,
+      "peak": 85,
+      "dispersion": 25,
+      "variance": 25,
+      "consistency": 62,
       "commanderDelta": 7,
       "coverage": 93,
       "dataCoverage": 93
     },
     "dimensions": {
-      "speed": 28,
-      "consistency": 63,
-      "explosiveness": 12,
+      "speed": 31,
+      "consistency": 62,
+      "explosiveness": 13,
       "synergy": 65,
       "interaction": 37,
       "resilience": 53
@@ -1870,7 +1870,11 @@
         ],
         "payoffs": [
           "Doomwake Giant",
-          "Ondu Spiritdancer"
+          "Ondu Spiritdancer",
+          "Mesa Enchantress",
+          "Secret Arcade // Dusty Parlor",
+          "Sigil of the Empty Throne",
+          "Starfield Mystic"
         ],
         "members": [
           "Ancient Cellarspawn",
@@ -1898,7 +1902,9 @@
           "The Eldest Reborn",
           "The Master of Keys",
           "Timely Ward",
-          "Ondu Spiritdancer"
+          "Ondu Spiritdancer",
+          "Mesa Enchantress",
+          "Starfield Mystic"
         ],
         "producerCards": [
           {
@@ -2447,6 +2453,84 @@
               ],
               "total": 5
             }
+          },
+          {
+            "name": "Mesa Enchantress",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "draw"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Secret Arcade // Dusty Parlor",
+            "cmc": 8,
+            "tags": [
+              "enchantment",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 6,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 8
+            }
+          },
+          {
+            "name": "Sigil of the Empty Throne",
+            "cmc": 5,
+            "tags": [
+              "enchantment",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ],
+                [
+                  "W"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Starfield Mystic",
+            "cmc": 2,
+            "tags": [
+              "creature",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
           }
         ],
         "producerTags": [
@@ -2456,7 +2540,7 @@
         "payoffTags": [
           "constellation"
         ],
-        "evidence": "25 producteur(s), 2 payoff(s), 26 carte(s) distincte(s)."
+        "evidence": "25 producteur(s), 6 payoff(s), 28 carte(s) distincte(s)."
       },
       {
         "id": "graveyard",
@@ -2710,12 +2794,11 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 44,
-        "cohesion": 44,
+        "strength": 41,
+        "cohesion": 41,
         "producers": [
           "Arcane Signet",
           "Azorius Signet",
-          "Commander's Sphere",
           "Mind Stone",
           "Orzhov Signet",
           "Sol Ring"
@@ -2726,7 +2809,6 @@
         "members": [
           "Arcane Signet",
           "Azorius Signet",
-          "Commander's Sphere",
           "Mind Stone",
           "Orzhov Signet",
           "Sol Ring",
@@ -2757,21 +2839,6 @@
               "generic": 2,
               "colored": [],
               "total": 2
-            }
-          },
-          {
-            "name": "Commander's Sphere",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "draw",
-              "mana",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
             }
           },
           {
@@ -2842,7 +2909,7 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 6 source(s) persistante(s) vers un commandant MV 4."
+        "evidence": "0 accélérateur(s) burst + 5 source(s) persistante(s) réellement dans la fenêtre T3 ou avant vers un commandant MV 4."
       }
     ],
     "combos": [],
@@ -2875,15 +2942,15 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
-      "median": 42,
-      "high": 50,
-      "ceiling": 50,
-      "peak": 75,
-      "iqr": 14,
-      "consistency": 70,
+      "floor": 35,
+      "median": 44,
+      "high": 53,
+      "ceiling": 53,
+      "peak": 80,
+      "iqr": 15,
+      "consistency": 68,
       "commanderMedianTurn": 4,
-      "engineMedianTurn": 6,
+      "engineMedianTurn": 5,
       "recoveryAfterDisruption": 90,
       "turnProfile": [
         {
@@ -2905,7 +2972,7 @@
         {
           "turn": 3,
           "commander": 21,
-          "engine": 1,
+          "engine": 3,
           "interaction": 28,
           "resource": 63,
           "burst": 0
@@ -2913,7 +2980,7 @@
         {
           "turn": 4,
           "commander": 60,
-          "engine": 6,
+          "engine": 15,
           "interaction": 41,
           "resource": 78,
           "burst": 0
@@ -2921,7 +2988,7 @@
         {
           "turn": 5,
           "commander": 77,
-          "engine": 15,
+          "engine": 30,
           "interaction": 51,
           "resource": 85,
           "burst": 1
@@ -2929,7 +2996,7 @@
         {
           "turn": 6,
           "commander": 83,
-          "engine": 25,
+          "engine": 44,
           "interaction": 56,
           "resource": 89,
           "burst": 4
@@ -2937,7 +3004,7 @@
         {
           "turn": 7,
           "commander": 87,
-          "engine": 31,
+          "engine": 53,
           "interaction": 61,
           "resource": 92,
           "burst": 7
@@ -2997,26 +3064,26 @@
               },
               {
                 "turn": 3,
-                "value": 0
+                "value": 2
               },
               {
                 "turn": 4,
-                "value": 5
+                "value": 13
               },
               {
                 "turn": 5,
-                "value": 14
+                "value": 27
               },
               {
                 "turn": 6,
-                "value": 22
+                "value": 40
               },
               {
                 "turn": 7,
-                "value": 28
+                "value": 49
               }
             ],
-            "observedWithinHorizon": 224
+            "observedWithinHorizon": 390
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -3205,17 +3272,6 @@
         "aeon": null
       },
       {
-        "name": "Commander's Sphere",
-        "impact": 3.3,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Mind Stone",
         "impact": 3.3,
         "tags": [
@@ -3255,6 +3311,15 @@
           "draw",
           "tokens",
           "spellslinger"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mesa Enchantress",
+        "impact": 3,
+        "tags": [
+          "creature",
+          "draw"
         ],
         "aeon": null
       },
@@ -3307,42 +3372,43 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
       "dimensions": {
         "tempo": {
-          "score": 28,
+          "score": 31,
           "level": "moderate",
           "evidence": [
             {
               "signal": "speed",
-              "value": 28,
+              "value": 31,
               "source": "aeon-dimension",
               "reason": "Existing Aeon speed dimension; no power-score feedback."
             }
           ]
         },
         "explosiveness": {
-          "score": 12,
+          "score": 13,
           "level": "low",
           "evidence": [
             {
               "signal": "explosiveness",
-              "value": 12,
+              "value": 13,
               "source": "aeon-dimension",
               "reason": "Existing Aeon explosiveness dimension; no power-score feedback."
             }
           ]
         },
         "volatility": {
-          "score": 92,
+          "score": 94,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 24,
+              "value": 25,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
@@ -3390,7 +3456,7 @@
             },
             {
               "signal": "consistency",
-              "value": 63,
+              "value": 62,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
@@ -3402,7 +3468,7 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 72.3,
+              "value": 71.3,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
@@ -3638,28 +3704,28 @@
             },
             {
               "turn": 3,
-              "value": 0
+              "value": 2
             },
             {
               "turn": 4,
-              "value": 5
+              "value": 13
             },
             {
               "turn": 5,
-              "value": 14
+              "value": 27
             },
             {
               "turn": 6,
-              "value": 22
+              "value": 40
             },
             {
               "turn": 7,
-              "value": 28
+              "value": 49
             }
           ],
-          "observedWithinHorizon": 224,
+          "observedWithinHorizon": 390,
           "milestones": {
-            "at25": 7,
+            "at25": 5,
             "at50": null,
             "at75": null
           }
@@ -3844,28 +3910,28 @@
             },
             {
               "turn": 3,
-              "value": 1
+              "value": 3
             },
             {
               "turn": 4,
-              "value": 6
-            },
-            {
-              "turn": 5,
               "value": 15
             },
             {
+              "turn": 5,
+              "value": 30
+            },
+            {
               "turn": 6,
-              "value": 25
+              "value": 44
             },
             {
               "turn": 7,
-              "value": 31
+              "value": 53
             }
           ],
           "milestones": {
-            "at25": 6,
-            "at50": null,
+            "at25": 5,
+            "at50": 7,
             "at75": null
           }
         },
@@ -4047,28 +4113,28 @@
             },
             {
               "turn": 3,
-              "value": 0
+              "value": 2
             },
             {
               "turn": 4,
-              "value": 5
+              "value": 13
             },
             {
               "turn": 5,
-              "value": 14
+              "value": 27
             },
             {
               "turn": 6,
-              "value": 22
+              "value": 40
             },
             {
               "turn": 7,
-              "value": 28
+              "value": 49
             }
           ],
-          "observedWithinHorizon": 224,
+          "observedWithinHorizon": 390,
           "milestones": {
-            "at25": 7,
+            "at25": 5,
             "at50": null,
             "at75": null
           }

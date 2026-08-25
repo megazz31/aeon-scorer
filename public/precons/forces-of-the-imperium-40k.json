@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/ForcesOfTheImperium_40K.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Forces of the Imperium",
@@ -40,11 +40,11 @@
     "peak": 81,
     "coverage": 95,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "25e0682364845f15e24c2b51b72deac94cd3f8533342b1039d2b4b14ab0bf022",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Bastion Protector\n1 Collective Effort\n1 Deploy to the Front\n1 Fell the Mighty\n1 Hour of Reckoning\n1 Launch the Fleet\n1 Martial Coup\n1 Entrapment Maneuver\n1 Utter End\n1 Swords to Plowshares\n1 Mortify\n1 Everflowing Chalice\n1 Mind Stone\n1 Skullclamp\n1 Sol Ring\n1 Talisman of Dominance\n1 Talisman of Hierarchy\n1 Talisman of Progress\n1 Arcane Signet\n1 Commander's Sphere\n1 Reconnaissance Mission\n1 Choked Estuary\n1 Darkwater Catacombs\n1 Exotic Orchard\n1 Port Town\n1 Prairie Stream\n1 Skycloud Expanse\n1 Sunken Hollow\n1 Arcane Sanctum\n1 Ash Barrens\n1 Memorial to Glory\n1 Command Tower\n1 Dismal Backwater\n1 Evolving Wilds\n1 Path of Ancestry\n1 Scoured Barrens\n1 Terramorphic Expanse\n1 Tranquil Cove\n5 Island\n7 Swamp\n8 Plains\n1 Marneus Calgar\n1 Celestine, the Living Saint\n1 Defenders of Humanity\n1 For the Emperor!\n1 Space Marine Devastator\n1 Triumph of Saint Katherine\n1 Ultramarines Honour Guard\n1 Vexilus Praetor\n1 Zephyrim\n1 Sister of Silence\n1 Vanguard Suppressor\n1 Arco-Flagellant\n1 Primaris Eliminator\n1 Assault Intercessor\n1 Belisarius Cawl\n1 Birth of the Imperium\n1 Callidus Assassin\n1 Commissar Severina Raine\n1 Company Commander\n1 Cybernetica Datasmith\n1 Epistolary Librarian\n1 Exterminatus\n1 The Flesh Is Weak\n1 Inquisitor Eisenhorn\n1 Neyam Shai Murad\n1 Sister Hospitaller\n1 Sister Repentia\n1 The Golden Throne\n1 Inquisitorial Rosette\n1 Knight Paladin\n1 Reaver Titan\n1 Redemptor Dreadnought\n1 Thunderhawk Gunship\n1 And They Shall Know No Fear\n1 Grey Knight Paragon\n1 Space Marine Scout\n1 Thunderwolf Cavalry\n1 Sicarian Infiltrator\n1 Sanguinary Priest\n1 Deny the Witch\n1 Primaris Chaplain",
   "oracleCards": [
@@ -1722,7 +1722,7 @@
       "speed": 34,
       "consistency": 64,
       "explosiveness": 16,
-      "synergy": 71,
+      "synergy": 70,
       "interaction": 49,
       "resilience": 45
     },
@@ -2336,11 +2336,10 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 50,
-        "cohesion": 50,
+        "strength": 47,
+        "cohesion": 47,
         "producers": [
           "Arcane Signet",
-          "Commander's Sphere",
           "Everflowing Chalice",
           "Mind Stone",
           "Sol Ring",
@@ -2353,7 +2352,6 @@
         ],
         "members": [
           "Arcane Signet",
-          "Commander's Sphere",
           "Everflowing Chalice",
           "Mind Stone",
           "Sol Ring",
@@ -2374,21 +2372,6 @@
               "generic": 2,
               "colored": [],
               "total": 2
-            }
-          },
-          {
-            "name": "Commander's Sphere",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "draw",
-              "mana",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
             }
           },
           {
@@ -2502,7 +2485,7 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 8 source(s) persistante(s) vers un commandant MV 4."
+        "evidence": "0 accélérateur(s) burst + 7 source(s) persistante(s) réellement dans la fenêtre T3 ou avant vers un commandant MV 4."
       }
     ],
     "combos": [],
@@ -2864,17 +2847,6 @@
         "aeon": null
       },
       {
-        "name": "Commander's Sphere",
-        "impact": 3.3,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Inquisitor Eisenhorn",
         "impact": 3.3,
         "tags": [
@@ -2961,6 +2933,17 @@
         "aeon": null
       },
       {
+        "name": "Commander's Sphere",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Martial Coup",
         "impact": 2.6,
         "tags": [
@@ -2979,7 +2962,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -3056,7 +3040,7 @@
           "evidence": [
             {
               "signal": "synergy",
-              "value": 71,
+              "value": 70,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -3074,7 +3058,7 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 69,
+              "value": 68,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }

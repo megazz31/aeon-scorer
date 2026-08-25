@@ -16,7 +16,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/PhantomPremonition_KHC.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Phantom Premonition",
@@ -33,11 +33,11 @@
     "peak": 88,
     "coverage": 93,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "4961729acea881346d74adca4f3f9a41ee81f70949de889dcb888a37c81a939a",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Angel of Finality\n1 Angel of Serenity\n1 Arcane Artisan\n1 Brago, King Eternal\n1 Burnished Hart\n1 Cloudblazer\n1 Cloudgoat Ranger\n1 Empyrean Eagle\n1 Ethereal Valkyrie\n1 Evangel of Heliod\n1 Flickerwisp\n1 Geist-Honored Monk\n1 Goldnight Commander\n1 Hero of Bretagard\n1 Inspired Sphinx\n1 Kor Cartographer\n1 Meteor Golem\n1 Mist Raven\n1 Mistmeadow Witch\n1 Mulldrifter\n1 Restoration Angel\n1 Sage of the Beyond\n1 Sea Gate Oracle\n1 Soulherder\n1 Stoic Farmer\n1 Sun Titan\n1 Surtland Elementalist\n1 Thunderclap Wyvern\n1 Vega, the Watcher\n1 Wall of Omens\n1 Whirler Rogue\n1 Behold the Multiverse\n1 Cosmic Intervention\n1 Eerie Interlude\n1 Ghostly Flicker\n1 Iron Verdict\n1 Momentary Blink\n1 Return to Dust\n1 Saw It Coming\n1 Synthetic Destiny\n1 Warhorn Blast\n1 Cleansing Nova\n1 Curse of the Swine\n1 Migratory Route\n1 Ravenform\n1 Spectral Deluge\n1 Storm Herd\n1 Tales of the Ancestors\n1 Windfall\n1 Banishing Light\n1 Day of the Dragons\n1 Ghostly Prison\n1 Marshal's Anthem\n1 Niko Defies Destiny\n1 Arcane Signet\n1 Azorius Signet\n1 Commander's Sphere\n1 Marble Diamond\n1 Mind Stone\n1 Replicating Ring\n1 Sky Diamond\n1 Sol Ring\n1 Swiftfoot Boots\n1 Azorius Chancery\n1 Azorius Guildgate\n1 Command Tower\n1 Cryptic Caves\n1 Gates of Istfell\n1 Glacial Floodplain\n12 Island\n1 Meandering River\n1 Myriad Landscape\n1 Opal Palace\n13 Plains\n1 Sejiri Refuge\n1 Tranquil Cove",
   "oracleCards": [
@@ -1568,7 +1568,7 @@
       "dispersion": 25,
       "variance": 25,
       "consistency": 59,
-      "commanderDelta": 7,
+      "commanderDelta": 8,
       "coverage": 93,
       "dataCoverage": 93
     },
@@ -1576,7 +1576,7 @@
       "speed": 32,
       "consistency": 59,
       "explosiveness": 14,
-      "synergy": 65,
+      "synergy": 67,
       "interaction": 53,
       "resilience": 49
     },
@@ -2287,16 +2287,13 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 53,
-        "cohesion": 53,
+        "strength": 44,
+        "cohesion": 44,
         "producers": [
           "Arcane Signet",
           "Azorius Signet",
-          "Commander's Sphere",
           "Marble Diamond",
           "Mind Stone",
-          "Niko Defies Destiny",
-          "Replicating Ring",
           "Sky Diamond",
           "Sol Ring"
         ],
@@ -2306,11 +2303,8 @@
         "members": [
           "Arcane Signet",
           "Azorius Signet",
-          "Commander's Sphere",
           "Marble Diamond",
           "Mind Stone",
-          "Niko Defies Destiny",
-          "Replicating Ring",
           "Sky Diamond",
           "Sol Ring",
           "Ranar the Ever-Watchful"
@@ -2343,21 +2337,6 @@
             }
           },
           {
-            "name": "Commander's Sphere",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "draw",
-              "mana",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
-          {
             "name": "Marble Diamond",
             "cmc": 2,
             "tags": [
@@ -2384,44 +2363,6 @@
               "generic": 2,
               "colored": [],
               "total": 2
-            }
-          },
-          {
-            "name": "Niko Defies Destiny",
-            "cmc": 3,
-            "tags": [
-              "enchantment",
-              "mana",
-              "recursion",
-              "lifegain"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "W"
-                ],
-                [
-                  "U"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Replicating Ring",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "mana",
-              "tokens",
-              "counter-producer",
-              "counter-kind:generic"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
             }
           },
           {
@@ -2475,12 +2416,12 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 9 source(s) persistante(s) vers un commandant MV 4."
+        "evidence": "0 accélérateur(s) burst + 6 source(s) persistante(s) réellement dans la fenêtre T3 ou avant vers un commandant MV 4."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 24,
+      "score": 40,
       "connected": [
         "Cloudgoat Ranger",
         "Day of the Dragons",
@@ -2490,11 +2431,18 @@
         "Migratory Route",
         "Replicating Ring",
         "Storm Herd",
-        "Whirler Rogue"
+        "Whirler Rogue",
+        "Brago, King Eternal",
+        "Empyrean Eagle",
+        "Ethereal Valkyrie",
+        "Sage of the Beyond",
+        "Soulherder",
+        "Vega, the Watcher"
       ],
       "tags": [
         "tokens",
-        "token-payoff"
+        "token-payoff",
+        "tribal:spirit"
       ]
     },
     "commanderNames": [
@@ -2837,17 +2785,6 @@
         "aeon": null
       },
       {
-        "name": "Commander's Sphere",
-        "impact": 3.3,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Mind Stone",
         "impact": 3.3,
         "tags": [
@@ -2869,14 +2806,13 @@
         "aeon": null
       },
       {
-        "name": "Replicating Ring",
-        "impact": 2.8,
+        "name": "Commander's Sphere",
+        "impact": 2.6,
         "tags": [
           "artifact",
+          "draw",
           "mana",
-          "tokens",
-          "counter-producer",
-          "counter-kind:generic"
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2888,17 +2824,6 @@
           "draw",
           "tokens",
           "etb"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Niko Defies Destiny",
-        "impact": 2.5,
-        "tags": [
-          "enchantment",
-          "mana",
-          "recursion",
-          "lifegain"
         ],
         "aeon": null
       },
@@ -2934,6 +2859,27 @@
           "lifegain"
         ],
         "aeon": null
+      },
+      {
+        "name": "Momentary Blink",
+        "impact": 2.3,
+        "tags": [
+          "instant",
+          "protection",
+          "recursion",
+          "blink"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mulldrifter",
+        "impact": 2.3,
+        "tags": [
+          "creature",
+          "draw",
+          "etb"
+        ],
+        "aeon": null
       }
     ],
     "warnings": [],
@@ -2944,7 +2890,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -3021,7 +2968,7 @@
           "evidence": [
             {
               "signal": "synergy",
-              "value": 65,
+              "value": 67,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -3039,25 +2986,25 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 76.5,
+              "value": 72,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 39,
-          "level": "moderate",
+          "score": 50,
+          "level": "high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 7,
+              "value": 8,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 24,
+              "value": 40,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },

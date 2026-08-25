@@ -16,7 +16,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/PlunderTheGraves_C15.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Plunder the Graves",
@@ -39,11 +39,11 @@
     "peak": 85,
     "coverage": 93,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "3e4c6a5d69b728a91a47ff6b16b2812c387118b07f3e7042b967ef641f064048",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Sakura-Tribe Elder\n1 Satyr Wayfinder\n1 Viridian Emissary\n1 Wall of Blossoms\n1 Viridian Zealot\n1 Korozda Guildmage\n1 Lotleth Troll\n1 Blood Bairn\n1 Phyrexian Rager\n1 Skullwinder\n1 Wood Elves\n1 Eternal Witness\n1 Corpse Augur\n1 Centaur Vinecrasher\n1 Bloodspore Thrinax\n1 Jarad, Golgari Lich Lord\n1 Shriekmaw\n1 Indrik Stomphowler\n1 Kessig Cagebreakers\n1 Banshee of the Dread Choir\n1 Phyrexian Plaguelord\n1 Acidic Slime\n1 Mycoloth\n1 Mazirek, Kraul Death Priest\n1 Vulturous Zombie\n1 Great Oak Guardian\n1 Champion of Stray Souls\n1 Extractor Demon\n1 Thief of Blood\n1 Pathbreaker Ibex\n1 Cloudthresher\n1 Butcher of Malakir\n1 Eater of Hope\n1 Scourge of Nel Toth\n1 Caller of the Pack\n1 Terastodon\n1 Verdant Force\n1 Mulch\n1 Victimize\n1 Primal Growth\n1 Ambition's Cost\n1 Sever the Bloodline\n1 Barter in Blood\n1 Rise from the Grave\n1 Spider Spawning\n1 Overwhelming Stampede\n1 Dread Summons\n1 Altar's Reap\n1 Tribute to the Wild\n1 Golgari Charm\n1 Grisly Salvage\n1 Putrefy\n1 Wretched Confluence\n1 Skullclamp\n1 Sol Ring\n1 Golgari Signet\n1 Lightning Greaves\n1 Thought Vessel\n1 Bonehoard\n1 Eldrazi Monument\n1 Diabolic Servitude\n1 Command Tower\n1 Evolving Wilds\n1 Golgari Guildgate\n1 Golgari Rot Farm\n1 Grim Backwoods\n1 High Market\n1 Jungle Hollow\n1 Polluted Mire\n1 Slippery Karst\n1 Tainted Wood\n1 Terramorphic Expanse\n1 Vivid Grove\n1 Vivid Marsh\n4 Swamp\n3 Swamp\n3 Swamp\n3 Swamp\n3 Forest\n3 Forest\n3 Forest\n3 Forest",
   "oracleCards": [
@@ -1560,7 +1560,7 @@
       "speed": 32,
       "consistency": 61,
       "explosiveness": 13,
-      "synergy": 62,
+      "synergy": 61,
       "interaction": 36,
       "resilience": 67
     },
@@ -2128,28 +2128,24 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 47,
-        "cohesion": 47,
+        "strength": 41,
+        "cohesion": 41,
         "producers": [
           "Golgari Signet",
-          "Primal Growth",
           "Sakura-Tribe Elder",
           "Sol Ring",
           "Thought Vessel",
-          "Viridian Emissary",
-          "Wood Elves"
+          "Viridian Emissary"
         ],
         "payoffs": [
           "Meren of Clan Nel Toth"
         ],
         "members": [
           "Golgari Signet",
-          "Primal Growth",
           "Sakura-Tribe Elder",
           "Sol Ring",
           "Thought Vessel",
           "Viridian Emissary",
-          "Wood Elves",
           "Meren of Clan Nel Toth"
         ],
         "producerCards": [
@@ -2164,24 +2160,6 @@
               "generic": 2,
               "colored": [],
               "total": 2
-            }
-          },
-          {
-            "name": "Primal Growth",
-            "cmc": 3,
-            "tags": [
-              "sorcery",
-              "land-ramp",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
             }
           },
           {
@@ -2246,24 +2224,6 @@
               ],
               "total": 2
             }
-          },
-          {
-            "name": "Wood Elves",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "land-ramp",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
-            }
           }
         ],
         "payoffCards": [
@@ -2289,7 +2249,7 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 7 source(s) persistante(s) vers un commandant MV 4."
+        "evidence": "0 accélérateur(s) burst + 5 source(s) persistante(s) réellement dans la fenêtre T3 ou avant vers un commandant MV 4."
       }
     ],
     "combos": [],
@@ -2754,7 +2714,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -2831,7 +2792,7 @@
           "evidence": [
             {
               "signal": "synergy",
-              "value": 62,
+              "value": 61,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -2849,7 +2810,7 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 66,
+              "value": 64,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }

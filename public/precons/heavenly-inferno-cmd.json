@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/HeavenlyInferno_CMD.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Heavenly Inferno",
@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 33,
-    "p20": 22,
-    "p80": 46,
-    "peak": 66,
+    "median": 35,
+    "p20": 23,
+    "p80": 48,
+    "peak": 67,
     "coverage": 91,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "3fc3157f3d12c4ae08adade5c2e0088138d65e0d1a75e1bbab271ff44c46db1d",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Mother of Runes\n1 Orzhov Guildmage\n1 Boros Guildmage\n1 Gwyllion Hedge-Mage\n1 Duergar Hedge-Mage\n1 Lightkeeper of Emeria\n1 Razorjaw Oni\n1 Anger\n1 Voice of All\n1 Dragon Whelp\n1 Furnace Whelp\n1 Serra Angel\n1 Shattered Angel\n1 Fallen Angel\n1 Basandra, Battle Seraph\n1 Oni of Wild Places\n1 Mana-Charged Dragon\n1 Oros, the Avenger\n1 Malfegor\n1 Angelic Arbiter\n1 Archangel of Strife\n1 Tariel, Reckoner of Souls\n1 Angel of Despair\n1 Bladewing the Risen\n1 Avatar of Slaughter\n1 Akroma, Angel of Fury\n1 Reiver Demon\n1 Dread Cacodemon\n1 Syphon Mind\n1 Diabolic Tutor\n1 Evincar's Justice\n1 Syphon Flesh\n1 Akroma's Vengeance\n1 Death by Dragons\n1 Earthquake\n1 Path to Exile\n1 Bathe in Light\n1 Terminate\n1 Orim's Thunder\n1 Mortify\n1 Congregate\n1 Return to Dust\n1 Sulfurous Blast\n1 Wrecking Ball\n1 Master Warcraft\n1 Cleansing Beam\n1 Comet Storm\n1 Sol Ring\n1 Armillary Sphere\n1 Boros Signet\n1 Lightning Greaves\n1 Orzhov Signet\n1 Rakdos Signet\n1 Darksteel Ingot\n1 Soul Snare\n1 Vow of Duty\n1 Vow of Malice\n1 Vow of Lightning\n1 Stranglehold\n1 Pyrohemia\n1 Righteous Cause\n1 Akoum Refuge\n1 Barren Moor\n1 Bojuka Bog\n1 Boros Garrison\n1 Command Tower\n1 Evolving Wilds\n1 Forgotten Cave\n1 Molten Slagheap\n1 Orzhov Basilica\n1 Rakdos Carnarium\n1 Rupture Spire\n1 Secluded Steppe\n1 Vivid Meadow\n1 Zoetic Cavern\n2 Plains\n2 Plains\n2 Plains\n2 Plains\n2 Swamp\n2 Swamp\n2 Swamp\n2 Swamp\n2 Mountain\n2 Mountain\n2 Mountain\n2 Mountain",
   "oracleCards": [
@@ -1564,14 +1564,14 @@
   ],
   "result": {
     "profile": {
-      "median": 33,
-      "floor": 22,
-      "ceiling": 46,
-      "peak": 66,
-      "dispersion": 24,
-      "variance": 24,
+      "median": 35,
+      "floor": 23,
+      "ceiling": 48,
+      "peak": 67,
+      "dispersion": 25,
+      "variance": 25,
       "consistency": 63,
-      "commanderDelta": 4,
+      "commanderDelta": 9,
       "coverage": 91,
       "dataCoverage": 91
     },
@@ -1579,7 +1579,7 @@
       "speed": 28,
       "consistency": 63,
       "explosiveness": 9,
-      "synergy": 30,
+      "synergy": 44,
       "interaction": 55,
       "resilience": 24
     },
@@ -1601,11 +1601,10 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 41,
-        "cohesion": 41,
+        "strength": 38,
+        "cohesion": 38,
         "producers": [
           "Boros Signet",
-          "Darksteel Ingot",
           "Orzhov Signet",
           "Rakdos Signet",
           "Sol Ring"
@@ -1615,7 +1614,6 @@
         ],
         "members": [
           "Boros Signet",
-          "Darksteel Ingot",
           "Orzhov Signet",
           "Rakdos Signet",
           "Sol Ring",
@@ -1633,20 +1631,6 @@
               "generic": 2,
               "colored": [],
               "total": 2
-            }
-          },
-          {
-            "name": "Darksteel Ingot",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "mana",
-              "protection"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
             }
           },
           {
@@ -1714,14 +1698,40 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 5 source(s) persistante(s) vers un commandant MV 4."
+        "evidence": "0 accélérateur(s) burst + 4 source(s) persistante(s) réellement dans la fenêtre T3 ou avant vers un commandant MV 4."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 0,
-      "connected": [],
-      "tags": []
+      "score": 59,
+      "connected": [
+        "Akroma, Angel of Fury",
+        "Angel of Despair",
+        "Angelic Arbiter",
+        "Archangel of Strife",
+        "Basandra, Battle Seraph",
+        "Fallen Angel",
+        "Lightkeeper of Emeria",
+        "Serra Angel",
+        "Shattered Angel",
+        "Tariel, Reckoner of Souls",
+        "Voice of All",
+        "Bladewing the Risen",
+        "Dragon Whelp",
+        "Furnace Whelp",
+        "Malfegor",
+        "Mana-Charged Dragon",
+        "Oros, the Avenger",
+        "Dread Cacodemon",
+        "Oni of Wild Places",
+        "Razorjaw Oni",
+        "Reiver Demon"
+      ],
+      "tags": [
+        "tribal:angel",
+        "tribal:dragon",
+        "tribal:demon"
+      ]
     },
     "commanderNames": [
       "Kaalia of the Vast"
@@ -2052,16 +2062,6 @@
         "aeon": null
       },
       {
-        "name": "Darksteel Ingot",
-        "impact": 2.4,
-        "tags": [
-          "artifact",
-          "mana",
-          "protection"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Boros Signet",
         "impact": 1.9,
         "tags": [
@@ -2085,6 +2085,16 @@
         "tags": [
           "artifact",
           "mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Darksteel Ingot",
+        "impact": 1.7,
+        "tags": [
+          "artifact",
+          "mana",
+          "protection"
         ],
         "aeon": null
       },
@@ -2151,7 +2161,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -2181,18 +2192,18 @@
           ]
         },
         "volatility": {
-          "score": 78,
+          "score": 79,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 24,
+              "value": 25,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 20,
+              "value": 19,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -2223,12 +2234,12 @@
           ]
         },
         "inevitability": {
-          "score": 40,
+          "score": 45,
           "level": "moderate",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 30,
+              "value": 44,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -2246,25 +2257,25 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 41,
+              "value": 38,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 16,
-          "level": "low",
+          "score": 63,
+          "level": "high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 4,
+              "value": 9,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 0,
+              "value": 59,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },

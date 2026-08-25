@@ -16,7 +16,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/RebellionRising_ONC.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Rebellion Rising",
@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 53,
+    "median": 52,
     "p20": 40,
-    "p80": 66,
-    "peak": 90,
+    "p80": 65,
+    "peak": 89,
     "coverage": 94,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "d96f83fc0e64e591b85766e4ba1e428977475ff8aad1568550ee57d072528d53",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Elspeth Tirel\n1 Adriana, Captain of the Guard\n1 Dragonmaster Outcast\n1 Emeria Angel\n1 Goldnight Commander\n1 Harmonious Archon\n1 Jor Kadeen, the Prevailer\n1 Legion Warboss\n1 Loyal Apprentice\n1 Mentor of the Meek\n1 Myr Battlesphere\n1 Otharri, Suns' Glory\n1 Phantom General\n1 Prava of the Steel Legion\n1 Siege-Gang Commander\n1 Silverwing Squadron\n1 Solemn Simulacrum\n1 Boros Charm\n1 Call the Coppercoats\n1 Clever Concealment\n1 Flawless Maneuver\n1 Generous Gift\n1 Midnight Haunting\n1 Path to Exile\n1 White Sun's Zenith\n1 Battle Screech\n1 Chain Reaction\n1 Collective Effort\n1 Cut a Deal\n1 Finale of Glory\n1 Goldwardens' Gambit\n1 Hate Mirage\n1 Heroic Reinforcements\n1 Hordeling Outburst\n1 Hour of Reckoning\n1 Increasing Devotion\n1 Martial Coup\n1 Rip Apart\n1 Assemble the Legion\n1 Court of Grace\n1 Felidar Retreat\n1 Intangible Virtue\n1 Roar of Resistance\n1 Arcane Signet\n1 Boros Signet\n1 Commander's Sphere\n1 Fellwar Stone\n1 Glimmer Lens\n1 Hexplate Wallbreaker\n1 Idol of Oblivion\n1 Kemba's Banner\n1 Loxodon Warhammer\n1 Mace of the Valiant\n1 Mask of Memory\n1 Maul of the Skyclaves\n1 Mind Stone\n1 Sol Ring\n1 Soul-Guide Lantern\n1 Staff of the Storyteller\n1 Talisman of Conviction\n1 Vulshok Factory\n1 Boros Garrison\n1 Buried Ruin\n1 Castle Ardenvale\n1 Castle Embereth\n1 Command Tower\n1 Exotic Orchard\n1 Forgotten Cave\n1 Furycalm Snarl\n1 Kher Keep\n1 Myriad Landscape\n1 Path of Ancestry\n1 Secluded Steppe\n1 Slayers' Stronghold\n1 Temple of Triumph\n1 Temple of the False God\n1 Windbrisk Heights\n11 Plains\n11 Mountain",
   "oracleCards": [
@@ -1622,10 +1622,10 @@
   ],
   "result": {
     "profile": {
-      "median": 53,
+      "median": 52,
       "floor": 40,
-      "ceiling": 66,
-      "peak": 90,
+      "ceiling": 65,
+      "peak": 89,
       "dispersion": 25,
       "variance": 25,
       "consistency": 59,
@@ -1637,7 +1637,7 @@
       "speed": 42,
       "consistency": 59,
       "explosiveness": 21,
-      "synergy": 84,
+      "synergy": 82,
       "interaction": 50,
       "resilience": 42
     },
@@ -2447,19 +2447,195 @@
         "evidence": "30 producteur(s), 7 payoff(s), 34 carte(s) distincte(s)."
       },
       {
+        "id": "equipment",
+        "name": "Équipements / Voltron",
+        "strength": 60,
+        "cohesion": 60,
+        "producers": [
+          "Glimmer Lens",
+          "Hexplate Wallbreaker",
+          "Kemba's Banner",
+          "Loxodon Warhammer",
+          "Mace of the Valiant",
+          "Mask of Memory",
+          "Maul of the Skyclaves"
+        ],
+        "payoffs": [
+          "Goldwardens' Gambit"
+        ],
+        "members": [
+          "Glimmer Lens",
+          "Hexplate Wallbreaker",
+          "Kemba's Banner",
+          "Loxodon Warhammer",
+          "Mace of the Valiant",
+          "Mask of Memory",
+          "Maul of the Skyclaves",
+          "Goldwardens' Gambit"
+        ],
+        "producerCards": [
+          {
+            "name": "Glimmer Lens",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 2
+            }
+          },
+          {
+            "name": "Hexplate Wallbreaker",
+            "cmc": 5,
+            "tags": [
+              "artifact",
+              "extra-combat"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Kemba's Banner",
+            "cmc": 4,
+            "tags": [
+              "artifact"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 4
+            }
+          },
+          {
+            "name": "Loxodon Warhammer",
+            "cmc": 3,
+            "tags": [
+              "artifact",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [],
+              "total": 3
+            }
+          },
+          {
+            "name": "Mace of the Valiant",
+            "cmc": 3,
+            "tags": [
+              "artifact",
+              "etb",
+              "counter-producer",
+              "counter-payoff",
+              "counter-kind:charge"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Mask of Memory",
+            "cmc": 2,
+            "tags": [
+              "artifact",
+              "draw",
+              "graveyard-setup"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [],
+              "total": 2
+            }
+          },
+          {
+            "name": "Maul of the Skyclaves",
+            "cmc": 3,
+            "tags": [
+              "artifact",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
+              "total": 3
+            }
+          }
+        ],
+        "supportCards": [],
+        "payoffCards": [
+          {
+            "name": "Goldwardens' Gambit",
+            "cmc": 8,
+            "tags": [
+              "sorcery",
+              "tokens"
+            ],
+            "manaReq": {
+              "generic": 6,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 8
+            }
+          }
+        ],
+        "producerTags": [
+          "equipment-type"
+        ],
+        "supportTags": [],
+        "payoffTags": [
+          "equipment-payoff"
+        ],
+        "evidence": "7 équipement(s), 1 carte(s) qui les convertissent en avantage."
+      },
+      {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 50,
-        "cohesion": 50,
+        "strength": 44,
+        "cohesion": 44,
         "producers": [
           "Arcane Signet",
           "Boros Signet",
-          "Commander's Sphere",
           "Fellwar Stone",
           "Mind Stone",
           "Sol Ring",
-          "Talisman of Conviction",
-          "Vulshok Factory"
+          "Talisman of Conviction"
         ],
         "payoffs": [
           "Neyali, Suns' Vanguard"
@@ -2467,12 +2643,10 @@
         "members": [
           "Arcane Signet",
           "Boros Signet",
-          "Commander's Sphere",
           "Fellwar Stone",
           "Mind Stone",
           "Sol Ring",
           "Talisman of Conviction",
-          "Vulshok Factory",
           "Neyali, Suns' Vanguard"
         ],
         "producerCards": [
@@ -2500,21 +2674,6 @@
               "generic": 2,
               "colored": [],
               "total": 2
-            }
-          },
-          {
-            "name": "Commander's Sphere",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "draw",
-              "mana",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
             }
           },
           {
@@ -2571,27 +2730,6 @@
               "colored": [],
               "total": 2
             }
-          },
-          {
-            "name": "Vulshok Factory",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "mana",
-              "tokens",
-              "sacrifice",
-              "counter-producer",
-              "counter-kind:charge"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 3
-            }
           }
         ],
         "payoffCards": [
@@ -2617,7 +2755,7 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 8 source(s) persistante(s) vers un commandant MV 4."
+        "evidence": "0 accélérateur(s) burst + 6 source(s) persistante(s) réellement dans la fenêtre T3 ou avant vers un commandant MV 4."
       }
     ],
     "combos": [],
@@ -2731,7 +2869,7 @@
         {
           "turn": 6,
           "commander": 93,
-          "engine": 55,
+          "engine": 56,
           "interaction": 66,
           "resource": 79,
           "burst": 13
@@ -2739,7 +2877,7 @@
         {
           "turn": 7,
           "commander": 95,
-          "engine": 61,
+          "engine": 62,
           "interaction": 71,
           "resource": 82,
           "burst": 13
@@ -2803,7 +2941,7 @@
               },
               {
                 "turn": 4,
-                "value": 40
+                "value": 41
               },
               {
                 "turn": 5,
@@ -2811,14 +2949,14 @@
               },
               {
                 "turn": 6,
-                "value": 57
+                "value": 58
               },
               {
                 "turn": 7,
                 "value": 63
               }
             ],
-            "observedWithinHorizon": 501
+            "observedWithinHorizon": 503
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -3022,17 +3160,6 @@
         "aeon": null
       },
       {
-        "name": "Commander's Sphere",
-        "impact": 3.3,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Mind Stone",
         "impact": 3.3,
         "tags": [
@@ -3044,15 +3171,21 @@
         "aeon": null
       },
       {
-        "name": "Vulshok Factory",
-        "impact": 2.9,
+        "name": "Glimmer Lens",
+        "impact": 3,
         "tags": [
           "artifact",
-          "mana",
-          "tokens",
-          "sacrifice",
-          "counter-producer",
-          "counter-kind:charge"
+          "draw"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Mask of Memory",
+        "impact": 3,
+        "tags": [
+          "artifact",
+          "draw",
+          "graveyard-setup"
         ],
         "aeon": null
       },
@@ -3065,6 +3198,26 @@
           "tokens",
           "token-payoff",
           "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commander's Sphere",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Hexplate Wallbreaker",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "extra-combat"
         ],
         "aeon": null
       },
@@ -3087,32 +3240,6 @@
           "lifegain"
         ],
         "aeon": null
-      },
-      {
-        "name": "Otharri, Suns' Glory",
-        "impact": 2.5,
-        "tags": [
-          "creature",
-          "recursion",
-          "tokens",
-          "counter-payoff",
-          "counter-kind:experience",
-          "lifegain"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Solemn Simulacrum",
-        "impact": 2.5,
-        "tags": [
-          "creature",
-          "artifact",
-          "draw",
-          "land-ramp",
-          "death-payoff",
-          "etb"
-        ],
-        "aeon": null
       }
     ],
     "warnings": [],
@@ -3123,7 +3250,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -3195,12 +3323,12 @@
           ]
         },
         "inevitability": {
-          "score": 67,
+          "score": 65,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 84,
+              "value": 82,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -3218,7 +3346,7 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 75,
+              "value": 68,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
@@ -3249,7 +3377,7 @@
           ]
         },
         "turnComplexity": {
-          "score": 30,
+          "score": 32,
           "level": "moderate",
           "evidence": [
             {
@@ -3272,7 +3400,7 @@
             },
             {
               "signal": "packages",
-              "value": 2,
+              "value": 3,
               "source": "package-model",
               "reason": "Independent engines increase sequencing branches."
             }
@@ -3353,13 +3481,13 @@
           "id": "long-sequencing",
           "label": "Long sequencing potential",
           "level": "moderate",
-          "score": 30,
+          "score": 32,
           "evidence": [
             {
               "name": "Experience Fingerprint",
               "reason": "Turn Complexity proxy from recurring/chained semantic actions.",
               "recurring": true,
-              "weight": 1.6666666666666667
+              "weight": 1.7777777777777777
             }
           ],
           "note": "Derived from Experience Fingerprint turn-complexity evidence; not calibrated to real clock time."
@@ -3443,7 +3571,7 @@
             },
             {
               "turn": 4,
-              "value": 40
+              "value": 41
             },
             {
               "turn": 5,
@@ -3451,14 +3579,14 @@
             },
             {
               "turn": 6,
-              "value": 57
+              "value": 58
             },
             {
               "turn": 7,
               "value": 63
             }
           ],
-          "observedWithinHorizon": 501,
+          "observedWithinHorizon": 503,
           "milestones": {
             "at25": 4,
             "at50": 5,
@@ -3657,11 +3785,11 @@
             },
             {
               "turn": 6,
-              "value": 55
+              "value": 56
             },
             {
               "turn": 7,
-              "value": 61
+              "value": 62
             }
           ],
           "milestones": {
@@ -3852,7 +3980,7 @@
             },
             {
               "turn": 4,
-              "value": 40
+              "value": 41
             },
             {
               "turn": 5,
@@ -3860,14 +3988,14 @@
             },
             {
               "turn": 6,
-              "value": 57
+              "value": 58
             },
             {
               "turn": 7,
               "value": 63
             }
           ],
-          "observedWithinHorizon": 501,
+          "observedWithinHorizon": 503,
           "milestones": {
             "at25": 4,
             "at50": 5,

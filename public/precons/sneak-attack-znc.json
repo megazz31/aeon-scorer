@@ -16,7 +16,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/SneakAttack_ZNC.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Sneak Attack",
@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 37,
-    "p20": 26,
-    "p80": 47,
-    "peak": 70,
+    "median": 39,
+    "p20": 28,
+    "p80": 49,
+    "peak": 72,
     "coverage": 92,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "0ba86cb0193452d126a8f4c7a8e2d901e733f3286e2e1251e2b2cbfa05bc3b0d",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Lazav, Dimir Mastermind\n1 Enigma Thief\n1 Scourge of Fleets\n1 Gonti, Lord of Luxury\n1 Nighthowler\n1 Ogre Slumlord\n1 Sepulchral Primordial\n1 Consuming Aberration\n1 Notion Thief\n1 Oona, Queen of the Fae\n1 Sygg, River Cutthroat\n1 Faerie Vandal\n1 Invisible Stalker\n1 Latchkey Faerie\n1 Marang River Prowler\n1 Master Thief\n1 Nightveil Sprite\n1 Slither Blade\n1 Triton Shorestalker\n1 Whirler Rogue\n1 Changeling Outcast\n1 Frogtosser Banneret\n1 Marsh Flitter\n1 Oona's Blackguard\n1 Stinkdrinker Bandit\n1 Syr Konrad, the Grim\n1 Zulaport Cutthroat\n1 Merfolk Windrobber\n1 Sure-Footed Infiltrator\n1 Soaring Thought-Thief\n1 Notorious Throng\n1 Stolen Identity\n1 In Garruk's Wake\n1 Necromantic Selection\n1 Distant Melody\n1 Open into Wonder\n1 Endless Obedience\n1 Rise from the Grave\n1 Extract from Darkness\n1 Fated Return\n1 Silumgar's Command\n1 Spinal Embrace\n1 Aetherize\n1 Fact or Fiction\n1 Murder\n1 Price of Fame\n1 Soul Manipulation\n1 Whispersteel Dagger\n1 Blackblade Reforged\n1 Bonehoard\n1 Obelisk of Urd\n1 Scytheclaw\n1 Arcane Signet\n1 Commander's Sphere\n1 Dimir Keyrune\n1 Dimir Locket\n1 Dimir Signet\n1 Heirloom Blade\n1 Mind Stone\n1 Sol Ring\n1 Military Intelligence\n1 Command Tower\n1 Dimir Aqueduct\n1 Dimir Guildgate\n1 Dismal Backwater\n1 Jwar Isle Refuge\n1 Myriad Landscape\n1 Rogue's Passage\n1 Submerged Boneyard\n15 Island\n15 Swamp",
   "oracleCards": [
@@ -1408,14 +1408,14 @@
   ],
   "result": {
     "profile": {
-      "median": 37,
-      "floor": 26,
-      "ceiling": 47,
-      "peak": 70,
+      "median": 39,
+      "floor": 28,
+      "ceiling": 49,
+      "peak": 72,
       "dispersion": 21,
       "variance": 21,
       "consistency": 66,
-      "commanderDelta": 5,
+      "commanderDelta": 10,
       "coverage": 92,
       "dataCoverage": 92
     },
@@ -1423,7 +1423,7 @@
       "speed": 34,
       "consistency": 66,
       "explosiveness": 15,
-      "synergy": 39,
+      "synergy": 54,
       "interaction": 26,
       "resilience": 37
     },
@@ -1551,13 +1551,10 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 47,
-        "cohesion": 47,
+        "strength": 38,
+        "cohesion": 38,
         "producers": [
           "Arcane Signet",
-          "Commander's Sphere",
-          "Dimir Keyrune",
-          "Dimir Locket",
           "Dimir Signet",
           "Mind Stone",
           "Sol Ring"
@@ -1567,9 +1564,6 @@
         ],
         "members": [
           "Arcane Signet",
-          "Commander's Sphere",
-          "Dimir Keyrune",
-          "Dimir Locket",
           "Dimir Signet",
           "Mind Stone",
           "Sol Ring",
@@ -1587,49 +1581,6 @@
               "generic": 2,
               "colored": [],
               "total": 2
-            }
-          },
-          {
-            "name": "Commander's Sphere",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "draw",
-              "mana",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
-          {
-            "name": "Dimir Keyrune",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "mana"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
-          {
-            "name": "Dimir Locket",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "draw",
-              "mana",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
             }
           },
           {
@@ -1697,14 +1648,39 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 7 source(s) persistante(s) vers un commandant MV 4."
+        "evidence": "0 accélérateur(s) burst + 4 source(s) persistante(s) réellement dans la fenêtre T3 ou avant vers un commandant MV 4."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 0,
-      "connected": [],
-      "tags": []
+      "score": 61,
+      "connected": [
+        "Enigma Thief",
+        "Faerie Vandal",
+        "Frogtosser Banneret",
+        "Gonti, Lord of Luxury",
+        "Invisible Stalker",
+        "Latchkey Faerie",
+        "Marang River Prowler",
+        "Marsh Flitter",
+        "Master Thief",
+        "Merfolk Windrobber",
+        "Nightveil Sprite",
+        "Notion Thief",
+        "Ogre Slumlord",
+        "Oona's Blackguard",
+        "Slither Blade",
+        "Soaring Thought-Thief",
+        "Stinkdrinker Bandit",
+        "Sure-Footed Infiltrator",
+        "Sygg, River Cutthroat",
+        "Triton Shorestalker",
+        "Whirler Rogue",
+        "Zulaport Cutthroat"
+      ],
+      "tags": [
+        "tribal:rogue"
+      ]
     },
     "commanderNames": [
       "Anowon, the Ruin Thief"
@@ -2025,28 +2001,6 @@
         "aeon": null
       },
       {
-        "name": "Commander's Sphere",
-        "impact": 3.3,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Dimir Locket",
-        "impact": 3.3,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Mind Stone",
         "impact": 3.3,
         "tags": [
@@ -2064,6 +2018,28 @@
           "sorcery",
           "tokens",
           "extra-turn"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commander's Sphere",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Dimir Locket",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -2141,7 +2117,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -2213,12 +2190,12 @@
           ]
         },
         "inevitability": {
-          "score": 49,
-          "level": "moderate",
+          "score": 53,
+          "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 39,
+              "value": 54,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -2236,25 +2213,25 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 53,
+              "value": 48.5,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 20,
-          "level": "low",
+          "score": 67,
+          "level": "high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 5,
+              "value": 10,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 0,
+              "value": 61,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },

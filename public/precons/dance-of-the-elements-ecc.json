@@ -19,7 +19,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/DanceOfTheElements_ECC.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Dance of the Elements",
@@ -30,17 +30,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 36,
-    "p20": 24,
-    "p80": 46,
-    "peak": 71,
+    "median": 38,
+    "p20": 26,
+    "p80": 48,
+    "peak": 73,
     "coverage": 91,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "880bb3c452aa02ad1f9c9f53c65fd9c469020209018a3c10e55e925c9a06966a",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Mass of Mysteries\n1 Elemental Spectacle\n1 Springleaf Parade\n1 Jubilation\n1 Impulsivity\n1 Lamentation\n1 Belonging\n1 Subterfuge\n1 Rain-Slicked Copse\n1 Sodden Verdure\n1 Abundant Countryside\n1 Endurance\n1 Fury\n1 Haunting Voyage\n1 Avenger of Zendikar\n1 Cavalier of Thorns\n1 Greenwarden of Murasa\n1 Selvala, Heart of the Wilds\n1 Titan of Industry\n1 Muldrotha, the Gravetide\n1 Omnath, Locus of Rage\n1 Yarok, the Desecrated\n1 Omnath, Locus of the Roil\n1 Timeless Lotus\n1 Shatter the Sky\n1 Hoofprints of the Stag\n1 Slithermuse\n1 Descendants' Fury\n1 Blasphemous Act\n1 Cream of the Crop\n1 Kindred Summons\n1 Bane of Progress\n1 Realmwalker\n1 Return of the Wildspeaker\n1 Faeburrow Elder\n1 Vernal Sovereign\n1 Horde of Notions\n1 Maelstrom Wanderer\n1 Jegantha, the Wellspring\n1 Chromatic Lantern\n1 Primal Beyond\n1 Raging Ravine\n1 Exotic Orchard\n1 Flamekin Village\n1 Path to Exile\n1 Mulldrifter\n1 Reality Shift\n1 Shriekmaw\n1 Shimmercreep\n1 Flamebraider\n1 Crib Swap\n1 Secluded Courtyard\n1 Sol Ring\n1 Command Tower\n1 Arcane Signet\n1 Distant Melody\n1 Incandescent Soulstoke\n1 Eclipsed Flamekin\n1 Foundation Breaker\n1 Garruk's Uprising\n1 Risen Reef\n1 Fellwar Stone\n1 Unclaimed Territory\n1 Ancient Ziggurat\n1 Frontier Bivouac\n1 Sandsteppe Citadel\n1 Savage Lands\n1 Opulent Palace\n1 Seaside Citadel\n1 Jungle Shrine\n1 Smokebraider\n1 Ingot Chewer\n1 Fertile Ground\n1 Abundant Growth\n1 Kodama's Reach\n1 Cultivate\n1 Path of Ancestry\n1 Thriving Grove\n1 Thriving Heath\n1 Thriving Isle\n1 Opal Palace\n1 Thriving Bluff\n1 Thriving Moor\n2 Plains\n2 Island\n2 Swamp\n2 Mountain\n8 Forest",
   "oracleCards": [
@@ -1955,14 +1955,14 @@
   ],
   "result": {
     "profile": {
-      "median": 36,
-      "floor": 24,
-      "ceiling": 46,
-      "peak": 71,
+      "median": 38,
+      "floor": 26,
+      "ceiling": 48,
+      "peak": 73,
       "dispersion": 22,
       "variance": 22,
       "consistency": 66,
-      "commanderDelta": 11,
+      "commanderDelta": 15,
       "coverage": 91,
       "dataCoverage": 91
     },
@@ -1970,7 +1970,7 @@
       "speed": 31,
       "consistency": 66,
       "explosiveness": 13,
-      "synergy": 13,
+      "synergy": 28,
       "interaction": 39,
       "resilience": 53
     },
@@ -1991,7 +1991,7 @@
     "packages": [],
     "combos": [],
     "commanderSynergy": {
-      "score": 46,
+      "score": 100,
       "connected": [
         "Abundant Countryside",
         "Avenger of Zendikar",
@@ -2008,13 +2008,34 @@
         "Springleaf Parade",
         "Subterfuge",
         "Titan of Industry",
-        "Vernal Sovereign"
+        "Vernal Sovereign",
+        "Bane of Progress",
+        "Eclipsed Flamekin",
+        "Endurance",
+        "Flamebraider",
+        "Foundation Breaker",
+        "Fury",
+        "Horde of Notions",
+        "Incandescent Soulstoke",
+        "Ingot Chewer",
+        "Jegantha, the Wellspring",
+        "Maelstrom Wanderer",
+        "Muldrotha, the Gravetide",
+        "Mulldrifter",
+        "Omnath, Locus of the Roil",
+        "Risen Reef",
+        "Shimmercreep",
+        "Shriekmaw",
+        "Slithermuse",
+        "Smokebraider",
+        "Yarok, the Desecrated"
       ],
       "tags": [
         "tokens",
         "death-payoff",
         "token-payoff",
-        "sac-outlet"
+        "sac-outlet",
+        "tribal:elemental"
       ]
     },
     "commanderNames": [
@@ -2467,7 +2488,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -2539,12 +2561,12 @@
           ]
         },
         "inevitability": {
-          "score": 35,
+          "score": 40,
           "level": "moderate",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 13,
+              "value": 28,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -2569,18 +2591,18 @@
           ]
         },
         "dependency": {
-          "score": 65,
-          "level": "high",
+          "score": 100,
+          "level": "very-high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 11,
+              "value": 15,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 46,
+              "value": 100,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },

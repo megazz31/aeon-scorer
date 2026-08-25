@@ -16,7 +16,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/ExquisiteInvention_C18.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Exquisite Invention",
@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 47,
-    "p20": 32,
+    "median": 46,
+    "p20": 31,
     "p80": 58,
     "peak": 85,
     "coverage": 93,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "91f6163d6409dc73703e0a58ae03b015b991e74967a0aefe139f3cd8b000c2a3",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Maverick Thopterist\n1 Soul of New Phyrexia\n1 Inkwell Leviathan\n1 Sharding Sphinx\n1 Hellkite Igniter\n1 Bosh, Iron Golem\n1 Darksteel Juggernaut\n1 Duplicant\n1 Myr Battlesphere\n1 Psychosis Crawler\n1 Scuttling Doom Engine\n1 Steel Hellkite\n1 Thopter Assembly\n1 Etherium Sculptor\n1 Whirler Rogue\n1 Chief of the Foundry\n1 Pilgrim's Eye\n1 Saheeli's Artistry\n1 Blasphemous Act\n1 Reverse Engineer\n1 Tidings\n1 Chaos Warp\n1 Magmaquake\n1 Into the Roil\n1 Thirst for Knowledge\n1 Blinkmoth Urn\n1 Mimic Vat\n1 Mirrorworks\n1 Prototype Portal\n1 Unwinding Clock\n1 Commander's Sphere\n1 Dreamstone Hedron\n1 Hedron Archive\n1 Izzet Signet\n1 Magnifying Glass\n1 Mind Stone\n1 Prismatic Lens\n1 Scrabbling Claws\n1 Sol Ring\n1 Swiftfoot Boots\n1 Unstable Obelisk\n1 Vessel of Endless Rest\n1 Worn Powerstone\n1 Darksteel Citadel\n1 Great Furnace\n1 Seat of the Synod\n1 Thopter Spy Network\n5 Island\n5 Island\n5 Island\n4 Mountain\n4 Mountain\n4 Mountain\n1 Buried Ruin\n1 Command Tower\n1 Foundry of the Consuls\n1 Highland Lake\n1 Izzet Boilerworks\n1 Izzet Guildgate\n1 Swiftwater Cliffs\n1 Brudiclad, Telchor Engineer\n1 Tawnos, Urza's Apprentice\n1 Echo Storm\n1 Vedalken Humiliator\n1 Enchanter's Bane\n1 Saheeli's Directive\n1 Treasure Nabber\n1 Varchild, Betrayer of Kjeldor\n1 Ancient Stone Idol\n1 Coveted Jewel\n1 Endless Atlas\n1 Retrofitter Foundry\n1 Aether Gale\n1 Loyal Drake\n1 Loyal Apprentice\n1 Geode Golem\n1 Thopter Engineer\n1 Forge of Heroes",
   "oracleCards": [
@@ -1466,8 +1466,8 @@
   ],
   "result": {
     "profile": {
-      "median": 47,
-      "floor": 32,
+      "median": 46,
+      "floor": 31,
       "ceiling": 58,
       "peak": 85,
       "dispersion": 27,
@@ -1481,7 +1481,7 @@
       "speed": 33,
       "consistency": 57,
       "explosiveness": 16,
-      "synergy": 87,
+      "synergy": 82,
       "interaction": 33,
       "resilience": 32
     },
@@ -2298,50 +2298,25 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 53,
-        "cohesion": 53,
+        "strength": 38,
+        "cohesion": 38,
         "producers": [
-          "Commander's Sphere",
           "Izzet Signet",
-          "Magnifying Glass",
           "Mind Stone",
           "Prismatic Lens",
-          "Sol Ring",
-          "Unstable Obelisk",
-          "Vessel of Endless Rest",
-          "Worn Powerstone"
+          "Sol Ring"
         ],
         "payoffs": [
           "Saheeli, the Gifted"
         ],
         "members": [
-          "Commander's Sphere",
           "Izzet Signet",
-          "Magnifying Glass",
           "Mind Stone",
           "Prismatic Lens",
           "Sol Ring",
-          "Unstable Obelisk",
-          "Vessel of Endless Rest",
-          "Worn Powerstone",
           "Saheeli, the Gifted"
         ],
         "producerCards": [
-          {
-            "name": "Commander's Sphere",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "draw",
-              "mana",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
           {
             "name": "Izzet Signet",
             "cmc": 2,
@@ -2353,20 +2328,6 @@
               "generic": 2,
               "colored": [],
               "total": 2
-            }
-          },
-          {
-            "name": "Magnifying Glass",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "mana",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
             }
           },
           {
@@ -2410,49 +2371,6 @@
               "colored": [],
               "total": 1
             }
-          },
-          {
-            "name": "Unstable Obelisk",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "mana",
-              "removal",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
-          {
-            "name": "Vessel of Endless Rest",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "mana",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
-          {
-            "name": "Worn Powerstone",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "mana",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
           }
         ],
         "payoffCards": [
@@ -2477,7 +2395,7 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 9 source(s) persistante(s) vers un commandant MV 4."
+        "evidence": "0 accélérateur(s) burst + 4 source(s) persistante(s) réellement dans la fenêtre T3 ou avant vers un commandant MV 4."
       }
     ],
     "combos": [],
@@ -2872,17 +2790,6 @@
         "aeon": null
       },
       {
-        "name": "Commander's Sphere",
-        "impact": 4,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Mind Stone",
         "impact": 4,
         "tags": [
@@ -2905,22 +2812,22 @@
         "aeon": null
       },
       {
-        "name": "Scrabbling Claws",
+        "name": "Commander's Sphere",
         "impact": 3.3,
         "tags": [
           "artifact",
           "draw",
-          "removal",
+          "mana",
           "sacrifice"
         ],
         "aeon": null
       },
       {
-        "name": "Unstable Obelisk",
+        "name": "Scrabbling Claws",
         "impact": 3.3,
         "tags": [
           "artifact",
-          "mana",
+          "draw",
           "removal",
           "sacrifice"
         ],
@@ -2960,21 +2867,30 @@
         "aeon": null
       },
       {
-        "name": "Magnifying Glass",
-        "impact": 2.9,
-        "tags": [
-          "artifact",
-          "mana",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Izzet Signet",
         "impact": 2.6,
         "tags": [
           "artifact",
           "mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Prismatic Lens",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "mana"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Steel Hellkite",
+        "impact": 2.6,
+        "tags": [
+          "creature",
+          "artifact",
+          "wipe"
         ],
         "aeon": null
       }
@@ -2987,7 +2903,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -3059,12 +2976,12 @@
           ]
         },
         "inevitability": {
-          "score": 65,
+          "score": 63,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 87,
+              "value": 82,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -3082,7 +2999,7 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 76.5,
+              "value": 69,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }

@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/MirrorMastery_CMD.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Mirror Mastery",
@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 35,
-    "p20": 23,
+    "p20": 22,
     "p80": 48,
     "peak": 72,
     "coverage": 90,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "2e0faf2de79b1d3cbc26d8320adc5edba9efe5625dfd8a23177ae4390194bee3",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Garruk Wildspeaker\n1 Magus of the Vineyard\n1 Veteran Explorer\n1 Fierce Empath\n1 Edric, Spymaster of Trest\n1 Animar, Soul of Elements\n1 Conundrum Sphinx\n1 Aethersnipe\n1 Chartooth Cougar\n1 Rapacious One\n1 Spitebellows\n1 Deadwood Treefolk\n1 Elvish Aberration\n1 Baloth Woodcrasher\n1 Hydra Omnivore\n1 Nucklavee\n1 Valley Rannet\n1 Intet, the Dreamer\n1 Faultgrinder\n1 Krosan Tusker\n1 Simic Sky Swallower\n1 Trench Gorger\n1 Avatar of Fury\n1 Magmatic Force\n1 Artisan of Kozilek\n1 Collective Voyage\n1 Hull Breach\n1 Cultivate\n1 Kodama's Reach\n1 Firespout\n1 Ruination\n1 Explosive Vegetation\n1 Chain Reaction\n1 Death by Dragons\n1 Vengeful Rebirth\n1 Disaster Radius\n1 Call the Skybreaker\n1 Savage Twister\n1 Brainstorm\n1 Tribute to the Wild\n1 Colossal Might\n1 Invigorate\n1 Spell Crumple\n1 Electrolyze\n1 Ray of Command\n1 Prophetic Bolt\n1 Hunting Pack\n1 Sol Ring\n1 Armillary Sphere\n1 Gruul Signet\n1 Izzet Signet\n1 Lightning Greaves\n1 Prophetic Prism\n1 Simic Signet\n1 Vow of Flight\n1 Vow of Lightning\n1 Vow of Wildness\n1 Command Tower\n1 Evolving Wilds\n1 Fungal Reaches\n1 Gruul Turf\n1 Homeward Path\n1 Izzet Boilerworks\n1 Kazandu Refuge\n1 Rupture Spire\n1 Simic Growth Chamber\n1 Temple of the False God\n1 Vivid Crag\n1 Vivid Creek\n1 Vivid Grove\n2 Island\n2 Island\n2 Island\n1 Island\n2 Mountain\n2 Mountain\n2 Mountain\n2 Mountain\n4 Forest\n3 Forest\n3 Forest\n3 Forest\n1 Fire // Ice",
   "oracleCards": [
@@ -1497,11 +1497,11 @@
   "result": {
     "profile": {
       "median": 35,
-      "floor": 23,
+      "floor": 22,
       "ceiling": 48,
       "peak": 72,
-      "dispersion": 26,
-      "variance": 26,
+      "dispersion": 25,
+      "variance": 25,
       "consistency": 63,
       "commanderDelta": 10,
       "coverage": 90,
@@ -1511,7 +1511,7 @@
       "speed": 22,
       "consistency": 63,
       "explosiveness": 12,
-      "synergy": 55,
+      "synergy": 53,
       "interaction": 38,
       "resilience": 37
     },
@@ -1533,12 +1533,11 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 48,
-        "cohesion": 48,
+        "strength": 45,
+        "cohesion": 45,
         "producers": [
           "Gruul Signet",
           "Izzet Signet",
-          "Magus of the Vineyard",
           "Prophetic Prism",
           "Simic Signet",
           "Sol Ring"
@@ -1549,7 +1548,6 @@
         "members": [
           "Gruul Signet",
           "Izzet Signet",
-          "Magus of the Vineyard",
           "Prophetic Prism",
           "Simic Signet",
           "Sol Ring",
@@ -1580,23 +1578,6 @@
               "generic": 2,
               "colored": [],
               "total": 2
-            }
-          },
-          {
-            "name": "Magus of the Vineyard",
-            "cmc": 1,
-            "tags": [
-              "creature",
-              "mana"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 1
             }
           },
           {
@@ -1669,7 +1650,7 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 6 source(s) persistante(s) vers un commandant MV 5."
+        "evidence": "0 accélérateur(s) burst + 5 source(s) persistante(s) réellement dans la fenêtre T4 ou avant vers un commandant MV 5."
       }
     ],
     "combos": [],
@@ -2051,15 +2032,6 @@
         "aeon": null
       },
       {
-        "name": "Magus of the Vineyard",
-        "impact": 2.5,
-        "tags": [
-          "creature",
-          "mana"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Elvish Aberration",
         "impact": 2.4,
         "tags": [
@@ -2117,6 +2089,15 @@
         "aeon": null
       },
       {
+        "name": "Magus of the Vineyard",
+        "impact": 1.8,
+        "tags": [
+          "creature",
+          "mana"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Electrolyze",
         "impact": 1.7,
         "tags": [
@@ -2143,7 +2124,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -2173,12 +2155,12 @@
           ]
         },
         "volatility": {
-          "score": 88,
+          "score": 86,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 26,
+              "value": 25,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
@@ -2215,12 +2197,12 @@
           ]
         },
         "inevitability": {
-          "score": 53,
+          "score": 52,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 55,
+              "value": 53,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -2238,7 +2220,7 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 48,
+              "value": 45,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }

@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/ArcaneWizardry_C17.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Arcane Wizardry",
@@ -28,17 +28,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 41,
-    "p20": 29,
-    "p80": 53,
-    "peak": 85,
+    "median": 45,
+    "p20": 33,
+    "p80": 56,
+    "peak": 87,
     "coverage": 93,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "c0b879ea00bca82be9485873dd3733c7273afbd711b1e3d74bd56062546ff4cf",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Kess, Dissident Mage\n1 Mairsil, the Pretender\n1 Galecaster Colossus\n1 Magus of the Mind\n1 Portal Mage\n1 Vindictive Lich\n1 Izzet Chemister\n1 Taigam, Sidisi's Hand\n1 Havengul Lich\n1 Marchesa, the Black Rose\n1 Vela the Night-Clad\n1 Arcanis the Omnipotent\n1 Azami, Lady of Scrolls\n1 Body Double\n1 Harbinger of the Tides\n1 Serendib Sorcerer\n1 Apprentice Necromancer\n1 Magus of the Abyss\n1 Puppeteer Clique\n1 Etherium-Horn Sorcerer\n1 Mercurial Chemister\n1 Nin, the Pain Artist\n1 Niv-Mizzet, the Firemind\n1 Shadowmage Infiltrator\n1 Bloodline Necromancer\n1 Archaeomancer\n1 Merchant of Secrets\n1 Sea Gate Oracle\n1 Corpse Augur\n1 Izzet Chronarch\n1 Nivix Guildmage\n1 Kindred Dominance\n1 Clone Legion\n1 Spelltwine\n1 Decree of Pain\n1 Necromantic Selection\n1 Comet Storm\n1 Polymorphist's Jest\n1 Chaos Warp\n1 Memory Plunder\n1 Silumgar's Command\n1 Into the Roil\n1 Opportunity\n1 Reality Shift\n1 Go for the Throat\n1 Cauldron Dance\n1 Crosis's Charm\n1 Rakdos Charm\n1 Terminate\n1 Nevinyrral's Disk\n1 Mirror of the Forebears\n1 Commander's Sphere\n1 Darksteel Ingot\n1 Fellwar Stone\n1 Sol Ring\n1 Unstable Obelisk\n1 Worn Powerstone\n1 Shifting Shadow\n1 Curse of Verbosity\n1 Curse of Disturbance\n1 Curse of Opulence\n1 Exotic Orchard\n1 Mystifying Maze\n4 Island\n3 Island\n3 Island\n2 Swamp\n2 Swamp\n2 Swamp\n2 Mountain\n1 Mountain\n1 Mountain\n1 Path of Ancestry\n1 Command Tower\n1 Crumbling Necropolis\n1 Dimir Aqueduct\n1 Dismal Backwater\n1 Evolving Wilds\n1 Grixis Panorama\n1 Izzet Boilerworks\n1 Jwar Isle Refuge\n1 Rakdos Carnarium\n1 Swiftwater Cliffs\n1 Temple of the False God\n1 Terramorphic Expanse\n1 Vivid Crag\n1 Vivid Creek\n1 Vivid Marsh",
   "oracleCards": [
@@ -1686,14 +1686,14 @@
   ],
   "result": {
     "profile": {
-      "median": 41,
-      "floor": 29,
-      "ceiling": 53,
-      "peak": 85,
+      "median": 45,
+      "floor": 33,
+      "ceiling": 56,
+      "peak": 87,
       "dispersion": 24,
       "variance": 24,
       "consistency": 62,
-      "commanderDelta": 4,
+      "commanderDelta": 10,
       "coverage": 93,
       "dataCoverage": 93
     },
@@ -1701,7 +1701,7 @@
       "speed": 27,
       "consistency": 62,
       "explosiveness": 21,
-      "synergy": 59,
+      "synergy": 82,
       "interaction": 50,
       "resilience": 45
     },
@@ -2397,11 +2397,10 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 51,
-        "cohesion": 51,
+        "strength": 48,
+        "cohesion": 48,
         "producers": [
           "Commander's Sphere",
-          "Curse of Opulence",
           "Darksteel Ingot",
           "Fellwar Stone",
           "Sol Ring",
@@ -2413,7 +2412,6 @@
         ],
         "members": [
           "Commander's Sphere",
-          "Curse of Opulence",
           "Darksteel Ingot",
           "Fellwar Stone",
           "Sol Ring",
@@ -2435,24 +2433,6 @@
               "generic": 3,
               "colored": [],
               "total": 3
-            }
-          },
-          {
-            "name": "Curse of Opulence",
-            "cmc": 1,
-            "tags": [
-              "enchantment",
-              "mana",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 1
             }
           },
           {
@@ -2552,20 +2532,51 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 7 source(s) persistante(s) vers un commandant MV 5."
+        "evidence": "0 accélérateur(s) burst + 6 source(s) persistante(s) réellement dans la fenêtre T4 ou avant vers un commandant MV 5."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 8,
+      "score": 92,
       "connected": [
         "Clone Legion",
         "Curse of Disturbance",
-        "Curse of Opulence"
+        "Curse of Opulence",
+        "Apprentice Necromancer",
+        "Arcanis the Omnipotent",
+        "Archaeomancer",
+        "Azami, Lady of Scrolls",
+        "Bloodline Necromancer",
+        "Corpse Augur",
+        "Etherium-Horn Sorcerer",
+        "Galecaster Colossus",
+        "Harbinger of the Tides",
+        "Havengul Lich",
+        "Izzet Chemister",
+        "Izzet Chronarch",
+        "Kess, Dissident Mage",
+        "Magus of the Abyss",
+        "Magus of the Mind",
+        "Mairsil, the Pretender",
+        "Marchesa, the Black Rose",
+        "Merchant of Secrets",
+        "Mercurial Chemister",
+        "Nin, the Pain Artist",
+        "Niv-Mizzet, the Firemind",
+        "Nivix Guildmage",
+        "Portal Mage",
+        "Puppeteer Clique",
+        "Sea Gate Oracle",
+        "Serendib Sorcerer",
+        "Shadowmage Infiltrator",
+        "Taigam, Sidisi's Hand",
+        "Vela the Night-Clad",
+        "Vindictive Lich"
       ],
       "tags": [
         "tokens",
-        "token-payoff"
+        "token-payoff",
+        "tribal:wizard"
       ]
     },
     "commanderNames": [
@@ -2962,16 +2973,6 @@
         "aeon": null
       },
       {
-        "name": "Curse of Opulence",
-        "impact": 2.9,
-        "tags": [
-          "enchantment",
-          "mana",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Cauldron Dance",
         "impact": 2.8,
         "tags": [
@@ -3000,6 +3001,15 @@
           "sacrifice"
         ],
         "aeon": null
+      },
+      {
+        "name": "Into the Roil",
+        "impact": 2.5,
+        "tags": [
+          "instant",
+          "draw"
+        ],
+        "aeon": null
       }
     ],
     "warnings": [],
@@ -3010,7 +3020,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -3040,7 +3051,7 @@
           ]
         },
         "volatility": {
-          "score": 96,
+          "score": 95,
           "level": "very-high",
           "evidence": [
             {
@@ -3051,7 +3062,7 @@
             },
             {
               "signal": "high-roll-tail",
-              "value": 32,
+              "value": 31,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -3082,12 +3093,12 @@
           ]
         },
         "inevitability": {
-          "score": 59,
+          "score": 67,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 59,
+              "value": 82,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -3105,25 +3116,25 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 71.3,
+              "value": 70.3,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 20,
-          "level": "low",
+          "score": 81,
+          "level": "very-high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 4,
+              "value": 10,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 8,
+              "value": 92,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },

@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/TinkerTime_MOC.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Tinker Time",
@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 52,
-    "p20": 38,
+    "p20": 37,
     "p80": 63,
     "peak": 91,
     "coverage": 94,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "4b3860739ce7df360da0aa5de59ee0db7f246a61bad66943b60bd71ff7a7c377",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Rashmi and Ragavan\n1 Schema Thief\n1 Sandsteppe War Riders\n1 Cutthroat Negotiator\n1 Hedron Detonator\n1 Ichor Elixir\n1 Path of the Animist\n1 Pain Distributor\n1 Dance with Calamity\n1 Pia and Kiran Nalaar\n1 Feldon of the Third Path\n1 Chaos Warp\n1 Stroke of Genius\n1 Academy Manufactor\n1 Aid from the Cowl\n1 Bloodforged Battle-Axe\n1 Brass's Bounty\n1 Cinder Glade\n1 Echo Storm\n1 Everquill Phoenix\n1 Exotic Orchard\n1 Fiery Confluence\n1 Frostboil Snarl\n1 Game Trail\n1 Gilded Goose\n1 Hellkite Igniter\n1 Imprisoned in the Moon\n1 Inspiring Statuary\n1 Master of Etherium\n1 Masterful Replication\n1 Perplexing Test\n1 Rise and Shine\n1 Saheeli's Artistry\n1 Sharding Sphinx\n1 Shimmer Dragon\n1 Skyclave Relic\n1 Spell Swindle\n1 Spine of Ish Sah\n1 Temple of Abandon\n1 Temple of Epiphany\n1 Temple of Mystery\n1 Thopter Assembly\n1 Thopter Spy Network\n1 Tireless Tracker\n1 Vedalken Humiliator\n1 Vineglimmer Snarl\n1 Workshop Elders\n1 Command Tower\n1 Crack Open\n1 Evolving Wilds\n1 Fractured Powerstone\n1 Gruul Signet\n1 Izzet Signet\n1 Path of Ancestry\n1 Reverse Engineer\n1 Root Out\n1 Simic Growth Chamber\n1 Simic Signet\n1 Terramorphic Expanse\n1 Thoughtcast\n1 Replicating Ring\n1 Arcane Signet\n1 Combine Chrysalis\n1 Curse of Opulence\n1 Frontier Bivouac\n1 Ghirapur Aether Grid\n1 Junk Winder\n1 Myriad Landscape\n1 Reality Shift\n1 Saheeli, Sublime Artificer\n1 Sol Ring\n1 Struggle // Survive\n1 Tireless Provisioner\n1 Vampires' Vengeance\n1 Weirding Wood\n1 Whirler Rogue\n8 Island\n8 Mountain\n7 Forest",
   "oracleCards": [
@@ -1684,7 +1684,7 @@
   "result": {
     "profile": {
       "median": 52,
-      "floor": 38,
+      "floor": 37,
       "ceiling": 63,
       "peak": 91,
       "dispersion": 26,
@@ -1698,7 +1698,7 @@
       "speed": 38,
       "consistency": 58,
       "explosiveness": 18,
-      "synergy": 94,
+      "synergy": 93,
       "interaction": 40,
       "resilience": 32
     },
@@ -3005,11 +3005,10 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 69,
-        "cohesion": 69,
+        "strength": 63,
+        "cohesion": 63,
         "producers": [
           "Arcane Signet",
-          "Curse of Opulence",
           "Fractured Powerstone",
           "Gilded Goose",
           "Gruul Signet",
@@ -3017,14 +3016,14 @@
           "Izzet Signet",
           "Replicating Ring",
           "Simic Signet",
-          "Skyclave Relic"
+          "Skyclave Relic",
+          "Sol Ring"
         ],
         "payoffs": [
           "Gimbal, Gremlin Prodigy"
         ],
         "members": [
           "Arcane Signet",
-          "Curse of Opulence",
           "Fractured Powerstone",
           "Gilded Goose",
           "Gruul Signet",
@@ -3034,7 +3033,6 @@
           "Simic Signet",
           "Skyclave Relic",
           "Sol Ring",
-          "Tireless Provisioner",
           "Weirding Wood",
           "Gimbal, Gremlin Prodigy"
         ],
@@ -3050,24 +3048,6 @@
               "generic": 2,
               "colored": [],
               "total": 2
-            }
-          },
-          {
-            "name": "Curse of Opulence",
-            "cmc": 1,
-            "tags": [
-              "enchantment",
-              "mana",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 1
             }
           },
           {
@@ -3206,26 +3186,6 @@
             }
           },
           {
-            "name": "Tireless Provisioner",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "mana",
-              "tokens",
-              "etb",
-              "landfall"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
             "name": "Weirding Wood",
             "cmc": 3,
             "tags": [
@@ -3273,7 +3233,7 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 13 source(s) persistante(s) vers un commandant MV 5."
+        "evidence": "0 accélérateur(s) burst + 11 source(s) persistante(s) réellement dans la fenêtre T4 ou avant vers un commandant MV 5."
       },
       {
         "id": "lands",
@@ -3780,33 +3740,11 @@
         "aeon": null
       },
       {
-        "name": "Tireless Provisioner",
-        "impact": 4.2,
-        "tags": [
-          "creature",
-          "mana",
-          "tokens",
-          "etb",
-          "landfall"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Cutthroat Negotiator",
         "impact": 4.1,
         "tags": [
           "creature",
           "draw",
-          "mana",
-          "tokens"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Curse of Opulence",
-        "impact": 3.6,
-        "tags": [
-          "enchantment",
           "mana",
           "tokens"
         ],
@@ -3820,6 +3758,18 @@
           "exile-cast",
           "cheat",
           "free"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Tireless Provisioner",
+        "impact": 3.5,
+        "tags": [
+          "creature",
+          "mana",
+          "tokens",
+          "etb",
+          "landfall"
         ],
         "aeon": null
       },
@@ -3866,6 +3816,17 @@
           "tokens"
         ],
         "aeon": null
+      },
+      {
+        "name": "Academy Manufactor",
+        "impact": 2.9,
+        "tags": [
+          "creature",
+          "artifact",
+          "mana",
+          "tokens"
+        ],
+        "aeon": null
       }
     ],
     "warnings": [],
@@ -3876,7 +3837,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -3953,7 +3915,7 @@
           "evidence": [
             {
               "signal": "synergy",
-              "value": 94,
+              "value": 93,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -3971,7 +3933,7 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 89.7,
+              "value": 87.7,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }

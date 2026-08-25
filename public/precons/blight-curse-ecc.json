@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/BlightCurse_ECC.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Blight Curse",
@@ -29,16 +29,16 @@
   "cardCount": 99,
   "analysis": {
     "median": 49,
-    "p20": 38,
+    "p20": 37,
     "p80": 59,
     "peak": 88,
     "coverage": 94,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "79815ac3b45cebd3790e9175a0feda678fd9d44b6b6410ce8baba65cb16d9013",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 The Reaper, King No More\n1 Wickersmith's Tools\n1 Sinister Gnarlbark\n1 Eventide's Shadow\n1 Aberrant Return\n1 Dread Tiller\n1 Grave Venerations\n1 Oft-Nabbed Goat\n1 Village Pillagers\n1 Puca's Covenant\n1 Ferrafor, Young Yew\n1 Tree of Perdition\n1 Vernal Fen\n1 Festering Thicket\n1 Necroskitter\n1 Ignoble Hierarch\n1 Nesting Grounds\n1 Massacre Girl, Known Killer\n1 Grave Titan\n1 Vraska, Betrayal's Sting\n1 The Scorpion God\n1 Liliana, Death Wielder\n1 Chimil, the Inner Sun\n1 Carnifex Demon\n1 Puppeteer Clique\n1 Dusk Urchins\n1 Black Sun's Zenith\n1 Painful Truths\n1 Persist\n1 Midnight Banshee\n1 Chain Reaction\n1 Archfiend of Ifnir\n1 Channeler Initiate\n1 Hapatra, Vizier of Poisons\n1 Glissa Sunslayer\n1 Everlasting Torment\n1 Assassin's Trophy\n1 Grim Poppet\n1 Canyon Slough\n1 Sheltered Thicket\n1 Exotic Orchard\n1 Smoldering Marsh\n1 Cinder Glade\n1 Dragonskull Summit\n1 Rootbound Crag\n1 Woodland Cemetery\n1 Lasting Tarfire\n1 Burning Curiosity\n1 Hoarder's Greed\n1 Blowfly Infestation\n1 Fire Covenant\n1 Sol Ring\n1 Arcane Signet\n1 Command Tower\n1 Cathartic Reunion\n1 Skinrender\n1 Soul Snuffers\n1 Incremental Blight\n1 Infernal Grasp\n1 Evolution Sage\n1 Devoted Druid\n1 Flourishing Defenses\n1 Harmonize\n1 Putrefy\n1 Binding the Old Gods\n1 Kulrath Knight\n1 Contagion Clasp\n1 Savage Lands\n1 Ifnir Deadlands\n1 Night's Whisper\n1 Wickerbough Elder\n1 Terminate\n1 Commander's Sphere\n1 Cathartic Pyre\n1 Evolving Wilds\n1 Terramorphic Expanse\n1 Path of Ancestry\n1 Riveteers Overlook\n1 Rakdos Carnarium\n1 Gruul Turf\n1 Golgari Rot Farm\n8 Swamp\n4 Mountain\n6 Forest",
   "oracleCards": [
@@ -1801,7 +1801,7 @@
   "result": {
     "profile": {
       "median": 49,
-      "floor": 38,
+      "floor": 37,
       "ceiling": 59,
       "peak": 88,
       "dispersion": 22,
@@ -1815,7 +1815,7 @@
       "speed": 38,
       "consistency": 65,
       "explosiveness": 13,
-      "synergy": 81,
+      "synergy": 80,
       "interaction": 49,
       "resilience": 43
     },
@@ -2819,17 +2819,14 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 50,
-        "cohesion": 50,
+        "strength": 41,
+        "cohesion": 41,
         "producers": [
           "Arcane Signet",
           "Channeler Initiate",
-          "Commander's Sphere",
           "Devoted Druid",
-          "Dread Tiller",
           "Ignoble Hierarch",
-          "Sol Ring",
-          "Wickersmith's Tools"
+          "Sol Ring"
         ],
         "payoffs": [
           "Auntie Ool, Cursewretch"
@@ -2837,12 +2834,9 @@
         "members": [
           "Arcane Signet",
           "Channeler Initiate",
-          "Commander's Sphere",
           "Devoted Druid",
-          "Dread Tiller",
           "Ignoble Hierarch",
           "Sol Ring",
-          "Wickersmith's Tools",
           "Auntie Ool, Cursewretch"
         ],
         "producerCards": [
@@ -2880,21 +2874,6 @@
             }
           },
           {
-            "name": "Commander's Sphere",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "draw",
-              "mana",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
-          {
             "name": "Devoted Druid",
             "cmc": 2,
             "tags": [
@@ -2911,30 +2890,6 @@
                 ]
               ],
               "total": 2
-            }
-          },
-          {
-            "name": "Dread Tiller",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "artifact",
-              "land-ramp",
-              "etb",
-              "counter-producer",
-              "counter-kind:minus1"
-            ],
-            "manaReq": {
-              "generic": 1,
-              "colored": [
-                [
-                  "B"
-                ],
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
             }
           },
           {
@@ -2967,24 +2922,6 @@
               "colored": [],
               "total": 1
             }
-          },
-          {
-            "name": "Wickersmith's Tools",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "mana",
-              "tokens",
-              "sacrifice",
-              "counter-producer",
-              "counter-kind:minus1",
-              "counter-kind:charge"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
           }
         ],
         "payoffCards": [
@@ -3015,7 +2952,7 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 8 source(s) persistante(s) vers un commandant MV 4."
+        "evidence": "0 accélérateur(s) burst + 5 source(s) persistante(s) réellement dans la fenêtre T3 ou avant vers un commandant MV 4."
       }
     ],
     "combos": [],
@@ -3058,7 +2995,8 @@
         "Wickersmith's Tools"
       ],
       "tags": [
-        "counter-producer"
+        "counter-producer",
+        "counter-payoff"
       ]
     },
     "commanderNames": [
@@ -3370,19 +3308,6 @@
     },
     "drivers": [
       {
-        "name": "Dread Tiller",
-        "impact": 3.8,
-        "tags": [
-          "creature",
-          "artifact",
-          "land-ramp",
-          "etb",
-          "counter-producer",
-          "counter-kind:minus1"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Sol Ring",
         "impact": 3.7,
         "tags": [
@@ -3393,26 +3318,15 @@
         "aeon": null
       },
       {
-        "name": "Wickersmith's Tools",
-        "impact": 3.5,
+        "name": "Dread Tiller",
+        "impact": 3.1,
         "tags": [
+          "creature",
           "artifact",
-          "mana",
-          "tokens",
-          "sacrifice",
+          "land-ramp",
+          "etb",
           "counter-producer",
           "counter-kind:minus1"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Commander's Sphere",
-        "impact": 3.3,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
         ],
         "aeon": null
       },
@@ -3487,6 +3401,19 @@
         "aeon": null
       },
       {
+        "name": "Wickersmith's Tools",
+        "impact": 2.8,
+        "tags": [
+          "artifact",
+          "mana",
+          "tokens",
+          "sacrifice",
+          "counter-producer",
+          "counter-kind:minus1"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Village Pillagers",
         "impact": 2.7,
         "tags": [
@@ -3508,6 +3435,18 @@
           "removal"
         ],
         "aeon": null
+      },
+      {
+        "name": "Channeler Initiate",
+        "impact": 2.6,
+        "tags": [
+          "creature",
+          "mana",
+          "etb",
+          "counter-producer",
+          "counter-kind:minus1"
+        ],
+        "aeon": null
       }
     ],
     "warnings": [],
@@ -3518,7 +3457,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -3590,12 +3530,12 @@
           ]
         },
         "inevitability": {
-          "score": 67,
+          "score": 66,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 81,
+              "value": 80,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -3613,7 +3553,7 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 67.7,
+              "value": 64.7,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }

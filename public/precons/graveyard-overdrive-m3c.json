@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/GraveyardOverdrive_M3C.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Graveyard Overdrive",
@@ -34,17 +34,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 40,
-    "p20": 28,
-    "p80": 52,
+    "median": 41,
+    "p20": 29,
+    "p80": 53,
     "peak": 85,
     "coverage": 92,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "099a201fd1cec55f1d983882f4c6ce3eb64316d63034304ddf27aee545641b44",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Coram, the Undertaker\n1 Bloodbraid Challenger\n1 Broodmate Tyrant\n1 Tempt with Mayhem\n1 Gluttonous Hellkite\n1 Pyrogoyf\n1 Polygoyf\n1 Barrowgoyf\n1 Sawhorn Nemesis\n1 Infested Thrinax\n1 Final Act\n1 Siege-Gang Lieutenant\n1 Tarmogoyf Nest\n1 Exterminator Magmarch\n1 Liliana, Death's Majesty\n1 Maelstrom Pulse\n1 Junji, the Midnight Sky\n1 Garruk, Apex Predator\n1 The Reaver Cleaver\n1 Temple of Malady\n1 Deadbridge Chant\n1 Kolaghan's Command\n1 Izoni, Thousand-Eyed\n1 Lhurgoyf\n1 Selvala, Heart of the Wilds\n1 Kessig Wolf Run\n1 Archon of Cruelty\n1 Maskwood Nexus\n1 Grist, the Hunger Tide\n1 Ignoble Hierarch\n1 Necrogoyf\n1 Mortivore\n1 Chandra's Ignition\n1 Viridescent Bog\n1 Find // Finality\n1 Mossfire Valley\n1 Ziatora, the Incinerator\n1 Canyon Slough\n1 Cinder Glade\n1 Exotic Orchard\n1 Shadowblood Ridge\n1 Sheltered Thicket\n1 Smoldering Marsh\n1 Temple of Abandon\n1 Temple of Malice\n1 Raging Ravine\n1 Terminate\n1 Demolition Field\n1 Command Tower\n1 Twisted Landscape\n1 Grisly Salvage\n1 Yavimaya Elder\n1 Bituminous Blast\n1 Bloodbraid Elf\n1 Eternal Witness\n1 Savage Lands\n1 Tainted Wood\n1 Burnished Hart\n1 Deathreap Ritual\n1 Arcane Signet\n1 Syr Konrad, the Grim\n1 Grapple with the Past\n1 Dakmor Salvage\n1 Accursed Marauder\n1 Brawn\n1 Faithless Looting\n1 Rampant Growth\n1 Anger\n1 Tranquil Thicket\n1 Stitcher's Supplier\n1 Graveshifter\n1 Talisman of Resilience\n1 Altar of the Goyf\n1 Syphon Mind\n1 Talisman of Indulgence\n1 Sakura-Tribe Elder\n1 Terramorphic Expanse\n1 Tainted Peak\n1 Riveteers Overlook\n1 Riveteers Charm\n1 Forgotten Cave\n1 Path of Ancestry\n1 Lightning Greaves\n1 Myriad Landscape\n1 Sol Ring\n1 Talisman of Impulse\n1 Evolving Wilds\n2 Swamp\n2 Swamp\n2 Mountain\n1 Mountain\n3 Forest\n2 Forest",
   "oracleCards": [
@@ -1882,14 +1882,14 @@
   ],
   "result": {
     "profile": {
-      "median": 40,
-      "floor": 28,
-      "ceiling": 52,
+      "median": 41,
+      "floor": 29,
+      "ceiling": 53,
       "peak": 85,
       "dispersion": 24,
       "variance": 24,
       "consistency": 61,
-      "commanderDelta": 6,
+      "commanderDelta": 7,
       "coverage": 92,
       "dataCoverage": 92
     },
@@ -1897,7 +1897,7 @@
       "speed": 30,
       "consistency": 61,
       "explosiveness": 14,
-      "synergy": 58,
+      "synergy": 62,
       "interaction": 38,
       "resilience": 55
     },
@@ -2628,12 +2628,12 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 9 source(s) persistante(s) vers un commandant MV 5."
+        "evidence": "0 accélérateur(s) burst + 9 source(s) persistante(s) réellement dans la fenêtre T4 ou avant vers un commandant MV 5."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 34,
+      "score": 48,
       "connected": [
         "Broodmate Tyrant",
         "Garruk, Apex Predator",
@@ -2646,11 +2646,17 @@
         "Siege-Gang Lieutenant",
         "Tarmogoyf Nest",
         "The Reaver Cleaver",
-        "Ziatora, the Incinerator"
+        "Ziatora, the Incinerator",
+        "Barrowgoyf",
+        "Lhurgoyf",
+        "Mortivore",
+        "Necrogoyf",
+        "Pyrogoyf"
       ],
       "tags": [
         "tokens",
-        "token-payoff"
+        "token-payoff",
+        "tribal:lhurgoyf"
       ]
     },
     "commanderNames": [
@@ -3100,7 +3106,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -3130,7 +3137,7 @@
           ]
         },
         "volatility": {
-          "score": 98,
+          "score": 96,
           "level": "very-high",
           "evidence": [
             {
@@ -3141,7 +3148,7 @@
             },
             {
               "signal": "high-roll-tail",
-              "value": 33,
+              "value": 32,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -3172,12 +3179,12 @@
           ]
         },
         "inevitability": {
-          "score": 59,
+          "score": 61,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 58,
+              "value": 62,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -3202,18 +3209,18 @@
           ]
         },
         "dependency": {
-          "score": 39,
-          "level": "moderate",
+          "score": 50,
+          "level": "high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 6,
+              "value": 7,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 34,
+              "value": 48,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },

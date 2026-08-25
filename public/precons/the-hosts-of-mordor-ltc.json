@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/TheHostsOfMordor_LTC.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "The Hosts of Mordor",
@@ -34,11 +34,11 @@
     "peak": 86,
     "coverage": 93,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "97929c1179cefa5aaaf01aecea0d9b3d39a5eaaa0fe899b22f3296ddf3bcbf96",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Saruman, the White Hand\n1 Corsairs of Umbar\n1 Monstrosity of the Lake\n1 Subjugate the Hobbits\n1 Shelob, Dread Weaver\n1 Cavern-Hoard Dragon\n1 Orcish Siegemaster\n1 Rampaging War Mammoth\n1 The Balrog of Moria\n1 Gríma, Saruman's Footman\n1 In the Darkness Bind Them\n1 Lidless Gaze\n1 Lord of the Nazgûl\n1 Moria Scavenger\n1 Summons of Saruman\n1 Too Greedily, Too Deep\n1 Wake the Dragon\n1 Relic of Sauron\n1 The Black Gate\n1 Decree of Pain\n1 Languish\n1 Living Death\n1 Reanimate\n1 Blasphemous Act\n1 Goblin Dark-Dwellers\n1 Inferno Titan\n1 Knollspine Dragon\n1 Scourge of the Throne\n1 Siege-Gang Commander\n1 Treasure Nabber\n1 Hostage Taker\n1 Notion Thief\n1 Choked Estuary\n1 Desolate Lighthouse\n1 Dragonskull Summit\n1 Drowned Catacomb\n1 Foreboding Ruins\n1 Frostboil Snarl\n1 Smoldering Marsh\n1 Sulfur Falls\n1 Sulfurous Springs\n1 Sunken Hollow\n1 Underground River\n1 Treason of Isengard\n1 Bitter Downfall\n1 Troll of Khazad-dûm\n1 Voracious Fell Beast\n1 Fiery Inscription\n1 Grishnákh, Brash Instigator\n1 Arcane Denial\n1 Boon of the Wish-Giver\n1 Consider\n1 Deep Analysis\n1 Fact or Fiction\n1 Forbidden Alchemy\n1 Feed the Swarm\n1 Merciless Executioner\n1 Revenge of Ravens\n1 Anger\n1 Faithless Looting\n1 The Mouth of Sauron\n1 Goblin Cratermaker\n1 Guttersnipe\n1 Shiny Impetus\n1 Thrill of Possibility\n1 Extract from Darkness\n1 Arcane Signet\n1 Basalt Monolith\n1 Commander's Sphere\n1 Everflowing Chalice\n1 Mind Stone\n1 Sol Ring\n1 Worn Powerstone\n1 Command Tower\n1 Crumbling Necropolis\n1 Evolving Wilds\n1 Field of Ruin\n1 Path of Ancestry\n1 Rogue's Passage\n1 Terramorphic Expanse\n3 Island\n3 Island\n3 Swamp\n3 Swamp\n4 Mountain\n3 Mountain",
   "oracleCards": [
@@ -1753,7 +1753,7 @@
       "speed": 26,
       "consistency": 58,
       "explosiveness": 25,
-      "synergy": 86,
+      "synergy": 87,
       "interaction": 45,
       "resilience": 54
     },
@@ -2674,15 +2674,14 @@
       {
         "id": "early-commander",
         "name": "Accélération du commandant",
-        "strength": 66,
-        "cohesion": 66,
+        "strength": 63,
+        "cohesion": 63,
         "producers": [
           "Arcane Signet",
           "Basalt Monolith",
           "Commander's Sphere",
           "Everflowing Chalice",
           "Mind Stone",
-          "Shiny Impetus",
           "Sol Ring",
           "Worn Powerstone"
         ],
@@ -2695,7 +2694,6 @@
           "Commander's Sphere",
           "Everflowing Chalice",
           "Mind Stone",
-          "Shiny Impetus",
           "Sol Ring",
           "Worn Powerstone",
           "Sauron, Lord of the Rings"
@@ -2775,24 +2773,6 @@
             }
           },
           {
-            "name": "Shiny Impetus",
-            "cmc": 3,
-            "tags": [
-              "enchantment",
-              "mana",
-              "tokens"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "R"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
             "name": "Sol Ring",
             "cmc": 1,
             "tags": [
@@ -2850,12 +2830,12 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 8 source(s) persistante(s) vers un commandant MV 8."
+        "evidence": "0 accélérateur(s) burst + 7 source(s) persistante(s) réellement dans la fenêtre T7 ou avant vers un commandant MV 8."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 72,
+      "score": 78,
       "connected": [
         "Cavern-Hoard Dragon",
         "Consider",
@@ -2882,14 +2862,17 @@
         "Thrill of Possibility",
         "Treason of Isengard",
         "Voracious Fell Beast",
-        "Wake the Dragon"
+        "Wake the Dragon",
+        "Merciless Executioner",
+        "Orcish Siegemaster"
       ],
       "tags": [
         "recursion",
         "graveyard-setup",
         "tokens",
         "counter-producer",
-        "token-payoff"
+        "token-payoff",
+        "tribal:orc"
       ]
     },
     "commanderNames": [
@@ -3340,7 +3323,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -3417,7 +3401,7 @@
           "evidence": [
             {
               "signal": "synergy",
-              "value": 86,
+              "value": 87,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -3435,14 +3419,14 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 86,
+              "value": 85,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 60,
+          "score": 63,
           "level": "high",
           "evidence": [
             {
@@ -3453,7 +3437,7 @@
             },
             {
               "signal": "commander-synergy",
-              "value": 72,
+              "value": 78,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },

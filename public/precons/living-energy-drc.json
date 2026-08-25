@@ -17,7 +17,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/LivingEnergy_DRC.json",
-  "sourceRevision": "2026-08-23",
+  "sourceRevision": "2026-08-24",
   "productAliases": [
     {
       "name": "Living Energy",
@@ -34,11 +34,11 @@
     "peak": 88,
     "coverage": 95,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-14",
+    "semanticVersion": "3.3.0-semantic-15",
     "oracleSnapshotHash": "f9b0fe03f52ad9a0573c24ee31937e3b37a1c0c4971ec404c34227a0e3dff427",
-    "scryfallOracleDate": "2026-08-23",
+    "scryfallOracleDate": "2026-08-25",
     "iterations": 3200,
-    "analyzedAt": "2026-08-23T19:10:50.610Z"
+    "analyzedAt": "2026-08-25T13:41:05.940Z"
   },
   "decklist": "1 Pia Nalaar, Chief Mechanic\n1 Territorial Aetherkite\n1 Nissa, Worldsoul Speaker\n1 Peema Trailblazer\n1 Rampaging Aetherhood\n1 Adaptive Omnitool\n1 Aetherflux Conduit\n1 Aetheric Amplifier\n1 Stridehangar Automaton\n1 Chain Reaction\n1 Chaos Warp\n1 Druid of Purification\n1 Chromatic Lantern\n1 Duplicant\n1 Academy Ruins\n1 Aethersquall Ancient\n1 Aethertide Whale\n1 Confiscation Coup\n1 Disallow\n1 Midnight Clock\n1 One with the Machine\n1 Sai, Master Thopterist\n1 Thopter Spy Network\n1 Blasphemous Act\n1 Combustible Gearhulk\n1 Lightning Runner\n1 Pia and Kiran Nalaar\n1 Aetherwind Basker\n1 Architect of the Untamed\n1 Bootleggers' Stash\n1 Elder Gargaroth\n1 Aetherworks Marvel\n1 Conjurer's Closet\n1 Cultivator's Caravan\n1 Panharmonicon\n1 Retrofitter Foundry\n1 Solemn Simulacrum\n1 Triplicate Titan\n1 Exotic Orchard\n1 Frostboil Snarl\n1 Hinterland Harbor\n1 Karplusan Forest\n1 Overflowing Basin\n1 Rootbound Crag\n1 Sheltered Thicket\n1 Shivan Reef\n1 Spire of Industry\n1 Sulfur Falls\n1 Temple of Epiphany\n1 Treasure Vault\n1 Vineglimmer Snarl\n1 Yavimaya Coast\n1 Reality Shift\n1 Arcane Signet\n1 Lightning Greaves\n1 Sol Ring\n1 Command Tower\n1 Arcane Denial\n1 Bespoke Battlewagon\n1 Era of Innovation\n1 Glimmer of Genius\n1 Whirler Rogue\n1 Loyal Apprentice\n1 Reckless Fireweaver\n1 Attune with Aether\n1 Explosive Vegetation\n1 Peema Aether-Seer\n1 Servant of the Conduit\n1 Rogue Refiner\n1 Saheeli, Sublime Artificer\n1 Whirler Virtuoso\n1 Commander's Sphere\n1 Decoction Module\n1 Ornithopter of Paradise\n1 Solar Transformer\n1 Soul-Guide Lantern\n1 Talisman of Curiosity\n1 Aether Hub\n1 Evolving Wilds\n1 Frontier Bivouac\n1 Path of Ancestry\n1 Slagwoods Bridge\n1 Tanglepool Bridge\n5 Island\n5 Mountain\n6 Forest",
   "oracleCards": [
@@ -1835,7 +1835,7 @@
       "speed": 39,
       "consistency": 60,
       "explosiveness": 19,
-      "synergy": 68,
+      "synergy": 67,
       "interaction": 46,
       "resilience": 32
     },
@@ -2483,32 +2483,127 @@
         "evidence": "29 producteur(s), 6 payoff(s), 34 carte(s) distincte(s)."
       },
       {
-        "id": "early-commander",
-        "name": "Accélération du commandant",
+        "id": "lands",
+        "name": "Lands / Landfall",
         "strength": 59,
         "cohesion": 59,
         "producers": [
-          "Aetheric Amplifier",
+          "Evolving Wilds",
+          "Solemn Simulacrum"
+        ],
+        "payoffs": [
+          "Architect of the Untamed",
+          "Nissa, Worldsoul Speaker"
+        ],
+        "members": [
+          "Evolving Wilds",
+          "Solemn Simulacrum",
+          "Architect of the Untamed",
+          "Nissa, Worldsoul Speaker"
+        ],
+        "producerCards": [
+          {
+            "name": "Evolving Wilds",
+            "cmc": 0,
+            "tags": [
+              "land",
+              "land-ramp",
+              "sacrifice"
+            ],
+            "manaReq": {
+              "generic": 0,
+              "colored": [],
+              "total": 0
+            }
+          },
+          {
+            "name": "Solemn Simulacrum",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "artifact",
+              "draw",
+              "land-ramp",
+              "death-payoff",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 4,
+              "colored": [],
+              "total": 4
+            }
+          }
+        ],
+        "supportCards": [],
+        "payoffCards": [
+          {
+            "name": "Architect of the Untamed",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb",
+              "landfall",
+              "counter-kind:energy"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Nissa, Worldsoul Speaker",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "etb",
+              "landfall",
+              "counter-kind:energy",
+              "free"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 4
+            }
+          }
+        ],
+        "producerTags": [
+          "land-ramp"
+        ],
+        "supportTags": [],
+        "payoffTags": [
+          "landfall"
+        ],
+        "evidence": "2 producteur(s), 2 payoff(s), 4 carte(s) distincte(s)."
+      },
+      {
+        "id": "early-commander",
+        "name": "Accélération du commandant",
+        "strength": 44,
+        "cohesion": 44,
+        "producers": [
           "Arcane Signet",
-          "Chromatic Lantern",
-          "Commander's Sphere",
-          "Cultivator's Caravan",
-          "Midnight Clock",
           "Ornithopter of Paradise",
           "Servant of the Conduit",
           "Sol Ring",
-          "Solar Transformer"
+          "Solar Transformer",
+          "Talisman of Curiosity"
         ],
         "payoffs": [
           "Saheeli, Radiant Creator"
         ],
         "members": [
-          "Aetheric Amplifier",
           "Arcane Signet",
-          "Chromatic Lantern",
-          "Commander's Sphere",
-          "Cultivator's Caravan",
-          "Midnight Clock",
           "Ornithopter of Paradise",
           "Servant of the Conduit",
           "Sol Ring",
@@ -2517,20 +2612,6 @@
           "Saheeli, Radiant Creator"
         ],
         "producerCards": [
-          {
-            "name": "Aetheric Amplifier",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "mana",
-              "counter-kind:any"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
           {
             "name": "Arcane Signet",
             "cmc": 2,
@@ -2542,66 +2623,6 @@
               "generic": 2,
               "colored": [],
               "total": 2
-            }
-          },
-          {
-            "name": "Chromatic Lantern",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "mana"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
-          {
-            "name": "Commander's Sphere",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "draw",
-              "mana",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
-          {
-            "name": "Cultivator's Caravan",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "mana"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [],
-              "total": 3
-            }
-          },
-          {
-            "name": "Midnight Clock",
-            "cmc": 3,
-            "tags": [
-              "artifact",
-              "mana",
-              "counter-producer",
-              "counter-kind:generic"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "U"
-                ]
-              ],
-              "total": 3
             }
           },
           {
@@ -2707,116 +2728,12 @@
             }
           }
         ],
-        "evidence": "0 accélérateur(s) burst + 11 source(s) persistante(s) vers un commandant MV 4."
-      },
-      {
-        "id": "lands",
-        "name": "Lands / Landfall",
-        "strength": 59,
-        "cohesion": 59,
-        "producers": [
-          "Evolving Wilds",
-          "Solemn Simulacrum"
-        ],
-        "payoffs": [
-          "Architect of the Untamed",
-          "Nissa, Worldsoul Speaker"
-        ],
-        "members": [
-          "Evolving Wilds",
-          "Solemn Simulacrum",
-          "Architect of the Untamed",
-          "Nissa, Worldsoul Speaker"
-        ],
-        "producerCards": [
-          {
-            "name": "Evolving Wilds",
-            "cmc": 0,
-            "tags": [
-              "land",
-              "land-ramp",
-              "sacrifice"
-            ],
-            "manaReq": {
-              "generic": 0,
-              "colored": [],
-              "total": 0
-            }
-          },
-          {
-            "name": "Solemn Simulacrum",
-            "cmc": 4,
-            "tags": [
-              "creature",
-              "artifact",
-              "draw",
-              "land-ramp",
-              "death-payoff",
-              "etb"
-            ],
-            "manaReq": {
-              "generic": 4,
-              "colored": [],
-              "total": 4
-            }
-          }
-        ],
-        "supportCards": [],
-        "payoffCards": [
-          {
-            "name": "Architect of the Untamed",
-            "cmc": 3,
-            "tags": [
-              "creature",
-              "tokens",
-              "etb",
-              "landfall",
-              "counter-kind:energy"
-            ],
-            "manaReq": {
-              "generic": 2,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 3
-            }
-          },
-          {
-            "name": "Nissa, Worldsoul Speaker",
-            "cmc": 4,
-            "tags": [
-              "creature",
-              "etb",
-              "landfall",
-              "counter-kind:energy",
-              "free"
-            ],
-            "manaReq": {
-              "generic": 3,
-              "colored": [
-                [
-                  "G"
-                ]
-              ],
-              "total": 4
-            }
-          }
-        ],
-        "producerTags": [
-          "land-ramp"
-        ],
-        "supportTags": [],
-        "payoffTags": [
-          "landfall"
-        ],
-        "evidence": "2 producteur(s), 2 payoff(s), 4 carte(s) distincte(s)."
+        "evidence": "0 accélérateur(s) burst + 6 source(s) persistante(s) réellement dans la fenêtre T3 ou avant vers un commandant MV 4."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 39,
+      "score": 42,
       "connected": [
         "Architect of the Untamed",
         "Bootleggers' Stash",
@@ -2831,11 +2748,13 @@
         "Treasure Vault",
         "Triplicate Titan",
         "Whirler Rogue",
-        "Whirler Virtuoso"
+        "Whirler Virtuoso",
+        "Reckless Fireweaver"
       ],
       "tags": [
         "tokens",
-        "token-payoff"
+        "token-payoff",
+        "tribal:artificer"
       ]
     },
     "commanderNames": [
@@ -3193,17 +3112,6 @@
         "aeon": null
       },
       {
-        "name": "Commander's Sphere",
-        "impact": 4,
-        "tags": [
-          "artifact",
-          "draw",
-          "mana",
-          "sacrifice"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Solemn Simulacrum",
         "impact": 3.9,
         "tags": [
@@ -3213,6 +3121,17 @@
           "land-ramp",
           "death-payoff",
           "etb"
+        ],
+        "aeon": null
+      },
+      {
+        "name": "Commander's Sphere",
+        "impact": 3.3,
+        "tags": [
+          "artifact",
+          "draw",
+          "mana",
+          "sacrifice"
         ],
         "aeon": null
       },
@@ -3235,17 +3154,6 @@
           "instant",
           "draw",
           "counterspell"
-        ],
-        "aeon": null
-      },
-      {
-        "name": "Midnight Clock",
-        "impact": 3.1,
-        "tags": [
-          "artifact",
-          "mana",
-          "counter-producer",
-          "counter-kind:generic"
         ],
         "aeon": null
       },
@@ -3279,6 +3187,17 @@
           "mana"
         ],
         "aeon": null
+      },
+      {
+        "name": "Solar Transformer",
+        "impact": 2.6,
+        "tags": [
+          "artifact",
+          "mana",
+          "etb",
+          "counter-kind:energy"
+        ],
+        "aeon": null
       }
     ],
     "warnings": [],
@@ -3289,7 +3208,8 @@
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
-      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée."
+      "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
+      "limitations": []
     },
     "experience": {
       "modelVersion": "experience-v1",
@@ -3361,12 +3281,12 @@
           ]
         },
         "inevitability": {
-          "score": 59,
+          "score": 58,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 68,
+              "value": 67,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -3384,14 +3304,14 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 72.7,
+              "value": 67.7,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 42,
+          "score": 43,
           "level": "moderate",
           "evidence": [
             {
@@ -3402,7 +3322,7 @@
             },
             {
               "signal": "commander-synergy",
-              "value": 39,
+              "value": 42,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },
