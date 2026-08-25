@@ -83,10 +83,12 @@ function creatureSubtypes(card){
   return parts.slice(1).join(' ').split(/\s+/).map(x=>x.toLowerCase().replace(/[^a-z'-]/g,'')).filter(Boolean)
 }
 
+export function cardHasSubtype(card,subtype){return creatureSubtypes(card).includes(String(subtype||'').toLowerCase())}
+
 export function isTopLibraryCheatTarget(card,profile){
   if(!profile||!/\bcreature\b/i.test(card?.type||''))return false
   if(!profile.subtype)return true
-  return creatureSubtypes(card).includes(profile.subtype.toLowerCase())
+  return cardHasSubtype(card,profile.subtype)
 }
 
 export function topLibraryCheatDeckStats(cards,commander){
@@ -99,4 +101,29 @@ export function topLibraryCheatDeckStats(cards,commander){
   const hitCards=(cards||[]).filter(c=>isTopLibraryCheatTarget(c,profile))
   const avgManaValue=hitCards.length?hitCards.reduce((n,c)=>n+Number(c.cmc||0),0)/hitCards.length:0
   return {profile,population,hits,hitProbability:Math.round(hitProbability*1000)/1000,averageHitManaValue:Math.round(avgManaValue*10)/10}
+}
+
+export function typeCostReductionProfile(source){
+  const o=cleanText(source)
+  const m=o.match(/\b([a-z][a-z'-]+) spells you cast cost \{(\d+)\} less to cast\b/)
+  if(!m)return null
+  const subtype=m[1].toLowerCase(),amount=Math.max(1,Number(m[2])||1)
+  if(['noncreature','creature','artifact','enchantment','instant','sorcery','legendary'].includes(subtype))return null
+  return {subtype,amount}
+}
+
+export function typeGenericReduction(card,sources=[]){
+  const generic=Math.max(0,Number(card?.manaReq?.generic||0))
+  if(!generic)return 0
+  let total=0
+  for(const source of sources||[]){const p=typeCostReductionProfile(source);if(p&&cardHasSubtype(card,p.subtype))total+=p.amount}
+  return Math.min(generic,total)
+}
+
+export function typeCostReducerMatches(card,spell){const p=typeCostReductionProfile(card);return !!p&&cardHasSubtype(spell,p.subtype)}
+
+export function commandZoneDeploymentProfile(card){
+  const o=cleanText(card)
+  if(!/put a commander you own from the command zone onto the battlefield/.test(o))return null
+  return {grantsHaste:/\bit gains haste\b|\bthat commander gains haste\b/.test(o),temporary:/return (?:it|that commander) to the command zone/.test(o)}
 }
