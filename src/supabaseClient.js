@@ -29,7 +29,21 @@ export async function consumeAuthRedirect(){
 async function refresh(session){if(!session?.refresh_token)return null;try{const res=await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=refresh_token`,{method:'POST',headers:baseHeaders(),body:JSON.stringify({refresh_token:session.refresh_token})});const next=cleanSession(await payload(res));store(next);return next}catch{store(null);return null}}
 export async function restoreSession(){const redirected=await consumeAuthRedirect();if(redirected)return redirected;let s=readStored();if(!s)return null;if(!s.expires_at||s.expires_at<Math.floor(Date.now()/1000)+300)s=await refresh(s);if(!s)return null;try{const user=await userForToken(s.access_token);s={...s,user};store(s);return s}catch{return refresh(s)}}
 export async function signIn(email,password){const res=await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`,{method:'POST',headers:baseHeaders(),body:JSON.stringify({email,password})});const s=cleanSession(await payload(res));store(s);return s}
-export async function signUp(email,password){const res=await fetch(`${SUPABASE_URL}/auth/v1/signup?redirect_to=${encodeURIComponent(AUTH_REDIRECT)}`,{method:'POST',headers:baseHeaders(),body:JSON.stringify({email,password})});const body=await payload(res),s=cleanSession(body);if(s)store(s);return {session:s,user:body?.user||s?.user||null,needsConfirmation:!s}}
+export async function signUp(email,password){
+  const res=await fetch(`${SUPABASE_URL}/auth/v1/signup?redirect_to=${encodeURIComponent(AUTH_REDIRECT)}`,{method:'POST',headers:baseHeaders(),body:JSON.stringify({email,password})})
+  const body=await payload(res)
+  let s=cleanSession(body)
+  if(!s&&body?.user){
+    try{s=await signIn(email,password)}catch{}
+  }
+  if(s)store(s)
+  return {session:s,user:body?.user||s?.user||null,needsConfirmation:!s}
+}
+export function signInWithOAuth(provider='google'){
+  if(typeof window==='undefined')return
+  const redirectTo=window.location.origin||AUTH_REDIRECT
+  window.location.href=`${SUPABASE_URL}/auth/v1/authorize?provider=${encodeURIComponent(provider)}&redirect_to=${encodeURIComponent(redirectTo)}`
+}
 export async function requestPasswordReset(email){const res=await fetch(`${SUPABASE_URL}/auth/v1/recover?redirect_to=${encodeURIComponent(AUTH_REDIRECT)}`,{method:'POST',headers:baseHeaders(),body:JSON.stringify({email})});await payload(res);return true}
 export async function updatePassword(session,password){if(!session?.access_token)throw new Error('authentication_required');const res=await fetch(`${SUPABASE_URL}/auth/v1/user`,{method:'PUT',headers:authHeaders(session.access_token),body:JSON.stringify({password})});const user=await payload(res),next={...session,user};store(next);return next}
 export async function signOut(session){try{if(session?.access_token)await fetch(`${SUPABASE_URL}/auth/v1/logout`,{headers:authHeaders(session.access_token),method:'POST'})}finally{store(null)}}

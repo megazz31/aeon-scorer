@@ -1,5 +1,5 @@
 import { useEffect,useMemo,useState } from 'react'
-import { analysisHistory,deckVersions,deleteDeck,deleteMyAnalysisData,hashDeck,listDecks,recordAnalysis,requestPasswordReset,restoreSession,saveDeck,saveDeckVersion,signIn,signOut,signUp,updatePassword } from './supabaseClient.js'
+import { analysisHistory,deckVersions,deleteDeck,deleteMyAnalysisData,hashDeck,listDecks,recordAnalysis,requestPasswordReset,restoreSession,saveDeck,saveDeckVersion,signIn,signInWithOAuth,signOut,signUp,updatePassword } from './supabaseClient.js'
 import { ENGINE_VERSION,SEMANTIC_VERSION } from './version.js'
 
 const t=(lang,en,fr)=>lang==='fr'?fr:en
@@ -19,11 +19,34 @@ function AuthPanel({lang,onDone}){
  const[mode,setMode]=useState('signin'),[email,setEmail]=useState(''),[password,setPassword]=useState(''),[busy,setBusy]=useState(false),[message,setMessage]=useState('')
  async function submit(e){e.preventDefault();setBusy(true);setMessage('');try{
    if(mode==='forgot'){await requestPasswordReset(email);setMessage(t(lang,'If an Aeon account exists for this address, a password-reset email has been sent.','Si un compte Aeon existe pour cette adresse, un e-mail de réinitialisation vient d’être envoyé.'));return}
-   if(mode==='signup'){const out=await signUp(email,password);if(out.session)onDone(out.session);else setMessage(t(lang,'Check your inbox. If this address is new, confirm the account from the email. If it already had an account, use “Forgot password?”.','Regarde ta boîte mail. Si cette adresse est nouvelle, confirme le compte depuis l’e-mail. Si elle avait déjà un compte, utilise « Mot de passe oublié ? ».'))}
+   if(mode==='signup'){const out=await signUp(email,password);if(out.session)onDone(out.session);else{const s=await signIn(email,password);onDone(s)}}
    else onDone(await signIn(email,password))
  }catch(e){setMessage(authMessage(e,lang))}finally{setBusy(false)}}
  const title=mode==='signup'?t(lang,'Create your Aeon account','Créer ton compte Aeon'):mode==='forgot'?t(lang,'Reset your password','Réinitialiser ton mot de passe'):t(lang,'Sign in to Aeon','Connexion à Aeon')
- return <div className="cloudAuth"><h3>{title}</h3><p>{mode==='forgot'?t(lang,'Enter your email and Aeon will send a secure reset link.','Entre ton e-mail et Aeon enverra un lien sécurisé de réinitialisation.'):t(lang,'Save decklists, keep every analysis version and re-run them when the engine improves.','Sauvegarde tes decklists, conserve chaque version d’analyse et relance-les quand le moteur évolue.')}</p><form onSubmit={submit}><label>Email<input type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} required/></label>{mode!=='forgot'&&<label>{t(lang,'Password','Mot de passe')}<input type="password" autoComplete={mode==='signup'?'new-password':'current-password'} minLength={6} value={password} onChange={e=>setPassword(e.target.value)} required/></label>}<button className="cloudPrimary" disabled={busy}>{busy?t(lang,'Please wait…','Patiente…'):mode==='signup'?t(lang,'Create account','Créer le compte'):mode==='forgot'?t(lang,'Send reset email','Envoyer l’e-mail'):t(lang,'Sign in','Se connecter')}</button></form>{message&&<p className="cloudMessage">{message}</p>}{mode==='signin'&&<button className="cloudLink" onClick={()=>{setMode('forgot');setMessage('')}}>{t(lang,'Forgot password?','Mot de passe oublié ?')}</button>}<button className="cloudLink" onClick={()=>{setMode(mode==='signin'?'signup':'signin');setMessage('')}}>{mode==='signup'?t(lang,'Already have an account? Sign in','Déjà un compte ? Se connecter'):mode==='forgot'?t(lang,'Back to sign in','Retour à la connexion'):t(lang,'No account yet? Create one','Pas encore de compte ? En créer un')}</button></div>
+ return <div className="cloudAuth">
+   <h3>{title}</h3>
+   <p>{mode==='forgot'?t(lang,'Enter your email and Aeon will send a secure reset link.','Entre ton e-mail et Aeon enverra un lien sécurisé de réinitialisation.'):t(lang,'Save decklists, keep every analysis version and re-run them when the engine improves.','Sauvegarde tes decklists, conserve chaque version d’analyse et relance-les quand le moteur évolue.')}</p>
+   {mode!=='forgot'&&<>
+     <button type="button" className="cloudOAuth" onClick={()=>signInWithOAuth('google')} disabled={busy}>
+       <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+         <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.15z"/>
+         <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.27 21.43 7.35 24 12 24z"/>
+         <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+         <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.27 2.57 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+       </svg>
+       <span>{t(lang,'Continue with Google','Continuer avec Google')}</span>
+     </button>
+     <div className="cloudAuthDivider"><span>{t(lang,'or with email','ou par e-mail')}</span></div>
+   </>}
+   <form onSubmit={submit}>
+     <label>Email<input type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} required/></label>
+     {mode!=='forgot'&&<label>{t(lang,'Password','Mot de passe')}<input type="password" autoComplete={mode==='signup'?'new-password':'current-password'} minLength={6} value={password} onChange={e=>setPassword(e.target.value)} required/></label>}
+     <button className="cloudPrimary" disabled={busy}>{busy?t(lang,'Please wait…','Patiente…'):mode==='signup'?t(lang,'Create account','Créer le compte'):mode==='forgot'?t(lang,'Send reset email','Envoyer l’e-mail'):t(lang,'Sign in','Se connecter')}</button>
+   </form>
+   {message&&<p className="cloudMessage">{message}</p>}
+   {mode==='signin'&&<button className="cloudLink" onClick={()=>{setMode('forgot');setMessage('')}}>{t(lang,'Forgot password?','Mot de passe oublié ?')}</button>}
+   <button className="cloudLink" onClick={()=>{setMode(mode==='signin'?'signup':'signin');setMessage('')}}>{mode==='signup'?t(lang,'Already have an account? Sign in','Déjà un compte ? Se connecter'):mode==='forgot'?t(lang,'Back to sign in','Retour à la connexion'):t(lang,'No account yet? Create one','Pas encore de compte ? En créer un')}</button>
+ </div>
 }
 
 function RecoveryPanel({lang,session,onDone}){
