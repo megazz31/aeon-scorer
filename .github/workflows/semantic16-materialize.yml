@@ -1,0 +1,32 @@
+name: Semantic16 materialize
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/semantic16-single-commander-mechanics-patch.mjs'
+      - '.github/workflows/semantic16-materialize.yml'
+permissions:
+  contents: write
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/semantic16-single-commander-mechanics-patch.mjs
+      - run: node --check src/engine/sequenceSimulator.js
+      - name: Commit materialized engine
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/engine/sequenceSimulator.js
+          if ! git diff --cached --quiet; then
+            git commit -m "feat(semantic16): simulate tribal reducers and command-zone deployment"
+            git push origin HEAD:main
+          fi
