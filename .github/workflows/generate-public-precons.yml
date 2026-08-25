@@ -34,15 +34,15 @@ jobs:
       - name: Generate, validate and publish current snapshot
         env:
           AEON_PRECON_ITERATIONS: '3200'
-          AEON_SEMANTIC_BASELINE_REF: '1acf8fddd674da89c6c5fec6a12ea8f56a01c93d'
+          AEON_SEMANTIC_BASELINE_REF: 'ac05c27f1583f6d7f62b6c851120c8cd854246ab'
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           # Always derive the published snapshot from the latest branch head.
-          # semantic-10 is compared to the last validated semantic-9 snapshot,
-          # not to the accidentally regenerated c21efa1 snapshot carrying the same label.
+          # Compare the candidate semantic snapshot with the last promoted
+          # semantic baseline so package/score drift is explicit and reviewable.
           for attempt in 1 2 3; do
             echo "Snapshot attempt ${attempt}/3"
             git fetch origin public-precon-library
