@@ -40,6 +40,7 @@ jobs:
       - name: Generate candidate precon snapshots for semantic gate
         env:
           AEON_PRECON_ITERATIONS: '3200'
+          AEON_PRECON_GENERATED_AT: '2026-08-25T00:00:00.000Z'
         run: |
           npm run precons:generate
           node scripts/update-public-precon-doc.mjs
@@ -85,6 +86,7 @@ jobs:
       - name: Generate semantic-15 precon delta from semantic-14 main baseline
         env:
           AEON_PRECON_ITERATIONS: '3200'
+          AEON_PRECON_GENERATED_AT: '2026-08-25T00:00:00.000Z'
           AEON_SEMANTIC_BASELINE_REF: '241f22b846df2ca8a74f4812b9701b835da7ad91'
         run: |
           set -euo pipefail
