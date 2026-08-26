@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import fs from 'node:fs'
 import { cardFeatures } from '../src/engine/cardFeatures.js'
 import { detectPackages } from '../src/engine/packageGraph.js'
 
@@ -18,14 +19,29 @@ const wylethPkg=detectPackages([...equips,brass,relic,slayer],wyleth).find(p=>p.
 assert(wylethPkg,'a real Equipment-payoff commander must complete the Equipment package')
 assert.deepEqual(new Set(wylethPkg.supportCards.map(x=>x.name)),new Set(['Brass Squire','Relic Seeker','Ironclad Slayer']))
 assert.deepEqual(wylethPkg.payoffCards.map(x=>x.name),['Wyleth, Soul of Steel'])
+assert.equal(wylethPkg.sequencePayoffRatio,0,'attack/attachment payoff must not count as immediately active')
+assert.equal(wylethPkg.scoringCohesion,Math.round(wylethPkg.cohesion*.35),'delayed-only Equipment package keeps structural cohesion but receives the conservative scoring floor')
+assert(wylethPkg.scoringCohesion<wylethPkg.cohesion,'delayed-only Equipment package must not inject full structural cohesion into power scoring')
 
 const sram=card('Sram, Senior Edificer','Whenever you cast an Aura, Equipment, or Vehicle spell, draw a card.',2,'Legendary Creature — Dwarf Advisor','{1}{W}')
 const sramPkg=detectPackages([...equips,sram],null).find(p=>p.id==='equipment')
 assert(sramPkg,'cast-trigger card advantage from Equipment is a real payoff')
 assert(sramPkg.payoffCards.some(x=>x.name==='Sram, Senior Edificer'))
+assert.equal(sramPkg.sequencePayoffRatio,1,'cast-trigger payoff is immediately active')
+assert.equal(sramPkg.scoringCohesion,sramPkg.cohesion,'fully immediate Equipment package must keep full scoring cohesion')
+
+const mixedPkg=detectPackages([...equips,sram],wyleth).find(p=>p.id==='equipment')
+assert(mixedPkg,'mixed immediate/delayed Equipment package should still exist')
+assert.equal(mixedPkg.sequencePayoffRatio,.5)
+assert.deepEqual(mixedPkg.sequencePayoffs,['Sram, Senior Edificer'])
+assert.equal(mixedPkg.scoringCohesion,Math.round(mixedPkg.cohesion*(.35+.5*.65)),'mixed package scoring cohesion should scale monotonically with immediately active payoff depth')
+
+const powerSource=fs.readFileSync(new URL('../src/engine/powerModel.js',import.meta.url),'utf8')
+assert(powerSource.includes('p.scoringCohesion??p.cohesion??p.strength??0'),'power scoring must consume scoringCohesion before structural cohesion')
+assert(powerSource.includes('top=[...packages].sort((a,b)=>value(b)-value(a)).slice(0,3)'),'power scoring must rank packages by scoring cohesion, not structural display cohesion')
 
 const shikari=card('Leonin Shikari','You may activate equip abilities any time you could cast an instant.',2,'Creature — Cat Soldier','{1}{W}')
 const shikariOnly=detectPackages([...equips,shikari],null)
 assert(!shikariOnly.some(p=>p.id==='equipment'),'equip timing flexibility is support, not a payoff by itself')
 
-console.log('EQUIPMENT PACKAGE PRECISION OK — tutors/attach/recursion are support, real conversion effects are payoffs')
+console.log('EQUIPMENT PACKAGE PRECISION OK — structural cohesion is preserved while scoring cohesion tracks immediately active payoff depth')
