@@ -16,7 +16,9 @@ function donationSupport(c){
   const o=text(c)
   if(/\b(?:target opponent|target player) gains control\b|\bexchange control\b|\bexchange of words\b/.test(o))return true
   if(!isCreature(c))return false
-  return /\bcan['’]?t attack\b|\bcan['’]?t block\b|\bcan['’]?t be sacrificed\b|\bat the beginning of your upkeep\b[^.]{0,140}\b(?:sacrifice|lose life|deals? [^.]*(?:damage )?to you)\b|\bwhen [^.]{0,80} enters\b[^.]{0,140}\b(?:sacrifice|lose life)\b|\byou lose the game\b/.test(o)
+  const selfRestriction=/\b(?:this creature can['’]?t (?:attack|block|attack or block|block or attack)|defender\b|you can['’]?t (?:cast|play|gain|draw)|creatures? you control can['’]?t)/.test(o)
+  const recurringBurden=/\b(?:cumulative upkeep|echo)\b|\bat the beginning of your upkeep\b[^.]{0,160}\b(?:sacrifice|you lose|deals? [^.]*(?:damage )?to you)\b|\byou lose the game\b/.test(o)
+  return selfRestriction||recurringBurden
 }
 function exactOneLifeSupport(c){
   const o=text(c)
