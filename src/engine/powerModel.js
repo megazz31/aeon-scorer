@@ -52,6 +52,9 @@ export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=
   const coverage=analysisCoverage(cards,packages,combos),firstAccessIterations=options?.firstAccess===false?0:Math.max(1,Math.min(Math.max(1,iterations),800,Math.max(80,Math.floor(iterations/3))))
   if(firstAccessIterations>0)sim.firstAccess=sampleFirstAccess({cards,commanders,packages,combos,iterations:firstAccessIterations,maxTurn:7,rng:seeded(hashSeed(cards,commanders,'first-access-v2'))})
   const limitations=[...(cmdSyn.limitations||[])]
+  const equipmentPackagePresent=packages.some(p=>p.id==='equipment')
+  if(equipmentPackagePresent)limitations.push('equipment-attachment-activation-combat-not-sequence-simulated')
+  if(equipmentPackagePresent)warnings.push('Les synergies Équipement sont reconnues structurellement, mais Aeon ne considère comme moteur séquencé que les payoffs immédiatement actifs au lancement ; les coûts d’équipement, l’attache et le combat restent conservateurs.')
   if(targetReductionXConservative)limitations.push('target-cost-reduction-x-value-conservative')
   if(targetReductionXConservative)warnings.push('Réduction de coût liée aux cibles simulée sur le mana générique connu ; les valeurs X choisies restent volontairement conservatrices.')
   const commanderLimitationWarning={
