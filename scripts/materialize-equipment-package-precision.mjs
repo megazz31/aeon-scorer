@@ -1,4 +1,5 @@
 import fs from 'node:fs'
+// Keep structural Equipment cohesion visible; only scoringCohesion is discounted for delayed attach/combat payoffs.
 const packagePath='src/engine/packageGraph.js'
 const powerPath='src/engine/powerModel.js'
 const before=fs.readFileSync(packagePath,'utf8')
