@@ -18,6 +18,8 @@ jobs:
           node-version: 22
       - name: Materialize user-corpus commander fixes
         run: node scripts/materialize-user-corpus-commander-fixes.mjs
+      - name: Materialize Equipment package precision
+        run: node scripts/materialize-equipment-package-precision.mjs
       - name: Syntax checks
         run: |
           node --check src/engine/commanderSynergyPatterns.js
@@ -26,6 +28,7 @@ jobs:
           node --check src/engine/powerModel.js
           node --check scripts/user-corpus-commander-regression-test.mjs
           node --check scripts/user-corpus-combo-regression-test.mjs
+          node --check scripts/materialize-equipment-package-precision.mjs
       - name: Focused regressions
         run: |
           node scripts/user-corpus-commander-regression-test.mjs
@@ -39,6 +42,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/engine/packageGraph.js src/engine/powerModel.js package.json
           if ! git diff --cached --quiet; then
-            git commit -m "feat(semantic16): recognize remaining user-corpus commander engines"
+            git commit -m "fix(semantic16): separate Equipment supports from true payoffs"
             git push origin HEAD:semantic/16-user-corpus-audit
           fi
