@@ -47,7 +47,7 @@ export function cardContextFlags(card={}){
   if(drawClause&&has(s,/\bdiscard (?:a|one|two|three|\d+|x|that many|all) cards?\b/))add('draw-discard')
   if(drawClause&&has(s,/(?:whenever|when) [^.]{0,180}deals? (?:combat )?damage to (?:a player|an opponent)/))add('combat-gated-draw')
 
-  if(has(s,/\bexile target [^.]{0,120}\buntil (?:this|that|it|the [^.]{0,60}) leaves the battlefield\b/))add('temporary-removal')
+  if(has(s,/\bexile target [^.]{0,120}\buntil (?:(?:this|that) [^.]{0,60}|it|the [^.]{0,60}) leaves the battlefield\b/))add('temporary-removal')
   if(tags.includes('protection')&&has(s,/\b(?:this creature|this permanent|this enchantment|this artifact) (?:has|gains?) [^.]{0,80}(?:indestructible|hexproof|ward|protection from)/)&&!has(s,/\b(?:target|another|other|creatures? you control|permanents? you control) [^.]{0,100}(?:gains?|have|has) [^.]{0,80}(?:indestructible|hexproof|ward|protection from)/))add('self-only-protection')
   if(has(s,/\bimpending\b|\bprototype\b|\bevoke\b|\bmiracle\b|\boverload\b/))add('alternate-timing')
   if(tags.includes('stax')&&has(s,/creatures? can'?t attack you unless|can'?t attack you or planeswalkers? you control unless/))add('defensive-tax')
