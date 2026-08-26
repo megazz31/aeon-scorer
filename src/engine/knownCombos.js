@@ -13,6 +13,11 @@ export const KNOWN_COMBOS = [
   { cards:['Redshift, Rocketeer Chief','Umbral Mantle'], name:'Redshift + Umbral Mantle', severity:.9, family:'redshift-untap-engine' },
   { cards:['Redshift, Rocketeer Chief','Staff of Domination'], name:'Redshift + Staff of Domination', severity:.9, family:'redshift-untap-engine' },
   { cards:['Redshift, Rocketeer Chief','Aggravated Assault'], name:'Redshift + Aggravated Assault', severity:.9, family:'redshift-untap-engine' },
+  { cards:['Kalamax, the Stormsire','Reverberate'], name:'Kalamax + Reverberate', severity:.7, family:'kalamax-copy-loop' },
+  { cards:['Kalamax, the Stormsire','Twincast'], name:'Kalamax + Twincast', severity:.7, family:'kalamax-copy-loop' },
+  { cards:['Kalamax, the Stormsire','Return the Favor'], name:'Kalamax + Return the Favor', severity:.7, family:'kalamax-copy-loop' },
+  { cards:['Kalamax, the Stormsire','Expansion // Explosion'], name:'Kalamax + Expansion', severity:.7, family:'kalamax-copy-loop' },
+  { cards:['Kalamax, the Stormsire','Refuse // Cooperate'], name:'Kalamax + Cooperate', severity:.7, family:'kalamax-copy-loop' },
 ]
 
 export function detectKnownCombos(cards) {
