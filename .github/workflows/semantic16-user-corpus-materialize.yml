@@ -20,6 +20,8 @@ jobs:
         run: node scripts/materialize-user-corpus-commander-fixes.mjs
       - name: Materialize Equipment package precision
         run: node scripts/materialize-equipment-package-precision.mjs
+      - name: Materialize Equipment sequence gating
+        run: node scripts/materialize-equipment-sequence-gating.mjs
       - name: Materialize combo timing eligibility
         run: node scripts/materialize-combo-sequence-eligibility.mjs
       - name: Syntax checks
@@ -32,13 +34,16 @@ jobs:
           node --check scripts/user-corpus-commander-regression-test.mjs
           node --check scripts/user-corpus-combo-regression-test.mjs
           node --check scripts/equipment-package-precision-test.mjs
+          node --check scripts/equipment-sequence-gating-test.mjs
           node --check scripts/materialize-equipment-package-precision.mjs
+          node --check scripts/materialize-equipment-sequence-gating.mjs
           node --check scripts/materialize-combo-sequence-eligibility.mjs
       - name: Focused regressions
         run: |
           node scripts/user-corpus-commander-regression-test.mjs
           node scripts/user-corpus-combo-regression-test.mjs
           node scripts/equipment-package-precision-test.mjs
+          node scripts/equipment-sequence-gating-test.mjs
           node scripts/semantic15-audit-regression-test.mjs
           node scripts/semantic16-commander-compression-test.mjs
       - name: Commit materialized files
@@ -48,6 +53,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/engine/packageGraph.js src/engine/sequenceSimulator.js src/engine/powerModel.js package.json
           if ! git diff --cached --quiet; then
-            git commit -m "fix(semantic16): separate combo presence from executable timing"
+            git commit -m "fix(semantic16): keep Equipment timing sequence-safe"
             git push origin HEAD:semantic/16-user-corpus-audit
           fi
