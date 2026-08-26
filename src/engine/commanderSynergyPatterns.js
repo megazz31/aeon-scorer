@@ -4,6 +4,8 @@ const uniq=xs=>{const seen=new Set(),out=[];for(const x of xs||[]){const k=Strin
 
 function isCreature(c){return /\bcreature\b/.test(type(c))}
 function isEnchantment(c){return /\benchantment\b/.test(type(c))}
+function isAura(c){return /\baura\b/.test(type(c))}
+function isEquipment(c){return /\bequipment\b/.test(type(c))}
 function hasTag(c,t){return Array.isArray(c?.tags)&&c.tags.includes(t)}
 
 function attackSupport(c){
@@ -33,10 +35,17 @@ export function extraCommanderSynergy(cards,commander){
     connected.push(...(cards||[]).filter(attackSupport))
     limitations.push('go-wide-combat-damage-not-sequence-simulated')
   }
-  if(/\bcreature you own but don['’]?t control\b/.test(o)&&/\bopponent gains control\b/.test(o)){
-    tags.push('donation-goad')
+  const transfers=/\b(?:target )?opponent gains control of (?:up to one )?target (?:creature|permanent) you control\b/.test(o)
+  const rewardsOwnership=/\b(?:creature|permanent)s? you own (?:but don['’]?t control|that (?:your )?opponents? control)\b/.test(o)
+  if(transfers&&rewardsOwnership){
     connected.push(...(cards||[]).filter(donationSupport))
-    limitations.push('donation-goad-opponent-behavior-not-sequence-simulated')
+    if(/\bcreature you own but don['’]?t control\b/.test(o)&&/\bgoad/.test(o)){
+      tags.push('donation-goad')
+      limitations.push('donation-goad-opponent-behavior-not-sequence-simulated')
+    }else{
+      tags.push('donation-engine')
+      limitations.push('donation-value-not-sequence-simulated')
+    }
   }
   if(/\bopponents? each lose exactly 1 life\b/.test(o)||/\bopponents? lose exactly 1 life\b/.test(o)){
     tags.push('exact-one-life-loss')
@@ -46,6 +55,11 @@ export function extraCommanderSynergy(cards,commander){
   if(/\bspend this mana only to activate abilities\b/.test(o)&&/\bput any number of permanent cards from your hand onto the battlefield\b/.test(o)){
     tags.push('activated-ability-compression')
     limitations.push('activated-ability-mana-and-exhaust-compression-not-sequence-simulated')
+  }
+  if(/\byou may cast (?:aura and equipment|equipment and aura) spells from the top of your library\b/.test(o)){
+    tags.push('top-library-aura-equipment')
+    connected.push(...(cards||[]).filter(c=>isAura(c)||isEquipment(c)))
+    limitations.push('top-library-restricted-cast-not-sequence-simulated')
   }
   return {connected:uniq(connected),tags:[...new Set(tags)],limitations:[...new Set(limitations)]}
 }
