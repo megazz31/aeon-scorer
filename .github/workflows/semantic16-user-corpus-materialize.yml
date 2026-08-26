@@ -30,6 +30,7 @@ jobs:
           node --check src/engine/packageGraph.js
           node --check src/engine/knownCombos.js
           node --check src/engine/sequenceSimulator.js
+          node --check src/engine/sequenceSimulatorMulti.js
           node --check src/engine/powerModel.js
           node --check scripts/user-corpus-commander-regression-test.mjs
           node --check scripts/user-corpus-combo-regression-test.mjs
@@ -51,8 +52,8 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/engine/packageGraph.js src/engine/sequenceSimulator.js src/engine/powerModel.js package.json
+          git add src/engine/packageGraph.js src/engine/sequenceSimulator.js src/engine/sequenceSimulatorMulti.js src/engine/powerModel.js package.json
           if ! git diff --cached --quiet; then
-            git commit -m "fix(semantic16): keep Equipment timing sequence-safe"
+            git commit -m "fix(semantic16): persist sequence timing safeguards"
             git push origin HEAD:semantic/16-user-corpus-audit
           fi
