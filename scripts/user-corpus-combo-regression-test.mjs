@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict'
 import { detectKnownCombos, comboScoringSignal, sequenceEligibleCombos } from '../src/engine/knownCombos.js'
+import { cardFeatures, featureDeck } from '../src/engine/cardFeatures.js'
+import { simulateSequencesMulti } from '../src/engine/sequenceSimulatorMulti.js'
 
 const card=name=>({name})
 const names=xs=>new Set(xs.map(x=>x.name))
@@ -48,4 +50,20 @@ assert.equal(independentSignal.families,2,'independent combo families remain ind
 assert.ok(independentSignal.boost>20)
 assert.equal(sequenceEligibleCombos(independent).length,2,'legacy deterministic two-card combos without hidden prerequisites remain eligible for sequence access')
 
-console.log('USER CORPUS COMBO REGRESSION OK — presence, redundancy and executable timing are separated')
+// Multi-commander simulation must apply the same executable-timing filter as single-commander simulation.
+const raw=(name,type,oracle='',cmc=2,manaCost='{2}',producedMana=[])=>({name,type,oracle,cmc,manaCost,colors:[],colorIdentity:[],producedMana,legalities:{commander:'legal'}})
+const obCommander=cardFeatures(raw('Ob Nixilis, Captive Kingpin','Legendary Creature — Demon','Whenever one or more opponents each lose exactly 1 life, put a +1/+1 counter on Ob Nixilis, Captive Kingpin. Exile the top card of your library. Until your next end step, you may play that card.',4,'{2}{B}{R}'))
+const helperCommander=cardFeatures(raw('Helper Partner','Legendary Creature — Human','Partner',2,'{1}{B}'))
+const multiDeck=featureDeck([
+  ...Array.from({length:20},(_,i)=>raw(`Swamp ${i}`,'Basic Land — Swamp','{T}: Add {B}.',0,'',['B'])),
+  ...Array.from({length:20},(_,i)=>raw(`Mountain ${i}`,'Basic Land — Mountain','{T}: Add {R}.',0,'',['R'])),
+  raw('All Will Be One','Enchantment','Whenever you put one or more counters on a permanent or player, All Will Be One deals that much damage to target opponent, creature an opponent controls, or planeswalker an opponent controls.',5,'{3}{R}{R}'),
+  ...Array.from({length:58},(_,i)=>raw(`Filler ${i}`,'Creature — Horror','',2,'{1}{B}')),
+])
+const multiObCombos=detectKnownCombos([...multiDeck,obCommander,helperCommander])
+assert.equal(multiObCombos.length,1)
+assert.equal(sequenceEligibleCombos(multiObCombos).length,0)
+const multiSim=simulateSequencesMulti(multiDeck,[obCommander,helperCommander],[],multiObCombos,600,7,()=>0.3141592653)
+assert(multiSim.turnProfile.every(x=>x.burst===0),'multi-commander sequence simulation must not count prerequisite-dependent Ob + AWBO as executable burst')
+
+console.log('USER CORPUS COMBO REGRESSION OK — presence, redundancy and executable timing are separated in single and multi commander')
