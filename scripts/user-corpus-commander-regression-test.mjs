@@ -37,20 +37,24 @@ const jonSyn=commanderSynergy(donation,jon)
 assert.ok(jonSyn.score>=60,'donation commander must not remain at zero with a dedicated drawback shell')
 assert.ok(jonSyn.tags.includes('donation-goad'))
 
-// Zedruu-style generic donation should use the same transferable/drawback evidence without pretending it is goad.
+// Zedruu-style generic donation should use transferable/ongoing drawback evidence, not recipient benefits or spent ETB costs.
 const zedruu=f(raw('Gift Goat','Legendary Creature — Minotaur Monk',"At the beginning of your upkeep, you gain X life and draw X cards, where X is the number of permanents you own that your opponents control.\n{U}{R}{W}: Target opponent gains control of target permanent you control.",4,'{1}{U}{R}{W}'))
 const zedruuShell=featureDeck([
   raw('Plotter','Creature — Wizard','When this creature enters, exchange control of target land you control and target land an opponent controls.',3,'{2}{U}'),
   raw('Cadets','Creature — Goblin','Whenever this creature blocks or becomes blocked, target opponent gains control of it.',2,'{1}{R}'),
   raw('Bad Defender','Creature — Wall',"Defender\nThis creature can't attack.",2,'{1}{U}'),
   raw('Upkeep Burden','Creature — Giant','At the beginning of your upkeep, sacrifice another creature.',4,'{3}{R}'),
+  raw('Pillowfort Muse','Creature — Spirit',"Flying\nCreatures can't attack you unless their controller pays {2} for each creature attacking you.",4,'{3}{W}'),
+  raw('Spent ETB Cost','Creature — Soldier','When this creature enters, sacrifice it unless {W} was spent to cast it.',3,'{2}{W}'),
   ...Array.from({length:12},(_,i)=>raw(`Neutral ${i}`,'Instant','Scry 1.',2,'{1}{U}')),
 ])
 const zedruuSyn=commanderSynergy(zedruuShell,zedruu)
-assert.ok(zedruuSyn.score>=35,'generic donation commander must connect actual transfer/drawback candidates')
+assert.ok(zedruuSyn.score>=30,'generic donation commander must connect actual transfer/drawback candidates')
 assert.ok(zedruuSyn.tags.includes('donation-engine'))
 assert.ok(!zedruuSyn.tags.includes('donation-goad'))
 assert.ok(zedruuSyn.limitations?.includes('donation-value-not-sequence-simulated'))
+assert.ok(!zedruuSyn.connected.includes('Pillowfort Muse'),'recipient-side defensive benefits must not be treated as donation drawbacks')
+assert.ok(!zedruuSyn.connected.includes('Spent ETB Cost'),'an ETB cost already paid before donation must not count as a recurring recipient burden')
 
 // Galea-style restricted top-library casting should recognize Aura/Equipment virtual depth.
 const galea=f(raw('Top Gear Knight','Legendary Creature — Elf Knight','Vigilance\nYou may look at the top card of your library any time.\nYou may cast Aura and Equipment spells from the top of your library. When you cast an Equipment spell this way, it gains "When this Equipment enters, attach it to target creature you control."',4,'{1}{G}{W}{U}'))
