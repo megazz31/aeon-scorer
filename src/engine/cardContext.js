@@ -8,13 +8,25 @@ const stripReminder=text=>{
   return out.replace(/\r/g,'').replace(/[ \t]+/g,' ').replace(/\s*\n\s*/g,'\n').trim()
 }
 const clauses=text=>String(text||'').split(/[.\n;]+/).map(x=>x.trim()).filter(Boolean)
+const abilities=text=>String(text||'').split(/\n+/).map(x=>x.trim()).filter(Boolean)
 const has=(s,re)=>re.test(s)
 const recurringWindow=/at the beginning of (?:your|each) (?:upkeep|end step|first main phase)/
+const drawText=/\b(?:you )?draw (?:a|one|two|three|four|five|six|seven|\d+|x|that many|cards? equal to)\b|\bdraw (?:a|one|two|three|four|five|six|seven|\d+|x|that many) cards?\b/
+const discardText=/\b(?:you may )?discard (?:a|one|two|three|four|five|six|seven|\d+|x|that many|all) cards?\b/
 const controllerLifePayment=clause=>{
   const c=String(clause||'').toLowerCase()
   if(/\bward\s*[—-]\s*pay\b/.test(c))return false
   if(/\b(?:an? |each |target )?opponents?\b[^.]{0,100}\bpay\b|\bthey (?:may )?pay\b/.test(c))return false
   return /\b(?:you may )?pay (?:\d+|x|that much) life\b|\bpay life equal to\b|\bby paying life equal to\b|\bcan be paid with either [^{]* or \d+ life\b/.test(c)
+}
+const linkedDrawDiscard=text=>{
+  const s=String(text||'').toLowerCase(),lines=abilities(s)
+  if(/\bconnive(?:s|d)?\b/.test(s))return true
+  if(/as an additional cost to cast this spell[^.\n]{0,160}\bdiscard (?:a|one|two|three|\d+|x) cards?\b/.test(s)&&drawText.test(s))return true
+  return lines.some(line=>{
+    if(/^(?:whenever|if) you discard\b/.test(line))return false
+    return drawText.test(line)&&discardText.test(line)
+  })
 }
 
 export const CARD_CONTEXT_SEVERITY={
@@ -49,8 +61,8 @@ export function cardContextFlags(card={}){
   if(recurringLifeInSameClause||recurringModalLife)add('recurring-life-loss')
   if(cs.some(controllerLifePayment))add('life-payment')
 
-  const drawClause=cs.some(c=>/\b(?:you )?draw (?:a|one|two|three|four|five|six|seven|\d+|x|that many|cards? equal to)\b/.test(c)||/\bdraw (?:a|one|two|three|four|five|six|seven|\d+|x|that many) cards?\b/.test(c))
-  if(drawClause&&has(s,/\bdiscard (?:a|one|two|three|\d+|x|that many|all) cards?\b/))add('draw-discard')
+  const drawClause=drawText.test(s)
+  if(linkedDrawDiscard(s))add('draw-discard')
   if(drawClause&&has(s,/(?:whenever|when) [^.]{0,180}deals? (?:combat )?damage to (?:a player|an opponent)/))add('combat-gated-draw')
 
   if(has(s,/\bexile target [^.]{0,120}\buntil (?:(?:this|that) [^.]{0,60}|it|the [^.]{0,60}) leaves the battlefield\b/))add('temporary-removal')
