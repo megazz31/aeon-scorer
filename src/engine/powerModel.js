@@ -25,8 +25,8 @@ function hasTopLibraryCreatureCheat(c){const o=String(c?.oracle||'');return /loo
 function combinedCommanderSynergy(cards,commanders){
   if(!commanders.length)return {score:0,connected:[],tags:[],commanders:[]}
   if(commanders.length===1)return commanderSynergy(cards,commanders[0])
-  const parts=commanders.map(c=>({name:c.name,...commanderSynergy(cards,c)})),connected=[...new Set(parts.flatMap(x=>x.connected))],tags=[...new Set(parts.flatMap(x=>x.tags))],nonlands=cards.filter(c=>!c.isLand).length
-  return {score:Math.min(100,Math.round(connected.length/Math.max(1,nonlands)*170)),connected,tags,commanders:parts}
+  const parts=commanders.map(c=>({name:c.name,...commanderSynergy(cards,c)})),connected=[...new Set(parts.flatMap(x=>x.connected))],tags=[...new Set(parts.flatMap(x=>x.tags))],limitations=[...new Set(parts.flatMap(x=>x.limitations||[]))],nonlands=cards.filter(c=>!c.isLand).length
+  return {score:Math.min(100,Math.round(connected.length/Math.max(1,nonlands)*170)),connected,tags,limitations,commanders:parts}
 }
 
 export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=3000,options={}){
@@ -51,9 +51,17 @@ export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=
   const drivers=cards.filter(c=>!c.isLand).map(c=>{const ap=aeonPriorFor(c,aeonMap),pkg=packages.filter(p=>(p.members||[]).some(n=>n.toLowerCase()===c.name.toLowerCase())).length,base=c.development*.85+c.interaction*.8+c.resilience*.7+c.explosiveness*1.15+c.recurring*.55+c.efficiency*.4;return {name:c.name,impact:Math.round((base+pkg*.7+(ap.normalized||0)*1.1)*10)/10,tags:c.tags.slice(0,6),aeon:ap.points}}).sort((a,b)=>b.impact-a.impact).slice(0,12)
   const coverage=analysisCoverage(cards,packages,combos),firstAccessIterations=options?.firstAccess===false?0:Math.max(1,Math.min(Math.max(1,iterations),800,Math.max(80,Math.floor(iterations/3))))
   if(firstAccessIterations>0)sim.firstAccess=sampleFirstAccess({cards,commanders,packages,combos,iterations:firstAccessIterations,maxTurn:7,rng:seeded(hashSeed(cards,commanders,'first-access-v2'))})
-  const limitations=[]
+  const limitations=[...(cmdSyn.limitations||[])]
   if(targetReductionXConservative)limitations.push('target-cost-reduction-x-value-conservative')
   if(targetReductionXConservative)warnings.push('Réduction de coût liée aux cibles simulée sur le mana générique connu ; les valeurs X choisies restent volontairement conservatrices.')
+  const commanderLimitationWarning={
+    'commander-enchantment-animation-combat-not-sequence-simulated':'Le commandant transforme ou renforce des enchantements-créatures : cette cohérence est reconnue, mais les dégâts de combat générés par cette animation restent conservateurs.',
+    'go-wide-combat-damage-not-sequence-simulated':'Le commandant amplifie les attaques de masse : la cohérence du plan go-wide est reconnue, mais les dégâts de combat multijoueur ne sont pas encore simulés tour par tour.',
+    'donation-goad-opponent-behavior-not-sequence-simulated':'Le plan donation/goad est reconnu, mais Aeon ne simule pas encore les décisions de l’adversaire ni la durée de vie des créatures données.',
+    'exact-one-life-loss-frequency-conservative':'Les sources répétées de perte exacte de 1 point de vie sont reliées au commandant ; leur fréquence réelle reste volontairement conservatrice.',
+    'activated-ability-mana-and-exhaust-compression-not-sequence-simulated':'Le commandant convertit sa puissance en mana réservé aux capacités et peut déployer des permanents via une capacité coûteuse ; cette compression n’est pas encore simulée intégralement.'
+  }
+  for(const limitation of cmdSyn.limitations||[]){const w=commanderLimitationWarning[limitation];if(w)warnings.push(w)}
   const result={profile:{median:Math.round(median),floor:Math.round(floor),ceiling:Math.round(ceiling),peak:Math.round(peak),dispersion:Math.round(dispersion),variance:Math.round(dispersion),consistency:Math.round(consistency),commanderDelta,coverage,dataCoverage:coverage},dimensions,roles,packages,combos,commanderSynergy:cmdSyn,commanderNames:commanders.map(c=>c.name),aeon,simulation:sim,drivers,warnings,methodology:{iterations,firstAccessIterations,model:'sequence-access-v3.2-semantic',maxTurn:7,commandZoneCount:commanders.length,separateCommanderTax:multi,curveMeaning:'Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.',commanderMechanics:sim.commanderMechanics||null,limitations}}
   result.experience=buildExperienceFingerprint(result,cards.concat(commanders))
   result.friction=buildTableFriction(result,cards.concat(commanders))

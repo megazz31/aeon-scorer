@@ -1,4 +1,5 @@
 import { topLibraryCheatProfile, isTopLibraryCheatTarget } from './commanderMechanics.js'
+import { extraCommanderSynergy } from './commanderSynergyPatterns.js'
 
 const MOTIFS=[
   {id:'early-commander',name:'Accélération du commandant',special:'commander'},
@@ -209,7 +210,9 @@ export function commanderSynergy(cards,commander){
   pair('blink','etb');pair('tokens','token-payoff');pair('token-payoff','tokens');pair('sac-outlet','death-payoff');pair('death-payoff','sac-outlet');pair('recursion','graveyard-setup');pair('graveyard-setup','recursion');pair('constellation','enchantment');pair('artifact-payoff','artifact');pair('exile-cast','exile-payoff');pair('exile-payoff','exile-cast');pair('landfall','land-ramp');pair('spellslinger','instant');pair('spellslinger','sorcery');pair('lifegain','life-payoff');pair('life-payoff','lifegain')
   if(selfEtbTrigger(commander))semantic.add('blink')
   const counterEngine=semantic.has('counter-producer')||semantic.has('counter-payoff')||semantic.has('modified-payoff')
-  const custom=[]
+  const custom=[],extra=extraCommanderSynergy(cards,commander)
+  for(const tag of extra.tags)semantic.add(tag)
+  custom.push(...extra.connected)
   const scope=targetReductionScope(commander)
   if(scope){semantic.add('target-cost-reduction');custom.push(...cards.filter(c=>spellTargetsScope(c,scope)))}
   const cheatProfile=topLibraryCheatProfile(commander)
@@ -227,5 +230,5 @@ export function commanderSynergy(cards,commander){
   }):[]
   const connected=uniqByName([...connectedByTags,...custom])
   const score=Math.min(100,Math.round(connected.length/Math.max(1,nonlands.length)*170))
-  return {score,connected:connected.map(c=>c.name),tags:[...semantic]}
+  return {score,connected:connected.map(c=>c.name),tags:[...semantic],limitations:extra.limitations}
 }
