@@ -58,6 +58,8 @@ export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=
     'commander-enchantment-animation-combat-not-sequence-simulated':'Le commandant transforme ou renforce des enchantements-créatures : cette cohérence est reconnue, mais les dégâts de combat générés par cette animation restent conservateurs.',
     'go-wide-combat-damage-not-sequence-simulated':'Le commandant amplifie les attaques de masse : la cohérence du plan go-wide est reconnue, mais les dégâts de combat multijoueur ne sont pas encore simulés tour par tour.',
     'donation-goad-opponent-behavior-not-sequence-simulated':'Le plan donation/goad est reconnu, mais Aeon ne simule pas encore les décisions de l’adversaire ni la durée de vie des créatures données.',
+    'donation-value-not-sequence-simulated':'Le commandant récompense les permanents donnés aux adversaires : cette cohérence est reconnue, mais Aeon ne simule pas encore la valeur perdue ou gagnée lors du choix des permanents à donner.',
+    'top-library-restricted-cast-not-sequence-simulated':'Le commandant permet de lancer une catégorie précise de cartes depuis le dessus de la bibliothèque : cette profondeur virtuelle est reconnue, sans simuler encore chaque carte révélée et lancée tour par tour.',
     'exact-one-life-loss-frequency-conservative':'Les sources répétées de perte exacte de 1 point de vie sont reliées au commandant ; leur fréquence réelle reste volontairement conservatrice.',
     'activated-ability-mana-and-exhaust-compression-not-sequence-simulated':'Le commandant convertit sa puissance en mana réservé aux capacités et peut déployer des permanents via une capacité coûteuse ; cette compression n’est pas encore simulée intégralement.'
   }
