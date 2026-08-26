@@ -32,6 +32,10 @@ jobs:
         run: npm ci
       - name: Smoke test
         run: npm run smoke
+      - name: Generate current semantic precon snapshots for sentinel gates
+        env:
+          AEON_PRECON_ITERATIONS: '3200'
+        run: npm run precons:generate
       - name: Semantic truth + sentinel precons
         run: npm run test:semantic:fast
       - name: Metamorphic independent verification
