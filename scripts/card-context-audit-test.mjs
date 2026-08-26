@@ -41,7 +41,19 @@ assert(flags(yojimbo).has('defensive-tax'))
 const taskmaster=card('Demonic Taskmaster','At the beginning of your upkeep, sacrifice a creature other than this creature.',['creature','sacrifice'])
 assert(flags(taskmaster).has('recurring-sacrifice'))
 
+const gwenom=card('Gwenom, Remorseless','Whenever Gwenom attacks, until end of turn, you may play cards from the top of your library. If you cast a spell this way, pay life equal to its mana value rather than pay its mana cost.',['creature','lifegain','free'])
+assert(flags(gwenom).has('life-payment'),'alternate costs paid with controller life must remain visible')
+
+const warRoom=card('War Room','{T}: Add {C}.\n{3}, {T}, Pay life equal to the number of colors in your commanders\' color identity: Draw a card.',['land','draw','mana'])
+assert(flags(warRoom).has('life-payment'),'activated life payments by the controller must be recognized')
+
+const zul=card('Zul Ashur, Lich Lord','Ward—Pay 2 life.\n{T}: You may cast target Zombie creature card from your graveyard this turn.',['creature','protection','recursion'])
+assert(!flags(zul).has('life-payment'),'Ward life is an opponent cost, not a downside paid by the controller')
+
+const squelcher=card('Hexing Squelcher','This spell can\'t be countered.\nWard—Pay 2 life.\nSpells you control can\'t be countered.\nOther creatures you control have "Ward—Pay 2 life."',['creature','protection'])
+assert(!flags(squelcher).has('life-payment'),'granted Ward costs must not be presented as controller life payments')
+
 const treasureReminder=card('Goldvein Pick','Whenever equipped creature deals combat damage to a player, create a Treasure token. (It\'s an artifact with “{T}, Sacrifice this token: Add one mana of any color.”)',['artifact','mana','tokens'])
 assert(!flags(treasureReminder).has('recurring-sacrifice'),'reminder-text Treasure sacrifice must not become a downside')
 
-console.log('CARD CONTEXT AUDIT OK — lose-game, harmful LTB, recurring costs, filtering, timing and temporary restrictions are explicit without changing score')
+console.log('CARD CONTEXT AUDIT OK — lose-game, harmful LTB, recurring costs, filtering, timing, temporary restrictions and controller-only life payments are explicit without changing score')
