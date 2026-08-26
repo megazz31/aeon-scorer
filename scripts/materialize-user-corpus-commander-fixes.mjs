@@ -21,8 +21,12 @@ patch('src/engine/powerModel.js',s=>{
 })
 
 patch('package.json',s=>{
-  s=once(s,'node scripts/semantic16-commander-compression-test.mjs','node scripts/semantic16-commander-compression-test.mjs && node scripts/user-corpus-commander-regression-test.mjs','semantic test hook')
-  s=once(s,'node scripts/user-corpus-commander-regression-test.mjs && node scripts/semantic16-ramp-planner-regression-test.mjs','node scripts/user-corpus-commander-regression-test.mjs && node scripts/user-corpus-combo-regression-test.mjs && node scripts/semantic16-ramp-planner-regression-test.mjs','combo test hook')
+  if(!s.includes('node scripts/user-corpus-commander-regression-test.mjs')){
+    s=once(s,'node scripts/semantic16-commander-compression-test.mjs','node scripts/semantic16-commander-compression-test.mjs && node scripts/user-corpus-commander-regression-test.mjs','semantic test hook')
+  }
+  if(!s.includes('node scripts/user-corpus-combo-regression-test.mjs')){
+    s=once(s,'node scripts/user-corpus-commander-regression-test.mjs','node scripts/user-corpus-commander-regression-test.mjs && node scripts/user-corpus-combo-regression-test.mjs','combo test hook')
+  }
   return s
 })
 console.log('USER CORPUS COMMANDER FIXES MATERIALIZED')
