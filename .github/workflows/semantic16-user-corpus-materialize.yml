@@ -28,11 +28,13 @@ jobs:
           node --check src/engine/powerModel.js
           node --check scripts/user-corpus-commander-regression-test.mjs
           node --check scripts/user-corpus-combo-regression-test.mjs
+          node --check scripts/equipment-package-precision-test.mjs
           node --check scripts/materialize-equipment-package-precision.mjs
       - name: Focused regressions
         run: |
           node scripts/user-corpus-commander-regression-test.mjs
           node scripts/user-corpus-combo-regression-test.mjs
+          node scripts/equipment-package-precision-test.mjs
           node scripts/semantic15-audit-regression-test.mjs
           node scripts/semantic16-commander-compression-test.mjs
       - name: Commit materialized files
