@@ -8,6 +8,7 @@ const equipment=(i)=>raw(`Equipment ${i}`,'Artifact — Equipment','Equipped cre
 const filler=i=>raw(`Filler ${i}`,'Creature — Soldier','',2,'{1}{W}')
 
 const wyleth=raw('Wyleth, Soul of Steel','Legendary Creature — Human Warrior','Trample\nWhenever Wyleth, Soul of Steel attacks, draw a card for each Aura and Equipment attached to it.',3,'{1}{R}{W}')
+const helper=raw('Helper Partner','Legendary Creature — Human','Partner',2,'{1}{W}')
 const attachmentOnlyDeck=[
   ...Array.from({length:19},(_,i)=>plains(i)),
   ...Array.from({length:19},(_,i)=>mountain(i)),
@@ -20,6 +21,11 @@ assert(wylethResult.commanderSynergy.tags.includes('equipment-payoff'),'Wyleth m
 assert(wylethResult.methodology.limitations.includes('equipment-attachment-activation-combat-not-sequence-simulated'))
 assert(wylethResult.simulation.turnProfile.every(x=>x.engine===0),'attack/attached-only Equipment payoff must not become an operational sequence engine without attachment/combat modeling')
 
+const multiResult=analyzePower(attachmentOnlyDeck,[wyleth,helper],null,500,{emitProduct:false,record:false,firstAccess:false})
+assert(multiResult.packages.some(p=>p.id==='equipment'),'multi-commander mode must retain the same structural Equipment package')
+assert(multiResult.methodology.limitations.includes('equipment-attachment-activation-combat-not-sequence-simulated'))
+assert(multiResult.simulation.turnProfile.every(x=>x.engine===0),'multi-commander simulation must not restore attachment/combat-only Equipment timing inflation')
+
 const castPayoffs=Array.from({length:6},(_,i)=>raw(`Cast Payoff ${i}`,'Creature — Advisor','Whenever you cast an Equipment spell, draw a card.',2,'{1}{W}'))
 const castDeck=[
   ...Array.from({length:38},(_,i)=>plains(i)),
@@ -31,4 +37,4 @@ const castResult=analyzePower(castDeck,null,null,500,{emitProduct:false,record:f
 assert(castResult.packages.some(p=>p.id==='equipment'),'cast-trigger payoffs must retain the Equipment package')
 assert(castResult.simulation.turnProfile.some(x=>x.engine>0),'immediately active Equipment cast payoffs must remain sequence-operational')
 
-console.log('EQUIPMENT SEQUENCE GATING OK — attachment/combat payoffs are structural only, cast payoffs remain operational')
+console.log('EQUIPMENT SEQUENCE GATING OK — single/multi attachment-combat payoffs are structural only, cast payoffs remain operational')
