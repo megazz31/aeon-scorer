@@ -22,11 +22,14 @@ jobs:
         run: |
           node --check src/engine/commanderSynergyPatterns.js
           node --check src/engine/packageGraph.js
+          node --check src/engine/knownCombos.js
           node --check src/engine/powerModel.js
           node --check scripts/user-corpus-commander-regression-test.mjs
+          node --check scripts/user-corpus-combo-regression-test.mjs
       - name: Focused regressions
         run: |
           node scripts/user-corpus-commander-regression-test.mjs
+          node scripts/user-corpus-combo-regression-test.mjs
           node scripts/semantic15-audit-regression-test.mjs
           node scripts/semantic16-commander-compression-test.mjs
       - name: Commit materialized files
