@@ -10,6 +10,12 @@ const stripReminder=text=>{
 const clauses=text=>String(text||'').split(/[.\n;]+/).map(x=>x.trim()).filter(Boolean)
 const has=(s,re)=>re.test(s)
 const recurringWindow=/at the beginning of (?:your|each) (?:upkeep|end step|first main phase)/
+const controllerLifePayment=clause=>{
+  const c=String(clause||'').toLowerCase()
+  if(/\bward\s*[—-]\s*pay\b/.test(c))return false
+  if(/\b(?:an? |each |target )?opponents?\b[^.]{0,100}\bpay\b|\bthey (?:may )?pay\b/.test(c))return false
+  return /\b(?:you may )?pay (?:\d+|x|that much) life\b|\bpay life equal to\b|\bby paying life equal to\b|\bcan be paid with either [^{]* or \d+ life\b/.test(c)
+}
 
 export const CARD_CONTEXT_SEVERITY={
   'lose-game':'critical',
@@ -41,7 +47,7 @@ export function cardContextFlags(card={}){
   const recurringLifeInSameClause=cs.some(c=>(recurringWindow.test(c)||/^whenever /.test(c))&&/\byou lose (?:\d+|x|that much) life\b/.test(c))
   const recurringModalLife=hasRecurringWindow&&/\bchoose one or more\b/.test(s)&&/\byou lose (?:\d+|x|that much) life\b/.test(s)
   if(recurringLifeInSameClause||recurringModalLife)add('recurring-life-loss')
-  if(has(s,/\bpay (?:\d+|x|that much) life\b|\bby paying life equal to\b|\bcan be paid with either [^{]* or \d+ life\b/))add('life-payment')
+  if(cs.some(controllerLifePayment))add('life-payment')
 
   const drawClause=cs.some(c=>/\b(?:you )?draw (?:a|one|two|three|four|five|six|seven|\d+|x|that many|cards? equal to)\b/.test(c)||/\bdraw (?:a|one|two|three|four|five|six|seven|\d+|x|that many) cards?\b/.test(c))
   if(drawClause&&has(s,/\bdiscard (?:a|one|two|three|\d+|x|that many|all) cards?\b/))add('draw-discard')
