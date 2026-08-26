@@ -37,6 +37,33 @@ const jonSyn=commanderSynergy(donation,jon)
 assert.ok(jonSyn.score>=60,'donation commander must not remain at zero with a dedicated drawback shell')
 assert.ok(jonSyn.tags.includes('donation-goad'))
 
+// Zedruu-style generic donation should use the same transferable/drawback evidence without pretending it is goad.
+const zedruu=f(raw('Gift Goat','Legendary Creature — Minotaur Monk',"At the beginning of your upkeep, you gain X life and draw X cards, where X is the number of permanents you own that your opponents control.\n{U}{R}{W}: Target opponent gains control of target permanent you control.",4,'{1}{U}{R}{W}'))
+const zedruuShell=featureDeck([
+  raw('Plotter','Creature — Wizard','When this creature enters, exchange control of target land you control and target land an opponent controls.',3,'{2}{U}'),
+  raw('Cadets','Creature — Goblin','Whenever this creature blocks or becomes blocked, target opponent gains control of it.',2,'{1}{R}'),
+  raw('Bad Defender','Creature — Wall',"Defender\nThis creature can't attack.",2,'{1}{U}'),
+  raw('Upkeep Burden','Creature — Giant','At the beginning of your upkeep, sacrifice another creature.',4,'{3}{R}'),
+  ...Array.from({length:12},(_,i)=>raw(`Neutral ${i}`,'Instant','Scry 1.',2,'{1}{U}')),
+])
+const zedruuSyn=commanderSynergy(zedruuShell,zedruu)
+assert.ok(zedruuSyn.score>=35,'generic donation commander must connect actual transfer/drawback candidates')
+assert.ok(zedruuSyn.tags.includes('donation-engine'))
+assert.ok(!zedruuSyn.tags.includes('donation-goad'))
+assert.ok(zedruuSyn.limitations?.includes('donation-value-not-sequence-simulated'))
+
+// Galea-style restricted top-library casting should recognize Aura/Equipment virtual depth.
+const galea=f(raw('Top Gear Knight','Legendary Creature — Elf Knight','Vigilance\nYou may look at the top card of your library any time.\nYou may cast Aura and Equipment spells from the top of your library. When you cast an Equipment spell this way, it gains "When this Equipment enters, attach it to target creature you control."',4,'{1}{G}{W}{U}'))
+const galeaShell=featureDeck([
+  ...Array.from({length:6},(_,i)=>raw(`Aura ${i}`,'Enchantment — Aura','Enchant creature',2,'{1}{W}')),
+  ...Array.from({length:6},(_,i)=>raw(`Equipment ${i}`,'Artifact — Equipment','Equipped creature gets +1/+1.\nEquip {1}',2,'{2}')),
+  ...Array.from({length:18},(_,i)=>raw(`Filler ${i}`,'Instant','Scry 1.',2,'{1}{U}')),
+])
+const galeaSyn=commanderSynergy(galeaShell,galea)
+assert.ok(galeaSyn.score>=60,'restricted top-library cast commander must connect Aura/Equipment density')
+assert.ok(galeaSyn.tags.includes('top-library-aura-equipment'))
+assert.ok(galeaSyn.limitations?.includes('top-library-restricted-cast-not-sequence-simulated'))
+
 // Ob Nixilis-style exact-one-life engines need a semantic connection to pingers.
 const ob=f(raw('Exact One King','Legendary Creature — Demon','Whenever one or more opponents each lose exactly 1 life, put a +1/+1 counter on this creature. Exile the top card of your library. Until your next end step, you may play that card.',4,'{2}{B}{R}'))
 const pingers=featureDeck([
