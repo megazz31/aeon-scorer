@@ -22,6 +22,20 @@ assert.equal(signal.families,1,'redundant Redshift untap lines are one engine fa
 assert.equal(signal.redundancy,3)
 assert.ok(signal.boost>12&&signal.boost<25,'redundancy should matter with diminishing returns instead of fourfold linear inflation')
 
+const kalamax=detectKnownCombos([
+  card('Kalamax, the Stormsire'),
+  card('Twincast'),
+  card('Return the Favor'),
+  card('Expansion // Explosion'),
+  card("Narset's Reversal"),
+])
+assert.equal(kalamax.length,3,'the three observed Kalamax copy-loop variants in the submitted list must be recognized')
+const kalamaxSignal=comboScoringSignal(kalamax)
+assert.equal(kalamaxSignal.families,1,'Kalamax fork variants are redundant routes to one copy-loop engine')
+assert.equal(kalamaxSignal.redundancy,2)
+assert.ok(kalamaxSignal.boost>9&&kalamaxSignal.boost<16,'Kalamax infinite magecraft/counter loops must score below a direct deterministic win while redundancy still matters')
+assert.ok(!names(kalamax).has("Kalamax + Narset's Reversal"),'Narset Reversal alone is not a two-card Kalamax loop and must not be promoted')
+
 const independent=detectKnownCombos([
   card("Thassa's Oracle"),card('Demonic Consultation'),
   card('Isochron Scepter'),card('Dramatic Reversal'),
@@ -30,4 +44,4 @@ const independentSignal=comboScoringSignal(independent)
 assert.equal(independentSignal.families,2,'independent combo families remain independently valuable')
 assert.ok(independentSignal.boost>20)
 
-console.log('USER CORPUS COMBO REGRESSION OK — Ob and Redshift loops are recognized with diminishing-return redundancy')
+console.log('USER CORPUS COMBO REGRESSION OK — Ob, Redshift and Kalamax loops are recognized with diminishing-return redundancy')
