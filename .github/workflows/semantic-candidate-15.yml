@@ -83,7 +83,7 @@ jobs:
           node-version: 22
       - name: Install
         run: npm install --no-audit --no-fund
-      - name: Generate semantic-15 precon delta from semantic-14 main baseline
+      - name: Generate semantic-16 precon delta from semantic-14 main baseline
         env:
           AEON_PRECON_ITERATIONS: '3200'
           AEON_PRECON_GENERATED_AT: '2026-08-25T00:00:00.000Z'
@@ -92,6 +92,7 @@ jobs:
           set -euo pipefail
           npm run precons:generate
           node scripts/semantic-precon-delta.mjs "$AEON_SEMANTIC_BASELINE_REF"
+          node scripts/semantic-precon-outlier-review.mjs
       - name: Pin mid-power validation cohort
         run: |
           mkdir -p calibration/cache
@@ -125,6 +126,8 @@ jobs:
           path: |
             calibration/semantic-precon-delta.json
             calibration/semantic-precon-delta.md
+            calibration/semantic-outlier-review.json
+            calibration/semantic-outlier-review.md
             calibration/latest.json
             calibration/latest.md
             calibration/run-1800.json
