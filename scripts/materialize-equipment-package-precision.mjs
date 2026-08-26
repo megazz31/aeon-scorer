@@ -15,11 +15,12 @@ function isEquipmentSupport(c){
   return /search your library [^.]{0,140}equipment|return [^.]{0,120}equipment [^.]{0,120}graveyard|attach (?:target |an? |this )?equipment|attach [^.]{0,100}equipment|\\bequip (?:ability|abilities|cost|costs)\\b|equipment spells? you cast cost|cast equipment spells? as though|equipment cards? [^.]{0,100}(?:hand|graveyard|battlefield)/.test(o)
 }
 `
-if(!s.includes('function isEquipmentSupport(c)')){
+{
   const start=s.indexOf('function isEquipmentCard(c)')
   const end=s.indexOf('function isEnchantmentCastPayoff(c)')
   if(start<0||end<=start)throw new Error('missing Equipment role anchors')
-  s=s.slice(0,start)+roleBlock+s.slice(end)
+  const current=s.slice(start,end)
+  if(current!==roleBlock)s=s.slice(0,start)+roleBlock+s.slice(end)
 }
 
 const packageBlock=`    if(m.special==='equipment'){
@@ -33,11 +34,12 @@ const packageBlock=`    if(m.special==='equipment'){
       continue
     }
 `
-if(!s.includes("supportTags:['equipment-support']")){
+{
   const start=s.indexOf("    if(m.special==='equipment'){")
   const end=s.indexOf('    let producers=roleCards(functionalPool,m.producers)',start)
   if(start<0||end<=start)throw new Error('missing Equipment package anchors')
-  s=s.slice(0,start)+packageBlock+s.slice(end)
+  const current=s.slice(start,end)
+  if(current!==packageBlock)s=s.slice(0,start)+packageBlock+s.slice(end)
 }
 
 if(s!==before){fs.writeFileSync(path,s);console.log('EQUIPMENT PACKAGE PRECISION MATERIALIZED')}else console.log('EQUIPMENT PACKAGE PRECISION ALREADY PRESENT')
