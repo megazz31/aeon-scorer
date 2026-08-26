@@ -13,6 +13,7 @@ const gf=flags(greed)
 assert(gf.has('harmful-leave'))
 assert(gf.has('recurring-sacrifice'))
 assert(gf.has('recurring-discard'))
+assert(!gf.has('draw-discard'),'independent ETB draw and later recurring discard are different contexts')
 
 const nine=card('Nine Lives','Hexproof\nWhen this enchantment leaves the battlefield, you lose the game.',['enchantment','protection'])
 assert(flags(nine).has('lose-game'))
@@ -31,6 +32,18 @@ const over=card('Overlord of the Floodpits','Impending 4—{1}{U}{U}\nWhenever t
 const of=flags(over)
 assert(of.has('alternate-timing'))
 assert(of.has('draw-discard'))
+
+const connive=card('Change of Plans','Each of X target creatures you control connive. You may have any number of them phase out. (To have a creature connive, draw a card, then discard a card.)',['instant','draw','protection','counter-producer'])
+assert(flags(connive).has('draw-discard'),'connive is intrinsically draw-then-discard even when reminder text is stripped')
+
+const cryptbreaker=card('Cryptbreaker','{1}{B}, {T}, Discard a card: Create a 2/2 black Zombie creature token.\nTap three untapped Zombies you control: You draw a card and you lose 1 life.',['creature','draw','graveyard-setup','tokens'])
+assert(!flags(cryptbreaker).has('draw-discard'),'discard-for-token and tap-Zombies-for-draw are independent abilities')
+
+const alliance=card('Chivalric Alliance','Whenever you attack with two or more creatures, draw a card.\n{2}, Discard a card: Create a 2/2 white and blue Knight creature token with vigilance.',['enchantment','draw','graveyard-setup','tokens'])
+assert(!flags(alliance).has('draw-discard'),'an unrelated token activation must not downgrade independent attack draw')
+
+const monument=card('Monument to Endurance','Whenever you discard a card, choose one that hasn\'t been chosen this turn —\n• Draw a card.\n• Create a Treasure token.\n• Each opponent loses 3 life.',['artifact','draw','mana','graveyard-setup','tokens'])
+assert(!flags(monument).has('draw-discard'),'rewarding an external discard is not a draw cost imposed by this card')
 
 const aura=card('Sheltered by Ghosts','Enchant creature you control\nWhen this Aura enters, exile target nonland permanent an opponent controls until this Aura leaves the battlefield.\nEnchanted creature gets +1/+0 and has lifelink and ward {2}.',['enchantment','removal','protection','etb'])
 assert(flags(aura).has('temporary-removal'))
@@ -56,4 +69,4 @@ assert(!flags(squelcher).has('life-payment'),'granted Ward costs must not be pre
 const treasureReminder=card('Goldvein Pick','Whenever equipped creature deals combat damage to a player, create a Treasure token. (It\'s an artifact with “{T}, Sacrifice this token: Add one mana of any color.”)',['artifact','mana','tokens'])
 assert(!flags(treasureReminder).has('recurring-sacrifice'),'reminder-text Treasure sacrifice must not become a downside')
 
-console.log('CARD CONTEXT AUDIT OK — lose-game, harmful LTB, recurring costs, filtering, timing, temporary restrictions and controller-only life payments are explicit without changing score')
+console.log('CARD CONTEXT AUDIT OK — causal filtering, lose-game, harmful LTB, recurring costs, timing, temporary restrictions and controller-only life payments are explicit without changing score')
