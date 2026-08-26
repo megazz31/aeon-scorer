@@ -114,7 +114,7 @@ function isEquipmentCard(c){return /\bartifact\b[^—\n]*—[^\n]*\bequipment\b|
 function isEquipmentPayoff(c){
   const o=semanticText(c)
   if(!o)return false
-  return /\bwhenever (?:an? |one or more )?equipped creatures?\b|\bequipped creatures? you control\b|\bfor each equipment (?:attached|you control)\b|\bfor each aura and equipment attached\b|\bfor each equipment attached\b|\bequipment attached to (?:it|this creature|that creature)\b|\bwhenever (?:an? )?equipment [^.]{0,100}becomes? attached\b|\bif [^.]{0,80}is equipped\b/.test(o)
+  return /\bwhenever (?:an? |one or more )?equipped creatures?\b|\bequipped creatures? you control\b|\bwhenever you cast [^.]{0,120}\bequipment\b|\bfor each equipment (?:attached|you control)\b|\bfor each aura and equipment attached\b|\bfor each equipment attached\b|\bequipment attached to (?:it|this creature|that creature)\b|\bas long as [^.]{0,100}equipment (?:is|are) attached\b|\bwhenever (?:an? )?equipment [^.]{0,100}becomes? attached\b|\bif [^.]{0,80}is equipped\b/.test(o)
 }
 function isEquipmentSupport(c){
   const o=semanticText(c)
