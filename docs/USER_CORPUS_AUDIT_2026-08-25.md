@@ -32,9 +32,9 @@ Scope: latest distinct `source=web` analyses stored under `3.3.0-semantic-14` be
 | Take it 🖕 | Jon Irenicus, Shattered One | 45 | Commander synergy 0: donation/goad/ownership plan invisible. | Add donation/goad relation; flag opponent-behavior simulation limitation. |
 | Sythis | Sythis, Harvest's Hand | 50 | Commander synergy only 31 despite a very dense enchantment shell. | Enchantment-cast payoff relation already fixed in Semantic 15. |
 | Pauper equipements | Bruenor Battlehammer | 44 | Commander synergy 0 and Equipment shell collapsed into generic artifacts. | Equipment/Voltron package + commander Equipment payoff already fixed in Semantic 15. |
-| Kalamax | Kalamax, the Stormsire | 54 | Spell-copy/spellslinger shell already strongly represented at coarse semantic level. | Keep as control sample; future copy-stack execution may refine it. |
+| Kalamax | Kalamax, the Stormsire | 54 | General spellslinger synergy was already strong, but `combo_count=0` was false: the submitted list contains Twincast, Return the Favor and Expansion // Explosion, each of which forms the known Kalamax copy loop (infinite +1/+1 counters / magecraft with an additional spell prerequisite). Narset's Reversal alone is not promoted to a two-card loop. | Add the observed fork variants to one diminishing-return `kalamax-copy-loop` family with lower severity than a deterministic direct-win combo. |
 | Killian Repartee | Killian, Ink Duelist | 56 | Commander synergy 0 despite creature-target cost reduction. Stored +3 over the Decisive Mentor precon is therefore conservative evidence, not proof the reducer was modeled. | Targeted-spell cost reduction already simulated in Semantic 15/16. |
-| Shalai and Hallar | Shalai and Hallar | 53 | Commander synergy 0 despite +1/+1-counter damage conversion. | Counter-trigger commander relation already fixed in Semantic 15. |
+| Shalai and Hallar | Shalai and Hallar | 53 | Commander synergy 0 despite +1/+1-counter damage conversion. The submitted list has several counter multipliers, but none of the complete Commander Spellbook loops checked (Red Terror, Heliod line, Phyrexian Devourer, Devoted Druid + Arcus Acolyte variants) are present. | Counter-trigger commander relation already fixed in Semantic 15; do not invent a combo bonus. |
 | Taper taper ! Budget | Adriana, Captain of the Guard | 38 | Same combat blind spot as the other Adriana list. | Covered by go-wide/melee regression; pending stored auditor row is not treated as truth. |
 | Taper taper ! | Adriana, Captain of the Guard | 39 | Same combat blind spot as the other Adriana lists. | Covered by go-wide/melee regression; pending stored auditor row is not treated as truth. |
 
@@ -70,12 +70,19 @@ The modified list therefore is not being treated as identical: it is read as mor
 
 ## Combo-catalog findings from the real corpus
 
-The local static combo catalog was too small for the user corpus. Two concrete misses are now regression targets:
+The local static combo catalog was too small for the user corpus. Three concrete misses are now regression targets:
 
 1. **Ob Nixilis, Captive Kingpin + All Will Be One** — infinite damage / counters / library exile after an exact-1-life trigger.
 2. **Redshift, Rocketeer Chief** with any of **Sword of the Paruns, Umbral Mantle, Staff of Domination, Aggravated Assault** — four overlapping activated-ability/untap loop variants present in the submitted Redshift list.
+3. **Kalamax, the Stormsire** with **Twincast, Return the Favor or Expansion // Explosion** in the submitted list — redundant routes to the same copy-loop family, producing arbitrarily many +1/+1 counters / magecraft triggers with an additional spell prerequisite. These are intentionally lower severity than a direct deterministic kill.
 
-Redshift variants are grouped into one combo family for scoring so redundancy helps without multiplying the same engine four times linearly.
+Redshift and Kalamax variants are grouped by combo family for scoring so redundancy helps without multiplying the same engine linearly.
+
+## Semantic-16 calibration check after the first user-corpus fixes
+
+The full candidate gate passed at 3200 iterations with all 17 macro quality gates green. Across 163 matched precons, the semantic-14 → semantic-16 median delta averaged +1.06; 120/163 stayed within ±1 median point and 133/163 within ±2. The largest positive outliers are mainly Equipment/Aura decks, which is expected from the new Equipment/Voltron and commander-enchantment relations but remains a focused review area rather than automatic proof of correctness.
+
+The benchmark cohort remained separated: strict precon median 48, user median 51, cEDH median 74, holdout AUC 1.000, with deterministic repeated medians and convergence passing. This means the user-corpus fixes have not globally collapsed the calibration, but outlier archetypes still need semantic inspection.
 
 ## Rules for using this corpus
 
