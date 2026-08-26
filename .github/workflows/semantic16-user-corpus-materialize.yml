@@ -20,16 +20,20 @@ jobs:
         run: node scripts/materialize-user-corpus-commander-fixes.mjs
       - name: Materialize Equipment package precision
         run: node scripts/materialize-equipment-package-precision.mjs
+      - name: Materialize combo timing eligibility
+        run: node scripts/materialize-combo-sequence-eligibility.mjs
       - name: Syntax checks
         run: |
           node --check src/engine/commanderSynergyPatterns.js
           node --check src/engine/packageGraph.js
           node --check src/engine/knownCombos.js
+          node --check src/engine/sequenceSimulator.js
           node --check src/engine/powerModel.js
           node --check scripts/user-corpus-commander-regression-test.mjs
           node --check scripts/user-corpus-combo-regression-test.mjs
           node --check scripts/equipment-package-precision-test.mjs
           node --check scripts/materialize-equipment-package-precision.mjs
+          node --check scripts/materialize-combo-sequence-eligibility.mjs
       - name: Focused regressions
         run: |
           node scripts/user-corpus-commander-regression-test.mjs
@@ -42,8 +46,8 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/engine/packageGraph.js src/engine/powerModel.js package.json
+          git add src/engine/packageGraph.js src/engine/sequenceSimulator.js src/engine/powerModel.js package.json
           if ! git diff --cached --quiet; then
-            git commit -m "fix(semantic16): separate Equipment supports from true payoffs"
+            git commit -m "fix(semantic16): separate combo presence from executable timing"
             git push origin HEAD:semantic/16-user-corpus-audit
           fi
