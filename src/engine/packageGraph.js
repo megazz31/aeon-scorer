@@ -114,7 +114,12 @@ function isEquipmentCard(c){return /\bartifact\b[^—\n]*—[^\n]*\bequipment\b|
 function isEquipmentPayoff(c){
   const o=semanticText(c)
   if(!o)return false
-  return /\bequipment(?:s)? (?:you control|attached|card|cards)|\bequipped creature|\bequip (?:ability|abilities|cost|costs)|\bfor each equipment\b/.test(o)
+  return /\bwhenever (?:an? |one or more )?equipped creatures?\b|\bequipped creatures? you control\b|\bfor each equipment (?:attached|you control)\b|\bfor each aura and equipment attached\b|\bfor each equipment attached\b|\bequipment attached to (?:it|this creature|that creature)\b|\bwhenever (?:an? )?equipment [^.]{0,100}becomes? attached\b|\bif [^.]{0,80}is equipped\b/.test(o)
+}
+function isEquipmentSupport(c){
+  const o=semanticText(c)
+  if(!o||isEquipmentPayoff(c))return false
+  return /search your library [^.]{0,140}equipment|return [^.]{0,120}equipment [^.]{0,120}graveyard|attach (?:target |an? |this )?equipment|attach [^.]{0,100}equipment|\bequip (?:ability|abilities|cost|costs)\b|equipment spells? you cast cost|cast equipment spells? as though|equipment cards? [^.]{0,100}(?:hand|graveyard|battlefield)/.test(o)
 }
 function isEnchantmentCastPayoff(c){return /\bwhenever you cast an? enchantment spell\b|\benchantment spells? you cast\b/.test(semanticText(c))}
 function targetReductionScope(c){
@@ -175,10 +180,13 @@ export function detectPackages(cards,commander=null){
       continue
     }
     if(m.special==='equipment'){
-      const producers=uniqByName(functionalPool.filter(isEquipmentCard)),payoffs=uniqByName(functionalPool.filter(c=>!isEquipmentCard(c)&&isEquipmentPayoff(c)))
+      const producers=uniqByName(functionalPool.filter(isEquipmentCard))
+      const supports=uniqByName(functionalPool.filter(c=>!isEquipmentCard(c)&&isEquipmentSupport(c)))
+      const commanderPayoff=commander&&!isEquipmentCard(commander)&&isEquipmentPayoff(commander)?[commander]:[]
+      const payoffs=uniqByName([...functionalPool.filter(c=>!isEquipmentCard(c)&&isEquipmentPayoff(c)),...commanderPayoff])
       if(producers.length<4||payoffs.length<1)continue
-      const members=uniqByName([...producers,...payoffs]),density=members.length/Math.max(1,nonlands.length),balance=Math.min(producers.length,payoffs.length)/Math.max(producers.length,payoffs.length),cohesion=Math.min(100,Math.round(24+members.length*3.3+density*52+balance*18))
-      out.push({id:m.id,name:m.name,strength:cohesion,cohesion,producers:previewNames(producers),payoffs:previewNames(payoffs),members:allNames(members),producerCards:producers.map(mini),supportCards:[],payoffCards:payoffs.map(mini),producerTags:['equipment-type'],supportTags:[],payoffTags:['equipment-payoff'],evidence:`${producers.length} équipement(s), ${payoffs.length} carte(s) qui les convertissent en avantage.`})
+      const members=uniqByName([...producers,...supports,...payoffs]),density=members.filter(c=>c!==commander).length/Math.max(1,nonlands.length),effectivePayoffDepth=payoffs.length+Math.min(supports.length,producers.length)*.35,balance=Math.min(producers.length,effectivePayoffDepth)/Math.max(producers.length,effectivePayoffDepth),cohesion=Math.min(100,Math.round(24+members.length*3.0+density*46+balance*16))
+      out.push({id:m.id,name:m.name,strength:cohesion,cohesion,producers:previewNames(producers),supports:previewNames(supports),payoffs:previewNames(payoffs),members:allNames(members),producerCards:producers.map(mini),supportCards:supports.map(mini),payoffCards:payoffs.map(mini),producerTags:['equipment-type'],supportTags:['equipment-support'],payoffTags:['equipment-payoff'],evidence:`${producers.length} équipement(s), ${supports.length} support(s) de tutor/attache/coût, ${payoffs.length} payoff(s) qui convertissent réellement l’équipement en avantage.`})
       continue
     }
     let producers=roleCards(functionalPool,m.producers)
