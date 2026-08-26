@@ -116,6 +116,10 @@ function isEquipmentPayoff(c){
   if(!o)return false
   return /\bwhenever (?:an? |one or more )?equipped creatures?\b|\bequipped creatures? you control\b|\bwhenever you cast [^.]{0,120}\bequipment\b|\bfor each equipment (?:attached|you control)\b|\bfor each aura and equipment attached\b|\bfor each equipment attached\b|\bequipment attached to (?:it|this creature|that creature)\b|\bas long as [^.]{0,100}equipment (?:is|are) attached\b|\bwhenever (?:an? )?equipment [^.]{0,100}becomes? attached\b|\bif [^.]{0,80}is equipped\b/.test(o)
 }
+function isImmediateEquipmentPayoff(c){
+  const o=semanticText(c)
+  return /\bwhenever you cast [^.]{0,120}\bequipment\b|\bfor each equipment you control\b/.test(o)
+}
 function isEquipmentSupport(c){
   const o=semanticText(c)
   if(!o||isEquipmentPayoff(c))return false
@@ -186,7 +190,8 @@ export function detectPackages(cards,commander=null){
       const payoffs=uniqByName([...functionalPool.filter(c=>!isEquipmentCard(c)&&isEquipmentPayoff(c)),...commanderPayoff])
       if(producers.length<4||payoffs.length<1)continue
       const members=uniqByName([...producers,...supports,...payoffs]),density=members.filter(c=>c!==commander).length/Math.max(1,nonlands.length),effectivePayoffDepth=payoffs.length+Math.min(supports.length,producers.length)*.35,balance=Math.min(producers.length,effectivePayoffDepth)/Math.max(producers.length,effectivePayoffDepth),cohesion=Math.min(100,Math.round(24+members.length*3.0+density*46+balance*16))
-      out.push({id:m.id,name:m.name,strength:cohesion,cohesion,producers:previewNames(producers),supports:previewNames(supports),payoffs:previewNames(payoffs),members:allNames(members),producerCards:producers.map(mini),supportCards:supports.map(mini),payoffCards:payoffs.map(mini),producerTags:['equipment-type'],supportTags:['equipment-support'],payoffTags:['equipment-payoff'],evidence:`${producers.length} équipement(s), ${supports.length} support(s) de tutor/attache/coût, ${payoffs.length} payoff(s) qui convertissent réellement l’équipement en avantage.`})
+      const sequencePayoffs=payoffs.filter(isImmediateEquipmentPayoff),sequencePayoffRatio=sequencePayoffs.length/Math.max(1,payoffs.length),scoringCohesion=Math.min(cohesion,Math.round(cohesion*(.35+sequencePayoffRatio*.65)))
+      out.push({id:m.id,name:m.name,strength:cohesion,cohesion,scoringCohesion,sequencePayoffRatio:Number(sequencePayoffRatio.toFixed(3)),producers:previewNames(producers),supports:previewNames(supports),payoffs:previewNames(payoffs),sequencePayoffs:previewNames(sequencePayoffs),members:allNames(members),producerCards:producers.map(mini),supportCards:supports.map(mini),payoffCards:payoffs.map(mini),producerTags:['equipment-type'],supportTags:['equipment-support'],payoffTags:['equipment-payoff'],evidence:`${producers.length} équipement(s), ${supports.length} support(s) de tutor/attache/coût, ${payoffs.length} payoff(s) structurel(s), ${sequencePayoffs.length}/${payoffs.length} immédiatement actif(s) pour le scoring.`})
       continue
     }
     let producers=roleCards(functionalPool,m.producers)
