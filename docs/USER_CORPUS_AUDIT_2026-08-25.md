@@ -11,7 +11,7 @@ Scope: latest distinct `source=web` analyses stored under `3.3.0-semantic-14` be
 
 ## Deck-by-deck triage
 
-| Deck | Commander | Stored P50 | Audit conclusion | Semantic 16 action |
+| Deck | Commander | Stored P50 | Audit conclusion | Semantic 17 action |
 |---|---|---:|---|---|
 | Zur, fun and friendly | Zur, Eternal Schemer | 47 | Commander synergy was 0 despite a dense enchantment shell; enchantment animation/lord combat value was invisible. | Add generic enchantment-animation commander relation; keep combat-damage limitation explicit. |
 | Atraxa (unnamed) | Atraxa, Praetors' Voice | 75 | Incomplete/legacy-shaped import (99/100 resolved). Not trustworthy calibration evidence. | Quarantine; do not tune the model to this row. |
@@ -66,7 +66,7 @@ Stored dimensions explain the collision:
 
 The modified list therefore is not being treated as identical: it is read as more focused and interactive, but less resource-resilient. The final integer calibration rounds two nearby structural values to the same 53. This is a score-resolution issue to explain in comparisons, not a reason to add arbitrary points to the modified list.
 
-`Killian Repartee` is a different case: it uses **Killian, Ink Duelist**, scores 56 under semantic-14, and its commander's cost reduction was not simulated in that stored run. It must be re-evaluated under Semantic 16 before judging its +3 relative to the factory Decisive Mentor precon.
+`Killian Repartee` is a different case: it uses **Killian, Ink Duelist**, scores 56 under semantic-14, and its commander's cost reduction was not simulated in that stored run. It must be re-evaluated under Semantic 17 before judging its +3 relative to the factory Decisive Mentor precon.
 
 ## Combo-catalog findings from the real corpus
 
@@ -80,7 +80,7 @@ Redshift and Kalamax variants are grouped by combo family for scoring so redunda
 
 ## Semantic-16 calibration check after the first user-corpus fixes
 
-The full candidate gate passed at 3200 iterations with all 17 macro quality gates green. Across 163 matched precons, the semantic-14 → semantic-16 median delta averaged +1.06; 120/163 stayed within ±1 median point and 133/163 within ±2. The largest positive outliers are mainly Equipment/Aura decks, which is expected from the new Equipment/Voltron and commander-enchantment relations but remains a focused review area rather than automatic proof of correctness.
+An earlier candidate gate, before the final timing and Equipment-scoring safeguards, passed at 3200 iterations with all 17 macro quality gates green. Across 163 matched precons, the semantic-14 → semantic-16 median delta averaged +1.06; 120/163 stayed within ±1 median point and 133/163 within ±2. This evidence is historical only: Semantic 17 requires a fresh delta and complete 1800/3200 convergence gate from the final materialized source.
 
 The benchmark cohort remained separated: strict precon median 48, user median 51, cEDH median 74, holdout AUC 1.000, with deterministic repeated medians and convergence passing. This means the user-corpus fixes have not globally collapsed the calibration, but outlier archetypes still need semantic inspection.
 

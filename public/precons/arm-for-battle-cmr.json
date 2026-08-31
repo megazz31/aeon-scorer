@@ -16,7 +16,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/ArmForBattle_CMR.json",
-  "sourceRevision": "2026-08-25",
+  "sourceRevision": "2026-08-30",
   "productAliases": [
     {
       "name": "Arm for Battle",
@@ -27,17 +27,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 57,
-    "p20": 48,
-    "p80": 69,
-    "peak": 90,
+    "median": 53,
+    "p20": 45,
+    "p80": 63,
+    "peak": 81,
     "coverage": 91,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-15",
+    "semanticVersion": "3.3.0-semantic-17",
     "oracleSnapshotHash": "abac55013aa5571073bd4db6cf731acb0d1ab4c3446f9fef407412eb15ffd86c",
-    "scryfallOracleDate": "2026-08-25",
+    "scryfallOracleDate": "2026-08-31",
     "iterations": 3200,
-    "analyzedAt": "2026-08-25T00:00:00.000Z"
+    "analyzedAt": "2026-08-31T13:52:08.917Z"
   },
   "decklist": "1 Oreskos Explorer\n1 Relic Seeker\n1 Sram, Senior Edificer\n1 Brass Squire\n1 Danitha Capashen, Paragon\n1 Dualcaster Mage\n1 Flickerwisp\n1 Ironclad Slayer\n1 Kor Cartographer\n1 Odric, Lunarch Marshal\n1 Tiana, Ship's Caretaker\n1 Condemn\n1 Expedite\n1 Swords to Plowshares\n1 Abrade\n1 Boros Charm\n1 Comet Storm\n1 Dawn Charm\n1 Deflecting Palm\n1 Disenchant\n1 Fists of Flame\n1 Temur Battle Rage\n1 Valorous Stance\n1 Generous Gift\n1 Unbreakable Formation\n1 Volcanic Fallout\n1 Wear // Tear\n1 White Sun's Zenith\n1 Master Warcraft\n1 Return to Dust\n1 Wild Ricochet\n1 Word of Seizing\n1 Response // Resurgence\n1 Jaya's Immolating Inferno\n1 Martial Coup\n1 Relentless Assault\n1 Winds of Rath\n1 Bonesplitter\n1 Explorer's Scope\n1 Sol Ring\n1 Blackblade Reforged\n1 Blazing Sunsteel\n1 Boros Signet\n1 Hero's Blade\n1 Mask of Avacyn\n1 Ring of Thune\n1 Ring of Valkas\n1 Swiftfoot Boots\n1 Fireshrieker\n1 Haunted Cloak\n1 Loxodon Warhammer\n1 Sunforger\n1 Sword of Vengeance\n1 Sigarda's Aid\n1 Spirit Mantle\n1 Timely Ward\n1 Unquestioned Authority\n1 Faith Unbroken\n1 On Serra's Wings\n1 Boros Garrison\n1 Boros Guildgate\n1 Command Tower\n1 Encroaching Wastes\n1 Evolving Wilds\n1 Forgotten Cave\n1 Memorial to War\n5 Mountain\n4 Mountain\n1 Myriad Landscape\n7 Plains\n7 Plains\n1 Rogue's Passage\n1 Rupture Spire\n1 Secluded Steppe\n1 Slayers' Stronghold\n1 Stone Quarry\n1 Sunhome, Fortress of the Legion\n1 Terramorphic Expanse\n1 Transguild Promenade\n1 Wind-Scarred Crag",
   "oracleCards": [
@@ -1513,22 +1513,22 @@
   ],
   "result": {
     "profile": {
-      "median": 57,
-      "floor": 48,
-      "ceiling": 69,
-      "peak": 90,
-      "dispersion": 22,
-      "variance": 22,
-      "consistency": 66,
-      "commanderDelta": 8,
+      "median": 53,
+      "floor": 45,
+      "ceiling": 63,
+      "peak": 81,
+      "dispersion": 18,
+      "variance": 18,
+      "consistency": 72,
+      "commanderDelta": 9,
       "coverage": 91,
       "dataCoverage": 91
     },
     "dimensions": {
-      "speed": 54,
-      "consistency": 66,
-      "explosiveness": 18,
-      "synergy": 83,
+      "speed": 53,
+      "consistency": 72,
+      "explosiveness": 16,
+      "synergy": 60,
       "interaction": 75,
       "resilience": 39
     },
@@ -1552,6 +1552,8 @@
         "name": "Équipements / Voltron",
         "strength": 100,
         "cohesion": 100,
+        "scoringCohesion": 68,
+        "sequencePayoffRatio": 0.5,
         "producers": [
           "Blackblade Reforged",
           "Blazing Sunsteel",
@@ -1564,12 +1566,18 @@
           "Mask of Avacyn",
           "Ring of Thune"
         ],
-        "payoffs": [
+        "supports": [
           "Brass Squire",
+          "Danitha Capashen, Paragon",
           "Ironclad Slayer",
-          "Relic Seeker",
-          "Sigarda's Aid",
-          "Tiana, Ship's Caretaker"
+          "Relic Seeker"
+        ],
+        "payoffs": [
+          "Sram, Senior Edificer",
+          "Wyleth, Soul of Steel"
+        ],
+        "sequencePayoffs": [
+          "Sram, Senior Edificer"
         ],
         "members": [
           "Blackblade Reforged",
@@ -1587,10 +1595,11 @@
           "Swiftfoot Boots",
           "Sword of Vengeance",
           "Brass Squire",
+          "Danitha Capashen, Paragon",
           "Ironclad Slayer",
           "Relic Seeker",
-          "Sigarda's Aid",
-          "Tiana, Ship's Caretaker"
+          "Sram, Senior Edificer",
+          "Wyleth, Soul of Steel"
         ],
         "producerCards": [
           {
@@ -1778,8 +1787,7 @@
             }
           }
         ],
-        "supportCards": [],
-        "payoffCards": [
+        "supportCards": [
           {
             "name": "Brass Squire",
             "cmc": 3,
@@ -1790,6 +1798,23 @@
             "manaReq": {
               "generic": 3,
               "colored": [],
+              "total": 3
+            }
+          },
+          {
+            "name": "Danitha Capashen, Paragon",
+            "cmc": 3,
+            "tags": [
+              "creature",
+              "lifegain"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "W"
+                ]
+              ],
               "total": 3
             }
           },
@@ -1829,32 +1854,35 @@
               ],
               "total": 2
             }
-          },
+          }
+        ],
+        "payoffCards": [
           {
-            "name": "Sigarda's Aid",
-            "cmc": 1,
+            "name": "Sram, Senior Edificer",
+            "cmc": 2,
             "tags": [
-              "enchantment",
-              "etb"
+              "creature",
+              "draw"
             ],
             "manaReq": {
-              "generic": 0,
+              "generic": 1,
               "colored": [
                 [
                   "W"
                 ]
               ],
-              "total": 1
+              "total": 2
             }
           },
           {
-            "name": "Tiana, Ship's Caretaker",
-            "cmc": 5,
+            "name": "Wyleth, Soul of Steel",
+            "cmc": 3,
             "tags": [
-              "creature"
+              "creature",
+              "draw"
             ],
             "manaReq": {
-              "generic": 3,
+              "generic": 1,
               "colored": [
                 [
                   "R"
@@ -1863,18 +1891,20 @@
                   "W"
                 ]
               ],
-              "total": 5
+              "total": 3
             }
           }
         ],
         "producerTags": [
           "equipment-type"
         ],
-        "supportTags": [],
+        "supportTags": [
+          "equipment-support"
+        ],
         "payoffTags": [
           "equipment-payoff"
         ],
-        "evidence": "14 équipement(s), 5 carte(s) qui les convertissent en avantage."
+        "evidence": "14 équipement(s), 4 support(s) de tutor/attache/coût, 2 payoff(s) structurel(s), 1/2 immédiatement actif(s) pour le scoring."
       }
     ],
     "combos": [],
@@ -1898,7 +1928,8 @@
       ],
       "tags": [
         "equipment-payoff"
-      ]
+      ],
+      "limitations": []
     },
     "commanderNames": [
       "Wyleth, Soul of Steel"
@@ -1911,16 +1942,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 38,
-      "median": 45,
-      "high": 55,
-      "ceiling": 55,
-      "peak": 77,
-      "iqr": 14,
-      "consistency": 69,
+      "floor": 35,
+      "median": 41,
+      "high": 49,
+      "ceiling": 49,
+      "peak": 65,
+      "iqr": 11,
+      "consistency": 76,
       "commanderMedianTurn": 3,
       "engineMedianTurn": 4,
-      "recoveryAfterDisruption": 82,
+      "recoveryAfterDisruption": 81,
       "turnProfile": [
         {
           "turn": 1,
@@ -1930,72 +1961,88 @@
           "resource": 19,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 2,
           "commander": 3,
-          "engine": 3,
+          "engine": 1,
           "interaction": 50,
           "resource": 33,
           "burst": 1,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 3,
           "commander": 73,
-          "engine": 18,
+          "engine": 6,
           "interaction": 69,
           "resource": 45,
           "burst": 8,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 4,
           "commander": 90,
-          "engine": 29,
+          "engine": 9,
           "interaction": 78,
           "resource": 49,
           "burst": 10,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 5,
           "commander": 94,
-          "engine": 36,
+          "engine": 10,
           "interaction": 83,
           "resource": 50,
           "burst": 11,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 6,
           "commander": 96,
-          "engine": 41,
+          "engine": 11,
           "interaction": 86,
           "resource": 52,
           "burst": 12,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 7,
           "commander": 97,
-          "engine": 45,
+          "engine": 13,
           "interaction": 88,
           "resource": 54,
           "burst": 13,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         }
       ],
       "commanderMechanics": {
         "targetCostReduction": null,
-        "topLibraryCheat": null
+        "topLibraryCheat": null,
+        "typeCostReduction": null,
+        "commandZoneDeployment": null
       },
       "firstAccess": {
         "modelVersion": "first-access-sampler-v1",
@@ -2047,30 +2094,30 @@
               },
               {
                 "turn": 2,
-                "value": 3
+                "value": 1
               },
               {
                 "turn": 3,
-                "value": 17
+                "value": 6
               },
               {
                 "turn": 4,
-                "value": 28
+                "value": 7
               },
               {
                 "turn": 5,
-                "value": 35
+                "value": 8
               },
               {
                 "turn": 6,
-                "value": 41
+                "value": 9
               },
               {
                 "turn": 7,
-                "value": 46
+                "value": 11
               }
             ],
-            "observedWithinHorizon": 366
+            "observedWithinHorizon": 86
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -2250,7 +2297,7 @@
       },
       {
         "name": "Sram, Senior Edificer",
-        "impact": 2.3,
+        "impact": 3,
         "tags": [
           "creature",
           "draw"
@@ -2346,61 +2393,72 @@
         "aeon": null
       }
     ],
-    "warnings": [],
+    "warnings": [
+      "Les synergies Équipement sont reconnues structurellement, mais Aeon ne considère comme moteur séquencé que les payoffs immédiatement actifs au lancement ; les coûts d’équipement, l’attache et le combat restent conservateurs."
+    ],
     "methodology": {
       "iterations": 3200,
       "firstAccessIterations": 800,
-      "model": "sequence-access-v3.2-semantic",
+      "model": "sequence-access-v3.3-semantic",
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
       "commanderMechanics": {
         "targetCostReduction": null,
-        "topLibraryCheat": null
+        "topLibraryCheat": null,
+        "typeCostReduction": null,
+        "commandZoneDeployment": null
       },
-      "limitations": []
+      "comboSignal": {
+        "families": 0,
+        "redundancy": 0,
+        "boost": 0
+      },
+      "limitations": [
+        "equipment-attachment-activation-combat-not-sequence-simulated"
+      ]
     },
     "experience": {
       "modelVersion": "experience-v1",
       "dimensions": {
         "tempo": {
-          "score": 54,
+          "score": 53,
           "level": "high",
           "evidence": [
             {
               "signal": "speed",
-              "value": 54,
+              "value": 53,
               "source": "aeon-dimension",
               "reason": "Existing Aeon speed dimension; no power-score feedback."
             }
           ]
         },
         "explosiveness": {
-          "score": 18,
+          "score": 16,
           "level": "low",
           "evidence": [
             {
               "signal": "explosiveness",
-              "value": 18,
+              "value": 16,
               "source": "aeon-dimension",
               "reason": "Existing Aeon explosiveness dimension; no power-score feedback."
             }
           ]
         },
         "volatility": {
-          "score": 76,
-          "level": "very-high",
+          "score": 63,
+          "level": "high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 22,
+              "value": 18,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 21,
+              "value": 18,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -2431,18 +2489,18 @@
           ]
         },
         "inevitability": {
-          "score": 72,
+          "score": 65,
           "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 83,
+              "value": 60,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 66,
+              "value": 72,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
@@ -2461,12 +2519,12 @@
           ]
         },
         "dependency": {
-          "score": 50,
+          "score": 54,
           "level": "high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 8,
+              "value": 9,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
@@ -2669,32 +2727,32 @@
             },
             {
               "turn": 2,
-              "value": 3
+              "value": 1
             },
             {
               "turn": 3,
-              "value": 17
+              "value": 6
             },
             {
               "turn": 4,
-              "value": 28
+              "value": 7
             },
             {
               "turn": 5,
-              "value": 35
+              "value": 8
             },
             {
               "turn": 6,
-              "value": 41
+              "value": 9
             },
             {
               "turn": 7,
-              "value": 46
+              "value": 11
             }
           ],
-          "observedWithinHorizon": 366,
+          "observedWithinHorizon": 86,
           "milestones": {
-            "at25": 4,
+            "at25": null,
             "at50": null,
             "at75": null
           }
@@ -2875,31 +2933,31 @@
             },
             {
               "turn": 2,
-              "value": 3
+              "value": 1
             },
             {
               "turn": 3,
-              "value": 18
+              "value": 6
             },
             {
               "turn": 4,
-              "value": 29
+              "value": 9
             },
             {
               "turn": 5,
-              "value": 36
+              "value": 10
             },
             {
               "turn": 6,
-              "value": 41
+              "value": 11
             },
             {
               "turn": 7,
-              "value": 45
+              "value": 13
             }
           ],
           "milestones": {
-            "at25": 4,
+            "at25": null,
             "at50": null,
             "at75": null
           }
@@ -3078,32 +3136,32 @@
             },
             {
               "turn": 2,
-              "value": 3
+              "value": 1
             },
             {
               "turn": 3,
-              "value": 17
+              "value": 6
             },
             {
               "turn": 4,
-              "value": 28
+              "value": 7
             },
             {
               "turn": 5,
-              "value": 35
+              "value": 8
             },
             {
               "turn": 6,
-              "value": 41
+              "value": 9
             },
             {
               "turn": 7,
-              "value": 46
+              "value": 11
             }
           ],
-          "observedWithinHorizon": 366,
+          "observedWithinHorizon": 86,
           "milestones": {
-            "at25": 4,
+            "at25": null,
             "at50": null,
             "at75": null
           }

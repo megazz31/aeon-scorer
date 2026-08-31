@@ -15,7 +15,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/ForgedInStone_C14.json",
-  "sourceRevision": "2026-08-25",
+  "sourceRevision": "2026-08-30",
   "productAliases": [
     {
       "name": "Forged In Stone",
@@ -26,17 +26,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 44,
-    "p20": 32,
-    "p80": 54,
-    "peak": 73,
+    "median": 36,
+    "p20": 24,
+    "p80": 47,
+    "peak": 67,
     "coverage": 92,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-15",
+    "semanticVersion": "3.3.0-semantic-17",
     "oracleSnapshotHash": "ee4eaced67c8dd1853efd0baf53b022b8bab4fe79201bb2c7ea080a88b3dfa46",
-    "scryfallOracleDate": "2026-08-25",
+    "scryfallOracleDate": "2026-08-31",
     "iterations": 3200,
-    "analyzedAt": "2026-08-25T00:00:00.000Z"
+    "analyzedAt": "2026-08-31T13:52:08.917Z"
   },
   "decklist": "1 Containment Priest\n1 Whitemane Lion\n1 Grand Abolisher\n1 Kor Sanctifiers\n1 Mentor of the Meek\n1 Flickerwisp\n1 Hallowed Spiritkeeper\n1 Kemba, Kha Regent\n1 Silverblade Paladin\n1 Skyhunter Skirmisher\n1 Angelic Field Marshal\n1 Celestial Crusader\n1 Jazal Goldmane\n1 Geist-Honored Monk\n1 Requiem Angel\n1 Adarkar Valkyrie\n1 Sun Titan\n1 Sunblast Angel\n1 Twilight Shepherd\n1 Angel of the Dire Hour\n1 Serra Avatar\n1 Gift of Estates\n1 Spectral Procession\n1 Fell the Mighty\n1 Nomads' Assembly\n1 Deploy to the Front\n1 Martial Coup\n1 Decree of Justice\n1 Brave the Elements\n1 Condemn\n1 Afterlife\n1 Midnight Haunting\n1 Oblation\n1 Wing Shards\n1 Benevolent Offering\n1 Comeuppance\n1 Return to Dust\n1 White Sun's Zenith\n1 Masterwork of Ingenuity\n1 Skullclamp\n1 Sol Ring\n1 Marble Diamond\n1 Mask of Memory\n1 Pearl Medallion\n1 Swiftfoot Boots\n1 Commander's Sphere\n1 Loxodon Warhammer\n1 Strata Scythe\n1 Sword of Vengeance\n1 Assault Suit\n1 Bonehoard\n1 Moonsilver Spear\n1 Argentum Armor\n1 Loreseeker's Stone\n1 Armistice\n1 Mobilization\n1 Sacred Mesa\n1 Marshal's Anthem\n1 Cathars' Crusade\n1 True Conviction\n1 Arcane Lighthouse\n1 Drifting Meadow\n1 Emeria, the Sky Ruin\n1 Ghost Quarter\n1 Karoo\n1 Secluded Steppe\n1 Temple of the False God\n8 Plains\n8 Plains\n8 Plains\n8 Plains",
   "oracleCards": [
@@ -1293,22 +1293,22 @@
   ],
   "result": {
     "profile": {
-      "median": 44,
-      "floor": 32,
-      "ceiling": 54,
-      "peak": 73,
-      "dispersion": 21,
-      "variance": 21,
-      "consistency": 64,
-      "commanderDelta": 11,
+      "median": 36,
+      "floor": 24,
+      "ceiling": 47,
+      "peak": 67,
+      "dispersion": 22,
+      "variance": 22,
+      "consistency": 65,
+      "commanderDelta": 9,
       "coverage": 92,
       "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 32,
-      "consistency": 64,
+      "speed": 28,
+      "consistency": 65,
       "explosiveness": 9,
-      "synergy": 75,
+      "synergy": 31,
       "interaction": 61,
       "resilience": 31
     },
@@ -1330,8 +1330,10 @@
       {
         "id": "equipment",
         "name": "Équipements / Voltron",
-        "strength": 76,
-        "cohesion": 76,
+        "strength": 71,
+        "cohesion": 71,
+        "scoringCohesion": 25,
+        "sequencePayoffRatio": 0,
         "producers": [
           "Argentum Armor",
           "Assault Suit",
@@ -1344,9 +1346,11 @@
           "Strata Scythe",
           "Swiftfoot Boots"
         ],
+        "supports": [],
         "payoffs": [
           "Kemba, Kha Regent"
         ],
+        "sequencePayoffs": [],
         "members": [
           "Argentum Armor",
           "Assault Suit",
@@ -1531,16 +1535,18 @@
         "producerTags": [
           "equipment-type"
         ],
-        "supportTags": [],
+        "supportTags": [
+          "equipment-support"
+        ],
         "payoffTags": [
           "equipment-payoff"
         ],
-        "evidence": "11 équipement(s), 1 carte(s) qui les convertissent en avantage."
+        "evidence": "11 équipement(s), 0 support(s) de tutor/attache/coût, 1 payoff(s) structurel(s), 0/1 immédiatement actif(s) pour le scoring."
       }
     ],
     "combos": [],
     "commanderSynergy": {
-      "score": 71,
+      "score": 45,
       "connected": [
         "Benevolent Offering",
         "Bonehoard",
@@ -1557,22 +1563,13 @@
         "Requiem Angel",
         "Sacred Mesa",
         "Spectral Procession",
-        "White Sun's Zenith",
-        "Argentum Armor",
-        "Assault Suit",
-        "Loxodon Warhammer",
-        "Mask of Memory",
-        "Masterwork of Ingenuity",
-        "Skullclamp",
-        "Strata Scythe",
-        "Swiftfoot Boots",
-        "Sword of Vengeance"
+        "White Sun's Zenith"
       ],
       "tags": [
         "tokens",
-        "token-payoff",
-        "equipment-payoff"
-      ]
+        "token-payoff"
+      ],
+      "limitations": []
     },
     "commanderNames": [
       "Nahiri, the Lithomancer"
@@ -1585,15 +1582,15 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 32,
-      "median": 40,
-      "high": 47,
-      "ceiling": 47,
+      "floor": 31,
+      "median": 39,
+      "high": 46,
+      "ceiling": 46,
       "peak": 62,
       "iqr": 12,
-      "consistency": 73,
+      "consistency": 74,
       "commanderMedianTurn": 5,
-      "engineMedianTurn": 4,
+      "engineMedianTurn": null,
       "recoveryAfterDisruption": 65,
       "turnProfile": [
         {
@@ -1604,7 +1601,9 @@
           "resource": 28,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 2,
@@ -1614,62 +1613,76 @@
           "resource": 37,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 3,
           "commander": 10,
-          "engine": 2,
-          "interaction": 54,
+          "engine": 0,
+          "interaction": 55,
           "resource": 46,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 4,
           "commander": 26,
-          "engine": 6,
+          "engine": 0,
           "interaction": 64,
           "resource": 56,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 5,
-          "commander": 67,
-          "engine": 8,
+          "commander": 68,
+          "engine": 0,
           "interaction": 71,
           "resource": 61,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 6,
           "commander": 79,
-          "engine": 9,
+          "engine": 0,
           "interaction": 77,
           "resource": 66,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 7,
           "commander": 86,
-          "engine": 10,
+          "engine": 0,
           "interaction": 82,
           "resource": 70,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         }
       ],
       "commanderMechanics": {
         "targetCostReduction": null,
-        "topLibraryCheat": null
+        "topLibraryCheat": null,
+        "typeCostReduction": null,
+        "commandZoneDeployment": null
       },
       "firstAccess": {
         "modelVersion": "first-access-sampler-v1",
@@ -1725,26 +1738,26 @@
               },
               {
                 "turn": 3,
-                "value": 4
+                "value": 0
               },
               {
                 "turn": 4,
-                "value": 7
+                "value": 0
               },
               {
                 "turn": 5,
-                "value": 9
+                "value": 0
               },
               {
                 "turn": 6,
-                "value": 10
+                "value": 0
               },
               {
                 "turn": 7,
-                "value": 12
+                "value": 0
               }
             ],
-            "observedWithinHorizon": 93
+            "observedWithinHorizon": 0
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -1807,14 +1820,14 @@
               },
               {
                 "turn": 6,
-                "value": 72
+                "value": 73
               },
               {
                 "turn": 7,
-                "value": 76
+                "value": 77
               }
             ],
-            "observedWithinHorizon": 610
+            "observedWithinHorizon": 612
           },
           "burst": {
             "id": "burst-first-access",
@@ -2017,31 +2030,42 @@
         "aeon": null
       }
     ],
-    "warnings": [],
+    "warnings": [
+      "Les synergies Équipement sont reconnues structurellement, mais Aeon ne considère comme moteur séquencé que les payoffs immédiatement actifs au lancement ; les coûts d’équipement, l’attache et le combat restent conservateurs."
+    ],
     "methodology": {
       "iterations": 3200,
       "firstAccessIterations": 800,
-      "model": "sequence-access-v3.2-semantic",
+      "model": "sequence-access-v3.3-semantic",
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
       "commanderMechanics": {
         "targetCostReduction": null,
-        "topLibraryCheat": null
+        "topLibraryCheat": null,
+        "typeCostReduction": null,
+        "commandZoneDeployment": null
       },
-      "limitations": []
+      "comboSignal": {
+        "families": 0,
+        "redundancy": 0,
+        "boost": 0
+      },
+      "limitations": [
+        "equipment-attachment-activation-combat-not-sequence-simulated"
+      ]
     },
     "experience": {
       "modelVersion": "experience-v1",
       "dimensions": {
         "tempo": {
-          "score": 32,
+          "score": 28,
           "level": "moderate",
           "evidence": [
             {
               "signal": "speed",
-              "value": 32,
+              "value": 28,
               "source": "aeon-dimension",
               "reason": "Existing Aeon speed dimension; no power-score feedback."
             }
@@ -2060,18 +2084,18 @@
           ]
         },
         "volatility": {
-          "score": 71,
+          "score": 74,
           "level": "high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 21,
+              "value": 22,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 19,
+              "value": 20,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
@@ -2102,18 +2126,18 @@
           ]
         },
         "inevitability": {
-          "score": 63,
-          "level": "high",
+          "score": 47,
+          "level": "moderate",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 75,
+              "value": 31,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
             {
               "signal": "consistency",
-              "value": 64,
+              "value": 65,
               "source": "aeon-dimension",
               "reason": "Ability to reproduce normal game plans."
             },
@@ -2125,25 +2149,25 @@
             },
             {
               "signal": "package-cohesion",
-              "value": 76,
+              "value": 71,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
           ]
         },
         "dependency": {
-          "score": 76,
-          "level": "very-high",
+          "score": 56,
+          "level": "high",
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 11,
+              "value": 9,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
             {
               "signal": "commander-synergy",
-              "value": 71,
+              "value": 45,
               "source": "package-model",
               "reason": "Share of the deck connected to commander semantics."
             },
@@ -2353,26 +2377,26 @@
             },
             {
               "turn": 3,
-              "value": 4
+              "value": 0
             },
             {
               "turn": 4,
-              "value": 7
+              "value": 0
             },
             {
               "turn": 5,
-              "value": 9
+              "value": 0
             },
             {
               "turn": 6,
-              "value": 10
+              "value": 0
             },
             {
               "turn": 7,
-              "value": 12
+              "value": 0
             }
           ],
-          "observedWithinHorizon": 93,
+          "observedWithinHorizon": 0,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -2447,14 +2471,14 @@
             },
             {
               "turn": 6,
-              "value": 72
+              "value": 73
             },
             {
               "turn": 7,
-              "value": 76
+              "value": 77
             }
           ],
-          "observedWithinHorizon": 610,
+          "observedWithinHorizon": 612,
           "milestones": {
             "at25": 1,
             "at50": 3,
@@ -2527,7 +2551,7 @@
             },
             {
               "turn": 5,
-              "value": 67
+              "value": 68
             },
             {
               "turn": 6,
@@ -2559,23 +2583,23 @@
             },
             {
               "turn": 3,
-              "value": 2
+              "value": 0
             },
             {
               "turn": 4,
-              "value": 6
+              "value": 0
             },
             {
               "turn": 5,
-              "value": 8
+              "value": 0
             },
             {
               "turn": 6,
-              "value": 9
+              "value": 0
             },
             {
               "turn": 7,
-              "value": 10
+              "value": 0
             }
           ],
           "milestones": {
@@ -2599,7 +2623,7 @@
             },
             {
               "turn": 3,
-              "value": 54
+              "value": 55
             },
             {
               "turn": 4,
@@ -2762,26 +2786,26 @@
             },
             {
               "turn": 3,
-              "value": 4
+              "value": 0
             },
             {
               "turn": 4,
-              "value": 7
+              "value": 0
             },
             {
               "turn": 5,
-              "value": 9
+              "value": 0
             },
             {
               "turn": 6,
-              "value": 10
+              "value": 0
             },
             {
               "turn": 7,
-              "value": 12
+              "value": 0
             }
           ],
-          "observedWithinHorizon": 93,
+          "observedWithinHorizon": 0,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -2856,14 +2880,14 @@
             },
             {
               "turn": 6,
-              "value": 72
+              "value": 73
             },
             {
               "turn": 7,
-              "value": 76
+              "value": 77
             }
           ],
-          "observedWithinHorizon": 610,
+          "observedWithinHorizon": 612,
           "milestones": {
             "at25": 1,
             "at50": 3,

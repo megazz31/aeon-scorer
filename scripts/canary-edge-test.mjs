@@ -124,7 +124,7 @@ async function runCanaryTests() {
         commanderName,
         deckHash: badHash,
         engineVersion: '3.3.0',
-        semanticVersion: '3.3.0-semantic-14',
+        semanticVersion: '3.3.0-semantic-17',
         iterations: 1800,
         cards: [{ name: 'Sol Ring', tags: ['fast-mana'] }],
         result: sampleResult
@@ -183,7 +183,7 @@ async function runCanaryTests() {
     passed++
   }
 
-  // 6. POST with current release pair 3.3.0 | 3.3.0-semantic-14
+  // 6. POST with current release pair 3.3.0 | 3.3.0-semantic-17
   {
     const res = await fetch(ENDPOINT, {
       method: 'POST',
@@ -193,7 +193,7 @@ async function runCanaryTests() {
         commanderName,
         deckHash: validDeckHash,
         engineVersion: '3.3.0',
-        semanticVersion: '3.3.0-semantic-14',
+        semanticVersion: '3.3.0-semantic-17',
         iterations: 1800,
         cards: sampleCards.map(name => ({ name })),
         result: sampleResult
@@ -202,7 +202,7 @@ async function runCanaryTests() {
     assert.equal(res.status, 200, 'New release version pair must be accepted (200 OK)')
     const data = await res.json()
     assert.equal(data.ok, true, 'Response must indicate ok: true')
-    console.log('✓ Canary 6: Release pair 3.3.0|3.3.0-semantic-14 accepted (200 OK)')
+    console.log('✓ Canary 6: Release pair 3.3.0|3.3.0-semantic-17 accepted (200 OK)')
     passed++
   }
 
@@ -216,7 +216,7 @@ async function runCanaryTests() {
         commanderName,
         deckHash: validDeckHash,
         engineVersion: '3.3.0',
-        semanticVersion: '3.3.0-semantic-14',
+        semanticVersion: '3.3.0-semantic-17',
         iterations: 1800,
         cards: sampleCards.map(name => ({ name })),
         result: sampleResult
