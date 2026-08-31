@@ -1,17 +1,18 @@
-name: Semantic 15 candidate validation
+# Generic gate for immutable semantic release candidates.
+name: Semantic candidate validation
 
 on:
   push:
-    branches: [semantic/15-audit-driven]
+    branches: ['semantic/**']
   pull_request:
     branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: semantic-15-candidate-${{ github.ref }}
+  group: semantic-candidate-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -26,13 +27,7 @@ jobs:
         with:
           node-version: 22
       - name: Install
-        run: npm install --no-audit --no-fund
-      - name: Apply one-shot semantic-15 finalizer
-        if: github.event_name == 'push'
-        run: node scripts/semantic15-finalize.mjs
-      - name: Apply semantic-15 hotfix pass
-        if: github.event_name == 'push'
-        run: node scripts/semantic15-hotfix.mjs
+        run: npm ci
       - name: Fast semantic + product preflight
         run: |
           npm run test:semantic
@@ -40,21 +35,9 @@ jobs:
       - name: Generate candidate precon snapshots for semantic gate
         env:
           AEON_PRECON_ITERATIONS: '3200'
-          AEON_PRECON_GENERATED_AT: '2026-08-25T00:00:00.000Z'
         run: |
           npm run precons:generate
           node scripts/update-public-precon-doc.mjs
-      - name: Commit finalized candidate and snapshots on branch pushes
-        if: github.event_name == 'push'
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if ! git diff --cached --quiet; then
-            git commit -m "Finalize semantic-15 audited mechanics and snapshots"
-            git push origin HEAD:semantic/15-audit-driven
-          fi
       - name: Smoke
         run: npm run smoke
       - name: Semantic truth + sentinel precons
@@ -82,16 +65,16 @@ jobs:
         with:
           node-version: 22
       - name: Install
-        run: npm install --no-audit --no-fund
-      - name: Generate semantic-15 precon delta from semantic-14 main baseline
+        run: npm ci
+      - name: Generate semantic candidate precon delta from main baseline
         env:
           AEON_PRECON_ITERATIONS: '3200'
-          AEON_PRECON_GENERATED_AT: '2026-08-25T00:00:00.000Z'
-          AEON_SEMANTIC_BASELINE_REF: '241f22b846df2ca8a74f4812b9701b835da7ad91'
         run: |
           set -euo pipefail
+          AEON_SEMANTIC_BASELINE_REF="$(git merge-base HEAD origin/main)"
           npm run precons:generate
           node scripts/semantic-precon-delta.mjs "$AEON_SEMANTIC_BASELINE_REF"
+          node scripts/semantic-precon-outlier-review.mjs
       - name: Pin mid-power validation cohort
         run: |
           mkdir -p calibration/cache
@@ -104,7 +87,9 @@ jobs:
           ARCHIDEKT_USERNAME: 'MegazZ31'
         run: npm run benchmark
       - name: Validate 1800
-        run: npm run validate:calibration
+        run: |
+          npm run validate:calibration
+          node scripts/stamp-calibration-report.mjs
       - name: Save 1800
         run: cp calibration/latest.json calibration/run-1800.json
       - name: Macro benchmark 3200
@@ -113,7 +98,9 @@ jobs:
           ARCHIDEKT_USERNAME: 'MegazZ31'
         run: npm run benchmark
       - name: Validate 3200
-        run: npm run validate:calibration
+        run: |
+          npm run validate:calibration
+          node scripts/stamp-calibration-report.mjs
       - name: Save 3200
         run: cp calibration/latest.json calibration/run-3200.json
       - name: Convergence
@@ -121,12 +108,16 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: semantic-15-candidate-validation
+          name: semantic-candidate-validation
           path: |
             calibration/semantic-precon-delta.json
             calibration/semantic-precon-delta.md
+            calibration/semantic-outlier-review.json
+            calibration/semantic-outlier-review.md
             calibration/latest.json
             calibration/latest.md
             calibration/run-1800.json
             calibration/run-3200.json
+            public/precons/catalog.json
+            public/precons/*.json
           if-no-files-found: warn

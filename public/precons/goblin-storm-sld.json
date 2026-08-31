@@ -15,7 +15,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/GoblinStorm_SLD.json",
-  "sourceRevision": "2026-08-25",
+  "sourceRevision": "2026-08-30",
   "productAliases": [
     {
       "name": "Goblin Storm",
@@ -32,11 +32,11 @@
     "peak": 83,
     "coverage": 92,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-15",
+    "semanticVersion": "3.3.0-semantic-17",
     "oracleSnapshotHash": "4d1558d824022492062b51525a1a02129ebad04b65b7bec9131c14bd1a7aa059",
-    "scryfallOracleDate": "2026-08-25",
+    "scryfallOracleDate": "2026-08-31",
     "iterations": 3200,
-    "analyzedAt": "2026-08-25T00:00:00.000Z"
+    "analyzedAt": "2026-08-31T13:52:08.917Z"
   },
   "decklist": "1 Krenko, Mob Boss\n1 Pashalik Mons\n1 Brightstone Ritual\n1 Broadside Bombardiers\n1 Conspicuous Snoop\n1 Empty the Warrens\n1 Grapeshot\n1 Skirk Prospector\n1 Roaming Throne\n1 Skullclamp\n1 Sol Ring\n1 Blasphemous Act\n1 Chaos Warp\n1 Frontline Heroism\n1 Goblin Bombardment\n1 Goblin Chieftain\n1 Goblin Dark-Dwellers\n1 Goblin Lackey\n1 Goblin Trashmaster\n1 Great Train Heist\n1 Grenzo, Havoc Raiser\n1 Howlsquad Heavy\n1 Past in Flames\n1 Redcap Gutter-Dweller\n1 Rundvelt Hordemaster\n1 Searslicer Goblin\n1 Siege-Gang Commander\n1 Siege-Gang Lieutenant\n1 Idol of Oblivion\n1 Ruby Medallion\n1 Throne of Eldraine\n1 Arena of Glory\n1 Castle Embereth\n1 Den of the Bugbear\n1 Fountainport\n1 Kher Keep\n1 Spinerock Knoll\n1 War Room\n1 Shinka, the Bloodsoaked Keep\n1 Ancestors' Aid\n1 Battle Hymn\n1 Boggart Shenanigans\n1 Crimson Wisps\n1 Daring Discovery\n1 Dragon Fodder\n1 Expedite\n1 Faithless Looting\n1 Fists of Flame\n1 Gempalm Incinerator\n1 General Kreat, the Boltbringer\n1 Glimpse the Impossible\n1 Goblin Bushwhacker\n1 Goblin Matron\n1 Goblin Negotiation\n1 Goblin Warchief\n1 Haze of Rage\n1 Impact Tremors\n1 Impulsive Pilferer\n1 Krenko's Command\n1 Mana Geyser\n1 Mogg War Marshal\n1 Quest for the Goblin Lord\n1 Renegade Tactics\n1 Sazacap's Brew\n1 Seething Song\n1 Spreading Insurrection\n1 Storm-Kiln Artist\n1 Vandalblast\n1 Wild Ride\n1 Witch's Mark\n1 Swiftfoot Boots\n1 Dwarven Mine\n1 Forgotten Cave\n1 Goblin Burrows\n1 Hidden Volcano\n1 Reliquary Tower\n1 Smoldering Crater\n7 Mountain\n8 Mountain\n7 Mountain",
   "oracleCards": [
@@ -331,7 +331,7 @@
     },
     {
       "oracleId": "3a59c882-8bb8-49ba-862f-125020dd5bec",
-      "scryfallId": "939d765a-aefb-4393-8808-98b1bbd7e803",
+      "scryfallId": "e9116aa0-1993-4f4a-9a1d-0561d0fbcba9",
       "name": "Empty the Warrens",
       "type": "Sorcery",
       "oracle": "Create two 1/1 red Goblin creature tokens.\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
@@ -1582,12 +1582,12 @@
       "dataCoverage": 92
     },
     "dimensions": {
-      "speed": 56,
+      "speed": 55,
       "consistency": 59,
       "explosiveness": 15,
       "synergy": 81,
       "interaction": 22,
-      "resilience": 44
+      "resilience": 43
     },
     "roles": {
       "lands": 36,
@@ -2555,7 +2555,8 @@
         "spellslinger",
         "instant",
         "sorcery"
-      ]
+      ],
+      "limitations": []
     },
     "commanderNames": [
       "Zada, Hedron Grinder"
@@ -2577,7 +2578,7 @@
       "consistency": 65,
       "commanderMedianTurn": 4,
       "engineMedianTurn": 3,
-      "recoveryAfterDisruption": 87,
+      "recoveryAfterDisruption": 86,
       "turnProfile": [
         {
           "turn": 1,
@@ -2587,57 +2588,69 @@
           "resource": 51,
           "burst": 6,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 2,
-          "commander": 6,
+          "commander": 7,
           "engine": 13,
           "interaction": 10,
           "resource": 70,
           "burst": 3,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 3,
-          "commander": 22,
-          "engine": 24,
+          "commander": 23,
+          "engine": 23,
           "interaction": 16,
-          "resource": 74,
+          "resource": 72,
           "burst": 2,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 4,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 4,
-          "commander": 74,
+          "commander": 78,
           "engine": 29,
           "interaction": 24,
-          "resource": 78,
+          "resource": 79,
           "burst": 3,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 5,
-          "commander": 87,
-          "engine": 34,
+          "commander": 88,
+          "engine": 33,
           "interaction": 28,
-          "resource": 82,
+          "resource": 81,
           "burst": 6,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 6,
-          "commander": 91,
+          "commander": 92,
           "engine": 38,
           "interaction": 32,
           "resource": 85,
           "burst": 8,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 7,
@@ -2647,12 +2660,27 @@
           "resource": 87,
           "burst": 10,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         }
       ],
       "commanderMechanics": {
         "targetCostReduction": null,
-        "topLibraryCheat": null
+        "topLibraryCheat": null,
+        "typeCostReduction": {
+          "eligibleReducers": [
+            {
+              "name": "Goblin Warchief",
+              "profile": {
+                "subtype": "goblin",
+                "amount": 1
+              }
+            }
+          ],
+          "casts": 181
+        },
+        "commandZoneDeployment": null
       },
       "firstAccess": {
         "modelVersion": "first-access-sampler-v1",
@@ -2673,26 +2701,26 @@
               },
               {
                 "turn": 3,
-                "value": 23
+                "value": 24
               },
               {
                 "turn": 4,
-                "value": 75
+                "value": 78
               },
               {
                 "turn": 5,
-                "value": 86
+                "value": 88
               },
               {
                 "turn": 6,
-                "value": 92
+                "value": 93
               },
               {
                 "turn": 7,
-                "value": 95
+                "value": 96
               }
             ],
-            "observedWithinHorizon": 762
+            "observedWithinHorizon": 766
           },
           "engine": {
             "id": "engine-first-access",
@@ -2743,7 +2771,7 @@
               },
               {
                 "turn": 3,
-                "value": 19
+                "value": 18
               },
               {
                 "turn": 4,
@@ -2850,26 +2878,26 @@
               },
               {
                 "turn": 3,
-                "value": 23
+                "value": 24
               },
               {
                 "turn": 4,
-                "value": 75
+                "value": 78
               },
               {
                 "turn": 5,
-                "value": 86
+                "value": 88
               },
               {
                 "turn": 6,
-                "value": 92
+                "value": 93
               },
               {
                 "turn": 7,
-                "value": 95
+                "value": 96
               }
             ],
-            "observedWithinHorizon": 762
+            "observedWithinHorizon": 766
           }
         },
         "confidence": {
@@ -3022,14 +3050,32 @@
     "methodology": {
       "iterations": 3200,
       "firstAccessIterations": 800,
-      "model": "sequence-access-v3.2-semantic",
+      "model": "sequence-access-v3.3-semantic",
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
       "commanderMechanics": {
         "targetCostReduction": null,
-        "topLibraryCheat": null
+        "topLibraryCheat": null,
+        "typeCostReduction": {
+          "eligibleReducers": [
+            {
+              "name": "Goblin Warchief",
+              "profile": {
+                "subtype": "goblin",
+                "amount": 1
+              }
+            }
+          ],
+          "casts": 181
+        },
+        "commandZoneDeployment": null
+      },
+      "comboSignal": {
+        "families": 0,
+        "redundancy": 0,
+        "boost": 0
       },
       "limitations": []
     },
@@ -3037,12 +3083,12 @@
       "modelVersion": "experience-v1",
       "dimensions": {
         "tempo": {
-          "score": 56,
+          "score": 55,
           "level": "high",
           "evidence": [
             {
               "signal": "speed",
-              "value": 56,
+              "value": 55,
               "source": "aeon-dimension",
               "reason": "Existing Aeon speed dimension; no power-score feedback."
             }
@@ -3091,12 +3137,12 @@
           ]
         },
         "resilience": {
-          "score": 44,
+          "score": 43,
           "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 44,
+              "value": 43,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
@@ -3120,7 +3166,7 @@
             },
             {
               "signal": "resilience",
-              "value": 44,
+              "value": 43,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
@@ -3313,26 +3359,26 @@
             },
             {
               "turn": 3,
-              "value": 23
+              "value": 24
             },
             {
               "turn": 4,
-              "value": 75
+              "value": 78
             },
             {
               "turn": 5,
-              "value": 86
+              "value": 88
             },
             {
               "turn": 6,
-              "value": 92
+              "value": 93
             },
             {
               "turn": 7,
-              "value": 95
+              "value": 96
             }
           ],
-          "observedWithinHorizon": 762,
+          "observedWithinHorizon": 766,
           "milestones": {
             "at25": 4,
             "at50": 4,
@@ -3395,7 +3441,7 @@
             },
             {
               "turn": 3,
-              "value": 19
+              "value": 18
             },
             {
               "turn": 4,
@@ -3516,23 +3562,23 @@
             },
             {
               "turn": 2,
-              "value": 6
+              "value": 7
             },
             {
               "turn": 3,
-              "value": 22
+              "value": 23
             },
             {
               "turn": 4,
-              "value": 74
+              "value": 78
             },
             {
               "turn": 5,
-              "value": 87
+              "value": 88
             },
             {
               "turn": 6,
-              "value": 91
+              "value": 92
             },
             {
               "turn": 7,
@@ -3542,7 +3588,7 @@
           "milestones": {
             "at25": 4,
             "at50": 4,
-            "at75": 5
+            "at75": 4
           }
         },
         "engine": {
@@ -3560,7 +3606,7 @@
             },
             {
               "turn": 3,
-              "value": 24
+              "value": 23
             },
             {
               "turn": 4,
@@ -3568,7 +3614,7 @@
             },
             {
               "turn": 5,
-              "value": 34
+              "value": 33
             },
             {
               "turn": 6,
@@ -3640,15 +3686,15 @@
             },
             {
               "turn": 3,
-              "value": 74
+              "value": 72
             },
             {
               "turn": 4,
-              "value": 78
+              "value": 79
             },
             {
               "turn": 5,
-              "value": 82
+              "value": 81
             },
             {
               "turn": 6,
@@ -3722,26 +3768,26 @@
             },
             {
               "turn": 3,
-              "value": 23
+              "value": 24
             },
             {
               "turn": 4,
-              "value": 75
+              "value": 78
             },
             {
               "turn": 5,
-              "value": 86
+              "value": 88
             },
             {
               "turn": 6,
-              "value": 92
+              "value": 93
             },
             {
               "turn": 7,
-              "value": 95
+              "value": 96
             }
           ],
-          "observedWithinHorizon": 762,
+          "observedWithinHorizon": 766,
           "milestones": {
             "at25": 4,
             "at50": 4,
@@ -3804,7 +3850,7 @@
             },
             {
               "turn": 3,
-              "value": 19
+              "value": 18
             },
             {
               "turn": 4,

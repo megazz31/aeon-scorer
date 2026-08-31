@@ -19,7 +19,7 @@
   "unsupportedReason": null,
   "sourceName": "MTGJSON",
   "sourceUrl": "https://mtgjson.com/api/v5/decks/DanceOfTheElements_ECC.json",
-  "sourceRevision": "2026-08-25",
+  "sourceRevision": "2026-08-30",
   "productAliases": [
     {
       "name": "Dance of the Elements",
@@ -30,17 +30,17 @@
   ],
   "cardCount": 99,
   "analysis": {
-    "median": 38,
-    "p20": 26,
-    "p80": 48,
-    "peak": 73,
-    "coverage": 91,
+    "median": 44,
+    "p20": 34,
+    "p80": 54,
+    "peak": 80,
+    "coverage": 94,
     "engineVersion": "3.3.0",
-    "semanticVersion": "3.3.0-semantic-15",
+    "semanticVersion": "3.3.0-semantic-17",
     "oracleSnapshotHash": "880bb3c452aa02ad1f9c9f53c65fd9c469020209018a3c10e55e925c9a06966a",
-    "scryfallOracleDate": "2026-08-25",
+    "scryfallOracleDate": "2026-08-31",
     "iterations": 3200,
-    "analyzedAt": "2026-08-25T00:00:00.000Z"
+    "analyzedAt": "2026-08-31T13:52:08.917Z"
   },
   "decklist": "1 Mass of Mysteries\n1 Elemental Spectacle\n1 Springleaf Parade\n1 Jubilation\n1 Impulsivity\n1 Lamentation\n1 Belonging\n1 Subterfuge\n1 Rain-Slicked Copse\n1 Sodden Verdure\n1 Abundant Countryside\n1 Endurance\n1 Fury\n1 Haunting Voyage\n1 Avenger of Zendikar\n1 Cavalier of Thorns\n1 Greenwarden of Murasa\n1 Selvala, Heart of the Wilds\n1 Titan of Industry\n1 Muldrotha, the Gravetide\n1 Omnath, Locus of Rage\n1 Yarok, the Desecrated\n1 Omnath, Locus of the Roil\n1 Timeless Lotus\n1 Shatter the Sky\n1 Hoofprints of the Stag\n1 Slithermuse\n1 Descendants' Fury\n1 Blasphemous Act\n1 Cream of the Crop\n1 Kindred Summons\n1 Bane of Progress\n1 Realmwalker\n1 Return of the Wildspeaker\n1 Faeburrow Elder\n1 Vernal Sovereign\n1 Horde of Notions\n1 Maelstrom Wanderer\n1 Jegantha, the Wellspring\n1 Chromatic Lantern\n1 Primal Beyond\n1 Raging Ravine\n1 Exotic Orchard\n1 Flamekin Village\n1 Path to Exile\n1 Mulldrifter\n1 Reality Shift\n1 Shriekmaw\n1 Shimmercreep\n1 Flamebraider\n1 Crib Swap\n1 Secluded Courtyard\n1 Sol Ring\n1 Command Tower\n1 Arcane Signet\n1 Distant Melody\n1 Incandescent Soulstoke\n1 Eclipsed Flamekin\n1 Foundation Breaker\n1 Garruk's Uprising\n1 Risen Reef\n1 Fellwar Stone\n1 Unclaimed Territory\n1 Ancient Ziggurat\n1 Frontier Bivouac\n1 Sandsteppe Citadel\n1 Savage Lands\n1 Opulent Palace\n1 Seaside Citadel\n1 Jungle Shrine\n1 Smokebraider\n1 Ingot Chewer\n1 Fertile Ground\n1 Abundant Growth\n1 Kodama's Reach\n1 Cultivate\n1 Path of Ancestry\n1 Thriving Grove\n1 Thriving Heath\n1 Thriving Isle\n1 Opal Palace\n1 Thriving Bluff\n1 Thriving Moor\n2 Plains\n2 Island\n2 Swamp\n2 Mountain\n8 Forest",
   "oracleCards": [
@@ -1932,24 +1932,24 @@
   ],
   "result": {
     "profile": {
-      "median": 38,
-      "floor": 26,
-      "ceiling": 48,
-      "peak": 73,
-      "dispersion": 22,
-      "variance": 22,
+      "median": 44,
+      "floor": 34,
+      "ceiling": 54,
+      "peak": 80,
+      "dispersion": 20,
+      "variance": 20,
       "consistency": 66,
-      "commanderDelta": 15,
-      "coverage": 91,
-      "dataCoverage": 91
+      "commanderDelta": 14,
+      "coverage": 94,
+      "dataCoverage": 94
     },
     "dimensions": {
       "speed": 31,
       "consistency": 66,
       "explosiveness": 13,
-      "synergy": 28,
-      "interaction": 39,
-      "resilience": 53
+      "synergy": 76,
+      "interaction": 30,
+      "resilience": 49
     },
     "roles": {
       "lands": 40,
@@ -1965,7 +1965,184 @@
       "avgCmc": 4.271186440677966,
       "unknownManaLands": 0
     },
-    "packages": [],
+    "packages": [
+      {
+        "id": "lands",
+        "name": "Lands / Landfall",
+        "strength": 67,
+        "cohesion": 67,
+        "producers": [
+          "Cavalier of Thorns",
+          "Cultivate",
+          "Kodama's Reach"
+        ],
+        "payoffs": [
+          "Avenger of Zendikar",
+          "Omnath, Locus of Rage",
+          "Omnath, Locus of the Roil"
+        ],
+        "members": [
+          "Cavalier of Thorns",
+          "Cultivate",
+          "Kodama's Reach",
+          "Avenger of Zendikar",
+          "Omnath, Locus of Rage",
+          "Omnath, Locus of the Roil"
+        ],
+        "producerCards": [
+          {
+            "name": "Cavalier of Thorns",
+            "cmc": 5,
+            "tags": [
+              "creature",
+              "land-ramp",
+              "death-payoff",
+              "etb"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 5
+            }
+          },
+          {
+            "name": "Cultivate",
+            "cmc": 3,
+            "tags": [
+              "sorcery",
+              "land-ramp"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          },
+          {
+            "name": "Kodama's Reach",
+            "cmc": 3,
+            "tags": [
+              "sorcery",
+              "land-ramp"
+            ],
+            "manaReq": {
+              "generic": 2,
+              "colored": [
+                [
+                  "G"
+                ]
+              ],
+              "total": 3
+            }
+          }
+        ],
+        "supportCards": [],
+        "payoffCards": [
+          {
+            "name": "Avenger of Zendikar",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "tokens",
+              "etb",
+              "landfall",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 5,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Omnath, Locus of Rage",
+            "cmc": 7,
+            "tags": [
+              "creature",
+              "tokens",
+              "death-payoff",
+              "etb",
+              "landfall"
+            ],
+            "manaReq": {
+              "generic": 3,
+              "colored": [
+                [
+                  "R"
+                ],
+                [
+                  "R"
+                ],
+                [
+                  "G"
+                ],
+                [
+                  "G"
+                ]
+              ],
+              "total": 7
+            }
+          },
+          {
+            "name": "Omnath, Locus of the Roil",
+            "cmc": 4,
+            "tags": [
+              "creature",
+              "draw",
+              "etb",
+              "landfall",
+              "counter-producer",
+              "counter-kind:plus1"
+            ],
+            "manaReq": {
+              "generic": 1,
+              "colored": [
+                [
+                  "G"
+                ],
+                [
+                  "U"
+                ],
+                [
+                  "R"
+                ]
+              ],
+              "total": 4
+            }
+          }
+        ],
+        "producerTags": [
+          "land-ramp"
+        ],
+        "supportTags": [],
+        "payoffTags": [
+          "landfall"
+        ],
+        "evidence": "3 producteur(s), 3 payoff(s), 6 carte(s) distincte(s)."
+      }
+    ],
     "combos": [],
     "commanderSynergy": {
       "score": 100,
@@ -2011,7 +2188,8 @@
         "tokens",
         "token-payoff",
         "tribal:elemental"
-      ]
+      ],
+      "limitations": []
     },
     "commanderNames": [
       "Ashling, the Limitless"
@@ -2024,16 +2202,16 @@
     },
     "simulation": {
       "iterations": 3200,
-      "floor": 33,
+      "floor": 34,
       "median": 41,
       "high": 48,
       "ceiling": 48,
-      "peak": 67,
+      "peak": 70,
       "iqr": 11,
       "consistency": 75,
       "commanderMedianTurn": 3,
-      "engineMedianTurn": null,
-      "recoveryAfterDisruption": 80,
+      "engineMedianTurn": 6,
+      "recoveryAfterDisruption": 69,
       "turnProfile": [
         {
           "turn": 1,
@@ -2043,72 +2221,88 @@
           "resource": 8,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 2,
-          "commander": 7,
+          "commander": 12,
           "engine": 0,
           "interaction": 12,
-          "resource": 9,
+          "resource": 10,
           "burst": 0,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 3,
-          "commander": 53,
+          "commander": 80,
           "engine": 0,
-          "interaction": 25,
-          "resource": 20,
+          "interaction": 29,
+          "resource": 23,
           "burst": 1,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 4,
-          "commander": 84,
+          "commander": 93,
           "engine": 0,
-          "interaction": 45,
-          "resource": 43,
-          "burst": 4,
+          "interaction": 31,
+          "resource": 27,
+          "burst": 2,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 5,
-          "commander": 93,
-          "engine": 0,
-          "interaction": 59,
-          "resource": 63,
-          "burst": 8,
+          "commander": 96,
+          "engine": 1,
+          "interaction": 52,
+          "resource": 55,
+          "burst": 7,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 6,
-          "commander": 95,
-          "engine": 0,
-          "interaction": 67,
+          "commander": 97,
+          "engine": 4,
+          "interaction": 65,
           "resource": 73,
-          "burst": 12,
+          "burst": 13,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         },
         {
           "turn": 7,
-          "commander": 96,
-          "engine": 0,
-          "interaction": 74,
+          "commander": 98,
+          "engine": 7,
+          "interaction": 73,
           "resource": 80,
-          "burst": 16,
+          "burst": 17,
           "commanderCheat": 0,
-          "targetReduction": 0
+          "targetReduction": 0,
+          "typeReduction": 0,
+          "commandZoneDeployment": 0
         }
       ],
       "commanderMechanics": {
         "targetCostReduction": null,
-        "topLibraryCheat": null
+        "topLibraryCheat": null,
+        "typeCostReduction": null,
+        "commandZoneDeployment": null
       },
       "firstAccess": {
         "modelVersion": "first-access-sampler-v1",
@@ -2125,30 +2319,30 @@
               },
               {
                 "turn": 2,
-                "value": 8
+                "value": 13
               },
               {
                 "turn": 3,
-                "value": 55
+                "value": 83
               },
               {
                 "turn": 4,
-                "value": 86
+                "value": 94
               },
               {
                 "turn": 5,
-                "value": 93
+                "value": 96
               },
               {
                 "turn": 6,
-                "value": 95
+                "value": 97
               },
               {
                 "turn": 7,
-                "value": 96
+                "value": 98
               }
             ],
-            "observedWithinHorizon": 768
+            "observedWithinHorizon": 781
           },
           "engine": {
             "id": "engine-first-access",
@@ -2172,18 +2366,18 @@
               },
               {
                 "turn": 5,
-                "value": 0
+                "value": 2
               },
               {
                 "turn": 6,
-                "value": 0
+                "value": 4
               },
               {
                 "turn": 7,
-                "value": 0
+                "value": 7
               }
             ],
-            "observedWithinHorizon": 0
+            "observedWithinHorizon": 59
           },
           "interaction": {
             "id": "interaction-first-access",
@@ -2191,7 +2385,7 @@
             "points": [
               {
                 "turn": 1,
-                "value": 5
+                "value": 4
               },
               {
                 "turn": 2,
@@ -2203,22 +2397,22 @@
               },
               {
                 "turn": 4,
-                "value": 48
+                "value": 39
               },
               {
                 "turn": 5,
-                "value": 61
+                "value": 56
               },
               {
                 "turn": 6,
-                "value": 69
+                "value": 68
               },
               {
                 "turn": 7,
                 "value": 74
               }
             ],
-            "observedWithinHorizon": 593
+            "observedWithinHorizon": 588
           },
           "resource": {
             "id": "resource-first-access",
@@ -2234,26 +2428,26 @@
               },
               {
                 "turn": 3,
-                "value": 19
+                "value": 25
               },
               {
                 "turn": 4,
-                "value": 46
+                "value": 36
               },
               {
                 "turn": 5,
-                "value": 66
+                "value": 61
               },
               {
                 "turn": 6,
-                "value": 77
+                "value": 78
               },
               {
                 "turn": 7,
-                "value": 83
+                "value": 84
               }
             ],
-            "observedWithinHorizon": 664
+            "observedWithinHorizon": 672
           },
           "burst": {
             "id": "burst-first-access",
@@ -2273,11 +2467,11 @@
               },
               {
                 "turn": 4,
-                "value": 4
+                "value": 2
               },
               {
                 "turn": 5,
-                "value": 9
+                "value": 8
               },
               {
                 "turn": 6,
@@ -2288,7 +2482,7 @@
                 "value": 18
               }
             ],
-            "observedWithinHorizon": 143
+            "observedWithinHorizon": 147
           }
         },
         "commanders": {
@@ -2302,30 +2496,30 @@
               },
               {
                 "turn": 2,
-                "value": 8
+                "value": 13
               },
               {
                 "turn": 3,
-                "value": 55
+                "value": 83
               },
               {
                 "turn": 4,
-                "value": 86
+                "value": 94
               },
               {
                 "turn": 5,
-                "value": 93
+                "value": 96
               },
               {
                 "turn": 6,
-                "value": 95
+                "value": 97
               },
               {
                 "turn": 7,
-                "value": 96
+                "value": 98
               }
             ],
-            "observedWithinHorizon": 768
+            "observedWithinHorizon": 781
           }
         },
         "confidence": {
@@ -2386,6 +2580,19 @@
         "aeon": null
       },
       {
+        "name": "Omnath, Locus of the Roil",
+        "impact": 2.9,
+        "tags": [
+          "creature",
+          "draw",
+          "etb",
+          "landfall",
+          "counter-producer",
+          "counter-kind:plus1"
+        ],
+        "aeon": null
+      },
+      {
         "name": "Abundant Growth",
         "impact": 2.7,
         "tags": [
@@ -2420,19 +2627,6 @@
         "aeon": null
       },
       {
-        "name": "Omnath, Locus of the Roil",
-        "impact": 2.2,
-        "tags": [
-          "creature",
-          "draw",
-          "etb",
-          "landfall",
-          "counter-producer",
-          "counter-kind:plus1"
-        ],
-        "aeon": null
-      },
-      {
         "name": "Belonging",
         "impact": 1.8,
         "tags": [
@@ -2455,20 +2649,26 @@
         "aeon": null
       },
       {
-        "name": "Distant Melody",
+        "name": "Avenger of Zendikar",
         "impact": 1.7,
         "tags": [
-          "sorcery",
-          "draw"
+          "creature",
+          "tokens",
+          "etb",
+          "landfall",
+          "counter-producer",
+          "counter-kind:plus1"
         ],
         "aeon": null
       },
       {
-        "name": "Fertile Ground",
+        "name": "Cavalier of Thorns",
         "impact": 1.7,
         "tags": [
-          "enchantment",
-          "mana"
+          "creature",
+          "land-ramp",
+          "death-payoff",
+          "etb"
         ],
         "aeon": null
       }
@@ -2477,14 +2677,21 @@
     "methodology": {
       "iterations": 3200,
       "firstAccessIterations": 800,
-      "model": "sequence-access-v3.2-semantic",
+      "model": "sequence-access-v3.3-semantic",
       "maxTurn": 7,
       "commandZoneCount": 1,
       "separateCommanderTax": false,
       "curveMeaning": "Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.",
       "commanderMechanics": {
         "targetCostReduction": null,
-        "topLibraryCheat": null
+        "topLibraryCheat": null,
+        "typeCostReduction": null,
+        "commandZoneDeployment": null
+      },
+      "comboSignal": {
+        "families": 0,
+        "redundancy": 0,
+        "boost": 0
       },
       "limitations": []
     },
@@ -2516,54 +2723,54 @@
           ]
         },
         "volatility": {
-          "score": 82,
+          "score": 79,
           "level": "very-high",
           "evidence": [
             {
               "signal": "normal-range-width",
-              "value": 22,
+              "value": 20,
               "source": "profile",
               "reason": "P20–P80 spread."
             },
             {
               "signal": "high-roll-tail",
-              "value": 25,
+              "value": 26,
               "source": "profile",
               "reason": "Peak distance above P80."
             }
           ]
         },
         "interaction": {
-          "score": 39,
+          "score": 30,
           "level": "moderate",
           "evidence": [
             {
               "signal": "interaction",
-              "value": 39,
+              "value": 30,
               "source": "aeon-dimension",
               "reason": "Existing Aeon interaction-access dimension."
             }
           ]
         },
         "resilience": {
-          "score": 53,
-          "level": "high",
+          "score": 49,
+          "level": "moderate",
           "evidence": [
             {
               "signal": "resilience",
-              "value": 53,
+              "value": 49,
               "source": "aeon-dimension",
               "reason": "Existing Aeon recovery/resilience dimension."
             }
           ]
         },
         "inevitability": {
-          "score": 40,
-          "level": "moderate",
+          "score": 66,
+          "level": "high",
           "evidence": [
             {
               "signal": "synergy",
-              "value": 28,
+              "value": 76,
               "source": "aeon-dimension",
               "reason": "Structural package/commander synergy."
             },
@@ -2575,13 +2782,13 @@
             },
             {
               "signal": "resilience",
-              "value": 53,
+              "value": 49,
               "source": "aeon-dimension",
               "reason": "Ability to keep the engine relevant."
             },
             {
               "signal": "package-cohesion",
-              "value": 0,
+              "value": 67,
               "source": "package-model",
               "reason": "Average cohesion of the three strongest packages."
             }
@@ -2593,7 +2800,7 @@
           "evidence": [
             {
               "signal": "commander-delta",
-              "value": 15,
+              "value": 14,
               "source": "profile",
               "reason": "Observed command-zone contribution proxy."
             },
@@ -2612,7 +2819,7 @@
           ]
         },
         "turnComplexity": {
-          "score": 22,
+          "score": 24,
           "level": "low",
           "evidence": [
             {
@@ -2635,7 +2842,7 @@
             },
             {
               "signal": "packages",
-              "value": 0,
+              "value": 1,
               "source": "package-model",
               "reason": "Independent engines increase sequencing branches."
             }
@@ -2716,13 +2923,13 @@
           "id": "long-sequencing",
           "label": "Long sequencing potential",
           "level": "low",
-          "score": 22,
+          "score": 24,
           "evidence": [
             {
               "name": "Experience Fingerprint",
               "reason": "Turn Complexity proxy from recurring/chained semantic actions.",
               "recurring": true,
-              "weight": 1.2222222222222223
+              "weight": 1.3333333333333333
             }
           ],
           "note": "Derived from Experience Fingerprint turn-complexity evidence; not calibrated to real clock time."
@@ -2755,34 +2962,34 @@
             },
             {
               "turn": 2,
-              "value": 8
+              "value": 13
             },
             {
               "turn": 3,
-              "value": 55
+              "value": 83
             },
             {
               "turn": 4,
-              "value": 86
+              "value": 94
             },
             {
               "turn": 5,
-              "value": 93
+              "value": 96
             },
             {
               "turn": 6,
-              "value": 95
+              "value": 97
             },
             {
               "turn": 7,
-              "value": 96
+              "value": 98
             }
           ],
-          "observedWithinHorizon": 768,
+          "observedWithinHorizon": 781,
           "milestones": {
             "at25": 3,
             "at50": 3,
-            "at75": 4
+            "at75": 3
           }
         },
         "engine": {
@@ -2808,18 +3015,18 @@
             },
             {
               "turn": 5,
-              "value": 0
+              "value": 2
             },
             {
               "turn": 6,
-              "value": 0
+              "value": 4
             },
             {
               "turn": 7,
-              "value": 0
+              "value": 7
             }
           ],
-          "observedWithinHorizon": 0,
+          "observedWithinHorizon": 59,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -2833,7 +3040,7 @@
           "points": [
             {
               "turn": 1,
-              "value": 5
+              "value": 4
             },
             {
               "turn": 2,
@@ -2845,22 +3052,22 @@
             },
             {
               "turn": 4,
-              "value": 48
+              "value": 39
             },
             {
               "turn": 5,
-              "value": 61
+              "value": 56
             },
             {
               "turn": 6,
-              "value": 69
+              "value": 68
             },
             {
               "turn": 7,
               "value": 74
             }
           ],
-          "observedWithinHorizon": 593,
+          "observedWithinHorizon": 588,
           "milestones": {
             "at25": 3,
             "at50": 5,
@@ -2882,28 +3089,28 @@
             },
             {
               "turn": 3,
-              "value": 19
+              "value": 25
             },
             {
               "turn": 4,
-              "value": 46
+              "value": 36
             },
             {
               "turn": 5,
-              "value": 66
+              "value": 61
             },
             {
               "turn": 6,
-              "value": 77
+              "value": 78
             },
             {
               "turn": 7,
-              "value": 83
+              "value": 84
             }
           ],
-          "observedWithinHorizon": 664,
+          "observedWithinHorizon": 672,
           "milestones": {
-            "at25": 4,
+            "at25": 3,
             "at50": 5,
             "at75": 6
           }
@@ -2927,11 +3134,11 @@
             },
             {
               "turn": 4,
-              "value": 4
+              "value": 2
             },
             {
               "turn": 5,
-              "value": 9
+              "value": 8
             },
             {
               "turn": 6,
@@ -2942,7 +3149,7 @@
               "value": 18
             }
           ],
-          "observedWithinHorizon": 143,
+          "observedWithinHorizon": 147,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -2962,33 +3169,33 @@
             },
             {
               "turn": 2,
-              "value": 7
+              "value": 12
             },
             {
               "turn": 3,
-              "value": 53
+              "value": 80
             },
             {
               "turn": 4,
-              "value": 84
-            },
-            {
-              "turn": 5,
               "value": 93
             },
             {
+              "turn": 5,
+              "value": 96
+            },
+            {
               "turn": 6,
-              "value": 95
+              "value": 97
             },
             {
               "turn": 7,
-              "value": 96
+              "value": 98
             }
           ],
           "milestones": {
             "at25": 3,
             "at50": 3,
-            "at75": 4
+            "at75": 3
           }
         },
         "engine": {
@@ -3014,15 +3221,15 @@
             },
             {
               "turn": 5,
-              "value": 0
+              "value": 1
             },
             {
               "turn": 6,
-              "value": 0
+              "value": 4
             },
             {
               "turn": 7,
-              "value": 0
+              "value": 7
             }
           ],
           "milestones": {
@@ -3046,23 +3253,23 @@
             },
             {
               "turn": 3,
-              "value": 25
+              "value": 29
             },
             {
               "turn": 4,
-              "value": 45
+              "value": 31
             },
             {
               "turn": 5,
-              "value": 59
+              "value": 52
             },
             {
               "turn": 6,
-              "value": 67
+              "value": 65
             },
             {
               "turn": 7,
-              "value": 74
+              "value": 73
             }
           ],
           "milestones": {
@@ -3082,19 +3289,19 @@
             },
             {
               "turn": 2,
-              "value": 9
+              "value": 10
             },
             {
               "turn": 3,
-              "value": 20
+              "value": 23
             },
             {
               "turn": 4,
-              "value": 43
+              "value": 27
             },
             {
               "turn": 5,
-              "value": 63
+              "value": 55
             },
             {
               "turn": 6,
@@ -3130,19 +3337,19 @@
             },
             {
               "turn": 4,
-              "value": 4
+              "value": 2
             },
             {
               "turn": 5,
-              "value": 8
+              "value": 7
             },
             {
               "turn": 6,
-              "value": 12
+              "value": 13
             },
             {
               "turn": 7,
-              "value": 16
+              "value": 17
             }
           ],
           "milestones": {
@@ -3164,34 +3371,34 @@
             },
             {
               "turn": 2,
-              "value": 8
+              "value": 13
             },
             {
               "turn": 3,
-              "value": 55
+              "value": 83
             },
             {
               "turn": 4,
-              "value": 86
+              "value": 94
             },
             {
               "turn": 5,
-              "value": 93
+              "value": 96
             },
             {
               "turn": 6,
-              "value": 95
+              "value": 97
             },
             {
               "turn": 7,
-              "value": 96
+              "value": 98
             }
           ],
-          "observedWithinHorizon": 768,
+          "observedWithinHorizon": 781,
           "milestones": {
             "at25": 3,
             "at50": 3,
-            "at75": 4
+            "at75": 3
           }
         },
         "engine": {
@@ -3217,18 +3424,18 @@
             },
             {
               "turn": 5,
-              "value": 0
+              "value": 2
             },
             {
               "turn": 6,
-              "value": 0
+              "value": 4
             },
             {
               "turn": 7,
-              "value": 0
+              "value": 7
             }
           ],
-          "observedWithinHorizon": 0,
+          "observedWithinHorizon": 59,
           "milestones": {
             "at25": null,
             "at50": null,
@@ -3242,7 +3449,7 @@
           "points": [
             {
               "turn": 1,
-              "value": 5
+              "value": 4
             },
             {
               "turn": 2,
@@ -3254,22 +3461,22 @@
             },
             {
               "turn": 4,
-              "value": 48
+              "value": 39
             },
             {
               "turn": 5,
-              "value": 61
+              "value": 56
             },
             {
               "turn": 6,
-              "value": 69
+              "value": 68
             },
             {
               "turn": 7,
               "value": 74
             }
           ],
-          "observedWithinHorizon": 593,
+          "observedWithinHorizon": 588,
           "milestones": {
             "at25": 3,
             "at50": 5,
@@ -3291,28 +3498,28 @@
             },
             {
               "turn": 3,
-              "value": 19
+              "value": 25
             },
             {
               "turn": 4,
-              "value": 46
+              "value": 36
             },
             {
               "turn": 5,
-              "value": 66
+              "value": 61
             },
             {
               "turn": 6,
-              "value": 77
+              "value": 78
             },
             {
               "turn": 7,
-              "value": 83
+              "value": 84
             }
           ],
-          "observedWithinHorizon": 664,
+          "observedWithinHorizon": 672,
           "milestones": {
-            "at25": 4,
+            "at25": 3,
             "at50": 5,
             "at75": 6
           }
@@ -3336,11 +3543,11 @@
             },
             {
               "turn": 4,
-              "value": 4
+              "value": 2
             },
             {
               "turn": 5,
-              "value": 9
+              "value": 8
             },
             {
               "turn": 6,
@@ -3351,7 +3558,7 @@
               "value": 18
             }
           ],
-          "observedWithinHorizon": 143,
+          "observedWithinHorizon": 147,
           "milestones": {
             "at25": null,
             "at50": null,
