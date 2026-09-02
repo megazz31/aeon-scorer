@@ -13,6 +13,26 @@ function normalizeCard(card = {}) {
   }
 }
 
+function hasControllerTokenProduction(card, tagSet) {
+  const oracle = String(card.oracle || '').toLowerCase()
+  const keywordTokenAction = /\b(?:amass|incubate|fabricate|populate|living weapon|for mirrodin!|myriad|encore|embalm|eternalize|offspring|afterlife|squad)\b/.test(oracle)
+  if (keywordTokenAction) return true
+
+  const tokenClauses = oracle
+    .split(/[.\n;]+/)
+    .map(clause => clause.trim())
+    .filter(clause => /\bcreat(?:e|es)\b[^.]*\btokens?\b|\binvestigat(?:e|es)\b/.test(clause))
+
+  if (tokenClauses.length === 0) return tagSet.has('tokens')
+
+  return tokenClauses.some(clause => {
+    const opponentDirected = /\b(?:target |each |an? )?opponents?\b[^.]{0,100}\b(?:creates?|investigates?)\b|\b(?:its|that|their) controller creates?\b|\bthat player creates?\b/.test(clause)
+    const controllerDirected = /\byou\b[^.]{0,100}\b(?:create|investigate)\b/.test(clause)
+      || /(?:^|,|\bthen\b)\s*(?:create|investigate)\b/.test(clause)
+    return controllerDirected || !opponentDirected
+  })
+}
+
 function pushHint(hints, id, label, evidenceTags) {
   if (hints.some(hint => hint.id === id)) return
   hints.push({
@@ -29,7 +49,7 @@ export function buildSimulatorHints(inputCard = {}) {
   const typeLine = String(card.type || '').toLowerCase()
   const hints = []
 
-  if (tagSet.has('tokens')) {
+  if (tagSet.has('tokens') && hasControllerTokenProduction(card, tagSet)) {
     pushHint(hints, 'associated-tokens', 'Jetons associés', ['tokens'])
   }
 
@@ -44,7 +64,6 @@ export function buildSimulatorHints(inputCard = {}) {
   }
 
   const sacrificeTags = tags.filter(tag =>
-    tag === 'sacrifice' ||
     tag === 'sac-outlet' ||
     tag === 'sac-enabler'
   )
