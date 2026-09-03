@@ -24,7 +24,8 @@
     "validate:calibration": "node scripts/validate-report.mjs",
     "verify:sampling": "node scripts/compare-sampling.mjs",
     "quality:local": "npm run smoke && npm run test:semantic:fast && npm run test:metamorphic && npm run test:product && npm run test:public-precons && npm run audit && npm run build",
-    "test:interop": "node scripts/simulator-hints-contract-test.mjs"
+    "test:interop": "node scripts/simulator-hints-contract-test.mjs && node scripts/simulator-evidence-contract-test.mjs",
+    "evidence:simulator": "node scripts/import-simulator-evidence.mjs"
   },
   "dependencies": {
     "react": "^18.2.0",
