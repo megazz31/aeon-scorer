@@ -12,6 +12,44 @@ function asInt(value) {
   return Number.isFinite(parsed) ? parsed : 0
 }
 
+function normalizeText(value) {
+  return String(value || '').trim().replace(/\s+/g, ' ')
+}
+
+function normalizeName(value) {
+  return normalizeText(value).toLowerCase()
+}
+
+function fnv1a(value) {
+  let hash = 0x811c9dc5
+  const text = String(value || '')
+  for (let index = 0; index < text.length; index++) {
+    hash ^= text.charCodeAt(index)
+    hash = Math.imul(hash, 0x01000193)
+  }
+  return (hash >>> 0).toString(16).padStart(8, '0')
+}
+
+function canonicalActionDescriptor(action = {}) {
+  const type = String(action.type || action.action || '').trim()
+  const amount = Math.max(1, Math.min(99, Number.parseInt(action.amount, 10) || 1))
+  const descriptor = { type, amount }
+
+  if (type === 'add_counter') {
+    descriptor.counterName = normalizeText(action.counterName).toLowerCase()
+  }
+  if (type === 'create_token') {
+    descriptor.tokenKey = String(action.tokenKey || '').trim()
+    descriptor.tokenName = normalizeName(descriptor.tokenKey.split('|')[0])
+  }
+
+  return descriptor
+}
+
+function actionFingerprint(action = {}) {
+  return `action-v1:${fnv1a(JSON.stringify(canonicalActionDescriptor(action)))}`
+}
+
 function recomputeStatus(entry = {}) {
   const confirmations = asInt(entry.confirmations)
   const rejections = asInt(entry.rejections)
@@ -73,6 +111,13 @@ export function inspectSimulatorEvidenceBundle(bundle = {}) {
     if (!entry?.cardKey) reasons.push('missing-card-key')
     if (!entry?.oracleFingerprint) reasons.push('missing-oracle-fingerprint')
     if (!entry?.actionFingerprint) reasons.push('missing-action-fingerprint')
+    if (
+      entry?.actionFingerprint &&
+      entry?.action &&
+      entry.actionFingerprint !== actionFingerprint(entry.action)
+    ) {
+      reasons.push('action-fingerprint-mismatch')
+    }
     if (entry?.engineVerified === true) reasons.push('simulator-cannot-claim-engine-verified')
 
     const actionError = validateAction(entry?.action)
