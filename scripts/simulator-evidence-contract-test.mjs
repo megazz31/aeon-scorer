@@ -47,6 +47,16 @@ assert.equal(forged.candidates.length, 0)
 assert.ok(forged.rejected[0].reasons.some(reason => reason.startsWith('insufficient-evidence:')))
 assert.ok(forged.rejected[0].reasons.some(reason => reason.startsWith('status-mismatch:')))
 
+const tamperedFingerprint = inspectSimulatorEvidenceBundle({
+  ...bundle,
+  entries: [{
+    ...trustedEntry,
+    action: { type: 'mill', amount: 2 }
+  }]
+})
+assert.equal(tamperedFingerprint.candidates.length, 0)
+assert.ok(tamperedFingerprint.rejected[0].reasons.includes('action-fingerprint-mismatch'))
+
 const contested = buildSimulatorEvidenceCandidates({
   ...bundle,
   entries: [{
