@@ -300,8 +300,11 @@ async function main() {
   const artifact = await buildArtifact({ rulesRepo })
   const serialized = serializeArtifact(artifact)
   if (check) {
-    const current = fs.existsSync(ARTIFACT_PATH) ? fs.readFileSync(ARTIFACT_PATH, 'utf8') : ''
-    if (current !== serialized) {
+    // Un checkout Windows peut rendre le fichier en CRLF : la comparaison porte
+    // sur le contenu, pas sur les fins de ligne.
+    const normalize = text => String(text).replace(/\r\n/g, '\n')
+    const current = fs.existsSync(ARTIFACT_PATH) ? normalize(fs.readFileSync(ARTIFACT_PATH, 'utf8')) : ''
+    if (current !== normalize(serialized)) {
       console.error('semantic artifact is stale: rerun node scripts/export-rules-semantics.mjs')
       process.exitCode = 1
       return
