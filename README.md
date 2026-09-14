@@ -34,7 +34,7 @@ Read more:
 
 ## How it works
 
-1. **Card primitives** — Oracle text and card types are mapped to functional roles such as draw, tutors, interaction, protection, recursion, fast mana, blink, tokens and payoffs.
+1. **Card primitives** — Oracle text and card types are mapped to functional roles such as draw, tutors, interaction, protection, recursion, fast mana, blink, tokens and payoffs. Where a card's ability has been **compiled exactly** by the MonSimulateur-MTG rules compiler, the compiled effect also contributes its role; an ability that the compiler refuses contributes nothing and keeps the heuristic path. See [`docs/SEMANTIC_BRIDGE_RULES_V2.md`](docs/SEMANTIC_BRIDGE_RULES_V2.md).
 2. **Package graph** — roles are connected into producer → payoff systems such as Blink/ETB, Constellation, tokens, sacrifice, graveyard, counters and commander acceleration.
 3. **Monte Carlo access** — thousands of Commander opening/mulligan and mana-access sequences are simulated through turn 7.
 4. **Power distribution** — the simulation becomes median / P20 / P80 / peak plus diagnostic dimensions for speed, consistency, explosiveness, synergy, interaction and recovery options.
@@ -106,7 +106,8 @@ Aeon Scorer is **not a full Magic rules engine**. In particular:
 - some hybrid, Phyrexian and highly conditional mana patterns remain approximations;
 - combo detection is deliberately high-confidence and non-exhaustive;
 - multiplayer politics, target selection, the real stack and opponent decisions are not simulated;
-- Partner / Friends Forever / Background two-commander configurations are not yet supported.
+- Partner / Friends Forever / Background two-commander configurations are not yet supported;
+- the rules compiler bridge only speaks for abilities compiled exactly. On the 12-deck reference corpus that is 431 of 1064 cards with at least one compiled ability, so most roles still come from the heuristics. Every analysis exposes the split in `result.semantics`.
 
 These limits are disclosed because a useful power model should be falsifiable and auditable.
 
@@ -128,6 +129,15 @@ Network benchmark:
 ```bash
 npm run benchmark
 npm run validate:calibration
+```
+
+Semantic bridge with the rules compiler (sibling checkout expected at `../MonSimulateur-MTG`, override with `AEON_RULES_REPO`):
+
+```bash
+npm run semantics:export   # regenerate semantic/rules-v2-card-semantics.json
+npm run semantics:check    # fail if the committed artifact is no longer reproducible
+npm run semantics:report   # before/after measurement on the 12-deck corpus
+node scripts/semantic-bridge-precon-diff.mjs   # which public precons actually move
 ```
 
 ## Contributing / reporting bad results

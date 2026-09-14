@@ -1,5 +1,6 @@
 import { featureDeck, cardFeatures } from './cardFeatures.js'
 import { augmentFeatureDeck } from './semanticAugment.js'
+import { rulesSemanticSummary } from './rulesSemantics.js'
 import { detectPackages, commanderSynergy } from './packageGraph.js'
 import { detectKnownCombos, comboScoringSignal } from './knownCombos.js'
 import { simulateSequences } from './sequenceSimulator.js'
@@ -30,8 +31,8 @@ function combinedCommanderSynergy(cards,commanders){
 }
 
 export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=3000,options={}){
-  const rawCommanders=(Array.isArray(rawCommander)?rawCommander:[rawCommander]).filter(Boolean).slice(0,2),commanders=rawCommanders.map(cardFeatures),commander=commanders[0]||null,multi=commanders.length>1
-  let cards=augmentFeatureDeck(featureDeck(rawCards)).sort(canonicalCardOrder)
+  const rawCommanders=(Array.isArray(rawCommander)?rawCommander:[rawCommander]).filter(Boolean).slice(0,2),commanders=augmentFeatureDeck(rawCommanders.map(cardFeatures),options),commander=commanders[0]||null,multi=commanders.length>1
+  let cards=augmentFeatureDeck(featureDeck(rawCards),options).sort(canonicalCardOrder)
   if(commanders.length){const names=new Set(commanders.map(c=>c.name.toLowerCase()));cards=cards.filter(c=>!names.has(c.name.toLowerCase())||c.__keepIn99)}
   const packages=detectPackages(cards,commander),combos=detectKnownCombos(cards.concat(commanders)),cmdSyn=combinedCommanderSynergy(cards,commanders),roles=roleStats(cards)
   const sim=multi?simulateSequencesMulti(cards,commanders,packages,combos,iterations,7,seeded(hashSeed(cards,commanders,'with-command-v31'))):simulateSequences(cards,commander,packages,combos,iterations,7,seeded(hashSeed(cards,commander,'with-command-v31')))
@@ -67,7 +68,9 @@ export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=
     'activated-ability-mana-and-exhaust-compression-not-sequence-simulated':'Le commandant convertit sa puissance en mana réservé aux capacités et peut déployer des permanents via une capacité coûteuse ; cette compression n’est pas encore simulée intégralement.'
   }
   for(const limitation of cmdSyn.limitations||[]){const w=commanderLimitationWarning[limitation];if(w)warnings.push(w)}
-  const result={profile:{median:Math.round(median),floor:Math.round(floor),ceiling:Math.round(ceiling),peak:Math.round(peak),dispersion:Math.round(dispersion),variance:Math.round(dispersion),consistency:Math.round(consistency),commanderDelta,coverage,dataCoverage:coverage},dimensions,roles,packages,combos,commanderSynergy:cmdSyn,commanderNames:commanders.map(c=>c.name),aeon,simulation:sim,drivers,warnings,methodology:{iterations,firstAccessIterations,model:'sequence-access-v3.3-semantic',maxTurn:7,commandZoneCount:commanders.length,separateCommanderTax:multi,curveMeaning:'Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.',commanderMechanics:sim.commanderMechanics||null,comboSignal,limitations}}
+  const semantics=rulesSemanticSummary(cards.concat(commanders))
+  if(semantics.cards>0&&semantics.exact+semantics.partial<semantics.cards*.35)warnings.push(`${semantics.cards-(semantics.exact+semantics.partial)} carte(s) sur ${semantics.cards} n’ont pas de sémantique compilée : leurs rôles restent heuristiques et ne sont jamais devinés à partir d’un refus.`)
+  const result={profile:{median:Math.round(median),floor:Math.round(floor),ceiling:Math.round(ceiling),peak:Math.round(peak),dispersion:Math.round(dispersion),variance:Math.round(dispersion),consistency:Math.round(consistency),commanderDelta,coverage,dataCoverage:coverage},dimensions,roles,packages,combos,commanderSynergy:cmdSyn,commanderNames:commanders.map(c=>c.name),aeon,semantics,simulation:sim,drivers,warnings,methodology:{iterations,firstAccessIterations,model:'sequence-access-v3.3-semantic',maxTurn:7,commandZoneCount:commanders.length,separateCommanderTax:multi,curveMeaning:'Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.',commanderMechanics:sim.commanderMechanics||null,comboSignal,limitations,cardSemantics:{artifactVersion:semantics.artifactVersion,source:'rules-v2',exact:semantics.exact,partial:semantics.partial,refused:semantics.refused,uncompiled:semantics.uncompiled,unknownToArtifact:semantics.unknownToArtifact,bridged:semantics.bridged,rolesAdded:semantics.rolesAdded}}}
   result.experience=buildExperienceFingerprint(result,cards.concat(commanders))
   result.friction=buildTableFriction(result,cards.concat(commanders))
   result.horizon=buildGoldfishHorizon(result)

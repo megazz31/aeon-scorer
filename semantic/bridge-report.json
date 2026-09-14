@@ -1,0 +1,1912 @@
+{
+  "iterations": 3000,
+  "semanticArtifact": {
+    "schemaVersion": 1,
+    "source": {
+      "repository": "MonSimulateur-MTG",
+      "corpus": "fixtures/rules-v2/archidekt-13.json",
+      "corpusSha256": "2d811dcf0c3a51cb0d876af288f5512f9741c970042c58aa179efa50ad690500",
+      "compiler": "src/rules-v2/compiler/semanticAbilityCompilerV3.js",
+      "compilerSha256": "f24bfb26841871ec78a1f5f5d604513cae7d92291f1c44c9742acccc2d07dce5",
+      "certification": "src/rules-v2/diagnostics/finalAutomationCertification.js",
+      "certificationSha256": "56a0095b568f0effa18beef1adcd8cee4d86946fb50298ab19c96dd3b247f192"
+    },
+    "corpus": {
+      "deckCount": 12,
+      "uniqueAbilityCount": 1961,
+      "certificationOk": false
+    },
+    "counts": {
+      "cards": 1064,
+      "exact": 176,
+      "partial": 255,
+      "refused": 588,
+      "uncompiled": 45
+    }
+  },
+  "totals": {
+    "uniqueCards": 852,
+    "artifact": {
+      "cards": 1064,
+      "exact": 176,
+      "partial": 255,
+      "refused": 588,
+      "uncompiled": 45
+    },
+    "bridgedCards": 29,
+    "tagsAdded": {
+      "mana": 26,
+      "removal": 3
+    },
+    "withRoleBefore": 709,
+    "withRoleAfter": 728,
+    "withRoleCards": 852,
+    "cardsWithoutRoleBefore": 143,
+    "cardsWithoutRoleAfter": 124
+  },
+  "decks": [
+    {
+      "id": "26158095",
+      "name": "Lazav V20.4",
+      "commanders": [
+        "Lazav, the Multifarious"
+      ],
+      "before": {
+        "profile": {
+          "median": 55,
+          "p20": 44,
+          "p80": 66,
+          "peak": 85,
+          "dispersion": 22,
+          "consistency": 64,
+          "coverage": 91
+        },
+        "dimensions": {
+          "speed": 59,
+          "consistency": 64,
+          "explosiveness": 11,
+          "synergy": 61,
+          "interaction": 62,
+          "resilience": 38
+        },
+        "roles": {
+          "lands": 36,
+          "nonlands": 63,
+          "fastMana": 0,
+          "tutors": 0,
+          "repeatableTutors": 0,
+          "draw": 14,
+          "interaction": 10,
+          "protection": 2,
+          "recursion": 1,
+          "wipes": 0,
+          "avgCmc": 2.4444444444444446,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "graveyard",
+            "strength": 80,
+            "producers": 10,
+            "payoffs": 2
+          },
+          {
+            "id": "lands",
+            "strength": 57,
+            "producers": 3,
+            "payoffs": 2
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 90,
+          "withRole": 67,
+          "withHeuristicRole": 67,
+          "withoutRole": 23,
+          "artifact": {
+            "exact": 24,
+            "partial": 17,
+            "refused": 45,
+            "uncompiled": 4,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 49,
+            "bridged": 5,
+            "tagsAdded": {
+              "mana": 5
+            }
+          }
+        }
+      },
+      "after": {
+        "profile": {
+          "median": 55,
+          "p20": 44,
+          "p80": 66,
+          "peak": 85,
+          "dispersion": 22,
+          "consistency": 64,
+          "coverage": 91
+        },
+        "dimensions": {
+          "speed": 59,
+          "consistency": 64,
+          "explosiveness": 11,
+          "synergy": 61,
+          "interaction": 62,
+          "resilience": 38
+        },
+        "roles": {
+          "lands": 36,
+          "nonlands": 63,
+          "fastMana": 0,
+          "tutors": 0,
+          "repeatableTutors": 0,
+          "draw": 14,
+          "interaction": 10,
+          "protection": 2,
+          "recursion": 1,
+          "wipes": 0,
+          "avgCmc": 2.4444444444444446,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "graveyard",
+            "strength": 80,
+            "producers": 10,
+            "payoffs": 2
+          },
+          {
+            "id": "lands",
+            "strength": 57,
+            "producers": 3,
+            "payoffs": 2
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 90,
+          "withRole": 71,
+          "withHeuristicRole": 67,
+          "withoutRole": 19,
+          "artifact": {
+            "exact": 24,
+            "partial": 17,
+            "refused": 45,
+            "uncompiled": 4,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 49,
+            "bridged": 5,
+            "tagsAdded": {
+              "mana": 5
+            }
+          }
+        }
+      },
+      "deltas": {
+        "median": 0,
+        "p20": 0,
+        "p80": 0,
+        "peak": 0,
+        "consistency": 0,
+        "packagesBefore": "graveyard,lands",
+        "packagesAfter": "graveyard,lands"
+      }
+    },
+    {
+      "id": "26066137",
+      "name": "Far fortune v20.4",
+      "commanders": [
+        "Far Fortune, End Boss",
+        "Mogis, God of Slaughter"
+      ],
+      "before": {
+        "profile": {
+          "median": 49,
+          "p20": 38,
+          "p80": 60,
+          "peak": 85,
+          "dispersion": 22,
+          "consistency": 63,
+          "coverage": 92
+        },
+        "dimensions": {
+          "speed": 45,
+          "consistency": 63,
+          "explosiveness": 14,
+          "synergy": 56,
+          "interaction": 67,
+          "resilience": 26
+        },
+        "roles": {
+          "lands": 40,
+          "nonlands": 58,
+          "fastMana": 0,
+          "tutors": 0,
+          "repeatableTutors": 0,
+          "draw": 6,
+          "interaction": 11,
+          "protection": 0,
+          "recursion": 1,
+          "wipes": 2,
+          "avgCmc": 2.7758620689655173,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "spells",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 2
+          },
+          {
+            "id": "sacrifice",
+            "strength": 57,
+            "producers": 2,
+            "payoffs": 3
+          },
+          {
+            "id": "graveyard",
+            "strength": 54,
+            "producers": 4,
+            "payoffs": 2
+          },
+          {
+            "id": "early-commander",
+            "strength": 44,
+            "producers": 6,
+            "payoffs": 1
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 82,
+          "withRole": 63,
+          "withHeuristicRole": 63,
+          "withoutRole": 19,
+          "artifact": {
+            "exact": 21,
+            "partial": 14,
+            "refused": 42,
+            "uncompiled": 5,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 47,
+            "bridged": 6,
+            "tagsAdded": {
+              "mana": 4,
+              "removal": 2
+            }
+          }
+        }
+      },
+      "after": {
+        "profile": {
+          "median": 50,
+          "p20": 40,
+          "p80": 60,
+          "peak": 86,
+          "dispersion": 20,
+          "consistency": 63,
+          "coverage": 92
+        },
+        "dimensions": {
+          "speed": 45,
+          "consistency": 63,
+          "explosiveness": 15,
+          "synergy": 56,
+          "interaction": 73,
+          "resilience": 26
+        },
+        "roles": {
+          "lands": 40,
+          "nonlands": 58,
+          "fastMana": 0,
+          "tutors": 0,
+          "repeatableTutors": 0,
+          "draw": 6,
+          "interaction": 13,
+          "protection": 0,
+          "recursion": 1,
+          "wipes": 2,
+          "avgCmc": 2.7758620689655173,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "spells",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 2
+          },
+          {
+            "id": "sacrifice",
+            "strength": 57,
+            "producers": 2,
+            "payoffs": 3
+          },
+          {
+            "id": "graveyard",
+            "strength": 54,
+            "producers": 4,
+            "payoffs": 2
+          },
+          {
+            "id": "early-commander",
+            "strength": 44,
+            "producers": 6,
+            "payoffs": 1
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 82,
+          "withRole": 68,
+          "withHeuristicRole": 63,
+          "withoutRole": 14,
+          "artifact": {
+            "exact": 21,
+            "partial": 14,
+            "refused": 42,
+            "uncompiled": 5,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 47,
+            "bridged": 6,
+            "tagsAdded": {
+              "mana": 4,
+              "removal": 2
+            }
+          }
+        }
+      },
+      "deltas": {
+        "median": 1,
+        "p20": 2,
+        "p80": 0,
+        "peak": 1,
+        "consistency": 0,
+        "packagesBefore": "early-commander,graveyard,sacrifice,spells",
+        "packagesAfter": "early-commander,graveyard,sacrifice,spells"
+      }
+    },
+    {
+      "id": "18888572",
+      "name": "hei bai fun and friendly (as much as possible)",
+      "commanders": [
+        "Hei Bai, Forest Guardian"
+      ],
+      "before": {
+        "profile": {
+          "median": 53,
+          "p20": 39,
+          "p80": 63,
+          "peak": 88,
+          "dispersion": 24,
+          "consistency": 60,
+          "coverage": 94
+        },
+        "dimensions": {
+          "speed": 51,
+          "consistency": 60,
+          "explosiveness": 9,
+          "synergy": 72,
+          "interaction": 42,
+          "resilience": 47
+        },
+        "roles": {
+          "lands": 35,
+          "nonlands": 64,
+          "fastMana": 0,
+          "tutors": 0,
+          "repeatableTutors": 0,
+          "draw": 9,
+          "interaction": 7,
+          "protection": 12,
+          "recursion": 2,
+          "wipes": 1,
+          "avgCmc": 2.8125,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "blink-etb",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 10
+          },
+          {
+            "id": "constellation",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 4
+          },
+          {
+            "id": "early-commander",
+            "strength": 59,
+            "producers": 10,
+            "payoffs": 1
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 97,
+          "withRole": 80,
+          "withHeuristicRole": 80,
+          "withoutRole": 17,
+          "artifact": {
+            "exact": 30,
+            "partial": 25,
+            "refused": 41,
+            "uncompiled": 1,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 42,
+            "bridged": 12,
+            "tagsAdded": {
+              "mana": 11,
+              "removal": 1
+            }
+          }
+        }
+      },
+      "after": {
+        "profile": {
+          "median": 53,
+          "p20": 41,
+          "p80": 63,
+          "peak": 88,
+          "dispersion": 23,
+          "consistency": 60,
+          "coverage": 94
+        },
+        "dimensions": {
+          "speed": 51,
+          "consistency": 60,
+          "explosiveness": 9,
+          "synergy": 72,
+          "interaction": 45,
+          "resilience": 47
+        },
+        "roles": {
+          "lands": 35,
+          "nonlands": 64,
+          "fastMana": 0,
+          "tutors": 0,
+          "repeatableTutors": 0,
+          "draw": 9,
+          "interaction": 8,
+          "protection": 12,
+          "recursion": 2,
+          "wipes": 1,
+          "avgCmc": 2.8125,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "blink-etb",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 10
+          },
+          {
+            "id": "constellation",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 4
+          },
+          {
+            "id": "early-commander",
+            "strength": 59,
+            "producers": 10,
+            "payoffs": 1
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 97,
+          "withRole": 91,
+          "withHeuristicRole": 80,
+          "withoutRole": 6,
+          "artifact": {
+            "exact": 30,
+            "partial": 25,
+            "refused": 41,
+            "uncompiled": 1,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 42,
+            "bridged": 12,
+            "tagsAdded": {
+              "mana": 11,
+              "removal": 1
+            }
+          }
+        }
+      },
+      "deltas": {
+        "median": 0,
+        "p20": 2,
+        "p80": 0,
+        "peak": 0,
+        "consistency": 0,
+        "packagesBefore": "blink-etb,constellation,early-commander",
+        "packagesAfter": "blink-etb,constellation,early-commander"
+      }
+    },
+    {
+      "id": "26158069",
+      "name": "Urianger v20.2",
+      "commanders": [
+        "Urianger Augurelt"
+      ],
+      "before": {
+        "profile": {
+          "median": 50,
+          "p20": 41,
+          "p80": 58,
+          "peak": 80,
+          "dispersion": 17,
+          "consistency": 69,
+          "coverage": 91
+        },
+        "dimensions": {
+          "speed": 52,
+          "consistency": 69,
+          "explosiveness": 6,
+          "synergy": 51,
+          "interaction": 61,
+          "resilience": 40
+        },
+        "roles": {
+          "lands": 36,
+          "nonlands": 63,
+          "fastMana": 0,
+          "tutors": 0,
+          "repeatableTutors": 0,
+          "draw": 16,
+          "interaction": 11,
+          "protection": 4,
+          "recursion": 1,
+          "wipes": 2,
+          "avgCmc": 2.8095238095238093,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "lifegain",
+            "strength": 64,
+            "producers": 5,
+            "payoffs": 3
+          },
+          {
+            "id": "lands",
+            "strength": 57,
+            "producers": 3,
+            "payoffs": 2
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 88,
+          "withRole": 67,
+          "withHeuristicRole": 67,
+          "withoutRole": 21,
+          "artifact": {
+            "exact": 21,
+            "partial": 13,
+            "refused": 53,
+            "uncompiled": 1,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 54,
+            "bridged": 5,
+            "tagsAdded": {
+              "mana": 5
+            }
+          }
+        }
+      },
+      "after": {
+        "profile": {
+          "median": 50,
+          "p20": 41,
+          "p80": 58,
+          "peak": 80,
+          "dispersion": 17,
+          "consistency": 69,
+          "coverage": 91
+        },
+        "dimensions": {
+          "speed": 52,
+          "consistency": 69,
+          "explosiveness": 6,
+          "synergy": 51,
+          "interaction": 61,
+          "resilience": 40
+        },
+        "roles": {
+          "lands": 36,
+          "nonlands": 63,
+          "fastMana": 0,
+          "tutors": 0,
+          "repeatableTutors": 0,
+          "draw": 16,
+          "interaction": 11,
+          "protection": 4,
+          "recursion": 1,
+          "wipes": 2,
+          "avgCmc": 2.8095238095238093,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "lifegain",
+            "strength": 64,
+            "producers": 5,
+            "payoffs": 3
+          },
+          {
+            "id": "lands",
+            "strength": 57,
+            "producers": 3,
+            "payoffs": 2
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 88,
+          "withRole": 71,
+          "withHeuristicRole": 67,
+          "withoutRole": 17,
+          "artifact": {
+            "exact": 21,
+            "partial": 13,
+            "refused": 53,
+            "uncompiled": 1,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 54,
+            "bridged": 5,
+            "tagsAdded": {
+              "mana": 5
+            }
+          }
+        }
+      },
+      "deltas": {
+        "median": 0,
+        "p20": 0,
+        "p80": 0,
+        "peak": 0,
+        "consistency": 0,
+        "packagesBefore": "lands,lifegain",
+        "packagesAfter": "lands,lifegain"
+      }
+    },
+    {
+      "id": "25942927",
+      "name": "Omo v21",
+      "commanders": [
+        "Omo, Queen of Vesuva"
+      ],
+      "before": {
+        "profile": {
+          "median": 46,
+          "p20": 35,
+          "p80": 55,
+          "peak": 82,
+          "dispersion": 20,
+          "consistency": 69,
+          "coverage": 91
+        },
+        "dimensions": {
+          "speed": 44,
+          "consistency": 69,
+          "explosiveness": 11,
+          "synergy": 55,
+          "interaction": 37,
+          "resilience": 44
+        },
+        "roles": {
+          "lands": 37,
+          "nonlands": 62,
+          "fastMana": 0,
+          "tutors": 2,
+          "repeatableTutors": 0,
+          "draw": 9,
+          "interaction": 7,
+          "protection": 3,
+          "recursion": 5,
+          "wipes": 1,
+          "avgCmc": 3.064516129032258,
+          "unknownManaLands": 2
+        },
+        "packages": [
+          {
+            "id": "lands",
+            "strength": 80,
+            "producers": 9,
+            "payoffs": 3
+          },
+          {
+            "id": "graveyard",
+            "strength": 71,
+            "producers": 5,
+            "payoffs": 5
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 97,
+          "withRole": 76,
+          "withHeuristicRole": 76,
+          "withoutRole": 21,
+          "artifact": {
+            "exact": 16,
+            "partial": 34,
+            "refused": 45,
+            "uncompiled": 2,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 47,
+            "bridged": 4,
+            "tagsAdded": {
+              "mana": 4
+            }
+          }
+        }
+      },
+      "after": {
+        "profile": {
+          "median": 46,
+          "p20": 35,
+          "p80": 55,
+          "peak": 82,
+          "dispersion": 20,
+          "consistency": 69,
+          "coverage": 91
+        },
+        "dimensions": {
+          "speed": 44,
+          "consistency": 69,
+          "explosiveness": 11,
+          "synergy": 55,
+          "interaction": 37,
+          "resilience": 44
+        },
+        "roles": {
+          "lands": 37,
+          "nonlands": 62,
+          "fastMana": 0,
+          "tutors": 2,
+          "repeatableTutors": 0,
+          "draw": 9,
+          "interaction": 7,
+          "protection": 3,
+          "recursion": 5,
+          "wipes": 1,
+          "avgCmc": 3.064516129032258,
+          "unknownManaLands": 2
+        },
+        "packages": [
+          {
+            "id": "lands",
+            "strength": 80,
+            "producers": 9,
+            "payoffs": 3
+          },
+          {
+            "id": "graveyard",
+            "strength": 71,
+            "producers": 5,
+            "payoffs": 5
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 97,
+          "withRole": 79,
+          "withHeuristicRole": 76,
+          "withoutRole": 18,
+          "artifact": {
+            "exact": 16,
+            "partial": 34,
+            "refused": 45,
+            "uncompiled": 2,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 47,
+            "bridged": 4,
+            "tagsAdded": {
+              "mana": 4
+            }
+          }
+        }
+      },
+      "deltas": {
+        "median": 0,
+        "p20": 0,
+        "p80": 0,
+        "peak": 0,
+        "consistency": 0,
+        "packagesBefore": "graveyard,lands",
+        "packagesAfter": "graveyard,lands"
+      }
+    },
+    {
+      "id": "25859452",
+      "name": "Magar v20.1",
+      "commanders": [
+        "Magar of the Magic Strings"
+      ],
+      "before": {
+        "profile": {
+          "median": 54,
+          "p20": 40,
+          "p80": 68,
+          "peak": 87,
+          "dispersion": 28,
+          "consistency": 59,
+          "coverage": 92
+        },
+        "dimensions": {
+          "speed": 46,
+          "consistency": 59,
+          "explosiveness": 27,
+          "synergy": 72,
+          "interaction": 45,
+          "resilience": 55
+        },
+        "roles": {
+          "lands": 37,
+          "nonlands": 62,
+          "fastMana": 2,
+          "tutors": 1,
+          "repeatableTutors": 1,
+          "draw": 20,
+          "interaction": 9,
+          "protection": 2,
+          "recursion": 6,
+          "wipes": 4,
+          "avgCmc": 3.7419354838709675,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "graveyard",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 7
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 93,
+          "withRole": 77,
+          "withHeuristicRole": 77,
+          "withoutRole": 16,
+          "artifact": {
+            "exact": 24,
+            "partial": 27,
+            "refused": 40,
+            "uncompiled": 2,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 42,
+            "bridged": 5,
+            "tagsAdded": {
+              "mana": 5
+            }
+          }
+        }
+      },
+      "after": {
+        "profile": {
+          "median": 54,
+          "p20": 40,
+          "p80": 68,
+          "peak": 87,
+          "dispersion": 28,
+          "consistency": 59,
+          "coverage": 92
+        },
+        "dimensions": {
+          "speed": 46,
+          "consistency": 59,
+          "explosiveness": 27,
+          "synergy": 72,
+          "interaction": 45,
+          "resilience": 55
+        },
+        "roles": {
+          "lands": 37,
+          "nonlands": 62,
+          "fastMana": 2,
+          "tutors": 1,
+          "repeatableTutors": 1,
+          "draw": 20,
+          "interaction": 9,
+          "protection": 2,
+          "recursion": 6,
+          "wipes": 4,
+          "avgCmc": 3.7419354838709675,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "graveyard",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 7
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 93,
+          "withRole": 81,
+          "withHeuristicRole": 77,
+          "withoutRole": 12,
+          "artifact": {
+            "exact": 24,
+            "partial": 27,
+            "refused": 40,
+            "uncompiled": 2,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 42,
+            "bridged": 5,
+            "tagsAdded": {
+              "mana": 5
+            }
+          }
+        }
+      },
+      "deltas": {
+        "median": 0,
+        "p20": 0,
+        "p80": 0,
+        "peak": 0,
+        "consistency": 0,
+        "packagesBefore": "graveyard",
+        "packagesAfter": "graveyard"
+      }
+    },
+    {
+      "id": "25811073",
+      "name": "Wick v25",
+      "commanders": [
+        "Wick, the Whorled Mind"
+      ],
+      "before": {
+        "profile": {
+          "median": 55,
+          "p20": 42,
+          "p80": 69,
+          "peak": 89,
+          "dispersion": 28,
+          "consistency": 55,
+          "coverage": 90
+        },
+        "dimensions": {
+          "speed": 55,
+          "consistency": 55,
+          "explosiveness": 11,
+          "synergy": 79,
+          "interaction": 61,
+          "resilience": 58
+        },
+        "roles": {
+          "lands": 36,
+          "nonlands": 63,
+          "fastMana": 1,
+          "tutors": 0,
+          "repeatableTutors": 0,
+          "draw": 4,
+          "interaction": 9,
+          "protection": 0,
+          "recursion": 9,
+          "wipes": 1,
+          "avgCmc": 2.1746031746031744,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "graveyard",
+            "strength": 94,
+            "producers": 7,
+            "payoffs": 10
+          },
+          {
+            "id": "sacrifice",
+            "strength": 84,
+            "producers": 5,
+            "payoffs": 6
+          },
+          {
+            "id": "early-commander",
+            "strength": 41,
+            "producers": 5,
+            "payoffs": 1
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 84,
+          "withRole": 69,
+          "withHeuristicRole": 69,
+          "withoutRole": 15,
+          "artifact": {
+            "exact": 21,
+            "partial": 21,
+            "refused": 37,
+            "uncompiled": 5,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 42,
+            "bridged": 6,
+            "tagsAdded": {
+              "mana": 6
+            }
+          }
+        }
+      },
+      "after": {
+        "profile": {
+          "median": 55,
+          "p20": 42,
+          "p80": 69,
+          "peak": 89,
+          "dispersion": 28,
+          "consistency": 55,
+          "coverage": 90
+        },
+        "dimensions": {
+          "speed": 55,
+          "consistency": 55,
+          "explosiveness": 11,
+          "synergy": 79,
+          "interaction": 61,
+          "resilience": 58
+        },
+        "roles": {
+          "lands": 36,
+          "nonlands": 63,
+          "fastMana": 1,
+          "tutors": 0,
+          "repeatableTutors": 0,
+          "draw": 4,
+          "interaction": 9,
+          "protection": 0,
+          "recursion": 9,
+          "wipes": 1,
+          "avgCmc": 2.1746031746031744,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "graveyard",
+            "strength": 94,
+            "producers": 7,
+            "payoffs": 10
+          },
+          {
+            "id": "sacrifice",
+            "strength": 84,
+            "producers": 5,
+            "payoffs": 6
+          },
+          {
+            "id": "early-commander",
+            "strength": 41,
+            "producers": 5,
+            "payoffs": 1
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 84,
+          "withRole": 75,
+          "withHeuristicRole": 69,
+          "withoutRole": 9,
+          "artifact": {
+            "exact": 21,
+            "partial": 21,
+            "refused": 37,
+            "uncompiled": 5,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 42,
+            "bridged": 6,
+            "tagsAdded": {
+              "mana": 6
+            }
+          }
+        }
+      },
+      "deltas": {
+        "median": 0,
+        "p20": 0,
+        "p80": 0,
+        "peak": 0,
+        "consistency": 0,
+        "packagesBefore": "early-commander,graveyard,sacrifice",
+        "packagesAfter": "early-commander,graveyard,sacrifice"
+      }
+    },
+    {
+      "id": "25464836",
+      "name": "Arabella, strong but not disgusting for others",
+      "commanders": [
+        "Arabella, Abandoned Doll"
+      ],
+      "before": {
+        "profile": {
+          "median": 57,
+          "p20": 45,
+          "p80": 69,
+          "peak": 87,
+          "dispersion": 25,
+          "consistency": 57,
+          "coverage": 94
+        },
+        "dimensions": {
+          "speed": 63,
+          "consistency": 57,
+          "explosiveness": 16,
+          "synergy": 63,
+          "interaction": 62,
+          "resilience": 46
+        },
+        "roles": {
+          "lands": 36,
+          "nonlands": 63,
+          "fastMana": 1,
+          "tutors": 0,
+          "repeatableTutors": 0,
+          "draw": 8,
+          "interaction": 11,
+          "protection": 8,
+          "recursion": 2,
+          "wipes": 2,
+          "avgCmc": 2.4285714285714284,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "tokens",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 6
+          },
+          {
+            "id": "graveyard",
+            "strength": 59,
+            "producers": 2,
+            "payoffs": 2
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 82,
+          "withRole": 75,
+          "withHeuristicRole": 75,
+          "withoutRole": 7,
+          "artifact": {
+            "exact": 16,
+            "partial": 15,
+            "refused": 46,
+            "uncompiled": 5,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 51,
+            "bridged": 3,
+            "tagsAdded": {
+              "mana": 3
+            }
+          }
+        }
+      },
+      "after": {
+        "profile": {
+          "median": 57,
+          "p20": 45,
+          "p80": 69,
+          "peak": 87,
+          "dispersion": 25,
+          "consistency": 57,
+          "coverage": 94
+        },
+        "dimensions": {
+          "speed": 63,
+          "consistency": 57,
+          "explosiveness": 16,
+          "synergy": 63,
+          "interaction": 62,
+          "resilience": 46
+        },
+        "roles": {
+          "lands": 36,
+          "nonlands": 63,
+          "fastMana": 1,
+          "tutors": 0,
+          "repeatableTutors": 0,
+          "draw": 8,
+          "interaction": 11,
+          "protection": 8,
+          "recursion": 2,
+          "wipes": 2,
+          "avgCmc": 2.4285714285714284,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "tokens",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 6
+          },
+          {
+            "id": "graveyard",
+            "strength": 59,
+            "producers": 2,
+            "payoffs": 2
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 82,
+          "withRole": 78,
+          "withHeuristicRole": 75,
+          "withoutRole": 4,
+          "artifact": {
+            "exact": 16,
+            "partial": 15,
+            "refused": 46,
+            "uncompiled": 5,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 51,
+            "bridged": 3,
+            "tagsAdded": {
+              "mana": 3
+            }
+          }
+        }
+      },
+      "deltas": {
+        "median": 0,
+        "p20": 0,
+        "p80": 0,
+        "peak": 0,
+        "consistency": 0,
+        "packagesBefore": "graveyard,tokens",
+        "packagesAfter": "graveyard,tokens"
+      }
+    },
+    {
+      "id": "25770580",
+      "name": "Kodama strong",
+      "commanders": [],
+      "before": {
+        "profile": {
+          "median": 45,
+          "p20": 31,
+          "p80": 56,
+          "peak": 79,
+          "dispersion": 25,
+          "consistency": 64,
+          "coverage": 94
+        },
+        "dimensions": {
+          "speed": 42,
+          "consistency": 64,
+          "explosiveness": 10,
+          "synergy": 63,
+          "interaction": 38,
+          "resilience": 34
+        },
+        "roles": {
+          "lands": 35,
+          "nonlands": 65,
+          "fastMana": 1,
+          "tutors": 2,
+          "repeatableTutors": 0,
+          "draw": 8,
+          "interaction": 6,
+          "protection": 10,
+          "recursion": 1,
+          "wipes": 0,
+          "avgCmc": 3.2153846153846155,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "counters",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 10
+          },
+          {
+            "id": "lands",
+            "strength": 67,
+            "producers": 3,
+            "payoffs": 3
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 73,
+          "withRole": 67,
+          "withHeuristicRole": 67,
+          "withoutRole": 6,
+          "artifact": {
+            "exact": 3,
+            "partial": 20,
+            "refused": 45,
+            "uncompiled": 5,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 50,
+            "bridged": 1,
+            "tagsAdded": {
+              "mana": 1
+            }
+          }
+        }
+      },
+      "after": {
+        "profile": {
+          "median": 45,
+          "p20": 31,
+          "p80": 56,
+          "peak": 79,
+          "dispersion": 25,
+          "consistency": 64,
+          "coverage": 94
+        },
+        "dimensions": {
+          "speed": 42,
+          "consistency": 64,
+          "explosiveness": 10,
+          "synergy": 63,
+          "interaction": 38,
+          "resilience": 34
+        },
+        "roles": {
+          "lands": 35,
+          "nonlands": 65,
+          "fastMana": 1,
+          "tutors": 2,
+          "repeatableTutors": 0,
+          "draw": 8,
+          "interaction": 6,
+          "protection": 10,
+          "recursion": 1,
+          "wipes": 0,
+          "avgCmc": 3.2153846153846155,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "counters",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 10
+          },
+          {
+            "id": "lands",
+            "strength": 67,
+            "producers": 3,
+            "payoffs": 3
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 73,
+          "withRole": 68,
+          "withHeuristicRole": 67,
+          "withoutRole": 5,
+          "artifact": {
+            "exact": 3,
+            "partial": 20,
+            "refused": 45,
+            "uncompiled": 5,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 50,
+            "bridged": 1,
+            "tagsAdded": {
+              "mana": 1
+            }
+          }
+        }
+      },
+      "deltas": {
+        "median": 0,
+        "p20": 0,
+        "p80": 0,
+        "peak": 0,
+        "consistency": 0,
+        "packagesBefore": "counters,lands",
+        "packagesAfter": "counters,lands"
+      }
+    },
+    {
+      "id": "25449616",
+      "name": "Clavileno upgraded",
+      "commanders": [
+        "Clavileño, First of the Blessed"
+      ],
+      "before": {
+        "profile": {
+          "median": 60,
+          "p20": 50,
+          "p80": 72,
+          "peak": 89,
+          "dispersion": 22,
+          "consistency": 62,
+          "coverage": 95
+        },
+        "dimensions": {
+          "speed": 59,
+          "consistency": 62,
+          "explosiveness": 14,
+          "synergy": 100,
+          "interaction": 41,
+          "resilience": 51
+        },
+        "roles": {
+          "lands": 38,
+          "nonlands": 61,
+          "fastMana": 2,
+          "tutors": 0,
+          "repeatableTutors": 0,
+          "draw": 14,
+          "interaction": 5,
+          "protection": 3,
+          "recursion": 5,
+          "wipes": 1,
+          "avgCmc": 2.6885245901639343,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "sacrifice",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 10
+          },
+          {
+            "id": "lifegain",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 2
+          },
+          {
+            "id": "tokens",
+            "strength": 97,
+            "producers": 10,
+            "payoffs": 2
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 81,
+          "withRole": 76,
+          "withHeuristicRole": 76,
+          "withoutRole": 5,
+          "artifact": {
+            "exact": 20,
+            "partial": 16,
+            "refused": 42,
+            "uncompiled": 3,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 45,
+            "bridged": 3,
+            "tagsAdded": {
+              "mana": 3
+            }
+          }
+        }
+      },
+      "after": {
+        "profile": {
+          "median": 60,
+          "p20": 50,
+          "p80": 72,
+          "peak": 89,
+          "dispersion": 22,
+          "consistency": 62,
+          "coverage": 95
+        },
+        "dimensions": {
+          "speed": 59,
+          "consistency": 62,
+          "explosiveness": 14,
+          "synergy": 100,
+          "interaction": 41,
+          "resilience": 51
+        },
+        "roles": {
+          "lands": 38,
+          "nonlands": 61,
+          "fastMana": 2,
+          "tutors": 0,
+          "repeatableTutors": 0,
+          "draw": 14,
+          "interaction": 5,
+          "protection": 3,
+          "recursion": 5,
+          "wipes": 1,
+          "avgCmc": 2.6885245901639343,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "sacrifice",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 10
+          },
+          {
+            "id": "lifegain",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 2
+          },
+          {
+            "id": "tokens",
+            "strength": 97,
+            "producers": 10,
+            "payoffs": 2
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 81,
+          "withRole": 79,
+          "withHeuristicRole": 76,
+          "withoutRole": 2,
+          "artifact": {
+            "exact": 20,
+            "partial": 16,
+            "refused": 42,
+            "uncompiled": 3,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 45,
+            "bridged": 3,
+            "tagsAdded": {
+              "mana": 3
+            }
+          }
+        }
+      },
+      "deltas": {
+        "median": 0,
+        "p20": 0,
+        "p80": 0,
+        "peak": 0,
+        "consistency": 0,
+        "packagesBefore": "lifegain,sacrifice,tokens",
+        "packagesAfter": "lifegain,sacrifice,tokens"
+      }
+    },
+    {
+      "id": "24925767",
+      "name": "Torgal Fine Hound - flash",
+      "commanders": [
+        "Torgal, A Fine Hound"
+      ],
+      "before": {
+        "profile": {
+          "median": 51,
+          "p20": 41,
+          "p80": 60,
+          "peak": 81,
+          "dispersion": 19,
+          "consistency": 67,
+          "coverage": 92
+        },
+        "dimensions": {
+          "speed": 51,
+          "consistency": 67,
+          "explosiveness": 9,
+          "synergy": 84,
+          "interaction": 40,
+          "resilience": 35
+        },
+        "roles": {
+          "lands": 35,
+          "nonlands": 64,
+          "fastMana": 0,
+          "tutors": 0,
+          "repeatableTutors": 0,
+          "draw": 11,
+          "interaction": 6,
+          "protection": 4,
+          "recursion": 1,
+          "wipes": 0,
+          "avgCmc": 2.859375,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "counters",
+            "strength": 92,
+            "producers": 10,
+            "payoffs": 2
+          },
+          {
+            "id": "lands",
+            "strength": 57,
+            "producers": 3,
+            "payoffs": 2
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 76,
+          "withRole": 62,
+          "withHeuristicRole": 62,
+          "withoutRole": 14,
+          "artifact": {
+            "exact": 7,
+            "partial": 26,
+            "refused": 38,
+            "uncompiled": 5,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 43,
+            "bridged": 1,
+            "tagsAdded": {
+              "mana": 1
+            }
+          }
+        }
+      },
+      "after": {
+        "profile": {
+          "median": 51,
+          "p20": 41,
+          "p80": 60,
+          "peak": 81,
+          "dispersion": 19,
+          "consistency": 67,
+          "coverage": 92
+        },
+        "dimensions": {
+          "speed": 51,
+          "consistency": 67,
+          "explosiveness": 9,
+          "synergy": 84,
+          "interaction": 40,
+          "resilience": 35
+        },
+        "roles": {
+          "lands": 35,
+          "nonlands": 64,
+          "fastMana": 0,
+          "tutors": 0,
+          "repeatableTutors": 0,
+          "draw": 11,
+          "interaction": 6,
+          "protection": 4,
+          "recursion": 1,
+          "wipes": 0,
+          "avgCmc": 2.859375,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "counters",
+            "strength": 92,
+            "producers": 10,
+            "payoffs": 2
+          },
+          {
+            "id": "lands",
+            "strength": 57,
+            "producers": 3,
+            "payoffs": 2
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 76,
+          "withRole": 63,
+          "withHeuristicRole": 62,
+          "withoutRole": 13,
+          "artifact": {
+            "exact": 7,
+            "partial": 26,
+            "refused": 38,
+            "uncompiled": 5,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 43,
+            "bridged": 1,
+            "tagsAdded": {
+              "mana": 1
+            }
+          }
+        }
+      },
+      "deltas": {
+        "median": 0,
+        "p20": 0,
+        "p80": 0,
+        "peak": 0,
+        "consistency": 0,
+        "packagesBefore": "counters,lands",
+        "packagesAfter": "counters,lands"
+      }
+    },
+    {
+      "id": "25449328",
+      "name": "Zur, fun and friendly",
+      "commanders": [
+        "Zur, Eternal Schemer"
+      ],
+      "before": {
+        "profile": {
+          "median": 51,
+          "p20": 39,
+          "p80": 62,
+          "peak": 87,
+          "dispersion": 23,
+          "consistency": 64,
+          "coverage": 93
+        },
+        "dimensions": {
+          "speed": 44,
+          "consistency": 64,
+          "explosiveness": 12,
+          "synergy": 96,
+          "interaction": 26,
+          "resilience": 49
+        },
+        "roles": {
+          "lands": 36,
+          "nonlands": 63,
+          "fastMana": 1,
+          "tutors": 1,
+          "repeatableTutors": 0,
+          "draw": 17,
+          "interaction": 4,
+          "protection": 2,
+          "recursion": 5,
+          "wipes": 1,
+          "avgCmc": 3.619047619047619,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "constellation",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 4
+          },
+          {
+            "id": "graveyard",
+            "strength": 90,
+            "producers": 9,
+            "payoffs": 6
+          },
+          {
+            "id": "blink-etb",
+            "strength": 89,
+            "producers": 2,
+            "payoffs": 10
+          },
+          {
+            "id": "lifegain",
+            "strength": 60,
+            "producers": 5,
+            "payoffs": 2
+          },
+          {
+            "id": "counters",
+            "strength": 59,
+            "producers": 6,
+            "payoffs": 2
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 95,
+          "withRole": 80,
+          "withHeuristicRole": 80,
+          "withoutRole": 15,
+          "artifact": {
+            "exact": 22,
+            "partial": 20,
+            "refused": 41,
+            "uncompiled": 12,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 53,
+            "bridged": 10,
+            "tagsAdded": {
+              "mana": 10
+            }
+          }
+        }
+      },
+      "after": {
+        "profile": {
+          "median": 51,
+          "p20": 39,
+          "p80": 62,
+          "peak": 87,
+          "dispersion": 23,
+          "consistency": 64,
+          "coverage": 93
+        },
+        "dimensions": {
+          "speed": 44,
+          "consistency": 64,
+          "explosiveness": 12,
+          "synergy": 96,
+          "interaction": 26,
+          "resilience": 49
+        },
+        "roles": {
+          "lands": 36,
+          "nonlands": 63,
+          "fastMana": 1,
+          "tutors": 1,
+          "repeatableTutors": 0,
+          "draw": 17,
+          "interaction": 4,
+          "protection": 2,
+          "recursion": 5,
+          "wipes": 1,
+          "avgCmc": 3.619047619047619,
+          "unknownManaLands": 0
+        },
+        "packages": [
+          {
+            "id": "constellation",
+            "strength": 100,
+            "producers": 10,
+            "payoffs": 4
+          },
+          {
+            "id": "graveyard",
+            "strength": 90,
+            "producers": 9,
+            "payoffs": 6
+          },
+          {
+            "id": "blink-etb",
+            "strength": 89,
+            "producers": 2,
+            "payoffs": 10
+          },
+          {
+            "id": "lifegain",
+            "strength": 60,
+            "producers": 5,
+            "payoffs": 2
+          },
+          {
+            "id": "counters",
+            "strength": 59,
+            "producers": 6,
+            "payoffs": 2
+          }
+        ],
+        "combos": [],
+        "coverage": {
+          "cards": 95,
+          "withRole": 86,
+          "withHeuristicRole": 80,
+          "withoutRole": 9,
+          "artifact": {
+            "exact": 22,
+            "partial": 20,
+            "refused": 41,
+            "uncompiled": 12,
+            "unknownToArtifact": 0,
+            "heuristicOnly": 53,
+            "bridged": 10,
+            "tagsAdded": {
+              "mana": 10
+            }
+          }
+        }
+      },
+      "deltas": {
+        "median": 0,
+        "p20": 0,
+        "p80": 0,
+        "peak": 0,
+        "consistency": 0,
+        "packagesBefore": "blink-etb,constellation,counters,graveyard,lifegain",
+        "packagesAfter": "blink-etb,constellation,counters,graveyard,lifegain"
+      }
+    }
+  ]
+}

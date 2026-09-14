@@ -1,3 +1,5 @@
+import { augmentRulesSemanticTags } from './rulesSemantics.js'
+
 const text=c=>String(c?.oracle||'').replace(/\([^)]*\)/g,' ').replace(/\s+/g,' ').trim().toLowerCase()
 
 export function isOracleLandRamp(card){
@@ -21,4 +23,16 @@ export function augmentFunctionalTags(card){
   return {...card,tags:[...tags,'land-ramp']}
 }
 
-export function augmentFeatureDeck(cards=[]){return (cards||[]).map(augmentFunctionalTags)}
+/**
+ * Deux passes additives, dans cet ordre :
+ * 1. `augmentFunctionalTags` : rattrapage heuristique land-ramp sur le texte Oracle ;
+ * 2. `augmentRulesSemanticTags` : rôles issus de la sémantique compilée par
+ *    MonSimulateur-MTG, uniquement pour les aptitudes compilées `exact`.
+ *
+ * `options.rulesSemantics === false` désactive la seconde passe : c'est le
+ * commutateur de mesure avant/après, pas un mode de production.
+ */
+export function augmentFeatureDeck(cards=[],options={}){
+  const list=(cards||[]).map(augmentFunctionalTags)
+  return options?.rulesSemantics===false?list:list.map(augmentRulesSemanticTags)
+}

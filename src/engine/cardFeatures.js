@@ -185,14 +185,26 @@ export function sourceColors(card){
   return unique(out)
 }
 
-export function cardFeatures(card){
-  const o=lower(card),t=typeLower(card),tags=tagsFor(card),has=x=>tags.includes(x),isLand=t.includes('land'),isCreature=t.includes('creature'),cmc=Number(card.cmc||0)
+/**
+ * Contributions numériques d'un jeu de tags fonctionnels.
+ *
+ * Extrait de `cardFeatures` pour que tout consommateur qui AJOUTE un rôle
+ * (aujourd'hui le pont sémantique rules-v2) puisse recalculer les primitives
+ * dérivées au lieu de laisser un tag sans effet mesurable. Une seule formule.
+ */
+export function metricScores(card,tags){
+  const o=lower(card),has=x=>tags.includes(x)
   let development=0;if(has('mana'))development+=1;if(has('land-ramp'))development+=1;if(has('draw'))development+=1.1;if(has('tutor'))development+=1.15;if(has('tokens'))development+=.45;if(has('cheat'))development+=1.15;if(has('trigger-doubler')||has('token-doubler')||has('counter-doubler'))development+=.8
   let interaction=0;if(has('removal'))interaction+=1;if(has('tempo-interaction'))interaction+=.65;if(has('counterspell'))interaction+=1.1;if(has('wipe'))interaction+=1.5;if(has('stax'))interaction+=1
   let resilience=0;if(has('draw'))resilience+=.7;if(has('recursion'))resilience+=1;if(has('protection'))resilience+=.85
   let explosiveness=0;if(has('fast-mana'))explosiveness+=1.5;if(has('free'))explosiveness+=1.1;if(has('cheat'))explosiveness+=1.05;if(has('extra-turn'))explosiveness+=2;if(has('extra-combat'))explosiveness+=1;if(has('trigger-doubler')||has('token-doubler'))explosiveness+=.55;if(has('win'))explosiveness+=2;if(/\bstorm\b/.test(o))explosiveness+=1
   let standalone=.7;if(interaction)standalone+=.4;if(has('draw'))standalone+=.3;if(has('protection'))standalone+=.2;if(/if you control|as long as you control|only if|unless you control/.test(o))standalone-=.3;if(/whenever another|for each other|equal to the number of/.test(o))standalone-=.12;standalone=clamp(standalone,.1,1.5)
-  const recurring=/at the beginning|whenever|each [^.]* step|once each turn/.test(o)?1:0,immediacy=/enters|haste|flash/.test(o)||has('instant')?1:0,efficiency=manaValueScore(cmc)
-  return {...card,tags,isLand,isCreature,development,interaction,resilience,explosiveness,standalone,recurring,immediacy,efficiency,manaReq:manaRequirement(card),sourceColors:sourceColors(card)}
+  const recurring=/at the beginning|whenever|each [^.]* step|once each turn/.test(o)?1:0,immediacy=/enters|haste|flash/.test(o)||has('instant')?1:0
+  return {development,interaction,resilience,explosiveness,standalone,recurring,immediacy}
+}
+
+export function cardFeatures(card){
+  const t=typeLower(card),tags=tagsFor(card),isLand=t.includes('land'),isCreature=t.includes('creature'),cmc=Number(card.cmc||0)
+  return {...card,tags,isLand,isCreature,...metricScores(card,tags),efficiency:manaValueScore(cmc),manaReq:manaRequirement(card),sourceColors:sourceColors(card)}
 }
 export function featureDeck(cards){return cards.map(cardFeatures)}
