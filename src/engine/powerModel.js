@@ -9,6 +9,7 @@ import { buildTableFriction } from './frictionModel.js'
 import { buildGoldfishHorizon } from './goldfishHorizon.js'
 import { sampleFirstAccess } from './firstAccessSampler.js'
 import { aeonPriorFor } from '../data/aeonshift.js'
+import { buildScoringReliability } from './scoringReliability.js'
 
 const clamp=(n,a=0,b=100)=>Math.max(a,Math.min(b,n))
 const avg=xs=>xs.length?xs.reduce((s,x)=>s+x,0)/xs.length:0
@@ -71,6 +72,7 @@ export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=
   result.experience=buildExperienceFingerprint(result,cards.concat(commanders))
   result.friction=buildTableFriction(result,cards.concat(commanders))
   result.horizon=buildGoldfishHorizon(result)
+  result.reliability=buildScoringReliability(result)
   const detail={result,cards,commander,commanders,iterations}
   if(options?.emitProduct!==false&&typeof window!=='undefined'&&typeof window.dispatchEvent==='function'&&typeof CustomEvent!=='undefined')queueMicrotask(()=>{try{window.dispatchEvent(new CustomEvent('aeon-analysis-computed',{detail}))}catch{}})
   const hook=globalThis?.__AEON_ANALYSIS_HOOK__;if(options?.record!==false&&typeof hook==='function')queueMicrotask(()=>{try{hook(detail)}catch{}})
