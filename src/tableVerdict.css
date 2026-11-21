@@ -1,0 +1,42 @@
+.tableVerdict{background:linear-gradient(145deg,#17151d,#111015);border:1px solid #302b3d;border-radius:24px;padding:24px;margin:0 0 22px;color:#f2eff8;box-shadow:0 20px 70px rgba(0,0,0,.3)}
+.tableVerdict.compact{padding:18px;border-radius:18px}
+.tvHead{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:18px;flex-wrap:wrap}
+.tvHead span,.tvCard>span{font-size:11px;letter-spacing:.18em;color:#967ce1;font-weight:800;text-transform:uppercase}
+.tvHead h2{margin:6px 0 0;font-size:clamp(22px,3.4vw,30px)}
+.tvHead p{margin:0;max-width:420px;color:#a7a2b2;font-size:13px;line-height:1.5}
+.tvCards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tvCard{background:#1d1a24;border:1px solid #2b2735;border-radius:18px;padding:16px;min-width:0}
+.tvCard strong{display:block;font-size:44px;line-height:1.05;margin:6px 0 4px;color:#e6deff}
+.tvCard small{display:block;color:#aaa4b8;font-size:12px;line-height:1.45}
+.tvCard p{margin:10px 0 0;color:#a7a2b2;font-size:13px;line-height:1.5}
+.tvCharter.status-ok strong{color:#8fe0b0}.tvCharter.status-announce strong{color:#f2d27a}.tvCharter.status-discuss strong{color:#f5a96b}.tvCharter.status-out strong{color:#f58b9f}
+.tvCharter strong{font-size:28px;margin:8px 0}
+.tvPresets{display:flex;gap:6px;flex-wrap:wrap}
+.tvPresets button{border:1px solid #51476b;background:#211c2b;color:#eee9ff;border-radius:10px;padding:6px 10px;font-weight:700;cursor:pointer}
+.tvPresets button.active{background:#967ce1;color:#100e15;border-color:#967ce1}
+.tvTurns{display:flex;gap:6px;align-items:flex-end;height:150px;margin:20px 0 6px;padding:0 2px}
+.tvTurns>div{flex:1;position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;min-width:0}
+.tvTurns i{position:absolute;bottom:34px;left:12%;right:12%;max-height:calc(100% - 34px);background:#7e66cf;border-radius:6px 6px 2px 2px}
+.tvTurns i.gold{background:#3a3150}
+.tvTurns>div.early i:not(.gold){background:#c0566f}
+.tvTurns b{position:relative;font-size:11px;color:#d9d2ee;margin-bottom:2px}
+.tvTurns small{font-size:11px;color:#8f8998;height:16px}
+.tvLegend,.tvNote{color:#8f8998;font-size:12px;line-height:1.5;margin:4px 0 0}
+.tvWarn{background:#2e2716;border:1px solid #6b5a2a;color:#f2d27a;border-radius:12px;padding:10px 12px;font-size:13px;margin:10px 0 0}
+.tvDetails{margin-top:14px;border-top:1px solid #292532;padding-top:12px}
+.tvDetails summary{cursor:pointer;font-weight:700;color:#d9d2ee}
+.tvCharterForm{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:14px 0}
+.tvCharterForm label{display:flex;flex-direction:column;gap:5px;font-size:12px;color:#aaa4b8}
+.tvCharterForm select,.tvCharterForm input{background:#1d1a24;border:1px solid #393247;color:#f2eff8;border-radius:10px;padding:8px 10px;font:inherit}
+.tvShare{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.tvShare button{border:1px solid #967ce1;background:#967ce1;color:#100e15;border-radius:12px;padding:9px 14px;font-weight:700;cursor:pointer}
+.tvShare small{color:#aaa4b8;word-break:break-all}
+.tvChecks{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px}
+.tvChecks li{display:grid;grid-template-columns:minmax(0,1.3fr) auto;gap:2px 12px;background:#1a1720;border:1px solid #2b2735;border-left-width:4px;border-radius:12px;padding:10px 12px}
+.tvChecks li span,.tvChecks li small{grid-column:1/-1;color:#a7a2b2;font-size:12px;line-height:1.45}
+.tvChecks li small{color:#8f8998}
+.tvChecks em{font-style:normal;font-weight:700;font-size:12px;color:#d9d2ee;text-align:right}
+.tvChecks .status-ok,.tvChecks .floor-ok{border-left-color:#3f8f62}.tvChecks .status-announce,.tvChecks .floor-limit{border-left-color:#b8963a}
+.tvChecks .status-discuss{border-left-color:#c27a3c}.tvChecks .status-out,.tvChecks .floor-exceeds{border-left-color:#c0566f}
+.aeonIndexNote{color:#8f8998;font-size:12px;margin:6px 0 0}
+@media (max-width:760px){.tvCards{grid-template-columns:1fr}.tvCard strong{font-size:36px}.tvTurns{height:120px;gap:3px}.tvTurns b{font-size:9px}.tableVerdict{padding:16px}}
