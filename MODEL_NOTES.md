@@ -36,6 +36,28 @@ Un package opérationnel exige deux cartes distinctes jouant les rôles producte
 
 Des cas mécaniques sensibles sont traités explicitement : Lotus Petal/Spirit Guides/Rituals, LED selon le contexte, Sol Ring/Mana Crypt, Chrome Mox, Mox Diamond, Mox Opal et Mox Amber.
 
+## Pont sémantique rules-v2
+
+Depuis la v3.3, les primitives de rôle ne reposent plus uniquement sur le texte Oracle : elles
+consomment aussi la sémantique **compilée** par MonSimulateur-MTG
+(`semantic/rules-v2-card-semantics.json`, généré par `npm run semantics:export`).
+
+- Une aptitude compilée `exact` ajoute le rôle que son **effet compilé** justifie sans ambiguïté
+  (draw, graveyard-setup, tokens, lifegain, mana, land-ramp, tutor, removal, recursion, etb).
+- Une aptitude **refusée** n'ajoute rien : la carte garde exactement le comportement heuristique actuel.
+  Un rôle n'est jamais déduit d'un refus.
+- Le pont est strictement **additif** : il ne retire aucun rôle heuristique.
+- Quand il ajoute un rôle, il recalcule `development`, `interaction`, `resilience`, `explosiveness` et
+  `standalone` (`metricScores`) pour que le rôle ait un effet mesurable.
+
+Couverte sur le corpus de référence de 12 decks : 1064 cartes dans l'artefact (176 `exact`, 255 `partial`,
+588 refusées, 45 sans texte Oracle dans le corpus). Effet mesuré à 3 000 itérations :
+728 cartes avec au moins un rôle fonctionnel contre 709 sans le pont, 3 détections de `removal` gagnées,
+aucun paquet ajouté ni perdu, écart de médiane maximal **+1**. Détail : `docs/SEMANTIC_BRIDGE_RULES_V2.md`
+et `semantic/bridge-report.md`.
+
+`result.semantics` et `methodology.cardSemantics` rendent la provenance opposable dans chaque analyse.
+
 ## Rôle d'AeonShift
 
 Les points AeonShift sont un **prior externe optionnel et faible**. Ils ne sont jamais additionnés comme une vérité Commander et ne remplacent ni la simulation d'accès ni les packages.
