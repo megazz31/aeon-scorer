@@ -21,6 +21,13 @@ function isBlinkText(o){
     return !opponentOnly||ownCapable&&/you control|you own/.test(a)
   })
 }
+// Opponent-facing tempo denial: non-targeted "each opponent ... return" bounce and stun/freeze locks (Summon: Valefor chapters).
+export function isOpponentTempoDenial(o){
+  const s=withoutReminderText(o).toLowerCase()
+  return abilities(s).some(a=>/each opponent (?:chooses|returns|puts)[^\n]{0,200}(?:to (?:their|its) owners?'?s?'? hands?|on top of (?:their|its) owners?'?s?'? librar)/.test(a)
+    ||/\bput (?:a|two|three|x) stun counters? on (?:it|that creature|that permanent|target|each|up to)/.test(a)
+    ||/\btarget [^.\n]{0,80}(?:an opponent controls|you don't control)[^.\n]{0,80}doesn't untap during its controller's (?:next )?untap step/.test(a))
+}
 function isTemporaryInteraction(o){const s=withoutReminderText(o).toLowerCase();return abilities(s).some(a=>/exile (?:up to )?(?:one other |one |another )?target [^.\n;]+/.test(a)&&!/target [^.\n;]+ you control/.test(a)&&/return (?:that card|it|them|those cards|the exiled cards?)[^.\n;]+battlefield/.test(a))}
 function isTargetRemoval(o){
   const s=withoutReminderText(o).toLowerCase(),temporary=isTemporaryInteraction(s)
@@ -31,7 +38,7 @@ function isTargetRemoval(o){
     if(isOwnTargetClause(c))continue
     if(/destroy target /.test(c))return true
     if(/exile (?:up to )?(?:one other |one |another )?target /.test(c)&&!temporary&&!/return .*battlefield/.test(c))return true
-    if(/return target [^.]+ to (?:its|their|that player's|owner'?s) hand/.test(c))return true
+    if(/return (?:up to (?:one|two|three|\w+) )?target [^.]+ to (?:its|their|that player's|owners?'?s?'?) (?:owners?'?s?'? )?hands?\b/.test(c))return true
     if(/target [^.]+ gets -(?:\d+|x)\/-(?:\d+|x)/.test(c))return true
     const libraryObject=/(?:target (?:attacking |blocking )?(?:artifact|creature|enchantment|planeswalker|permanent|nonland permanent|historic permanent|spell)|target [^.]{0,60}\b(?:artifact|creature|enchantment|planeswalker|permanent|spell)\b)/.test(c)
     if(libraryObject&&(/put target [^.]{0,120}(?:into|on) [^.]{0,80}\blibrary\b/.test(c)||/target [^.]{0,100}owner shuffles? (?:it|that [^.]{0,40}) into [^.]{0,50}\blibrary\b/.test(c)||/shuffle target [^.]{0,100} into [^.]{0,50}\blibrary\b/.test(c)||/(?:owner|controller) of target [^.]{0,100} shuffles? (?:it|that [^.]{0,40}) into [^.]{0,50}\blibrary\b/.test(c)))return true
@@ -154,9 +161,9 @@ export function tagsFor(card){
   if(isDrawSource(semantic))add('draw')
   if(isTutor(semantic)){add('tutor');if(isRepeatableTutor(card,semantic))add('repeatable-tutor')}
   if(isLandRamp(semantic))add('land-ramp');if(isManaSourceText(semantic))add('mana');if(fm){add('fast-mana');add('mana');if(fm==='burst')add('burst-mana')}
-  if(isTargetRemoval(semantic))add('removal');if(isTemporaryInteraction(semantic))add('tempo-interaction')
+  if(isTargetRemoval(semantic))add('removal');if(isTemporaryInteraction(semantic))add('tempo-interaction');if(isOpponentTempoDenial(semantic)){add('tempo-interaction');add('tempo-denial')}
   if(isCounterspell(semantic))add('counterspell')
-  if(/destroy (?:all|each)|exile (?:all|each)|each player sacrifices (?:all|all but|all nonland|[0-9]+|x)|(?:all|each) creatures? (?:your opponents? control )?gets? -(?:[0-9]+|x)|return (?:all|each) [^.]* to (?:their|its) owner|return all nonland permanents target player controls|deals? (?:[2-9]|[1-9]\d+|x) damage to (?:each|all|each other) creatures?|deals? (?:[2-9]|[1-9]\d+|x) damage to each creature without flying/i.test(semantic))add('wipe')
+  if(/destroy (?:all|each)|exile (?:all|each)|each player sacrifices (?:all|all but|all nonland|[0-9]+|x)|(?:all|each) creatures? (?:your opponents? control )?gets? -(?:[0-9]+|x)|return (?:all|each) [^.]* to (?:their|its) owner|return all nonland permanents target player controls|deals? (?:[2-9]|[1-9]\d+|x) damage to (?:each|all|each other) creatures?|deals? (?:[2-9]|[1-9]\d+|x) damage to each creature without flying/i.test(semantic)||/\boverload\b/i.test(semantic)&&tags.includes('removal'))add('wipe')
   if(protection(card,semantic))add('protection');else if(/\b(?:hexproof|shroud|indestructible|protection from|ward)\b/i.test(semantic))add('self-protection');if(isRecursion(semantic))add('recursion');if(isGraveSetup(semantic))add('graveyard-setup')
   if(tokens.producer)add('tokens');if(tokens.payoff)add('token-payoff');if(tokens.doubler){add('token-doubler');add('token-payoff')}
   if(/\bsacrifice\b/i.test(semantic))add('sacrifice');if(isSacOutlet(card,semantic))add('sac-outlet');if(isSacEnabler(card,semantic))add('sac-enabler');if(deathPayoff(semantic))add('death-payoff')
@@ -165,7 +172,7 @@ export function tagsFor(card){
   if(lifeGainSource(semantic))add('lifegain');if(lifePayoff(semantic))add('life-payoff')
   if(spellslinger(semantic))add('spellslinger');if(exileCast(semantic))add('exile-cast');if(exilePayoff(semantic))add('exile-payoff')
   if(/without paying [^.]* mana cost|put [^.]* onto the battlefield from your (?:hand|library)/i.test(semantic))add('cheat');if(/without paying [^.]* mana cost|rather than pay [^.]* mana cost/i.test(semantic))add('free')
-  if(isStax(semantic))add('stax');if(/take an extra turn/i.test(semantic))add('extra-turn');if(/additional combat|extra combat/i.test(semantic))add('extra-combat');if(/you win the game|target opponent loses the game/i.test(semantic))add('win');if(triggerDoubler(semantic))add('trigger-doubler')
+  if(isStax(semantic))add('stax');if(/takes? an extra turn/i.test(semantic))add('extra-turn');if(/additional combat|extra combat/i.test(semantic))add('extra-combat');if(/you win the game|target opponent loses the game/i.test(semantic))add('win');if(triggerDoubler(semantic))add('trigger-doubler')
   return unique(tags)
 }
 
