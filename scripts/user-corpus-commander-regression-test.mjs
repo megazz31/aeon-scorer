@@ -87,5 +87,8 @@ const redDeck=featureDeck([
 ])
 const redResult=analyzePower(redDeck,redshift,null,180,{emitProduct:false,record:false,firstAccess:false})
 assert.ok(redResult.methodology.limitations.includes('activated-ability-mana-and-exhaust-compression-not-sequence-simulated'))
+assert.equal(redResult.reliability?.modelVersion,'scoring-reliability-v1','real power analysis must expose the reliability diagnostic')
+assert.ok(redResult.reliability?.reasons?.some(r=>r.code==='activated-ability-mana-and-exhaust-compression-not-sequence-simulated'),'known model limits must flow into reliability reasons')
+assert.ok(redResult.reliability.score<90,'a central unsequenced commander mechanic must prevent a near-max reliability index')
 
 console.log('USER CORPUS COMMANDER REGRESSION OK')

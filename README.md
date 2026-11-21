@@ -39,6 +39,7 @@ Read more:
 3. **Monte Carlo access** — thousands of Commander opening/mulligan and mana-access sequences are simulated through turn 7.
 4. **Power distribution** — the simulation becomes median / P20 / P80 / peak plus diagnostic dimensions for speed, consistency, explosiveness, synergy, interaction and recovery options.
 5. **Optional external prior** — AeonShift CSV data can add a deliberately weak secondary signal, but is never required.
+6. **Scoring reliability diagnostic** — each analysis now exposes a deterministic reliability index that combines data completeness with model limitations Aeon already knows about (for example unsequenced commander mechanics, uncertain mana production or partially modeled combo execution). It is a diagnostic index, **not** a probability that the power score is correct.
 
 The model is deterministic for a fixed seed and is designed to expose the reasons behind a score rather than hide them.
 
