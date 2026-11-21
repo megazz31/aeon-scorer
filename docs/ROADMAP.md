@@ -1,6 +1,6 @@
 # Aeon Scorer — roadmap
 
-_Last updated: 2026-08-23_
+_Last updated: 2026-11-21_
 
 ## Product thesis
 
@@ -25,6 +25,27 @@ Aeon should not drift into:
 - a black-box LLM that assigns a score by judgement;
 - a deckbuilder whose main value is suggesting cards;
 - automatic model changes learned from user scores or repeated tags.
+
+---
+
+## v3.3 / Semantic 18 — Table Verdict (in review)
+
+A single median reads like a single bracket: it hides *when* a deck ends games and *what* a table would object to. The result screen now leads with a table verdict, in turns, the unit of the official bracket expectations (WotC, Oct. 2025: B1 ≥ 9, B2 ≥ 8, B3 ≥ 6, B4 ≥ 4).
+
+Shipped in this candidate:
+
+- **Win clock** (`src/engine/winClock.js`): first elimination and whole-table win, P20 / median / P80, on a goldfish table (speed ceiling) and a blocking table (headline). Combat, commander damage, poison, burn, drain and combo lines (Aeon catalog + Commander Spellbook, engine + finisher chaining). Tutors fetch win-line pieces. Assumptions are part of the output. Not a win-rate: no opposing interaction is simulated.
+- **Bracket estimate** (`src/engine/bracketEstimate.js`): one floor per official rule (Game Changers, mass land denial, extra turns, game-ending combos, speed vs turn expectations), estimate = highest floor, with the decision trace and a plausible range. Brackets 1 and 5 stay intents: Aeon reports “inside every B1 limit” and “cEDH-level speed”.
+- **Table charter** (`src/engine/tableCharter.js`): rule 0 made explicit — preset B1–B5, then Sol Ring / fast mana, combos and their earliest turn, tutors, extra-turn chaining, mass land denial, land locks, stax, repeated bounce/stun (Valefor), theft, Game Changers and minimum game length. Every check names the cards. Shareable with `?charte=`.
+- **Friction v2**: owner's-hand bounce, “takes an extra turn”, overload mass bounce, opponent tempo denial (repeatable with blink), land locks distinct from mass land destruction.
+- **Validation**: benchmark reports bracket agreement against cohort labels (precon = 2, cEDH = 5) next to the “always B3” baseline. Cohort labels are not organizer labels.
+
+Next:
+
+- organizer-labelled corpus (tournament / league declared brackets) to publish exact / ±1 accuracy the way it deserves;
+- replace the three-question intent in Pod/Match with the table charter;
+- clock interaction model (removal / counters probability per turn) before calling the contested table more than “blocking”;
+- mana-to-draw converters (Urza, Thrasios…) so infinite mana feeds empty-library finishers.
 
 ---
 

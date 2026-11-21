@@ -39,7 +39,8 @@ Read more:
 3. **Monte Carlo access** — thousands of Commander opening/mulligan and mana-access sequences are simulated through turn 7.
 4. **Power distribution** — the simulation becomes median / P20 / P80 / peak plus diagnostic dimensions for speed, consistency, explosiveness, synergy, interaction and recovery options.
 5. **Optional external prior** — AeonShift CSV data can add a deliberately weak secondary signal, but is never required.
-6. **Scoring reliability diagnostic** — each analysis now exposes a deterministic reliability index that combines data completeness with model limitations Aeon already knows about (for example unsequenced commander mechanics, uncertain mana production or partially modeled combo execution). It is a diagnostic index, **not** a probability that the power score is correct.
+6. **Table verdict** — the result screen leads with what a table needs before a game: the **win clock** (turn of the first elimination and of the whole-table win, P20 / median / P80, on a blocking table and a no-blocker table), an **official bracket estimate** with one floor per rule and the decision trace, and a shareable **table charter** (rule 0 made explicit: Sol Ring, combos and their turn, tutors, extra turns, land locks, stax, repeated bounce, theft, minimum game length). The 0–100 median becomes the *Aeon index*, used to compare decks on one scale.
+7. **Scoring reliability diagnostic** — each analysis now exposes a deterministic reliability index that combines data completeness with model limitations Aeon already knows about (for example unsequenced commander mechanics, uncertain mana production or partially modeled combo execution). It is a diagnostic index, **not** a probability that the power score is correct.
 
 The model is deterministic for a fixed seed and is designed to expose the reasons behind a score rather than hide them.
 
@@ -161,6 +162,6 @@ Aeon Scorer est un analyseur de puissance pour decks **Magic: The Gathering Comm
 
 La production actuelle est **v3.2.0** avec la sémantique **`3.2.0-semantic-1`**. Chaque analyse réussie est versionnée et agrandit le corpus QA utilisé pour détecter les cartes ou mécaniques mal comprises et améliorer les prochaines versions. Les analyses utilisateur restent des indices : elles ne deviennent jamais automatiquement la vérité du modèle.
 
-L'écran principal sert à comparer les decks. Les dimensions, packages, courbe d'accès, dépendance au commandant et couverture des données restent disponibles dans **Diagnostic détaillé** uniquement pour expliquer ou auditer le résultat.
+L'écran principal commence par le **verdict de table** : l'horloge de victoire en tours (première élimination et victoire de table, P20 / médiane / P80, table qui bloque et table sans bloqueurs), le **bracket officiel estimé** avec un plancher par règle et sa trace de décision, et une **charte de table** partageable (la règle 0 rendue explicite : Sol Ring, combos et leur tour, tuteurs, tours supplémentaires, verrous de terrains, stax, renvois répétés, vol, durée minimale de partie). La médiane 0–100 devient l'*indice Aeon*, pour comparer les decks entre eux. Les dimensions, packages, courbe d'accès, dépendance au commandant et couverture des données restent disponibles dans **Diagnostic détaillé** uniquement pour expliquer ou auditer le résultat.
 
 Projet indépendant porté par **megazz31**.
