@@ -15,6 +15,8 @@ const cards = featureDeck([
   C('Armageddon', 'Sorcery', 4, 'Destroy all lands.'),
   C('Expropriate', 'Sorcery', 9, "Council's dilemma — Starting with you, each player votes for time or money. For each time vote, take an extra turn after this one. For each money vote, choose a permanent owned by the voter and gain control of it. Exile Expropriate."),
   C('Raise the Alarm', 'Instant', 2, 'Create two 1/1 white Soldier creature tokens.'),
+  C('Wave of Vitriol', 'Sorcery', 7, 'Each player sacrifices all artifacts, enchantments, and nonbasic lands they control. For each land sacrificed this way, its controller may search their library for a basic land card and put it onto the battlefield tapped. Then each player who searched their library this way shuffles.'),
+  C('Tectonic Break', 'Sorcery', 2, 'Each player sacrifices X lands.'),
 ])
 const by = Object.fromEntries(cards.map(c => [c.name, c]))
 const tags = name => by[name].tags
@@ -38,6 +40,10 @@ assert.ok(names('landLock').includes('Blood Moon'))
 assert.ok(names('landLock').includes('Back to Basics'))
 assert.ok(!names('massLandDenial').includes('Back to Basics'), 'Back to Basics is a land lock, not mass land destruction')
 assert.ok(names('massLandDenial').includes('Armageddon'))
+assert.ok(names('massLandDenial').includes('Tectonic Break'))
+// Nonbasic-only sacrifice that hands back basics is nonbasic hate, not mass land denial (bracket 4 floor).
+assert.ok(!names('massLandDenial').includes('Wave of Vitriol'))
+assert.ok(names('landLock').includes('Wave of Vitriol'))
 assert.ok(names('theft').includes('Expropriate'))
 assert.ok(names('extraTurns').includes('Time Warp'))
 
