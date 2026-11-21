@@ -9,7 +9,8 @@ const trustedEntry = {
   cardKey: 'oracle:test',
   oracleId: 'test',
   oracleFingerprint: 'oracle-v1:abc',
-  actionFingerprint: 'action-v1:def',
+  // Real fingerprint of { type: 'draw', amount: 2 }: the validator recomputes it and rejects mismatches.
+  actionFingerprint: 'action-v1:b9162b61',
   action: { type: 'draw', amount: 2 },
   status: 'group_confirmed',
   observations: 12,
