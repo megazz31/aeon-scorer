@@ -7,7 +7,7 @@ function cardName(x){return clean(x?.card?.name||x?.card||x?.name||x?.card_name)
 function comboCards(v){const raw=v?.uses||v?.cards||v?.card_list||v?.cardList||[];if(Array.isArray(raw))return raw.map(cardName).filter(Boolean);return []}
 function comboText(v){const produces=v?.produces||v?.results||[];if(Array.isArray(produces))return produces.map(x=>clean(x?.feature?.name||x?.name||x?.description||x)).filter(Boolean).join(' · ');return clean(produces)}
 function normalizeVariant(v){return {id:clean(v?.id||v?.variant_id),cards:comboCards(v),result:comboText(v),manaNeeded:clean(v?.mana_needed||v?.manaNeeded),description:clean(v?.description||v?.other_prerequisites||v?.otherPrerequisites),popularity:Number(v?.popularity||v?.popularity_count||0)||0}}
-function listFrom(section){const x=section?.results||section?.variants||section||[];return Array.isArray(x)?x.map(normalizeVariant).filter(v=>v.cards.length).slice(0,40):[]}
+export function listFrom(section){const x=section?.results||section?.variants||section||[];return Array.isArray(x)?x.map(normalizeVariant).filter(v=>v.cards.length).slice(0,40):[]}
 async function post(path,body,signal){const r=await fetch(`${SPELLBOOK}${path}`,{method:'POST',headers:{Accept:'application/json','Content-Type':'application/json','User-Agent':'AeonScorer/3.2 product-insights'},body:JSON.stringify(body),signal});if(!r.ok)throw new Error(`Spellbook ${path} HTTP ${r.status}`);return r.json()}
 export default async function handler(req,res){
   res.setHeader('Cache-Control','s-maxage=1800, stale-while-revalidate=86400')

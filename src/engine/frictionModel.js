@@ -1,4 +1,4 @@
-export const FRICTION_MODEL_VERSION='friction-v1'
+export const FRICTION_MODEL_VERSION='friction-v2'
 
 const clamp=(n,a=0,b=100)=>Math.max(a,Math.min(b,Number.isFinite(Number(n))?Number(n):0))
 const levelFor=score=>score<=0?'none':score<25?'low':score<55?'moderate':'high'
@@ -11,24 +11,36 @@ function scoreEntries(entries,factor=1){const rows=uniqByName(entries),weight=ro
 function signal(id,label,entries,{factor=1,override=null,note=null}={}){const score=override==null?scoreEntries(entries,factor):Math.round(clamp(override));return {id,label,level:levelFor(score),score,evidence:uniqByName(entries).map(({name,reason,recurring,weight})=>({name,reason,recurring,weight})).slice(0,8),note}}
 
 export function buildTableFriction(result={},cards=[]){
-  const pool=(Array.isArray(cards)?cards:[]).filter(c=>!c?.isLand&&!/\bland\b/i.test(c?.type||'')),buckets={resourceDenial:[],massLandDenial:[],commanderLockout:[],theft:[],extraTurns:[],forcedDiscardSacrifice:[]}
+  const pool=(Array.isArray(cards)?cards:[]).filter(c=>!c?.isLand&&!/\bland\b/i.test(c?.type||'')),buckets={resourceDenial:[],massLandDenial:[],landLock:[],commanderLockout:[],theft:[],extraTurns:[],forcedDiscardSacrifice:[],tempoDenial:[]}
+  // A deck that can blink or reanimate its own permanents can reset Sagas/ETB effects, so their opponent-facing denial repeats.
+  const loopable=pool.some(c=>(c.tags||[]).includes('blink'))||pool.some(c=>/\breturn (?:target |up to one target )?(?:enchantment|saga|nonland permanent|permanent) card[^.]{0,60}from your graveyard to the battlefield/.test(clean(c.oracle)))
   for(const c of pool){
     const s=clean(c.oracle),tags=new Set(c.tags||[])
     if(tags.has('stax')||/\bopponents? can(?:'|’)?t (?:cast|play|activate|attack|block|draw|search|untap)|\bspells? (?:your opponents? cast )?cost [^.]{0,80} more|\bpermanents? (?:your opponents? control )?don(?:'|’)?t untap|\bplayers can(?:'|’)?t (?:cast|play|activate|draw|search)/.test(s))buckets.resourceDenial.push(entry(c,'resource-denial','Persistent or repeated restriction on normal game resources/actions.'))
-    if(/\bdestroy all lands\b|\beach player sacrifices? [^.]{0,50}\blands?\b|\blands? [^.]{0,40}don(?:'|’)?t untap|\breturn all lands\b[^.]{0,60}\bto (?:their owners?|owners?) hands?\b/.test(s))buckets.massLandDenial.push(entry(c,'mass-land-denial','Affects many lands or broadly prevents land use.',1.35))
+    if(/\bdestroy all lands\b|\beach player sacrifices? (?![^.]{0,50}\bnonbasic lands?\b)[^.]{0,50}\blands?\b|\breturn all lands\b[^.]{0,60}\bto (?:their owners?|owners?) hands?\b/.test(s))buckets.massLandDenial.push(entry(c,'mass-land-denial','Affects many lands or broadly prevents land use.',1.35))
+    if(/\bnonbasic lands (?:are|don(?:'|’)?t untap|can(?:'|’)?t|enter)\b|\blands? [^.]{0,40}don(?:'|’)?t untap|\bcan(?:'|’)?t untap more than (?:one|two|\w+) lands?\b|\blands? (?:your opponents control|each player controls) enter (?:the battlefield )?tapped\b|\beach player sacrifices? [^.]{0,50}\bnonbasic lands?\b/.test(s))buckets.landLock.push(entry(c,'land-lock','Locks or taxes land mana without destroying lands (Blood Moon / Back to Basics family).',1.15))
     if(/\bopponents? can(?:'|’)?t cast spells? from anywhere other than their hands\b|\bcan(?:'|’)?t cast (?:your|their|a) commander\b|\bcommanders? [^.]{0,80}(?:lose|loses|can(?:'|’)?t|cannot)\b|\bcommand zone\b[^.]{0,80}\bcan(?:'|’)?t\b/.test(s))buckets.commanderLockout.push(entry(c,'commander-lockout','Directly restricts casting or using commanders.',1.2))
-    if(/\bgain control of (?:target|another|a|an|all)\b|\bexchange control of\b|\byou control enchanted (?:creature|permanent)\b/.test(s))buckets.theft.push(entry(c,'theft','Changes control of opposing permanents.'))
-    if(tags.has('extra-turn')||/\btake an extra turn\b/.test(s))buckets.extraTurns.push(entry(c,'extra-turns','Creates additional turns.'))
+    if(/\bgain control of (?:target|another|a|an|all)\b|\bexchange control of\b|\byou control enchanted (?:creature|permanent)\b|\b(?:owned|controlled) by [^.]{0,40}\band gain control of (?:it|them)\b/.test(s))buckets.theft.push(entry(c,'theft','Changes control of opposing permanents.'))
+    if(tags.has('extra-turn')||/\btakes? an extra turn\b/.test(s))buckets.extraTurns.push(entry(c,'extra-turns','Creates additional turns.'))
     if(/\b(?:target|each) opponents? discards?\b|\beach player discards?\b|\b(?:target|each) opponents? sacrifices?\b|\beach player sacrifices? (?:a|one or more|two|three|x|all)\b/.test(s))buckets.forcedDiscardSacrifice.push(entry(c,'forced-discard-sacrifice','Forces discard or sacrifice rather than merely observing it.'))
+    const massOpponentBounce=/\breturn (?:all|each) [^.]{0,60}(?:your opponents control|you don(?:'|’)?t control)[^.]{0,40}to (?:their|its) owners?(?:'|’)?s?(?:'|’)? hands?\b/.test(s)||(/\boverload\b/.test(s)&&/\breturn target [^.]{0,60}to (?:its|their) owner/.test(s))
+    if(tags.has('tempo-denial')||massOpponentBounce){
+      const looped=loopable&&/\bsaga\b|\bcreature\b/i.test(c?.type||'')&&tags.has('tempo-denial')
+      const e=entry(c,'tempo-denial',looped?'Repeatable bounce/stun on opponents: the deck can reset this permanent (blink/recursion).':'Bounces or freezes opponent permanents, setting their development back.',looped?1.5:1)
+      if(looped&&!e.recurring){e.recurring=true;e.weight*=2}
+      buckets.tempoDenial.push(e)
+    }
   }
-  const persistentRestrictions=buckets.resourceDenial.filter(x=>x.recurring).length+buckets.commanderLockout.filter(x=>x.recurring).length+buckets.massLandDenial.filter(x=>x.recurring).length
-  const restrictionFamilies=[buckets.resourceDenial.length,buckets.commanderLockout.length,buckets.massLandDenial.length].filter(Boolean).length
+  const persistentRestrictions=buckets.landLock.filter(x=>x.recurring).length+buckets.resourceDenial.filter(x=>x.recurring).length+buckets.commanderLockout.filter(x=>x.recurring).length+buckets.massLandDenial.filter(x=>x.recurring).length
+  const restrictionFamilies=[buckets.resourceDenial.length,buckets.commanderLockout.length,buckets.massLandDenial.length,buckets.landLock.length].filter(Boolean).length
   const lockPotential=Math.round(clamp(persistentRestrictions*24+Math.max(0,persistentRestrictions-1)*8+Math.max(0,restrictionFamilies-1)*10))
   const complexity=Number(result?.experience?.dimensions?.turnComplexity?.score||0)
   const complexityEvidence=complexity>0?[{name:'Experience Fingerprint',reason:'Turn Complexity proxy from recurring/chained semantic actions.',recurring:true,weight:complexity/18}]:[]
   const signals={
     resourceDenial:signal('resource-denial','Resource denial / taxes',buckets.resourceDenial),
     massLandDenial:signal('mass-land-denial','Mass land denial',buckets.massLandDenial,{factor:1.1}),
+    landLock:signal('land-lock','Land lock / nonbasic hate',buckets.landLock),
+    tempoDenial:signal('tempo-denial','Repeated bounce / freeze',buckets.tempoDenial),
     commanderLockout:signal('commander-lockout','Commander lockout',buckets.commanderLockout),
     theft:signal('theft','Theft / control exchange',buckets.theft),
     extraTurns:signal('extra-turns','Extra-turn recurrence',buckets.extraTurns),

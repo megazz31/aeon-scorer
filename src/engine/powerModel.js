@@ -11,6 +11,7 @@ import { buildGoldfishHorizon } from './goldfishHorizon.js'
 import { sampleFirstAccess } from './firstAccessSampler.js'
 import { aeonPriorFor } from '../data/aeonshift.js'
 import { buildScoringReliability } from './scoringReliability.js'
+import { simulateWinClock } from './winClock.js'
 
 const clamp=(n,a=0,b=100)=>Math.max(a,Math.min(b,n))
 const avg=xs=>xs.length?xs.reduce((s,x)=>s+x,0)/xs.length:0
@@ -71,7 +72,8 @@ export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=
   for(const limitation of cmdSyn.limitations||[]){const w=commanderLimitationWarning[limitation];if(w)warnings.push(w)}
   const semantics=rulesSemanticSummary(cards.concat(commanders))
   if(semantics.cards>0&&semantics.exact+semantics.partial<semantics.cards*.35)warnings.push(`${semantics.cards-(semantics.exact+semantics.partial)} carte(s) sur ${semantics.cards} n’ont pas de sémantique compilée : leurs rôles restent heuristiques et ne sont jamais devinés à partir d’un refus.`)
-  const result={profile:{median:Math.round(median),floor:Math.round(floor),ceiling:Math.round(ceiling),peak:Math.round(peak),dispersion:Math.round(dispersion),variance:Math.round(dispersion),consistency:Math.round(consistency),commanderDelta,coverage,dataCoverage:coverage},dimensions,roles,packages,combos,commanderSynergy:cmdSyn,commanderNames:commanders.map(c=>c.name),aeon,semantics,simulation:sim,drivers,warnings,methodology:{iterations,firstAccessIterations,model:'sequence-access-v3.3-semantic',maxTurn:7,commandZoneCount:commanders.length,separateCommanderTax:multi,curveMeaning:'Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.',commanderMechanics:sim.commanderMechanics||null,comboSignal,limitations,cardSemantics:{artifactVersion:semantics.artifactVersion,source:'rules-v2',exact:semantics.exact,partial:semantics.partial,refused:semantics.refused,uncompiled:semantics.uncompiled,unknownToArtifact:semantics.unknownToArtifact,bridged:semantics.bridged,rolesAdded:semantics.rolesAdded}}}
+  const clockIterations=options.clock===false?0:Math.max(1,Math.min(1000,Math.max(200,Math.floor(iterations/3)),iterations)),clock=clockIterations?simulateWinClock({cards,commanders,externalCombos:options.externalCombos||[],iterations:clockIterations,rng:seeded(hashSeed(cards,commanders,'win-clock-v1'))}):null
+  const result={profile:{median:Math.round(median),floor:Math.round(floor),ceiling:Math.round(ceiling),peak:Math.round(peak),dispersion:Math.round(dispersion),variance:Math.round(dispersion),consistency:Math.round(consistency),commanderDelta,coverage,dataCoverage:coverage},dimensions,roles,packages,combos,commanderSynergy:cmdSyn,commanderNames:commanders.map(c=>c.name),aeon,semantics,simulation:sim,drivers,warnings,clock,methodology:{iterations,firstAccessIterations,clockIterations,model:'sequence-access-v3.3-semantic',maxTurn:7,commandZoneCount:commanders.length,separateCommanderTax:multi,curveMeaning:'Chaque colonne mesure un accès indépendant ; elles ne représentent pas une même ligne de jeu simultanée.',commanderMechanics:sim.commanderMechanics||null,comboSignal,limitations,cardSemantics:{artifactVersion:semantics.artifactVersion,source:'rules-v2',exact:semantics.exact,partial:semantics.partial,refused:semantics.refused,uncompiled:semantics.uncompiled,unknownToArtifact:semantics.unknownToArtifact,bridged:semantics.bridged,rolesAdded:semantics.rolesAdded}}}
   result.experience=buildExperienceFingerprint(result,cards.concat(commanders))
   result.friction=buildTableFriction(result,cards.concat(commanders))
   result.horizon=buildGoldfishHorizon(result)
@@ -80,4 +82,9 @@ export function analyzePower(rawCards,rawCommander=null,aeonMap=null,iterations=
   if(options?.emitProduct!==false&&typeof window!=='undefined'&&typeof window.dispatchEvent==='function'&&typeof CustomEvent!=='undefined')queueMicrotask(()=>{try{window.dispatchEvent(new CustomEvent('aeon-analysis-computed',{detail}))}catch{}})
   const hook=globalThis?.__AEON_ANALYSIS_HOOK__;if(options?.record!==false&&typeof hook==='function')queueMicrotask(()=>{try{hook(detail)}catch{}})
   return result
+}
+
+// Same clock as analyzePower (same prepared cards, same seed), rerun when Commander Spellbook combos arrive after the analysis.
+export function rerunWinClock(cards,commanders,externalCombos=[],iterations=1000){
+  return simulateWinClock({cards,commanders,externalCombos,iterations,rng:seeded(hashSeed(cards,commanders,'win-clock-v1'))})
 }

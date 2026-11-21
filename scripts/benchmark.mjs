@@ -2,6 +2,9 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import { analyzePower } from '../src/engine/powerModel.js'
 import { featureDeck } from '../src/engine/cardFeatures.js'
+import { listFrom as spellbookList } from '../api/commander-insights.js'
+import { deckFacts, estimateBracket } from '../src/engine/bracketEstimate.js'
+import { gameChangersIn } from '../src/productData.js'
 
 const OUT=path.resolve('calibration')
 const CACHE=path.join(OUT,'cache')
@@ -119,7 +122,7 @@ async function loadArchidekt(n){
   return out
 }
 
-function scoreDeck(d,iterations=ITERATIONS){const result=analyzePower(d.cards,d.commander,null,iterations);return {source:d.source,name:d.name,commander:d.commander?.name,meta:d.meta,profile:result.profile,dimensions:result.dimensions,roles:result.roles,packages:result.packages.map(p=>({id:p.id,name:p.name,strength:p.strength,cohesion:p.cohesion,producers:p.producers,payoffs:p.payoffs})),combos:result.combos.map(c=>c.name),simulation:result.simulation}}
+function scoreDeck(d,iterations=ITERATIONS){const result=analyzePower(d.cards,d.commander,null,iterations,{externalCombos:d.spellbook||[]});const k=result.clock,b=estimateBracket(deckFacts(result,featureDeck(d.cards),{gameChangers:gameChangersIn(d.cards.map(c=>c.name)),spellbook:{included:d.spellbook||[]}}));return {bracket:{bracket:b.bracket,range:b.range,binding:b.binding,b1Compatible:b.b1Compatible,cedhSpeed:b.cedhSpeed},source:d.source,name:d.name,commander:d.commander?.name,meta:d.meta,profile:result.profile,clock:k?{firstKill:{p20:k.firstKill.p20,median:k.firstKill.median,p80:k.firstKill.p80},win:{p20:k.win.p20,median:k.win.median,p80:k.win.p80},firstKillBefore:k.firstKillBefore,winBefore:k.winBefore,sources:k.sources,combos:k.combos.length,estimatedPowerCards:k.coverage.estimatedPowerCards}:null,dimensions:result.dimensions,roles:result.roles,packages:result.packages.map(p=>({id:p.id,name:p.name,strength:p.strength,cohesion:p.cohesion,producers:p.producers,payoffs:p.payoffs})),combos:result.combos.map(c=>c.name),simulation:result.simulation}}
 function splitHalf(xs){return {cal:xs.filter((_,i)=>i%2===0),hold:xs.filter((_,i)=>i%2===1)}}
 function separation(pre,cedh){const p=pre.map(x=>x.profile.median),c=cedh.map(x=>x.profile.median);return {preconMedian:median(p),cedhMedian:median(c),gap:median(c)-median(p),auc:auc(c,p),preconP90:pct(p,.9),cedhP10:pct(c,.1),strictGap:pct(c,.1)-pct(p,.9)}}
 function neutralizeTagged(deck,tag,max=99){const featured=featureDeck(deck.cards),killNames=new Set(featured.filter(c=>c.tags.includes(tag)).slice(0,max).map(c=>c.name.toLowerCase()));let i=0;return {...deck,cards:deck.cards.map(c=>killNames.has(c.name.toLowerCase())?{...c,name:`Calibration Blank ${tag} ${++i}`,oracle:'',type:'Calibration',producedMana:[],power:null,toughness:null}:c)}}
@@ -152,14 +155,21 @@ async function evaluateQuality(decks,scored){
     {id:'commander-dependency',ok:commanderDependency.positive>=Math.ceil(commanderDependency.total*.75),detail:JSON.stringify(commanderDependency)},
     {id:'semantic-scale',ok:sepAll.preconMedian>=42&&sepAll.preconMedian<=55&&sepAll.cedhMedian>=72&&sepAll.cedhMedian<=88,detail:`strict precon ${sepAll.preconMedian.toFixed(1)}, cEDH ${sepAll.cedhMedian.toFixed(1)}`},
   ]
-  return {score:gates.filter(g=>g.ok).length,total:gates.length,gates,separation:{all:sepAll,calibration:sepCal,holdout:sepHold},temporal,distinctCedhCommanders,repeatability,fastManaSensitivity,tutorSensitivity,commanderDependency}
+  return {score:gates.filter(g=>g.ok).length,total:gates.length,gates,separation:{all:sepAll,calibration:sepCal,holdout:sepHold},temporal,distinctCedhCommanders,repeatability,fastManaSensitivity,tutorSensitivity,commanderDependency,bracketAgreement:bracketAgreement(scored)}
+}
+// Reported, not gated: anchor labels are cohort labels (precon = B2 by WotC guidance, cEDH lists = B5), not organizer labels.
+function bracketAgreement(scored){
+  const LABEL={precon:2,cedh:5},rows=scored.filter(x=>LABEL[x.source]&&x.bracket),rate=f=>Math.round(rows.filter(f).length/Math.max(1,rows.length)*1000)/10
+  return {labelled:rows.length,labels:'precon=2, cedh=5',exact:rate(x=>x.bracket.bracket===LABEL[x.source]),withinOne:rate(x=>Math.abs(x.bracket.bracket-LABEL[x.source])<=1),rangeHit:rate(x=>LABEL[x.source]>=x.bracket.range[0]&&LABEL[x.source]<=x.bracket.range[1]),baselineAlwaysB3:{exact:0,withinOne:rate(x=>Math.abs(3-LABEL[x.source])<=1)},bySource:Object.fromEntries(Object.keys(LABEL).map(s=>[s,rows.filter(x=>x.source===s).map(x=>x.bracket.bracket).sort().join('')]))}
 }
 
 function markdown(report){
   const q=report.quality,lines=[`# Aeon Scorer v3.1 calibration report`,``,`Generated: ${report.generatedAt}`,`Model: ${report.model}`,`Iterations/deck: ${report.iterations}`,``,`## Base macro gates: ${q.score}/${q.total}`,``]
   for(const g of q.gates)lines.push(`- ${g.ok?'✅':'❌'} **${g.id}** — ${g.detail}`)
-  lines.push('','## Anchors','',`- Precons: ${report.counts.precon}`,`- Precon dates: ${q.temporal?.earliest||'n/d'} → ${q.temporal?.latest||'n/d'} (${q.temporal?.recent||0} since 2024)`,`- cEDH: ${report.counts.cedh} (${q.distinctCedhCommanders||0} distinct commanders)`,`- User/public: ${report.counts.user}`,`- Holdout AUC: ${q.separation.holdout.auc.toFixed(3)}`,`- Overall median gap: ${q.separation.all.gap.toFixed(1)}`,'','## Deck results','','| Source | Deck | Commander | Median | P20 | P80 | Peak | Dispersion | Consistency |','|---|---|---|---:|---:|---:|---:|---:|---:|')
-  for(const d of [...report.decks].sort((a,b)=>a.profile.median-b.profile.median))lines.push(`| ${d.source} | ${String(d.name).replace(/\|/g,'/')} | ${String(d.commander||'').replace(/\|/g,'/')} | ${d.profile.median} | ${d.profile.floor} | ${d.profile.ceiling} | ${d.profile.peak} | ${d.profile.dispersion} | ${d.profile.consistency} |`)
+  lines.push('','## Anchors','',`- Precons: ${report.counts.precon}`,`- Precon dates: ${q.temporal?.earliest||'n/d'} → ${q.temporal?.latest||'n/d'} (${q.temporal?.recent||0} since 2024)`,`- cEDH: ${report.counts.cedh} (${q.distinctCedhCommanders||0} distinct commanders)`,`- User/public: ${report.counts.user}`,`- Holdout AUC: ${q.separation.holdout.auc.toFixed(3)}`,`- Overall median gap: ${q.separation.all.gap.toFixed(1)}`)
+  const ba=q.bracketAgreement;if(ba)lines.push('','## Bracket estimate vs anchor labels (reported, not gated)','',`- Labels: ${ba.labels} (cohort labels, not organizer labels) — ${ba.labelled} decks`,`- Exact: ${ba.exact}% · within ±1: ${ba.withinOne}% · label inside the announced range: ${ba.rangeHit}%`,`- Baseline "always B3": exact 0% · within ±1: ${ba.baselineAlwaysB3.withinOne}%`,`- Estimates: precon ${ba.bySource.precon} · cEDH ${ba.bySource.cedh}`)
+  lines.push('','## Deck results','','| Source | Deck | Commander | Bracket | Median | P20 | P80 | Peak | Dispersion | Consistency | First kill P20/med/P80 | Table win med | Kill ≤T6 % | Kill ≤T8 % |','|---|---|---|---|---:|---:|---:|---:|---:|---:|---|---|---:|---:|')
+  for(const d of [...report.decks].sort((a,b)=>a.profile.median-b.profile.median))lines.push(`| ${d.source} | ${String(d.name).replace(/\|/g,'/')} | ${String(d.commander||'').replace(/\|/g,'/')} | ${d.bracket?`B${d.bracket.bracket}${d.bracket.range[1]>d.bracket.bracket?`–${d.bracket.range[1]}`:''}`:'—'} | ${d.profile.median} | ${d.profile.floor} | ${d.profile.ceiling} | ${d.profile.peak} | ${d.profile.dispersion} | ${d.profile.consistency} | ${d.clock?`T${d.clock.firstKill.p20}/T${d.clock.firstKill.median}/T${d.clock.firstKill.p80}`:'—'} | ${d.clock?`T${d.clock.win.median}`:'—'} | ${d.clock?.firstKillBefore?.[6]??'—'} | ${d.clock?.firstKillBefore?.[8]??'—'} |`)
   return lines.join('\n')+'\n'
 }
 
@@ -167,6 +177,13 @@ await ensure();console.log('Loading benchmark cohorts...')
 const precons=await loadPrecons(TARGET.precon),cedh=await loadCedh(TARGET.cedh),user=await loadArchidekt(TARGET.user),decks=[...precons,...cedh,...user]
 console.log(`Loaded ${decks.length}: ${precons.length} precon, ${cedh.length} cEDH, ${user.length} user/public`)
 if(precons.length<12||cedh.length<12)throw new Error('Insufficient fully resolved anchor decks; benchmark would not be meaningful.')
+// Commander Spellbook combos feed the win clock (cached per exact list, like every other calibration source).
+async function loadSpellbook(d){
+  const commanders=[d.commander?.name].filter(Boolean),main=[...new Set(d.cards.map(c=>c.name).filter(n=>!commanders.includes(n)))].sort()
+  try{const j=await cachedJson('spellbook_'+simpleHash([...commanders,...main].join('|')),'https://backend.commanderspellbook.com/find-my-combos',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({commanders:commanders.map(card=>({card,quantity:1})),main:main.map(card=>({card,quantity:1}))})});return spellbookList(j?.results?.included||j?.included)}catch(e){console.warn(`Spellbook unavailable for ${d.name}: ${e.message}`);return []}
+}
+for(const d of decks)d.spellbook=await loadSpellbook(d)
+console.log(`Spellbook combos loaded: ${decks.filter(d=>d.spellbook.length).length}/${decks.length} decks with at least one combo`)
 const scored=[];for(let i=0;i<decks.length;i++){const d=decks[i];console.log(`[${i+1}/${decks.length}] ${d.source}: ${d.name}`);scored.push(scoreDeck(d))}
 const quality=await evaluateQuality(decks,scored),report={generatedAt:new Date().toISOString(),model:'sequence-access-v3.1-semantic',iterations:ITERATIONS,counts:{total:decks.length,precon:precons.length,cedh:cedh.length,user:user.length},quality,decks:scored}
 await fs.writeFile(path.join(OUT,'latest.json'),JSON.stringify(report,null,2));await fs.writeFile(path.join(OUT,'latest.md'),markdown(report));console.log(`QUALITY ${quality.score}/${quality.total}`);for(const g of quality.gates)console.log(`${g.ok?'PASS':'FAIL'} ${g.id}: ${g.detail}`);if(quality.score<quality.total)process.exitCode=2

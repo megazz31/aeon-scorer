@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T14:05:33.841Z",
+  "generatedAt": "2026-11-21T09:27:51.871Z",
   "model": "sequence-access-v3.3-semantic",
   "iterations": 3200,
   "counts": {
@@ -9,8 +9,8 @@
     "user": 9
   },
   "quality": {
-    "score": 17,
-    "total": 17,
+    "score": 12,
+    "total": 12,
     "gates": [
       {
         "id": "sample",
@@ -35,7 +35,7 @@
       {
         "id": "all-separation",
         "ok": true,
-        "detail": "AUC 1.000, gap 26.0"
+        "detail": "AUC 1.000, gap 25.0"
       },
       {
         "id": "holdout-separation",
@@ -45,7 +45,7 @@
       {
         "id": "distribution-separation",
         "ok": true,
-        "detail": "cEDH P10 - precon P90 = 11.8"
+        "detail": "cEDH P10 - precon P90 = 11.2"
       },
       {
         "id": "deterministic-repeat",
@@ -55,76 +55,51 @@
       {
         "id": "fast-mana",
         "ok": true,
-        "detail": "{\"name\":\" Layered Atraxa  cEDH\",\"full\":74,\"cut\":56,\"speedDelta\":32,\"explosiveDelta\":51,\"commanderTurnDelta\":1}"
+        "detail": "{\"name\":\" Layered Atraxa  cEDH\",\"full\":75,\"cut\":56,\"speedDelta\":32,\"explosiveDelta\":51,\"commanderTurnDelta\":1}"
       },
       {
         "id": "tutors",
         "ok": true,
-        "detail": "{\"name\":\" Layered Atraxa  cEDH\",\"consistencyDelta\":23,\"medianDelta\":5,\"ceilingDelta\":3}"
+        "detail": "{\"name\":\" Layered Atraxa  cEDH\",\"consistencyDelta\":22,\"medianDelta\":4,\"ceilingDelta\":2}"
       },
       {
         "id": "commander-dependency",
         "ok": true,
-        "detail": "{\"median\":8,\"positive\":8,\"total\":8}"
+        "detail": "{\"median\":7.5,\"positive\":8,\"total\":8}"
       },
       {
         "id": "semantic-scale",
         "ok": true,
-        "detail": "strict precon 48.0, cEDH 74.0"
-      },
-      {
-        "id": "package-precision",
-        "ok": true,
-        "detail": "{\"preconStrongMedian\":1,\"userStrongMedian\":1}"
-      },
-      {
-        "id": "hei-bai-real-regression",
-        "ok": true,
-        "detail": "{\"preconStrongMedian\":1,\"userStrongMedian\":1,\"heiBaiFound\":true,\"heiBaiHasEarly\":true,\"heiBaiHasBlink\":true,\"heiBaiHasConstellation\":true,\"heiBaiFalseSpells\":false,\"heiBaiFalseCounters\":false,\"heiBaiFalseGraveyard\":false,\"heiBaiT1Engine\":0}"
-      },
-      {
-        "id": "untrained-mid-cohort",
-        "ok": true,
-        "detail": "{\"precon\":48,\"user\":51,\"cedh\":74}"
-      },
-      {
-        "id": "combo-signal",
-        "ok": true,
-        "detail": "{\"count\":6,\"peakMedian\":98,\"names\":[\" Layered Atraxa  cEDH\",\"cEDH Inalla - Wizard's Chess\",\"  Warrior Queen [cEDH Najeela] \"]}"
-      },
-      {
-        "id": "profile-invariants",
-        "ok": true,
-        "detail": "P20 ≤ P50 ≤ P80 ≤ peak for all decks"
+        "detail": "strict precon 49.0, cEDH 74.0"
       }
     ],
     "separation": {
       "all": {
-        "preconMedian": 48,
+        "preconMedian": 49,
         "cedhMedian": 74,
-        "gap": 26,
+        "gap": 25,
         "auc": 1,
-        "preconP90": 52,
+        "preconP90": 52.6,
         "cedhP10": 63.8,
-        "strictGap": 11.799999999999997
+        "strictGap": 11.199999999999996
       },
       "calibration": {
-        "preconMedian": 48.5,
+        "preconMedian": 49,
         "cedhMedian": 75,
-        "gap": 26.5,
+        "gap": 26,
         "auc": 1,
         "preconP90": 51.3,
-        "cedhP10": 68,
-        "strictGap": 16.700000000000003
+        "cedhP10": 69.4,
+        "strictGap": 18.10000000000001
       },
       "holdout": {
         "preconMedian": 45,
         "cedhMedian": 68,
         "gap": 23,
         "auc": 1,
-        "preconP90": 54.800000000000004,
+        "preconP90": 55.400000000000006,
         "cedhP10": 64.2,
-        "strictGap": 9.399999999999999
+        "strictGap": 8.799999999999997
       }
     },
     "temporal": {
@@ -159,10 +134,10 @@
         "name": " Layered Atraxa  cEDH",
         "range": 0,
         "runs": [
-          74,
-          74,
-          74,
-          74
+          75,
+          75,
+          75,
+          75
         ]
       },
       {
@@ -178,7 +153,7 @@
     ],
     "fastManaSensitivity": {
       "name": " Layered Atraxa  cEDH",
-      "full": 74,
+      "full": 75,
       "cut": 56,
       "speedDelta": 32,
       "explosiveDelta": 51,
@@ -186,51 +161,45 @@
     },
     "tutorSensitivity": {
       "name": " Layered Atraxa  cEDH",
-      "consistencyDelta": 23,
-      "medianDelta": 5,
-      "ceilingDelta": 3
+      "consistencyDelta": 22,
+      "medianDelta": 4,
+      "ceilingDelta": 2
     },
     "commanderDependency": {
-      "median": 8,
+      "median": 7.5,
       "positive": 8,
       "total": 8
     },
-    "extended": {
-      "strictScale": {
-        "precon": 48,
-        "cedh": 74
+    "bracketAgreement": {
+      "labelled": 30,
+      "labels": "precon=2, cedh=5",
+      "exact": 43.3,
+      "withinOne": 100,
+      "rangeHit": 50,
+      "baselineAlwaysB3": {
+        "exact": 0,
+        "withinOne": 50
       },
-      "packagePrecision": {
-        "preconStrongMedian": 1,
-        "userStrongMedian": 1,
-        "heiBaiFound": true,
-        "heiBaiHasEarly": true,
-        "heiBaiHasBlink": true,
-        "heiBaiHasConstellation": true,
-        "heiBaiFalseSpells": false,
-        "heiBaiFalseCounters": false,
-        "heiBaiFalseGraveyard": false,
-        "heiBaiT1Engine": 0
-      },
-      "midCohort": {
-        "precon": 48,
-        "user": 51,
-        "cedh": 74
-      },
-      "comboSignal": {
-        "count": 6,
-        "peakMedian": 98,
-        "names": [
-          " Layered Atraxa  cEDH",
-          "cEDH Inalla - Wizard's Chess",
-          "  Warrior Queen [cEDH Najeela] "
-        ]
-      },
-      "badProfiles": []
+      "bySource": {
+        "precon": "222222222222333",
+        "cedh": "444444444444445"
+      }
     }
   },
   "decks": [
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          2
+        ],
+        "binding": [
+          "baseline"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "precon",
       "name": "Breed Lethality",
       "commander": "Atraxa, Praetors' Voice",
@@ -252,6 +221,45 @@
         "commanderDelta": 12,
         "coverage": 94,
         "dataCoverage": 94
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 9,
+          "median": 10,
+          "p80": 12
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0.4,
+          "8": 5.2,
+          "9": 23.1,
+          "10": 50.8
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0
+        },
+        "sources": {
+          "combat": 100,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 38,
@@ -653,6 +661,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          3
+        ],
+        "binding": [
+          "speed"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "precon",
       "name": "Primal Genesis",
       "commander": "Ghired, Conclave Exile",
@@ -664,23 +684,62 @@
         "resolvedCount": 99
       },
       "profile": {
-        "median": 43,
-        "floor": 31,
+        "median": 44,
+        "floor": 30,
         "ceiling": 55,
         "peak": 89,
-        "dispersion": 24,
-        "variance": 24,
+        "dispersion": 25,
+        "variance": 25,
         "consistency": 62,
-        "commanderDelta": 12,
+        "commanderDelta": 13,
         "coverage": 94,
         "dataCoverage": 94
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 8,
+          "median": 10,
+          "p80": 12
+        },
+        "win": {
+          "p20": 12,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0.3,
+          "6": 3.3,
+          "7": 10,
+          "8": 21,
+          "9": 38.3,
+          "10": 59.5
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0.6,
+          "9": 4.3,
+          "10": 10
+        },
+        "sources": {
+          "combat": 99.3,
+          "commander": 0.7,
+          "poison": 0,
+          "drain": 0,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 28,
         "consistency": 62,
         "explosiveness": 15,
         "synergy": 86,
-        "interaction": 38,
+        "interaction": 41,
         "resilience": 42
       },
       "roles": {
@@ -690,7 +749,7 @@
         "tutors": 0,
         "repeatableTutors": 0,
         "draw": 12,
-        "interaction": 10,
+        "interaction": 11,
         "protection": 3,
         "recursion": 4,
         "wipes": 3,
@@ -765,9 +824,9 @@
       "simulation": {
         "iterations": 3200,
         "floor": 30,
-        "median": 38,
-        "high": 47,
-        "ceiling": 47,
+        "median": 39,
+        "high": 48,
+        "ceiling": 48,
         "peak": 80,
         "iqr": 14,
         "consistency": 70,
@@ -803,7 +862,7 @@
             "turn": 3,
             "commander": 5,
             "engine": 10,
-            "interaction": 25,
+            "interaction": 27,
             "resource": 35,
             "burst": 0,
             "commanderCheat": 0,
@@ -815,7 +874,7 @@
             "turn": 4,
             "commander": 29,
             "engine": 22,
-            "interaction": 43,
+            "interaction": 46,
             "resource": 61,
             "burst": 0,
             "commanderCheat": 0,
@@ -827,7 +886,7 @@
             "turn": 5,
             "commander": 65,
             "engine": 31,
-            "interaction": 54,
+            "interaction": 57,
             "resource": 76,
             "burst": 0,
             "commanderCheat": 0,
@@ -839,7 +898,7 @@
             "turn": 6,
             "commander": 79,
             "engine": 39,
-            "interaction": 62,
+            "interaction": 65,
             "resource": 81,
             "burst": 0,
             "commanderCheat": 0,
@@ -851,7 +910,7 @@
             "turn": 7,
             "commander": 84,
             "engine": 46,
-            "interaction": 68,
+            "interaction": 72,
             "resource": 86,
             "burst": 0,
             "commanderCheat": 0,
@@ -955,26 +1014,26 @@
                 },
                 {
                   "turn": 3,
-                  "value": 24
+                  "value": 26
                 },
                 {
                   "turn": 4,
-                  "value": 46
+                  "value": 49
                 },
                 {
                   "turn": 5,
-                  "value": 57
+                  "value": 61
                 },
                 {
                   "turn": 6,
-                  "value": 64
+                  "value": 68
                 },
                 {
                   "turn": 7,
-                  "value": 72
+                  "value": 76
                 }
               ],
-              "observedWithinHorizon": 577
+              "observedWithinHorizon": 605
             },
             "resource": {
               "id": "resource-first-access",
@@ -1096,6 +1155,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          2
+        ],
+        "binding": [
+          "baseline"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "precon",
       "name": "Elven Empire",
       "commander": "Lathril, Blade of the Elves",
@@ -1117,6 +1188,45 @@
         "commanderDelta": 14,
         "coverage": 93,
         "dataCoverage": 93
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 10,
+          "median": 11,
+          "p80": 12
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0.1,
+          "7": 1,
+          "8": 6.1,
+          "9": 19.7,
+          "10": 40.6
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0.1,
+          "10": 0.6
+        },
+        "sources": {
+          "combat": 99,
+          "commander": 0.5,
+          "poison": 0,
+          "drain": 0.5,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 34,
@@ -1510,6 +1620,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          2
+        ],
+        "binding": [
+          "baseline"
+        ],
+        "b1Compatible": true,
+        "cedhSpeed": false
+      },
       "source": "precon",
       "name": "Coven Counters",
       "commander": "Leinore, Autumn Sovereign",
@@ -1531,6 +1653,45 @@
         "commanderDelta": 10,
         "coverage": 94,
         "dataCoverage": 94
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 10,
+          "median": 12,
+          "p80": 13
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 1,
+          "9": 8.3,
+          "10": 26.2
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0
+        },
+        "sources": {
+          "combat": 100,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 33,
@@ -1963,6 +2124,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          2
+        ],
+        "binding": [
+          "baseline"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "precon",
       "name": "Obscura Operation",
       "commander": "Kamiz, Obscura Oculus",
@@ -1984,6 +2157,45 @@
         "commanderDelta": 7,
         "coverage": 94,
         "dataCoverage": 94
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 9,
+          "median": 10,
+          "p80": 12
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4.2,
+          "9": 24.2,
+          "10": 54.9
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0
+        },
+        "sources": {
+          "combat": 100,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 39,
@@ -2409,6 +2621,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          3
+        ],
+        "binding": [
+          "speed"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "precon",
       "name": "Necron Dynasties Collector's Edition",
       "commander": "Szarekh, the Silent King",
@@ -2430,6 +2654,45 @@
         "commanderDelta": 10,
         "coverage": 94,
         "dataCoverage": 94
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 9,
+          "median": 10,
+          "p80": 11
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 2.5,
+          "8": 15.2,
+          "9": 48.5,
+          "10": 78.9
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0.7
+        },
+        "sources": {
+          "combat": 99.5,
+          "commander": 0.5,
+          "poison": 0,
+          "drain": 0,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 38,
@@ -2859,6 +3122,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          3
+        ],
+        "binding": [
+          "speed"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "precon",
       "name": "Grave Danger",
       "commander": "Gisa and Geralf",
@@ -2880,6 +3155,45 @@
         "commanderDelta": 14,
         "coverage": 94,
         "dataCoverage": 94
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 9,
+          "median": 10,
+          "p80": 11
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 2.6,
+          "8": 16.3,
+          "9": 40.6,
+          "10": 69.2
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0.1,
+          "10": 1.8
+        },
+        "sources": {
+          "combat": 95.1,
+          "commander": 1.8,
+          "poison": 0,
+          "drain": 3.1,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 35,
@@ -3316,6 +3630,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 3,
+        "range": [
+          3,
+          3
+        ],
+        "binding": [
+          "game-changers"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "precon",
       "name": "Planeswalker Party",
       "commander": "Commodore Guff",
@@ -3327,23 +3653,62 @@
         "resolvedCount": 99
       },
       "profile": {
-        "median": 52,
+        "median": 53,
         "floor": 40,
         "ceiling": 65,
         "peak": 90,
         "dispersion": 25,
         "variance": 25,
         "consistency": 62,
-        "commanderDelta": 9,
+        "commanderDelta": 8,
         "coverage": 92,
         "dataCoverage": 92
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 11,
+          "median": 13,
+          "p80": 13
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0.1,
+          "8": 0.4,
+          "9": 5.3,
+          "10": 13.3
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0
+        },
+        "sources": {
+          "combat": 99.7,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0.3,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 45,
         "consistency": 62,
         "explosiveness": 24,
         "synergy": 72,
-        "interaction": 55,
+        "interaction": 56,
         "resilience": 38
       },
       "roles": {
@@ -3353,7 +3718,7 @@
         "tutors": 1,
         "repeatableTutors": 1,
         "draw": 7,
-        "interaction": 12,
+        "interaction": 13,
         "protection": 4,
         "recursion": 2,
         "wipes": 4,
@@ -3483,7 +3848,7 @@
             "turn": 3,
             "commander": 48,
             "engine": 10,
-            "interaction": 43,
+            "interaction": 44,
             "resource": 40,
             "burst": 11,
             "commanderCheat": 0,
@@ -3495,7 +3860,7 @@
             "turn": 4,
             "commander": 80,
             "engine": 21,
-            "interaction": 59,
+            "interaction": 60,
             "resource": 55,
             "burst": 17,
             "commanderCheat": 0,
@@ -3507,7 +3872,7 @@
             "turn": 5,
             "commander": 85,
             "engine": 29,
-            "interaction": 69,
+            "interaction": 71,
             "resource": 63,
             "burst": 23,
             "commanderCheat": 0,
@@ -3519,7 +3884,7 @@
             "turn": 6,
             "commander": 89,
             "engine": 36,
-            "interaction": 76,
+            "interaction": 78,
             "resource": 68,
             "burst": 27,
             "commanderCheat": 0,
@@ -3531,7 +3896,7 @@
             "turn": 7,
             "commander": 92,
             "engine": 42,
-            "interaction": 80,
+            "interaction": 82,
             "resource": 72,
             "burst": 30,
             "commanderCheat": 0,
@@ -3619,7 +3984,7 @@
                   "value": 42
                 }
               ],
-              "observedWithinHorizon": 333
+              "observedWithinHorizon": 335
             },
             "interaction": {
               "id": "interaction-first-access",
@@ -3631,30 +3996,30 @@
                 },
                 {
                   "turn": 2,
-                  "value": 21
+                  "value": 22
                 },
                 {
                   "turn": 3,
-                  "value": 45
+                  "value": 46
                 },
                 {
                   "turn": 4,
-                  "value": 62
+                  "value": 64
                 },
                 {
                   "turn": 5,
-                  "value": 70
+                  "value": 73
                 },
                 {
                   "turn": 6,
-                  "value": 75
+                  "value": 78
                 },
                 {
                   "turn": 7,
-                  "value": 80
+                  "value": 83
                 }
               ],
-              "observedWithinHorizon": 636
+              "observedWithinHorizon": 662
             },
             "resource": {
               "id": "resource-first-access",
@@ -3776,6 +4141,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          2
+        ],
+        "binding": [
+          "baseline"
+        ],
+        "b1Compatible": true,
+        "cedhSpeed": false
+      },
       "source": "precon",
       "name": "Blame Game",
       "commander": "Nelly Borca, Impulsive Accuser",
@@ -3797,6 +4174,45 @@
         "commanderDelta": 6,
         "coverage": 92,
         "dataCoverage": 92
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 10,
+          "median": 11,
+          "p80": 13
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0.1,
+          "8": 2.4,
+          "9": 12,
+          "10": 31.5
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0.2
+        },
+        "sources": {
+          "combat": 99.9,
+          "commander": 0.1,
+          "poison": 0,
+          "drain": 0,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 33,
@@ -4174,6 +4590,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          3
+        ],
+        "binding": [
+          "speed"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "precon",
       "name": "Most Wanted",
       "commander": "Olivia, Opulent Outlaw",
@@ -4195,6 +4623,45 @@
         "commanderDelta": 10,
         "coverage": 93,
         "dataCoverage": 93
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 9,
+          "median": 10,
+          "p80": 11
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0.3,
+          "7": 3.5,
+          "8": 15.2,
+          "9": 40.2,
+          "10": 70.4
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0
+        },
+        "sources": {
+          "combat": 99.6,
+          "commander": 0.3,
+          "poison": 0,
+          "drain": 0.1,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 40,
@@ -4607,6 +5074,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 3,
+        "range": [
+          3,
+          3
+        ],
+        "binding": [
+          "combos"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "precon",
       "name": "Family Matters",
       "commander": "Zinnia, Valley's Voice",
@@ -4618,23 +5097,62 @@
         "resolvedCount": 99
       },
       "profile": {
-        "median": 48,
-        "floor": 38,
+        "median": 49,
+        "floor": 39,
         "ceiling": 59,
-        "peak": 83,
-        "dispersion": 22,
-        "variance": 22,
+        "peak": 84,
+        "dispersion": 20,
+        "variance": 20,
         "consistency": 63,
-        "commanderDelta": 10,
+        "commanderDelta": 11,
         "coverage": 94,
         "dataCoverage": 94
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 9,
+          "median": 10,
+          "p80": 11
+        },
+        "win": {
+          "p20": 12,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0.1,
+          "5": 0.6,
+          "6": 1.5,
+          "7": 6.4,
+          "8": 18.9,
+          "9": 44,
+          "10": 70.7
+        },
+        "winBefore": {
+          "4": 0.1,
+          "5": 0.6,
+          "6": 1.2,
+          "7": 1.5,
+          "8": 1.9,
+          "9": 3.2,
+          "10": 5.6
+        },
+        "sources": {
+          "combat": 94.9,
+          "commander": 1.1,
+          "poison": 0,
+          "drain": 0.2,
+          "combo": 3.8
+        },
+        "combos": 1,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 41,
         "consistency": 63,
         "explosiveness": 11,
         "synergy": 74,
-        "interaction": 46,
+        "interaction": 51,
         "resilience": 43
       },
       "roles": {
@@ -4644,7 +5162,7 @@
         "tutors": 0,
         "repeatableTutors": 0,
         "draw": 16,
-        "interaction": 9,
+        "interaction": 10,
         "protection": 3,
         "recursion": 3,
         "wipes": 5,
@@ -4694,11 +5212,11 @@
       "combos": [],
       "simulation": {
         "iterations": 3200,
-        "floor": 36,
-        "median": 43,
+        "floor": 37,
+        "median": 44,
         "high": 52,
         "ceiling": 52,
-        "peak": 73,
+        "peak": 74,
         "iqr": 13,
         "consistency": 72,
         "commanderMedianTurn": 3,
@@ -4721,7 +5239,7 @@
             "turn": 2,
             "commander": 2,
             "engine": 0,
-            "interaction": 18,
+            "interaction": 20,
             "resource": 16,
             "burst": 0,
             "commanderCheat": 0,
@@ -4733,7 +5251,7 @@
             "turn": 3,
             "commander": 74,
             "engine": 2,
-            "interaction": 40,
+            "interaction": 45,
             "resource": 60,
             "burst": 0,
             "commanderCheat": 0,
@@ -4745,7 +5263,7 @@
             "turn": 4,
             "commander": 89,
             "engine": 7,
-            "interaction": 49,
+            "interaction": 53,
             "resource": 70,
             "burst": 0,
             "commanderCheat": 0,
@@ -4757,7 +5275,7 @@
             "turn": 5,
             "commander": 93,
             "engine": 14,
-            "interaction": 58,
+            "interaction": 63,
             "resource": 83,
             "burst": 0,
             "commanderCheat": 0,
@@ -4769,7 +5287,7 @@
             "turn": 6,
             "commander": 95,
             "engine": 21,
-            "interaction": 64,
+            "interaction": 69,
             "resource": 88,
             "burst": 0,
             "commanderCheat": 0,
@@ -4781,7 +5299,7 @@
             "turn": 7,
             "commander": 97,
             "engine": 26,
-            "interaction": 70,
+            "interaction": 74,
             "resource": 92,
             "burst": 0,
             "commanderCheat": 0,
@@ -4881,30 +5399,30 @@
                 },
                 {
                   "turn": 2,
-                  "value": 17
+                  "value": 20
                 },
                 {
                   "turn": 3,
-                  "value": 38
+                  "value": 42
                 },
                 {
                   "turn": 4,
-                  "value": 50
+                  "value": 55
                 },
                 {
                   "turn": 5,
-                  "value": 59
+                  "value": 63
                 },
                 {
                   "turn": 6,
-                  "value": 65
+                  "value": 69
                 },
                 {
                   "turn": 7,
-                  "value": 69
+                  "value": 73
                 }
               ],
-              "observedWithinHorizon": 551
+              "observedWithinHorizon": 587
             },
             "resource": {
               "id": "resource-first-access",
@@ -5026,6 +5544,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 3,
+        "range": [
+          3,
+          3
+        ],
+        "binding": [
+          "game-changers"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "precon",
       "name": "Abzan Armor",
       "commander": "Felothar the Steadfast",
@@ -5047,6 +5577,45 @@
         "commanderDelta": 5,
         "coverage": 92,
         "dataCoverage": 92
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 11,
+          "median": 13,
+          "p80": 13
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0.2,
+          "9": 3.6,
+          "10": 13.9
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0
+        },
+        "sources": {
+          "combat": 98.3,
+          "commander": 0,
+          "poison": 0,
+          "drain": 1.7,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 39,
@@ -5460,6 +6029,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          2
+        ],
+        "binding": [
+          "baseline"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "precon",
       "name": "Revival Trance Collector's Edition (FINAL FANTASY VI)",
       "commander": "Terra, Herald of Hope",
@@ -5481,6 +6062,45 @@
         "commanderDelta": 11,
         "coverage": 93,
         "dataCoverage": 93
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 9,
+          "median": 10,
+          "p80": 12
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 2.7,
+          "8": 10,
+          "9": 27.2,
+          "10": 52.6
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 1.2
+        },
+        "sources": {
+          "combat": 98.8,
+          "commander": 1.1,
+          "poison": 0,
+          "drain": 0.1,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 40,
@@ -5871,6 +6491,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          2
+        ],
+        "binding": [
+          "baseline"
+        ],
+        "b1Compatible": true,
+        "cedhSpeed": false
+      },
       "source": "precon",
       "name": "Quandrix Unlimited",
       "commander": "Zimone, Infinite Analyst",
@@ -5892,6 +6524,45 @@
         "commanderDelta": 14,
         "coverage": 94,
         "dataCoverage": 94
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 11,
+          "median": 13,
+          "p80": 13
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0.4,
+          "8": 2,
+          "9": 7.3,
+          "10": 16.2
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0
+        },
+        "sources": {
+          "combat": 100,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 62,
@@ -6305,6 +6976,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          2
+        ],
+        "binding": [
+          "baseline"
+        ],
+        "b1Compatible": true,
+        "cedhSpeed": false
+      },
       "source": "precon",
       "name": "Wakanda Forever Collector's Edition",
       "commander": "T'Challa, the Black Panther",
@@ -6326,6 +7009,45 @@
         "commanderDelta": 14,
         "coverage": 94,
         "dataCoverage": 94
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 10,
+          "median": 12,
+          "p80": 13
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0.5,
+          "7": 6.2,
+          "8": 9.4,
+          "9": 14.5,
+          "10": 23.8
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0.6,
+          "10": 3.6
+        },
+        "sources": {
+          "combat": 98.4,
+          "commander": 1.6,
+          "poison": 0,
+          "drain": 0,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 41,
@@ -6728,6 +7450,19 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 4,
+        "range": [
+          4,
+          4
+        ],
+        "binding": [
+          "game-changers",
+          "combos"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "cedh",
       "name": " Layered Atraxa  cEDH",
       "commander": "Atraxa, Grand Unifier",
@@ -6738,8 +7473,8 @@
       },
       "profile": {
         "median": 75,
-        "floor": 64,
-        "ceiling": 82,
+        "floor": 65,
+        "ceiling": 83,
         "peak": 97,
         "dispersion": 18,
         "variance": 18,
@@ -6748,12 +7483,51 @@
         "coverage": 95,
         "dataCoverage": 95
       },
+      "clock": {
+        "firstKill": {
+          "p20": 5,
+          "median": 9,
+          "p80": 13
+        },
+        "win": {
+          "p20": 5,
+          "median": 12,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 15.2,
+          "5": 20.6,
+          "6": 25,
+          "7": 30.6,
+          "8": 40.3,
+          "9": 52.9,
+          "10": 64
+        },
+        "winBefore": {
+          "4": 15.2,
+          "5": 20.6,
+          "6": 25,
+          "7": 30,
+          "8": 33.7,
+          "9": 38.9,
+          "10": 43.7
+        },
+        "sources": {
+          "combat": 34.9,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 65.1
+        },
+        "combos": 2,
+        "estimatedPowerCards": 0
+      },
       "dimensions": {
         "speed": 79,
         "consistency": 83,
-        "explosiveness": 92,
+        "explosiveness": 91,
         "synergy": 75,
-        "interaction": 82,
+        "interaction": 88,
         "resilience": 27
       },
       "roles": {
@@ -6763,7 +7537,7 @@
         "tutors": 10,
         "repeatableTutors": 1,
         "draw": 6,
-        "interaction": 20,
+        "interaction": 23,
         "protection": 3,
         "recursion": 1,
         "wipes": 3,
@@ -6821,10 +7595,10 @@
       ],
       "simulation": {
         "iterations": 3200,
-        "floor": 39,
-        "median": 47,
-        "high": 55,
-        "ceiling": 55,
+        "floor": 40,
+        "median": 48,
+        "high": 56,
+        "ceiling": 56,
         "peak": 71,
         "iqr": 13,
         "consistency": 72,
@@ -6836,7 +7610,7 @@
             "turn": 1,
             "commander": 0,
             "engine": 0,
-            "interaction": 41,
+            "interaction": 52,
             "resource": 13,
             "burst": 11,
             "commanderCheat": 0,
@@ -6848,7 +7622,7 @@
             "turn": 2,
             "commander": 1,
             "engine": 2,
-            "interaction": 63,
+            "interaction": 72,
             "resource": 27,
             "burst": 19,
             "commanderCheat": 0,
@@ -6860,7 +7634,7 @@
             "turn": 3,
             "commander": 9,
             "engine": 6,
-            "interaction": 78,
+            "interaction": 84,
             "resource": 40,
             "burst": 27,
             "commanderCheat": 0,
@@ -6872,7 +7646,7 @@
             "turn": 4,
             "commander": 25,
             "engine": 12,
-            "interaction": 84,
+            "interaction": 90,
             "resource": 47,
             "burst": 34,
             "commanderCheat": 0,
@@ -6884,7 +7658,7 @@
             "turn": 5,
             "commander": 42,
             "engine": 16,
-            "interaction": 88,
+            "interaction": 92,
             "resource": 52,
             "burst": 39,
             "commanderCheat": 0,
@@ -6896,7 +7670,7 @@
             "turn": 6,
             "commander": 57,
             "engine": 19,
-            "interaction": 90,
+            "interaction": 94,
             "resource": 57,
             "burst": 44,
             "commanderCheat": 0,
@@ -6908,7 +7682,7 @@
             "turn": 7,
             "commander": 67,
             "engine": 22,
-            "interaction": 93,
+            "interaction": 96,
             "resource": 60,
             "burst": 48,
             "commanderCheat": 0,
@@ -7004,34 +7778,34 @@
               "points": [
                 {
                   "turn": 1,
-                  "value": 44
+                  "value": 54
                 },
                 {
                   "turn": 2,
-                  "value": 68
+                  "value": 76
                 },
                 {
                   "turn": 3,
-                  "value": 82
-                },
-                {
-                  "turn": 4,
                   "value": 88
                 },
                 {
+                  "turn": 4,
+                  "value": 92
+                },
+                {
                   "turn": 5,
-                  "value": 91
+                  "value": 94
                 },
                 {
                   "turn": 6,
-                  "value": 93
+                  "value": 96
                 },
                 {
                   "turn": 7,
-                  "value": 95
+                  "value": 97
                 }
               ],
-              "observedWithinHorizon": 758
+              "observedWithinHorizon": 777
             },
             "resource": {
               "id": "resource-first-access",
@@ -7153,6 +7927,19 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 4,
+        "range": [
+          4,
+          4
+        ],
+        "binding": [
+          "game-changers",
+          "combos"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "cedh",
       "name": "[Mardu cEDH] Binder of the Breach",
       "commander": "Dihada, Binder of Wills",
@@ -7172,6 +7959,45 @@
         "commanderDelta": 8,
         "coverage": 94,
         "dataCoverage": 94
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 6,
+          "median": 10,
+          "p80": 13
+        },
+        "win": {
+          "p20": 6,
+          "median": 10,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 7,
+          "5": 15.6,
+          "6": 23,
+          "7": 29.3,
+          "8": 37.3,
+          "9": 45.6,
+          "10": 51.9
+        },
+        "winBefore": {
+          "4": 7,
+          "5": 15.6,
+          "6": 23,
+          "7": 29.3,
+          "8": 37.3,
+          "9": 45.6,
+          "10": 51.9
+        },
+        "sources": {
+          "combat": 2,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 98
+        },
+        "combos": 2,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 94,
@@ -7589,6 +8415,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 4,
+        "range": [
+          4,
+          4
+        ],
+        "binding": [
+          "game-changers"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "cedh",
       "name": " It Does Nothing ",
       "commander": "Ellivere of the Wild Court",
@@ -7608,6 +8446,45 @@
         "commanderDelta": 8,
         "coverage": 92,
         "dataCoverage": 92
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 9,
+          "median": 10,
+          "p80": 11
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4.7,
+          "9": 28.5,
+          "10": 59.3
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0
+        },
+        "sources": {
+          "combat": 100,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 72,
@@ -8033,6 +8910,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 4,
+        "range": [
+          4,
+          4
+        ],
+        "binding": [
+          "game-changers"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "cedh",
       "name": "[cEDH Etali] Flintstone Gummy ",
       "commander": "Etali, Primal Conqueror // Etali, Primal Sickness",
@@ -8052,6 +8941,45 @@
         "commanderDelta": 5,
         "coverage": 94,
         "dataCoverage": 94
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 7,
+          "median": 10,
+          "p80": 13
+        },
+        "win": {
+          "p20": 7,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 5.1,
+          "5": 9.8,
+          "6": 15.6,
+          "7": 21.6,
+          "8": 28.8,
+          "9": 40.7,
+          "10": 54.5
+        },
+        "winBefore": {
+          "4": 5.1,
+          "5": 9.8,
+          "6": 15.6,
+          "7": 21.5,
+          "8": 26.2,
+          "9": 31.5,
+          "10": 36.4
+        },
+        "sources": {
+          "combat": 38.1,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 61.9
+        },
+        "combos": 6,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 84,
@@ -8465,6 +9393,20 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 4,
+        "range": [
+          4,
+          5
+        ],
+        "binding": [
+          "game-changers",
+          "combos",
+          "speed"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "cedh",
       "name": "cEDH Inalla - Wizard's Chess",
       "commander": "Inalla, Archmage Ritualist",
@@ -8474,23 +9416,62 @@
         "resolvedCount": 99
       },
       "profile": {
-        "median": 81,
-        "floor": 70,
-        "ceiling": 87,
+        "median": 82,
+        "floor": 72,
+        "ceiling": 89,
         "peak": 100,
-        "dispersion": 18,
-        "variance": 18,
+        "dispersion": 17,
+        "variance": 17,
         "consistency": 83,
-        "commanderDelta": 8,
+        "commanderDelta": 7,
         "coverage": 95,
         "dataCoverage": 95
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 5,
+          "median": 8,
+          "p80": 13
+        },
+        "win": {
+          "p20": 5,
+          "median": 8,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 18.1,
+          "5": 28.5,
+          "6": 35.5,
+          "7": 42.4,
+          "8": 50.1,
+          "9": 55.4,
+          "10": 61.9
+        },
+        "winBefore": {
+          "4": 18.1,
+          "5": 28.5,
+          "6": 35.5,
+          "7": 42.4,
+          "8": 50.1,
+          "9": 55.3,
+          "10": 61
+        },
+        "sources": {
+          "combat": 2.8,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 97.2
+        },
+        "combos": 2,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 100,
         "consistency": 83,
         "explosiveness": 100,
         "synergy": 75,
-        "interaction": 51,
+        "interaction": 63,
         "resilience": 67
       },
       "roles": {
@@ -8500,7 +9481,7 @@
         "tutors": 13,
         "repeatableTutors": 1,
         "draw": 7,
-        "interaction": 8,
+        "interaction": 10,
         "protection": 1,
         "recursion": 11,
         "wipes": 0,
@@ -8574,11 +9555,11 @@
       ],
       "simulation": {
         "iterations": 3200,
-        "floor": 41,
-        "median": 51,
-        "high": 60,
-        "ceiling": 60,
-        "peak": 80,
+        "floor": 43,
+        "median": 52,
+        "high": 62,
+        "ceiling": 62,
+        "peak": 82,
         "iqr": 15,
         "consistency": 66,
         "commanderMedianTurn": 3,
@@ -8589,7 +9570,7 @@
             "turn": 1,
             "commander": 5,
             "engine": 3,
-            "interaction": 31,
+            "interaction": 44,
             "resource": 31,
             "burst": 19,
             "commanderCheat": 0,
@@ -8601,7 +9582,7 @@
             "turn": 2,
             "commander": 20,
             "engine": 7,
-            "interaction": 40,
+            "interaction": 53,
             "resource": 51,
             "burst": 30,
             "commanderCheat": 0,
@@ -8613,7 +9594,7 @@
             "turn": 3,
             "commander": 47,
             "engine": 13,
-            "interaction": 47,
+            "interaction": 59,
             "resource": 65,
             "burst": 41,
             "commanderCheat": 0,
@@ -8625,7 +9606,7 @@
             "turn": 4,
             "commander": 71,
             "engine": 20,
-            "interaction": 53,
+            "interaction": 64,
             "resource": 76,
             "burst": 50,
             "commanderCheat": 0,
@@ -8637,7 +9618,7 @@
             "turn": 5,
             "commander": 82,
             "engine": 26,
-            "interaction": 58,
+            "interaction": 68,
             "resource": 82,
             "burst": 57,
             "commanderCheat": 0,
@@ -8649,7 +9630,7 @@
             "turn": 6,
             "commander": 88,
             "engine": 30,
-            "interaction": 62,
+            "interaction": 72,
             "resource": 86,
             "burst": 63,
             "commanderCheat": 0,
@@ -8661,7 +9642,7 @@
             "turn": 7,
             "commander": 92,
             "engine": 36,
-            "interaction": 66,
+            "interaction": 74,
             "resource": 89,
             "burst": 68,
             "commanderCheat": 0,
@@ -8757,34 +9738,34 @@
               "points": [
                 {
                   "turn": 1,
-                  "value": 33
+                  "value": 46
                 },
                 {
                   "turn": 2,
-                  "value": 43
+                  "value": 59
                 },
                 {
                   "turn": 3,
-                  "value": 52
-                },
-                {
-                  "turn": 4,
-                  "value": 57
-                },
-                {
-                  "turn": 5,
-                  "value": 62
-                },
-                {
-                  "turn": 6,
                   "value": 66
                 },
                 {
+                  "turn": 4,
+                  "value": 71
+                },
+                {
+                  "turn": 5,
+                  "value": 74
+                },
+                {
+                  "turn": 6,
+                  "value": 76
+                },
+                {
                   "turn": 7,
-                  "value": 70
+                  "value": 81
                 }
               ],
-              "observedWithinHorizon": 558
+              "observedWithinHorizon": 646
             },
             "resource": {
               "id": "resource-first-access",
@@ -8906,6 +9887,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 4,
+        "range": [
+          4,
+          4
+        ],
+        "binding": [
+          "game-changers"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "cedh",
       "name": "Black Hole Son",
       "commander": "K'rrik, Son of Yawgmoth",
@@ -8925,6 +9918,45 @@
         "commanderDelta": 4,
         "coverage": 93,
         "dataCoverage": 93
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 8,
+          "median": 11,
+          "p80": 13
+        },
+        "win": {
+          "p20": 8,
+          "median": 12,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0.4,
+          "5": 1.8,
+          "6": 6.9,
+          "7": 12.8,
+          "8": 22.9,
+          "9": 32.1,
+          "10": 41.5
+        },
+        "winBefore": {
+          "4": 0.4,
+          "5": 1.8,
+          "6": 6.9,
+          "7": 12.8,
+          "8": 22.9,
+          "9": 31.9,
+          "10": 40.3
+        },
+        "sources": {
+          "combat": 10.3,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 89.7
+        },
+        "combos": 3,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 77,
@@ -9377,6 +10409,19 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 4,
+        "range": [
+          4,
+          4
+        ],
+        "binding": [
+          "game-changers",
+          "combos"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "cedh",
       "name": "Korvold, the MAD King ",
       "commander": "Korvold, Fae-Cursed King",
@@ -9396,6 +10441,45 @@
         "commanderDelta": 8,
         "coverage": 93,
         "dataCoverage": 93
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 5,
+          "median": 9,
+          "p80": 11
+        },
+        "win": {
+          "p20": 5,
+          "median": 10,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 19.6,
+          "5": 27.2,
+          "6": 32.5,
+          "7": 38.3,
+          "8": 46.1,
+          "9": 57.4,
+          "10": 72.4
+        },
+        "winBefore": {
+          "4": 19.6,
+          "5": 27.2,
+          "6": 32.5,
+          "7": 38.3,
+          "8": 43.9,
+          "9": 48.6,
+          "10": 53.9
+        },
+        "sources": {
+          "combat": 32.3,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 67.7
+        },
+        "combos": 2,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 100,
@@ -9855,6 +10939,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 5,
+        "range": [
+          5,
+          5
+        ],
+        "binding": [
+          "speed"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": true
+      },
       "source": "cedh",
       "name": "  Warrior Queen [cEDH Najeela] ",
       "commander": "Najeela, the Blade-Blossom",
@@ -9865,8 +10961,8 @@
       },
       "profile": {
         "median": 83,
-        "floor": 77,
-        "ceiling": 87,
+        "floor": 78,
+        "ceiling": 88,
         "peak": 100,
         "dispersion": 10,
         "variance": 10,
@@ -9875,12 +10971,51 @@
         "coverage": 95,
         "dataCoverage": 95
       },
+      "clock": {
+        "firstKill": {
+          "p20": 3,
+          "median": 5,
+          "p80": 8
+        },
+        "win": {
+          "p20": 3,
+          "median": 5,
+          "p80": 8
+        },
+        "firstKillBefore": {
+          "4": 48.1,
+          "5": 64.7,
+          "6": 71.3,
+          "7": 77.7,
+          "8": 88,
+          "9": 94.4,
+          "10": 98.1
+        },
+        "winBefore": {
+          "4": 48.1,
+          "5": 64.7,
+          "6": 71.3,
+          "7": 76.8,
+          "8": 81.9,
+          "9": 84.6,
+          "10": 87.6
+        },
+        "sources": {
+          "combat": 8.6,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 91.4
+        },
+        "combos": 6,
+        "estimatedPowerCards": 0
+      },
       "dimensions": {
         "speed": 100,
         "consistency": 94,
         "explosiveness": 100,
         "synergy": 90,
-        "interaction": 68,
+        "interaction": 71,
         "resilience": 38
       },
       "roles": {
@@ -9890,7 +11025,7 @@
         "tutors": 14,
         "repeatableTutors": 1,
         "draw": 6,
-        "interaction": 14,
+        "interaction": 15,
         "protection": 2,
         "recursion": 2,
         "wipes": 2,
@@ -9927,11 +11062,11 @@
       ],
       "simulation": {
         "iterations": 3200,
-        "floor": 43,
+        "floor": 44,
         "median": 50,
-        "high": 56,
-        "ceiling": 56,
-        "peak": 69,
+        "high": 57,
+        "ceiling": 57,
+        "peak": 70,
         "iqr": 10,
         "consistency": 77,
         "commanderMedianTurn": 2,
@@ -9942,7 +11077,7 @@
             "turn": 1,
             "commander": 26,
             "engine": 0,
-            "interaction": 35,
+            "interaction": 37,
             "resource": 19,
             "burst": 20,
             "commanderCheat": 0,
@@ -9954,7 +11089,7 @@
             "turn": 2,
             "commander": 70,
             "engine": 0,
-            "interaction": 53,
+            "interaction": 56,
             "resource": 38,
             "burst": 38,
             "commanderCheat": 0,
@@ -9966,7 +11101,7 @@
             "turn": 3,
             "commander": 94,
             "engine": 0,
-            "interaction": 62,
+            "interaction": 65,
             "resource": 47,
             "burst": 49,
             "commanderCheat": 0,
@@ -9978,7 +11113,7 @@
             "turn": 4,
             "commander": 97,
             "engine": 0,
-            "interaction": 71,
+            "interaction": 74,
             "resource": 53,
             "burst": 57,
             "commanderCheat": 0,
@@ -9990,7 +11125,7 @@
             "turn": 5,
             "commander": 98,
             "engine": 0,
-            "interaction": 77,
+            "interaction": 80,
             "resource": 59,
             "burst": 64,
             "commanderCheat": 0,
@@ -10002,7 +11137,7 @@
             "turn": 6,
             "commander": 99,
             "engine": 0,
-            "interaction": 82,
+            "interaction": 84,
             "resource": 63,
             "burst": 68,
             "commanderCheat": 0,
@@ -10014,7 +11149,7 @@
             "turn": 7,
             "commander": 99,
             "engine": 0,
-            "interaction": 85,
+            "interaction": 87,
             "resource": 67,
             "burst": 72,
             "commanderCheat": 0,
@@ -10110,34 +11245,34 @@
               "points": [
                 {
                   "turn": 1,
-                  "value": 34
+                  "value": 36
                 },
                 {
                   "turn": 2,
-                  "value": 54
+                  "value": 58
                 },
                 {
                   "turn": 3,
-                  "value": 67
+                  "value": 70
                 },
                 {
                   "turn": 4,
-                  "value": 74
+                  "value": 77
                 },
                 {
                   "turn": 5,
-                  "value": 80
+                  "value": 82
                 },
                 {
                   "turn": 6,
-                  "value": 83
+                  "value": 85
                 },
                 {
                   "turn": 7,
-                  "value": 87
+                  "value": 89
                 }
               ],
-              "observedWithinHorizon": 696
+              "observedWithinHorizon": 715
             },
             "resource": {
               "id": "resource-first-access",
@@ -10259,6 +11394,19 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 4,
+        "range": [
+          4,
+          4
+        ],
+        "binding": [
+          "game-changers",
+          "combos"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "cedh",
       "name": "[A52] New Catering ",
       "commander": "Rocco, Cabaretti Caterer",
@@ -10278,6 +11426,45 @@
         "commanderDelta": 8,
         "coverage": 94,
         "dataCoverage": 94
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 6,
+          "median": 11,
+          "p80": 13
+        },
+        "win": {
+          "p20": 6,
+          "median": 11,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 6.3,
+          "5": 12.3,
+          "6": 21.2,
+          "7": 30.6,
+          "8": 34.9,
+          "9": 41.7,
+          "10": 47.7
+        },
+        "winBefore": {
+          "4": 6.3,
+          "5": 12.3,
+          "6": 21.2,
+          "7": 30.6,
+          "8": 34.9,
+          "9": 41.5,
+          "10": 46
+        },
+        "sources": {
+          "combat": 19.1,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 80.9
+        },
+        "combos": 2,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 95,
@@ -10678,6 +11865,20 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 4,
+        "range": [
+          4,
+          5
+        ],
+        "binding": [
+          "game-changers",
+          "combos",
+          "speed"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "cedh",
       "name": "NBC Sisay Slop",
       "commander": "Sisay, Weatherlight Captain",
@@ -10688,22 +11889,61 @@
       },
       "profile": {
         "median": 81,
-        "floor": 72,
-        "ceiling": 86,
-        "peak": 99,
+        "floor": 73,
+        "ceiling": 87,
+        "peak": 100,
         "dispersion": 14,
         "variance": 14,
-        "consistency": 86,
+        "consistency": 87,
         "commanderDelta": 8,
-        "coverage": 94,
-        "dataCoverage": 94
+        "coverage": 95,
+        "dataCoverage": 95
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 4,
+          "median": 8,
+          "p80": 13
+        },
+        "win": {
+          "p20": 4,
+          "median": 8,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 24.4,
+          "5": 33.9,
+          "6": 40.7,
+          "7": 47.1,
+          "8": 51.9,
+          "9": 57.4,
+          "10": 60.5
+        },
+        "winBefore": {
+          "4": 24.4,
+          "5": 33.9,
+          "6": 40.7,
+          "7": 47.1,
+          "8": 51.9,
+          "9": 57.4,
+          "10": 60.5
+        },
+        "sources": {
+          "combat": 1,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 99
+        },
+        "combos": 8,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 100,
-        "consistency": 86,
+        "consistency": 87,
         "explosiveness": 100,
         "synergy": 87,
-        "interaction": 61,
+        "interaction": 67,
         "resilience": 33
       },
       "roles": {
@@ -10713,7 +11953,7 @@
         "tutors": 11,
         "repeatableTutors": 1,
         "draw": 8,
-        "interaction": 13,
+        "interaction": 15,
         "protection": 1,
         "recursion": 1,
         "wipes": 1,
@@ -10750,13 +11990,13 @@
       ],
       "simulation": {
         "iterations": 3200,
-        "floor": 40,
-        "median": 48,
-        "high": 55,
-        "ceiling": 55,
-        "peak": 67,
+        "floor": 41,
+        "median": 49,
+        "high": 56,
+        "ceiling": 56,
+        "peak": 68,
         "iqr": 12,
-        "consistency": 74,
+        "consistency": 75,
         "commanderMedianTurn": 2,
         "engineMedianTurn": null,
         "recoveryAfterDisruption": 92,
@@ -10765,7 +12005,7 @@
             "turn": 1,
             "commander": 22,
             "engine": 0,
-            "interaction": 34,
+            "interaction": 43,
             "resource": 20,
             "burst": 16,
             "commanderCheat": 0,
@@ -10777,7 +12017,7 @@
             "turn": 2,
             "commander": 62,
             "engine": 0,
-            "interaction": 48,
+            "interaction": 57,
             "resource": 38,
             "burst": 28,
             "commanderCheat": 0,
@@ -10789,7 +12029,7 @@
             "turn": 3,
             "commander": 88,
             "engine": 0,
-            "interaction": 56,
+            "interaction": 63,
             "resource": 48,
             "burst": 39,
             "commanderCheat": 0,
@@ -10801,7 +12041,7 @@
             "turn": 4,
             "commander": 91,
             "engine": 0,
-            "interaction": 63,
+            "interaction": 69,
             "resource": 55,
             "burst": 47,
             "commanderCheat": 0,
@@ -10813,7 +12053,7 @@
             "turn": 5,
             "commander": 94,
             "engine": 0,
-            "interaction": 70,
+            "interaction": 76,
             "resource": 62,
             "burst": 55,
             "commanderCheat": 0,
@@ -10825,7 +12065,7 @@
             "turn": 6,
             "commander": 95,
             "engine": 0,
-            "interaction": 75,
+            "interaction": 80,
             "resource": 66,
             "burst": 61,
             "commanderCheat": 0,
@@ -10837,7 +12077,7 @@
             "turn": 7,
             "commander": 96,
             "engine": 0,
-            "interaction": 78,
+            "interaction": 83,
             "resource": 69,
             "burst": 66,
             "commanderCheat": 0,
@@ -10933,34 +12173,34 @@
               "points": [
                 {
                   "turn": 1,
-                  "value": 33
+                  "value": 41
                 },
                 {
                   "turn": 2,
-                  "value": 52
+                  "value": 61
                 },
                 {
                   "turn": 3,
-                  "value": 63
+                  "value": 73
                 },
                 {
                   "turn": 4,
-                  "value": 72
+                  "value": 80
                 },
                 {
                   "turn": 5,
-                  "value": 78
+                  "value": 85
                 },
                 {
                   "turn": 6,
-                  "value": 81
+                  "value": 89
                 },
                 {
                   "turn": 7,
-                  "value": 84
+                  "value": 90
                 }
               ],
-              "observedWithinHorizon": 670
+              "observedWithinHorizon": 720
             },
             "resource": {
               "id": "resource-first-access",
@@ -11082,6 +12322,19 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 4,
+        "range": [
+          4,
+          4
+        ],
+        "binding": [
+          "game-changers",
+          "combos"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "cedh",
       "name": "[CABAL] cEDH  UB adaptive control ",
       "commander": "Talion, the Kindly Lord",
@@ -11092,7 +12345,7 @@
       },
       "profile": {
         "median": 75,
-        "floor": 67,
+        "floor": 66,
         "ceiling": 82,
         "peak": 94,
         "dispersion": 15,
@@ -11102,12 +12355,51 @@
         "coverage": 94,
         "dataCoverage": 94
       },
+      "clock": {
+        "firstKill": {
+          "p20": 9,
+          "median": 12,
+          "p80": 13
+        },
+        "win": {
+          "p20": 10,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 9.3,
+          "5": 11.8,
+          "6": 13.4,
+          "7": 15.6,
+          "8": 17.8,
+          "9": 21.8,
+          "10": 28.9
+        },
+        "winBefore": {
+          "4": 9.3,
+          "5": 11.8,
+          "6": 13.4,
+          "7": 15.6,
+          "8": 17.7,
+          "9": 19.9,
+          "10": 22.7
+        },
+        "sources": {
+          "combat": 61,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 39
+        },
+        "combos": 2,
+        "estimatedPowerCards": 0
+      },
       "dimensions": {
         "speed": 79,
         "consistency": 75,
         "explosiveness": 90,
         "synergy": 82,
-        "interaction": 90,
+        "interaction": 93,
         "resilience": 24
       },
       "roles": {
@@ -11117,10 +12409,10 @@
         "tutors": 4,
         "repeatableTutors": 1,
         "draw": 5,
-        "interaction": 22,
+        "interaction": 26,
         "protection": 0,
         "recursion": 0,
-        "wipes": 4,
+        "wipes": 5,
         "avgCmc": 2.1142857142857143,
         "unknownManaLands": 0
       },
@@ -11154,7 +12446,7 @@
       "simulation": {
         "iterations": 3200,
         "floor": 42,
-        "median": 48,
+        "median": 49,
         "high": 56,
         "ceiling": 56,
         "peak": 67,
@@ -11168,7 +12460,7 @@
             "turn": 1,
             "commander": 3,
             "engine": 0,
-            "interaction": 57,
+            "interaction": 64,
             "resource": 24,
             "burst": 15,
             "commanderCheat": 0,
@@ -11180,7 +12472,7 @@
             "turn": 2,
             "commander": 26,
             "engine": 0,
-            "interaction": 73,
+            "interaction": 80,
             "resource": 32,
             "burst": 22,
             "commanderCheat": 0,
@@ -11192,7 +12484,7 @@
             "turn": 3,
             "commander": 63,
             "engine": 0,
-            "interaction": 87,
+            "interaction": 92,
             "resource": 40,
             "burst": 34,
             "commanderCheat": 0,
@@ -11204,7 +12496,7 @@
             "turn": 4,
             "commander": 85,
             "engine": 0,
-            "interaction": 91,
+            "interaction": 94,
             "resource": 43,
             "burst": 39,
             "commanderCheat": 0,
@@ -11216,7 +12508,7 @@
             "turn": 5,
             "commander": 90,
             "engine": 0,
-            "interaction": 94,
+            "interaction": 96,
             "resource": 45,
             "burst": 44,
             "commanderCheat": 0,
@@ -11228,7 +12520,7 @@
             "turn": 6,
             "commander": 93,
             "engine": 0,
-            "interaction": 96,
+            "interaction": 97,
             "resource": 48,
             "burst": 47,
             "commanderCheat": 0,
@@ -11240,7 +12532,7 @@
             "turn": 7,
             "commander": 95,
             "engine": 0,
-            "interaction": 97,
+            "interaction": 98,
             "resource": 52,
             "burst": 51,
             "commanderCheat": 0,
@@ -11336,34 +12628,34 @@
               "points": [
                 {
                   "turn": 1,
-                  "value": 57
+                  "value": 65
                 },
                 {
                   "turn": 2,
-                  "value": 75
+                  "value": 80
                 },
                 {
                   "turn": 3,
-                  "value": 87
+                  "value": 92
                 },
                 {
                   "turn": 4,
-                  "value": 91
+                  "value": 95
                 },
                 {
                   "turn": 5,
-                  "value": 94
+                  "value": 97
                 },
                 {
                   "turn": 6,
-                  "value": 96
+                  "value": 98
                 },
                 {
                   "turn": 7,
-                  "value": 98
+                  "value": 99
                 }
               ],
-              "observedWithinHorizon": 780
+              "observedWithinHorizon": 791
             },
             "resource": {
               "id": "resource-first-access",
@@ -11375,7 +12667,7 @@
                 },
                 {
                   "turn": 2,
-                  "value": 35
+                  "value": 34
                 },
                 {
                   "turn": 3,
@@ -11387,7 +12679,7 @@
                 },
                 {
                   "turn": 5,
-                  "value": 52
+                  "value": 51
                 },
                 {
                   "turn": 6,
@@ -11398,7 +12690,7 @@
                   "value": 57
                 }
               ],
-              "observedWithinHorizon": 459
+              "observedWithinHorizon": 458
             },
             "burst": {
               "id": "burst-first-access",
@@ -11485,6 +12777,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 4,
+        "range": [
+          4,
+          4
+        ],
+        "binding": [
+          "game-changers"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "cedh",
       "name": "Tayam Midrange Adnaus [cEDH PRIMER]",
       "commander": "Tayam, Luminous Enigma",
@@ -11504,6 +12808,45 @@
         "commanderDelta": 7,
         "coverage": 94,
         "dataCoverage": 94
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0.1
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0
+        },
+        "sources": {
+          "combat": 100,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 81,
@@ -11920,6 +13263,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 4,
+        "range": [
+          4,
+          4
+        ],
+        "binding": [
+          "game-changers"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "cedh",
       "name": "[cEDH] Urza Power Scepter [Primer]",
       "commander": "Urza, Lord High Artificer",
@@ -11929,23 +13284,62 @@
         "resolvedCount": 95
       },
       "profile": {
-        "median": 71,
-        "floor": 56,
+        "median": 73,
+        "floor": 59,
         "ceiling": 84,
         "peak": 95,
-        "dispersion": 27,
-        "variance": 27,
-        "consistency": 64,
+        "dispersion": 24,
+        "variance": 24,
+        "consistency": 65,
         "commanderDelta": 12,
-        "coverage": 92,
-        "dataCoverage": 92
+        "coverage": 93,
+        "dataCoverage": 93
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 8,
+          "median": 13,
+          "p80": 13
+        },
+        "win": {
+          "p20": 8,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 4.9,
+          "5": 9.6,
+          "6": 13.8,
+          "7": 16.8,
+          "8": 20.6,
+          "9": 24.3,
+          "10": 28.5
+        },
+        "winBefore": {
+          "4": 4.9,
+          "5": 9.6,
+          "6": 13.8,
+          "7": 16.8,
+          "8": 20.6,
+          "9": 24.3,
+          "10": 28.2
+        },
+        "sources": {
+          "combat": 7.3,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 92.7
+        },
+        "combos": 12,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 83,
-        "consistency": 64,
+        "consistency": 65,
         "explosiveness": 43,
         "synergy": 89,
-        "interaction": 61,
+        "interaction": 79,
         "resilience": 36
       },
       "roles": {
@@ -11955,7 +13349,7 @@
         "tutors": 6,
         "repeatableTutors": 2,
         "draw": 9,
-        "interaction": 10,
+        "interaction": 16,
         "protection": 0,
         "recursion": 2,
         "wipes": 0,
@@ -12032,13 +13426,13 @@
       "combos": [],
       "simulation": {
         "iterations": 3200,
-        "floor": 44,
-        "median": 55,
-        "high": 68,
-        "ceiling": 68,
-        "peak": 83,
-        "iqr": 19,
-        "consistency": 58,
+        "floor": 47,
+        "median": 58,
+        "high": 69,
+        "ceiling": 69,
+        "peak": 84,
+        "iqr": 18,
+        "consistency": 59,
         "commanderMedianTurn": 3,
         "engineMedianTurn": 3,
         "recoveryAfterDisruption": 89,
@@ -12047,7 +13441,7 @@
             "turn": 1,
             "commander": 2,
             "engine": 17,
-            "interaction": 36,
+            "interaction": 57,
             "resource": 46,
             "burst": 9,
             "commanderCheat": 0,
@@ -12059,7 +13453,7 @@
             "turn": 2,
             "commander": 22,
             "engine": 28,
-            "interaction": 47,
+            "interaction": 67,
             "resource": 57,
             "burst": 12,
             "commanderCheat": 0,
@@ -12071,7 +13465,7 @@
             "turn": 3,
             "commander": 57,
             "engine": 40,
-            "interaction": 56,
+            "interaction": 75,
             "resource": 66,
             "burst": 17,
             "commanderCheat": 0,
@@ -12083,7 +13477,7 @@
             "turn": 4,
             "commander": 76,
             "engine": 46,
-            "interaction": 63,
+            "interaction": 80,
             "resource": 71,
             "burst": 19,
             "commanderCheat": 0,
@@ -12095,7 +13489,7 @@
             "turn": 5,
             "commander": 82,
             "engine": 52,
-            "interaction": 68,
+            "interaction": 84,
             "resource": 76,
             "burst": 21,
             "commanderCheat": 0,
@@ -12107,7 +13501,7 @@
             "turn": 6,
             "commander": 87,
             "engine": 58,
-            "interaction": 72,
+            "interaction": 88,
             "resource": 79,
             "burst": 23,
             "commanderCheat": 0,
@@ -12119,7 +13513,7 @@
             "turn": 7,
             "commander": 90,
             "engine": 61,
-            "interaction": 76,
+            "interaction": 90,
             "resource": 82,
             "burst": 25,
             "commanderCheat": 0,
@@ -12215,34 +13609,34 @@
               "points": [
                 {
                   "turn": 1,
-                  "value": 37
+                  "value": 56
                 },
                 {
                   "turn": 2,
-                  "value": 50
+                  "value": 70
                 },
                 {
                   "turn": 3,
-                  "value": 60
+                  "value": 79
                 },
                 {
                   "turn": 4,
-                  "value": 67
+                  "value": 84
                 },
                 {
                   "turn": 5,
-                  "value": 72
+                  "value": 87
                 },
                 {
                   "turn": 6,
-                  "value": 75
+                  "value": 90
                 },
                 {
                   "turn": 7,
-                  "value": 78
+                  "value": 93
                 }
               ],
-              "observedWithinHorizon": 627
+              "observedWithinHorizon": 743
             },
             "resource": {
               "id": "resource-first-access",
@@ -12364,6 +13758,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 4,
+        "range": [
+          4,
+          4
+        ],
+        "binding": [
+          "game-changers"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "cedh",
       "name": "Winota Avalanche",
       "commander": "Winota, Joiner of Forces",
@@ -12383,6 +13789,45 @@
         "commanderDelta": 12,
         "coverage": 92,
         "dataCoverage": 92
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 8,
+          "median": 9,
+          "p80": 10
+        },
+        "win": {
+          "p20": 11,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0.1,
+          "5": 1.2,
+          "6": 5.3,
+          "7": 18.3,
+          "8": 40.7,
+          "9": 66.4,
+          "10": 83.3
+        },
+        "winBefore": {
+          "4": 0.1,
+          "5": 1.2,
+          "6": 2.7,
+          "7": 4.5,
+          "8": 7.1,
+          "9": 11.1,
+          "10": 19.2
+        },
+        "sources": {
+          "combat": 83.4,
+          "commander": 5.1,
+          "poison": 0.3,
+          "drain": 0,
+          "combo": 11.1
+        },
+        "combos": 1,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 74,
@@ -12817,6 +14262,19 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 4,
+        "range": [
+          4,
+          4
+        ],
+        "binding": [
+          "game-changers",
+          "combos"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "cedh",
       "name": "[SALT] two rhystics. (cEDH Zur Tempo)",
       "commander": "Zur the Enchanter",
@@ -12827,22 +14285,61 @@
       },
       "profile": {
         "median": 79,
-        "floor": 69,
-        "ceiling": 84,
-        "peak": 96,
+        "floor": 70,
+        "ceiling": 85,
+        "peak": 97,
         "dispersion": 15,
         "variance": 15,
         "consistency": 84,
-        "commanderDelta": 7,
+        "commanderDelta": 6,
         "coverage": 94,
         "dataCoverage": 94
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 7,
+          "median": 13,
+          "p80": 13
+        },
+        "win": {
+          "p20": 7,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 13.8,
+          "5": 16.6,
+          "6": 19.8,
+          "7": 22.4,
+          "8": 25.9,
+          "9": 31,
+          "10": 34.3
+        },
+        "winBefore": {
+          "4": 13.8,
+          "5": 16.6,
+          "6": 19.8,
+          "7": 22.4,
+          "8": 25.9,
+          "9": 31,
+          "10": 34.2
+        },
+        "sources": {
+          "combat": 3.3,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 96.7
+        },
+        "combos": 3,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 90,
         "consistency": 84,
         "explosiveness": 100,
         "synergy": 82,
-        "interaction": 76,
+        "interaction": 80,
         "resilience": 31
       },
       "roles": {
@@ -12852,7 +14349,7 @@
         "tutors": 9,
         "repeatableTutors": 2,
         "draw": 9,
-        "interaction": 16,
+        "interaction": 17,
         "protection": 0,
         "recursion": 1,
         "wipes": 2,
@@ -12888,11 +14385,11 @@
       ],
       "simulation": {
         "iterations": 3200,
-        "floor": 39,
+        "floor": 40,
         "median": 47,
-        "high": 54,
-        "ceiling": 54,
-        "peak": 66,
+        "high": 55,
+        "ceiling": 55,
+        "peak": 67,
         "iqr": 12,
         "consistency": 74,
         "commanderMedianTurn": 3,
@@ -12903,7 +14400,7 @@
             "turn": 1,
             "commander": 8,
             "engine": 0,
-            "interaction": 42,
+            "interaction": 51,
             "resource": 22,
             "burst": 14,
             "commanderCheat": 0,
@@ -12915,7 +14412,7 @@
             "turn": 2,
             "commander": 23,
             "engine": 0,
-            "interaction": 58,
+            "interaction": 64,
             "resource": 37,
             "burst": 22,
             "commanderCheat": 0,
@@ -12927,7 +14424,7 @@
             "turn": 3,
             "commander": 59,
             "engine": 0,
-            "interaction": 72,
+            "interaction": 76,
             "resource": 55,
             "burst": 34,
             "commanderCheat": 0,
@@ -12939,7 +14436,7 @@
             "turn": 4,
             "commander": 78,
             "engine": 0,
-            "interaction": 78,
+            "interaction": 82,
             "resource": 61,
             "burst": 40,
             "commanderCheat": 0,
@@ -12951,7 +14448,7 @@
             "turn": 5,
             "commander": 84,
             "engine": 0,
-            "interaction": 82,
+            "interaction": 85,
             "resource": 66,
             "burst": 43,
             "commanderCheat": 0,
@@ -12963,7 +14460,7 @@
             "turn": 6,
             "commander": 88,
             "engine": 0,
-            "interaction": 87,
+            "interaction": 88,
             "resource": 70,
             "burst": 47,
             "commanderCheat": 0,
@@ -12975,7 +14472,7 @@
             "turn": 7,
             "commander": 91,
             "engine": 0,
-            "interaction": 90,
+            "interaction": 91,
             "resource": 74,
             "burst": 51,
             "commanderCheat": 0,
@@ -13071,34 +14568,34 @@
               "points": [
                 {
                   "turn": 1,
-                  "value": 43
+                  "value": 52
                 },
                 {
                   "turn": 2,
-                  "value": 60
+                  "value": 69
                 },
                 {
                   "turn": 3,
-                  "value": 74
+                  "value": 80
                 },
                 {
                   "turn": 4,
-                  "value": 79
-                },
-                {
-                  "turn": 5,
-                  "value": 82
-                },
-                {
-                  "turn": 6,
                   "value": 85
                 },
                 {
+                  "turn": 5,
+                  "value": 87
+                },
+                {
+                  "turn": 6,
+                  "value": 89
+                },
+                {
                   "turn": 7,
-                  "value": 88
+                  "value": 91
                 }
               ],
-              "observedWithinHorizon": 707
+              "observedWithinHorizon": 731
             },
             "resource": {
               "id": "resource-first-access",
@@ -13220,6 +14717,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 3,
+        "range": [
+          3,
+          3
+        ],
+        "binding": [
+          "speed"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "user",
       "name": "Arabella, strong but not disgusting for others",
       "commander": "Arabella, Abandoned Doll",
@@ -13240,6 +14749,45 @@
         "commanderDelta": 9,
         "coverage": 95,
         "dataCoverage": 95
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 7,
+          "median": 8,
+          "p80": 9
+        },
+        "win": {
+          "p20": 10,
+          "median": 11,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0.1,
+          "6": 5.8,
+          "7": 29,
+          "8": 65.8,
+          "9": 88.5,
+          "10": 96.5
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 1,
+          "9": 8.4,
+          "10": 23.2
+        },
+        "sources": {
+          "combat": 87.3,
+          "commander": 3.3,
+          "poison": 0,
+          "drain": 9.4,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 63,
@@ -13639,6 +15187,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          3
+        ],
+        "binding": [
+          "speed"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "user",
       "name": "Clavileno upgraded",
       "commander": "Clavileño, First of the Blessed",
@@ -13659,6 +15219,45 @@
         "commanderDelta": 14,
         "coverage": 95,
         "dataCoverage": 95
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 9,
+          "median": 10,
+          "p80": 11
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 6.1,
+          "8": 19.9,
+          "9": 45.6,
+          "10": 71.8
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0.2,
+          "10": 4.4
+        },
+        "sources": {
+          "combat": 99.1,
+          "commander": 0.5,
+          "poison": 0,
+          "drain": 0.4,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 59,
@@ -14093,6 +15692,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          2
+        ],
+        "binding": [
+          "baseline"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "user",
       "name": "hei bai fun and friendly (as much as possible)",
       "commander": "Hei Bai, Forest Guardian",
@@ -14113,6 +15724,45 @@
         "commanderDelta": 9,
         "coverage": 94,
         "dataCoverage": 94
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 10,
+          "median": 12,
+          "p80": 13
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0.2,
+          "8": 6.1,
+          "9": 18.2,
+          "10": 33.1
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0.5
+        },
+        "sources": {
+          "combat": 96.1,
+          "commander": 0.9,
+          "poison": 0,
+          "drain": 3,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 66,
@@ -14549,6 +16199,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          2
+        ],
+        "binding": [
+          "speed"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "user",
       "name": "Torgal Fine Hound - flash",
       "commander": "Torgal, A Fine Hound",
@@ -14569,6 +16231,45 @@
         "commanderDelta": 16,
         "coverage": 92,
         "dataCoverage": 92
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 9,
+          "median": 10,
+          "p80": 11
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 1.5,
+          "8": 13.8,
+          "9": 39.9,
+          "10": 68.6
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0.7
+        },
+        "sources": {
+          "combat": 99.6,
+          "commander": 0.4,
+          "poison": 0,
+          "drain": 0,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 51,
@@ -14966,6 +16667,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 3,
+        "range": [
+          3,
+          3
+        ],
+        "binding": [
+          "combos"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "user",
       "name": "Zur, fun and friendly",
       "commander": "Zur, Eternal Schemer",
@@ -14976,10 +16689,10 @@
         "resolvedCount": 100
       },
       "profile": {
-        "median": 51,
-        "floor": 39,
-        "ceiling": 62,
-        "peak": 87,
+        "median": 52,
+        "floor": 40,
+        "ceiling": 63,
+        "peak": 89,
         "dispersion": 23,
         "variance": 23,
         "consistency": 64,
@@ -14987,12 +16700,51 @@
         "coverage": 93,
         "dataCoverage": 93
       },
+      "clock": {
+        "firstKill": {
+          "p20": 9,
+          "median": 10,
+          "p80": 12
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 1.7,
+          "5": 3,
+          "6": 4.4,
+          "7": 6.2,
+          "8": 13.4,
+          "9": 37.8,
+          "10": 59.3
+        },
+        "winBefore": {
+          "4": 1.7,
+          "5": 3,
+          "6": 4.4,
+          "7": 5.5,
+          "8": 6.6,
+          "9": 8,
+          "10": 9.2
+        },
+        "sources": {
+          "combat": 86.7,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 13.3
+        },
+        "combos": 2,
+        "estimatedPowerCards": 2
+      },
       "dimensions": {
         "speed": 44,
         "consistency": 64,
-        "explosiveness": 12,
+        "explosiveness": 13,
         "synergy": 96,
-        "interaction": 26,
+        "interaction": 30,
         "resilience": 49
       },
       "roles": {
@@ -15002,7 +16754,7 @@
         "tutors": 1,
         "repeatableTutors": 0,
         "draw": 17,
-        "interaction": 4,
+        "interaction": 6,
         "protection": 2,
         "recursion": 5,
         "wipes": 1,
@@ -15120,11 +16872,11 @@
       "combos": [],
       "simulation": {
         "iterations": 3200,
-        "floor": 36,
-        "median": 45,
-        "high": 53,
-        "ceiling": 53,
-        "peak": 77,
+        "floor": 37,
+        "median": 46,
+        "high": 54,
+        "ceiling": 54,
+        "peak": 80,
         "iqr": 13,
         "consistency": 71,
         "commanderMedianTurn": 3,
@@ -15159,7 +16911,7 @@
             "turn": 3,
             "commander": 63,
             "engine": 17,
-            "interaction": 20,
+            "interaction": 23,
             "resource": 65,
             "burst": 0,
             "commanderCheat": 0,
@@ -15171,7 +16923,7 @@
             "turn": 4,
             "commander": 81,
             "engine": 43,
-            "interaction": 28,
+            "interaction": 33,
             "resource": 77,
             "burst": 0,
             "commanderCheat": 0,
@@ -15183,7 +16935,7 @@
             "turn": 5,
             "commander": 87,
             "engine": 58,
-            "interaction": 32,
+            "interaction": 40,
             "resource": 87,
             "burst": 0,
             "commanderCheat": 0,
@@ -15195,7 +16947,7 @@
             "turn": 6,
             "commander": 90,
             "engine": 66,
-            "interaction": 35,
+            "interaction": 45,
             "resource": 91,
             "burst": 1,
             "commanderCheat": 0,
@@ -15207,8 +16959,8 @@
             "turn": 7,
             "commander": 93,
             "engine": 73,
-            "interaction": 38,
-            "resource": 95,
+            "interaction": 50,
+            "resource": 94,
             "burst": 1,
             "commanderCheat": 0,
             "targetReduction": 0,
@@ -15307,30 +17059,30 @@
                 },
                 {
                   "turn": 2,
-                  "value": 6
+                  "value": 7
                 },
                 {
                   "turn": 3,
-                  "value": 21
+                  "value": 24
                 },
                 {
                   "turn": 4,
-                  "value": 29
-                },
-                {
-                  "turn": 5,
                   "value": 34
                 },
                 {
+                  "turn": 5,
+                  "value": 43
+                },
+                {
                   "turn": 6,
-                  "value": 39
+                  "value": 49
                 },
                 {
                   "turn": 7,
-                  "value": 42
+                  "value": 54
                 }
               ],
-              "observedWithinHorizon": 334
+              "observedWithinHorizon": 433
             },
             "resource": {
               "id": "resource-first-access",
@@ -15452,6 +17204,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          2
+        ],
+        "binding": [
+          "baseline"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "user",
       "name": "Karumonix - Rat Colony Aggro",
       "commander": "Karumonix, the Rat King",
@@ -15472,6 +17236,45 @@
         "commanderDelta": 10,
         "coverage": 89,
         "dataCoverage": 89
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 10,
+          "median": 10,
+          "p80": 12
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 1.6,
+          "9": 16.6,
+          "10": 51.9
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0
+        },
+        "sources": {
+          "combat": 100,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 57,
@@ -15867,6 +17670,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          2
+        ],
+        "binding": [
+          "baseline"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "user",
       "name": "Wick - Grixis Snail Burn",
       "commander": "Wick, the Whorled Mind",
@@ -15887,6 +17702,45 @@
         "commanderDelta": 8,
         "coverage": 90,
         "dataCoverage": 90
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 10,
+          "median": 10,
+          "p80": 12
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 1.1,
+          "9": 17.5,
+          "10": 52
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0
+        },
+        "sources": {
+          "combat": 99.9,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0.1,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 52,
@@ -16300,6 +18154,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          2
+        ],
+        "binding": [
+          "baseline"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "user",
       "name": "RAT SWAP KARUMONIX / WICK",
       "commander": "Karumonix, the Rat King",
@@ -16320,6 +18186,45 @@
         "commanderDelta": 10,
         "coverage": 89,
         "dataCoverage": 89
+      },
+      "clock": {
+        "firstKill": {
+          "p20": 10,
+          "median": 10,
+          "p80": 12
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 1.6,
+          "9": 16.6,
+          "10": 51.9
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0
+        },
+        "sources": {
+          "combat": 100,
+          "commander": 0,
+          "poison": 0,
+          "drain": 0,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
       },
       "dimensions": {
         "speed": 57,
@@ -16715,6 +18620,18 @@
       }
     },
     {
+      "bracket": {
+        "bracket": 2,
+        "range": [
+          2,
+          2
+        ],
+        "binding": [
+          "speed"
+        ],
+        "b1Compatible": false,
+        "cedhSpeed": false
+      },
       "source": "user",
       "name": "Clavileno",
       "commander": "Clavileño, First of the Blessed",
@@ -16736,6 +18653,45 @@
         "coverage": 94,
         "dataCoverage": 94
       },
+      "clock": {
+        "firstKill": {
+          "p20": 9,
+          "median": 10,
+          "p80": 11
+        },
+        "win": {
+          "p20": 13,
+          "median": 13,
+          "p80": 13
+        },
+        "firstKillBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0.1,
+          "7": 1.9,
+          "8": 12.6,
+          "9": 39.5,
+          "10": 71.2
+        },
+        "winBefore": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0.3,
+          "10": 2.7
+        },
+        "sources": {
+          "combat": 98.8,
+          "commander": 0.4,
+          "poison": 0,
+          "drain": 0.7,
+          "combo": 0
+        },
+        "combos": 0,
+        "estimatedPowerCards": 0
+      },
       "dimensions": {
         "speed": 53,
         "consistency": 61,
@@ -16754,7 +18710,7 @@
         "interaction": 7,
         "protection": 2,
         "recursion": 5,
-        "wipes": 1,
+        "wipes": 2,
         "avgCmc": 3.1451612903225805,
         "unknownManaLands": 0
       },
@@ -17158,5 +19114,5 @@
     }
   ],
   "engineVersion": "3.3.0",
-  "semanticVersion": "3.3.0-semantic-17"
+  "semanticVersion": "3.3.0-semantic-18"
 }

@@ -113,7 +113,7 @@ function compactOracleEvidence(cards,commanderName){
   const uniq=new Map(),cmd=String(commanderName||'').toLowerCase()
   for(const c of cards){
     const key=c.oracleId||c.id||c.name.toLowerCase();if(uniq.has(key))continue
-    uniq.set(key,{oracleId:c.oracleId||c.id,scryfallId:c.id||null,name:c.name,type:c.type||'',oracle:c.oracle||'',manaCost:c.manaCost||'',cmc:Number(c.cmc||0),colorIdentity:c.colorIdentity||[],producedMana:c.producedMana||[],tags:tagsFor(c),isCommander:String(c.name||'').toLowerCase()===cmd})
+    uniq.set(key,{oracleId:c.oracleId||c.id,scryfallId:c.id||null,name:c.name,type:c.type||'',oracle:c.oracle||'',manaCost:c.manaCost||'',cmc:Number(c.cmc||0),colorIdentity:c.colorIdentity||[],producedMana:c.producedMana||[],power:c.power??null,toughness:c.toughness??null,keywords:c.keywords||[],tags:tagsFor(c),isCommander:String(c.name||'').toLowerCase()===cmd})
   }
   return [...uniq.values()].sort((a,b)=>a.name.localeCompare(b.name))
 }
